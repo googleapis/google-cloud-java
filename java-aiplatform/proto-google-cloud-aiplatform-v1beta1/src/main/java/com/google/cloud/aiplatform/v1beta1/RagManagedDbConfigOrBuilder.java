@@ -38,7 +38,7 @@ public interface RagManagedDbConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.enterprise is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=836
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=842
    * @return Whether the enterprise field is set.
    */
   @java.lang.Deprecated
@@ -56,7 +56,7 @@ public interface RagManagedDbConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.enterprise is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=836
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=842
    * @return The enterprise.
    */
   @java.lang.Deprecated
@@ -90,7 +90,7 @@ public interface RagManagedDbConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.scaled is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=840
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=846
    * @return Whether the scaled field is set.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface RagManagedDbConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.scaled is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=840
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=846
    * @return The scaled.
    */
   @java.lang.Deprecated
@@ -142,7 +142,7 @@ public interface RagManagedDbConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.basic is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=844
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=850
    * @return Whether the basic field is set.
    */
   @java.lang.Deprecated
@@ -160,7 +160,7 @@ public interface RagManagedDbConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.basic is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=844
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=850
    * @return The basic.
    */
   @java.lang.Deprecated
@@ -193,7 +193,7 @@ public interface RagManagedDbConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.unprovisioned is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=848
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=854
    * @return Whether the unprovisioned field is set.
    */
   @java.lang.Deprecated
@@ -212,7 +212,7 @@ public interface RagManagedDbConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.unprovisioned is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=848
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=854
    * @return The unprovisioned.
    */
   @java.lang.Deprecated

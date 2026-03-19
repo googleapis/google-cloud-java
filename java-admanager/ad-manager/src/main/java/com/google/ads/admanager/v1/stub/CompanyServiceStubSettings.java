@@ -35,6 +35,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -103,6 +104,7 @@ import javax.annotation.Generated;
  * retries.
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class CompanyServiceStubSettings extends StubSettings<CompanyServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -259,6 +261,14 @@ public class CompanyServiceStubSettings extends StubSettings<CompanyServiceStubS
 
     getCompanySettings = settingsBuilder.getCompanySettings().build();
     listCompaniesSettings = settingsBuilder.listCompaniesSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.api-ads:ad-manager")
+        .setRepository("googleapis/google-cloud-java")
+        .build();
   }
 
   /** Builder for CompanyServiceStubSettings. */

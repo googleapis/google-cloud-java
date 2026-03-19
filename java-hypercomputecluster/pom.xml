@@ -33,6 +33,16 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-hypercomputecluster-v1</artifactId>
+        <version>0.8.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-hypercomputecluster-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-hypercomputecluster-v1</artifactId>
+        <version>0.8.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-hypercomputecluster-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-hypercomputecluster-v1beta</artifactId>
         <version>0.8.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-hypercomputecluster-v1beta:current} -->
       </dependency>
@@ -48,7 +58,9 @@
   <modules>
     <module>google-cloud-hypercomputecluster</module>
     <module>grpc-google-cloud-hypercomputecluster-v1beta</module>
+    <module>grpc-google-cloud-hypercomputecluster-v1</module>
     <module>proto-google-cloud-hypercomputecluster-v1beta</module>
+    <module>proto-google-cloud-hypercomputecluster-v1</module>
     <module>google-cloud-hypercomputecluster-bom</module>
   </modules>
 

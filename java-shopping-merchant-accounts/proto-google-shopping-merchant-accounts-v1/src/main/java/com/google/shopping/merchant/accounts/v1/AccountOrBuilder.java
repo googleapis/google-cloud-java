@@ -71,10 +71,12 @@ public interface AccountOrBuilder
    *
    *
    * <pre>
-   * Required. A human-readable name of the account. See
-   * [store name](https://support.google.com/merchants/answer/160556) and
-   * [business name](https://support.google.com/merchants/answer/12159159) for
-   * more information.
+   * Required. A human-readable name of the account. Don't use punctuation,
+   * capitalization, or non-alphanumeric symbols such as the "/" or "_" symbols.
+   * See
+   * [Adding a business
+   * name](https://support.google.com/merchants/answer/12159159) for more
+   * information.
    * </pre>
    *
    * <code>string account_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -87,10 +89,12 @@ public interface AccountOrBuilder
    *
    *
    * <pre>
-   * Required. A human-readable name of the account. See
-   * [store name](https://support.google.com/merchants/answer/160556) and
-   * [business name](https://support.google.com/merchants/answer/12159159) for
-   * more information.
+   * Required. A human-readable name of the account. Don't use punctuation,
+   * capitalization, or non-alphanumeric symbols such as the "/" or "_" symbols.
+   * See
+   * [Adding a business
+   * name](https://support.google.com/merchants/answer/12159159) for more
+   * information.
    * </pre>
    *
    * <code>string account_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>

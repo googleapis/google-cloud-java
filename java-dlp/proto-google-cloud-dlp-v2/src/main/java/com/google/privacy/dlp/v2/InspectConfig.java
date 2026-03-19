@@ -3942,7 +3942,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Set of rules to apply to the findings for this InspectConfig.
    * Exclusion rules, contained in the set are executed in the end, other
-   * rules are executed in the order they are specified for each info type.
+   * rules are executed in the order they are specified for each info type. Not
+   * supported for the `metadata_key_value_expression` CustomInfoType.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
@@ -3958,7 +3959,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Set of rules to apply to the findings for this InspectConfig.
    * Exclusion rules, contained in the set are executed in the end, other
-   * rules are executed in the order they are specified for each info type.
+   * rules are executed in the order they are specified for each info type. Not
+   * supported for the `metadata_key_value_expression` CustomInfoType.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
@@ -3975,7 +3977,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Set of rules to apply to the findings for this InspectConfig.
    * Exclusion rules, contained in the set are executed in the end, other
-   * rules are executed in the order they are specified for each info type.
+   * rules are executed in the order they are specified for each info type. Not
+   * supported for the `metadata_key_value_expression` CustomInfoType.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
@@ -3991,7 +3994,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Set of rules to apply to the findings for this InspectConfig.
    * Exclusion rules, contained in the set are executed in the end, other
-   * rules are executed in the order they are specified for each info type.
+   * rules are executed in the order they are specified for each info type. Not
+   * supported for the `metadata_key_value_expression` CustomInfoType.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
@@ -4007,7 +4011,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Set of rules to apply to the findings for this InspectConfig.
    * Exclusion rules, contained in the set are executed in the end, other
-   * rules are executed in the order they are specified for each info type.
+   * rules are executed in the order they are specified for each info type. Not
+   * supported for the `metadata_key_value_expression` CustomInfoType.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
@@ -7010,7 +7015,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Set of rules to apply to the findings for this InspectConfig.
      * Exclusion rules, contained in the set are executed in the end, other
-     * rules are executed in the order they are specified for each info type.
+     * rules are executed in the order they are specified for each info type. Not
+     * supported for the `metadata_key_value_expression` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
@@ -7029,7 +7035,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Set of rules to apply to the findings for this InspectConfig.
      * Exclusion rules, contained in the set are executed in the end, other
-     * rules are executed in the order they are specified for each info type.
+     * rules are executed in the order they are specified for each info type. Not
+     * supported for the `metadata_key_value_expression` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
@@ -7048,7 +7055,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Set of rules to apply to the findings for this InspectConfig.
      * Exclusion rules, contained in the set are executed in the end, other
-     * rules are executed in the order they are specified for each info type.
+     * rules are executed in the order they are specified for each info type. Not
+     * supported for the `metadata_key_value_expression` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
@@ -7067,7 +7075,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Set of rules to apply to the findings for this InspectConfig.
      * Exclusion rules, contained in the set are executed in the end, other
-     * rules are executed in the order they are specified for each info type.
+     * rules are executed in the order they are specified for each info type. Not
+     * supported for the `metadata_key_value_expression` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
@@ -7092,7 +7101,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Set of rules to apply to the findings for this InspectConfig.
      * Exclusion rules, contained in the set are executed in the end, other
-     * rules are executed in the order they are specified for each info type.
+     * rules are executed in the order they are specified for each info type. Not
+     * supported for the `metadata_key_value_expression` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
@@ -7115,7 +7125,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Set of rules to apply to the findings for this InspectConfig.
      * Exclusion rules, contained in the set are executed in the end, other
-     * rules are executed in the order they are specified for each info type.
+     * rules are executed in the order they are specified for each info type. Not
+     * supported for the `metadata_key_value_expression` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
@@ -7140,7 +7151,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Set of rules to apply to the findings for this InspectConfig.
      * Exclusion rules, contained in the set are executed in the end, other
-     * rules are executed in the order they are specified for each info type.
+     * rules are executed in the order they are specified for each info type. Not
+     * supported for the `metadata_key_value_expression` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
@@ -7165,7 +7177,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Set of rules to apply to the findings for this InspectConfig.
      * Exclusion rules, contained in the set are executed in the end, other
-     * rules are executed in the order they are specified for each info type.
+     * rules are executed in the order they are specified for each info type. Not
+     * supported for the `metadata_key_value_expression` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
@@ -7187,7 +7200,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Set of rules to apply to the findings for this InspectConfig.
      * Exclusion rules, contained in the set are executed in the end, other
-     * rules are executed in the order they are specified for each info type.
+     * rules are executed in the order they are specified for each info type. Not
+     * supported for the `metadata_key_value_expression` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
@@ -7210,7 +7224,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Set of rules to apply to the findings for this InspectConfig.
      * Exclusion rules, contained in the set are executed in the end, other
-     * rules are executed in the order they are specified for each info type.
+     * rules are executed in the order they are specified for each info type. Not
+     * supported for the `metadata_key_value_expression` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
@@ -7233,7 +7248,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Set of rules to apply to the findings for this InspectConfig.
      * Exclusion rules, contained in the set are executed in the end, other
-     * rules are executed in the order they are specified for each info type.
+     * rules are executed in the order they are specified for each info type. Not
+     * supported for the `metadata_key_value_expression` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
@@ -7255,7 +7271,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Set of rules to apply to the findings for this InspectConfig.
      * Exclusion rules, contained in the set are executed in the end, other
-     * rules are executed in the order they are specified for each info type.
+     * rules are executed in the order they are specified for each info type. Not
+     * supported for the `metadata_key_value_expression` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
@@ -7277,7 +7294,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Set of rules to apply to the findings for this InspectConfig.
      * Exclusion rules, contained in the set are executed in the end, other
-     * rules are executed in the order they are specified for each info type.
+     * rules are executed in the order they are specified for each info type. Not
+     * supported for the `metadata_key_value_expression` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
@@ -7292,7 +7310,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Set of rules to apply to the findings for this InspectConfig.
      * Exclusion rules, contained in the set are executed in the end, other
-     * rules are executed in the order they are specified for each info type.
+     * rules are executed in the order they are specified for each info type. Not
+     * supported for the `metadata_key_value_expression` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
@@ -7311,7 +7330,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Set of rules to apply to the findings for this InspectConfig.
      * Exclusion rules, contained in the set are executed in the end, other
-     * rules are executed in the order they are specified for each info type.
+     * rules are executed in the order they are specified for each info type. Not
+     * supported for the `metadata_key_value_expression` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
@@ -7331,7 +7351,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Set of rules to apply to the findings for this InspectConfig.
      * Exclusion rules, contained in the set are executed in the end, other
-     * rules are executed in the order they are specified for each info type.
+     * rules are executed in the order they are specified for each info type. Not
+     * supported for the `metadata_key_value_expression` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
@@ -7347,7 +7368,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Set of rules to apply to the findings for this InspectConfig.
      * Exclusion rules, contained in the set are executed in the end, other
-     * rules are executed in the order they are specified for each info type.
+     * rules are executed in the order they are specified for each info type. Not
+     * supported for the `metadata_key_value_expression` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
@@ -7363,7 +7385,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Set of rules to apply to the findings for this InspectConfig.
      * Exclusion rules, contained in the set are executed in the end, other
-     * rules are executed in the order they are specified for each info type.
+     * rules are executed in the order they are specified for each info type. Not
+     * supported for the `metadata_key_value_expression` CustomInfoType.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>

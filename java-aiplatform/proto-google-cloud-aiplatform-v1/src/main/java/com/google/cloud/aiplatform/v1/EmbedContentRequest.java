@@ -385,6 +385,1684 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType)
   }
 
+  public interface EmbedContentConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The title for the text.
+     *
+     * Only applicable to text-only embedding models.
+     * </pre>
+     *
+     * <code>optional string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the title field is set.
+     */
+    boolean hasTitle();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The title for the text.
+     *
+     * Only applicable to text-only embedding models.
+     * </pre>
+     *
+     * <code>optional string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The title.
+     */
+    java.lang.String getTitle();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The title for the text.
+     *
+     * Only applicable to text-only embedding models.
+     * </pre>
+     *
+     * <code>optional string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for title.
+     */
+    com.google.protobuf.ByteString getTitleBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The task type of the embedding.
+     *
+     * Only applicable to text-only embedding models.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the taskType field is set.
+     */
+    boolean hasTaskType();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The task type of the embedding.
+     *
+     * Only applicable to text-only embedding models.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for taskType.
+     */
+    int getTaskTypeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The task type of the embedding.
+     *
+     * Only applicable to text-only embedding models.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The taskType.
+     */
+    com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType getTaskType();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to silently truncate the input content if it's longer
+     * than the maximum sequence length.
+     *
+     * Only applicable to text-only embedding models.
+     * </pre>
+     *
+     * <code>optional bool auto_truncate = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the autoTruncate field is set.
+     */
+    boolean hasAutoTruncate();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to silently truncate the input content if it's longer
+     * than the maximum sequence length.
+     *
+     * Only applicable to text-only embedding models.
+     * </pre>
+     *
+     * <code>optional bool auto_truncate = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The autoTruncate.
+     */
+    boolean getAutoTruncate();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Reduced dimension for the output embedding. If set, excessive
+     * values in the output embedding are truncated from the end.
+     * </pre>
+     *
+     * <code>optional int32 output_dimensionality = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the outputDimensionality field is set.
+     */
+    boolean hasOutputDimensionality();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Reduced dimension for the output embedding. If set, excessive
+     * values in the output embedding are truncated from the end.
+     * </pre>
+     *
+     * <code>optional int32 output_dimensionality = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The outputDimensionality.
+     */
+    int getOutputDimensionality();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to enable OCR for document content.
+     * </pre>
+     *
+     * <code>optional bool document_ocr = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the documentOcr field is set.
+     */
+    boolean hasDocumentOcr();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to enable OCR for document content.
+     * </pre>
+     *
+     * <code>optional bool document_ocr = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The documentOcr.
+     */
+    boolean getDocumentOcr();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to extract audio from video content.
+     * </pre>
+     *
+     * <code>optional bool audio_track_extraction = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the audioTrackExtraction field is set.
+     */
+    boolean hasAudioTrackExtraction();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to extract audio from video content.
+     * </pre>
+     *
+     * <code>optional bool audio_track_extraction = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The audioTrackExtraction.
+     */
+    boolean getAudioTrackExtraction();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configurations for the EmbedContent API.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig}
+   */
+  public static final class EmbedContentConfig extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig)
+      EmbedContentConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "EmbedContentConfig");
+    }
+
+    // Use EmbedContentConfig.newBuilder() to construct.
+    private EmbedContentConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private EmbedContentConfig() {
+      title_ = "";
+      taskType_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1.PredictionServiceProto
+          .internal_static_google_cloud_aiplatform_v1_EmbedContentRequest_EmbedContentConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1.PredictionServiceProto
+          .internal_static_google_cloud_aiplatform_v1_EmbedContentRequest_EmbedContentConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig.class,
+              com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int TITLE_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object title_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The title for the text.
+     *
+     * Only applicable to text-only embedding models.
+     * </pre>
+     *
+     * <code>optional string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the title field is set.
+     */
+    @java.lang.Override
+    public boolean hasTitle() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The title for the text.
+     *
+     * Only applicable to text-only embedding models.
+     * </pre>
+     *
+     * <code>optional string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The title.
+     */
+    @java.lang.Override
+    public java.lang.String getTitle() {
+      java.lang.Object ref = title_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        title_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The title for the text.
+     *
+     * Only applicable to text-only embedding models.
+     * </pre>
+     *
+     * <code>optional string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for title.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTitleBytes() {
+      java.lang.Object ref = title_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        title_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TASK_TYPE_FIELD_NUMBER = 2;
+    private int taskType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The task type of the embedding.
+     *
+     * Only applicable to text-only embedding models.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the taskType field is set.
+     */
+    @java.lang.Override
+    public boolean hasTaskType() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The task type of the embedding.
+     *
+     * Only applicable to text-only embedding models.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for taskType.
+     */
+    @java.lang.Override
+    public int getTaskTypeValue() {
+      return taskType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The task type of the embedding.
+     *
+     * Only applicable to text-only embedding models.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The taskType.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType getTaskType() {
+      com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType result =
+          com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType.forNumber(taskType_);
+      return result == null
+          ? com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int AUTO_TRUNCATE_FIELD_NUMBER = 3;
+    private boolean autoTruncate_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to silently truncate the input content if it's longer
+     * than the maximum sequence length.
+     *
+     * Only applicable to text-only embedding models.
+     * </pre>
+     *
+     * <code>optional bool auto_truncate = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the autoTruncate field is set.
+     */
+    @java.lang.Override
+    public boolean hasAutoTruncate() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to silently truncate the input content if it's longer
+     * than the maximum sequence length.
+     *
+     * Only applicable to text-only embedding models.
+     * </pre>
+     *
+     * <code>optional bool auto_truncate = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The autoTruncate.
+     */
+    @java.lang.Override
+    public boolean getAutoTruncate() {
+      return autoTruncate_;
+    }
+
+    public static final int OUTPUT_DIMENSIONALITY_FIELD_NUMBER = 4;
+    private int outputDimensionality_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Reduced dimension for the output embedding. If set, excessive
+     * values in the output embedding are truncated from the end.
+     * </pre>
+     *
+     * <code>optional int32 output_dimensionality = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the outputDimensionality field is set.
+     */
+    @java.lang.Override
+    public boolean hasOutputDimensionality() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Reduced dimension for the output embedding. If set, excessive
+     * values in the output embedding are truncated from the end.
+     * </pre>
+     *
+     * <code>optional int32 output_dimensionality = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The outputDimensionality.
+     */
+    @java.lang.Override
+    public int getOutputDimensionality() {
+      return outputDimensionality_;
+    }
+
+    public static final int DOCUMENT_OCR_FIELD_NUMBER = 5;
+    private boolean documentOcr_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to enable OCR for document content.
+     * </pre>
+     *
+     * <code>optional bool document_ocr = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the documentOcr field is set.
+     */
+    @java.lang.Override
+    public boolean hasDocumentOcr() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to enable OCR for document content.
+     * </pre>
+     *
+     * <code>optional bool document_ocr = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The documentOcr.
+     */
+    @java.lang.Override
+    public boolean getDocumentOcr() {
+      return documentOcr_;
+    }
+
+    public static final int AUDIO_TRACK_EXTRACTION_FIELD_NUMBER = 6;
+    private boolean audioTrackExtraction_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to extract audio from video content.
+     * </pre>
+     *
+     * <code>optional bool audio_track_extraction = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the audioTrackExtraction field is set.
+     */
+    @java.lang.Override
+    public boolean hasAudioTrackExtraction() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to extract audio from video content.
+     * </pre>
+     *
+     * <code>optional bool audio_track_extraction = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The audioTrackExtraction.
+     */
+    @java.lang.Override
+    public boolean getAudioTrackExtraction() {
+      return audioTrackExtraction_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, title_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeEnum(2, taskType_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeBool(3, autoTruncate_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeInt32(4, outputDimensionality_);
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        output.writeBool(5, documentOcr_);
+      }
+      if (((bitField0_ & 0x00000020) != 0)) {
+        output.writeBool(6, audioTrackExtraction_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, title_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, taskType_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, autoTruncate_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, outputDimensionality_);
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, documentOcr_);
+      }
+      if (((bitField0_ & 0x00000020) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, audioTrackExtraction_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig other =
+          (com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig) obj;
+
+      if (hasTitle() != other.hasTitle()) return false;
+      if (hasTitle()) {
+        if (!getTitle().equals(other.getTitle())) return false;
+      }
+      if (hasTaskType() != other.hasTaskType()) return false;
+      if (hasTaskType()) {
+        if (taskType_ != other.taskType_) return false;
+      }
+      if (hasAutoTruncate() != other.hasAutoTruncate()) return false;
+      if (hasAutoTruncate()) {
+        if (getAutoTruncate() != other.getAutoTruncate()) return false;
+      }
+      if (hasOutputDimensionality() != other.hasOutputDimensionality()) return false;
+      if (hasOutputDimensionality()) {
+        if (getOutputDimensionality() != other.getOutputDimensionality()) return false;
+      }
+      if (hasDocumentOcr() != other.hasDocumentOcr()) return false;
+      if (hasDocumentOcr()) {
+        if (getDocumentOcr() != other.getDocumentOcr()) return false;
+      }
+      if (hasAudioTrackExtraction() != other.hasAudioTrackExtraction()) return false;
+      if (hasAudioTrackExtraction()) {
+        if (getAudioTrackExtraction() != other.getAudioTrackExtraction()) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasTitle()) {
+        hash = (37 * hash) + TITLE_FIELD_NUMBER;
+        hash = (53 * hash) + getTitle().hashCode();
+      }
+      if (hasTaskType()) {
+        hash = (37 * hash) + TASK_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + taskType_;
+      }
+      if (hasAutoTruncate()) {
+        hash = (37 * hash) + AUTO_TRUNCATE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutoTruncate());
+      }
+      if (hasOutputDimensionality()) {
+        hash = (37 * hash) + OUTPUT_DIMENSIONALITY_FIELD_NUMBER;
+        hash = (53 * hash) + getOutputDimensionality();
+      }
+      if (hasDocumentOcr()) {
+        hash = (37 * hash) + DOCUMENT_OCR_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDocumentOcr());
+      }
+      if (hasAudioTrackExtraction()) {
+        hash = (37 * hash) + AUDIO_TRACK_EXTRACTION_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAudioTrackExtraction());
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configurations for the EmbedContent API.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig)
+        com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.PredictionServiceProto
+            .internal_static_google_cloud_aiplatform_v1_EmbedContentRequest_EmbedContentConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.PredictionServiceProto
+            .internal_static_google_cloud_aiplatform_v1_EmbedContentRequest_EmbedContentConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig.class,
+                com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        title_ = "";
+        taskType_ = 0;
+        autoTruncate_ = false;
+        outputDimensionality_ = 0;
+        documentOcr_ = false;
+        audioTrackExtraction_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1.PredictionServiceProto
+            .internal_static_google_cloud_aiplatform_v1_EmbedContentRequest_EmbedContentConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig build() {
+        com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig buildPartial() {
+        com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig result =
+            new com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.title_ = title_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.taskType_ = taskType_;
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.autoTruncate_ = autoTruncate_;
+          to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.outputDimensionality_ = outputDimensionality_;
+          to_bitField0_ |= 0x00000008;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.documentOcr_ = documentOcr_;
+          to_bitField0_ |= 0x00000010;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.audioTrackExtraction_ = audioTrackExtraction_;
+          to_bitField0_ |= 0x00000020;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig other) {
+        if (other
+            == com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig
+                .getDefaultInstance()) return this;
+        if (other.hasTitle()) {
+          title_ = other.title_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.hasTaskType()) {
+          setTaskTypeValue(other.getTaskTypeValue());
+        }
+        if (other.hasAutoTruncate()) {
+          setAutoTruncate(other.getAutoTruncate());
+        }
+        if (other.hasOutputDimensionality()) {
+          setOutputDimensionality(other.getOutputDimensionality());
+        }
+        if (other.hasDocumentOcr()) {
+          setDocumentOcr(other.getDocumentOcr());
+        }
+        if (other.hasAudioTrackExtraction()) {
+          setAudioTrackExtraction(other.getAudioTrackExtraction());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  title_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 16:
+                {
+                  taskType_ = input.readEnum();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 24:
+                {
+                  autoTruncate_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              case 32:
+                {
+                  outputDimensionality_ = input.readInt32();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
+              case 40:
+                {
+                  documentOcr_ = input.readBool();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 40
+              case 48:
+                {
+                  audioTrackExtraction_ = input.readBool();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 48
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object title_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The title for the text.
+       *
+       * Only applicable to text-only embedding models.
+       * </pre>
+       *
+       * <code>optional string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the title field is set.
+       */
+      public boolean hasTitle() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The title for the text.
+       *
+       * Only applicable to text-only embedding models.
+       * </pre>
+       *
+       * <code>optional string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The title.
+       */
+      public java.lang.String getTitle() {
+        java.lang.Object ref = title_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          title_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The title for the text.
+       *
+       * Only applicable to text-only embedding models.
+       * </pre>
+       *
+       * <code>optional string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for title.
+       */
+      public com.google.protobuf.ByteString getTitleBytes() {
+        java.lang.Object ref = title_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          title_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The title for the text.
+       *
+       * Only applicable to text-only embedding models.
+       * </pre>
+       *
+       * <code>optional string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The title to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTitle(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        title_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The title for the text.
+       *
+       * Only applicable to text-only embedding models.
+       * </pre>
+       *
+       * <code>optional string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTitle() {
+        title_ = getDefaultInstance().getTitle();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The title for the text.
+       *
+       * Only applicable to text-only embedding models.
+       * </pre>
+       *
+       * <code>optional string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for title to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTitleBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        title_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private int taskType_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The task type of the embedding.
+       *
+       * Only applicable to text-only embedding models.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the taskType field is set.
+       */
+      @java.lang.Override
+      public boolean hasTaskType() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The task type of the embedding.
+       *
+       * Only applicable to text-only embedding models.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for taskType.
+       */
+      @java.lang.Override
+      public int getTaskTypeValue() {
+        return taskType_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The task type of the embedding.
+       *
+       * Only applicable to text-only embedding models.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for taskType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTaskTypeValue(int value) {
+        taskType_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The task type of the embedding.
+       *
+       * Only applicable to text-only embedding models.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The taskType.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType getTaskType() {
+        com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType result =
+            com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType.forNumber(
+                taskType_);
+        return result == null
+            ? com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The task type of the embedding.
+       *
+       * Only applicable to text-only embedding models.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The taskType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTaskType(
+          com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        taskType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The task type of the embedding.
+       *
+       * Only applicable to text-only embedding models.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTaskType() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        taskType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean autoTruncate_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to silently truncate the input content if it's longer
+       * than the maximum sequence length.
+       *
+       * Only applicable to text-only embedding models.
+       * </pre>
+       *
+       * <code>optional bool auto_truncate = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the autoTruncate field is set.
+       */
+      @java.lang.Override
+      public boolean hasAutoTruncate() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to silently truncate the input content if it's longer
+       * than the maximum sequence length.
+       *
+       * Only applicable to text-only embedding models.
+       * </pre>
+       *
+       * <code>optional bool auto_truncate = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The autoTruncate.
+       */
+      @java.lang.Override
+      public boolean getAutoTruncate() {
+        return autoTruncate_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to silently truncate the input content if it's longer
+       * than the maximum sequence length.
+       *
+       * Only applicable to text-only embedding models.
+       * </pre>
+       *
+       * <code>optional bool auto_truncate = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The autoTruncate to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAutoTruncate(boolean value) {
+
+        autoTruncate_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to silently truncate the input content if it's longer
+       * than the maximum sequence length.
+       *
+       * Only applicable to text-only embedding models.
+       * </pre>
+       *
+       * <code>optional bool auto_truncate = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAutoTruncate() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        autoTruncate_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int outputDimensionality_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Reduced dimension for the output embedding. If set, excessive
+       * values in the output embedding are truncated from the end.
+       * </pre>
+       *
+       * <code>optional int32 output_dimensionality = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the outputDimensionality field is set.
+       */
+      @java.lang.Override
+      public boolean hasOutputDimensionality() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Reduced dimension for the output embedding. If set, excessive
+       * values in the output embedding are truncated from the end.
+       * </pre>
+       *
+       * <code>optional int32 output_dimensionality = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The outputDimensionality.
+       */
+      @java.lang.Override
+      public int getOutputDimensionality() {
+        return outputDimensionality_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Reduced dimension for the output embedding. If set, excessive
+       * values in the output embedding are truncated from the end.
+       * </pre>
+       *
+       * <code>optional int32 output_dimensionality = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The outputDimensionality to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOutputDimensionality(int value) {
+
+        outputDimensionality_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Reduced dimension for the output embedding. If set, excessive
+       * values in the output embedding are truncated from the end.
+       * </pre>
+       *
+       * <code>optional int32 output_dimensionality = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearOutputDimensionality() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        outputDimensionality_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean documentOcr_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to enable OCR for document content.
+       * </pre>
+       *
+       * <code>optional bool document_ocr = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the documentOcr field is set.
+       */
+      @java.lang.Override
+      public boolean hasDocumentOcr() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to enable OCR for document content.
+       * </pre>
+       *
+       * <code>optional bool document_ocr = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The documentOcr.
+       */
+      @java.lang.Override
+      public boolean getDocumentOcr() {
+        return documentOcr_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to enable OCR for document content.
+       * </pre>
+       *
+       * <code>optional bool document_ocr = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The documentOcr to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDocumentOcr(boolean value) {
+
+        documentOcr_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to enable OCR for document content.
+       * </pre>
+       *
+       * <code>optional bool document_ocr = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDocumentOcr() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        documentOcr_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean audioTrackExtraction_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to extract audio from video content.
+       * </pre>
+       *
+       * <code>optional bool audio_track_extraction = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the audioTrackExtraction field is set.
+       */
+      @java.lang.Override
+      public boolean hasAudioTrackExtraction() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to extract audio from video content.
+       * </pre>
+       *
+       * <code>optional bool audio_track_extraction = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The audioTrackExtraction.
+       */
+      @java.lang.Override
+      public boolean getAudioTrackExtraction() {
+        return audioTrackExtraction_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to extract audio from video content.
+       * </pre>
+       *
+       * <code>optional bool audio_track_extraction = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The audioTrackExtraction to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAudioTrackExtraction(boolean value) {
+
+        audioTrackExtraction_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to extract audio from video content.
+       * </pre>
+       *
+       * <code>optional bool audio_track_extraction = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAudioTrackExtraction() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        audioTrackExtraction_ = false;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig)
+    private static final com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig();
+    }
+
+    public static com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EmbedContentConfig> PARSER =
+        new com.google.protobuf.AbstractParser<EmbedContentConfig>() {
+          @java.lang.Override
+          public EmbedContentConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<EmbedContentConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EmbedContentConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int MODEL_FIELD_NUMBER = 1;
 
@@ -468,7 +2146,7 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Input content to be embedded. Required.
+   * Required. Input content to be embedded.
    * </pre>
    *
    * <code>optional .google.cloud.aiplatform.v1.Content content = 2;</code>
@@ -484,7 +2162,7 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Input content to be embedded. Required.
+   * Required. Input content to be embedded.
    * </pre>
    *
    * <code>optional .google.cloud.aiplatform.v1.Content content = 2;</code>
@@ -502,7 +2180,7 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Input content to be embedded. Required.
+   * Required. Input content to be embedded.
    * </pre>
    *
    * <code>optional .google.cloud.aiplatform.v1.Content content = 2;</code>
@@ -523,14 +2201,19 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. An optional title for the text.
+   * Optional. Deprecated: Please use EmbedContentConfig.title instead.
+   * The title for the text.
    * </pre>
    *
-   * <code>optional string title = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string title = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.title is deprecated. See
+   *     google/cloud/aiplatform/v1/prediction_service.proto;l=968
    * @return Whether the title field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasTitle() {
     return ((bitField0_ & 0x00000004) != 0);
   }
@@ -539,14 +2222,19 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. An optional title for the text.
+   * Optional. Deprecated: Please use EmbedContentConfig.title instead.
+   * The title for the text.
    * </pre>
    *
-   * <code>optional string title = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string title = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.title is deprecated. See
+   *     google/cloud/aiplatform/v1/prediction_service.proto;l=968
    * @return The title.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getTitle() {
     java.lang.Object ref = title_;
     if (ref instanceof java.lang.String) {
@@ -563,14 +2251,19 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. An optional title for the text.
+   * Optional. Deprecated: Please use EmbedContentConfig.title instead.
+   * The title for the text.
    * </pre>
    *
-   * <code>optional string title = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string title = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.title is deprecated. See
+   *     google/cloud/aiplatform/v1/prediction_service.proto;l=968
    * @return The bytes for title.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getTitleBytes() {
     java.lang.Object ref = title_;
     if (ref instanceof java.lang.String) {
@@ -590,16 +2283,20 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. The task type of the embedding.
+   * Optional. Deprecated: Please use EmbedContentConfig.task_type instead.
+   * The task type of the embedding.
    * </pre>
    *
    * <code>
-   * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.task_type is deprecated. See
+   *     google/cloud/aiplatform/v1/prediction_service.proto;l=973
    * @return Whether the taskType field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasTaskType() {
     return ((bitField0_ & 0x00000008) != 0);
   }
@@ -608,16 +2305,20 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. The task type of the embedding.
+   * Optional. Deprecated: Please use EmbedContentConfig.task_type instead.
+   * The task type of the embedding.
    * </pre>
    *
    * <code>
-   * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.task_type is deprecated. See
+   *     google/cloud/aiplatform/v1/prediction_service.proto;l=973
    * @return The enum numeric value on the wire for taskType.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public int getTaskTypeValue() {
     return taskType_;
   }
@@ -626,16 +2327,20 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. The task type of the embedding.
+   * Optional. Deprecated: Please use EmbedContentConfig.task_type instead.
+   * The task type of the embedding.
    * </pre>
    *
    * <code>
-   * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.task_type is deprecated. See
+   *     google/cloud/aiplatform/v1/prediction_service.proto;l=973
    * @return The taskType.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType getTaskType() {
     com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType result =
         com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType.forNumber(taskType_);
@@ -651,16 +2356,21 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. Optional reduced dimension for the output embedding. If set,
-   * excessive values in the output embedding are truncated from the end.
+   * Optional. Deprecated: Please use EmbedContentConfig.output_dimensionality
+   * instead. Reduced dimension for the output embedding. If set, excessive
+   * values in the output embedding are truncated from the end.
    * </pre>
    *
-   * <code>optional int32 output_dimensionality = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * optional int32 output_dimensionality = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.output_dimensionality is deprecated.
+   *     See google/cloud/aiplatform/v1/prediction_service.proto;l=979
    * @return Whether the outputDimensionality field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasOutputDimensionality() {
     return ((bitField0_ & 0x00000010) != 0);
   }
@@ -669,16 +2379,21 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. Optional reduced dimension for the output embedding. If set,
-   * excessive values in the output embedding are truncated from the end.
+   * Optional. Deprecated: Please use EmbedContentConfig.output_dimensionality
+   * instead. Reduced dimension for the output embedding. If set, excessive
+   * values in the output embedding are truncated from the end.
    * </pre>
    *
-   * <code>optional int32 output_dimensionality = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * optional int32 output_dimensionality = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.output_dimensionality is deprecated.
+   *     See google/cloud/aiplatform/v1/prediction_service.proto;l=979
    * @return The outputDimensionality.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public int getOutputDimensionality() {
     return outputDimensionality_;
   }
@@ -690,15 +2405,21 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. Whether to silently truncate the input content if it's longer
+   * Optional. Deprecated: Please use EmbedContentConfig.auto_truncate instead.
+   * Whether to silently truncate the input content if it's longer
    * than the maximum sequence length.
    * </pre>
    *
-   * <code>optional bool auto_truncate = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * optional bool auto_truncate = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.auto_truncate is deprecated. See
+   *     google/cloud/aiplatform/v1/prediction_service.proto;l=985
    * @return Whether the autoTruncate field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasAutoTruncate() {
     return ((bitField0_ & 0x00000020) != 0);
   }
@@ -707,17 +2428,84 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. Whether to silently truncate the input content if it's longer
+   * Optional. Deprecated: Please use EmbedContentConfig.auto_truncate instead.
+   * Whether to silently truncate the input content if it's longer
    * than the maximum sequence length.
    * </pre>
    *
-   * <code>optional bool auto_truncate = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * optional bool auto_truncate = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.auto_truncate is deprecated. See
+   *     google/cloud/aiplatform/v1/prediction_service.proto;l=985
    * @return The autoTruncate.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getAutoTruncate() {
     return autoTruncate_;
+  }
+
+  public static final int EMBED_CONTENT_CONFIG_FIELD_NUMBER = 8;
+  private com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig embedContentConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the EmbedContent request.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig embed_content_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the embedContentConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasEmbedContentConfig() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the EmbedContent request.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig embed_content_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The embedContentConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig
+      getEmbedContentConfig() {
+    return embedContentConfig_ == null
+        ? com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig.getDefaultInstance()
+        : embedContentConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the EmbedContent request.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig embed_content_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfigOrBuilder
+      getEmbedContentConfigOrBuilder() {
+    return embedContentConfig_ == null
+        ? com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig.getDefaultInstance()
+        : embedContentConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -752,6 +2540,9 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeBool(7, autoTruncate_);
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(8, getEmbedContentConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -778,6 +2569,9 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, autoTruncate_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getEmbedContentConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -819,6 +2613,10 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
     if (hasAutoTruncate()) {
       if (getAutoTruncate() != other.getAutoTruncate()) return false;
     }
+    if (hasEmbedContentConfig() != other.hasEmbedContentConfig()) return false;
+    if (hasEmbedContentConfig()) {
+      if (!getEmbedContentConfig().equals(other.getEmbedContentConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -853,6 +2651,10 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
     if (hasAutoTruncate()) {
       hash = (37 * hash) + AUTO_TRUNCATE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutoTruncate());
+    }
+    if (hasEmbedContentConfig()) {
+      hash = (37 * hash) + EMBED_CONTENT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getEmbedContentConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -997,6 +2799,7 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetContentFieldBuilder();
+        internalGetEmbedContentConfigFieldBuilder();
       }
     }
 
@@ -1014,6 +2817,11 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
       taskType_ = 0;
       outputDimensionality_ = 0;
       autoTruncate_ = false;
+      embedContentConfig_ = null;
+      if (embedContentConfigBuilder_ != null) {
+        embedContentConfigBuilder_.dispose();
+        embedContentConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -1075,6 +2883,13 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
         result.autoTruncate_ = autoTruncate_;
         to_bitField0_ |= 0x00000020;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.embedContentConfig_ =
+            embedContentConfigBuilder_ == null
+                ? embedContentConfig_
+                : embedContentConfigBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1112,6 +2927,9 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
       }
       if (other.hasAutoTruncate()) {
         setAutoTruncate(other.getAutoTruncate());
+      }
+      if (other.hasEmbedContentConfig()) {
+        mergeEmbedContentConfig(other.getEmbedContentConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1175,6 +2993,13 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000020;
                 break;
               } // case 56
+            case 66:
+              {
+                input.readMessage(
+                    internalGetEmbedContentConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1343,7 +3168,7 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Input content to be embedded. Required.
+     * Required. Input content to be embedded.
      * </pre>
      *
      * <code>optional .google.cloud.aiplatform.v1.Content content = 2;</code>
@@ -1358,7 +3183,7 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Input content to be embedded. Required.
+     * Required. Input content to be embedded.
      * </pre>
      *
      * <code>optional .google.cloud.aiplatform.v1.Content content = 2;</code>
@@ -1379,7 +3204,7 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Input content to be embedded. Required.
+     * Required. Input content to be embedded.
      * </pre>
      *
      * <code>optional .google.cloud.aiplatform.v1.Content content = 2;</code>
@@ -1402,7 +3227,7 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Input content to be embedded. Required.
+     * Required. Input content to be embedded.
      * </pre>
      *
      * <code>optional .google.cloud.aiplatform.v1.Content content = 2;</code>
@@ -1422,7 +3247,7 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Input content to be embedded. Required.
+     * Required. Input content to be embedded.
      * </pre>
      *
      * <code>optional .google.cloud.aiplatform.v1.Content content = 2;</code>
@@ -1450,7 +3275,7 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Input content to be embedded. Required.
+     * Required. Input content to be embedded.
      * </pre>
      *
      * <code>optional .google.cloud.aiplatform.v1.Content content = 2;</code>
@@ -1470,7 +3295,7 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Input content to be embedded. Required.
+     * Required. Input content to be embedded.
      * </pre>
      *
      * <code>optional .google.cloud.aiplatform.v1.Content content = 2;</code>
@@ -1485,7 +3310,7 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Input content to be embedded. Required.
+     * Required. Input content to be embedded.
      * </pre>
      *
      * <code>optional .google.cloud.aiplatform.v1.Content content = 2;</code>
@@ -1504,7 +3329,7 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Input content to be embedded. Required.
+     * Required. Input content to be embedded.
      * </pre>
      *
      * <code>optional .google.cloud.aiplatform.v1.Content content = 2;</code>
@@ -1532,13 +3357,18 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. An optional title for the text.
+     * Optional. Deprecated: Please use EmbedContentConfig.title instead.
+     * The title for the text.
      * </pre>
      *
-     * <code>optional string title = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string title = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.title is deprecated. See
+     *     google/cloud/aiplatform/v1/prediction_service.proto;l=968
      * @return Whether the title field is set.
      */
+    @java.lang.Deprecated
     public boolean hasTitle() {
       return ((bitField0_ & 0x00000004) != 0);
     }
@@ -1547,13 +3377,18 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. An optional title for the text.
+     * Optional. Deprecated: Please use EmbedContentConfig.title instead.
+     * The title for the text.
      * </pre>
      *
-     * <code>optional string title = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string title = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.title is deprecated. See
+     *     google/cloud/aiplatform/v1/prediction_service.proto;l=968
      * @return The title.
      */
+    @java.lang.Deprecated
     public java.lang.String getTitle() {
       java.lang.Object ref = title_;
       if (!(ref instanceof java.lang.String)) {
@@ -1570,13 +3405,18 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. An optional title for the text.
+     * Optional. Deprecated: Please use EmbedContentConfig.title instead.
+     * The title for the text.
      * </pre>
      *
-     * <code>optional string title = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string title = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.title is deprecated. See
+     *     google/cloud/aiplatform/v1/prediction_service.proto;l=968
      * @return The bytes for title.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getTitleBytes() {
       java.lang.Object ref = title_;
       if (ref instanceof String) {
@@ -1593,14 +3433,19 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. An optional title for the text.
+     * Optional. Deprecated: Please use EmbedContentConfig.title instead.
+     * The title for the text.
      * </pre>
      *
-     * <code>optional string title = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string title = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.title is deprecated. See
+     *     google/cloud/aiplatform/v1/prediction_service.proto;l=968
      * @param value The title to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setTitle(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1615,13 +3460,18 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. An optional title for the text.
+     * Optional. Deprecated: Please use EmbedContentConfig.title instead.
+     * The title for the text.
      * </pre>
      *
-     * <code>optional string title = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string title = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.title is deprecated. See
+     *     google/cloud/aiplatform/v1/prediction_service.proto;l=968
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearTitle() {
       title_ = getDefaultInstance().getTitle();
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -1633,14 +3483,19 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. An optional title for the text.
+     * Optional. Deprecated: Please use EmbedContentConfig.title instead.
+     * The title for the text.
      * </pre>
      *
-     * <code>optional string title = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string title = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.title is deprecated. See
+     *     google/cloud/aiplatform/v1/prediction_service.proto;l=968
      * @param value The bytes for title to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setTitleBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1658,16 +3513,20 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The task type of the embedding.
+     * Optional. Deprecated: Please use EmbedContentConfig.task_type instead.
+     * The task type of the embedding.
      * </pre>
      *
      * <code>
-     * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.task_type is deprecated. See
+     *     google/cloud/aiplatform/v1/prediction_service.proto;l=973
      * @return Whether the taskType field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasTaskType() {
       return ((bitField0_ & 0x00000008) != 0);
     }
@@ -1676,16 +3535,20 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The task type of the embedding.
+     * Optional. Deprecated: Please use EmbedContentConfig.task_type instead.
+     * The task type of the embedding.
      * </pre>
      *
      * <code>
-     * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.task_type is deprecated. See
+     *     google/cloud/aiplatform/v1/prediction_service.proto;l=973
      * @return The enum numeric value on the wire for taskType.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public int getTaskTypeValue() {
       return taskType_;
     }
@@ -1694,16 +3557,20 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The task type of the embedding.
+     * Optional. Deprecated: Please use EmbedContentConfig.task_type instead.
+     * The task type of the embedding.
      * </pre>
      *
      * <code>
-     * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.task_type is deprecated. See
+     *     google/cloud/aiplatform/v1/prediction_service.proto;l=973
      * @param value The enum numeric value on the wire for taskType to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setTaskTypeValue(int value) {
       taskType_ = value;
       bitField0_ |= 0x00000008;
@@ -1715,16 +3582,20 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The task type of the embedding.
+     * Optional. Deprecated: Please use EmbedContentConfig.task_type instead.
+     * The task type of the embedding.
      * </pre>
      *
      * <code>
-     * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.task_type is deprecated. See
+     *     google/cloud/aiplatform/v1/prediction_service.proto;l=973
      * @return The taskType.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType getTaskType() {
       com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType result =
           com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType.forNumber(taskType_);
@@ -1737,16 +3608,20 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The task type of the embedding.
+     * Optional. Deprecated: Please use EmbedContentConfig.task_type instead.
+     * The task type of the embedding.
      * </pre>
      *
      * <code>
-     * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.task_type is deprecated. See
+     *     google/cloud/aiplatform/v1/prediction_service.proto;l=973
      * @param value The taskType to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setTaskType(
         com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType value) {
       if (value == null) {
@@ -1762,15 +3637,19 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The task type of the embedding.
+     * Optional. Deprecated: Please use EmbedContentConfig.task_type instead.
+     * The task type of the embedding.
      * </pre>
      *
      * <code>
-     * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbeddingTaskType task_type = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.task_type is deprecated. See
+     *     google/cloud/aiplatform/v1/prediction_service.proto;l=973
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearTaskType() {
       bitField0_ = (bitField0_ & ~0x00000008);
       taskType_ = 0;
@@ -1784,16 +3663,21 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Optional reduced dimension for the output embedding. If set,
-     * excessive values in the output embedding are truncated from the end.
+     * Optional. Deprecated: Please use EmbedContentConfig.output_dimensionality
+     * instead. Reduced dimension for the output embedding. If set, excessive
+     * values in the output embedding are truncated from the end.
      * </pre>
      *
-     * <code>optional int32 output_dimensionality = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional int32 output_dimensionality = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.output_dimensionality is
+     *     deprecated. See google/cloud/aiplatform/v1/prediction_service.proto;l=979
      * @return Whether the outputDimensionality field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasOutputDimensionality() {
       return ((bitField0_ & 0x00000010) != 0);
     }
@@ -1802,16 +3686,21 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Optional reduced dimension for the output embedding. If set,
-     * excessive values in the output embedding are truncated from the end.
+     * Optional. Deprecated: Please use EmbedContentConfig.output_dimensionality
+     * instead. Reduced dimension for the output embedding. If set, excessive
+     * values in the output embedding are truncated from the end.
      * </pre>
      *
-     * <code>optional int32 output_dimensionality = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional int32 output_dimensionality = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.output_dimensionality is
+     *     deprecated. See google/cloud/aiplatform/v1/prediction_service.proto;l=979
      * @return The outputDimensionality.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public int getOutputDimensionality() {
       return outputDimensionality_;
     }
@@ -1820,16 +3709,21 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Optional reduced dimension for the output embedding. If set,
-     * excessive values in the output embedding are truncated from the end.
+     * Optional. Deprecated: Please use EmbedContentConfig.output_dimensionality
+     * instead. Reduced dimension for the output embedding. If set, excessive
+     * values in the output embedding are truncated from the end.
      * </pre>
      *
-     * <code>optional int32 output_dimensionality = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional int32 output_dimensionality = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.output_dimensionality is
+     *     deprecated. See google/cloud/aiplatform/v1/prediction_service.proto;l=979
      * @param value The outputDimensionality to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setOutputDimensionality(int value) {
 
       outputDimensionality_ = value;
@@ -1842,15 +3736,20 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Optional reduced dimension for the output embedding. If set,
-     * excessive values in the output embedding are truncated from the end.
+     * Optional. Deprecated: Please use EmbedContentConfig.output_dimensionality
+     * instead. Reduced dimension for the output embedding. If set, excessive
+     * values in the output embedding are truncated from the end.
      * </pre>
      *
-     * <code>optional int32 output_dimensionality = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional int32 output_dimensionality = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.output_dimensionality is
+     *     deprecated. See google/cloud/aiplatform/v1/prediction_service.proto;l=979
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearOutputDimensionality() {
       bitField0_ = (bitField0_ & ~0x00000010);
       outputDimensionality_ = 0;
@@ -1864,15 +3763,21 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Whether to silently truncate the input content if it's longer
+     * Optional. Deprecated: Please use EmbedContentConfig.auto_truncate instead.
+     * Whether to silently truncate the input content if it's longer
      * than the maximum sequence length.
      * </pre>
      *
-     * <code>optional bool auto_truncate = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * optional bool auto_truncate = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.auto_truncate is deprecated. See
+     *     google/cloud/aiplatform/v1/prediction_service.proto;l=985
      * @return Whether the autoTruncate field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasAutoTruncate() {
       return ((bitField0_ & 0x00000020) != 0);
     }
@@ -1881,15 +3786,21 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Whether to silently truncate the input content if it's longer
+     * Optional. Deprecated: Please use EmbedContentConfig.auto_truncate instead.
+     * Whether to silently truncate the input content if it's longer
      * than the maximum sequence length.
      * </pre>
      *
-     * <code>optional bool auto_truncate = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * optional bool auto_truncate = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.auto_truncate is deprecated. See
+     *     google/cloud/aiplatform/v1/prediction_service.proto;l=985
      * @return The autoTruncate.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getAutoTruncate() {
       return autoTruncate_;
     }
@@ -1898,15 +3809,21 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Whether to silently truncate the input content if it's longer
+     * Optional. Deprecated: Please use EmbedContentConfig.auto_truncate instead.
+     * Whether to silently truncate the input content if it's longer
      * than the maximum sequence length.
      * </pre>
      *
-     * <code>optional bool auto_truncate = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * optional bool auto_truncate = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.auto_truncate is deprecated. See
+     *     google/cloud/aiplatform/v1/prediction_service.proto;l=985
      * @param value The autoTruncate to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setAutoTruncate(boolean value) {
 
       autoTruncate_ = value;
@@ -1919,19 +3836,249 @@ public final class EmbedContentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Whether to silently truncate the input content if it's longer
+     * Optional. Deprecated: Please use EmbedContentConfig.auto_truncate instead.
+     * Whether to silently truncate the input content if it's longer
      * than the maximum sequence length.
      * </pre>
      *
-     * <code>optional bool auto_truncate = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * optional bool auto_truncate = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1.EmbedContentRequest.auto_truncate is deprecated. See
+     *     google/cloud/aiplatform/v1/prediction_service.proto;l=985
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearAutoTruncate() {
       bitField0_ = (bitField0_ & ~0x00000020);
       autoTruncate_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig
+        embedContentConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig,
+            com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig.Builder,
+            com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfigOrBuilder>
+        embedContentConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the EmbedContent request.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig embed_content_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the embedContentConfig field is set.
+     */
+    public boolean hasEmbedContentConfig() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the EmbedContent request.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig embed_content_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The embedContentConfig.
+     */
+    public com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig
+        getEmbedContentConfig() {
+      if (embedContentConfigBuilder_ == null) {
+        return embedContentConfig_ == null
+            ? com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig
+                .getDefaultInstance()
+            : embedContentConfig_;
+      } else {
+        return embedContentConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the EmbedContent request.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig embed_content_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEmbedContentConfig(
+        com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig value) {
+      if (embedContentConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        embedContentConfig_ = value;
+      } else {
+        embedContentConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the EmbedContent request.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig embed_content_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEmbedContentConfig(
+        com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig.Builder
+            builderForValue) {
+      if (embedContentConfigBuilder_ == null) {
+        embedContentConfig_ = builderForValue.build();
+      } else {
+        embedContentConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the EmbedContent request.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig embed_content_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeEmbedContentConfig(
+        com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig value) {
+      if (embedContentConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && embedContentConfig_ != null
+            && embedContentConfig_
+                != com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig
+                    .getDefaultInstance()) {
+          getEmbedContentConfigBuilder().mergeFrom(value);
+        } else {
+          embedContentConfig_ = value;
+        }
+      } else {
+        embedContentConfigBuilder_.mergeFrom(value);
+      }
+      if (embedContentConfig_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the EmbedContent request.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig embed_content_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEmbedContentConfig() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      embedContentConfig_ = null;
+      if (embedContentConfigBuilder_ != null) {
+        embedContentConfigBuilder_.dispose();
+        embedContentConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the EmbedContent request.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig embed_content_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig.Builder
+        getEmbedContentConfigBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return internalGetEmbedContentConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the EmbedContent request.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig embed_content_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfigOrBuilder
+        getEmbedContentConfigOrBuilder() {
+      if (embedContentConfigBuilder_ != null) {
+        return embedContentConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return embedContentConfig_ == null
+            ? com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig
+                .getDefaultInstance()
+            : embedContentConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the EmbedContent request.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig embed_content_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig,
+            com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig.Builder,
+            com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfigOrBuilder>
+        internalGetEmbedContentConfigFieldBuilder() {
+      if (embedContentConfigBuilder_ == null) {
+        embedContentConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig,
+                com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfig.Builder,
+                com.google.cloud.aiplatform.v1.EmbedContentRequest.EmbedContentConfigOrBuilder>(
+                getEmbedContentConfig(), getParentForChildren(), isClean());
+        embedContentConfig_ = null;
+      }
+      return embedContentConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.EmbedContentRequest)

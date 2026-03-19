@@ -16,6 +16,27 @@
 
 package com.google.cloud.bigquery.jdbc.it;
 
-import com.google.cloud.bigquery.jdbc.BigQueryJdbcBaseTest;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class ITBase extends BigQueryJdbcBaseTest {}
+import com.google.cloud.bigquery.jdbc.BigQueryJdbcBaseTest;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class ITBase extends BigQueryJdbcBaseTest {
+
+  protected static String requireEnvVar(String varName) {
+    String value = System.getenv(varName);
+    assertNotNull(
+        System.getenv(varName),
+        "Environment variable " + varName + " is required to perform these tests.");
+    return value;
+  }
+
+  protected int resultSetRowCount(ResultSet resultSet) throws SQLException {
+    int rowCount = 0;
+    while (resultSet.next()) {
+      rowCount++;
+    }
+    return rowCount;
+  }
+}

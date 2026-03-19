@@ -36,6 +36,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -52,6 +53,7 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
 import com.google.shopping.merchant.accounts.v1.Account;
 import com.google.shopping.merchant.accounts.v1.CreateAndConfigureAccountRequest;
+import com.google.shopping.merchant.accounts.v1.CreateTestAccountRequest;
 import com.google.shopping.merchant.accounts.v1.DeleteAccountRequest;
 import com.google.shopping.merchant.accounts.v1.GetAccountRequest;
 import com.google.shopping.merchant.accounts.v1.ListAccountsRequest;
@@ -115,6 +117,7 @@ import javax.annotation.Generated;
  * retries.
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class AccountsServiceStubSettings extends StubSettings<AccountsServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -123,6 +126,7 @@ public class AccountsServiceStubSettings extends StubSettings<AccountsServiceStu
   private final UnaryCallSettings<GetAccountRequest, Account> getAccountSettings;
   private final UnaryCallSettings<CreateAndConfigureAccountRequest, Account>
       createAndConfigureAccountSettings;
+  private final UnaryCallSettings<CreateTestAccountRequest, Account> createTestAccountSettings;
   private final UnaryCallSettings<DeleteAccountRequest, Empty> deleteAccountSettings;
   private final UnaryCallSettings<UpdateAccountRequest, Account> updateAccountSettings;
   private final PagedCallSettings<
@@ -245,6 +249,11 @@ public class AccountsServiceStubSettings extends StubSettings<AccountsServiceStu
   public UnaryCallSettings<CreateAndConfigureAccountRequest, Account>
       createAndConfigureAccountSettings() {
     return createAndConfigureAccountSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createTestAccount. */
+  public UnaryCallSettings<CreateTestAccountRequest, Account> createTestAccountSettings() {
+    return createTestAccountSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteAccount. */
@@ -383,10 +392,19 @@ public class AccountsServiceStubSettings extends StubSettings<AccountsServiceStu
 
     getAccountSettings = settingsBuilder.getAccountSettings().build();
     createAndConfigureAccountSettings = settingsBuilder.createAndConfigureAccountSettings().build();
+    createTestAccountSettings = settingsBuilder.createTestAccountSettings().build();
     deleteAccountSettings = settingsBuilder.deleteAccountSettings().build();
     updateAccountSettings = settingsBuilder.updateAccountSettings().build();
     listAccountsSettings = settingsBuilder.listAccountsSettings().build();
     listSubAccountsSettings = settingsBuilder.listSubAccountsSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.shopping:google-shopping-merchant-accounts")
+        .setRepository("googleapis/google-cloud-java")
+        .build();
   }
 
   /** Builder for AccountsServiceStubSettings. */
@@ -395,6 +413,8 @@ public class AccountsServiceStubSettings extends StubSettings<AccountsServiceStu
     private final UnaryCallSettings.Builder<GetAccountRequest, Account> getAccountSettings;
     private final UnaryCallSettings.Builder<CreateAndConfigureAccountRequest, Account>
         createAndConfigureAccountSettings;
+    private final UnaryCallSettings.Builder<CreateTestAccountRequest, Account>
+        createTestAccountSettings;
     private final UnaryCallSettings.Builder<DeleteAccountRequest, Empty> deleteAccountSettings;
     private final UnaryCallSettings.Builder<UpdateAccountRequest, Account> updateAccountSettings;
     private final PagedCallSettings.Builder<
@@ -443,6 +463,7 @@ public class AccountsServiceStubSettings extends StubSettings<AccountsServiceStu
 
       getAccountSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createAndConfigureAccountSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createTestAccountSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteAccountSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateAccountSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listAccountsSettings = PagedCallSettings.newBuilder(LIST_ACCOUNTS_PAGE_STR_FACT);
@@ -452,6 +473,7 @@ public class AccountsServiceStubSettings extends StubSettings<AccountsServiceStu
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               getAccountSettings,
               createAndConfigureAccountSettings,
+              createTestAccountSettings,
               deleteAccountSettings,
               updateAccountSettings,
               listAccountsSettings,
@@ -464,6 +486,7 @@ public class AccountsServiceStubSettings extends StubSettings<AccountsServiceStu
 
       getAccountSettings = settings.getAccountSettings.toBuilder();
       createAndConfigureAccountSettings = settings.createAndConfigureAccountSettings.toBuilder();
+      createTestAccountSettings = settings.createTestAccountSettings.toBuilder();
       deleteAccountSettings = settings.deleteAccountSettings.toBuilder();
       updateAccountSettings = settings.updateAccountSettings.toBuilder();
       listAccountsSettings = settings.listAccountsSettings.toBuilder();
@@ -473,6 +496,7 @@ public class AccountsServiceStubSettings extends StubSettings<AccountsServiceStu
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               getAccountSettings,
               createAndConfigureAccountSettings,
+              createTestAccountSettings,
               deleteAccountSettings,
               updateAccountSettings,
               listAccountsSettings,
@@ -511,6 +535,11 @@ public class AccountsServiceStubSettings extends StubSettings<AccountsServiceStu
 
       builder
           .createAndConfigureAccountSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createTestAccountSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -561,6 +590,12 @@ public class AccountsServiceStubSettings extends StubSettings<AccountsServiceStu
     public UnaryCallSettings.Builder<CreateAndConfigureAccountRequest, Account>
         createAndConfigureAccountSettings() {
       return createAndConfigureAccountSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createTestAccount. */
+    public UnaryCallSettings.Builder<CreateTestAccountRequest, Account>
+        createTestAccountSettings() {
+      return createTestAccountSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteAccount. */

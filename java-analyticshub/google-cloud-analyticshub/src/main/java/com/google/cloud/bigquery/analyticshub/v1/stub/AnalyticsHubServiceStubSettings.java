@@ -43,6 +43,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -188,6 +189,7 @@ import javax.annotation.Generated;
  * }</pre>
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -965,6 +967,14 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
     deleteQueryTemplateSettings = settingsBuilder.deleteQueryTemplateSettings().build();
     submitQueryTemplateSettings = settingsBuilder.submitQueryTemplateSettings().build();
     approveQueryTemplateSettings = settingsBuilder.approveQueryTemplateSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-analyticshub")
+        .setRepository("googleapis/google-cloud-java")
+        .build();
   }
 
   /** Builder for AnalyticsHubServiceStubSettings. */

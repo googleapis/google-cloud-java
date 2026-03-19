@@ -398,8 +398,7 @@ public final class UserServiceGrpc {
      * <pre>
      * Deletes a Merchant Center account user. Executing this method requires
      * admin access. The user to be deleted can't be the last admin user of that
-     * account. Also a user is protected from deletion if it
-     * is managed by Business Manager"
+     * account.
      * </pre>
      */
     default void deleteUser(
@@ -524,8 +523,7 @@ public final class UserServiceGrpc {
      * <pre>
      * Deletes a Merchant Center account user. Executing this method requires
      * admin access. The user to be deleted can't be the last admin user of that
-     * account. Also a user is protected from deletion if it
-     * is managed by Business Manager"
+     * account.
      * </pre>
      */
     public void deleteUser(
@@ -637,8 +635,7 @@ public final class UserServiceGrpc {
      * <pre>
      * Deletes a Merchant Center account user. Executing this method requires
      * admin access. The user to be deleted can't be the last admin user of that
-     * account. Also a user is protected from deletion if it
-     * is managed by Business Manager"
+     * account.
      * </pre>
      */
     public com.google.protobuf.Empty deleteUser(
@@ -745,8 +742,7 @@ public final class UserServiceGrpc {
      * <pre>
      * Deletes a Merchant Center account user. Executing this method requires
      * admin access. The user to be deleted can't be the last admin user of that
-     * account. Also a user is protected from deletion if it
-     * is managed by Business Manager"
+     * account.
      * </pre>
      */
     public com.google.protobuf.Empty deleteUser(
@@ -851,8 +847,7 @@ public final class UserServiceGrpc {
      * <pre>
      * Deletes a Merchant Center account user. Executing this method requires
      * admin access. The user to be deleted can't be the last admin user of that
-     * account. Also a user is protected from deletion if it
-     * is managed by Business Manager"
+     * account.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteUser(

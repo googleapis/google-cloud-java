@@ -37,6 +37,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -132,6 +133,7 @@ import javax.annotation.Generated;
  */
 @BetaApi
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class GrafeasV1Beta1StubSettings extends StubSettings<GrafeasV1Beta1StubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -537,6 +539,14 @@ public class GrafeasV1Beta1StubSettings extends StubSettings<GrafeasV1Beta1StubS
     listNoteOccurrencesSettings = settingsBuilder.listNoteOccurrencesSettings().build();
     getVulnerabilityOccurrencesSummarySettings =
         settingsBuilder.getVulnerabilityOccurrencesSummarySettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-containeranalysis")
+        .setRepository("googleapis/google-cloud-java")
+        .build();
   }
 
   /** Builder for GrafeasV1Beta1StubSettings. */

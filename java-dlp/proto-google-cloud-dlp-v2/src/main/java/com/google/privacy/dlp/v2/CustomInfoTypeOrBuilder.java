@@ -226,8 +226,7 @@ public interface CustomInfoTypeOrBuilder
    *
    *
    * <pre>
-   * Load an existing `StoredInfoType` resource for use in
-   * `InspectDataSource`. Not currently supported in `InspectContent`.
+   * Loads an existing `StoredInfoType` resource.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
@@ -240,8 +239,7 @@ public interface CustomInfoTypeOrBuilder
    *
    *
    * <pre>
-   * Load an existing `StoredInfoType` resource for use in
-   * `InspectDataSource`. Not currently supported in `InspectContent`.
+   * Loads an existing `StoredInfoType` resource.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
@@ -254,8 +252,7 @@ public interface CustomInfoTypeOrBuilder
    *
    *
    * <pre>
-   * Load an existing `StoredInfoType` resource for use in
-   * `InspectDataSource`. Not currently supported in `InspectContent`.
+   * Loads an existing `StoredInfoType` resource.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
@@ -266,9 +263,54 @@ public interface CustomInfoTypeOrBuilder
    *
    *
    * <pre>
+   * Key-value pair to detect in the metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression metadata_key_value_expression = 10;
+   * </code>
+   *
+   * @return Whether the metadataKeyValueExpression field is set.
+   */
+  boolean hasMetadataKeyValueExpression();
+
+  /**
+   *
+   *
+   * <pre>
+   * Key-value pair to detect in the metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression metadata_key_value_expression = 10;
+   * </code>
+   *
+   * @return The metadataKeyValueExpression.
+   */
+  com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression
+      getMetadataKeyValueExpression();
+
+  /**
+   *
+   *
+   * <pre>
+   * Key-value pair to detect in the metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression metadata_key_value_expression = 10;
+   * </code>
+   */
+  com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpressionOrBuilder
+      getMetadataKeyValueExpressionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Set of detection rules to apply to all findings of this CustomInfoType.
-   * Rules are applied in order that they are specified. Not supported for the
-   * `surrogate_type` CustomInfoType.
+   * Rules are applied in the order that they are specified. Only supported
+   * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -280,8 +322,8 @@ public interface CustomInfoTypeOrBuilder
    *
    * <pre>
    * Set of detection rules to apply to all findings of this CustomInfoType.
-   * Rules are applied in order that they are specified. Not supported for the
-   * `surrogate_type` CustomInfoType.
+   * Rules are applied in the order that they are specified. Only supported
+   * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -293,8 +335,8 @@ public interface CustomInfoTypeOrBuilder
    *
    * <pre>
    * Set of detection rules to apply to all findings of this CustomInfoType.
-   * Rules are applied in order that they are specified. Not supported for the
-   * `surrogate_type` CustomInfoType.
+   * Rules are applied in the order that they are specified. Only supported
+   * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -306,8 +348,8 @@ public interface CustomInfoTypeOrBuilder
    *
    * <pre>
    * Set of detection rules to apply to all findings of this CustomInfoType.
-   * Rules are applied in order that they are specified. Not supported for the
-   * `surrogate_type` CustomInfoType.
+   * Rules are applied in the order that they are specified. Only supported
+   * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -320,8 +362,8 @@ public interface CustomInfoTypeOrBuilder
    *
    * <pre>
    * Set of detection rules to apply to all findings of this CustomInfoType.
-   * Rules are applied in order that they are specified. Not supported for the
-   * `surrogate_type` CustomInfoType.
+   * Rules are applied in the order that they are specified. Only supported
+   * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -334,7 +376,8 @@ public interface CustomInfoTypeOrBuilder
    *
    * <pre>
    * If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
-   * to be returned. It still can be used for rules matching.
+   * to be returned. It still can be used for rules matching. Only supported
+   * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
@@ -348,7 +391,8 @@ public interface CustomInfoTypeOrBuilder
    *
    * <pre>
    * If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
-   * to be returned. It still can be used for rules matching.
+   * to be returned. It still can be used for rules matching. Only supported
+   * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>

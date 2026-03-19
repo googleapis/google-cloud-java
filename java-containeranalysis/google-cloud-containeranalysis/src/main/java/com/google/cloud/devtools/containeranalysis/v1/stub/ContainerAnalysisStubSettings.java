@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
@@ -106,6 +107,7 @@ import javax.annotation.Generated;
  * retries.
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysisStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -265,6 +267,14 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
     getVulnerabilityOccurrencesSummarySettings =
         settingsBuilder.getVulnerabilityOccurrencesSummarySettings().build();
     exportSBOMSettings = settingsBuilder.exportSBOMSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-containeranalysis")
+        .setRepository("googleapis/google-cloud-java")
+        .build();
   }
 
   /** Builder for ContainerAnalysisStubSettings. */

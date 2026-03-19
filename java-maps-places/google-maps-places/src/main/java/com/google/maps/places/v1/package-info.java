@@ -46,6 +46,7 @@
  *           .setMaxResultCount(-1736124056)
  *           .setLocationRestriction(SearchNearbyRequest.LocationRestriction.newBuilder().build())
  *           .setRoutingParameters(RoutingParameters.newBuilder().build())
+ *           .setIncludeFutureOpeningBusinesses(true)
  *           .build();
  *   SearchNearbyResponse response = placesClient.searchNearby(request);
  * }
