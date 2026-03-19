@@ -28,6 +28,7 @@ import static org.mockito.Mockito.when;
 import com.google.api.client.http.ByteArrayContent;
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpContent;
+import com.google.api.client.http.HttpEncoding;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpRequestInitializer;
@@ -232,6 +233,43 @@ public class HttpTracingRequestInitializerTest {
     assertEquals(1, spans.size());
     SpanData span = spans.get(0);
     assertNull(span.getAttributes().get(HttpTracingRequestInitializer.HTTP_REQUEST_BODY_SIZE));
+  }
+
+  @Test
+  public void testAddRequestBodySizeToSpan_WithEncoding() throws IOException {
+    HttpTransport transport = createTransport();
+    HttpContent content = ByteArrayContent.fromString("application/json", "{\"test\": \"data\"}");
+    HttpRequest request = buildPostRequest(transport, null, BASE_URL, content);
+    request.setEncoding(mock(HttpEncoding.class));
+
+    HttpTracingRequestInitializer.addRequestBodySizeToSpan(request, parentSpan);
+
+    spanScope.close();
+    parentSpan.end();
+
+    List<SpanData> spans = spanExporter.getFinishedSpanItems();
+    assertEquals(1, spans.size());
+    SpanData span = spans.get(0);
+    assertNull(span.getAttributes().get(HttpTracingRequestInitializer.HTTP_REQUEST_BODY_SIZE));
+  }
+
+  @Test
+  public void testAddRequestBodySizeToSpan() throws IOException {
+    HttpTransport transport = createTransport();
+    HttpContent content = ByteArrayContent.fromString("application/json", "{\"test\": \"data\"}");
+    HttpRequest request = buildPostRequest(transport, null, BASE_URL, content);
+
+    HttpTracingRequestInitializer.addRequestBodySizeToSpan(request, parentSpan);
+
+    spanScope.close();
+    parentSpan.end();
+
+    List<SpanData> spans = spanExporter.getFinishedSpanItems();
+    assertEquals(1, spans.size());
+    SpanData span = spans.get(0);
+    assertEquals(
+        content.getLength(),
+        span.getAttributes().get(HttpTracingRequestInitializer.HTTP_REQUEST_BODY_SIZE));
   }
 
   @Test

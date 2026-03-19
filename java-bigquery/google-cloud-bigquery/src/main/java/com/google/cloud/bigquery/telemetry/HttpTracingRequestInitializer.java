@@ -121,7 +121,7 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
 
   static void addRequestBodySizeToSpan(HttpRequest request, Span span) {
     try {
-      if (request.getContent() != null) {
+      if (request.getContent() != null && request.getEncoding() == null) {
         span.setAttribute(HTTP_REQUEST_BODY_SIZE, request.getContent().getLength());
       }
     } catch (IOException e) {
