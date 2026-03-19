@@ -1088,6 +1088,46 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
+   * The date this place will open in the future. This field is only
+   * populated if the business status is FUTURE_OPENING.
+   * </pre>
+   *
+   * <code>.google.type.Date opening_date = 95;</code>
+   *
+   * @return Whether the openingDate field is set.
+   */
+  boolean hasOpeningDate();
+
+  /**
+   *
+   *
+   * <pre>
+   * The date this place will open in the future. This field is only
+   * populated if the business status is FUTURE_OPENING.
+   * </pre>
+   *
+   * <code>.google.type.Date opening_date = 95;</code>
+   *
+   * @return The openingDate.
+   */
+  com.google.type.Date getOpeningDate();
+
+  /**
+   *
+   *
+   * <pre>
+   * The date this place will open in the future. This field is only
+   * populated if the business status is FUTURE_OPENING.
+   * </pre>
+   *
+   * <code>.google.type.Date opening_date = 95;</code>
+   */
+  com.google.type.DateOrBuilder getOpeningDateOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Price level of the place.
    * </pre>
    *

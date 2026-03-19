@@ -716,4 +716,19 @@ public interface SearchNearbyRequestOrBuilder
    * </code>
    */
   com.google.maps.places.v1.RoutingParametersOrBuilder getRoutingParametersOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, include businesses that are not yet open but will open
+   * in the future.
+   * </pre>
+   *
+   * <code>bool include_future_opening_businesses = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The includeFutureOpeningBusinesses.
+   */
+  boolean getIncludeFutureOpeningBusinesses();
 }

@@ -249,7 +249,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The signal used to determine the category.
-   * This list may increase over time.
+   * New values may be added in the future.
    * </pre>
    *
    * Protobuf enum {@code google.privacy.dlp.v2.Domain.Signal}
@@ -279,12 +279,24 @@ public final class Domain extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A table appears to be a text embedding.
+     * A table appears to contain text embeddings.
      * </pre>
      *
      * <code>TEXT_EMBEDDING = 2;</code>
      */
     TEXT_EMBEDDING(2),
+    /**
+     *
+     *
+     * <pre>
+     * A table appears to contain embeddings of any type (for example, text,
+     * image, multimodal). The `TEXT_EMBEDDING` signal might also be present if
+     * the table contains text embeddings.
+     * </pre>
+     *
+     * <code>EMBEDDING = 7;</code>
+     */
+    EMBEDDING(7),
     /**
      *
      *
@@ -369,12 +381,25 @@ public final class Domain extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A table appears to be a text embedding.
+     * A table appears to contain text embeddings.
      * </pre>
      *
      * <code>TEXT_EMBEDDING = 2;</code>
      */
     public static final int TEXT_EMBEDDING_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * A table appears to contain embeddings of any type (for example, text,
+     * image, multimodal). The `TEXT_EMBEDDING` signal might also be present if
+     * the table contains text embeddings.
+     * </pre>
+     *
+     * <code>EMBEDDING = 7;</code>
+     */
+    public static final int EMBEDDING_VALUE = 7;
 
     /**
      *
@@ -455,6 +480,8 @@ public final class Domain extends com.google.protobuf.GeneratedMessage
           return MODEL;
         case 2:
           return TEXT_EMBEDDING;
+        case 7:
+          return EMBEDDING;
         case 3:
           return VERTEX_PLUGIN;
         case 4:

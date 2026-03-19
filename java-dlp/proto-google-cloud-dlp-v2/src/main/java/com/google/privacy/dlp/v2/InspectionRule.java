@@ -80,6 +80,7 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     HOTWORD_RULE(1),
     EXCLUSION_RULE(2),
+    ADJUSTMENT_RULE(3),
     TYPE_NOT_SET(0);
     private final int value;
 
@@ -103,6 +104,8 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessage
           return HOTWORD_RULE;
         case 2:
           return EXCLUSION_RULE;
+        case 3:
+          return ADJUSTMENT_RULE;
         case 0:
           return TYPE_NOT_SET;
         default:
@@ -228,6 +231,60 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessage
     return com.google.privacy.dlp.v2.ExclusionRule.getDefaultInstance();
   }
 
+  public static final int ADJUSTMENT_RULE_FIELD_NUMBER = 3;
+
+  /**
+   *
+   *
+   * <pre>
+   * Adjustment rule.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.AdjustmentRule adjustment_rule = 3;</code>
+   *
+   * @return Whether the adjustmentRule field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdjustmentRule() {
+    return typeCase_ == 3;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Adjustment rule.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.AdjustmentRule adjustment_rule = 3;</code>
+   *
+   * @return The adjustmentRule.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.AdjustmentRule getAdjustmentRule() {
+    if (typeCase_ == 3) {
+      return (com.google.privacy.dlp.v2.AdjustmentRule) type_;
+    }
+    return com.google.privacy.dlp.v2.AdjustmentRule.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Adjustment rule.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.AdjustmentRule adjustment_rule = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.AdjustmentRuleOrBuilder getAdjustmentRuleOrBuilder() {
+    if (typeCase_ == 3) {
+      return (com.google.privacy.dlp.v2.AdjustmentRule) type_;
+    }
+    return com.google.privacy.dlp.v2.AdjustmentRule.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -249,6 +306,9 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessage
     if (typeCase_ == 2) {
       output.writeMessage(2, (com.google.privacy.dlp.v2.ExclusionRule) type_);
     }
+    if (typeCase_ == 3) {
+      output.writeMessage(3, (com.google.privacy.dlp.v2.AdjustmentRule) type_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -267,6 +327,11 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.privacy.dlp.v2.ExclusionRule) type_);
+    }
+    if (typeCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.privacy.dlp.v2.AdjustmentRule) type_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -291,6 +356,9 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessage
       case 2:
         if (!getExclusionRule().equals(other.getExclusionRule())) return false;
         break;
+      case 3:
+        if (!getAdjustmentRule().equals(other.getAdjustmentRule())) return false;
+        break;
       case 0:
       default:
     }
@@ -313,6 +381,10 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessage
       case 2:
         hash = (37 * hash) + EXCLUSION_RULE_FIELD_NUMBER;
         hash = (53 * hash) + getExclusionRule().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + ADJUSTMENT_RULE_FIELD_NUMBER;
+        hash = (53 * hash) + getAdjustmentRule().hashCode();
         break;
       case 0:
       default:
@@ -464,6 +536,9 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessage
       if (exclusionRuleBuilder_ != null) {
         exclusionRuleBuilder_.clear();
       }
+      if (adjustmentRuleBuilder_ != null) {
+        adjustmentRuleBuilder_.clear();
+      }
       typeCase_ = 0;
       type_ = null;
       return this;
@@ -514,6 +589,9 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessage
       if (typeCase_ == 2 && exclusionRuleBuilder_ != null) {
         result.type_ = exclusionRuleBuilder_.build();
       }
+      if (typeCase_ == 3 && adjustmentRuleBuilder_ != null) {
+        result.type_ = adjustmentRuleBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -537,6 +615,11 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessage
         case EXCLUSION_RULE:
           {
             mergeExclusionRule(other.getExclusionRule());
+            break;
+          }
+        case ADJUSTMENT_RULE:
+          {
+            mergeAdjustmentRule(other.getAdjustmentRule());
             break;
           }
         case TYPE_NOT_SET:
@@ -584,6 +667,13 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessage
                 typeCase_ = 2;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    internalGetAdjustmentRuleFieldBuilder().getBuilder(), extensionRegistry);
+                typeCase_ = 3;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1070,6 +1160,224 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessage
       typeCase_ = 2;
       onChanged();
       return exclusionRuleBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.privacy.dlp.v2.AdjustmentRule,
+            com.google.privacy.dlp.v2.AdjustmentRule.Builder,
+            com.google.privacy.dlp.v2.AdjustmentRuleOrBuilder>
+        adjustmentRuleBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Adjustment rule.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.AdjustmentRule adjustment_rule = 3;</code>
+     *
+     * @return Whether the adjustmentRule field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdjustmentRule() {
+      return typeCase_ == 3;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adjustment rule.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.AdjustmentRule adjustment_rule = 3;</code>
+     *
+     * @return The adjustmentRule.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.AdjustmentRule getAdjustmentRule() {
+      if (adjustmentRuleBuilder_ == null) {
+        if (typeCase_ == 3) {
+          return (com.google.privacy.dlp.v2.AdjustmentRule) type_;
+        }
+        return com.google.privacy.dlp.v2.AdjustmentRule.getDefaultInstance();
+      } else {
+        if (typeCase_ == 3) {
+          return adjustmentRuleBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.AdjustmentRule.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adjustment rule.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.AdjustmentRule adjustment_rule = 3;</code>
+     */
+    public Builder setAdjustmentRule(com.google.privacy.dlp.v2.AdjustmentRule value) {
+      if (adjustmentRuleBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+        onChanged();
+      } else {
+        adjustmentRuleBuilder_.setMessage(value);
+      }
+      typeCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adjustment rule.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.AdjustmentRule adjustment_rule = 3;</code>
+     */
+    public Builder setAdjustmentRule(
+        com.google.privacy.dlp.v2.AdjustmentRule.Builder builderForValue) {
+      if (adjustmentRuleBuilder_ == null) {
+        type_ = builderForValue.build();
+        onChanged();
+      } else {
+        adjustmentRuleBuilder_.setMessage(builderForValue.build());
+      }
+      typeCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adjustment rule.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.AdjustmentRule adjustment_rule = 3;</code>
+     */
+    public Builder mergeAdjustmentRule(com.google.privacy.dlp.v2.AdjustmentRule value) {
+      if (adjustmentRuleBuilder_ == null) {
+        if (typeCase_ == 3
+            && type_ != com.google.privacy.dlp.v2.AdjustmentRule.getDefaultInstance()) {
+          type_ =
+              com.google.privacy.dlp.v2.AdjustmentRule.newBuilder(
+                      (com.google.privacy.dlp.v2.AdjustmentRule) type_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          type_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeCase_ == 3) {
+          adjustmentRuleBuilder_.mergeFrom(value);
+        } else {
+          adjustmentRuleBuilder_.setMessage(value);
+        }
+      }
+      typeCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adjustment rule.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.AdjustmentRule adjustment_rule = 3;</code>
+     */
+    public Builder clearAdjustmentRule() {
+      if (adjustmentRuleBuilder_ == null) {
+        if (typeCase_ == 3) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeCase_ == 3) {
+          typeCase_ = 0;
+          type_ = null;
+        }
+        adjustmentRuleBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adjustment rule.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.AdjustmentRule adjustment_rule = 3;</code>
+     */
+    public com.google.privacy.dlp.v2.AdjustmentRule.Builder getAdjustmentRuleBuilder() {
+      return internalGetAdjustmentRuleFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adjustment rule.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.AdjustmentRule adjustment_rule = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.AdjustmentRuleOrBuilder getAdjustmentRuleOrBuilder() {
+      if ((typeCase_ == 3) && (adjustmentRuleBuilder_ != null)) {
+        return adjustmentRuleBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeCase_ == 3) {
+          return (com.google.privacy.dlp.v2.AdjustmentRule) type_;
+        }
+        return com.google.privacy.dlp.v2.AdjustmentRule.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adjustment rule.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.AdjustmentRule adjustment_rule = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.privacy.dlp.v2.AdjustmentRule,
+            com.google.privacy.dlp.v2.AdjustmentRule.Builder,
+            com.google.privacy.dlp.v2.AdjustmentRuleOrBuilder>
+        internalGetAdjustmentRuleFieldBuilder() {
+      if (adjustmentRuleBuilder_ == null) {
+        if (!(typeCase_ == 3)) {
+          type_ = com.google.privacy.dlp.v2.AdjustmentRule.getDefaultInstance();
+        }
+        adjustmentRuleBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.privacy.dlp.v2.AdjustmentRule,
+                com.google.privacy.dlp.v2.AdjustmentRule.Builder,
+                com.google.privacy.dlp.v2.AdjustmentRuleOrBuilder>(
+                (com.google.privacy.dlp.v2.AdjustmentRule) type_,
+                getParentForChildren(),
+                isClean());
+        type_ = null;
+      }
+      typeCase_ = 3;
+      onChanged();
+      return adjustmentRuleBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.InspectionRule)

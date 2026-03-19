@@ -181,6 +181,46 @@ public interface ExclusionRuleOrBuilder
    *
    *
    * <pre>
+   * Exclude findings based on image containment rules. For example, exclude
+   * an image finding if it overlaps with another image finding.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ExcludeByImageFindings exclude_by_image_findings = 6;</code>
+   *
+   * @return Whether the excludeByImageFindings field is set.
+   */
+  boolean hasExcludeByImageFindings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Exclude findings based on image containment rules. For example, exclude
+   * an image finding if it overlaps with another image finding.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ExcludeByImageFindings exclude_by_image_findings = 6;</code>
+   *
+   * @return The excludeByImageFindings.
+   */
+  com.google.privacy.dlp.v2.ExcludeByImageFindings getExcludeByImageFindings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Exclude findings based on image containment rules. For example, exclude
+   * an image finding if it overlaps with another image finding.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ExcludeByImageFindings exclude_by_image_findings = 6;</code>
+   */
+  com.google.privacy.dlp.v2.ExcludeByImageFindingsOrBuilder getExcludeByImageFindingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * How the rule is applied, see MatchingType documentation for details.
    * </pre>
    *

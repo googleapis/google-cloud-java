@@ -3151,6 +3151,27 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     return includePureServiceAreaBusinesses_;
   }
 
+  public static final int INCLUDE_FUTURE_OPENING_BUSINESSES_FIELD_NUMBER = 13;
+  private boolean includeFutureOpeningBusinesses_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, include businesses that are not yet open but will open
+   * in the future.
+   * </pre>
+   *
+   * <code>bool include_future_opening_businesses = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The includeFutureOpeningBusinesses.
+   */
+  @java.lang.Override
+  public boolean getIncludeFutureOpeningBusinesses() {
+    return includeFutureOpeningBusinesses_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3200,6 +3221,9 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     }
     if (includePureServiceAreaBusinesses_ != false) {
       output.writeBool(12, includePureServiceAreaBusinesses_);
+    }
+    if (includeFutureOpeningBusinesses_ != false) {
+      output.writeBool(13, includeFutureOpeningBusinesses_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -3258,6 +3282,11 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               12, includePureServiceAreaBusinesses_);
     }
+    if (includeFutureOpeningBusinesses_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              13, includeFutureOpeningBusinesses_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3295,6 +3324,8 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     if (getIncludeQueryPredictions() != other.getIncludeQueryPredictions()) return false;
     if (!getSessionToken().equals(other.getSessionToken())) return false;
     if (getIncludePureServiceAreaBusinesses() != other.getIncludePureServiceAreaBusinesses())
+      return false;
+    if (getIncludeFutureOpeningBusinesses() != other.getIncludeFutureOpeningBusinesses())
       return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -3343,6 +3374,9 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     hash =
         (53 * hash)
             + com.google.protobuf.Internal.hashBoolean(getIncludePureServiceAreaBusinesses());
+    hash = (37 * hash) + INCLUDE_FUTURE_OPENING_BUSINESSES_FIELD_NUMBER;
+    hash =
+        (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeFutureOpeningBusinesses());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3518,6 +3552,7 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       includeQueryPredictions_ = false;
       sessionToken_ = "";
       includePureServiceAreaBusinesses_ = false;
+      includeFutureOpeningBusinesses_ = false;
       return this;
     }
 
@@ -3600,6 +3635,9 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.includePureServiceAreaBusinesses_ = includePureServiceAreaBusinesses_;
       }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.includeFutureOpeningBusinesses_ = includeFutureOpeningBusinesses_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -3673,6 +3711,9 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       }
       if (other.getIncludePureServiceAreaBusinesses() != false) {
         setIncludePureServiceAreaBusinesses(other.getIncludePureServiceAreaBusinesses());
+      }
+      if (other.getIncludeFutureOpeningBusinesses() != false) {
+        setIncludeFutureOpeningBusinesses(other.getIncludeFutureOpeningBusinesses());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3776,6 +3817,12 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
                 bitField0_ |= 0x00000800;
                 break;
               } // case 96
+            case 104:
+              {
+                includeFutureOpeningBusinesses_ = input.readBool();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 104
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5789,6 +5836,68 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     public Builder clearIncludePureServiceAreaBusinesses() {
       bitField0_ = (bitField0_ & ~0x00000800);
       includePureServiceAreaBusinesses_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean includeFutureOpeningBusinesses_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, include businesses that are not yet open but will open
+     * in the future.
+     * </pre>
+     *
+     * <code>bool include_future_opening_businesses = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The includeFutureOpeningBusinesses.
+     */
+    @java.lang.Override
+    public boolean getIncludeFutureOpeningBusinesses() {
+      return includeFutureOpeningBusinesses_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, include businesses that are not yet open but will open
+     * in the future.
+     * </pre>
+     *
+     * <code>bool include_future_opening_businesses = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The includeFutureOpeningBusinesses to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIncludeFutureOpeningBusinesses(boolean value) {
+
+      includeFutureOpeningBusinesses_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, include businesses that are not yet open but will open
+     * in the future.
+     * </pre>
+     *
+     * <code>bool include_future_opening_businesses = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIncludeFutureOpeningBusinesses() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      includeFutureOpeningBusinesses_ = false;
       onChanged();
       return this;
     }

@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.geo.type.Viewport;
 import com.google.maps.places.v1.stub.HttpJsonPlacesStub;
+import com.google.type.Date;
 import com.google.type.LatLng;
 import com.google.type.LocalizedText;
 import com.google.type.PostalAddress;
@@ -96,6 +97,7 @@ public class PlacesClientHttpJsonTest {
             .setMaxResultCount(-1736124056)
             .setLocationRestriction(SearchNearbyRequest.LocationRestriction.newBuilder().build())
             .setRoutingParameters(RoutingParameters.newBuilder().build())
+            .setIncludeFutureOpeningBusinesses(true)
             .build();
 
     SearchNearbyResponse actualResponse = client.searchNearby(request);
@@ -135,6 +137,7 @@ public class PlacesClientHttpJsonTest {
               .setMaxResultCount(-1736124056)
               .setLocationRestriction(SearchNearbyRequest.LocationRestriction.newBuilder().build())
               .setRoutingParameters(RoutingParameters.newBuilder().build())
+              .setIncludeFutureOpeningBusinesses(true)
               .build();
       client.searchNearby(request);
       Assert.fail("No exception raised");
@@ -171,6 +174,7 @@ public class PlacesClientHttpJsonTest {
             .setSearchAlongRouteParameters(
                 SearchTextRequest.SearchAlongRouteParameters.newBuilder().build())
             .setIncludePureServiceAreaBusinesses(true)
+            .setIncludeFutureOpeningBusinesses(true)
             .build();
 
     SearchTextResponse actualResponse = client.searchText(request);
@@ -217,6 +221,7 @@ public class PlacesClientHttpJsonTest {
               .setSearchAlongRouteParameters(
                   SearchTextRequest.SearchAlongRouteParameters.newBuilder().build())
               .setIncludePureServiceAreaBusinesses(true)
+              .setIncludeFutureOpeningBusinesses(true)
               .build();
       client.searchText(request);
       Assert.fail("No exception raised");
@@ -344,6 +349,7 @@ public class PlacesClientHttpJsonTest {
             .setTimeZone(TimeZone.newBuilder().build())
             .addAllPhotos(new ArrayList<Photo>())
             .setAdrFormatAddress("adrFormatAddress1685861262")
+            .setOpeningDate(Date.newBuilder().build())
             .setPriceLevel(PriceLevel.forNumber(0))
             .addAllAttributions(new ArrayList<Place.Attribution>())
             .setUserRatingCount(-1453311007)
@@ -462,6 +468,7 @@ public class PlacesClientHttpJsonTest {
             .setTimeZone(TimeZone.newBuilder().build())
             .addAllPhotos(new ArrayList<Photo>())
             .setAdrFormatAddress("adrFormatAddress1685861262")
+            .setOpeningDate(Date.newBuilder().build())
             .setPriceLevel(PriceLevel.forNumber(0))
             .addAllAttributions(new ArrayList<Place.Attribution>())
             .setUserRatingCount(-1453311007)
@@ -574,6 +581,7 @@ public class PlacesClientHttpJsonTest {
             .setIncludeQueryPredictions(true)
             .setSessionToken("sessionToken-696552189")
             .setIncludePureServiceAreaBusinesses(true)
+            .setIncludeFutureOpeningBusinesses(true)
             .build();
 
     AutocompletePlacesResponse actualResponse = client.autocompletePlaces(request);
@@ -617,6 +625,7 @@ public class PlacesClientHttpJsonTest {
               .setIncludeQueryPredictions(true)
               .setSessionToken("sessionToken-696552189")
               .setIncludePureServiceAreaBusinesses(true)
+              .setIncludeFutureOpeningBusinesses(true)
               .build();
       client.autocompletePlaces(request);
       Assert.fail("No exception raised");
