@@ -5463,6 +5463,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.aiplatform.v1.EmbedContentRequest$EmbedContentConfig",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.aiplatform.v1.EmbedContentRequest$EmbedContentConfig$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.aiplatform.v1.EmbedContentRequest$EmbeddingTaskType",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

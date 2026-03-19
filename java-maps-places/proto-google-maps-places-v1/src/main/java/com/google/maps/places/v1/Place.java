@@ -143,6 +143,16 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * <code>CLOSED_PERMANENTLY = 3;</code>
      */
     CLOSED_PERMANENTLY(3),
+    /**
+     *
+     *
+     * <pre>
+     * The establishment will open in the future.
+     * </pre>
+     *
+     * <code>FUTURE_OPENING = 4;</code>
+     */
+    FUTURE_OPENING(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -200,6 +210,17 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     public static final int CLOSED_PERMANENTLY_VALUE = 3;
 
+    /**
+     *
+     *
+     * <pre>
+     * The establishment will open in the future.
+     * </pre>
+     *
+     * <code>FUTURE_OPENING = 4;</code>
+     */
+    public static final int FUTURE_OPENING_VALUE = 4;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -232,6 +253,8 @@ public final class Place extends com.google.protobuf.GeneratedMessage
           return CLOSED_TEMPORARILY;
         case 3:
           return CLOSED_PERMANENTLY;
+        case 4:
+          return FUTURE_OPENING;
         default:
           return null;
       }
@@ -28691,6 +28714,58 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     return result == null ? com.google.maps.places.v1.Place.BusinessStatus.UNRECOGNIZED : result;
   }
 
+  public static final int OPENING_DATE_FIELD_NUMBER = 95;
+  private com.google.type.Date openingDate_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The date this place will open in the future. This field is only
+   * populated if the business status is FUTURE_OPENING.
+   * </pre>
+   *
+   * <code>.google.type.Date opening_date = 95;</code>
+   *
+   * @return Whether the openingDate field is set.
+   */
+  @java.lang.Override
+  public boolean hasOpeningDate() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The date this place will open in the future. This field is only
+   * populated if the business status is FUTURE_OPENING.
+   * </pre>
+   *
+   * <code>.google.type.Date opening_date = 95;</code>
+   *
+   * @return The openingDate.
+   */
+  @java.lang.Override
+  public com.google.type.Date getOpeningDate() {
+    return openingDate_ == null ? com.google.type.Date.getDefaultInstance() : openingDate_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The date this place will open in the future. This field is only
+   * populated if the business status is FUTURE_OPENING.
+   * </pre>
+   *
+   * <code>.google.type.Date opening_date = 95;</code>
+   */
+  @java.lang.Override
+  public com.google.type.DateOrBuilder getOpeningDateOrBuilder() {
+    return openingDate_ == null ? com.google.type.Date.getDefaultInstance() : openingDate_;
+  }
+
   public static final int PRICE_LEVEL_FIELD_NUMBER = 26;
   private int priceLevel_ = 0;
 
@@ -28820,7 +28895,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasUserRatingCount() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -28963,7 +29038,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasTakeout() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -28998,7 +29073,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasDelivery() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -29033,7 +29108,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasDineIn() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
@@ -29068,7 +29143,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasCurbsidePickup() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -29103,7 +29178,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasReservable() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
 
   /**
@@ -29138,7 +29213,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasServesBreakfast() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
 
   /**
@@ -29173,7 +29248,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasServesLunch() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00040000) != 0);
   }
 
   /**
@@ -29208,7 +29283,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasServesDinner() {
-    return ((bitField0_ & 0x00040000) != 0);
+    return ((bitField0_ & 0x00080000) != 0);
   }
 
   /**
@@ -29243,7 +29318,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasServesBeer() {
-    return ((bitField0_ & 0x00080000) != 0);
+    return ((bitField0_ & 0x00100000) != 0);
   }
 
   /**
@@ -29278,7 +29353,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasServesWine() {
-    return ((bitField0_ & 0x00100000) != 0);
+    return ((bitField0_ & 0x00200000) != 0);
   }
 
   /**
@@ -29313,7 +29388,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasServesBrunch() {
-    return ((bitField0_ & 0x00200000) != 0);
+    return ((bitField0_ & 0x00400000) != 0);
   }
 
   /**
@@ -29348,7 +29423,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasServesVegetarianFood() {
-    return ((bitField0_ & 0x00400000) != 0);
+    return ((bitField0_ & 0x00800000) != 0);
   }
 
   /**
@@ -29386,7 +29461,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasCurrentOpeningHours() {
-    return ((bitField0_ & 0x00800000) != 0);
+    return ((bitField0_ & 0x01000000) != 0);
   }
 
   /**
@@ -29675,7 +29750,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasEditorialSummary() {
-    return ((bitField0_ & 0x01000000) != 0);
+    return ((bitField0_ & 0x02000000) != 0);
   }
 
   /**
@@ -29732,7 +29807,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasOutdoorSeating() {
-    return ((bitField0_ & 0x02000000) != 0);
+    return ((bitField0_ & 0x04000000) != 0);
   }
 
   /**
@@ -29767,7 +29842,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasLiveMusic() {
-    return ((bitField0_ & 0x04000000) != 0);
+    return ((bitField0_ & 0x08000000) != 0);
   }
 
   /**
@@ -29802,7 +29877,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasMenuForChildren() {
-    return ((bitField0_ & 0x08000000) != 0);
+    return ((bitField0_ & 0x10000000) != 0);
   }
 
   /**
@@ -29837,7 +29912,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasServesCocktails() {
-    return ((bitField0_ & 0x10000000) != 0);
+    return ((bitField0_ & 0x20000000) != 0);
   }
 
   /**
@@ -29872,7 +29947,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasServesDessert() {
-    return ((bitField0_ & 0x20000000) != 0);
+    return ((bitField0_ & 0x40000000) != 0);
   }
 
   /**
@@ -29907,7 +29982,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasServesCoffee() {
-    return ((bitField0_ & 0x40000000) != 0);
+    return ((bitField0_ & 0x80000000) != 0);
   }
 
   /**
@@ -29942,7 +30017,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasGoodForChildren() {
-    return ((bitField0_ & 0x80000000) != 0);
+    return ((bitField1_ & 0x00000001) != 0);
   }
 
   /**
@@ -29977,7 +30052,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasAllowsDogs() {
-    return ((bitField1_ & 0x00000001) != 0);
+    return ((bitField1_ & 0x00000002) != 0);
   }
 
   /**
@@ -30012,7 +30087,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRestroom() {
-    return ((bitField1_ & 0x00000002) != 0);
+    return ((bitField1_ & 0x00000004) != 0);
   }
 
   /**
@@ -30047,7 +30122,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasGoodForGroups() {
-    return ((bitField1_ & 0x00000004) != 0);
+    return ((bitField1_ & 0x00000008) != 0);
   }
 
   /**
@@ -30082,7 +30157,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasGoodForWatchingSports() {
-    return ((bitField1_ & 0x00000008) != 0);
+    return ((bitField1_ & 0x00000010) != 0);
   }
 
   /**
@@ -30118,7 +30193,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasPaymentOptions() {
-    return ((bitField1_ & 0x00000010) != 0);
+    return ((bitField1_ & 0x00000020) != 0);
   }
 
   /**
@@ -30173,7 +30248,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasParkingOptions() {
-    return ((bitField1_ & 0x00000020) != 0);
+    return ((bitField1_ & 0x00000040) != 0);
   }
 
   /**
@@ -30304,7 +30379,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasAccessibilityOptions() {
-    return ((bitField1_ & 0x00000040) != 0);
+    return ((bitField1_ & 0x00000080) != 0);
   }
 
   /**
@@ -30361,7 +30436,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasFuelOptions() {
-    return ((bitField1_ & 0x00000080) != 0);
+    return ((bitField1_ & 0x00000100) != 0);
   }
 
   /**
@@ -30416,7 +30491,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasEvChargeOptions() {
-    return ((bitField1_ & 0x00000100) != 0);
+    return ((bitField1_ & 0x00000200) != 0);
   }
 
   /**
@@ -30469,7 +30544,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasGenerativeSummary() {
-    return ((bitField1_ & 0x00000200) != 0);
+    return ((bitField1_ & 0x00000400) != 0);
   }
 
   /**
@@ -30604,7 +30679,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasPureServiceAreaBusiness() {
-    return ((bitField1_ & 0x00000400) != 0);
+    return ((bitField1_ & 0x00000800) != 0);
   }
 
   /**
@@ -30646,7 +30721,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasAddressDescriptor() {
-    return ((bitField1_ & 0x00000800) != 0);
+    return ((bitField1_ & 0x00001000) != 0);
   }
 
   /**
@@ -30705,7 +30780,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasGoogleMapsLinks() {
-    return ((bitField1_ & 0x00001000) != 0);
+    return ((bitField1_ & 0x00002000) != 0);
   }
 
   /**
@@ -30758,7 +30833,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasPriceRange() {
-    return ((bitField1_ & 0x00002000) != 0);
+    return ((bitField1_ & 0x00004000) != 0);
   }
 
   /**
@@ -30811,7 +30886,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasReviewSummary() {
-    return ((bitField1_ & 0x00004000) != 0);
+    return ((bitField1_ & 0x00008000) != 0);
   }
 
   /**
@@ -30865,7 +30940,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasEvChargeAmenitySummary() {
-    return ((bitField1_ & 0x00008000) != 0);
+    return ((bitField1_ & 0x00010000) != 0);
   }
 
   /**
@@ -30921,7 +30996,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasNeighborhoodSummary() {
-    return ((bitField1_ & 0x00010000) != 0);
+    return ((bitField1_ & 0x00020000) != 0);
   }
 
   /**
@@ -30976,7 +31051,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasConsumerAlert() {
-    return ((bitField1_ & 0x00020000) != 0);
+    return ((bitField1_ & 0x00040000) != 0);
   }
 
   /**
@@ -31207,7 +31282,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < attributions_.size(); i++) {
       output.writeMessage(27, attributions_.get(i));
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeInt32(28, userRatingCount_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(iconMaskBaseUri_)) {
@@ -31222,43 +31297,43 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(32, getPrimaryTypeDisplayName());
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       output.writeBool(33, takeout_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       output.writeBool(34, delivery_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       output.writeBool(35, dineIn_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       output.writeBool(36, curbsidePickup_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       output.writeBool(38, reservable_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       output.writeBool(39, servesBreakfast_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       output.writeBool(40, servesLunch_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       output.writeBool(41, servesDinner_);
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       output.writeBool(42, servesBeer_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       output.writeBool(43, servesWine_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       output.writeBool(44, servesBrunch_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       output.writeBool(45, servesVegetarianFood_);
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       output.writeMessage(46, getCurrentOpeningHours());
     }
     for (int i = 0; i < currentSecondaryOpeningHours_.size(); i++) {
@@ -31273,7 +31348,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(shortFormattedAddress_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 51, shortFormattedAddress_);
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       output.writeMessage(52, getEditorialSummary());
     }
     for (int i = 0; i < reviews_.size(); i++) {
@@ -31282,91 +31357,91 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < photos_.size(); i++) {
       output.writeMessage(54, photos_.get(i));
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x04000000) != 0)) {
       output.writeBool(55, outdoorSeating_);
     }
-    if (((bitField0_ & 0x04000000) != 0)) {
+    if (((bitField0_ & 0x08000000) != 0)) {
       output.writeBool(56, liveMusic_);
     }
-    if (((bitField0_ & 0x08000000) != 0)) {
+    if (((bitField0_ & 0x10000000) != 0)) {
       output.writeBool(57, menuForChildren_);
     }
-    if (((bitField0_ & 0x10000000) != 0)) {
+    if (((bitField0_ & 0x20000000) != 0)) {
       output.writeBool(58, servesCocktails_);
     }
-    if (((bitField0_ & 0x20000000) != 0)) {
+    if (((bitField0_ & 0x40000000) != 0)) {
       output.writeBool(59, servesDessert_);
     }
-    if (((bitField0_ & 0x40000000) != 0)) {
+    if (((bitField0_ & 0x80000000) != 0)) {
       output.writeBool(60, servesCoffee_);
     }
-    if (((bitField0_ & 0x80000000) != 0)) {
+    if (((bitField1_ & 0x00000001) != 0)) {
       output.writeBool(62, goodForChildren_);
     }
-    if (((bitField1_ & 0x00000001) != 0)) {
+    if (((bitField1_ & 0x00000002) != 0)) {
       output.writeBool(63, allowsDogs_);
     }
-    if (((bitField1_ & 0x00000002) != 0)) {
+    if (((bitField1_ & 0x00000004) != 0)) {
       output.writeBool(64, restroom_);
     }
-    if (((bitField1_ & 0x00000004) != 0)) {
+    if (((bitField1_ & 0x00000008) != 0)) {
       output.writeBool(65, goodForGroups_);
     }
-    if (((bitField1_ & 0x00000008) != 0)) {
+    if (((bitField1_ & 0x00000010) != 0)) {
       output.writeBool(66, goodForWatchingSports_);
     }
-    if (((bitField1_ & 0x00000010) != 0)) {
+    if (((bitField1_ & 0x00000020) != 0)) {
       output.writeMessage(67, getPaymentOptions());
     }
-    if (((bitField1_ & 0x00000020) != 0)) {
+    if (((bitField1_ & 0x00000040) != 0)) {
       output.writeMessage(70, getParkingOptions());
     }
     for (int i = 0; i < subDestinations_.size(); i++) {
       output.writeMessage(71, subDestinations_.get(i));
     }
-    if (((bitField1_ & 0x00000040) != 0)) {
+    if (((bitField1_ & 0x00000080) != 0)) {
       output.writeMessage(72, getAccessibilityOptions());
     }
-    if (((bitField1_ & 0x00000080) != 0)) {
+    if (((bitField1_ & 0x00000100) != 0)) {
       output.writeMessage(78, getFuelOptions());
     }
-    if (((bitField1_ & 0x00000100) != 0)) {
+    if (((bitField1_ & 0x00000200) != 0)) {
       output.writeMessage(79, getEvChargeOptions());
     }
-    if (((bitField1_ & 0x00000200) != 0)) {
+    if (((bitField1_ & 0x00000400) != 0)) {
       output.writeMessage(80, getGenerativeSummary());
     }
     for (int i = 0; i < containingPlaces_.size(); i++) {
       output.writeMessage(82, containingPlaces_.get(i));
     }
-    if (((bitField1_ & 0x00000400) != 0)) {
+    if (((bitField1_ & 0x00000800) != 0)) {
       output.writeBool(83, pureServiceAreaBusiness_);
     }
-    if (((bitField1_ & 0x00000800) != 0)) {
+    if (((bitField1_ & 0x00001000) != 0)) {
       output.writeMessage(84, getAddressDescriptor());
     }
-    if (((bitField1_ & 0x00001000) != 0)) {
+    if (((bitField1_ & 0x00002000) != 0)) {
       output.writeMessage(85, getGoogleMapsLinks());
     }
-    if (((bitField1_ & 0x00002000) != 0)) {
+    if (((bitField1_ & 0x00004000) != 0)) {
       output.writeMessage(86, getPriceRange());
     }
-    if (((bitField1_ & 0x00004000) != 0)) {
+    if (((bitField1_ & 0x00008000) != 0)) {
       output.writeMessage(87, getReviewSummary());
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(88, getTimeZone());
     }
-    if (((bitField1_ & 0x00008000) != 0)) {
+    if (((bitField1_ & 0x00010000) != 0)) {
       output.writeMessage(89, getEvChargeAmenitySummary());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(90, getPostalAddress());
     }
-    if (((bitField1_ & 0x00010000) != 0)) {
+    if (((bitField1_ & 0x00020000) != 0)) {
       output.writeMessage(91, getNeighborhoodSummary());
     }
-    if (((bitField1_ & 0x00020000) != 0)) {
+    if (((bitField1_ & 0x00040000) != 0)) {
       output.writeMessage(92, getConsumerAlert());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(movedPlace_)) {
@@ -31374,6 +31449,9 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(movedPlaceId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 94, movedPlaceId_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeMessage(95, getOpeningDate());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(96, getGoogleMapsTypeLabel());
@@ -31452,7 +31530,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < attributions_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(27, attributions_.get(i));
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(28, userRatingCount_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(iconMaskBaseUri_)) {
@@ -31468,43 +31546,43 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(32, getPrimaryTypeDisplayName());
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(33, takeout_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(34, delivery_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(35, dineIn_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(36, curbsidePickup_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(38, reservable_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(39, servesBreakfast_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(40, servesLunch_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(41, servesDinner_);
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(42, servesBeer_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(43, servesWine_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(44, servesBrunch_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(45, servesVegetarianFood_);
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(46, getCurrentOpeningHours());
     }
@@ -31524,7 +31602,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(shortFormattedAddress_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(51, shortFormattedAddress_);
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(52, getEditorialSummary());
     }
     for (int i = 0; i < reviews_.size(); i++) {
@@ -31533,95 +31611,95 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < photos_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(54, photos_.get(i));
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x04000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(55, outdoorSeating_);
     }
-    if (((bitField0_ & 0x04000000) != 0)) {
+    if (((bitField0_ & 0x08000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(56, liveMusic_);
     }
-    if (((bitField0_ & 0x08000000) != 0)) {
+    if (((bitField0_ & 0x10000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(57, menuForChildren_);
     }
-    if (((bitField0_ & 0x10000000) != 0)) {
+    if (((bitField0_ & 0x20000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(58, servesCocktails_);
     }
-    if (((bitField0_ & 0x20000000) != 0)) {
+    if (((bitField0_ & 0x40000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(59, servesDessert_);
     }
-    if (((bitField0_ & 0x40000000) != 0)) {
+    if (((bitField0_ & 0x80000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(60, servesCoffee_);
     }
-    if (((bitField0_ & 0x80000000) != 0)) {
+    if (((bitField1_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(62, goodForChildren_);
     }
-    if (((bitField1_ & 0x00000001) != 0)) {
+    if (((bitField1_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(63, allowsDogs_);
     }
-    if (((bitField1_ & 0x00000002) != 0)) {
+    if (((bitField1_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(64, restroom_);
     }
-    if (((bitField1_ & 0x00000004) != 0)) {
+    if (((bitField1_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(65, goodForGroups_);
     }
-    if (((bitField1_ & 0x00000008) != 0)) {
+    if (((bitField1_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(66, goodForWatchingSports_);
     }
-    if (((bitField1_ & 0x00000010) != 0)) {
+    if (((bitField1_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(67, getPaymentOptions());
     }
-    if (((bitField1_ & 0x00000020) != 0)) {
+    if (((bitField1_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(70, getParkingOptions());
     }
     for (int i = 0; i < subDestinations_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(71, subDestinations_.get(i));
     }
-    if (((bitField1_ & 0x00000040) != 0)) {
+    if (((bitField1_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(72, getAccessibilityOptions());
     }
-    if (((bitField1_ & 0x00000080) != 0)) {
+    if (((bitField1_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(78, getFuelOptions());
     }
-    if (((bitField1_ & 0x00000100) != 0)) {
+    if (((bitField1_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(79, getEvChargeOptions());
     }
-    if (((bitField1_ & 0x00000200) != 0)) {
+    if (((bitField1_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(80, getGenerativeSummary());
     }
     for (int i = 0; i < containingPlaces_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(82, containingPlaces_.get(i));
     }
-    if (((bitField1_ & 0x00000400) != 0)) {
+    if (((bitField1_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(83, pureServiceAreaBusiness_);
     }
-    if (((bitField1_ & 0x00000800) != 0)) {
+    if (((bitField1_ & 0x00001000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(84, getAddressDescriptor());
     }
-    if (((bitField1_ & 0x00001000) != 0)) {
+    if (((bitField1_ & 0x00002000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(85, getGoogleMapsLinks());
     }
-    if (((bitField1_ & 0x00002000) != 0)) {
+    if (((bitField1_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(86, getPriceRange());
     }
-    if (((bitField1_ & 0x00004000) != 0)) {
+    if (((bitField1_ & 0x00008000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(87, getReviewSummary());
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(88, getTimeZone());
     }
-    if (((bitField1_ & 0x00008000) != 0)) {
+    if (((bitField1_ & 0x00010000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(89, getEvChargeAmenitySummary());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(90, getPostalAddress());
     }
-    if (((bitField1_ & 0x00010000) != 0)) {
+    if (((bitField1_ & 0x00020000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(91, getNeighborhoodSummary());
     }
-    if (((bitField1_ & 0x00020000) != 0)) {
+    if (((bitField1_ & 0x00040000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(92, getConsumerAlert());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(movedPlace_)) {
@@ -31629,6 +31707,9 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(movedPlaceId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(94, movedPlaceId_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(95, getOpeningDate());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size +=
@@ -31706,6 +31787,10 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     if (!getPhotosList().equals(other.getPhotosList())) return false;
     if (!getAdrFormatAddress().equals(other.getAdrFormatAddress())) return false;
     if (businessStatus_ != other.businessStatus_) return false;
+    if (hasOpeningDate() != other.hasOpeningDate()) return false;
+    if (hasOpeningDate()) {
+      if (!getOpeningDate().equals(other.getOpeningDate())) return false;
+    }
     if (priceLevel_ != other.priceLevel_) return false;
     if (!getAttributionsList().equals(other.getAttributionsList())) return false;
     if (hasUserRatingCount() != other.hasUserRatingCount()) return false;
@@ -31971,6 +32056,10 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getAdrFormatAddress().hashCode();
     hash = (37 * hash) + BUSINESS_STATUS_FIELD_NUMBER;
     hash = (53 * hash) + businessStatus_;
+    if (hasOpeningDate()) {
+      hash = (37 * hash) + OPENING_DATE_FIELD_NUMBER;
+      hash = (53 * hash) + getOpeningDate().hashCode();
+    }
     hash = (37 * hash) + PRICE_LEVEL_FIELD_NUMBER;
     hash = (53 * hash) + priceLevel_;
     if (getAttributionsCount() > 0) {
@@ -32312,6 +32401,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         internalGetRegularOpeningHoursFieldBuilder();
         internalGetTimeZoneFieldBuilder();
         internalGetPhotosFieldBuilder();
+        internalGetOpeningDateFieldBuilder();
         internalGetAttributionsFieldBuilder();
         internalGetCurrentOpeningHoursFieldBuilder();
         internalGetCurrentSecondaryOpeningHoursFieldBuilder();
@@ -32421,6 +32511,11 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       bitField0_ = (bitField0_ & ~0x00800000);
       adrFormatAddress_ = "";
       businessStatus_ = 0;
+      openingDate_ = null;
+      if (openingDateBuilder_ != null) {
+        openingDateBuilder_.dispose();
+        openingDateBuilder_ = null;
+      }
       priceLevel_ = 0;
       if (attributionsBuilder_ == null) {
         attributions_ = java.util.Collections.emptyList();
@@ -32428,7 +32523,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         attributions_ = null;
         attributionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       userRatingCount_ = 0;
       iconMaskBaseUri_ = "";
       iconBackgroundColor_ = "";
@@ -32455,14 +32550,14 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         currentSecondaryOpeningHours_ = null;
         currentSecondaryOpeningHoursBuilder_.clear();
       }
-      bitField1_ = (bitField1_ & ~0x00001000);
+      bitField1_ = (bitField1_ & ~0x00002000);
       if (regularSecondaryOpeningHoursBuilder_ == null) {
         regularSecondaryOpeningHours_ = java.util.Collections.emptyList();
       } else {
         regularSecondaryOpeningHours_ = null;
         regularSecondaryOpeningHoursBuilder_.clear();
       }
-      bitField1_ = (bitField1_ & ~0x00002000);
+      bitField1_ = (bitField1_ & ~0x00004000);
       editorialSummary_ = null;
       if (editorialSummaryBuilder_ != null) {
         editorialSummaryBuilder_.dispose();
@@ -32495,7 +32590,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         subDestinations_ = null;
         subDestinationsBuilder_.clear();
       }
-      bitField1_ = (bitField1_ & ~0x10000000);
+      bitField1_ = (bitField1_ & ~0x20000000);
       accessibilityOptions_ = null;
       if (accessibilityOptionsBuilder_ != null) {
         accessibilityOptionsBuilder_.dispose();
@@ -32522,7 +32617,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         containingPlaces_ = null;
         containingPlacesBuilder_.clear();
       }
-      bitField2_ = (bitField2_ & ~0x00000002);
+      bitField2_ = (bitField2_ & ~0x00000004);
       pureServiceAreaBusiness_ = false;
       addressDescriptor_ = null;
       if (addressDescriptorBuilder_ != null) {
@@ -32630,47 +32725,47 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         result.photos_ = photosBuilder_.build();
       }
       if (attributionsBuilder_ == null) {
-        if (((bitField0_ & 0x08000000) != 0)) {
+        if (((bitField0_ & 0x10000000) != 0)) {
           attributions_ = java.util.Collections.unmodifiableList(attributions_);
-          bitField0_ = (bitField0_ & ~0x08000000);
+          bitField0_ = (bitField0_ & ~0x10000000);
         }
         result.attributions_ = attributions_;
       } else {
         result.attributions_ = attributionsBuilder_.build();
       }
       if (currentSecondaryOpeningHoursBuilder_ == null) {
-        if (((bitField1_ & 0x00001000) != 0)) {
+        if (((bitField1_ & 0x00002000) != 0)) {
           currentSecondaryOpeningHours_ =
               java.util.Collections.unmodifiableList(currentSecondaryOpeningHours_);
-          bitField1_ = (bitField1_ & ~0x00001000);
+          bitField1_ = (bitField1_ & ~0x00002000);
         }
         result.currentSecondaryOpeningHours_ = currentSecondaryOpeningHours_;
       } else {
         result.currentSecondaryOpeningHours_ = currentSecondaryOpeningHoursBuilder_.build();
       }
       if (regularSecondaryOpeningHoursBuilder_ == null) {
-        if (((bitField1_ & 0x00002000) != 0)) {
+        if (((bitField1_ & 0x00004000) != 0)) {
           regularSecondaryOpeningHours_ =
               java.util.Collections.unmodifiableList(regularSecondaryOpeningHours_);
-          bitField1_ = (bitField1_ & ~0x00002000);
+          bitField1_ = (bitField1_ & ~0x00004000);
         }
         result.regularSecondaryOpeningHours_ = regularSecondaryOpeningHours_;
       } else {
         result.regularSecondaryOpeningHours_ = regularSecondaryOpeningHoursBuilder_.build();
       }
       if (subDestinationsBuilder_ == null) {
-        if (((bitField1_ & 0x10000000) != 0)) {
+        if (((bitField1_ & 0x20000000) != 0)) {
           subDestinations_ = java.util.Collections.unmodifiableList(subDestinations_);
-          bitField1_ = (bitField1_ & ~0x10000000);
+          bitField1_ = (bitField1_ & ~0x20000000);
         }
         result.subDestinations_ = subDestinations_;
       } else {
         result.subDestinations_ = subDestinationsBuilder_.build();
       }
       if (containingPlacesBuilder_ == null) {
-        if (((bitField2_ & 0x00000002) != 0)) {
+        if (((bitField2_ & 0x00000004) != 0)) {
           containingPlaces_ = java.util.Collections.unmodifiableList(containingPlaces_);
-          bitField2_ = (bitField2_ & ~0x00000002);
+          bitField2_ = (bitField2_ & ~0x00000004);
         }
         result.containingPlaces_ = containingPlaces_;
       } else {
@@ -32773,21 +32868,22 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         result.businessStatus_ = businessStatus_;
       }
       if (((from_bitField0_ & 0x04000000) != 0)) {
-        result.priceLevel_ = priceLevel_;
-      }
-      if (((from_bitField0_ & 0x10000000) != 0)) {
-        result.userRatingCount_ = userRatingCount_;
+        result.openingDate_ =
+            openingDateBuilder_ == null ? openingDate_ : openingDateBuilder_.build();
         to_bitField0_ |= 0x00000400;
       }
+      if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.priceLevel_ = priceLevel_;
+      }
       if (((from_bitField0_ & 0x20000000) != 0)) {
-        result.iconMaskBaseUri_ = iconMaskBaseUri_;
+        result.userRatingCount_ = userRatingCount_;
+        to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x40000000) != 0)) {
-        result.iconBackgroundColor_ = iconBackgroundColor_;
+        result.iconMaskBaseUri_ = iconMaskBaseUri_;
       }
       if (((from_bitField0_ & 0x80000000) != 0)) {
-        result.takeout_ = takeout_;
-        to_bitField0_ |= 0x00000800;
+        result.iconBackgroundColor_ = iconBackgroundColor_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -32796,131 +32892,130 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       int from_bitField1_ = bitField1_;
       int to_bitField0_ = 0;
       if (((from_bitField1_ & 0x00000001) != 0)) {
-        result.delivery_ = delivery_;
+        result.takeout_ = takeout_;
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField1_ & 0x00000002) != 0)) {
-        result.dineIn_ = dineIn_;
+        result.delivery_ = delivery_;
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField1_ & 0x00000004) != 0)) {
-        result.curbsidePickup_ = curbsidePickup_;
+        result.dineIn_ = dineIn_;
         to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField1_ & 0x00000008) != 0)) {
-        result.reservable_ = reservable_;
+        result.curbsidePickup_ = curbsidePickup_;
         to_bitField0_ |= 0x00008000;
       }
       if (((from_bitField1_ & 0x00000010) != 0)) {
-        result.servesBreakfast_ = servesBreakfast_;
+        result.reservable_ = reservable_;
         to_bitField0_ |= 0x00010000;
       }
       if (((from_bitField1_ & 0x00000020) != 0)) {
-        result.servesLunch_ = servesLunch_;
+        result.servesBreakfast_ = servesBreakfast_;
         to_bitField0_ |= 0x00020000;
       }
       if (((from_bitField1_ & 0x00000040) != 0)) {
-        result.servesDinner_ = servesDinner_;
+        result.servesLunch_ = servesLunch_;
         to_bitField0_ |= 0x00040000;
       }
       if (((from_bitField1_ & 0x00000080) != 0)) {
-        result.servesBeer_ = servesBeer_;
+        result.servesDinner_ = servesDinner_;
         to_bitField0_ |= 0x00080000;
       }
       if (((from_bitField1_ & 0x00000100) != 0)) {
-        result.servesWine_ = servesWine_;
+        result.servesBeer_ = servesBeer_;
         to_bitField0_ |= 0x00100000;
       }
       if (((from_bitField1_ & 0x00000200) != 0)) {
-        result.servesBrunch_ = servesBrunch_;
+        result.servesWine_ = servesWine_;
         to_bitField0_ |= 0x00200000;
       }
       if (((from_bitField1_ & 0x00000400) != 0)) {
-        result.servesVegetarianFood_ = servesVegetarianFood_;
+        result.servesBrunch_ = servesBrunch_;
         to_bitField0_ |= 0x00400000;
       }
       if (((from_bitField1_ & 0x00000800) != 0)) {
+        result.servesVegetarianFood_ = servesVegetarianFood_;
+        to_bitField0_ |= 0x00800000;
+      }
+      if (((from_bitField1_ & 0x00001000) != 0)) {
         result.currentOpeningHours_ =
             currentOpeningHoursBuilder_ == null
                 ? currentOpeningHours_
                 : currentOpeningHoursBuilder_.build();
-        to_bitField0_ |= 0x00800000;
-      }
-      if (((from_bitField1_ & 0x00004000) != 0)) {
-        result.editorialSummary_ =
-            editorialSummaryBuilder_ == null ? editorialSummary_ : editorialSummaryBuilder_.build();
         to_bitField0_ |= 0x01000000;
       }
       if (((from_bitField1_ & 0x00008000) != 0)) {
-        result.outdoorSeating_ = outdoorSeating_;
+        result.editorialSummary_ =
+            editorialSummaryBuilder_ == null ? editorialSummary_ : editorialSummaryBuilder_.build();
         to_bitField0_ |= 0x02000000;
       }
       if (((from_bitField1_ & 0x00010000) != 0)) {
-        result.liveMusic_ = liveMusic_;
+        result.outdoorSeating_ = outdoorSeating_;
         to_bitField0_ |= 0x04000000;
       }
       if (((from_bitField1_ & 0x00020000) != 0)) {
-        result.menuForChildren_ = menuForChildren_;
+        result.liveMusic_ = liveMusic_;
         to_bitField0_ |= 0x08000000;
       }
       if (((from_bitField1_ & 0x00040000) != 0)) {
-        result.servesCocktails_ = servesCocktails_;
+        result.menuForChildren_ = menuForChildren_;
         to_bitField0_ |= 0x10000000;
       }
       if (((from_bitField1_ & 0x00080000) != 0)) {
-        result.servesDessert_ = servesDessert_;
+        result.servesCocktails_ = servesCocktails_;
         to_bitField0_ |= 0x20000000;
       }
       if (((from_bitField1_ & 0x00100000) != 0)) {
-        result.servesCoffee_ = servesCoffee_;
+        result.servesDessert_ = servesDessert_;
         to_bitField0_ |= 0x40000000;
       }
       if (((from_bitField1_ & 0x00200000) != 0)) {
-        result.goodForChildren_ = goodForChildren_;
+        result.servesCoffee_ = servesCoffee_;
         to_bitField0_ |= 0x80000000;
       }
       int to_bitField1_ = 0;
       if (((from_bitField1_ & 0x00400000) != 0)) {
-        result.allowsDogs_ = allowsDogs_;
+        result.goodForChildren_ = goodForChildren_;
         to_bitField1_ |= 0x00000001;
       }
       if (((from_bitField1_ & 0x00800000) != 0)) {
-        result.restroom_ = restroom_;
+        result.allowsDogs_ = allowsDogs_;
         to_bitField1_ |= 0x00000002;
       }
       if (((from_bitField1_ & 0x01000000) != 0)) {
-        result.goodForGroups_ = goodForGroups_;
+        result.restroom_ = restroom_;
         to_bitField1_ |= 0x00000004;
       }
       if (((from_bitField1_ & 0x02000000) != 0)) {
-        result.goodForWatchingSports_ = goodForWatchingSports_;
+        result.goodForGroups_ = goodForGroups_;
         to_bitField1_ |= 0x00000008;
       }
       if (((from_bitField1_ & 0x04000000) != 0)) {
-        result.paymentOptions_ =
-            paymentOptionsBuilder_ == null ? paymentOptions_ : paymentOptionsBuilder_.build();
+        result.goodForWatchingSports_ = goodForWatchingSports_;
         to_bitField1_ |= 0x00000010;
       }
       if (((from_bitField1_ & 0x08000000) != 0)) {
-        result.parkingOptions_ =
-            parkingOptionsBuilder_ == null ? parkingOptions_ : parkingOptionsBuilder_.build();
+        result.paymentOptions_ =
+            paymentOptionsBuilder_ == null ? paymentOptions_ : paymentOptionsBuilder_.build();
         to_bitField1_ |= 0x00000020;
       }
-      if (((from_bitField1_ & 0x20000000) != 0)) {
+      if (((from_bitField1_ & 0x10000000) != 0)) {
+        result.parkingOptions_ =
+            parkingOptionsBuilder_ == null ? parkingOptions_ : parkingOptionsBuilder_.build();
+        to_bitField1_ |= 0x00000040;
+      }
+      if (((from_bitField1_ & 0x40000000) != 0)) {
         result.accessibilityOptions_ =
             accessibilityOptionsBuilder_ == null
                 ? accessibilityOptions_
                 : accessibilityOptionsBuilder_.build();
-        to_bitField1_ |= 0x00000040;
-      }
-      if (((from_bitField1_ & 0x40000000) != 0)) {
-        result.fuelOptions_ =
-            fuelOptionsBuilder_ == null ? fuelOptions_ : fuelOptionsBuilder_.build();
         to_bitField1_ |= 0x00000080;
       }
       if (((from_bitField1_ & 0x80000000) != 0)) {
-        result.evChargeOptions_ =
-            evChargeOptionsBuilder_ == null ? evChargeOptions_ : evChargeOptionsBuilder_.build();
+        result.fuelOptions_ =
+            fuelOptionsBuilder_ == null ? fuelOptions_ : fuelOptionsBuilder_.build();
         to_bitField1_ |= 0x00000100;
       }
       result.bitField0_ |= to_bitField0_;
@@ -32931,60 +33026,65 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       int from_bitField2_ = bitField2_;
       int to_bitField1_ = 0;
       if (((from_bitField2_ & 0x00000001) != 0)) {
+        result.evChargeOptions_ =
+            evChargeOptionsBuilder_ == null ? evChargeOptions_ : evChargeOptionsBuilder_.build();
+        to_bitField1_ |= 0x00000200;
+      }
+      if (((from_bitField2_ & 0x00000002) != 0)) {
         result.generativeSummary_ =
             generativeSummaryBuilder_ == null
                 ? generativeSummary_
                 : generativeSummaryBuilder_.build();
-        to_bitField1_ |= 0x00000200;
-      }
-      if (((from_bitField2_ & 0x00000004) != 0)) {
-        result.pureServiceAreaBusiness_ = pureServiceAreaBusiness_;
         to_bitField1_ |= 0x00000400;
       }
       if (((from_bitField2_ & 0x00000008) != 0)) {
+        result.pureServiceAreaBusiness_ = pureServiceAreaBusiness_;
+        to_bitField1_ |= 0x00000800;
+      }
+      if (((from_bitField2_ & 0x00000010) != 0)) {
         result.addressDescriptor_ =
             addressDescriptorBuilder_ == null
                 ? addressDescriptor_
                 : addressDescriptorBuilder_.build();
-        to_bitField1_ |= 0x00000800;
-      }
-      if (((from_bitField2_ & 0x00000010) != 0)) {
-        result.googleMapsLinks_ =
-            googleMapsLinksBuilder_ == null ? googleMapsLinks_ : googleMapsLinksBuilder_.build();
         to_bitField1_ |= 0x00001000;
       }
       if (((from_bitField2_ & 0x00000020) != 0)) {
-        result.priceRange_ = priceRangeBuilder_ == null ? priceRange_ : priceRangeBuilder_.build();
+        result.googleMapsLinks_ =
+            googleMapsLinksBuilder_ == null ? googleMapsLinks_ : googleMapsLinksBuilder_.build();
         to_bitField1_ |= 0x00002000;
       }
       if (((from_bitField2_ & 0x00000040) != 0)) {
-        result.reviewSummary_ =
-            reviewSummaryBuilder_ == null ? reviewSummary_ : reviewSummaryBuilder_.build();
+        result.priceRange_ = priceRangeBuilder_ == null ? priceRange_ : priceRangeBuilder_.build();
         to_bitField1_ |= 0x00004000;
       }
       if (((from_bitField2_ & 0x00000080) != 0)) {
+        result.reviewSummary_ =
+            reviewSummaryBuilder_ == null ? reviewSummary_ : reviewSummaryBuilder_.build();
+        to_bitField1_ |= 0x00008000;
+      }
+      if (((from_bitField2_ & 0x00000100) != 0)) {
         result.evChargeAmenitySummary_ =
             evChargeAmenitySummaryBuilder_ == null
                 ? evChargeAmenitySummary_
                 : evChargeAmenitySummaryBuilder_.build();
-        to_bitField1_ |= 0x00008000;
+        to_bitField1_ |= 0x00010000;
       }
-      if (((from_bitField2_ & 0x00000100) != 0)) {
+      if (((from_bitField2_ & 0x00000200) != 0)) {
         result.neighborhoodSummary_ =
             neighborhoodSummaryBuilder_ == null
                 ? neighborhoodSummary_
                 : neighborhoodSummaryBuilder_.build();
-        to_bitField1_ |= 0x00010000;
-      }
-      if (((from_bitField2_ & 0x00000200) != 0)) {
-        result.consumerAlert_ =
-            consumerAlertBuilder_ == null ? consumerAlert_ : consumerAlertBuilder_.build();
         to_bitField1_ |= 0x00020000;
       }
       if (((from_bitField2_ & 0x00000400) != 0)) {
-        result.movedPlace_ = movedPlace_;
+        result.consumerAlert_ =
+            consumerAlertBuilder_ == null ? consumerAlert_ : consumerAlertBuilder_.build();
+        to_bitField1_ |= 0x00040000;
       }
       if (((from_bitField2_ & 0x00000800) != 0)) {
+        result.movedPlace_ = movedPlace_;
+      }
+      if (((from_bitField2_ & 0x00001000) != 0)) {
         result.movedPlaceId_ = movedPlaceId_;
       }
       result.bitField1_ |= to_bitField1_;
@@ -33179,6 +33279,9 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       if (other.businessStatus_ != 0) {
         setBusinessStatusValue(other.getBusinessStatusValue());
       }
+      if (other.hasOpeningDate()) {
+        mergeOpeningDate(other.getOpeningDate());
+      }
       if (other.priceLevel_ != 0) {
         setPriceLevelValue(other.getPriceLevelValue());
       }
@@ -33186,7 +33289,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         if (!other.attributions_.isEmpty()) {
           if (attributions_.isEmpty()) {
             attributions_ = other.attributions_;
-            bitField0_ = (bitField0_ & ~0x08000000);
+            bitField0_ = (bitField0_ & ~0x10000000);
           } else {
             ensureAttributionsIsMutable();
             attributions_.addAll(other.attributions_);
@@ -33199,7 +33302,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
             attributionsBuilder_.dispose();
             attributionsBuilder_ = null;
             attributions_ = other.attributions_;
-            bitField0_ = (bitField0_ & ~0x08000000);
+            bitField0_ = (bitField0_ & ~0x10000000);
             attributionsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetAttributionsFieldBuilder()
@@ -33214,12 +33317,12 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getIconMaskBaseUri().isEmpty()) {
         iconMaskBaseUri_ = other.iconMaskBaseUri_;
-        bitField0_ |= 0x20000000;
+        bitField0_ |= 0x40000000;
         onChanged();
       }
       if (!other.getIconBackgroundColor().isEmpty()) {
         iconBackgroundColor_ = other.iconBackgroundColor_;
-        bitField0_ |= 0x40000000;
+        bitField0_ |= 0x80000000;
         onChanged();
       }
       if (other.hasTakeout()) {
@@ -33265,7 +33368,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         if (!other.currentSecondaryOpeningHours_.isEmpty()) {
           if (currentSecondaryOpeningHours_.isEmpty()) {
             currentSecondaryOpeningHours_ = other.currentSecondaryOpeningHours_;
-            bitField1_ = (bitField1_ & ~0x00001000);
+            bitField1_ = (bitField1_ & ~0x00002000);
           } else {
             ensureCurrentSecondaryOpeningHoursIsMutable();
             currentSecondaryOpeningHours_.addAll(other.currentSecondaryOpeningHours_);
@@ -33278,7 +33381,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
             currentSecondaryOpeningHoursBuilder_.dispose();
             currentSecondaryOpeningHoursBuilder_ = null;
             currentSecondaryOpeningHours_ = other.currentSecondaryOpeningHours_;
-            bitField1_ = (bitField1_ & ~0x00001000);
+            bitField1_ = (bitField1_ & ~0x00002000);
             currentSecondaryOpeningHoursBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetCurrentSecondaryOpeningHoursFieldBuilder()
@@ -33293,7 +33396,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         if (!other.regularSecondaryOpeningHours_.isEmpty()) {
           if (regularSecondaryOpeningHours_.isEmpty()) {
             regularSecondaryOpeningHours_ = other.regularSecondaryOpeningHours_;
-            bitField1_ = (bitField1_ & ~0x00002000);
+            bitField1_ = (bitField1_ & ~0x00004000);
           } else {
             ensureRegularSecondaryOpeningHoursIsMutable();
             regularSecondaryOpeningHours_.addAll(other.regularSecondaryOpeningHours_);
@@ -33306,7 +33409,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
             regularSecondaryOpeningHoursBuilder_.dispose();
             regularSecondaryOpeningHoursBuilder_ = null;
             regularSecondaryOpeningHours_ = other.regularSecondaryOpeningHours_;
-            bitField1_ = (bitField1_ & ~0x00002000);
+            bitField1_ = (bitField1_ & ~0x00004000);
             regularSecondaryOpeningHoursBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetRegularSecondaryOpeningHoursFieldBuilder()
@@ -33363,7 +33466,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         if (!other.subDestinations_.isEmpty()) {
           if (subDestinations_.isEmpty()) {
             subDestinations_ = other.subDestinations_;
-            bitField1_ = (bitField1_ & ~0x10000000);
+            bitField1_ = (bitField1_ & ~0x20000000);
           } else {
             ensureSubDestinationsIsMutable();
             subDestinations_.addAll(other.subDestinations_);
@@ -33376,7 +33479,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
             subDestinationsBuilder_.dispose();
             subDestinationsBuilder_ = null;
             subDestinations_ = other.subDestinations_;
-            bitField1_ = (bitField1_ & ~0x10000000);
+            bitField1_ = (bitField1_ & ~0x20000000);
             subDestinationsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetSubDestinationsFieldBuilder()
@@ -33402,7 +33505,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         if (!other.containingPlaces_.isEmpty()) {
           if (containingPlaces_.isEmpty()) {
             containingPlaces_ = other.containingPlaces_;
-            bitField2_ = (bitField2_ & ~0x00000002);
+            bitField2_ = (bitField2_ & ~0x00000004);
           } else {
             ensureContainingPlacesIsMutable();
             containingPlaces_.addAll(other.containingPlaces_);
@@ -33415,7 +33518,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
             containingPlacesBuilder_.dispose();
             containingPlacesBuilder_ = null;
             containingPlaces_ = other.containingPlaces_;
-            bitField2_ = (bitField2_ & ~0x00000002);
+            bitField2_ = (bitField2_ & ~0x00000004);
             containingPlacesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetContainingPlacesFieldBuilder()
@@ -33451,12 +33554,12 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getMovedPlace().isEmpty()) {
         movedPlace_ = other.movedPlace_;
-        bitField2_ |= 0x00000400;
+        bitField2_ |= 0x00000800;
         onChanged();
       }
       if (!other.getMovedPlaceId().isEmpty()) {
         movedPlaceId_ = other.movedPlaceId_;
-        bitField2_ |= 0x00000800;
+        bitField2_ |= 0x00001000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -33603,7 +33706,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
             case 208:
               {
                 priceLevel_ = input.readEnum();
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case 208
             case 218:
@@ -33622,19 +33725,19 @@ public final class Place extends com.google.protobuf.GeneratedMessage
             case 224:
               {
                 userRatingCount_ = input.readInt32();
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 224
             case 234:
               {
                 iconMaskBaseUri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x20000000;
+                bitField0_ |= 0x40000000;
                 break;
               } // case 234
             case 242:
               {
                 iconBackgroundColor_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x40000000;
+                bitField0_ |= 0x80000000;
                 break;
               } // case 242
             case 250:
@@ -33655,80 +33758,80 @@ public final class Place extends com.google.protobuf.GeneratedMessage
             case 264:
               {
                 takeout_ = input.readBool();
-                bitField0_ |= 0x80000000;
+                bitField1_ |= 0x00000001;
                 break;
               } // case 264
             case 272:
               {
                 delivery_ = input.readBool();
-                bitField1_ |= 0x00000001;
+                bitField1_ |= 0x00000002;
                 break;
               } // case 272
             case 280:
               {
                 dineIn_ = input.readBool();
-                bitField1_ |= 0x00000002;
+                bitField1_ |= 0x00000004;
                 break;
               } // case 280
             case 288:
               {
                 curbsidePickup_ = input.readBool();
-                bitField1_ |= 0x00000004;
+                bitField1_ |= 0x00000008;
                 break;
               } // case 288
             case 304:
               {
                 reservable_ = input.readBool();
-                bitField1_ |= 0x00000008;
+                bitField1_ |= 0x00000010;
                 break;
               } // case 304
             case 312:
               {
                 servesBreakfast_ = input.readBool();
-                bitField1_ |= 0x00000010;
+                bitField1_ |= 0x00000020;
                 break;
               } // case 312
             case 320:
               {
                 servesLunch_ = input.readBool();
-                bitField1_ |= 0x00000020;
+                bitField1_ |= 0x00000040;
                 break;
               } // case 320
             case 328:
               {
                 servesDinner_ = input.readBool();
-                bitField1_ |= 0x00000040;
+                bitField1_ |= 0x00000080;
                 break;
               } // case 328
             case 336:
               {
                 servesBeer_ = input.readBool();
-                bitField1_ |= 0x00000080;
+                bitField1_ |= 0x00000100;
                 break;
               } // case 336
             case 344:
               {
                 servesWine_ = input.readBool();
-                bitField1_ |= 0x00000100;
+                bitField1_ |= 0x00000200;
                 break;
               } // case 344
             case 352:
               {
                 servesBrunch_ = input.readBool();
-                bitField1_ |= 0x00000200;
+                bitField1_ |= 0x00000400;
                 break;
               } // case 352
             case 360:
               {
                 servesVegetarianFood_ = input.readBool();
-                bitField1_ |= 0x00000400;
+                bitField1_ |= 0x00000800;
                 break;
               } // case 360
             case 370:
               {
                 input.readMessage(
                     internalGetCurrentOpeningHoursFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000800;
+                bitField1_ |= 0x00001000;
                 break;
               } // case 370
             case 378:
@@ -33773,7 +33876,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetEditorialSummaryFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00004000;
+                bitField1_ |= 0x00008000;
                 break;
               } // case 418
             case 426:
@@ -33803,81 +33906,81 @@ public final class Place extends com.google.protobuf.GeneratedMessage
             case 440:
               {
                 outdoorSeating_ = input.readBool();
-                bitField1_ |= 0x00008000;
+                bitField1_ |= 0x00010000;
                 break;
               } // case 440
             case 448:
               {
                 liveMusic_ = input.readBool();
-                bitField1_ |= 0x00010000;
+                bitField1_ |= 0x00020000;
                 break;
               } // case 448
             case 456:
               {
                 menuForChildren_ = input.readBool();
-                bitField1_ |= 0x00020000;
+                bitField1_ |= 0x00040000;
                 break;
               } // case 456
             case 464:
               {
                 servesCocktails_ = input.readBool();
-                bitField1_ |= 0x00040000;
+                bitField1_ |= 0x00080000;
                 break;
               } // case 464
             case 472:
               {
                 servesDessert_ = input.readBool();
-                bitField1_ |= 0x00080000;
+                bitField1_ |= 0x00100000;
                 break;
               } // case 472
             case 480:
               {
                 servesCoffee_ = input.readBool();
-                bitField1_ |= 0x00100000;
+                bitField1_ |= 0x00200000;
                 break;
               } // case 480
             case 496:
               {
                 goodForChildren_ = input.readBool();
-                bitField1_ |= 0x00200000;
+                bitField1_ |= 0x00400000;
                 break;
               } // case 496
             case 504:
               {
                 allowsDogs_ = input.readBool();
-                bitField1_ |= 0x00400000;
+                bitField1_ |= 0x00800000;
                 break;
               } // case 504
             case 512:
               {
                 restroom_ = input.readBool();
-                bitField1_ |= 0x00800000;
+                bitField1_ |= 0x01000000;
                 break;
               } // case 512
             case 520:
               {
                 goodForGroups_ = input.readBool();
-                bitField1_ |= 0x01000000;
+                bitField1_ |= 0x02000000;
                 break;
               } // case 520
             case 528:
               {
                 goodForWatchingSports_ = input.readBool();
-                bitField1_ |= 0x02000000;
+                bitField1_ |= 0x04000000;
                 break;
               } // case 528
             case 538:
               {
                 input.readMessage(
                     internalGetPaymentOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x04000000;
+                bitField1_ |= 0x08000000;
                 break;
               } // case 538
             case 562:
               {
                 input.readMessage(
                     internalGetParkingOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x08000000;
+                bitField1_ |= 0x10000000;
                 break;
               } // case 562
             case 570:
@@ -33897,28 +34000,28 @@ public final class Place extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetAccessibilityOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x20000000;
+                bitField1_ |= 0x40000000;
                 break;
               } // case 578
             case 626:
               {
                 input.readMessage(
                     internalGetFuelOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x40000000;
+                bitField1_ |= 0x80000000;
                 break;
               } // case 626
             case 634:
               {
                 input.readMessage(
                     internalGetEvChargeOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x80000000;
+                bitField2_ |= 0x00000001;
                 break;
               } // case 634
             case 642:
               {
                 input.readMessage(
                     internalGetGenerativeSummaryFieldBuilder().getBuilder(), extensionRegistry);
-                bitField2_ |= 0x00000001;
+                bitField2_ |= 0x00000002;
                 break;
               } // case 642
             case 658:
@@ -33938,35 +34041,35 @@ public final class Place extends com.google.protobuf.GeneratedMessage
             case 664:
               {
                 pureServiceAreaBusiness_ = input.readBool();
-                bitField2_ |= 0x00000004;
+                bitField2_ |= 0x00000008;
                 break;
               } // case 664
             case 674:
               {
                 input.readMessage(
                     internalGetAddressDescriptorFieldBuilder().getBuilder(), extensionRegistry);
-                bitField2_ |= 0x00000008;
+                bitField2_ |= 0x00000010;
                 break;
               } // case 674
             case 682:
               {
                 input.readMessage(
                     internalGetGoogleMapsLinksFieldBuilder().getBuilder(), extensionRegistry);
-                bitField2_ |= 0x00000010;
+                bitField2_ |= 0x00000020;
                 break;
               } // case 682
             case 690:
               {
                 input.readMessage(
                     internalGetPriceRangeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField2_ |= 0x00000020;
+                bitField2_ |= 0x00000040;
                 break;
               } // case 690
             case 698:
               {
                 input.readMessage(
                     internalGetReviewSummaryFieldBuilder().getBuilder(), extensionRegistry);
-                bitField2_ |= 0x00000040;
+                bitField2_ |= 0x00000080;
                 break;
               } // case 698
             case 706:
@@ -33981,7 +34084,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetEvChargeAmenitySummaryFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField2_ |= 0x00000080;
+                bitField2_ |= 0x00000100;
                 break;
               } // case 714
             case 722:
@@ -33995,28 +34098,35 @@ public final class Place extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetNeighborhoodSummaryFieldBuilder().getBuilder(), extensionRegistry);
-                bitField2_ |= 0x00000100;
+                bitField2_ |= 0x00000200;
                 break;
               } // case 730
             case 738:
               {
                 input.readMessage(
                     internalGetConsumerAlertFieldBuilder().getBuilder(), extensionRegistry);
-                bitField2_ |= 0x00000200;
+                bitField2_ |= 0x00000400;
                 break;
               } // case 738
             case 746:
               {
                 movedPlace_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00000400;
+                bitField2_ |= 0x00000800;
                 break;
               } // case 746
             case 754:
               {
                 movedPlaceId_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00000800;
+                bitField2_ |= 0x00001000;
                 break;
               } // case 754
+            case 762:
+              {
+                input.readMessage(
+                    internalGetOpeningDateFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x04000000;
+                break;
+              } // case 762
             case 770:
               {
                 input.readMessage(
@@ -38955,6 +39065,199 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private com.google.type.Date openingDate_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+        openingDateBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The date this place will open in the future. This field is only
+     * populated if the business status is FUTURE_OPENING.
+     * </pre>
+     *
+     * <code>.google.type.Date opening_date = 95;</code>
+     *
+     * @return Whether the openingDate field is set.
+     */
+    public boolean hasOpeningDate() {
+      return ((bitField0_ & 0x04000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The date this place will open in the future. This field is only
+     * populated if the business status is FUTURE_OPENING.
+     * </pre>
+     *
+     * <code>.google.type.Date opening_date = 95;</code>
+     *
+     * @return The openingDate.
+     */
+    public com.google.type.Date getOpeningDate() {
+      if (openingDateBuilder_ == null) {
+        return openingDate_ == null ? com.google.type.Date.getDefaultInstance() : openingDate_;
+      } else {
+        return openingDateBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The date this place will open in the future. This field is only
+     * populated if the business status is FUTURE_OPENING.
+     * </pre>
+     *
+     * <code>.google.type.Date opening_date = 95;</code>
+     */
+    public Builder setOpeningDate(com.google.type.Date value) {
+      if (openingDateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        openingDate_ = value;
+      } else {
+        openingDateBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The date this place will open in the future. This field is only
+     * populated if the business status is FUTURE_OPENING.
+     * </pre>
+     *
+     * <code>.google.type.Date opening_date = 95;</code>
+     */
+    public Builder setOpeningDate(com.google.type.Date.Builder builderForValue) {
+      if (openingDateBuilder_ == null) {
+        openingDate_ = builderForValue.build();
+      } else {
+        openingDateBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The date this place will open in the future. This field is only
+     * populated if the business status is FUTURE_OPENING.
+     * </pre>
+     *
+     * <code>.google.type.Date opening_date = 95;</code>
+     */
+    public Builder mergeOpeningDate(com.google.type.Date value) {
+      if (openingDateBuilder_ == null) {
+        if (((bitField0_ & 0x04000000) != 0)
+            && openingDate_ != null
+            && openingDate_ != com.google.type.Date.getDefaultInstance()) {
+          getOpeningDateBuilder().mergeFrom(value);
+        } else {
+          openingDate_ = value;
+        }
+      } else {
+        openingDateBuilder_.mergeFrom(value);
+      }
+      if (openingDate_ != null) {
+        bitField0_ |= 0x04000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The date this place will open in the future. This field is only
+     * populated if the business status is FUTURE_OPENING.
+     * </pre>
+     *
+     * <code>.google.type.Date opening_date = 95;</code>
+     */
+    public Builder clearOpeningDate() {
+      bitField0_ = (bitField0_ & ~0x04000000);
+      openingDate_ = null;
+      if (openingDateBuilder_ != null) {
+        openingDateBuilder_.dispose();
+        openingDateBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The date this place will open in the future. This field is only
+     * populated if the business status is FUTURE_OPENING.
+     * </pre>
+     *
+     * <code>.google.type.Date opening_date = 95;</code>
+     */
+    public com.google.type.Date.Builder getOpeningDateBuilder() {
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return internalGetOpeningDateFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The date this place will open in the future. This field is only
+     * populated if the business status is FUTURE_OPENING.
+     * </pre>
+     *
+     * <code>.google.type.Date opening_date = 95;</code>
+     */
+    public com.google.type.DateOrBuilder getOpeningDateOrBuilder() {
+      if (openingDateBuilder_ != null) {
+        return openingDateBuilder_.getMessageOrBuilder();
+      } else {
+        return openingDate_ == null ? com.google.type.Date.getDefaultInstance() : openingDate_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The date this place will open in the future. This field is only
+     * populated if the business status is FUTURE_OPENING.
+     * </pre>
+     *
+     * <code>.google.type.Date opening_date = 95;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+        internalGetOpeningDateFieldBuilder() {
+      if (openingDateBuilder_ == null) {
+        openingDateBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>(
+                getOpeningDate(), getParentForChildren(), isClean());
+        openingDate_ = null;
+      }
+      return openingDateBuilder_;
+    }
+
     private int priceLevel_ = 0;
 
     /**
@@ -38987,7 +39290,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     public Builder setPriceLevelValue(int value) {
       priceLevel_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -39026,7 +39329,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       priceLevel_ = value.getNumber();
       onChanged();
       return this;
@@ -39044,7 +39347,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPriceLevel() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       priceLevel_ = 0;
       onChanged();
       return this;
@@ -39054,10 +39357,10 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureAttributionsIsMutable() {
-      if (!((bitField0_ & 0x08000000) != 0)) {
+      if (!((bitField0_ & 0x10000000) != 0)) {
         attributions_ =
             new java.util.ArrayList<com.google.maps.places.v1.Place.Attribution>(attributions_);
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x10000000;
       }
     }
 
@@ -39283,7 +39586,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder clearAttributions() {
       if (attributionsBuilder_ == null) {
         attributions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x08000000);
+        bitField0_ = (bitField0_ & ~0x10000000);
         onChanged();
       } else {
         attributionsBuilder_.clear();
@@ -39413,7 +39716,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
                 com.google.maps.places.v1.Place.Attribution,
                 com.google.maps.places.v1.Place.Attribution.Builder,
                 com.google.maps.places.v1.Place.AttributionOrBuilder>(
-                attributions_, ((bitField0_ & 0x08000000) != 0), getParentForChildren(), isClean());
+                attributions_, ((bitField0_ & 0x10000000) != 0), getParentForChildren(), isClean());
         attributions_ = null;
       }
       return attributionsBuilder_;
@@ -39434,7 +39737,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasUserRatingCount() {
-      return ((bitField0_ & 0x10000000) != 0);
+      return ((bitField0_ & 0x20000000) != 0);
     }
 
     /**
@@ -39468,7 +39771,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder setUserRatingCount(int value) {
 
       userRatingCount_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -39485,7 +39788,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearUserRatingCount() {
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       userRatingCount_ = 0;
       onChanged();
       return this;
@@ -39559,7 +39862,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       iconMaskBaseUri_ = value;
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -39578,7 +39881,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearIconMaskBaseUri() {
       iconMaskBaseUri_ = getDefaultInstance().getIconMaskBaseUri();
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       onChanged();
       return this;
     }
@@ -39602,7 +39905,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       iconMaskBaseUri_ = value;
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -39672,7 +39975,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       iconBackgroundColor_ = value;
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -39690,7 +39993,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearIconBackgroundColor() {
       iconBackgroundColor_ = getDefaultInstance().getIconBackgroundColor();
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField0_ = (bitField0_ & ~0x80000000);
       onChanged();
       return this;
     }
@@ -39713,7 +40016,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       iconBackgroundColor_ = value;
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -39733,7 +40036,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasTakeout() {
-      return ((bitField0_ & 0x80000000) != 0);
+      return ((bitField1_ & 0x00000001) != 0);
     }
 
     /**
@@ -39767,7 +40070,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder setTakeout(boolean value) {
 
       takeout_ = value;
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -39784,7 +40087,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearTakeout() {
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x00000001);
       takeout_ = false;
       onChanged();
       return this;
@@ -39805,7 +40108,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasDelivery() {
-      return ((bitField1_ & 0x00000001) != 0);
+      return ((bitField1_ & 0x00000002) != 0);
     }
 
     /**
@@ -39839,7 +40142,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder setDelivery(boolean value) {
 
       delivery_ = value;
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -39856,7 +40159,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDelivery() {
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000002);
       delivery_ = false;
       onChanged();
       return this;
@@ -39877,7 +40180,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasDineIn() {
-      return ((bitField1_ & 0x00000002) != 0);
+      return ((bitField1_ & 0x00000004) != 0);
     }
 
     /**
@@ -39911,7 +40214,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder setDineIn(boolean value) {
 
       dineIn_ = value;
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -39928,7 +40231,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDineIn() {
-      bitField1_ = (bitField1_ & ~0x00000002);
+      bitField1_ = (bitField1_ & ~0x00000004);
       dineIn_ = false;
       onChanged();
       return this;
@@ -39949,7 +40252,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasCurbsidePickup() {
-      return ((bitField1_ & 0x00000004) != 0);
+      return ((bitField1_ & 0x00000008) != 0);
     }
 
     /**
@@ -39983,7 +40286,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder setCurbsidePickup(boolean value) {
 
       curbsidePickup_ = value;
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -40000,7 +40303,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearCurbsidePickup() {
-      bitField1_ = (bitField1_ & ~0x00000004);
+      bitField1_ = (bitField1_ & ~0x00000008);
       curbsidePickup_ = false;
       onChanged();
       return this;
@@ -40021,7 +40324,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasReservable() {
-      return ((bitField1_ & 0x00000008) != 0);
+      return ((bitField1_ & 0x00000010) != 0);
     }
 
     /**
@@ -40055,7 +40358,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder setReservable(boolean value) {
 
       reservable_ = value;
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -40072,7 +40375,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearReservable() {
-      bitField1_ = (bitField1_ & ~0x00000008);
+      bitField1_ = (bitField1_ & ~0x00000010);
       reservable_ = false;
       onChanged();
       return this;
@@ -40093,7 +40396,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasServesBreakfast() {
-      return ((bitField1_ & 0x00000010) != 0);
+      return ((bitField1_ & 0x00000020) != 0);
     }
 
     /**
@@ -40127,7 +40430,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder setServesBreakfast(boolean value) {
 
       servesBreakfast_ = value;
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -40144,7 +40447,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearServesBreakfast() {
-      bitField1_ = (bitField1_ & ~0x00000010);
+      bitField1_ = (bitField1_ & ~0x00000020);
       servesBreakfast_ = false;
       onChanged();
       return this;
@@ -40165,7 +40468,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasServesLunch() {
-      return ((bitField1_ & 0x00000020) != 0);
+      return ((bitField1_ & 0x00000040) != 0);
     }
 
     /**
@@ -40199,7 +40502,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder setServesLunch(boolean value) {
 
       servesLunch_ = value;
-      bitField1_ |= 0x00000020;
+      bitField1_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -40216,7 +40519,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearServesLunch() {
-      bitField1_ = (bitField1_ & ~0x00000020);
+      bitField1_ = (bitField1_ & ~0x00000040);
       servesLunch_ = false;
       onChanged();
       return this;
@@ -40237,7 +40540,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasServesDinner() {
-      return ((bitField1_ & 0x00000040) != 0);
+      return ((bitField1_ & 0x00000080) != 0);
     }
 
     /**
@@ -40271,7 +40574,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder setServesDinner(boolean value) {
 
       servesDinner_ = value;
-      bitField1_ |= 0x00000040;
+      bitField1_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -40288,7 +40591,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearServesDinner() {
-      bitField1_ = (bitField1_ & ~0x00000040);
+      bitField1_ = (bitField1_ & ~0x00000080);
       servesDinner_ = false;
       onChanged();
       return this;
@@ -40309,7 +40612,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasServesBeer() {
-      return ((bitField1_ & 0x00000080) != 0);
+      return ((bitField1_ & 0x00000100) != 0);
     }
 
     /**
@@ -40343,7 +40646,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder setServesBeer(boolean value) {
 
       servesBeer_ = value;
-      bitField1_ |= 0x00000080;
+      bitField1_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -40360,7 +40663,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearServesBeer() {
-      bitField1_ = (bitField1_ & ~0x00000080);
+      bitField1_ = (bitField1_ & ~0x00000100);
       servesBeer_ = false;
       onChanged();
       return this;
@@ -40381,7 +40684,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasServesWine() {
-      return ((bitField1_ & 0x00000100) != 0);
+      return ((bitField1_ & 0x00000200) != 0);
     }
 
     /**
@@ -40415,7 +40718,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder setServesWine(boolean value) {
 
       servesWine_ = value;
-      bitField1_ |= 0x00000100;
+      bitField1_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -40432,7 +40735,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearServesWine() {
-      bitField1_ = (bitField1_ & ~0x00000100);
+      bitField1_ = (bitField1_ & ~0x00000200);
       servesWine_ = false;
       onChanged();
       return this;
@@ -40453,7 +40756,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasServesBrunch() {
-      return ((bitField1_ & 0x00000200) != 0);
+      return ((bitField1_ & 0x00000400) != 0);
     }
 
     /**
@@ -40487,7 +40790,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder setServesBrunch(boolean value) {
 
       servesBrunch_ = value;
-      bitField1_ |= 0x00000200;
+      bitField1_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -40504,7 +40807,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearServesBrunch() {
-      bitField1_ = (bitField1_ & ~0x00000200);
+      bitField1_ = (bitField1_ & ~0x00000400);
       servesBrunch_ = false;
       onChanged();
       return this;
@@ -40525,7 +40828,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasServesVegetarianFood() {
-      return ((bitField1_ & 0x00000400) != 0);
+      return ((bitField1_ & 0x00000800) != 0);
     }
 
     /**
@@ -40559,7 +40862,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder setServesVegetarianFood(boolean value) {
 
       servesVegetarianFood_ = value;
-      bitField1_ |= 0x00000400;
+      bitField1_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -40576,7 +40879,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearServesVegetarianFood() {
-      bitField1_ = (bitField1_ & ~0x00000400);
+      bitField1_ = (bitField1_ & ~0x00000800);
       servesVegetarianFood_ = false;
       onChanged();
       return this;
@@ -40604,7 +40907,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return Whether the currentOpeningHours field is set.
      */
     public boolean hasCurrentOpeningHours() {
-      return ((bitField1_ & 0x00000800) != 0);
+      return ((bitField1_ & 0x00001000) != 0);
     }
 
     /**
@@ -40652,7 +40955,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         currentOpeningHoursBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000800;
+      bitField1_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -40676,7 +40979,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         currentOpeningHoursBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000800;
+      bitField1_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -40695,7 +40998,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCurrentOpeningHours(com.google.maps.places.v1.Place.OpeningHours value) {
       if (currentOpeningHoursBuilder_ == null) {
-        if (((bitField1_ & 0x00000800) != 0)
+        if (((bitField1_ & 0x00001000) != 0)
             && currentOpeningHours_ != null
             && currentOpeningHours_
                 != com.google.maps.places.v1.Place.OpeningHours.getDefaultInstance()) {
@@ -40707,7 +41010,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         currentOpeningHoursBuilder_.mergeFrom(value);
       }
       if (currentOpeningHours_ != null) {
-        bitField1_ |= 0x00000800;
+        bitField1_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -40726,7 +41029,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * <code>.google.maps.places.v1.Place.OpeningHours current_opening_hours = 46;</code>
      */
     public Builder clearCurrentOpeningHours() {
-      bitField1_ = (bitField1_ & ~0x00000800);
+      bitField1_ = (bitField1_ & ~0x00001000);
       currentOpeningHours_ = null;
       if (currentOpeningHoursBuilder_ != null) {
         currentOpeningHoursBuilder_.dispose();
@@ -40749,7 +41052,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * <code>.google.maps.places.v1.Place.OpeningHours current_opening_hours = 46;</code>
      */
     public com.google.maps.places.v1.Place.OpeningHours.Builder getCurrentOpeningHoursBuilder() {
-      bitField1_ |= 0x00000800;
+      bitField1_ |= 0x00001000;
       onChanged();
       return internalGetCurrentOpeningHoursFieldBuilder().getBuilder();
     }
@@ -40809,11 +41112,11 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         currentSecondaryOpeningHours_ = java.util.Collections.emptyList();
 
     private void ensureCurrentSecondaryOpeningHoursIsMutable() {
-      if (!((bitField1_ & 0x00001000) != 0)) {
+      if (!((bitField1_ & 0x00002000) != 0)) {
         currentSecondaryOpeningHours_ =
             new java.util.ArrayList<com.google.maps.places.v1.Place.OpeningHours>(
                 currentSecondaryOpeningHours_);
-        bitField1_ |= 0x00001000;
+        bitField1_ |= 0x00002000;
       }
     }
 
@@ -41143,7 +41446,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder clearCurrentSecondaryOpeningHours() {
       if (currentSecondaryOpeningHoursBuilder_ == null) {
         currentSecondaryOpeningHours_ = java.util.Collections.emptyList();
-        bitField1_ = (bitField1_ & ~0x00001000);
+        bitField1_ = (bitField1_ & ~0x00002000);
         onChanged();
       } else {
         currentSecondaryOpeningHoursBuilder_.clear();
@@ -41340,7 +41643,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
                 com.google.maps.places.v1.Place.OpeningHours.Builder,
                 com.google.maps.places.v1.Place.OpeningHoursOrBuilder>(
                 currentSecondaryOpeningHours_,
-                ((bitField1_ & 0x00001000) != 0),
+                ((bitField1_ & 0x00002000) != 0),
                 getParentForChildren(),
                 isClean());
         currentSecondaryOpeningHours_ = null;
@@ -41352,11 +41655,11 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         regularSecondaryOpeningHours_ = java.util.Collections.emptyList();
 
     private void ensureRegularSecondaryOpeningHoursIsMutable() {
-      if (!((bitField1_ & 0x00002000) != 0)) {
+      if (!((bitField1_ & 0x00004000) != 0)) {
         regularSecondaryOpeningHours_ =
             new java.util.ArrayList<com.google.maps.places.v1.Place.OpeningHours>(
                 regularSecondaryOpeningHours_);
-        bitField1_ |= 0x00002000;
+        bitField1_ |= 0x00004000;
       }
     }
 
@@ -41664,7 +41967,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder clearRegularSecondaryOpeningHours() {
       if (regularSecondaryOpeningHoursBuilder_ == null) {
         regularSecondaryOpeningHours_ = java.util.Collections.emptyList();
-        bitField1_ = (bitField1_ & ~0x00002000);
+        bitField1_ = (bitField1_ & ~0x00004000);
         onChanged();
       } else {
         regularSecondaryOpeningHoursBuilder_.clear();
@@ -41847,7 +42150,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
                 com.google.maps.places.v1.Place.OpeningHours.Builder,
                 com.google.maps.places.v1.Place.OpeningHoursOrBuilder>(
                 regularSecondaryOpeningHours_,
-                ((bitField1_ & 0x00002000) != 0),
+                ((bitField1_ & 0x00004000) != 0),
                 getParentForChildren(),
                 isClean());
         regularSecondaryOpeningHours_ = null;
@@ -41876,7 +42179,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return Whether the editorialSummary field is set.
      */
     public boolean hasEditorialSummary() {
-      return ((bitField1_ & 0x00004000) != 0);
+      return ((bitField1_ & 0x00008000) != 0);
     }
 
     /**
@@ -41922,7 +42225,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         editorialSummaryBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00004000;
+      bitField1_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -41944,7 +42247,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         editorialSummaryBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00004000;
+      bitField1_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -41962,7 +42265,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeEditorialSummary(com.google.type.LocalizedText value) {
       if (editorialSummaryBuilder_ == null) {
-        if (((bitField1_ & 0x00004000) != 0)
+        if (((bitField1_ & 0x00008000) != 0)
             && editorialSummary_ != null
             && editorialSummary_ != com.google.type.LocalizedText.getDefaultInstance()) {
           getEditorialSummaryBuilder().mergeFrom(value);
@@ -41973,7 +42276,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         editorialSummaryBuilder_.mergeFrom(value);
       }
       if (editorialSummary_ != null) {
-        bitField1_ |= 0x00004000;
+        bitField1_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -41991,7 +42294,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * <code>.google.type.LocalizedText editorial_summary = 52;</code>
      */
     public Builder clearEditorialSummary() {
-      bitField1_ = (bitField1_ & ~0x00004000);
+      bitField1_ = (bitField1_ & ~0x00008000);
       editorialSummary_ = null;
       if (editorialSummaryBuilder_ != null) {
         editorialSummaryBuilder_.dispose();
@@ -42013,7 +42316,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * <code>.google.type.LocalizedText editorial_summary = 52;</code>
      */
     public com.google.type.LocalizedText.Builder getEditorialSummaryBuilder() {
-      bitField1_ |= 0x00004000;
+      bitField1_ |= 0x00008000;
       onChanged();
       return internalGetEditorialSummaryFieldBuilder().getBuilder();
     }
@@ -42082,7 +42385,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasOutdoorSeating() {
-      return ((bitField1_ & 0x00008000) != 0);
+      return ((bitField1_ & 0x00010000) != 0);
     }
 
     /**
@@ -42116,7 +42419,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder setOutdoorSeating(boolean value) {
 
       outdoorSeating_ = value;
-      bitField1_ |= 0x00008000;
+      bitField1_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -42133,7 +42436,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearOutdoorSeating() {
-      bitField1_ = (bitField1_ & ~0x00008000);
+      bitField1_ = (bitField1_ & ~0x00010000);
       outdoorSeating_ = false;
       onChanged();
       return this;
@@ -42154,7 +42457,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasLiveMusic() {
-      return ((bitField1_ & 0x00010000) != 0);
+      return ((bitField1_ & 0x00020000) != 0);
     }
 
     /**
@@ -42188,7 +42491,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder setLiveMusic(boolean value) {
 
       liveMusic_ = value;
-      bitField1_ |= 0x00010000;
+      bitField1_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -42205,7 +42508,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearLiveMusic() {
-      bitField1_ = (bitField1_ & ~0x00010000);
+      bitField1_ = (bitField1_ & ~0x00020000);
       liveMusic_ = false;
       onChanged();
       return this;
@@ -42226,7 +42529,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasMenuForChildren() {
-      return ((bitField1_ & 0x00020000) != 0);
+      return ((bitField1_ & 0x00040000) != 0);
     }
 
     /**
@@ -42260,7 +42563,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder setMenuForChildren(boolean value) {
 
       menuForChildren_ = value;
-      bitField1_ |= 0x00020000;
+      bitField1_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -42277,7 +42580,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearMenuForChildren() {
-      bitField1_ = (bitField1_ & ~0x00020000);
+      bitField1_ = (bitField1_ & ~0x00040000);
       menuForChildren_ = false;
       onChanged();
       return this;
@@ -42298,7 +42601,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasServesCocktails() {
-      return ((bitField1_ & 0x00040000) != 0);
+      return ((bitField1_ & 0x00080000) != 0);
     }
 
     /**
@@ -42332,7 +42635,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder setServesCocktails(boolean value) {
 
       servesCocktails_ = value;
-      bitField1_ |= 0x00040000;
+      bitField1_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -42349,7 +42652,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearServesCocktails() {
-      bitField1_ = (bitField1_ & ~0x00040000);
+      bitField1_ = (bitField1_ & ~0x00080000);
       servesCocktails_ = false;
       onChanged();
       return this;
@@ -42370,7 +42673,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasServesDessert() {
-      return ((bitField1_ & 0x00080000) != 0);
+      return ((bitField1_ & 0x00100000) != 0);
     }
 
     /**
@@ -42404,7 +42707,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder setServesDessert(boolean value) {
 
       servesDessert_ = value;
-      bitField1_ |= 0x00080000;
+      bitField1_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -42421,7 +42724,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearServesDessert() {
-      bitField1_ = (bitField1_ & ~0x00080000);
+      bitField1_ = (bitField1_ & ~0x00100000);
       servesDessert_ = false;
       onChanged();
       return this;
@@ -42442,7 +42745,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasServesCoffee() {
-      return ((bitField1_ & 0x00100000) != 0);
+      return ((bitField1_ & 0x00200000) != 0);
     }
 
     /**
@@ -42476,7 +42779,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder setServesCoffee(boolean value) {
 
       servesCoffee_ = value;
-      bitField1_ |= 0x00100000;
+      bitField1_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -42493,7 +42796,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearServesCoffee() {
-      bitField1_ = (bitField1_ & ~0x00100000);
+      bitField1_ = (bitField1_ & ~0x00200000);
       servesCoffee_ = false;
       onChanged();
       return this;
@@ -42514,7 +42817,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasGoodForChildren() {
-      return ((bitField1_ & 0x00200000) != 0);
+      return ((bitField1_ & 0x00400000) != 0);
     }
 
     /**
@@ -42548,7 +42851,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder setGoodForChildren(boolean value) {
 
       goodForChildren_ = value;
-      bitField1_ |= 0x00200000;
+      bitField1_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -42565,7 +42868,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearGoodForChildren() {
-      bitField1_ = (bitField1_ & ~0x00200000);
+      bitField1_ = (bitField1_ & ~0x00400000);
       goodForChildren_ = false;
       onChanged();
       return this;
@@ -42586,7 +42889,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasAllowsDogs() {
-      return ((bitField1_ & 0x00400000) != 0);
+      return ((bitField1_ & 0x00800000) != 0);
     }
 
     /**
@@ -42620,7 +42923,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder setAllowsDogs(boolean value) {
 
       allowsDogs_ = value;
-      bitField1_ |= 0x00400000;
+      bitField1_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -42637,7 +42940,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAllowsDogs() {
-      bitField1_ = (bitField1_ & ~0x00400000);
+      bitField1_ = (bitField1_ & ~0x00800000);
       allowsDogs_ = false;
       onChanged();
       return this;
@@ -42658,7 +42961,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasRestroom() {
-      return ((bitField1_ & 0x00800000) != 0);
+      return ((bitField1_ & 0x01000000) != 0);
     }
 
     /**
@@ -42692,7 +42995,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder setRestroom(boolean value) {
 
       restroom_ = value;
-      bitField1_ |= 0x00800000;
+      bitField1_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -42709,7 +43012,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRestroom() {
-      bitField1_ = (bitField1_ & ~0x00800000);
+      bitField1_ = (bitField1_ & ~0x01000000);
       restroom_ = false;
       onChanged();
       return this;
@@ -42730,7 +43033,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasGoodForGroups() {
-      return ((bitField1_ & 0x01000000) != 0);
+      return ((bitField1_ & 0x02000000) != 0);
     }
 
     /**
@@ -42764,7 +43067,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder setGoodForGroups(boolean value) {
 
       goodForGroups_ = value;
-      bitField1_ |= 0x01000000;
+      bitField1_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -42781,7 +43084,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearGoodForGroups() {
-      bitField1_ = (bitField1_ & ~0x01000000);
+      bitField1_ = (bitField1_ & ~0x02000000);
       goodForGroups_ = false;
       onChanged();
       return this;
@@ -42802,7 +43105,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasGoodForWatchingSports() {
-      return ((bitField1_ & 0x02000000) != 0);
+      return ((bitField1_ & 0x04000000) != 0);
     }
 
     /**
@@ -42836,7 +43139,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder setGoodForWatchingSports(boolean value) {
 
       goodForWatchingSports_ = value;
-      bitField1_ |= 0x02000000;
+      bitField1_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -42853,7 +43156,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearGoodForWatchingSports() {
-      bitField1_ = (bitField1_ & ~0x02000000);
+      bitField1_ = (bitField1_ & ~0x04000000);
       goodForWatchingSports_ = false;
       onChanged();
       return this;
@@ -42879,7 +43182,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return Whether the paymentOptions field is set.
      */
     public boolean hasPaymentOptions() {
-      return ((bitField1_ & 0x04000000) != 0);
+      return ((bitField1_ & 0x08000000) != 0);
     }
 
     /**
@@ -42923,7 +43226,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         paymentOptionsBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x04000000;
+      bitField1_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -42945,7 +43248,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         paymentOptionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x04000000;
+      bitField1_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -42962,7 +43265,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergePaymentOptions(com.google.maps.places.v1.Place.PaymentOptions value) {
       if (paymentOptionsBuilder_ == null) {
-        if (((bitField1_ & 0x04000000) != 0)
+        if (((bitField1_ & 0x08000000) != 0)
             && paymentOptions_ != null
             && paymentOptions_
                 != com.google.maps.places.v1.Place.PaymentOptions.getDefaultInstance()) {
@@ -42974,7 +43277,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         paymentOptionsBuilder_.mergeFrom(value);
       }
       if (paymentOptions_ != null) {
-        bitField1_ |= 0x04000000;
+        bitField1_ |= 0x08000000;
         onChanged();
       }
       return this;
@@ -42991,7 +43294,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * <code>.google.maps.places.v1.Place.PaymentOptions payment_options = 67;</code>
      */
     public Builder clearPaymentOptions() {
-      bitField1_ = (bitField1_ & ~0x04000000);
+      bitField1_ = (bitField1_ & ~0x08000000);
       paymentOptions_ = null;
       if (paymentOptionsBuilder_ != null) {
         paymentOptionsBuilder_.dispose();
@@ -43012,7 +43315,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * <code>.google.maps.places.v1.Place.PaymentOptions payment_options = 67;</code>
      */
     public com.google.maps.places.v1.Place.PaymentOptions.Builder getPaymentOptionsBuilder() {
-      bitField1_ |= 0x04000000;
+      bitField1_ |= 0x08000000;
       onChanged();
       return internalGetPaymentOptionsFieldBuilder().getBuilder();
     }
@@ -43083,7 +43386,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return Whether the parkingOptions field is set.
      */
     public boolean hasParkingOptions() {
-      return ((bitField1_ & 0x08000000) != 0);
+      return ((bitField1_ & 0x10000000) != 0);
     }
 
     /**
@@ -43125,7 +43428,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         parkingOptionsBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x08000000;
+      bitField1_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -43146,7 +43449,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         parkingOptionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x08000000;
+      bitField1_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -43162,7 +43465,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeParkingOptions(com.google.maps.places.v1.Place.ParkingOptions value) {
       if (parkingOptionsBuilder_ == null) {
-        if (((bitField1_ & 0x08000000) != 0)
+        if (((bitField1_ & 0x10000000) != 0)
             && parkingOptions_ != null
             && parkingOptions_
                 != com.google.maps.places.v1.Place.ParkingOptions.getDefaultInstance()) {
@@ -43174,7 +43477,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         parkingOptionsBuilder_.mergeFrom(value);
       }
       if (parkingOptions_ != null) {
-        bitField1_ |= 0x08000000;
+        bitField1_ |= 0x10000000;
         onChanged();
       }
       return this;
@@ -43190,7 +43493,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * <code>.google.maps.places.v1.Place.ParkingOptions parking_options = 70;</code>
      */
     public Builder clearParkingOptions() {
-      bitField1_ = (bitField1_ & ~0x08000000);
+      bitField1_ = (bitField1_ & ~0x10000000);
       parkingOptions_ = null;
       if (parkingOptionsBuilder_ != null) {
         parkingOptionsBuilder_.dispose();
@@ -43210,7 +43513,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * <code>.google.maps.places.v1.Place.ParkingOptions parking_options = 70;</code>
      */
     public com.google.maps.places.v1.Place.ParkingOptions.Builder getParkingOptionsBuilder() {
-      bitField1_ |= 0x08000000;
+      bitField1_ |= 0x10000000;
       onChanged();
       return internalGetParkingOptionsFieldBuilder().getBuilder();
     }
@@ -43264,11 +43567,11 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureSubDestinationsIsMutable() {
-      if (!((bitField1_ & 0x10000000) != 0)) {
+      if (!((bitField1_ & 0x20000000) != 0)) {
         subDestinations_ =
             new java.util.ArrayList<com.google.maps.places.v1.Place.SubDestination>(
                 subDestinations_);
-        bitField1_ |= 0x10000000;
+        bitField1_ |= 0x20000000;
       }
     }
 
@@ -43496,7 +43799,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder clearSubDestinations() {
       if (subDestinationsBuilder_ == null) {
         subDestinations_ = java.util.Collections.emptyList();
-        bitField1_ = (bitField1_ & ~0x10000000);
+        bitField1_ = (bitField1_ & ~0x20000000);
         onChanged();
       } else {
         subDestinationsBuilder_.clear();
@@ -43629,7 +43932,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
                 com.google.maps.places.v1.Place.SubDestination.Builder,
                 com.google.maps.places.v1.Place.SubDestinationOrBuilder>(
                 subDestinations_,
-                ((bitField1_ & 0x10000000) != 0),
+                ((bitField1_ & 0x20000000) != 0),
                 getParentForChildren(),
                 isClean());
         subDestinations_ = null;
@@ -43657,7 +43960,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return Whether the accessibilityOptions field is set.
      */
     public boolean hasAccessibilityOptions() {
-      return ((bitField1_ & 0x20000000) != 0);
+      return ((bitField1_ & 0x40000000) != 0);
     }
 
     /**
@@ -43702,7 +44005,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         accessibilityOptionsBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x20000000;
+      bitField1_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -43724,7 +44027,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         accessibilityOptionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x20000000;
+      bitField1_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -43742,7 +44045,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder mergeAccessibilityOptions(
         com.google.maps.places.v1.Place.AccessibilityOptions value) {
       if (accessibilityOptionsBuilder_ == null) {
-        if (((bitField1_ & 0x20000000) != 0)
+        if (((bitField1_ & 0x40000000) != 0)
             && accessibilityOptions_ != null
             && accessibilityOptions_
                 != com.google.maps.places.v1.Place.AccessibilityOptions.getDefaultInstance()) {
@@ -43754,7 +44057,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         accessibilityOptionsBuilder_.mergeFrom(value);
       }
       if (accessibilityOptions_ != null) {
-        bitField1_ |= 0x20000000;
+        bitField1_ |= 0x40000000;
         onChanged();
       }
       return this;
@@ -43771,7 +44074,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearAccessibilityOptions() {
-      bitField1_ = (bitField1_ & ~0x20000000);
+      bitField1_ = (bitField1_ & ~0x40000000);
       accessibilityOptions_ = null;
       if (accessibilityOptionsBuilder_ != null) {
         accessibilityOptionsBuilder_.dispose();
@@ -43793,7 +44096,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     public com.google.maps.places.v1.Place.AccessibilityOptions.Builder
         getAccessibilityOptionsBuilder() {
-      bitField1_ |= 0x20000000;
+      bitField1_ |= 0x40000000;
       onChanged();
       return internalGetAccessibilityOptionsFieldBuilder().getBuilder();
     }
@@ -43866,7 +44169,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return Whether the fuelOptions field is set.
      */
     public boolean hasFuelOptions() {
-      return ((bitField1_ & 0x40000000) != 0);
+      return ((bitField1_ & 0x80000000) != 0);
     }
 
     /**
@@ -43910,7 +44213,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         fuelOptionsBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x40000000;
+      bitField1_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -43931,7 +44234,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         fuelOptionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x40000000;
+      bitField1_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -43948,7 +44251,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeFuelOptions(com.google.maps.places.v1.FuelOptions value) {
       if (fuelOptionsBuilder_ == null) {
-        if (((bitField1_ & 0x40000000) != 0)
+        if (((bitField1_ & 0x80000000) != 0)
             && fuelOptions_ != null
             && fuelOptions_ != com.google.maps.places.v1.FuelOptions.getDefaultInstance()) {
           getFuelOptionsBuilder().mergeFrom(value);
@@ -43959,7 +44262,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         fuelOptionsBuilder_.mergeFrom(value);
       }
       if (fuelOptions_ != null) {
-        bitField1_ |= 0x40000000;
+        bitField1_ |= 0x80000000;
         onChanged();
       }
       return this;
@@ -43976,7 +44279,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * <code>.google.maps.places.v1.FuelOptions fuel_options = 78;</code>
      */
     public Builder clearFuelOptions() {
-      bitField1_ = (bitField1_ & ~0x40000000);
+      bitField1_ = (bitField1_ & ~0x80000000);
       fuelOptions_ = null;
       if (fuelOptionsBuilder_ != null) {
         fuelOptionsBuilder_.dispose();
@@ -43997,7 +44300,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * <code>.google.maps.places.v1.FuelOptions fuel_options = 78;</code>
      */
     public com.google.maps.places.v1.FuelOptions.Builder getFuelOptionsBuilder() {
-      bitField1_ |= 0x40000000;
+      bitField1_ |= 0x80000000;
       onChanged();
       return internalGetFuelOptionsFieldBuilder().getBuilder();
     }
@@ -44068,7 +44371,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return Whether the evChargeOptions field is set.
      */
     public boolean hasEvChargeOptions() {
-      return ((bitField1_ & 0x80000000) != 0);
+      return ((bitField2_ & 0x00000001) != 0);
     }
 
     /**
@@ -44110,7 +44413,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         evChargeOptionsBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x80000000;
+      bitField2_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -44131,7 +44434,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         evChargeOptionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x80000000;
+      bitField2_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -44147,7 +44450,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeEvChargeOptions(com.google.maps.places.v1.EVChargeOptions value) {
       if (evChargeOptionsBuilder_ == null) {
-        if (((bitField1_ & 0x80000000) != 0)
+        if (((bitField2_ & 0x00000001) != 0)
             && evChargeOptions_ != null
             && evChargeOptions_ != com.google.maps.places.v1.EVChargeOptions.getDefaultInstance()) {
           getEvChargeOptionsBuilder().mergeFrom(value);
@@ -44158,7 +44461,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         evChargeOptionsBuilder_.mergeFrom(value);
       }
       if (evChargeOptions_ != null) {
-        bitField1_ |= 0x80000000;
+        bitField2_ |= 0x00000001;
         onChanged();
       }
       return this;
@@ -44174,7 +44477,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * <code>.google.maps.places.v1.EVChargeOptions ev_charge_options = 79;</code>
      */
     public Builder clearEvChargeOptions() {
-      bitField1_ = (bitField1_ & ~0x80000000);
+      bitField2_ = (bitField2_ & ~0x00000001);
       evChargeOptions_ = null;
       if (evChargeOptionsBuilder_ != null) {
         evChargeOptionsBuilder_.dispose();
@@ -44194,7 +44497,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * <code>.google.maps.places.v1.EVChargeOptions ev_charge_options = 79;</code>
      */
     public com.google.maps.places.v1.EVChargeOptions.Builder getEvChargeOptionsBuilder() {
-      bitField1_ |= 0x80000000;
+      bitField2_ |= 0x00000001;
       onChanged();
       return internalGetEvChargeOptionsFieldBuilder().getBuilder();
     }
@@ -44263,7 +44566,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return Whether the generativeSummary field is set.
      */
     public boolean hasGenerativeSummary() {
-      return ((bitField2_ & 0x00000001) != 0);
+      return ((bitField2_ & 0x00000002) != 0);
     }
 
     /**
@@ -44305,7 +44608,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         generativeSummaryBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x00000001;
+      bitField2_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -44326,7 +44629,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         generativeSummaryBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x00000001;
+      bitField2_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -44342,7 +44645,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeGenerativeSummary(com.google.maps.places.v1.Place.GenerativeSummary value) {
       if (generativeSummaryBuilder_ == null) {
-        if (((bitField2_ & 0x00000001) != 0)
+        if (((bitField2_ & 0x00000002) != 0)
             && generativeSummary_ != null
             && generativeSummary_
                 != com.google.maps.places.v1.Place.GenerativeSummary.getDefaultInstance()) {
@@ -44354,7 +44657,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         generativeSummaryBuilder_.mergeFrom(value);
       }
       if (generativeSummary_ != null) {
-        bitField2_ |= 0x00000001;
+        bitField2_ |= 0x00000002;
         onChanged();
       }
       return this;
@@ -44370,7 +44673,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * <code>.google.maps.places.v1.Place.GenerativeSummary generative_summary = 80;</code>
      */
     public Builder clearGenerativeSummary() {
-      bitField2_ = (bitField2_ & ~0x00000001);
+      bitField2_ = (bitField2_ & ~0x00000002);
       generativeSummary_ = null;
       if (generativeSummaryBuilder_ != null) {
         generativeSummaryBuilder_.dispose();
@@ -44390,7 +44693,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * <code>.google.maps.places.v1.Place.GenerativeSummary generative_summary = 80;</code>
      */
     public com.google.maps.places.v1.Place.GenerativeSummary.Builder getGenerativeSummaryBuilder() {
-      bitField2_ |= 0x00000001;
+      bitField2_ |= 0x00000002;
       onChanged();
       return internalGetGenerativeSummaryFieldBuilder().getBuilder();
     }
@@ -44445,11 +44748,11 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureContainingPlacesIsMutable() {
-      if (!((bitField2_ & 0x00000002) != 0)) {
+      if (!((bitField2_ & 0x00000004) != 0)) {
         containingPlaces_ =
             new java.util.ArrayList<com.google.maps.places.v1.Place.ContainingPlace>(
                 containingPlaces_);
-        bitField2_ |= 0x00000002;
+        bitField2_ |= 0x00000004;
       }
     }
 
@@ -44678,7 +44981,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder clearContainingPlaces() {
       if (containingPlacesBuilder_ == null) {
         containingPlaces_ = java.util.Collections.emptyList();
-        bitField2_ = (bitField2_ & ~0x00000002);
+        bitField2_ = (bitField2_ & ~0x00000004);
         onChanged();
       } else {
         containingPlacesBuilder_.clear();
@@ -44811,7 +45114,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
                 com.google.maps.places.v1.Place.ContainingPlace.Builder,
                 com.google.maps.places.v1.Place.ContainingPlaceOrBuilder>(
                 containingPlaces_,
-                ((bitField2_ & 0x00000002) != 0),
+                ((bitField2_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         containingPlaces_ = null;
@@ -44838,7 +45141,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasPureServiceAreaBusiness() {
-      return ((bitField2_ & 0x00000004) != 0);
+      return ((bitField2_ & 0x00000008) != 0);
     }
 
     /**
@@ -44880,7 +45183,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder setPureServiceAreaBusiness(boolean value) {
 
       pureServiceAreaBusiness_ = value;
-      bitField2_ |= 0x00000004;
+      bitField2_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -44901,7 +45204,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPureServiceAreaBusiness() {
-      bitField2_ = (bitField2_ & ~0x00000004);
+      bitField2_ = (bitField2_ & ~0x00000008);
       pureServiceAreaBusiness_ = false;
       onChanged();
       return this;
@@ -44929,7 +45232,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return Whether the addressDescriptor field is set.
      */
     public boolean hasAddressDescriptor() {
-      return ((bitField2_ & 0x00000008) != 0);
+      return ((bitField2_ & 0x00000010) != 0);
     }
 
     /**
@@ -44977,7 +45280,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         addressDescriptorBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x00000008;
+      bitField2_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -45001,7 +45304,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         addressDescriptorBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x00000008;
+      bitField2_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -45020,7 +45323,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeAddressDescriptor(com.google.maps.places.v1.AddressDescriptor value) {
       if (addressDescriptorBuilder_ == null) {
-        if (((bitField2_ & 0x00000008) != 0)
+        if (((bitField2_ & 0x00000010) != 0)
             && addressDescriptor_ != null
             && addressDescriptor_
                 != com.google.maps.places.v1.AddressDescriptor.getDefaultInstance()) {
@@ -45032,7 +45335,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         addressDescriptorBuilder_.mergeFrom(value);
       }
       if (addressDescriptor_ != null) {
-        bitField2_ |= 0x00000008;
+        bitField2_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -45051,7 +45354,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * <code>.google.maps.places.v1.AddressDescriptor address_descriptor = 84;</code>
      */
     public Builder clearAddressDescriptor() {
-      bitField2_ = (bitField2_ & ~0x00000008);
+      bitField2_ = (bitField2_ & ~0x00000010);
       addressDescriptor_ = null;
       if (addressDescriptorBuilder_ != null) {
         addressDescriptorBuilder_.dispose();
@@ -45074,7 +45377,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * <code>.google.maps.places.v1.AddressDescriptor address_descriptor = 84;</code>
      */
     public com.google.maps.places.v1.AddressDescriptor.Builder getAddressDescriptorBuilder() {
-      bitField2_ |= 0x00000008;
+      bitField2_ |= 0x00000010;
       onChanged();
       return internalGetAddressDescriptorFieldBuilder().getBuilder();
     }
@@ -45149,7 +45452,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return Whether the googleMapsLinks field is set.
      */
     public boolean hasGoogleMapsLinks() {
-      return ((bitField2_ & 0x00000010) != 0);
+      return ((bitField2_ & 0x00000020) != 0);
     }
 
     /**
@@ -45191,7 +45494,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         googleMapsLinksBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x00000010;
+      bitField2_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -45212,7 +45515,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         googleMapsLinksBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x00000010;
+      bitField2_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -45228,7 +45531,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeGoogleMapsLinks(com.google.maps.places.v1.Place.GoogleMapsLinks value) {
       if (googleMapsLinksBuilder_ == null) {
-        if (((bitField2_ & 0x00000010) != 0)
+        if (((bitField2_ & 0x00000020) != 0)
             && googleMapsLinks_ != null
             && googleMapsLinks_
                 != com.google.maps.places.v1.Place.GoogleMapsLinks.getDefaultInstance()) {
@@ -45240,7 +45543,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         googleMapsLinksBuilder_.mergeFrom(value);
       }
       if (googleMapsLinks_ != null) {
-        bitField2_ |= 0x00000010;
+        bitField2_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -45256,7 +45559,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * <code>.google.maps.places.v1.Place.GoogleMapsLinks google_maps_links = 85;</code>
      */
     public Builder clearGoogleMapsLinks() {
-      bitField2_ = (bitField2_ & ~0x00000010);
+      bitField2_ = (bitField2_ & ~0x00000020);
       googleMapsLinks_ = null;
       if (googleMapsLinksBuilder_ != null) {
         googleMapsLinksBuilder_.dispose();
@@ -45276,7 +45579,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * <code>.google.maps.places.v1.Place.GoogleMapsLinks google_maps_links = 85;</code>
      */
     public com.google.maps.places.v1.Place.GoogleMapsLinks.Builder getGoogleMapsLinksBuilder() {
-      bitField2_ |= 0x00000010;
+      bitField2_ |= 0x00000020;
       onChanged();
       return internalGetGoogleMapsLinksFieldBuilder().getBuilder();
     }
@@ -45345,7 +45648,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return Whether the priceRange field is set.
      */
     public boolean hasPriceRange() {
-      return ((bitField2_ & 0x00000020) != 0);
+      return ((bitField2_ & 0x00000040) != 0);
     }
 
     /**
@@ -45387,7 +45690,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         priceRangeBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x00000020;
+      bitField2_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -45407,7 +45710,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         priceRangeBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x00000020;
+      bitField2_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -45423,7 +45726,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergePriceRange(com.google.maps.places.v1.PriceRange value) {
       if (priceRangeBuilder_ == null) {
-        if (((bitField2_ & 0x00000020) != 0)
+        if (((bitField2_ & 0x00000040) != 0)
             && priceRange_ != null
             && priceRange_ != com.google.maps.places.v1.PriceRange.getDefaultInstance()) {
           getPriceRangeBuilder().mergeFrom(value);
@@ -45434,7 +45737,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         priceRangeBuilder_.mergeFrom(value);
       }
       if (priceRange_ != null) {
-        bitField2_ |= 0x00000020;
+        bitField2_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -45450,7 +45753,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * <code>.google.maps.places.v1.PriceRange price_range = 86;</code>
      */
     public Builder clearPriceRange() {
-      bitField2_ = (bitField2_ & ~0x00000020);
+      bitField2_ = (bitField2_ & ~0x00000040);
       priceRange_ = null;
       if (priceRangeBuilder_ != null) {
         priceRangeBuilder_.dispose();
@@ -45470,7 +45773,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * <code>.google.maps.places.v1.PriceRange price_range = 86;</code>
      */
     public com.google.maps.places.v1.PriceRange.Builder getPriceRangeBuilder() {
-      bitField2_ |= 0x00000020;
+      bitField2_ |= 0x00000040;
       onChanged();
       return internalGetPriceRangeFieldBuilder().getBuilder();
     }
@@ -45539,7 +45842,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return Whether the reviewSummary field is set.
      */
     public boolean hasReviewSummary() {
-      return ((bitField2_ & 0x00000040) != 0);
+      return ((bitField2_ & 0x00000080) != 0);
     }
 
     /**
@@ -45581,7 +45884,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         reviewSummaryBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x00000040;
+      bitField2_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -45602,7 +45905,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         reviewSummaryBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x00000040;
+      bitField2_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -45618,7 +45921,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeReviewSummary(com.google.maps.places.v1.Place.ReviewSummary value) {
       if (reviewSummaryBuilder_ == null) {
-        if (((bitField2_ & 0x00000040) != 0)
+        if (((bitField2_ & 0x00000080) != 0)
             && reviewSummary_ != null
             && reviewSummary_
                 != com.google.maps.places.v1.Place.ReviewSummary.getDefaultInstance()) {
@@ -45630,7 +45933,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         reviewSummaryBuilder_.mergeFrom(value);
       }
       if (reviewSummary_ != null) {
-        bitField2_ |= 0x00000040;
+        bitField2_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -45646,7 +45949,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * <code>.google.maps.places.v1.Place.ReviewSummary review_summary = 87;</code>
      */
     public Builder clearReviewSummary() {
-      bitField2_ = (bitField2_ & ~0x00000040);
+      bitField2_ = (bitField2_ & ~0x00000080);
       reviewSummary_ = null;
       if (reviewSummaryBuilder_ != null) {
         reviewSummaryBuilder_.dispose();
@@ -45666,7 +45969,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * <code>.google.maps.places.v1.Place.ReviewSummary review_summary = 87;</code>
      */
     public com.google.maps.places.v1.Place.ReviewSummary.Builder getReviewSummaryBuilder() {
-      bitField2_ |= 0x00000040;
+      bitField2_ |= 0x00000080;
       onChanged();
       return internalGetReviewSummaryFieldBuilder().getBuilder();
     }
@@ -45736,7 +46039,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return Whether the evChargeAmenitySummary field is set.
      */
     public boolean hasEvChargeAmenitySummary() {
-      return ((bitField2_ & 0x00000080) != 0);
+      return ((bitField2_ & 0x00000100) != 0);
     }
 
     /**
@@ -45781,7 +46084,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         evChargeAmenitySummaryBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x00000080;
+      bitField2_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -45803,7 +46106,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         evChargeAmenitySummaryBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x00000080;
+      bitField2_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -45821,7 +46124,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder mergeEvChargeAmenitySummary(
         com.google.maps.places.v1.Place.EvChargeAmenitySummary value) {
       if (evChargeAmenitySummaryBuilder_ == null) {
-        if (((bitField2_ & 0x00000080) != 0)
+        if (((bitField2_ & 0x00000100) != 0)
             && evChargeAmenitySummary_ != null
             && evChargeAmenitySummary_
                 != com.google.maps.places.v1.Place.EvChargeAmenitySummary.getDefaultInstance()) {
@@ -45833,7 +46136,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         evChargeAmenitySummaryBuilder_.mergeFrom(value);
       }
       if (evChargeAmenitySummary_ != null) {
-        bitField2_ |= 0x00000080;
+        bitField2_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -45850,7 +46153,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearEvChargeAmenitySummary() {
-      bitField2_ = (bitField2_ & ~0x00000080);
+      bitField2_ = (bitField2_ & ~0x00000100);
       evChargeAmenitySummary_ = null;
       if (evChargeAmenitySummaryBuilder_ != null) {
         evChargeAmenitySummaryBuilder_.dispose();
@@ -45872,7 +46175,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     public com.google.maps.places.v1.Place.EvChargeAmenitySummary.Builder
         getEvChargeAmenitySummaryBuilder() {
-      bitField2_ |= 0x00000080;
+      bitField2_ |= 0x00000100;
       onChanged();
       return internalGetEvChargeAmenitySummaryFieldBuilder().getBuilder();
     }
@@ -45944,7 +46247,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return Whether the neighborhoodSummary field is set.
      */
     public boolean hasNeighborhoodSummary() {
-      return ((bitField2_ & 0x00000100) != 0);
+      return ((bitField2_ & 0x00000200) != 0);
     }
 
     /**
@@ -45987,7 +46290,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         neighborhoodSummaryBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x00000100;
+      bitField2_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -46008,7 +46311,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         neighborhoodSummaryBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x00000100;
+      bitField2_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -46025,7 +46328,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     public Builder mergeNeighborhoodSummary(
         com.google.maps.places.v1.Place.NeighborhoodSummary value) {
       if (neighborhoodSummaryBuilder_ == null) {
-        if (((bitField2_ & 0x00000100) != 0)
+        if (((bitField2_ & 0x00000200) != 0)
             && neighborhoodSummary_ != null
             && neighborhoodSummary_
                 != com.google.maps.places.v1.Place.NeighborhoodSummary.getDefaultInstance()) {
@@ -46037,7 +46340,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         neighborhoodSummaryBuilder_.mergeFrom(value);
       }
       if (neighborhoodSummary_ != null) {
-        bitField2_ |= 0x00000100;
+        bitField2_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -46053,7 +46356,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * <code>.google.maps.places.v1.Place.NeighborhoodSummary neighborhood_summary = 91;</code>
      */
     public Builder clearNeighborhoodSummary() {
-      bitField2_ = (bitField2_ & ~0x00000100);
+      bitField2_ = (bitField2_ & ~0x00000200);
       neighborhoodSummary_ = null;
       if (neighborhoodSummaryBuilder_ != null) {
         neighborhoodSummaryBuilder_.dispose();
@@ -46074,7 +46377,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     public com.google.maps.places.v1.Place.NeighborhoodSummary.Builder
         getNeighborhoodSummaryBuilder() {
-      bitField2_ |= 0x00000100;
+      bitField2_ |= 0x00000200;
       onChanged();
       return internalGetNeighborhoodSummaryFieldBuilder().getBuilder();
     }
@@ -46145,7 +46448,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * @return Whether the consumerAlert field is set.
      */
     public boolean hasConsumerAlert() {
-      return ((bitField2_ & 0x00000200) != 0);
+      return ((bitField2_ & 0x00000400) != 0);
     }
 
     /**
@@ -46189,7 +46492,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         consumerAlertBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x00000200;
+      bitField2_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -46211,7 +46514,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       } else {
         consumerAlertBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x00000200;
+      bitField2_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -46228,7 +46531,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeConsumerAlert(com.google.maps.places.v1.Place.ConsumerAlert value) {
       if (consumerAlertBuilder_ == null) {
-        if (((bitField2_ & 0x00000200) != 0)
+        if (((bitField2_ & 0x00000400) != 0)
             && consumerAlert_ != null
             && consumerAlert_
                 != com.google.maps.places.v1.Place.ConsumerAlert.getDefaultInstance()) {
@@ -46240,7 +46543,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         consumerAlertBuilder_.mergeFrom(value);
       }
       if (consumerAlert_ != null) {
-        bitField2_ |= 0x00000200;
+        bitField2_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -46257,7 +46560,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * <code>.google.maps.places.v1.Place.ConsumerAlert consumer_alert = 92;</code>
      */
     public Builder clearConsumerAlert() {
-      bitField2_ = (bitField2_ & ~0x00000200);
+      bitField2_ = (bitField2_ & ~0x00000400);
       consumerAlert_ = null;
       if (consumerAlertBuilder_ != null) {
         consumerAlertBuilder_.dispose();
@@ -46278,7 +46581,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      * <code>.google.maps.places.v1.Place.ConsumerAlert consumer_alert = 92;</code>
      */
     public com.google.maps.places.v1.Place.ConsumerAlert.Builder getConsumerAlertBuilder() {
-      bitField2_ |= 0x00000200;
+      bitField2_ |= 0x00000400;
       onChanged();
       return internalGetConsumerAlertFieldBuilder().getBuilder();
     }
@@ -46407,7 +46710,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       movedPlace_ = value;
-      bitField2_ |= 0x00000400;
+      bitField2_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -46429,7 +46732,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearMovedPlace() {
       movedPlace_ = getDefaultInstance().getMovedPlace();
-      bitField2_ = (bitField2_ & ~0x00000400);
+      bitField2_ = (bitField2_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -46456,7 +46759,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       movedPlace_ = value;
-      bitField2_ |= 0x00000400;
+      bitField2_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -46535,7 +46838,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       movedPlaceId_ = value;
-      bitField2_ |= 0x00000800;
+      bitField2_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -46556,7 +46859,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearMovedPlaceId() {
       movedPlaceId_ = getDefaultInstance().getMovedPlaceId();
-      bitField2_ = (bitField2_ & ~0x00000800);
+      bitField2_ = (bitField2_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -46582,7 +46885,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       movedPlaceId_ = value;
-      bitField2_ |= 0x00000800;
+      bitField2_ |= 0x00001000;
       onChanged();
       return this;
     }

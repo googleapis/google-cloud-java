@@ -54,6 +54,8 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessage
 
   private RagChunk() {
     text_ = "";
+    fileId_ = "";
+    chunkId_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -790,6 +792,112 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessage
         : pageSpan_;
   }
 
+  public static final int FILE_ID_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fileId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The ID of the file that the chunk belongs to.
+   * </pre>
+   *
+   * <code>string file_id = 3;</code>
+   *
+   * @return The fileId.
+   */
+  @java.lang.Override
+  public java.lang.String getFileId() {
+    java.lang.Object ref = fileId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      fileId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The ID of the file that the chunk belongs to.
+   * </pre>
+   *
+   * <code>string file_id = 3;</code>
+   *
+   * @return The bytes for fileId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getFileIdBytes() {
+    java.lang.Object ref = fileId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      fileId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CHUNK_ID_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object chunkId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The ID of the chunk.
+   * </pre>
+   *
+   * <code>string chunk_id = 4;</code>
+   *
+   * @return The chunkId.
+   */
+  @java.lang.Override
+  public java.lang.String getChunkId() {
+    java.lang.Object ref = chunkId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      chunkId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The ID of the chunk.
+   * </pre>
+   *
+   * <code>string chunk_id = 4;</code>
+   *
+   * @return The bytes for chunkId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getChunkIdBytes() {
+    java.lang.Object ref = chunkId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      chunkId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -810,6 +918,12 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getPageSpan());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(fileId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, fileId_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(chunkId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, chunkId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -824,6 +938,12 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getPageSpan());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(fileId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, fileId_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(chunkId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, chunkId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -846,6 +966,8 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessage
     if (hasPageSpan()) {
       if (!getPageSpan().equals(other.getPageSpan())) return false;
     }
+    if (!getFileId().equals(other.getFileId())) return false;
+    if (!getChunkId().equals(other.getChunkId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -863,6 +985,10 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + PAGE_SPAN_FIELD_NUMBER;
       hash = (53 * hash) + getPageSpan().hashCode();
     }
+    hash = (37 * hash) + FILE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getFileId().hashCode();
+    hash = (37 * hash) + CHUNK_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getChunkId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1019,6 +1145,8 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessage
         pageSpanBuilder_.dispose();
         pageSpanBuilder_ = null;
       }
+      fileId_ = "";
+      chunkId_ = "";
       return this;
     }
 
@@ -1063,6 +1191,12 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessage
         result.pageSpan_ = pageSpanBuilder_ == null ? pageSpan_ : pageSpanBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.fileId_ = fileId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.chunkId_ = chunkId_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1085,6 +1219,16 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasPageSpan()) {
         mergePageSpan(other.getPageSpan());
+      }
+      if (!other.getFileId().isEmpty()) {
+        fileId_ = other.fileId_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (!other.getChunkId().isEmpty()) {
+        chunkId_ = other.chunkId_;
+        bitField0_ |= 0x00000008;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1125,6 +1269,18 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                fileId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+            case 34:
+              {
+                chunkId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1449,6 +1605,228 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessage
         pageSpan_ = null;
       }
       return pageSpanBuilder_;
+    }
+
+    private java.lang.Object fileId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the file that the chunk belongs to.
+     * </pre>
+     *
+     * <code>string file_id = 3;</code>
+     *
+     * @return The fileId.
+     */
+    public java.lang.String getFileId() {
+      java.lang.Object ref = fileId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fileId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the file that the chunk belongs to.
+     * </pre>
+     *
+     * <code>string file_id = 3;</code>
+     *
+     * @return The bytes for fileId.
+     */
+    public com.google.protobuf.ByteString getFileIdBytes() {
+      java.lang.Object ref = fileId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        fileId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the file that the chunk belongs to.
+     * </pre>
+     *
+     * <code>string file_id = 3;</code>
+     *
+     * @param value The fileId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFileId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      fileId_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the file that the chunk belongs to.
+     * </pre>
+     *
+     * <code>string file_id = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFileId() {
+      fileId_ = getDefaultInstance().getFileId();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the file that the chunk belongs to.
+     * </pre>
+     *
+     * <code>string file_id = 3;</code>
+     *
+     * @param value The bytes for fileId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFileIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      fileId_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object chunkId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the chunk.
+     * </pre>
+     *
+     * <code>string chunk_id = 4;</code>
+     *
+     * @return The chunkId.
+     */
+    public java.lang.String getChunkId() {
+      java.lang.Object ref = chunkId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        chunkId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the chunk.
+     * </pre>
+     *
+     * <code>string chunk_id = 4;</code>
+     *
+     * @return The bytes for chunkId.
+     */
+    public com.google.protobuf.ByteString getChunkIdBytes() {
+      java.lang.Object ref = chunkId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        chunkId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the chunk.
+     * </pre>
+     *
+     * <code>string chunk_id = 4;</code>
+     *
+     * @param value The chunkId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setChunkId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      chunkId_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the chunk.
+     * </pre>
+     *
+     * <code>string chunk_id = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearChunkId() {
+      chunkId_ = getDefaultInstance().getChunkId();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the chunk.
+     * </pre>
+     *
+     * <code>string chunk_id = 4;</code>
+     *
+     * @param value The bytes for chunkId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setChunkIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      chunkId_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.RagChunk)

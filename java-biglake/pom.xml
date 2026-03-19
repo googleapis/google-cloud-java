@@ -33,6 +33,16 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-biglake-v1beta</artifactId>
+        <version>0.76.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-biglake-v1beta:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-biglake-v1beta</artifactId>
+        <version>0.76.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-biglake-v1beta:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-biglake-v1</artifactId>
         <version>0.76.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-biglake-v1:current} -->
       </dependency>
@@ -58,8 +68,10 @@
     <module>google-cloud-biglake</module>
     <module>grpc-google-cloud-biglake-v1alpha1</module>
     <module>grpc-google-cloud-biglake-v1</module>
+    <module>grpc-google-cloud-biglake-v1beta</module>
     <module>proto-google-cloud-biglake-v1alpha1</module>
     <module>proto-google-cloud-biglake-v1</module>
+    <module>proto-google-cloud-biglake-v1beta</module>
     <module>google-cloud-biglake-bom</module>
   </modules>
 

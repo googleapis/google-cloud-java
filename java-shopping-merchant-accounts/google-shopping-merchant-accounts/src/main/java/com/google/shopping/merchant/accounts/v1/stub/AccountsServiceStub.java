@@ -24,6 +24,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.protobuf.Empty;
 import com.google.shopping.merchant.accounts.v1.Account;
 import com.google.shopping.merchant.accounts.v1.CreateAndConfigureAccountRequest;
+import com.google.shopping.merchant.accounts.v1.CreateTestAccountRequest;
 import com.google.shopping.merchant.accounts.v1.DeleteAccountRequest;
 import com.google.shopping.merchant.accounts.v1.GetAccountRequest;
 import com.google.shopping.merchant.accounts.v1.ListAccountsRequest;
@@ -49,6 +50,10 @@ public abstract class AccountsServiceStub implements BackgroundResource {
   public UnaryCallable<CreateAndConfigureAccountRequest, Account>
       createAndConfigureAccountCallable() {
     throw new UnsupportedOperationException("Not implemented: createAndConfigureAccountCallable()");
+  }
+
+  public UnaryCallable<CreateTestAccountRequest, Account> createTestAccountCallable() {
+    throw new UnsupportedOperationException("Not implemented: createTestAccountCallable()");
   }
 
   public UnaryCallable<DeleteAccountRequest, Empty> deleteAccountCallable() {

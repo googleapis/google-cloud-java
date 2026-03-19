@@ -612,6 +612,60 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.privacy.dlp.v2.AdjustByImageFindings",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.privacy.dlp.v2.AdjustByImageFindings$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.privacy.dlp.v2.AdjustByMatchingInfoTypes",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.privacy.dlp.v2.AdjustByMatchingInfoTypes$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.privacy.dlp.v2.AdjustmentRule",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.privacy.dlp.v2.AdjustmentRule$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.privacy.dlp.v2.AllOtherDatabaseResources",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -2116,6 +2170,24 @@
   },
   {
     "name": "com.google.privacy.dlp.v2.CustomInfoType$ExclusionType",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.privacy.dlp.v2.CustomInfoType$MetadataKeyValueExpression",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.privacy.dlp.v2.CustomInfoType$MetadataKeyValueExpression$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -3690,6 +3762,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.privacy.dlp.v2.Encloses",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.privacy.dlp.v2.Encloses$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.privacy.dlp.v2.EncryptionStatus",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -3754,6 +3844,24 @@
   },
   {
     "name": "com.google.privacy.dlp.v2.ExcludeByHotword$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.privacy.dlp.v2.ExcludeByImageFindings",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.privacy.dlp.v2.ExcludeByImageFindings$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -4051,6 +4159,24 @@
   },
   {
     "name": "com.google.privacy.dlp.v2.FixedSizeBucketingConfig$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.privacy.dlp.v2.FullyInside",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.privacy.dlp.v2.FullyInside$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -4383,6 +4509,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.privacy.dlp.v2.ImageContainmentType",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.privacy.dlp.v2.ImageContainmentType$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.privacy.dlp.v2.ImageLocation",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -4564,6 +4708,15 @@
   },
   {
     "name": "com.google.privacy.dlp.v2.InfoTypeDescription$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.privacy.dlp.v2.InfoTypeDescription$InfoTypeLaunchStatus",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -4978,6 +5131,24 @@
   },
   {
     "name": "com.google.privacy.dlp.v2.Key$PathElement$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.privacy.dlp.v2.KeyValueMetadataLabel",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.privacy.dlp.v2.KeyValueMetadataLabel$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -5770,6 +5941,24 @@
   },
   {
     "name": "com.google.privacy.dlp.v2.OutputStorageConfig$OutputSchema",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.privacy.dlp.v2.Overlap",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.privacy.dlp.v2.Overlap$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,

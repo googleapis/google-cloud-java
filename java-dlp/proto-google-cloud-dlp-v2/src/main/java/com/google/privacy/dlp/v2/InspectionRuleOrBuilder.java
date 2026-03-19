@@ -101,5 +101,42 @@ public interface InspectionRuleOrBuilder
    */
   com.google.privacy.dlp.v2.ExclusionRuleOrBuilder getExclusionRuleOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Adjustment rule.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.AdjustmentRule adjustment_rule = 3;</code>
+   *
+   * @return Whether the adjustmentRule field is set.
+   */
+  boolean hasAdjustmentRule();
+
+  /**
+   *
+   *
+   * <pre>
+   * Adjustment rule.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.AdjustmentRule adjustment_rule = 3;</code>
+   *
+   * @return The adjustmentRule.
+   */
+  com.google.privacy.dlp.v2.AdjustmentRule getAdjustmentRule();
+
+  /**
+   *
+   *
+   * <pre>
+   * Adjustment rule.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.AdjustmentRule adjustment_rule = 3;</code>
+   */
+  com.google.privacy.dlp.v2.AdjustmentRuleOrBuilder getAdjustmentRuleOrBuilder();
+
   com.google.privacy.dlp.v2.InspectionRule.TypeCase getTypeCase();
 }

@@ -828,7 +828,7 @@ public final class EmbedContentResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Metadata about the response(s).
+   * Usage metadata about the response(s).
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.UsageMetadata usage_metadata = 2;</code>
@@ -844,7 +844,7 @@ public final class EmbedContentResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Metadata about the response(s).
+   * Usage metadata about the response(s).
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.UsageMetadata usage_metadata = 2;</code>
@@ -862,7 +862,7 @@ public final class EmbedContentResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Metadata about the response(s).
+   * Usage metadata about the response(s).
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.UsageMetadata usage_metadata = 2;</code>
@@ -1493,7 +1493,7 @@ public final class EmbedContentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Metadata about the response(s).
+     * Usage metadata about the response(s).
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.UsageMetadata usage_metadata = 2;</code>
@@ -1508,7 +1508,7 @@ public final class EmbedContentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Metadata about the response(s).
+     * Usage metadata about the response(s).
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.UsageMetadata usage_metadata = 2;</code>
@@ -1529,7 +1529,7 @@ public final class EmbedContentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Metadata about the response(s).
+     * Usage metadata about the response(s).
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.UsageMetadata usage_metadata = 2;</code>
@@ -1552,7 +1552,7 @@ public final class EmbedContentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Metadata about the response(s).
+     * Usage metadata about the response(s).
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.UsageMetadata usage_metadata = 2;</code>
@@ -1573,7 +1573,7 @@ public final class EmbedContentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Metadata about the response(s).
+     * Usage metadata about the response(s).
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.UsageMetadata usage_metadata = 2;</code>
@@ -1602,7 +1602,7 @@ public final class EmbedContentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Metadata about the response(s).
+     * Usage metadata about the response(s).
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.UsageMetadata usage_metadata = 2;</code>
@@ -1622,7 +1622,7 @@ public final class EmbedContentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Metadata about the response(s).
+     * Usage metadata about the response(s).
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.UsageMetadata usage_metadata = 2;</code>
@@ -1637,7 +1637,7 @@ public final class EmbedContentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Metadata about the response(s).
+     * Usage metadata about the response(s).
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.UsageMetadata usage_metadata = 2;</code>
@@ -1656,7 +1656,7 @@ public final class EmbedContentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Metadata about the response(s).
+     * Usage metadata about the response(s).
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.UsageMetadata usage_metadata = 2;</code>

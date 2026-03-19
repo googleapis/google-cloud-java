@@ -3559,6 +3559,851 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface MetadataKeyValueExpressionOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The regular expression for the key. Key should be
+     * non-empty.
+     * </pre>
+     *
+     * <code>string key_regex = 1;</code>
+     *
+     * @return The keyRegex.
+     */
+    java.lang.String getKeyRegex();
+
+    /**
+     *
+     *
+     * <pre>
+     * The regular expression for the key. Key should be
+     * non-empty.
+     * </pre>
+     *
+     * <code>string key_regex = 1;</code>
+     *
+     * @return The bytes for keyRegex.
+     */
+    com.google.protobuf.ByteString getKeyRegexBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The regular expression for the value. Value should be non-empty.
+     * </pre>
+     *
+     * <code>string value_regex = 2;</code>
+     *
+     * @return The valueRegex.
+     */
+    java.lang.String getValueRegex();
+
+    /**
+     *
+     *
+     * <pre>
+     * The regular expression for the value. Value should be non-empty.
+     * </pre>
+     *
+     * <code>string value_regex = 2;</code>
+     *
+     * @return The bytes for valueRegex.
+     */
+    com.google.protobuf.ByteString getValueRegexBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for a custom infoType that detects key-value pairs in the
+   * metadata matching the specified regular expressions.
+   * </pre>
+   *
+   * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression}
+   */
+  public static final class MetadataKeyValueExpression extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression)
+      MetadataKeyValueExpressionOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "MetadataKeyValueExpression");
+    }
+
+    // Use MetadataKeyValueExpression.newBuilder() to construct.
+    private MetadataKeyValueExpression(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private MetadataKeyValueExpression() {
+      keyRegex_ = "";
+      valueRegex_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpStorage
+          .internal_static_google_privacy_dlp_v2_CustomInfoType_MetadataKeyValueExpression_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.privacy.dlp.v2.DlpStorage
+          .internal_static_google_privacy_dlp_v2_CustomInfoType_MetadataKeyValueExpression_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression.class,
+              com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression.Builder.class);
+    }
+
+    public static final int KEY_REGEX_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object keyRegex_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The regular expression for the key. Key should be
+     * non-empty.
+     * </pre>
+     *
+     * <code>string key_regex = 1;</code>
+     *
+     * @return The keyRegex.
+     */
+    @java.lang.Override
+    public java.lang.String getKeyRegex() {
+      java.lang.Object ref = keyRegex_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        keyRegex_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The regular expression for the key. Key should be
+     * non-empty.
+     * </pre>
+     *
+     * <code>string key_regex = 1;</code>
+     *
+     * @return The bytes for keyRegex.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getKeyRegexBytes() {
+      java.lang.Object ref = keyRegex_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        keyRegex_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VALUE_REGEX_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object valueRegex_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The regular expression for the value. Value should be non-empty.
+     * </pre>
+     *
+     * <code>string value_regex = 2;</code>
+     *
+     * @return The valueRegex.
+     */
+    @java.lang.Override
+    public java.lang.String getValueRegex() {
+      java.lang.Object ref = valueRegex_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        valueRegex_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The regular expression for the value. Value should be non-empty.
+     * </pre>
+     *
+     * <code>string value_regex = 2;</code>
+     *
+     * @return The bytes for valueRegex.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getValueRegexBytes() {
+      java.lang.Object ref = valueRegex_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        valueRegex_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(keyRegex_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, keyRegex_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(valueRegex_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, valueRegex_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(keyRegex_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, keyRegex_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(valueRegex_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, valueRegex_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression)) {
+        return super.equals(obj);
+      }
+      com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression other =
+          (com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression) obj;
+
+      if (!getKeyRegex().equals(other.getKeyRegex())) return false;
+      if (!getValueRegex().equals(other.getValueRegex())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + KEY_REGEX_FIELD_NUMBER;
+      hash = (53 * hash) + getKeyRegex().hashCode();
+      hash = (37 * hash) + VALUE_REGEX_FIELD_NUMBER;
+      hash = (53 * hash) + getValueRegex().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for a custom infoType that detects key-value pairs in the
+     * metadata matching the specified regular expressions.
+     * </pre>
+     *
+     * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression)
+        com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpressionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_MetadataKeyValueExpression_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_MetadataKeyValueExpression_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression.class,
+                com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression.Builder.class);
+      }
+
+      // Construct using
+      // com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        keyRegex_ = "";
+        valueRegex_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_MetadataKeyValueExpression_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression
+          getDefaultInstanceForType() {
+        return com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression build() {
+        com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression buildPartial() {
+        com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression result =
+            new com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.keyRegex_ = keyRegex_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.valueRegex_ = valueRegex_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression) {
+          return mergeFrom(
+              (com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression other) {
+        if (other
+            == com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression
+                .getDefaultInstance()) return this;
+        if (!other.getKeyRegex().isEmpty()) {
+          keyRegex_ = other.keyRegex_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getValueRegex().isEmpty()) {
+          valueRegex_ = other.valueRegex_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  keyRegex_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  valueRegex_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object keyRegex_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The regular expression for the key. Key should be
+       * non-empty.
+       * </pre>
+       *
+       * <code>string key_regex = 1;</code>
+       *
+       * @return The keyRegex.
+       */
+      public java.lang.String getKeyRegex() {
+        java.lang.Object ref = keyRegex_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          keyRegex_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The regular expression for the key. Key should be
+       * non-empty.
+       * </pre>
+       *
+       * <code>string key_regex = 1;</code>
+       *
+       * @return The bytes for keyRegex.
+       */
+      public com.google.protobuf.ByteString getKeyRegexBytes() {
+        java.lang.Object ref = keyRegex_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          keyRegex_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The regular expression for the key. Key should be
+       * non-empty.
+       * </pre>
+       *
+       * <code>string key_regex = 1;</code>
+       *
+       * @param value The keyRegex to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKeyRegex(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        keyRegex_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The regular expression for the key. Key should be
+       * non-empty.
+       * </pre>
+       *
+       * <code>string key_regex = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearKeyRegex() {
+        keyRegex_ = getDefaultInstance().getKeyRegex();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The regular expression for the key. Key should be
+       * non-empty.
+       * </pre>
+       *
+       * <code>string key_regex = 1;</code>
+       *
+       * @param value The bytes for keyRegex to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKeyRegexBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        keyRegex_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object valueRegex_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The regular expression for the value. Value should be non-empty.
+       * </pre>
+       *
+       * <code>string value_regex = 2;</code>
+       *
+       * @return The valueRegex.
+       */
+      public java.lang.String getValueRegex() {
+        java.lang.Object ref = valueRegex_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          valueRegex_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The regular expression for the value. Value should be non-empty.
+       * </pre>
+       *
+       * <code>string value_regex = 2;</code>
+       *
+       * @return The bytes for valueRegex.
+       */
+      public com.google.protobuf.ByteString getValueRegexBytes() {
+        java.lang.Object ref = valueRegex_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          valueRegex_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The regular expression for the value. Value should be non-empty.
+       * </pre>
+       *
+       * <code>string value_regex = 2;</code>
+       *
+       * @param value The valueRegex to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValueRegex(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        valueRegex_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The regular expression for the value. Value should be non-empty.
+       * </pre>
+       *
+       * <code>string value_regex = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearValueRegex() {
+        valueRegex_ = getDefaultInstance().getValueRegex();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The regular expression for the value. Value should be non-empty.
+       * </pre>
+       *
+       * <code>string value_regex = 2;</code>
+       *
+       * @param value The bytes for valueRegex to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValueRegexBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        valueRegex_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression)
+    private static final com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression();
+    }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MetadataKeyValueExpression> PARSER =
+        new com.google.protobuf.AbstractParser<MetadataKeyValueExpression>() {
+          @java.lang.Override
+          public MetadataKeyValueExpression parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<MetadataKeyValueExpression> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MetadataKeyValueExpression> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface DetectionRuleOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CustomInfoType.DetectionRule)
@@ -7681,6 +8526,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
     REGEX(3),
     SURROGATE_TYPE(4),
     STORED_TYPE(5),
+    METADATA_KEY_VALUE_EXPRESSION(10),
     TYPE_NOT_SET(0);
     private final int value;
 
@@ -7708,6 +8554,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
           return SURROGATE_TYPE;
         case 5:
           return STORED_TYPE;
+        case 10:
+          return METADATA_KEY_VALUE_EXPRESSION;
         case 0:
           return TYPE_NOT_SET;
         default:
@@ -8001,8 +8849,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Load an existing `StoredInfoType` resource for use in
-   * `InspectDataSource`. Not currently supported in `InspectContent`.
+   * Loads an existing `StoredInfoType` resource.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
@@ -8018,8 +8865,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Load an existing `StoredInfoType` resource for use in
-   * `InspectDataSource`. Not currently supported in `InspectContent`.
+   * Loads an existing `StoredInfoType` resource.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
@@ -8038,8 +8884,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Load an existing `StoredInfoType` resource for use in
-   * `InspectDataSource`. Not currently supported in `InspectContent`.
+   * Loads an existing `StoredInfoType` resource.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
@@ -8052,6 +8897,68 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
     return com.google.privacy.dlp.v2.StoredType.getDefaultInstance();
   }
 
+  public static final int METADATA_KEY_VALUE_EXPRESSION_FIELD_NUMBER = 10;
+
+  /**
+   *
+   *
+   * <pre>
+   * Key-value pair to detect in the metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression metadata_key_value_expression = 10;
+   * </code>
+   *
+   * @return Whether the metadataKeyValueExpression field is set.
+   */
+  @java.lang.Override
+  public boolean hasMetadataKeyValueExpression() {
+    return typeCase_ == 10;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Key-value pair to detect in the metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression metadata_key_value_expression = 10;
+   * </code>
+   *
+   * @return The metadataKeyValueExpression.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression
+      getMetadataKeyValueExpression() {
+    if (typeCase_ == 10) {
+      return (com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression) type_;
+    }
+    return com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Key-value pair to detect in the metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression metadata_key_value_expression = 10;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpressionOrBuilder
+      getMetadataKeyValueExpressionOrBuilder() {
+    if (typeCase_ == 10) {
+      return (com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression) type_;
+    }
+    return com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression.getDefaultInstance();
+  }
+
   public static final int DETECTION_RULES_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
@@ -8062,8 +8969,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Set of detection rules to apply to all findings of this CustomInfoType.
-   * Rules are applied in order that they are specified. Not supported for the
-   * `surrogate_type` CustomInfoType.
+   * Rules are applied in the order that they are specified. Only supported
+   * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -8079,8 +8986,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Set of detection rules to apply to all findings of this CustomInfoType.
-   * Rules are applied in order that they are specified. Not supported for the
-   * `surrogate_type` CustomInfoType.
+   * Rules are applied in the order that they are specified. Only supported
+   * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -8096,8 +9003,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Set of detection rules to apply to all findings of this CustomInfoType.
-   * Rules are applied in order that they are specified. Not supported for the
-   * `surrogate_type` CustomInfoType.
+   * Rules are applied in the order that they are specified. Only supported
+   * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -8112,8 +9019,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Set of detection rules to apply to all findings of this CustomInfoType.
-   * Rules are applied in order that they are specified. Not supported for the
-   * `surrogate_type` CustomInfoType.
+   * Rules are applied in the order that they are specified. Only supported
+   * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -8128,8 +9035,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Set of detection rules to apply to all findings of this CustomInfoType.
-   * Rules are applied in order that they are specified. Not supported for the
-   * `surrogate_type` CustomInfoType.
+   * Rules are applied in the order that they are specified. Only supported
+   * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
@@ -8148,7 +9055,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
-   * to be returned. It still can be used for rules matching.
+   * to be returned. It still can be used for rules matching. Only supported
+   * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
@@ -8165,7 +9073,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
-   * to be returned. It still can be used for rules matching.
+   * to be returned. It still can be used for rules matching. Only supported
+   * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
@@ -8289,6 +9198,10 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(9, getSensitivityScore());
     }
+    if (typeCase_ == 10) {
+      output.writeMessage(
+          10, (com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression) type_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -8335,6 +9248,11 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getSensitivityScore());
     }
+    if (typeCase_ == 10) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, (com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression) type_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -8374,6 +9292,10 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
         break;
       case 5:
         if (!getStoredType().equals(other.getStoredType())) return false;
+        break;
+      case 10:
+        if (!getMetadataKeyValueExpression().equals(other.getMetadataKeyValueExpression()))
+          return false;
         break;
       case 0:
       default:
@@ -8421,6 +9343,10 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
       case 5:
         hash = (37 * hash) + STORED_TYPE_FIELD_NUMBER;
         hash = (53 * hash) + getStoredType().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + METADATA_KEY_VALUE_EXPRESSION_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadataKeyValueExpression().hashCode();
         break;
       case 0:
       default:
@@ -8595,13 +9521,16 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
       if (storedTypeBuilder_ != null) {
         storedTypeBuilder_.clear();
       }
+      if (metadataKeyValueExpressionBuilder_ != null) {
+        metadataKeyValueExpressionBuilder_.clear();
+      }
       if (detectionRulesBuilder_ == null) {
         detectionRules_ = java.util.Collections.emptyList();
       } else {
         detectionRules_ = null;
         detectionRulesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       exclusionType_ = 0;
       sensitivityScore_ = null;
       if (sensitivityScoreBuilder_ != null) {
@@ -8648,9 +9577,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
 
     private void buildPartialRepeatedFields(com.google.privacy.dlp.v2.CustomInfoType result) {
       if (detectionRulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           detectionRules_ = java.util.Collections.unmodifiableList(detectionRules_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.detectionRules_ = detectionRules_;
       } else {
@@ -8668,10 +9597,10 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.likelihood_ = likelihood_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.exclusionType_ = exclusionType_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.sensitivityScore_ =
             sensitivityScoreBuilder_ == null ? sensitivityScore_ : sensitivityScoreBuilder_.build();
         to_bitField0_ |= 0x00000002;
@@ -8693,6 +9622,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
       }
       if (typeCase_ == 5 && storedTypeBuilder_ != null) {
         result.type_ = storedTypeBuilder_.build();
+      }
+      if (typeCase_ == 10 && metadataKeyValueExpressionBuilder_ != null) {
+        result.type_ = metadataKeyValueExpressionBuilder_.build();
       }
     }
 
@@ -8718,7 +9650,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
         if (!other.detectionRules_.isEmpty()) {
           if (detectionRules_.isEmpty()) {
             detectionRules_ = other.detectionRules_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureDetectionRulesIsMutable();
             detectionRules_.addAll(other.detectionRules_);
@@ -8731,7 +9663,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
             detectionRulesBuilder_.dispose();
             detectionRulesBuilder_ = null;
             detectionRules_ = other.detectionRules_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
             detectionRulesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetDetectionRulesFieldBuilder()
@@ -8766,6 +9698,11 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
         case STORED_TYPE:
           {
             mergeStoredType(other.getStoredType());
+            break;
+          }
+        case METADATA_KEY_VALUE_EXPRESSION:
+          {
+            mergeMetadataKeyValueExpression(other.getMetadataKeyValueExpression());
             break;
           }
         case TYPE_NOT_SET:
@@ -8856,16 +9793,24 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
             case 64:
               {
                 exclusionType_ = input.readEnum();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 64
             case 74:
               {
                 input.readMessage(
                     internalGetSensitivityScoreFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    internalGetMetadataKeyValueExpressionFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 10;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9920,8 +10865,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Load an existing `StoredInfoType` resource for use in
-     * `InspectDataSource`. Not currently supported in `InspectContent`.
+     * Loads an existing `StoredInfoType` resource.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
@@ -9937,8 +10881,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Load an existing `StoredInfoType` resource for use in
-     * `InspectDataSource`. Not currently supported in `InspectContent`.
+     * Loads an existing `StoredInfoType` resource.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
@@ -9964,8 +10907,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Load an existing `StoredInfoType` resource for use in
-     * `InspectDataSource`. Not currently supported in `InspectContent`.
+     * Loads an existing `StoredInfoType` resource.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
@@ -9988,8 +10930,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Load an existing `StoredInfoType` resource for use in
-     * `InspectDataSource`. Not currently supported in `InspectContent`.
+     * Loads an existing `StoredInfoType` resource.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
@@ -10009,8 +10950,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Load an existing `StoredInfoType` resource for use in
-     * `InspectDataSource`. Not currently supported in `InspectContent`.
+     * Loads an existing `StoredInfoType` resource.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
@@ -10042,8 +10982,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Load an existing `StoredInfoType` resource for use in
-     * `InspectDataSource`. Not currently supported in `InspectContent`.
+     * Loads an existing `StoredInfoType` resource.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
@@ -10069,8 +11008,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Load an existing `StoredInfoType` resource for use in
-     * `InspectDataSource`. Not currently supported in `InspectContent`.
+     * Loads an existing `StoredInfoType` resource.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
@@ -10083,8 +11021,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Load an existing `StoredInfoType` resource for use in
-     * `InspectDataSource`. Not currently supported in `InspectContent`.
+     * Loads an existing `StoredInfoType` resource.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
@@ -10105,8 +11042,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Load an existing `StoredInfoType` resource for use in
-     * `InspectDataSource`. Not currently supported in `InspectContent`.
+     * Loads an existing `StoredInfoType` resource.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
@@ -10133,15 +11069,264 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
       return storedTypeBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression,
+            com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression.Builder,
+            com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpressionOrBuilder>
+        metadataKeyValueExpressionBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Key-value pair to detect in the metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression metadata_key_value_expression = 10;
+     * </code>
+     *
+     * @return Whether the metadataKeyValueExpression field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadataKeyValueExpression() {
+      return typeCase_ == 10;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Key-value pair to detect in the metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression metadata_key_value_expression = 10;
+     * </code>
+     *
+     * @return The metadataKeyValueExpression.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression
+        getMetadataKeyValueExpression() {
+      if (metadataKeyValueExpressionBuilder_ == null) {
+        if (typeCase_ == 10) {
+          return (com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression) type_;
+        }
+        return com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression
+            .getDefaultInstance();
+      } else {
+        if (typeCase_ == 10) {
+          return metadataKeyValueExpressionBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Key-value pair to detect in the metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression metadata_key_value_expression = 10;
+     * </code>
+     */
+    public Builder setMetadataKeyValueExpression(
+        com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression value) {
+      if (metadataKeyValueExpressionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+        onChanged();
+      } else {
+        metadataKeyValueExpressionBuilder_.setMessage(value);
+      }
+      typeCase_ = 10;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Key-value pair to detect in the metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression metadata_key_value_expression = 10;
+     * </code>
+     */
+    public Builder setMetadataKeyValueExpression(
+        com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression.Builder
+            builderForValue) {
+      if (metadataKeyValueExpressionBuilder_ == null) {
+        type_ = builderForValue.build();
+        onChanged();
+      } else {
+        metadataKeyValueExpressionBuilder_.setMessage(builderForValue.build());
+      }
+      typeCase_ = 10;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Key-value pair to detect in the metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression metadata_key_value_expression = 10;
+     * </code>
+     */
+    public Builder mergeMetadataKeyValueExpression(
+        com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression value) {
+      if (metadataKeyValueExpressionBuilder_ == null) {
+        if (typeCase_ == 10
+            && type_
+                != com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression
+                    .getDefaultInstance()) {
+          type_ =
+              com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression.newBuilder(
+                      (com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression) type_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          type_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeCase_ == 10) {
+          metadataKeyValueExpressionBuilder_.mergeFrom(value);
+        } else {
+          metadataKeyValueExpressionBuilder_.setMessage(value);
+        }
+      }
+      typeCase_ = 10;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Key-value pair to detect in the metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression metadata_key_value_expression = 10;
+     * </code>
+     */
+    public Builder clearMetadataKeyValueExpression() {
+      if (metadataKeyValueExpressionBuilder_ == null) {
+        if (typeCase_ == 10) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeCase_ == 10) {
+          typeCase_ = 0;
+          type_ = null;
+        }
+        metadataKeyValueExpressionBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Key-value pair to detect in the metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression metadata_key_value_expression = 10;
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression.Builder
+        getMetadataKeyValueExpressionBuilder() {
+      return internalGetMetadataKeyValueExpressionFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Key-value pair to detect in the metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression metadata_key_value_expression = 10;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpressionOrBuilder
+        getMetadataKeyValueExpressionOrBuilder() {
+      if ((typeCase_ == 10) && (metadataKeyValueExpressionBuilder_ != null)) {
+        return metadataKeyValueExpressionBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeCase_ == 10) {
+          return (com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression) type_;
+        }
+        return com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Key-value pair to detect in the metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression metadata_key_value_expression = 10;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression,
+            com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression.Builder,
+            com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpressionOrBuilder>
+        internalGetMetadataKeyValueExpressionFieldBuilder() {
+      if (metadataKeyValueExpressionBuilder_ == null) {
+        if (!(typeCase_ == 10)) {
+          type_ =
+              com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression
+                  .getDefaultInstance();
+        }
+        metadataKeyValueExpressionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression,
+                com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression.Builder,
+                com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpressionOrBuilder>(
+                (com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression) type_,
+                getParentForChildren(),
+                isClean());
+        type_ = null;
+      }
+      typeCase_ = 10;
+      onChanged();
+      return metadataKeyValueExpressionBuilder_;
+    }
+
     private java.util.List<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule> detectionRules_ =
         java.util.Collections.emptyList();
 
     private void ensureDetectionRulesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         detectionRules_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule>(
                 detectionRules_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -10156,8 +11341,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
-     * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` CustomInfoType.
+     * Rules are applied in the order that they are specified. Only supported
+     * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
@@ -10177,8 +11362,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
-     * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` CustomInfoType.
+     * Rules are applied in the order that they are specified. Only supported
+     * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
@@ -10197,8 +11382,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
-     * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` CustomInfoType.
+     * Rules are applied in the order that they are specified. Only supported
+     * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
@@ -10217,8 +11402,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
-     * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` CustomInfoType.
+     * Rules are applied in the order that they are specified. Only supported
+     * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
@@ -10244,8 +11429,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
-     * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` CustomInfoType.
+     * Rules are applied in the order that they are specified. Only supported
+     * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
@@ -10268,8 +11453,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
-     * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` CustomInfoType.
+     * Rules are applied in the order that they are specified. Only supported
+     * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
@@ -10294,8 +11479,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
-     * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` CustomInfoType.
+     * Rules are applied in the order that they are specified. Only supported
+     * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
@@ -10321,8 +11506,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
-     * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` CustomInfoType.
+     * Rules are applied in the order that they are specified. Only supported
+     * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
@@ -10345,8 +11530,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
-     * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` CustomInfoType.
+     * Rules are applied in the order that they are specified. Only supported
+     * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
@@ -10369,8 +11554,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
-     * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` CustomInfoType.
+     * Rules are applied in the order that they are specified. Only supported
+     * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
@@ -10394,8 +11579,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
-     * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` CustomInfoType.
+     * Rules are applied in the order that they are specified. Only supported
+     * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
@@ -10404,7 +11589,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
     public Builder clearDetectionRules() {
       if (detectionRulesBuilder_ == null) {
         detectionRules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         detectionRulesBuilder_.clear();
@@ -10417,8 +11602,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
-     * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` CustomInfoType.
+     * Rules are applied in the order that they are specified. Only supported
+     * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
@@ -10440,8 +11625,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
-     * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` CustomInfoType.
+     * Rules are applied in the order that they are specified. Only supported
+     * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
@@ -10457,8 +11642,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
-     * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` CustomInfoType.
+     * Rules are applied in the order that they are specified. Only supported
+     * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
@@ -10478,8 +11663,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
-     * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` CustomInfoType.
+     * Rules are applied in the order that they are specified. Only supported
+     * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
@@ -10499,8 +11684,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
-     * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` CustomInfoType.
+     * Rules are applied in the order that they are specified. Only supported
+     * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
@@ -10517,8 +11702,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
-     * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` CustomInfoType.
+     * Rules are applied in the order that they are specified. Only supported
+     * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
@@ -10536,8 +11721,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
-     * Rules are applied in order that they are specified. Not supported for the
-     * `surrogate_type` CustomInfoType.
+     * Rules are applied in the order that they are specified. Only supported
+     * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
@@ -10560,7 +11745,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
                 com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Builder,
                 com.google.privacy.dlp.v2.CustomInfoType.DetectionRuleOrBuilder>(
                 detectionRules_,
-                ((bitField0_ & 0x00000040) != 0),
+                ((bitField0_ & 0x00000080) != 0),
                 getParentForChildren(),
                 isClean());
         detectionRules_ = null;
@@ -10575,7 +11760,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
-     * to be returned. It still can be used for rules matching.
+     * to be returned. It still can be used for rules matching. Only supported
+     * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
@@ -10592,7 +11778,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
-     * to be returned. It still can be used for rules matching.
+     * to be returned. It still can be used for rules matching. Only supported
+     * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
@@ -10602,7 +11789,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      */
     public Builder setExclusionTypeValue(int value) {
       exclusionType_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -10612,7 +11799,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
-     * to be returned. It still can be used for rules matching.
+     * to be returned. It still can be used for rules matching. Only supported
+     * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
@@ -10633,7 +11821,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
-     * to be returned. It still can be used for rules matching.
+     * to be returned. It still can be used for rules matching. Only supported
+     * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
@@ -10645,7 +11834,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       exclusionType_ = value.getNumber();
       onChanged();
       return this;
@@ -10656,7 +11845,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
-     * to be returned. It still can be used for rules matching.
+     * to be returned. It still can be used for rules matching. Only supported
+     * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
@@ -10664,7 +11854,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearExclusionType() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       exclusionType_ = 0;
       onChanged();
       return this;
@@ -10693,7 +11883,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      * @return Whether the sensitivityScore field is set.
      */
     public boolean hasSensitivityScore() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -10743,7 +11933,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
       } else {
         sensitivityScoreBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -10768,7 +11958,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
       } else {
         sensitivityScoreBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -10788,7 +11978,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeSensitivityScore(com.google.privacy.dlp.v2.SensitivityScore value) {
       if (sensitivityScoreBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && sensitivityScore_ != null
             && sensitivityScore_
                 != com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance()) {
@@ -10800,7 +11990,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
         sensitivityScoreBuilder_.mergeFrom(value);
       }
       if (sensitivityScore_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -10820,7 +12010,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 9;</code>
      */
     public Builder clearSensitivityScore() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       sensitivityScore_ = null;
       if (sensitivityScoreBuilder_ != null) {
         sensitivityScoreBuilder_.dispose();
@@ -10844,7 +12034,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 9;</code>
      */
     public com.google.privacy.dlp.v2.SensitivityScore.Builder getSensitivityScoreBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetSensitivityScoreFieldBuilder().getBuilder();
     }

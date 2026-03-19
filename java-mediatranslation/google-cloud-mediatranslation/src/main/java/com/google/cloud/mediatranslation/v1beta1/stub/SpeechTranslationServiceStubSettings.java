@@ -28,6 +28,7 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.StubSettings;
@@ -98,6 +99,7 @@ import javax.annotation.Generated;
  */
 @BetaApi
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class SpeechTranslationServiceStubSettings
     extends StubSettings<SpeechTranslationServiceStubSettings> {
   /** The default scopes of the service. */
@@ -196,6 +198,14 @@ public class SpeechTranslationServiceStubSettings
     super(settingsBuilder);
 
     streamingTranslateSpeechSettings = settingsBuilder.streamingTranslateSpeechSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-mediatranslation")
+        .setRepository("googleapis/google-cloud-java")
+        .build();
   }
 
   /** Builder for SpeechTranslationServiceStubSettings. */

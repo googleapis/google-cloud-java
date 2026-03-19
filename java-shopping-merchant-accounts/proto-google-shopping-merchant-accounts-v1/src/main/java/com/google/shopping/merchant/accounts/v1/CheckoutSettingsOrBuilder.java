@@ -95,10 +95,11 @@ public interface CheckoutSettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. The destinations (also known as [Marketing
+   * Optional. Required for the create operation. The destinations (also known
+   * as [Marketing
    * methods](https://support.google.com/merchants/answer/15130232)) to which
-   * the checkout program applies, valid destination values are `SHOPPING_ADS`,
-   * `FREE_LISTINGS`
+   * the checkout program applies. Valid destination values are `SHOPPING_ADS`
+   * and `FREE_LISTINGS`.
    * </pre>
    *
    * <code>
@@ -114,10 +115,11 @@ public interface CheckoutSettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. The destinations (also known as [Marketing
+   * Optional. Required for the create operation. The destinations (also known
+   * as [Marketing
    * methods](https://support.google.com/merchants/answer/15130232)) to which
-   * the checkout program applies, valid destination values are `SHOPPING_ADS`,
-   * `FREE_LISTINGS`
+   * the checkout program applies. Valid destination values are `SHOPPING_ADS`
+   * and `FREE_LISTINGS`.
    * </pre>
    *
    * <code>
@@ -132,10 +134,11 @@ public interface CheckoutSettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. The destinations (also known as [Marketing
+   * Optional. Required for the create operation. The destinations (also known
+   * as [Marketing
    * methods](https://support.google.com/merchants/answer/15130232)) to which
-   * the checkout program applies, valid destination values are `SHOPPING_ADS`,
-   * `FREE_LISTINGS`
+   * the checkout program applies. Valid destination values are `SHOPPING_ADS`
+   * and `FREE_LISTINGS`.
    * </pre>
    *
    * <code>
@@ -151,10 +154,11 @@ public interface CheckoutSettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. The destinations (also known as [Marketing
+   * Optional. Required for the create operation. The destinations (also known
+   * as [Marketing
    * methods](https://support.google.com/merchants/answer/15130232)) to which
-   * the checkout program applies, valid destination values are `SHOPPING_ADS`,
-   * `FREE_LISTINGS`
+   * the checkout program applies. Valid destination values are `SHOPPING_ADS`
+   * and `FREE_LISTINGS`.
    * </pre>
    *
    * <code>
@@ -169,10 +173,11 @@ public interface CheckoutSettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. The destinations (also known as [Marketing
+   * Optional. Required for the create operation. The destinations (also known
+   * as [Marketing
    * methods](https://support.google.com/merchants/answer/15130232)) to which
-   * the checkout program applies, valid destination values are `SHOPPING_ADS`,
-   * `FREE_LISTINGS`
+   * the checkout program applies. Valid destination values are `SHOPPING_ADS`
+   * and `FREE_LISTINGS`.
    * </pre>
    *
    * <code>
