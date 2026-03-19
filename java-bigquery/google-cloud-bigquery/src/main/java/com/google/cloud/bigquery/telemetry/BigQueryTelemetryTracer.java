@@ -86,7 +86,8 @@ public final class BigQueryTelemetryTracer {
     span.setStatus(StatusCode.ERROR, statusMessage);
   }
 
-  public static void addErrorResponseToSpan(GoogleJsonResponseException errorResponse, Span span) {
+  public static void addServerErrorResponseToSpan(
+      GoogleJsonResponseException errorResponse, Span span) {
     span.setStatus(StatusCode.ERROR);
     // set default values in case details aren't available below
     if (errorResponse.getDetails() != null) {

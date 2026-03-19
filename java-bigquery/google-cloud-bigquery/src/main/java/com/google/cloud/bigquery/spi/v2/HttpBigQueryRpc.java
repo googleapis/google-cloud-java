@@ -1774,7 +1774,8 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     } catch (Exception e) {
       if (isHttpTracingEnabled()) {
         if (e instanceof GoogleJsonResponseException) {
-          BigQueryTelemetryTracer.addErrorResponseToSpan(((GoogleJsonResponseException) e), span);
+          BigQueryTelemetryTracer.addServerErrorResponseToSpan(
+              ((GoogleJsonResponseException) e), span);
         } else {
           BigQueryTelemetryTracer.addExceptionToSpan(e, span);
         }

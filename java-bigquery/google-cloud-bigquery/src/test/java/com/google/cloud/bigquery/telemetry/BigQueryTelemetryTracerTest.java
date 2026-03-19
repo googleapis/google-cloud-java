@@ -59,72 +59,73 @@ public class BigQueryTelemetryTracerTest {
   }
 
   @Test
-  public void testAddErrorResponseToSpan_DetailsNull() throws Exception {
+  public void testAddServerErrorResponseToSpan_DetailsNull() throws Exception {
     GoogleJsonResponseException errorResponse = createException(400, "{}");
 
-    BigQueryTelemetryTracer.addErrorResponseToSpan(errorResponse, span);
+    BigQueryTelemetryTracer.addServerErrorResponseToSpan(errorResponse, span);
     span.end();
 
     assertErrorSpanAttributes("400", null);
   }
 
   @Test
-  public void testAddErrorResponseToSpan_ErrorsNull() throws Exception {
+  public void testAddServerErrorResponseToSpan_ErrorsNull() throws Exception {
     GoogleJsonResponseException errorResponse =
         createException(400, "{\"error\": {\"code\": 400, \"message\": \"Bad Request\"}}");
 
-    BigQueryTelemetryTracer.addErrorResponseToSpan(errorResponse, span);
+    BigQueryTelemetryTracer.addServerErrorResponseToSpan(errorResponse, span);
     span.end();
 
     assertErrorSpanAttributes("400", "Bad Request");
   }
 
   @Test
-  public void testAddErrorResponseToSpan_ErrorsEmpty() throws Exception {
+  public void testAddServerErrorResponseToSpan_ErrorsEmpty() throws Exception {
     GoogleJsonResponseException errorResponse =
         createException(
             400, "{\"error\": {\"code\": 400, \"message\": \"Bad Request\", \"errors\": []}}");
 
-    BigQueryTelemetryTracer.addErrorResponseToSpan(errorResponse, span);
+    BigQueryTelemetryTracer.addServerErrorResponseToSpan(errorResponse, span);
     span.end();
 
     assertErrorSpanAttributes("400", "Bad Request");
   }
 
   @Test
-  public void testAddErrorResponseToSpan_WithErrors_MessageAndReasonNotNull() throws Exception {
+  public void testAddServerErrorResponseToSpan_WithErrors_MessageAndReasonNotNull()
+      throws Exception {
     GoogleJsonResponseException errorResponse =
         createException(
             400,
             "{\"error\": {\"code\": 400, \"message\": \"Bad Request\", \"errors\": [{\"message\": \"Detailed error\", \"reason\": \"invalidParameter\"}]}}");
 
-    BigQueryTelemetryTracer.addErrorResponseToSpan(errorResponse, span);
+    BigQueryTelemetryTracer.addServerErrorResponseToSpan(errorResponse, span);
     span.end();
 
     assertErrorSpanAttributes("invalidParameter", "Detailed error");
   }
 
   @Test
-  public void testAddErrorResponseToSpan_WithErrors_MessageNull() throws Exception {
+  public void testAddServerErrorResponseToSpan_WithErrors_MessageNull() throws Exception {
     GoogleJsonResponseException errorResponse =
         createException(
             400,
             "{\"error\": {\"code\": 400, \"message\": \"Bad Request\", \"errors\": [{\"reason\": \"invalidParameter\"}]}}");
 
-    BigQueryTelemetryTracer.addErrorResponseToSpan(errorResponse, span);
+    BigQueryTelemetryTracer.addServerErrorResponseToSpan(errorResponse, span);
     span.end();
 
     assertErrorSpanAttributes("invalidParameter", "Bad Request");
   }
 
   @Test
-  public void testAddErrorResponseToSpan_WithErrors_ReasonNull() throws Exception {
+  public void testAddServerErrorResponseToSpan_WithErrors_ReasonNull() throws Exception {
     GoogleJsonResponseException errorResponse =
         createException(
             400,
             "{\"error\": {\"code\": 400, \"message\": \"Bad Request\", \"errors\": [{\"message\": \"Detailed error\"}]}}");
 
-    BigQueryTelemetryTracer.addErrorResponseToSpan(errorResponse, span);
+    BigQueryTelemetryTracer.addServerErrorResponseToSpan(errorResponse, span);
     span.end();
 
     assertErrorSpanAttributes("400", "Detailed error");
