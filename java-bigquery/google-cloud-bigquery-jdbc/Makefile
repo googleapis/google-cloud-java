@@ -35,7 +35,7 @@ integration-test:
 		-DskipSurefire=$(skipSurefire) \
 		-Dclirr.skip=true \
 		-Denforcer.skip=true \
-		-Dit.failIfNoSpecifiedTests=false \
+		-Dit.failIfNoSpecifiedTests=true \
 		-Dit.test=$(test) \
 		integration-test
 
