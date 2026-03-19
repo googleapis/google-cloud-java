@@ -102,6 +102,27 @@ public class MockAccountsServiceImpl extends AccountsServiceImplBase {
   }
 
   @Override
+  public void createTestAccount(
+      CreateTestAccountRequest request, StreamObserver<Account> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Account) {
+      requests.add(request);
+      responseObserver.onNext(((Account) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateTestAccount, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Account.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void deleteAccount(DeleteAccountRequest request, StreamObserver<Empty> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Empty) {

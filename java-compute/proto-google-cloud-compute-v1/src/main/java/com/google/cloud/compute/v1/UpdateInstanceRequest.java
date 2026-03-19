@@ -346,6 +346,43 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
   }
 
   private int bitField0_;
+  public static final int DISCARD_LOCAL_SSD_FIELD_NUMBER = 319517903;
+  private boolean discardLocalSsd_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether to discard local SSDs from the instance during restart
+   * default value is false.
+   * </pre>
+   *
+   * <code>optional bool discard_local_ssd = 319517903;</code>
+   *
+   * @return Whether the discardLocalSsd field is set.
+   */
+  @java.lang.Override
+  public boolean hasDiscardLocalSsd() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether to discard local SSDs from the instance during restart
+   * default value is false.
+   * </pre>
+   *
+   * <code>optional bool discard_local_ssd = 319517903;</code>
+   *
+   * @return The discardLocalSsd.
+   */
+  @java.lang.Override
+  public boolean getDiscardLocalSsd() {
+    return discardLocalSsd_;
+  }
+
   public static final int INSTANCE_FIELD_NUMBER = 18257045;
 
   @SuppressWarnings("serial")
@@ -417,7 +454,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public boolean hasInstanceResource() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -480,7 +517,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public boolean hasMinimalAction() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -562,7 +599,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public boolean hasMostDisruptiveAllowedAction() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -710,7 +747,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public boolean hasRequestId() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -862,21 +899,24 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(instance_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 18257045, instance_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 37109963, requestId_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(
           output, 66103053, mostDisruptiveAllowedAction_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(215988344, getInstanceResource());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 227560217, project_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 270567060, minimalAction_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(319517903, discardLocalSsd_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -893,15 +933,15 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(instance_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(18257045, instance_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(37109963, requestId_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessage.computeStringSize(
               66103053, mostDisruptiveAllowedAction_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               215988344, getInstanceResource());
@@ -909,8 +949,11 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(227560217, project_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(270567060, minimalAction_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(319517903, discardLocalSsd_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -928,6 +971,10 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
     com.google.cloud.compute.v1.UpdateInstanceRequest other =
         (com.google.cloud.compute.v1.UpdateInstanceRequest) obj;
 
+    if (hasDiscardLocalSsd() != other.hasDiscardLocalSsd()) return false;
+    if (hasDiscardLocalSsd()) {
+      if (getDiscardLocalSsd() != other.getDiscardLocalSsd()) return false;
+    }
     if (!getInstance().equals(other.getInstance())) return false;
     if (hasInstanceResource() != other.hasInstanceResource()) return false;
     if (hasInstanceResource()) {
@@ -959,6 +1006,10 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasDiscardLocalSsd()) {
+      hash = (37 * hash) + DISCARD_LOCAL_SSD_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDiscardLocalSsd());
+    }
     hash = (37 * hash) + INSTANCE_FIELD_NUMBER;
     hash = (53 * hash) + getInstance().hashCode();
     if (hasInstanceResource()) {
@@ -1130,6 +1181,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      discardLocalSsd_ = false;
       instance_ = "";
       instanceResource_ = null;
       if (instanceResourceBuilder_ != null) {
@@ -1177,31 +1229,35 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
 
     private void buildPartial0(com.google.cloud.compute.v1.UpdateInstanceRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.instance_ = instance_;
-      }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.instanceResource_ =
-            instanceResourceBuilder_ == null ? instanceResource_ : instanceResourceBuilder_.build();
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.discardLocalSsd_ = discardLocalSsd_;
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.instance_ = instance_;
+      }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.minimalAction_ = minimalAction_;
+        result.instanceResource_ =
+            instanceResourceBuilder_ == null ? instanceResource_ : instanceResourceBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.mostDisruptiveAllowedAction_ = mostDisruptiveAllowedAction_;
+        result.minimalAction_ = minimalAction_;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.project_ = project_;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.requestId_ = requestId_;
+        result.mostDisruptiveAllowedAction_ = mostDisruptiveAllowedAction_;
         to_bitField0_ |= 0x00000008;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.project_ = project_;
+      }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.zone_ = zone_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1220,9 +1276,12 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
     public Builder mergeFrom(com.google.cloud.compute.v1.UpdateInstanceRequest other) {
       if (other == com.google.cloud.compute.v1.UpdateInstanceRequest.getDefaultInstance())
         return this;
+      if (other.hasDiscardLocalSsd()) {
+        setDiscardLocalSsd(other.getDiscardLocalSsd());
+      }
       if (!other.getInstance().isEmpty()) {
         instance_ = other.instance_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasInstanceResource()) {
@@ -1230,27 +1289,27 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
       }
       if (other.hasMinimalAction()) {
         minimalAction_ = other.minimalAction_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasMostDisruptiveAllowedAction()) {
         mostDisruptiveAllowedAction_ = other.mostDisruptiveAllowedAction_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasRequestId()) {
         requestId_ = other.requestId_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1282,46 +1341,52 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 29957474
             case 146056362:
               {
                 instance_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 146056362
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 296879706
             case 528824426:
               {
                 mostDisruptiveAllowedAction_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 528824426
             case 1727906754:
               {
                 input.readMessage(
                     internalGetInstanceResourceFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1727906754
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 1820481738
             case -2130430814:
               {
                 minimalAction_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case -2130430814
+            case -1738824072:
+              {
+                discardLocalSsd_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case -1738824072
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1340,6 +1405,82 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
     }
 
     private int bitField0_;
+
+    private boolean discardLocalSsd_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether to discard local SSDs from the instance during restart
+     * default value is false.
+     * </pre>
+     *
+     * <code>optional bool discard_local_ssd = 319517903;</code>
+     *
+     * @return Whether the discardLocalSsd field is set.
+     */
+    @java.lang.Override
+    public boolean hasDiscardLocalSsd() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether to discard local SSDs from the instance during restart
+     * default value is false.
+     * </pre>
+     *
+     * <code>optional bool discard_local_ssd = 319517903;</code>
+     *
+     * @return The discardLocalSsd.
+     */
+    @java.lang.Override
+    public boolean getDiscardLocalSsd() {
+      return discardLocalSsd_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether to discard local SSDs from the instance during restart
+     * default value is false.
+     * </pre>
+     *
+     * <code>optional bool discard_local_ssd = 319517903;</code>
+     *
+     * @param value The discardLocalSsd to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDiscardLocalSsd(boolean value) {
+
+      discardLocalSsd_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether to discard local SSDs from the instance during restart
+     * default value is false.
+     * </pre>
+     *
+     * <code>optional bool discard_local_ssd = 319517903;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDiscardLocalSsd() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      discardLocalSsd_ = false;
+      onChanged();
+      return this;
+    }
 
     private java.lang.Object instance_ = "";
 
@@ -1406,7 +1547,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       instance_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1424,7 +1565,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearInstance() {
       instance_ = getDefaultInstance().getInstance();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1447,7 +1588,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       instance_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1473,7 +1614,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the instanceResource field is set.
      */
     public boolean hasInstanceResource() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -1519,7 +1660,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
       } else {
         instanceResourceBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1542,7 +1683,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
       } else {
         instanceResourceBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1560,7 +1701,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeInstanceResource(com.google.cloud.compute.v1.Instance value) {
       if (instanceResourceBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && instanceResource_ != null
             && instanceResource_ != com.google.cloud.compute.v1.Instance.getDefaultInstance()) {
           getInstanceResourceBuilder().mergeFrom(value);
@@ -1571,7 +1712,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
         instanceResourceBuilder_.mergeFrom(value);
       }
       if (instanceResource_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -1589,7 +1730,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearInstanceResource() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       instanceResource_ = null;
       if (instanceResourceBuilder_ != null) {
         instanceResourceBuilder_.dispose();
@@ -1611,7 +1752,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.compute.v1.Instance.Builder getInstanceResourceBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return internalGetInstanceResourceFieldBuilder().getBuilder();
     }
@@ -1683,7 +1824,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the minimalAction field is set.
      */
     public boolean hasMinimalAction() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -1761,7 +1902,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       minimalAction_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1783,7 +1924,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearMinimalAction() {
       minimalAction_ = getDefaultInstance().getMinimalAction();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1810,7 +1951,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       minimalAction_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1834,7 +1975,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the mostDisruptiveAllowedAction field is set.
      */
     public boolean hasMostDisruptiveAllowedAction() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1915,7 +2056,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       mostDisruptiveAllowedAction_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1938,7 +2079,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearMostDisruptiveAllowedAction() {
       mostDisruptiveAllowedAction_ = getDefaultInstance().getMostDisruptiveAllowedAction();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1966,7 +2107,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       mostDisruptiveAllowedAction_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2042,7 +2183,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       project_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2062,7 +2203,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearProject() {
       project_ = getDefaultInstance().getProject();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2087,7 +2228,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       project_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2118,7 +2259,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -2220,7 +2361,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       requestId_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2250,7 +2391,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearRequestId() {
       requestId_ = getDefaultInstance().getRequestId();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2285,7 +2426,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       requestId_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2361,7 +2502,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       zone_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2381,7 +2522,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearZone() {
       zone_ = getDefaultInstance().getZone();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2406,7 +2547,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       zone_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

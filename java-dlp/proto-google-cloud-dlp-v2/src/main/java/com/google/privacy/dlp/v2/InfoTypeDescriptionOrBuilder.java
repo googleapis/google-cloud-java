@@ -454,4 +454,32 @@ public interface InfoTypeDescriptionOrBuilder
    * @return The bytes of the specificInfoTypes at the given index.
    */
   com.google.protobuf.ByteString getSpecificInfoTypesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The launch status of the infoType.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.InfoTypeDescription.InfoTypeLaunchStatus launch_status = 13;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for launchStatus.
+   */
+  int getLaunchStatusValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * The launch status of the infoType.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.InfoTypeDescription.InfoTypeLaunchStatus launch_status = 13;
+   * </code>
+   *
+   * @return The launchStatus.
+   */
+  com.google.privacy.dlp.v2.InfoTypeDescription.InfoTypeLaunchStatus getLaunchStatus();
 }

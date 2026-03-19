@@ -37,6 +37,7 @@ package com.google.shopping.merchant.accounts.v1;
  *
  * * `checkout`
  * * `free-listings`
+ * * `product-ratings`
  * * `shopping-ads`
  * * `youtube-shopping-checkout`
  * </pre>
@@ -2132,6 +2133,7 @@ public final class Program extends com.google.protobuf.GeneratedMessage
    *
    * * `checkout`
    * * `free-listings`
+   * * `product-ratings`
    * * `shopping-ads`
    * * `youtube-shopping-checkout`
    * </pre>

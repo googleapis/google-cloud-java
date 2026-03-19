@@ -46,6 +46,7 @@ public class SyncEmbedContent {
               .setTitle("title110371416")
               .setOutputDimensionality(-495931909)
               .setAutoTruncate(true)
+              .setEmbedContentConfig(EmbedContentRequest.EmbedContentConfig.newBuilder().build())
               .build();
       EmbedContentResponse response = predictionServiceClient.embedContent(request);
     }

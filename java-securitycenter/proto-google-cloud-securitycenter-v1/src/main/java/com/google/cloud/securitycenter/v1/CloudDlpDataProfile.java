@@ -55,6 +55,7 @@ public final class CloudDlpDataProfile extends com.google.protobuf.GeneratedMess
   private CloudDlpDataProfile() {
     dataProfile_ = "";
     parentType_ = 0;
+    infoTypes_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -337,6 +338,92 @@ public final class CloudDlpDataProfile extends com.google.protobuf.GeneratedMess
         : result;
   }
 
+  public static final int INFO_TYPES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.securitycenter.v1.InfoType> infoTypes_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of information detected by SDP.
+   * Info type includes name, version and sensitivity of the detected
+   * information type.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.InfoType info_types = 3;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.securitycenter.v1.InfoType> getInfoTypesList() {
+    return infoTypes_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of information detected by SDP.
+   * Info type includes name, version and sensitivity of the detected
+   * information type.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.InfoType info_types = 3;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.securitycenter.v1.InfoTypeOrBuilder>
+      getInfoTypesOrBuilderList() {
+    return infoTypes_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of information detected by SDP.
+   * Info type includes name, version and sensitivity of the detected
+   * information type.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.InfoType info_types = 3;</code>
+   */
+  @java.lang.Override
+  public int getInfoTypesCount() {
+    return infoTypes_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of information detected by SDP.
+   * Info type includes name, version and sensitivity of the detected
+   * information type.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.InfoType info_types = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.InfoType getInfoTypes(int index) {
+    return infoTypes_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of information detected by SDP.
+   * Info type includes name, version and sensitivity of the detected
+   * information type.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.InfoType info_types = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.InfoTypeOrBuilder getInfoTypesOrBuilder(int index) {
+    return infoTypes_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -359,6 +446,9 @@ public final class CloudDlpDataProfile extends com.google.protobuf.GeneratedMess
             .getNumber()) {
       output.writeEnum(2, parentType_);
     }
+    for (int i = 0; i < infoTypes_.size(); i++) {
+      output.writeMessage(3, infoTypes_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -375,6 +465,9 @@ public final class CloudDlpDataProfile extends com.google.protobuf.GeneratedMess
         != com.google.cloud.securitycenter.v1.CloudDlpDataProfile.ParentType.PARENT_TYPE_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, parentType_);
+    }
+    for (int i = 0; i < infoTypes_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, infoTypes_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -394,6 +487,7 @@ public final class CloudDlpDataProfile extends com.google.protobuf.GeneratedMess
 
     if (!getDataProfile().equals(other.getDataProfile())) return false;
     if (parentType_ != other.parentType_) return false;
+    if (!getInfoTypesList().equals(other.getInfoTypesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -409,6 +503,10 @@ public final class CloudDlpDataProfile extends com.google.protobuf.GeneratedMess
     hash = (53 * hash) + getDataProfile().hashCode();
     hash = (37 * hash) + PARENT_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + parentType_;
+    if (getInfoTypesCount() > 0) {
+      hash = (37 * hash) + INFO_TYPES_FIELD_NUMBER;
+      hash = (53 * hash) + getInfoTypesList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -553,6 +651,13 @@ public final class CloudDlpDataProfile extends com.google.protobuf.GeneratedMess
       bitField0_ = 0;
       dataProfile_ = "";
       parentType_ = 0;
+      if (infoTypesBuilder_ == null) {
+        infoTypes_ = java.util.Collections.emptyList();
+      } else {
+        infoTypes_ = null;
+        infoTypesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -580,11 +685,25 @@ public final class CloudDlpDataProfile extends com.google.protobuf.GeneratedMess
     public com.google.cloud.securitycenter.v1.CloudDlpDataProfile buildPartial() {
       com.google.cloud.securitycenter.v1.CloudDlpDataProfile result =
           new com.google.cloud.securitycenter.v1.CloudDlpDataProfile(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.securitycenter.v1.CloudDlpDataProfile result) {
+      if (infoTypesBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          infoTypes_ = java.util.Collections.unmodifiableList(infoTypes_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.infoTypes_ = infoTypes_;
+      } else {
+        result.infoTypes_ = infoTypesBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.securitycenter.v1.CloudDlpDataProfile result) {
@@ -617,6 +736,33 @@ public final class CloudDlpDataProfile extends com.google.protobuf.GeneratedMess
       }
       if (other.parentType_ != 0) {
         setParentTypeValue(other.getParentTypeValue());
+      }
+      if (infoTypesBuilder_ == null) {
+        if (!other.infoTypes_.isEmpty()) {
+          if (infoTypes_.isEmpty()) {
+            infoTypes_ = other.infoTypes_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureInfoTypesIsMutable();
+            infoTypes_.addAll(other.infoTypes_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.infoTypes_.isEmpty()) {
+          if (infoTypesBuilder_.isEmpty()) {
+            infoTypesBuilder_.dispose();
+            infoTypesBuilder_ = null;
+            infoTypes_ = other.infoTypes_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            infoTypesBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetInfoTypesFieldBuilder()
+                    : null;
+          } else {
+            infoTypesBuilder_.addAllMessages(other.infoTypes_);
+          }
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -656,6 +802,19 @@ public final class CloudDlpDataProfile extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 26:
+              {
+                com.google.cloud.securitycenter.v1.InfoType m =
+                    input.readMessage(
+                        com.google.cloud.securitycenter.v1.InfoType.parser(), extensionRegistry);
+                if (infoTypesBuilder_ == null) {
+                  ensureInfoTypesIsMutable();
+                  infoTypes_.add(m);
+                } else {
+                  infoTypesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -887,6 +1046,410 @@ public final class CloudDlpDataProfile extends com.google.protobuf.GeneratedMess
       parentType_ = 0;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.securitycenter.v1.InfoType> infoTypes_ =
+        java.util.Collections.emptyList();
+
+    private void ensureInfoTypesIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        infoTypes_ =
+            new java.util.ArrayList<com.google.cloud.securitycenter.v1.InfoType>(infoTypes_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.securitycenter.v1.InfoType,
+            com.google.cloud.securitycenter.v1.InfoType.Builder,
+            com.google.cloud.securitycenter.v1.InfoTypeOrBuilder>
+        infoTypesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of information detected by SDP.
+     * Info type includes name, version and sensitivity of the detected
+     * information type.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.InfoType info_types = 3;</code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v1.InfoType> getInfoTypesList() {
+      if (infoTypesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(infoTypes_);
+      } else {
+        return infoTypesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of information detected by SDP.
+     * Info type includes name, version and sensitivity of the detected
+     * information type.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.InfoType info_types = 3;</code>
+     */
+    public int getInfoTypesCount() {
+      if (infoTypesBuilder_ == null) {
+        return infoTypes_.size();
+      } else {
+        return infoTypesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of information detected by SDP.
+     * Info type includes name, version and sensitivity of the detected
+     * information type.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.InfoType info_types = 3;</code>
+     */
+    public com.google.cloud.securitycenter.v1.InfoType getInfoTypes(int index) {
+      if (infoTypesBuilder_ == null) {
+        return infoTypes_.get(index);
+      } else {
+        return infoTypesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of information detected by SDP.
+     * Info type includes name, version and sensitivity of the detected
+     * information type.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.InfoType info_types = 3;</code>
+     */
+    public Builder setInfoTypes(int index, com.google.cloud.securitycenter.v1.InfoType value) {
+      if (infoTypesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInfoTypesIsMutable();
+        infoTypes_.set(index, value);
+        onChanged();
+      } else {
+        infoTypesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of information detected by SDP.
+     * Info type includes name, version and sensitivity of the detected
+     * information type.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.InfoType info_types = 3;</code>
+     */
+    public Builder setInfoTypes(
+        int index, com.google.cloud.securitycenter.v1.InfoType.Builder builderForValue) {
+      if (infoTypesBuilder_ == null) {
+        ensureInfoTypesIsMutable();
+        infoTypes_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        infoTypesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of information detected by SDP.
+     * Info type includes name, version and sensitivity of the detected
+     * information type.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.InfoType info_types = 3;</code>
+     */
+    public Builder addInfoTypes(com.google.cloud.securitycenter.v1.InfoType value) {
+      if (infoTypesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInfoTypesIsMutable();
+        infoTypes_.add(value);
+        onChanged();
+      } else {
+        infoTypesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of information detected by SDP.
+     * Info type includes name, version and sensitivity of the detected
+     * information type.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.InfoType info_types = 3;</code>
+     */
+    public Builder addInfoTypes(int index, com.google.cloud.securitycenter.v1.InfoType value) {
+      if (infoTypesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInfoTypesIsMutable();
+        infoTypes_.add(index, value);
+        onChanged();
+      } else {
+        infoTypesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of information detected by SDP.
+     * Info type includes name, version and sensitivity of the detected
+     * information type.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.InfoType info_types = 3;</code>
+     */
+    public Builder addInfoTypes(
+        com.google.cloud.securitycenter.v1.InfoType.Builder builderForValue) {
+      if (infoTypesBuilder_ == null) {
+        ensureInfoTypesIsMutable();
+        infoTypes_.add(builderForValue.build());
+        onChanged();
+      } else {
+        infoTypesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of information detected by SDP.
+     * Info type includes name, version and sensitivity of the detected
+     * information type.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.InfoType info_types = 3;</code>
+     */
+    public Builder addInfoTypes(
+        int index, com.google.cloud.securitycenter.v1.InfoType.Builder builderForValue) {
+      if (infoTypesBuilder_ == null) {
+        ensureInfoTypesIsMutable();
+        infoTypes_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        infoTypesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of information detected by SDP.
+     * Info type includes name, version and sensitivity of the detected
+     * information type.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.InfoType info_types = 3;</code>
+     */
+    public Builder addAllInfoTypes(
+        java.lang.Iterable<? extends com.google.cloud.securitycenter.v1.InfoType> values) {
+      if (infoTypesBuilder_ == null) {
+        ensureInfoTypesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, infoTypes_);
+        onChanged();
+      } else {
+        infoTypesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of information detected by SDP.
+     * Info type includes name, version and sensitivity of the detected
+     * information type.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.InfoType info_types = 3;</code>
+     */
+    public Builder clearInfoTypes() {
+      if (infoTypesBuilder_ == null) {
+        infoTypes_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        infoTypesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of information detected by SDP.
+     * Info type includes name, version and sensitivity of the detected
+     * information type.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.InfoType info_types = 3;</code>
+     */
+    public Builder removeInfoTypes(int index) {
+      if (infoTypesBuilder_ == null) {
+        ensureInfoTypesIsMutable();
+        infoTypes_.remove(index);
+        onChanged();
+      } else {
+        infoTypesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of information detected by SDP.
+     * Info type includes name, version and sensitivity of the detected
+     * information type.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.InfoType info_types = 3;</code>
+     */
+    public com.google.cloud.securitycenter.v1.InfoType.Builder getInfoTypesBuilder(int index) {
+      return internalGetInfoTypesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of information detected by SDP.
+     * Info type includes name, version and sensitivity of the detected
+     * information type.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.InfoType info_types = 3;</code>
+     */
+    public com.google.cloud.securitycenter.v1.InfoTypeOrBuilder getInfoTypesOrBuilder(int index) {
+      if (infoTypesBuilder_ == null) {
+        return infoTypes_.get(index);
+      } else {
+        return infoTypesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of information detected by SDP.
+     * Info type includes name, version and sensitivity of the detected
+     * information type.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.InfoType info_types = 3;</code>
+     */
+    public java.util.List<? extends com.google.cloud.securitycenter.v1.InfoTypeOrBuilder>
+        getInfoTypesOrBuilderList() {
+      if (infoTypesBuilder_ != null) {
+        return infoTypesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(infoTypes_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of information detected by SDP.
+     * Info type includes name, version and sensitivity of the detected
+     * information type.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.InfoType info_types = 3;</code>
+     */
+    public com.google.cloud.securitycenter.v1.InfoType.Builder addInfoTypesBuilder() {
+      return internalGetInfoTypesFieldBuilder()
+          .addBuilder(com.google.cloud.securitycenter.v1.InfoType.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of information detected by SDP.
+     * Info type includes name, version and sensitivity of the detected
+     * information type.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.InfoType info_types = 3;</code>
+     */
+    public com.google.cloud.securitycenter.v1.InfoType.Builder addInfoTypesBuilder(int index) {
+      return internalGetInfoTypesFieldBuilder()
+          .addBuilder(index, com.google.cloud.securitycenter.v1.InfoType.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of information detected by SDP.
+     * Info type includes name, version and sensitivity of the detected
+     * information type.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.InfoType info_types = 3;</code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v1.InfoType.Builder>
+        getInfoTypesBuilderList() {
+      return internalGetInfoTypesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.securitycenter.v1.InfoType,
+            com.google.cloud.securitycenter.v1.InfoType.Builder,
+            com.google.cloud.securitycenter.v1.InfoTypeOrBuilder>
+        internalGetInfoTypesFieldBuilder() {
+      if (infoTypesBuilder_ == null) {
+        infoTypesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.securitycenter.v1.InfoType,
+                com.google.cloud.securitycenter.v1.InfoType.Builder,
+                com.google.cloud.securitycenter.v1.InfoTypeOrBuilder>(
+                infoTypes_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+        infoTypes_ = null;
+      }
+      return infoTypesBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1.CloudDlpDataProfile)

@@ -2542,6 +2542,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UpdateInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            if (request.hasDiscardLocalSsd()) {
+                              serializer.putQueryParam(
+                                  fields, "discardLocalSsd", request.getDiscardLocalSsd());
+                            }
                             if (request.hasMinimalAction()) {
                               serializer.putQueryParam(
                                   fields, "minimalAction", request.getMinimalAction());

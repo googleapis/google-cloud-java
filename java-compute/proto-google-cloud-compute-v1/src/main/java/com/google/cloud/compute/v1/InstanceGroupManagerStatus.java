@@ -51,6 +51,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
   }
 
   private InstanceGroupManagerStatus() {
+    appliedAcceleratorTopologies_ = java.util.Collections.emptyList();
     autoscaler_ = "";
   }
 
@@ -134,6 +135,103 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
         : allInstancesConfig_;
   }
 
+  public static final int APPLIED_ACCELERATOR_TOPOLOGIES_FIELD_NUMBER = 481392547;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology>
+      appliedAcceleratorTopologies_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The accelerator topology applied to this MIG.
+   * Currently only one accelerator topology is supported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology applied_accelerator_topologies = 481392547;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology>
+      getAppliedAcceleratorTopologiesList() {
+    return appliedAcceleratorTopologies_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The accelerator topology applied to this MIG.
+   * Currently only one accelerator topology is supported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology applied_accelerator_topologies = 481392547;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends
+              com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopologyOrBuilder>
+      getAppliedAcceleratorTopologiesOrBuilderList() {
+    return appliedAcceleratorTopologies_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The accelerator topology applied to this MIG.
+   * Currently only one accelerator topology is supported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology applied_accelerator_topologies = 481392547;
+   * </code>
+   */
+  @java.lang.Override
+  public int getAppliedAcceleratorTopologiesCount() {
+    return appliedAcceleratorTopologies_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The accelerator topology applied to this MIG.
+   * Currently only one accelerator topology is supported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology applied_accelerator_topologies = 481392547;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology
+      getAppliedAcceleratorTopologies(int index) {
+    return appliedAcceleratorTopologies_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The accelerator topology applied to this MIG.
+   * Currently only one accelerator topology is supported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology applied_accelerator_topologies = 481392547;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopologyOrBuilder
+      getAppliedAcceleratorTopologiesOrBuilder(int index) {
+    return appliedAcceleratorTopologies_.get(index);
+  }
+
   public static final int AUTOSCALER_FIELD_NUMBER = 517258967;
 
   @SuppressWarnings("serial")
@@ -206,6 +304,70 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     }
   }
 
+  public static final int BULK_INSTANCE_OPERATION_FIELD_NUMBER = 501667466;
+  private com.google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation
+      bulkInstanceOperation_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The status of bulk instance operation.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation bulk_instance_operation = 501667466;
+   * </code>
+   *
+   * @return Whether the bulkInstanceOperation field is set.
+   */
+  @java.lang.Override
+  public boolean hasBulkInstanceOperation() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The status of bulk instance operation.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation bulk_instance_operation = 501667466;
+   * </code>
+   *
+   * @return The bulkInstanceOperation.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation
+      getBulkInstanceOperation() {
+    return bulkInstanceOperation_ == null
+        ? com.google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation
+            .getDefaultInstance()
+        : bulkInstanceOperation_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The status of bulk instance operation.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation bulk_instance_operation = 501667466;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperationOrBuilder
+      getBulkInstanceOperationOrBuilder() {
+    return bulkInstanceOperation_ == null
+        ? com.google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation
+            .getDefaultInstance()
+        : bulkInstanceOperation_;
+  }
+
   public static final int IS_STABLE_FIELD_NUMBER = 108410864;
   private boolean isStable_ = false;
 
@@ -227,7 +389,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public boolean hasIsStable() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -269,7 +431,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public boolean hasStateful() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -331,7 +493,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public boolean hasVersionTarget() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -391,17 +553,23 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeBool(108410864, isStable_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(112596737, getAllInstancesConfig());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(244462412, getStateful());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(289386200, getVersionTarget());
+    }
+    for (int i = 0; i < appliedAcceleratorTopologies_.size(); i++) {
+      output.writeMessage(481392547, appliedAcceleratorTopologies_.get(i));
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(501667466, getBulkInstanceOperation());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 517258967, autoscaler_);
@@ -415,7 +583,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(108410864, isStable_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -423,12 +591,22 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               112596737, getAllInstancesConfig());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(244462412, getStateful());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(289386200, getVersionTarget());
+    }
+    for (int i = 0; i < appliedAcceleratorTopologies_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              481392547, appliedAcceleratorTopologies_.get(i));
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              501667466, getBulkInstanceOperation());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(517258967, autoscaler_);
@@ -453,9 +631,15 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     if (hasAllInstancesConfig()) {
       if (!getAllInstancesConfig().equals(other.getAllInstancesConfig())) return false;
     }
+    if (!getAppliedAcceleratorTopologiesList().equals(other.getAppliedAcceleratorTopologiesList()))
+      return false;
     if (hasAutoscaler() != other.hasAutoscaler()) return false;
     if (hasAutoscaler()) {
       if (!getAutoscaler().equals(other.getAutoscaler())) return false;
+    }
+    if (hasBulkInstanceOperation() != other.hasBulkInstanceOperation()) return false;
+    if (hasBulkInstanceOperation()) {
+      if (!getBulkInstanceOperation().equals(other.getBulkInstanceOperation())) return false;
     }
     if (hasIsStable() != other.hasIsStable()) return false;
     if (hasIsStable()) {
@@ -484,9 +668,17 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       hash = (37 * hash) + ALL_INSTANCES_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getAllInstancesConfig().hashCode();
     }
+    if (getAppliedAcceleratorTopologiesCount() > 0) {
+      hash = (37 * hash) + APPLIED_ACCELERATOR_TOPOLOGIES_FIELD_NUMBER;
+      hash = (53 * hash) + getAppliedAcceleratorTopologiesList().hashCode();
+    }
     if (hasAutoscaler()) {
       hash = (37 * hash) + AUTOSCALER_FIELD_NUMBER;
       hash = (53 * hash) + getAutoscaler().hashCode();
+    }
+    if (hasBulkInstanceOperation()) {
+      hash = (37 * hash) + BULK_INSTANCE_OPERATION_FIELD_NUMBER;
+      hash = (53 * hash) + getBulkInstanceOperation().hashCode();
     }
     if (hasIsStable()) {
       hash = (37 * hash) + IS_STABLE_FIELD_NUMBER;
@@ -642,6 +834,8 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetAllInstancesConfigFieldBuilder();
+        internalGetAppliedAcceleratorTopologiesFieldBuilder();
+        internalGetBulkInstanceOperationFieldBuilder();
         internalGetStatefulFieldBuilder();
         internalGetVersionTargetFieldBuilder();
       }
@@ -656,7 +850,19 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
         allInstancesConfigBuilder_.dispose();
         allInstancesConfigBuilder_ = null;
       }
+      if (appliedAcceleratorTopologiesBuilder_ == null) {
+        appliedAcceleratorTopologies_ = java.util.Collections.emptyList();
+      } else {
+        appliedAcceleratorTopologies_ = null;
+        appliedAcceleratorTopologiesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
       autoscaler_ = "";
+      bulkInstanceOperation_ = null;
+      if (bulkInstanceOperationBuilder_ != null) {
+        bulkInstanceOperationBuilder_.dispose();
+        bulkInstanceOperationBuilder_ = null;
+      }
       isStable_ = false;
       stateful_ = null;
       if (statefulBuilder_ != null) {
@@ -695,11 +901,26 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.InstanceGroupManagerStatus buildPartial() {
       com.google.cloud.compute.v1.InstanceGroupManagerStatus result =
           new com.google.cloud.compute.v1.InstanceGroupManagerStatus(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.InstanceGroupManagerStatus result) {
+      if (appliedAcceleratorTopologiesBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          appliedAcceleratorTopologies_ =
+              java.util.Collections.unmodifiableList(appliedAcceleratorTopologies_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.appliedAcceleratorTopologies_ = appliedAcceleratorTopologies_;
+      } else {
+        result.appliedAcceleratorTopologies_ = appliedAcceleratorTopologiesBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.InstanceGroupManagerStatus result) {
@@ -712,22 +933,29 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
                 : allInstancesConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.autoscaler_ = autoscaler_;
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.isStable_ = isStable_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.bulkInstanceOperation_ =
+            bulkInstanceOperationBuilder_ == null
+                ? bulkInstanceOperation_
+                : bulkInstanceOperationBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.stateful_ = statefulBuilder_ == null ? stateful_ : statefulBuilder_.build();
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.isStable_ = isStable_;
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.stateful_ = statefulBuilder_ == null ? stateful_ : statefulBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.versionTarget_ =
             versionTargetBuilder_ == null ? versionTarget_ : versionTargetBuilder_.build();
-        to_bitField0_ |= 0x00000010;
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -748,10 +976,41 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       if (other.hasAllInstancesConfig()) {
         mergeAllInstancesConfig(other.getAllInstancesConfig());
       }
+      if (appliedAcceleratorTopologiesBuilder_ == null) {
+        if (!other.appliedAcceleratorTopologies_.isEmpty()) {
+          if (appliedAcceleratorTopologies_.isEmpty()) {
+            appliedAcceleratorTopologies_ = other.appliedAcceleratorTopologies_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureAppliedAcceleratorTopologiesIsMutable();
+            appliedAcceleratorTopologies_.addAll(other.appliedAcceleratorTopologies_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.appliedAcceleratorTopologies_.isEmpty()) {
+          if (appliedAcceleratorTopologiesBuilder_.isEmpty()) {
+            appliedAcceleratorTopologiesBuilder_.dispose();
+            appliedAcceleratorTopologiesBuilder_ = null;
+            appliedAcceleratorTopologies_ = other.appliedAcceleratorTopologies_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            appliedAcceleratorTopologiesBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetAppliedAcceleratorTopologiesFieldBuilder()
+                    : null;
+          } else {
+            appliedAcceleratorTopologiesBuilder_.addAllMessages(
+                other.appliedAcceleratorTopologies_);
+          }
+        }
+      }
       if (other.hasAutoscaler()) {
         autoscaler_ = other.autoscaler_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
+      }
+      if (other.hasBulkInstanceOperation()) {
+        mergeBulkInstanceOperation(other.getBulkInstanceOperation());
       }
       if (other.hasIsStable()) {
         setIsStable(other.getIsStable());
@@ -791,7 +1050,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
             case 867286912:
               {
                 isStable_ = input.readBool();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 867286912
             case 900773898:
@@ -805,20 +1064,42 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
               {
                 input.readMessage(
                     internalGetStatefulFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 1955699298
             case -1979877694:
               {
                 input.readMessage(
                     internalGetVersionTargetFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case -1979877694
+            case -443826918:
+              {
+                com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology
+                            .parser(),
+                        extensionRegistry);
+                if (appliedAcceleratorTopologiesBuilder_ == null) {
+                  ensureAppliedAcceleratorTopologiesIsMutable();
+                  appliedAcceleratorTopologies_.add(m);
+                } else {
+                  appliedAcceleratorTopologiesBuilder_.addMessage(m);
+                }
+                break;
+              } // case -443826918
+            case -281627566:
+              {
+                input.readMessage(
+                    internalGetBulkInstanceOperationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case -281627566
             case -156895558:
               {
                 autoscaler_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case -156895558
             default:
@@ -1064,6 +1345,461 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       return allInstancesConfigBuilder_;
     }
 
+    private java.util.List<
+            com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology>
+        appliedAcceleratorTopologies_ = java.util.Collections.emptyList();
+
+    private void ensureAppliedAcceleratorTopologiesIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        appliedAcceleratorTopologies_ =
+            new java.util.ArrayList<
+                com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology>(
+                appliedAcceleratorTopologies_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology,
+            com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology.Builder,
+            com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopologyOrBuilder>
+        appliedAcceleratorTopologiesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Currently only one accelerator topology is supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology applied_accelerator_topologies = 481392547;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology>
+        getAppliedAcceleratorTopologiesList() {
+      if (appliedAcceleratorTopologiesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(appliedAcceleratorTopologies_);
+      } else {
+        return appliedAcceleratorTopologiesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Currently only one accelerator topology is supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology applied_accelerator_topologies = 481392547;
+     * </code>
+     */
+    public int getAppliedAcceleratorTopologiesCount() {
+      if (appliedAcceleratorTopologiesBuilder_ == null) {
+        return appliedAcceleratorTopologies_.size();
+      } else {
+        return appliedAcceleratorTopologiesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Currently only one accelerator topology is supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology applied_accelerator_topologies = 481392547;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology
+        getAppliedAcceleratorTopologies(int index) {
+      if (appliedAcceleratorTopologiesBuilder_ == null) {
+        return appliedAcceleratorTopologies_.get(index);
+      } else {
+        return appliedAcceleratorTopologiesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Currently only one accelerator topology is supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology applied_accelerator_topologies = 481392547;
+     * </code>
+     */
+    public Builder setAppliedAcceleratorTopologies(
+        int index,
+        com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology value) {
+      if (appliedAcceleratorTopologiesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAppliedAcceleratorTopologiesIsMutable();
+        appliedAcceleratorTopologies_.set(index, value);
+        onChanged();
+      } else {
+        appliedAcceleratorTopologiesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Currently only one accelerator topology is supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology applied_accelerator_topologies = 481392547;
+     * </code>
+     */
+    public Builder setAppliedAcceleratorTopologies(
+        int index,
+        com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology.Builder
+            builderForValue) {
+      if (appliedAcceleratorTopologiesBuilder_ == null) {
+        ensureAppliedAcceleratorTopologiesIsMutable();
+        appliedAcceleratorTopologies_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        appliedAcceleratorTopologiesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Currently only one accelerator topology is supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology applied_accelerator_topologies = 481392547;
+     * </code>
+     */
+    public Builder addAppliedAcceleratorTopologies(
+        com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology value) {
+      if (appliedAcceleratorTopologiesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAppliedAcceleratorTopologiesIsMutable();
+        appliedAcceleratorTopologies_.add(value);
+        onChanged();
+      } else {
+        appliedAcceleratorTopologiesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Currently only one accelerator topology is supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology applied_accelerator_topologies = 481392547;
+     * </code>
+     */
+    public Builder addAppliedAcceleratorTopologies(
+        int index,
+        com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology value) {
+      if (appliedAcceleratorTopologiesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAppliedAcceleratorTopologiesIsMutable();
+        appliedAcceleratorTopologies_.add(index, value);
+        onChanged();
+      } else {
+        appliedAcceleratorTopologiesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Currently only one accelerator topology is supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology applied_accelerator_topologies = 481392547;
+     * </code>
+     */
+    public Builder addAppliedAcceleratorTopologies(
+        com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology.Builder
+            builderForValue) {
+      if (appliedAcceleratorTopologiesBuilder_ == null) {
+        ensureAppliedAcceleratorTopologiesIsMutable();
+        appliedAcceleratorTopologies_.add(builderForValue.build());
+        onChanged();
+      } else {
+        appliedAcceleratorTopologiesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Currently only one accelerator topology is supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology applied_accelerator_topologies = 481392547;
+     * </code>
+     */
+    public Builder addAppliedAcceleratorTopologies(
+        int index,
+        com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology.Builder
+            builderForValue) {
+      if (appliedAcceleratorTopologiesBuilder_ == null) {
+        ensureAppliedAcceleratorTopologiesIsMutable();
+        appliedAcceleratorTopologies_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        appliedAcceleratorTopologiesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Currently only one accelerator topology is supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology applied_accelerator_topologies = 481392547;
+     * </code>
+     */
+    public Builder addAllAppliedAcceleratorTopologies(
+        java.lang.Iterable<
+                ? extends com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology>
+            values) {
+      if (appliedAcceleratorTopologiesBuilder_ == null) {
+        ensureAppliedAcceleratorTopologiesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, appliedAcceleratorTopologies_);
+        onChanged();
+      } else {
+        appliedAcceleratorTopologiesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Currently only one accelerator topology is supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology applied_accelerator_topologies = 481392547;
+     * </code>
+     */
+    public Builder clearAppliedAcceleratorTopologies() {
+      if (appliedAcceleratorTopologiesBuilder_ == null) {
+        appliedAcceleratorTopologies_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        appliedAcceleratorTopologiesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Currently only one accelerator topology is supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology applied_accelerator_topologies = 481392547;
+     * </code>
+     */
+    public Builder removeAppliedAcceleratorTopologies(int index) {
+      if (appliedAcceleratorTopologiesBuilder_ == null) {
+        ensureAppliedAcceleratorTopologiesIsMutable();
+        appliedAcceleratorTopologies_.remove(index);
+        onChanged();
+      } else {
+        appliedAcceleratorTopologiesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Currently only one accelerator topology is supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology applied_accelerator_topologies = 481392547;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology.Builder
+        getAppliedAcceleratorTopologiesBuilder(int index) {
+      return internalGetAppliedAcceleratorTopologiesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Currently only one accelerator topology is supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology applied_accelerator_topologies = 481392547;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopologyOrBuilder
+        getAppliedAcceleratorTopologiesOrBuilder(int index) {
+      if (appliedAcceleratorTopologiesBuilder_ == null) {
+        return appliedAcceleratorTopologies_.get(index);
+      } else {
+        return appliedAcceleratorTopologiesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Currently only one accelerator topology is supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology applied_accelerator_topologies = 481392547;
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopologyOrBuilder>
+        getAppliedAcceleratorTopologiesOrBuilderList() {
+      if (appliedAcceleratorTopologiesBuilder_ != null) {
+        return appliedAcceleratorTopologiesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(appliedAcceleratorTopologies_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Currently only one accelerator topology is supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology applied_accelerator_topologies = 481392547;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology.Builder
+        addAppliedAcceleratorTopologiesBuilder() {
+      return internalGetAppliedAcceleratorTopologiesFieldBuilder()
+          .addBuilder(
+              com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Currently only one accelerator topology is supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology applied_accelerator_topologies = 481392547;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology.Builder
+        addAppliedAcceleratorTopologiesBuilder(int index) {
+      return internalGetAppliedAcceleratorTopologiesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Currently only one accelerator topology is supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology applied_accelerator_topologies = 481392547;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology.Builder>
+        getAppliedAcceleratorTopologiesBuilderList() {
+      return internalGetAppliedAcceleratorTopologiesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology,
+            com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology.Builder,
+            com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopologyOrBuilder>
+        internalGetAppliedAcceleratorTopologiesFieldBuilder() {
+      if (appliedAcceleratorTopologiesBuilder_ == null) {
+        appliedAcceleratorTopologiesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology,
+                com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopology.Builder,
+                com.google.cloud.compute.v1.InstanceGroupManagerStatusAcceleratorTopologyOrBuilder>(
+                appliedAcceleratorTopologies_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        appliedAcceleratorTopologies_ = null;
+      }
+      return appliedAcceleratorTopologiesBuilder_;
+    }
+
     private java.lang.Object autoscaler_ = "";
 
     /**
@@ -1079,7 +1815,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * @return Whether the autoscaler field is set.
      */
     public boolean hasAutoscaler() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -1148,7 +1884,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       autoscaler_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1167,7 +1903,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      */
     public Builder clearAutoscaler() {
       autoscaler_ = getDefaultInstance().getAutoscaler();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1191,9 +1927,234 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       }
       checkByteStringIsUtf8(value);
       autoscaler_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation
+        bulkInstanceOperation_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation,
+            com.google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation.Builder,
+            com.google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperationOrBuilder>
+        bulkInstanceOperationBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The status of bulk instance operation.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation bulk_instance_operation = 501667466;
+     * </code>
+     *
+     * @return Whether the bulkInstanceOperation field is set.
+     */
+    public boolean hasBulkInstanceOperation() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The status of bulk instance operation.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation bulk_instance_operation = 501667466;
+     * </code>
+     *
+     * @return The bulkInstanceOperation.
+     */
+    public com.google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation
+        getBulkInstanceOperation() {
+      if (bulkInstanceOperationBuilder_ == null) {
+        return bulkInstanceOperation_ == null
+            ? com.google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation
+                .getDefaultInstance()
+            : bulkInstanceOperation_;
+      } else {
+        return bulkInstanceOperationBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The status of bulk instance operation.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation bulk_instance_operation = 501667466;
+     * </code>
+     */
+    public Builder setBulkInstanceOperation(
+        com.google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation value) {
+      if (bulkInstanceOperationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bulkInstanceOperation_ = value;
+      } else {
+        bulkInstanceOperationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The status of bulk instance operation.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation bulk_instance_operation = 501667466;
+     * </code>
+     */
+    public Builder setBulkInstanceOperation(
+        com.google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation.Builder
+            builderForValue) {
+      if (bulkInstanceOperationBuilder_ == null) {
+        bulkInstanceOperation_ = builderForValue.build();
+      } else {
+        bulkInstanceOperationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The status of bulk instance operation.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation bulk_instance_operation = 501667466;
+     * </code>
+     */
+    public Builder mergeBulkInstanceOperation(
+        com.google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation value) {
+      if (bulkInstanceOperationBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && bulkInstanceOperation_ != null
+            && bulkInstanceOperation_
+                != com.google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation
+                    .getDefaultInstance()) {
+          getBulkInstanceOperationBuilder().mergeFrom(value);
+        } else {
+          bulkInstanceOperation_ = value;
+        }
+      } else {
+        bulkInstanceOperationBuilder_.mergeFrom(value);
+      }
+      if (bulkInstanceOperation_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The status of bulk instance operation.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation bulk_instance_operation = 501667466;
+     * </code>
+     */
+    public Builder clearBulkInstanceOperation() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      bulkInstanceOperation_ = null;
+      if (bulkInstanceOperationBuilder_ != null) {
+        bulkInstanceOperationBuilder_.dispose();
+        bulkInstanceOperationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The status of bulk instance operation.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation bulk_instance_operation = 501667466;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation.Builder
+        getBulkInstanceOperationBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return internalGetBulkInstanceOperationFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The status of bulk instance operation.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation bulk_instance_operation = 501667466;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperationOrBuilder
+        getBulkInstanceOperationOrBuilder() {
+      if (bulkInstanceOperationBuilder_ != null) {
+        return bulkInstanceOperationBuilder_.getMessageOrBuilder();
+      } else {
+        return bulkInstanceOperation_ == null
+            ? com.google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation
+                .getDefaultInstance()
+            : bulkInstanceOperation_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The status of bulk instance operation.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation bulk_instance_operation = 501667466;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation,
+            com.google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation.Builder,
+            com.google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperationOrBuilder>
+        internalGetBulkInstanceOperationFieldBuilder() {
+      if (bulkInstanceOperationBuilder_ == null) {
+        bulkInstanceOperationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation,
+                com.google.cloud.compute.v1.InstanceGroupManagerStatusBulkInstanceOperation.Builder,
+                com.google.cloud.compute.v1
+                    .InstanceGroupManagerStatusBulkInstanceOperationOrBuilder>(
+                getBulkInstanceOperation(), getParentForChildren(), isClean());
+        bulkInstanceOperation_ = null;
+      }
+      return bulkInstanceOperationBuilder_;
     }
 
     private boolean isStable_;
@@ -1216,7 +2177,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      */
     @java.lang.Override
     public boolean hasIsStable() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1260,7 +2221,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     public Builder setIsStable(boolean value) {
 
       isStable_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1282,7 +2243,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearIsStable() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       isStable_ = false;
       onChanged();
       return this;
@@ -1309,7 +2270,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * @return Whether the stateful field is set.
      */
     public boolean hasStateful() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -1356,7 +2317,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       } else {
         statefulBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1379,7 +2340,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       } else {
         statefulBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1398,7 +2359,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     public Builder mergeStateful(
         com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful value) {
       if (statefulBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && stateful_ != null
             && stateful_
                 != com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful
@@ -1411,7 +2372,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
         statefulBuilder_.mergeFrom(value);
       }
       if (stateful_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -1429,7 +2390,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearStateful() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       stateful_ = null;
       if (statefulBuilder_ != null) {
         statefulBuilder_.dispose();
@@ -1452,7 +2413,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful.Builder
         getStatefulBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return internalGetStatefulFieldBuilder().getBuilder();
     }
@@ -1530,7 +2491,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * @return Whether the versionTarget field is set.
      */
     public boolean hasVersionTarget() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -1582,7 +2543,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       } else {
         versionTargetBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1608,7 +2569,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       } else {
         versionTargetBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1629,7 +2590,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     public Builder mergeVersionTarget(
         com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget value) {
       if (versionTargetBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && versionTarget_ != null
             && versionTarget_
                 != com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget
@@ -1642,7 +2603,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
         versionTargetBuilder_.mergeFrom(value);
       }
       if (versionTarget_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -1662,7 +2623,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearVersionTarget() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       versionTarget_ = null;
       if (versionTargetBuilder_ != null) {
         versionTargetBuilder_.dispose();
@@ -1687,7 +2648,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget.Builder
         getVersionTargetBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return internalGetVersionTargetFieldBuilder().getBuilder();
     }

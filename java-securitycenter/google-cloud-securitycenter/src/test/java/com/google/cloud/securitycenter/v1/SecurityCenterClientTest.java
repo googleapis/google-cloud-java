@@ -462,6 +462,8 @@ public class SecurityCenterClientTest {
             .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
+            .setChokepoint(Chokepoint.newBuilder().build())
+            .setExternalExposure(ExternalExposure.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -554,6 +556,8 @@ public class SecurityCenterClientTest {
             .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
+            .setChokepoint(Chokepoint.newBuilder().build())
+            .setExternalExposure(ExternalExposure.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -4256,6 +4260,8 @@ public class SecurityCenterClientTest {
             .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
+            .setChokepoint(Chokepoint.newBuilder().build())
+            .setExternalExposure(ExternalExposure.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -4350,6 +4356,8 @@ public class SecurityCenterClientTest {
             .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
+            .setChokepoint(Chokepoint.newBuilder().build())
+            .setExternalExposure(ExternalExposure.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -4442,6 +4450,8 @@ public class SecurityCenterClientTest {
             .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
+            .setChokepoint(Chokepoint.newBuilder().build())
+            .setExternalExposure(ExternalExposure.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -4533,6 +4543,8 @@ public class SecurityCenterClientTest {
             .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
+            .setChokepoint(Chokepoint.newBuilder().build())
+            .setExternalExposure(ExternalExposure.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -4890,6 +4902,8 @@ public class SecurityCenterClientTest {
             .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
+            .setChokepoint(Chokepoint.newBuilder().build())
+            .setExternalExposure(ExternalExposure.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 

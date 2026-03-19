@@ -22,8 +22,8 @@ import com.google.cloud.bigquery.jdbc.BigQueryResultSetFinalizers.ArrowResultSet
 import java.lang.ref.ReferenceQueue;
 import java.util.ArrayList;
 import java.util.List;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class BigQueryDaemonPollingTaskTest {
 
@@ -32,7 +32,7 @@ public class BigQueryDaemonPollingTaskTest {
   static List<ArrowResultSetFinalizer> arrowResultSetFinalizers;
   static List<BigQueryResultSetFinalizers.JsonResultSetFinalizer> jsonResultSetFinalizers;
 
-  @Before
+  @BeforeEach
   public void setUp() {
     referenceQueueArrowRs = new ReferenceQueue<>();
     referenceQueueJsonRs = new ReferenceQueue<>();

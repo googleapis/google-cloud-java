@@ -598,6 +598,641 @@ public final class VertexRagDataServiceGrpc {
     return getGetRagEngineConfigMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.CreateRagDataSchemaRequest,
+          com.google.cloud.aiplatform.v1beta1.RagDataSchema>
+      getCreateRagDataSchemaMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateRagDataSchema",
+      requestType = com.google.cloud.aiplatform.v1beta1.CreateRagDataSchemaRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.RagDataSchema.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.CreateRagDataSchemaRequest,
+          com.google.cloud.aiplatform.v1beta1.RagDataSchema>
+      getCreateRagDataSchemaMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.CreateRagDataSchemaRequest,
+            com.google.cloud.aiplatform.v1beta1.RagDataSchema>
+        getCreateRagDataSchemaMethod;
+    if ((getCreateRagDataSchemaMethod = VertexRagDataServiceGrpc.getCreateRagDataSchemaMethod)
+        == null) {
+      synchronized (VertexRagDataServiceGrpc.class) {
+        if ((getCreateRagDataSchemaMethod = VertexRagDataServiceGrpc.getCreateRagDataSchemaMethod)
+            == null) {
+          VertexRagDataServiceGrpc.getCreateRagDataSchemaMethod =
+              getCreateRagDataSchemaMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.CreateRagDataSchemaRequest,
+                          com.google.cloud.aiplatform.v1beta1.RagDataSchema>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateRagDataSchema"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.CreateRagDataSchemaRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.RagDataSchema
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VertexRagDataServiceMethodDescriptorSupplier("CreateRagDataSchema"))
+                      .build();
+        }
+      }
+    }
+    return getCreateRagDataSchemaMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.BatchCreateRagDataSchemasRequest,
+          com.google.longrunning.Operation>
+      getBatchCreateRagDataSchemasMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchCreateRagDataSchemas",
+      requestType = com.google.cloud.aiplatform.v1beta1.BatchCreateRagDataSchemasRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.BatchCreateRagDataSchemasRequest,
+          com.google.longrunning.Operation>
+      getBatchCreateRagDataSchemasMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.BatchCreateRagDataSchemasRequest,
+            com.google.longrunning.Operation>
+        getBatchCreateRagDataSchemasMethod;
+    if ((getBatchCreateRagDataSchemasMethod =
+            VertexRagDataServiceGrpc.getBatchCreateRagDataSchemasMethod)
+        == null) {
+      synchronized (VertexRagDataServiceGrpc.class) {
+        if ((getBatchCreateRagDataSchemasMethod =
+                VertexRagDataServiceGrpc.getBatchCreateRagDataSchemasMethod)
+            == null) {
+          VertexRagDataServiceGrpc.getBatchCreateRagDataSchemasMethod =
+              getBatchCreateRagDataSchemasMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.BatchCreateRagDataSchemasRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "BatchCreateRagDataSchemas"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.BatchCreateRagDataSchemasRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VertexRagDataServiceMethodDescriptorSupplier(
+                              "BatchCreateRagDataSchemas"))
+                      .build();
+        }
+      }
+    }
+    return getBatchCreateRagDataSchemasMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.GetRagDataSchemaRequest,
+          com.google.cloud.aiplatform.v1beta1.RagDataSchema>
+      getGetRagDataSchemaMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetRagDataSchema",
+      requestType = com.google.cloud.aiplatform.v1beta1.GetRagDataSchemaRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.RagDataSchema.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.GetRagDataSchemaRequest,
+          com.google.cloud.aiplatform.v1beta1.RagDataSchema>
+      getGetRagDataSchemaMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.GetRagDataSchemaRequest,
+            com.google.cloud.aiplatform.v1beta1.RagDataSchema>
+        getGetRagDataSchemaMethod;
+    if ((getGetRagDataSchemaMethod = VertexRagDataServiceGrpc.getGetRagDataSchemaMethod) == null) {
+      synchronized (VertexRagDataServiceGrpc.class) {
+        if ((getGetRagDataSchemaMethod = VertexRagDataServiceGrpc.getGetRagDataSchemaMethod)
+            == null) {
+          VertexRagDataServiceGrpc.getGetRagDataSchemaMethod =
+              getGetRagDataSchemaMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.GetRagDataSchemaRequest,
+                          com.google.cloud.aiplatform.v1beta1.RagDataSchema>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetRagDataSchema"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.GetRagDataSchemaRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.RagDataSchema
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VertexRagDataServiceMethodDescriptorSupplier("GetRagDataSchema"))
+                      .build();
+        }
+      }
+    }
+    return getGetRagDataSchemaMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasRequest,
+          com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasResponse>
+      getListRagDataSchemasMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListRagDataSchemas",
+      requestType = com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasRequest,
+          com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasResponse>
+      getListRagDataSchemasMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasRequest,
+            com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasResponse>
+        getListRagDataSchemasMethod;
+    if ((getListRagDataSchemasMethod = VertexRagDataServiceGrpc.getListRagDataSchemasMethod)
+        == null) {
+      synchronized (VertexRagDataServiceGrpc.class) {
+        if ((getListRagDataSchemasMethod = VertexRagDataServiceGrpc.getListRagDataSchemasMethod)
+            == null) {
+          VertexRagDataServiceGrpc.getListRagDataSchemasMethod =
+              getListRagDataSchemasMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasRequest,
+                          com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListRagDataSchemas"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VertexRagDataServiceMethodDescriptorSupplier("ListRagDataSchemas"))
+                      .build();
+        }
+      }
+    }
+    return getListRagDataSchemasMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.DeleteRagDataSchemaRequest, com.google.protobuf.Empty>
+      getDeleteRagDataSchemaMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteRagDataSchema",
+      requestType = com.google.cloud.aiplatform.v1beta1.DeleteRagDataSchemaRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.DeleteRagDataSchemaRequest, com.google.protobuf.Empty>
+      getDeleteRagDataSchemaMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.DeleteRagDataSchemaRequest,
+            com.google.protobuf.Empty>
+        getDeleteRagDataSchemaMethod;
+    if ((getDeleteRagDataSchemaMethod = VertexRagDataServiceGrpc.getDeleteRagDataSchemaMethod)
+        == null) {
+      synchronized (VertexRagDataServiceGrpc.class) {
+        if ((getDeleteRagDataSchemaMethod = VertexRagDataServiceGrpc.getDeleteRagDataSchemaMethod)
+            == null) {
+          VertexRagDataServiceGrpc.getDeleteRagDataSchemaMethod =
+              getDeleteRagDataSchemaMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.DeleteRagDataSchemaRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteRagDataSchema"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.DeleteRagDataSchemaRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VertexRagDataServiceMethodDescriptorSupplier("DeleteRagDataSchema"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteRagDataSchemaMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.BatchDeleteRagDataSchemasRequest,
+          com.google.longrunning.Operation>
+      getBatchDeleteRagDataSchemasMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchDeleteRagDataSchemas",
+      requestType = com.google.cloud.aiplatform.v1beta1.BatchDeleteRagDataSchemasRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.BatchDeleteRagDataSchemasRequest,
+          com.google.longrunning.Operation>
+      getBatchDeleteRagDataSchemasMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.BatchDeleteRagDataSchemasRequest,
+            com.google.longrunning.Operation>
+        getBatchDeleteRagDataSchemasMethod;
+    if ((getBatchDeleteRagDataSchemasMethod =
+            VertexRagDataServiceGrpc.getBatchDeleteRagDataSchemasMethod)
+        == null) {
+      synchronized (VertexRagDataServiceGrpc.class) {
+        if ((getBatchDeleteRagDataSchemasMethod =
+                VertexRagDataServiceGrpc.getBatchDeleteRagDataSchemasMethod)
+            == null) {
+          VertexRagDataServiceGrpc.getBatchDeleteRagDataSchemasMethod =
+              getBatchDeleteRagDataSchemasMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.BatchDeleteRagDataSchemasRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "BatchDeleteRagDataSchemas"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.BatchDeleteRagDataSchemasRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VertexRagDataServiceMethodDescriptorSupplier(
+                              "BatchDeleteRagDataSchemas"))
+                      .build();
+        }
+      }
+    }
+    return getBatchDeleteRagDataSchemasMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.CreateRagMetadataRequest,
+          com.google.cloud.aiplatform.v1beta1.RagMetadata>
+      getCreateRagMetadataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateRagMetadata",
+      requestType = com.google.cloud.aiplatform.v1beta1.CreateRagMetadataRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.RagMetadata.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.CreateRagMetadataRequest,
+          com.google.cloud.aiplatform.v1beta1.RagMetadata>
+      getCreateRagMetadataMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.CreateRagMetadataRequest,
+            com.google.cloud.aiplatform.v1beta1.RagMetadata>
+        getCreateRagMetadataMethod;
+    if ((getCreateRagMetadataMethod = VertexRagDataServiceGrpc.getCreateRagMetadataMethod)
+        == null) {
+      synchronized (VertexRagDataServiceGrpc.class) {
+        if ((getCreateRagMetadataMethod = VertexRagDataServiceGrpc.getCreateRagMetadataMethod)
+            == null) {
+          VertexRagDataServiceGrpc.getCreateRagMetadataMethod =
+              getCreateRagMetadataMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.CreateRagMetadataRequest,
+                          com.google.cloud.aiplatform.v1beta1.RagMetadata>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateRagMetadata"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.CreateRagMetadataRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.RagMetadata.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VertexRagDataServiceMethodDescriptorSupplier("CreateRagMetadata"))
+                      .build();
+        }
+      }
+    }
+    return getCreateRagMetadataMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.BatchCreateRagMetadataRequest,
+          com.google.longrunning.Operation>
+      getBatchCreateRagMetadataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchCreateRagMetadata",
+      requestType = com.google.cloud.aiplatform.v1beta1.BatchCreateRagMetadataRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.BatchCreateRagMetadataRequest,
+          com.google.longrunning.Operation>
+      getBatchCreateRagMetadataMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.BatchCreateRagMetadataRequest,
+            com.google.longrunning.Operation>
+        getBatchCreateRagMetadataMethod;
+    if ((getBatchCreateRagMetadataMethod = VertexRagDataServiceGrpc.getBatchCreateRagMetadataMethod)
+        == null) {
+      synchronized (VertexRagDataServiceGrpc.class) {
+        if ((getBatchCreateRagMetadataMethod =
+                VertexRagDataServiceGrpc.getBatchCreateRagMetadataMethod)
+            == null) {
+          VertexRagDataServiceGrpc.getBatchCreateRagMetadataMethod =
+              getBatchCreateRagMetadataMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.BatchCreateRagMetadataRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "BatchCreateRagMetadata"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.BatchCreateRagMetadataRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VertexRagDataServiceMethodDescriptorSupplier(
+                              "BatchCreateRagMetadata"))
+                      .build();
+        }
+      }
+    }
+    return getBatchCreateRagMetadataMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.UpdateRagMetadataRequest,
+          com.google.cloud.aiplatform.v1beta1.RagMetadata>
+      getUpdateRagMetadataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateRagMetadata",
+      requestType = com.google.cloud.aiplatform.v1beta1.UpdateRagMetadataRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.RagMetadata.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.UpdateRagMetadataRequest,
+          com.google.cloud.aiplatform.v1beta1.RagMetadata>
+      getUpdateRagMetadataMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.UpdateRagMetadataRequest,
+            com.google.cloud.aiplatform.v1beta1.RagMetadata>
+        getUpdateRagMetadataMethod;
+    if ((getUpdateRagMetadataMethod = VertexRagDataServiceGrpc.getUpdateRagMetadataMethod)
+        == null) {
+      synchronized (VertexRagDataServiceGrpc.class) {
+        if ((getUpdateRagMetadataMethod = VertexRagDataServiceGrpc.getUpdateRagMetadataMethod)
+            == null) {
+          VertexRagDataServiceGrpc.getUpdateRagMetadataMethod =
+              getUpdateRagMetadataMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.UpdateRagMetadataRequest,
+                          com.google.cloud.aiplatform.v1beta1.RagMetadata>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateRagMetadata"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.UpdateRagMetadataRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.RagMetadata.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VertexRagDataServiceMethodDescriptorSupplier("UpdateRagMetadata"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateRagMetadataMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.GetRagMetadataRequest,
+          com.google.cloud.aiplatform.v1beta1.RagMetadata>
+      getGetRagMetadataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetRagMetadata",
+      requestType = com.google.cloud.aiplatform.v1beta1.GetRagMetadataRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.RagMetadata.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.GetRagMetadataRequest,
+          com.google.cloud.aiplatform.v1beta1.RagMetadata>
+      getGetRagMetadataMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.GetRagMetadataRequest,
+            com.google.cloud.aiplatform.v1beta1.RagMetadata>
+        getGetRagMetadataMethod;
+    if ((getGetRagMetadataMethod = VertexRagDataServiceGrpc.getGetRagMetadataMethod) == null) {
+      synchronized (VertexRagDataServiceGrpc.class) {
+        if ((getGetRagMetadataMethod = VertexRagDataServiceGrpc.getGetRagMetadataMethod) == null) {
+          VertexRagDataServiceGrpc.getGetRagMetadataMethod =
+              getGetRagMetadataMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.GetRagMetadataRequest,
+                          com.google.cloud.aiplatform.v1beta1.RagMetadata>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetRagMetadata"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.GetRagMetadataRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.RagMetadata.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VertexRagDataServiceMethodDescriptorSupplier("GetRagMetadata"))
+                      .build();
+        }
+      }
+    }
+    return getGetRagMetadataMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.ListRagMetadataRequest,
+          com.google.cloud.aiplatform.v1beta1.ListRagMetadataResponse>
+      getListRagMetadataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListRagMetadata",
+      requestType = com.google.cloud.aiplatform.v1beta1.ListRagMetadataRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.ListRagMetadataResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.ListRagMetadataRequest,
+          com.google.cloud.aiplatform.v1beta1.ListRagMetadataResponse>
+      getListRagMetadataMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.ListRagMetadataRequest,
+            com.google.cloud.aiplatform.v1beta1.ListRagMetadataResponse>
+        getListRagMetadataMethod;
+    if ((getListRagMetadataMethod = VertexRagDataServiceGrpc.getListRagMetadataMethod) == null) {
+      synchronized (VertexRagDataServiceGrpc.class) {
+        if ((getListRagMetadataMethod = VertexRagDataServiceGrpc.getListRagMetadataMethod)
+            == null) {
+          VertexRagDataServiceGrpc.getListRagMetadataMethod =
+              getListRagMetadataMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.ListRagMetadataRequest,
+                          com.google.cloud.aiplatform.v1beta1.ListRagMetadataResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListRagMetadata"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.ListRagMetadataRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.ListRagMetadataResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VertexRagDataServiceMethodDescriptorSupplier("ListRagMetadata"))
+                      .build();
+        }
+      }
+    }
+    return getListRagMetadataMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.DeleteRagMetadataRequest, com.google.protobuf.Empty>
+      getDeleteRagMetadataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteRagMetadata",
+      requestType = com.google.cloud.aiplatform.v1beta1.DeleteRagMetadataRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.DeleteRagMetadataRequest, com.google.protobuf.Empty>
+      getDeleteRagMetadataMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.DeleteRagMetadataRequest, com.google.protobuf.Empty>
+        getDeleteRagMetadataMethod;
+    if ((getDeleteRagMetadataMethod = VertexRagDataServiceGrpc.getDeleteRagMetadataMethod)
+        == null) {
+      synchronized (VertexRagDataServiceGrpc.class) {
+        if ((getDeleteRagMetadataMethod = VertexRagDataServiceGrpc.getDeleteRagMetadataMethod)
+            == null) {
+          VertexRagDataServiceGrpc.getDeleteRagMetadataMethod =
+              getDeleteRagMetadataMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.DeleteRagMetadataRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteRagMetadata"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.DeleteRagMetadataRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VertexRagDataServiceMethodDescriptorSupplier("DeleteRagMetadata"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteRagMetadataMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.BatchDeleteRagMetadataRequest,
+          com.google.longrunning.Operation>
+      getBatchDeleteRagMetadataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchDeleteRagMetadata",
+      requestType = com.google.cloud.aiplatform.v1beta1.BatchDeleteRagMetadataRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.BatchDeleteRagMetadataRequest,
+          com.google.longrunning.Operation>
+      getBatchDeleteRagMetadataMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.BatchDeleteRagMetadataRequest,
+            com.google.longrunning.Operation>
+        getBatchDeleteRagMetadataMethod;
+    if ((getBatchDeleteRagMetadataMethod = VertexRagDataServiceGrpc.getBatchDeleteRagMetadataMethod)
+        == null) {
+      synchronized (VertexRagDataServiceGrpc.class) {
+        if ((getBatchDeleteRagMetadataMethod =
+                VertexRagDataServiceGrpc.getBatchDeleteRagMetadataMethod)
+            == null) {
+          VertexRagDataServiceGrpc.getBatchDeleteRagMetadataMethod =
+              getBatchDeleteRagMetadataMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.BatchDeleteRagMetadataRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "BatchDeleteRagMetadata"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.BatchDeleteRagMetadataRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VertexRagDataServiceMethodDescriptorSupplier(
+                              "BatchDeleteRagMetadata"))
+                      .build();
+        }
+      }
+    }
+    return getBatchDeleteRagMetadataMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static VertexRagDataServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<VertexRagDataServiceStub> factory =
@@ -832,6 +1467,195 @@ public final class VertexRagDataServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetRagEngineConfigMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a RagDataSchema.
+     * </pre>
+     */
+    default void createRagDataSchema(
+        com.google.cloud.aiplatform.v1beta1.CreateRagDataSchemaRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.RagDataSchema>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateRagDataSchemaMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch Create one or more RagDataSchemas
+     * </pre>
+     */
+    default void batchCreateRagDataSchemas(
+        com.google.cloud.aiplatform.v1beta1.BatchCreateRagDataSchemasRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchCreateRagDataSchemasMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a RagDataSchema.
+     * </pre>
+     */
+    default void getRagDataSchema(
+        com.google.cloud.aiplatform.v1beta1.GetRagDataSchemaRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.RagDataSchema>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetRagDataSchemaMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RagDataSchemas in a Location.
+     * </pre>
+     */
+    default void listRagDataSchemas(
+        com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListRagDataSchemasMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a RagDataSchema.
+     * </pre>
+     */
+    default void deleteRagDataSchema(
+        com.google.cloud.aiplatform.v1beta1.DeleteRagDataSchemaRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteRagDataSchemaMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch Deletes one or more RagDataSchemas
+     * </pre>
+     */
+    default void batchDeleteRagDataSchemas(
+        com.google.cloud.aiplatform.v1beta1.BatchDeleteRagDataSchemasRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchDeleteRagDataSchemasMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a RagMetadata.
+     * </pre>
+     */
+    default void createRagMetadata(
+        com.google.cloud.aiplatform.v1beta1.CreateRagMetadataRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.RagMetadata>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateRagMetadataMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch Create one or more RagMetadatas
+     * </pre>
+     */
+    default void batchCreateRagMetadata(
+        com.google.cloud.aiplatform.v1beta1.BatchCreateRagMetadataRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchCreateRagMetadataMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a RagMetadata.
+     * </pre>
+     */
+    default void updateRagMetadata(
+        com.google.cloud.aiplatform.v1beta1.UpdateRagMetadataRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.RagMetadata>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateRagMetadataMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a RagMetadata.
+     * </pre>
+     */
+    default void getRagMetadata(
+        com.google.cloud.aiplatform.v1beta1.GetRagMetadataRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.RagMetadata>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetRagMetadataMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RagMetadata in a RagFile.
+     * </pre>
+     */
+    default void listRagMetadata(
+        com.google.cloud.aiplatform.v1beta1.ListRagMetadataRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListRagMetadataResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListRagMetadataMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a RagMetadata.
+     * </pre>
+     */
+    default void deleteRagMetadata(
+        com.google.cloud.aiplatform.v1beta1.DeleteRagMetadataRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteRagMetadataMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch Deletes one or more RagMetadata.
+     * </pre>
+     */
+    default void batchDeleteRagMetadata(
+        com.google.cloud.aiplatform.v1beta1.BatchDeleteRagMetadataRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchDeleteRagMetadataMethod(), responseObserver);
+    }
   }
 
   /**
@@ -1063,6 +1887,221 @@ public final class VertexRagDataServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a RagDataSchema.
+     * </pre>
+     */
+    public void createRagDataSchema(
+        com.google.cloud.aiplatform.v1beta1.CreateRagDataSchemaRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.RagDataSchema>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateRagDataSchemaMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch Create one or more RagDataSchemas
+     * </pre>
+     */
+    public void batchCreateRagDataSchemas(
+        com.google.cloud.aiplatform.v1beta1.BatchCreateRagDataSchemasRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchCreateRagDataSchemasMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a RagDataSchema.
+     * </pre>
+     */
+    public void getRagDataSchema(
+        com.google.cloud.aiplatform.v1beta1.GetRagDataSchemaRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.RagDataSchema>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetRagDataSchemaMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RagDataSchemas in a Location.
+     * </pre>
+     */
+    public void listRagDataSchemas(
+        com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListRagDataSchemasMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a RagDataSchema.
+     * </pre>
+     */
+    public void deleteRagDataSchema(
+        com.google.cloud.aiplatform.v1beta1.DeleteRagDataSchemaRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteRagDataSchemaMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch Deletes one or more RagDataSchemas
+     * </pre>
+     */
+    public void batchDeleteRagDataSchemas(
+        com.google.cloud.aiplatform.v1beta1.BatchDeleteRagDataSchemasRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchDeleteRagDataSchemasMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a RagMetadata.
+     * </pre>
+     */
+    public void createRagMetadata(
+        com.google.cloud.aiplatform.v1beta1.CreateRagMetadataRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.RagMetadata>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateRagMetadataMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch Create one or more RagMetadatas
+     * </pre>
+     */
+    public void batchCreateRagMetadata(
+        com.google.cloud.aiplatform.v1beta1.BatchCreateRagMetadataRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchCreateRagMetadataMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a RagMetadata.
+     * </pre>
+     */
+    public void updateRagMetadata(
+        com.google.cloud.aiplatform.v1beta1.UpdateRagMetadataRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.RagMetadata>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateRagMetadataMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a RagMetadata.
+     * </pre>
+     */
+    public void getRagMetadata(
+        com.google.cloud.aiplatform.v1beta1.GetRagMetadataRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.RagMetadata>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetRagMetadataMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RagMetadata in a RagFile.
+     * </pre>
+     */
+    public void listRagMetadata(
+        com.google.cloud.aiplatform.v1beta1.ListRagMetadataRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListRagMetadataResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListRagMetadataMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a RagMetadata.
+     * </pre>
+     */
+    public void deleteRagMetadata(
+        com.google.cloud.aiplatform.v1beta1.DeleteRagMetadataRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteRagMetadataMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch Deletes one or more RagMetadata.
+     * </pre>
+     */
+    public void batchDeleteRagMetadata(
+        com.google.cloud.aiplatform.v1beta1.BatchDeleteRagMetadataRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchDeleteRagMetadataMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1252,6 +2291,188 @@ public final class VertexRagDataServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRagEngineConfigMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a RagDataSchema.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagDataSchema createRagDataSchema(
+        com.google.cloud.aiplatform.v1beta1.CreateRagDataSchemaRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateRagDataSchemaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch Create one or more RagDataSchemas
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchCreateRagDataSchemas(
+        com.google.cloud.aiplatform.v1beta1.BatchCreateRagDataSchemasRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchCreateRagDataSchemasMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a RagDataSchema.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagDataSchema getRagDataSchema(
+        com.google.cloud.aiplatform.v1beta1.GetRagDataSchemaRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetRagDataSchemaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RagDataSchemas in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasResponse listRagDataSchemas(
+        com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListRagDataSchemasMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a RagDataSchema.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteRagDataSchema(
+        com.google.cloud.aiplatform.v1beta1.DeleteRagDataSchemaRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteRagDataSchemaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch Deletes one or more RagDataSchemas
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchDeleteRagDataSchemas(
+        com.google.cloud.aiplatform.v1beta1.BatchDeleteRagDataSchemasRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchDeleteRagDataSchemasMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a RagMetadata.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagMetadata createRagMetadata(
+        com.google.cloud.aiplatform.v1beta1.CreateRagMetadataRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateRagMetadataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch Create one or more RagMetadatas
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchCreateRagMetadata(
+        com.google.cloud.aiplatform.v1beta1.BatchCreateRagMetadataRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchCreateRagMetadataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a RagMetadata.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagMetadata updateRagMetadata(
+        com.google.cloud.aiplatform.v1beta1.UpdateRagMetadataRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateRagMetadataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a RagMetadata.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagMetadata getRagMetadata(
+        com.google.cloud.aiplatform.v1beta1.GetRagMetadataRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetRagMetadataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RagMetadata in a RagFile.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListRagMetadataResponse listRagMetadata(
+        com.google.cloud.aiplatform.v1beta1.ListRagMetadataRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListRagMetadataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a RagMetadata.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteRagMetadata(
+        com.google.cloud.aiplatform.v1beta1.DeleteRagMetadataRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteRagMetadataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch Deletes one or more RagMetadata.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchDeleteRagMetadata(
+        com.google.cloud.aiplatform.v1beta1.BatchDeleteRagMetadataRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchDeleteRagMetadataMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1428,6 +2649,175 @@ public final class VertexRagDataServiceGrpc {
         com.google.cloud.aiplatform.v1beta1.GetRagEngineConfigRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetRagEngineConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a RagDataSchema.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagDataSchema createRagDataSchema(
+        com.google.cloud.aiplatform.v1beta1.CreateRagDataSchemaRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRagDataSchemaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch Create one or more RagDataSchemas
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchCreateRagDataSchemas(
+        com.google.cloud.aiplatform.v1beta1.BatchCreateRagDataSchemasRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchCreateRagDataSchemasMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a RagDataSchema.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagDataSchema getRagDataSchema(
+        com.google.cloud.aiplatform.v1beta1.GetRagDataSchemaRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRagDataSchemaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RagDataSchemas in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasResponse listRagDataSchemas(
+        com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRagDataSchemasMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a RagDataSchema.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteRagDataSchema(
+        com.google.cloud.aiplatform.v1beta1.DeleteRagDataSchemaRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRagDataSchemaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch Deletes one or more RagDataSchemas
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchDeleteRagDataSchemas(
+        com.google.cloud.aiplatform.v1beta1.BatchDeleteRagDataSchemasRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchDeleteRagDataSchemasMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a RagMetadata.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagMetadata createRagMetadata(
+        com.google.cloud.aiplatform.v1beta1.CreateRagMetadataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRagMetadataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch Create one or more RagMetadatas
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchCreateRagMetadata(
+        com.google.cloud.aiplatform.v1beta1.BatchCreateRagMetadataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchCreateRagMetadataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a RagMetadata.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagMetadata updateRagMetadata(
+        com.google.cloud.aiplatform.v1beta1.UpdateRagMetadataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateRagMetadataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a RagMetadata.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagMetadata getRagMetadata(
+        com.google.cloud.aiplatform.v1beta1.GetRagMetadataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRagMetadataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RagMetadata in a RagFile.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListRagMetadataResponse listRagMetadata(
+        com.google.cloud.aiplatform.v1beta1.ListRagMetadataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRagMetadataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a RagMetadata.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteRagMetadata(
+        com.google.cloud.aiplatform.v1beta1.DeleteRagMetadataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRagMetadataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch Deletes one or more RagMetadata.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchDeleteRagMetadata(
+        com.google.cloud.aiplatform.v1beta1.BatchDeleteRagMetadataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchDeleteRagMetadataMethod(), getCallOptions(), request);
     }
   }
 
@@ -1613,6 +3003,188 @@ public final class VertexRagDataServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetRagEngineConfigMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a RagDataSchema.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.RagDataSchema>
+        createRagDataSchema(
+            com.google.cloud.aiplatform.v1beta1.CreateRagDataSchemaRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateRagDataSchemaMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch Create one or more RagDataSchemas
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        batchCreateRagDataSchemas(
+            com.google.cloud.aiplatform.v1beta1.BatchCreateRagDataSchemasRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchCreateRagDataSchemasMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a RagDataSchema.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.RagDataSchema>
+        getRagDataSchema(com.google.cloud.aiplatform.v1beta1.GetRagDataSchemaRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetRagDataSchemaMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RagDataSchemas in a Location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasResponse>
+        listRagDataSchemas(com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListRagDataSchemasMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a RagDataSchema.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteRagDataSchema(
+            com.google.cloud.aiplatform.v1beta1.DeleteRagDataSchemaRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteRagDataSchemaMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch Deletes one or more RagDataSchemas
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        batchDeleteRagDataSchemas(
+            com.google.cloud.aiplatform.v1beta1.BatchDeleteRagDataSchemasRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchDeleteRagDataSchemasMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a RagMetadata.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.RagMetadata>
+        createRagMetadata(com.google.cloud.aiplatform.v1beta1.CreateRagMetadataRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateRagMetadataMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch Create one or more RagMetadatas
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        batchCreateRagMetadata(
+            com.google.cloud.aiplatform.v1beta1.BatchCreateRagMetadataRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchCreateRagMetadataMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a RagMetadata.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.RagMetadata>
+        updateRagMetadata(com.google.cloud.aiplatform.v1beta1.UpdateRagMetadataRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateRagMetadataMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a RagMetadata.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.RagMetadata>
+        getRagMetadata(com.google.cloud.aiplatform.v1beta1.GetRagMetadataRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetRagMetadataMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RagMetadata in a RagFile.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.ListRagMetadataResponse>
+        listRagMetadata(com.google.cloud.aiplatform.v1beta1.ListRagMetadataRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListRagMetadataMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a RagMetadata.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteRagMetadata(com.google.cloud.aiplatform.v1beta1.DeleteRagMetadataRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteRagMetadataMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch Deletes one or more RagMetadata.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        batchDeleteRagMetadata(
+            com.google.cloud.aiplatform.v1beta1.BatchDeleteRagMetadataRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchDeleteRagMetadataMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_RAG_CORPUS = 0;
@@ -1627,6 +3199,19 @@ public final class VertexRagDataServiceGrpc {
   private static final int METHODID_DELETE_RAG_FILE = 9;
   private static final int METHODID_UPDATE_RAG_ENGINE_CONFIG = 10;
   private static final int METHODID_GET_RAG_ENGINE_CONFIG = 11;
+  private static final int METHODID_CREATE_RAG_DATA_SCHEMA = 12;
+  private static final int METHODID_BATCH_CREATE_RAG_DATA_SCHEMAS = 13;
+  private static final int METHODID_GET_RAG_DATA_SCHEMA = 14;
+  private static final int METHODID_LIST_RAG_DATA_SCHEMAS = 15;
+  private static final int METHODID_DELETE_RAG_DATA_SCHEMA = 16;
+  private static final int METHODID_BATCH_DELETE_RAG_DATA_SCHEMAS = 17;
+  private static final int METHODID_CREATE_RAG_METADATA = 18;
+  private static final int METHODID_BATCH_CREATE_RAG_METADATA = 19;
+  private static final int METHODID_UPDATE_RAG_METADATA = 20;
+  private static final int METHODID_GET_RAG_METADATA = 21;
+  private static final int METHODID_LIST_RAG_METADATA = 22;
+  private static final int METHODID_DELETE_RAG_METADATA = 23;
+  private static final int METHODID_BATCH_DELETE_RAG_METADATA = 24;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1713,6 +3298,80 @@ public final class VertexRagDataServiceGrpc {
               (com.google.cloud.aiplatform.v1beta1.GetRagEngineConfigRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.RagEngineConfig>)
                   responseObserver);
+          break;
+        case METHODID_CREATE_RAG_DATA_SCHEMA:
+          serviceImpl.createRagDataSchema(
+              (com.google.cloud.aiplatform.v1beta1.CreateRagDataSchemaRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.RagDataSchema>)
+                  responseObserver);
+          break;
+        case METHODID_BATCH_CREATE_RAG_DATA_SCHEMAS:
+          serviceImpl.batchCreateRagDataSchemas(
+              (com.google.cloud.aiplatform.v1beta1.BatchCreateRagDataSchemasRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_RAG_DATA_SCHEMA:
+          serviceImpl.getRagDataSchema(
+              (com.google.cloud.aiplatform.v1beta1.GetRagDataSchemaRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.RagDataSchema>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_RAG_DATA_SCHEMAS:
+          serviceImpl.listRagDataSchemas(
+              (com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasResponse>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_RAG_DATA_SCHEMA:
+          serviceImpl.deleteRagDataSchema(
+              (com.google.cloud.aiplatform.v1beta1.DeleteRagDataSchemaRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_BATCH_DELETE_RAG_DATA_SCHEMAS:
+          serviceImpl.batchDeleteRagDataSchemas(
+              (com.google.cloud.aiplatform.v1beta1.BatchDeleteRagDataSchemasRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_RAG_METADATA:
+          serviceImpl.createRagMetadata(
+              (com.google.cloud.aiplatform.v1beta1.CreateRagMetadataRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.RagMetadata>)
+                  responseObserver);
+          break;
+        case METHODID_BATCH_CREATE_RAG_METADATA:
+          serviceImpl.batchCreateRagMetadata(
+              (com.google.cloud.aiplatform.v1beta1.BatchCreateRagMetadataRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_RAG_METADATA:
+          serviceImpl.updateRagMetadata(
+              (com.google.cloud.aiplatform.v1beta1.UpdateRagMetadataRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.RagMetadata>)
+                  responseObserver);
+          break;
+        case METHODID_GET_RAG_METADATA:
+          serviceImpl.getRagMetadata(
+              (com.google.cloud.aiplatform.v1beta1.GetRagMetadataRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.RagMetadata>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_RAG_METADATA:
+          serviceImpl.listRagMetadata(
+              (com.google.cloud.aiplatform.v1beta1.ListRagMetadataRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1beta1.ListRagMetadataResponse>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_RAG_METADATA:
+          serviceImpl.deleteRagMetadata(
+              (com.google.cloud.aiplatform.v1beta1.DeleteRagMetadataRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_BATCH_DELETE_RAG_METADATA:
+          serviceImpl.batchDeleteRagMetadata(
+              (com.google.cloud.aiplatform.v1beta1.BatchDeleteRagMetadataRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1809,6 +3468,93 @@ public final class VertexRagDataServiceGrpc {
                     com.google.cloud.aiplatform.v1beta1.GetRagEngineConfigRequest,
                     com.google.cloud.aiplatform.v1beta1.RagEngineConfig>(
                     service, METHODID_GET_RAG_ENGINE_CONFIG)))
+        .addMethod(
+            getCreateRagDataSchemaMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.CreateRagDataSchemaRequest,
+                    com.google.cloud.aiplatform.v1beta1.RagDataSchema>(
+                    service, METHODID_CREATE_RAG_DATA_SCHEMA)))
+        .addMethod(
+            getBatchCreateRagDataSchemasMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.BatchCreateRagDataSchemasRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_BATCH_CREATE_RAG_DATA_SCHEMAS)))
+        .addMethod(
+            getGetRagDataSchemaMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.GetRagDataSchemaRequest,
+                    com.google.cloud.aiplatform.v1beta1.RagDataSchema>(
+                    service, METHODID_GET_RAG_DATA_SCHEMA)))
+        .addMethod(
+            getListRagDataSchemasMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasRequest,
+                    com.google.cloud.aiplatform.v1beta1.ListRagDataSchemasResponse>(
+                    service, METHODID_LIST_RAG_DATA_SCHEMAS)))
+        .addMethod(
+            getDeleteRagDataSchemaMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.DeleteRagDataSchemaRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_RAG_DATA_SCHEMA)))
+        .addMethod(
+            getBatchDeleteRagDataSchemasMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.BatchDeleteRagDataSchemasRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_BATCH_DELETE_RAG_DATA_SCHEMAS)))
+        .addMethod(
+            getCreateRagMetadataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.CreateRagMetadataRequest,
+                    com.google.cloud.aiplatform.v1beta1.RagMetadata>(
+                    service, METHODID_CREATE_RAG_METADATA)))
+        .addMethod(
+            getBatchCreateRagMetadataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.BatchCreateRagMetadataRequest,
+                    com.google.longrunning.Operation>(service, METHODID_BATCH_CREATE_RAG_METADATA)))
+        .addMethod(
+            getUpdateRagMetadataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.UpdateRagMetadataRequest,
+                    com.google.cloud.aiplatform.v1beta1.RagMetadata>(
+                    service, METHODID_UPDATE_RAG_METADATA)))
+        .addMethod(
+            getGetRagMetadataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.GetRagMetadataRequest,
+                    com.google.cloud.aiplatform.v1beta1.RagMetadata>(
+                    service, METHODID_GET_RAG_METADATA)))
+        .addMethod(
+            getListRagMetadataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.ListRagMetadataRequest,
+                    com.google.cloud.aiplatform.v1beta1.ListRagMetadataResponse>(
+                    service, METHODID_LIST_RAG_METADATA)))
+        .addMethod(
+            getDeleteRagMetadataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.DeleteRagMetadataRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_RAG_METADATA)))
+        .addMethod(
+            getBatchDeleteRagMetadataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.BatchDeleteRagMetadataRequest,
+                    com.google.longrunning.Operation>(service, METHODID_BATCH_DELETE_RAG_METADATA)))
         .build();
   }
 
@@ -1872,6 +3618,19 @@ public final class VertexRagDataServiceGrpc {
                       .addMethod(getDeleteRagFileMethod())
                       .addMethod(getUpdateRagEngineConfigMethod())
                       .addMethod(getGetRagEngineConfigMethod())
+                      .addMethod(getCreateRagDataSchemaMethod())
+                      .addMethod(getBatchCreateRagDataSchemasMethod())
+                      .addMethod(getGetRagDataSchemaMethod())
+                      .addMethod(getListRagDataSchemasMethod())
+                      .addMethod(getDeleteRagDataSchemaMethod())
+                      .addMethod(getBatchDeleteRagDataSchemasMethod())
+                      .addMethod(getCreateRagMetadataMethod())
+                      .addMethod(getBatchCreateRagMetadataMethod())
+                      .addMethod(getUpdateRagMetadataMethod())
+                      .addMethod(getGetRagMetadataMethod())
+                      .addMethod(getListRagMetadataMethod())
+                      .addMethod(getDeleteRagMetadataMethod())
+                      .addMethod(getBatchDeleteRagMetadataMethod())
                       .build();
         }
       }

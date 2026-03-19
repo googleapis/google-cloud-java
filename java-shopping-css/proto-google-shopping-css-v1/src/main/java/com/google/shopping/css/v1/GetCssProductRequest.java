@@ -80,6 +80,7 @@ public final class GetCssProductRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The name of the CSS product to retrieve.
+   * Format: `accounts/{account}/cssProducts/{css_product}`
    * </pre>
    *
    * <code>
@@ -106,6 +107,7 @@ public final class GetCssProductRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The name of the CSS product to retrieve.
+   * Format: `accounts/{account}/cssProducts/{css_product}`
    * </pre>
    *
    * <code>
@@ -444,6 +446,7 @@ public final class GetCssProductRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The name of the CSS product to retrieve.
+     * Format: `accounts/{account}/cssProducts/{css_product}`
      * </pre>
      *
      * <code>
@@ -469,6 +472,7 @@ public final class GetCssProductRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The name of the CSS product to retrieve.
+     * Format: `accounts/{account}/cssProducts/{css_product}`
      * </pre>
      *
      * <code>
@@ -494,6 +498,7 @@ public final class GetCssProductRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The name of the CSS product to retrieve.
+     * Format: `accounts/{account}/cssProducts/{css_product}`
      * </pre>
      *
      * <code>
@@ -518,6 +523,7 @@ public final class GetCssProductRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The name of the CSS product to retrieve.
+     * Format: `accounts/{account}/cssProducts/{css_product}`
      * </pre>
      *
      * <code>
@@ -538,6 +544,7 @@ public final class GetCssProductRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The name of the CSS product to retrieve.
+     * Format: `accounts/{account}/cssProducts/{css_product}`
      * </pre>
      *
      * <code>

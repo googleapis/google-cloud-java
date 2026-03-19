@@ -21,7 +21,9 @@ import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntriesPaged
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntryGroupsPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntryTypesPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListMetadataFeedsPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListMetadataJobsPagedResponse;
+import static com.google.cloud.dataplex.v1.CatalogServiceClient.LookupEntryLinksPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.SearchEntriesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -42,6 +44,11 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -332,14 +339,76 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
     return ((CatalogServiceStubSettings) getStubSettings()).createEntryLinkSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateEntryLink. */
+  public UnaryCallSettings<UpdateEntryLinkRequest, EntryLink> updateEntryLinkSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).updateEntryLinkSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteEntryLink. */
   public UnaryCallSettings<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkSettings() {
     return ((CatalogServiceStubSettings) getStubSettings()).deleteEntryLinkSettings();
   }
 
+  /** Returns the object with the settings used for calls to lookupEntryLinks. */
+  public PagedCallSettings<
+          LookupEntryLinksRequest, LookupEntryLinksResponse, LookupEntryLinksPagedResponse>
+      lookupEntryLinksSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).lookupEntryLinksSettings();
+  }
+
+  /** Returns the object with the settings used for calls to lookupContext. */
+  public UnaryCallSettings<LookupContextRequest, LookupContextResponse> lookupContextSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).lookupContextSettings();
+  }
+
   /** Returns the object with the settings used for calls to getEntryLink. */
   public UnaryCallSettings<GetEntryLinkRequest, EntryLink> getEntryLinkSettings() {
     return ((CatalogServiceStubSettings) getStubSettings()).getEntryLinkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createMetadataFeed. */
+  public UnaryCallSettings<CreateMetadataFeedRequest, Operation> createMetadataFeedSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).createMetadataFeedSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createMetadataFeed. */
+  public OperationCallSettings<CreateMetadataFeedRequest, MetadataFeed, OperationMetadata>
+      createMetadataFeedOperationSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).createMetadataFeedOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getMetadataFeed. */
+  public UnaryCallSettings<GetMetadataFeedRequest, MetadataFeed> getMetadataFeedSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).getMetadataFeedSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listMetadataFeeds. */
+  public PagedCallSettings<
+          ListMetadataFeedsRequest, ListMetadataFeedsResponse, ListMetadataFeedsPagedResponse>
+      listMetadataFeedsSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).listMetadataFeedsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteMetadataFeed. */
+  public UnaryCallSettings<DeleteMetadataFeedRequest, Operation> deleteMetadataFeedSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).deleteMetadataFeedSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteMetadataFeed. */
+  public OperationCallSettings<DeleteMetadataFeedRequest, Empty, OperationMetadata>
+      deleteMetadataFeedOperationSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).deleteMetadataFeedOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateMetadataFeed. */
+  public UnaryCallSettings<UpdateMetadataFeedRequest, Operation> updateMetadataFeedSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).updateMetadataFeedSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateMetadataFeed. */
+  public OperationCallSettings<UpdateMetadataFeedRequest, MetadataFeed, OperationMetadata>
+      updateMetadataFeedOperationSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).updateMetadataFeedOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -351,6 +420,22 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
   /** Returns the object with the settings used for calls to getLocation. */
   public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
     return ((CatalogServiceStubSettings) getStubSettings()).getLocationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).setIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
   public static final CatalogServiceSettings create(CatalogServiceStubSettings stub)
@@ -679,14 +764,81 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
       return getStubSettingsBuilder().createEntryLinkSettings();
     }
 
+    /** Returns the builder for the settings used for calls to updateEntryLink. */
+    public UnaryCallSettings.Builder<UpdateEntryLinkRequest, EntryLink> updateEntryLinkSettings() {
+      return getStubSettingsBuilder().updateEntryLinkSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deleteEntryLink. */
     public UnaryCallSettings.Builder<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkSettings() {
       return getStubSettingsBuilder().deleteEntryLinkSettings();
     }
 
+    /** Returns the builder for the settings used for calls to lookupEntryLinks. */
+    public PagedCallSettings.Builder<
+            LookupEntryLinksRequest, LookupEntryLinksResponse, LookupEntryLinksPagedResponse>
+        lookupEntryLinksSettings() {
+      return getStubSettingsBuilder().lookupEntryLinksSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to lookupContext. */
+    public UnaryCallSettings.Builder<LookupContextRequest, LookupContextResponse>
+        lookupContextSettings() {
+      return getStubSettingsBuilder().lookupContextSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getEntryLink. */
     public UnaryCallSettings.Builder<GetEntryLinkRequest, EntryLink> getEntryLinkSettings() {
       return getStubSettingsBuilder().getEntryLinkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createMetadataFeed. */
+    public UnaryCallSettings.Builder<CreateMetadataFeedRequest, Operation>
+        createMetadataFeedSettings() {
+      return getStubSettingsBuilder().createMetadataFeedSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createMetadataFeed. */
+    public OperationCallSettings.Builder<CreateMetadataFeedRequest, MetadataFeed, OperationMetadata>
+        createMetadataFeedOperationSettings() {
+      return getStubSettingsBuilder().createMetadataFeedOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getMetadataFeed. */
+    public UnaryCallSettings.Builder<GetMetadataFeedRequest, MetadataFeed>
+        getMetadataFeedSettings() {
+      return getStubSettingsBuilder().getMetadataFeedSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listMetadataFeeds. */
+    public PagedCallSettings.Builder<
+            ListMetadataFeedsRequest, ListMetadataFeedsResponse, ListMetadataFeedsPagedResponse>
+        listMetadataFeedsSettings() {
+      return getStubSettingsBuilder().listMetadataFeedsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteMetadataFeed. */
+    public UnaryCallSettings.Builder<DeleteMetadataFeedRequest, Operation>
+        deleteMetadataFeedSettings() {
+      return getStubSettingsBuilder().deleteMetadataFeedSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteMetadataFeed. */
+    public OperationCallSettings.Builder<DeleteMetadataFeedRequest, Empty, OperationMetadata>
+        deleteMetadataFeedOperationSettings() {
+      return getStubSettingsBuilder().deleteMetadataFeedOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateMetadataFeed. */
+    public UnaryCallSettings.Builder<UpdateMetadataFeedRequest, Operation>
+        updateMetadataFeedSettings() {
+      return getStubSettingsBuilder().updateMetadataFeedSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateMetadataFeed. */
+    public OperationCallSettings.Builder<UpdateMetadataFeedRequest, MetadataFeed, OperationMetadata>
+        updateMetadataFeedOperationSettings() {
+      return getStubSettingsBuilder().updateMetadataFeedOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */
@@ -699,6 +851,22 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
     /** Returns the builder for the settings used for calls to getLocation. */
     public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
       return getStubSettingsBuilder().getLocationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

@@ -17,7 +17,7 @@
 package com.google.cloud.bigquery.jdbc;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.CALLS_REAL_METHODS;
 import static org.mockito.Mockito.doReturn;
@@ -28,8 +28,8 @@ import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import java.lang.reflect.Field;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class BigQueryBaseResultSetTest {
   private BigQuery bigQuery;
@@ -37,7 +37,7 @@ public class BigQueryBaseResultSetTest {
   private Job job;
   private QueryStatistics statistics;
 
-  @Before
+  @BeforeEach
   public void setUp() {
     // Using mock() for QueryStatistics because Builder() seems to not be available
     // from outside.

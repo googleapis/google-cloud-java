@@ -88,4 +88,56 @@ public interface RagChunkOrBuilder
    * <code>optional .google.cloud.aiplatform.v1beta1.RagChunk.PageSpan page_span = 2;</code>
    */
   com.google.cloud.aiplatform.v1beta1.RagChunk.PageSpanOrBuilder getPageSpanOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The ID of the file that the chunk belongs to.
+   * </pre>
+   *
+   * <code>string file_id = 3;</code>
+   *
+   * @return The fileId.
+   */
+  java.lang.String getFileId();
+
+  /**
+   *
+   *
+   * <pre>
+   * The ID of the file that the chunk belongs to.
+   * </pre>
+   *
+   * <code>string file_id = 3;</code>
+   *
+   * @return The bytes for fileId.
+   */
+  com.google.protobuf.ByteString getFileIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The ID of the chunk.
+   * </pre>
+   *
+   * <code>string chunk_id = 4;</code>
+   *
+   * @return The chunkId.
+   */
+  java.lang.String getChunkId();
+
+  /**
+   *
+   *
+   * <pre>
+   * The ID of the chunk.
+   * </pre>
+   *
+   * <code>string chunk_id = 4;</code>
+   *
+   * @return The bytes for chunkId.
+   */
+  com.google.protobuf.ByteString getChunkIdBytes();
 }

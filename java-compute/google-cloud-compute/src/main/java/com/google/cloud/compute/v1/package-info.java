@@ -1181,6 +1181,28 @@
  * }
  * }</pre>
  *
+ * <p>======================= RegionCompositeHealthChecksClient =======================
+ *
+ * <p>Service Description: The RegionCompositeHealthChecks API.
+ *
+ * <p>Sample for RegionCompositeHealthChecksClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (RegionCompositeHealthChecksClient regionCompositeHealthChecksClient =
+ *     RegionCompositeHealthChecksClient.create()) {
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String compositeHealthCheck = "compositeHealthCheck-1727645947";
+ *   CompositeHealthCheck response =
+ *       regionCompositeHealthChecksClient.get(project, region, compositeHealthCheck);
+ * }
+ * }</pre>
+ *
  * <p>======================= RegionDiskTypesClient =======================
  *
  * <p>Service Description: The RegionDiskTypes API.
@@ -1282,6 +1304,26 @@
  *   String region = "region-934795532";
  *   String healthCheck = "healthCheck-1938093044";
  *   HealthCheck response = regionHealthChecksClient.get(project, region, healthCheck);
+ * }
+ * }</pre>
+ *
+ * <p>======================= RegionHealthSourcesClient =======================
+ *
+ * <p>Service Description: The RegionHealthSources API.
+ *
+ * <p>Sample for RegionHealthSourcesClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (RegionHealthSourcesClient regionHealthSourcesClient = RegionHealthSourcesClient.create()) {
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String healthSource = "healthSource513679767";
+ *   HealthSource response = regionHealthSourcesClient.get(project, region, healthSource);
  * }
  * }</pre>
  *

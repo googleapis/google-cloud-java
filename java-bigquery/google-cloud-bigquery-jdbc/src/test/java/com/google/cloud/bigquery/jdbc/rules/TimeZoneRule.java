@@ -17,40 +17,49 @@
 package com.google.cloud.bigquery.jdbc.rules;
 
 import java.util.TimeZone;
-import org.junit.rules.TestRule;
-import org.junit.runner.Description;
-import org.junit.runners.model.Statement;
+import org.junit.jupiter.api.extension.AfterAllCallback;
+import org.junit.jupiter.api.extension.AfterEachCallback;
+import org.junit.jupiter.api.extension.BeforeAllCallback;
+import org.junit.jupiter.api.extension.BeforeEachCallback;
+import org.junit.jupiter.api.extension.ExtensionContext;
 
-public class TimeZoneRule implements TestRule {
+public class TimeZoneRule
+    implements BeforeAllCallback, AfterAllCallback, BeforeEachCallback, AfterEachCallback {
 
   private final String timeZoneId;
-  private final TimeZone defaultTimeZone;
+  private TimeZone defaultTimeZone;
 
   public TimeZoneRule(String timeZoneId) {
     this.timeZoneId = timeZoneId;
-    defaultTimeZone = TimeZone.getDefault();
   }
 
   @Override
-  public Statement apply(Statement base, Description description) {
-    return new Statement() {
-      @Override
-      public void evaluate() throws Throwable {
-        try {
-          TimeZone.setDefault(TimeZone.getTimeZone(timeZoneId));
-          base.evaluate();
-        } finally {
-          TimeZone.setDefault(defaultTimeZone);
-        }
-      }
-    };
+  public void beforeAll(ExtensionContext context) {
+    defaultTimeZone = TimeZone.getDefault();
+    TimeZone.setDefault(TimeZone.getTimeZone(timeZoneId));
   }
 
-  /**
-   * Public method to enforce the rule from places like methods annotated with {@link
-   * org.junit.runners.Parameterized.Parameters} annotation which gets executed before this rule is
-   * applied.
-   */
+  @Override
+  public void afterAll(ExtensionContext context) {
+    TimeZone.setDefault(defaultTimeZone);
+  }
+
+  @Override
+  public void beforeEach(ExtensionContext context) {
+    if (defaultTimeZone == null) {
+      defaultTimeZone = TimeZone.getDefault();
+    }
+    TimeZone.setDefault(TimeZone.getTimeZone(timeZoneId));
+  }
+
+  @Override
+  public void afterEach(ExtensionContext context) {
+    if (defaultTimeZone != null) {
+      TimeZone.setDefault(defaultTimeZone);
+    }
+  }
+
+  /** Public method to enforce the rule manually */
   public void enforce() {
     TimeZone.setDefault(TimeZone.getTimeZone(timeZoneId));
   }

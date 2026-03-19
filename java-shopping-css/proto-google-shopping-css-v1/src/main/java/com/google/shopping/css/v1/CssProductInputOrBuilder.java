@@ -30,7 +30,7 @@ public interface CssProductInputOrBuilder
    *
    *
    * <pre>
-   * The name of the CSS Product input.
+   * Identifier. The name of the CSS Product input.
    * Format:
    * `accounts/{account}/cssProductInputs/{css_product_input}`, where the
    * last section `css_product_input` consists of 3 parts:
@@ -38,7 +38,7 @@ public interface CssProductInputOrBuilder
    * accounts/123/cssProductInputs/de~DE~rawProvidedId123
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -48,7 +48,7 @@ public interface CssProductInputOrBuilder
    *
    *
    * <pre>
-   * The name of the CSS Product input.
+   * Identifier. The name of the CSS Product input.
    * Format:
    * `accounts/{account}/cssProductInputs/{css_product_input}`, where the
    * last section `css_product_input` consists of 3 parts:
@@ -56,7 +56,7 @@ public interface CssProductInputOrBuilder
    * accounts/123/cssProductInputs/de~DE~rawProvidedId123
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

@@ -102,10 +102,11 @@ public final class Common extends com.google.protobuf.GeneratedFile {
           + "signatures\030\003 \003(\0132\035.grafeas.v1.EnvelopeSignature\"/\n"
           + "\021EnvelopeSignature\022\013\n"
           + "\003sig\030\001 \001(\014\022\r\n"
-          + "\005keyid\030\002 \001(\t\"R\n"
+          + "\005keyid\030\002 \001(\t\"g\n"
           + "\014FileLocation\022\021\n"
           + "\tfile_path\030\001 \001(\t\022/\n\r"
-          + "layer_details\030\002 \001(\0132\030.grafeas.v1.LayerDetails\"T\n"
+          + "layer_details\030\002 \001(\0132\030.grafeas.v1.LayerDetails\022\023\n"
+          + "\013line_number\030\003 \001(\005\"T\n"
           + "\tBaseImage\022\014\n"
           + "\004name\030\001 \001(\t\022\022\n\n"
           + "repository\030\002 \001(\t\022\023\n"
@@ -124,8 +125,7 @@ public final class Common extends com.google.protobuf.GeneratedFile {
           + "\004algo\030\001 \001(\t\022\024\n"
           + "\014digest_bytes\030\002 \001(\014*\374\001\n"
           + "\010NoteKind\022\031\n"
-          + "\025NOTE_KIND_UNSPECIFIED\020\000\022\021\n"
-          + "\r"
+          + "\025NOTE_KIND_UNSPECIFIED\020\000\022\021\n\r"
           + "VULNERABILITY\020\001\022\t\n"
           + "\005BUILD\020\002\022\t\n"
           + "\005IMAGE\020\003\022\013\n"
@@ -141,8 +141,8 @@ public final class Common extends com.google.protobuf.GeneratedFile {
           + "\016SBOM_REFERENCE\020\014\022\n\n"
           + "\006SECRET\020\r"
           + "BQ\n\r"
-          + "io.grafeas.v1P\001Z8google.golang.org/genproto/googleapis/grafeas/v"
-          + "1;grafeas\242\002\003GRAb\006proto3"
+          + "io.grafeas.v1P\001Z8google.golang.org/genproto"
+          + "/googleapis/grafeas/v1;grafeas\242\002\003GRAb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -180,7 +180,7 @@ public final class Common extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_grafeas_v1_FileLocation_descriptor,
             new java.lang.String[] {
-              "FilePath", "LayerDetails",
+              "FilePath", "LayerDetails", "LineNumber",
             });
     internal_static_grafeas_v1_BaseImage_descriptor = getDescriptor().getMessageType(5);
     internal_static_grafeas_v1_BaseImage_fieldAccessorTable =

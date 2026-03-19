@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.StubSettings;
@@ -103,6 +104,7 @@ import javax.annotation.Generated;
  */
 @BetaApi
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -245,6 +247,14 @@ public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSetti
     listVoicesSettings = settingsBuilder.listVoicesSettings().build();
     synthesizeSpeechSettings = settingsBuilder.synthesizeSpeechSettings().build();
     streamingSynthesizeSettings = settingsBuilder.streamingSynthesizeSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-texttospeech")
+        .setRepository("googleapis/google-cloud-java")
+        .build();
   }
 
   /** Builder for TextToSpeechStubSettings. */

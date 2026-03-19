@@ -84,6 +84,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessage
     REGEX(2),
     EXCLUDE_INFO_TYPES(3),
     EXCLUDE_BY_HOTWORD(5),
+    EXCLUDE_BY_IMAGE_FINDINGS(6),
     TYPE_NOT_SET(0);
     private final int value;
 
@@ -111,6 +112,8 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessage
           return EXCLUDE_INFO_TYPES;
         case 5:
           return EXCLUDE_BY_HOTWORD;
+        case 6:
+          return EXCLUDE_BY_IMAGE_FINDINGS;
         case 0:
           return TYPE_NOT_SET;
         default:
@@ -346,6 +349,64 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessage
     return com.google.privacy.dlp.v2.ExcludeByHotword.getDefaultInstance();
   }
 
+  public static final int EXCLUDE_BY_IMAGE_FINDINGS_FIELD_NUMBER = 6;
+
+  /**
+   *
+   *
+   * <pre>
+   * Exclude findings based on image containment rules. For example, exclude
+   * an image finding if it overlaps with another image finding.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ExcludeByImageFindings exclude_by_image_findings = 6;</code>
+   *
+   * @return Whether the excludeByImageFindings field is set.
+   */
+  @java.lang.Override
+  public boolean hasExcludeByImageFindings() {
+    return typeCase_ == 6;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Exclude findings based on image containment rules. For example, exclude
+   * an image finding if it overlaps with another image finding.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ExcludeByImageFindings exclude_by_image_findings = 6;</code>
+   *
+   * @return The excludeByImageFindings.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.ExcludeByImageFindings getExcludeByImageFindings() {
+    if (typeCase_ == 6) {
+      return (com.google.privacy.dlp.v2.ExcludeByImageFindings) type_;
+    }
+    return com.google.privacy.dlp.v2.ExcludeByImageFindings.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Exclude findings based on image containment rules. For example, exclude
+   * an image finding if it overlaps with another image finding.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ExcludeByImageFindings exclude_by_image_findings = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.ExcludeByImageFindingsOrBuilder
+      getExcludeByImageFindingsOrBuilder() {
+    if (typeCase_ == 6) {
+      return (com.google.privacy.dlp.v2.ExcludeByImageFindings) type_;
+    }
+    return com.google.privacy.dlp.v2.ExcludeByImageFindings.getDefaultInstance();
+  }
+
   public static final int MATCHING_TYPE_FIELD_NUMBER = 4;
   private int matchingType_ = 0;
 
@@ -413,6 +474,9 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessage
     if (typeCase_ == 5) {
       output.writeMessage(5, (com.google.privacy.dlp.v2.ExcludeByHotword) type_);
     }
+    if (typeCase_ == 6) {
+      output.writeMessage(6, (com.google.privacy.dlp.v2.ExcludeByImageFindings) type_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -446,6 +510,11 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, (com.google.privacy.dlp.v2.ExcludeByHotword) type_);
     }
+    if (typeCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.privacy.dlp.v2.ExcludeByImageFindings) type_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -475,6 +544,9 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessage
         break;
       case 5:
         if (!getExcludeByHotword().equals(other.getExcludeByHotword())) return false;
+        break;
+      case 6:
+        if (!getExcludeByImageFindings().equals(other.getExcludeByImageFindings())) return false;
         break;
       case 0:
       default:
@@ -508,6 +580,10 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessage
       case 5:
         hash = (37 * hash) + EXCLUDE_BY_HOTWORD_FIELD_NUMBER;
         hash = (53 * hash) + getExcludeByHotword().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + EXCLUDE_BY_IMAGE_FINDINGS_FIELD_NUMBER;
+        hash = (53 * hash) + getExcludeByImageFindings().hashCode();
         break;
       case 0:
       default:
@@ -665,6 +741,9 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessage
       if (excludeByHotwordBuilder_ != null) {
         excludeByHotwordBuilder_.clear();
       }
+      if (excludeByImageFindingsBuilder_ != null) {
+        excludeByImageFindingsBuilder_.clear();
+      }
       matchingType_ = 0;
       typeCase_ = 0;
       type_ = null;
@@ -705,7 +784,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.privacy.dlp.v2.ExclusionRule result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.matchingType_ = matchingType_;
       }
     }
@@ -724,6 +803,9 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessage
       }
       if (typeCase_ == 5 && excludeByHotwordBuilder_ != null) {
         result.type_ = excludeByHotwordBuilder_.build();
+      }
+      if (typeCase_ == 6 && excludeByImageFindingsBuilder_ != null) {
+        result.type_ = excludeByImageFindingsBuilder_.build();
       }
     }
 
@@ -761,6 +843,11 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessage
         case EXCLUDE_BY_HOTWORD:
           {
             mergeExcludeByHotword(other.getExcludeByHotword());
+            break;
+          }
+        case EXCLUDE_BY_IMAGE_FINDINGS:
+          {
+            mergeExcludeByImageFindings(other.getExcludeByImageFindings());
             break;
           }
         case TYPE_NOT_SET:
@@ -817,7 +904,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessage
             case 32:
               {
                 matchingType_ = input.readEnum();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 32
             case 42:
@@ -827,6 +914,14 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessage
                 typeCase_ = 5;
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    internalGetExcludeByImageFindingsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                typeCase_ = 6;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1741,6 +1836,237 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessage
       return excludeByHotwordBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.privacy.dlp.v2.ExcludeByImageFindings,
+            com.google.privacy.dlp.v2.ExcludeByImageFindings.Builder,
+            com.google.privacy.dlp.v2.ExcludeByImageFindingsOrBuilder>
+        excludeByImageFindingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Exclude findings based on image containment rules. For example, exclude
+     * an image finding if it overlaps with another image finding.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ExcludeByImageFindings exclude_by_image_findings = 6;</code>
+     *
+     * @return Whether the excludeByImageFindings field is set.
+     */
+    @java.lang.Override
+    public boolean hasExcludeByImageFindings() {
+      return typeCase_ == 6;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exclude findings based on image containment rules. For example, exclude
+     * an image finding if it overlaps with another image finding.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ExcludeByImageFindings exclude_by_image_findings = 6;</code>
+     *
+     * @return The excludeByImageFindings.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.ExcludeByImageFindings getExcludeByImageFindings() {
+      if (excludeByImageFindingsBuilder_ == null) {
+        if (typeCase_ == 6) {
+          return (com.google.privacy.dlp.v2.ExcludeByImageFindings) type_;
+        }
+        return com.google.privacy.dlp.v2.ExcludeByImageFindings.getDefaultInstance();
+      } else {
+        if (typeCase_ == 6) {
+          return excludeByImageFindingsBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.ExcludeByImageFindings.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exclude findings based on image containment rules. For example, exclude
+     * an image finding if it overlaps with another image finding.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ExcludeByImageFindings exclude_by_image_findings = 6;</code>
+     */
+    public Builder setExcludeByImageFindings(
+        com.google.privacy.dlp.v2.ExcludeByImageFindings value) {
+      if (excludeByImageFindingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+        onChanged();
+      } else {
+        excludeByImageFindingsBuilder_.setMessage(value);
+      }
+      typeCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exclude findings based on image containment rules. For example, exclude
+     * an image finding if it overlaps with another image finding.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ExcludeByImageFindings exclude_by_image_findings = 6;</code>
+     */
+    public Builder setExcludeByImageFindings(
+        com.google.privacy.dlp.v2.ExcludeByImageFindings.Builder builderForValue) {
+      if (excludeByImageFindingsBuilder_ == null) {
+        type_ = builderForValue.build();
+        onChanged();
+      } else {
+        excludeByImageFindingsBuilder_.setMessage(builderForValue.build());
+      }
+      typeCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exclude findings based on image containment rules. For example, exclude
+     * an image finding if it overlaps with another image finding.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ExcludeByImageFindings exclude_by_image_findings = 6;</code>
+     */
+    public Builder mergeExcludeByImageFindings(
+        com.google.privacy.dlp.v2.ExcludeByImageFindings value) {
+      if (excludeByImageFindingsBuilder_ == null) {
+        if (typeCase_ == 6
+            && type_ != com.google.privacy.dlp.v2.ExcludeByImageFindings.getDefaultInstance()) {
+          type_ =
+              com.google.privacy.dlp.v2.ExcludeByImageFindings.newBuilder(
+                      (com.google.privacy.dlp.v2.ExcludeByImageFindings) type_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          type_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeCase_ == 6) {
+          excludeByImageFindingsBuilder_.mergeFrom(value);
+        } else {
+          excludeByImageFindingsBuilder_.setMessage(value);
+        }
+      }
+      typeCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exclude findings based on image containment rules. For example, exclude
+     * an image finding if it overlaps with another image finding.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ExcludeByImageFindings exclude_by_image_findings = 6;</code>
+     */
+    public Builder clearExcludeByImageFindings() {
+      if (excludeByImageFindingsBuilder_ == null) {
+        if (typeCase_ == 6) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeCase_ == 6) {
+          typeCase_ = 0;
+          type_ = null;
+        }
+        excludeByImageFindingsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exclude findings based on image containment rules. For example, exclude
+     * an image finding if it overlaps with another image finding.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ExcludeByImageFindings exclude_by_image_findings = 6;</code>
+     */
+    public com.google.privacy.dlp.v2.ExcludeByImageFindings.Builder
+        getExcludeByImageFindingsBuilder() {
+      return internalGetExcludeByImageFindingsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exclude findings based on image containment rules. For example, exclude
+     * an image finding if it overlaps with another image finding.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ExcludeByImageFindings exclude_by_image_findings = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.ExcludeByImageFindingsOrBuilder
+        getExcludeByImageFindingsOrBuilder() {
+      if ((typeCase_ == 6) && (excludeByImageFindingsBuilder_ != null)) {
+        return excludeByImageFindingsBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeCase_ == 6) {
+          return (com.google.privacy.dlp.v2.ExcludeByImageFindings) type_;
+        }
+        return com.google.privacy.dlp.v2.ExcludeByImageFindings.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exclude findings based on image containment rules. For example, exclude
+     * an image finding if it overlaps with another image finding.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ExcludeByImageFindings exclude_by_image_findings = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.privacy.dlp.v2.ExcludeByImageFindings,
+            com.google.privacy.dlp.v2.ExcludeByImageFindings.Builder,
+            com.google.privacy.dlp.v2.ExcludeByImageFindingsOrBuilder>
+        internalGetExcludeByImageFindingsFieldBuilder() {
+      if (excludeByImageFindingsBuilder_ == null) {
+        if (!(typeCase_ == 6)) {
+          type_ = com.google.privacy.dlp.v2.ExcludeByImageFindings.getDefaultInstance();
+        }
+        excludeByImageFindingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.privacy.dlp.v2.ExcludeByImageFindings,
+                com.google.privacy.dlp.v2.ExcludeByImageFindings.Builder,
+                com.google.privacy.dlp.v2.ExcludeByImageFindingsOrBuilder>(
+                (com.google.privacy.dlp.v2.ExcludeByImageFindings) type_,
+                getParentForChildren(),
+                isClean());
+        type_ = null;
+      }
+      typeCase_ = 6;
+      onChanged();
+      return excludeByImageFindingsBuilder_;
+    }
+
     private int matchingType_ = 0;
 
     /**
@@ -1773,7 +2099,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder setMatchingTypeValue(int value) {
       matchingType_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1812,7 +2138,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       matchingType_ = value.getNumber();
       onChanged();
       return this;
@@ -1830,7 +2156,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearMatchingType() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       matchingType_ = 0;
       onChanged();
       return this;

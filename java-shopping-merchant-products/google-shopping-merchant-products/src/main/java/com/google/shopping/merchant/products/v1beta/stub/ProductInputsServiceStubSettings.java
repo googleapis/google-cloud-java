@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
@@ -102,6 +103,7 @@ import javax.annotation.Generated;
  */
 @BetaApi
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class ProductInputsServiceStubSettings
     extends StubSettings<ProductInputsServiceStubSettings> {
   /** The default scopes of the service. */
@@ -243,6 +245,14 @@ public class ProductInputsServiceStubSettings
     insertProductInputSettings = settingsBuilder.insertProductInputSettings().build();
     updateProductInputSettings = settingsBuilder.updateProductInputSettings().build();
     deleteProductInputSettings = settingsBuilder.deleteProductInputSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.shopping:google-shopping-merchant-products")
+        .setRepository("googleapis/google-cloud-java")
+        .build();
   }
 
   /** Builder for ProductInputsServiceStubSettings. */

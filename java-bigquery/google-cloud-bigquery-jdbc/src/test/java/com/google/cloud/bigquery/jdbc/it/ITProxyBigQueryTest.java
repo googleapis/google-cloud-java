@@ -16,10 +16,10 @@
 
 package com.google.cloud.bigquery.jdbc.it;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertThrows;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
@@ -29,13 +29,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Ignore;
-import org.junit.Test;
-import org.junit.experimental.runners.Enclosed;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
-@RunWith(Enclosed.class)
 public class ITProxyBigQueryTest {
   static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   static final String PROXY_HOST = "34.94.167.18";
@@ -43,7 +43,8 @@ public class ITProxyBigQueryTest {
   static final String PROXY_UID = "fahmz";
   static final String PROXY_PWD = "fahmz";
 
-  public static class NonParameterizedProxyTests {
+  @Nested
+  public class NonParameterizedProxyTests {
     @Test
     public void testValidAuthenticatedProxy() throws SQLException {
       String connection_uri =
@@ -111,7 +112,7 @@ public class ITProxyBigQueryTest {
     }
 
     @Test
-    @Ignore // Run this when Proxy server has no authentication otherwise you'll get a "407 Proxy
+    @Disabled // Run this when Proxy server has no authentication otherwise you'll get a "407 Proxy
     // Authentication Required".
     public void testNonAuthenticatedProxy() throws SQLException {
       String connection_uri =
@@ -185,23 +186,11 @@ public class ITProxyBigQueryTest {
     }
   }
 
-  @RunWith(Parameterized.class)
-  public static class ParametrizedMissingPropertiesTest {
-    private final String ProxyHost;
-    private final String ProxyPort;
-    private final String ProxyUid;
-    private final String ProxyPwd;
+  @Nested
+  @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+  public class ParametrizedMissingPropertiesTest {
 
-    public ParametrizedMissingPropertiesTest(
-        String ProxyHost, String ProxyPort, String ProxyUid, String ProxyPwd) {
-      this.ProxyHost = ProxyHost;
-      this.ProxyPort = ProxyPort;
-      this.ProxyUid = ProxyUid;
-      this.ProxyPwd = ProxyPwd;
-    }
-
-    @Parameterized.Parameters
-    public static List<String[]> ProxyParameters() {
+    public List<String[]> ProxyParameters() {
       String proxyHost = "ProxyHost=" + PROXY_HOST + ";";
       String proxyPort = "ProxyPort=" + PROXY_PORT + ";";
       String proxyUid = "ProxyUid=" + PROXY_UID + ";";
@@ -216,8 +205,10 @@ public class ITProxyBigQueryTest {
           });
     }
 
-    @Test
-    public void testMissingProxyParameterThrowsIllegalArgument() {
+    @ParameterizedTest
+    @MethodSource("ProxyParameters")
+    public void testMissingProxyParameterThrowsIllegalArgument(
+        String ProxyHost, String ProxyPort, String ProxyUid, String ProxyPwd) {
       String connection_uri =
           "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
               + "ProjectId="

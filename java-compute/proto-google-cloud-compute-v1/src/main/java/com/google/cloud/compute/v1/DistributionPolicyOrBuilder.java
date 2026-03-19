@@ -77,6 +77,11 @@ public interface DistributionPolicyOrBuilder
    * <pre>
    * Zones where the regional managed instance group will create and manage
    * its instances.
+   * By default, a regional MIG doesn't automatically select an AI zone to create
+   * instances, even if an AI zone is available in the specified region. To
+   * create instances in an AI zone in the selected region, you must explicitly
+   * specify it in the distribution policy together with the other preferred
+   * zones.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.DistributionPolicyZoneConfiguration zones = 116085319;
@@ -90,6 +95,11 @@ public interface DistributionPolicyOrBuilder
    * <pre>
    * Zones where the regional managed instance group will create and manage
    * its instances.
+   * By default, a regional MIG doesn't automatically select an AI zone to create
+   * instances, even if an AI zone is available in the specified region. To
+   * create instances in an AI zone in the selected region, you must explicitly
+   * specify it in the distribution policy together with the other preferred
+   * zones.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.DistributionPolicyZoneConfiguration zones = 116085319;
@@ -103,6 +113,11 @@ public interface DistributionPolicyOrBuilder
    * <pre>
    * Zones where the regional managed instance group will create and manage
    * its instances.
+   * By default, a regional MIG doesn't automatically select an AI zone to create
+   * instances, even if an AI zone is available in the specified region. To
+   * create instances in an AI zone in the selected region, you must explicitly
+   * specify it in the distribution policy together with the other preferred
+   * zones.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.DistributionPolicyZoneConfiguration zones = 116085319;
@@ -116,6 +131,11 @@ public interface DistributionPolicyOrBuilder
    * <pre>
    * Zones where the regional managed instance group will create and manage
    * its instances.
+   * By default, a regional MIG doesn't automatically select an AI zone to create
+   * instances, even if an AI zone is available in the specified region. To
+   * create instances in an AI zone in the selected region, you must explicitly
+   * specify it in the distribution policy together with the other preferred
+   * zones.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.DistributionPolicyZoneConfiguration zones = 116085319;
@@ -130,6 +150,11 @@ public interface DistributionPolicyOrBuilder
    * <pre>
    * Zones where the regional managed instance group will create and manage
    * its instances.
+   * By default, a regional MIG doesn't automatically select an AI zone to create
+   * instances, even if an AI zone is available in the specified region. To
+   * create instances in an AI zone in the selected region, you must explicitly
+   * specify it in the distribution policy together with the other preferred
+   * zones.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.DistributionPolicyZoneConfiguration zones = 116085319;

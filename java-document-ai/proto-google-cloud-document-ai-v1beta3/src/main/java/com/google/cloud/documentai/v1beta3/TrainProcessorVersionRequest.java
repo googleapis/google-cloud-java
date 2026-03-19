@@ -2026,6 +2026,44 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * @return The learningRateMultiplier.
      */
     float getLearningRateMultiplier();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name of a previously fine tuned version id to copy the
+     * overwritten configs from. The base_processor_version should be newer than
+     * the base processor version used to fine tune this provided processor
+     * version. Format:
+     * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`.
+     * </pre>
+     *
+     * <code>
+     * string previous_fine_tuned_processor_version_name = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The previousFineTunedProcessorVersionName.
+     */
+    java.lang.String getPreviousFineTunedProcessorVersionName();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name of a previously fine tuned version id to copy the
+     * overwritten configs from. The base_processor_version should be newer than
+     * the base processor version used to fine tune this provided processor
+     * version. Format:
+     * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`.
+     * </pre>
+     *
+     * <code>
+     * string previous_fine_tuned_processor_version_name = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for previousFineTunedProcessorVersionName.
+     */
+    com.google.protobuf.ByteString getPreviousFineTunedProcessorVersionNameBytes();
   }
 
   /**
@@ -2060,7 +2098,9 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       super(builder);
     }
 
-    private FoundationModelTuningOptions() {}
+    private FoundationModelTuningOptions() {
+      previousFineTunedProcessorVersionName_ = "";
+    }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.documentai.v1beta3.DocumentAiProcessorService
@@ -2120,6 +2160,71 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       return learningRateMultiplier_;
     }
 
+    public static final int PREVIOUS_FINE_TUNED_PROCESSOR_VERSION_NAME_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object previousFineTunedProcessorVersionName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name of a previously fine tuned version id to copy the
+     * overwritten configs from. The base_processor_version should be newer than
+     * the base processor version used to fine tune this provided processor
+     * version. Format:
+     * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`.
+     * </pre>
+     *
+     * <code>
+     * string previous_fine_tuned_processor_version_name = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The previousFineTunedProcessorVersionName.
+     */
+    @java.lang.Override
+    public java.lang.String getPreviousFineTunedProcessorVersionName() {
+      java.lang.Object ref = previousFineTunedProcessorVersionName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        previousFineTunedProcessorVersionName_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name of a previously fine tuned version id to copy the
+     * overwritten configs from. The base_processor_version should be newer than
+     * the base processor version used to fine tune this provided processor
+     * version. Format:
+     * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`.
+     * </pre>
+     *
+     * <code>
+     * string previous_fine_tuned_processor_version_name = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for previousFineTunedProcessorVersionName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPreviousFineTunedProcessorVersionNameBytes() {
+      java.lang.Object ref = previousFineTunedProcessorVersionName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        previousFineTunedProcessorVersionName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2140,6 +2245,11 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       if (java.lang.Float.floatToRawIntBits(learningRateMultiplier_) != 0) {
         output.writeFloat(3, learningRateMultiplier_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(
+          previousFineTunedProcessorVersionName_)) {
+        com.google.protobuf.GeneratedMessage.writeString(
+            output, 5, previousFineTunedProcessorVersionName_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2154,6 +2264,12 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       }
       if (java.lang.Float.floatToRawIntBits(learningRateMultiplier_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, learningRateMultiplier_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(
+          previousFineTunedProcessorVersionName_)) {
+        size +=
+            com.google.protobuf.GeneratedMessage.computeStringSize(
+                5, previousFineTunedProcessorVersionName_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2180,6 +2296,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       if (getTrainSteps() != other.getTrainSteps()) return false;
       if (java.lang.Float.floatToIntBits(getLearningRateMultiplier())
           != java.lang.Float.floatToIntBits(other.getLearningRateMultiplier())) return false;
+      if (!getPreviousFineTunedProcessorVersionName()
+          .equals(other.getPreviousFineTunedProcessorVersionName())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2195,6 +2313,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       hash = (53 * hash) + getTrainSteps();
       hash = (37 * hash) + LEARNING_RATE_MULTIPLIER_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(getLearningRateMultiplier());
+      hash = (37 * hash) + PREVIOUS_FINE_TUNED_PROCESSOR_VERSION_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getPreviousFineTunedProcessorVersionName().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2363,6 +2483,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         bitField0_ = 0;
         trainSteps_ = 0;
         learningRateMultiplier_ = 0F;
+        previousFineTunedProcessorVersionName_ = "";
         return this;
       }
 
@@ -2420,6 +2541,9 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.learningRateMultiplier_ = learningRateMultiplier_;
         }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.previousFineTunedProcessorVersionName_ = previousFineTunedProcessorVersionName_;
+        }
       }
 
       @java.lang.Override
@@ -2450,6 +2574,11 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         }
         if (java.lang.Float.floatToRawIntBits(other.getLearningRateMultiplier()) != 0) {
           setLearningRateMultiplier(other.getLearningRateMultiplier());
+        }
+        if (!other.getPreviousFineTunedProcessorVersionName().isEmpty()) {
+          previousFineTunedProcessorVersionName_ = other.previousFineTunedProcessorVersionName_;
+          bitField0_ |= 0x00000004;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -2489,6 +2618,12 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 29
+              case 42:
+                {
+                  previousFineTunedProcessorVersionName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2625,6 +2760,149 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       public Builder clearLearningRateMultiplier() {
         bitField0_ = (bitField0_ & ~0x00000002);
         learningRateMultiplier_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object previousFineTunedProcessorVersionName_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource name of a previously fine tuned version id to copy the
+       * overwritten configs from. The base_processor_version should be newer than
+       * the base processor version used to fine tune this provided processor
+       * version. Format:
+       * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`.
+       * </pre>
+       *
+       * <code>
+       * string previous_fine_tuned_processor_version_name = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The previousFineTunedProcessorVersionName.
+       */
+      public java.lang.String getPreviousFineTunedProcessorVersionName() {
+        java.lang.Object ref = previousFineTunedProcessorVersionName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          previousFineTunedProcessorVersionName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource name of a previously fine tuned version id to copy the
+       * overwritten configs from. The base_processor_version should be newer than
+       * the base processor version used to fine tune this provided processor
+       * version. Format:
+       * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`.
+       * </pre>
+       *
+       * <code>
+       * string previous_fine_tuned_processor_version_name = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The bytes for previousFineTunedProcessorVersionName.
+       */
+      public com.google.protobuf.ByteString getPreviousFineTunedProcessorVersionNameBytes() {
+        java.lang.Object ref = previousFineTunedProcessorVersionName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          previousFineTunedProcessorVersionName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource name of a previously fine tuned version id to copy the
+       * overwritten configs from. The base_processor_version should be newer than
+       * the base processor version used to fine tune this provided processor
+       * version. Format:
+       * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`.
+       * </pre>
+       *
+       * <code>
+       * string previous_fine_tuned_processor_version_name = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The previousFineTunedProcessorVersionName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPreviousFineTunedProcessorVersionName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        previousFineTunedProcessorVersionName_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource name of a previously fine tuned version id to copy the
+       * overwritten configs from. The base_processor_version should be newer than
+       * the base processor version used to fine tune this provided processor
+       * version. Format:
+       * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`.
+       * </pre>
+       *
+       * <code>
+       * string previous_fine_tuned_processor_version_name = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPreviousFineTunedProcessorVersionName() {
+        previousFineTunedProcessorVersionName_ =
+            getDefaultInstance().getPreviousFineTunedProcessorVersionName();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource name of a previously fine tuned version id to copy the
+       * overwritten configs from. The base_processor_version should be newer than
+       * the base processor version used to fine tune this provided processor
+       * version. Format:
+       * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`.
+       * </pre>
+       *
+       * <code>
+       * string previous_fine_tuned_processor_version_name = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The bytes for previousFineTunedProcessorVersionName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPreviousFineTunedProcessorVersionNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        previousFineTunedProcessorVersionName_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }

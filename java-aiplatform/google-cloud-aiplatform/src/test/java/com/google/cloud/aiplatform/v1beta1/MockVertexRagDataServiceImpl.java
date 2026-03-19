@@ -20,6 +20,7 @@ import com.google.api.core.BetaApi;
 import com.google.cloud.aiplatform.v1beta1.VertexRagDataServiceGrpc.VertexRagDataServiceImplBase;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -307,6 +308,284 @@ public class MockVertexRagDataServiceImpl extends VertexRagDataServiceImplBase {
                   "Unrecognized response type %s for method GetRagEngineConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   RagEngineConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createRagDataSchema(
+      CreateRagDataSchemaRequest request, StreamObserver<RagDataSchema> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RagDataSchema) {
+      requests.add(request);
+      responseObserver.onNext(((RagDataSchema) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateRagDataSchema, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RagDataSchema.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void batchCreateRagDataSchemas(
+      BatchCreateRagDataSchemasRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchCreateRagDataSchemas, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getRagDataSchema(
+      GetRagDataSchemaRequest request, StreamObserver<RagDataSchema> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RagDataSchema) {
+      requests.add(request);
+      responseObserver.onNext(((RagDataSchema) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetRagDataSchema, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RagDataSchema.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listRagDataSchemas(
+      ListRagDataSchemasRequest request,
+      StreamObserver<ListRagDataSchemasResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListRagDataSchemasResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListRagDataSchemasResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListRagDataSchemas, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListRagDataSchemasResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteRagDataSchema(
+      DeleteRagDataSchemaRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteRagDataSchema, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void batchDeleteRagDataSchemas(
+      BatchDeleteRagDataSchemasRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchDeleteRagDataSchemas, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createRagMetadata(
+      CreateRagMetadataRequest request, StreamObserver<RagMetadata> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RagMetadata) {
+      requests.add(request);
+      responseObserver.onNext(((RagMetadata) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateRagMetadata, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RagMetadata.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void batchCreateRagMetadata(
+      BatchCreateRagMetadataRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchCreateRagMetadata, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateRagMetadata(
+      UpdateRagMetadataRequest request, StreamObserver<RagMetadata> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RagMetadata) {
+      requests.add(request);
+      responseObserver.onNext(((RagMetadata) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateRagMetadata, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RagMetadata.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getRagMetadata(
+      GetRagMetadataRequest request, StreamObserver<RagMetadata> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RagMetadata) {
+      requests.add(request);
+      responseObserver.onNext(((RagMetadata) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetRagMetadata, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RagMetadata.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listRagMetadata(
+      ListRagMetadataRequest request, StreamObserver<ListRagMetadataResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListRagMetadataResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListRagMetadataResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListRagMetadata, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListRagMetadataResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteRagMetadata(
+      DeleteRagMetadataRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteRagMetadata, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void batchDeleteRagMetadata(
+      BatchDeleteRagMetadataRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchDeleteRagMetadata, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }

@@ -874,6 +874,39 @@ public final class Finding extends com.google.protobuf.GeneratedMessage
      * <code>TOXIC_COMBINATION = 7;</code>
      */
     TOXIC_COMBINATION(7),
+    /**
+     *
+     *
+     * <pre>
+     * Describes a potential security risk to data assets that contain sensitive
+     * data.
+     * </pre>
+     *
+     * <code>SENSITIVE_DATA_RISK = 8;</code>
+     */
+    SENSITIVE_DATA_RISK(8),
+    /**
+     *
+     *
+     * <pre>
+     * Describes a resource or resource group where high risk attack paths
+     * converge, based on attack path simulations (APS).
+     * </pre>
+     *
+     * <code>CHOKEPOINT = 9;</code>
+     */
+    CHOKEPOINT(9),
+    /**
+     *
+     *
+     * <pre>
+     * Describes a potential security risk due to the resource being exposed to
+     * the internet.
+     * </pre>
+     *
+     * <code>EXTERNAL_EXPOSURE = 10;</code>
+     */
+    EXTERNAL_EXPOSURE(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -981,6 +1014,42 @@ public final class Finding extends com.google.protobuf.GeneratedMessage
      */
     public static final int TOXIC_COMBINATION_VALUE = 7;
 
+    /**
+     *
+     *
+     * <pre>
+     * Describes a potential security risk to data assets that contain sensitive
+     * data.
+     * </pre>
+     *
+     * <code>SENSITIVE_DATA_RISK = 8;</code>
+     */
+    public static final int SENSITIVE_DATA_RISK_VALUE = 8;
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a resource or resource group where high risk attack paths
+     * converge, based on attack path simulations (APS).
+     * </pre>
+     *
+     * <code>CHOKEPOINT = 9;</code>
+     */
+    public static final int CHOKEPOINT_VALUE = 9;
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a potential security risk due to the resource being exposed to
+     * the internet.
+     * </pre>
+     *
+     * <code>EXTERNAL_EXPOSURE = 10;</code>
+     */
+    public static final int EXTERNAL_EXPOSURE_VALUE = 10;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -1021,6 +1090,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessage
           return POSTURE_VIOLATION;
         case 7:
           return TOXIC_COMBINATION;
+        case 8:
+          return SENSITIVE_DATA_RISK;
+        case 9:
+          return CHOKEPOINT;
+        case 10:
+          return EXTERNAL_EXPOSURE;
         default:
           return null;
       }
@@ -7688,6 +7763,122 @@ public final class Finding extends com.google.protobuf.GeneratedMessage
     return groupMemberships_.get(index);
   }
 
+  public static final int CHOKEPOINT_FIELD_NUMBER = 77;
+  private com.google.cloud.securitycenter.v1.Chokepoint chokepoint_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Contains details about a chokepoint, which is a resource or resource group
+   * where high-risk attack paths converge, based on [attack path simulations]
+   * (https://cloud.google.com/security-command-center/docs/attack-exposure-learn#attack_path_simulations).
+   * This field cannot be updated. Its value is ignored in all update requests.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Chokepoint chokepoint = 77;</code>
+   *
+   * @return Whether the chokepoint field is set.
+   */
+  @java.lang.Override
+  public boolean hasChokepoint() {
+    return ((bitField0_ & 0x00400000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Contains details about a chokepoint, which is a resource or resource group
+   * where high-risk attack paths converge, based on [attack path simulations]
+   * (https://cloud.google.com/security-command-center/docs/attack-exposure-learn#attack_path_simulations).
+   * This field cannot be updated. Its value is ignored in all update requests.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Chokepoint chokepoint = 77;</code>
+   *
+   * @return The chokepoint.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.Chokepoint getChokepoint() {
+    return chokepoint_ == null
+        ? com.google.cloud.securitycenter.v1.Chokepoint.getDefaultInstance()
+        : chokepoint_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Contains details about a chokepoint, which is a resource or resource group
+   * where high-risk attack paths converge, based on [attack path simulations]
+   * (https://cloud.google.com/security-command-center/docs/attack-exposure-learn#attack_path_simulations).
+   * This field cannot be updated. Its value is ignored in all update requests.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Chokepoint chokepoint = 77;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.ChokepointOrBuilder getChokepointOrBuilder() {
+    return chokepoint_ == null
+        ? com.google.cloud.securitycenter.v1.Chokepoint.getDefaultInstance()
+        : chokepoint_;
+  }
+
+  public static final int EXTERNAL_EXPOSURE_FIELD_NUMBER = 84;
+  private com.google.cloud.securitycenter.v1.ExternalExposure externalExposure_;
+
+  /**
+   *
+   *
+   * <pre>
+   * External exposure associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.ExternalExposure external_exposure = 84;</code>
+   *
+   * @return Whether the externalExposure field is set.
+   */
+  @java.lang.Override
+  public boolean hasExternalExposure() {
+    return ((bitField0_ & 0x00800000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * External exposure associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.ExternalExposure external_exposure = 84;</code>
+   *
+   * @return The externalExposure.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.ExternalExposure getExternalExposure() {
+    return externalExposure_ == null
+        ? com.google.cloud.securitycenter.v1.ExternalExposure.getDefaultInstance()
+        : externalExposure_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * External exposure associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.ExternalExposure external_exposure = 84;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.ExternalExposureOrBuilder
+      getExternalExposureOrBuilder() {
+    return externalExposure_ == null
+        ? com.google.cloud.securitycenter.v1.ExternalExposure.getDefaultInstance()
+        : externalExposure_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -7851,6 +8042,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessage
     }
     for (int i = 0; i < groupMemberships_.size(); i++) {
       output.writeMessage(65, groupMemberships_.get(i));
+    }
+    if (((bitField0_ & 0x00400000) != 0)) {
+      output.writeMessage(77, getChokepoint());
+    }
+    if (((bitField0_ & 0x00800000) != 0)) {
+      output.writeMessage(84, getExternalExposure());
     }
     getUnknownFields().writeTo(output);
   }
@@ -8042,6 +8239,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(65, groupMemberships_.get(i));
     }
+    if (((bitField0_ & 0x00400000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(77, getChokepoint());
+    }
+    if (((bitField0_ & 0x00800000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(84, getExternalExposure());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -8174,6 +8377,14 @@ public final class Finding extends com.google.protobuf.GeneratedMessage
       if (!getToxicCombination().equals(other.getToxicCombination())) return false;
     }
     if (!getGroupMembershipsList().equals(other.getGroupMembershipsList())) return false;
+    if (hasChokepoint() != other.hasChokepoint()) return false;
+    if (hasChokepoint()) {
+      if (!getChokepoint().equals(other.getChokepoint())) return false;
+    }
+    if (hasExternalExposure() != other.hasExternalExposure()) return false;
+    if (hasExternalExposure()) {
+      if (!getExternalExposure().equals(other.getExternalExposure())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -8354,6 +8565,14 @@ public final class Finding extends com.google.protobuf.GeneratedMessage
     if (getGroupMembershipsCount() > 0) {
       hash = (37 * hash) + GROUP_MEMBERSHIPS_FIELD_NUMBER;
       hash = (53 * hash) + getGroupMembershipsList().hashCode();
+    }
+    if (hasChokepoint()) {
+      hash = (37 * hash) + CHOKEPOINT_FIELD_NUMBER;
+      hash = (53 * hash) + getChokepoint().hashCode();
+    }
+    if (hasExternalExposure()) {
+      hash = (37 * hash) + EXTERNAL_EXPOSURE_FIELD_NUMBER;
+      hash = (53 * hash) + getExternalExposure().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -8564,6 +8783,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessage
         internalGetNotebookFieldBuilder();
         internalGetToxicCombinationFieldBuilder();
         internalGetGroupMembershipsFieldBuilder();
+        internalGetChokepointFieldBuilder();
+        internalGetExternalExposureFieldBuilder();
       }
     }
 
@@ -8770,6 +8991,16 @@ public final class Finding extends com.google.protobuf.GeneratedMessage
         groupMembershipsBuilder_.clear();
       }
       bitField1_ = (bitField1_ & ~0x00020000);
+      chokepoint_ = null;
+      if (chokepointBuilder_ != null) {
+        chokepointBuilder_.dispose();
+        chokepointBuilder_ = null;
+      }
+      externalExposure_ = null;
+      if (externalExposureBuilder_ != null) {
+        externalExposureBuilder_.dispose();
+        externalExposureBuilder_ = null;
+      }
       return this;
     }
 
@@ -9072,6 +9303,15 @@ public final class Finding extends com.google.protobuf.GeneratedMessage
         result.toxicCombination_ =
             toxicCombinationBuilder_ == null ? toxicCombination_ : toxicCombinationBuilder_.build();
         to_bitField0_ |= 0x00200000;
+      }
+      if (((from_bitField1_ & 0x00040000) != 0)) {
+        result.chokepoint_ = chokepointBuilder_ == null ? chokepoint_ : chokepointBuilder_.build();
+        to_bitField0_ |= 0x00400000;
+      }
+      if (((from_bitField1_ & 0x00080000) != 0)) {
+        result.externalExposure_ =
+            externalExposureBuilder_ == null ? externalExposure_ : externalExposureBuilder_.build();
+        to_bitField0_ |= 0x00800000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -9496,6 +9736,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessage
             groupMembershipsBuilder_.addAllMessages(other.groupMemberships_);
           }
         }
+      }
+      if (other.hasChokepoint()) {
+        mergeChokepoint(other.getChokepoint());
+      }
+      if (other.hasExternalExposure()) {
+        mergeExternalExposure(other.getExternalExposure());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -9940,6 +10186,20 @@ public final class Finding extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 522
+            case 618:
+              {
+                input.readMessage(
+                    internalGetChokepointFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00040000;
+                break;
+              } // case 618
+            case 674:
+              {
+                input.readMessage(
+                    internalGetExternalExposureFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00080000;
+                break;
+              } // case 674
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -20982,6 +21242,427 @@ public final class Finding extends com.google.protobuf.GeneratedMessage
         groupMemberships_ = null;
       }
       return groupMembershipsBuilder_;
+    }
+
+    private com.google.cloud.securitycenter.v1.Chokepoint chokepoint_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.securitycenter.v1.Chokepoint,
+            com.google.cloud.securitycenter.v1.Chokepoint.Builder,
+            com.google.cloud.securitycenter.v1.ChokepointOrBuilder>
+        chokepointBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about a chokepoint, which is a resource or resource group
+     * where high-risk attack paths converge, based on [attack path simulations]
+     * (https://cloud.google.com/security-command-center/docs/attack-exposure-learn#attack_path_simulations).
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Chokepoint chokepoint = 77;</code>
+     *
+     * @return Whether the chokepoint field is set.
+     */
+    public boolean hasChokepoint() {
+      return ((bitField1_ & 0x00040000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about a chokepoint, which is a resource or resource group
+     * where high-risk attack paths converge, based on [attack path simulations]
+     * (https://cloud.google.com/security-command-center/docs/attack-exposure-learn#attack_path_simulations).
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Chokepoint chokepoint = 77;</code>
+     *
+     * @return The chokepoint.
+     */
+    public com.google.cloud.securitycenter.v1.Chokepoint getChokepoint() {
+      if (chokepointBuilder_ == null) {
+        return chokepoint_ == null
+            ? com.google.cloud.securitycenter.v1.Chokepoint.getDefaultInstance()
+            : chokepoint_;
+      } else {
+        return chokepointBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about a chokepoint, which is a resource or resource group
+     * where high-risk attack paths converge, based on [attack path simulations]
+     * (https://cloud.google.com/security-command-center/docs/attack-exposure-learn#attack_path_simulations).
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Chokepoint chokepoint = 77;</code>
+     */
+    public Builder setChokepoint(com.google.cloud.securitycenter.v1.Chokepoint value) {
+      if (chokepointBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        chokepoint_ = value;
+      } else {
+        chokepointBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about a chokepoint, which is a resource or resource group
+     * where high-risk attack paths converge, based on [attack path simulations]
+     * (https://cloud.google.com/security-command-center/docs/attack-exposure-learn#attack_path_simulations).
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Chokepoint chokepoint = 77;</code>
+     */
+    public Builder setChokepoint(
+        com.google.cloud.securitycenter.v1.Chokepoint.Builder builderForValue) {
+      if (chokepointBuilder_ == null) {
+        chokepoint_ = builderForValue.build();
+      } else {
+        chokepointBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about a chokepoint, which is a resource or resource group
+     * where high-risk attack paths converge, based on [attack path simulations]
+     * (https://cloud.google.com/security-command-center/docs/attack-exposure-learn#attack_path_simulations).
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Chokepoint chokepoint = 77;</code>
+     */
+    public Builder mergeChokepoint(com.google.cloud.securitycenter.v1.Chokepoint value) {
+      if (chokepointBuilder_ == null) {
+        if (((bitField1_ & 0x00040000) != 0)
+            && chokepoint_ != null
+            && chokepoint_ != com.google.cloud.securitycenter.v1.Chokepoint.getDefaultInstance()) {
+          getChokepointBuilder().mergeFrom(value);
+        } else {
+          chokepoint_ = value;
+        }
+      } else {
+        chokepointBuilder_.mergeFrom(value);
+      }
+      if (chokepoint_ != null) {
+        bitField1_ |= 0x00040000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about a chokepoint, which is a resource or resource group
+     * where high-risk attack paths converge, based on [attack path simulations]
+     * (https://cloud.google.com/security-command-center/docs/attack-exposure-learn#attack_path_simulations).
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Chokepoint chokepoint = 77;</code>
+     */
+    public Builder clearChokepoint() {
+      bitField1_ = (bitField1_ & ~0x00040000);
+      chokepoint_ = null;
+      if (chokepointBuilder_ != null) {
+        chokepointBuilder_.dispose();
+        chokepointBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about a chokepoint, which is a resource or resource group
+     * where high-risk attack paths converge, based on [attack path simulations]
+     * (https://cloud.google.com/security-command-center/docs/attack-exposure-learn#attack_path_simulations).
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Chokepoint chokepoint = 77;</code>
+     */
+    public com.google.cloud.securitycenter.v1.Chokepoint.Builder getChokepointBuilder() {
+      bitField1_ |= 0x00040000;
+      onChanged();
+      return internalGetChokepointFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about a chokepoint, which is a resource or resource group
+     * where high-risk attack paths converge, based on [attack path simulations]
+     * (https://cloud.google.com/security-command-center/docs/attack-exposure-learn#attack_path_simulations).
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Chokepoint chokepoint = 77;</code>
+     */
+    public com.google.cloud.securitycenter.v1.ChokepointOrBuilder getChokepointOrBuilder() {
+      if (chokepointBuilder_ != null) {
+        return chokepointBuilder_.getMessageOrBuilder();
+      } else {
+        return chokepoint_ == null
+            ? com.google.cloud.securitycenter.v1.Chokepoint.getDefaultInstance()
+            : chokepoint_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about a chokepoint, which is a resource or resource group
+     * where high-risk attack paths converge, based on [attack path simulations]
+     * (https://cloud.google.com/security-command-center/docs/attack-exposure-learn#attack_path_simulations).
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Chokepoint chokepoint = 77;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.securitycenter.v1.Chokepoint,
+            com.google.cloud.securitycenter.v1.Chokepoint.Builder,
+            com.google.cloud.securitycenter.v1.ChokepointOrBuilder>
+        internalGetChokepointFieldBuilder() {
+      if (chokepointBuilder_ == null) {
+        chokepointBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.securitycenter.v1.Chokepoint,
+                com.google.cloud.securitycenter.v1.Chokepoint.Builder,
+                com.google.cloud.securitycenter.v1.ChokepointOrBuilder>(
+                getChokepoint(), getParentForChildren(), isClean());
+        chokepoint_ = null;
+      }
+      return chokepointBuilder_;
+    }
+
+    private com.google.cloud.securitycenter.v1.ExternalExposure externalExposure_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.securitycenter.v1.ExternalExposure,
+            com.google.cloud.securitycenter.v1.ExternalExposure.Builder,
+            com.google.cloud.securitycenter.v1.ExternalExposureOrBuilder>
+        externalExposureBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * External exposure associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.ExternalExposure external_exposure = 84;</code>
+     *
+     * @return Whether the externalExposure field is set.
+     */
+    public boolean hasExternalExposure() {
+      return ((bitField1_ & 0x00080000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * External exposure associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.ExternalExposure external_exposure = 84;</code>
+     *
+     * @return The externalExposure.
+     */
+    public com.google.cloud.securitycenter.v1.ExternalExposure getExternalExposure() {
+      if (externalExposureBuilder_ == null) {
+        return externalExposure_ == null
+            ? com.google.cloud.securitycenter.v1.ExternalExposure.getDefaultInstance()
+            : externalExposure_;
+      } else {
+        return externalExposureBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * External exposure associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.ExternalExposure external_exposure = 84;</code>
+     */
+    public Builder setExternalExposure(com.google.cloud.securitycenter.v1.ExternalExposure value) {
+      if (externalExposureBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        externalExposure_ = value;
+      } else {
+        externalExposureBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * External exposure associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.ExternalExposure external_exposure = 84;</code>
+     */
+    public Builder setExternalExposure(
+        com.google.cloud.securitycenter.v1.ExternalExposure.Builder builderForValue) {
+      if (externalExposureBuilder_ == null) {
+        externalExposure_ = builderForValue.build();
+      } else {
+        externalExposureBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * External exposure associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.ExternalExposure external_exposure = 84;</code>
+     */
+    public Builder mergeExternalExposure(
+        com.google.cloud.securitycenter.v1.ExternalExposure value) {
+      if (externalExposureBuilder_ == null) {
+        if (((bitField1_ & 0x00080000) != 0)
+            && externalExposure_ != null
+            && externalExposure_
+                != com.google.cloud.securitycenter.v1.ExternalExposure.getDefaultInstance()) {
+          getExternalExposureBuilder().mergeFrom(value);
+        } else {
+          externalExposure_ = value;
+        }
+      } else {
+        externalExposureBuilder_.mergeFrom(value);
+      }
+      if (externalExposure_ != null) {
+        bitField1_ |= 0x00080000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * External exposure associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.ExternalExposure external_exposure = 84;</code>
+     */
+    public Builder clearExternalExposure() {
+      bitField1_ = (bitField1_ & ~0x00080000);
+      externalExposure_ = null;
+      if (externalExposureBuilder_ != null) {
+        externalExposureBuilder_.dispose();
+        externalExposureBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * External exposure associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.ExternalExposure external_exposure = 84;</code>
+     */
+    public com.google.cloud.securitycenter.v1.ExternalExposure.Builder
+        getExternalExposureBuilder() {
+      bitField1_ |= 0x00080000;
+      onChanged();
+      return internalGetExternalExposureFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * External exposure associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.ExternalExposure external_exposure = 84;</code>
+     */
+    public com.google.cloud.securitycenter.v1.ExternalExposureOrBuilder
+        getExternalExposureOrBuilder() {
+      if (externalExposureBuilder_ != null) {
+        return externalExposureBuilder_.getMessageOrBuilder();
+      } else {
+        return externalExposure_ == null
+            ? com.google.cloud.securitycenter.v1.ExternalExposure.getDefaultInstance()
+            : externalExposure_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * External exposure associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.ExternalExposure external_exposure = 84;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.securitycenter.v1.ExternalExposure,
+            com.google.cloud.securitycenter.v1.ExternalExposure.Builder,
+            com.google.cloud.securitycenter.v1.ExternalExposureOrBuilder>
+        internalGetExternalExposureFieldBuilder() {
+      if (externalExposureBuilder_ == null) {
+        externalExposureBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.securitycenter.v1.ExternalExposure,
+                com.google.cloud.securitycenter.v1.ExternalExposure.Builder,
+                com.google.cloud.securitycenter.v1.ExternalExposureOrBuilder>(
+                getExternalExposure(), getParentForChildren(), isClean());
+        externalExposure_ = null;
+      }
+      return externalExposureBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1.Finding)
