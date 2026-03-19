@@ -66,8 +66,7 @@ import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
 
 // same thread execution temporarily required for using java system properties will get removed in
-// issue
-// https://github.com/googleapis/google-cloud-java/issues/12100
+// issue https://github.com/googleapis/google-cloud-java/issues/12100
 @Execution(ExecutionMode.SAME_THREAD)
 public class HttpBigQueryRpcTest {
 
@@ -1000,6 +999,7 @@ public class HttpBigQueryRpcTest {
       assertEquals("invalid", rpcSpan.getAttributes().get(BigQueryTelemetryTracer.ERROR_TYPE));
       assertEquals(
           "Invalid request", rpcSpan.getAttributes().get(BigQueryTelemetryTracer.STATUS_MESSAGE));
+      assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.EXCEPTION_TYPE));
     }
   }
 
@@ -1016,7 +1016,6 @@ public class HttpBigQueryRpcTest {
 
     @Test
     public void testHttpTracingDisabledDoesNotAddAdditionalAttributes() throws Exception {
-
       setMockResponse(
           "{\"kind\":\"bigquery#dataset\",\"id\":\""
               + PROJECT_ID
@@ -1052,7 +1051,33 @@ public class HttpBigQueryRpcTest {
 
     @Test
     public void testHttpTracingDisabled_GenericException_DoesNotSetAttributes() throws Exception {
-      spanExporter.reset(); // Clear any accumulated spans
+      assertThrows(
+          IOException.class,
+          () -> {
+            rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
+          });
+
+      List<io.opentelemetry.sdk.trace.data.SpanData> spans = spanExporter.getFinishedSpanItems();
+      assertThat(spans).isNotEmpty();
+      io.opentelemetry.sdk.trace.data.SpanData rpcSpan =
+          spans.stream()
+              .filter(
+                  span -> span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
+              .findFirst()
+              .orElse(null);
+      assertNotNull(rpcSpan);
+      assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.EXCEPTION_TYPE));
+      assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.ERROR_TYPE));
+      assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.STATUS_MESSAGE));
+    }
+
+    @Test
+    public void testHttpTracingDisabled_GoogleJsonResponseException_DoesNotSetAttributes()
+        throws Exception {
+      mockResponse.setStatusCode(400);
+      mockResponse.setContentType(Json.MEDIA_TYPE);
+      mockResponse.setContent(
+          "{\"error\":{\"code\":400,\"message\":\"Invalid request\",\"errors\":[{\"message\":\"Invalid request\",\"domain\":\"global\",\"reason\":\"invalid\"}]}}");
 
       assertThrows(
           IOException.class,

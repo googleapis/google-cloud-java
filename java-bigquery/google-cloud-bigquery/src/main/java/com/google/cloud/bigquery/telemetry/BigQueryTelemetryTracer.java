@@ -74,6 +74,11 @@ public final class BigQueryTelemetryTracer {
     // TODO: add version
   }
 
+  /**
+   * Adds the following error attributes to trace span: STATUS_MESSAGE: the name of the exception +
+   * message if available EXCEPTION_TYPE: full name of exception ex: java.net.UnknownHostException
+   * ERROR_TYPE: mapped string based on {@link ErrorTypeUtil#getClientErrorType(Exception)}
+   */
   public static void addExceptionToSpan(Exception e, Span span) {
     span.recordException(e);
     String message = e.getMessage();
@@ -86,6 +91,11 @@ public final class BigQueryTelemetryTracer {
     span.setStatus(StatusCode.ERROR, statusMessage);
   }
 
+  /**
+   * Adds the following error attributes to trace span from GoogleJsonResponseException:
+   * STATUS_MESSAGE: user readable error message ERROR_TYPE: reason if available otherwise the
+   * status code
+   */
   public static void addServerErrorResponseToSpan(
       GoogleJsonResponseException errorResponse, Span span) {
     span.setStatus(StatusCode.ERROR);

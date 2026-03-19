@@ -19,14 +19,10 @@ package com.google.cloud.bigquery.telemetry;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
+import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
-import com.google.api.client.http.LowLevelHttpRequest;
-import com.google.api.client.http.LowLevelHttpResponse;
-import com.google.api.client.json.JsonFactory;
-import com.google.api.client.json.gson.GsonFactory;
-import com.google.api.client.testing.http.MockHttpTransport;
-import com.google.api.client.testing.http.MockLowLevelHttpRequest;
-import com.google.api.client.testing.http.MockLowLevelHttpResponse;
+import com.google.api.client.http.HttpHeaders;
+import com.google.api.client.http.HttpResponseException;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
@@ -35,6 +31,7 @@ import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.sdk.trace.data.SpanData;
 import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -42,8 +39,8 @@ import org.junit.jupiter.api.Test;
 public class BigQueryTelemetryTracerTest {
 
   private InMemorySpanExporter spanExporter;
-  private Tracer tracer;
   private Span span;
+  String errorCode = "400";
 
   @BeforeEach
   public void setUp() {
@@ -54,51 +51,57 @@ public class BigQueryTelemetryTracerTest {
             .build();
     OpenTelemetrySdk openTelemetry =
         OpenTelemetrySdk.builder().setTracerProvider(tracerProvider).build();
-    tracer = openTelemetry.getTracer("test-tracer");
+    Tracer tracer = openTelemetry.getTracer("test-tracer");
     span = tracer.spanBuilder("test-span").startSpan();
   }
 
   @Test
   public void testAddServerErrorResponseToSpan_DetailsNull() throws Exception {
-    GoogleJsonResponseException errorResponse = createException(400, "{}");
+    GoogleJsonResponseException errorResponse = createException(null, null, null, null);
 
     BigQueryTelemetryTracer.addServerErrorResponseToSpan(errorResponse, span);
     span.end();
 
-    assertErrorSpanAttributes("400", null);
+    assertErrorSpanAttributes(errorCode, null);
+  }
+
+  @Test
+  public void testAddServerErrorResponseToSpan_UsesStatusMessage() throws Exception {
+    GoogleJsonResponseException errorResponse = createException("Status Message", null, null, null);
+
+    BigQueryTelemetryTracer.addServerErrorResponseToSpan(errorResponse, span);
+    span.end();
+
+    assertErrorSpanAttributes(errorCode, "Status Message");
   }
 
   @Test
   public void testAddServerErrorResponseToSpan_ErrorsNull() throws Exception {
     GoogleJsonResponseException errorResponse =
-        createException(400, "{\"error\": {\"code\": 400, \"message\": \"Bad Request\"}}");
+        createException("Status Message", "Bad Request", null, null);
 
     BigQueryTelemetryTracer.addServerErrorResponseToSpan(errorResponse, span);
     span.end();
 
-    assertErrorSpanAttributes("400", "Bad Request");
+    assertErrorSpanAttributes(errorCode, "Bad Request");
   }
 
   @Test
   public void testAddServerErrorResponseToSpan_ErrorsEmpty() throws Exception {
     GoogleJsonResponseException errorResponse =
-        createException(
-            400, "{\"error\": {\"code\": 400, \"message\": \"Bad Request\", \"errors\": []}}");
+        createException("Status Message", "Bad Request", "", "");
 
     BigQueryTelemetryTracer.addServerErrorResponseToSpan(errorResponse, span);
     span.end();
 
-    assertErrorSpanAttributes("400", "Bad Request");
+    assertErrorSpanAttributes(errorCode, "Bad Request");
   }
 
   @Test
   public void testAddServerErrorResponseToSpan_WithErrors_MessageAndReasonNotNull()
       throws Exception {
     GoogleJsonResponseException errorResponse =
-        createException(
-            400,
-            "{\"error\": {\"code\": 400, \"message\": \"Bad Request\", \"errors\": [{\"message\": \"Detailed error\", \"reason\": \"invalidParameter\"}]}}");
-
+        createException("Status Message", "Bad Request", "Detailed error", "invalidParameter");
     BigQueryTelemetryTracer.addServerErrorResponseToSpan(errorResponse, span);
     span.end();
 
@@ -108,9 +111,7 @@ public class BigQueryTelemetryTracerTest {
   @Test
   public void testAddServerErrorResponseToSpan_WithErrors_MessageNull() throws Exception {
     GoogleJsonResponseException errorResponse =
-        createException(
-            400,
-            "{\"error\": {\"code\": 400, \"message\": \"Bad Request\", \"errors\": [{\"reason\": \"invalidParameter\"}]}}");
+        createException("Status Message", "Bad Request", null, "invalidParameter");
 
     BigQueryTelemetryTracer.addServerErrorResponseToSpan(errorResponse, span);
     span.end();
@@ -121,60 +122,12 @@ public class BigQueryTelemetryTracerTest {
   @Test
   public void testAddServerErrorResponseToSpan_WithErrors_ReasonNull() throws Exception {
     GoogleJsonResponseException errorResponse =
-        createException(
-            400,
-            "{\"error\": {\"code\": 400, \"message\": \"Bad Request\", \"errors\": [{\"message\": \"Detailed error\"}]}}");
+        createException("Status Message", "Bad Request", "Detailed error", null);
 
     BigQueryTelemetryTracer.addServerErrorResponseToSpan(errorResponse, span);
     span.end();
 
-    assertErrorSpanAttributes("400", "Detailed error");
-  }
-
-  private GoogleJsonResponseException createException(int statusCode, String content)
-      throws Exception {
-    JsonFactory jsonFactory = GsonFactory.getDefaultInstance();
-    MockHttpTransport transport =
-        new MockHttpTransport() {
-          @Override
-          public LowLevelHttpRequest buildRequest(String method, String url) {
-            return new MockLowLevelHttpRequest() {
-              @Override
-              public LowLevelHttpResponse execute() throws java.io.IOException {
-                MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
-                response.setStatusCode(statusCode);
-                response.setContentType(com.google.api.client.json.Json.MEDIA_TYPE);
-                response.setContent(content);
-                return response;
-              }
-            };
-          }
-        };
-
-    com.google.api.client.http.HttpRequestFactory requestFactory = transport.createRequestFactory();
-    com.google.api.client.http.HttpRequest request =
-        requestFactory.buildGetRequest(
-            new com.google.api.client.http.GenericUrl("https://example.com"));
-    request.setThrowExceptionOnExecuteError(false);
-    com.google.api.client.http.HttpResponse response = request.execute();
-
-    return GoogleJsonResponseException.from(jsonFactory, response);
-  }
-
-  private void assertErrorSpanAttributes(String expectedErrorType, String expectedStatusMessage) {
-    List<SpanData> spans = spanExporter.getFinishedSpanItems();
-    SpanData spanData = spans.get(0);
-
-    assertEquals(StatusCode.ERROR, spanData.getStatus().getStatusCode());
-    assertEquals(
-        expectedErrorType, spanData.getAttributes().get(BigQueryTelemetryTracer.ERROR_TYPE));
-    if (expectedStatusMessage == null) {
-      assertNull(spanData.getAttributes().get(BigQueryTelemetryTracer.STATUS_MESSAGE));
-    } else {
-      assertEquals(
-          expectedStatusMessage,
-          spanData.getAttributes().get(BigQueryTelemetryTracer.STATUS_MESSAGE));
-    }
+    assertErrorSpanAttributes(errorCode, "Detailed error");
   }
 
   @Test
@@ -190,11 +143,7 @@ public class BigQueryTelemetryTracerTest {
     assertEquals(
         "java.lang.Exception",
         spanData.getAttributes().get(BigQueryTelemetryTracer.EXCEPTION_TYPE));
-    assertEquals(
-        "Exception: Test error message",
-        spanData.getAttributes().get(BigQueryTelemetryTracer.STATUS_MESSAGE));
-    assertEquals(
-        "CLIENT_UNKNOWN_ERROR", spanData.getAttributes().get(BigQueryTelemetryTracer.ERROR_TYPE));
+    assertErrorSpanAttributes("CLIENT_UNKNOWN_ERROR", "Exception: Test error message");
   }
 
   @Test
@@ -213,5 +162,45 @@ public class BigQueryTelemetryTracerTest {
     assertEquals("Exception", spanData.getAttributes().get(BigQueryTelemetryTracer.STATUS_MESSAGE));
     assertEquals(
         "CLIENT_UNKNOWN_ERROR", spanData.getAttributes().get(BigQueryTelemetryTracer.ERROR_TYPE));
+  }
+
+  private GoogleJsonResponseException createException(
+      String highLevelStatusCode, String errorMessage, String detailedErrorMessage, String reason) {
+    GoogleJsonError googleJsonError = null;
+    if (errorMessage != null || detailedErrorMessage != null || reason != null) {
+      googleJsonError = new GoogleJsonError();
+      ArrayList<GoogleJsonError.ErrorInfo> errorList = new ArrayList<>();
+      if (detailedErrorMessage != null || reason != null) {
+        GoogleJsonError.ErrorInfo errorInfo = new GoogleJsonError.ErrorInfo();
+        if (detailedErrorMessage != null && !detailedErrorMessage.isEmpty()) {
+          errorInfo.setMessage(detailedErrorMessage);
+        }
+        if (reason != null && !reason.isEmpty()) {
+          errorInfo.setReason(reason);
+        }
+        errorList.add(errorInfo);
+      }
+      googleJsonError.setErrors(errorList);
+      googleJsonError.setMessage(errorMessage);
+    }
+    return new GoogleJsonResponseException(
+        new HttpResponseException.Builder(400, highLevelStatusCode, new HttpHeaders()),
+        googleJsonError);
+  }
+
+  private void assertErrorSpanAttributes(String expectedErrorType, String expectedStatusMessage) {
+    List<SpanData> spans = spanExporter.getFinishedSpanItems();
+    SpanData spanData = spans.get(0);
+
+    assertEquals(StatusCode.ERROR, spanData.getStatus().getStatusCode());
+    assertEquals(
+        expectedErrorType, spanData.getAttributes().get(BigQueryTelemetryTracer.ERROR_TYPE));
+    if (expectedStatusMessage == null) {
+      assertNull(spanData.getAttributes().get(BigQueryTelemetryTracer.STATUS_MESSAGE));
+    } else {
+      assertEquals(
+          expectedStatusMessage,
+          spanData.getAttributes().get(BigQueryTelemetryTracer.STATUS_MESSAGE));
+    }
   }
 }
