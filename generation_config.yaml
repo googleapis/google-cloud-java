@@ -349,7 +349,7 @@ libraries:
   - proto_path: google/cloud/bigquery/biglake/v1
   - proto_path: google/cloud/biglake/v1
   - proto_path: google/cloud/bigquery/biglake/v1alpha1
-  - proto_path: google/cloud/biglake/hive/v1beta
+  - proto_path: google/cloud/biglake/hive/v1beta 
 - api_shortname: analyticshub
   name_pretty: Analytics Hub
   product_documentation: https://cloud.google.com/analytics-hub
