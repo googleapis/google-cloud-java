@@ -60,7 +60,7 @@ class ErrorTypeUtil {
   static ErrorType getClientErrorType(Exception e) {
     if (isClientTimeout(e)) {
       return ErrorType.CLIENT_TIMEOUT;
-    } else if (ErrorTypeUtil.isClientConnectionError(e)) {
+    } else if (isClientConnectionError(e)) {
       return ErrorType.CLIENT_CONNECTION_ERROR;
     } else if (isClientResponseDecodeError(e)) {
       return ErrorType.CLIENT_RESPONSE_DECODE_ERROR;
