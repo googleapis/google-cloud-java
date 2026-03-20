@@ -1204,54 +1204,66 @@ public interface WorkerPoolOrBuilder
    *
    *
    * <pre>
-   * Not supported, and ignored by Cloud Run.
+   * Deprecated: Not supported, and ignored by Cloud Run.
    * </pre>
    *
-   * <code>repeated string custom_audiences = 37;</code>
+   * <code>repeated string custom_audiences = 37 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.run.v2.WorkerPool.custom_audiences is deprecated. See
+   *     google/cloud/run/v2/worker_pool.proto;l=459
    * @return A list containing the customAudiences.
    */
+  @java.lang.Deprecated
   java.util.List<java.lang.String> getCustomAudiencesList();
 
   /**
    *
    *
    * <pre>
-   * Not supported, and ignored by Cloud Run.
+   * Deprecated: Not supported, and ignored by Cloud Run.
    * </pre>
    *
-   * <code>repeated string custom_audiences = 37;</code>
+   * <code>repeated string custom_audiences = 37 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.run.v2.WorkerPool.custom_audiences is deprecated. See
+   *     google/cloud/run/v2/worker_pool.proto;l=459
    * @return The count of customAudiences.
    */
+  @java.lang.Deprecated
   int getCustomAudiencesCount();
 
   /**
    *
    *
    * <pre>
-   * Not supported, and ignored by Cloud Run.
+   * Deprecated: Not supported, and ignored by Cloud Run.
    * </pre>
    *
-   * <code>repeated string custom_audiences = 37;</code>
+   * <code>repeated string custom_audiences = 37 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.run.v2.WorkerPool.custom_audiences is deprecated. See
+   *     google/cloud/run/v2/worker_pool.proto;l=459
    * @param index The index of the element to return.
    * @return The customAudiences at the given index.
    */
+  @java.lang.Deprecated
   java.lang.String getCustomAudiences(int index);
 
   /**
    *
    *
    * <pre>
-   * Not supported, and ignored by Cloud Run.
+   * Deprecated: Not supported, and ignored by Cloud Run.
    * </pre>
    *
-   * <code>repeated string custom_audiences = 37;</code>
+   * <code>repeated string custom_audiences = 37 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.run.v2.WorkerPool.custom_audiences is deprecated. See
+   *     google/cloud/run/v2/worker_pool.proto;l=459
    * @param index The index of the value to return.
    * @return The bytes of the customAudiences at the given index.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getCustomAudiencesBytes(int index);
 
   /**
