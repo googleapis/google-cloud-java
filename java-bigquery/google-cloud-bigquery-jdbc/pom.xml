@@ -131,6 +131,10 @@
                     <relocation>
                       <pattern>io</pattern>
                       <shadedPattern>com.google.bqjdbc.shaded.io</shadedPattern>
+                      <excludes>
+                        <exclude>io.opentelemetry.api.*</exclude>
+                        <exclude>io.opentelemetry.context.*</exclude>
+                      </excludes>
                     </relocation>
                   </relocations>
                   <filters>
@@ -275,6 +279,42 @@
     <dependency>
       <groupId>org.apache.httpcomponents.core5</groupId>
       <artifactId>httpcore5</artifactId>
+    </dependency>
+
+    <!-- OpenTelemetry APIs (unshaded) -->
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-api</artifactId>
+      <version>1.37.0</version>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-context</artifactId>
+      <version>1.37.0</version>
+    </dependency>
+
+    <!-- OpenTelemetry SDK & Exporters (shaded) -->
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk</artifactId>
+      <version>1.37.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud.opentelemetry</groupId>
+      <artifactId>exporter-trace</artifactId>
+      <version>0.33.0</version>
+    </dependency>
+
+    <!-- Explicitly pin versions to satisfy maven-enforcer RequireUpperBoundDeps -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>2.0.16</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.re2j</groupId>
+      <artifactId>re2j</artifactId>
+      <version>1.8</version>
     </dependency>
 
     <!--  Test Dependencies  -->
