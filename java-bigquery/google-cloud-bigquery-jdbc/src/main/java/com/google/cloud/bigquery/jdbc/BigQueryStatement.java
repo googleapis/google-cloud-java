@@ -57,11 +57,18 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterators;
 import com.google.common.util.concurrent.Uninterruptibles;
+import io.opentelemetry.context.Context;
 import java.lang.ref.ReferenceQueue;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.SQLWarning;
+
+import io.opentelemetry.api.GlobalOpenTelemetry;
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.StatusCode;
+import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.context.Scope;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -117,6 +124,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   private int fetchSize;
   private String scriptQuery;
   private Map<String, String> extraLabels = new HashMap<>();
+  protected Context otelContext = null;
 
   private BigQueryReadClient bigQueryReadClient = null;
   private final BigQuery bigQuery;
@@ -233,40 +241,73 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    */
   @Override
   public ResultSet executeQuery(String sql) throws SQLException {
-    // TODO: write method to return state variables to original state.
     LOG.finest("++enter++");
-    logQueryExecutionStart(sql);
-    try {
-      QueryJobConfiguration jobConfiguration =
-          setDestinationDatasetAndTableInJobConfig(getJobConfig(sql).build());
-      runQuery(sql, jobConfiguration);
-    } catch (InterruptedException ex) {
-      throw new BigQueryJdbcException(ex);
-    }
+    Tracer tracer = getSafeTracer();
+    Span span = tracer.spanBuilder("BigQueryStatement.executeQuery").startSpan();
+    try (Scope scope = span.makeCurrent()) {
+      span.setAttribute("db.statement", sql);
+      this.otelContext = Context.current();
+      logQueryExecutionStart(sql);
+      try {
+        QueryJobConfiguration jobConfiguration =
+            setDestinationDatasetAndTableInJobConfig(getJobConfig(sql).build());
+        runQuery(sql, jobConfiguration);
+      } catch (InterruptedException ex) {
+        span.recordException(ex);
+        span.setStatus(StatusCode.ERROR, ex.getMessage());
+        throw new BigQueryJdbcException(ex);
+      } catch (Exception ex) {
+        span.recordException(ex);
+        span.setStatus(StatusCode.ERROR, ex.getMessage());
+        throw ex;
+      }
 
-    if (!isSingularResultSet()) {
-      throw new BigQueryJdbcException(
-          "Query returned more than one or didn't return any ResultSet.");
+      if (!isSingularResultSet()) {
+        BigQueryJdbcException ex = new BigQueryJdbcException(
+            "Query returned more than one or didn't return any ResultSet.");
+        span.recordException(ex);
+        span.setStatus(StatusCode.ERROR, ex.getMessage());
+        throw ex;
+      }
+      // This contains all the other assertions spec required on this method
+      return getCurrentResultSet();
+    } finally {
+      span.end();
     }
-    // This contains all the other assertions spec required on this method
-    return getCurrentResultSet();
   }
 
   @Override
   public long executeLargeUpdate(String sql) throws SQLException {
     LOG.finest("++enter++");
-    logQueryExecutionStart(sql);
-    try {
-      QueryJobConfiguration.Builder jobConfiguration = getJobConfig(sql);
-      runQuery(sql, jobConfiguration.build());
-    } catch (InterruptedException ex) {
-      throw new BigQueryJdbcRuntimeException(ex);
+    Tracer tracer = getSafeTracer();
+    Span span = tracer.spanBuilder("BigQueryStatement.executeLargeUpdate").startSpan();
+    try (Scope scope = span.makeCurrent()) {
+      span.setAttribute("db.statement", sql);
+      this.otelContext = Context.current();
+      logQueryExecutionStart(sql);
+      try {
+        QueryJobConfiguration.Builder jobConfiguration = getJobConfig(sql);
+        runQuery(sql, jobConfiguration.build());
+      } catch (InterruptedException ex) {
+        span.recordException(ex);
+        span.setStatus(StatusCode.ERROR, ex.getMessage());
+        throw new BigQueryJdbcRuntimeException(ex);
+      } catch (Exception ex) {
+        span.recordException(ex);
+        span.setStatus(StatusCode.ERROR, ex.getMessage());
+        throw ex;
+      }
+      if (this.currentUpdateCount == -1) {
+        BigQueryJdbcException ex = new BigQueryJdbcException(
+            "Update query expected to return affected row count. Double check query type.");
+        span.recordException(ex);
+        span.setStatus(StatusCode.ERROR, ex.getMessage());
+        throw ex;
+      }
+      return this.currentUpdateCount;
+    } finally {
+      span.end();
     }
-    if (this.currentUpdateCount == -1) {
-      throw new BigQueryJdbcException(
-          "Update query expected to return affected row count. Double check query type.");
-    }
-    return this.currentUpdateCount;
   }
 
   @Override
@@ -288,18 +329,32 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   @Override
   public boolean execute(String sql) throws SQLException {
     LOG.finest("++enter++");
-    logQueryExecutionStart(sql);
-    try {
-      QueryJobConfiguration jobConfiguration = getJobConfig(sql).build();
-      // If Large Results are enabled, ensure query type is SELECT
-      if (isLargeResultsEnabled() && getQueryType(jobConfiguration, null) == SqlType.SELECT) {
-        jobConfiguration = setDestinationDatasetAndTableInJobConfig(jobConfiguration);
+    Tracer tracer = getSafeTracer();
+    Span span = tracer.spanBuilder("BigQueryStatement.execute").startSpan();
+    try (Scope scope = span.makeCurrent()) {
+      span.setAttribute("db.statement", sql);
+      this.otelContext = Context.current();
+      logQueryExecutionStart(sql);
+      try {
+        QueryJobConfiguration jobConfiguration = getJobConfig(sql).build();
+        // If Large Results are enabled, ensure query type is SELECT
+        if (isLargeResultsEnabled() && getQueryType(jobConfiguration, null) == SqlType.SELECT) {
+          jobConfiguration = setDestinationDatasetAndTableInJobConfig(jobConfiguration);
+        }
+        runQuery(sql, jobConfiguration);
+      } catch (InterruptedException ex) {
+        span.recordException(ex);
+        span.setStatus(StatusCode.ERROR, ex.getMessage());
+        throw new BigQueryJdbcRuntimeException(ex);
+      } catch (Exception ex) {
+        span.recordException(ex);
+        span.setStatus(StatusCode.ERROR, ex.getMessage());
+        throw ex;
       }
-      runQuery(sql, jobConfiguration);
-    } catch (InterruptedException ex) {
-      throw new BigQueryJdbcRuntimeException(ex);
+      return getCurrentResultSet() != null;
+    } finally {
+      span.end();
     }
-    return getCurrentResultSet() != null;
   }
 
   StatementType getStatementType(QueryJobConfiguration queryJobConfiguration) throws SQLException {
@@ -810,9 +865,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     LOG.finest("++enter++");
 
     Runnable arrowStreamProcessor =
-        () -> {
-          long rowsRead = 0;
-          int retryCount = 0;
+        Context.current().wrap(
+            () -> {
+              long rowsRead = 0;
+              int retryCount = 0;
           try {
             // Use the first stream to perform reading.
             String streamName = readSession.getStreams(0).getName();
@@ -880,7 +936,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           } finally { // logic needed for graceful shutdown
             enqueueEndOfStream(arrowBatchWrapperBlockingQueue);
           }
-        };
+        });
 
     Thread populateBufferWorker = JDBC_THREAD_FACTORY.newThread(arrowStreamProcessor);
     populateBufferWorker.start();
@@ -1029,53 +1085,70 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     // calls
     populateFirstPage(result, rpcResponseQueue);
 
+    Context asyncContext = (this.otelContext != null) ? this.otelContext : Context.current();
+
     // This thread makes the RPC calls and paginates
     Runnable nextPageTask =
-        () -> {
-          String currentPageToken = firstPageToken;
-          TableResult currentResults = result;
-          TableId destinationTable = null;
-          if (firstPageToken != null) {
-            destinationTable = getDestinationTable(jobId);
-          }
-
-          try {
-            while (currentPageToken != null) {
-              // do not process further pages and shutdown
-              if (Thread.currentThread().isInterrupted() || queryTaskExecutor.isShutdown()) {
-                LOG.warning(
-                    "%s Interrupted @ runNextPageTaskAsync", Thread.currentThread().getName());
-                break;
+        asyncContext.wrap(
+            () -> {
+              Tracer tracer = getSafeTracer();
+              String currentPageToken = firstPageToken;
+              TableResult currentResults = result;
+              TableId destinationTable = null;
+              if (firstPageToken != null) {
+                destinationTable = getDestinationTable(jobId);
               }
 
-              long startTime = System.nanoTime();
-              currentResults =
-                  this.bigQuery.listTableData(
-                      destinationTable,
-                      TableDataListOption.pageSize(querySettings.getMaxResultPerPage()),
-                      TableDataListOption.pageToken(currentPageToken));
+              try {
+                while (currentPageToken != null) {
+                  // do not process further pages and shutdown
+                  if (Thread.currentThread().isInterrupted() || queryTaskExecutor.isShutdown()) {
+                    LOG.warning(
+                        "%s Interrupted @ runNextPageTaskAsync", Thread.currentThread().getName());
+                    break;
+                  }
 
-              currentPageToken = currentResults.getNextPageToken();
-              // this will be parsed asynchronously without blocking the current
-              // thread
-              Uninterruptibles.putUninterruptibly(rpcResponseQueue, Tuple.of(currentResults, true));
-              LOG.fine(
-                  "Fetched %d results from the server in %d ms.",
-                  querySettings.getMaxResultPerPage(),
-                  (int) ((System.nanoTime() - startTime) / 1000000));
-            }
-          } catch (Exception ex) {
-            Uninterruptibles.putUninterruptibly(
-                bigQueryFieldValueListWrapperBlockingQueue,
-                BigQueryFieldValueListWrapper.ofError(new BigQueryJdbcRuntimeException(ex)));
-          } finally {
-            // this will stop the parseDataTask as well when the pagination
-            // completes
-            Uninterruptibles.putUninterruptibly(rpcResponseQueue, Tuple.of(null, false));
-          }
-          // We cannot do queryTaskExecutor.shutdownNow() here as populate buffer method may not
-          // have finished processing the records and even that will be interrupted
-        };
+                  Span paginationSpan = tracer.spanBuilder("BigQueryStatement.pagination").startSpan();
+                  try (Scope scope = paginationSpan.makeCurrent()) {
+                    paginationSpan.setAttribute("db.pagination.page_token", currentPageToken);
+
+                    long startTime = System.nanoTime();
+                    currentResults =
+                        this.bigQuery.listTableData(
+                            destinationTable,
+                            TableDataListOption.pageSize(querySettings.getMaxResultPerPage()),
+                            TableDataListOption.pageToken(currentPageToken));
+
+                    long duration = (System.nanoTime() - startTime) / 1000000;
+                    paginationSpan.setAttribute("db.pagination.duration_ms", duration);
+                    paginationSpan.setAttribute("db.pagination.rows_fetched", querySettings.getMaxResultPerPage());
+
+                    currentPageToken = currentResults.getNextPageToken();
+                    // this will be parsed asynchronously without blocking the current thread
+                    Uninterruptibles.putUninterruptibly(rpcResponseQueue, Tuple.of(currentResults, true));
+                    LOG.fine(
+                        "Fetched %d results from the server in %d ms.",
+                        querySettings.getMaxResultPerPage(),
+                        (int) duration);
+                  } catch (Exception e) {
+                    paginationSpan.recordException(e);
+                    paginationSpan.setStatus(StatusCode.ERROR, e.getMessage());
+                    throw e;
+                  } finally {
+                    paginationSpan.end();
+                  }
+                }
+              } catch (Exception ex) {
+                Uninterruptibles.putUninterruptibly(
+                    bigQueryFieldValueListWrapperBlockingQueue,
+                    BigQueryFieldValueListWrapper.ofError(new BigQueryJdbcRuntimeException(ex)));
+              } finally {
+                // this will stop the parseDataTask as well when the pagination completes
+                Uninterruptibles.putUninterruptibly(rpcResponseQueue, Tuple.of(null, false));
+              }
+              // We cannot do queryTaskExecutor.shutdownNow() here as populate buffer method may not
+              // have finished processing the records and even that will be interrupted
+            });
 
     Thread nextPageWorker = JDBC_THREAD_FACTORY.newThread(nextPageTask);
     nextPageWorker.start();
@@ -1094,8 +1167,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     LOG.finest("++enter++");
 
     Runnable populateBufferRunnable =
-        () -> { // producer thread populating the buffer
-          try {
+        Context.current().wrap(
+            () -> { // producer thread populating the buffer
+              try {
             Iterable<FieldValueList> fieldValueLists;
             // as we have to process the first page
             boolean hasRows = true;
@@ -1150,7 +1224,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           } finally {
             enqueueBufferEndOfStream(bigQueryFieldValueListWrapperBlockingQueue);
           }
-        };
+        });
 
     Thread populateBufferWorker = JDBC_THREAD_FACTORY.newThread(populateBufferRunnable);
     populateBufferWorker.start();
@@ -1402,29 +1476,42 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   @Override
   public int[] executeBatch() throws SQLException {
     LOG.finest("++enter++");
-    int[] result = new int[this.batchQueries.size()];
-    if (this.batchQueries.isEmpty()) {
+    Tracer tracer = getSafeTracer();
+    Span span = tracer.spanBuilder("BigQueryStatement.executeBatch").startSpan();
+    try (Scope scope = span.makeCurrent()) {
+      span.setAttribute("db.statement.count", this.batchQueries.size());
+      this.otelContext = Context.current();
+
+      int[] result = new int[this.batchQueries.size()];
+      if (this.batchQueries.isEmpty()) {
+        return result;
+      }
+
+      try {
+        String combinedQueries = String.join("", this.batchQueries);
+        QueryJobConfiguration.Builder jobConfiguration = getJobConfig(combinedQueries);
+        jobConfiguration.setPriority(QueryJobConfiguration.Priority.BATCH);
+        runQuery(combinedQueries, jobConfiguration.build());
+      } catch (InterruptedException ex) {
+        throw new BigQueryJdbcRuntimeException(ex);
+      }
+
+      int i = 0;
+      while (getUpdateCount() != -1 && i < this.batchQueries.size()) {
+        result[i] = getUpdateCount();
+        getMoreResults();
+        i++;
+      }
+
+      clearBatch();
       return result;
+    } catch (Exception e) {
+      span.recordException(e);
+      span.setStatus(StatusCode.ERROR, e.getMessage());
+      throw e;
+    } finally {
+      span.end();
     }
-
-    try {
-      String combinedQueries = String.join("", this.batchQueries);
-      QueryJobConfiguration.Builder jobConfiguration = getJobConfig(combinedQueries);
-      jobConfiguration.setPriority(QueryJobConfiguration.Priority.BATCH);
-      runQuery(combinedQueries, jobConfiguration.build());
-    } catch (InterruptedException ex) {
-      throw new BigQueryJdbcRuntimeException(ex);
-    }
-
-    int i = 0;
-    while (getUpdateCount() != -1 && i < this.batchQueries.size()) {
-      result[i] = getUpdateCount();
-      getMoreResults();
-      i++;
-    }
-
-    clearBatch();
-    return result;
   }
 
   @Override
@@ -1572,5 +1659,23 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   private void enqueueBufferEndOfStream(BlockingQueue<BigQueryFieldValueListWrapper> queue) {
     Uninterruptibles.putUninterruptibly(queue, BigQueryFieldValueListWrapper.of(null, null, true));
+  }
+
+  /**
+   * Gets the OpenTelemetry Context from the statement execution. Used by ResultSet for
+   * pagination span context.
+   */
+  private Tracer getSafeTracer() {
+    if (connection != null) {
+      Tracer tracer = connection.getTracer();
+      if (tracer != null) {
+        return tracer;
+      }
+    }
+    return GlobalOpenTelemetry.getTracer("google-cloud-bigquery-jdbc-noop");
+  }
+
+  public Context getOtelContext() {
+    return this.otelContext;
   }
 }
