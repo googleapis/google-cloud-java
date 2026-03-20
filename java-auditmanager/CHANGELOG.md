@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.6.0 (None)
+
+* No change
+
+
 ## 0.5.0 (2026-03-11)
 
 ### ⚠ BREAKING CHANGES

@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.206.0-beta (None)
+
+* No change
+
+
 ## 0.205.0-beta (2026-03-11)
 
 * No change
