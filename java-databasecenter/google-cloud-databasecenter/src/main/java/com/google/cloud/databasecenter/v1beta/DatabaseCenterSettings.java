@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,9 @@
 
 package com.google.cloud.databasecenter.v1beta;
 
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.AggregateFleetPagedResponse;
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryDatabaseResourceGroupsPagedResponse;
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryIssuesPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryProductsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -53,7 +56,7 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of queryProducts:
+ * of aggregateIssueStats:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -64,10 +67,10 @@ import javax.annotation.Generated;
  * DatabaseCenterSettings.Builder databaseCenterSettingsBuilder =
  *     DatabaseCenterSettings.newBuilder();
  * databaseCenterSettingsBuilder
- *     .queryProductsSettings()
+ *     .aggregateIssueStatsSettings()
  *     .setRetrySettings(
  *         databaseCenterSettingsBuilder
- *             .queryProductsSettings()
+ *             .aggregateIssueStatsSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -83,8 +86,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @BetaApi
 @Generated("by gapic-generator-java")
@@ -94,6 +97,34 @@ public class DatabaseCenterSettings extends ClientSettings<DatabaseCenterSetting
   public PagedCallSettings<QueryProductsRequest, QueryProductsResponse, QueryProductsPagedResponse>
       queryProductsSettings() {
     return ((DatabaseCenterStubSettings) getStubSettings()).queryProductsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to aggregateFleet. */
+  public PagedCallSettings<
+          AggregateFleetRequest, AggregateFleetResponse, AggregateFleetPagedResponse>
+      aggregateFleetSettings() {
+    return ((DatabaseCenterStubSettings) getStubSettings()).aggregateFleetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to queryDatabaseResourceGroups. */
+  public PagedCallSettings<
+          QueryDatabaseResourceGroupsRequest,
+          QueryDatabaseResourceGroupsResponse,
+          QueryDatabaseResourceGroupsPagedResponse>
+      queryDatabaseResourceGroupsSettings() {
+    return ((DatabaseCenterStubSettings) getStubSettings()).queryDatabaseResourceGroupsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to aggregateIssueStats. */
+  public UnaryCallSettings<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
+      aggregateIssueStatsSettings() {
+    return ((DatabaseCenterStubSettings) getStubSettings()).aggregateIssueStatsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to queryIssues. */
+  public PagedCallSettings<QueryIssuesRequest, QueryIssuesResponse, QueryIssuesPagedResponse>
+      queryIssuesSettings() {
+    return ((DatabaseCenterStubSettings) getStubSettings()).queryIssuesSettings();
   }
 
   public static final DatabaseCenterSettings create(DatabaseCenterStubSettings stub)
@@ -213,6 +244,35 @@ public class DatabaseCenterSettings extends ClientSettings<DatabaseCenterSetting
             QueryProductsRequest, QueryProductsResponse, QueryProductsPagedResponse>
         queryProductsSettings() {
       return getStubSettingsBuilder().queryProductsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to aggregateFleet. */
+    public PagedCallSettings.Builder<
+            AggregateFleetRequest, AggregateFleetResponse, AggregateFleetPagedResponse>
+        aggregateFleetSettings() {
+      return getStubSettingsBuilder().aggregateFleetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to queryDatabaseResourceGroups. */
+    public PagedCallSettings.Builder<
+            QueryDatabaseResourceGroupsRequest,
+            QueryDatabaseResourceGroupsResponse,
+            QueryDatabaseResourceGroupsPagedResponse>
+        queryDatabaseResourceGroupsSettings() {
+      return getStubSettingsBuilder().queryDatabaseResourceGroupsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to aggregateIssueStats. */
+    public UnaryCallSettings.Builder<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
+        aggregateIssueStatsSettings() {
+      return getStubSettingsBuilder().aggregateIssueStatsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to queryIssues. */
+    public PagedCallSettings.Builder<
+            QueryIssuesRequest, QueryIssuesResponse, QueryIssuesPagedResponse>
+        queryIssuesSettings() {
+      return getStubSettingsBuilder().queryIssuesSettings();
     }
 
     @Override

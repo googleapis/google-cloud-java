@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.storagebatchoperations.v1;
 
+import static com.google.cloud.storagebatchoperations.v1.StorageBatchOperationsClient.ListBucketOperationsPagedResponse;
 import static com.google.cloud.storagebatchoperations.v1.StorageBatchOperationsClient.ListJobsPagedResponse;
 import static com.google.cloud.storagebatchoperations.v1.StorageBatchOperationsClient.ListLocationsPagedResponse;
 
@@ -92,8 +93,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -154,6 +155,21 @@ public class StorageBatchOperationsSettings extends ClientSettings<StorageBatchO
   /** Returns the object with the settings used for calls to cancelJob. */
   public UnaryCallSettings<CancelJobRequest, CancelJobResponse> cancelJobSettings() {
     return ((StorageBatchOperationsStubSettings) getStubSettings()).cancelJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listBucketOperations. */
+  public PagedCallSettings<
+          ListBucketOperationsRequest,
+          ListBucketOperationsResponse,
+          ListBucketOperationsPagedResponse>
+      listBucketOperationsSettings() {
+    return ((StorageBatchOperationsStubSettings) getStubSettings()).listBucketOperationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getBucket. */
+  public UnaryCallSettings<GetBucketOperationRequest, BucketOperation>
+      getBucketOperationSettings() {
+    return ((StorageBatchOperationsStubSettings) getStubSettings()).getBucketOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -310,6 +326,21 @@ public class StorageBatchOperationsSettings extends ClientSettings<StorageBatchO
     /** Returns the builder for the settings used for calls to cancelJob. */
     public UnaryCallSettings.Builder<CancelJobRequest, CancelJobResponse> cancelJobSettings() {
       return getStubSettingsBuilder().cancelJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listBucketOperations. */
+    public PagedCallSettings.Builder<
+            ListBucketOperationsRequest,
+            ListBucketOperationsResponse,
+            ListBucketOperationsPagedResponse>
+        listBucketOperationsSettings() {
+      return getStubSettingsBuilder().listBucketOperationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getBucket. */
+    public UnaryCallSettings.Builder<GetBucketOperationRequest, BucketOperation>
+        getBucketOperationSettings() {
+      return getStubSettingsBuilder().getBucketOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

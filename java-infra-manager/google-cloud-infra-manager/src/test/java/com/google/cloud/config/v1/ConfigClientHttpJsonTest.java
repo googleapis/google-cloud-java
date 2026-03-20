@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2926,6 +2926,162 @@ public class ConfigClientHttpJsonTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAutoMigrationConfigTest() throws Exception {
+    AutoMigrationConfig expectedResponse =
+        AutoMigrationConfig.newBuilder()
+            .setName(AutoMigrationConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setAutoMigrationEnabled(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AutoMigrationConfigName name = AutoMigrationConfigName.of("[PROJECT]", "[LOCATION]");
+
+    AutoMigrationConfig actualResponse = client.getAutoMigrationConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAutoMigrationConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutoMigrationConfigName name = AutoMigrationConfigName.of("[PROJECT]", "[LOCATION]");
+      client.getAutoMigrationConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAutoMigrationConfigTest2() throws Exception {
+    AutoMigrationConfig expectedResponse =
+        AutoMigrationConfig.newBuilder()
+            .setName(AutoMigrationConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setAutoMigrationEnabled(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-1316/locations/location-1316/autoMigrationConfig";
+
+    AutoMigrationConfig actualResponse = client.getAutoMigrationConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAutoMigrationConfigExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-1316/locations/location-1316/autoMigrationConfig";
+      client.getAutoMigrationConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateAutoMigrationConfigTest() throws Exception {
+    AutoMigrationConfig expectedResponse =
+        AutoMigrationConfig.newBuilder()
+            .setName(AutoMigrationConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setAutoMigrationEnabled(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateAutoMigrationConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AutoMigrationConfig autoMigrationConfig =
+        AutoMigrationConfig.newBuilder()
+            .setName(AutoMigrationConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setAutoMigrationEnabled(true)
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    AutoMigrationConfig actualResponse =
+        client.updateAutoMigrationConfigAsync(autoMigrationConfig, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateAutoMigrationConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutoMigrationConfig autoMigrationConfig =
+          AutoMigrationConfig.newBuilder()
+              .setName(AutoMigrationConfigName.of("[PROJECT]", "[LOCATION]").toString())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setAutoMigrationEnabled(true)
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAutoMigrationConfigAsync(autoMigrationConfig, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 

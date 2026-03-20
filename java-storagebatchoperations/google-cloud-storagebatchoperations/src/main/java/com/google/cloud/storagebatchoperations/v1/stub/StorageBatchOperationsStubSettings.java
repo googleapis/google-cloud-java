@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.storagebatchoperations.v1.stub;
 
+import static com.google.cloud.storagebatchoperations.v1.StorageBatchOperationsClient.ListBucketOperationsPagedResponse;
 import static com.google.cloud.storagebatchoperations.v1.StorageBatchOperationsClient.ListJobsPagedResponse;
 import static com.google.cloud.storagebatchoperations.v1.StorageBatchOperationsClient.ListLocationsPagedResponse;
 
@@ -39,6 +40,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -53,12 +55,16 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.storagebatchoperations.v1.BucketOperation;
 import com.google.cloud.storagebatchoperations.v1.CancelJobRequest;
 import com.google.cloud.storagebatchoperations.v1.CancelJobResponse;
 import com.google.cloud.storagebatchoperations.v1.CreateJobRequest;
 import com.google.cloud.storagebatchoperations.v1.DeleteJobRequest;
+import com.google.cloud.storagebatchoperations.v1.GetBucketOperationRequest;
 import com.google.cloud.storagebatchoperations.v1.GetJobRequest;
 import com.google.cloud.storagebatchoperations.v1.Job;
+import com.google.cloud.storagebatchoperations.v1.ListBucketOperationsRequest;
+import com.google.cloud.storagebatchoperations.v1.ListBucketOperationsResponse;
 import com.google.cloud.storagebatchoperations.v1.ListJobsRequest;
 import com.google.cloud.storagebatchoperations.v1.ListJobsResponse;
 import com.google.cloud.storagebatchoperations.v1.OperationMetadata;
@@ -122,8 +128,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -152,6 +158,7 @@ import javax.annotation.Generated;
  * }</pre>
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class StorageBatchOperationsStubSettings
     extends StubSettings<StorageBatchOperationsStubSettings> {
   /** The default scopes of the service. */
@@ -166,6 +173,13 @@ public class StorageBatchOperationsStubSettings
       createJobOperationSettings;
   private final UnaryCallSettings<DeleteJobRequest, Empty> deleteJobSettings;
   private final UnaryCallSettings<CancelJobRequest, CancelJobResponse> cancelJobSettings;
+  private final PagedCallSettings<
+          ListBucketOperationsRequest,
+          ListBucketOperationsResponse,
+          ListBucketOperationsPagedResponse>
+      listBucketOperationsSettings;
+  private final UnaryCallSettings<GetBucketOperationRequest, BucketOperation>
+      getBucketOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -202,6 +216,45 @@ public class StorageBatchOperationsStubSettings
             @Override
             public Iterable<Job> extractResources(ListJobsResponse payload) {
               return payload.getJobsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListBucketOperationsRequest, ListBucketOperationsResponse, BucketOperation>
+      LIST_BUCKET_OPERATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListBucketOperationsRequest, ListBucketOperationsResponse, BucketOperation>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBucketOperationsRequest injectToken(
+                ListBucketOperationsRequest payload, String token) {
+              return ListBucketOperationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListBucketOperationsRequest injectPageSize(
+                ListBucketOperationsRequest payload, int pageSize) {
+              return ListBucketOperationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBucketOperationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBucketOperationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<BucketOperation> extractResources(
+                ListBucketOperationsResponse payload) {
+              return payload.getBucketOperationsList();
             }
           };
 
@@ -256,6 +309,30 @@ public class StorageBatchOperationsStubSettings
           };
 
   private static final PagedListResponseFactory<
+          ListBucketOperationsRequest,
+          ListBucketOperationsResponse,
+          ListBucketOperationsPagedResponse>
+      LIST_BUCKET_OPERATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBucketOperationsRequest,
+              ListBucketOperationsResponse,
+              ListBucketOperationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListBucketOperationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBucketOperationsRequest, ListBucketOperationsResponse> callable,
+                ListBucketOperationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBucketOperationsResponse> futureResponse) {
+              PageContext<
+                      ListBucketOperationsRequest, ListBucketOperationsResponse, BucketOperation>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_BUCKET_OPERATIONS_PAGE_STR_DESC, request, context);
+              return ListBucketOperationsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       LIST_LOCATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -302,6 +379,21 @@ public class StorageBatchOperationsStubSettings
   /** Returns the object with the settings used for calls to cancelJob. */
   public UnaryCallSettings<CancelJobRequest, CancelJobResponse> cancelJobSettings() {
     return cancelJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listBucketOperations. */
+  public PagedCallSettings<
+          ListBucketOperationsRequest,
+          ListBucketOperationsResponse,
+          ListBucketOperationsPagedResponse>
+      listBucketOperationsSettings() {
+    return listBucketOperationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getBucket. */
+  public UnaryCallSettings<GetBucketOperationRequest, BucketOperation>
+      getBucketOperationSettings() {
+    return getBucketOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -432,8 +524,18 @@ public class StorageBatchOperationsStubSettings
     createJobOperationSettings = settingsBuilder.createJobOperationSettings().build();
     deleteJobSettings = settingsBuilder.deleteJobSettings().build();
     cancelJobSettings = settingsBuilder.cancelJobSettings().build();
+    listBucketOperationsSettings = settingsBuilder.listBucketOperationsSettings().build();
+    getBucketOperationSettings = settingsBuilder.getBucketOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-storagebatchoperations")
+        .setRepository("googleapis/google-cloud-java")
+        .build();
   }
 
   /** Builder for StorageBatchOperationsStubSettings. */
@@ -449,6 +551,13 @@ public class StorageBatchOperationsStubSettings
         createJobOperationSettings;
     private final UnaryCallSettings.Builder<DeleteJobRequest, Empty> deleteJobSettings;
     private final UnaryCallSettings.Builder<CancelJobRequest, CancelJobResponse> cancelJobSettings;
+    private final PagedCallSettings.Builder<
+            ListBucketOperationsRequest,
+            ListBucketOperationsResponse,
+            ListBucketOperationsPagedResponse>
+        listBucketOperationsSettings;
+    private final UnaryCallSettings.Builder<GetBucketOperationRequest, BucketOperation>
+        getBucketOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -510,6 +619,9 @@ public class StorageBatchOperationsStubSettings
       createJobOperationSettings = OperationCallSettings.newBuilder();
       deleteJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       cancelJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listBucketOperationsSettings =
+          PagedCallSettings.newBuilder(LIST_BUCKET_OPERATIONS_PAGE_STR_FACT);
+      getBucketOperationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -520,6 +632,8 @@ public class StorageBatchOperationsStubSettings
               createJobSettings,
               deleteJobSettings,
               cancelJobSettings,
+              listBucketOperationsSettings,
+              getBucketOperationSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -534,6 +648,8 @@ public class StorageBatchOperationsStubSettings
       createJobOperationSettings = settings.createJobOperationSettings.toBuilder();
       deleteJobSettings = settings.deleteJobSettings.toBuilder();
       cancelJobSettings = settings.cancelJobSettings.toBuilder();
+      listBucketOperationsSettings = settings.listBucketOperationsSettings.toBuilder();
+      getBucketOperationSettings = settings.getBucketOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -544,6 +660,8 @@ public class StorageBatchOperationsStubSettings
               createJobSettings,
               deleteJobSettings,
               cancelJobSettings,
+              listBucketOperationsSettings,
+              getBucketOperationSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -597,6 +715,16 @@ public class StorageBatchOperationsStubSettings
           .cancelJobSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listBucketOperationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getBucketOperationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .listLocationsSettings()
@@ -678,6 +806,21 @@ public class StorageBatchOperationsStubSettings
     /** Returns the builder for the settings used for calls to cancelJob. */
     public UnaryCallSettings.Builder<CancelJobRequest, CancelJobResponse> cancelJobSettings() {
       return cancelJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listBucketOperations. */
+    public PagedCallSettings.Builder<
+            ListBucketOperationsRequest,
+            ListBucketOperationsResponse,
+            ListBucketOperationsPagedResponse>
+        listBucketOperationsSettings() {
+      return listBucketOperationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getBucket. */
+    public UnaryCallSettings.Builder<GetBucketOperationRequest, BucketOperation>
+        getBucketOperationSettings() {
+      return getBucketOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -37,6 +37,9 @@
             "ExportRevisionStatefile": {
               "methods": ["exportRevisionStatefile", "exportRevisionStatefileCallable"]
             },
+            "GetAutoMigrationConfig": {
+              "methods": ["getAutoMigrationConfig", "getAutoMigrationConfig", "getAutoMigrationConfig", "getAutoMigrationConfigCallable"]
+            },
             "GetDeployment": {
               "methods": ["getDeployment", "getDeployment", "getDeployment", "getDeploymentCallable"]
             },
@@ -102,6 +105,9 @@
             },
             "UnlockDeployment": {
               "methods": ["unlockDeploymentAsync", "unlockDeploymentAsync", "unlockDeploymentAsync", "unlockDeploymentOperationCallable", "unlockDeploymentCallable"]
+            },
+            "UpdateAutoMigrationConfig": {
+              "methods": ["updateAutoMigrationConfigAsync", "updateAutoMigrationConfigAsync", "updateAutoMigrationConfigOperationCallable", "updateAutoMigrationConfigCallable"]
             },
             "UpdateDeployment": {
               "methods": ["updateDeploymentAsync", "updateDeploymentAsync", "updateDeploymentOperationCallable", "updateDeploymentCallable"]

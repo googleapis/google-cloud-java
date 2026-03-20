@@ -1,0 +1,35 @@
+# Changelog
+
+## 0.6.0 (None)
+
+* No change
+
+
+## 0.5.0 (2026-03-11)
+
+### ⚠ BREAKING CHANGES
+
+* Update existing packaging option `cloud.google.com/go/auditmanager/apiv1/auditmanagerpb;auditmanagerpb` for `go_package`
+
+### Bug Fixes
+
+* Update existing packaging option `cloud.google.com/go/auditmanager/apiv1/auditmanagerpb;auditmanagerpb` for `go_package` ([6c3721b](https://github.com/googleapis/google-cloud-java/commit/6c3721bfb672676a33a2edd7caa83f462f98f76f))
+
+
+
+## 0.4.0 (2026-02-25)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.57.0 ([#11956](https://github.com/googleapis/google-cloud-java/issues/11956)) ([62b97e1](https://github.com/googleapis/google-cloud-java/commit/62b97e108eee0f8649c53cef400774f4fca4ffab))
+
+
+## 0.1.0 (2026-01-29)
+
+### Features
+
+* new module for auditmanager ([#11888](https://github.com/googleapis/google-cloud-java/issues/11888)) ([c307b61](https://github.com/googleapis/google-cloud-java/commit/c307b61aa5debb504f49cce5d9d64840590eb93d))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.56.0 ([#11879](https://github.com/googleapis/google-cloud-java/issues/11879)) ([ac1f018](https://github.com/googleapis/google-cloud-java/commit/ac1f0182ac5b405ca164ac867c8c042322736bef))

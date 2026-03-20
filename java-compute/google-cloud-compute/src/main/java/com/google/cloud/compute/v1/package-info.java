@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1181,6 +1181,28 @@
  * }
  * }</pre>
  *
+ * <p>======================= RegionCompositeHealthChecksClient =======================
+ *
+ * <p>Service Description: The RegionCompositeHealthChecks API.
+ *
+ * <p>Sample for RegionCompositeHealthChecksClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (RegionCompositeHealthChecksClient regionCompositeHealthChecksClient =
+ *     RegionCompositeHealthChecksClient.create()) {
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String compositeHealthCheck = "compositeHealthCheck-1727645947";
+ *   CompositeHealthCheck response =
+ *       regionCompositeHealthChecksClient.get(project, region, compositeHealthCheck);
+ * }
+ * }</pre>
+ *
  * <p>======================= RegionDiskTypesClient =======================
  *
  * <p>Service Description: The RegionDiskTypes API.
@@ -1218,6 +1240,28 @@
  *   String region = "region-934795532";
  *   String disk = "disk3083677";
  *   Disk response = regionDisksClient.get(project, region, disk);
+ * }
+ * }</pre>
+ *
+ * <p>======================= RegionHealthAggregationPoliciesClient =======================
+ *
+ * <p>Service Description: The RegionHealthAggregationPolicies API.
+ *
+ * <p>Sample for RegionHealthAggregationPoliciesClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (RegionHealthAggregationPoliciesClient regionHealthAggregationPoliciesClient =
+ *     RegionHealthAggregationPoliciesClient.create()) {
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String healthAggregationPolicy = "healthAggregationPolicy755484600";
+ *   HealthAggregationPolicy response =
+ *       regionHealthAggregationPoliciesClient.get(project, region, healthAggregationPolicy);
  * }
  * }</pre>
  *
@@ -1260,6 +1304,26 @@
  *   String region = "region-934795532";
  *   String healthCheck = "healthCheck-1938093044";
  *   HealthCheck response = regionHealthChecksClient.get(project, region, healthCheck);
+ * }
+ * }</pre>
+ *
+ * <p>======================= RegionHealthSourcesClient =======================
+ *
+ * <p>Service Description: The RegionHealthSources API.
+ *
+ * <p>Sample for RegionHealthSourcesClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (RegionHealthSourcesClient regionHealthSourcesClient = RegionHealthSourcesClient.create()) {
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String healthSource = "healthSource513679767";
+ *   HealthSource response = regionHealthSourcesClient.get(project, region, healthSource);
  * }
  * }</pre>
  *
@@ -1666,6 +1730,28 @@
  *   String reservationBlock = "reservationBlock-1897000927";
  *   ReservationBlocksGetResponse response =
  *       reservationBlocksClient.get(project, zone, reservation, reservationBlock);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ReservationSlotsClient =======================
+ *
+ * <p>Service Description: The ReservationSlots API.
+ *
+ * <p>Sample for ReservationSlotsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ReservationSlotsClient reservationSlotsClient = ReservationSlotsClient.create()) {
+ *   String project = "project-309310695";
+ *   String zone = "zone3744684";
+ *   String parentName = "parentName-244870571";
+ *   String reservationSlot = "reservationSlot-337781782";
+ *   ReservationSlotsGetResponse response =
+ *       reservationSlotsClient.get(project, zone, parentName, reservationSlot);
  * }
  * }</pre>
  *

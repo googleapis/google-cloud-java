@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,15 +47,14 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (DatabaseCenterClient databaseCenterClient = DatabaseCenterClient.create()) {
- *   QueryProductsRequest request =
- *       QueryProductsRequest.newBuilder()
+ *   AggregateIssueStatsRequest request =
+ *       AggregateIssueStatsRequest.newBuilder()
  *           .setParent("parent-995424086")
- *           .setPageSize(883849137)
- *           .setPageToken("pageToken873572522")
+ *           .setFilter("filter-1274492040")
+ *           .addAllSignalTypeGroups(new ArrayList<SignalTypeGroup>())
+ *           .setBaselineDate(Date.newBuilder().build())
  *           .build();
- *   for (Product element : databaseCenterClient.queryProducts(request).iterateAll()) {
- *     // doThingsWith(element);
- *   }
+ *   AggregateIssueStatsResponse response = databaseCenterClient.aggregateIssueStats(request);
  * }
  * }</pre>
  *
@@ -81,6 +80,69 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> queryProductsPagedCallable()
  *           <li><p> queryProductsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AggregateFleet</td>
+ *      <td><p> AggregateFleet provides statistics about the fleet grouped by various fields.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> aggregateFleet(AggregateFleetRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> aggregateFleetPagedCallable()
+ *           <li><p> aggregateFleetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> QueryDatabaseResourceGroups</td>
+ *      <td><p> QueryDatabaseResourceGroups returns paginated results of database groups.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> queryDatabaseResourceGroups(QueryDatabaseResourceGroupsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> queryDatabaseResourceGroupsPagedCallable()
+ *           <li><p> queryDatabaseResourceGroupsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AggregateIssueStats</td>
+ *      <td><p> AggregateIssueStats provides database resource issues statistics.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> aggregateIssueStats(AggregateIssueStatsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> aggregateIssueStatsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> QueryIssues</td>
+ *      <td><p> QueryIssues provides a list of issues and recommendations that a user has access to and that are within the requested scope.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> queryIssues(QueryIssuesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> queryIssues(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> queryIssuesPagedCallable()
+ *           <li><p> queryIssuesCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -296,6 +358,460 @@ public class DatabaseCenterClient implements BackgroundResource {
     return stub.queryProductsCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * AggregateFleet provides statistics about the fleet grouped by various fields.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatabaseCenterClient databaseCenterClient = DatabaseCenterClient.create()) {
+   *   AggregateFleetRequest request =
+   *       AggregateFleetRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setGroupBy("groupBy293428022")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setBaselineDate(Date.newBuilder().build())
+   *           .build();
+   *   for (AggregateFleetRow element : databaseCenterClient.aggregateFleet(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AggregateFleetPagedResponse aggregateFleet(AggregateFleetRequest request) {
+    return aggregateFleetPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * AggregateFleet provides statistics about the fleet grouped by various fields.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatabaseCenterClient databaseCenterClient = DatabaseCenterClient.create()) {
+   *   AggregateFleetRequest request =
+   *       AggregateFleetRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setGroupBy("groupBy293428022")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setBaselineDate(Date.newBuilder().build())
+   *           .build();
+   *   ApiFuture<AggregateFleetRow> future =
+   *       databaseCenterClient.aggregateFleetPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AggregateFleetRow element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AggregateFleetRequest, AggregateFleetPagedResponse>
+      aggregateFleetPagedCallable() {
+    return stub.aggregateFleetPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * AggregateFleet provides statistics about the fleet grouped by various fields.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatabaseCenterClient databaseCenterClient = DatabaseCenterClient.create()) {
+   *   AggregateFleetRequest request =
+   *       AggregateFleetRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setGroupBy("groupBy293428022")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setBaselineDate(Date.newBuilder().build())
+   *           .build();
+   *   while (true) {
+   *     AggregateFleetResponse response =
+   *         databaseCenterClient.aggregateFleetCallable().call(request);
+   *     for (AggregateFleetRow element : response.getRowsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AggregateFleetRequest, AggregateFleetResponse>
+      aggregateFleetCallable() {
+    return stub.aggregateFleetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * QueryDatabaseResourceGroups returns paginated results of database groups.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatabaseCenterClient databaseCenterClient = DatabaseCenterClient.create()) {
+   *   QueryDatabaseResourceGroupsRequest request =
+   *       QueryDatabaseResourceGroupsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .addAllSignalTypeGroups(new ArrayList<SignalTypeGroup>())
+   *           .addAllSignalFilters(new ArrayList<SignalFilter>())
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (DatabaseResourceGroup element :
+   *       databaseCenterClient.queryDatabaseResourceGroups(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryDatabaseResourceGroupsPagedResponse queryDatabaseResourceGroups(
+      QueryDatabaseResourceGroupsRequest request) {
+    return queryDatabaseResourceGroupsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * QueryDatabaseResourceGroups returns paginated results of database groups.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatabaseCenterClient databaseCenterClient = DatabaseCenterClient.create()) {
+   *   QueryDatabaseResourceGroupsRequest request =
+   *       QueryDatabaseResourceGroupsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .addAllSignalTypeGroups(new ArrayList<SignalTypeGroup>())
+   *           .addAllSignalFilters(new ArrayList<SignalFilter>())
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<DatabaseResourceGroup> future =
+   *       databaseCenterClient.queryDatabaseResourceGroupsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (DatabaseResourceGroup element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsPagedResponse>
+      queryDatabaseResourceGroupsPagedCallable() {
+    return stub.queryDatabaseResourceGroupsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * QueryDatabaseResourceGroups returns paginated results of database groups.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatabaseCenterClient databaseCenterClient = DatabaseCenterClient.create()) {
+   *   QueryDatabaseResourceGroupsRequest request =
+   *       QueryDatabaseResourceGroupsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .addAllSignalTypeGroups(new ArrayList<SignalTypeGroup>())
+   *           .addAllSignalFilters(new ArrayList<SignalFilter>())
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     QueryDatabaseResourceGroupsResponse response =
+   *         databaseCenterClient.queryDatabaseResourceGroupsCallable().call(request);
+   *     for (DatabaseResourceGroup element : response.getResourceGroupsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
+      queryDatabaseResourceGroupsCallable() {
+    return stub.queryDatabaseResourceGroupsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * AggregateIssueStats provides database resource issues statistics.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatabaseCenterClient databaseCenterClient = DatabaseCenterClient.create()) {
+   *   AggregateIssueStatsRequest request =
+   *       AggregateIssueStatsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .addAllSignalTypeGroups(new ArrayList<SignalTypeGroup>())
+   *           .setBaselineDate(Date.newBuilder().build())
+   *           .build();
+   *   AggregateIssueStatsResponse response = databaseCenterClient.aggregateIssueStats(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AggregateIssueStatsResponse aggregateIssueStats(AggregateIssueStatsRequest request) {
+    return aggregateIssueStatsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * AggregateIssueStats provides database resource issues statistics.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatabaseCenterClient databaseCenterClient = DatabaseCenterClient.create()) {
+   *   AggregateIssueStatsRequest request =
+   *       AggregateIssueStatsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .addAllSignalTypeGroups(new ArrayList<SignalTypeGroup>())
+   *           .setBaselineDate(Date.newBuilder().build())
+   *           .build();
+   *   ApiFuture<AggregateIssueStatsResponse> future =
+   *       databaseCenterClient.aggregateIssueStatsCallable().futureCall(request);
+   *   // Do something.
+   *   AggregateIssueStatsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
+      aggregateIssueStatsCallable() {
+    return stub.aggregateIssueStatsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * QueryIssues provides a list of issues and recommendations that a user has access to and that
+   * are within the requested scope.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatabaseCenterClient databaseCenterClient = DatabaseCenterClient.create()) {
+   *   String parent = "parent-995424086";
+   *   for (DatabaseResourceIssue element : databaseCenterClient.queryIssues(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent can be a project, a folder, or an organization. The list is
+   *     limited to the one attached to resources within the `scope` that a user has access to.
+   *     <p>The allowed values are:
+   *     <ul>
+   *       <li>projects/{PROJECT_ID} (e.g., "projects/foo-bar")
+   *       <li>projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
+   *       <li>folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
+   *       <li>organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryIssuesPagedResponse queryIssues(String parent) {
+    QueryIssuesRequest request = QueryIssuesRequest.newBuilder().setParent(parent).build();
+    return queryIssues(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * QueryIssues provides a list of issues and recommendations that a user has access to and that
+   * are within the requested scope.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatabaseCenterClient databaseCenterClient = DatabaseCenterClient.create()) {
+   *   QueryIssuesRequest request =
+   *       QueryIssuesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .addAllSignalProductsFilters(new ArrayList<SignalProductsFilters>())
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (DatabaseResourceIssue element : databaseCenterClient.queryIssues(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryIssuesPagedResponse queryIssues(QueryIssuesRequest request) {
+    return queryIssuesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * QueryIssues provides a list of issues and recommendations that a user has access to and that
+   * are within the requested scope.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatabaseCenterClient databaseCenterClient = DatabaseCenterClient.create()) {
+   *   QueryIssuesRequest request =
+   *       QueryIssuesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .addAllSignalProductsFilters(new ArrayList<SignalProductsFilters>())
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<DatabaseResourceIssue> future =
+   *       databaseCenterClient.queryIssuesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (DatabaseResourceIssue element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<QueryIssuesRequest, QueryIssuesPagedResponse>
+      queryIssuesPagedCallable() {
+    return stub.queryIssuesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * QueryIssues provides a list of issues and recommendations that a user has access to and that
+   * are within the requested scope.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatabaseCenterClient databaseCenterClient = DatabaseCenterClient.create()) {
+   *   QueryIssuesRequest request =
+   *       QueryIssuesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .addAllSignalProductsFilters(new ArrayList<SignalProductsFilters>())
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     QueryIssuesResponse response = databaseCenterClient.queryIssuesCallable().call(request);
+   *     for (DatabaseResourceIssue element : response.getResourceIssuesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<QueryIssuesRequest, QueryIssuesResponse> queryIssuesCallable() {
+    return stub.queryIssuesCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -399,6 +915,253 @@ public class DatabaseCenterClient implements BackgroundResource {
     protected QueryProductsFixedSizeCollection createCollection(
         List<QueryProductsPage> pages, int collectionSize) {
       return new QueryProductsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class AggregateFleetPagedResponse
+      extends AbstractPagedListResponse<
+          AggregateFleetRequest,
+          AggregateFleetResponse,
+          AggregateFleetRow,
+          AggregateFleetPage,
+          AggregateFleetFixedSizeCollection> {
+
+    public static ApiFuture<AggregateFleetPagedResponse> createAsync(
+        PageContext<AggregateFleetRequest, AggregateFleetResponse, AggregateFleetRow> context,
+        ApiFuture<AggregateFleetResponse> futureResponse) {
+      ApiFuture<AggregateFleetPage> futurePage =
+          AggregateFleetPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new AggregateFleetPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private AggregateFleetPagedResponse(AggregateFleetPage page) {
+      super(page, AggregateFleetFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class AggregateFleetPage
+      extends AbstractPage<
+          AggregateFleetRequest, AggregateFleetResponse, AggregateFleetRow, AggregateFleetPage> {
+
+    private AggregateFleetPage(
+        PageContext<AggregateFleetRequest, AggregateFleetResponse, AggregateFleetRow> context,
+        AggregateFleetResponse response) {
+      super(context, response);
+    }
+
+    private static AggregateFleetPage createEmptyPage() {
+      return new AggregateFleetPage(null, null);
+    }
+
+    @Override
+    protected AggregateFleetPage createPage(
+        PageContext<AggregateFleetRequest, AggregateFleetResponse, AggregateFleetRow> context,
+        AggregateFleetResponse response) {
+      return new AggregateFleetPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<AggregateFleetPage> createPageAsync(
+        PageContext<AggregateFleetRequest, AggregateFleetResponse, AggregateFleetRow> context,
+        ApiFuture<AggregateFleetResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class AggregateFleetFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          AggregateFleetRequest,
+          AggregateFleetResponse,
+          AggregateFleetRow,
+          AggregateFleetPage,
+          AggregateFleetFixedSizeCollection> {
+
+    private AggregateFleetFixedSizeCollection(List<AggregateFleetPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static AggregateFleetFixedSizeCollection createEmptyCollection() {
+      return new AggregateFleetFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected AggregateFleetFixedSizeCollection createCollection(
+        List<AggregateFleetPage> pages, int collectionSize) {
+      return new AggregateFleetFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class QueryDatabaseResourceGroupsPagedResponse
+      extends AbstractPagedListResponse<
+          QueryDatabaseResourceGroupsRequest,
+          QueryDatabaseResourceGroupsResponse,
+          DatabaseResourceGroup,
+          QueryDatabaseResourceGroupsPage,
+          QueryDatabaseResourceGroupsFixedSizeCollection> {
+
+    public static ApiFuture<QueryDatabaseResourceGroupsPagedResponse> createAsync(
+        PageContext<
+                QueryDatabaseResourceGroupsRequest,
+                QueryDatabaseResourceGroupsResponse,
+                DatabaseResourceGroup>
+            context,
+        ApiFuture<QueryDatabaseResourceGroupsResponse> futureResponse) {
+      ApiFuture<QueryDatabaseResourceGroupsPage> futurePage =
+          QueryDatabaseResourceGroupsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new QueryDatabaseResourceGroupsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private QueryDatabaseResourceGroupsPagedResponse(QueryDatabaseResourceGroupsPage page) {
+      super(page, QueryDatabaseResourceGroupsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class QueryDatabaseResourceGroupsPage
+      extends AbstractPage<
+          QueryDatabaseResourceGroupsRequest,
+          QueryDatabaseResourceGroupsResponse,
+          DatabaseResourceGroup,
+          QueryDatabaseResourceGroupsPage> {
+
+    private QueryDatabaseResourceGroupsPage(
+        PageContext<
+                QueryDatabaseResourceGroupsRequest,
+                QueryDatabaseResourceGroupsResponse,
+                DatabaseResourceGroup>
+            context,
+        QueryDatabaseResourceGroupsResponse response) {
+      super(context, response);
+    }
+
+    private static QueryDatabaseResourceGroupsPage createEmptyPage() {
+      return new QueryDatabaseResourceGroupsPage(null, null);
+    }
+
+    @Override
+    protected QueryDatabaseResourceGroupsPage createPage(
+        PageContext<
+                QueryDatabaseResourceGroupsRequest,
+                QueryDatabaseResourceGroupsResponse,
+                DatabaseResourceGroup>
+            context,
+        QueryDatabaseResourceGroupsResponse response) {
+      return new QueryDatabaseResourceGroupsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<QueryDatabaseResourceGroupsPage> createPageAsync(
+        PageContext<
+                QueryDatabaseResourceGroupsRequest,
+                QueryDatabaseResourceGroupsResponse,
+                DatabaseResourceGroup>
+            context,
+        ApiFuture<QueryDatabaseResourceGroupsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class QueryDatabaseResourceGroupsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          QueryDatabaseResourceGroupsRequest,
+          QueryDatabaseResourceGroupsResponse,
+          DatabaseResourceGroup,
+          QueryDatabaseResourceGroupsPage,
+          QueryDatabaseResourceGroupsFixedSizeCollection> {
+
+    private QueryDatabaseResourceGroupsFixedSizeCollection(
+        List<QueryDatabaseResourceGroupsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static QueryDatabaseResourceGroupsFixedSizeCollection createEmptyCollection() {
+      return new QueryDatabaseResourceGroupsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected QueryDatabaseResourceGroupsFixedSizeCollection createCollection(
+        List<QueryDatabaseResourceGroupsPage> pages, int collectionSize) {
+      return new QueryDatabaseResourceGroupsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class QueryIssuesPagedResponse
+      extends AbstractPagedListResponse<
+          QueryIssuesRequest,
+          QueryIssuesResponse,
+          DatabaseResourceIssue,
+          QueryIssuesPage,
+          QueryIssuesFixedSizeCollection> {
+
+    public static ApiFuture<QueryIssuesPagedResponse> createAsync(
+        PageContext<QueryIssuesRequest, QueryIssuesResponse, DatabaseResourceIssue> context,
+        ApiFuture<QueryIssuesResponse> futureResponse) {
+      ApiFuture<QueryIssuesPage> futurePage =
+          QueryIssuesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new QueryIssuesPagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private QueryIssuesPagedResponse(QueryIssuesPage page) {
+      super(page, QueryIssuesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class QueryIssuesPage
+      extends AbstractPage<
+          QueryIssuesRequest, QueryIssuesResponse, DatabaseResourceIssue, QueryIssuesPage> {
+
+    private QueryIssuesPage(
+        PageContext<QueryIssuesRequest, QueryIssuesResponse, DatabaseResourceIssue> context,
+        QueryIssuesResponse response) {
+      super(context, response);
+    }
+
+    private static QueryIssuesPage createEmptyPage() {
+      return new QueryIssuesPage(null, null);
+    }
+
+    @Override
+    protected QueryIssuesPage createPage(
+        PageContext<QueryIssuesRequest, QueryIssuesResponse, DatabaseResourceIssue> context,
+        QueryIssuesResponse response) {
+      return new QueryIssuesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<QueryIssuesPage> createPageAsync(
+        PageContext<QueryIssuesRequest, QueryIssuesResponse, DatabaseResourceIssue> context,
+        ApiFuture<QueryIssuesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class QueryIssuesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          QueryIssuesRequest,
+          QueryIssuesResponse,
+          DatabaseResourceIssue,
+          QueryIssuesPage,
+          QueryIssuesFixedSizeCollection> {
+
+    private QueryIssuesFixedSizeCollection(List<QueryIssuesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static QueryIssuesFixedSizeCollection createEmptyCollection() {
+      return new QueryIssuesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected QueryIssuesFixedSizeCollection createCollection(
+        List<QueryIssuesPage> pages, int collectionSize) {
+      return new QueryIssuesFixedSizeCollection(pages, collectionSize);
     }
   }
 }

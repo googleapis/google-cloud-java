@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ import com.google.container.v1beta1.CheckAutopilotCompatibilityRequest;
 import com.google.container.v1beta1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1beta1.Cluster;
 import com.google.container.v1beta1.ClusterUpgradeInfo;
+import com.google.container.v1beta1.CompleteControlPlaneUpgradeRequest;
 import com.google.container.v1beta1.CompleteIPRotationRequest;
 import com.google.container.v1beta1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1beta1.CreateClusterRequest;
@@ -132,8 +133,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @BetaApi
 @Generated("by gapic-generator-java")
@@ -338,6 +339,12 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
   public UnaryCallSettings<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
       fetchNodePoolUpgradeInfoSettings() {
     return ((ClusterManagerStubSettings) getStubSettings()).fetchNodePoolUpgradeInfoSettings();
+  }
+
+  /** Returns the object with the settings used for calls to completeControlPlaneUpgrade. */
+  public UnaryCallSettings<CompleteControlPlaneUpgradeRequest, Operation>
+      completeControlPlaneUpgradeSettings() {
+    return ((ClusterManagerStubSettings) getStubSettings()).completeControlPlaneUpgradeSettings();
   }
 
   public static final ClusterManagerSettings create(ClusterManagerStubSettings stub)
@@ -647,6 +654,12 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
     public UnaryCallSettings.Builder<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
         fetchNodePoolUpgradeInfoSettings() {
       return getStubSettingsBuilder().fetchNodePoolUpgradeInfoSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to completeControlPlaneUpgrade. */
+    public UnaryCallSettings.Builder<CompleteControlPlaneUpgradeRequest, Operation>
+        completeControlPlaneUpgradeSettings() {
+      return getStubSettingsBuilder().completeControlPlaneUpgradeSettings();
     }
 
     @Override

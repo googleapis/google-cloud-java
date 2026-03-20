@@ -25,11 +25,17 @@
             "CreateCompilationResult": {
               "methods": ["createCompilationResult", "createCompilationResult", "createCompilationResult", "createCompilationResultCallable"]
             },
+            "CreateFolder": {
+              "methods": ["createFolder", "createFolder", "createFolder", "createFolderCallable"]
+            },
             "CreateReleaseConfig": {
               "methods": ["createReleaseConfig", "createReleaseConfig", "createReleaseConfig", "createReleaseConfigCallable"]
             },
             "CreateRepository": {
               "methods": ["createRepository", "createRepository", "createRepository", "createRepositoryCallable"]
+            },
+            "CreateTeamFolder": {
+              "methods": ["createTeamFolder", "createTeamFolder", "createTeamFolder", "createTeamFolderCallable"]
             },
             "CreateWorkflowConfig": {
               "methods": ["createWorkflowConfig", "createWorkflowConfig", "createWorkflowConfig", "createWorkflowConfigCallable"]
@@ -40,11 +46,17 @@
             "CreateWorkspace": {
               "methods": ["createWorkspace", "createWorkspace", "createWorkspace", "createWorkspaceCallable"]
             },
+            "DeleteFolder": {
+              "methods": ["deleteFolder", "deleteFolder", "deleteFolder", "deleteFolderCallable"]
+            },
             "DeleteReleaseConfig": {
               "methods": ["deleteReleaseConfig", "deleteReleaseConfig", "deleteReleaseConfig", "deleteReleaseConfigCallable"]
             },
             "DeleteRepository": {
               "methods": ["deleteRepository", "deleteRepository", "deleteRepository", "deleteRepositoryCallable"]
+            },
+            "DeleteTeamFolder": {
+              "methods": ["deleteTeamFolder", "deleteTeamFolder", "deleteTeamFolder", "deleteTeamFolderCallable"]
             },
             "DeleteWorkflowConfig": {
               "methods": ["deleteWorkflowConfig", "deleteWorkflowConfig", "deleteWorkflowConfig", "deleteWorkflowConfigCallable"]
@@ -76,8 +88,11 @@
             "GetConfig": {
               "methods": ["getConfig", "getConfig", "getConfig", "getConfigCallable"]
             },
+            "GetFolder": {
+              "methods": ["getFolder", "getFolder", "getFolder", "getFolderCallable"]
+            },
             "GetIamPolicy": {
-              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
             },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
@@ -87,6 +102,9 @@
             },
             "GetRepository": {
               "methods": ["getRepository", "getRepository", "getRepository", "getRepositoryCallable"]
+            },
+            "GetTeamFolder": {
+              "methods": ["getTeamFolder", "getTeamFolder", "getTeamFolder", "getTeamFolderCallable"]
             },
             "GetWorkflowConfig": {
               "methods": ["getWorkflowConfig", "getWorkflowConfig", "getWorkflowConfig", "getWorkflowConfigCallable"]
@@ -130,6 +148,12 @@
             "MoveFile": {
               "methods": ["moveFile", "moveFileCallable"]
             },
+            "MoveFolder": {
+              "methods": ["moveFolderAsync", "moveFolderAsync", "moveFolderAsync", "moveFolderOperationCallable", "moveFolderCallable"]
+            },
+            "MoveRepository": {
+              "methods": ["moveRepositoryAsync", "moveRepositoryAsync", "moveRepositoryAsync", "moveRepositoryOperationCallable", "moveRepositoryCallable"]
+            },
             "PullGitCommits": {
               "methods": ["pullGitCommits", "pullGitCommitsCallable"]
             },
@@ -142,8 +166,17 @@
             "QueryDirectoryContents": {
               "methods": ["queryDirectoryContents", "queryDirectoryContentsPagedCallable", "queryDirectoryContentsCallable"]
             },
+            "QueryFolderContents": {
+              "methods": ["queryFolderContents", "queryFolderContents", "queryFolderContents", "queryFolderContentsPagedCallable", "queryFolderContentsCallable"]
+            },
             "QueryRepositoryDirectoryContents": {
               "methods": ["queryRepositoryDirectoryContents", "queryRepositoryDirectoryContentsPagedCallable", "queryRepositoryDirectoryContentsCallable"]
+            },
+            "QueryTeamFolderContents": {
+              "methods": ["queryTeamFolderContents", "queryTeamFolderContents", "queryTeamFolderContents", "queryTeamFolderContentsPagedCallable", "queryTeamFolderContentsCallable"]
+            },
+            "QueryUserRootContents": {
+              "methods": ["queryUserRootContents", "queryUserRootContents", "queryUserRootContents", "queryUserRootContentsPagedCallable", "queryUserRootContentsCallable"]
             },
             "QueryWorkflowInvocationActions": {
               "methods": ["queryWorkflowInvocationActions", "queryWorkflowInvocationActionsPagedCallable", "queryWorkflowInvocationActionsCallable"]
@@ -166,6 +199,9 @@
             "SearchFiles": {
               "methods": ["searchFiles", "searchFilesPagedCallable", "searchFilesCallable"]
             },
+            "SearchTeamFolders": {
+              "methods": ["searchTeamFolders", "searchTeamFoldersPagedCallable", "searchTeamFoldersCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },
@@ -175,11 +211,17 @@
             "UpdateConfig": {
               "methods": ["updateConfig", "updateConfig", "updateConfigCallable"]
             },
+            "UpdateFolder": {
+              "methods": ["updateFolder", "updateFolder", "updateFolderCallable"]
+            },
             "UpdateReleaseConfig": {
               "methods": ["updateReleaseConfig", "updateReleaseConfig", "updateReleaseConfigCallable"]
             },
             "UpdateRepository": {
               "methods": ["updateRepository", "updateRepository", "updateRepositoryCallable"]
+            },
+            "UpdateTeamFolder": {
+              "methods": ["updateTeamFolder", "updateTeamFolder", "updateTeamFolderCallable"]
             },
             "UpdateWorkflowConfig": {
               "methods": ["updateWorkflowConfig", "updateWorkflowConfig", "updateWorkflowConfigCallable"]

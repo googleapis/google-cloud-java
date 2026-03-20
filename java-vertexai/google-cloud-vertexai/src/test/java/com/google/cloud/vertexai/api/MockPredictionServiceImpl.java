@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -179,7 +179,8 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
               responseObserver.onError(
                   new IllegalArgumentException(
                       String.format(
-                          "Unrecognized response type %s for method StreamDirectPredict, expected %s or %s",
+                          "Unrecognized response type %s for method StreamDirectPredict, expected"
+                              + " %s or %s",
                           response == null ? "null" : response.getClass().getName(),
                           StreamDirectPredictResponse.class.getName(),
                           Exception.class.getName())));
@@ -216,7 +217,8 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
               responseObserver.onError(
                   new IllegalArgumentException(
                       String.format(
-                          "Unrecognized response type %s for method StreamDirectRawPredict, expected %s or %s",
+                          "Unrecognized response type %s for method StreamDirectRawPredict,"
+                              + " expected %s or %s",
                           response == null ? "null" : response.getClass().getName(),
                           StreamDirectRawPredictResponse.class.getName(),
                           Exception.class.getName())));
@@ -253,7 +255,8 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
               responseObserver.onError(
                   new IllegalArgumentException(
                       String.format(
-                          "Unrecognized response type %s for method StreamingPredict, expected %s or %s",
+                          "Unrecognized response type %s for method StreamingPredict, expected %s"
+                              + " or %s",
                           response == null ? "null" : response.getClass().getName(),
                           StreamingPredictResponse.class.getName(),
                           Exception.class.getName())));
@@ -287,7 +290,8 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ServerStreamingPredict, expected %s or %s",
+                  "Unrecognized response type %s for method ServerStreamingPredict, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   StreamingPredictResponse.class.getName(),
                   Exception.class.getName())));
@@ -311,7 +315,8 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
               responseObserver.onError(
                   new IllegalArgumentException(
                       String.format(
-                          "Unrecognized response type %s for method StreamingRawPredict, expected %s or %s",
+                          "Unrecognized response type %s for method StreamingRawPredict, expected"
+                              + " %s or %s",
                           response == null ? "null" : response.getClass().getName(),
                           StreamingRawPredictResponse.class.getName(),
                           Exception.class.getName())));
@@ -386,9 +391,31 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method StreamGenerateContent, expected %s or %s",
+                  "Unrecognized response type %s for method StreamGenerateContent, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerateContentResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void embedContent(
+      EmbedContentRequest request, StreamObserver<EmbedContentResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof EmbedContentResponse) {
+      requests.add(request);
+      responseObserver.onNext(((EmbedContentResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method EmbedContent, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  EmbedContentResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

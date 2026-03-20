@@ -35,6 +35,7 @@
     <module>java-artifact-registry</module>
     <module>java-asset</module>
     <module>java-assured-workloads</module>
+    <module>java-auditmanager</module>
     <module>java-automl</module>
     <module>java-backupdr</module>
     <module>java-bare-metal-solution</module>
@@ -45,20 +46,24 @@
     <module>java-beyondcorp-clientconnectorservices</module>
     <module>java-beyondcorp-clientgateways</module>
     <module>java-biglake</module>
+    <module>java-bigquery</module>
     <module>java-bigquery-data-exchange</module>
     <module>java-bigqueryconnection</module>
     <module>java-bigquerydatapolicy</module>
     <module>java-bigquerydatatransfer</module>
     <module>java-bigquerymigration</module>
     <module>java-bigqueryreservation</module>
+    <module>java-bigquerystorage</module>
     <module>java-billing</module>
     <module>java-billingbudgets</module>
     <module>java-binary-authorization</module>
     <module>java-capacityplanner</module>
     <module>java-certificate-manager</module>
+    <module>java-ces</module>
     <module>java-channel</module>
     <module>java-chat</module>
     <module>java-chronicle</module>
+    <module>java-cloudapiregistry</module>
     <module>java-cloudbuild</module>
     <module>java-cloudcommerceconsumerprocurement</module>
     <module>java-cloudcontrolspartner</module>
@@ -84,6 +89,7 @@
     <module>java-dataplex</module>
     <module>java-dataproc</module>
     <module>java-dataproc-metastore</module>
+    <module>java-datastore</module>
     <module>java-datastream</module>
     <module>java-deploy</module>
     <module>java-developerconnect</module>
@@ -131,6 +137,8 @@
     <module>java-licensemanager</module>
     <module>java-life-sciences</module>
     <module>java-locationfinder</module>
+    <module>java-logging</module>
+    <module>java-logging-logback</module>
     <module>java-lustre</module>
     <module>java-maintenance</module>
     <module>java-managed-identities</module>
@@ -241,6 +249,7 @@
     <module>java-websecurityscanner</module>
     <module>java-workflow-executions</module>
     <module>java-workflows</module>
+    <module>java-workloadmanager</module>
     <module>java-workspaceevents</module>
     <module>java-workstations</module>
   </modules>

@@ -1,0 +1,36 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.apiregistry.v1beta",
+  "libraryPackage": "com.google.cloud.apiregistry.v1beta",
+  "services": {
+    "CloudApiRegistry": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CloudApiRegistryClient",
+          "rpcs": {
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetMcpServer": {
+              "methods": ["getMcpServer", "getMcpServer", "getMcpServer", "getMcpServerCallable"]
+            },
+            "GetMcpTool": {
+              "methods": ["getMcpTool", "getMcpTool", "getMcpTool", "getMcpToolCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListMcpServers": {
+              "methods": ["listMcpServers", "listMcpServers", "listMcpServers", "listMcpServersPagedCallable", "listMcpServersCallable"]
+            },
+            "ListMcpTools": {
+              "methods": ["listMcpTools", "listMcpTools", "listMcpTools", "listMcpToolsPagedCallable", "listMcpToolsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

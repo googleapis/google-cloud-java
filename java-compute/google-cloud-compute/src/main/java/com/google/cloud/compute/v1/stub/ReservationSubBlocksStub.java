@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.GetIamPolicyReservationSubBlockRequest;
 import com.google.cloud.compute.v1.GetReservationSubBlockRequest;
+import com.google.cloud.compute.v1.GetVersionReservationSubBlockRequest;
 import com.google.cloud.compute.v1.ListReservationSubBlocksRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PerformMaintenanceReservationSubBlockRequest;
@@ -51,6 +52,15 @@ public abstract class ReservationSubBlocksStub implements BackgroundResource {
 
   public UnaryCallable<GetIamPolicyReservationSubBlockRequest, Policy> getIamPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public OperationCallable<GetVersionReservationSubBlockRequest, Operation, Operation>
+      getVersionOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getVersionOperationCallable()");
+  }
+
+  public UnaryCallable<GetVersionReservationSubBlockRequest, Operation> getVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: getVersionCallable()");
   }
 
   public UnaryCallable<ListReservationSubBlocksRequest, ListPagedResponse> listPagedCallable() {

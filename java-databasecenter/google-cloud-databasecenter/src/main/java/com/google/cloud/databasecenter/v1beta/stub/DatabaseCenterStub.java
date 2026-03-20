@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,22 @@
 
 package com.google.cloud.databasecenter.v1beta.stub;
 
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.AggregateFleetPagedResponse;
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryDatabaseResourceGroupsPagedResponse;
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryIssuesPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryProductsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.databasecenter.v1beta.AggregateFleetRequest;
+import com.google.cloud.databasecenter.v1beta.AggregateFleetResponse;
+import com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest;
+import com.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse;
+import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest;
+import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse;
+import com.google.cloud.databasecenter.v1beta.QueryIssuesRequest;
+import com.google.cloud.databasecenter.v1beta.QueryIssuesResponse;
 import com.google.cloud.databasecenter.v1beta.QueryProductsRequest;
 import com.google.cloud.databasecenter.v1beta.QueryProductsResponse;
 import javax.annotation.Generated;
@@ -42,6 +53,40 @@ public abstract class DatabaseCenterStub implements BackgroundResource {
 
   public UnaryCallable<QueryProductsRequest, QueryProductsResponse> queryProductsCallable() {
     throw new UnsupportedOperationException("Not implemented: queryProductsCallable()");
+  }
+
+  public UnaryCallable<AggregateFleetRequest, AggregateFleetPagedResponse>
+      aggregateFleetPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregateFleetPagedCallable()");
+  }
+
+  public UnaryCallable<AggregateFleetRequest, AggregateFleetResponse> aggregateFleetCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregateFleetCallable()");
+  }
+
+  public UnaryCallable<QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsPagedResponse>
+      queryDatabaseResourceGroupsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: queryDatabaseResourceGroupsPagedCallable()");
+  }
+
+  public UnaryCallable<QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
+      queryDatabaseResourceGroupsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: queryDatabaseResourceGroupsCallable()");
+  }
+
+  public UnaryCallable<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
+      aggregateIssueStatsCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregateIssueStatsCallable()");
+  }
+
+  public UnaryCallable<QueryIssuesRequest, QueryIssuesPagedResponse> queryIssuesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: queryIssuesPagedCallable()");
+  }
+
+  public UnaryCallable<QueryIssuesRequest, QueryIssuesResponse> queryIssuesCallable() {
+    throw new UnsupportedOperationException("Not implemented: queryIssuesCallable()");
   }
 
   @Override

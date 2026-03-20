@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1219,6 +1219,103 @@ public final class ConfigGrpc {
     return getGetResourceDriftMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.GetAutoMigrationConfigRequest,
+          com.google.cloud.config.v1.AutoMigrationConfig>
+      getGetAutoMigrationConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAutoMigrationConfig",
+      requestType = com.google.cloud.config.v1.GetAutoMigrationConfigRequest.class,
+      responseType = com.google.cloud.config.v1.AutoMigrationConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.GetAutoMigrationConfigRequest,
+          com.google.cloud.config.v1.AutoMigrationConfig>
+      getGetAutoMigrationConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.GetAutoMigrationConfigRequest,
+            com.google.cloud.config.v1.AutoMigrationConfig>
+        getGetAutoMigrationConfigMethod;
+    if ((getGetAutoMigrationConfigMethod = ConfigGrpc.getGetAutoMigrationConfigMethod) == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getGetAutoMigrationConfigMethod = ConfigGrpc.getGetAutoMigrationConfigMethod)
+            == null) {
+          ConfigGrpc.getGetAutoMigrationConfigMethod =
+              getGetAutoMigrationConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.GetAutoMigrationConfigRequest,
+                          com.google.cloud.config.v1.AutoMigrationConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetAutoMigrationConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.GetAutoMigrationConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.AutoMigrationConfig.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigMethodDescriptorSupplier("GetAutoMigrationConfig"))
+                      .build();
+        }
+      }
+    }
+    return getGetAutoMigrationConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest,
+          com.google.longrunning.Operation>
+      getUpdateAutoMigrationConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAutoMigrationConfig",
+      requestType = com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest,
+          com.google.longrunning.Operation>
+      getUpdateAutoMigrationConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest,
+            com.google.longrunning.Operation>
+        getUpdateAutoMigrationConfigMethod;
+    if ((getUpdateAutoMigrationConfigMethod = ConfigGrpc.getUpdateAutoMigrationConfigMethod)
+        == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getUpdateAutoMigrationConfigMethod = ConfigGrpc.getUpdateAutoMigrationConfigMethod)
+            == null) {
+          ConfigGrpc.getUpdateAutoMigrationConfigMethod =
+              getUpdateAutoMigrationConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateAutoMigrationConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigMethodDescriptorSupplier("UpdateAutoMigrationConfig"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateAutoMigrationConfigMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ConfigStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ConfigStub> factory =
@@ -1671,6 +1768,35 @@ public final class ConfigGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ResourceDrift> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetResourceDriftMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the AutoMigrationConfig for a given project and location.
+     * </pre>
+     */
+    default void getAutoMigrationConfig(
+        com.google.cloud.config.v1.GetAutoMigrationConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.AutoMigrationConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAutoMigrationConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the AutoMigrationConfig for a given project and location.
+     * </pre>
+     */
+    default void updateAutoMigrationConfig(
+        com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateAutoMigrationConfigMethod(), responseObserver);
     }
   }
 
@@ -2151,6 +2277,39 @@ public final class ConfigGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the AutoMigrationConfig for a given project and location.
+     * </pre>
+     */
+    public void getAutoMigrationConfig(
+        com.google.cloud.config.v1.GetAutoMigrationConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.AutoMigrationConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAutoMigrationConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the AutoMigrationConfig for a given project and location.
+     * </pre>
+     */
+    public void updateAutoMigrationConfig(
+        com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateAutoMigrationConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -2536,6 +2695,34 @@ public final class ConfigGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetResourceDriftMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the AutoMigrationConfig for a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.AutoMigrationConfig getAutoMigrationConfig(
+        com.google.cloud.config.v1.GetAutoMigrationConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAutoMigrationConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the AutoMigrationConfig for a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAutoMigrationConfig(
+        com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateAutoMigrationConfigMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -2912,6 +3099,32 @@ public final class ConfigGrpc {
         com.google.cloud.config.v1.GetResourceDriftRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetResourceDriftMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the AutoMigrationConfig for a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.AutoMigrationConfig getAutoMigrationConfig(
+        com.google.cloud.config.v1.GetAutoMigrationConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAutoMigrationConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the AutoMigrationConfig for a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAutoMigrationConfig(
+        com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAutoMigrationConfigMethod(), getCallOptions(), request);
     }
   }
 
@@ -3302,6 +3515,34 @@ public final class ConfigGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetResourceDriftMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the AutoMigrationConfig for a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.config.v1.AutoMigrationConfig>
+        getAutoMigrationConfig(com.google.cloud.config.v1.GetAutoMigrationConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAutoMigrationConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the AutoMigrationConfig for a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateAutoMigrationConfig(
+            com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateAutoMigrationConfigMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_DEPLOYMENTS = 0;
@@ -3331,6 +3572,8 @@ public final class ConfigGrpc {
   private static final int METHODID_GET_RESOURCE_CHANGE = 24;
   private static final int METHODID_LIST_RESOURCE_DRIFTS = 25;
   private static final int METHODID_GET_RESOURCE_DRIFT = 26;
+  private static final int METHODID_GET_AUTO_MIGRATION_CONFIG = 27;
+  private static final int METHODID_UPDATE_AUTO_MIGRATION_CONFIG = 28;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3496,6 +3739,17 @@ public final class ConfigGrpc {
               (com.google.cloud.config.v1.GetResourceDriftRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ResourceDrift>)
                   responseObserver);
+          break;
+        case METHODID_GET_AUTO_MIGRATION_CONFIG:
+          serviceImpl.getAutoMigrationConfig(
+              (com.google.cloud.config.v1.GetAutoMigrationConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.config.v1.AutoMigrationConfig>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_AUTO_MIGRATION_CONFIG:
+          serviceImpl.updateAutoMigrationConfig(
+              (com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -3690,6 +3944,20 @@ public final class ConfigGrpc {
                     com.google.cloud.config.v1.GetResourceDriftRequest,
                     com.google.cloud.config.v1.ResourceDrift>(
                     service, METHODID_GET_RESOURCE_DRIFT)))
+        .addMethod(
+            getGetAutoMigrationConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.GetAutoMigrationConfigRequest,
+                    com.google.cloud.config.v1.AutoMigrationConfig>(
+                    service, METHODID_GET_AUTO_MIGRATION_CONFIG)))
+        .addMethod(
+            getUpdateAutoMigrationConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_AUTO_MIGRATION_CONFIG)))
         .build();
   }
 
@@ -3766,6 +4034,8 @@ public final class ConfigGrpc {
                       .addMethod(getGetResourceChangeMethod())
                       .addMethod(getListResourceDriftsMethod())
                       .addMethod(getGetResourceDriftMethod())
+                      .addMethod(getGetAutoMigrationConfigMethod())
+                      .addMethod(getUpdateAutoMigrationConfigMethod())
                       .build();
         }
       }

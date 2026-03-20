@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -77,6 +78,8 @@ import com.google.cloud.developerconnect.v1.FetchReadTokenResponse;
 import com.google.cloud.developerconnect.v1.FetchReadWriteTokenRequest;
 import com.google.cloud.developerconnect.v1.FetchReadWriteTokenResponse;
 import com.google.cloud.developerconnect.v1.FetchSelfRequest;
+import com.google.cloud.developerconnect.v1.FinishOAuthRequest;
+import com.google.cloud.developerconnect.v1.FinishOAuthResponse;
 import com.google.cloud.developerconnect.v1.GetAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.GetConnectionRequest;
 import com.google.cloud.developerconnect.v1.GetGitRepositoryLinkRequest;
@@ -91,6 +94,8 @@ import com.google.cloud.developerconnect.v1.ListGitRepositoryLinksResponse;
 import com.google.cloud.developerconnect.v1.ListUsersRequest;
 import com.google.cloud.developerconnect.v1.ListUsersResponse;
 import com.google.cloud.developerconnect.v1.OperationMetadata;
+import com.google.cloud.developerconnect.v1.StartOAuthRequest;
+import com.google.cloud.developerconnect.v1.StartOAuthResponse;
 import com.google.cloud.developerconnect.v1.UpdateAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.UpdateConnectionRequest;
 import com.google.cloud.developerconnect.v1.User;
@@ -157,8 +162,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -187,6 +192,7 @@ import javax.annotation.Generated;
  * }</pre>
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class DeveloperConnectStubSettings extends StubSettings<DeveloperConnectStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -267,6 +273,8 @@ public class DeveloperConnectStubSettings extends StubSettings<DeveloperConnectS
   private final UnaryCallSettings<DeleteSelfRequest, Operation> deleteSelfSettings;
   private final OperationCallSettings<DeleteSelfRequest, Empty, OperationMetadata>
       deleteSelfOperationSettings;
+  private final UnaryCallSettings<StartOAuthRequest, StartOAuthResponse> startOAuthSettings;
+  private final UnaryCallSettings<FinishOAuthRequest, FinishOAuthResponse> finishOAuthSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -895,6 +903,16 @@ public class DeveloperConnectStubSettings extends StubSettings<DeveloperConnectS
     return deleteSelfOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to startOAuth. */
+  public UnaryCallSettings<StartOAuthRequest, StartOAuthResponse> startOAuthSettings() {
+    return startOAuthSettings;
+  }
+
+  /** Returns the object with the settings used for calls to finishOAuth. */
+  public UnaryCallSettings<FinishOAuthRequest, FinishOAuthResponse> finishOAuthSettings() {
+    return finishOAuthSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1057,8 +1075,18 @@ public class DeveloperConnectStubSettings extends StubSettings<DeveloperConnectS
     fetchSelfSettings = settingsBuilder.fetchSelfSettings().build();
     deleteSelfSettings = settingsBuilder.deleteSelfSettings().build();
     deleteSelfOperationSettings = settingsBuilder.deleteSelfOperationSettings().build();
+    startOAuthSettings = settingsBuilder.startOAuthSettings().build();
+    finishOAuthSettings = settingsBuilder.finishOAuthSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-developerconnect")
+        .setRepository("googleapis/google-cloud-java")
+        .build();
   }
 
   /** Builder for DeveloperConnectStubSettings. */
@@ -1148,6 +1176,10 @@ public class DeveloperConnectStubSettings extends StubSettings<DeveloperConnectS
     private final UnaryCallSettings.Builder<DeleteSelfRequest, Operation> deleteSelfSettings;
     private final OperationCallSettings.Builder<DeleteSelfRequest, Empty, OperationMetadata>
         deleteSelfOperationSettings;
+    private final UnaryCallSettings.Builder<StartOAuthRequest, StartOAuthResponse>
+        startOAuthSettings;
+    private final UnaryCallSettings.Builder<FinishOAuthRequest, FinishOAuthResponse>
+        finishOAuthSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -1230,6 +1262,8 @@ public class DeveloperConnectStubSettings extends StubSettings<DeveloperConnectS
       fetchSelfSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteSelfSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteSelfOperationSettings = OperationCallSettings.newBuilder();
+      startOAuthSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      finishOAuthSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -1259,6 +1293,8 @@ public class DeveloperConnectStubSettings extends StubSettings<DeveloperConnectS
               deleteUserSettings,
               fetchSelfSettings,
               deleteSelfSettings,
+              startOAuthSettings,
+              finishOAuthSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -1307,6 +1343,8 @@ public class DeveloperConnectStubSettings extends StubSettings<DeveloperConnectS
       fetchSelfSettings = settings.fetchSelfSettings.toBuilder();
       deleteSelfSettings = settings.deleteSelfSettings.toBuilder();
       deleteSelfOperationSettings = settings.deleteSelfOperationSettings.toBuilder();
+      startOAuthSettings = settings.startOAuthSettings.toBuilder();
+      finishOAuthSettings = settings.finishOAuthSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -1336,6 +1374,8 @@ public class DeveloperConnectStubSettings extends StubSettings<DeveloperConnectS
               deleteUserSettings,
               fetchSelfSettings,
               deleteSelfSettings,
+              startOAuthSettings,
+              finishOAuthSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -1482,6 +1522,16 @@ public class DeveloperConnectStubSettings extends StubSettings<DeveloperConnectS
 
       builder
           .deleteSelfSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .startOAuthSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .finishOAuthSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1964,6 +2014,17 @@ public class DeveloperConnectStubSettings extends StubSettings<DeveloperConnectS
     public OperationCallSettings.Builder<DeleteSelfRequest, Empty, OperationMetadata>
         deleteSelfOperationSettings() {
       return deleteSelfOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to startOAuth. */
+    public UnaryCallSettings.Builder<StartOAuthRequest, StartOAuthResponse> startOAuthSettings() {
+      return startOAuthSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to finishOAuth. */
+    public UnaryCallSettings.Builder<FinishOAuthRequest, FinishOAuthResponse>
+        finishOAuthSettings() {
+      return finishOAuthSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

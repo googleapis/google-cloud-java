@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.config.v1.AutoMigrationConfig;
 import com.google.cloud.config.v1.CreateDeploymentRequest;
 import com.google.cloud.config.v1.CreatePreviewRequest;
 import com.google.cloud.config.v1.DeleteDeploymentRequest;
@@ -52,6 +53,7 @@ import com.google.cloud.config.v1.ExportLockInfoRequest;
 import com.google.cloud.config.v1.ExportPreviewResultRequest;
 import com.google.cloud.config.v1.ExportPreviewResultResponse;
 import com.google.cloud.config.v1.ExportRevisionStatefileRequest;
+import com.google.cloud.config.v1.GetAutoMigrationConfigRequest;
 import com.google.cloud.config.v1.GetDeploymentRequest;
 import com.google.cloud.config.v1.GetPreviewRequest;
 import com.google.cloud.config.v1.GetResourceChangeRequest;
@@ -85,6 +87,7 @@ import com.google.cloud.config.v1.Revision;
 import com.google.cloud.config.v1.Statefile;
 import com.google.cloud.config.v1.TerraformVersion;
 import com.google.cloud.config.v1.UnlockDeploymentRequest;
+import com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest;
 import com.google.cloud.config.v1.UpdateDeploymentRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -118,6 +121,7 @@ public class HttpJsonConfigStub extends ConfigStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
           .add(Deployment.getDescriptor())
+          .add(AutoMigrationConfig.getDescriptor())
           .add(OperationMetadata.getDescriptor())
           .add(Preview.getDescriptor())
           .build();
@@ -1133,6 +1137,87 @@ public class HttpJsonConfigStub extends ConfigStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetAutoMigrationConfigRequest, AutoMigrationConfig>
+      getAutoMigrationConfigMethodDescriptor =
+          ApiMethodDescriptor.<GetAutoMigrationConfigRequest, AutoMigrationConfig>newBuilder()
+              .setFullMethodName("google.cloud.config.v1.Config/GetAutoMigrationConfig")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAutoMigrationConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/autoMigrationConfig}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAutoMigrationConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAutoMigrationConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AutoMigrationConfig>newBuilder()
+                      .setDefaultInstance(AutoMigrationConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateAutoMigrationConfigRequest, Operation>
+      updateAutoMigrationConfigMethodDescriptor =
+          ApiMethodDescriptor.<UpdateAutoMigrationConfigRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.config.v1.Config/UpdateAutoMigrationConfig")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateAutoMigrationConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{autoMigrationConfig.name=projects/*/locations/*/autoMigrationConfig}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAutoMigrationConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "autoMigrationConfig.name",
+                                request.getAutoMigrationConfig().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAutoMigrationConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "autoMigrationConfig",
+                                      request.getAutoMigrationConfig(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateAutoMigrationConfigRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1372,6 +1457,13 @@ public class HttpJsonConfigStub extends ConfigStub {
   private final UnaryCallable<ListResourceDriftsRequest, ListResourceDriftsPagedResponse>
       listResourceDriftsPagedCallable;
   private final UnaryCallable<GetResourceDriftRequest, ResourceDrift> getResourceDriftCallable;
+  private final UnaryCallable<GetAutoMigrationConfigRequest, AutoMigrationConfig>
+      getAutoMigrationConfigCallable;
+  private final UnaryCallable<UpdateAutoMigrationConfigRequest, Operation>
+      updateAutoMigrationConfigCallable;
+  private final OperationCallable<
+          UpdateAutoMigrationConfigRequest, AutoMigrationConfig, OperationMetadata>
+      updateAutoMigrationConfigOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1759,6 +1851,32 @@ public class HttpJsonConfigStub extends ConfigStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<GetAutoMigrationConfigRequest, AutoMigrationConfig>
+        getAutoMigrationConfigTransportSettings =
+            HttpJsonCallSettings.<GetAutoMigrationConfigRequest, AutoMigrationConfig>newBuilder()
+                .setMethodDescriptor(getAutoMigrationConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateAutoMigrationConfigRequest, Operation>
+        updateAutoMigrationConfigTransportSettings =
+            HttpJsonCallSettings.<UpdateAutoMigrationConfigRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateAutoMigrationConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "auto_migration_config.name",
+                          String.valueOf(request.getAutoMigrationConfig().getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1983,6 +2101,22 @@ public class HttpJsonConfigStub extends ConfigStub {
     this.getResourceDriftCallable =
         callableFactory.createUnaryCallable(
             getResourceDriftTransportSettings, settings.getResourceDriftSettings(), clientContext);
+    this.getAutoMigrationConfigCallable =
+        callableFactory.createUnaryCallable(
+            getAutoMigrationConfigTransportSettings,
+            settings.getAutoMigrationConfigSettings(),
+            clientContext);
+    this.updateAutoMigrationConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateAutoMigrationConfigTransportSettings,
+            settings.updateAutoMigrationConfigSettings(),
+            clientContext);
+    this.updateAutoMigrationConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            updateAutoMigrationConfigTransportSettings,
+            settings.updateAutoMigrationConfigOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -2038,6 +2172,8 @@ public class HttpJsonConfigStub extends ConfigStub {
     methodDescriptors.add(getResourceChangeMethodDescriptor);
     methodDescriptors.add(listResourceDriftsMethodDescriptor);
     methodDescriptors.add(getResourceDriftMethodDescriptor);
+    methodDescriptors.add(getAutoMigrationConfigMethodDescriptor);
+    methodDescriptors.add(updateAutoMigrationConfigMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
@@ -2272,6 +2408,24 @@ public class HttpJsonConfigStub extends ConfigStub {
   @Override
   public UnaryCallable<GetResourceDriftRequest, ResourceDrift> getResourceDriftCallable() {
     return getResourceDriftCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAutoMigrationConfigRequest, AutoMigrationConfig>
+      getAutoMigrationConfigCallable() {
+    return getAutoMigrationConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAutoMigrationConfigRequest, Operation>
+      updateAutoMigrationConfigCallable() {
+    return updateAutoMigrationConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateAutoMigrationConfigRequest, AutoMigrationConfig, OperationMetadata>
+      updateAutoMigrationConfigOperationCallable() {
+    return updateAutoMigrationConfigOperationCallable;
   }
 
   @Override

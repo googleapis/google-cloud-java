@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import com.google.cloud.confidentialcomputing.v1.ChallengeName;
 import com.google.cloud.confidentialcomputing.v1.ConfidentialComputingClient;
 import com.google.cloud.confidentialcomputing.v1.GceShieldedIdentity;
 import com.google.cloud.confidentialcomputing.v1.GcpCredentials;
+import com.google.cloud.confidentialcomputing.v1.NvidiaAttestation;
 import com.google.cloud.confidentialcomputing.v1.SignedEntity;
 import com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceRequest;
 import com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse;
@@ -48,6 +49,7 @@ public class SyncVerifyConfidentialSpace {
               .setGceShieldedIdentity(GceShieldedIdentity.newBuilder().build())
               .setOptions(
                   VerifyConfidentialSpaceRequest.ConfidentialSpaceOptions.newBuilder().build())
+              .setNvidiaAttestation(NvidiaAttestation.newBuilder().build())
               .build();
       VerifyConfidentialSpaceResponse response =
           confidentialComputingClient.verifyConfidentialSpace(request);

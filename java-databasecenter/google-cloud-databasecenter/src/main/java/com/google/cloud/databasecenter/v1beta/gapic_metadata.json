@@ -10,6 +10,18 @@
         "grpc": {
           "libraryClient": "DatabaseCenterClient",
           "rpcs": {
+            "AggregateFleet": {
+              "methods": ["aggregateFleet", "aggregateFleetPagedCallable", "aggregateFleetCallable"]
+            },
+            "AggregateIssueStats": {
+              "methods": ["aggregateIssueStats", "aggregateIssueStatsCallable"]
+            },
+            "QueryDatabaseResourceGroups": {
+              "methods": ["queryDatabaseResourceGroups", "queryDatabaseResourceGroupsPagedCallable", "queryDatabaseResourceGroupsCallable"]
+            },
+            "QueryIssues": {
+              "methods": ["queryIssues", "queryIssues", "queryIssuesPagedCallable", "queryIssuesCallable"]
+            },
             "QueryProducts": {
               "methods": ["queryProducts", "queryProductsPagedCallable", "queryProductsCallable"]
             }

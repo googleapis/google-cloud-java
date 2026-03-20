@@ -12,50 +12,27 @@ Java idiomatic client for [Merchant API][product-docs].
 ## Quickstart
 
 
-If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
-
-```xml
-<dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>libraries-bom</artifactId>
-      <version>26.73.0</version>
-      <type>pom</type>
-      <scope>import</scope>
-    </dependency>
-  </dependencies>
-</dependencyManagement>
-
-<dependencies>
-  <dependency>
-    <groupId>com.google.shopping</groupId>
-    <artifactId>google-shopping-merchant-datasources</artifactId>
-  </dependency>
-</dependencies>
-```
-
-If you are using Maven without the BOM, add this to your dependencies:
+If you are using Maven, add this to your pom.xml file:
 
 
 ```xml
 <dependency>
   <groupId>com.google.shopping</groupId>
   <artifactId>google-shopping-merchant-datasources</artifactId>
-  <version>1.9.0</version>
+  <version>1.15.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.shopping:google-shopping-merchant-datasources:1.9.0'
+implementation 'com.google.shopping:google-shopping-merchant-datasources:1.15.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.shopping" % "google-shopping-merchant-datasources" % "1.9.0"
+libraryDependencies += "com.google.shopping" % "google-shopping-merchant-datasources" % "1.15.0"
 ```
 
 ## Authentication
@@ -175,7 +152,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [javadocs]: https://cloud.google.com/java/docs/reference/google-shopping-merchant-datasources/latest/overview
 [stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.shopping/google-shopping-merchant-datasources.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.shopping/google-shopping-merchant-datasources/1.9.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.shopping/google-shopping-merchant-datasources/1.15.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

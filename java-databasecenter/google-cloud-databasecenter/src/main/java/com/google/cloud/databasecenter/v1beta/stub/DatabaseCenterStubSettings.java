@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,9 @@
 
 package com.google.cloud.databasecenter.v1beta.stub;
 
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.AggregateFleetPagedResponse;
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryDatabaseResourceGroupsPagedResponse;
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryIssuesPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryProductsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -35,6 +38,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -44,7 +48,18 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.databasecenter.v1beta.AggregateFleetRequest;
+import com.google.cloud.databasecenter.v1beta.AggregateFleetResponse;
+import com.google.cloud.databasecenter.v1beta.AggregateFleetRow;
+import com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest;
+import com.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse;
+import com.google.cloud.databasecenter.v1beta.DatabaseResourceGroup;
+import com.google.cloud.databasecenter.v1beta.DatabaseResourceIssue;
 import com.google.cloud.databasecenter.v1beta.Product;
+import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest;
+import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse;
+import com.google.cloud.databasecenter.v1beta.QueryIssuesRequest;
+import com.google.cloud.databasecenter.v1beta.QueryIssuesResponse;
 import com.google.cloud.databasecenter.v1beta.QueryProductsRequest;
 import com.google.cloud.databasecenter.v1beta.QueryProductsResponse;
 import com.google.common.collect.ImmutableList;
@@ -73,7 +88,7 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of queryProducts:
+ * of aggregateIssueStats:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -84,10 +99,10 @@ import javax.annotation.Generated;
  * DatabaseCenterStubSettings.Builder databaseCenterSettingsBuilder =
  *     DatabaseCenterStubSettings.newBuilder();
  * databaseCenterSettingsBuilder
- *     .queryProductsSettings()
+ *     .aggregateIssueStatsSettings()
  *     .setRetrySettings(
  *         databaseCenterSettingsBuilder
- *             .queryProductsSettings()
+ *             .aggregateIssueStatsSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -103,11 +118,12 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @BetaApi
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -116,6 +132,18 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
   private final PagedCallSettings<
           QueryProductsRequest, QueryProductsResponse, QueryProductsPagedResponse>
       queryProductsSettings;
+  private final PagedCallSettings<
+          AggregateFleetRequest, AggregateFleetResponse, AggregateFleetPagedResponse>
+      aggregateFleetSettings;
+  private final PagedCallSettings<
+          QueryDatabaseResourceGroupsRequest,
+          QueryDatabaseResourceGroupsResponse,
+          QueryDatabaseResourceGroupsPagedResponse>
+      queryDatabaseResourceGroupsSettings;
+  private final UnaryCallSettings<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
+      aggregateIssueStatsSettings;
+  private final PagedCallSettings<QueryIssuesRequest, QueryIssuesResponse, QueryIssuesPagedResponse>
+      queryIssuesSettings;
 
   private static final PagedListDescriptor<QueryProductsRequest, QueryProductsResponse, Product>
       QUERY_PRODUCTS_PAGE_STR_DESC =
@@ -151,6 +179,126 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
             }
           };
 
+  private static final PagedListDescriptor<
+          AggregateFleetRequest, AggregateFleetResponse, AggregateFleetRow>
+      AGGREGATE_FLEET_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              AggregateFleetRequest, AggregateFleetResponse, AggregateFleetRow>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public AggregateFleetRequest injectToken(AggregateFleetRequest payload, String token) {
+              return AggregateFleetRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public AggregateFleetRequest injectPageSize(
+                AggregateFleetRequest payload, int pageSize) {
+              return AggregateFleetRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(AggregateFleetRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(AggregateFleetResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AggregateFleetRow> extractResources(AggregateFleetResponse payload) {
+              return payload.getRowsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          QueryDatabaseResourceGroupsRequest,
+          QueryDatabaseResourceGroupsResponse,
+          DatabaseResourceGroup>
+      QUERY_DATABASE_RESOURCE_GROUPS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              QueryDatabaseResourceGroupsRequest,
+              QueryDatabaseResourceGroupsResponse,
+              DatabaseResourceGroup>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public QueryDatabaseResourceGroupsRequest injectToken(
+                QueryDatabaseResourceGroupsRequest payload, String token) {
+              return QueryDatabaseResourceGroupsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public QueryDatabaseResourceGroupsRequest injectPageSize(
+                QueryDatabaseResourceGroupsRequest payload, int pageSize) {
+              return QueryDatabaseResourceGroupsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(QueryDatabaseResourceGroupsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(QueryDatabaseResourceGroupsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DatabaseResourceGroup> extractResources(
+                QueryDatabaseResourceGroupsResponse payload) {
+              return payload.getResourceGroupsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          QueryIssuesRequest, QueryIssuesResponse, DatabaseResourceIssue>
+      QUERY_ISSUES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              QueryIssuesRequest, QueryIssuesResponse, DatabaseResourceIssue>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public QueryIssuesRequest injectToken(QueryIssuesRequest payload, String token) {
+              return QueryIssuesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public QueryIssuesRequest injectPageSize(QueryIssuesRequest payload, int pageSize) {
+              return QueryIssuesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(QueryIssuesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(QueryIssuesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DatabaseResourceIssue> extractResources(QueryIssuesResponse payload) {
+              return payload.getResourceIssuesList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           QueryProductsRequest, QueryProductsResponse, QueryProductsPagedResponse>
       QUERY_PRODUCTS_PAGE_STR_FACT =
@@ -168,10 +316,103 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
             }
           };
 
+  private static final PagedListResponseFactory<
+          AggregateFleetRequest, AggregateFleetResponse, AggregateFleetPagedResponse>
+      AGGREGATE_FLEET_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              AggregateFleetRequest, AggregateFleetResponse, AggregateFleetPagedResponse>() {
+            @Override
+            public ApiFuture<AggregateFleetPagedResponse> getFuturePagedResponse(
+                UnaryCallable<AggregateFleetRequest, AggregateFleetResponse> callable,
+                AggregateFleetRequest request,
+                ApiCallContext context,
+                ApiFuture<AggregateFleetResponse> futureResponse) {
+              PageContext<AggregateFleetRequest, AggregateFleetResponse, AggregateFleetRow>
+                  pageContext =
+                      PageContext.create(callable, AGGREGATE_FLEET_PAGE_STR_DESC, request, context);
+              return AggregateFleetPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          QueryDatabaseResourceGroupsRequest,
+          QueryDatabaseResourceGroupsResponse,
+          QueryDatabaseResourceGroupsPagedResponse>
+      QUERY_DATABASE_RESOURCE_GROUPS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              QueryDatabaseResourceGroupsRequest,
+              QueryDatabaseResourceGroupsResponse,
+              QueryDatabaseResourceGroupsPagedResponse>() {
+            @Override
+            public ApiFuture<QueryDatabaseResourceGroupsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
+                    callable,
+                QueryDatabaseResourceGroupsRequest request,
+                ApiCallContext context,
+                ApiFuture<QueryDatabaseResourceGroupsResponse> futureResponse) {
+              PageContext<
+                      QueryDatabaseResourceGroupsRequest,
+                      QueryDatabaseResourceGroupsResponse,
+                      DatabaseResourceGroup>
+                  pageContext =
+                      PageContext.create(
+                          callable, QUERY_DATABASE_RESOURCE_GROUPS_PAGE_STR_DESC, request, context);
+              return QueryDatabaseResourceGroupsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          QueryIssuesRequest, QueryIssuesResponse, QueryIssuesPagedResponse>
+      QUERY_ISSUES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              QueryIssuesRequest, QueryIssuesResponse, QueryIssuesPagedResponse>() {
+            @Override
+            public ApiFuture<QueryIssuesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<QueryIssuesRequest, QueryIssuesResponse> callable,
+                QueryIssuesRequest request,
+                ApiCallContext context,
+                ApiFuture<QueryIssuesResponse> futureResponse) {
+              PageContext<QueryIssuesRequest, QueryIssuesResponse, DatabaseResourceIssue>
+                  pageContext =
+                      PageContext.create(callable, QUERY_ISSUES_PAGE_STR_DESC, request, context);
+              return QueryIssuesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to queryProducts. */
   public PagedCallSettings<QueryProductsRequest, QueryProductsResponse, QueryProductsPagedResponse>
       queryProductsSettings() {
     return queryProductsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to aggregateFleet. */
+  public PagedCallSettings<
+          AggregateFleetRequest, AggregateFleetResponse, AggregateFleetPagedResponse>
+      aggregateFleetSettings() {
+    return aggregateFleetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to queryDatabaseResourceGroups. */
+  public PagedCallSettings<
+          QueryDatabaseResourceGroupsRequest,
+          QueryDatabaseResourceGroupsResponse,
+          QueryDatabaseResourceGroupsPagedResponse>
+      queryDatabaseResourceGroupsSettings() {
+    return queryDatabaseResourceGroupsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to aggregateIssueStats. */
+  public UnaryCallSettings<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
+      aggregateIssueStatsSettings() {
+    return aggregateIssueStatsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to queryIssues. */
+  public PagedCallSettings<QueryIssuesRequest, QueryIssuesResponse, QueryIssuesPagedResponse>
+      queryIssuesSettings() {
+    return queryIssuesSettings;
   }
 
   public DatabaseCenterStub createStub() throws IOException {
@@ -286,6 +527,19 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
     super(settingsBuilder);
 
     queryProductsSettings = settingsBuilder.queryProductsSettings().build();
+    aggregateFleetSettings = settingsBuilder.aggregateFleetSettings().build();
+    queryDatabaseResourceGroupsSettings =
+        settingsBuilder.queryDatabaseResourceGroupsSettings().build();
+    aggregateIssueStatsSettings = settingsBuilder.aggregateIssueStatsSettings().build();
+    queryIssuesSettings = settingsBuilder.queryIssuesSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-databasecenter")
+        .setRepository("googleapis/google-cloud-java")
+        .build();
   }
 
   /** Builder for DatabaseCenterStubSettings. */
@@ -294,6 +548,19 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
     private final PagedCallSettings.Builder<
             QueryProductsRequest, QueryProductsResponse, QueryProductsPagedResponse>
         queryProductsSettings;
+    private final PagedCallSettings.Builder<
+            AggregateFleetRequest, AggregateFleetResponse, AggregateFleetPagedResponse>
+        aggregateFleetSettings;
+    private final PagedCallSettings.Builder<
+            QueryDatabaseResourceGroupsRequest,
+            QueryDatabaseResourceGroupsResponse,
+            QueryDatabaseResourceGroupsPagedResponse>
+        queryDatabaseResourceGroupsSettings;
+    private final UnaryCallSettings.Builder<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
+        aggregateIssueStatsSettings;
+    private final PagedCallSettings.Builder<
+            QueryIssuesRequest, QueryIssuesResponse, QueryIssuesPagedResponse>
+        queryIssuesSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -322,9 +589,19 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
       super(clientContext);
 
       queryProductsSettings = PagedCallSettings.newBuilder(QUERY_PRODUCTS_PAGE_STR_FACT);
+      aggregateFleetSettings = PagedCallSettings.newBuilder(AGGREGATE_FLEET_PAGE_STR_FACT);
+      queryDatabaseResourceGroupsSettings =
+          PagedCallSettings.newBuilder(QUERY_DATABASE_RESOURCE_GROUPS_PAGE_STR_FACT);
+      aggregateIssueStatsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      queryIssuesSettings = PagedCallSettings.newBuilder(QUERY_ISSUES_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(queryProductsSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              queryProductsSettings,
+              aggregateFleetSettings,
+              queryDatabaseResourceGroupsSettings,
+              aggregateIssueStatsSettings,
+              queryIssuesSettings);
       initDefaults(this);
     }
 
@@ -332,9 +609,19 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
       super(settings);
 
       queryProductsSettings = settings.queryProductsSettings.toBuilder();
+      aggregateFleetSettings = settings.aggregateFleetSettings.toBuilder();
+      queryDatabaseResourceGroupsSettings =
+          settings.queryDatabaseResourceGroupsSettings.toBuilder();
+      aggregateIssueStatsSettings = settings.aggregateIssueStatsSettings.toBuilder();
+      queryIssuesSettings = settings.queryIssuesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(queryProductsSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              queryProductsSettings,
+              aggregateFleetSettings,
+              queryDatabaseResourceGroupsSettings,
+              aggregateIssueStatsSettings,
+              queryIssuesSettings);
     }
 
     private static Builder createDefault() {
@@ -367,6 +654,26 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
+      builder
+          .aggregateFleetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .queryDatabaseResourceGroupsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .aggregateIssueStatsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .queryIssuesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
       return builder;
     }
 
@@ -390,6 +697,35 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
             QueryProductsRequest, QueryProductsResponse, QueryProductsPagedResponse>
         queryProductsSettings() {
       return queryProductsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to aggregateFleet. */
+    public PagedCallSettings.Builder<
+            AggregateFleetRequest, AggregateFleetResponse, AggregateFleetPagedResponse>
+        aggregateFleetSettings() {
+      return aggregateFleetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to queryDatabaseResourceGroups. */
+    public PagedCallSettings.Builder<
+            QueryDatabaseResourceGroupsRequest,
+            QueryDatabaseResourceGroupsResponse,
+            QueryDatabaseResourceGroupsPagedResponse>
+        queryDatabaseResourceGroupsSettings() {
+      return queryDatabaseResourceGroupsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to aggregateIssueStats. */
+    public UnaryCallSettings.Builder<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
+        aggregateIssueStatsSettings() {
+      return aggregateIssueStatsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to queryIssues. */
+    public PagedCallSettings.Builder<
+            QueryIssuesRequest, QueryIssuesResponse, QueryIssuesPagedResponse>
+        queryIssuesSettings() {
+      return queryIssuesSettings;
     }
 
     @Override

@@ -85,6 +85,9 @@
             "DeleteIndex": {
               "methods": ["deleteIndexAsync", "deleteIndexAsync", "deleteIndexAsync", "deleteIndexOperationCallable", "deleteIndexCallable"]
             },
+            "ExportDataObjects": {
+              "methods": ["exportDataObjectsAsync", "exportDataObjectsOperationCallable", "exportDataObjectsCallable"]
+            },
             "GetCollection": {
               "methods": ["getCollection", "getCollection", "getCollection", "getCollectionCallable"]
             },

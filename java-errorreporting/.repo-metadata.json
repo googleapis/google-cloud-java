@@ -13,6 +13,5 @@
   "api_id": "clouderrorreporting.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": false,
-  "codeowner_team": "@googleapis/api-logging",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559780"
 }

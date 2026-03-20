@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,8 +84,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @Generated("by gapic-generator-java")
 public class AccountsServiceSettings extends ClientSettings<AccountsServiceSettings> {
@@ -99,6 +99,11 @@ public class AccountsServiceSettings extends ClientSettings<AccountsServiceSetti
   public UnaryCallSettings<CreateAndConfigureAccountRequest, Account>
       createAndConfigureAccountSettings() {
     return ((AccountsServiceStubSettings) getStubSettings()).createAndConfigureAccountSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createTestAccount. */
+  public UnaryCallSettings<CreateTestAccountRequest, Account> createTestAccountSettings() {
+    return ((AccountsServiceStubSettings) getStubSettings()).createTestAccountSettings();
   }
 
   /** Returns the object with the settings used for calls to deleteAccount. */
@@ -245,6 +250,12 @@ public class AccountsServiceSettings extends ClientSettings<AccountsServiceSetti
     public UnaryCallSettings.Builder<CreateAndConfigureAccountRequest, Account>
         createAndConfigureAccountSettings() {
       return getStubSettingsBuilder().createAndConfigureAccountSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createTestAccount. */
+    public UnaryCallSettings.Builder<CreateTestAccountRequest, Account>
+        createTestAccountSettings() {
+      return getStubSettingsBuilder().createTestAccountSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteAccount. */

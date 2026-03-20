@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -628,6 +628,7 @@ public class GrafeasClient implements BackgroundResource {
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (Occurrence element : grafeasClient.listOccurrences(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -661,6 +662,7 @@ public class GrafeasClient implements BackgroundResource {
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<Occurrence> future =
    *       grafeasClient.listOccurrencesPagedCallable().futureCall(request);
@@ -695,6 +697,7 @@ public class GrafeasClient implements BackgroundResource {
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     ListOccurrencesResponse response = grafeasClient.listOccurrencesCallable().call(request);
@@ -1521,6 +1524,7 @@ public class GrafeasClient implements BackgroundResource {
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (Note element : grafeasClient.listNotes(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1554,6 +1558,7 @@ public class GrafeasClient implements BackgroundResource {
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<Note> future = grafeasClient.listNotesPagedCallable().futureCall(request);
    *   // Do something.
@@ -1586,6 +1591,7 @@ public class GrafeasClient implements BackgroundResource {
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     ListNotesResponse response = grafeasClient.listNotesCallable().call(request);

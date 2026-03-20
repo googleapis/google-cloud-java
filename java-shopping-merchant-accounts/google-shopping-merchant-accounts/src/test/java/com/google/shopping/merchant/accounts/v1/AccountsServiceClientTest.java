@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -227,6 +227,100 @@ public class AccountsServiceClientTest {
                   new ArrayList<CreateAndConfigureAccountRequest.SetAliasForRelationship>())
               .build();
       client.createAndConfigureAccount(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createTestAccountTest() throws Exception {
+    Account expectedResponse =
+        Account.newBuilder()
+            .setName(AccountName.of("[ACCOUNT]").toString())
+            .setAccountId(-803333011)
+            .setAccountName("accountName865966680")
+            .setAdultContent(true)
+            .setTestAccount(true)
+            .setTimeZone(TimeZone.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
+            .build();
+    mockAccountsService.addResponse(expectedResponse);
+
+    AccountName parent = AccountName.of("[ACCOUNT]");
+    Account account = Account.newBuilder().build();
+
+    Account actualResponse = client.createTestAccount(parent, account);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAccountsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateTestAccountRequest actualRequest = ((CreateTestAccountRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(account, actualRequest.getAccount());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createTestAccountExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAccountsService.addException(exception);
+
+    try {
+      AccountName parent = AccountName.of("[ACCOUNT]");
+      Account account = Account.newBuilder().build();
+      client.createTestAccount(parent, account);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createTestAccountTest2() throws Exception {
+    Account expectedResponse =
+        Account.newBuilder()
+            .setName(AccountName.of("[ACCOUNT]").toString())
+            .setAccountId(-803333011)
+            .setAccountName("accountName865966680")
+            .setAdultContent(true)
+            .setTestAccount(true)
+            .setTimeZone(TimeZone.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
+            .build();
+    mockAccountsService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    Account account = Account.newBuilder().build();
+
+    Account actualResponse = client.createTestAccount(parent, account);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAccountsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateTestAccountRequest actualRequest = ((CreateTestAccountRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(account, actualRequest.getAccount());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createTestAccountExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAccountsService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Account account = Account.newBuilder().build();
+      client.createTestAccount(parent, account);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

@@ -20,6 +20,12 @@
 // 3. If the status is "success", it will squash and merge the pull request.
 // 4. If the status is "pending", it will wait and check again.
 //
+// Flags:
+// -skip-kokoro (Optional) If set, skips applying Kokoro rerunning labels on failure.
+// -email       (Optional) Email address to send success/failure notifications to.
+//              Note: This relies on the internal sendgmr tool and is only
+//              supported on Cloudtop/gLinux with valid LOAS credentials.
+//
 // Prerequisites:
 // - Go must be installed (https://golang.org/doc/install).
 // - A GitHub personal access token with repo scope must be set in the GITHUB_TOKEN environment variable.
@@ -28,16 +34,18 @@
 //
 // export GITHUB_TOKEN="<your GitHub token>"
 // cd .github/scripts
-// go run ./release_manager_merge_bot.go <PR URL>
+// go run ./release_manager_merge_bot.go -skip-kokoro -email="user@google.com" <PR URL>
 
 package main
 
 import (
 	"context"
+	"flag"
 	"fmt"
 	"log"
 	"net/url"
 	"os"
+	"os/exec"
 	"strconv"
 	"strings"
 	"time"
@@ -51,6 +59,11 @@ import (
 var labelsToAdd = []string{"kokoro:force-run", "kokoro:run"}
 
 // --- End of Configuration ---
+
+var (
+	skipKokoroOpt bool
+	emailOpt      string
+)
 
 // parseURL parses a GitHub pull request URL and returns the owner, repository, and PR number.
 func parseURL(prURL string) (string, string, int, error) {
@@ -95,13 +108,43 @@ func getMissingLabels(ctx context.Context, client *github.Client, owner, repo st
 	return missingLabels, nil
 }
 
+// sendEmail sends an email notification using the internal sendgmr tool.
+func sendEmail(to, subject, body string) {
+	if to == "" {
+		return
+	}
+	sendgmrPath := "/google/bin/releases/gws-sre/files/sendgmr/sendgmr"
+	cmd := exec.Command(sendgmrPath, "--to="+to, "--subject="+subject)
+	cmd.Stdin = strings.NewReader(body)
+	if err := cmd.Run(); err != nil {
+		log.Printf("Warning: Failed to send email: %v", err)
+	} else {
+		log.Printf("Email successfully sent to %s", to)
+	}
+}
+
+// fatalError logs an error message, optionally sends an email, and exits.
+func fatalError(format string, v ...interface{}) {
+	msg := fmt.Sprintf(format, v...)
+	log.Printf("Error: %s", msg)
+	if emailOpt != "" {
+		sendEmail(emailOpt, "❌ Release Manager Merge Bot Failed", msg)
+	}
+	os.Exit(1)
+}
+
 func main() {
 	log.Println("Starting the release manager merge bot.")
 
-	if len(os.Args) < 2 {
-		log.Fatal("Error: Pull request URL is required. Example: go run ./release_manager_merge_bot.go <PR URL>")
+	flag.BoolVar(&skipKokoroOpt, "skip-kokoro", false, "Skip applying kokoro rerunning labels on failure")
+	flag.StringVar(&emailOpt, "email", "", "Email address to send notifications to (requires Cloudtop/gLinux and LOAS/gcert)")
+	flag.Parse()
+
+	args := flag.Args()
+	if len(args) < 1 {
+		log.Fatal("Error: Pull request URL is required. Example: go run ./release_manager_merge_bot.go [flags] <PR URL>")
 	}
-	prURL := os.Args[1]
+	prURL := args[0]
 
 	githubToken := os.Getenv("GITHUB_TOKEN")
 	if githubToken == "" {
@@ -110,7 +153,11 @@ func main() {
 
 	owner, repo, prNumber, err := parseURL(prURL)
 	if err != nil {
-		log.Fatalf("Error parsing URL: %v", err)
+		fatalError("Error parsing URL: %v", err)
+	}
+
+	if emailOpt != "" {
+		log.Printf("Notifications will be sent to: %s", emailOpt)
 	}
 
 	ctx := context.Background()
@@ -120,21 +167,25 @@ func main() {
 
 	// --- Initial Label Check ---
 	retryCount := 0
-	log.Printf("Performing initial label check for PR #%d...", prNumber)
-	missingLabels, err := getMissingLabels(ctx, client, owner, repo, prNumber)
-	if err != nil {
-		log.Printf("Warning: could not perform initial label check: %v", err)
-	} else {
-		if len(missingLabels) > 0 {
-			log.Println("Required Kokoro labels are missing. Adding them now...")
-			_, _, err := client.Issues.AddLabelsToIssue(ctx, owner, repo, prNumber, missingLabels)
-			if err != nil {
-				log.Printf("Warning: failed to add labels: %v", err)
-			}
-			retryCount++
+	if !skipKokoroOpt {
+		log.Printf("Performing initial label check for PR #%d...", prNumber)
+		missingLabels, err := getMissingLabels(ctx, client, owner, repo, prNumber)
+		if err != nil {
+			log.Printf("Warning: could not perform initial label check: %v", err)
 		} else {
-			log.Println("Required Kokoro labels are already present.")
+			if len(missingLabels) > 0 {
+				log.Println("Required Kokoro labels are missing. Adding them now...")
+				_, _, err := client.Issues.AddLabelsToIssue(ctx, owner, repo, prNumber, missingLabels)
+				if err != nil {
+					log.Printf("Warning: failed to add labels: %v", err)
+				}
+				retryCount++
+			} else {
+				log.Println("Required Kokoro labels are already present.")
+			}
 		}
+	} else {
+		log.Println("Skipping initial Kokoro label check due to -skip-kokoro flag.")
 	}
 	// --- End of Initial Label Check ---
 
@@ -166,8 +217,11 @@ func main() {
 
 		switch state {
 		case "failure":
+			if skipKokoroOpt {
+				fatalError("PR #%d has failed checks and -skip-kokoro is enabled. Failing the script.", prNumber)
+			}
 			if retryCount >= 2 {
-				log.Fatal("The PR has failed twice after applying the Kokoro labels. Failing the script.")
+				fatalError("The PR has failed twice after applying the Kokoro labels. Failing the script.")
 			}
 			log.Println("Some checks have failed. Retrying the tests...")
 			_, _, err := client.Issues.AddLabelsToIssue(ctx, owner, repo, prNumber, labelsToAdd)
@@ -182,9 +236,13 @@ func main() {
 				MergeMethod: "squash",
 			})
 			if err != nil {
-				log.Fatalf("Failed to merge PR: %v", err)
+				fatalError("Failed to merge PR: %v", err)
 			}
-			log.Printf("Successfully squashed and merged PR #%d: %s", prNumber, *mergeResult.Message)
+			successMsg := fmt.Sprintf("Successfully squashed and merged PR #%d: %s", prNumber, *mergeResult.Message)
+			log.Println(successMsg)
+			if emailOpt != "" {
+				sendEmail(emailOpt, fmt.Sprintf("✅ PR #%d Merged Successfully", prNumber), successMsg)
+			}
 			return // Exit the program on success
 		case "pending":
 			log.Println("Some checks are still pending. Waiting for them to complete.")
