@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.0 (None)
+
+* No change
+
+
 ## 0.3.0 (2026-03-11)
 
 ### Features
