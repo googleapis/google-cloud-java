@@ -332,7 +332,9 @@ public class DataSource implements javax.sql.DataSource {
                   ds.setEnableOpenTelemetry(
                       BigQueryJdbcUrlUtility.convertIntToBoolean(
                           val, BigQueryJdbcUrlUtility.ENABLE_OPENTELEMETRY_PROPERTY_NAME)))
-          .put(BigQueryJdbcUrlUtility.OPENTELEMETRY_EXPORTER_PROPERTY_NAME, DataSource::setOpenTelemetryExporter)
+          .put(
+              BigQueryJdbcUrlUtility.OPENTELEMETRY_EXPORTER_PROPERTY_NAME,
+              DataSource::setOpenTelemetryExporter)
           .build();
 
   public static DataSource fromUrl(String url) {

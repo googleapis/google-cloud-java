@@ -943,7 +943,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     }
 
     OpenTelemetry openTelemetry =
-        BigQueryJdbcOpenTelemetry.getOpenTelemetry(this.enableOpenTelemetry, this.openTelemetryExporter);
+        BigQueryJdbcOpenTelemetry.getOpenTelemetry(
+            this.enableOpenTelemetry, this.openTelemetryExporter);
     if (this.enableOpenTelemetry) {
       this.tracer = BigQueryJdbcOpenTelemetry.getTracer(openTelemetry);
       bigQueryOptions.setOpenTelemetryTracer(this.tracer);
