@@ -13,7 +13,7 @@ repositories {
     mavenLocal()
 }
 
-version = '1.9.2'
+version = '1.9.3-SNAPSHOT'
 group = 'com.google.cloud'
 description = 'GRPC-GCP-Extension Java'
 
