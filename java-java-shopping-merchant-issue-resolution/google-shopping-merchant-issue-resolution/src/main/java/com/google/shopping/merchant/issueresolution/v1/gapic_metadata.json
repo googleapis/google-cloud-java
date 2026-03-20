@@ -1,0 +1,39 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.shopping.merchant.issueresolution.v1",
+  "libraryPackage": "com.google.shopping.merchant.issueresolution.v1",
+  "services": {
+    "AggregateProductStatusesService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AggregateProductStatusesServiceClient",
+          "rpcs": {
+            "ListAggregateProductStatuses": {
+              "methods": ["listAggregateProductStatuses", "listAggregateProductStatuses", "listAggregateProductStatuses", "listAggregateProductStatusesPagedCallable", "listAggregateProductStatusesCallable"]
+            }
+          }
+        }
+      }
+    },
+    "IssueResolutionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "IssueResolutionServiceClient",
+          "rpcs": {
+            "RenderAccountIssues": {
+              "methods": ["renderAccountIssues", "renderAccountIssues", "renderAccountIssues", "renderAccountIssuesCallable"]
+            },
+            "RenderProductIssues": {
+              "methods": ["renderProductIssues", "renderProductIssues", "renderProductIssues", "renderProductIssuesCallable"]
+            },
+            "TriggerAction": {
+              "methods": ["triggerAction", "triggerAction", "triggerAction", "triggerActionCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

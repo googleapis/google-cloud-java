@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * so that TagHolds can be managed in the same location as their usage.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/resourcemanager/v3/tag_holds.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class TagHoldsGrpc {
 
@@ -409,8 +406,9 @@ public final class TagHoldsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createTagHold(
-        com.google.cloud.resourcemanager.v3.CreateTagHoldRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.CreateTagHoldRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTagHoldMethod(), getCallOptions(), request);
     }
 
@@ -422,8 +420,9 @@ public final class TagHoldsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteTagHold(
-        com.google.cloud.resourcemanager.v3.DeleteTagHoldRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.DeleteTagHoldRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTagHoldMethod(), getCallOptions(), request);
     }
 
@@ -435,8 +434,9 @@ public final class TagHoldsGrpc {
      * </pre>
      */
     public com.google.cloud.resourcemanager.v3.ListTagHoldsResponse listTagHolds(
-        com.google.cloud.resourcemanager.v3.ListTagHoldsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.ListTagHoldsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTagHoldsMethod(), getCallOptions(), request);
     }
   }

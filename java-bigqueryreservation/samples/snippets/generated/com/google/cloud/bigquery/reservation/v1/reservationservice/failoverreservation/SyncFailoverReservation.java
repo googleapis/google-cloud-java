@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery.reservation.v1.samples;
 
 // [START bigqueryreservation_v1_generated_ReservationService_FailoverReservation_sync]
+import com.google.cloud.bigquery.reservation.v1.FailoverMode;
 import com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.Reservation;
 import com.google.cloud.bigquery.reservation.v1.ReservationName;
@@ -38,6 +39,7 @@ public class SyncFailoverReservation {
       FailoverReservationRequest request =
           FailoverReservationRequest.newBuilder()
               .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
+              .setFailoverMode(FailoverMode.forNumber(0))
               .build();
       Reservation response = reservationServiceClient.failoverReservation(request);
     }

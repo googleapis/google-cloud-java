@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -56,6 +57,8 @@ import com.google.cloud.compute.v1.TargetInstance;
 import com.google.cloud.compute.v1.TargetInstanceAggregatedList;
 import com.google.cloud.compute.v1.TargetInstanceList;
 import com.google.cloud.compute.v1.TargetInstancesScopedList;
+import com.google.cloud.compute.v1.TestIamPermissionsTargetInstanceRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -113,8 +116,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -143,6 +146,7 @@ import javax.annotation.Generated;
  * }</pre>
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class TargetInstancesStubSettings extends StubSettings<TargetInstancesStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -169,6 +173,8 @@ public class TargetInstancesStubSettings extends StubSettings<TargetInstancesStu
       setSecurityPolicySettings;
   private final OperationCallSettings<SetSecurityPolicyTargetInstanceRequest, Operation, Operation>
       setSecurityPolicyOperationSettings;
+  private final UnaryCallSettings<TestIamPermissionsTargetInstanceRequest, TestPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<
           AggregatedListTargetInstancesRequest,
@@ -352,6 +358,12 @@ public class TargetInstancesStubSettings extends StubSettings<TargetInstancesStu
     return setSecurityPolicyOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsTargetInstanceRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   public TargetInstancesStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -444,6 +456,15 @@ public class TargetInstancesStubSettings extends StubSettings<TargetInstancesStu
     setSecurityPolicySettings = settingsBuilder.setSecurityPolicySettings().build();
     setSecurityPolicyOperationSettings =
         settingsBuilder.setSecurityPolicyOperationSettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-compute")
+        .setRepository("googleapis/google-cloud-java")
+        .build();
   }
 
   /** Builder for TargetInstancesStubSettings. */
@@ -469,6 +490,9 @@ public class TargetInstancesStubSettings extends StubSettings<TargetInstancesStu
     private final OperationCallSettings.Builder<
             SetSecurityPolicyTargetInstanceRequest, Operation, Operation>
         setSecurityPolicyOperationSettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsTargetInstanceRequest, TestPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -528,6 +552,7 @@ public class TargetInstancesStubSettings extends StubSettings<TargetInstancesStu
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       setSecurityPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setSecurityPolicyOperationSettings = OperationCallSettings.newBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -536,7 +561,8 @@ public class TargetInstancesStubSettings extends StubSettings<TargetInstancesStu
               getSettings,
               insertSettings,
               listSettings,
-              setSecurityPolicySettings);
+              setSecurityPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -552,6 +578,7 @@ public class TargetInstancesStubSettings extends StubSettings<TargetInstancesStu
       listSettings = settings.listSettings.toBuilder();
       setSecurityPolicySettings = settings.setSecurityPolicySettings.toBuilder();
       setSecurityPolicyOperationSettings = settings.setSecurityPolicyOperationSettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -560,7 +587,8 @@ public class TargetInstancesStubSettings extends StubSettings<TargetInstancesStu
               getSettings,
               insertSettings,
               listSettings,
-              setSecurityPolicySettings);
+              setSecurityPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -603,6 +631,11 @@ public class TargetInstancesStubSettings extends StubSettings<TargetInstancesStu
 
       builder
           .setSecurityPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -751,6 +784,13 @@ public class TargetInstancesStubSettings extends StubSettings<TargetInstancesStu
             SetSecurityPolicyTargetInstanceRequest, Operation, Operation>
         setSecurityPolicyOperationSettings() {
       return setSecurityPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsTargetInstanceRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,6 +58,7 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
                   ProtoUtils.marshaller(CreateSshPublicKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(OsLoginProto.SshPublicKey.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePosixAccountRequest, Empty>
@@ -68,6 +69,7 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePosixAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSshPublicKeyRequest, Empty>
@@ -78,6 +80,7 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteSshPublicKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLoginProfileRequest, LoginProfile>
@@ -88,6 +91,7 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetLoginProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LoginProfile.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSshPublicKeyRequest, OsLoginProto.SshPublicKey>
@@ -99,6 +103,7 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
                   ProtoUtils.marshaller(GetSshPublicKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(OsLoginProto.SshPublicKey.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportSshPublicKeyRequest, ImportSshPublicKeyResponse>
@@ -110,6 +115,7 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
                   ProtoUtils.marshaller(ImportSshPublicKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ImportSshPublicKeyResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSshPublicKeyRequest, OsLoginProto.SshPublicKey>
@@ -121,6 +127,7 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
                   ProtoUtils.marshaller(UpdateSshPublicKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(OsLoginProto.SshPublicKey.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateSshPublicKeyRequest, OsLoginProto.SshPublicKey>

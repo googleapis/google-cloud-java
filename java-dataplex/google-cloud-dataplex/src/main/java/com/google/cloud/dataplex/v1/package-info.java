@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,12 +19,33 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
+ * <p>======================= BusinessGlossaryServiceClient =======================
+ *
+ * <p>Service Description: BusinessGlossaryService provides APIs for managing business glossary
+ * resources for enterprise customers. The resources currently supported in Business Glossary are:
+ * 1. Glossary 2. GlossaryCategory 3. GlossaryTerm
+ *
+ * <p>Sample for BusinessGlossaryServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (BusinessGlossaryServiceClient businessGlossaryServiceClient =
+ *     BusinessGlossaryServiceClient.create()) {
+ *   GlossaryName name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
+ *   Glossary response = businessGlossaryServiceClient.getGlossary(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= CatalogServiceClient =======================
  *
  * <p>Service Description: The primary resources offered by this service are EntryGroups,
- * EntryTypes, AspectTypes, and Entries. They collectively let data administrators organize, manage,
- * secure, and catalog data located across cloud projects in their organization in a variety of
- * storage systems, including Cloud Storage and BigQuery.
+ * EntryTypes, AspectTypes, Entries and EntryLinks. They collectively let data administrators
+ * organize, manage, secure, and catalog data located across cloud projects in their organization in
+ * a variety of storage systems, including Cloud Storage and BigQuery.
  *
  * <p>Sample for CatalogServiceClient:
  *
@@ -42,7 +63,8 @@
  *
  * <p>======================= CmekServiceClient =======================
  *
- * <p>Service Description: Dataplex Cmek Service
+ * <p>Service Description: Dataplex Universal Catalog Customer Managed Encryption Keys (CMEK)
+ * Service
  *
  * <p>Sample for CmekServiceClient:
  *
@@ -59,11 +81,12 @@
  * }
  * }</pre>
  *
- * <p>======================= ContentServiceClient =======================
+ * <p>======================= DataProductServiceClient =======================
  *
- * <p>Service Description: ContentService manages Notebook and SQL Scripts for Dataplex.
+ * <p>Service Description: `DataProductService` provides APIs for managing data products and the
+ * underlying data assets.
  *
- * <p>Sample for ContentServiceClient:
+ * <p>Sample for DataProductServiceClient:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -71,10 +94,9 @@
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
- *   LakeName parent = LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]");
- *   Content content = Content.newBuilder().build();
- *   Content response = contentServiceClient.createContent(parent, content);
+ * try (DataProductServiceClient dataProductServiceClient = DataProductServiceClient.create()) {
+ *   DataProductName name = DataProductName.of("[PROJECT]", "[LOCATION]", "[DATA_PRODUCT]");
+ *   DataProduct response = dataProductServiceClient.getDataProduct(name);
  * }
  * }</pre>
  *

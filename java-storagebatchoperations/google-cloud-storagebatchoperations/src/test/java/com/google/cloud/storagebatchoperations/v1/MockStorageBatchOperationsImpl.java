@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -157,6 +157,50 @@ public class MockStorageBatchOperationsImpl extends StorageBatchOperationsImplBa
                   "Unrecognized response type %s for method CancelJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   CancelJobResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listBucketOperations(
+      ListBucketOperationsRequest request,
+      StreamObserver<ListBucketOperationsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListBucketOperationsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListBucketOperationsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListBucketOperations, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListBucketOperationsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getBucketOperation(
+      GetBucketOperationRequest request, StreamObserver<BucketOperation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof BucketOperation) {
+      requests.add(request);
+      responseObserver.onNext(((BucketOperation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetBucketOperation, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BucketOperation.class.getName(),
                   Exception.class.getName())));
     }
   }

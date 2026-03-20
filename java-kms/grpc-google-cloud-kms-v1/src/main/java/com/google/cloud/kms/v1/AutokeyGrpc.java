@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,9 +40,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [ShowEffectiveAutokeyConfig][google.cloud.kms.v1.AutokeyAdmin.ShowEffectiveAutokeyConfig].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/kms/v1/autokey.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AutokeyGrpc {
 
@@ -474,8 +471,8 @@ public final class AutokeyGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createKeyHandle(
-        com.google.cloud.kms.v1.CreateKeyHandleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.CreateKeyHandleRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateKeyHandleMethod(), getCallOptions(), request);
     }
 
@@ -487,8 +484,8 @@ public final class AutokeyGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.KeyHandle getKeyHandle(
-        com.google.cloud.kms.v1.GetKeyHandleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.GetKeyHandleRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetKeyHandleMethod(), getCallOptions(), request);
     }
 
@@ -500,8 +497,8 @@ public final class AutokeyGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.ListKeyHandlesResponse listKeyHandles(
-        com.google.cloud.kms.v1.ListKeyHandlesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.ListKeyHandlesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListKeyHandlesMethod(), getCallOptions(), request);
     }
   }

@@ -5,6 +5,27 @@
   "protoPackage": "google.cloud.policysimulator.v1",
   "libraryPackage": "com.google.cloud.policysimulator.v1",
   "services": {
+    "OrgPolicyViolationsPreviewService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "OrgPolicyViolationsPreviewServiceClient",
+          "rpcs": {
+            "CreateOrgPolicyViolationsPreview": {
+              "methods": ["createOrgPolicyViolationsPreviewAsync", "createOrgPolicyViolationsPreviewAsync", "createOrgPolicyViolationsPreviewAsync", "createOrgPolicyViolationsPreviewOperationCallable", "createOrgPolicyViolationsPreviewCallable"]
+            },
+            "GetOrgPolicyViolationsPreview": {
+              "methods": ["getOrgPolicyViolationsPreview", "getOrgPolicyViolationsPreview", "getOrgPolicyViolationsPreview", "getOrgPolicyViolationsPreviewCallable"]
+            },
+            "ListOrgPolicyViolations": {
+              "methods": ["listOrgPolicyViolations", "listOrgPolicyViolations", "listOrgPolicyViolations", "listOrgPolicyViolationsPagedCallable", "listOrgPolicyViolationsCallable"]
+            },
+            "ListOrgPolicyViolationsPreviews": {
+              "methods": ["listOrgPolicyViolationsPreviews", "listOrgPolicyViolationsPreviews", "listOrgPolicyViolationsPreviews", "listOrgPolicyViolationsPreviewsPagedCallable", "listOrgPolicyViolationsPreviewsCallable"]
+            }
+          }
+        }
+      }
+    },
     "Simulator": {
       "clients": {
         "grpc": {

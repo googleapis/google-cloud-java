@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to handle EDW migrations.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/bigquery/migration/v2alpha/migration_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class MigrationServiceGrpc {
 
@@ -748,8 +745,9 @@ public final class MigrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.migration.v2alpha.MigrationWorkflow createMigrationWorkflow(
-        com.google.cloud.bigquery.migration.v2alpha.CreateMigrationWorkflowRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.migration.v2alpha.CreateMigrationWorkflowRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateMigrationWorkflowMethod(), getCallOptions(), request);
     }
 
@@ -761,8 +759,9 @@ public final class MigrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.migration.v2alpha.MigrationWorkflow getMigrationWorkflow(
-        com.google.cloud.bigquery.migration.v2alpha.GetMigrationWorkflowRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.migration.v2alpha.GetMigrationWorkflowRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMigrationWorkflowMethod(), getCallOptions(), request);
     }
 
@@ -775,8 +774,9 @@ public final class MigrationServiceGrpc {
      */
     public com.google.cloud.bigquery.migration.v2alpha.ListMigrationWorkflowsResponse
         listMigrationWorkflows(
-            com.google.cloud.bigquery.migration.v2alpha.ListMigrationWorkflowsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.bigquery.migration.v2alpha.ListMigrationWorkflowsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMigrationWorkflowsMethod(), getCallOptions(), request);
     }
 
@@ -788,8 +788,9 @@ public final class MigrationServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteMigrationWorkflow(
-        com.google.cloud.bigquery.migration.v2alpha.DeleteMigrationWorkflowRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.migration.v2alpha.DeleteMigrationWorkflowRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteMigrationWorkflowMethod(), getCallOptions(), request);
     }
 
@@ -804,8 +805,9 @@ public final class MigrationServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty startMigrationWorkflow(
-        com.google.cloud.bigquery.migration.v2alpha.StartMigrationWorkflowRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.migration.v2alpha.StartMigrationWorkflowRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStartMigrationWorkflowMethod(), getCallOptions(), request);
     }
 
@@ -817,8 +819,9 @@ public final class MigrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.migration.v2alpha.MigrationSubtask getMigrationSubtask(
-        com.google.cloud.bigquery.migration.v2alpha.GetMigrationSubtaskRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.migration.v2alpha.GetMigrationSubtaskRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMigrationSubtaskMethod(), getCallOptions(), request);
     }
 
@@ -831,8 +834,9 @@ public final class MigrationServiceGrpc {
      */
     public com.google.cloud.bigquery.migration.v2alpha.ListMigrationSubtasksResponse
         listMigrationSubtasks(
-            com.google.cloud.bigquery.migration.v2alpha.ListMigrationSubtasksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.bigquery.migration.v2alpha.ListMigrationSubtasksRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMigrationSubtasksMethod(), getCallOptions(), request);
     }
   }

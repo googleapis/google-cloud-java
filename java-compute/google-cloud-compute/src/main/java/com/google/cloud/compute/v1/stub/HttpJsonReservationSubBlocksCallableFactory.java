@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonCallableFactory;
 import com.google.api.gax.httpjson.HttpJsonOperationSnapshotCallable;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
-import com.google.api.gax.httpjson.longrunning.stub.OperationsStub;
 import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallSettings;
@@ -30,7 +29,7 @@ import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.longrunning.Operation;
+import com.google.cloud.compute.v1.Operation;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -41,7 +40,7 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public class HttpJsonReservationSubBlocksCallableFactory
-    implements HttpJsonStubCallableFactory<Operation, OperationsStub> {
+    implements HttpJsonStubCallableFactory<Operation, ZoneOperationsStub> {
 
   @Override
   public <RequestT, ResponseT> UnaryCallable<RequestT, ResponseT> createUnaryCallable(
@@ -77,7 +76,7 @@ public class HttpJsonReservationSubBlocksCallableFactory
           HttpJsonCallSettings<RequestT, Operation> httpJsonCallSettings,
           OperationCallSettings<RequestT, ResponseT, MetadataT> callSettings,
           ClientContext clientContext,
-          OperationsStub operationsStub) {
+          ZoneOperationsStub operationsStub) {
     UnaryCallable<RequestT, Operation> innerCallable =
         HttpJsonCallableFactory.createBaseUnaryCallable(
             httpJsonCallSettings, callSettings.getInitialCallSettings(), clientContext);

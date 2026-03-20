@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service that handles company management, including CRUD and enumeration.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/talent/v4beta1/company_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CompanyServiceGrpc {
 
@@ -539,8 +536,9 @@ public final class CompanyServiceGrpc {
      * </pre>
      */
     public com.google.cloud.talent.v4beta1.Company createCompany(
-        com.google.cloud.talent.v4beta1.CreateCompanyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.talent.v4beta1.CreateCompanyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCompanyMethod(), getCallOptions(), request);
     }
 
@@ -552,8 +550,8 @@ public final class CompanyServiceGrpc {
      * </pre>
      */
     public com.google.cloud.talent.v4beta1.Company getCompany(
-        com.google.cloud.talent.v4beta1.GetCompanyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.talent.v4beta1.GetCompanyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCompanyMethod(), getCallOptions(), request);
     }
 
@@ -565,8 +563,9 @@ public final class CompanyServiceGrpc {
      * </pre>
      */
     public com.google.cloud.talent.v4beta1.Company updateCompany(
-        com.google.cloud.talent.v4beta1.UpdateCompanyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.talent.v4beta1.UpdateCompanyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCompanyMethod(), getCallOptions(), request);
     }
 
@@ -579,8 +578,9 @@ public final class CompanyServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteCompany(
-        com.google.cloud.talent.v4beta1.DeleteCompanyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.talent.v4beta1.DeleteCompanyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCompanyMethod(), getCallOptions(), request);
     }
 
@@ -592,8 +592,9 @@ public final class CompanyServiceGrpc {
      * </pre>
      */
     public com.google.cloud.talent.v4beta1.ListCompaniesResponse listCompanies(
-        com.google.cloud.talent.v4beta1.ListCompaniesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.talent.v4beta1.ListCompaniesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCompaniesMethod(), getCallOptions(), request);
     }
   }

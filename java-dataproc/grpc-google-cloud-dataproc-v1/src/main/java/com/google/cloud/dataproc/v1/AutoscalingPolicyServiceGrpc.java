@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Dataproc API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dataproc/v1/autoscaling_policies.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AutoscalingPolicyServiceGrpc {
 
@@ -590,8 +587,9 @@ public final class AutoscalingPolicyServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataproc.v1.AutoscalingPolicy createAutoscalingPolicy(
-        com.google.cloud.dataproc.v1.CreateAutoscalingPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.CreateAutoscalingPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAutoscalingPolicyMethod(), getCallOptions(), request);
     }
 
@@ -605,8 +603,9 @@ public final class AutoscalingPolicyServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataproc.v1.AutoscalingPolicy updateAutoscalingPolicy(
-        com.google.cloud.dataproc.v1.UpdateAutoscalingPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.UpdateAutoscalingPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAutoscalingPolicyMethod(), getCallOptions(), request);
     }
 
@@ -618,8 +617,9 @@ public final class AutoscalingPolicyServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataproc.v1.AutoscalingPolicy getAutoscalingPolicy(
-        com.google.cloud.dataproc.v1.GetAutoscalingPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.GetAutoscalingPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAutoscalingPolicyMethod(), getCallOptions(), request);
     }
 
@@ -631,8 +631,9 @@ public final class AutoscalingPolicyServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataproc.v1.ListAutoscalingPoliciesResponse listAutoscalingPolicies(
-        com.google.cloud.dataproc.v1.ListAutoscalingPoliciesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.ListAutoscalingPoliciesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAutoscalingPoliciesMethod(), getCallOptions(), request);
     }
 
@@ -645,8 +646,9 @@ public final class AutoscalingPolicyServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteAutoscalingPolicy(
-        com.google.cloud.dataproc.v1.DeleteAutoscalingPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.DeleteAutoscalingPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAutoscalingPolicyMethod(), getCallOptions(), request);
     }
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,6 +56,7 @@ public class GrpcRegionsServiceStub extends RegionsServiceStub {
           .setFullMethodName("google.shopping.merchant.accounts.v1beta.RegionsService/GetRegion")
           .setRequestMarshaller(ProtoUtils.marshaller(GetRegionRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Region.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateRegionRequest, Region> createRegionMethodDescriptor =
@@ -64,6 +65,7 @@ public class GrpcRegionsServiceStub extends RegionsServiceStub {
           .setFullMethodName("google.shopping.merchant.accounts.v1beta.RegionsService/CreateRegion")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateRegionRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Region.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateRegionRequest, Region> updateRegionMethodDescriptor =
@@ -72,6 +74,7 @@ public class GrpcRegionsServiceStub extends RegionsServiceStub {
           .setFullMethodName("google.shopping.merchant.accounts.v1beta.RegionsService/UpdateRegion")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateRegionRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Region.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteRegionRequest, Empty> deleteRegionMethodDescriptor =
@@ -80,6 +83,7 @@ public class GrpcRegionsServiceStub extends RegionsServiceStub {
           .setFullMethodName("google.shopping.merchant.accounts.v1beta.RegionsService/DeleteRegion")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteRegionRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListRegionsRequest, ListRegionsResponse>
@@ -91,6 +95,7 @@ public class GrpcRegionsServiceStub extends RegionsServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListRegionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRegionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetRegionRequest, Region> getRegionCallable;

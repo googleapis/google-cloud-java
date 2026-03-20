@@ -19,11 +19,17 @@
             "DeleteJob": {
               "methods": ["deleteJob", "deleteJob", "deleteJob", "deleteJobCallable"]
             },
+            "GetBucketOperation": {
+              "methods": ["getBucketOperation", "getBucketOperation", "getBucketOperation", "getBucketOperationCallable"]
+            },
             "GetJob": {
               "methods": ["getJob", "getJob", "getJob", "getJobCallable"]
             },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListBucketOperations": {
+              "methods": ["listBucketOperations", "listBucketOperations", "listBucketOperations", "listBucketOperationsPagedCallable", "listBucketOperationsCallable"]
             },
             "ListJobs": {
               "methods": ["listJobs", "listJobs", "listJobs", "listJobsPagedCallable", "listJobsCallable"]

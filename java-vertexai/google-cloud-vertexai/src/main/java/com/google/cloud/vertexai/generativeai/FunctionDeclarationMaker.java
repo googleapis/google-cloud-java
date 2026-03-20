@@ -29,7 +29,14 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.Parameter;
 
-/** Helper class to create {@link com.google.cloud.vertexai.api.FunctionDeclaration} */
+/**
+ * Helper class to create {@link com.google.cloud.vertexai.api.FunctionDeclaration}
+ *
+ * @deprecated This class and its package are deprecated. See the <a
+ *     href="https://cloud.google.com/vertex-ai/generative-ai/docs/deprecations/genai-vertexai-sdk#java">
+ *     migration guide</a> for more details.
+ */
+@Deprecated
 public final class FunctionDeclarationMaker {
 
   /**

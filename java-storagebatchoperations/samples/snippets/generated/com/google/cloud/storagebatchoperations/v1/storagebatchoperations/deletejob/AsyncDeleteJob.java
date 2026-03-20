@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ public class AsyncDeleteJob {
           DeleteJobRequest.newBuilder()
               .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
               .setRequestId("requestId693933066")
+              .setForce(true)
               .build();
       ApiFuture<Empty> future =
           storageBatchOperationsClient.deleteJobCallable().futureCall(request);

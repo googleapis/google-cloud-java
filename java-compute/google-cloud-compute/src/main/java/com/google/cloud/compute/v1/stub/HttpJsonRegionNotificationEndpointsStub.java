@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.RegionNotificationEndpointsClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.RegionNotificationEndpointsClient.ListPagedResponse;
 
 import com.google.api.core.InternalApi;
@@ -32,14 +33,18 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AggregatedListRegionNotificationEndpointsRequest;
 import com.google.cloud.compute.v1.DeleteRegionNotificationEndpointRequest;
 import com.google.cloud.compute.v1.GetRegionNotificationEndpointRequest;
 import com.google.cloud.compute.v1.InsertRegionNotificationEndpointRequest;
 import com.google.cloud.compute.v1.ListRegionNotificationEndpointsRequest;
 import com.google.cloud.compute.v1.NotificationEndpoint;
+import com.google.cloud.compute.v1.NotificationEndpointAggregatedList;
 import com.google.cloud.compute.v1.NotificationEndpointList;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
+import com.google.cloud.compute.v1.TestIamPermissionsRegionNotificationEndpointRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -59,6 +64,74 @@ import javax.annotation.Generated;
 public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationEndpointsStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
+  private static final ApiMethodDescriptor<
+          AggregatedListRegionNotificationEndpointsRequest, NotificationEndpointAggregatedList>
+      aggregatedListMethodDescriptor =
+          ApiMethodDescriptor
+              .<AggregatedListRegionNotificationEndpointsRequest,
+                  NotificationEndpointAggregatedList>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.compute.v1.RegionNotificationEndpoints/AggregatedList")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<AggregatedListRegionNotificationEndpointsRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/aggregated/notificationEndpoints",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListRegionNotificationEndpointsRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListRegionNotificationEndpointsRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
+                            }
+                            if (request.hasIncludeAllScopes()) {
+                              serializer.putQueryParam(
+                                  fields, "includeAllScopes", request.getIncludeAllScopes());
+                            }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            if (request.hasServiceProjectNumber()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "serviceProjectNumber",
+                                  request.getServiceProjectNumber());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<NotificationEndpointAggregatedList>newBuilder()
+                      .setDefaultInstance(NotificationEndpointAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<DeleteRegionNotificationEndpointRequest, Operation>
       deleteMethodDescriptor =
@@ -261,6 +334,58 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          TestIamPermissionsRegionNotificationEndpointRequest, TestPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsRegionNotificationEndpointRequest, TestPermissionsResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.compute.v1.RegionNotificationEndpoints/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<TestIamPermissionsRegionNotificationEndpointRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/notificationEndpoints/{resource}/testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRegionNotificationEndpointRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRegionNotificationEndpointRequest>
+                                serializer = ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "testPermissionsRequestResource",
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private final UnaryCallable<
+          AggregatedListRegionNotificationEndpointsRequest, NotificationEndpointAggregatedList>
+      aggregatedListCallable;
+  private final UnaryCallable<
+          AggregatedListRegionNotificationEndpointsRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable;
   private final UnaryCallable<DeleteRegionNotificationEndpointRequest, Operation> deleteCallable;
   private final OperationCallable<DeleteRegionNotificationEndpointRequest, Operation, Operation>
       deleteOperationCallable;
@@ -273,6 +398,9 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
       listCallable;
   private final UnaryCallable<ListRegionNotificationEndpointsRequest, ListPagedResponse>
       listPagedCallable;
+  private final UnaryCallable<
+          TestIamPermissionsRegionNotificationEndpointRequest, TestPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
@@ -322,6 +450,22 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
     this.httpJsonOperationsStub =
         HttpJsonRegionOperationsStub.create(clientContext, callableFactory);
 
+    HttpJsonCallSettings<
+            AggregatedListRegionNotificationEndpointsRequest, NotificationEndpointAggregatedList>
+        aggregatedListTransportSettings =
+            HttpJsonCallSettings
+                .<AggregatedListRegionNotificationEndpointsRequest,
+                    NotificationEndpointAggregatedList>
+                    newBuilder()
+                .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<DeleteRegionNotificationEndpointRequest, Operation>
         deleteTransportSettings =
             HttpJsonCallSettings.<DeleteRegionNotificationEndpointRequest, Operation>newBuilder()
@@ -382,7 +526,30 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<
+            TestIamPermissionsRegionNotificationEndpointRequest, TestPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsRegionNotificationEndpointRequest, TestPermissionsResponse>
+                    newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .build();
 
+    this.aggregatedListCallable =
+        callableFactory.createUnaryCallable(
+            aggregatedListTransportSettings, settings.aggregatedListSettings(), clientContext);
+    this.aggregatedListPagedCallable =
+        callableFactory.createPagedCallable(
+            aggregatedListTransportSettings, settings.aggregatedListSettings(), clientContext);
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
@@ -410,6 +577,11 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
     this.listPagedCallable =
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -418,11 +590,27 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
   @InternalApi
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(aggregatedListMethodDescriptor);
     methodDescriptors.add(deleteMethodDescriptor);
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
+  }
+
+  @Override
+  public UnaryCallable<
+          AggregatedListRegionNotificationEndpointsRequest, NotificationEndpointAggregatedList>
+      aggregatedListCallable() {
+    return aggregatedListCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          AggregatedListRegionNotificationEndpointsRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
   }
 
   @Override
@@ -462,6 +650,12 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
   public UnaryCallable<ListRegionNotificationEndpointsRequest, ListPagedResponse>
       listPagedCallable() {
     return listPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsRegionNotificationEndpointRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

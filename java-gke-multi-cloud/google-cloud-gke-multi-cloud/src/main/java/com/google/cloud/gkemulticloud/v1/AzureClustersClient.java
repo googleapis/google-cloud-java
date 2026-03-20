@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -492,7 +492,10 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@Deprecated
 @Generated("by gapic-generator-java")
 public class AzureClustersClient implements BackgroundResource {
   private final AzureClustersSettings settings;
@@ -611,7 +614,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
    *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AzureClient, OperationMetadata> createAzureClientAsync(
       LocationName parent, AzureClient azureClient, String azureClientId) {
     CreateAzureClientRequest request =
@@ -666,7 +671,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
    *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AzureClient, OperationMetadata> createAzureClientAsync(
       String parent, AzureClient azureClient, String azureClientId) {
     CreateAzureClientRequest request =
@@ -712,7 +719,9 @@ public class AzureClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AzureClient, OperationMetadata> createAzureClientAsync(
       CreateAzureClientRequest request) {
     return createAzureClientOperationCallable().futureCall(request);
@@ -752,7 +761,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   AzureClient response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<CreateAzureClientRequest, AzureClient, OperationMetadata>
       createAzureClientOperationCallable() {
     return stub.createAzureClientOperationCallable();
@@ -792,7 +804,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   Operation response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<CreateAzureClientRequest, Operation> createAzureClientCallable() {
     return stub.createAzureClientCallable();
   }
@@ -822,7 +837,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AzureClient getAzureClient(AzureClientName name) {
     GetAzureClientRequest request =
         GetAzureClientRequest.newBuilder().setName(name == null ? null : name.toString()).build();
@@ -854,7 +871,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AzureClient getAzureClient(String name) {
     GetAzureClientRequest request = GetAzureClientRequest.newBuilder().setName(name).build();
     return getAzureClient(request);
@@ -883,7 +902,9 @@ public class AzureClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AzureClient getAzureClient(GetAzureClientRequest request) {
     return getAzureClientCallable().call(request);
   }
@@ -911,7 +932,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   AzureClient response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GetAzureClientRequest, AzureClient> getAzureClientCallable() {
     return stub.getAzureClientCallable();
   }
@@ -943,7 +967,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAzureClientsPagedResponse listAzureClients(LocationName parent) {
     ListAzureClientsRequest request =
         ListAzureClientsRequest.newBuilder()
@@ -979,7 +1005,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAzureClientsPagedResponse listAzureClients(String parent) {
     ListAzureClientsRequest request =
         ListAzureClientsRequest.newBuilder().setParent(parent).build();
@@ -1014,7 +1042,9 @@ public class AzureClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAzureClientsPagedResponse listAzureClients(ListAzureClientsRequest request) {
     return listAzureClientsPagedCallable().call(request);
   }
@@ -1047,7 +1077,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListAzureClientsRequest, ListAzureClientsPagedResponse>
       listAzureClientsPagedCallable() {
     return stub.listAzureClientsPagedCallable();
@@ -1088,7 +1121,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListAzureClientsRequest, ListAzureClientsResponse>
       listAzureClientsCallable() {
     return stub.listAzureClientsCallable();
@@ -1126,7 +1162,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteAzureClientAsync(
       AzureClientName name) {
     DeleteAzureClientRequest request =
@@ -1168,7 +1206,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteAzureClientAsync(String name) {
     DeleteAzureClientRequest request = DeleteAzureClientRequest.newBuilder().setName(name).build();
     return deleteAzureClientAsync(request);
@@ -1206,7 +1246,9 @@ public class AzureClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteAzureClientAsync(
       DeleteAzureClientRequest request) {
     return deleteAzureClientOperationCallable().futureCall(request);
@@ -1244,7 +1286,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<DeleteAzureClientRequest, Empty, OperationMetadata>
       deleteAzureClientOperationCallable() {
     return stub.deleteAzureClientOperationCallable();
@@ -1282,7 +1327,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<DeleteAzureClientRequest, Operation> deleteAzureClientCallable() {
     return stub.deleteAzureClientCallable();
   }
@@ -1327,7 +1375,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
    *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AzureCluster, OperationMetadata> createAzureClusterAsync(
       LocationName parent, AzureCluster azureCluster, String azureClusterId) {
     CreateAzureClusterRequest request =
@@ -1379,7 +1429,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
    *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AzureCluster, OperationMetadata> createAzureClusterAsync(
       String parent, AzureCluster azureCluster, String azureClusterId) {
     CreateAzureClusterRequest request =
@@ -1422,7 +1474,9 @@ public class AzureClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AzureCluster, OperationMetadata> createAzureClusterAsync(
       CreateAzureClusterRequest request) {
     return createAzureClusterOperationCallable().futureCall(request);
@@ -1459,7 +1513,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   AzureCluster response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<CreateAzureClusterRequest, AzureCluster, OperationMetadata>
       createAzureClusterOperationCallable() {
     return stub.createAzureClusterOperationCallable();
@@ -1496,7 +1553,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   Operation response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<CreateAzureClusterRequest, Operation> createAzureClusterCallable() {
     return stub.createAzureClusterCallable();
   }
@@ -1536,7 +1596,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     &#42; `logging_config.component_config.enable_components` &#42;
    *     `monitoring_config.managed_prometheus_config.enabled`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AzureCluster, OperationMetadata> updateAzureClusterAsync(
       AzureCluster azureCluster, FieldMask updateMask) {
     UpdateAzureClusterRequest request =
@@ -1572,7 +1634,9 @@ public class AzureClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AzureCluster, OperationMetadata> updateAzureClusterAsync(
       UpdateAzureClusterRequest request) {
     return updateAzureClusterOperationCallable().futureCall(request);
@@ -1603,7 +1667,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   AzureCluster response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<UpdateAzureClusterRequest, AzureCluster, OperationMetadata>
       updateAzureClusterOperationCallable() {
     return stub.updateAzureClusterOperationCallable();
@@ -1634,7 +1701,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   Operation response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<UpdateAzureClusterRequest, Operation> updateAzureClusterCallable() {
     return stub.updateAzureClusterCallable();
   }
@@ -1664,7 +1734,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AzureCluster getAzureCluster(AzureClusterName name) {
     GetAzureClusterRequest request =
         GetAzureClusterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
@@ -1696,7 +1768,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AzureCluster getAzureCluster(String name) {
     GetAzureClusterRequest request = GetAzureClusterRequest.newBuilder().setName(name).build();
     return getAzureCluster(request);
@@ -1725,7 +1799,9 @@ public class AzureClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AzureCluster getAzureCluster(GetAzureClusterRequest request) {
     return getAzureClusterCallable().call(request);
   }
@@ -1753,7 +1829,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   AzureCluster response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GetAzureClusterRequest, AzureCluster> getAzureClusterCallable() {
     return stub.getAzureClusterCallable();
   }
@@ -1785,7 +1864,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAzureClustersPagedResponse listAzureClusters(LocationName parent) {
     ListAzureClustersRequest request =
         ListAzureClustersRequest.newBuilder()
@@ -1821,7 +1902,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAzureClustersPagedResponse listAzureClusters(String parent) {
     ListAzureClustersRequest request =
         ListAzureClustersRequest.newBuilder().setParent(parent).build();
@@ -1856,7 +1939,9 @@ public class AzureClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAzureClustersPagedResponse listAzureClusters(ListAzureClustersRequest request) {
     return listAzureClustersPagedCallable().call(request);
   }
@@ -1889,7 +1974,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListAzureClustersRequest, ListAzureClustersPagedResponse>
       listAzureClustersPagedCallable() {
     return stub.listAzureClustersPagedCallable();
@@ -1930,7 +2018,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListAzureClustersRequest, ListAzureClustersResponse>
       listAzureClustersCallable() {
     return stub.listAzureClustersCallable();
@@ -1968,7 +2059,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteAzureClusterAsync(
       AzureClusterName name) {
     DeleteAzureClusterRequest request =
@@ -2010,7 +2103,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteAzureClusterAsync(String name) {
     DeleteAzureClusterRequest request =
         DeleteAzureClusterRequest.newBuilder().setName(name).build();
@@ -2051,7 +2146,9 @@ public class AzureClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteAzureClusterAsync(
       DeleteAzureClusterRequest request) {
     return deleteAzureClusterOperationCallable().futureCall(request);
@@ -2091,7 +2188,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<DeleteAzureClusterRequest, Empty, OperationMetadata>
       deleteAzureClusterOperationCallable() {
     return stub.deleteAzureClusterOperationCallable();
@@ -2131,7 +2231,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<DeleteAzureClusterRequest, Operation> deleteAzureClusterCallable() {
     return stub.deleteAzureClusterCallable();
   }
@@ -2170,7 +2273,9 @@ public class AzureClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final GenerateAzureClusterAgentTokenResponse generateAzureClusterAgentToken(
       GenerateAzureClusterAgentTokenRequest request) {
     return generateAzureClusterAgentTokenCallable().call(request);
@@ -2209,7 +2314,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   GenerateAzureClusterAgentTokenResponse response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<
           GenerateAzureClusterAgentTokenRequest, GenerateAzureClusterAgentTokenResponse>
       generateAzureClusterAgentTokenCallable() {
@@ -2242,7 +2350,9 @@ public class AzureClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final GenerateAzureAccessTokenResponse generateAzureAccessToken(
       GenerateAzureAccessTokenRequest request) {
     return generateAzureAccessTokenCallable().call(request);
@@ -2273,7 +2383,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   GenerateAzureAccessTokenResponse response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GenerateAzureAccessTokenRequest, GenerateAzureAccessTokenResponse>
       generateAzureAccessTokenCallable() {
     return stub.generateAzureAccessTokenCallable();
@@ -2322,7 +2435,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
    *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AzureNodePool, OperationMetadata> createAzureNodePoolAsync(
       AzureClusterName parent, AzureNodePool azureNodePool, String azureNodePoolId) {
     CreateAzureNodePoolRequest request =
@@ -2377,7 +2492,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
    *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AzureNodePool, OperationMetadata> createAzureNodePoolAsync(
       String parent, AzureNodePool azureNodePool, String azureNodePoolId) {
     CreateAzureNodePoolRequest request =
@@ -2421,7 +2538,9 @@ public class AzureClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AzureNodePool, OperationMetadata> createAzureNodePoolAsync(
       CreateAzureNodePoolRequest request) {
     return createAzureNodePoolOperationCallable().futureCall(request);
@@ -2459,7 +2578,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   AzureNodePool response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<CreateAzureNodePoolRequest, AzureNodePool, OperationMetadata>
       createAzureNodePoolOperationCallable() {
     return stub.createAzureNodePoolOperationCallable();
@@ -2497,7 +2619,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   Operation response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<CreateAzureNodePoolRequest, Operation> createAzureNodePoolCallable() {
     return stub.createAzureNodePoolCallable();
   }
@@ -2531,7 +2656,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     `autoscaling.max_node_count`. &#42; `config.ssh_config.authorized_key`. &#42;
    *     `management.auto_repair`. &#42; `management`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AzureNodePool, OperationMetadata> updateAzureNodePoolAsync(
       AzureNodePool azureNodePool, FieldMask updateMask) {
     UpdateAzureNodePoolRequest request =
@@ -2567,7 +2694,9 @@ public class AzureClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AzureNodePool, OperationMetadata> updateAzureNodePoolAsync(
       UpdateAzureNodePoolRequest request) {
     return updateAzureNodePoolOperationCallable().futureCall(request);
@@ -2598,7 +2727,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   AzureNodePool response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<UpdateAzureNodePoolRequest, AzureNodePool, OperationMetadata>
       updateAzureNodePoolOperationCallable() {
     return stub.updateAzureNodePoolOperationCallable();
@@ -2629,7 +2761,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   Operation response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<UpdateAzureNodePoolRequest, Operation> updateAzureNodePoolCallable() {
     return stub.updateAzureNodePoolCallable();
   }
@@ -2660,7 +2795,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AzureNodePool getAzureNodePool(AzureNodePoolName name) {
     GetAzureNodePoolRequest request =
         GetAzureNodePoolRequest.newBuilder().setName(name == null ? null : name.toString()).build();
@@ -2694,7 +2831,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AzureNodePool getAzureNodePool(String name) {
     GetAzureNodePoolRequest request = GetAzureNodePoolRequest.newBuilder().setName(name).build();
     return getAzureNodePool(request);
@@ -2726,7 +2865,9 @@ public class AzureClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AzureNodePool getAzureNodePool(GetAzureNodePoolRequest request) {
     return getAzureNodePoolCallable().call(request);
   }
@@ -2757,7 +2898,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   AzureNodePool response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GetAzureNodePoolRequest, AzureNodePool> getAzureNodePoolCallable() {
     return stub.getAzureNodePoolCallable();
   }
@@ -2790,7 +2934,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAzureNodePoolsPagedResponse listAzureNodePools(AzureClusterName parent) {
     ListAzureNodePoolsRequest request =
         ListAzureNodePoolsRequest.newBuilder()
@@ -2827,7 +2973,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAzureNodePoolsPagedResponse listAzureNodePools(String parent) {
     ListAzureNodePoolsRequest request =
         ListAzureNodePoolsRequest.newBuilder().setParent(parent).build();
@@ -2863,7 +3011,9 @@ public class AzureClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAzureNodePoolsPagedResponse listAzureNodePools(
       ListAzureNodePoolsRequest request) {
     return listAzureNodePoolsPagedCallable().call(request);
@@ -2898,7 +3048,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListAzureNodePoolsRequest, ListAzureNodePoolsPagedResponse>
       listAzureNodePoolsPagedCallable() {
     return stub.listAzureNodePoolsPagedCallable();
@@ -2940,7 +3093,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListAzureNodePoolsRequest, ListAzureNodePoolsResponse>
       listAzureNodePoolsCallable() {
     return stub.listAzureNodePoolsCallable();
@@ -2976,7 +3132,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteAzureNodePoolAsync(
       AzureNodePoolName name) {
     DeleteAzureNodePoolRequest request =
@@ -3017,7 +3175,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteAzureNodePoolAsync(String name) {
     DeleteAzureNodePoolRequest request =
         DeleteAzureNodePoolRequest.newBuilder().setName(name).build();
@@ -3058,7 +3218,9 @@ public class AzureClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteAzureNodePoolAsync(
       DeleteAzureNodePoolRequest request) {
     return deleteAzureNodePoolOperationCallable().futureCall(request);
@@ -3098,7 +3260,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<DeleteAzureNodePoolRequest, Empty, OperationMetadata>
       deleteAzureNodePoolOperationCallable() {
     return stub.deleteAzureNodePoolOperationCallable();
@@ -3138,7 +3303,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<DeleteAzureNodePoolRequest, Operation> deleteAzureNodePoolCallable() {
     return stub.deleteAzureNodePoolCallable();
   }
@@ -3166,7 +3334,9 @@ public class AzureClustersClient implements BackgroundResource {
    * @param azureCluster Required. The AzureCluster, which owns the OIDC discovery document. Format:
    *     projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AzureOpenIdConfig getAzureOpenIdConfig(AzureClusterName azureCluster) {
     GetAzureOpenIdConfigRequest request =
         GetAzureOpenIdConfigRequest.newBuilder()
@@ -3198,7 +3368,9 @@ public class AzureClustersClient implements BackgroundResource {
    * @param azureCluster Required. The AzureCluster, which owns the OIDC discovery document. Format:
    *     projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AzureOpenIdConfig getAzureOpenIdConfig(String azureCluster) {
     GetAzureOpenIdConfigRequest request =
         GetAzureOpenIdConfigRequest.newBuilder().setAzureCluster(azureCluster).build();
@@ -3230,7 +3402,9 @@ public class AzureClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AzureOpenIdConfig getAzureOpenIdConfig(GetAzureOpenIdConfigRequest request) {
     return getAzureOpenIdConfigCallable().call(request);
   }
@@ -3260,7 +3434,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   AzureOpenIdConfig response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>
       getAzureOpenIdConfigCallable() {
     return stub.getAzureOpenIdConfigCallable();
@@ -3288,7 +3465,9 @@ public class AzureClustersClient implements BackgroundResource {
    * @param azureCluster Required. The AzureCluster, which owns the JsonWebKeys. Format:
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AzureJsonWebKeys getAzureJsonWebKeys(AzureClusterName azureCluster) {
     GetAzureJsonWebKeysRequest request =
         GetAzureJsonWebKeysRequest.newBuilder()
@@ -3319,7 +3498,9 @@ public class AzureClustersClient implements BackgroundResource {
    * @param azureCluster Required. The AzureCluster, which owns the JsonWebKeys. Format:
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AzureJsonWebKeys getAzureJsonWebKeys(String azureCluster) {
     GetAzureJsonWebKeysRequest request =
         GetAzureJsonWebKeysRequest.newBuilder().setAzureCluster(azureCluster).build();
@@ -3350,7 +3531,9 @@ public class AzureClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AzureJsonWebKeys getAzureJsonWebKeys(GetAzureJsonWebKeysRequest request) {
     return getAzureJsonWebKeysCallable().call(request);
   }
@@ -3379,7 +3562,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   AzureJsonWebKeys response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GetAzureJsonWebKeysRequest, AzureJsonWebKeys>
       getAzureJsonWebKeysCallable() {
     return stub.getAzureJsonWebKeysCallable();
@@ -3411,7 +3597,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AzureServerConfig getAzureServerConfig(AzureServerConfigName name) {
     GetAzureServerConfigRequest request =
         GetAzureServerConfigRequest.newBuilder()
@@ -3446,7 +3634,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AzureServerConfig getAzureServerConfig(String name) {
     GetAzureServerConfigRequest request =
         GetAzureServerConfigRequest.newBuilder().setName(name).build();
@@ -3477,7 +3667,9 @@ public class AzureClustersClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AzureServerConfig getAzureServerConfig(GetAzureServerConfigRequest request) {
     return getAzureServerConfigCallable().call(request);
   }
@@ -3506,7 +3698,10 @@ public class AzureClustersClient implements BackgroundResource {
    *   AzureServerConfig response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GetAzureServerConfigRequest, AzureServerConfig>
       getAzureServerConfigCallable() {
     return stub.getAzureServerConfigCallable();

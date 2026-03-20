@@ -1,0 +1,17 @@
+{
+  "api_shortname": "configdelivery",
+  "name_pretty": "Config Delivery API",
+  "product_documentation": "https://cloud.google.com/kubernetes-engine/enterprise/config-sync/docs/concepts/fleet-packages",
+  "api_description": "ConfigDelivery service manages the deployment of kubernetes configuration to a fleet of kubernetes clusters.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-configdelivery/latest/overview",
+  "release_level": "preview",
+  "transport": "both",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-configdelivery",
+  "distribution_name": "com.google.cloud:google-cloud-configdelivery",
+  "api_id": "configdelivery.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true,
+  "rest_documentation": "https://cloud.google.com/kubernetes-engine/enterprise/config-sync/docs/reference/rest"
+}

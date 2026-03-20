@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,10 +17,10 @@
 package com.google.ads.admanager.v1.samples;
 
 // [START admanager_v1_generated_CustomTargetingValueService_ListCustomTargetingValues_sync]
-import com.google.ads.admanager.v1.CustomTargetingKeyName;
 import com.google.ads.admanager.v1.CustomTargetingValue;
 import com.google.ads.admanager.v1.CustomTargetingValueServiceClient;
 import com.google.ads.admanager.v1.ListCustomTargetingValuesRequest;
+import com.google.ads.admanager.v1.NetworkName;
 
 public class SyncListCustomTargetingValues {
 
@@ -38,8 +38,7 @@ public class SyncListCustomTargetingValues {
         CustomTargetingValueServiceClient.create()) {
       ListCustomTargetingValuesRequest request =
           ListCustomTargetingValuesRequest.newBuilder()
-              .setParent(
-                  CustomTargetingKeyName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]").toString())
+              .setParent(NetworkName.of("[NETWORK_CODE]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")

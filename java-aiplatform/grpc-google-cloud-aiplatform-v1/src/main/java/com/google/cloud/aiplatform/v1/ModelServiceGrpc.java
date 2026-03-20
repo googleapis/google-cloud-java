@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service for managing Vertex AI's machine learning Models.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1/model_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ModelServiceGrpc {
 
@@ -1677,8 +1674,8 @@ public final class ModelServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation uploadModel(
-        com.google.cloud.aiplatform.v1.UploadModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.UploadModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUploadModelMethod(), getCallOptions(), request);
     }
 
@@ -1690,8 +1687,8 @@ public final class ModelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.Model getModel(
-        com.google.cloud.aiplatform.v1.GetModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetModelMethod(), getCallOptions(), request);
     }
 
@@ -1703,8 +1700,8 @@ public final class ModelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListModelsResponse listModels(
-        com.google.cloud.aiplatform.v1.ListModelsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ListModelsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListModelsMethod(), getCallOptions(), request);
     }
 
@@ -1716,8 +1713,9 @@ public final class ModelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListModelVersionsResponse listModelVersions(
-        com.google.cloud.aiplatform.v1.ListModelVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ListModelVersionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListModelVersionsMethod(), getCallOptions(), request);
     }
 
@@ -1730,8 +1728,9 @@ public final class ModelServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsResponse
         listModelVersionCheckpoints(
-            com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListModelVersionCheckpointsMethod(), getCallOptions(), request);
     }
 
@@ -1743,8 +1742,8 @@ public final class ModelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.Model updateModel(
-        com.google.cloud.aiplatform.v1.UpdateModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.UpdateModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateModelMethod(), getCallOptions(), request);
     }
 
@@ -1756,8 +1755,9 @@ public final class ModelServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateExplanationDataset(
-        com.google.cloud.aiplatform.v1.UpdateExplanationDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.UpdateExplanationDatasetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateExplanationDatasetMethod(), getCallOptions(), request);
     }
 
@@ -1775,8 +1775,8 @@ public final class ModelServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteModel(
-        com.google.cloud.aiplatform.v1.DeleteModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DeleteModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteModelMethod(), getCallOptions(), request);
     }
 
@@ -1793,8 +1793,9 @@ public final class ModelServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteModelVersion(
-        com.google.cloud.aiplatform.v1.DeleteModelVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DeleteModelVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteModelVersionMethod(), getCallOptions(), request);
     }
 
@@ -1806,8 +1807,9 @@ public final class ModelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.Model mergeVersionAliases(
-        com.google.cloud.aiplatform.v1.MergeVersionAliasesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.MergeVersionAliasesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getMergeVersionAliasesMethod(), getCallOptions(), request);
     }
 
@@ -1822,8 +1824,8 @@ public final class ModelServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportModel(
-        com.google.cloud.aiplatform.v1.ExportModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ExportModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportModelMethod(), getCallOptions(), request);
     }
 
@@ -1840,8 +1842,8 @@ public final class ModelServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation copyModel(
-        com.google.cloud.aiplatform.v1.CopyModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CopyModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCopyModelMethod(), getCallOptions(), request);
     }
 
@@ -1853,8 +1855,9 @@ public final class ModelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ModelEvaluation importModelEvaluation(
-        com.google.cloud.aiplatform.v1.ImportModelEvaluationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ImportModelEvaluationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportModelEvaluationMethod(), getCallOptions(), request);
     }
 
@@ -1867,8 +1870,9 @@ public final class ModelServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesResponse
         batchImportModelEvaluationSlices(
-            com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchImportModelEvaluationSlicesMethod(), getCallOptions(), request);
     }
 
@@ -1881,8 +1885,9 @@ public final class ModelServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsResponse
         batchImportEvaluatedAnnotations(
-            com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchImportEvaluatedAnnotationsMethod(), getCallOptions(), request);
     }
 
@@ -1894,8 +1899,9 @@ public final class ModelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ModelEvaluation getModelEvaluation(
-        com.google.cloud.aiplatform.v1.GetModelEvaluationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetModelEvaluationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetModelEvaluationMethod(), getCallOptions(), request);
     }
 
@@ -1907,8 +1913,9 @@ public final class ModelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListModelEvaluationsResponse listModelEvaluations(
-        com.google.cloud.aiplatform.v1.ListModelEvaluationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ListModelEvaluationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListModelEvaluationsMethod(), getCallOptions(), request);
     }
 
@@ -1920,8 +1927,9 @@ public final class ModelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ModelEvaluationSlice getModelEvaluationSlice(
-        com.google.cloud.aiplatform.v1.GetModelEvaluationSliceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetModelEvaluationSliceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetModelEvaluationSliceMethod(), getCallOptions(), request);
     }
 
@@ -1934,8 +1942,9 @@ public final class ModelServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesResponse
         listModelEvaluationSlices(
-            com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListModelEvaluationSlicesMethod(), getCallOptions(), request);
     }
   }

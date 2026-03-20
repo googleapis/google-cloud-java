@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing site search related resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1beta/site_search_engine_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SiteSearchEngineServiceGrpc {
 
@@ -1384,8 +1381,9 @@ public final class SiteSearchEngineServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1beta.SiteSearchEngine getSiteSearchEngine(
-        com.google.cloud.discoveryengine.v1beta.GetSiteSearchEngineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.GetSiteSearchEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSiteSearchEngineMethod(), getCallOptions(), request);
     }
 
@@ -1397,8 +1395,9 @@ public final class SiteSearchEngineServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createTargetSite(
-        com.google.cloud.discoveryengine.v1beta.CreateTargetSiteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.CreateTargetSiteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTargetSiteMethod(), getCallOptions(), request);
     }
 
@@ -1411,8 +1410,9 @@ public final class SiteSearchEngineServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchCreateTargetSites(
-        com.google.cloud.discoveryengine.v1beta.BatchCreateTargetSitesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.BatchCreateTargetSitesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchCreateTargetSitesMethod(), getCallOptions(), request);
     }
 
@@ -1424,8 +1424,9 @@ public final class SiteSearchEngineServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1beta.TargetSite getTargetSite(
-        com.google.cloud.discoveryengine.v1beta.GetTargetSiteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.GetTargetSiteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTargetSiteMethod(), getCallOptions(), request);
     }
 
@@ -1437,8 +1438,9 @@ public final class SiteSearchEngineServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateTargetSite(
-        com.google.cloud.discoveryengine.v1beta.UpdateTargetSiteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.UpdateTargetSiteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTargetSiteMethod(), getCallOptions(), request);
     }
 
@@ -1450,8 +1452,9 @@ public final class SiteSearchEngineServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteTargetSite(
-        com.google.cloud.discoveryengine.v1beta.DeleteTargetSiteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.DeleteTargetSiteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTargetSiteMethod(), getCallOptions(), request);
     }
 
@@ -1464,8 +1467,9 @@ public final class SiteSearchEngineServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1beta.ListTargetSitesResponse listTargetSites(
-        com.google.cloud.discoveryengine.v1beta.ListTargetSitesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.ListTargetSitesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTargetSitesMethod(), getCallOptions(), request);
     }
 
@@ -1477,8 +1481,9 @@ public final class SiteSearchEngineServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createSitemap(
-        com.google.cloud.discoveryengine.v1beta.CreateSitemapRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.CreateSitemapRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSitemapMethod(), getCallOptions(), request);
     }
 
@@ -1490,8 +1495,9 @@ public final class SiteSearchEngineServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteSitemap(
-        com.google.cloud.discoveryengine.v1beta.DeleteSitemapRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.DeleteSitemapRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSitemapMethod(), getCallOptions(), request);
     }
 
@@ -1504,8 +1510,9 @@ public final class SiteSearchEngineServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1beta.FetchSitemapsResponse fetchSitemaps(
-        com.google.cloud.discoveryengine.v1beta.FetchSitemapsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.FetchSitemapsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchSitemapsMethod(), getCallOptions(), request);
     }
 
@@ -1517,8 +1524,9 @@ public final class SiteSearchEngineServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation enableAdvancedSiteSearch(
-        com.google.cloud.discoveryengine.v1beta.EnableAdvancedSiteSearchRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.EnableAdvancedSiteSearchRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getEnableAdvancedSiteSearchMethod(), getCallOptions(), request);
     }
 
@@ -1530,8 +1538,9 @@ public final class SiteSearchEngineServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation disableAdvancedSiteSearch(
-        com.google.cloud.discoveryengine.v1beta.DisableAdvancedSiteSearchRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.DisableAdvancedSiteSearchRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDisableAdvancedSiteSearchMethod(), getCallOptions(), request);
     }
 
@@ -1543,8 +1552,9 @@ public final class SiteSearchEngineServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation recrawlUris(
-        com.google.cloud.discoveryengine.v1beta.RecrawlUrisRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.RecrawlUrisRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRecrawlUrisMethod(), getCallOptions(), request);
     }
 
@@ -1558,8 +1568,9 @@ public final class SiteSearchEngineServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchVerifyTargetSites(
-        com.google.cloud.discoveryengine.v1beta.BatchVerifyTargetSitesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.BatchVerifyTargetSitesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchVerifyTargetSitesMethod(), getCallOptions(), request);
     }
 
@@ -1574,8 +1585,9 @@ public final class SiteSearchEngineServiceGrpc {
      */
     public com.google.cloud.discoveryengine.v1beta.FetchDomainVerificationStatusResponse
         fetchDomainVerificationStatus(
-            com.google.cloud.discoveryengine.v1beta.FetchDomainVerificationStatusRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.discoveryengine.v1beta.FetchDomainVerificationStatusRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchDomainVerificationStatusMethod(), getCallOptions(), request);
     }
   }

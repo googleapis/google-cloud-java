@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ package com.google.cloud.container.v1beta1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.container.v1beta1.ClusterManagerClient;
 import com.google.container.v1beta1.AcceleratorConfig;
+import com.google.container.v1beta1.BootDisk;
 import com.google.container.v1beta1.ConfidentialNodes;
 import com.google.container.v1beta1.ContainerdConfig;
 import com.google.container.v1beta1.FastSocket;
@@ -91,6 +92,9 @@ public class AsyncUpdateNodePool {
               .addAllStoragePools(new ArrayList<String>())
               .setMaxRunDuration(Duration.newBuilder().build())
               .setFlexStart(true)
+              .setBootDisk(BootDisk.newBuilder().build())
+              .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
+              .setConsolidationDelay(Duration.newBuilder().build())
               .build();
       ApiFuture<Operation> future =
           clusterManagerClient.updateNodePoolCallable().futureCall(request);

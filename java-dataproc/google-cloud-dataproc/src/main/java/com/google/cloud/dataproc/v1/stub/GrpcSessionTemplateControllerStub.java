@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,7 @@ public class GrpcSessionTemplateControllerStub extends SessionTemplateController
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSessionTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SessionTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSessionTemplateRequest, SessionTemplate>
@@ -73,6 +74,7 @@ public class GrpcSessionTemplateControllerStub extends SessionTemplateController
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSessionTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SessionTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSessionTemplateRequest, SessionTemplate>
@@ -84,6 +86,7 @@ public class GrpcSessionTemplateControllerStub extends SessionTemplateController
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetSessionTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SessionTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSessionTemplatesRequest, ListSessionTemplatesResponse>
@@ -96,6 +99,7 @@ public class GrpcSessionTemplateControllerStub extends SessionTemplateController
                   ProtoUtils.marshaller(ListSessionTemplatesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSessionTemplatesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSessionTemplateRequest, Empty>
@@ -107,6 +111,7 @@ public class GrpcSessionTemplateControllerStub extends SessionTemplateController
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteSessionTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -115,6 +120,7 @@ public class GrpcSessionTemplateControllerStub extends SessionTemplateController
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -123,6 +129,7 @@ public class GrpcSessionTemplateControllerStub extends SessionTemplateController
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -134,6 +141,7 @@ public class GrpcSessionTemplateControllerStub extends SessionTemplateController
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateSessionTemplateRequest, SessionTemplate>

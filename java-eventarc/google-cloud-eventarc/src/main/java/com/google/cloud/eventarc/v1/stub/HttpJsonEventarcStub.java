@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1789,6 +1789,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                           "/v1/{resource=projects/*/locations/*/messageBuses/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/enrollments/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/pipelines/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/kafkaSources/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/googleApiSources/*}:setIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
@@ -1833,6 +1834,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                           "/v1/{resource=projects/*/locations/*/messageBuses/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/enrollments/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/pipelines/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/kafkaSources/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/googleApiSources/*}:getIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
@@ -1874,6 +1876,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                           "/v1/{resource=projects/*/locations/*/messageBuses/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/enrollments/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/pipelines/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/kafkaSources/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/googleApiSources/*}:testIamPermissions")
                       .setQueryParamsExtractor(
                           request -> {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,6 +51,7 @@ public class GrpcTextToSpeechStub extends TextToSpeechStub {
               .setFullMethodName("google.cloud.texttospeech.v1.TextToSpeech/ListVoices")
               .setRequestMarshaller(ProtoUtils.marshaller(ListVoicesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListVoicesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
@@ -62,6 +63,7 @@ public class GrpcTextToSpeechStub extends TextToSpeechStub {
                   ProtoUtils.marshaller(SynthesizeSpeechRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SynthesizeSpeechResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StreamingSynthesizeRequest, StreamingSynthesizeResponse>
@@ -73,6 +75,7 @@ public class GrpcTextToSpeechStub extends TextToSpeechStub {
                   ProtoUtils.marshaller(StreamingSynthesizeRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StreamingSynthesizeResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListVoicesRequest, ListVoicesResponse> listVoicesCallable;

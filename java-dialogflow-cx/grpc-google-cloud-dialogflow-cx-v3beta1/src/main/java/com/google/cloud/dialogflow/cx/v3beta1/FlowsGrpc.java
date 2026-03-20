@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing [Flows][google.cloud.dialogflow.cx.v3beta1.Flow].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/cx/v3beta1/flow.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class FlowsGrpc {
 
@@ -970,8 +967,9 @@ public final class FlowsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Flow createFlow(
-        com.google.cloud.dialogflow.cx.v3beta1.CreateFlowRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.CreateFlowRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateFlowMethod(), getCallOptions(), request);
     }
 
@@ -983,8 +981,9 @@ public final class FlowsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteFlow(
-        com.google.cloud.dialogflow.cx.v3beta1.DeleteFlowRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.DeleteFlowRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteFlowMethod(), getCallOptions(), request);
     }
 
@@ -996,8 +995,9 @@ public final class FlowsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.ListFlowsResponse listFlows(
-        com.google.cloud.dialogflow.cx.v3beta1.ListFlowsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.ListFlowsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFlowsMethod(), getCallOptions(), request);
     }
 
@@ -1009,8 +1009,9 @@ public final class FlowsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Flow getFlow(
-        com.google.cloud.dialogflow.cx.v3beta1.GetFlowRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.GetFlowRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFlowMethod(), getCallOptions(), request);
     }
 
@@ -1025,8 +1026,9 @@ public final class FlowsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Flow updateFlow(
-        com.google.cloud.dialogflow.cx.v3beta1.UpdateFlowRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.UpdateFlowRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateFlowMethod(), getCallOptions(), request);
     }
 
@@ -1049,8 +1051,9 @@ public final class FlowsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation trainFlow(
-        com.google.cloud.dialogflow.cx.v3beta1.TrainFlowRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.TrainFlowRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTrainFlowMethod(), getCallOptions(), request);
     }
 
@@ -1064,8 +1067,9 @@ public final class FlowsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult validateFlow(
-        com.google.cloud.dialogflow.cx.v3beta1.ValidateFlowRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.ValidateFlowRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getValidateFlowMethod(), getCallOptions(), request);
     }
 
@@ -1078,8 +1082,9 @@ public final class FlowsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult getFlowValidationResult(
-        com.google.cloud.dialogflow.cx.v3beta1.GetFlowValidationResultRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.GetFlowValidationResultRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFlowValidationResultMethod(), getCallOptions(), request);
     }
 
@@ -1101,8 +1106,9 @@ public final class FlowsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importFlow(
-        com.google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportFlowMethod(), getCallOptions(), request);
     }
 
@@ -1123,8 +1129,9 @@ public final class FlowsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportFlow(
-        com.google.cloud.dialogflow.cx.v3beta1.ExportFlowRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.ExportFlowRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportFlowMethod(), getCallOptions(), request);
     }
   }

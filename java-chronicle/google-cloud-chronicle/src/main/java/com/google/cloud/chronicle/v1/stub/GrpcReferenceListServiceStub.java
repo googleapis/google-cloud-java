@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,6 +54,7 @@ public class GrpcReferenceListServiceStub extends ReferenceListServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetReferenceListRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReferenceList.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListReferenceListsRequest, ListReferenceListsResponse>
@@ -66,6 +67,7 @@ public class GrpcReferenceListServiceStub extends ReferenceListServiceStub {
                   ProtoUtils.marshaller(ListReferenceListsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReferenceListsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateReferenceListRequest, ReferenceList>
@@ -77,6 +79,7 @@ public class GrpcReferenceListServiceStub extends ReferenceListServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateReferenceListRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReferenceList.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateReferenceListRequest, ReferenceList>
@@ -88,6 +91,7 @@ public class GrpcReferenceListServiceStub extends ReferenceListServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateReferenceListRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReferenceList.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetReferenceListRequest, ReferenceList> getReferenceListCallable;

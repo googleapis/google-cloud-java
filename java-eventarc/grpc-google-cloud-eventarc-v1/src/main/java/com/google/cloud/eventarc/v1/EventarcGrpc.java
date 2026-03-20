@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Google Cloud services and forward them to supported destinations.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/eventarc/v1/eventarc.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EventarcGrpc {
 
@@ -2071,7 +2068,9 @@ public final class EventarcGrpc {
      *
      *
      * <pre>
-     * Get a GoogleChannelConfig
+     * Get a GoogleChannelConfig.
+     * The name of the GoogleChannelConfig in the response is ALWAYS coded with
+     * projectID.
      * </pre>
      */
     default void getGoogleChannelConfig(
@@ -2693,7 +2692,9 @@ public final class EventarcGrpc {
      *
      *
      * <pre>
-     * Get a GoogleChannelConfig
+     * Get a GoogleChannelConfig.
+     * The name of the GoogleChannelConfig in the response is ALWAYS coded with
+     * projectID.
      * </pre>
      */
     public void getGoogleChannelConfig(
@@ -3094,8 +3095,8 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.cloud.eventarc.v1.Trigger getTrigger(
-        com.google.cloud.eventarc.v1.GetTriggerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.GetTriggerRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTriggerMethod(), getCallOptions(), request);
     }
 
@@ -3107,8 +3108,8 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.cloud.eventarc.v1.ListTriggersResponse listTriggers(
-        com.google.cloud.eventarc.v1.ListTriggersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.ListTriggersRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTriggersMethod(), getCallOptions(), request);
     }
 
@@ -3120,8 +3121,8 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createTrigger(
-        com.google.cloud.eventarc.v1.CreateTriggerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.CreateTriggerRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTriggerMethod(), getCallOptions(), request);
     }
 
@@ -3133,8 +3134,8 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateTrigger(
-        com.google.cloud.eventarc.v1.UpdateTriggerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.UpdateTriggerRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTriggerMethod(), getCallOptions(), request);
     }
 
@@ -3146,8 +3147,8 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteTrigger(
-        com.google.cloud.eventarc.v1.DeleteTriggerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.DeleteTriggerRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTriggerMethod(), getCallOptions(), request);
     }
 
@@ -3159,8 +3160,8 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.cloud.eventarc.v1.Channel getChannel(
-        com.google.cloud.eventarc.v1.GetChannelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.GetChannelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetChannelMethod(), getCallOptions(), request);
     }
 
@@ -3172,8 +3173,8 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.cloud.eventarc.v1.ListChannelsResponse listChannels(
-        com.google.cloud.eventarc.v1.ListChannelsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.ListChannelsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListChannelsMethod(), getCallOptions(), request);
     }
 
@@ -3185,8 +3186,8 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createChannel(
-        com.google.cloud.eventarc.v1.CreateChannelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.CreateChannelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateChannelMethod(), getCallOptions(), request);
     }
 
@@ -3198,8 +3199,8 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateChannel(
-        com.google.cloud.eventarc.v1.UpdateChannelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.UpdateChannelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateChannelMethod(), getCallOptions(), request);
     }
 
@@ -3211,8 +3212,8 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteChannel(
-        com.google.cloud.eventarc.v1.DeleteChannelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.DeleteChannelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteChannelMethod(), getCallOptions(), request);
     }
 
@@ -3224,8 +3225,8 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.cloud.eventarc.v1.Provider getProvider(
-        com.google.cloud.eventarc.v1.GetProviderRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.GetProviderRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetProviderMethod(), getCallOptions(), request);
     }
 
@@ -3237,8 +3238,8 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.cloud.eventarc.v1.ListProvidersResponse listProviders(
-        com.google.cloud.eventarc.v1.ListProvidersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.ListProvidersRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListProvidersMethod(), getCallOptions(), request);
     }
 
@@ -3250,8 +3251,9 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.cloud.eventarc.v1.ChannelConnection getChannelConnection(
-        com.google.cloud.eventarc.v1.GetChannelConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.GetChannelConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetChannelConnectionMethod(), getCallOptions(), request);
     }
 
@@ -3263,8 +3265,9 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.cloud.eventarc.v1.ListChannelConnectionsResponse listChannelConnections(
-        com.google.cloud.eventarc.v1.ListChannelConnectionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.ListChannelConnectionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListChannelConnectionsMethod(), getCallOptions(), request);
     }
 
@@ -3276,8 +3279,9 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createChannelConnection(
-        com.google.cloud.eventarc.v1.CreateChannelConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.CreateChannelConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateChannelConnectionMethod(), getCallOptions(), request);
     }
 
@@ -3289,8 +3293,9 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteChannelConnection(
-        com.google.cloud.eventarc.v1.DeleteChannelConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.DeleteChannelConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteChannelConnectionMethod(), getCallOptions(), request);
     }
 
@@ -3298,12 +3303,15 @@ public final class EventarcGrpc {
      *
      *
      * <pre>
-     * Get a GoogleChannelConfig
+     * Get a GoogleChannelConfig.
+     * The name of the GoogleChannelConfig in the response is ALWAYS coded with
+     * projectID.
      * </pre>
      */
     public com.google.cloud.eventarc.v1.GoogleChannelConfig getGoogleChannelConfig(
-        com.google.cloud.eventarc.v1.GetGoogleChannelConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.GetGoogleChannelConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetGoogleChannelConfigMethod(), getCallOptions(), request);
     }
 
@@ -3315,8 +3323,9 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.cloud.eventarc.v1.GoogleChannelConfig updateGoogleChannelConfig(
-        com.google.cloud.eventarc.v1.UpdateGoogleChannelConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.UpdateGoogleChannelConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateGoogleChannelConfigMethod(), getCallOptions(), request);
     }
 
@@ -3328,8 +3337,8 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.cloud.eventarc.v1.MessageBus getMessageBus(
-        com.google.cloud.eventarc.v1.GetMessageBusRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.GetMessageBusRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMessageBusMethod(), getCallOptions(), request);
     }
 
@@ -3341,8 +3350,9 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.cloud.eventarc.v1.ListMessageBusesResponse listMessageBuses(
-        com.google.cloud.eventarc.v1.ListMessageBusesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.ListMessageBusesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMessageBusesMethod(), getCallOptions(), request);
     }
 
@@ -3354,8 +3364,9 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsResponse listMessageBusEnrollments(
-        com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMessageBusEnrollmentsMethod(), getCallOptions(), request);
     }
 
@@ -3367,8 +3378,9 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createMessageBus(
-        com.google.cloud.eventarc.v1.CreateMessageBusRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.CreateMessageBusRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateMessageBusMethod(), getCallOptions(), request);
     }
 
@@ -3380,8 +3392,9 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateMessageBus(
-        com.google.cloud.eventarc.v1.UpdateMessageBusRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.UpdateMessageBusRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateMessageBusMethod(), getCallOptions(), request);
     }
 
@@ -3393,8 +3406,9 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteMessageBus(
-        com.google.cloud.eventarc.v1.DeleteMessageBusRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.DeleteMessageBusRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteMessageBusMethod(), getCallOptions(), request);
     }
 
@@ -3406,8 +3420,8 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.cloud.eventarc.v1.Enrollment getEnrollment(
-        com.google.cloud.eventarc.v1.GetEnrollmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.GetEnrollmentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEnrollmentMethod(), getCallOptions(), request);
     }
 
@@ -3419,8 +3433,9 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.cloud.eventarc.v1.ListEnrollmentsResponse listEnrollments(
-        com.google.cloud.eventarc.v1.ListEnrollmentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.ListEnrollmentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEnrollmentsMethod(), getCallOptions(), request);
     }
 
@@ -3432,8 +3447,9 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createEnrollment(
-        com.google.cloud.eventarc.v1.CreateEnrollmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.CreateEnrollmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEnrollmentMethod(), getCallOptions(), request);
     }
 
@@ -3445,8 +3461,9 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateEnrollment(
-        com.google.cloud.eventarc.v1.UpdateEnrollmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.UpdateEnrollmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEnrollmentMethod(), getCallOptions(), request);
     }
 
@@ -3458,8 +3475,9 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteEnrollment(
-        com.google.cloud.eventarc.v1.DeleteEnrollmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.DeleteEnrollmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEnrollmentMethod(), getCallOptions(), request);
     }
 
@@ -3471,8 +3489,8 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.cloud.eventarc.v1.Pipeline getPipeline(
-        com.google.cloud.eventarc.v1.GetPipelineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.GetPipelineRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPipelineMethod(), getCallOptions(), request);
     }
 
@@ -3484,8 +3502,8 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.cloud.eventarc.v1.ListPipelinesResponse listPipelines(
-        com.google.cloud.eventarc.v1.ListPipelinesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.ListPipelinesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPipelinesMethod(), getCallOptions(), request);
     }
 
@@ -3497,8 +3515,8 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createPipeline(
-        com.google.cloud.eventarc.v1.CreatePipelineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.CreatePipelineRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreatePipelineMethod(), getCallOptions(), request);
     }
 
@@ -3510,8 +3528,8 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updatePipeline(
-        com.google.cloud.eventarc.v1.UpdatePipelineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.UpdatePipelineRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdatePipelineMethod(), getCallOptions(), request);
     }
 
@@ -3523,8 +3541,8 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deletePipeline(
-        com.google.cloud.eventarc.v1.DeletePipelineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.DeletePipelineRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePipelineMethod(), getCallOptions(), request);
     }
 
@@ -3536,8 +3554,9 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.cloud.eventarc.v1.GoogleApiSource getGoogleApiSource(
-        com.google.cloud.eventarc.v1.GetGoogleApiSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.GetGoogleApiSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetGoogleApiSourceMethod(), getCallOptions(), request);
     }
 
@@ -3549,8 +3568,9 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.cloud.eventarc.v1.ListGoogleApiSourcesResponse listGoogleApiSources(
-        com.google.cloud.eventarc.v1.ListGoogleApiSourcesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.ListGoogleApiSourcesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGoogleApiSourcesMethod(), getCallOptions(), request);
     }
 
@@ -3562,8 +3582,9 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createGoogleApiSource(
-        com.google.cloud.eventarc.v1.CreateGoogleApiSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.CreateGoogleApiSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateGoogleApiSourceMethod(), getCallOptions(), request);
     }
 
@@ -3575,8 +3596,9 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateGoogleApiSource(
-        com.google.cloud.eventarc.v1.UpdateGoogleApiSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.UpdateGoogleApiSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateGoogleApiSourceMethod(), getCallOptions(), request);
     }
 
@@ -3588,8 +3610,9 @@ public final class EventarcGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteGoogleApiSource(
-        com.google.cloud.eventarc.v1.DeleteGoogleApiSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.v1.DeleteGoogleApiSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteGoogleApiSourceMethod(), getCallOptions(), request);
     }
   }
@@ -3825,7 +3848,9 @@ public final class EventarcGrpc {
      *
      *
      * <pre>
-     * Get a GoogleChannelConfig
+     * Get a GoogleChannelConfig.
+     * The name of the GoogleChannelConfig in the response is ALWAYS coded with
+     * projectID.
      * </pre>
      */
     public com.google.cloud.eventarc.v1.GoogleChannelConfig getGoogleChannelConfig(
@@ -4359,7 +4384,9 @@ public final class EventarcGrpc {
      *
      *
      * <pre>
-     * Get a GoogleChannelConfig
+     * Get a GoogleChannelConfig.
+     * The name of the GoogleChannelConfig in the response is ALWAYS coded with
+     * projectID.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

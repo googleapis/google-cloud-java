@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,6 +57,7 @@ public class GrpcMetricsV1Beta3Stub extends MetricsV1Beta3Stub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetJobMetricsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(JobMetrics.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetJobExecutionDetailsRequest, JobExecutionDetails>
@@ -68,6 +69,7 @@ public class GrpcMetricsV1Beta3Stub extends MetricsV1Beta3Stub {
                   ProtoUtils.marshaller(GetJobExecutionDetailsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(JobExecutionDetails.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetStageExecutionDetailsRequest, StageExecutionDetails>
@@ -79,6 +81,7 @@ public class GrpcMetricsV1Beta3Stub extends MetricsV1Beta3Stub {
                   ProtoUtils.marshaller(GetStageExecutionDetailsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StageExecutionDetails.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetJobMetricsRequest, JobMetrics> getJobMetricsCallable;

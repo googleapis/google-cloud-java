@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,37 +20,50 @@ import static com.google.cloud.dialogflow.cx.v3beta1.PlaybooksClient.ListLocatio
 import static com.google.cloud.dialogflow.cx.v3beta1.PlaybooksClient.ListPlaybookVersionsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3beta1.PlaybooksClient.ListPlaybooksPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
+import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3beta1.CreatePlaybookRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.CreatePlaybookVersionRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeletePlaybookRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeletePlaybookVersionRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ExportPlaybookRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ExportPlaybookResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.GetPlaybookRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.GetPlaybookVersionRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ImportPlaybookRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ImportPlaybookResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.ListPlaybookVersionsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListPlaybookVersionsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.ListPlaybooksRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListPlaybooksResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.Playbook;
 import com.google.cloud.dialogflow.cx.v3beta1.PlaybookVersion;
+import com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.UpdatePlaybookRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
+import com.google.protobuf.Struct;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -69,7 +82,12 @@ import javax.annotation.Generated;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class HttpJsonPlaybooksStub extends PlaybooksStub {
-  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder()
+          .add(ImportPlaybookResponse.getDescriptor())
+          .add(ExportPlaybookResponse.getDescriptor())
+          .add(Struct.getDescriptor())
+          .build();
 
   private static final ApiMethodDescriptor<CreatePlaybookRequest, Playbook>
       createPlaybookMethodDescriptor =
@@ -212,6 +230,86 @@ public class HttpJsonPlaybooksStub extends PlaybooksStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<ExportPlaybookRequest, Operation>
+      exportPlaybookMethodDescriptor =
+          ApiMethodDescriptor.<ExportPlaybookRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Playbooks/ExportPlaybook")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ExportPlaybookRequest>newBuilder()
+                      .setPath(
+                          "/v3beta1/{name=projects/*/locations/*/agents/*/playbooks/*}:export",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportPlaybookRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportPlaybookRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ExportPlaybookRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ImportPlaybookRequest, Operation>
+      importPlaybookMethodDescriptor =
+          ApiMethodDescriptor.<ImportPlaybookRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Playbooks/ImportPlaybook")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ImportPlaybookRequest>newBuilder()
+                      .setPath(
+                          "/v3beta1/{parent=projects/*/locations/*/agents/*}/playbooks:import",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ImportPlaybookRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ImportPlaybookRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ImportPlaybookRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<UpdatePlaybookRequest, Playbook>
       updatePlaybookMethodDescriptor =
           ApiMethodDescriptor.<UpdatePlaybookRequest, Playbook>newBuilder()
@@ -319,6 +417,46 @@ public class HttpJsonPlaybooksStub extends PlaybooksStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<PlaybookVersion>newBuilder()
                       .setDefaultInstance(PlaybookVersion.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          RestorePlaybookVersionRequest, RestorePlaybookVersionResponse>
+      restorePlaybookVersionMethodDescriptor =
+          ApiMethodDescriptor
+              .<RestorePlaybookVersionRequest, RestorePlaybookVersionResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.dialogflow.cx.v3beta1.Playbooks/RestorePlaybookVersion")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RestorePlaybookVersionRequest>newBuilder()
+                      .setPath(
+                          "/v3beta1/{name=projects/*/locations/*/agents/*/playbooks/*/versions/*}:restore",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RestorePlaybookVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RestorePlaybookVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RestorePlaybookVersionResponse>newBuilder()
+                      .setDefaultInstance(RestorePlaybookVersionResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -471,11 +609,19 @@ public class HttpJsonPlaybooksStub extends PlaybooksStub {
   private final UnaryCallable<ListPlaybooksRequest, ListPlaybooksPagedResponse>
       listPlaybooksPagedCallable;
   private final UnaryCallable<GetPlaybookRequest, Playbook> getPlaybookCallable;
+  private final UnaryCallable<ExportPlaybookRequest, Operation> exportPlaybookCallable;
+  private final OperationCallable<ExportPlaybookRequest, ExportPlaybookResponse, Struct>
+      exportPlaybookOperationCallable;
+  private final UnaryCallable<ImportPlaybookRequest, Operation> importPlaybookCallable;
+  private final OperationCallable<ImportPlaybookRequest, ImportPlaybookResponse, Struct>
+      importPlaybookOperationCallable;
   private final UnaryCallable<UpdatePlaybookRequest, Playbook> updatePlaybookCallable;
   private final UnaryCallable<CreatePlaybookVersionRequest, PlaybookVersion>
       createPlaybookVersionCallable;
   private final UnaryCallable<GetPlaybookVersionRequest, PlaybookVersion>
       getPlaybookVersionCallable;
+  private final UnaryCallable<RestorePlaybookVersionRequest, RestorePlaybookVersionResponse>
+      restorePlaybookVersionCallable;
   private final UnaryCallable<ListPlaybookVersionsRequest, ListPlaybookVersionsResponse>
       listPlaybookVersionsCallable;
   private final UnaryCallable<ListPlaybookVersionsRequest, ListPlaybookVersionsPagedResponse>
@@ -487,6 +633,7 @@ public class HttpJsonPlaybooksStub extends PlaybooksStub {
   private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonPlaybooksStub create(PlaybooksStubSettings settings)
@@ -526,6 +673,41 @@ public class HttpJsonPlaybooksStub extends PlaybooksStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost("/v3beta1/{name=projects/*/operations/*}:cancel")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v3beta1/{name=projects/*/locations/*/operations/*}:cancel")
+                                .build())
+                        .build())
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v3beta1/{name=projects/*/operations/*}")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v3beta1/{name=projects/*/locations/*/operations/*}")
+                                .build())
+                        .build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder()
+                        .setGet("/v3beta1/{name=projects/*}/operations")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v3beta1/{name=projects/*/locations/*}/operations")
+                                .build())
+                        .build())
+                .build());
 
     HttpJsonCallSettings<CreatePlaybookRequest, Playbook> createPlaybookTransportSettings =
         HttpJsonCallSettings.<CreatePlaybookRequest, Playbook>newBuilder()
@@ -572,6 +754,28 @@ public class HttpJsonPlaybooksStub extends PlaybooksStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ExportPlaybookRequest, Operation> exportPlaybookTransportSettings =
+        HttpJsonCallSettings.<ExportPlaybookRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportPlaybookMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ImportPlaybookRequest, Operation> importPlaybookTransportSettings =
+        HttpJsonCallSettings.<ImportPlaybookRequest, Operation>newBuilder()
+            .setMethodDescriptor(importPlaybookMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<UpdatePlaybookRequest, Playbook> updatePlaybookTransportSettings =
         HttpJsonCallSettings.<UpdatePlaybookRequest, Playbook>newBuilder()
             .setMethodDescriptor(updatePlaybookMethodDescriptor)
@@ -599,6 +803,19 @@ public class HttpJsonPlaybooksStub extends PlaybooksStub {
         getPlaybookVersionTransportSettings =
             HttpJsonCallSettings.<GetPlaybookVersionRequest, PlaybookVersion>newBuilder()
                 .setMethodDescriptor(getPlaybookVersionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<RestorePlaybookVersionRequest, RestorePlaybookVersionResponse>
+        restorePlaybookVersionTransportSettings =
+            HttpJsonCallSettings
+                .<RestorePlaybookVersionRequest, RestorePlaybookVersionResponse>newBuilder()
+                .setMethodDescriptor(restorePlaybookVersionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .setParamsExtractor(
                     request -> {
@@ -671,6 +888,24 @@ public class HttpJsonPlaybooksStub extends PlaybooksStub {
     this.getPlaybookCallable =
         callableFactory.createUnaryCallable(
             getPlaybookTransportSettings, settings.getPlaybookSettings(), clientContext);
+    this.exportPlaybookCallable =
+        callableFactory.createUnaryCallable(
+            exportPlaybookTransportSettings, settings.exportPlaybookSettings(), clientContext);
+    this.exportPlaybookOperationCallable =
+        callableFactory.createOperationCallable(
+            exportPlaybookTransportSettings,
+            settings.exportPlaybookOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.importPlaybookCallable =
+        callableFactory.createUnaryCallable(
+            importPlaybookTransportSettings, settings.importPlaybookSettings(), clientContext);
+    this.importPlaybookOperationCallable =
+        callableFactory.createOperationCallable(
+            importPlaybookTransportSettings,
+            settings.importPlaybookOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.updatePlaybookCallable =
         callableFactory.createUnaryCallable(
             updatePlaybookTransportSettings, settings.updatePlaybookSettings(), clientContext);
@@ -683,6 +918,11 @@ public class HttpJsonPlaybooksStub extends PlaybooksStub {
         callableFactory.createUnaryCallable(
             getPlaybookVersionTransportSettings,
             settings.getPlaybookVersionSettings(),
+            clientContext);
+    this.restorePlaybookVersionCallable =
+        callableFactory.createUnaryCallable(
+            restorePlaybookVersionTransportSettings,
+            settings.restorePlaybookVersionSettings(),
             clientContext);
     this.listPlaybookVersionsCallable =
         callableFactory.createUnaryCallable(
@@ -720,14 +960,21 @@ public class HttpJsonPlaybooksStub extends PlaybooksStub {
     methodDescriptors.add(deletePlaybookMethodDescriptor);
     methodDescriptors.add(listPlaybooksMethodDescriptor);
     methodDescriptors.add(getPlaybookMethodDescriptor);
+    methodDescriptors.add(exportPlaybookMethodDescriptor);
+    methodDescriptors.add(importPlaybookMethodDescriptor);
     methodDescriptors.add(updatePlaybookMethodDescriptor);
     methodDescriptors.add(createPlaybookVersionMethodDescriptor);
     methodDescriptors.add(getPlaybookVersionMethodDescriptor);
+    methodDescriptors.add(restorePlaybookVersionMethodDescriptor);
     methodDescriptors.add(listPlaybookVersionsMethodDescriptor);
     methodDescriptors.add(deletePlaybookVersionMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
+  }
+
+  public HttpJsonOperationsStub getHttpJsonOperationsStub() {
+    return httpJsonOperationsStub;
   }
 
   @Override
@@ -757,6 +1004,28 @@ public class HttpJsonPlaybooksStub extends PlaybooksStub {
   }
 
   @Override
+  public UnaryCallable<ExportPlaybookRequest, Operation> exportPlaybookCallable() {
+    return exportPlaybookCallable;
+  }
+
+  @Override
+  public OperationCallable<ExportPlaybookRequest, ExportPlaybookResponse, Struct>
+      exportPlaybookOperationCallable() {
+    return exportPlaybookOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportPlaybookRequest, Operation> importPlaybookCallable() {
+    return importPlaybookCallable;
+  }
+
+  @Override
+  public OperationCallable<ImportPlaybookRequest, ImportPlaybookResponse, Struct>
+      importPlaybookOperationCallable() {
+    return importPlaybookOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<UpdatePlaybookRequest, Playbook> updatePlaybookCallable() {
     return updatePlaybookCallable;
   }
@@ -770,6 +1039,12 @@ public class HttpJsonPlaybooksStub extends PlaybooksStub {
   @Override
   public UnaryCallable<GetPlaybookVersionRequest, PlaybookVersion> getPlaybookVersionCallable() {
     return getPlaybookVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<RestorePlaybookVersionRequest, RestorePlaybookVersionResponse>
+      restorePlaybookVersionCallable() {
+    return restorePlaybookVersionCallable;
   }
 
   @Override

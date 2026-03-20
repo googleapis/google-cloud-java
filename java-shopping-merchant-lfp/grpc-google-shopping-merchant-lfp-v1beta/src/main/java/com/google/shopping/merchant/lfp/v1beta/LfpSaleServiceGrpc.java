@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * data for a merchant.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/lfp/v1beta/lfpsale.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class LfpSaleServiceGrpc {
 
@@ -250,8 +247,9 @@ public final class LfpSaleServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.lfp.v1beta.LfpSale insertLfpSale(
-        com.google.shopping.merchant.lfp.v1beta.InsertLfpSaleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.lfp.v1beta.InsertLfpSaleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getInsertLfpSaleMethod(), getCallOptions(), request);
     }
   }

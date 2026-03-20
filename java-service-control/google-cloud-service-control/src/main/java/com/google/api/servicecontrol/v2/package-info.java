@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,6 @@
  *
  * <p>Service Description: [Service Control API
  * v2](https://cloud.google.com/service-infrastructure/docs/service-control/access-control)
- *
- * <p>Private Preview. This feature is only available for approved services.
  *
  * <p>This API provides admission control and telemetry reporting for services that are integrated
  * with [Service Infrastructure](https://cloud.google.com/service-infrastructure).

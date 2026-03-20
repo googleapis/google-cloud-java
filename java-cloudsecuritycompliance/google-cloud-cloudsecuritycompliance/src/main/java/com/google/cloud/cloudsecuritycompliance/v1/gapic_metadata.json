@@ -1,0 +1,165 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.cloudsecuritycompliance.v1",
+  "libraryPackage": "com.google.cloud.cloudsecuritycompliance.v1",
+  "services": {
+    "Audit": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AuditClient",
+          "rpcs": {
+            "CreateFrameworkAudit": {
+              "methods": ["createFrameworkAuditAsync", "createFrameworkAuditAsync", "createFrameworkAuditAsync", "createFrameworkAuditAsync", "createFrameworkAuditOperationCallable", "createFrameworkAuditCallable"]
+            },
+            "GenerateFrameworkAuditScopeReport": {
+              "methods": ["generateFrameworkAuditScopeReport", "generateFrameworkAuditScopeReport", "generateFrameworkAuditScopeReportCallable"]
+            },
+            "GetFrameworkAudit": {
+              "methods": ["getFrameworkAudit", "getFrameworkAudit", "getFrameworkAudit", "getFrameworkAuditCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListFrameworkAudits": {
+              "methods": ["listFrameworkAudits", "listFrameworkAudits", "listFrameworkAudits", "listFrameworkAudits", "listFrameworkAuditsPagedCallable", "listFrameworkAuditsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "CmEnrollmentService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CmEnrollmentServiceClient",
+          "rpcs": {
+            "CalculateEffectiveCmEnrollment": {
+              "methods": ["calculateEffectiveCmEnrollment", "calculateEffectiveCmEnrollment", "calculateEffectiveCmEnrollment", "calculateEffectiveCmEnrollmentCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "UpdateCmEnrollment": {
+              "methods": ["updateCmEnrollment", "updateCmEnrollment", "updateCmEnrollmentCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Config": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ConfigClient",
+          "rpcs": {
+            "CreateCloudControl": {
+              "methods": ["createCloudControl", "createCloudControl", "createCloudControl", "createCloudControlCallable"]
+            },
+            "CreateFramework": {
+              "methods": ["createFramework", "createFramework", "createFramework", "createFrameworkCallable"]
+            },
+            "DeleteCloudControl": {
+              "methods": ["deleteCloudControl", "deleteCloudControl", "deleteCloudControl", "deleteCloudControlCallable"]
+            },
+            "DeleteFramework": {
+              "methods": ["deleteFramework", "deleteFramework", "deleteFramework", "deleteFrameworkCallable"]
+            },
+            "GetCloudControl": {
+              "methods": ["getCloudControl", "getCloudControl", "getCloudControl", "getCloudControlCallable"]
+            },
+            "GetFramework": {
+              "methods": ["getFramework", "getFramework", "getFramework", "getFrameworkCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListCloudControls": {
+              "methods": ["listCloudControls", "listCloudControls", "listCloudControls", "listCloudControlsPagedCallable", "listCloudControlsCallable"]
+            },
+            "ListFrameworks": {
+              "methods": ["listFrameworks", "listFrameworks", "listFrameworks", "listFrameworksPagedCallable", "listFrameworksCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "UpdateCloudControl": {
+              "methods": ["updateCloudControl", "updateCloudControl", "updateCloudControlCallable"]
+            },
+            "UpdateFramework": {
+              "methods": ["updateFramework", "updateFramework", "updateFrameworkCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Deployment": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DeploymentClient",
+          "rpcs": {
+            "CreateFrameworkDeployment": {
+              "methods": ["createFrameworkDeploymentAsync", "createFrameworkDeploymentAsync", "createFrameworkDeploymentAsync", "createFrameworkDeploymentOperationCallable", "createFrameworkDeploymentCallable"]
+            },
+            "DeleteFrameworkDeployment": {
+              "methods": ["deleteFrameworkDeploymentAsync", "deleteFrameworkDeploymentAsync", "deleteFrameworkDeploymentAsync", "deleteFrameworkDeploymentOperationCallable", "deleteFrameworkDeploymentCallable"]
+            },
+            "GetCloudControlDeployment": {
+              "methods": ["getCloudControlDeployment", "getCloudControlDeployment", "getCloudControlDeployment", "getCloudControlDeploymentCallable"]
+            },
+            "GetFrameworkDeployment": {
+              "methods": ["getFrameworkDeployment", "getFrameworkDeployment", "getFrameworkDeployment", "getFrameworkDeploymentCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListCloudControlDeployments": {
+              "methods": ["listCloudControlDeployments", "listCloudControlDeployments", "listCloudControlDeployments", "listCloudControlDeploymentsPagedCallable", "listCloudControlDeploymentsCallable"]
+            },
+            "ListFrameworkDeployments": {
+              "methods": ["listFrameworkDeployments", "listFrameworkDeployments", "listFrameworkDeployments", "listFrameworkDeploymentsPagedCallable", "listFrameworkDeploymentsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Monitoring": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "MonitoringClient",
+          "rpcs": {
+            "AggregateFrameworkComplianceReport": {
+              "methods": ["aggregateFrameworkComplianceReport", "aggregateFrameworkComplianceReport", "aggregateFrameworkComplianceReport", "aggregateFrameworkComplianceReportCallable"]
+            },
+            "FetchFrameworkComplianceReport": {
+              "methods": ["fetchFrameworkComplianceReport", "fetchFrameworkComplianceReport", "fetchFrameworkComplianceReport", "fetchFrameworkComplianceReportCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListControlComplianceSummaries": {
+              "methods": ["listControlComplianceSummaries", "listControlComplianceSummaries", "listControlComplianceSummaries", "listControlComplianceSummariesPagedCallable", "listControlComplianceSummariesCallable"]
+            },
+            "ListFindingSummaries": {
+              "methods": ["listFindingSummaries", "listFindingSummaries", "listFindingSummaries", "listFindingSummaries", "listFindingSummaries", "listFindingSummariesPagedCallable", "listFindingSummariesCallable"]
+            },
+            "ListFrameworkComplianceSummaries": {
+              "methods": ["listFrameworkComplianceSummaries", "listFrameworkComplianceSummaries", "listFrameworkComplianceSummaries", "listFrameworkComplianceSummaries", "listFrameworkComplianceSummaries", "listFrameworkComplianceSummariesPagedCallable", "listFrameworkComplianceSummariesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

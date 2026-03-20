@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,9 +39,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * * `projects/12345/locations/us-central1/backups/my-backup`
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/filestore/v1/cloud_filestore_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CloudFilestoreManagerGrpc {
 
@@ -1589,8 +1586,8 @@ public final class CloudFilestoreManagerGrpc {
      * </pre>
      */
     public com.google.cloud.filestore.v1.ListInstancesResponse listInstances(
-        com.google.cloud.filestore.v1.ListInstancesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.filestore.v1.ListInstancesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListInstancesMethod(), getCallOptions(), request);
     }
 
@@ -1602,8 +1599,8 @@ public final class CloudFilestoreManagerGrpc {
      * </pre>
      */
     public com.google.cloud.filestore.v1.Instance getInstance(
-        com.google.cloud.filestore.v1.GetInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.filestore.v1.GetInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInstanceMethod(), getCallOptions(), request);
     }
 
@@ -1618,8 +1615,9 @@ public final class CloudFilestoreManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createInstance(
-        com.google.cloud.filestore.v1.CreateInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.filestore.v1.CreateInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateInstanceMethod(), getCallOptions(), request);
     }
 
@@ -1631,8 +1629,9 @@ public final class CloudFilestoreManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateInstance(
-        com.google.cloud.filestore.v1.UpdateInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.filestore.v1.UpdateInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateInstanceMethod(), getCallOptions(), request);
     }
 
@@ -1647,8 +1646,9 @@ public final class CloudFilestoreManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation restoreInstance(
-        com.google.cloud.filestore.v1.RestoreInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.filestore.v1.RestoreInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRestoreInstanceMethod(), getCallOptions(), request);
     }
 
@@ -1660,8 +1660,9 @@ public final class CloudFilestoreManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation revertInstance(
-        com.google.cloud.filestore.v1.RevertInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.filestore.v1.RevertInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRevertInstanceMethod(), getCallOptions(), request);
     }
 
@@ -1673,8 +1674,9 @@ public final class CloudFilestoreManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteInstance(
-        com.google.cloud.filestore.v1.DeleteInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.filestore.v1.DeleteInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteInstanceMethod(), getCallOptions(), request);
     }
 
@@ -1687,8 +1689,8 @@ public final class CloudFilestoreManagerGrpc {
      * </pre>
      */
     public com.google.cloud.filestore.v1.ListSnapshotsResponse listSnapshots(
-        com.google.cloud.filestore.v1.ListSnapshotsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.filestore.v1.ListSnapshotsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSnapshotsMethod(), getCallOptions(), request);
     }
 
@@ -1700,8 +1702,8 @@ public final class CloudFilestoreManagerGrpc {
      * </pre>
      */
     public com.google.cloud.filestore.v1.Snapshot getSnapshot(
-        com.google.cloud.filestore.v1.GetSnapshotRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.filestore.v1.GetSnapshotRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSnapshotMethod(), getCallOptions(), request);
     }
 
@@ -1713,8 +1715,9 @@ public final class CloudFilestoreManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createSnapshot(
-        com.google.cloud.filestore.v1.CreateSnapshotRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.filestore.v1.CreateSnapshotRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSnapshotMethod(), getCallOptions(), request);
     }
 
@@ -1726,8 +1729,9 @@ public final class CloudFilestoreManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteSnapshot(
-        com.google.cloud.filestore.v1.DeleteSnapshotRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.filestore.v1.DeleteSnapshotRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSnapshotMethod(), getCallOptions(), request);
     }
 
@@ -1739,8 +1743,9 @@ public final class CloudFilestoreManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateSnapshot(
-        com.google.cloud.filestore.v1.UpdateSnapshotRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.filestore.v1.UpdateSnapshotRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSnapshotMethod(), getCallOptions(), request);
     }
 
@@ -1753,8 +1758,8 @@ public final class CloudFilestoreManagerGrpc {
      * </pre>
      */
     public com.google.cloud.filestore.v1.ListBackupsResponse listBackups(
-        com.google.cloud.filestore.v1.ListBackupsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.filestore.v1.ListBackupsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBackupsMethod(), getCallOptions(), request);
     }
 
@@ -1766,8 +1771,8 @@ public final class CloudFilestoreManagerGrpc {
      * </pre>
      */
     public com.google.cloud.filestore.v1.Backup getBackup(
-        com.google.cloud.filestore.v1.GetBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.filestore.v1.GetBackupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBackupMethod(), getCallOptions(), request);
     }
 
@@ -1779,8 +1784,8 @@ public final class CloudFilestoreManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createBackup(
-        com.google.cloud.filestore.v1.CreateBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.filestore.v1.CreateBackupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateBackupMethod(), getCallOptions(), request);
     }
 
@@ -1792,8 +1797,8 @@ public final class CloudFilestoreManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteBackup(
-        com.google.cloud.filestore.v1.DeleteBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.filestore.v1.DeleteBackupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteBackupMethod(), getCallOptions(), request);
     }
 
@@ -1805,8 +1810,8 @@ public final class CloudFilestoreManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateBackup(
-        com.google.cloud.filestore.v1.UpdateBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.filestore.v1.UpdateBackupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateBackupMethod(), getCallOptions(), request);
     }
 
@@ -1818,8 +1823,9 @@ public final class CloudFilestoreManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation promoteReplica(
-        com.google.cloud.filestore.v1.PromoteReplicaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.filestore.v1.PromoteReplicaRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPromoteReplicaMethod(), getCallOptions(), request);
     }
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,7 @@ public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
                   ProtoUtils.marshaller(ListKnowledgeBasesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListKnowledgeBasesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetKnowledgeBaseRequest, KnowledgeBase>
@@ -72,6 +73,7 @@ public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetKnowledgeBaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(KnowledgeBase.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateKnowledgeBaseRequest, KnowledgeBase>
@@ -82,6 +84,7 @@ public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateKnowledgeBaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(KnowledgeBase.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteKnowledgeBaseRequest, Empty>
@@ -92,6 +95,7 @@ public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteKnowledgeBaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateKnowledgeBaseRequest, KnowledgeBase>
@@ -102,6 +106,7 @@ public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateKnowledgeBaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(KnowledgeBase.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -113,6 +118,7 @@ public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -121,6 +127,7 @@ public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListKnowledgeBasesRequest, ListKnowledgeBasesResponse>

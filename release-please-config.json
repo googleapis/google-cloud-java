@@ -1,5 +1,6 @@
 {
   "release-type": "java-yoshi-mono-repo",
+  "bootstrap-sha": "601ea6a901e20e705e57c164562055dda93601de",
   "versioning": "always-bump-minor",
   "separate-pull-requests": false,
   "include-component-in-tag": false,

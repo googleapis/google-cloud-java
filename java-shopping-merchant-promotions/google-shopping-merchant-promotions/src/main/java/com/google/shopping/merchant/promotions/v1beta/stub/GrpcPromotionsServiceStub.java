@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,6 +56,7 @@ public class GrpcPromotionsServiceStub extends PromotionsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(InsertPromotionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Promotion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPromotionRequest, Promotion>
@@ -66,6 +67,7 @@ public class GrpcPromotionsServiceStub extends PromotionsServiceStub {
                   "google.shopping.merchant.promotions.v1beta.PromotionsService/GetPromotion")
               .setRequestMarshaller(ProtoUtils.marshaller(GetPromotionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Promotion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListPromotionsRequest, ListPromotionsResponse>
@@ -78,6 +80,7 @@ public class GrpcPromotionsServiceStub extends PromotionsServiceStub {
                   ProtoUtils.marshaller(ListPromotionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPromotionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<InsertPromotionRequest, Promotion> insertPromotionCallable;

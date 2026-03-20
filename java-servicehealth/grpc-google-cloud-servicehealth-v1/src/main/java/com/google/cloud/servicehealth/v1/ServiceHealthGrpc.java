@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Request service health events relevant to your Google Cloud project.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/servicehealth/v1/event_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ServiceHealthGrpc {
 
@@ -645,8 +642,9 @@ public final class ServiceHealthGrpc {
      * </pre>
      */
     public com.google.cloud.servicehealth.v1.ListEventsResponse listEvents(
-        com.google.cloud.servicehealth.v1.ListEventsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.servicehealth.v1.ListEventsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEventsMethod(), getCallOptions(), request);
     }
 
@@ -658,8 +656,8 @@ public final class ServiceHealthGrpc {
      * </pre>
      */
     public com.google.cloud.servicehealth.v1.Event getEvent(
-        com.google.cloud.servicehealth.v1.GetEventRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.servicehealth.v1.GetEventRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEventMethod(), getCallOptions(), request);
     }
 
@@ -671,8 +669,9 @@ public final class ServiceHealthGrpc {
      * </pre>
      */
     public com.google.cloud.servicehealth.v1.ListOrganizationEventsResponse listOrganizationEvents(
-        com.google.cloud.servicehealth.v1.ListOrganizationEventsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.servicehealth.v1.ListOrganizationEventsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListOrganizationEventsMethod(), getCallOptions(), request);
     }
 
@@ -685,8 +684,9 @@ public final class ServiceHealthGrpc {
      * </pre>
      */
     public com.google.cloud.servicehealth.v1.OrganizationEvent getOrganizationEvent(
-        com.google.cloud.servicehealth.v1.GetOrganizationEventRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.servicehealth.v1.GetOrganizationEventRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetOrganizationEventMethod(), getCallOptions(), request);
     }
 
@@ -700,8 +700,9 @@ public final class ServiceHealthGrpc {
      */
     public com.google.cloud.servicehealth.v1.ListOrganizationImpactsResponse
         listOrganizationImpacts(
-            com.google.cloud.servicehealth.v1.ListOrganizationImpactsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.servicehealth.v1.ListOrganizationImpactsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListOrganizationImpactsMethod(), getCallOptions(), request);
     }
 
@@ -714,8 +715,9 @@ public final class ServiceHealthGrpc {
      * </pre>
      */
     public com.google.cloud.servicehealth.v1.OrganizationImpact getOrganizationImpact(
-        com.google.cloud.servicehealth.v1.GetOrganizationImpactRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.servicehealth.v1.GetOrganizationImpactRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetOrganizationImpactMethod(), getCallOptions(), request);
     }
   }

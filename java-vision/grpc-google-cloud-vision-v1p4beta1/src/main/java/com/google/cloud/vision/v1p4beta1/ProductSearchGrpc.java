@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,9 +37,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;&#47;referenceImages/&#42;`
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/vision/v1p4beta1/product_search_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ProductSearchGrpc {
 
@@ -1895,8 +1892,9 @@ public final class ProductSearchGrpc {
      * </pre>
      */
     public com.google.cloud.vision.v1p4beta1.ProductSet createProductSet(
-        com.google.cloud.vision.v1p4beta1.CreateProductSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vision.v1p4beta1.CreateProductSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateProductSetMethod(), getCallOptions(), request);
     }
 
@@ -1911,8 +1909,9 @@ public final class ProductSearchGrpc {
      * </pre>
      */
     public com.google.cloud.vision.v1p4beta1.ListProductSetsResponse listProductSets(
-        com.google.cloud.vision.v1p4beta1.ListProductSetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vision.v1p4beta1.ListProductSetsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListProductSetsMethod(), getCallOptions(), request);
     }
 
@@ -1926,8 +1925,9 @@ public final class ProductSearchGrpc {
      * </pre>
      */
     public com.google.cloud.vision.v1p4beta1.ProductSet getProductSet(
-        com.google.cloud.vision.v1p4beta1.GetProductSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vision.v1p4beta1.GetProductSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetProductSetMethod(), getCallOptions(), request);
     }
 
@@ -1944,8 +1944,9 @@ public final class ProductSearchGrpc {
      * </pre>
      */
     public com.google.cloud.vision.v1p4beta1.ProductSet updateProductSet(
-        com.google.cloud.vision.v1p4beta1.UpdateProductSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vision.v1p4beta1.UpdateProductSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateProductSetMethod(), getCallOptions(), request);
     }
 
@@ -1959,8 +1960,9 @@ public final class ProductSearchGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteProductSet(
-        com.google.cloud.vision.v1p4beta1.DeleteProductSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vision.v1p4beta1.DeleteProductSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteProductSetMethod(), getCallOptions(), request);
     }
 
@@ -1977,8 +1979,9 @@ public final class ProductSearchGrpc {
      * </pre>
      */
     public com.google.cloud.vision.v1p4beta1.Product createProduct(
-        com.google.cloud.vision.v1p4beta1.CreateProductRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vision.v1p4beta1.CreateProductRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateProductMethod(), getCallOptions(), request);
     }
 
@@ -1992,8 +1995,9 @@ public final class ProductSearchGrpc {
      * </pre>
      */
     public com.google.cloud.vision.v1p4beta1.ListProductsResponse listProducts(
-        com.google.cloud.vision.v1p4beta1.ListProductsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vision.v1p4beta1.ListProductsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListProductsMethod(), getCallOptions(), request);
     }
 
@@ -2007,8 +2011,9 @@ public final class ProductSearchGrpc {
      * </pre>
      */
     public com.google.cloud.vision.v1p4beta1.Product getProduct(
-        com.google.cloud.vision.v1p4beta1.GetProductRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vision.v1p4beta1.GetProductRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetProductMethod(), getCallOptions(), request);
     }
 
@@ -2031,8 +2036,9 @@ public final class ProductSearchGrpc {
      * </pre>
      */
     public com.google.cloud.vision.v1p4beta1.Product updateProduct(
-        com.google.cloud.vision.v1p4beta1.UpdateProductRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vision.v1p4beta1.UpdateProductRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateProductMethod(), getCallOptions(), request);
     }
 
@@ -2047,8 +2053,9 @@ public final class ProductSearchGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteProduct(
-        com.google.cloud.vision.v1p4beta1.DeleteProductRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vision.v1p4beta1.DeleteProductRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteProductMethod(), getCallOptions(), request);
     }
 
@@ -2074,8 +2081,9 @@ public final class ProductSearchGrpc {
      * </pre>
      */
     public com.google.cloud.vision.v1p4beta1.ReferenceImage createReferenceImage(
-        com.google.cloud.vision.v1p4beta1.CreateReferenceImageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vision.v1p4beta1.CreateReferenceImageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateReferenceImageMethod(), getCallOptions(), request);
     }
 
@@ -2091,8 +2099,9 @@ public final class ProductSearchGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteReferenceImage(
-        com.google.cloud.vision.v1p4beta1.DeleteReferenceImageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vision.v1p4beta1.DeleteReferenceImageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteReferenceImageMethod(), getCallOptions(), request);
     }
 
@@ -2108,8 +2117,9 @@ public final class ProductSearchGrpc {
      * </pre>
      */
     public com.google.cloud.vision.v1p4beta1.ListReferenceImagesResponse listReferenceImages(
-        com.google.cloud.vision.v1p4beta1.ListReferenceImagesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vision.v1p4beta1.ListReferenceImagesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListReferenceImagesMethod(), getCallOptions(), request);
     }
 
@@ -2123,8 +2133,9 @@ public final class ProductSearchGrpc {
      * </pre>
      */
     public com.google.cloud.vision.v1p4beta1.ReferenceImage getReferenceImage(
-        com.google.cloud.vision.v1p4beta1.GetReferenceImageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vision.v1p4beta1.GetReferenceImageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetReferenceImageMethod(), getCallOptions(), request);
     }
 
@@ -2140,8 +2151,9 @@ public final class ProductSearchGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty addProductToProductSet(
-        com.google.cloud.vision.v1p4beta1.AddProductToProductSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vision.v1p4beta1.AddProductToProductSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAddProductToProductSetMethod(), getCallOptions(), request);
     }
 
@@ -2153,8 +2165,9 @@ public final class ProductSearchGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty removeProductFromProductSet(
-        com.google.cloud.vision.v1p4beta1.RemoveProductFromProductSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vision.v1p4beta1.RemoveProductFromProductSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRemoveProductFromProductSetMethod(), getCallOptions(), request);
     }
 
@@ -2171,8 +2184,9 @@ public final class ProductSearchGrpc {
      */
     public com.google.cloud.vision.v1p4beta1.ListProductsInProductSetResponse
         listProductsInProductSet(
-            com.google.cloud.vision.v1p4beta1.ListProductsInProductSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.vision.v1p4beta1.ListProductsInProductSetRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListProductsInProductSetMethod(), getCallOptions(), request);
     }
 
@@ -2192,8 +2206,9 @@ public final class ProductSearchGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importProductSets(
-        com.google.cloud.vision.v1p4beta1.ImportProductSetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vision.v1p4beta1.ImportProductSetsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportProductSetsMethod(), getCallOptions(), request);
     }
 
@@ -2223,8 +2238,9 @@ public final class ProductSearchGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation purgeProducts(
-        com.google.cloud.vision.v1p4beta1.PurgeProductsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vision.v1p4beta1.PurgeProductsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPurgeProductsMethod(), getCallOptions(), request);
     }
   }

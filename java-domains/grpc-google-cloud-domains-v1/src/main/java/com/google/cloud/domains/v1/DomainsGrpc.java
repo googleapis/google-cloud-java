@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The Cloud Domains API enables management and configuration of domain names.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/domains/v1/domains.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DomainsGrpc {
 
@@ -1442,8 +1439,8 @@ public final class DomainsGrpc {
      * </pre>
      */
     public com.google.cloud.domains.v1.SearchDomainsResponse searchDomains(
-        com.google.cloud.domains.v1.SearchDomainsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.domains.v1.SearchDomainsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchDomainsMethod(), getCallOptions(), request);
     }
 
@@ -1457,8 +1454,9 @@ public final class DomainsGrpc {
      */
     public com.google.cloud.domains.v1.RetrieveRegisterParametersResponse
         retrieveRegisterParameters(
-            com.google.cloud.domains.v1.RetrieveRegisterParametersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.domains.v1.RetrieveRegisterParametersRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRetrieveRegisterParametersMethod(), getCallOptions(), request);
     }
 
@@ -1480,8 +1478,8 @@ public final class DomainsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation registerDomain(
-        com.google.cloud.domains.v1.RegisterDomainRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.domains.v1.RegisterDomainRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRegisterDomainMethod(), getCallOptions(), request);
     }
 
@@ -1497,8 +1495,9 @@ public final class DomainsGrpc {
      */
     public com.google.cloud.domains.v1.RetrieveTransferParametersResponse
         retrieveTransferParameters(
-            com.google.cloud.domains.v1.RetrieveTransferParametersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.domains.v1.RetrieveTransferParametersRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRetrieveTransferParametersMethod(), getCallOptions(), request);
     }
 
@@ -1526,8 +1525,8 @@ public final class DomainsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation transferDomain(
-        com.google.cloud.domains.v1.TransferDomainRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.domains.v1.TransferDomainRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTransferDomainMethod(), getCallOptions(), request);
     }
 
@@ -1539,8 +1538,9 @@ public final class DomainsGrpc {
      * </pre>
      */
     public com.google.cloud.domains.v1.ListRegistrationsResponse listRegistrations(
-        com.google.cloud.domains.v1.ListRegistrationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.domains.v1.ListRegistrationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRegistrationsMethod(), getCallOptions(), request);
     }
 
@@ -1552,8 +1552,8 @@ public final class DomainsGrpc {
      * </pre>
      */
     public com.google.cloud.domains.v1.Registration getRegistration(
-        com.google.cloud.domains.v1.GetRegistrationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.domains.v1.GetRegistrationRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRegistrationMethod(), getCallOptions(), request);
     }
 
@@ -1569,8 +1569,9 @@ public final class DomainsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateRegistration(
-        com.google.cloud.domains.v1.UpdateRegistrationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.domains.v1.UpdateRegistrationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateRegistrationMethod(), getCallOptions(), request);
     }
 
@@ -1582,8 +1583,9 @@ public final class DomainsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation configureManagementSettings(
-        com.google.cloud.domains.v1.ConfigureManagementSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.domains.v1.ConfigureManagementSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getConfigureManagementSettingsMethod(), getCallOptions(), request);
     }
 
@@ -1595,8 +1597,9 @@ public final class DomainsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation configureDnsSettings(
-        com.google.cloud.domains.v1.ConfigureDnsSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.domains.v1.ConfigureDnsSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getConfigureDnsSettingsMethod(), getCallOptions(), request);
     }
 
@@ -1609,8 +1612,9 @@ public final class DomainsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation configureContactSettings(
-        com.google.cloud.domains.v1.ConfigureContactSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.domains.v1.ConfigureContactSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getConfigureContactSettingsMethod(), getCallOptions(), request);
     }
 
@@ -1629,8 +1633,9 @@ public final class DomainsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportRegistration(
-        com.google.cloud.domains.v1.ExportRegistrationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.domains.v1.ExportRegistrationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportRegistrationMethod(), getCallOptions(), request);
     }
 
@@ -1656,8 +1661,9 @@ public final class DomainsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteRegistration(
-        com.google.cloud.domains.v1.DeleteRegistrationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.domains.v1.DeleteRegistrationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteRegistrationMethod(), getCallOptions(), request);
     }
 
@@ -1672,8 +1678,9 @@ public final class DomainsGrpc {
      * </pre>
      */
     public com.google.cloud.domains.v1.AuthorizationCode retrieveAuthorizationCode(
-        com.google.cloud.domains.v1.RetrieveAuthorizationCodeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.domains.v1.RetrieveAuthorizationCodeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRetrieveAuthorizationCodeMethod(), getCallOptions(), request);
     }
 
@@ -1687,8 +1694,9 @@ public final class DomainsGrpc {
      * </pre>
      */
     public com.google.cloud.domains.v1.AuthorizationCode resetAuthorizationCode(
-        com.google.cloud.domains.v1.ResetAuthorizationCodeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.domains.v1.ResetAuthorizationCodeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResetAuthorizationCodeMethod(), getCallOptions(), request);
     }
   }

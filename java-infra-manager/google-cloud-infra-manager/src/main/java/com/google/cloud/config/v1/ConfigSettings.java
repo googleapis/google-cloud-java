@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,8 @@ package com.google.cloud.config.v1;
 import static com.google.cloud.config.v1.ConfigClient.ListDeploymentsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListResourceChangesPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListResourceDriftsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListResourcesPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListRevisionsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListTerraformVersionsPagedResponse;
@@ -98,8 +100,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -297,6 +299,49 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
   public UnaryCallSettings<GetTerraformVersionRequest, TerraformVersion>
       getTerraformVersionSettings() {
     return ((ConfigStubSettings) getStubSettings()).getTerraformVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listResourceChanges. */
+  public PagedCallSettings<
+          ListResourceChangesRequest, ListResourceChangesResponse, ListResourceChangesPagedResponse>
+      listResourceChangesSettings() {
+    return ((ConfigStubSettings) getStubSettings()).listResourceChangesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getResourceChange. */
+  public UnaryCallSettings<GetResourceChangeRequest, ResourceChange> getResourceChangeSettings() {
+    return ((ConfigStubSettings) getStubSettings()).getResourceChangeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listResourceDrifts. */
+  public PagedCallSettings<
+          ListResourceDriftsRequest, ListResourceDriftsResponse, ListResourceDriftsPagedResponse>
+      listResourceDriftsSettings() {
+    return ((ConfigStubSettings) getStubSettings()).listResourceDriftsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getResourceDrift. */
+  public UnaryCallSettings<GetResourceDriftRequest, ResourceDrift> getResourceDriftSettings() {
+    return ((ConfigStubSettings) getStubSettings()).getResourceDriftSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAutoMigrationConfig. */
+  public UnaryCallSettings<GetAutoMigrationConfigRequest, AutoMigrationConfig>
+      getAutoMigrationConfigSettings() {
+    return ((ConfigStubSettings) getStubSettings()).getAutoMigrationConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAutoMigrationConfig. */
+  public UnaryCallSettings<UpdateAutoMigrationConfigRequest, Operation>
+      updateAutoMigrationConfigSettings() {
+    return ((ConfigStubSettings) getStubSettings()).updateAutoMigrationConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAutoMigrationConfig. */
+  public OperationCallSettings<
+          UpdateAutoMigrationConfigRequest, AutoMigrationConfig, OperationMetadata>
+      updateAutoMigrationConfigOperationSettings() {
+    return ((ConfigStubSettings) getStubSettings()).updateAutoMigrationConfigOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -612,6 +657,53 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
     public UnaryCallSettings.Builder<GetTerraformVersionRequest, TerraformVersion>
         getTerraformVersionSettings() {
       return getStubSettingsBuilder().getTerraformVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listResourceChanges. */
+    public PagedCallSettings.Builder<
+            ListResourceChangesRequest,
+            ListResourceChangesResponse,
+            ListResourceChangesPagedResponse>
+        listResourceChangesSettings() {
+      return getStubSettingsBuilder().listResourceChangesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getResourceChange. */
+    public UnaryCallSettings.Builder<GetResourceChangeRequest, ResourceChange>
+        getResourceChangeSettings() {
+      return getStubSettingsBuilder().getResourceChangeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listResourceDrifts. */
+    public PagedCallSettings.Builder<
+            ListResourceDriftsRequest, ListResourceDriftsResponse, ListResourceDriftsPagedResponse>
+        listResourceDriftsSettings() {
+      return getStubSettingsBuilder().listResourceDriftsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getResourceDrift. */
+    public UnaryCallSettings.Builder<GetResourceDriftRequest, ResourceDrift>
+        getResourceDriftSettings() {
+      return getStubSettingsBuilder().getResourceDriftSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAutoMigrationConfig. */
+    public UnaryCallSettings.Builder<GetAutoMigrationConfigRequest, AutoMigrationConfig>
+        getAutoMigrationConfigSettings() {
+      return getStubSettingsBuilder().getAutoMigrationConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAutoMigrationConfig. */
+    public UnaryCallSettings.Builder<UpdateAutoMigrationConfigRequest, Operation>
+        updateAutoMigrationConfigSettings() {
+      return getStubSettingsBuilder().updateAutoMigrationConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAutoMigrationConfig. */
+    public OperationCallSettings.Builder<
+            UpdateAutoMigrationConfigRequest, AutoMigrationConfig, OperationMetadata>
+        updateAutoMigrationConfigOperationSettings() {
+      return getStubSettingsBuilder().updateAutoMigrationConfigOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

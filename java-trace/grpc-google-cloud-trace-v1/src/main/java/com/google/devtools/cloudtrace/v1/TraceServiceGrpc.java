@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * may span multiple services.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/devtools/cloudtrace/v1/trace.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class TraceServiceGrpc {
 
@@ -408,8 +405,9 @@ public final class TraceServiceGrpc {
      * </pre>
      */
     public com.google.devtools.cloudtrace.v1.ListTracesResponse listTraces(
-        com.google.devtools.cloudtrace.v1.ListTracesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.cloudtrace.v1.ListTracesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTracesMethod(), getCallOptions(), request);
     }
 
@@ -421,8 +419,8 @@ public final class TraceServiceGrpc {
      * </pre>
      */
     public com.google.devtools.cloudtrace.v1.Trace getTrace(
-        com.google.devtools.cloudtrace.v1.GetTraceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.cloudtrace.v1.GetTraceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTraceMethod(), getCallOptions(), request);
     }
 
@@ -438,8 +436,9 @@ public final class TraceServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty patchTraces(
-        com.google.devtools.cloudtrace.v1.PatchTracesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.cloudtrace.v1.PatchTracesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPatchTracesMethod(), getCallOptions(), request);
     }
   }

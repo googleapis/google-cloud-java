@@ -15,6 +15,12 @@
             },
             "OptimizeTours": {
               "methods": ["optimizeTours", "optimizeToursCallable"]
+            },
+            "OptimizeToursLongRunning": {
+              "methods": ["optimizeToursLongRunningAsync", "optimizeToursLongRunningOperationCallable", "optimizeToursLongRunningCallable"]
+            },
+            "OptimizeToursUri": {
+              "methods": ["optimizeToursUriAsync", "optimizeToursUriOperationCallable", "optimizeToursUriCallable"]
             }
           }
         }

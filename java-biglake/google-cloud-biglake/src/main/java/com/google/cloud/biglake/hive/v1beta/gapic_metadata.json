@@ -1,0 +1,75 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.biglake.hive.v1beta",
+  "libraryPackage": "com.google.cloud.biglake.hive.v1beta",
+  "services": {
+    "HiveMetastoreService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "HiveMetastoreServiceClient",
+          "rpcs": {
+            "BatchCreatePartitions": {
+              "methods": ["batchCreatePartitions", "batchCreatePartitions", "batchCreatePartitions", "batchCreatePartitionsCallable"]
+            },
+            "BatchDeletePartitions": {
+              "methods": ["batchDeletePartitions", "batchDeletePartitions", "batchDeletePartitions", "batchDeletePartitionsCallable"]
+            },
+            "BatchUpdatePartitions": {
+              "methods": ["batchUpdatePartitions", "batchUpdatePartitions", "batchUpdatePartitions", "batchUpdatePartitionsCallable"]
+            },
+            "CreateHiveCatalog": {
+              "methods": ["createHiveCatalog", "createHiveCatalog", "createHiveCatalog", "createHiveCatalogCallable"]
+            },
+            "CreateHiveDatabase": {
+              "methods": ["createHiveDatabase", "createHiveDatabase", "createHiveDatabase", "createHiveDatabaseCallable"]
+            },
+            "CreateHiveTable": {
+              "methods": ["createHiveTable", "createHiveTable", "createHiveTable", "createHiveTableCallable"]
+            },
+            "DeleteHiveCatalog": {
+              "methods": ["deleteHiveCatalog", "deleteHiveCatalog", "deleteHiveCatalog", "deleteHiveCatalogCallable"]
+            },
+            "DeleteHiveDatabase": {
+              "methods": ["deleteHiveDatabase", "deleteHiveDatabase", "deleteHiveDatabase", "deleteHiveDatabaseCallable"]
+            },
+            "DeleteHiveTable": {
+              "methods": ["deleteHiveTable", "deleteHiveTable", "deleteHiveTable", "deleteHiveTableCallable"]
+            },
+            "GetHiveCatalog": {
+              "methods": ["getHiveCatalog", "getHiveCatalog", "getHiveCatalog", "getHiveCatalogCallable"]
+            },
+            "GetHiveDatabase": {
+              "methods": ["getHiveDatabase", "getHiveDatabase", "getHiveDatabase", "getHiveDatabaseCallable"]
+            },
+            "GetHiveTable": {
+              "methods": ["getHiveTable", "getHiveTable", "getHiveTable", "getHiveTableCallable"]
+            },
+            "ListHiveCatalogs": {
+              "methods": ["listHiveCatalogs", "listHiveCatalogs", "listHiveCatalogs", "listHiveCatalogsPagedCallable", "listHiveCatalogsCallable"]
+            },
+            "ListHiveDatabases": {
+              "methods": ["listHiveDatabases", "listHiveDatabases", "listHiveDatabases", "listHiveDatabasesPagedCallable", "listHiveDatabasesCallable"]
+            },
+            "ListHiveTables": {
+              "methods": ["listHiveTables", "listHiveTables", "listHiveTables", "listHiveTablesPagedCallable", "listHiveTablesCallable"]
+            },
+            "ListPartitions": {
+              "methods": ["listPartitionsCallable"]
+            },
+            "UpdateHiveCatalog": {
+              "methods": ["updateHiveCatalog", "updateHiveCatalog", "updateHiveCatalogCallable"]
+            },
+            "UpdateHiveDatabase": {
+              "methods": ["updateHiveDatabase", "updateHiveDatabase", "updateHiveDatabaseCallable"]
+            },
+            "UpdateHiveTable": {
+              "methods": ["updateHiveTable", "updateHiveTable", "updateHiveTableCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

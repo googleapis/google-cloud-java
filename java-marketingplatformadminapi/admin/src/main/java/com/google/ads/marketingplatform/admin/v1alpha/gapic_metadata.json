@@ -16,11 +16,20 @@
             "DeleteAnalyticsAccountLink": {
               "methods": ["deleteAnalyticsAccountLink", "deleteAnalyticsAccountLink", "deleteAnalyticsAccountLink", "deleteAnalyticsAccountLinkCallable"]
             },
+            "FindSalesPartnerManagedClients": {
+              "methods": ["findSalesPartnerManagedClients", "findSalesPartnerManagedClientsCallable"]
+            },
             "GetOrganization": {
               "methods": ["getOrganization", "getOrganization", "getOrganization", "getOrganizationCallable"]
             },
             "ListAnalyticsAccountLinks": {
               "methods": ["listAnalyticsAccountLinks", "listAnalyticsAccountLinks", "listAnalyticsAccountLinks", "listAnalyticsAccountLinksPagedCallable", "listAnalyticsAccountLinksCallable"]
+            },
+            "ListOrganizations": {
+              "methods": ["listOrganizations", "listOrganizationsPagedCallable", "listOrganizationsCallable"]
+            },
+            "ReportPropertyUsage": {
+              "methods": ["reportPropertyUsage", "reportPropertyUsage", "reportPropertyUsageCallable"]
             },
             "SetPropertyServiceLevel": {
               "methods": ["setPropertyServiceLevel", "setPropertyServiceLevel", "setPropertyServiceLevelCallable"]

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * image with the vulnerability referring to that note.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/devtools/containeranalysis/v1beta1/grafeas/grafeas.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class GrafeasV1Beta1Grpc {
 
@@ -1290,8 +1287,8 @@ public final class GrafeasV1Beta1Grpc {
      * </pre>
      */
     public io.grafeas.v1beta1.Occurrence getOccurrence(
-        io.grafeas.v1beta1.GetOccurrenceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        io.grafeas.v1beta1.GetOccurrenceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetOccurrenceMethod(), getCallOptions(), request);
     }
 
@@ -1303,8 +1300,8 @@ public final class GrafeasV1Beta1Grpc {
      * </pre>
      */
     public io.grafeas.v1beta1.ListOccurrencesResponse listOccurrences(
-        io.grafeas.v1beta1.ListOccurrencesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        io.grafeas.v1beta1.ListOccurrencesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListOccurrencesMethod(), getCallOptions(), request);
     }
 
@@ -1318,8 +1315,8 @@ public final class GrafeasV1Beta1Grpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteOccurrence(
-        io.grafeas.v1beta1.DeleteOccurrenceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        io.grafeas.v1beta1.DeleteOccurrenceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteOccurrenceMethod(), getCallOptions(), request);
     }
 
@@ -1331,8 +1328,8 @@ public final class GrafeasV1Beta1Grpc {
      * </pre>
      */
     public io.grafeas.v1beta1.Occurrence createOccurrence(
-        io.grafeas.v1beta1.CreateOccurrenceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        io.grafeas.v1beta1.CreateOccurrenceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateOccurrenceMethod(), getCallOptions(), request);
     }
 
@@ -1344,8 +1341,8 @@ public final class GrafeasV1Beta1Grpc {
      * </pre>
      */
     public io.grafeas.v1beta1.BatchCreateOccurrencesResponse batchCreateOccurrences(
-        io.grafeas.v1beta1.BatchCreateOccurrencesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        io.grafeas.v1beta1.BatchCreateOccurrencesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchCreateOccurrencesMethod(), getCallOptions(), request);
     }
 
@@ -1357,8 +1354,8 @@ public final class GrafeasV1Beta1Grpc {
      * </pre>
      */
     public io.grafeas.v1beta1.Occurrence updateOccurrence(
-        io.grafeas.v1beta1.UpdateOccurrenceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        io.grafeas.v1beta1.UpdateOccurrenceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateOccurrenceMethod(), getCallOptions(), request);
     }
 
@@ -1371,8 +1368,8 @@ public final class GrafeasV1Beta1Grpc {
      * </pre>
      */
     public io.grafeas.v1beta1.Note getOccurrenceNote(
-        io.grafeas.v1beta1.GetOccurrenceNoteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        io.grafeas.v1beta1.GetOccurrenceNoteRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetOccurrenceNoteMethod(), getCallOptions(), request);
     }
 
@@ -1383,8 +1380,9 @@ public final class GrafeasV1Beta1Grpc {
      * Gets the specified note.
      * </pre>
      */
-    public io.grafeas.v1beta1.Note getNote(io.grafeas.v1beta1.GetNoteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public io.grafeas.v1beta1.Note getNote(io.grafeas.v1beta1.GetNoteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetNoteMethod(), getCallOptions(), request);
     }
 
@@ -1396,8 +1394,8 @@ public final class GrafeasV1Beta1Grpc {
      * </pre>
      */
     public io.grafeas.v1beta1.ListNotesResponse listNotes(
-        io.grafeas.v1beta1.ListNotesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        io.grafeas.v1beta1.ListNotesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListNotesMethod(), getCallOptions(), request);
     }
 
@@ -1408,8 +1406,9 @@ public final class GrafeasV1Beta1Grpc {
      * Deletes the specified note.
      * </pre>
      */
-    public com.google.protobuf.Empty deleteNote(io.grafeas.v1beta1.DeleteNoteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.protobuf.Empty deleteNote(io.grafeas.v1beta1.DeleteNoteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteNoteMethod(), getCallOptions(), request);
     }
 
@@ -1420,8 +1419,9 @@ public final class GrafeasV1Beta1Grpc {
      * Creates a new note.
      * </pre>
      */
-    public io.grafeas.v1beta1.Note createNote(io.grafeas.v1beta1.CreateNoteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public io.grafeas.v1beta1.Note createNote(io.grafeas.v1beta1.CreateNoteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateNoteMethod(), getCallOptions(), request);
     }
 
@@ -1433,8 +1433,8 @@ public final class GrafeasV1Beta1Grpc {
      * </pre>
      */
     public io.grafeas.v1beta1.BatchCreateNotesResponse batchCreateNotes(
-        io.grafeas.v1beta1.BatchCreateNotesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        io.grafeas.v1beta1.BatchCreateNotesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchCreateNotesMethod(), getCallOptions(), request);
     }
 
@@ -1445,8 +1445,9 @@ public final class GrafeasV1Beta1Grpc {
      * Updates the specified note.
      * </pre>
      */
-    public io.grafeas.v1beta1.Note updateNote(io.grafeas.v1beta1.UpdateNoteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public io.grafeas.v1beta1.Note updateNote(io.grafeas.v1beta1.UpdateNoteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateNoteMethod(), getCallOptions(), request);
     }
 
@@ -1460,8 +1461,8 @@ public final class GrafeasV1Beta1Grpc {
      * </pre>
      */
     public io.grafeas.v1beta1.ListNoteOccurrencesResponse listNoteOccurrences(
-        io.grafeas.v1beta1.ListNoteOccurrencesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        io.grafeas.v1beta1.ListNoteOccurrencesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListNoteOccurrencesMethod(), getCallOptions(), request);
     }
 
@@ -1473,8 +1474,9 @@ public final class GrafeasV1Beta1Grpc {
      * </pre>
      */
     public io.grafeas.v1beta1.VulnerabilityOccurrencesSummary getVulnerabilityOccurrencesSummary(
-        io.grafeas.v1beta1.GetVulnerabilityOccurrencesSummaryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        io.grafeas.v1beta1.GetVulnerabilityOccurrencesSummaryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetVulnerabilityOccurrencesSummaryMethod(), getCallOptions(), request);
     }
   }

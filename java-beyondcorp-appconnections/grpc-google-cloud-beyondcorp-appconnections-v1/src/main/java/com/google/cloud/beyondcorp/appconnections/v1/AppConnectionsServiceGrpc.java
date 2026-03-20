@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,9 +32,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * (create/read/update/delete) BeyondCorp AppConnections.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/beyondcorp/appconnections/v1/app_connections_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AppConnectionsServiceGrpc {
 
@@ -698,8 +695,9 @@ public final class AppConnectionsServiceGrpc {
      */
     public com.google.cloud.beyondcorp.appconnections.v1.ListAppConnectionsResponse
         listAppConnections(
-            com.google.cloud.beyondcorp.appconnections.v1.ListAppConnectionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.beyondcorp.appconnections.v1.ListAppConnectionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAppConnectionsMethod(), getCallOptions(), request);
     }
 
@@ -711,8 +709,9 @@ public final class AppConnectionsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.beyondcorp.appconnections.v1.AppConnection getAppConnection(
-        com.google.cloud.beyondcorp.appconnections.v1.GetAppConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.beyondcorp.appconnections.v1.GetAppConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAppConnectionMethod(), getCallOptions(), request);
     }
 
@@ -724,8 +723,9 @@ public final class AppConnectionsServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAppConnection(
-        com.google.cloud.beyondcorp.appconnections.v1.CreateAppConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.beyondcorp.appconnections.v1.CreateAppConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAppConnectionMethod(), getCallOptions(), request);
     }
 
@@ -737,8 +737,9 @@ public final class AppConnectionsServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateAppConnection(
-        com.google.cloud.beyondcorp.appconnections.v1.UpdateAppConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.beyondcorp.appconnections.v1.UpdateAppConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAppConnectionMethod(), getCallOptions(), request);
     }
 
@@ -750,8 +751,9 @@ public final class AppConnectionsServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteAppConnection(
-        com.google.cloud.beyondcorp.appconnections.v1.DeleteAppConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.beyondcorp.appconnections.v1.DeleteAppConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAppConnectionMethod(), getCallOptions(), request);
     }
 
@@ -766,8 +768,9 @@ public final class AppConnectionsServiceGrpc {
      */
     public com.google.cloud.beyondcorp.appconnections.v1.ResolveAppConnectionsResponse
         resolveAppConnections(
-            com.google.cloud.beyondcorp.appconnections.v1.ResolveAppConnectionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.beyondcorp.appconnections.v1.ResolveAppConnectionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResolveAppConnectionsMethod(), getCallOptions(), request);
     }
   }

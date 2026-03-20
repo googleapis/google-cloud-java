@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -118,6 +118,42 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> batchOptimizeToursOperationCallable()
  *           <li><p> batchOptimizeToursCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> OptimizeToursLongRunning</td>
+ *      <td><p> This is a variant of the [OptimizeTours][google.maps.routeoptimization.v1.RouteOptimization.OptimizeTours] method designed for optimizations with large timeout values. It should be preferred over the `OptimizeTours` method for optimizations that take longer than a few minutes.
+ * <p>  The returned [long-running operation][google.longrunning.Operation] (LRO) will have a name of the format `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track progress of the computation. The [metadata][google.longrunning.Operation.metadata] field type is [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursLongRunningMetadata]. The [response][google.longrunning.Operation.response] field type is [OptimizeToursResponse][google.maps.routeoptimization.v1.OptimizeToursResponse], if successful.
+ * <p>  Experimental: See https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request for more details.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> optimizeToursLongRunningAsync(OptimizeToursRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> optimizeToursLongRunningOperationCallable()
+ *           <li><p> optimizeToursLongRunningCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> OptimizeToursUri</td>
+ *      <td><p> This is a variant of the [OptimizeToursLongRunning][google.maps.routeoptimization.v1.RouteOptimization.OptimizeToursLongRunning] method designed for optimizations with large timeout values and large input/output sizes.
+ * <p>  The client specifies the URI of the `OptimizeToursRequest` stored in Google Cloud Storage and the server writes the `OptimizeToursResponse` to a client-specified Google Cloud Storage URI.
+ * <p>  This method should be preferred over the `OptimizeTours` method for optimizations that take longer than a few minutes and input/output sizes that are larger than 8MB, though it can be used for shorter and smaller optimizations as well.
+ * <p>  The returned [long-running operation][google.longrunning.Operation] (LRO) will have a name of the format `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track progress of the computation. The [metadata][google.longrunning.Operation.metadata] field type is [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursUriMetadata]. The [response][google.longrunning.Operation.response] field type is [OptimizeToursUriResponse][google.maps.routeoptimization.v1.OptimizeToursUriResponse], if successful.
+ * <p>  Experimental: See https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request for more details.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> optimizeToursUriAsync(OptimizeToursUriRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> optimizeToursUriOperationCallable()
+ *           <li><p> optimizeToursUriCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -500,6 +536,344 @@ public class RouteOptimizationClient implements BackgroundResource {
    */
   public final UnaryCallable<BatchOptimizeToursRequest, Operation> batchOptimizeToursCallable() {
     return stub.batchOptimizeToursCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * This is a variant of the
+   * [OptimizeTours][google.maps.routeoptimization.v1.RouteOptimization.OptimizeTours] method
+   * designed for optimizations with large timeout values. It should be preferred over the
+   * `OptimizeTours` method for optimizations that take longer than a few minutes.
+   *
+   * <p>The returned [long-running operation][google.longrunning.Operation] (LRO) will have a name
+   * of the format `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track
+   * progress of the computation. The [metadata][google.longrunning.Operation.metadata] field type
+   * is
+   * [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursLongRunningMetadata].
+   * The [response][google.longrunning.Operation.response] field type is
+   * [OptimizeToursResponse][google.maps.routeoptimization.v1.OptimizeToursResponse], if successful.
+   *
+   * <p>Experimental: See
+   * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request for
+   * more details.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RouteOptimizationClient routeOptimizationClient = RouteOptimizationClient.create()) {
+   *   OptimizeToursRequest request =
+   *       OptimizeToursRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setTimeout(Duration.newBuilder().build())
+   *           .setModel(ShipmentModel.newBuilder().build())
+   *           .addAllInjectedFirstSolutionRoutes(new ArrayList<ShipmentRoute>())
+   *           .setInjectedSolutionConstraint(InjectedSolutionConstraint.newBuilder().build())
+   *           .addAllRefreshDetailsRoutes(new ArrayList<ShipmentRoute>())
+   *           .setInterpretInjectedSolutionsUsingLabels(true)
+   *           .setConsiderRoadTraffic(true)
+   *           .setPopulatePolylines(true)
+   *           .setPopulateTransitionPolylines(true)
+   *           .setAllowLargeDeadlineDespiteInterruptionRisk(true)
+   *           .setUseGeodesicDistances(true)
+   *           .setGeodesicMetersPerSecond(-2129658905)
+   *           .setMaxValidationErrors(-1367418922)
+   *           .setLabel("label102727412")
+   *           .build();
+   *   OptimizeToursResponse response =
+   *       routeOptimizationClient.optimizeToursLongRunningAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<OptimizeToursResponse, OptimizeToursLongRunningMetadata>
+      optimizeToursLongRunningAsync(OptimizeToursRequest request) {
+    return optimizeToursLongRunningOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * This is a variant of the
+   * [OptimizeTours][google.maps.routeoptimization.v1.RouteOptimization.OptimizeTours] method
+   * designed for optimizations with large timeout values. It should be preferred over the
+   * `OptimizeTours` method for optimizations that take longer than a few minutes.
+   *
+   * <p>The returned [long-running operation][google.longrunning.Operation] (LRO) will have a name
+   * of the format `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track
+   * progress of the computation. The [metadata][google.longrunning.Operation.metadata] field type
+   * is
+   * [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursLongRunningMetadata].
+   * The [response][google.longrunning.Operation.response] field type is
+   * [OptimizeToursResponse][google.maps.routeoptimization.v1.OptimizeToursResponse], if successful.
+   *
+   * <p>Experimental: See
+   * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request for
+   * more details.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RouteOptimizationClient routeOptimizationClient = RouteOptimizationClient.create()) {
+   *   OptimizeToursRequest request =
+   *       OptimizeToursRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setTimeout(Duration.newBuilder().build())
+   *           .setModel(ShipmentModel.newBuilder().build())
+   *           .addAllInjectedFirstSolutionRoutes(new ArrayList<ShipmentRoute>())
+   *           .setInjectedSolutionConstraint(InjectedSolutionConstraint.newBuilder().build())
+   *           .addAllRefreshDetailsRoutes(new ArrayList<ShipmentRoute>())
+   *           .setInterpretInjectedSolutionsUsingLabels(true)
+   *           .setConsiderRoadTraffic(true)
+   *           .setPopulatePolylines(true)
+   *           .setPopulateTransitionPolylines(true)
+   *           .setAllowLargeDeadlineDespiteInterruptionRisk(true)
+   *           .setUseGeodesicDistances(true)
+   *           .setGeodesicMetersPerSecond(-2129658905)
+   *           .setMaxValidationErrors(-1367418922)
+   *           .setLabel("label102727412")
+   *           .build();
+   *   OperationFuture<OptimizeToursResponse, OptimizeToursLongRunningMetadata> future =
+   *       routeOptimizationClient.optimizeToursLongRunningOperationCallable().futureCall(request);
+   *   // Do something.
+   *   OptimizeToursResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          OptimizeToursRequest, OptimizeToursResponse, OptimizeToursLongRunningMetadata>
+      optimizeToursLongRunningOperationCallable() {
+    return stub.optimizeToursLongRunningOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * This is a variant of the
+   * [OptimizeTours][google.maps.routeoptimization.v1.RouteOptimization.OptimizeTours] method
+   * designed for optimizations with large timeout values. It should be preferred over the
+   * `OptimizeTours` method for optimizations that take longer than a few minutes.
+   *
+   * <p>The returned [long-running operation][google.longrunning.Operation] (LRO) will have a name
+   * of the format `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track
+   * progress of the computation. The [metadata][google.longrunning.Operation.metadata] field type
+   * is
+   * [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursLongRunningMetadata].
+   * The [response][google.longrunning.Operation.response] field type is
+   * [OptimizeToursResponse][google.maps.routeoptimization.v1.OptimizeToursResponse], if successful.
+   *
+   * <p>Experimental: See
+   * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request for
+   * more details.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RouteOptimizationClient routeOptimizationClient = RouteOptimizationClient.create()) {
+   *   OptimizeToursRequest request =
+   *       OptimizeToursRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setTimeout(Duration.newBuilder().build())
+   *           .setModel(ShipmentModel.newBuilder().build())
+   *           .addAllInjectedFirstSolutionRoutes(new ArrayList<ShipmentRoute>())
+   *           .setInjectedSolutionConstraint(InjectedSolutionConstraint.newBuilder().build())
+   *           .addAllRefreshDetailsRoutes(new ArrayList<ShipmentRoute>())
+   *           .setInterpretInjectedSolutionsUsingLabels(true)
+   *           .setConsiderRoadTraffic(true)
+   *           .setPopulatePolylines(true)
+   *           .setPopulateTransitionPolylines(true)
+   *           .setAllowLargeDeadlineDespiteInterruptionRisk(true)
+   *           .setUseGeodesicDistances(true)
+   *           .setGeodesicMetersPerSecond(-2129658905)
+   *           .setMaxValidationErrors(-1367418922)
+   *           .setLabel("label102727412")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       routeOptimizationClient.optimizeToursLongRunningCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<OptimizeToursRequest, Operation> optimizeToursLongRunningCallable() {
+    return stub.optimizeToursLongRunningCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * This is a variant of the
+   * [OptimizeToursLongRunning][google.maps.routeoptimization.v1.RouteOptimization.OptimizeToursLongRunning]
+   * method designed for optimizations with large timeout values and large input/output sizes.
+   *
+   * <p>The client specifies the URI of the `OptimizeToursRequest` stored in Google Cloud Storage
+   * and the server writes the `OptimizeToursResponse` to a client-specified Google Cloud Storage
+   * URI.
+   *
+   * <p>This method should be preferred over the `OptimizeTours` method for optimizations that take
+   * longer than a few minutes and input/output sizes that are larger than 8MB, though it can be
+   * used for shorter and smaller optimizations as well.
+   *
+   * <p>The returned [long-running operation][google.longrunning.Operation] (LRO) will have a name
+   * of the format `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track
+   * progress of the computation. The [metadata][google.longrunning.Operation.metadata] field type
+   * is
+   * [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursUriMetadata].
+   * The [response][google.longrunning.Operation.response] field type is
+   * [OptimizeToursUriResponse][google.maps.routeoptimization.v1.OptimizeToursUriResponse], if
+   * successful.
+   *
+   * <p>Experimental: See
+   * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request for
+   * more details.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RouteOptimizationClient routeOptimizationClient = RouteOptimizationClient.create()) {
+   *   OptimizeToursUriRequest request =
+   *       OptimizeToursUriRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setInput(Uri.newBuilder().build())
+   *           .setOutput(Uri.newBuilder().build())
+   *           .build();
+   *   OptimizeToursUriResponse response =
+   *       routeOptimizationClient.optimizeToursUriAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<OptimizeToursUriResponse, OptimizeToursUriMetadata>
+      optimizeToursUriAsync(OptimizeToursUriRequest request) {
+    return optimizeToursUriOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * This is a variant of the
+   * [OptimizeToursLongRunning][google.maps.routeoptimization.v1.RouteOptimization.OptimizeToursLongRunning]
+   * method designed for optimizations with large timeout values and large input/output sizes.
+   *
+   * <p>The client specifies the URI of the `OptimizeToursRequest` stored in Google Cloud Storage
+   * and the server writes the `OptimizeToursResponse` to a client-specified Google Cloud Storage
+   * URI.
+   *
+   * <p>This method should be preferred over the `OptimizeTours` method for optimizations that take
+   * longer than a few minutes and input/output sizes that are larger than 8MB, though it can be
+   * used for shorter and smaller optimizations as well.
+   *
+   * <p>The returned [long-running operation][google.longrunning.Operation] (LRO) will have a name
+   * of the format `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track
+   * progress of the computation. The [metadata][google.longrunning.Operation.metadata] field type
+   * is
+   * [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursUriMetadata].
+   * The [response][google.longrunning.Operation.response] field type is
+   * [OptimizeToursUriResponse][google.maps.routeoptimization.v1.OptimizeToursUriResponse], if
+   * successful.
+   *
+   * <p>Experimental: See
+   * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request for
+   * more details.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RouteOptimizationClient routeOptimizationClient = RouteOptimizationClient.create()) {
+   *   OptimizeToursUriRequest request =
+   *       OptimizeToursUriRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setInput(Uri.newBuilder().build())
+   *           .setOutput(Uri.newBuilder().build())
+   *           .build();
+   *   OperationFuture<OptimizeToursUriResponse, OptimizeToursUriMetadata> future =
+   *       routeOptimizationClient.optimizeToursUriOperationCallable().futureCall(request);
+   *   // Do something.
+   *   OptimizeToursUriResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          OptimizeToursUriRequest, OptimizeToursUriResponse, OptimizeToursUriMetadata>
+      optimizeToursUriOperationCallable() {
+    return stub.optimizeToursUriOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * This is a variant of the
+   * [OptimizeToursLongRunning][google.maps.routeoptimization.v1.RouteOptimization.OptimizeToursLongRunning]
+   * method designed for optimizations with large timeout values and large input/output sizes.
+   *
+   * <p>The client specifies the URI of the `OptimizeToursRequest` stored in Google Cloud Storage
+   * and the server writes the `OptimizeToursResponse` to a client-specified Google Cloud Storage
+   * URI.
+   *
+   * <p>This method should be preferred over the `OptimizeTours` method for optimizations that take
+   * longer than a few minutes and input/output sizes that are larger than 8MB, though it can be
+   * used for shorter and smaller optimizations as well.
+   *
+   * <p>The returned [long-running operation][google.longrunning.Operation] (LRO) will have a name
+   * of the format `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track
+   * progress of the computation. The [metadata][google.longrunning.Operation.metadata] field type
+   * is
+   * [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursUriMetadata].
+   * The [response][google.longrunning.Operation.response] field type is
+   * [OptimizeToursUriResponse][google.maps.routeoptimization.v1.OptimizeToursUriResponse], if
+   * successful.
+   *
+   * <p>Experimental: See
+   * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request for
+   * more details.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RouteOptimizationClient routeOptimizationClient = RouteOptimizationClient.create()) {
+   *   OptimizeToursUriRequest request =
+   *       OptimizeToursUriRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setInput(Uri.newBuilder().build())
+   *           .setOutput(Uri.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       routeOptimizationClient.optimizeToursUriCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<OptimizeToursUriRequest, Operation> optimizeToursUriCallable() {
+    return stub.optimizeToursUriCallable();
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,7 +89,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> VerifyAttestation</td>
- *      <td><p> Verifies the provided attestation info, returning a signed OIDC token.</td>
+ *      <td><p> Verifies the provided attestation info, returning a signed attestation token.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -102,8 +102,37 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> VerifyConfidentialSpace</td>
+ *      <td><p> Verifies whether the provided attestation info is valid, returning a signed attestation token if so.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> verifyConfidentialSpace(VerifyConfidentialSpaceRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> verifyConfidentialSpaceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> VerifyConfidentialGke</td>
+ *      <td><p> Verifies the provided Confidential GKE attestation info, returning a signed OIDC token.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> verifyConfidentialGke(VerifyConfidentialGkeRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> verifyConfidentialGkeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.This method can be called in two ways:
+ * <p> &#42;   &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;   &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or other locations specifically visibleto the project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -367,7 +396,7 @@ public class ConfidentialComputingClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Verifies the provided attestation info, returning a signed OIDC token.
+   * Verifies the provided attestation info, returning a signed attestation token.
    *
    * <p>Sample code:
    *
@@ -401,7 +430,7 @@ public class ConfidentialComputingClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Verifies the provided attestation info, returning a signed OIDC token.
+   * Verifies the provided attestation info, returning a signed attestation token.
    *
    * <p>Sample code:
    *
@@ -436,7 +465,151 @@ public class ConfidentialComputingClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Verifies whether the provided attestation info is valid, returning a signed attestation token
+   * if so.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfidentialComputingClient confidentialComputingClient =
+   *     ConfidentialComputingClient.create()) {
+   *   VerifyConfidentialSpaceRequest request =
+   *       VerifyConfidentialSpaceRequest.newBuilder()
+   *           .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
+   *           .setGcpCredentials(GcpCredentials.newBuilder().build())
+   *           .addAllSignedEntities(new ArrayList<SignedEntity>())
+   *           .setGceShieldedIdentity(GceShieldedIdentity.newBuilder().build())
+   *           .setOptions(
+   *               VerifyConfidentialSpaceRequest.ConfidentialSpaceOptions.newBuilder().build())
+   *           .setNvidiaAttestation(NvidiaAttestation.newBuilder().build())
+   *           .build();
+   *   VerifyConfidentialSpaceResponse response =
+   *       confidentialComputingClient.verifyConfidentialSpace(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final VerifyConfidentialSpaceResponse verifyConfidentialSpace(
+      VerifyConfidentialSpaceRequest request) {
+    return verifyConfidentialSpaceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Verifies whether the provided attestation info is valid, returning a signed attestation token
+   * if so.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfidentialComputingClient confidentialComputingClient =
+   *     ConfidentialComputingClient.create()) {
+   *   VerifyConfidentialSpaceRequest request =
+   *       VerifyConfidentialSpaceRequest.newBuilder()
+   *           .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
+   *           .setGcpCredentials(GcpCredentials.newBuilder().build())
+   *           .addAllSignedEntities(new ArrayList<SignedEntity>())
+   *           .setGceShieldedIdentity(GceShieldedIdentity.newBuilder().build())
+   *           .setOptions(
+   *               VerifyConfidentialSpaceRequest.ConfidentialSpaceOptions.newBuilder().build())
+   *           .setNvidiaAttestation(NvidiaAttestation.newBuilder().build())
+   *           .build();
+   *   ApiFuture<VerifyConfidentialSpaceResponse> future =
+   *       confidentialComputingClient.verifyConfidentialSpaceCallable().futureCall(request);
+   *   // Do something.
+   *   VerifyConfidentialSpaceResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<VerifyConfidentialSpaceRequest, VerifyConfidentialSpaceResponse>
+      verifyConfidentialSpaceCallable() {
+    return stub.verifyConfidentialSpaceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Verifies the provided Confidential GKE attestation info, returning a signed OIDC token.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfidentialComputingClient confidentialComputingClient =
+   *     ConfidentialComputingClient.create()) {
+   *   VerifyConfidentialGkeRequest request =
+   *       VerifyConfidentialGkeRequest.newBuilder()
+   *           .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
+   *           .setOptions(VerifyConfidentialGkeRequest.ConfidentialGkeOptions.newBuilder().build())
+   *           .build();
+   *   VerifyConfidentialGkeResponse response =
+   *       confidentialComputingClient.verifyConfidentialGke(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final VerifyConfidentialGkeResponse verifyConfidentialGke(
+      VerifyConfidentialGkeRequest request) {
+    return verifyConfidentialGkeCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Verifies the provided Confidential GKE attestation info, returning a signed OIDC token.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfidentialComputingClient confidentialComputingClient =
+   *     ConfidentialComputingClient.create()) {
+   *   VerifyConfidentialGkeRequest request =
+   *       VerifyConfidentialGkeRequest.newBuilder()
+   *           .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
+   *           .setOptions(VerifyConfidentialGkeRequest.ConfidentialGkeOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<VerifyConfidentialGkeResponse> future =
+   *       confidentialComputingClient.verifyConfidentialGkeCallable().futureCall(request);
+   *   // Do something.
+   *   VerifyConfidentialGkeResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<VerifyConfidentialGkeRequest, VerifyConfidentialGkeResponse>
+      verifyConfidentialGkeCallable() {
+    return stub.verifyConfidentialGkeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *
@@ -470,7 +643,13 @@ public class ConfidentialComputingClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *
@@ -505,7 +684,13 @@ public class ConfidentialComputingClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.
+   * Lists information about the supported locations for this service.This method can be called in
+   * two ways:
+   *
+   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
+   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
+   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
+   * other locations specifically visibleto the project.
    *
    * <p>Sample code:
    *

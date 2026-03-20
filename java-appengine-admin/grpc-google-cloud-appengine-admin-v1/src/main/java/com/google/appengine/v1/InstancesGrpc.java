@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Manages instances of a version.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/appengine/v1/appengine.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class InstancesGrpc {
 
@@ -483,8 +480,8 @@ public final class InstancesGrpc {
      * </pre>
      */
     public com.google.appengine.v1.ListInstancesResponse listInstances(
-        com.google.appengine.v1.ListInstancesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.ListInstancesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListInstancesMethod(), getCallOptions(), request);
     }
 
@@ -496,8 +493,8 @@ public final class InstancesGrpc {
      * </pre>
      */
     public com.google.appengine.v1.Instance getInstance(
-        com.google.appengine.v1.GetInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.GetInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInstanceMethod(), getCallOptions(), request);
     }
 
@@ -518,8 +515,8 @@ public final class InstancesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteInstance(
-        com.google.appengine.v1.DeleteInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.DeleteInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteInstanceMethod(), getCallOptions(), request);
     }
 
@@ -537,8 +534,8 @@ public final class InstancesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation debugInstance(
-        com.google.appengine.v1.DebugInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.DebugInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDebugInstanceMethod(), getCallOptions(), request);
     }
   }

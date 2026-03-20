@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,6 +51,7 @@ public class GrpcRoutesStub extends RoutesStub {
                   ProtoUtils.marshaller(ComputeRoutesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ComputeRoutesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ComputeRouteMatrixRequest, RouteMatrixElement>
@@ -61,6 +62,7 @@ public class GrpcRoutesStub extends RoutesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ComputeRouteMatrixRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RouteMatrixElement.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ComputeRoutesRequest, ComputeRoutesResponse> computeRoutesCallable;

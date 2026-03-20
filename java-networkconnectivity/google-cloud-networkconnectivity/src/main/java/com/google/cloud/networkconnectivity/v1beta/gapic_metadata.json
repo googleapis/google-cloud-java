@@ -1,0 +1,261 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.networkconnectivity.v1beta",
+  "libraryPackage": "com.google.cloud.networkconnectivity.v1beta",
+  "services": {
+    "DataTransferService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DataTransferServiceClient",
+          "rpcs": {
+            "CreateDestination": {
+              "methods": ["createDestinationAsync", "createDestinationAsync", "createDestinationAsync", "createDestinationOperationCallable", "createDestinationCallable"]
+            },
+            "CreateMulticloudDataTransferConfig": {
+              "methods": ["createMulticloudDataTransferConfigAsync", "createMulticloudDataTransferConfigAsync", "createMulticloudDataTransferConfigAsync", "createMulticloudDataTransferConfigOperationCallable", "createMulticloudDataTransferConfigCallable"]
+            },
+            "DeleteDestination": {
+              "methods": ["deleteDestinationAsync", "deleteDestinationAsync", "deleteDestinationAsync", "deleteDestinationOperationCallable", "deleteDestinationCallable"]
+            },
+            "DeleteMulticloudDataTransferConfig": {
+              "methods": ["deleteMulticloudDataTransferConfigAsync", "deleteMulticloudDataTransferConfigAsync", "deleteMulticloudDataTransferConfigAsync", "deleteMulticloudDataTransferConfigOperationCallable", "deleteMulticloudDataTransferConfigCallable"]
+            },
+            "GetDestination": {
+              "methods": ["getDestination", "getDestination", "getDestination", "getDestinationCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetMulticloudDataTransferConfig": {
+              "methods": ["getMulticloudDataTransferConfig", "getMulticloudDataTransferConfig", "getMulticloudDataTransferConfig", "getMulticloudDataTransferConfigCallable"]
+            },
+            "GetMulticloudDataTransferSupportedService": {
+              "methods": ["getMulticloudDataTransferSupportedService", "getMulticloudDataTransferSupportedService", "getMulticloudDataTransferSupportedService", "getMulticloudDataTransferSupportedServiceCallable"]
+            },
+            "ListDestinations": {
+              "methods": ["listDestinations", "listDestinations", "listDestinations", "listDestinationsPagedCallable", "listDestinationsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListMulticloudDataTransferConfigs": {
+              "methods": ["listMulticloudDataTransferConfigs", "listMulticloudDataTransferConfigs", "listMulticloudDataTransferConfigs", "listMulticloudDataTransferConfigsPagedCallable", "listMulticloudDataTransferConfigsCallable"]
+            },
+            "ListMulticloudDataTransferSupportedServices": {
+              "methods": ["listMulticloudDataTransferSupportedServices", "listMulticloudDataTransferSupportedServices", "listMulticloudDataTransferSupportedServices", "listMulticloudDataTransferSupportedServicesPagedCallable", "listMulticloudDataTransferSupportedServicesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateDestination": {
+              "methods": ["updateDestinationAsync", "updateDestinationAsync", "updateDestinationOperationCallable", "updateDestinationCallable"]
+            },
+            "UpdateMulticloudDataTransferConfig": {
+              "methods": ["updateMulticloudDataTransferConfigAsync", "updateMulticloudDataTransferConfigAsync", "updateMulticloudDataTransferConfigOperationCallable", "updateMulticloudDataTransferConfigCallable"]
+            }
+          }
+        }
+      }
+    },
+    "HubService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "HubServiceClient",
+          "rpcs": {
+            "AcceptHubSpoke": {
+              "methods": ["acceptHubSpokeAsync", "acceptHubSpokeAsync", "acceptHubSpokeAsync", "acceptHubSpokeAsync", "acceptHubSpokeAsync", "acceptHubSpokeOperationCallable", "acceptHubSpokeCallable"]
+            },
+            "AcceptSpokeUpdate": {
+              "methods": ["acceptSpokeUpdateAsync", "acceptSpokeUpdateAsync", "acceptSpokeUpdateAsync", "acceptSpokeUpdateAsync", "acceptSpokeUpdateAsync", "acceptSpokeUpdateOperationCallable", "acceptSpokeUpdateCallable"]
+            },
+            "CreateGatewayAdvertisedRoute": {
+              "methods": ["createGatewayAdvertisedRouteAsync", "createGatewayAdvertisedRouteAsync", "createGatewayAdvertisedRouteAsync", "createGatewayAdvertisedRouteOperationCallable", "createGatewayAdvertisedRouteCallable"]
+            },
+            "CreateHub": {
+              "methods": ["createHubAsync", "createHubAsync", "createHubAsync", "createHubOperationCallable", "createHubCallable"]
+            },
+            "CreateSpoke": {
+              "methods": ["createSpokeAsync", "createSpokeAsync", "createSpokeAsync", "createSpokeOperationCallable", "createSpokeCallable"]
+            },
+            "DeleteGatewayAdvertisedRoute": {
+              "methods": ["deleteGatewayAdvertisedRouteAsync", "deleteGatewayAdvertisedRouteAsync", "deleteGatewayAdvertisedRouteAsync", "deleteGatewayAdvertisedRouteOperationCallable", "deleteGatewayAdvertisedRouteCallable"]
+            },
+            "DeleteHub": {
+              "methods": ["deleteHubAsync", "deleteHubAsync", "deleteHubAsync", "deleteHubOperationCallable", "deleteHubCallable"]
+            },
+            "DeleteSpoke": {
+              "methods": ["deleteSpokeAsync", "deleteSpokeAsync", "deleteSpokeAsync", "deleteSpokeOperationCallable", "deleteSpokeCallable"]
+            },
+            "GetGatewayAdvertisedRoute": {
+              "methods": ["getGatewayAdvertisedRoute", "getGatewayAdvertisedRoute", "getGatewayAdvertisedRoute", "getGatewayAdvertisedRouteCallable"]
+            },
+            "GetGroup": {
+              "methods": ["getGroup", "getGroup", "getGroup", "getGroupCallable"]
+            },
+            "GetHub": {
+              "methods": ["getHub", "getHub", "getHub", "getHubCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetRoute": {
+              "methods": ["getRoute", "getRoute", "getRoute", "getRouteCallable"]
+            },
+            "GetRouteTable": {
+              "methods": ["getRouteTable", "getRouteTable", "getRouteTable", "getRouteTableCallable"]
+            },
+            "GetSpoke": {
+              "methods": ["getSpoke", "getSpoke", "getSpoke", "getSpokeCallable"]
+            },
+            "ListGatewayAdvertisedRoutes": {
+              "methods": ["listGatewayAdvertisedRoutes", "listGatewayAdvertisedRoutes", "listGatewayAdvertisedRoutes", "listGatewayAdvertisedRoutesPagedCallable", "listGatewayAdvertisedRoutesCallable"]
+            },
+            "ListGroups": {
+              "methods": ["listGroups", "listGroups", "listGroups", "listGroupsPagedCallable", "listGroupsCallable"]
+            },
+            "ListHubSpokes": {
+              "methods": ["listHubSpokes", "listHubSpokes", "listHubSpokes", "listHubSpokesPagedCallable", "listHubSpokesCallable"]
+            },
+            "ListHubs": {
+              "methods": ["listHubs", "listHubs", "listHubs", "listHubsPagedCallable", "listHubsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListRouteTables": {
+              "methods": ["listRouteTables", "listRouteTables", "listRouteTables", "listRouteTablesPagedCallable", "listRouteTablesCallable"]
+            },
+            "ListRoutes": {
+              "methods": ["listRoutes", "listRoutes", "listRoutes", "listRoutesPagedCallable", "listRoutesCallable"]
+            },
+            "ListSpokes": {
+              "methods": ["listSpokes", "listSpokes", "listSpokes", "listSpokesPagedCallable", "listSpokesCallable"]
+            },
+            "QueryHubStatus": {
+              "methods": ["queryHubStatus", "queryHubStatus", "queryHubStatus", "queryHubStatusPagedCallable", "queryHubStatusCallable"]
+            },
+            "RejectHubSpoke": {
+              "methods": ["rejectHubSpokeAsync", "rejectHubSpokeAsync", "rejectHubSpokeAsync", "rejectHubSpokeAsync", "rejectHubSpokeAsync", "rejectHubSpokeOperationCallable", "rejectHubSpokeCallable"]
+            },
+            "RejectSpokeUpdate": {
+              "methods": ["rejectSpokeUpdateAsync", "rejectSpokeUpdateAsync", "rejectSpokeUpdateAsync", "rejectSpokeUpdateAsync", "rejectSpokeUpdateAsync", "rejectSpokeUpdateOperationCallable", "rejectSpokeUpdateCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateGatewayAdvertisedRoute": {
+              "methods": ["updateGatewayAdvertisedRouteAsync", "updateGatewayAdvertisedRouteAsync", "updateGatewayAdvertisedRouteOperationCallable", "updateGatewayAdvertisedRouteCallable"]
+            },
+            "UpdateGroup": {
+              "methods": ["updateGroupAsync", "updateGroupAsync", "updateGroupOperationCallable", "updateGroupCallable"]
+            },
+            "UpdateHub": {
+              "methods": ["updateHubAsync", "updateHubAsync", "updateHubOperationCallable", "updateHubCallable"]
+            },
+            "UpdateSpoke": {
+              "methods": ["updateSpokeAsync", "updateSpokeAsync", "updateSpokeOperationCallable", "updateSpokeCallable"]
+            }
+          }
+        }
+      }
+    },
+    "PolicyBasedRoutingService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PolicyBasedRoutingServiceClient",
+          "rpcs": {
+            "CreatePolicyBasedRoute": {
+              "methods": ["createPolicyBasedRouteAsync", "createPolicyBasedRouteAsync", "createPolicyBasedRouteAsync", "createPolicyBasedRouteOperationCallable", "createPolicyBasedRouteCallable"]
+            },
+            "DeletePolicyBasedRoute": {
+              "methods": ["deletePolicyBasedRouteAsync", "deletePolicyBasedRouteAsync", "deletePolicyBasedRouteAsync", "deletePolicyBasedRouteOperationCallable", "deletePolicyBasedRouteCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetPolicyBasedRoute": {
+              "methods": ["getPolicyBasedRoute", "getPolicyBasedRoute", "getPolicyBasedRoute", "getPolicyBasedRouteCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListPolicyBasedRoutes": {
+              "methods": ["listPolicyBasedRoutes", "listPolicyBasedRoutes", "listPolicyBasedRoutes", "listPolicyBasedRoutesPagedCallable", "listPolicyBasedRoutesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "TransportManager": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TransportManagerClient",
+          "rpcs": {
+            "CreateTransport": {
+              "methods": ["createTransportAsync", "createTransportAsync", "createTransportAsync", "createTransportOperationCallable", "createTransportCallable"]
+            },
+            "DeleteTransport": {
+              "methods": ["deleteTransportAsync", "deleteTransportAsync", "deleteTransportAsync", "deleteTransportOperationCallable", "deleteTransportCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetRemoteTransportProfile": {
+              "methods": ["getRemoteTransportProfile", "getRemoteTransportProfile", "getRemoteTransportProfile", "getRemoteTransportProfileCallable"]
+            },
+            "GetStatus": {
+              "methods": ["getStatus", "getStatus", "getStatus", "getStatusCallable"]
+            },
+            "GetTransport": {
+              "methods": ["getTransport", "getTransport", "getTransport", "getTransportCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListRemoteTransportProfiles": {
+              "methods": ["listRemoteTransportProfiles", "listRemoteTransportProfiles", "listRemoteTransportProfiles", "listRemoteTransportProfilesPagedCallable", "listRemoteTransportProfilesCallable"]
+            },
+            "ListTransports": {
+              "methods": ["listTransports", "listTransports", "listTransports", "listTransportsPagedCallable", "listTransportsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateTransport": {
+              "methods": ["updateTransportAsync", "updateTransportAsync", "updateTransportOperationCallable", "updateTransportCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

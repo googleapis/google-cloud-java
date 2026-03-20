@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,9 @@ public class SyncGetVpcFlowLogsConfigString {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (VpcFlowLogsServiceClient vpcFlowLogsServiceClient = VpcFlowLogsServiceClient.create()) {
       String name =
-          VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]").toString();
+          VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+                  "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
+              .toString();
       VpcFlowLogsConfig response = vpcFlowLogsServiceClient.getVpcFlowLogsConfig(name);
     }
   }

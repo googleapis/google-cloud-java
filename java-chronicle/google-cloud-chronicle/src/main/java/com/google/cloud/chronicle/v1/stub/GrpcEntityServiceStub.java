@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,6 +55,7 @@ public class GrpcEntityServiceStub extends EntityServiceStub {
               .setFullMethodName("google.cloud.chronicle.v1.EntityService/GetWatchlist")
               .setRequestMarshaller(ProtoUtils.marshaller(GetWatchlistRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Watchlist.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListWatchlistsRequest, ListWatchlistsResponse>
@@ -66,6 +67,7 @@ public class GrpcEntityServiceStub extends EntityServiceStub {
                   ProtoUtils.marshaller(ListWatchlistsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListWatchlistsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateWatchlistRequest, Watchlist>
@@ -76,6 +78,7 @@ public class GrpcEntityServiceStub extends EntityServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateWatchlistRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Watchlist.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateWatchlistRequest, Watchlist>
@@ -86,6 +89,7 @@ public class GrpcEntityServiceStub extends EntityServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateWatchlistRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Watchlist.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteWatchlistRequest, Empty>
@@ -96,6 +100,7 @@ public class GrpcEntityServiceStub extends EntityServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteWatchlistRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetWatchlistRequest, Watchlist> getWatchlistCallable;

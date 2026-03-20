@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ import com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient;
 import com.google.cloudbuild.v1.Build;
 import com.google.cloudbuild.v1.BuildOperationMetadata;
 import com.google.cloudbuild.v1.CreateBuildRequest;
-import com.google.cloudbuild.v1.LocationName;
+import com.google.cloudbuild.v1.ProjectName;
 
 public class AsyncCreateBuildLRO {
 
@@ -39,7 +39,7 @@ public class AsyncCreateBuildLRO {
     try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
       CreateBuildRequest request =
           CreateBuildRequest.newBuilder()
-              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setParent(ProjectName.of("[PROJECT]").toString())
               .setProjectId("projectId-894832108")
               .setBuild(Build.newBuilder().build())
               .build();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -95,8 +95,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -193,6 +193,29 @@ public class LivestreamServiceSettings extends ClientSettings<LivestreamServiceS
     return ((LivestreamServiceStubSettings) getStubSettings()).stopChannelOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to startDistribution. */
+  public UnaryCallSettings<StartDistributionRequest, Operation> startDistributionSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).startDistributionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to startDistribution. */
+  public OperationCallSettings<
+          StartDistributionRequest, ChannelOperationResponse, OperationMetadata>
+      startDistributionOperationSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).startDistributionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to stopDistribution. */
+  public UnaryCallSettings<StopDistributionRequest, Operation> stopDistributionSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).stopDistributionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to stopDistribution. */
+  public OperationCallSettings<StopDistributionRequest, ChannelOperationResponse, OperationMetadata>
+      stopDistributionOperationSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).stopDistributionOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to createInput. */
   public UnaryCallSettings<CreateInputRequest, Operation> createInputSettings() {
     return ((LivestreamServiceStubSettings) getStubSettings()).createInputSettings();
@@ -235,6 +258,11 @@ public class LivestreamServiceSettings extends ClientSettings<LivestreamServiceS
   public OperationCallSettings<UpdateInputRequest, Input, OperationMetadata>
       updateInputOperationSettings() {
     return ((LivestreamServiceStubSettings) getStubSettings()).updateInputOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to previewInput. */
+  public UnaryCallSettings<PreviewInputRequest, PreviewInputResponse> previewInputSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).previewInputSettings();
   }
 
   /** Returns the object with the settings used for calls to createEvent. */
@@ -577,6 +605,32 @@ public class LivestreamServiceSettings extends ClientSettings<LivestreamServiceS
       return getStubSettingsBuilder().stopChannelOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to startDistribution. */
+    public UnaryCallSettings.Builder<StartDistributionRequest, Operation>
+        startDistributionSettings() {
+      return getStubSettingsBuilder().startDistributionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startDistribution. */
+    public OperationCallSettings.Builder<
+            StartDistributionRequest, ChannelOperationResponse, OperationMetadata>
+        startDistributionOperationSettings() {
+      return getStubSettingsBuilder().startDistributionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stopDistribution. */
+    public UnaryCallSettings.Builder<StopDistributionRequest, Operation>
+        stopDistributionSettings() {
+      return getStubSettingsBuilder().stopDistributionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stopDistribution. */
+    public OperationCallSettings.Builder<
+            StopDistributionRequest, ChannelOperationResponse, OperationMetadata>
+        stopDistributionOperationSettings() {
+      return getStubSettingsBuilder().stopDistributionOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createInput. */
     public UnaryCallSettings.Builder<CreateInputRequest, Operation> createInputSettings() {
       return getStubSettingsBuilder().createInputSettings();
@@ -619,6 +673,12 @@ public class LivestreamServiceSettings extends ClientSettings<LivestreamServiceS
     public OperationCallSettings.Builder<UpdateInputRequest, Input, OperationMetadata>
         updateInputOperationSettings() {
       return getStubSettingsBuilder().updateInputOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to previewInput. */
+    public UnaryCallSettings.Builder<PreviewInputRequest, PreviewInputResponse>
+        previewInputSettings() {
+      return getStubSettingsBuilder().previewInputSettings();
     }
 
     /** Returns the builder for the settings used for calls to createEvent. */

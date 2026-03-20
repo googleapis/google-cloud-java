@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -99,6 +99,7 @@ public class SolarClientHttpJsonTest {
             .setLocation(LatLng.newBuilder().build())
             .setRequiredQuality(ImageryQuality.forNumber(0))
             .setExactQualityRequired(true)
+            .addAllExperiments(new ArrayList<Experiment>())
             .build();
 
     BuildingInsights actualResponse = client.findClosestBuildingInsights(request);
@@ -132,6 +133,7 @@ public class SolarClientHttpJsonTest {
               .setLocation(LatLng.newBuilder().build())
               .setRequiredQuality(ImageryQuality.forNumber(0))
               .setExactQualityRequired(true)
+              .addAllExperiments(new ArrayList<Experiment>())
               .build();
       client.findClosestBuildingInsights(request);
       Assert.fail("No exception raised");
@@ -164,6 +166,7 @@ public class SolarClientHttpJsonTest {
             .setRequiredQuality(ImageryQuality.forNumber(0))
             .setPixelSizeMeters(-1623742513)
             .setExactQualityRequired(true)
+            .addAllExperiments(new ArrayList<Experiment>())
             .build();
 
     DataLayers actualResponse = client.getDataLayers(request);
@@ -200,6 +203,7 @@ public class SolarClientHttpJsonTest {
               .setRequiredQuality(ImageryQuality.forNumber(0))
               .setPixelSizeMeters(-1623742513)
               .setExactQualityRequired(true)
+              .addAllExperiments(new ArrayList<Experiment>())
               .build();
       client.getDataLayers(request);
       Assert.fail("No exception raised");

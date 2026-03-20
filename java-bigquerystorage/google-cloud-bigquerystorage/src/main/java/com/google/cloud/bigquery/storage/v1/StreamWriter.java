@@ -1,0 +1,1139 @@
+/*
+ * Copyright 2020 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.google.cloud.bigquery.storage.v1;
+
+import com.google.api.core.ApiFuture;
+import com.google.api.gax.batching.FlowController;
+import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.core.ExecutorProvider;
+import com.google.api.gax.core.GaxProperties;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.auth.Credentials;
+import com.google.auto.value.AutoOneOf;
+import com.google.auto.value.AutoValue;
+import com.google.cloud.bigquery.storage.v1.AppendFormats.AppendRowsData;
+import com.google.cloud.bigquery.storage.v1.AppendFormats.AppendRowsSchema;
+import com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation;
+import com.google.cloud.bigquery.storage.v1.ConnectionWorker.AppendRequestAndResponse;
+import com.google.cloud.bigquery.storage.v1.ConnectionWorker.TableSchemaAndTimestamp;
+import com.google.cloud.bigquery.storage.v1.StreamWriter.SingleConnectionOrConnectionPool.Kind;
+import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Preconditions;
+import com.google.common.cache.Cache;
+import com.google.common.cache.CacheBuilder;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
+import com.google.protobuf.ByteString;
+import io.grpc.Status;
+import io.grpc.Status.Code;
+import io.grpc.StatusRuntimeException;
+import io.opentelemetry.api.common.Attributes;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.nio.channels.Channels;
+import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Objects;
+import java.util.UUID;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.locks.Lock;
+import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.annotation.Nullable;
+import org.apache.arrow.vector.ipc.WriteChannel;
+import org.apache.arrow.vector.ipc.message.MessageSerializer;
+import org.apache.arrow.vector.types.pojo.Schema;
+
+/**
+ * A BigQuery Stream Writer that can be used to write data into BigQuery Table.
+ *
+ * <p>TODO: Support batching.
+ */
+public class StreamWriter implements AutoCloseable {
+  private static final Logger log = Logger.getLogger(StreamWriter.class.getName());
+
+  private static String datasetsMatching = "projects/[^/]+/datasets/[^/]+/";
+  private static Pattern streamPatternDatasets = Pattern.compile(datasetsMatching);
+
+  private static String defaultStreamMatching = "/_default";
+  private static Pattern streamPatternDefaultStream = Pattern.compile(defaultStreamMatching);
+
+  // Cache of location info for a given dataset.
+  private static long LOCATION_CACHE_EXPIRE_MILLIS = 10 * 60 * 1000; // 10 minutes
+
+  private static Cache<String, String> allocateProjectLocationCache() {
+    return CacheBuilder.newBuilder()
+        .expireAfterWrite(LOCATION_CACHE_EXPIRE_MILLIS, TimeUnit.MILLISECONDS)
+        .build();
+  }
+
+  private static Cache<String, String> projectAndDatasetToLocation = allocateProjectLocationCache();
+  /*
+   * The identifier of stream to write to.
+   */
+  private final String streamName;
+
+  /** This is the library version may or may not include library version id. */
+  private final String fullTraceId;
+
+  /** Every writer has a fixed proto schema or arrow schema. */
+  private final AppendRowsSchema writerSchema;
+
+  /*
+   * Location of the destination.
+   */
+  private final String location;
+
+  /*
+   * If user has closed the StreamWriter.
+   */
+  private AtomicBoolean userClosed = new AtomicBoolean(false);
+
+  /*
+   * A String that uniquely identifies this writer.
+   */
+  private final String writerId = UUID.randomUUID().toString();
+
+  /**
+   * The default missing value interpretation if the column has default value defined but not
+   * presented in the missing value map.
+   */
+  private AppendRowsRequest.MissingValueInterpretation defaultMissingValueInterpretation =
+      MissingValueInterpretation.MISSING_VALUE_INTERPRETATION_UNSPECIFIED;
+
+  // Map of fields to their MissingValueInterpretation, which dictates how a field should be
+  // populated when it is missing from an input user row.
+  private Map<String, AppendRowsRequest.MissingValueInterpretation> missingValueInterpretationMap =
+      new HashMap();
+
+  /**
+   * Stream can access a single connection or a pool of connection depending on whether multiplexing
+   * is enabled.
+   */
+  private final SingleConnectionOrConnectionPool singleConnectionOrConnectionPool;
+
+  /** Test only param to tell how many times a client is created. */
+  private static int testOnlyClientCreatedTimes = 0;
+
+  /**
+   * Static map from {@link ConnectionPoolKey} to connection pool. Note this map is static to be
+   * shared by every stream writer in the same process.
+   */
+  private static final Map<ConnectionPoolKey, ConnectionWorkerPool> connectionPoolMap =
+      new ConcurrentHashMap<>();
+
+  /** Creation timestamp of this streamwriter */
+  private final long creationTimestamp;
+
+  /** Provide access to the request profiler tool. */
+  private final RequestProfiler.RequestProfilerHook requestProfilerHook;
+
+  private Lock lock;
+
+  /** The maximum size of one request. Defined by the API. */
+  public static long getApiMaxRequestBytes() {
+    return ConnectionWorker.getApiMaxRequestBytes();
+  }
+
+  /**
+   * Connection pool with different key will be split.
+   *
+   * <p>Shard based only on location right now.
+   */
+  @AutoValue
+  abstract static class ConnectionPoolKey {
+    abstract String location();
+
+    abstract int credentialsHashcode();
+
+    public static ConnectionPoolKey create(String location, @Nullable Credentials credentials) {
+      return new AutoValue_StreamWriter_ConnectionPoolKey(
+          location, credentials != null ? credentials.hashCode() : 0);
+    }
+  }
+
+  /**
+   * When in single table mode, append directly to connectionWorker. Otherwise append to connection
+   * pool in multiplexing mode.
+   */
+  @AutoOneOf(SingleConnectionOrConnectionPool.Kind.class)
+  abstract static class SingleConnectionOrConnectionPool {
+    /** Kind of connection operation mode. */
+    public enum Kind {
+      CONNECTION_WORKER,
+      CONNECTION_WORKER_POOL
+    }
+
+    abstract Kind getKind();
+
+    abstract ConnectionWorker connectionWorker();
+
+    abstract ConnectionWorkerPool connectionWorkerPool();
+
+    ApiFuture<AppendRowsResponse> append(
+        StreamWriter streamWriter, AppendRowsData rows, long offset, String requestUniqueId) {
+      if (getKind() == Kind.CONNECTION_WORKER) {
+        return connectionWorker().append(streamWriter, rows, offset, requestUniqueId);
+      } else {
+        return connectionWorkerPool().append(streamWriter, rows, offset, requestUniqueId);
+      }
+    }
+
+    @VisibleForTesting
+    Attributes getTelemetryAttributes(StreamWriter streamWriter) {
+      if (getKind() == Kind.CONNECTION_WORKER) {
+        return connectionWorker().getTelemetryAttributes();
+      } else {
+        return connectionWorkerPool().getTelemetryAttributes(streamWriter);
+      }
+    }
+
+    void close(StreamWriter streamWriter) {
+      if (getKind() == Kind.CONNECTION_WORKER) {
+        connectionWorker().close();
+      } else {
+        connectionWorkerPool().close(streamWriter);
+      }
+    }
+
+    long getInflightWaitSeconds(StreamWriter streamWriter) {
+      if (getKind() == Kind.CONNECTION_WORKER_POOL) {
+        return connectionWorkerPool().getInflightWaitSeconds(streamWriter);
+      }
+      return connectionWorker().getInflightWaitSeconds();
+    }
+
+    TableSchemaAndTimestamp getUpdatedSchema(StreamWriter streamWriter) {
+      if (getKind() == Kind.CONNECTION_WORKER_POOL) {
+        return connectionWorkerPool().getUpdatedSchema(streamWriter);
+      }
+      // Always populate MIN timestamp to w
+      return connectionWorker().getUpdatedSchema();
+    }
+
+    String getWriterId(String streamWriterId) {
+      if (getKind() == Kind.CONNECTION_WORKER_POOL) {
+        return streamWriterId;
+      }
+      return connectionWorker().getWriterId();
+    }
+
+    static SingleConnectionOrConnectionPool ofSingleConnection(ConnectionWorker connection) {
+      return AutoOneOf_StreamWriter_SingleConnectionOrConnectionPool.connectionWorker(connection);
+    }
+
+    static SingleConnectionOrConnectionPool ofConnectionPool(ConnectionWorkerPool connectionPool) {
+      return AutoOneOf_StreamWriter_SingleConnectionOrConnectionPool.connectionWorkerPool(
+          connectionPool);
+    }
+  }
+
+  private StreamWriter(Builder builder) throws IOException {
+    this.streamName = builder.streamName;
+    this.writerSchema = builder.writerSchema;
+    this.defaultMissingValueInterpretation = builder.defaultMissingValueInterpretation;
+    this.missingValueInterpretationMap = builder.missingValueInterpretationMap;
+    BigQueryWriteSettings clientSettings = getBigQueryWriteSettings(builder);
+    this.requestProfilerHook =
+        new RequestProfiler.RequestProfilerHook(builder.enableRequestProfiler);
+    this.fullTraceId = builder.getFullTraceId();
+    if (builder.enableRequestProfiler) {
+      // Request profiler is enabled on singleton level, from now on a periodical flush will be
+      // started
+      // to generate detailed latency reports for requests latency.
+      requestProfilerHook.startPeriodicalReportFlushing();
+    }
+    if (!builder.enableConnectionPool) {
+      this.location = builder.location;
+      this.singleConnectionOrConnectionPool =
+          SingleConnectionOrConnectionPool.ofSingleConnection(
+              new ConnectionWorker(
+                  builder.streamName,
+                  builder.location,
+                  builder.writerSchema,
+                  builder.maxInflightRequest,
+                  builder.maxInflightBytes,
+                  builder.maxRetryDuration,
+                  builder.limitExceededBehavior,
+                  builder.getFullTraceId(),
+                  builder.compressorName,
+                  clientSettings,
+                  builder.retrySettings,
+                  builder.enableRequestProfiler,
+                  builder.enableOpenTelemetry,
+                  /* isMultiplexing= */ false));
+    } else {
+      if (!isDefaultStream(streamName)) {
+        log.warning(
+            "Connection pool is only allowed in default stream! However received "
+                + builder.streamName);
+        throw new IllegalArgumentException(
+            "Trying to enable connection pool in non-default stream.");
+      }
+
+      // We need a client to perform some getWriteStream calls.
+      BigQueryWriteClient client =
+          builder.client != null ? builder.client : new BigQueryWriteClient(clientSettings);
+      String location = builder.location;
+      if (location == null || location.isEmpty()) {
+        // Location is not passed in, try to fetch from RPC
+        String datasetAndProjectName = extractDatasetAndProjectName(builder.streamName);
+        try {
+          location =
+              projectAndDatasetToLocation.get(
+                  datasetAndProjectName,
+                  new Callable<String>() {
+                    @Override
+                    public String call() throws Exception {
+                      GetWriteStreamRequest writeStreamRequest =
+                          GetWriteStreamRequest.newBuilder()
+                              .setName(getStreamName())
+                              .setView(WriteStreamView.BASIC)
+                              .build();
+
+                      WriteStream writeStream = client.getWriteStream(writeStreamRequest);
+                      TableSchema writeStreamTableSchema = writeStream.getTableSchema();
+                      String fetchedLocation = writeStream.getLocation();
+                      log.info(
+                          String.format(
+                              "Fetched location %s for stream name %s, extracted project and"
+                                  + " dataset name: %s\"",
+                              fetchedLocation, streamName, datasetAndProjectName));
+                      return fetchedLocation;
+                    }
+                  });
+        } catch (ExecutionException e) {
+          throw new IllegalStateException(e.getCause());
+        }
+        if (location.isEmpty()) {
+          throw new IllegalStateException(
+              String.format(
+                  "The location is empty for both user passed in value and looked up value for "
+                      + "stream: %s, extracted project and dataset name: %s",
+                  streamName, datasetAndProjectName));
+        }
+      }
+      this.location = location;
+      CredentialsProvider credentialsProvider = client.getSettings().getCredentialsProvider();
+      // Assume the connection in the same pool share the same client and trace id.
+      // The first StreamWriter for a new stub will create the pool for the other
+      // streams in the same region, meaning the per StreamWriter settings are no
+      // longer working unless all streams share the same set of settings
+      this.singleConnectionOrConnectionPool =
+          SingleConnectionOrConnectionPool.ofConnectionPool(
+              connectionPoolMap.computeIfAbsent(
+                  ConnectionPoolKey.create(
+                      location,
+                      credentialsProvider != null ? credentialsProvider.getCredentials() : null),
+                  (key) -> {
+                    return new ConnectionWorkerPool(
+                        builder.maxInflightRequest,
+                        builder.maxInflightBytes,
+                        builder.maxRetryDuration,
+                        builder.limitExceededBehavior,
+                        builder.compressorName,
+                        client.getSettings(),
+                        builder.retrySettings,
+                        builder.enableRequestProfiler,
+                        builder.enableOpenTelemetry);
+                  }));
+      validateFetchedConnectonPool(builder);
+      // If the client is not from outside, then shutdown the client we created.
+      if (builder.client == null) {
+        client.shutdown();
+        try {
+          client.awaitTermination(150, TimeUnit.SECONDS);
+        } catch (InterruptedException unused) {
+          // Ignore interruption as this client is not used.
+        }
+        client.close();
+      }
+    }
+    this.creationTimestamp = System.nanoTime();
+  }
+
+  @VisibleForTesting
+  static String extractDatasetAndProjectName(String streamName) {
+    Matcher streamMatcher = streamPatternDatasets.matcher(streamName);
+    if (streamMatcher.find()) {
+      return streamMatcher.group();
+    } else {
+      throw new IllegalStateException(
+          String.format("The passed in stream name does not match standard format %s", streamName));
+    }
+  }
+
+  @VisibleForTesting
+  static boolean isDefaultStream(String streamName) {
+    Matcher streamMatcher = streamPatternDefaultStream.matcher(streamName);
+    return streamMatcher.find();
+  }
+
+  @VisibleForTesting
+  static void recreateProjectLocationCache(long durationExpireMillis) {
+    LOCATION_CACHE_EXPIRE_MILLIS = durationExpireMillis;
+    projectAndDatasetToLocation = allocateProjectLocationCache();
+  }
+
+  String getFullTraceId() {
+    return fullTraceId;
+  }
+
+  AppendRowsRequest.MissingValueInterpretation getDefaultValueInterpretation() {
+    return defaultMissingValueInterpretation;
+  }
+
+  static BigQueryWriteSettings getBigQueryWriteSettings(Builder builder) throws IOException {
+    BigQueryWriteSettings.Builder settingsBuilder = null;
+    if (builder.client != null) {
+      settingsBuilder = builder.client.getSettings().toBuilder();
+    } else {
+      settingsBuilder =
+          new BigQueryWriteSettings.Builder()
+              .setTransportChannelProvider(
+                  BigQueryWriteSettings.defaultGrpcTransportProviderBuilder()
+                      .setKeepAliveTimeDuration(java.time.Duration.ofMinutes(1))
+                      .setKeepAliveTimeoutDuration(java.time.Duration.ofMinutes(1))
+                      .setKeepAliveWithoutCalls(true)
+                      .setChannelsPerCpu(2)
+                      .build())
+              .setCredentialsProvider(
+                  BigQueryWriteSettings.defaultCredentialsProviderBuilder().build())
+              .setBackgroundExecutorProvider(
+                  BigQueryWriteSettings.defaultExecutorProviderBuilder().build())
+              .setEndpoint(BigQueryWriteSettings.getDefaultEndpoint());
+    }
+    if (builder.channelProvider != null) {
+      settingsBuilder.setTransportChannelProvider(builder.channelProvider);
+    }
+    if (builder.credentialsProvider != null) {
+      settingsBuilder.setCredentialsProvider(builder.credentialsProvider);
+    }
+    if (builder.executorProvider != null) {
+      settingsBuilder.setBackgroundExecutorProvider(builder.executorProvider);
+    }
+    if (builder.endpoint != null) {
+      settingsBuilder.setEndpoint(builder.endpoint);
+    }
+
+    return settingsBuilder.build();
+  }
+
+  // Validate whether the fetched connection pool matched certain properties.
+  private void validateFetchedConnectonPool(StreamWriter.Builder builder) {
+    FlowController.LimitExceededBehavior storedLimitExceededBehavior =
+        singleConnectionOrConnectionPool.connectionWorkerPool().limitExceededBehavior();
+    if (!Objects.equals(storedLimitExceededBehavior, builder.limitExceededBehavior)) {
+      throw new IllegalArgumentException(
+          String.format(
+              "Limit exceeded behavior setting used for the same connection pool for the same "
+                  + "location must be the same, however stored value is %s, and expected "
+                  + "value is %s.",
+              storedLimitExceededBehavior, builder.limitExceededBehavior));
+    }
+  }
+
+  /**
+   * Schedules the writing of Arrow record batch at the end of current stream. Since the
+   * StreamWriter doesn't know how many rows are in the batch, the OpenTelemetry row count metric
+   * will report 0 rows for the append. Please use the version of append method that accepts
+   * org.apache.arrow.vector.ipc.message.ArrowRecordBatch if OpenTelemetry row count is requried.
+   * Arrow schema is required to be set for the StreamWriter to use this method.
+   *
+   * @param recordBatch the Arrow record batch in serialized format to write to BigQuery.
+   *     <p>Since the serialized Arrow record batch doesn't contain schema, to use this method, the
+   *     StreamWriter must have been created with Arrow schema.
+   * @return the append response wrapped in a future.
+   */
+  public ApiFuture<AppendRowsResponse> append(ArrowRecordBatch recordBatch) {
+    return append(recordBatch, -1);
+  }
+
+  /**
+   * Schedules the writing of rows at the end of current stream.
+   *
+   * @param rows the rows in serialized format to write to BigQuery.
+   * @return the append response wrapped in a future.
+   */
+  public ApiFuture<AppendRowsResponse> append(ProtoRows rows) {
+    return append(rows, -1);
+  }
+
+  /**
+   * Schedules the writing of rows at given offset.
+   *
+   * <p>Example of writing rows with specific offset.
+   *
+   * <pre>{@code
+   * ApiFuture<AppendRowsResponse> future = writer.append(rows, 0);
+   * ApiFutures.addCallback(future, new ApiFutureCallback<AppendRowsResponse>() {
+   *   public void onSuccess(AppendRowsResponse response) {
+   *     if (!response.hasError()) {
+   *       System.out.println("written with offset: " + response.getAppendResult().getOffset());
+   *     } else {
+   *       System.out.println("received an in stream error: " + response.getError().toString());
+   *     }
+   *   }
+   *
+   *   public void onFailure(Throwable t) {
+   *     System.out.println("failed to write: " + t);
+   *   }
+   * }, MoreExecutors.directExecutor());
+   * }</pre>
+   *
+   * @param rows the rows in serialized format to write to BigQuery.
+   * @param offset the offset of the first row. Provide -1 to write at the current end of stream.
+   * @return the append response wrapped in a future.
+   */
+  public ApiFuture<AppendRowsResponse> append(ProtoRows rows, long offset) {
+    return append(AppendRowsData.of(rows), offset);
+  }
+
+  /**
+   * Schedules the writing of Arrow record batch at given offset. Since the StreamWriter doesn't
+   * know how many rows are in the batch, the OpenTelemetry row count metric will report 0 rows for
+   * the append. Please use the version of append method that accepts
+   * org.apache.arrow.vector.ipc.message.ArrowRecordBatch if OpenTelemetry row count is requried.
+   * Arrow schema is required to be set for the StreamWriter to use this method.
+   *
+   * <p>Example of writing Arrow record batch with specific offset.
+   *
+   * <pre>{@code
+   * ApiFuture<AppendRowsResponse> future = writer.append(recordBatch, 0);
+   * ApiFutures.addCallback(future, new ApiFutureCallback<AppendRowsResponse>() {
+   *   public void onSuccess(AppendRowsResponse response) {
+   *     if (!response.hasError()) {
+   *       System.out.println("written with offset: " + response.getAppendResult().getOffset());
+   *     } else {
+   *       System.out.println("received an in stream error: " + response.getError().toString());
+   *     }
+   *   }
+   *
+   *   public void onFailure(Throwable t) {
+   *     System.out.println("failed to write: " + t);
+   *   }
+   * }, MoreExecutors.directExecutor());
+   * }</pre>
+   *
+   * @param recordBatch the ArrowRecordBatch in serialized format to write to BigQuery.
+   * @param offset the offset of the first row. Provide -1 to write at the current end of stream.
+   * @return the append response wrapped in a future.
+   */
+  public ApiFuture<AppendRowsResponse> append(ArrowRecordBatch recordBatch, long offset) {
+    return append(recordBatch, offset, -1);
+  }
+
+  private ApiFuture<AppendRowsResponse> append(
+      ArrowRecordBatch recordBatch, long offset, long recordBatchRowCount) {
+    return append(AppendRowsData.of(recordBatch, recordBatchRowCount), offset);
+  }
+
+  /**
+   * Schedules the writing of Arrow record batch at the end of current stream. Arrow schema is
+   * required to be set for the StreamWriter to use this method.
+   *
+   * @param recordBatch the Arrow record batch to write to BigQuery.
+   *     <p>Since the serialized Arrow record batch doesn't contain schema, to use this method, the
+   *     StreamWriter must have been created with Arrow schema. The ArrowRecordBatch will be closed
+   *     after it is serialized.
+   * @return the append response wrapped in a future.
+   */
+  public ApiFuture<AppendRowsResponse> append(
+      org.apache.arrow.vector.ipc.message.ArrowRecordBatch recordBatch) {
+    return append(recordBatch, -1);
+  }
+
+  /**
+   * Schedules the writing of Arrow record batch at given offset. Arrow schema is required to be set
+   * for the StreamWriter to use this method.
+   *
+   * @param recordBatch the Arrow record batch to write to BigQuery.
+   * @param offset the offset of the first row. Provide -1 to write at the current end of stream.
+   *     <p>The ArrowRecordBatch will be closed after it is serialized.
+   * @return the append response wrapped in a future.
+   */
+  public ApiFuture<AppendRowsResponse> append(
+      org.apache.arrow.vector.ipc.message.ArrowRecordBatch recordBatch, long offset) {
+    Preconditions.checkNotNull(recordBatch);
+    if (writerSchema.format() != AppendFormats.DataFormat.ARROW) {
+      throw new IllegalStateException(
+          "The StreamWriter must be created with Arrow schema to append Arrow data.");
+    }
+    try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+      MessageSerializer.serialize(new WriteChannel(Channels.newChannel(out)), recordBatch);
+      return append(
+          ArrowRecordBatch.newBuilder()
+              .setSerializedRecordBatch(ByteString.copyFrom(out.toByteArray()))
+              .build(),
+          offset,
+          recordBatch.getLength());
+    } catch (IOException e) {
+      throw new StatusRuntimeException(
+          Status.INVALID_ARGUMENT
+              .withDescription("Failed to serialize arrow record batch.")
+              .withCause(e));
+    } finally {
+      recordBatch.close();
+    }
+  }
+
+  private ApiFuture<AppendRowsResponse> append(AppendRowsData rows, long offset) {
+    String requestUniqueId = generateRequestUniqueId();
+    requestProfilerHook.startOperation(
+        RequestProfiler.OperationName.TOTAL_LATENCY, requestUniqueId);
+    try {
+      return appendWithUniqueId(rows, offset, requestUniqueId);
+    } catch (Exception ex) {
+      requestProfilerHook.endOperation(
+          RequestProfiler.OperationName.TOTAL_LATENCY, requestUniqueId);
+      throw ex;
+    }
+  }
+
+  ApiFuture<AppendRowsResponse> appendWithUniqueId(
+      ProtoRows rows, long offset, String requestUniqueId) {
+    return appendWithUniqueId(AppendRowsData.of(rows), offset, requestUniqueId);
+  }
+
+  ApiFuture<AppendRowsResponse> appendWithUniqueId(
+      AppendRowsData rows, long offset, String requestUniqueId) {
+    if (userClosed.get()) {
+      AppendRequestAndResponse requestWrapper =
+          new AppendRequestAndResponse(
+              AppendRowsRequest.newBuilder().build(),
+              /* streamWriter= */ this,
+              /* retrySettings= */ null,
+              requestUniqueId,
+              rows.recordBatchRowCount());
+      requestWrapper.appendResult.setException(
+          new Exceptions.StreamWriterClosedException(
+              Status.fromCode(Status.Code.FAILED_PRECONDITION)
+                  .withDescription("User closed StreamWriter"),
+              streamName,
+              getWriterId()));
+      requestProfilerHook.endOperation(
+          RequestProfiler.OperationName.TOTAL_LATENCY, requestUniqueId);
+      return requestWrapper.appendResult;
+    }
+    return this.singleConnectionOrConnectionPool.append(this, rows, offset, requestUniqueId);
+  }
+
+  @VisibleForTesting
+  Attributes getTelemetryAttributes() {
+    return this.singleConnectionOrConnectionPool.getTelemetryAttributes(this);
+  }
+
+  /**
+   * Returns the wait of a request in Client side before sending to the Server. Request could wait
+   * in Client because it reached the client side inflight request limit (adjustable when
+   * constructing the StreamWriter). The value is the wait time for the last sent request. A
+   * constant high wait value indicates a need for more throughput, you can create a new Stream for
+   * to increase the throughput in exclusive stream case, or create a new Writer in the default
+   * stream case.
+   */
+  public long getInflightWaitSeconds() {
+    return singleConnectionOrConnectionPool.getInflightWaitSeconds(this);
+  }
+
+  /**
+   * @return a unique Id for the writer.
+   */
+  public String getWriterId() {
+    return singleConnectionOrConnectionPool.getWriterId(writerId);
+  }
+
+  /**
+   * @return name of the Stream that this writer is working on.
+   */
+  public String getStreamName() {
+    return streamName;
+  }
+
+  /**
+   * @return the passed in user schema.
+   */
+  /** {@return the user provided schema in a general AppendRowsSchema} */
+  AppendRowsSchema getWriterSchema() {
+    return writerSchema;
+  }
+
+  /** {@return the passed in Proto user schema} */
+  public ProtoSchema getProtoSchema() {
+    if (writerSchema.format() == AppendFormats.DataFormat.PROTO) {
+      return writerSchema.protoSchema();
+    } else {
+      throw new IllegalStateException("No Proto schema found.");
+    }
+  }
+
+  /** {@return the passed in Arrow user schema} */
+  public ArrowSchema getArrowSchema() {
+    if (writerSchema.format() == AppendFormats.DataFormat.ARROW) {
+      return writerSchema.arrowSchema();
+    } else {
+      throw new IllegalStateException("No Arrow schema found.");
+    }
+  }
+
+  /**
+   * @return the location of the destination.
+   */
+  public String getLocation() {
+    return location;
+  }
+
+  /**
+   * @return the missing value interpretation map used for the writer.
+   */
+  public Map<String, AppendRowsRequest.MissingValueInterpretation>
+      getMissingValueInterpretationMap() {
+    return missingValueInterpretationMap;
+  }
+
+  /**
+   * @return if a stream writer can no longer be used for writing. It is due to either the
+   *     StreamWriter is explicitly closed or the underlying connection is broken when connection
+   *     pool is not used. Client should recreate StreamWriter in this case.
+   */
+  public boolean isClosed() {
+    if (singleConnectionOrConnectionPool.getKind() == Kind.CONNECTION_WORKER) {
+      return userClosed.get()
+          || singleConnectionOrConnectionPool.connectionWorker().isConnectionInUnrecoverableState();
+    } else {
+      // With ConnectionPool, we will replace the bad connection automatically.
+      return userClosed.get();
+    }
+  }
+
+  /**
+   * @return if user explicitly closed the writer.
+   */
+  public boolean isUserClosed() {
+    return userClosed.get();
+  }
+
+  /** Close the stream writer. Shut down all resources. */
+  @Override
+  public void close() {
+    userClosed.set(true);
+    singleConnectionOrConnectionPool.close(this);
+  }
+
+  /** Constructs a new {@link StreamWriter.Builder} using the given stream and client. */
+  public static StreamWriter.Builder newBuilder(String streamName, BigQueryWriteClient client) {
+    return new StreamWriter.Builder(streamName, client);
+  }
+
+  /** Constructs a new {@link StreamWriter.Builder} using the given stream. */
+  public static StreamWriter.Builder newBuilder(String streamName) {
+    return new StreamWriter.Builder(streamName);
+  }
+
+  /**
+   * Thread-safe getter of updated TableSchema.
+   *
+   * <p>This will return the updated schema only when the creation timestamp of this writer is older
+   * than the updated schema.
+   */
+  public synchronized TableSchema getUpdatedSchema() {
+    TableSchemaAndTimestamp tableSchemaAndTimestamp =
+        singleConnectionOrConnectionPool.getUpdatedSchema(this);
+    if (tableSchemaAndTimestamp == null) {
+      return null;
+    }
+    return creationTimestamp < tableSchemaAndTimestamp.updateTimeStamp()
+        ? tableSchemaAndTimestamp.updatedSchema()
+        : null;
+  }
+
+  /**
+   * Sets the maximum time a request is allowed to be waiting in request waiting queue. Under very
+   * low chance, it's possible for append request to be waiting indefintely for request callback
+   * when Google networking SDK does not detect the networking breakage. The default timeout is 15
+   * minutes. We are investigating the root cause for callback not triggered by networking SDK.
+   */
+  public static void setMaxRequestCallbackWaitTime(Duration waitTime) {
+    ConnectionWorker.MAXIMUM_REQUEST_CALLBACK_WAIT_TIME = waitTime;
+  }
+
+  /**
+   * @return the default stream name associated with tableName
+   */
+  public static String getDefaultStreamName(TableName tableName) {
+    return tableName + defaultStreamMatching;
+  }
+
+  long getCreationTimestamp() {
+    return creationTimestamp;
+  }
+
+  @VisibleForTesting
+  SingleConnectionOrConnectionPool.Kind getConnectionOperationType() {
+    return singleConnectionOrConnectionPool.getKind();
+  }
+
+  @VisibleForTesting
+  static int getTestOnlyClientCreatedTimes() {
+    return testOnlyClientCreatedTimes;
+  }
+
+  @VisibleForTesting
+  static void cleanUp() {
+    testOnlyClientCreatedTimes = 0;
+    connectionPoolMap.clear();
+  }
+
+  @VisibleForTesting
+  ConnectionWorkerPool getTestOnlyConnectionWorkerPool() {
+    ConnectionWorkerPool connectionWorkerPool = null;
+    for (Entry<ConnectionPoolKey, ConnectionWorkerPool> entry : connectionPoolMap.entrySet()) {
+      connectionWorkerPool = entry.getValue();
+    }
+    return connectionWorkerPool;
+  }
+
+  @VisibleForTesting
+  Map<ConnectionPoolKey, ConnectionWorkerPool> getTestOnlyConnectionPoolMap() {
+    return connectionPoolMap;
+  }
+
+  // A method to clear the static connection pool to avoid making pool visible to other tests.
+  @VisibleForTesting
+  static void clearConnectionPool() {
+    connectionPoolMap.clear();
+  }
+
+  /** A builder of {@link StreamWriter}s. */
+  public static final class Builder {
+    private static final long DEFAULT_MAX_INFLIGHT_REQUESTS = 1000L;
+
+    private static final long DEFAULT_MAX_INFLIGHT_BYTES = 100 * 1024 * 1024; // 100Mb.
+
+    private String streamName;
+
+    private BigQueryWriteClient client;
+
+    private AppendRowsSchema writerSchema = null;
+
+    private long maxInflightRequest = DEFAULT_MAX_INFLIGHT_REQUESTS;
+
+    private long maxInflightBytes = DEFAULT_MAX_INFLIGHT_BYTES;
+
+    private String endpoint = null;
+
+    private TransportChannelProvider channelProvider = null;
+
+    private CredentialsProvider credentialsProvider = null;
+
+    private ExecutorProvider executorProvider = null;
+
+    private FlowController.LimitExceededBehavior limitExceededBehavior =
+        FlowController.LimitExceededBehavior.Block;
+
+    private String traceId = null;
+
+    private String clientId = "java-streamwriter";
+
+    private TableSchema updatedTableSchema = null;
+
+    private String location = null;
+
+    private boolean enableConnectionPool = false;
+
+    private java.time.Duration maxRetryDuration = Duration.ofMinutes(5);
+
+    private String compressorName = null;
+
+    // Default missing value interpretation value.
+    private AppendRowsRequest.MissingValueInterpretation defaultMissingValueInterpretation =
+        MissingValueInterpretation.MISSING_VALUE_INTERPRETATION_UNSPECIFIED;
+
+    private Map<String, AppendRowsRequest.MissingValueInterpretation>
+        missingValueInterpretationMap = new HashMap();
+
+    private boolean enableRequestProfiler = false;
+    private boolean enableOpenTelemetry = false;
+
+    private RetrySettings retrySettings = null;
+
+    private Builder(String streamName) {
+      this.streamName = Preconditions.checkNotNull(streamName);
+      this.client = null;
+    }
+
+    private Builder(String streamName, BigQueryWriteClient client) {
+      this.streamName = Preconditions.checkNotNull(streamName);
+      this.client = Preconditions.checkNotNull(client);
+    }
+
+    /** Sets the user provided proto schema of the rows. */
+    @CanIgnoreReturnValue
+    public Builder setWriterSchema(ProtoSchema protoSchema) {
+      this.writerSchema = AppendRowsSchema.of(protoSchema);
+      return this;
+    }
+
+    /** Sets the user provided serialized Arrow schema of the rows. */
+    @CanIgnoreReturnValue
+    public Builder setWriterSchema(ArrowSchema arrowSchema) {
+      this.writerSchema = AppendRowsSchema.of(arrowSchema);
+      return this;
+    }
+
+    /** Sets the user provided unserialized Arrow schema of the rows. */
+    @CanIgnoreReturnValue
+    public Builder setWriterSchema(Schema arrowSchema) {
+      final ByteArrayOutputStream out = new ByteArrayOutputStream();
+      try {
+        MessageSerializer.serialize(new WriteChannel(Channels.newChannel(out)), arrowSchema);
+        this.writerSchema =
+            AppendRowsSchema.of(
+                ArrowSchema.newBuilder()
+                    .setSerializedSchema(ByteString.copyFrom(out.toByteArray()))
+                    .build());
+      } catch (IOException e) {
+        throw new StatusRuntimeException(
+            Status.INVALID_ARGUMENT.withDescription("Failed to serialize arrow schema."));
+      }
+      return this;
+    }
+
+    public Builder setMaxInflightRequests(long value) {
+      this.maxInflightRequest = value;
+      return this;
+    }
+
+    public Builder setMaxInflightBytes(long value) {
+      this.maxInflightBytes = value;
+      return this;
+    }
+
+    /** Gives the ability to override the gRPC endpoint. */
+    public Builder setEndpoint(String endpoint) {
+      this.endpoint = Preconditions.checkNotNull(endpoint, "Endpoint is null.");
+      return this;
+    }
+
+    /**
+     * Enables a static shared bidi-streaming connection pool that would dynamically scale up
+     * connections based on backlog within each individual connection. A single table's traffic
+     * might be splitted into multiple connections if needed. Different tables' traffic can also be
+     * multiplexed within the same connection.
+     *
+     * <pre>
+     * Each connection pool would have a upper limit (default to 20) and lower limit (default to
+     * 2) for the number of active connections. This parameter can be tuned via a static method
+     * exposed on {@link ConnectionWorkerPool}.
+     *
+     * Example:
+     * ConnectionWorkerPool.setOptions(
+     *     Settings.builder().setMinConnectionsPerRegion(4).setMaxConnectionsPerRegion(10).build());
+     *
+     * </pre>
+     *
+     * @param enableConnectionPool
+     * @return Builder
+     */
+    public Builder setEnableConnectionPool(boolean enableConnectionPool) {
+      this.enableConnectionPool = enableConnectionPool;
+      return this;
+    }
+
+    /**
+     * {@code ChannelProvider} to use to create Channels, which must point at Cloud BigQuery Storage
+     * API endpoint.
+     *
+     * <p>For performance, this client benefits from having multiple underlying connections. See
+     * {@link com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.Builder#setPoolSize(int)}.
+     */
+    public Builder setChannelProvider(TransportChannelProvider channelProvider) {
+      this.channelProvider =
+          Preconditions.checkNotNull(channelProvider, "ChannelProvider is null.");
+      return this;
+    }
+
+    /** {@code CredentialsProvider} to use to create Credentials to authenticate calls. */
+    public Builder setCredentialsProvider(CredentialsProvider credentialsProvider) {
+      this.credentialsProvider =
+          Preconditions.checkNotNull(credentialsProvider, "CredentialsProvider is null.");
+      return this;
+    }
+
+    /** {@code ExecutorProvider} to use to create Executor to run background jobs. */
+    public Builder setExecutorProvider(ExecutorProvider executorProvider) {
+      this.executorProvider =
+          Preconditions.checkNotNull(executorProvider, "ExecutorProvider is null.");
+      return this;
+    }
+
+    /**
+     * Sets traceId for debuging purpose. TraceId must follow the format of
+     * CustomerDomain:DebugString, e.g. DATAFLOW:job_id_x.
+     */
+    public Builder setTraceId(String traceId) {
+      int colonIndex = traceId.indexOf(':');
+      if (colonIndex == -1 || colonIndex == 0 || colonIndex == traceId.length() - 1) {
+        throw new IllegalArgumentException(
+            "TraceId must follow the format of A:B. Actual:" + traceId);
+      }
+      this.traceId = traceId;
+      return this;
+    }
+
+    /**
+     * Sets the client id of the writer, for example, JsonStreamWriter has the client id of
+     * "java-jsonwriter".
+     */
+    Builder setClientId(String clientId) {
+      this.clientId = clientId;
+      return this;
+    }
+
+    /** Location of the table this stream writer is targeting. */
+    public Builder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    /**
+     * Sets the limit exceeded behavior.
+     *
+     * @param limitExceededBehavior
+     * @return
+     */
+    public Builder setLimitExceededBehavior(
+        FlowController.LimitExceededBehavior limitExceededBehavior) throws StatusRuntimeException {
+      if (limitExceededBehavior == FlowController.LimitExceededBehavior.Ignore) {
+        throw new StatusRuntimeException(
+            Status.fromCode(Code.INVALID_ARGUMENT)
+                .withDescription("LimitExceededBehavior.Ignore is not supported on StreamWriter."));
+      }
+      this.limitExceededBehavior = limitExceededBehavior;
+      return this;
+    }
+
+    /*
+     * Max duration to retry on retryable errors. Default is 5 minutes. You can allow unlimited
+     * retry by setting the value to be 0.
+     */
+    public Builder setMaxRetryDuration(java.time.Duration maxRetryDuration) {
+      this.maxRetryDuration = maxRetryDuration;
+      return this;
+    }
+
+    public Builder setCompressorName(String compressorName) {
+      Preconditions.checkNotNull(compressorName);
+      Preconditions.checkArgument(
+          compressorName.equals("gzip"),
+          "Compression of type \"%s\" isn't supported, only \"gzip\" compression is supported.",
+          compressorName);
+      this.compressorName = compressorName;
+      return this;
+    }
+
+    /**
+     * Sets the default missing value interpretation value if the column is not presented in the
+     * missing_value_interpretations map.
+     */
+    public Builder setDefaultMissingValueInterpretation(
+        AppendRowsRequest.MissingValueInterpretation defaultMissingValueInterpretation) {
+      this.defaultMissingValueInterpretation = defaultMissingValueInterpretation;
+      return this;
+    }
+
+    /**
+     * Sets the missing value interpretation map for the stream writer. The input
+     * missingValueInterpretationMap is used for all write requests unless otherwise changed.
+     *
+     * @param missingValueInterpretationMap the missing value interpretation map used by stream
+     *     writer.
+     * @return Builder
+     */
+    public Builder setMissingValueInterpretationMap(
+        Map<String, AppendRowsRequest.MissingValueInterpretation> missingValueInterpretationMap) {
+      this.missingValueInterpretationMap = missingValueInterpretationMap;
+      return this;
+    }
+
+    /**
+     * Enable a latency profiler that would periodically generate a detailed latency report for the
+     * top latency requests. This is currently an experimental API.
+     */
+    public Builder setEnableLatencyProfiler(boolean enableLatencyProfiler) {
+      this.enableRequestProfiler = enableLatencyProfiler;
+      return this;
+    }
+
+    /** Enable generation of metrics for OpenTelemetry. */
+    public Builder setEnableOpenTelemetry(boolean enableOpenTelemetry) {
+      this.enableOpenTelemetry = enableOpenTelemetry;
+      return this;
+    }
+
+    /**
+     * Enable client lib automatic retries on request level errors.
+     *
+     * <pre>
+     * Immeidate Retry code:
+     * ABORTED, UNAVAILABLE, CANCELLED, INTERNAL, DEADLINE_EXCEEDED
+     * Backoff Retry code:
+     * RESOURCE_EXHAUSTED
+     *
+     * Example:
+     * RetrySettings retrySettings = RetrySettings.newBuilder()
+     *      .setInitialRetryDelay(Duration.ofMillis(500)) // applies to backoff retry
+     *      .setRetryDelayMultiplier(1.1) // applies to backoff retry
+     *      .setMaxAttempts(5) // applies to both retries
+     *      .setMaxRetryDelay(Duration.ofMinutes(1)) // applies to backoff retry .build();
+     * </pre>
+     *
+     * @param retrySettings
+     * @return
+     */
+    public Builder setRetrySettings(RetrySettings retrySettings) {
+      this.retrySettings = retrySettings;
+      return this;
+    }
+
+    /** Builds the {@code StreamWriterV2}. */
+    public StreamWriter build() throws IOException {
+      return new StreamWriter(this);
+    }
+
+    String getFullTraceId() {
+      String clientWithVersion =
+          GaxProperties.getLibraryVersion(StreamWriter.class).isEmpty()
+              ? clientId
+              : clientId + ":" + GaxProperties.getLibraryVersion(StreamWriter.class);
+      if (traceId == null || traceId.isEmpty()) {
+        return clientWithVersion;
+      } else {
+        return clientWithVersion + " " + traceId;
+      }
+    }
+  }
+
+  private String generateRequestUniqueId() {
+    return getStreamName() + "-" + UUID.randomUUID().toString();
+  }
+}

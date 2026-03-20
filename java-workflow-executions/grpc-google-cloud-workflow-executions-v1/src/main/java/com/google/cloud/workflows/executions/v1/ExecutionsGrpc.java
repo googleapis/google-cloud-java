@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [Workflows][google.cloud.workflows.v1.Workflow] called executions.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/workflows/executions/v1/executions.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ExecutionsGrpc {
 
@@ -487,8 +484,9 @@ public final class ExecutionsGrpc {
      * </pre>
      */
     public com.google.cloud.workflows.executions.v1.ListExecutionsResponse listExecutions(
-        com.google.cloud.workflows.executions.v1.ListExecutionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.workflows.executions.v1.ListExecutionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListExecutionsMethod(), getCallOptions(), request);
     }
 
@@ -500,8 +498,9 @@ public final class ExecutionsGrpc {
      * </pre>
      */
     public com.google.cloud.workflows.executions.v1.Execution createExecution(
-        com.google.cloud.workflows.executions.v1.CreateExecutionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.workflows.executions.v1.CreateExecutionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateExecutionMethod(), getCallOptions(), request);
     }
 
@@ -513,8 +512,9 @@ public final class ExecutionsGrpc {
      * </pre>
      */
     public com.google.cloud.workflows.executions.v1.Execution getExecution(
-        com.google.cloud.workflows.executions.v1.GetExecutionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.workflows.executions.v1.GetExecutionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetExecutionMethod(), getCallOptions(), request);
     }
 
@@ -526,8 +526,9 @@ public final class ExecutionsGrpc {
      * </pre>
      */
     public com.google.cloud.workflows.executions.v1.Execution cancelExecution(
-        com.google.cloud.workflows.executions.v1.CancelExecutionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.workflows.executions.v1.CancelExecutionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelExecutionMethod(), getCallOptions(), request);
     }
   }

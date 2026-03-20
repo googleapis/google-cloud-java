@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * ImageAnnotator service returns detected entities from the images.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/vision/v1p4beta1/image_annotator.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ImageAnnotatorGrpc {
 
@@ -524,8 +521,9 @@ public final class ImageAnnotatorGrpc {
      * </pre>
      */
     public com.google.cloud.vision.v1p4beta1.BatchAnnotateImagesResponse batchAnnotateImages(
-        com.google.cloud.vision.v1p4beta1.BatchAnnotateImagesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vision.v1p4beta1.BatchAnnotateImagesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchAnnotateImagesMethod(), getCallOptions(), request);
     }
 
@@ -542,8 +540,9 @@ public final class ImageAnnotatorGrpc {
      * </pre>
      */
     public com.google.cloud.vision.v1p4beta1.BatchAnnotateFilesResponse batchAnnotateFiles(
-        com.google.cloud.vision.v1p4beta1.BatchAnnotateFilesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vision.v1p4beta1.BatchAnnotateFilesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchAnnotateFilesMethod(), getCallOptions(), request);
     }
 
@@ -561,8 +560,9 @@ public final class ImageAnnotatorGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation asyncBatchAnnotateImages(
-        com.google.cloud.vision.v1p4beta1.AsyncBatchAnnotateImagesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vision.v1p4beta1.AsyncBatchAnnotateImagesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAsyncBatchAnnotateImagesMethod(), getCallOptions(), request);
     }
 
@@ -579,8 +579,9 @@ public final class ImageAnnotatorGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation asyncBatchAnnotateFiles(
-        com.google.cloud.vision.v1p4beta1.AsyncBatchAnnotateFilesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vision.v1p4beta1.AsyncBatchAnnotateFilesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAsyncBatchAnnotateFilesMethod(), getCallOptions(), request);
     }
   }

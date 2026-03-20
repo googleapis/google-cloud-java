@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -449,6 +449,20 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> listModelEvaluationSlicesPagedCallable()
  *           <li><p> listModelEvaluationSlicesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RecommendSpec</td>
+ *      <td><p> Gets a Model's spec recommendations.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> recommendSpec(RecommendSpecRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> recommendSpecCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -3604,6 +3618,68 @@ public class ModelServiceClient implements BackgroundResource {
   public final UnaryCallable<ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse>
       listModelEvaluationSlicesCallable() {
     return stub.listModelEvaluationSlicesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a Model's spec recommendations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   RecommendSpecRequest request =
+   *       RecommendSpecRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setGcsUri("gcsUri-1251224875")
+   *           .setCheckMachineAvailability(true)
+   *           .setCheckUserQuota(true)
+   *           .build();
+   *   RecommendSpecResponse response = modelServiceClient.recommendSpec(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RecommendSpecResponse recommendSpec(RecommendSpecRequest request) {
+    return recommendSpecCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a Model's spec recommendations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   RecommendSpecRequest request =
+   *       RecommendSpecRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setGcsUri("gcsUri-1251224875")
+   *           .setCheckMachineAvailability(true)
+   *           .setCheckUserQuota(true)
+   *           .build();
+   *   ApiFuture<RecommendSpecResponse> future =
+   *       modelServiceClient.recommendSpecCallable().futureCall(request);
+   *   // Do something.
+   *   RecommendSpecResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RecommendSpecRequest, RecommendSpecResponse> recommendSpecCallable() {
+    return stub.recommendSpecCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,15 +18,23 @@ package com.google.ads.admanager.v1;
 
 import com.google.ads.admanager.v1.stub.NetworkServiceStub;
 import com.google.ads.admanager.v1.stub.NetworkServiceStubSettings;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Provides methods for handling Network objects.
+ * Service Description: Provides methods for handling `Network` objects.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -82,6 +90,7 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
+ *           <li><p> listNetworksPagedCallable()
  *           <li><p> listNetworksCallable()
  *      </ul>
  *       </td>
@@ -298,16 +307,23 @@ public class NetworkServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NetworkServiceClient networkServiceClient = NetworkServiceClient.create()) {
-   *   ListNetworksRequest request = ListNetworksRequest.newBuilder().build();
-   *   ListNetworksResponse response = networkServiceClient.listNetworks(request);
+   *   ListNetworksRequest request =
+   *       ListNetworksRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setSkip(3532159)
+   *           .build();
+   *   for (Network element : networkServiceClient.listNetworks(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListNetworksResponse listNetworks(ListNetworksRequest request) {
-    return listNetworksCallable().call(request);
+  public final ListNetworksPagedResponse listNetworks(ListNetworksRequest request) {
+    return listNetworksPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -323,11 +339,57 @@ public class NetworkServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NetworkServiceClient networkServiceClient = NetworkServiceClient.create()) {
-   *   ListNetworksRequest request = ListNetworksRequest.newBuilder().build();
-   *   ApiFuture<ListNetworksResponse> future =
-   *       networkServiceClient.listNetworksCallable().futureCall(request);
+   *   ListNetworksRequest request =
+   *       ListNetworksRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setSkip(3532159)
+   *           .build();
+   *   ApiFuture<Network> future =
+   *       networkServiceClient.listNetworksPagedCallable().futureCall(request);
    *   // Do something.
-   *   ListNetworksResponse response = future.get();
+   *   for (Network element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListNetworksRequest, ListNetworksPagedResponse>
+      listNetworksPagedCallable() {
+    return stub.listNetworksPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to retrieve all the networks the current user has access to.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServiceClient networkServiceClient = NetworkServiceClient.create()) {
+   *   ListNetworksRequest request =
+   *       ListNetworksRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setSkip(3532159)
+   *           .build();
+   *   while (true) {
+   *     ListNetworksResponse response = networkServiceClient.listNetworksCallable().call(request);
+   *     for (Network element : response.getNetworksList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
    * }
    * }</pre>
    */
@@ -363,5 +425,80 @@ public class NetworkServiceClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListNetworksPagedResponse
+      extends AbstractPagedListResponse<
+          ListNetworksRequest,
+          ListNetworksResponse,
+          Network,
+          ListNetworksPage,
+          ListNetworksFixedSizeCollection> {
+
+    public static ApiFuture<ListNetworksPagedResponse> createAsync(
+        PageContext<ListNetworksRequest, ListNetworksResponse, Network> context,
+        ApiFuture<ListNetworksResponse> futureResponse) {
+      ApiFuture<ListNetworksPage> futurePage =
+          ListNetworksPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListNetworksPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListNetworksPagedResponse(ListNetworksPage page) {
+      super(page, ListNetworksFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListNetworksPage
+      extends AbstractPage<ListNetworksRequest, ListNetworksResponse, Network, ListNetworksPage> {
+
+    private ListNetworksPage(
+        PageContext<ListNetworksRequest, ListNetworksResponse, Network> context,
+        ListNetworksResponse response) {
+      super(context, response);
+    }
+
+    private static ListNetworksPage createEmptyPage() {
+      return new ListNetworksPage(null, null);
+    }
+
+    @Override
+    protected ListNetworksPage createPage(
+        PageContext<ListNetworksRequest, ListNetworksResponse, Network> context,
+        ListNetworksResponse response) {
+      return new ListNetworksPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListNetworksPage> createPageAsync(
+        PageContext<ListNetworksRequest, ListNetworksResponse, Network> context,
+        ApiFuture<ListNetworksResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListNetworksFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListNetworksRequest,
+          ListNetworksResponse,
+          Network,
+          ListNetworksPage,
+          ListNetworksFixedSizeCollection> {
+
+    private ListNetworksFixedSizeCollection(List<ListNetworksPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListNetworksFixedSizeCollection createEmptyCollection() {
+      return new ListNetworksFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListNetworksFixedSizeCollection createCollection(
+        List<ListNetworksPage> pages, int collectionSize) {
+      return new ListNetworksFixedSizeCollection(pages, collectionSize);
+    }
   }
 }

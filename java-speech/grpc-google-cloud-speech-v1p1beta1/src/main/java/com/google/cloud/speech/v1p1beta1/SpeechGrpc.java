@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service that implements Google Cloud Speech API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/speech/v1p1beta1/cloud_speech.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SpeechGrpc {
 
@@ -402,8 +399,8 @@ public final class SpeechGrpc {
      * </pre>
      */
     public com.google.cloud.speech.v1p1beta1.RecognizeResponse recognize(
-        com.google.cloud.speech.v1p1beta1.RecognizeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v1p1beta1.RecognizeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRecognizeMethod(), getCallOptions(), request);
     }
 
@@ -420,8 +417,9 @@ public final class SpeechGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation longRunningRecognize(
-        com.google.cloud.speech.v1p1beta1.LongRunningRecognizeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v1p1beta1.LongRunningRecognizeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getLongRunningRecognizeMethod(), getCallOptions(), request);
     }
 

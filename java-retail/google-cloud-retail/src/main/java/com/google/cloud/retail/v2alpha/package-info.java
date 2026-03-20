@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -168,6 +168,8 @@
  *           .setUserInfo(UserInfo.newBuilder().build())
  *           .setConversationalFilteringSpec(
  *               ConversationalSearchRequest.ConversationalFilteringSpec.newBuilder().build())
+ *           .putAllUserLabels(new HashMap<String, String>())
+ *           .addAllSafetySettings(new ArrayList<SafetySetting>())
  *           .build();
  *   ServerStream<ConversationalSearchResponse> stream =
  *       conversationalSearchServiceClient.conversationalSearchCallable().call(request);
@@ -353,6 +355,7 @@
  *           .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
  *           .setQueryExpansionSpec(SearchRequest.QueryExpansionSpec.newBuilder().build())
  *           .addAllVariantRollupKeys(new ArrayList<String>())
+ *           .setExperimentId("experimentId-404563464")
  *           .addAllPageCategories(new ArrayList<String>())
  *           .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
  *           .putAllLabels(new HashMap<String, String>())

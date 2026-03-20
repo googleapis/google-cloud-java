@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * TensorboardService
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1/tensorboard_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class TensorboardServiceGrpc {
 
@@ -2677,8 +2674,9 @@ public final class TensorboardServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createTensorboard(
-        com.google.cloud.aiplatform.v1.CreateTensorboardRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CreateTensorboardRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTensorboardMethod(), getCallOptions(), request);
     }
 
@@ -2690,8 +2688,9 @@ public final class TensorboardServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.Tensorboard getTensorboard(
-        com.google.cloud.aiplatform.v1.GetTensorboardRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetTensorboardRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTensorboardMethod(), getCallOptions(), request);
     }
 
@@ -2703,8 +2702,9 @@ public final class TensorboardServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateTensorboard(
-        com.google.cloud.aiplatform.v1.UpdateTensorboardRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.UpdateTensorboardRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTensorboardMethod(), getCallOptions(), request);
     }
 
@@ -2716,8 +2716,9 @@ public final class TensorboardServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListTensorboardsResponse listTensorboards(
-        com.google.cloud.aiplatform.v1.ListTensorboardsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ListTensorboardsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTensorboardsMethod(), getCallOptions(), request);
     }
 
@@ -2729,8 +2730,9 @@ public final class TensorboardServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteTensorboard(
-        com.google.cloud.aiplatform.v1.DeleteTensorboardRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DeleteTensorboardRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTensorboardMethod(), getCallOptions(), request);
     }
 
@@ -2742,8 +2744,9 @@ public final class TensorboardServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse readTensorboardUsage(
-        com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReadTensorboardUsageMethod(), getCallOptions(), request);
     }
 
@@ -2755,8 +2758,9 @@ public final class TensorboardServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ReadTensorboardSizeResponse readTensorboardSize(
-        com.google.cloud.aiplatform.v1.ReadTensorboardSizeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ReadTensorboardSizeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReadTensorboardSizeMethod(), getCallOptions(), request);
     }
 
@@ -2768,8 +2772,9 @@ public final class TensorboardServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.TensorboardExperiment createTensorboardExperiment(
-        com.google.cloud.aiplatform.v1.CreateTensorboardExperimentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CreateTensorboardExperimentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTensorboardExperimentMethod(), getCallOptions(), request);
     }
 
@@ -2781,8 +2786,9 @@ public final class TensorboardServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.TensorboardExperiment getTensorboardExperiment(
-        com.google.cloud.aiplatform.v1.GetTensorboardExperimentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetTensorboardExperimentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTensorboardExperimentMethod(), getCallOptions(), request);
     }
 
@@ -2794,8 +2800,9 @@ public final class TensorboardServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.TensorboardExperiment updateTensorboardExperiment(
-        com.google.cloud.aiplatform.v1.UpdateTensorboardExperimentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.UpdateTensorboardExperimentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTensorboardExperimentMethod(), getCallOptions(), request);
     }
 
@@ -2808,8 +2815,9 @@ public final class TensorboardServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1.ListTensorboardExperimentsResponse
         listTensorboardExperiments(
-            com.google.cloud.aiplatform.v1.ListTensorboardExperimentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.aiplatform.v1.ListTensorboardExperimentsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTensorboardExperimentsMethod(), getCallOptions(), request);
     }
 
@@ -2821,8 +2829,9 @@ public final class TensorboardServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteTensorboardExperiment(
-        com.google.cloud.aiplatform.v1.DeleteTensorboardExperimentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DeleteTensorboardExperimentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTensorboardExperimentMethod(), getCallOptions(), request);
     }
 
@@ -2834,8 +2843,9 @@ public final class TensorboardServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.TensorboardRun createTensorboardRun(
-        com.google.cloud.aiplatform.v1.CreateTensorboardRunRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CreateTensorboardRunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTensorboardRunMethod(), getCallOptions(), request);
     }
 
@@ -2848,8 +2858,9 @@ public final class TensorboardServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1.BatchCreateTensorboardRunsResponse
         batchCreateTensorboardRuns(
-            com.google.cloud.aiplatform.v1.BatchCreateTensorboardRunsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.aiplatform.v1.BatchCreateTensorboardRunsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchCreateTensorboardRunsMethod(), getCallOptions(), request);
     }
 
@@ -2861,8 +2872,9 @@ public final class TensorboardServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.TensorboardRun getTensorboardRun(
-        com.google.cloud.aiplatform.v1.GetTensorboardRunRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetTensorboardRunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTensorboardRunMethod(), getCallOptions(), request);
     }
 
@@ -2874,8 +2886,9 @@ public final class TensorboardServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.TensorboardRun updateTensorboardRun(
-        com.google.cloud.aiplatform.v1.UpdateTensorboardRunRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.UpdateTensorboardRunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTensorboardRunMethod(), getCallOptions(), request);
     }
 
@@ -2887,8 +2900,9 @@ public final class TensorboardServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListTensorboardRunsResponse listTensorboardRuns(
-        com.google.cloud.aiplatform.v1.ListTensorboardRunsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ListTensorboardRunsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTensorboardRunsMethod(), getCallOptions(), request);
     }
 
@@ -2900,8 +2914,9 @@ public final class TensorboardServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteTensorboardRun(
-        com.google.cloud.aiplatform.v1.DeleteTensorboardRunRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DeleteTensorboardRunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTensorboardRunMethod(), getCallOptions(), request);
     }
 
@@ -2914,8 +2929,9 @@ public final class TensorboardServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1.BatchCreateTensorboardTimeSeriesResponse
         batchCreateTensorboardTimeSeries(
-            com.google.cloud.aiplatform.v1.BatchCreateTensorboardTimeSeriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.aiplatform.v1.BatchCreateTensorboardTimeSeriesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchCreateTensorboardTimeSeriesMethod(), getCallOptions(), request);
     }
 
@@ -2927,8 +2943,9 @@ public final class TensorboardServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.TensorboardTimeSeries createTensorboardTimeSeries(
-        com.google.cloud.aiplatform.v1.CreateTensorboardTimeSeriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CreateTensorboardTimeSeriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTensorboardTimeSeriesMethod(), getCallOptions(), request);
     }
 
@@ -2940,8 +2957,9 @@ public final class TensorboardServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.TensorboardTimeSeries getTensorboardTimeSeries(
-        com.google.cloud.aiplatform.v1.GetTensorboardTimeSeriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetTensorboardTimeSeriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTensorboardTimeSeriesMethod(), getCallOptions(), request);
     }
 
@@ -2953,8 +2971,9 @@ public final class TensorboardServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.TensorboardTimeSeries updateTensorboardTimeSeries(
-        com.google.cloud.aiplatform.v1.UpdateTensorboardTimeSeriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.UpdateTensorboardTimeSeriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTensorboardTimeSeriesMethod(), getCallOptions(), request);
     }
 
@@ -2967,8 +2986,9 @@ public final class TensorboardServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1.ListTensorboardTimeSeriesResponse
         listTensorboardTimeSeries(
-            com.google.cloud.aiplatform.v1.ListTensorboardTimeSeriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.aiplatform.v1.ListTensorboardTimeSeriesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTensorboardTimeSeriesMethod(), getCallOptions(), request);
     }
 
@@ -2980,8 +3000,9 @@ public final class TensorboardServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteTensorboardTimeSeries(
-        com.google.cloud.aiplatform.v1.DeleteTensorboardTimeSeriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DeleteTensorboardTimeSeriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTensorboardTimeSeriesMethod(), getCallOptions(), request);
     }
 
@@ -2998,8 +3019,9 @@ public final class TensorboardServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1.BatchReadTensorboardTimeSeriesDataResponse
         batchReadTensorboardTimeSeriesData(
-            com.google.cloud.aiplatform.v1.BatchReadTensorboardTimeSeriesDataRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.aiplatform.v1.BatchReadTensorboardTimeSeriesDataRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchReadTensorboardTimeSeriesDataMethod(), getCallOptions(), request);
     }
 
@@ -3016,8 +3038,9 @@ public final class TensorboardServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1.ReadTensorboardTimeSeriesDataResponse
         readTensorboardTimeSeriesData(
-            com.google.cloud.aiplatform.v1.ReadTensorboardTimeSeriesDataRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.aiplatform.v1.ReadTensorboardTimeSeriesDataRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReadTensorboardTimeSeriesDataMethod(), getCallOptions(), request);
     }
 
@@ -3050,8 +3073,9 @@ public final class TensorboardServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1.WriteTensorboardExperimentDataResponse
         writeTensorboardExperimentData(
-            com.google.cloud.aiplatform.v1.WriteTensorboardExperimentDataRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.aiplatform.v1.WriteTensorboardExperimentDataRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getWriteTensorboardExperimentDataMethod(), getCallOptions(), request);
     }
 
@@ -3064,8 +3088,9 @@ public final class TensorboardServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.WriteTensorboardRunDataResponse writeTensorboardRunData(
-        com.google.cloud.aiplatform.v1.WriteTensorboardRunDataRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.WriteTensorboardRunDataRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getWriteTensorboardRunDataMethod(), getCallOptions(), request);
     }
 
@@ -3079,8 +3104,9 @@ public final class TensorboardServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1.ExportTensorboardTimeSeriesDataResponse
         exportTensorboardTimeSeriesData(
-            com.google.cloud.aiplatform.v1.ExportTensorboardTimeSeriesDataRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.aiplatform.v1.ExportTensorboardTimeSeriesDataRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportTensorboardTimeSeriesDataMethod(), getCallOptions(), request);
     }
   }

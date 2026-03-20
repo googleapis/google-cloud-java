@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing [Tools][google.cloud.dialogflow.cx.v3beta1.Tool].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/cx/v3beta1/tool.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ToolsGrpc {
 
@@ -995,8 +992,9 @@ public final class ToolsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Tool createTool(
-        com.google.cloud.dialogflow.cx.v3beta1.CreateToolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.CreateToolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateToolMethod(), getCallOptions(), request);
     }
 
@@ -1009,8 +1007,9 @@ public final class ToolsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.ListToolsResponse listTools(
-        com.google.cloud.dialogflow.cx.v3beta1.ListToolsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.ListToolsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListToolsMethod(), getCallOptions(), request);
     }
 
@@ -1022,8 +1021,9 @@ public final class ToolsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportTools(
-        com.google.cloud.dialogflow.cx.v3beta1.ExportToolsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.ExportToolsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportToolsMethod(), getCallOptions(), request);
     }
 
@@ -1035,8 +1035,9 @@ public final class ToolsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Tool getTool(
-        com.google.cloud.dialogflow.cx.v3beta1.GetToolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.GetToolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetToolMethod(), getCallOptions(), request);
     }
 
@@ -1048,8 +1049,9 @@ public final class ToolsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Tool updateTool(
-        com.google.cloud.dialogflow.cx.v3beta1.UpdateToolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.UpdateToolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateToolMethod(), getCallOptions(), request);
     }
 
@@ -1061,8 +1063,9 @@ public final class ToolsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteTool(
-        com.google.cloud.dialogflow.cx.v3beta1.DeleteToolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.DeleteToolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteToolMethod(), getCallOptions(), request);
     }
 
@@ -1075,8 +1078,9 @@ public final class ToolsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsResponse listToolVersions(
-        com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListToolVersionsMethod(), getCallOptions(), request);
     }
 
@@ -1089,8 +1093,9 @@ public final class ToolsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.ToolVersion createToolVersion(
-        com.google.cloud.dialogflow.cx.v3beta1.CreateToolVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.CreateToolVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateToolVersionMethod(), getCallOptions(), request);
     }
 
@@ -1103,8 +1108,9 @@ public final class ToolsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.ToolVersion getToolVersion(
-        com.google.cloud.dialogflow.cx.v3beta1.GetToolVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.GetToolVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetToolVersionMethod(), getCallOptions(), request);
     }
 
@@ -1117,8 +1123,9 @@ public final class ToolsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteToolVersion(
-        com.google.cloud.dialogflow.cx.v3beta1.DeleteToolVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.DeleteToolVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteToolVersionMethod(), getCallOptions(), request);
     }
 
@@ -1131,8 +1138,9 @@ public final class ToolsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionResponse restoreToolVersion(
-        com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRestoreToolVersionMethod(), getCallOptions(), request);
     }
   }

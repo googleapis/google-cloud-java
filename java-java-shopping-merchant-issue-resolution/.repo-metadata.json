@@ -4,7 +4,7 @@
   "product_documentation": "https://developers.google.com/merchant/api",
   "api_description": "Programatically manage your Merchant Issues",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-shopping-merchant-issue-resolution/latest/overview",
-  "release_level": "preview",
+  "release_level": "stable",
   "transport": "both",
   "language": "java",
   "repo": "googleapis/google-cloud-java",

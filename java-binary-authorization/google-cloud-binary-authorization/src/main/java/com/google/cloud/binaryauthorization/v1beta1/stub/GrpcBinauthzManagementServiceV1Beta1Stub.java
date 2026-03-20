@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,6 +60,7 @@ public class GrpcBinauthzManagementServiceV1Beta1Stub extends BinauthzManagement
               "google.cloud.binaryauthorization.v1beta1.BinauthzManagementServiceV1Beta1/GetPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdatePolicyRequest, Policy> updatePolicyMethodDescriptor =
@@ -69,6 +70,7 @@ public class GrpcBinauthzManagementServiceV1Beta1Stub extends BinauthzManagement
               "google.cloud.binaryauthorization.v1beta1.BinauthzManagementServiceV1Beta1/UpdatePolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdatePolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateAttestorRequest, Attestor>
@@ -80,6 +82,7 @@ public class GrpcBinauthzManagementServiceV1Beta1Stub extends BinauthzManagement
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAttestorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Attestor.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAttestorRequest, Attestor> getAttestorMethodDescriptor =
@@ -89,6 +92,7 @@ public class GrpcBinauthzManagementServiceV1Beta1Stub extends BinauthzManagement
               "google.cloud.binaryauthorization.v1beta1.BinauthzManagementServiceV1Beta1/GetAttestor")
           .setRequestMarshaller(ProtoUtils.marshaller(GetAttestorRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Attestor.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateAttestorRequest, Attestor>
@@ -100,6 +104,7 @@ public class GrpcBinauthzManagementServiceV1Beta1Stub extends BinauthzManagement
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAttestorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Attestor.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAttestorsRequest, ListAttestorsResponse>
@@ -112,6 +117,7 @@ public class GrpcBinauthzManagementServiceV1Beta1Stub extends BinauthzManagement
                   ProtoUtils.marshaller(ListAttestorsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAttestorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAttestorRequest, Empty>
@@ -123,6 +129,7 @@ public class GrpcBinauthzManagementServiceV1Beta1Stub extends BinauthzManagement
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAttestorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetPolicyRequest, Policy> getPolicyCallable;

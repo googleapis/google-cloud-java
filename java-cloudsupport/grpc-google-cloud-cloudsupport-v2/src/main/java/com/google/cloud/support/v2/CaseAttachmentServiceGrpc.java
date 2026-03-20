@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service to manage file attachments for Google Cloud support cases.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/support/v2/attachment_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CaseAttachmentServiceGrpc {
 
@@ -244,8 +241,8 @@ public final class CaseAttachmentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.support.v2.ListAttachmentsResponse listAttachments(
-        com.google.cloud.support.v2.ListAttachmentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.support.v2.ListAttachmentsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAttachmentsMethod(), getCallOptions(), request);
     }
   }

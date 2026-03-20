@@ -30,6 +30,7 @@ import java.util.Map;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class ITPaginationTest extends BaseTest {
@@ -111,6 +112,7 @@ public class ITPaginationTest extends BaseTest {
         Lists.newArrayList(Iterables.transform(nextPageWithToken.getValues(), Zone::getName)));
   }
 
+  @Ignore(value = "https://github.com/googleapis/google-cloud-java/issues/11759")
   @Test
   public void testPaginationIterating() {
     ListZonesRequest listZonesRequest =

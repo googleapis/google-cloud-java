@@ -21,7 +21,14 @@ import java.util.Iterator;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-/** An iterable of GenerateContentResponse. */
+/**
+ * An iterable of GenerateContentResponse.
+ *
+ * @deprecated This class and its package are deprecated. See the <a
+ *     href="https://cloud.google.com/vertex-ai/generative-ai/docs/deprecations/genai-vertexai-sdk#java">
+ *     migration guide</a> for more details.
+ */
+@Deprecated
 public class ResponseStream<GenerateContentResponse> implements Iterable<GenerateContentResponse> {
 
   private ResponseStreamIteratorWithHistory<GenerateContentResponse> iteratorWithHistory;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to support `TermsOfService` API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/accounts/v1beta/termsofservice.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class TermsOfServiceServiceGrpc {
 
@@ -414,8 +411,9 @@ public final class TermsOfServiceServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.TermsOfService getTermsOfService(
-        com.google.shopping.merchant.accounts.v1beta.GetTermsOfServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.GetTermsOfServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTermsOfServiceMethod(), getCallOptions(), request);
     }
 
@@ -428,8 +426,9 @@ public final class TermsOfServiceServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.TermsOfService retrieveLatestTermsOfService(
-        com.google.shopping.merchant.accounts.v1beta.RetrieveLatestTermsOfServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.RetrieveLatestTermsOfServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRetrieveLatestTermsOfServiceMethod(), getCallOptions(), request);
     }
 
@@ -441,8 +440,9 @@ public final class TermsOfServiceServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty acceptTermsOfService(
-        com.google.shopping.merchant.accounts.v1beta.AcceptTermsOfServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.AcceptTermsOfServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAcceptTermsOfServiceMethod(), getCallOptions(), request);
     }
   }

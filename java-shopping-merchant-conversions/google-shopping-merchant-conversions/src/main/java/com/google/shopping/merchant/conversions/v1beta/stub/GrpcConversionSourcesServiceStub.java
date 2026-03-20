@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,6 +60,7 @@ public class GrpcConversionSourcesServiceStub extends ConversionSourcesServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateConversionSourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ConversionSource.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateConversionSourceRequest, ConversionSource>
@@ -71,6 +72,7 @@ public class GrpcConversionSourcesServiceStub extends ConversionSourcesServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateConversionSourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ConversionSource.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteConversionSourceRequest, Empty>
@@ -82,6 +84,7 @@ public class GrpcConversionSourcesServiceStub extends ConversionSourcesServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteConversionSourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UndeleteConversionSourceRequest, ConversionSource>
@@ -93,6 +96,7 @@ public class GrpcConversionSourcesServiceStub extends ConversionSourcesServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UndeleteConversionSourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ConversionSource.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetConversionSourceRequest, ConversionSource>
@@ -104,6 +108,7 @@ public class GrpcConversionSourcesServiceStub extends ConversionSourcesServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetConversionSourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ConversionSource.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListConversionSourcesRequest, ListConversionSourcesResponse>
@@ -116,6 +121,7 @@ public class GrpcConversionSourcesServiceStub extends ConversionSourcesServiceSt
                   ProtoUtils.marshaller(ListConversionSourcesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConversionSourcesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateConversionSourceRequest, ConversionSource>

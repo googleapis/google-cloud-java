@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -144,7 +144,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> RunReport</td>
- *      <td><p> Initiates the execution of an existing report asynchronously. Users can get the report by polling this operation via `OperationsService.GetOperation`. Poll every 5 seconds initially, with an exponential backoff. Once a report is complete, the operation will contain a `RunReportResponse` in its response field containing a report_result that can be passed to the `FetchReportResultRows` method to retrieve the report data.</td>
+ *      <td><p> Initiates the execution of an existing report asynchronously. Users can get the report by polling this operation using `OperationsService.GetOperation`. Poll every 5 seconds initially, with an exponential backoff. Once a report is complete, the operation will contain a `RunReportResponse` in its response field containing a report_result that can be passed to the `FetchReportResultRows` method to retrieve the report data.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -774,7 +774,7 @@ public class ReportServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Initiates the execution of an existing report asynchronously. Users can get the report by
-   * polling this operation via `OperationsService.GetOperation`. Poll every 5 seconds initially,
+   * polling this operation using `OperationsService.GetOperation`. Poll every 5 seconds initially,
    * with an exponential backoff. Once a report is complete, the operation will contain a
    * `RunReportResponse` in its response field containing a report_result that can be passed to the
    * `FetchReportResultRows` method to retrieve the report data.
@@ -806,7 +806,7 @@ public class ReportServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Initiates the execution of an existing report asynchronously. Users can get the report by
-   * polling this operation via `OperationsService.GetOperation`. Poll every 5 seconds initially,
+   * polling this operation using `OperationsService.GetOperation`. Poll every 5 seconds initially,
    * with an exponential backoff. Once a report is complete, the operation will contain a
    * `RunReportResponse` in its response field containing a report_result that can be passed to the
    * `FetchReportResultRows` method to retrieve the report data.
@@ -836,7 +836,7 @@ public class ReportServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Initiates the execution of an existing report asynchronously. Users can get the report by
-   * polling this operation via `OperationsService.GetOperation`. Poll every 5 seconds initially,
+   * polling this operation using `OperationsService.GetOperation`. Poll every 5 seconds initially,
    * with an exponential backoff. Once a report is complete, the operation will contain a
    * `RunReportResponse` in its response field containing a report_result that can be passed to the
    * `FetchReportResultRows` method to retrieve the report data.
@@ -869,7 +869,7 @@ public class ReportServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Initiates the execution of an existing report asynchronously. Users can get the report by
-   * polling this operation via `OperationsService.GetOperation`. Poll every 5 seconds initially,
+   * polling this operation using `OperationsService.GetOperation`. Poll every 5 seconds initially,
    * with an exponential backoff. Once a report is complete, the operation will contain a
    * `RunReportResponse` in its response field containing a report_result that can be passed to the
    * `FetchReportResultRows` method to retrieve the report data.
@@ -902,7 +902,7 @@ public class ReportServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Initiates the execution of an existing report asynchronously. Users can get the report by
-   * polling this operation via `OperationsService.GetOperation`. Poll every 5 seconds initially,
+   * polling this operation using `OperationsService.GetOperation`. Poll every 5 seconds initially,
    * with an exponential backoff. Once a report is complete, the operation will contain a
    * `RunReportResponse` in its response field containing a report_result that can be passed to the
    * `FetchReportResultRows` method to retrieve the report data.
@@ -946,7 +946,7 @@ public class ReportServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ReportServiceClient reportServiceClient = ReportServiceClient.create()) {
    *   String name = "name3373707";
-   *   for (Report.DataTable.Row element :
+   *   for (ReportDataTable.Row element :
    *       reportServiceClient.fetchReportResultRows(name).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -984,7 +984,7 @@ public class ReportServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
-   *   for (Report.DataTable.Row element :
+   *   for (ReportDataTable.Row element :
    *       reportServiceClient.fetchReportResultRows(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -1020,10 +1020,10 @@ public class ReportServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
-   *   ApiFuture<Report.DataTable.Row> future =
+   *   ApiFuture<ReportDataTable.Row> future =
    *       reportServiceClient.fetchReportResultRowsPagedCallable().futureCall(request);
    *   // Do something.
-   *   for (Report.DataTable.Row element : future.get().iterateAll()) {
+   *   for (ReportDataTable.Row element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -1058,7 +1058,7 @@ public class ReportServiceClient implements BackgroundResource {
    *   while (true) {
    *     FetchReportResultRowsResponse response =
    *         reportServiceClient.fetchReportResultRowsCallable().call(request);
-   *     for (Report.DataTable.Row element : response.getRowsList()) {
+   *     for (ReportDataTable.Row element : response.getRowsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1183,13 +1183,13 @@ public class ReportServiceClient implements BackgroundResource {
       extends AbstractPagedListResponse<
           FetchReportResultRowsRequest,
           FetchReportResultRowsResponse,
-          Report.DataTable.Row,
+          ReportDataTable.Row,
           FetchReportResultRowsPage,
           FetchReportResultRowsFixedSizeCollection> {
 
     public static ApiFuture<FetchReportResultRowsPagedResponse> createAsync(
         PageContext<
-                FetchReportResultRowsRequest, FetchReportResultRowsResponse, Report.DataTable.Row>
+                FetchReportResultRowsRequest, FetchReportResultRowsResponse, ReportDataTable.Row>
             context,
         ApiFuture<FetchReportResultRowsResponse> futureResponse) {
       ApiFuture<FetchReportResultRowsPage> futurePage =
@@ -1209,12 +1209,12 @@ public class ReportServiceClient implements BackgroundResource {
       extends AbstractPage<
           FetchReportResultRowsRequest,
           FetchReportResultRowsResponse,
-          Report.DataTable.Row,
+          ReportDataTable.Row,
           FetchReportResultRowsPage> {
 
     private FetchReportResultRowsPage(
         PageContext<
-                FetchReportResultRowsRequest, FetchReportResultRowsResponse, Report.DataTable.Row>
+                FetchReportResultRowsRequest, FetchReportResultRowsResponse, ReportDataTable.Row>
             context,
         FetchReportResultRowsResponse response) {
       super(context, response);
@@ -1227,7 +1227,7 @@ public class ReportServiceClient implements BackgroundResource {
     @Override
     protected FetchReportResultRowsPage createPage(
         PageContext<
-                FetchReportResultRowsRequest, FetchReportResultRowsResponse, Report.DataTable.Row>
+                FetchReportResultRowsRequest, FetchReportResultRowsResponse, ReportDataTable.Row>
             context,
         FetchReportResultRowsResponse response) {
       return new FetchReportResultRowsPage(context, response);
@@ -1236,7 +1236,7 @@ public class ReportServiceClient implements BackgroundResource {
     @Override
     public ApiFuture<FetchReportResultRowsPage> createPageAsync(
         PageContext<
-                FetchReportResultRowsRequest, FetchReportResultRowsResponse, Report.DataTable.Row>
+                FetchReportResultRowsRequest, FetchReportResultRowsResponse, ReportDataTable.Row>
             context,
         ApiFuture<FetchReportResultRowsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1247,7 +1247,7 @@ public class ReportServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           FetchReportResultRowsRequest,
           FetchReportResultRowsResponse,
-          Report.DataTable.Row,
+          ReportDataTable.Row,
           FetchReportResultRowsPage,
           FetchReportResultRowsFixedSizeCollection> {
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service definition for the Maps Platform Datasets API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/maps/mapsplatformdatasets/v1/maps_platform_datasets_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class MapsPlatformDatasetsGrpc {
 
@@ -634,8 +631,9 @@ public final class MapsPlatformDatasetsGrpc {
      * </pre>
      */
     public com.google.maps.mapsplatformdatasets.v1.Dataset createDataset(
-        com.google.maps.mapsplatformdatasets.v1.CreateDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.mapsplatformdatasets.v1.CreateDatasetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDatasetMethod(), getCallOptions(), request);
     }
 
@@ -647,8 +645,9 @@ public final class MapsPlatformDatasetsGrpc {
      * </pre>
      */
     public com.google.maps.mapsplatformdatasets.v1.Dataset updateDatasetMetadata(
-        com.google.maps.mapsplatformdatasets.v1.UpdateDatasetMetadataRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.mapsplatformdatasets.v1.UpdateDatasetMetadataRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDatasetMetadataMethod(), getCallOptions(), request);
     }
 
@@ -660,8 +659,9 @@ public final class MapsPlatformDatasetsGrpc {
      * </pre>
      */
     public com.google.maps.mapsplatformdatasets.v1.Dataset getDataset(
-        com.google.maps.mapsplatformdatasets.v1.GetDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.mapsplatformdatasets.v1.GetDatasetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDatasetMethod(), getCallOptions(), request);
     }
 
@@ -673,8 +673,9 @@ public final class MapsPlatformDatasetsGrpc {
      * </pre>
      */
     public com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsResponse fetchDatasetErrors(
-        com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchDatasetErrorsMethod(), getCallOptions(), request);
     }
 
@@ -686,8 +687,9 @@ public final class MapsPlatformDatasetsGrpc {
      * </pre>
      */
     public com.google.maps.mapsplatformdatasets.v1.ListDatasetsResponse listDatasets(
-        com.google.maps.mapsplatformdatasets.v1.ListDatasetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.mapsplatformdatasets.v1.ListDatasetsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDatasetsMethod(), getCallOptions(), request);
     }
 
@@ -699,8 +701,9 @@ public final class MapsPlatformDatasetsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteDataset(
-        com.google.maps.mapsplatformdatasets.v1.DeleteDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.mapsplatformdatasets.v1.DeleteDatasetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDatasetMethod(), getCallOptions(), request);
     }
   }

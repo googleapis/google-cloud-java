@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The service that handles CRUD and List for resources for Featurestore.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/featurestore_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class FeaturestoreServiceGrpc {
 
@@ -1858,8 +1855,9 @@ public final class FeaturestoreServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createFeaturestore(
-        com.google.cloud.aiplatform.v1beta1.CreateFeaturestoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.CreateFeaturestoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateFeaturestoreMethod(), getCallOptions(), request);
     }
 
@@ -1871,8 +1869,9 @@ public final class FeaturestoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.Featurestore getFeaturestore(
-        com.google.cloud.aiplatform.v1beta1.GetFeaturestoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.GetFeaturestoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFeaturestoreMethod(), getCallOptions(), request);
     }
 
@@ -1884,8 +1883,9 @@ public final class FeaturestoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ListFeaturestoresResponse listFeaturestores(
-        com.google.cloud.aiplatform.v1beta1.ListFeaturestoresRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ListFeaturestoresRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFeaturestoresMethod(), getCallOptions(), request);
     }
 
@@ -1897,8 +1897,9 @@ public final class FeaturestoreServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateFeaturestore(
-        com.google.cloud.aiplatform.v1beta1.UpdateFeaturestoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.UpdateFeaturestoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateFeaturestoreMethod(), getCallOptions(), request);
     }
 
@@ -1911,8 +1912,9 @@ public final class FeaturestoreServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteFeaturestore(
-        com.google.cloud.aiplatform.v1beta1.DeleteFeaturestoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.DeleteFeaturestoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteFeaturestoreMethod(), getCallOptions(), request);
     }
 
@@ -1924,8 +1926,9 @@ public final class FeaturestoreServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createEntityType(
-        com.google.cloud.aiplatform.v1beta1.CreateEntityTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.CreateEntityTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEntityTypeMethod(), getCallOptions(), request);
     }
 
@@ -1937,8 +1940,9 @@ public final class FeaturestoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.EntityType getEntityType(
-        com.google.cloud.aiplatform.v1beta1.GetEntityTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.GetEntityTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEntityTypeMethod(), getCallOptions(), request);
     }
 
@@ -1950,8 +1954,9 @@ public final class FeaturestoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ListEntityTypesResponse listEntityTypes(
-        com.google.cloud.aiplatform.v1beta1.ListEntityTypesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ListEntityTypesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEntityTypesMethod(), getCallOptions(), request);
     }
 
@@ -1963,8 +1968,9 @@ public final class FeaturestoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.EntityType updateEntityType(
-        com.google.cloud.aiplatform.v1beta1.UpdateEntityTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.UpdateEntityTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEntityTypeMethod(), getCallOptions(), request);
     }
 
@@ -1977,8 +1983,9 @@ public final class FeaturestoreServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteEntityType(
-        com.google.cloud.aiplatform.v1beta1.DeleteEntityTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.DeleteEntityTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEntityTypeMethod(), getCallOptions(), request);
     }
 
@@ -1990,8 +1997,9 @@ public final class FeaturestoreServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createFeature(
-        com.google.cloud.aiplatform.v1beta1.CreateFeatureRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.CreateFeatureRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateFeatureMethod(), getCallOptions(), request);
     }
 
@@ -2003,8 +2011,9 @@ public final class FeaturestoreServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchCreateFeatures(
-        com.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchCreateFeaturesMethod(), getCallOptions(), request);
     }
 
@@ -2016,8 +2025,9 @@ public final class FeaturestoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.Feature getFeature(
-        com.google.cloud.aiplatform.v1beta1.GetFeatureRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.GetFeatureRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFeatureMethod(), getCallOptions(), request);
     }
 
@@ -2029,8 +2039,9 @@ public final class FeaturestoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ListFeaturesResponse listFeatures(
-        com.google.cloud.aiplatform.v1beta1.ListFeaturesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ListFeaturesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFeaturesMethod(), getCallOptions(), request);
     }
 
@@ -2042,8 +2053,9 @@ public final class FeaturestoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.Feature updateFeature(
-        com.google.cloud.aiplatform.v1beta1.UpdateFeatureRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.UpdateFeatureRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateFeatureMethod(), getCallOptions(), request);
     }
 
@@ -2055,8 +2067,9 @@ public final class FeaturestoreServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteFeature(
-        com.google.cloud.aiplatform.v1beta1.DeleteFeatureRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.DeleteFeatureRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteFeatureMethod(), getCallOptions(), request);
     }
 
@@ -2083,8 +2096,9 @@ public final class FeaturestoreServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importFeatureValues(
-        com.google.cloud.aiplatform.v1beta1.ImportFeatureValuesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ImportFeatureValuesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportFeatureValuesMethod(), getCallOptions(), request);
     }
 
@@ -2100,8 +2114,9 @@ public final class FeaturestoreServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchReadFeatureValues(
-        com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchReadFeatureValuesMethod(), getCallOptions(), request);
     }
 
@@ -2113,8 +2128,9 @@ public final class FeaturestoreServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportFeatureValues(
-        com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportFeatureValuesMethod(), getCallOptions(), request);
     }
 
@@ -2133,8 +2149,9 @@ public final class FeaturestoreServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteFeatureValues(
-        com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteFeatureValuesMethod(), getCallOptions(), request);
     }
 
@@ -2146,8 +2163,9 @@ public final class FeaturestoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.SearchFeaturesResponse searchFeatures(
-        com.google.cloud.aiplatform.v1beta1.SearchFeaturesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.SearchFeaturesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchFeaturesMethod(), getCallOptions(), request);
     }
   }

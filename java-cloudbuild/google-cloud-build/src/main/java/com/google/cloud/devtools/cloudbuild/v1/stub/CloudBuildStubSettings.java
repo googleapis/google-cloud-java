@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -59,11 +60,13 @@ import com.google.cloudbuild.v1.CreateBuildRequest;
 import com.google.cloudbuild.v1.CreateBuildTriggerRequest;
 import com.google.cloudbuild.v1.CreateWorkerPoolOperationMetadata;
 import com.google.cloudbuild.v1.CreateWorkerPoolRequest;
+import com.google.cloudbuild.v1.DefaultServiceAccount;
 import com.google.cloudbuild.v1.DeleteBuildTriggerRequest;
 import com.google.cloudbuild.v1.DeleteWorkerPoolOperationMetadata;
 import com.google.cloudbuild.v1.DeleteWorkerPoolRequest;
 import com.google.cloudbuild.v1.GetBuildRequest;
 import com.google.cloudbuild.v1.GetBuildTriggerRequest;
+import com.google.cloudbuild.v1.GetDefaultServiceAccountRequest;
 import com.google.cloudbuild.v1.GetWorkerPoolRequest;
 import com.google.cloudbuild.v1.ListBuildTriggersRequest;
 import com.google.cloudbuild.v1.ListBuildTriggersResponse;
@@ -136,8 +139,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -165,6 +168,7 @@ import javax.annotation.Generated;
  * }</pre>
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -213,6 +217,8 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
   private final PagedCallSettings<
           ListWorkerPoolsRequest, ListWorkerPoolsResponse, ListWorkerPoolsPagedResponse>
       listWorkerPoolsSettings;
+  private final UnaryCallSettings<GetDefaultServiceAccountRequest, DefaultServiceAccount>
+      getDefaultServiceAccountSettings;
 
   private static final PagedListDescriptor<ListBuildsRequest, ListBuildsResponse, Build>
       LIST_BUILDS_PAGE_STR_DESC =
@@ -518,6 +524,12 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
     return listWorkerPoolsSettings;
   }
 
+  /** Returns the object with the settings used for calls to getDefaultServiceAccount. */
+  public UnaryCallSettings<GetDefaultServiceAccountRequest, DefaultServiceAccount>
+      getDefaultServiceAccountSettings() {
+    return getDefaultServiceAccountSettings;
+  }
+
   public CloudBuildStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -654,6 +666,15 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
     updateWorkerPoolSettings = settingsBuilder.updateWorkerPoolSettings().build();
     updateWorkerPoolOperationSettings = settingsBuilder.updateWorkerPoolOperationSettings().build();
     listWorkerPoolsSettings = settingsBuilder.listWorkerPoolsSettings().build();
+    getDefaultServiceAccountSettings = settingsBuilder.getDefaultServiceAccountSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-build")
+        .setRepository("googleapis/google-cloud-java")
+        .build();
   }
 
   /** Builder for CloudBuildStubSettings. */
@@ -711,6 +732,8 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
     private final PagedCallSettings.Builder<
             ListWorkerPoolsRequest, ListWorkerPoolsResponse, ListWorkerPoolsPagedResponse>
         listWorkerPoolsSettings;
+    private final UnaryCallSettings.Builder<GetDefaultServiceAccountRequest, DefaultServiceAccount>
+        getDefaultServiceAccountSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -789,6 +812,7 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
       updateWorkerPoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateWorkerPoolOperationSettings = OperationCallSettings.newBuilder();
       listWorkerPoolsSettings = PagedCallSettings.newBuilder(LIST_WORKER_POOLS_PAGE_STR_FACT);
+      getDefaultServiceAccountSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -809,7 +833,8 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
               getWorkerPoolSettings,
               deleteWorkerPoolSettings,
               updateWorkerPoolSettings,
-              listWorkerPoolsSettings);
+              listWorkerPoolsSettings,
+              getDefaultServiceAccountSettings);
       initDefaults(this);
     }
 
@@ -841,6 +866,7 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
       updateWorkerPoolSettings = settings.updateWorkerPoolSettings.toBuilder();
       updateWorkerPoolOperationSettings = settings.updateWorkerPoolOperationSettings.toBuilder();
       listWorkerPoolsSettings = settings.listWorkerPoolsSettings.toBuilder();
+      getDefaultServiceAccountSettings = settings.getDefaultServiceAccountSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -861,7 +887,8 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
               getWorkerPoolSettings,
               deleteWorkerPoolSettings,
               updateWorkerPoolSettings,
-              listWorkerPoolsSettings);
+              listWorkerPoolsSettings,
+              getDefaultServiceAccountSettings);
     }
 
     private static Builder createDefault() {
@@ -978,6 +1005,11 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
           .listWorkerPoolsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getDefaultServiceAccountSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .createBuildOperationSettings()
@@ -1312,6 +1344,12 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
             ListWorkerPoolsRequest, ListWorkerPoolsResponse, ListWorkerPoolsPagedResponse>
         listWorkerPoolsSettings() {
       return listWorkerPoolsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getDefaultServiceAccount. */
+    public UnaryCallSettings.Builder<GetDefaultServiceAccountRequest, DefaultServiceAccount>
+        getDefaultServiceAccountSettings() {
+      return getDefaultServiceAccountSettings;
     }
 
     @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,8 +82,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @BetaApi
 @Generated("by gapic-generator-java")
@@ -98,6 +98,11 @@ public class CommentServiceSettings extends ClientSettings<CommentServiceSetting
   /** Returns the object with the settings used for calls to createComment. */
   public UnaryCallSettings<CreateCommentRequest, Comment> createCommentSettings() {
     return ((CommentServiceStubSettings) getStubSettings()).createCommentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getComment. */
+  public UnaryCallSettings<GetCommentRequest, Comment> getCommentSettings() {
+    return ((CommentServiceStubSettings) getStubSettings()).getCommentSettings();
   }
 
   public static final CommentServiceSettings create(CommentServiceStubSettings stub)
@@ -222,6 +227,11 @@ public class CommentServiceSettings extends ClientSettings<CommentServiceSetting
     /** Returns the builder for the settings used for calls to createComment. */
     public UnaryCallSettings.Builder<CreateCommentRequest, Comment> createCommentSettings() {
       return getStubSettingsBuilder().createCommentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getComment. */
+    public UnaryCallSettings.Builder<GetCommentRequest, Comment> getCommentSettings() {
+      return getStubSettingsBuilder().getCommentSettings();
     }
 
     @Override

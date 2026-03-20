@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * image with the vulnerability referring to that note.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/devtools/containeranalysis/v1beta1/containeranalysis.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ContainerAnalysisV1Beta1Grpc {
 
@@ -630,8 +627,9 @@ public final class ContainerAnalysisV1Beta1Grpc {
      * occurrences.
      * </pre>
      */
-    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -648,8 +646,9 @@ public final class ContainerAnalysisV1Beta1Grpc {
      * occurrences.
      * </pre>
      */
-    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -666,8 +665,8 @@ public final class ContainerAnalysisV1Beta1Grpc {
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
-        com.google.iam.v1.TestIamPermissionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
 
@@ -679,8 +678,9 @@ public final class ContainerAnalysisV1Beta1Grpc {
      * </pre>
      */
     public com.google.containeranalysis.v1beta1.PackagesSummaryResponse generatePackagesSummary(
-        com.google.containeranalysis.v1beta1.GeneratePackagesSummaryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.containeranalysis.v1beta1.GeneratePackagesSummaryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGeneratePackagesSummaryMethod(), getCallOptions(), request);
     }
 
@@ -692,8 +692,9 @@ public final class ContainerAnalysisV1Beta1Grpc {
      * </pre>
      */
     public com.google.containeranalysis.v1beta1.ExportSBOMResponse exportSBOM(
-        com.google.containeranalysis.v1beta1.ExportSBOMRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.containeranalysis.v1beta1.ExportSBOMRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportSBOMMethod(), getCallOptions(), request);
     }
   }

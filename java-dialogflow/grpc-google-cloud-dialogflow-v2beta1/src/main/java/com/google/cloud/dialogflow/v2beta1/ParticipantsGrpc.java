@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [Participants][google.cloud.dialogflow.v2beta1.Participant].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/v2beta1/participant.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ParticipantsGrpc {
 
@@ -317,6 +314,58 @@ public final class ParticipantsGrpc {
       }
     }
     return getStreamingAnalyzeContentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest,
+          com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse>
+      getBidiStreamingAnalyzeContentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BidiStreamingAnalyzeContent",
+      requestType = com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest.class,
+      responseType = com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest,
+          com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse>
+      getBidiStreamingAnalyzeContentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest,
+            com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse>
+        getBidiStreamingAnalyzeContentMethod;
+    if ((getBidiStreamingAnalyzeContentMethod =
+            ParticipantsGrpc.getBidiStreamingAnalyzeContentMethod)
+        == null) {
+      synchronized (ParticipantsGrpc.class) {
+        if ((getBidiStreamingAnalyzeContentMethod =
+                ParticipantsGrpc.getBidiStreamingAnalyzeContentMethod)
+            == null) {
+          ParticipantsGrpc.getBidiStreamingAnalyzeContentMethod =
+              getBidiStreamingAnalyzeContentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest,
+                          com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "BidiStreamingAnalyzeContent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2beta1
+                                  .BidiStreamingAnalyzeContentResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ParticipantsMethodDescriptorSupplier("BidiStreamingAnalyzeContent"))
+                      .build();
+        }
+      }
+    }
+    return getBidiStreamingAnalyzeContentMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -782,6 +831,24 @@ public final class ParticipantsGrpc {
      *
      *
      * <pre>
+     * Bidirectional endless streaming version of
+     * [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent].
+     * </pre>
+     */
+    default io.grpc.stub.StreamObserver<
+            com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest>
+        bidiStreamingAnalyzeContent(
+            io.grpc.stub.StreamObserver<
+                    com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse>
+                responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(
+          getBidiStreamingAnalyzeContentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets suggested articles for a participant based on specific historical
      * messages.
      * Note that
@@ -1069,6 +1136,25 @@ public final class ParticipantsGrpc {
      *
      *
      * <pre>
+     * Bidirectional endless streaming version of
+     * [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent].
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<
+            com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest>
+        bidiStreamingAnalyzeContent(
+            io.grpc.stub.StreamObserver<
+                    com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse>
+                responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
+          getChannel().newCall(getBidiStreamingAnalyzeContentMethod(), getCallOptions()),
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets suggested articles for a participant based on specific historical
      * messages.
      * Note that
@@ -1237,8 +1323,9 @@ public final class ParticipantsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.Participant createParticipant(
-        com.google.cloud.dialogflow.v2beta1.CreateParticipantRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.CreateParticipantRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateParticipantMethod(), getCallOptions(), request);
     }
 
@@ -1250,8 +1337,9 @@ public final class ParticipantsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.Participant getParticipant(
-        com.google.cloud.dialogflow.v2beta1.GetParticipantRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.GetParticipantRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetParticipantMethod(), getCallOptions(), request);
     }
 
@@ -1263,8 +1351,9 @@ public final class ParticipantsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.ListParticipantsResponse listParticipants(
-        com.google.cloud.dialogflow.v2beta1.ListParticipantsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.ListParticipantsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListParticipantsMethod(), getCallOptions(), request);
     }
 
@@ -1276,8 +1365,9 @@ public final class ParticipantsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.Participant updateParticipant(
-        com.google.cloud.dialogflow.v2beta1.UpdateParticipantRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.UpdateParticipantRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateParticipantMethod(), getCallOptions(), request);
     }
 
@@ -1293,8 +1383,9 @@ public final class ParticipantsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.AnalyzeContentResponse analyzeContent(
-        com.google.cloud.dialogflow.v2beta1.AnalyzeContentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.AnalyzeContentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAnalyzeContentMethod(), getCallOptions(), request);
     }
 
@@ -1330,6 +1421,23 @@ public final class ParticipantsGrpc {
      *
      *
      * <pre>
+     * Bidirectional endless streaming version of
+     * [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent].
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest,
+            com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse>
+        bidiStreamingAnalyzeContent() {
+      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
+          getChannel(), getBidiStreamingAnalyzeContentMethod(), getCallOptions());
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets suggested articles for a participant based on specific historical
      * messages.
      * Note that
@@ -1341,8 +1449,9 @@ public final class ParticipantsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.SuggestArticlesResponse suggestArticles(
-        com.google.cloud.dialogflow.v2beta1.SuggestArticlesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.SuggestArticlesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSuggestArticlesMethod(), getCallOptions(), request);
     }
 
@@ -1355,8 +1464,9 @@ public final class ParticipantsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse suggestFaqAnswers(
-        com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSuggestFaqAnswersMethod(), getCallOptions(), request);
     }
 
@@ -1369,8 +1479,9 @@ public final class ParticipantsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse suggestSmartReplies(
-        com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSuggestSmartRepliesMethod(), getCallOptions(), request);
     }
 
@@ -1383,8 +1494,9 @@ public final class ParticipantsGrpc {
      */
     public com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse
         suggestKnowledgeAssist(
-            com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSuggestKnowledgeAssistMethod(), getCallOptions(), request);
     }
 
@@ -1414,8 +1526,9 @@ public final class ParticipantsGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.dialogflow.v2beta1.ListSuggestionsResponse listSuggestions(
-        com.google.cloud.dialogflow.v2beta1.ListSuggestionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.ListSuggestionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSuggestionsMethod(), getCallOptions(), request);
     }
 
@@ -1440,8 +1553,9 @@ public final class ParticipantsGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.dialogflow.v2beta1.CompileSuggestionResponse compileSuggestion(
-        com.google.cloud.dialogflow.v2beta1.CompileSuggestionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.CompileSuggestionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCompileSuggestionMethod(), getCallOptions(), request);
     }
   }
@@ -1888,6 +2002,7 @@ public final class ParticipantsGrpc {
   private static final int METHODID_LIST_SUGGESTIONS = 9;
   private static final int METHODID_COMPILE_SUGGESTION = 10;
   private static final int METHODID_STREAMING_ANALYZE_CONTENT = 11;
+  private static final int METHODID_BIDI_STREAMING_ANALYZE_CONTENT = 12;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1996,6 +2111,12 @@ public final class ParticipantsGrpc {
                   (io.grpc.stub.StreamObserver<
                           com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse>)
                       responseObserver);
+        case METHODID_BIDI_STREAMING_ANALYZE_CONTENT:
+          return (io.grpc.stub.StreamObserver<Req>)
+              serviceImpl.bidiStreamingAnalyzeContent(
+                  (io.grpc.stub.StreamObserver<
+                          com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse>)
+                      responseObserver);
         default:
           throw new AssertionError();
       }
@@ -2046,6 +2167,13 @@ public final class ParticipantsGrpc {
                     com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest,
                     com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse>(
                     service, METHODID_STREAMING_ANALYZE_CONTENT)))
+        .addMethod(
+            getBidiStreamingAnalyzeContentMethod(),
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest,
+                    com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse>(
+                    service, METHODID_BIDI_STREAMING_ANALYZE_CONTENT)))
         .addMethod(
             getSuggestArticlesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2145,6 +2273,7 @@ public final class ParticipantsGrpc {
                       .addMethod(getUpdateParticipantMethod())
                       .addMethod(getAnalyzeContentMethod())
                       .addMethod(getStreamingAnalyzeContentMethod())
+                      .addMethod(getBidiStreamingAnalyzeContentMethod())
                       .addMethod(getSuggestArticlesMethod())
                       .addMethod(getSuggestFaqAnswersMethod())
                       .addMethod(getSuggestSmartRepliesMethod())

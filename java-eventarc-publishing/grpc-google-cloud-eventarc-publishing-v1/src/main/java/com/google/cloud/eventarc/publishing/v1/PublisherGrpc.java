@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,9 +44,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Publisher allows an event provider to publish events to Eventarc.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/eventarc/publishing/v1/publisher.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class PublisherGrpc {
 
@@ -503,8 +500,9 @@ public final class PublisherGrpc {
      */
     public com.google.cloud.eventarc.publishing.v1.PublishChannelConnectionEventsResponse
         publishChannelConnectionEvents(
-            com.google.cloud.eventarc.publishing.v1.PublishChannelConnectionEventsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.eventarc.publishing.v1.PublishChannelConnectionEventsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPublishChannelConnectionEventsMethod(), getCallOptions(), request);
     }
 
@@ -516,8 +514,9 @@ public final class PublisherGrpc {
      * </pre>
      */
     public com.google.cloud.eventarc.publishing.v1.PublishEventsResponse publishEvents(
-        com.google.cloud.eventarc.publishing.v1.PublishEventsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.publishing.v1.PublishEventsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPublishEventsMethod(), getCallOptions(), request);
     }
 
@@ -529,8 +528,9 @@ public final class PublisherGrpc {
      * </pre>
      */
     public com.google.cloud.eventarc.publishing.v1.PublishResponse publish(
-        com.google.cloud.eventarc.publishing.v1.PublishRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.eventarc.publishing.v1.PublishRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPublishMethod(), getCallOptions(), request);
     }
   }

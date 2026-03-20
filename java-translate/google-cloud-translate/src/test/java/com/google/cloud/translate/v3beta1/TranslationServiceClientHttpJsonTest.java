@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -349,7 +349,7 @@ public class TranslationServiceClientHttpJsonTest {
 
     TranslateDocumentRequest request =
         TranslateDocumentRequest.newBuilder()
-            .setParent("projects/project-5833/locations/location-5833")
+            .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setSourceLanguageCode("sourceLanguageCode1645917472")
             .setTargetLanguageCode("targetLanguageCode-106414698")
             .setDocumentInputConfig(DocumentInputConfig.newBuilder().build())
@@ -391,7 +391,7 @@ public class TranslationServiceClientHttpJsonTest {
     try {
       TranslateDocumentRequest request =
           TranslateDocumentRequest.newBuilder()
-              .setParent("projects/project-5833/locations/location-5833")
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setSourceLanguageCode("sourceLanguageCode1645917472")
               .setTargetLanguageCode("targetLanguageCode-106414698")
               .setDocumentInputConfig(DocumentInputConfig.newBuilder().build())
@@ -1039,6 +1039,60 @@ public class TranslationServiceClientHttpJsonTest {
       client.deleteGlossaryAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void refineTextTest() throws Exception {
+    RefineTextResponse expectedResponse =
+        RefineTextResponse.newBuilder().addAllRefinedTranslations(new ArrayList<String>()).build();
+    mockService.addResponse(expectedResponse);
+
+    RefineTextRequest request =
+        RefineTextRequest.newBuilder()
+            .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .addAllRefinementEntries(new ArrayList<RefinementEntry>())
+            .setSourceLanguageCode("sourceLanguageCode1645917472")
+            .setTargetLanguageCode("targetLanguageCode-106414698")
+            .build();
+
+    RefineTextResponse actualResponse = client.refineText(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void refineTextExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RefineTextRequest request =
+          RefineTextRequest.newBuilder()
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .addAllRefinementEntries(new ArrayList<RefinementEntry>())
+              .setSourceLanguageCode("sourceLanguageCode1645917472")
+              .setTargetLanguageCode("targetLanguageCode-106414698")
+              .build();
+      client.refineText(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

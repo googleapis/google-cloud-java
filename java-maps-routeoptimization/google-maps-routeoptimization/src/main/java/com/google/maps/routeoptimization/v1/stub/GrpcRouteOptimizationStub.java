@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,8 +29,12 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.maps.routeoptimization.v1.BatchOptimizeToursMetadata;
 import com.google.maps.routeoptimization.v1.BatchOptimizeToursRequest;
 import com.google.maps.routeoptimization.v1.BatchOptimizeToursResponse;
+import com.google.maps.routeoptimization.v1.OptimizeToursLongRunningMetadata;
 import com.google.maps.routeoptimization.v1.OptimizeToursRequest;
 import com.google.maps.routeoptimization.v1.OptimizeToursResponse;
+import com.google.maps.routeoptimization.v1.OptimizeToursUriMetadata;
+import com.google.maps.routeoptimization.v1.OptimizeToursUriRequest;
+import com.google.maps.routeoptimization.v1.OptimizeToursUriResponse;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -54,6 +58,7 @@ public class GrpcRouteOptimizationStub extends RouteOptimizationStub {
                   ProtoUtils.marshaller(OptimizeToursRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(OptimizeToursResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchOptimizeToursRequest, Operation>
@@ -65,6 +70,31 @@ public class GrpcRouteOptimizationStub extends RouteOptimizationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchOptimizeToursRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<OptimizeToursRequest, Operation>
+      optimizeToursLongRunningMethodDescriptor =
+          MethodDescriptor.<OptimizeToursRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.maps.routeoptimization.v1.RouteOptimization/OptimizeToursLongRunning")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(OptimizeToursRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<OptimizeToursUriRequest, Operation>
+      optimizeToursUriMethodDescriptor =
+          MethodDescriptor.<OptimizeToursUriRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.maps.routeoptimization.v1.RouteOptimization/OptimizeToursUri")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(OptimizeToursUriRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<OptimizeToursRequest, OptimizeToursResponse> optimizeToursCallable;
@@ -72,6 +102,14 @@ public class GrpcRouteOptimizationStub extends RouteOptimizationStub {
   private final OperationCallable<
           BatchOptimizeToursRequest, BatchOptimizeToursResponse, BatchOptimizeToursMetadata>
       batchOptimizeToursOperationCallable;
+  private final UnaryCallable<OptimizeToursRequest, Operation> optimizeToursLongRunningCallable;
+  private final OperationCallable<
+          OptimizeToursRequest, OptimizeToursResponse, OptimizeToursLongRunningMetadata>
+      optimizeToursLongRunningOperationCallable;
+  private final UnaryCallable<OptimizeToursUriRequest, Operation> optimizeToursUriCallable;
+  private final OperationCallable<
+          OptimizeToursUriRequest, OptimizeToursUriResponse, OptimizeToursUriMetadata>
+      optimizeToursUriOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -137,6 +175,26 @@ public class GrpcRouteOptimizationStub extends RouteOptimizationStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<OptimizeToursRequest, Operation> optimizeToursLongRunningTransportSettings =
+        GrpcCallSettings.<OptimizeToursRequest, Operation>newBuilder()
+            .setMethodDescriptor(optimizeToursLongRunningMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<OptimizeToursUriRequest, Operation> optimizeToursUriTransportSettings =
+        GrpcCallSettings.<OptimizeToursUriRequest, Operation>newBuilder()
+            .setMethodDescriptor(optimizeToursUriMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
 
     this.optimizeToursCallable =
         callableFactory.createUnaryCallable(
@@ -150,6 +208,26 @@ public class GrpcRouteOptimizationStub extends RouteOptimizationStub {
         callableFactory.createOperationCallable(
             batchOptimizeToursTransportSettings,
             settings.batchOptimizeToursOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.optimizeToursLongRunningCallable =
+        callableFactory.createUnaryCallable(
+            optimizeToursLongRunningTransportSettings,
+            settings.optimizeToursLongRunningSettings(),
+            clientContext);
+    this.optimizeToursLongRunningOperationCallable =
+        callableFactory.createOperationCallable(
+            optimizeToursLongRunningTransportSettings,
+            settings.optimizeToursLongRunningOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.optimizeToursUriCallable =
+        callableFactory.createUnaryCallable(
+            optimizeToursUriTransportSettings, settings.optimizeToursUriSettings(), clientContext);
+    this.optimizeToursUriOperationCallable =
+        callableFactory.createOperationCallable(
+            optimizeToursUriTransportSettings,
+            settings.optimizeToursUriOperationSettings(),
             clientContext,
             operationsStub);
 
@@ -176,6 +254,30 @@ public class GrpcRouteOptimizationStub extends RouteOptimizationStub {
           BatchOptimizeToursRequest, BatchOptimizeToursResponse, BatchOptimizeToursMetadata>
       batchOptimizeToursOperationCallable() {
     return batchOptimizeToursOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<OptimizeToursRequest, Operation> optimizeToursLongRunningCallable() {
+    return optimizeToursLongRunningCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          OptimizeToursRequest, OptimizeToursResponse, OptimizeToursLongRunningMetadata>
+      optimizeToursLongRunningOperationCallable() {
+    return optimizeToursLongRunningOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<OptimizeToursUriRequest, Operation> optimizeToursUriCallable() {
+    return optimizeToursUriCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          OptimizeToursUriRequest, OptimizeToursUriResponse, OptimizeToursUriMetadata>
+      optimizeToursUriOperationCallable() {
+    return optimizeToursUriOperationCallable;
   }
 
   @Override

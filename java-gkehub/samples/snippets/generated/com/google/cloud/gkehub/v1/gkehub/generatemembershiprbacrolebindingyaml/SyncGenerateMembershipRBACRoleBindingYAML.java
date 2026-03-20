@@ -1,0 +1,50 @@
+/*
+ * Copyright 2026 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.cloud.gkehub.v1.samples;
+
+// [START gkehub_v1_generated_GkeHub_GenerateMembershipRBACRoleBindingYAML_sync]
+import com.google.cloud.gkehub.v1.GenerateMembershipRBACRoleBindingYAMLRequest;
+import com.google.cloud.gkehub.v1.GenerateMembershipRBACRoleBindingYAMLResponse;
+import com.google.cloud.gkehub.v1.GkeHubClient;
+import com.google.cloud.gkehub.v1.MembershipName;
+import com.google.cloud.gkehub.v1.RBACRoleBinding;
+
+public class SyncGenerateMembershipRBACRoleBindingYAML {
+
+  public static void main(String[] args) throws Exception {
+    syncGenerateMembershipRBACRoleBindingYAML();
+  }
+
+  public static void syncGenerateMembershipRBACRoleBindingYAML() throws Exception {
+    // This snippet has been automatically generated and should be regarded as a code template only.
+    // It will require modifications to work:
+    // - It may require correct/in-range values for request initialization.
+    // - It may require specifying regional endpoints when creating the service client as shown in
+    // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+    try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
+      GenerateMembershipRBACRoleBindingYAMLRequest request =
+          GenerateMembershipRBACRoleBindingYAMLRequest.newBuilder()
+              .setParent(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
+              .setRbacrolebindingId("rbacrolebindingId827577784")
+              .setRbacrolebinding(RBACRoleBinding.newBuilder().build())
+              .build();
+      GenerateMembershipRBACRoleBindingYAMLResponse response =
+          gkeHubClient.generateMembershipRBACRoleBindingYAML(request);
+    }
+  }
+}
+// [END gkehub_v1_generated_GkeHub_GenerateMembershipRBACRoleBindingYAML_sync]

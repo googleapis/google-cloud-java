@@ -1,0 +1,33 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.maintenance.api.v1beta",
+  "libraryPackage": "com.google.cloud.maintenance.api.v1beta",
+  "services": {
+    "Maintenance": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "MaintenanceClient",
+          "rpcs": {
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetResourceMaintenance": {
+              "methods": ["getResourceMaintenance", "getResourceMaintenance", "getResourceMaintenance", "getResourceMaintenanceCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListResourceMaintenances": {
+              "methods": ["listResourceMaintenances", "listResourceMaintenances", "listResourceMaintenances", "listResourceMaintenancesPagedCallable", "listResourceMaintenancesCallable"]
+            },
+            "SummarizeMaintenances": {
+              "methods": ["summarizeMaintenances", "summarizeMaintenances", "summarizeMaintenances", "summarizeMaintenancesPagedCallable", "summarizeMaintenancesCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

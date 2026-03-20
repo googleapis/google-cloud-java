@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<differences>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/logging/v2/ConfigServiceV2Grpc$AsyncService</className>
+    <method>void createBucketAsync(com.google.logging.v2.CreateBucketRequest, io.grpc.stub.StreamObserver)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/logging/v2/ConfigServiceV2Grpc$AsyncService</className>
+    <method>void updateBucketAsync(com.google.logging.v2.UpdateBucketRequest, io.grpc.stub.StreamObserver)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/logging/v2/ConfigServiceV2Grpc$AsyncService</className>
+    <method>void createLink(com.google.logging.v2.CreateLinkRequest, io.grpc.stub.StreamObserver)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/logging/v2/ConfigServiceV2Grpc$AsyncService</className>
+    <method>void deleteLink(com.google.logging.v2.DeleteLinkRequest, io.grpc.stub.StreamObserver)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/logging/v2/ConfigServiceV2Grpc$AsyncService</className>
+    <method>void getLink(com.google.logging.v2.GetLinkRequest, io.grpc.stub.StreamObserver)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/logging/v2/ConfigServiceV2Grpc$AsyncService</className>
+    <method>void listLinks(com.google.logging.v2.ListLinksRequest, io.grpc.stub.StreamObserver)</method>
+  </difference>
+</differences>

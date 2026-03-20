@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,7 +69,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Delete</td>
- *      <td><p> Deletes the specified InstantSnapshot resource. Keep in mind that deleting a single instantSnapshot might not necessarily delete all the data on that instantSnapshot. If any data on the instantSnapshot that is marked for deletion is needed for subsequent instantSnapshots, the data will be moved to the next corresponding instantSnapshot. For more information, see Deleting instantSnapshots.</td>
+ *      <td><p> Deletes the specified InstantSnapshot resource. Keep in mind that deleting a single instantSnapshot might not necessarily delete all the data on that instantSnapshot. If any data on the instantSnapshot that is marked for deletion is needed for subsequent instantSnapshots, the data will be moved to the next corresponding instantSnapshot.
+ * <p>  For more information, seeDeleting instantSnapshots.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -314,8 +315,9 @@ public class RegionInstantSnapshotsClient implements BackgroundResource {
    * Deletes the specified InstantSnapshot resource. Keep in mind that deleting a single
    * instantSnapshot might not necessarily delete all the data on that instantSnapshot. If any data
    * on the instantSnapshot that is marked for deletion is needed for subsequent instantSnapshots,
-   * the data will be moved to the next corresponding instantSnapshot. For more information, see
-   * Deleting instantSnapshots.
+   * the data will be moved to the next corresponding instantSnapshot.
+   *
+   * <p>For more information, seeDeleting instantSnapshots.
    *
    * <p>Sample code:
    *
@@ -356,8 +358,9 @@ public class RegionInstantSnapshotsClient implements BackgroundResource {
    * Deletes the specified InstantSnapshot resource. Keep in mind that deleting a single
    * instantSnapshot might not necessarily delete all the data on that instantSnapshot. If any data
    * on the instantSnapshot that is marked for deletion is needed for subsequent instantSnapshots,
-   * the data will be moved to the next corresponding instantSnapshot. For more information, see
-   * Deleting instantSnapshots.
+   * the data will be moved to the next corresponding instantSnapshot.
+   *
+   * <p>For more information, seeDeleting instantSnapshots.
    *
    * <p>Sample code:
    *
@@ -393,8 +396,9 @@ public class RegionInstantSnapshotsClient implements BackgroundResource {
    * Deletes the specified InstantSnapshot resource. Keep in mind that deleting a single
    * instantSnapshot might not necessarily delete all the data on that instantSnapshot. If any data
    * on the instantSnapshot that is marked for deletion is needed for subsequent instantSnapshots,
-   * the data will be moved to the next corresponding instantSnapshot. For more information, see
-   * Deleting instantSnapshots.
+   * the data will be moved to the next corresponding instantSnapshot.
+   *
+   * <p>For more information, seeDeleting instantSnapshots.
    *
    * <p>Sample code:
    *
@@ -430,8 +434,9 @@ public class RegionInstantSnapshotsClient implements BackgroundResource {
    * Deletes the specified InstantSnapshot resource. Keep in mind that deleting a single
    * instantSnapshot might not necessarily delete all the data on that instantSnapshot. If any data
    * on the instantSnapshot that is marked for deletion is needed for subsequent instantSnapshots,
-   * the data will be moved to the next corresponding instantSnapshot. For more information, see
-   * Deleting instantSnapshots.
+   * the data will be moved to the next corresponding instantSnapshot.
+   *
+   * <p>For more information, seeDeleting instantSnapshots.
    *
    * <p>Sample code:
    *

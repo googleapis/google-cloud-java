@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,6 +56,7 @@ public class GrpcDashboardsServiceStub extends DashboardsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDashboardRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Dashboard.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDashboardsRequest, ListDashboardsResponse>
@@ -67,6 +68,7 @@ public class GrpcDashboardsServiceStub extends DashboardsServiceStub {
                   ProtoUtils.marshaller(ListDashboardsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDashboardsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDashboardRequest, Dashboard>
@@ -76,6 +78,7 @@ public class GrpcDashboardsServiceStub extends DashboardsServiceStub {
               .setFullMethodName("google.monitoring.dashboard.v1.DashboardsService/GetDashboard")
               .setRequestMarshaller(ProtoUtils.marshaller(GetDashboardRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Dashboard.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDashboardRequest, Empty>
@@ -86,6 +89,7 @@ public class GrpcDashboardsServiceStub extends DashboardsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDashboardRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDashboardRequest, Dashboard>
@@ -96,6 +100,7 @@ public class GrpcDashboardsServiceStub extends DashboardsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDashboardRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Dashboard.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateDashboardRequest, Dashboard> createDashboardCallable;

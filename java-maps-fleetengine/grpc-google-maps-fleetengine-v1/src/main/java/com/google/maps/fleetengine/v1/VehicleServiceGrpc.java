@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Vehicle management service.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/maps/fleetengine/v1/vehicle_api.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class VehicleServiceGrpc {
 
@@ -800,8 +797,9 @@ public final class VehicleServiceGrpc {
      * </pre>
      */
     public com.google.maps.fleetengine.v1.Vehicle createVehicle(
-        com.google.maps.fleetengine.v1.CreateVehicleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.fleetengine.v1.CreateVehicleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateVehicleMethod(), getCallOptions(), request);
     }
 
@@ -813,8 +811,8 @@ public final class VehicleServiceGrpc {
      * </pre>
      */
     public com.google.maps.fleetengine.v1.Vehicle getVehicle(
-        com.google.maps.fleetengine.v1.GetVehicleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.fleetengine.v1.GetVehicleRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetVehicleMethod(), getCallOptions(), request);
     }
 
@@ -828,8 +826,9 @@ public final class VehicleServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteVehicle(
-        com.google.maps.fleetengine.v1.DeleteVehicleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.fleetengine.v1.DeleteVehicleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteVehicleMethod(), getCallOptions(), request);
     }
 
@@ -853,8 +852,9 @@ public final class VehicleServiceGrpc {
      * </pre>
      */
     public com.google.maps.fleetengine.v1.Vehicle updateVehicle(
-        com.google.maps.fleetengine.v1.UpdateVehicleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.fleetengine.v1.UpdateVehicleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateVehicleMethod(), getCallOptions(), request);
     }
 
@@ -870,8 +870,9 @@ public final class VehicleServiceGrpc {
      * </pre>
      */
     public com.google.maps.fleetengine.v1.UpdateVehicleAttributesResponse updateVehicleAttributes(
-        com.google.maps.fleetengine.v1.UpdateVehicleAttributesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.fleetengine.v1.UpdateVehicleAttributesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateVehicleAttributesMethod(), getCallOptions(), request);
     }
 
@@ -884,8 +885,8 @@ public final class VehicleServiceGrpc {
      * </pre>
      */
     public com.google.maps.fleetengine.v1.ListVehiclesResponse listVehicles(
-        com.google.maps.fleetengine.v1.ListVehiclesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.fleetengine.v1.ListVehiclesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListVehiclesMethod(), getCallOptions(), request);
     }
 
@@ -897,8 +898,9 @@ public final class VehicleServiceGrpc {
      * </pre>
      */
     public com.google.maps.fleetengine.v1.SearchVehiclesResponse searchVehicles(
-        com.google.maps.fleetengine.v1.SearchVehiclesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.fleetengine.v1.SearchVehiclesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchVehiclesMethod(), getCallOptions(), request);
     }
   }

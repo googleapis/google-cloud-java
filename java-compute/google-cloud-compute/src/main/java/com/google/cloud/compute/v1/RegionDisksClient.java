@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -124,7 +124,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Delete</td>
- *      <td><p> Deletes the specified regional persistent disk. Deleting a regional disk removes all the replicas of its data permanently and is irreversible. However, deleting a disk does not delete any snapshots previously made from the disk. You must separately delete snapshots.</td>
+ *      <td><p> Deletes the specified regional persistent disk. Deleting a regional disk removes all the replicas of its data permanently and is irreversible. However, deleting a disk does not delete anysnapshots previously made from the disk. You must separatelydelete snapshots.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -367,7 +367,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Update</td>
- *      <td><p> Update the specified disk with the data included in the request. Update is performed only on selected fields included as part of update-mask. Only the following fields can be modified: user_license.</td>
+ *      <td><p> Update the specified disk with the data included in the request. Update is performed only on selected fields included as part of update-mask.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -909,7 +909,7 @@ public class RegionDisksClient implements BackgroundResource {
   /**
    * Deletes the specified regional persistent disk. Deleting a regional disk removes all the
    * replicas of its data permanently and is irreversible. However, deleting a disk does not delete
-   * any snapshots previously made from the disk. You must separately delete snapshots.
+   * anysnapshots previously made from the disk. You must separatelydelete snapshots.
    *
    * <p>Sample code:
    *
@@ -947,7 +947,7 @@ public class RegionDisksClient implements BackgroundResource {
   /**
    * Deletes the specified regional persistent disk. Deleting a regional disk removes all the
    * replicas of its data permanently and is irreversible. However, deleting a disk does not delete
-   * any snapshots previously made from the disk. You must separately delete snapshots.
+   * anysnapshots previously made from the disk. You must separatelydelete snapshots.
    *
    * <p>Sample code:
    *
@@ -980,7 +980,7 @@ public class RegionDisksClient implements BackgroundResource {
   /**
    * Deletes the specified regional persistent disk. Deleting a regional disk removes all the
    * replicas of its data permanently and is irreversible. However, deleting a disk does not delete
-   * any snapshots previously made from the disk. You must separately delete snapshots.
+   * anysnapshots previously made from the disk. You must separatelydelete snapshots.
    *
    * <p>Sample code:
    *
@@ -1014,7 +1014,7 @@ public class RegionDisksClient implements BackgroundResource {
   /**
    * Deletes the specified regional persistent disk. Deleting a regional disk removes all the
    * replicas of its data permanently and is irreversible. However, deleting a disk does not delete
-   * any snapshots previously made from the disk. You must separately delete snapshots.
+   * anysnapshots previously made from the disk. You must separatelydelete snapshots.
    *
    * <p>Sample code:
    *
@@ -2597,8 +2597,7 @@ public class RegionDisksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Update the specified disk with the data included in the request. Update is performed only on
-   * selected fields included as part of update-mask. Only the following fields can be modified:
-   * user_license.
+   * selected fields included as part of update-mask.
    *
    * <p>Sample code:
    *
@@ -2638,8 +2637,7 @@ public class RegionDisksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Update the specified disk with the data included in the request. Update is performed only on
-   * selected fields included as part of update-mask. Only the following fields can be modified:
-   * user_license.
+   * selected fields included as part of update-mask.
    *
    * <p>Sample code:
    *
@@ -2674,8 +2672,7 @@ public class RegionDisksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Update the specified disk with the data included in the request. Update is performed only on
-   * selected fields included as part of update-mask. Only the following fields can be modified:
-   * user_license.
+   * selected fields included as part of update-mask.
    *
    * <p>Sample code:
    *
@@ -2711,8 +2708,7 @@ public class RegionDisksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Update the specified disk with the data included in the request. Update is performed only on
-   * selected fields included as part of update-mask. Only the following fields can be modified:
-   * user_license.
+   * selected fields included as part of update-mask.
    *
    * <p>Sample code:
    *

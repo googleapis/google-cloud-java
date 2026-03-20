@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,12 @@ import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.grpc.testing.MockStreamObserver;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.ApiStreamObserver;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -42,6 +46,8 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
+import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -49,6 +55,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -236,6 +243,126 @@ public class FeatureOnlineStoreServiceClientTest {
               .setReturnFullEntity(true)
               .build();
       client.searchNearestEntities(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void featureViewDirectWriteTest() throws Exception {
+    FeatureViewDirectWriteResponse expectedResponse =
+        FeatureViewDirectWriteResponse.newBuilder()
+            .setStatus(Status.newBuilder().build())
+            .addAllWriteResponses(new ArrayList<FeatureViewDirectWriteResponse.WriteResponse>())
+            .build();
+    mockFeatureOnlineStoreService.addResponse(expectedResponse);
+    FeatureViewDirectWriteRequest request =
+        FeatureViewDirectWriteRequest.newBuilder()
+            .setFeatureView(
+                FeatureViewName.of(
+                        "[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
+                    .toString())
+            .addAllDataKeyAndFeatureValues(
+                new ArrayList<FeatureViewDirectWriteRequest.DataKeyAndFeatureValues>())
+            .build();
+
+    MockStreamObserver<FeatureViewDirectWriteResponse> responseObserver =
+        new MockStreamObserver<>();
+
+    BidiStreamingCallable<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse> callable =
+        client.featureViewDirectWriteCallable();
+    ApiStreamObserver<FeatureViewDirectWriteRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+    requestObserver.onCompleted();
+
+    List<FeatureViewDirectWriteResponse> actualResponses = responseObserver.future().get();
+    Assert.assertEquals(1, actualResponses.size());
+    Assert.assertEquals(expectedResponse, actualResponses.get(0));
+  }
+
+  @Test
+  public void featureViewDirectWriteExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeatureOnlineStoreService.addException(exception);
+    FeatureViewDirectWriteRequest request =
+        FeatureViewDirectWriteRequest.newBuilder()
+            .setFeatureView(
+                FeatureViewName.of(
+                        "[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
+                    .toString())
+            .addAllDataKeyAndFeatureValues(
+                new ArrayList<FeatureViewDirectWriteRequest.DataKeyAndFeatureValues>())
+            .build();
+
+    MockStreamObserver<FeatureViewDirectWriteResponse> responseObserver =
+        new MockStreamObserver<>();
+
+    BidiStreamingCallable<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse> callable =
+        client.featureViewDirectWriteCallable();
+    ApiStreamObserver<FeatureViewDirectWriteRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+
+    try {
+      List<FeatureViewDirectWriteResponse> actualResponses = responseObserver.future().get();
+      Assert.fail("No exception thrown");
+    } catch (ExecutionException e) {
+      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void generateFetchAccessTokenTest() throws Exception {
+    GenerateFetchAccessTokenResponse expectedResponse =
+        GenerateFetchAccessTokenResponse.newBuilder()
+            .setAccessToken("accessToken-1042689291")
+            .setExpireTime(Timestamp.newBuilder().build())
+            .build();
+    mockFeatureOnlineStoreService.addResponse(expectedResponse);
+
+    GenerateFetchAccessTokenRequest request =
+        GenerateFetchAccessTokenRequest.newBuilder()
+            .setFeatureView(
+                FeatureViewName.of(
+                        "[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
+                    .toString())
+            .build();
+
+    GenerateFetchAccessTokenResponse actualResponse = client.generateFetchAccessToken(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeatureOnlineStoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GenerateFetchAccessTokenRequest actualRequest =
+        ((GenerateFetchAccessTokenRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getFeatureView(), actualRequest.getFeatureView());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void generateFetchAccessTokenExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeatureOnlineStoreService.addException(exception);
+
+    try {
+      GenerateFetchAccessTokenRequest request =
+          GenerateFetchAccessTokenRequest.newBuilder()
+              .setFeatureView(
+                  FeatureViewName.of(
+                          "[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
+                      .toString())
+              .build();
+      client.generateFetchAccessToken(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

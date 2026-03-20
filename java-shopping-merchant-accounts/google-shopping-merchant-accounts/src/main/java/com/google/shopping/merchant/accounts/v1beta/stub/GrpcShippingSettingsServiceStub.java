@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,6 +52,7 @@ public class GrpcShippingSettingsServiceStub extends ShippingSettingsServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetShippingSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ShippingSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<InsertShippingSettingsRequest, ShippingSettings>
@@ -63,6 +64,7 @@ public class GrpcShippingSettingsServiceStub extends ShippingSettingsServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(InsertShippingSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ShippingSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetShippingSettingsRequest, ShippingSettings>

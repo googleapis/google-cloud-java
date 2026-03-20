@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.run.v2;
 
+import com.google.api.LaunchStage;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -95,8 +96,12 @@ public class BuildsClientTest {
             .setParent("parent-995424086")
             .setImageUri("imageUri-859610607")
             .setServiceAccount("serviceAccount1079137720")
-            .setWorkerPool(WorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
+            .setWorkerPool(
+                BuildWorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
             .addAllTags(new ArrayList<String>())
+            .setMachineType("machineType-218117087")
+            .setReleaseTrack(LaunchStage.forNumber(0))
+            .setClient("client-1357712437")
             .build();
 
     SubmitBuildResponse actualResponse = client.submitBuild(request);
@@ -114,6 +119,9 @@ public class BuildsClientTest {
     Assert.assertEquals(request.getServiceAccount(), actualRequest.getServiceAccount());
     Assert.assertEquals(request.getWorkerPool(), actualRequest.getWorkerPool());
     Assert.assertEquals(request.getTagsList(), actualRequest.getTagsList());
+    Assert.assertEquals(request.getMachineType(), actualRequest.getMachineType());
+    Assert.assertEquals(request.getReleaseTrack(), actualRequest.getReleaseTrack());
+    Assert.assertEquals(request.getClient(), actualRequest.getClient());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -132,8 +140,11 @@ public class BuildsClientTest {
               .setImageUri("imageUri-859610607")
               .setServiceAccount("serviceAccount1079137720")
               .setWorkerPool(
-                  WorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
+                  BuildWorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
               .addAllTags(new ArrayList<String>())
+              .setMachineType("machineType-218117087")
+              .setReleaseTrack(LaunchStage.forNumber(0))
+              .setClient("client-1357712437")
               .build();
       client.submitBuild(request);
       Assert.fail("No exception raised");

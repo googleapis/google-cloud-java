@@ -14,28 +14,31 @@
               "methods": ["approveBuildAsync", "approveBuildAsync", "approveBuildOperationCallable", "approveBuildCallable"]
             },
             "CancelBuild": {
-              "methods": ["cancelBuild", "cancelBuild", "cancelBuildCallable"]
+              "methods": ["cancelBuild", "cancelBuild", "cancelBuild", "cancelBuild", "cancelBuildCallable"]
             },
             "CreateBuild": {
-              "methods": ["createBuildAsync", "createBuildAsync", "createBuildOperationCallable", "createBuildCallable"]
+              "methods": ["createBuildAsync", "createBuildAsync", "createBuildAsync", "createBuildAsync", "createBuildAsync", "createBuildOperationCallable", "createBuildCallable"]
             },
             "CreateBuildTrigger": {
-              "methods": ["createBuildTrigger", "createBuildTrigger", "createBuildTriggerCallable"]
+              "methods": ["createBuildTrigger", "createBuildTrigger", "createBuildTrigger", "createBuildTrigger", "createBuildTrigger", "createBuildTriggerCallable"]
             },
             "CreateWorkerPool": {
               "methods": ["createWorkerPoolAsync", "createWorkerPoolAsync", "createWorkerPoolAsync", "createWorkerPoolOperationCallable", "createWorkerPoolCallable"]
             },
             "DeleteBuildTrigger": {
-              "methods": ["deleteBuildTrigger", "deleteBuildTrigger", "deleteBuildTriggerCallable"]
+              "methods": ["deleteBuildTrigger", "deleteBuildTrigger", "deleteBuildTrigger", "deleteBuildTrigger", "deleteBuildTriggerCallable"]
             },
             "DeleteWorkerPool": {
               "methods": ["deleteWorkerPoolAsync", "deleteWorkerPoolAsync", "deleteWorkerPoolAsync", "deleteWorkerPoolOperationCallable", "deleteWorkerPoolCallable"]
             },
             "GetBuild": {
-              "methods": ["getBuild", "getBuild", "getBuildCallable"]
+              "methods": ["getBuild", "getBuild", "getBuild", "getBuild", "getBuildCallable"]
             },
             "GetBuildTrigger": {
-              "methods": ["getBuildTrigger", "getBuildTrigger", "getBuildTriggerCallable"]
+              "methods": ["getBuildTrigger", "getBuildTrigger", "getBuildTrigger", "getBuildTrigger", "getBuildTriggerCallable"]
+            },
+            "GetDefaultServiceAccount": {
+              "methods": ["getDefaultServiceAccount", "getDefaultServiceAccount", "getDefaultServiceAccount", "getDefaultServiceAccountCallable"]
             },
             "GetWorkerPool": {
               "methods": ["getWorkerPool", "getWorkerPool", "getWorkerPool", "getWorkerPoolCallable"]
@@ -53,7 +56,7 @@
               "methods": ["receiveTriggerWebhook", "receiveTriggerWebhookCallable"]
             },
             "RetryBuild": {
-              "methods": ["retryBuildAsync", "retryBuildAsync", "retryBuildOperationCallable", "retryBuildCallable"]
+              "methods": ["retryBuildAsync", "retryBuildAsync", "retryBuildAsync", "retryBuildAsync", "retryBuildOperationCallable", "retryBuildCallable"]
             },
             "RunBuildTrigger": {
               "methods": ["runBuildTriggerAsync", "runBuildTriggerAsync", "runBuildTriggerOperationCallable", "runBuildTriggerCallable"]

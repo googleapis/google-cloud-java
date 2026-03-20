@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for modifying ServingConfig.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/retail/v2alpha/serving_config_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ServingConfigServiceGrpc {
 
@@ -749,8 +746,9 @@ public final class ServingConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.ServingConfig createServingConfig(
-        com.google.cloud.retail.v2alpha.CreateServingConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.CreateServingConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateServingConfigMethod(), getCallOptions(), request);
     }
 
@@ -763,8 +761,9 @@ public final class ServingConfigServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteServingConfig(
-        com.google.cloud.retail.v2alpha.DeleteServingConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.DeleteServingConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteServingConfigMethod(), getCallOptions(), request);
     }
 
@@ -776,8 +775,9 @@ public final class ServingConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.ServingConfig updateServingConfig(
-        com.google.cloud.retail.v2alpha.UpdateServingConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.UpdateServingConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateServingConfigMethod(), getCallOptions(), request);
     }
 
@@ -790,8 +790,9 @@ public final class ServingConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.ServingConfig getServingConfig(
-        com.google.cloud.retail.v2alpha.GetServingConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.GetServingConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetServingConfigMethod(), getCallOptions(), request);
     }
 
@@ -803,8 +804,9 @@ public final class ServingConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.ListServingConfigsResponse listServingConfigs(
-        com.google.cloud.retail.v2alpha.ListServingConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.ListServingConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListServingConfigsMethod(), getCallOptions(), request);
     }
 
@@ -822,8 +824,8 @@ public final class ServingConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.ServingConfig addControl(
-        com.google.cloud.retail.v2alpha.AddControlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.AddControlRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAddControlMethod(), getCallOptions(), request);
     }
 
@@ -838,8 +840,9 @@ public final class ServingConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.ServingConfig removeControl(
-        com.google.cloud.retail.v2alpha.RemoveControlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.RemoveControlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRemoveControlMethod(), getCallOptions(), request);
     }
   }

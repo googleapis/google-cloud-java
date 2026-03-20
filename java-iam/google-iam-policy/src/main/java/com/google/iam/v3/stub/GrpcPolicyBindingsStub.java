@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,7 @@ public class GrpcPolicyBindingsStub extends PolicyBindingsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreatePolicyBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPolicyBindingRequest, PolicyBinding>
@@ -72,6 +73,7 @@ public class GrpcPolicyBindingsStub extends PolicyBindingsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetPolicyBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PolicyBinding.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdatePolicyBindingRequest, Operation>
@@ -82,6 +84,7 @@ public class GrpcPolicyBindingsStub extends PolicyBindingsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdatePolicyBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePolicyBindingRequest, Operation>
@@ -92,6 +95,7 @@ public class GrpcPolicyBindingsStub extends PolicyBindingsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePolicyBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListPolicyBindingsRequest, ListPolicyBindingsResponse>
@@ -103,6 +107,7 @@ public class GrpcPolicyBindingsStub extends PolicyBindingsStub {
                   ProtoUtils.marshaller(ListPolicyBindingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPolicyBindingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -116,6 +121,7 @@ public class GrpcPolicyBindingsStub extends PolicyBindingsStub {
                   ProtoUtils.marshaller(SearchTargetPolicyBindingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchTargetPolicyBindingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreatePolicyBindingRequest, Operation> createPolicyBindingCallable;

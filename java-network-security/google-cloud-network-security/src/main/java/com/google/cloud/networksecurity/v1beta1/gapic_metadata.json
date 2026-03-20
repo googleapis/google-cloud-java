@@ -5,6 +5,45 @@
   "protoPackage": "google.cloud.networksecurity.v1beta1",
   "libraryPackage": "com.google.cloud.networksecurity.v1beta1",
   "services": {
+    "DnsThreatDetectorService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DnsThreatDetectorServiceClient",
+          "rpcs": {
+            "CreateDnsThreatDetector": {
+              "methods": ["createDnsThreatDetector", "createDnsThreatDetector", "createDnsThreatDetector", "createDnsThreatDetectorCallable"]
+            },
+            "DeleteDnsThreatDetector": {
+              "methods": ["deleteDnsThreatDetector", "deleteDnsThreatDetector", "deleteDnsThreatDetector", "deleteDnsThreatDetectorCallable"]
+            },
+            "GetDnsThreatDetector": {
+              "methods": ["getDnsThreatDetector", "getDnsThreatDetector", "getDnsThreatDetector", "getDnsThreatDetectorCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListDnsThreatDetectors": {
+              "methods": ["listDnsThreatDetectors", "listDnsThreatDetectors", "listDnsThreatDetectors", "listDnsThreatDetectorsPagedCallable", "listDnsThreatDetectorsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateDnsThreatDetector": {
+              "methods": ["updateDnsThreatDetector", "updateDnsThreatDetector", "updateDnsThreatDetectorCallable"]
+            }
+          }
+        }
+      }
+    },
     "NetworkSecurity": {
       "clients": {
         "grpc": {

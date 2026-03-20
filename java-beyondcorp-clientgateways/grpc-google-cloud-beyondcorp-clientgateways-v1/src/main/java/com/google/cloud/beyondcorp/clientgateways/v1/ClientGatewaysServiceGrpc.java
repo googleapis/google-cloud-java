@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,9 +30,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *   `projects/{project_id}/locations/{location_id}/clientGateways/{client_gateway_id}`.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/beyondcorp/clientgateways/v1/client_gateways_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ClientGatewaysServiceGrpc {
 
@@ -516,8 +513,9 @@ public final class ClientGatewaysServiceGrpc {
      */
     public com.google.cloud.beyondcorp.clientgateways.v1.ListClientGatewaysResponse
         listClientGateways(
-            com.google.cloud.beyondcorp.clientgateways.v1.ListClientGatewaysRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.beyondcorp.clientgateways.v1.ListClientGatewaysRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListClientGatewaysMethod(), getCallOptions(), request);
     }
 
@@ -529,8 +527,9 @@ public final class ClientGatewaysServiceGrpc {
      * </pre>
      */
     public com.google.cloud.beyondcorp.clientgateways.v1.ClientGateway getClientGateway(
-        com.google.cloud.beyondcorp.clientgateways.v1.GetClientGatewayRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.beyondcorp.clientgateways.v1.GetClientGatewayRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetClientGatewayMethod(), getCallOptions(), request);
     }
 
@@ -542,8 +541,9 @@ public final class ClientGatewaysServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createClientGateway(
-        com.google.cloud.beyondcorp.clientgateways.v1.CreateClientGatewayRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.beyondcorp.clientgateways.v1.CreateClientGatewayRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateClientGatewayMethod(), getCallOptions(), request);
     }
 
@@ -555,8 +555,9 @@ public final class ClientGatewaysServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteClientGateway(
-        com.google.cloud.beyondcorp.clientgateways.v1.DeleteClientGatewayRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.beyondcorp.clientgateways.v1.DeleteClientGatewayRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteClientGatewayMethod(), getCallOptions(), request);
     }
   }

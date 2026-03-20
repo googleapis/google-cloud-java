@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,8 +80,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @Generated("by gapic-generator-java")
 public class AdUnitServiceSettings extends ClientSettings<AdUnitServiceSettings> {
@@ -102,6 +102,46 @@ public class AdUnitServiceSettings extends ClientSettings<AdUnitServiceSettings>
           ListAdUnitSizesRequest, ListAdUnitSizesResponse, ListAdUnitSizesPagedResponse>
       listAdUnitSizesSettings() {
     return ((AdUnitServiceStubSettings) getStubSettings()).listAdUnitSizesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAdUnit. */
+  public UnaryCallSettings<CreateAdUnitRequest, AdUnit> createAdUnitSettings() {
+    return ((AdUnitServiceStubSettings) getStubSettings()).createAdUnitSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAdUnit. */
+  public UnaryCallSettings<UpdateAdUnitRequest, AdUnit> updateAdUnitSettings() {
+    return ((AdUnitServiceStubSettings) getStubSettings()).updateAdUnitSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateAdUnits. */
+  public UnaryCallSettings<BatchCreateAdUnitsRequest, BatchCreateAdUnitsResponse>
+      batchCreateAdUnitsSettings() {
+    return ((AdUnitServiceStubSettings) getStubSettings()).batchCreateAdUnitsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateAdUnits. */
+  public UnaryCallSettings<BatchUpdateAdUnitsRequest, BatchUpdateAdUnitsResponse>
+      batchUpdateAdUnitsSettings() {
+    return ((AdUnitServiceStubSettings) getStubSettings()).batchUpdateAdUnitsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchActivateAdUnits. */
+  public UnaryCallSettings<BatchActivateAdUnitsRequest, BatchActivateAdUnitsResponse>
+      batchActivateAdUnitsSettings() {
+    return ((AdUnitServiceStubSettings) getStubSettings()).batchActivateAdUnitsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeactivateAdUnits. */
+  public UnaryCallSettings<BatchDeactivateAdUnitsRequest, BatchDeactivateAdUnitsResponse>
+      batchDeactivateAdUnitsSettings() {
+    return ((AdUnitServiceStubSettings) getStubSettings()).batchDeactivateAdUnitsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchArchiveAdUnits. */
+  public UnaryCallSettings<BatchArchiveAdUnitsRequest, BatchArchiveAdUnitsResponse>
+      batchArchiveAdUnitsSettings() {
+    return ((AdUnitServiceStubSettings) getStubSettings()).batchArchiveAdUnitsSettings();
   }
 
   public static final AdUnitServiceSettings create(AdUnitServiceStubSettings stub)
@@ -218,6 +258,46 @@ public class AdUnitServiceSettings extends ClientSettings<AdUnitServiceSettings>
             ListAdUnitSizesRequest, ListAdUnitSizesResponse, ListAdUnitSizesPagedResponse>
         listAdUnitSizesSettings() {
       return getStubSettingsBuilder().listAdUnitSizesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAdUnit. */
+    public UnaryCallSettings.Builder<CreateAdUnitRequest, AdUnit> createAdUnitSettings() {
+      return getStubSettingsBuilder().createAdUnitSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAdUnit. */
+    public UnaryCallSettings.Builder<UpdateAdUnitRequest, AdUnit> updateAdUnitSettings() {
+      return getStubSettingsBuilder().updateAdUnitSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateAdUnits. */
+    public UnaryCallSettings.Builder<BatchCreateAdUnitsRequest, BatchCreateAdUnitsResponse>
+        batchCreateAdUnitsSettings() {
+      return getStubSettingsBuilder().batchCreateAdUnitsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateAdUnits. */
+    public UnaryCallSettings.Builder<BatchUpdateAdUnitsRequest, BatchUpdateAdUnitsResponse>
+        batchUpdateAdUnitsSettings() {
+      return getStubSettingsBuilder().batchUpdateAdUnitsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchActivateAdUnits. */
+    public UnaryCallSettings.Builder<BatchActivateAdUnitsRequest, BatchActivateAdUnitsResponse>
+        batchActivateAdUnitsSettings() {
+      return getStubSettingsBuilder().batchActivateAdUnitsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeactivateAdUnits. */
+    public UnaryCallSettings.Builder<BatchDeactivateAdUnitsRequest, BatchDeactivateAdUnitsResponse>
+        batchDeactivateAdUnitsSettings() {
+      return getStubSettingsBuilder().batchDeactivateAdUnitsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchArchiveAdUnits. */
+    public UnaryCallSettings.Builder<BatchArchiveAdUnitsRequest, BatchArchiveAdUnitsResponse>
+        batchArchiveAdUnitsSettings() {
+      return getStubSettingsBuilder().batchArchiveAdUnitsSettings();
     }
 
     @Override

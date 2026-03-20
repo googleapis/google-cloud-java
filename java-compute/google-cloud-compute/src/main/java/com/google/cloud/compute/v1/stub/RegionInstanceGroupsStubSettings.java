@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -54,6 +55,8 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.RegionInstanceGroupList;
 import com.google.cloud.compute.v1.RegionInstanceGroupsListInstances;
 import com.google.cloud.compute.v1.SetNamedPortsRegionInstanceGroupRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsRegionInstanceGroupRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -111,8 +114,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -141,6 +144,7 @@ import javax.annotation.Generated;
  * }</pre>
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class RegionInstanceGroupsStubSettings
     extends StubSettings<RegionInstanceGroupsStubSettings> {
   /** The default scopes of the service. */
@@ -163,6 +167,9 @@ public class RegionInstanceGroupsStubSettings
       setNamedPortsSettings;
   private final OperationCallSettings<SetNamedPortsRegionInstanceGroupRequest, Operation, Operation>
       setNamedPortsOperationSettings;
+  private final UnaryCallSettings<
+          TestIamPermissionsRegionInstanceGroupRequest, TestPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<
           ListRegionInstanceGroupsRequest, RegionInstanceGroupList, InstanceGroup>
@@ -330,6 +337,12 @@ public class RegionInstanceGroupsStubSettings
     return setNamedPortsOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRegionInstanceGroupRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   public RegionInstanceGroupsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -417,6 +430,15 @@ public class RegionInstanceGroupsStubSettings
     listInstancesSettings = settingsBuilder.listInstancesSettings().build();
     setNamedPortsSettings = settingsBuilder.setNamedPortsSettings().build();
     setNamedPortsOperationSettings = settingsBuilder.setNamedPortsOperationSettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-compute")
+        .setRepository("googleapis/google-cloud-java")
+        .build();
   }
 
   /** Builder for RegionInstanceGroupsStubSettings. */
@@ -438,6 +460,9 @@ public class RegionInstanceGroupsStubSettings
     private final OperationCallSettings.Builder<
             SetNamedPortsRegionInstanceGroupRequest, Operation, Operation>
         setNamedPortsOperationSettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsRegionInstanceGroupRequest, TestPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -493,10 +518,15 @@ public class RegionInstanceGroupsStubSettings
       listInstancesSettings = PagedCallSettings.newBuilder(LIST_INSTANCES_PAGE_STR_FACT);
       setNamedPortsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setNamedPortsOperationSettings = OperationCallSettings.newBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getSettings, listSettings, listInstancesSettings, setNamedPortsSettings);
+              getSettings,
+              listSettings,
+              listInstancesSettings,
+              setNamedPortsSettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -508,10 +538,15 @@ public class RegionInstanceGroupsStubSettings
       listInstancesSettings = settings.listInstancesSettings.toBuilder();
       setNamedPortsSettings = settings.setNamedPortsSettings.toBuilder();
       setNamedPortsOperationSettings = settings.setNamedPortsOperationSettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getSettings, listSettings, listInstancesSettings, setNamedPortsSettings);
+              getSettings,
+              listSettings,
+              listInstancesSettings,
+              setNamedPortsSettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -544,6 +579,11 @@ public class RegionInstanceGroupsStubSettings
 
       builder
           .setNamedPortsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -622,6 +662,13 @@ public class RegionInstanceGroupsStubSettings
             SetNamedPortsRegionInstanceGroupRequest, Operation, Operation>
         setNamedPortsOperationSettings() {
       return setNamedPortsOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsRegionInstanceGroupRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

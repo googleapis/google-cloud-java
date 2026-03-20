@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * wire protocol used by the driver in a gRPC stream.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/spanner/adapter/v1/adapter.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AdapterGrpc {
 
@@ -334,8 +331,8 @@ public final class AdapterGrpc {
      * </pre>
      */
     public com.google.spanner.adapter.v1.Session createSession(
-        com.google.spanner.adapter.v1.CreateSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.spanner.adapter.v1.CreateSessionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSessionMethod(), getCallOptions(), request);
     }
 

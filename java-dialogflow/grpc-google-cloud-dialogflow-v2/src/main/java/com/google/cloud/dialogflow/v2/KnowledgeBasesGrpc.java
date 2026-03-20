@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [KnowledgeBases][google.cloud.dialogflow.v2.KnowledgeBase].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/v2/knowledge_base.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class KnowledgeBasesGrpc {
 
@@ -559,8 +556,9 @@ public final class KnowledgeBasesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.ListKnowledgeBasesResponse listKnowledgeBases(
-        com.google.cloud.dialogflow.v2.ListKnowledgeBasesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.ListKnowledgeBasesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListKnowledgeBasesMethod(), getCallOptions(), request);
     }
 
@@ -572,8 +570,9 @@ public final class KnowledgeBasesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.KnowledgeBase getKnowledgeBase(
-        com.google.cloud.dialogflow.v2.GetKnowledgeBaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.GetKnowledgeBaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetKnowledgeBaseMethod(), getCallOptions(), request);
     }
 
@@ -585,8 +584,9 @@ public final class KnowledgeBasesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.KnowledgeBase createKnowledgeBase(
-        com.google.cloud.dialogflow.v2.CreateKnowledgeBaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.CreateKnowledgeBaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateKnowledgeBaseMethod(), getCallOptions(), request);
     }
 
@@ -598,8 +598,9 @@ public final class KnowledgeBasesGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteKnowledgeBase(
-        com.google.cloud.dialogflow.v2.DeleteKnowledgeBaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.DeleteKnowledgeBaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteKnowledgeBaseMethod(), getCallOptions(), request);
     }
 
@@ -611,8 +612,9 @@ public final class KnowledgeBasesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.KnowledgeBase updateKnowledgeBase(
-        com.google.cloud.dialogflow.v2.UpdateKnowledgeBaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.UpdateKnowledgeBaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateKnowledgeBaseMethod(), getCallOptions(), request);
     }
   }

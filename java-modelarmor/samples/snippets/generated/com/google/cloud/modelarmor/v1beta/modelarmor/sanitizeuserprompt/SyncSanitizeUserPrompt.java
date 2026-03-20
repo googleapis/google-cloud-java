@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package com.google.cloud.modelarmor.v1beta.samples;
 // [START modelarmor_v1beta_generated_ModelArmor_SanitizeUserPrompt_sync]
 import com.google.cloud.modelarmor.v1beta.DataItem;
 import com.google.cloud.modelarmor.v1beta.ModelArmorClient;
+import com.google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata;
 import com.google.cloud.modelarmor.v1beta.SanitizeUserPromptRequest;
 import com.google.cloud.modelarmor.v1beta.SanitizeUserPromptResponse;
 import com.google.cloud.modelarmor.v1beta.TemplateName;
@@ -40,6 +41,8 @@ public class SyncSanitizeUserPrompt {
           SanitizeUserPromptRequest.newBuilder()
               .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
               .setUserPromptData(DataItem.newBuilder().build())
+              .setMultiLanguageDetectionMetadata(
+                  MultiLanguageDetectionMetadata.newBuilder().build())
               .build();
       SanitizeUserPromptResponse response = modelArmorClient.sanitizeUserPrompt(request);
     }

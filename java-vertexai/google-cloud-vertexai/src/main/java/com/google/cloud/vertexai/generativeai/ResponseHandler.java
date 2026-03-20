@@ -30,7 +30,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/** Helper class to post-process GenerateContentResponse. */
+/**
+ * Helper class to post-process GenerateContentResponse.
+ *
+ * @deprecated This class and its package are deprecated. See the <a
+ *     href="https://cloud.google.com/vertex-ai/generative-ai/docs/deprecations/genai-vertexai-sdk#java">
+ *     migration guide</a> for more details.
+ */
+@Deprecated
 public class ResponseHandler {
 
   /**

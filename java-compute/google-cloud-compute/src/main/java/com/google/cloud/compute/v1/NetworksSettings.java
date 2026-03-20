@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,8 +81,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -190,6 +190,18 @@ public class NetworksSettings extends ClientSettings<NetworksSettings> {
   public OperationCallSettings<RemovePeeringNetworkRequest, Operation, Operation>
       removePeeringOperationSettings() {
     return ((NetworksStubSettings) getStubSettings()).removePeeringOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to requestRemovePeering. */
+  public UnaryCallSettings<RequestRemovePeeringNetworkRequest, Operation>
+      requestRemovePeeringSettings() {
+    return ((NetworksStubSettings) getStubSettings()).requestRemovePeeringSettings();
+  }
+
+  /** Returns the object with the settings used for calls to requestRemovePeering. */
+  public OperationCallSettings<RequestRemovePeeringNetworkRequest, Operation, Operation>
+      requestRemovePeeringOperationSettings() {
+    return ((NetworksStubSettings) getStubSettings()).requestRemovePeeringOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to switchToCustomMode. */
@@ -392,6 +404,18 @@ public class NetworksSettings extends ClientSettings<NetworksSettings> {
     public OperationCallSettings.Builder<RemovePeeringNetworkRequest, Operation, Operation>
         removePeeringOperationSettings() {
       return getStubSettingsBuilder().removePeeringOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to requestRemovePeering. */
+    public UnaryCallSettings.Builder<RequestRemovePeeringNetworkRequest, Operation>
+        requestRemovePeeringSettings() {
+      return getStubSettingsBuilder().requestRemovePeeringSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to requestRemovePeering. */
+    public OperationCallSettings.Builder<RequestRemovePeeringNetworkRequest, Operation, Operation>
+        requestRemovePeeringOperationSettings() {
+      return getStubSettingsBuilder().requestRemovePeeringOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to switchToCustomMode. */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,6 +60,7 @@ public class GrpcCloudChannelReportsServiceStub extends CloudChannelReportsServi
               .setFullMethodName("google.cloud.channel.v1.CloudChannelReportsService/RunReportJob")
               .setRequestMarshaller(ProtoUtils.marshaller(RunReportJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchReportResultsRequest, FetchReportResultsResponse>
@@ -72,6 +73,7 @@ public class GrpcCloudChannelReportsServiceStub extends CloudChannelReportsServi
                   ProtoUtils.marshaller(FetchReportResultsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchReportResultsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListReportsRequest, ListReportsResponse>
@@ -82,6 +84,7 @@ public class GrpcCloudChannelReportsServiceStub extends CloudChannelReportsServi
               .setRequestMarshaller(ProtoUtils.marshaller(ListReportsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReportsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<RunReportJobRequest, Operation> runReportJobCallable;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [AnswerRecords][google.cloud.dialogflow.v2.AnswerRecord].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/v2/answer_record.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AnswerRecordsGrpc {
 
@@ -324,8 +321,9 @@ public final class AnswerRecordsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.ListAnswerRecordsResponse listAnswerRecords(
-        com.google.cloud.dialogflow.v2.ListAnswerRecordsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.ListAnswerRecordsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAnswerRecordsMethod(), getCallOptions(), request);
     }
 
@@ -337,8 +335,9 @@ public final class AnswerRecordsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.AnswerRecord updateAnswerRecord(
-        com.google.cloud.dialogflow.v2.UpdateAnswerRecordRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.UpdateAnswerRecordRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAnswerRecordMethod(), getCallOptions(), request);
     }
   }

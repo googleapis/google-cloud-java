@@ -21,6 +21,12 @@
             },
             "VerifyAttestation": {
               "methods": ["verifyAttestation", "verifyAttestationCallable"]
+            },
+            "VerifyConfidentialGke": {
+              "methods": ["verifyConfidentialGke", "verifyConfidentialGkeCallable"]
+            },
+            "VerifyConfidentialSpace": {
+              "methods": ["verifyConfidentialSpace", "verifyConfidentialSpaceCallable"]
             }
           }
         }

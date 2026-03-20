@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -256,6 +256,7 @@ public class SecretManagerServiceClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setVersionDestroyTtl(Duration.newBuilder().build())
             .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -314,6 +315,7 @@ public class SecretManagerServiceClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setVersionDestroyTtl(Duration.newBuilder().build())
             .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -372,6 +374,7 @@ public class SecretManagerServiceClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setVersionDestroyTtl(Duration.newBuilder().build())
             .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -542,6 +545,7 @@ public class SecretManagerServiceClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setVersionDestroyTtl(Duration.newBuilder().build())
             .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -596,6 +600,7 @@ public class SecretManagerServiceClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setVersionDestroyTtl(Duration.newBuilder().build())
             .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -650,6 +655,7 @@ public class SecretManagerServiceClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setVersionDestroyTtl(Duration.newBuilder().build())
             .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -666,6 +672,7 @@ public class SecretManagerServiceClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setVersionDestroyTtl(Duration.newBuilder().build())
             .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -708,6 +715,7 @@ public class SecretManagerServiceClientHttpJsonTest {
               .putAllAnnotations(new HashMap<String, String>())
               .setVersionDestroyTtl(Duration.newBuilder().build())
               .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
+              .putAllTags(new HashMap<String, String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateSecret(secret, updateMask);

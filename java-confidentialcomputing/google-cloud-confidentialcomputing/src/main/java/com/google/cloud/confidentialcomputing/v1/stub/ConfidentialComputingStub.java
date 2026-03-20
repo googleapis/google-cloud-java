@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,10 @@ import com.google.cloud.confidentialcomputing.v1.Challenge;
 import com.google.cloud.confidentialcomputing.v1.CreateChallengeRequest;
 import com.google.cloud.confidentialcomputing.v1.VerifyAttestationRequest;
 import com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse;
+import com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest;
+import com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeResponse;
+import com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceRequest;
+import com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -46,6 +50,16 @@ public abstract class ConfidentialComputingStub implements BackgroundResource {
   public UnaryCallable<VerifyAttestationRequest, VerifyAttestationResponse>
       verifyAttestationCallable() {
     throw new UnsupportedOperationException("Not implemented: verifyAttestationCallable()");
+  }
+
+  public UnaryCallable<VerifyConfidentialSpaceRequest, VerifyConfidentialSpaceResponse>
+      verifyConfidentialSpaceCallable() {
+    throw new UnsupportedOperationException("Not implemented: verifyConfidentialSpaceCallable()");
+  }
+
+  public UnaryCallable<VerifyConfidentialGkeRequest, VerifyConfidentialGkeResponse>
+      verifyConfidentialGkeCallable() {
+    throw new UnsupportedOperationException("Not implemented: verifyConfidentialGkeCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

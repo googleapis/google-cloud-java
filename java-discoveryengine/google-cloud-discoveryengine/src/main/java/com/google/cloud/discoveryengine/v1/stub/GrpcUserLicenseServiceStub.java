@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,6 +57,7 @@ public class GrpcUserLicenseServiceStub extends UserLicenseServiceStub {
                   ProtoUtils.marshaller(ListUserLicensesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListUserLicensesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchUpdateUserLicensesRequest, Operation>
@@ -68,6 +69,7 @@ public class GrpcUserLicenseServiceStub extends UserLicenseServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchUpdateUserLicensesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListUserLicensesRequest, ListUserLicensesResponse>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,6 +56,7 @@ public class GrpcLfpProvidersServiceStub extends LfpProvidersServiceStub {
                   ProtoUtils.marshaller(FindLfpProvidersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FindLfpProvidersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<LinkLfpProviderRequest, LinkLfpProviderResponse>
@@ -68,6 +69,7 @@ public class GrpcLfpProvidersServiceStub extends LfpProvidersServiceStub {
                   ProtoUtils.marshaller(LinkLfpProviderRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(LinkLfpProviderResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<FindLfpProvidersRequest, FindLfpProvidersResponse>

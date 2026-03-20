@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Manages App Engine applications.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/appengine/v1/appengine.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ApplicationsGrpc {
 
@@ -486,8 +483,8 @@ public final class ApplicationsGrpc {
      * </pre>
      */
     public com.google.appengine.v1.Application getApplication(
-        com.google.appengine.v1.GetApplicationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.GetApplicationRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetApplicationMethod(), getCallOptions(), request);
     }
 
@@ -503,8 +500,8 @@ public final class ApplicationsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createApplication(
-        com.google.appengine.v1.CreateApplicationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.CreateApplicationRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateApplicationMethod(), getCallOptions(), request);
     }
 
@@ -520,8 +517,8 @@ public final class ApplicationsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateApplication(
-        com.google.appengine.v1.UpdateApplicationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.UpdateApplicationRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateApplicationMethod(), getCallOptions(), request);
     }
 
@@ -542,8 +539,8 @@ public final class ApplicationsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation repairApplication(
-        com.google.appengine.v1.RepairApplicationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.RepairApplicationRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRepairApplicationMethod(), getCallOptions(), request);
     }
   }

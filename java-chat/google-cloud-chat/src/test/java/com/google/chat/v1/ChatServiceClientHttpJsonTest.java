@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1141,6 +1141,7 @@ public class ChatServiceClientHttpJsonTest {
             .setAdminInstalled(true)
             .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setCustomer("customer606175198")
             .setSpaceUri("spaceUri2047440518")
             .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
@@ -1199,6 +1200,7 @@ public class ChatServiceClientHttpJsonTest {
             .setAdminInstalled(true)
             .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setCustomer("customer606175198")
             .setSpaceUri("spaceUri2047440518")
             .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
@@ -1257,6 +1259,7 @@ public class ChatServiceClientHttpJsonTest {
             .setAdminInstalled(true)
             .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setCustomer("customer606175198")
             .setSpaceUri("spaceUri2047440518")
             .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
@@ -1315,6 +1318,7 @@ public class ChatServiceClientHttpJsonTest {
             .setAdminInstalled(true)
             .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setCustomer("customer606175198")
             .setSpaceUri("spaceUri2047440518")
             .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
@@ -1383,6 +1387,7 @@ public class ChatServiceClientHttpJsonTest {
             .setAdminInstalled(true)
             .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setCustomer("customer606175198")
             .setSpaceUri("spaceUri2047440518")
             .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
@@ -1403,6 +1408,7 @@ public class ChatServiceClientHttpJsonTest {
             .setAdminInstalled(true)
             .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setCustomer("customer606175198")
             .setSpaceUri("spaceUri2047440518")
             .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
@@ -1449,6 +1455,7 @@ public class ChatServiceClientHttpJsonTest {
               .setAdminInstalled(true)
               .setMembershipCount(Space.MembershipCount.newBuilder().build())
               .setAccessSettings(Space.AccessSettings.newBuilder().build())
+              .setCustomer("customer606175198")
               .setSpaceUri("spaceUri2047440518")
               .setImportModeExpireTime(Timestamp.newBuilder().build())
               .build();
@@ -1603,6 +1610,7 @@ public class ChatServiceClientHttpJsonTest {
             .setAdminInstalled(true)
             .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setCustomer("customer606175198")
             .setSpaceUri("spaceUri2047440518")
             .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,6 +52,7 @@ public class GrpcCssProductInputsServiceStub extends CssProductInputsServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(InsertCssProductInputRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CssProductInput.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateCssProductInputRequest, CssProductInput>
@@ -63,6 +64,7 @@ public class GrpcCssProductInputsServiceStub extends CssProductInputsServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateCssProductInputRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CssProductInput.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCssProductInputRequest, Empty>
@@ -74,6 +76,7 @@ public class GrpcCssProductInputsServiceStub extends CssProductInputsServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteCssProductInputRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<InsertCssProductInputRequest, CssProductInput>

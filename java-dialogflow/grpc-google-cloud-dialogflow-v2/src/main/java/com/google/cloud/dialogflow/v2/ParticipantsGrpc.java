@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing [Participants][google.cloud.dialogflow.v2.Participant].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/v2/participant.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ParticipantsGrpc {
 
@@ -991,8 +988,9 @@ public final class ParticipantsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.Participant createParticipant(
-        com.google.cloud.dialogflow.v2.CreateParticipantRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.CreateParticipantRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateParticipantMethod(), getCallOptions(), request);
     }
 
@@ -1004,8 +1002,9 @@ public final class ParticipantsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.Participant getParticipant(
-        com.google.cloud.dialogflow.v2.GetParticipantRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.GetParticipantRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetParticipantMethod(), getCallOptions(), request);
     }
 
@@ -1017,8 +1016,9 @@ public final class ParticipantsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.ListParticipantsResponse listParticipants(
-        com.google.cloud.dialogflow.v2.ListParticipantsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.ListParticipantsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListParticipantsMethod(), getCallOptions(), request);
     }
 
@@ -1030,8 +1030,9 @@ public final class ParticipantsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.Participant updateParticipant(
-        com.google.cloud.dialogflow.v2.UpdateParticipantRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.UpdateParticipantRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateParticipantMethod(), getCallOptions(), request);
     }
 
@@ -1047,8 +1048,9 @@ public final class ParticipantsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.AnalyzeContentResponse analyzeContent(
-        com.google.cloud.dialogflow.v2.AnalyzeContentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.AnalyzeContentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAnalyzeContentMethod(), getCallOptions(), request);
     }
 
@@ -1089,8 +1091,9 @@ public final class ParticipantsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.SuggestArticlesResponse suggestArticles(
-        com.google.cloud.dialogflow.v2.SuggestArticlesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.SuggestArticlesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSuggestArticlesMethod(), getCallOptions(), request);
     }
 
@@ -1103,8 +1106,9 @@ public final class ParticipantsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.SuggestFaqAnswersResponse suggestFaqAnswers(
-        com.google.cloud.dialogflow.v2.SuggestFaqAnswersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.SuggestFaqAnswersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSuggestFaqAnswersMethod(), getCallOptions(), request);
     }
 
@@ -1117,8 +1121,9 @@ public final class ParticipantsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse suggestSmartReplies(
-        com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSuggestSmartRepliesMethod(), getCallOptions(), request);
     }
 
@@ -1130,8 +1135,9 @@ public final class ParticipantsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.SuggestKnowledgeAssistResponse suggestKnowledgeAssist(
-        com.google.cloud.dialogflow.v2.SuggestKnowledgeAssistRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.SuggestKnowledgeAssistRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSuggestKnowledgeAssistMethod(), getCallOptions(), request);
     }
   }

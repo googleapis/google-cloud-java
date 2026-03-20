@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,6 +55,7 @@ public class GrpcWebRiskServiceV1Beta1Stub extends WebRiskServiceV1Beta1Stub {
                   ProtoUtils.marshaller(ComputeThreatListDiffRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ComputeThreatListDiffResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchUrisRequest, SearchUrisResponse>
@@ -64,6 +65,7 @@ public class GrpcWebRiskServiceV1Beta1Stub extends WebRiskServiceV1Beta1Stub {
               .setFullMethodName("google.cloud.webrisk.v1beta1.WebRiskServiceV1Beta1/SearchUris")
               .setRequestMarshaller(ProtoUtils.marshaller(SearchUrisRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SearchUrisResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchHashesRequest, SearchHashesResponse>
@@ -74,6 +76,7 @@ public class GrpcWebRiskServiceV1Beta1Stub extends WebRiskServiceV1Beta1Stub {
               .setRequestMarshaller(ProtoUtils.marshaller(SearchHashesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchHashesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ComputeThreatListDiffRequest, ComputeThreatListDiffResponse>

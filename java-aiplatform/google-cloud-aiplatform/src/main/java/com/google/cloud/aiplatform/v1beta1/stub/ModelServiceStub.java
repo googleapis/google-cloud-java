@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,6 +58,8 @@ import com.google.cloud.aiplatform.v1beta1.MergeVersionAliasesRequest;
 import com.google.cloud.aiplatform.v1beta1.Model;
 import com.google.cloud.aiplatform.v1beta1.ModelEvaluation;
 import com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice;
+import com.google.cloud.aiplatform.v1beta1.RecommendSpecRequest;
+import com.google.cloud.aiplatform.v1beta1.RecommendSpecResponse;
 import com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetRequest;
 import com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetResponse;
@@ -242,6 +244,10 @@ public abstract class ModelServiceStub implements BackgroundResource {
   public UnaryCallable<ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse>
       listModelEvaluationSlicesCallable() {
     throw new UnsupportedOperationException("Not implemented: listModelEvaluationSlicesCallable()");
+  }
+
+  public UnaryCallable<RecommendSpecRequest, RecommendSpecResponse> recommendSpecCallable() {
+    throw new UnsupportedOperationException("Not implemented: recommendSpecCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1892,8 +1892,6 @@ public class DatasetServiceClientTest {
     Assert.assertEquals(
         request.getBatchPredictionResourceUsageAssessmentConfig(),
         actualRequest.getBatchPredictionResourceUsageAssessmentConfig());
-    Assert.assertEquals(request.getGeminiTemplateConfig(), actualRequest.getGeminiTemplateConfig());
-    Assert.assertEquals(request.getRequestColumnName(), actualRequest.getRequestColumnName());
     Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertEquals(
         request.getGeminiRequestReadConfig(), actualRequest.getGeminiRequestReadConfig());
@@ -1950,8 +1948,6 @@ public class DatasetServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     AssembleDataRequest actualRequest = ((AssembleDataRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getGeminiTemplateConfig(), actualRequest.getGeminiTemplateConfig());
-    Assert.assertEquals(request.getRequestColumnName(), actualRequest.getRequestColumnName());
     Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertEquals(
         request.getGeminiRequestReadConfig(), actualRequest.getGeminiRequestReadConfig());

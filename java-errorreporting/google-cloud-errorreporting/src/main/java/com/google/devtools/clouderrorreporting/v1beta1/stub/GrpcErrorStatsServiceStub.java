@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,6 +59,7 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
                   ProtoUtils.marshaller(ListGroupStatsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGroupStatsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListEventsRequest, ListEventsResponse>
@@ -69,6 +70,7 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
                   "google.devtools.clouderrorreporting.v1beta1.ErrorStatsService/ListEvents")
               .setRequestMarshaller(ProtoUtils.marshaller(ListEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListEventsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEventsRequest, DeleteEventsResponse>
@@ -80,6 +82,7 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DeleteEventsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListGroupStatsRequest, ListGroupStatsResponse> listGroupStatsCallable;

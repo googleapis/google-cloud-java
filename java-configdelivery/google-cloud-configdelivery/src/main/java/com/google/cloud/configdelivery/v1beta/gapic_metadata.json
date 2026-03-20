@@ -1,0 +1,99 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.configdelivery.v1beta",
+  "libraryPackage": "com.google.cloud.configdelivery.v1beta",
+  "services": {
+    "ConfigDelivery": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ConfigDeliveryClient",
+          "rpcs": {
+            "AbortRollout": {
+              "methods": ["abortRolloutAsync", "abortRolloutAsync", "abortRolloutAsync", "abortRolloutOperationCallable", "abortRolloutCallable"]
+            },
+            "CreateFleetPackage": {
+              "methods": ["createFleetPackageAsync", "createFleetPackageAsync", "createFleetPackageAsync", "createFleetPackageOperationCallable", "createFleetPackageCallable"]
+            },
+            "CreateRelease": {
+              "methods": ["createReleaseAsync", "createReleaseAsync", "createReleaseAsync", "createReleaseOperationCallable", "createReleaseCallable"]
+            },
+            "CreateResourceBundle": {
+              "methods": ["createResourceBundleAsync", "createResourceBundleAsync", "createResourceBundleAsync", "createResourceBundleOperationCallable", "createResourceBundleCallable"]
+            },
+            "CreateVariant": {
+              "methods": ["createVariantAsync", "createVariantAsync", "createVariantAsync", "createVariantOperationCallable", "createVariantCallable"]
+            },
+            "DeleteFleetPackage": {
+              "methods": ["deleteFleetPackageAsync", "deleteFleetPackageAsync", "deleteFleetPackageAsync", "deleteFleetPackageOperationCallable", "deleteFleetPackageCallable"]
+            },
+            "DeleteRelease": {
+              "methods": ["deleteReleaseAsync", "deleteReleaseAsync", "deleteReleaseAsync", "deleteReleaseOperationCallable", "deleteReleaseCallable"]
+            },
+            "DeleteResourceBundle": {
+              "methods": ["deleteResourceBundleAsync", "deleteResourceBundleAsync", "deleteResourceBundleAsync", "deleteResourceBundleOperationCallable", "deleteResourceBundleCallable"]
+            },
+            "DeleteVariant": {
+              "methods": ["deleteVariantAsync", "deleteVariantAsync", "deleteVariantAsync", "deleteVariantOperationCallable", "deleteVariantCallable"]
+            },
+            "GetFleetPackage": {
+              "methods": ["getFleetPackage", "getFleetPackage", "getFleetPackage", "getFleetPackageCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetRelease": {
+              "methods": ["getRelease", "getRelease", "getRelease", "getReleaseCallable"]
+            },
+            "GetResourceBundle": {
+              "methods": ["getResourceBundle", "getResourceBundle", "getResourceBundle", "getResourceBundleCallable"]
+            },
+            "GetRollout": {
+              "methods": ["getRollout", "getRollout", "getRollout", "getRolloutCallable"]
+            },
+            "GetVariant": {
+              "methods": ["getVariant", "getVariant", "getVariant", "getVariantCallable"]
+            },
+            "ListFleetPackages": {
+              "methods": ["listFleetPackages", "listFleetPackages", "listFleetPackages", "listFleetPackagesPagedCallable", "listFleetPackagesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListReleases": {
+              "methods": ["listReleases", "listReleases", "listReleases", "listReleasesPagedCallable", "listReleasesCallable"]
+            },
+            "ListResourceBundles": {
+              "methods": ["listResourceBundles", "listResourceBundles", "listResourceBundles", "listResourceBundlesPagedCallable", "listResourceBundlesCallable"]
+            },
+            "ListRollouts": {
+              "methods": ["listRollouts", "listRollouts", "listRollouts", "listRolloutsPagedCallable", "listRolloutsCallable"]
+            },
+            "ListVariants": {
+              "methods": ["listVariants", "listVariants", "listVariants", "listVariantsPagedCallable", "listVariantsCallable"]
+            },
+            "ResumeRollout": {
+              "methods": ["resumeRolloutAsync", "resumeRolloutAsync", "resumeRolloutAsync", "resumeRolloutOperationCallable", "resumeRolloutCallable"]
+            },
+            "SuspendRollout": {
+              "methods": ["suspendRolloutAsync", "suspendRolloutAsync", "suspendRolloutAsync", "suspendRolloutOperationCallable", "suspendRolloutCallable"]
+            },
+            "UpdateFleetPackage": {
+              "methods": ["updateFleetPackageAsync", "updateFleetPackageAsync", "updateFleetPackageOperationCallable", "updateFleetPackageCallable"]
+            },
+            "UpdateRelease": {
+              "methods": ["updateReleaseAsync", "updateReleaseAsync", "updateReleaseOperationCallable", "updateReleaseCallable"]
+            },
+            "UpdateResourceBundle": {
+              "methods": ["updateResourceBundleAsync", "updateResourceBundleAsync", "updateResourceBundleOperationCallable", "updateResourceBundleCallable"]
+            },
+            "UpdateVariant": {
+              "methods": ["updateVariantAsync", "updateVariantAsync", "updateVariantOperationCallable", "updateVariantCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

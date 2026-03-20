@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,6 +37,7 @@ import com.google.container.v1.Autopilot;
 import com.google.container.v1.AutopilotCompatibilityIssue;
 import com.google.container.v1.BestEffortProvisioning;
 import com.google.container.v1.BinaryAuthorization;
+import com.google.container.v1.BootDisk;
 import com.google.container.v1.CheckAutopilotCompatibilityRequest;
 import com.google.container.v1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1.Cluster;
@@ -56,6 +57,7 @@ import com.google.container.v1.Fleet;
 import com.google.container.v1.GcfsConfig;
 import com.google.container.v1.GetJSONWebKeysRequest;
 import com.google.container.v1.GetJSONWebKeysResponse;
+import com.google.container.v1.GkeAutoUpgradeConfig;
 import com.google.container.v1.IPAllocationPolicy;
 import com.google.container.v1.IdentityServiceConfig;
 import com.google.container.v1.Jwk;
@@ -69,6 +71,7 @@ import com.google.container.v1.ListUsableSubnetworksRequest;
 import com.google.container.v1.ListUsableSubnetworksResponse;
 import com.google.container.v1.LoggingConfig;
 import com.google.container.v1.MaintenancePolicy;
+import com.google.container.v1.ManagedOpenTelemetryConfig;
 import com.google.container.v1.MasterAuth;
 import com.google.container.v1.MasterAuthorizedNetworksConfig;
 import com.google.container.v1.MaxPodsConstraint;
@@ -340,7 +343,9 @@ public class ClusterManagerClientHttpJsonTest {
             .setSatisfiesPzi(true)
             .setUserManagedKeysConfig(UserManagedKeysConfig.newBuilder().build())
             .setRbacBindingConfig(RBACBindingConfig.newBuilder().build())
+            .setGkeAutoUpgradeConfig(GkeAutoUpgradeConfig.newBuilder().build())
             .setAnonymousAuthenticationConfig(AnonymousAuthenticationConfig.newBuilder().build())
+            .setManagedOpentelemetryConfig(ManagedOpenTelemetryConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -459,7 +464,9 @@ public class ClusterManagerClientHttpJsonTest {
             .setSatisfiesPzi(true)
             .setUserManagedKeysConfig(UserManagedKeysConfig.newBuilder().build())
             .setRbacBindingConfig(RBACBindingConfig.newBuilder().build())
+            .setGkeAutoUpgradeConfig(GkeAutoUpgradeConfig.newBuilder().build())
             .setAnonymousAuthenticationConfig(AnonymousAuthenticationConfig.newBuilder().build())
+            .setManagedOpentelemetryConfig(ManagedOpenTelemetryConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -798,6 +805,9 @@ public class ClusterManagerClientHttpJsonTest {
             .addAllStoragePools(new ArrayList<String>())
             .setMaxRunDuration(Duration.newBuilder().build())
             .setFlexStart(true)
+            .setBootDisk(BootDisk.newBuilder().build())
+            .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
+            .setConsolidationDelay(Duration.newBuilder().build())
             .build();
 
     Operation actualResponse = client.updateNodePool(request);
@@ -863,6 +873,9 @@ public class ClusterManagerClientHttpJsonTest {
               .addAllStoragePools(new ArrayList<String>())
               .setMaxRunDuration(Duration.newBuilder().build())
               .setFlexStart(true)
+              .setBootDisk(BootDisk.newBuilder().build())
+              .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
+              .setConsolidationDelay(Duration.newBuilder().build())
               .build();
       client.updateNodePool(request);
       Assert.fail("No exception raised");
@@ -2284,6 +2297,7 @@ public class ClusterManagerClientHttpJsonTest {
             .setEtag("etag3123477")
             .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
             .setBestEffortProvisioning(BestEffortProvisioning.newBuilder().build())
+            .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2349,6 +2363,7 @@ public class ClusterManagerClientHttpJsonTest {
             .setEtag("etag3123477")
             .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
             .setBestEffortProvisioning(BestEffortProvisioning.newBuilder().build())
+            .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

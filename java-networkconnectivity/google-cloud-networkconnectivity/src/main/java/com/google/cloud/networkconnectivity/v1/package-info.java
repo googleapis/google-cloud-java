@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,27 @@
  * }
  * }</pre>
  *
+ * <p>======================= DataTransferServiceClient =======================
+ *
+ * <p>Service Description: DataTransferService is the service for the Data Transfer API.
+ *
+ * <p>Sample for DataTransferServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
+ *   MulticloudDataTransferConfigName name =
+ *       MulticloudDataTransferConfigName.of(
+ *           "[PROJECT]", "[LOCATION]", "[MULTICLOUD_DATA_TRANSFER_CONFIG]");
+ *   MulticloudDataTransferConfig response =
+ *       dataTransferServiceClient.getMulticloudDataTransferConfig(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= HubServiceClient =======================
  *
  * <p>Service Description: Network Connectivity Center is a hub-and-spoke abstraction for network
@@ -57,6 +78,26 @@
  * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
  *   HubName name = HubName.of("[PROJECT]", "[HUB]");
  *   Hub response = hubServiceClient.getHub(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= InternalRangeServiceClient =======================
+ *
+ * <p>Service Description: The CLH-based service for internal range resources used to perform IPAM
+ * operations within a VPC network.
+ *
+ * <p>Sample for InternalRangeServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (InternalRangeServiceClient internalRangeServiceClient =
+ *     InternalRangeServiceClient.create()) {
+ *   InternalRangeName name = InternalRangeName.of("[PROJECT]", "[LOCATION]", "[INTERNAL_RANGE]");
+ *   InternalRange response = internalRangeServiceClient.getInternalRange(name);
  * }
  * }</pre>
  *

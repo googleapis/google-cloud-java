@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -98,8 +99,12 @@ import com.google.cloud.video.livestream.v1.ListInputsRequest;
 import com.google.cloud.video.livestream.v1.ListInputsResponse;
 import com.google.cloud.video.livestream.v1.OperationMetadata;
 import com.google.cloud.video.livestream.v1.Pool;
+import com.google.cloud.video.livestream.v1.PreviewInputRequest;
+import com.google.cloud.video.livestream.v1.PreviewInputResponse;
 import com.google.cloud.video.livestream.v1.StartChannelRequest;
+import com.google.cloud.video.livestream.v1.StartDistributionRequest;
 import com.google.cloud.video.livestream.v1.StopChannelRequest;
+import com.google.cloud.video.livestream.v1.StopDistributionRequest;
 import com.google.cloud.video.livestream.v1.UpdateChannelRequest;
 import com.google.cloud.video.livestream.v1.UpdateDvrSessionRequest;
 import com.google.cloud.video.livestream.v1.UpdateInputRequest;
@@ -163,8 +168,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -193,6 +198,7 @@ import javax.annotation.Generated;
  * }</pre>
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class LivestreamServiceStubSettings extends StubSettings<LivestreamServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -219,6 +225,14 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
   private final OperationCallSettings<
           StopChannelRequest, ChannelOperationResponse, OperationMetadata>
       stopChannelOperationSettings;
+  private final UnaryCallSettings<StartDistributionRequest, Operation> startDistributionSettings;
+  private final OperationCallSettings<
+          StartDistributionRequest, ChannelOperationResponse, OperationMetadata>
+      startDistributionOperationSettings;
+  private final UnaryCallSettings<StopDistributionRequest, Operation> stopDistributionSettings;
+  private final OperationCallSettings<
+          StopDistributionRequest, ChannelOperationResponse, OperationMetadata>
+      stopDistributionOperationSettings;
   private final UnaryCallSettings<CreateInputRequest, Operation> createInputSettings;
   private final OperationCallSettings<CreateInputRequest, Input, OperationMetadata>
       createInputOperationSettings;
@@ -231,6 +245,7 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
   private final UnaryCallSettings<UpdateInputRequest, Operation> updateInputSettings;
   private final OperationCallSettings<UpdateInputRequest, Input, OperationMetadata>
       updateInputOperationSettings;
+  private final UnaryCallSettings<PreviewInputRequest, PreviewInputResponse> previewInputSettings;
   private final UnaryCallSettings<CreateEventRequest, Event> createEventSettings;
   private final PagedCallSettings<ListEventsRequest, ListEventsResponse, ListEventsPagedResponse>
       listEventsSettings;
@@ -702,6 +717,29 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     return stopChannelOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to startDistribution. */
+  public UnaryCallSettings<StartDistributionRequest, Operation> startDistributionSettings() {
+    return startDistributionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to startDistribution. */
+  public OperationCallSettings<
+          StartDistributionRequest, ChannelOperationResponse, OperationMetadata>
+      startDistributionOperationSettings() {
+    return startDistributionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to stopDistribution. */
+  public UnaryCallSettings<StopDistributionRequest, Operation> stopDistributionSettings() {
+    return stopDistributionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to stopDistribution. */
+  public OperationCallSettings<StopDistributionRequest, ChannelOperationResponse, OperationMetadata>
+      stopDistributionOperationSettings() {
+    return stopDistributionOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to createInput. */
   public UnaryCallSettings<CreateInputRequest, Operation> createInputSettings() {
     return createInputSettings;
@@ -744,6 +782,11 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
   public OperationCallSettings<UpdateInputRequest, Input, OperationMetadata>
       updateInputOperationSettings() {
     return updateInputOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to previewInput. */
+  public UnaryCallSettings<PreviewInputRequest, PreviewInputResponse> previewInputSettings() {
+    return previewInputSettings;
   }
 
   /** Returns the object with the settings used for calls to createEvent. */
@@ -1028,6 +1071,11 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     startChannelOperationSettings = settingsBuilder.startChannelOperationSettings().build();
     stopChannelSettings = settingsBuilder.stopChannelSettings().build();
     stopChannelOperationSettings = settingsBuilder.stopChannelOperationSettings().build();
+    startDistributionSettings = settingsBuilder.startDistributionSettings().build();
+    startDistributionOperationSettings =
+        settingsBuilder.startDistributionOperationSettings().build();
+    stopDistributionSettings = settingsBuilder.stopDistributionSettings().build();
+    stopDistributionOperationSettings = settingsBuilder.stopDistributionOperationSettings().build();
     createInputSettings = settingsBuilder.createInputSettings().build();
     createInputOperationSettings = settingsBuilder.createInputOperationSettings().build();
     listInputsSettings = settingsBuilder.listInputsSettings().build();
@@ -1036,6 +1084,7 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     deleteInputOperationSettings = settingsBuilder.deleteInputOperationSettings().build();
     updateInputSettings = settingsBuilder.updateInputSettings().build();
     updateInputOperationSettings = settingsBuilder.updateInputOperationSettings().build();
+    previewInputSettings = settingsBuilder.previewInputSettings().build();
     createEventSettings = settingsBuilder.createEventSettings().build();
     listEventsSettings = settingsBuilder.listEventsSettings().build();
     getEventSettings = settingsBuilder.getEventSettings().build();
@@ -1067,6 +1116,14 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
 
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-live-stream")
+        .setRepository("googleapis/google-cloud-java")
+        .build();
+  }
+
   /** Builder for LivestreamServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<LivestreamServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
@@ -1091,6 +1148,16 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     private final OperationCallSettings.Builder<
             StopChannelRequest, ChannelOperationResponse, OperationMetadata>
         stopChannelOperationSettings;
+    private final UnaryCallSettings.Builder<StartDistributionRequest, Operation>
+        startDistributionSettings;
+    private final OperationCallSettings.Builder<
+            StartDistributionRequest, ChannelOperationResponse, OperationMetadata>
+        startDistributionOperationSettings;
+    private final UnaryCallSettings.Builder<StopDistributionRequest, Operation>
+        stopDistributionSettings;
+    private final OperationCallSettings.Builder<
+            StopDistributionRequest, ChannelOperationResponse, OperationMetadata>
+        stopDistributionOperationSettings;
     private final UnaryCallSettings.Builder<CreateInputRequest, Operation> createInputSettings;
     private final OperationCallSettings.Builder<CreateInputRequest, Input, OperationMetadata>
         createInputOperationSettings;
@@ -1104,6 +1171,8 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     private final UnaryCallSettings.Builder<UpdateInputRequest, Operation> updateInputSettings;
     private final OperationCallSettings.Builder<UpdateInputRequest, Input, OperationMetadata>
         updateInputOperationSettings;
+    private final UnaryCallSettings.Builder<PreviewInputRequest, PreviewInputResponse>
+        previewInputSettings;
     private final UnaryCallSettings.Builder<CreateEventRequest, Event> createEventSettings;
     private final PagedCallSettings.Builder<
             ListEventsRequest, ListEventsResponse, ListEventsPagedResponse>
@@ -1219,6 +1288,10 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
       startChannelOperationSettings = OperationCallSettings.newBuilder();
       stopChannelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       stopChannelOperationSettings = OperationCallSettings.newBuilder();
+      startDistributionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      startDistributionOperationSettings = OperationCallSettings.newBuilder();
+      stopDistributionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      stopDistributionOperationSettings = OperationCallSettings.newBuilder();
       createInputSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createInputOperationSettings = OperationCallSettings.newBuilder();
       listInputsSettings = PagedCallSettings.newBuilder(LIST_INPUTS_PAGE_STR_FACT);
@@ -1227,6 +1300,7 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
       deleteInputOperationSettings = OperationCallSettings.newBuilder();
       updateInputSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateInputOperationSettings = OperationCallSettings.newBuilder();
+      previewInputSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listEventsSettings = PagedCallSettings.newBuilder(LIST_EVENTS_PAGE_STR_FACT);
       getEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1266,11 +1340,14 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
               updateChannelSettings,
               startChannelSettings,
               stopChannelSettings,
+              startDistributionSettings,
+              stopDistributionSettings,
               createInputSettings,
               listInputsSettings,
               getInputSettings,
               deleteInputSettings,
               updateInputSettings,
+              previewInputSettings,
               createEventSettings,
               listEventsSettings,
               getEventSettings,
@@ -1310,6 +1387,10 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
       startChannelOperationSettings = settings.startChannelOperationSettings.toBuilder();
       stopChannelSettings = settings.stopChannelSettings.toBuilder();
       stopChannelOperationSettings = settings.stopChannelOperationSettings.toBuilder();
+      startDistributionSettings = settings.startDistributionSettings.toBuilder();
+      startDistributionOperationSettings = settings.startDistributionOperationSettings.toBuilder();
+      stopDistributionSettings = settings.stopDistributionSettings.toBuilder();
+      stopDistributionOperationSettings = settings.stopDistributionOperationSettings.toBuilder();
       createInputSettings = settings.createInputSettings.toBuilder();
       createInputOperationSettings = settings.createInputOperationSettings.toBuilder();
       listInputsSettings = settings.listInputsSettings.toBuilder();
@@ -1318,6 +1399,7 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
       deleteInputOperationSettings = settings.deleteInputOperationSettings.toBuilder();
       updateInputSettings = settings.updateInputSettings.toBuilder();
       updateInputOperationSettings = settings.updateInputOperationSettings.toBuilder();
+      previewInputSettings = settings.previewInputSettings.toBuilder();
       createEventSettings = settings.createEventSettings.toBuilder();
       listEventsSettings = settings.listEventsSettings.toBuilder();
       getEventSettings = settings.getEventSettings.toBuilder();
@@ -1357,11 +1439,14 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
               updateChannelSettings,
               startChannelSettings,
               stopChannelSettings,
+              startDistributionSettings,
+              stopDistributionSettings,
               createInputSettings,
               listInputsSettings,
               getInputSettings,
               deleteInputSettings,
               updateInputSettings,
+              previewInputSettings,
               createEventSettings,
               listEventsSettings,
               getEventSettings,
@@ -1446,6 +1531,16 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .startDistributionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .stopDistributionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .createInputSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -1467,6 +1562,11 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
 
       builder
           .updateInputSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .previewInputSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -1502,48 +1602,48 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
 
       builder
           .createClipSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .deleteClipSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .createDvrSessionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .listDvrSessionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .getDvrSessionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .deleteDvrSessionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .updateDvrSessionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .createAssetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .deleteAssetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .getAssetSettings()
@@ -1562,8 +1662,8 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
 
       builder
           .updatePoolSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .listLocationsSettings()
@@ -1695,6 +1795,54 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
                       .build()));
 
       builder
+          .startDistributionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<StartDistributionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ChannelOperationResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .stopDistributionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<StopDistributionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ChannelOperationResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .createInputOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<CreateInputRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
@@ -1767,8 +1915,8 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
           .createClipOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<CreateClipRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(ProtoOperationTransformers.ResponseTransformer.create(Clip.class))
           .setMetadataTransformer(
@@ -1789,8 +1937,8 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
           .deleteClipOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<DeleteClipRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -1813,8 +1961,8 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
           .setInitialCallSettings(
               UnaryCallSettings
                   .<CreateDvrSessionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(DvrSession.class))
@@ -1837,8 +1985,8 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteDvrSessionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -1861,8 +2009,8 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
           .setInitialCallSettings(
               UnaryCallSettings
                   .<UpdateDvrSessionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(DvrSession.class))
@@ -1884,8 +2032,8 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
           .createAssetOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<CreateAssetRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Asset.class))
@@ -1907,8 +2055,8 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
           .deleteAssetOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<DeleteAssetRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -1930,8 +2078,8 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
           .updatePoolOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<UpdatePoolRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(ProtoOperationTransformers.ResponseTransformer.create(Pool.class))
           .setMetadataTransformer(
@@ -2035,6 +2183,32 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
       return stopChannelOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to startDistribution. */
+    public UnaryCallSettings.Builder<StartDistributionRequest, Operation>
+        startDistributionSettings() {
+      return startDistributionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to startDistribution. */
+    public OperationCallSettings.Builder<
+            StartDistributionRequest, ChannelOperationResponse, OperationMetadata>
+        startDistributionOperationSettings() {
+      return startDistributionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to stopDistribution. */
+    public UnaryCallSettings.Builder<StopDistributionRequest, Operation>
+        stopDistributionSettings() {
+      return stopDistributionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to stopDistribution. */
+    public OperationCallSettings.Builder<
+            StopDistributionRequest, ChannelOperationResponse, OperationMetadata>
+        stopDistributionOperationSettings() {
+      return stopDistributionOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to createInput. */
     public UnaryCallSettings.Builder<CreateInputRequest, Operation> createInputSettings() {
       return createInputSettings;
@@ -2077,6 +2251,12 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     public OperationCallSettings.Builder<UpdateInputRequest, Input, OperationMetadata>
         updateInputOperationSettings() {
       return updateInputOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to previewInput. */
+    public UnaryCallSettings.Builder<PreviewInputRequest, PreviewInputResponse>
+        previewInputSettings() {
+      return previewInputSettings;
     }
 
     /** Returns the builder for the settings used for calls to createEvent. */

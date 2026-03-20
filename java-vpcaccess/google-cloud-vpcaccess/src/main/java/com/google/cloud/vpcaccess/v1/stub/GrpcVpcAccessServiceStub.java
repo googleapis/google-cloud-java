@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,6 +61,7 @@ public class GrpcVpcAccessServiceStub extends VpcAccessServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateConnectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetConnectorRequest, Connector>
@@ -70,6 +71,7 @@ public class GrpcVpcAccessServiceStub extends VpcAccessServiceStub {
               .setFullMethodName("google.cloud.vpcaccess.v1.VpcAccessService/GetConnector")
               .setRequestMarshaller(ProtoUtils.marshaller(GetConnectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Connector.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListConnectorsRequest, ListConnectorsResponse>
@@ -81,6 +83,7 @@ public class GrpcVpcAccessServiceStub extends VpcAccessServiceStub {
                   ProtoUtils.marshaller(ListConnectorsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConnectorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteConnectorRequest, Operation>
@@ -91,6 +94,7 @@ public class GrpcVpcAccessServiceStub extends VpcAccessServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteConnectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -102,6 +106,7 @@ public class GrpcVpcAccessServiceStub extends VpcAccessServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateConnectorRequest, Operation> createConnectorCallable;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,31 @@
  * A client to Vertex AI API
  *
  * <p>The interfaces provided are listed below, along with usage samples.
+ *
+ * <p>======================= DataFoundryServiceClient =======================
+ *
+ * <p>Service Description: Service for generating and preparing datasets for Gen AI evaluation.
+ *
+ * <p>Sample for DataFoundryServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (DataFoundryServiceClient dataFoundryServiceClient = DataFoundryServiceClient.create()) {
+ *   GenerateSyntheticDataRequest request =
+ *       GenerateSyntheticDataRequest.newBuilder()
+ *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+ *           .setCount(94851343)
+ *           .addAllOutputFieldSpecs(new ArrayList<OutputFieldSpec>())
+ *           .addAllExamples(new ArrayList<SyntheticExample>())
+ *           .build();
+ *   GenerateSyntheticDataResponse response =
+ *       dataFoundryServiceClient.generateSyntheticData(request);
+ * }
+ * }</pre>
  *
  * <p>======================= DatasetServiceClient =======================
  *
@@ -559,6 +584,25 @@
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   Schedule schedule = Schedule.newBuilder().build();
  *   Schedule response = scheduleServiceClient.createSchedule(parent, schedule);
+ * }
+ * }</pre>
+ *
+ * <p>======================= SessionServiceClient =======================
+ *
+ * <p>Service Description: The service that manages Vertex Session related resources.
+ *
+ * <p>Sample for SessionServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
+ *   SessionName name =
+ *       SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]");
+ *   Session response = sessionServiceClient.getSession(name);
  * }
  * }</pre>
  *

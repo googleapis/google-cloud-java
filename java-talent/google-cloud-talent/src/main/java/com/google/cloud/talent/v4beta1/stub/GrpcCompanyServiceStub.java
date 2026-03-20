@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,6 +58,7 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCompanyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Company.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCompanyRequest, Company> getCompanyMethodDescriptor =
@@ -66,6 +67,7 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
           .setFullMethodName("google.cloud.talent.v4beta1.CompanyService/GetCompany")
           .setRequestMarshaller(ProtoUtils.marshaller(GetCompanyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Company.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateCompanyRequest, Company>
@@ -76,6 +78,7 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateCompanyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Company.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCompanyRequest, Empty> deleteCompanyMethodDescriptor =
@@ -84,6 +87,7 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
           .setFullMethodName("google.cloud.talent.v4beta1.CompanyService/DeleteCompany")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteCompanyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListCompaniesRequest, ListCompaniesResponse>
@@ -95,6 +99,7 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
                   ProtoUtils.marshaller(ListCompaniesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCompaniesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateCompanyRequest, Company> createCompanyCallable;

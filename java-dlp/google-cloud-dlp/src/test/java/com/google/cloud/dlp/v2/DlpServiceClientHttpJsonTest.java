@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,6 +66,7 @@ import com.google.privacy.dlp.v2.DiscoveryTarget;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.DlpJobName;
 import com.google.privacy.dlp.v2.DlpJobType;
+import com.google.privacy.dlp.v2.Domain;
 import com.google.privacy.dlp.v2.EncryptionStatus;
 import com.google.privacy.dlp.v2.Error;
 import com.google.privacy.dlp.v2.FileClusterSummary;
@@ -252,6 +253,8 @@ public class DlpServiceClientHttpJsonTest {
             .addAllImageRedactionConfigs(new ArrayList<RedactImageRequest.ImageRedactionConfig>())
             .setIncludeFindings(true)
             .setByteItem(ByteContentItem.newBuilder().build())
+            .setInspectTemplate("inspectTemplate-2053620050")
+            .setDeidentifyTemplate("deidentifyTemplate-2141929945")
             .build();
 
     RedactImageResponse actualResponse = client.redactImage(request);
@@ -288,6 +291,8 @@ public class DlpServiceClientHttpJsonTest {
               .addAllImageRedactionConfigs(new ArrayList<RedactImageRequest.ImageRedactionConfig>())
               .setIncludeFindings(true)
               .setByteItem(ByteContentItem.newBuilder().build())
+              .setInspectTemplate("inspectTemplate-2053620050")
+              .setDeidentifyTemplate("deidentifyTemplate-2141929945")
               .build();
       client.redactImage(request);
       Assert.fail("No exception raised");
@@ -5678,6 +5683,7 @@ public class DlpServiceClientHttpJsonTest {
             .setFileStoreIsEmpty(true)
             .addAllTags(new ArrayList<Tag>())
             .addAllRelatedResources(new ArrayList<RelatedResource>())
+            .addAllDomains(new ArrayList<Domain>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5753,6 +5759,7 @@ public class DlpServiceClientHttpJsonTest {
             .setFileStoreIsEmpty(true)
             .addAllTags(new ArrayList<Tag>())
             .addAllRelatedResources(new ArrayList<RelatedResource>())
+            .addAllDomains(new ArrayList<Domain>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5915,6 +5922,7 @@ public class DlpServiceClientHttpJsonTest {
             .setSampleFindingsTable(BigQueryTable.newBuilder().build())
             .addAllTags(new ArrayList<Tag>())
             .addAllRelatedResources(new ArrayList<RelatedResource>())
+            .addAllDomains(new ArrayList<Domain>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5993,6 +6001,7 @@ public class DlpServiceClientHttpJsonTest {
             .setSampleFindingsTable(BigQueryTable.newBuilder().build())
             .addAllTags(new ArrayList<Tag>())
             .addAllRelatedResources(new ArrayList<RelatedResource>())
+            .addAllDomains(new ArrayList<Domain>())
             .build();
     mockService.addResponse(expectedResponse);
 

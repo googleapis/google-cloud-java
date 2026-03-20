@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import com.google.container.v1beta1.Autopilot;
 import com.google.container.v1beta1.AutopilotCompatibilityIssue;
 import com.google.container.v1beta1.BestEffortProvisioning;
 import com.google.container.v1beta1.BinaryAuthorization;
+import com.google.container.v1beta1.BootDisk;
 import com.google.container.v1beta1.CancelOperationRequest;
 import com.google.container.v1beta1.CheckAutopilotCompatibilityRequest;
 import com.google.container.v1beta1.CheckAutopilotCompatibilityResponse;
@@ -42,6 +43,7 @@ import com.google.container.v1beta1.ClusterAutoscaling;
 import com.google.container.v1beta1.ClusterTelemetry;
 import com.google.container.v1beta1.ClusterUpdate;
 import com.google.container.v1beta1.ClusterUpgradeInfo;
+import com.google.container.v1beta1.CompleteControlPlaneUpgradeRequest;
 import com.google.container.v1beta1.CompleteIPRotationRequest;
 import com.google.container.v1beta1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1beta1.CompliancePostureConfig;
@@ -66,6 +68,7 @@ import com.google.container.v1beta1.GetJSONWebKeysResponse;
 import com.google.container.v1beta1.GetNodePoolRequest;
 import com.google.container.v1beta1.GetOperationRequest;
 import com.google.container.v1beta1.GetServerConfigRequest;
+import com.google.container.v1beta1.GkeAutoUpgradeConfig;
 import com.google.container.v1beta1.IPAllocationPolicy;
 import com.google.container.v1beta1.IdentityServiceConfig;
 import com.google.container.v1beta1.Jwk;
@@ -85,6 +88,7 @@ import com.google.container.v1beta1.ListUsableSubnetworksResponse;
 import com.google.container.v1beta1.Location;
 import com.google.container.v1beta1.LoggingConfig;
 import com.google.container.v1beta1.MaintenancePolicy;
+import com.google.container.v1beta1.ManagedOpenTelemetryConfig;
 import com.google.container.v1beta1.Master;
 import com.google.container.v1beta1.MasterAuth;
 import com.google.container.v1beta1.MasterAuthorizedNetworksConfig;
@@ -119,7 +123,10 @@ import com.google.container.v1beta1.ResourceLabels;
 import com.google.container.v1beta1.ResourceManagerTags;
 import com.google.container.v1beta1.ResourceUsageExportConfig;
 import com.google.container.v1beta1.RollbackNodePoolUpgradeRequest;
+import com.google.container.v1beta1.RollbackSafeUpgrade;
+import com.google.container.v1beta1.RollbackSafeUpgradeStatus;
 import com.google.container.v1beta1.SecretManagerConfig;
+import com.google.container.v1beta1.SecretSyncConfig;
 import com.google.container.v1beta1.SecurityPostureConfig;
 import com.google.container.v1beta1.ServerConfig;
 import com.google.container.v1beta1.SetAddonsConfigRequest;
@@ -307,6 +314,8 @@ public class ClusterManagerClientTest {
             .setEndpoint("endpoint1741102485")
             .setInitialClusterVersion("initialClusterVersion-1547734558")
             .setCurrentMasterVersion("currentMasterVersion1871927069")
+            .setCurrentEmulatedVersion("currentEmulatedVersion1001176846")
+            .setRollbackSafeUpgrade(RollbackSafeUpgrade.newBuilder().build())
             .setCurrentNodeVersion("currentNodeVersion373921085")
             .setCreateTime("createTime1369213417")
             .setStatusMessage("statusMessage-958704715")
@@ -340,7 +349,10 @@ public class ClusterManagerClientTest {
             .setSatisfiesPzi(true)
             .setUserManagedKeysConfig(UserManagedKeysConfig.newBuilder().build())
             .setRbacBindingConfig(RBACBindingConfig.newBuilder().build())
+            .setGkeAutoUpgradeConfig(GkeAutoUpgradeConfig.newBuilder().build())
             .setAnonymousAuthenticationConfig(AnonymousAuthenticationConfig.newBuilder().build())
+            .setSecretSyncConfig(SecretSyncConfig.newBuilder().build())
+            .setManagedOpentelemetryConfig(ManagedOpenTelemetryConfig.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -551,6 +563,9 @@ public class ClusterManagerClientTest {
             .addAllStoragePools(new ArrayList<String>())
             .setMaxRunDuration(Duration.newBuilder().build())
             .setFlexStart(true)
+            .setBootDisk(BootDisk.newBuilder().build())
+            .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
+            .setConsolidationDelay(Duration.newBuilder().build())
             .build();
 
     Operation actualResponse = client.updateNodePool(request);
@@ -595,6 +610,9 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(request.getStoragePoolsList(), actualRequest.getStoragePoolsList());
     Assert.assertEquals(request.getMaxRunDuration(), actualRequest.getMaxRunDuration());
     Assert.assertEquals(request.getFlexStart(), actualRequest.getFlexStart());
+    Assert.assertEquals(request.getBootDisk(), actualRequest.getBootDisk());
+    Assert.assertEquals(request.getNodeDrainConfig(), actualRequest.getNodeDrainConfig());
+    Assert.assertEquals(request.getConsolidationDelay(), actualRequest.getConsolidationDelay());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -643,6 +661,9 @@ public class ClusterManagerClientTest {
               .addAllStoragePools(new ArrayList<String>())
               .setMaxRunDuration(Duration.newBuilder().build())
               .setFlexStart(true)
+              .setBootDisk(BootDisk.newBuilder().build())
+              .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
+              .setConsolidationDelay(Duration.newBuilder().build())
               .build();
       client.updateNodePool(request);
       Assert.fail("No exception raised");
@@ -1434,6 +1455,7 @@ public class ClusterManagerClientTest {
             .setEtag("etag3123477")
             .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
             .setBestEffortProvisioning(BestEffortProvisioning.newBuilder().build())
+            .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -2319,6 +2341,7 @@ public class ClusterManagerClientTest {
             .addAllUpgradeDetails(new ArrayList<UpgradeDetails>())
             .setEndOfStandardSupportTimestamp("endOfStandardSupportTimestamp-1097416426")
             .setEndOfExtendedSupportTimestamp("endOfExtendedSupportTimestamp599562130")
+            .setRollbackSafeUpgradeStatus(RollbackSafeUpgradeStatus.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -2392,6 +2415,66 @@ public class ClusterManagerClientTest {
     try {
       String name = "name3373707";
       client.fetchNodePoolUpgradeInfo(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void completeControlPlaneUpgradeTest() throws Exception {
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
+            .setError(Status.newBuilder().build())
+            .build();
+    mockClusterManager.addResponse(expectedResponse);
+
+    CompleteControlPlaneUpgradeRequest request =
+        CompleteControlPlaneUpgradeRequest.newBuilder()
+            .setName("name3373707")
+            .setVersion("version351608024")
+            .build();
+
+    Operation actualResponse = client.completeControlPlaneUpgrade(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CompleteControlPlaneUpgradeRequest actualRequest =
+        ((CompleteControlPlaneUpgradeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getVersion(), actualRequest.getVersion());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void completeControlPlaneUpgradeExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockClusterManager.addException(exception);
+
+    try {
+      CompleteControlPlaneUpgradeRequest request =
+          CompleteControlPlaneUpgradeRequest.newBuilder()
+              .setName("name3373707")
+              .setVersion("version351608024")
+              .build();
+      client.completeControlPlaneUpgrade(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

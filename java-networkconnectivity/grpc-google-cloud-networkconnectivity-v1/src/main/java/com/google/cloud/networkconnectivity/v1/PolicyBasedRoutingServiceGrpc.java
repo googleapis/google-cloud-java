@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * policies for Layer 4 traffic traversing through the connected service.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/networkconnectivity/v1/policy_based_routing.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class PolicyBasedRoutingServiceGrpc {
 
@@ -506,8 +503,9 @@ public final class PolicyBasedRoutingServiceGrpc {
      */
     public com.google.cloud.networkconnectivity.v1.ListPolicyBasedRoutesResponse
         listPolicyBasedRoutes(
-            com.google.cloud.networkconnectivity.v1.ListPolicyBasedRoutesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.networkconnectivity.v1.ListPolicyBasedRoutesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPolicyBasedRoutesMethod(), getCallOptions(), request);
     }
 
@@ -519,8 +517,9 @@ public final class PolicyBasedRoutingServiceGrpc {
      * </pre>
      */
     public com.google.cloud.networkconnectivity.v1.PolicyBasedRoute getPolicyBasedRoute(
-        com.google.cloud.networkconnectivity.v1.GetPolicyBasedRouteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.GetPolicyBasedRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPolicyBasedRouteMethod(), getCallOptions(), request);
     }
 
@@ -532,8 +531,9 @@ public final class PolicyBasedRoutingServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createPolicyBasedRoute(
-        com.google.cloud.networkconnectivity.v1.CreatePolicyBasedRouteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.CreatePolicyBasedRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreatePolicyBasedRouteMethod(), getCallOptions(), request);
     }
 
@@ -545,8 +545,9 @@ public final class PolicyBasedRoutingServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deletePolicyBasedRoute(
-        com.google.cloud.networkconnectivity.v1.DeletePolicyBasedRouteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.DeletePolicyBasedRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePolicyBasedRouteMethod(), getCallOptions(), request);
     }
   }

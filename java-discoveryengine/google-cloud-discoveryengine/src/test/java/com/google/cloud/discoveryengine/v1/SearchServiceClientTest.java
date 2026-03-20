@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,6 +106,7 @@ public class SearchServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                     .toString())
             .setQuery("query107944136")
+            .addAllPageCategories(new ArrayList<String>())
             .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
@@ -124,10 +125,14 @@ public class SearchServiceClientTest {
             .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
             .setUserPseudoId("userPseudoId-1155274652")
             .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+            .setRankingExpression("rankingExpression2110320494")
             .setSafeSearch(true)
             .putAllUserLabels(new HashMap<String, String>())
+            .setNaturalLanguageQueryUnderstandingSpec(
+                SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
             .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
             .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
+            .addAllCrowdingSpecs(new ArrayList<SearchRequest.CrowdingSpec>())
             .setSession(
                 SessionName.ofProjectLocationDataStoreSessionName(
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
@@ -151,6 +156,7 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getServingConfig(), actualRequest.getServingConfig());
     Assert.assertEquals(request.getBranch(), actualRequest.getBranch());
     Assert.assertEquals(request.getQuery(), actualRequest.getQuery());
+    Assert.assertEquals(request.getPageCategoriesList(), actualRequest.getPageCategoriesList());
     Assert.assertEquals(request.getImageQuery(), actualRequest.getImageQuery());
     Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
     Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
@@ -169,10 +175,17 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getSpellCorrectionSpec(), actualRequest.getSpellCorrectionSpec());
     Assert.assertEquals(request.getUserPseudoId(), actualRequest.getUserPseudoId());
     Assert.assertEquals(request.getContentSearchSpec(), actualRequest.getContentSearchSpec());
+    Assert.assertEquals(request.getRankingExpression(), actualRequest.getRankingExpression());
+    Assert.assertEquals(
+        request.getRankingExpressionBackend(), actualRequest.getRankingExpressionBackend());
     Assert.assertEquals(request.getSafeSearch(), actualRequest.getSafeSearch());
     Assert.assertEquals(request.getUserLabelsMap(), actualRequest.getUserLabelsMap());
+    Assert.assertEquals(
+        request.getNaturalLanguageQueryUnderstandingSpec(),
+        actualRequest.getNaturalLanguageQueryUnderstandingSpec());
     Assert.assertEquals(request.getSearchAsYouTypeSpec(), actualRequest.getSearchAsYouTypeSpec());
     Assert.assertEquals(request.getDisplaySpec(), actualRequest.getDisplaySpec());
+    Assert.assertEquals(request.getCrowdingSpecsList(), actualRequest.getCrowdingSpecsList());
     Assert.assertEquals(request.getSession(), actualRequest.getSession());
     Assert.assertEquals(request.getSessionSpec(), actualRequest.getSessionSpec());
     Assert.assertEquals(request.getRelevanceThreshold(), actualRequest.getRelevanceThreshold());
@@ -200,6 +213,7 @@ public class SearchServiceClientTest {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                       .toString())
               .setQuery("query107944136")
+              .addAllPageCategories(new ArrayList<String>())
               .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
@@ -218,10 +232,14 @@ public class SearchServiceClientTest {
               .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
               .setUserPseudoId("userPseudoId-1155274652")
               .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+              .setRankingExpression("rankingExpression2110320494")
               .setSafeSearch(true)
               .putAllUserLabels(new HashMap<String, String>())
+              .setNaturalLanguageQueryUnderstandingSpec(
+                  SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
               .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
               .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
+              .addAllCrowdingSpecs(new ArrayList<SearchRequest.CrowdingSpec>())
               .setSession(
                   SessionName.ofProjectLocationDataStoreSessionName(
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
@@ -257,6 +275,7 @@ public class SearchServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                     .toString())
             .setQuery("query107944136")
+            .addAllPageCategories(new ArrayList<String>())
             .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
@@ -275,10 +294,14 @@ public class SearchServiceClientTest {
             .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
             .setUserPseudoId("userPseudoId-1155274652")
             .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+            .setRankingExpression("rankingExpression2110320494")
             .setSafeSearch(true)
             .putAllUserLabels(new HashMap<String, String>())
+            .setNaturalLanguageQueryUnderstandingSpec(
+                SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
             .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
             .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
+            .addAllCrowdingSpecs(new ArrayList<SearchRequest.CrowdingSpec>())
             .setSession(
                 SessionName.ofProjectLocationDataStoreSessionName(
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
@@ -302,6 +325,7 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getServingConfig(), actualRequest.getServingConfig());
     Assert.assertEquals(request.getBranch(), actualRequest.getBranch());
     Assert.assertEquals(request.getQuery(), actualRequest.getQuery());
+    Assert.assertEquals(request.getPageCategoriesList(), actualRequest.getPageCategoriesList());
     Assert.assertEquals(request.getImageQuery(), actualRequest.getImageQuery());
     Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
     Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
@@ -320,10 +344,17 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getSpellCorrectionSpec(), actualRequest.getSpellCorrectionSpec());
     Assert.assertEquals(request.getUserPseudoId(), actualRequest.getUserPseudoId());
     Assert.assertEquals(request.getContentSearchSpec(), actualRequest.getContentSearchSpec());
+    Assert.assertEquals(request.getRankingExpression(), actualRequest.getRankingExpression());
+    Assert.assertEquals(
+        request.getRankingExpressionBackend(), actualRequest.getRankingExpressionBackend());
     Assert.assertEquals(request.getSafeSearch(), actualRequest.getSafeSearch());
     Assert.assertEquals(request.getUserLabelsMap(), actualRequest.getUserLabelsMap());
+    Assert.assertEquals(
+        request.getNaturalLanguageQueryUnderstandingSpec(),
+        actualRequest.getNaturalLanguageQueryUnderstandingSpec());
     Assert.assertEquals(request.getSearchAsYouTypeSpec(), actualRequest.getSearchAsYouTypeSpec());
     Assert.assertEquals(request.getDisplaySpec(), actualRequest.getDisplaySpec());
+    Assert.assertEquals(request.getCrowdingSpecsList(), actualRequest.getCrowdingSpecsList());
     Assert.assertEquals(request.getSession(), actualRequest.getSession());
     Assert.assertEquals(request.getSessionSpec(), actualRequest.getSessionSpec());
     Assert.assertEquals(request.getRelevanceThreshold(), actualRequest.getRelevanceThreshold());
@@ -351,6 +382,7 @@ public class SearchServiceClientTest {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                       .toString())
               .setQuery("query107944136")
+              .addAllPageCategories(new ArrayList<String>())
               .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
@@ -369,10 +401,14 @@ public class SearchServiceClientTest {
               .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
               .setUserPseudoId("userPseudoId-1155274652")
               .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+              .setRankingExpression("rankingExpression2110320494")
               .setSafeSearch(true)
               .putAllUserLabels(new HashMap<String, String>())
+              .setNaturalLanguageQueryUnderstandingSpec(
+                  SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
               .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
               .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
+              .addAllCrowdingSpecs(new ArrayList<SearchRequest.CrowdingSpec>())
               .setSession(
                   SessionName.ofProjectLocationDataStoreSessionName(
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")

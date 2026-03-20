@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,6 +55,11 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -83,6 +88,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDataTaxonomyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDataTaxonomyRequest, Operation>
@@ -93,6 +99,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDataTaxonomyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDataTaxonomyRequest, Operation>
@@ -103,6 +110,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDataTaxonomyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDataTaxonomiesRequest, ListDataTaxonomiesResponse>
@@ -114,6 +122,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                   ProtoUtils.marshaller(ListDataTaxonomiesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataTaxonomiesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataTaxonomyRequest, DataTaxonomy>
@@ -124,6 +133,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDataTaxonomyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataTaxonomy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDataAttributeBindingRequest, Operation>
@@ -135,6 +145,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDataAttributeBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDataAttributeBindingRequest, Operation>
@@ -146,6 +157,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDataAttributeBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDataAttributeBindingRequest, Operation>
@@ -157,6 +169,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDataAttributeBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -171,6 +184,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                   ProtoUtils.marshaller(ListDataAttributeBindingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataAttributeBindingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataAttributeBindingRequest, DataAttributeBinding>
@@ -183,6 +197,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                   ProtoUtils.marshaller(GetDataAttributeBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DataAttributeBinding.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDataAttributeRequest, Operation>
@@ -193,6 +208,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDataAttributeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDataAttributeRequest, Operation>
@@ -203,6 +219,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDataAttributeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDataAttributeRequest, Operation>
@@ -213,6 +230,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDataAttributeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDataAttributesRequest, ListDataAttributesResponse>
@@ -224,6 +242,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                   ProtoUtils.marshaller(ListDataAttributesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataAttributesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataAttributeRequest, DataAttribute>
@@ -234,6 +253,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDataAttributeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataAttribute.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -245,6 +265,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -253,7 +274,38 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
+
+  private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
+      MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
+      MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.iam.v1.IAMPolicy/TestIamPermissions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
 
   private final UnaryCallable<CreateDataTaxonomyRequest, Operation> createDataTaxonomyCallable;
   private final OperationCallable<CreateDataTaxonomyRequest, DataTaxonomy, OperationMetadata>
@@ -308,6 +360,10 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
   private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
+  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -535,6 +591,37 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
+        GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .build();
 
     this.createDataTaxonomyCallable =
         callableFactory.createUnaryCallable(
@@ -685,6 +772,17 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
     this.getLocationCallable =
         callableFactory.createUnaryCallable(
             getLocationTransportSettings, settings.getLocationSettings(), clientContext);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -864,6 +962,22 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
   @Override
   public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
     return getLocationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

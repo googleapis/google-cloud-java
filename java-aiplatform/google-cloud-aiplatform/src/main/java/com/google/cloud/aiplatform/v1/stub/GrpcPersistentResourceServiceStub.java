@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,6 +74,7 @@ public class GrpcPersistentResourceServiceStub extends PersistentResourceService
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreatePersistentResourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPersistentResourceRequest, PersistentResource>
@@ -85,6 +86,7 @@ public class GrpcPersistentResourceServiceStub extends PersistentResourceService
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetPersistentResourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PersistentResource.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -99,6 +101,7 @@ public class GrpcPersistentResourceServiceStub extends PersistentResourceService
                   ProtoUtils.marshaller(ListPersistentResourcesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPersistentResourcesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePersistentResourceRequest, Operation>
@@ -110,6 +113,7 @@ public class GrpcPersistentResourceServiceStub extends PersistentResourceService
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePersistentResourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdatePersistentResourceRequest, Operation>
@@ -121,6 +125,7 @@ public class GrpcPersistentResourceServiceStub extends PersistentResourceService
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdatePersistentResourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RebootPersistentResourceRequest, Operation>
@@ -132,6 +137,7 @@ public class GrpcPersistentResourceServiceStub extends PersistentResourceService
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RebootPersistentResourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -143,6 +149,7 @@ public class GrpcPersistentResourceServiceStub extends PersistentResourceService
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -151,6 +158,7 @@ public class GrpcPersistentResourceServiceStub extends PersistentResourceService
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -159,6 +167,7 @@ public class GrpcPersistentResourceServiceStub extends PersistentResourceService
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -167,6 +176,7 @@ public class GrpcPersistentResourceServiceStub extends PersistentResourceService
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -178,6 +188,7 @@ public class GrpcPersistentResourceServiceStub extends PersistentResourceService
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreatePersistentResourceRequest, Operation>

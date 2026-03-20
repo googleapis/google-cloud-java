@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of listAttachments:
+ * of getAttachment:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -63,10 +63,10 @@ import javax.annotation.Generated;
  * CaseAttachmentServiceSettings.Builder caseAttachmentServiceSettingsBuilder =
  *     CaseAttachmentServiceSettings.newBuilder();
  * caseAttachmentServiceSettingsBuilder
- *     .listAttachmentsSettings()
+ *     .getAttachmentSettings()
  *     .setRetrySettings(
  *         caseAttachmentServiceSettingsBuilder
- *             .listAttachmentsSettings()
+ *             .getAttachmentSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -83,8 +83,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @BetaApi
 @Generated("by gapic-generator-java")
@@ -95,6 +95,11 @@ public class CaseAttachmentServiceSettings extends ClientSettings<CaseAttachment
           ListAttachmentsRequest, ListAttachmentsResponse, ListAttachmentsPagedResponse>
       listAttachmentsSettings() {
     return ((CaseAttachmentServiceStubSettings) getStubSettings()).listAttachmentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAttachment. */
+  public UnaryCallSettings<GetAttachmentRequest, Attachment> getAttachmentSettings() {
+    return ((CaseAttachmentServiceStubSettings) getStubSettings()).getAttachmentSettings();
   }
 
   public static final CaseAttachmentServiceSettings create(CaseAttachmentServiceStubSettings stub)
@@ -215,6 +220,11 @@ public class CaseAttachmentServiceSettings extends ClientSettings<CaseAttachment
             ListAttachmentsRequest, ListAttachmentsResponse, ListAttachmentsPagedResponse>
         listAttachmentsSettings() {
       return getStubSettingsBuilder().listAttachmentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAttachment. */
+    public UnaryCallSettings.Builder<GetAttachmentRequest, Attachment> getAttachmentSettings() {
+      return getStubSettingsBuilder().getAttachmentSettings();
     }
 
     @Override

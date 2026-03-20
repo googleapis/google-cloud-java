@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +22,10 @@ import com.google.cloud.retail.v2alpha.BranchName;
 import com.google.cloud.retail.v2alpha.ConversationalSearchRequest;
 import com.google.cloud.retail.v2alpha.ConversationalSearchResponse;
 import com.google.cloud.retail.v2alpha.ConversationalSearchServiceClient;
+import com.google.cloud.retail.v2alpha.SafetySetting;
 import com.google.cloud.retail.v2alpha.UserInfo;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class AsyncConversationalSearch {
 
@@ -52,6 +54,8 @@ public class AsyncConversationalSearch {
               .setUserInfo(UserInfo.newBuilder().build())
               .setConversationalFilteringSpec(
                   ConversationalSearchRequest.ConversationalFilteringSpec.newBuilder().build())
+              .putAllUserLabels(new HashMap<String, String>())
+              .addAllSafetySettings(new ArrayList<SafetySetting>())
               .build();
       ServerStream<ConversationalSearchResponse> stream =
           conversationalSearchServiceClient.conversationalSearchCallable().call(request);

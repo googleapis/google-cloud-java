@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,6 +56,7 @@ public class GrpcPlacesStub extends PlacesStub {
               .setRequestMarshaller(ProtoUtils.marshaller(SearchNearbyRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchNearbyResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchTextRequest, SearchTextResponse>
@@ -65,6 +66,7 @@ public class GrpcPlacesStub extends PlacesStub {
               .setFullMethodName("google.maps.places.v1.Places/SearchText")
               .setRequestMarshaller(ProtoUtils.marshaller(SearchTextRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SearchTextResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPhotoMediaRequest, PhotoMedia>
@@ -75,6 +77,7 @@ public class GrpcPlacesStub extends PlacesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetPhotoMediaRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PhotoMedia.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPlaceRequest, Place> getPlaceMethodDescriptor =
@@ -83,6 +86,7 @@ public class GrpcPlacesStub extends PlacesStub {
           .setFullMethodName("google.maps.places.v1.Places/GetPlace")
           .setRequestMarshaller(ProtoUtils.marshaller(GetPlaceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Place.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<AutocompletePlacesRequest, AutocompletePlacesResponse>
@@ -94,6 +98,7 @@ public class GrpcPlacesStub extends PlacesStub {
                   ProtoUtils.marshaller(AutocompletePlacesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AutocompletePlacesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<SearchNearbyRequest, SearchNearbyResponse> searchNearbyCallable;

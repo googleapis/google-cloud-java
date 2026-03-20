@@ -24,7 +24,14 @@ import com.google.gson.JsonObject;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.util.JsonFormat;
 
-/** Helper class to create {@link com.google.cloud.vertexai.api.Schema} */
+/**
+ * Helper class to create {@link com.google.cloud.vertexai.api.Schema}
+ *
+ * @deprecated This class and its package are deprecated. See the <a
+ *     href="https://cloud.google.com/vertex-ai/generative-ai/docs/deprecations/genai-vertexai-sdk#java">
+ *     migration guide</a> for more details.
+ */
+@Deprecated
 public final class SchemaMaker {
 
   private SchemaMaker() {}

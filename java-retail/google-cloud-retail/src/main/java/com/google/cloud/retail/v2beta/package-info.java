@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -112,6 +112,47 @@
  *   Control control = Control.newBuilder().build();
  *   String controlId = "controlId-395080872";
  *   Control response = controlServiceClient.createControl(parent, control, controlId);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ConversationalSearchServiceClient =======================
+ *
+ * <p>Service Description: Service for retail conversational search.
+ *
+ * <p>This feature is only available for users who have Retail Conversational Search enabled. Enable
+ * Retail Conversational Search on Cloud Console before using this feature.
+ *
+ * <p>Sample for ConversationalSearchServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+ *     ConversationalSearchServiceClient.create()) {
+ *   ConversationalSearchRequest request =
+ *       ConversationalSearchRequest.newBuilder()
+ *           .setPlacement("placement1792938725")
+ *           .setBranch(
+ *               BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+ *           .setQuery("query107944136")
+ *           .addAllPageCategories(new ArrayList<String>())
+ *           .setConversationId("conversationId-1676095234")
+ *           .setSearchParams(ConversationalSearchRequest.SearchParams.newBuilder().build())
+ *           .setVisitorId("visitorId1880545833")
+ *           .setUserInfo(UserInfo.newBuilder().build())
+ *           .setConversationalFilteringSpec(
+ *               ConversationalSearchRequest.ConversationalFilteringSpec.newBuilder().build())
+ *           .putAllUserLabels(new HashMap<String, String>())
+ *           .addAllSafetySettings(new ArrayList<SafetySetting>())
+ *           .build();
+ *   ServerStream<ConversationalSearchResponse> stream =
+ *       conversationalSearchServiceClient.conversationalSearchCallable().call(request);
+ *   for (ConversationalSearchResponse response : stream) {
+ *     // Do something when a response is received.
+ *   }
  * }
  * }</pre>
  *
@@ -281,6 +322,7 @@
  *           .setLanguageCode("languageCode-2092349083")
  *           .setRegionCode("regionCode-1991004415")
  *           .setPlaceId("placeId-494224254")
+ *           .putAllUserAttributes(new HashMap<String, StringList>())
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to manage product reviews.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/reviews/v1beta/productreviews.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ProductReviewsServiceGrpc {
 
@@ -488,8 +485,9 @@ public final class ProductReviewsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.reviews.v1beta.ProductReview getProductReview(
-        com.google.shopping.merchant.reviews.v1beta.GetProductReviewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.reviews.v1beta.GetProductReviewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetProductReviewMethod(), getCallOptions(), request);
     }
 
@@ -502,8 +500,9 @@ public final class ProductReviewsServiceGrpc {
      */
     public com.google.shopping.merchant.reviews.v1beta.ListProductReviewsResponse
         listProductReviews(
-            com.google.shopping.merchant.reviews.v1beta.ListProductReviewsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.shopping.merchant.reviews.v1beta.ListProductReviewsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListProductReviewsMethod(), getCallOptions(), request);
     }
 
@@ -515,8 +514,9 @@ public final class ProductReviewsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.reviews.v1beta.ProductReview insertProductReview(
-        com.google.shopping.merchant.reviews.v1beta.InsertProductReviewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.reviews.v1beta.InsertProductReviewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getInsertProductReviewMethod(), getCallOptions(), request);
     }
 
@@ -528,8 +528,9 @@ public final class ProductReviewsServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteProductReview(
-        com.google.shopping.merchant.reviews.v1beta.DeleteProductReviewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.reviews.v1beta.DeleteProductReviewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteProductReviewMethod(), getCallOptions(), request);
     }
   }

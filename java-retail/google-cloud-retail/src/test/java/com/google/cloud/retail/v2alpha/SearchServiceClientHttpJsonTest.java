@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,6 +106,7 @@ public class SearchServiceClientHttpJsonTest {
             .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
             .setQueryExpansionSpec(SearchRequest.QueryExpansionSpec.newBuilder().build())
             .addAllVariantRollupKeys(new ArrayList<String>())
+            .setExperimentId("experimentId-404563464")
             .addAllPageCategories(new ArrayList<String>())
             .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
@@ -171,6 +172,7 @@ public class SearchServiceClientHttpJsonTest {
               .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
               .setQueryExpansionSpec(SearchRequest.QueryExpansionSpec.newBuilder().build())
               .addAllVariantRollupKeys(new ArrayList<String>())
+              .setExperimentId("experimentId-404563464")
               .addAllPageCategories(new ArrayList<String>())
               .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())

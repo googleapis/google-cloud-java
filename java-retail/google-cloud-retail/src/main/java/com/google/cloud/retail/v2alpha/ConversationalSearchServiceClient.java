@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,6 +56,8 @@ import javax.annotation.Generated;
  *           .setUserInfo(UserInfo.newBuilder().build())
  *           .setConversationalFilteringSpec(
  *               ConversationalSearchRequest.ConversationalFilteringSpec.newBuilder().build())
+ *           .putAllUserLabels(new HashMap<String, String>())
+ *           .addAllSafetySettings(new ArrayList<SafetySetting>())
  *           .build();
  *   ServerStream<ConversationalSearchResponse> stream =
  *       conversationalSearchServiceClient.conversationalSearchCallable().call(request);
@@ -228,6 +230,8 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    *           .setUserInfo(UserInfo.newBuilder().build())
    *           .setConversationalFilteringSpec(
    *               ConversationalSearchRequest.ConversationalFilteringSpec.newBuilder().build())
+   *           .putAllUserLabels(new HashMap<String, String>())
+   *           .addAllSafetySettings(new ArrayList<SafetySetting>())
    *           .build();
    *   ServerStream<ConversationalSearchResponse> stream =
    *       conversationalSearchServiceClient.conversationalSearchCallable().call(request);

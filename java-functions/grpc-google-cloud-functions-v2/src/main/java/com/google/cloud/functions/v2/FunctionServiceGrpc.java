@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * executed and how it is triggered.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/functions/v2/functions.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class FunctionServiceGrpc {
 
@@ -841,8 +838,8 @@ public final class FunctionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.functions.v2.Function getFunction(
-        com.google.cloud.functions.v2.GetFunctionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.functions.v2.GetFunctionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFunctionMethod(), getCallOptions(), request);
     }
 
@@ -854,8 +851,8 @@ public final class FunctionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.functions.v2.ListFunctionsResponse listFunctions(
-        com.google.cloud.functions.v2.ListFunctionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.functions.v2.ListFunctionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFunctionsMethod(), getCallOptions(), request);
     }
 
@@ -869,8 +866,9 @@ public final class FunctionServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createFunction(
-        com.google.cloud.functions.v2.CreateFunctionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.functions.v2.CreateFunctionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateFunctionMethod(), getCallOptions(), request);
     }
 
@@ -882,8 +880,9 @@ public final class FunctionServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateFunction(
-        com.google.cloud.functions.v2.UpdateFunctionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.functions.v2.UpdateFunctionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateFunctionMethod(), getCallOptions(), request);
     }
 
@@ -897,8 +896,9 @@ public final class FunctionServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteFunction(
-        com.google.cloud.functions.v2.DeleteFunctionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.functions.v2.DeleteFunctionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteFunctionMethod(), getCallOptions(), request);
     }
 
@@ -926,8 +926,9 @@ public final class FunctionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.functions.v2.GenerateUploadUrlResponse generateUploadUrl(
-        com.google.cloud.functions.v2.GenerateUploadUrlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.functions.v2.GenerateUploadUrlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateUploadUrlMethod(), getCallOptions(), request);
     }
 
@@ -943,8 +944,9 @@ public final class FunctionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.functions.v2.GenerateDownloadUrlResponse generateDownloadUrl(
-        com.google.cloud.functions.v2.GenerateDownloadUrlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.functions.v2.GenerateDownloadUrlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateDownloadUrlMethod(), getCallOptions(), request);
     }
 
@@ -956,8 +958,8 @@ public final class FunctionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.functions.v2.ListRuntimesResponse listRuntimes(
-        com.google.cloud.functions.v2.ListRuntimesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.functions.v2.ListRuntimesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRuntimesMethod(), getCallOptions(), request);
     }
   }

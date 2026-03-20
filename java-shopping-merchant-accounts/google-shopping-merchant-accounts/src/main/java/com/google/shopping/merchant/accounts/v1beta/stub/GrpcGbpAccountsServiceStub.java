@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,6 +56,7 @@ public class GrpcGbpAccountsServiceStub extends GbpAccountsServiceStub {
                   ProtoUtils.marshaller(ListGbpAccountsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGbpAccountsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<LinkGbpAccountRequest, LinkGbpAccountResponse>
@@ -68,6 +69,7 @@ public class GrpcGbpAccountsServiceStub extends GbpAccountsServiceStub {
                   ProtoUtils.marshaller(LinkGbpAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(LinkGbpAccountResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListGbpAccountsRequest, ListGbpAccountsResponse>

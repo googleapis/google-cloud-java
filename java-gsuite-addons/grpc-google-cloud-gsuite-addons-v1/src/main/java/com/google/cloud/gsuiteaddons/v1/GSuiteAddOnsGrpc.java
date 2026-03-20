@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,9 +47,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * for details.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/gsuiteaddons/v1/gsuiteaddons.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class GSuiteAddOnsGrpc {
 
@@ -968,8 +965,9 @@ public final class GSuiteAddOnsGrpc {
      * </pre>
      */
     public com.google.cloud.gsuiteaddons.v1.Authorization getAuthorization(
-        com.google.cloud.gsuiteaddons.v1.GetAuthorizationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gsuiteaddons.v1.GetAuthorizationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAuthorizationMethod(), getCallOptions(), request);
     }
 
@@ -981,8 +979,9 @@ public final class GSuiteAddOnsGrpc {
      * </pre>
      */
     public com.google.cloud.gsuiteaddons.v1.Deployment createDeployment(
-        com.google.cloud.gsuiteaddons.v1.CreateDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gsuiteaddons.v1.CreateDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -994,8 +993,9 @@ public final class GSuiteAddOnsGrpc {
      * </pre>
      */
     public com.google.cloud.gsuiteaddons.v1.Deployment replaceDeployment(
-        com.google.cloud.gsuiteaddons.v1.ReplaceDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gsuiteaddons.v1.ReplaceDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReplaceDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -1007,8 +1007,9 @@ public final class GSuiteAddOnsGrpc {
      * </pre>
      */
     public com.google.cloud.gsuiteaddons.v1.Deployment getDeployment(
-        com.google.cloud.gsuiteaddons.v1.GetDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gsuiteaddons.v1.GetDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -1020,8 +1021,9 @@ public final class GSuiteAddOnsGrpc {
      * </pre>
      */
     public com.google.cloud.gsuiteaddons.v1.ListDeploymentsResponse listDeployments(
-        com.google.cloud.gsuiteaddons.v1.ListDeploymentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gsuiteaddons.v1.ListDeploymentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDeploymentsMethod(), getCallOptions(), request);
     }
 
@@ -1033,8 +1035,9 @@ public final class GSuiteAddOnsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteDeployment(
-        com.google.cloud.gsuiteaddons.v1.DeleteDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gsuiteaddons.v1.DeleteDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -1048,8 +1051,9 @@ public final class GSuiteAddOnsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty installDeployment(
-        com.google.cloud.gsuiteaddons.v1.InstallDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gsuiteaddons.v1.InstallDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getInstallDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -1063,8 +1067,9 @@ public final class GSuiteAddOnsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty uninstallDeployment(
-        com.google.cloud.gsuiteaddons.v1.UninstallDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gsuiteaddons.v1.UninstallDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUninstallDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -1076,8 +1081,9 @@ public final class GSuiteAddOnsGrpc {
      * </pre>
      */
     public com.google.cloud.gsuiteaddons.v1.InstallStatus getInstallStatus(
-        com.google.cloud.gsuiteaddons.v1.GetInstallStatusRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gsuiteaddons.v1.GetInstallStatusRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInstallStatusMethod(), getCallOptions(), request);
     }
   }

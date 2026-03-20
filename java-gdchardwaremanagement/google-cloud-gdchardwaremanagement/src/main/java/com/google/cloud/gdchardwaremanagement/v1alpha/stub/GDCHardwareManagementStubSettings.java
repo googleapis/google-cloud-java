@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +46,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -56,6 +57,7 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.gdchardwaremanagement.v1alpha.CancelOrderRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.ChangeLogEntry;
 import com.google.cloud.gdchardwaremanagement.v1alpha.Comment;
 import com.google.cloud.gdchardwaremanagement.v1alpha.CreateCommentRequest;
@@ -98,6 +100,7 @@ import com.google.cloud.gdchardwaremanagement.v1alpha.ListZonesResponse;
 import com.google.cloud.gdchardwaremanagement.v1alpha.OperationMetadata;
 import com.google.cloud.gdchardwaremanagement.v1alpha.Order;
 import com.google.cloud.gdchardwaremanagement.v1alpha.RecordActionOnCommentRequest;
+import com.google.cloud.gdchardwaremanagement.v1alpha.RequestOrderDateChangeRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.Site;
 import com.google.cloud.gdchardwaremanagement.v1alpha.Sku;
@@ -172,8 +175,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -203,6 +206,7 @@ import javax.annotation.Generated;
  */
 @BetaApi
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class GDCHardwareManagementStubSettings
     extends StubSettings<GDCHardwareManagementStubSettings> {
   /** The default scopes of the service. */
@@ -224,6 +228,9 @@ public class GDCHardwareManagementStubSettings
   private final UnaryCallSettings<SubmitOrderRequest, Operation> submitOrderSettings;
   private final OperationCallSettings<SubmitOrderRequest, Order, OperationMetadata>
       submitOrderOperationSettings;
+  private final UnaryCallSettings<CancelOrderRequest, Operation> cancelOrderSettings;
+  private final OperationCallSettings<CancelOrderRequest, Order, OperationMetadata>
+      cancelOrderOperationSettings;
   private final PagedCallSettings<ListSitesRequest, ListSitesResponse, ListSitesPagedResponse>
       listSitesSettings;
   private final UnaryCallSettings<GetSiteRequest, Site> getSiteSettings;
@@ -299,6 +306,10 @@ public class GDCHardwareManagementStubSettings
   private final UnaryCallSettings<SignalZoneStateRequest, Operation> signalZoneStateSettings;
   private final OperationCallSettings<SignalZoneStateRequest, Zone, OperationMetadata>
       signalZoneStateOperationSettings;
+  private final UnaryCallSettings<RequestOrderDateChangeRequest, Operation>
+      requestOrderDateChangeSettings;
+  private final OperationCallSettings<RequestOrderDateChangeRequest, Order, OperationMetadata>
+      requestOrderDateChangeOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -835,6 +846,17 @@ public class GDCHardwareManagementStubSettings
     return submitOrderOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to cancelOrder. */
+  public UnaryCallSettings<CancelOrderRequest, Operation> cancelOrderSettings() {
+    return cancelOrderSettings;
+  }
+
+  /** Returns the object with the settings used for calls to cancelOrder. */
+  public OperationCallSettings<CancelOrderRequest, Order, OperationMetadata>
+      cancelOrderOperationSettings() {
+    return cancelOrderOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listSites. */
   public PagedCallSettings<ListSitesRequest, ListSitesResponse, ListSitesPagedResponse>
       listSitesSettings() {
@@ -1075,6 +1097,18 @@ public class GDCHardwareManagementStubSettings
     return signalZoneStateOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to requestOrderDateChange. */
+  public UnaryCallSettings<RequestOrderDateChangeRequest, Operation>
+      requestOrderDateChangeSettings() {
+    return requestOrderDateChangeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to requestOrderDateChange. */
+  public OperationCallSettings<RequestOrderDateChangeRequest, Order, OperationMetadata>
+      requestOrderDateChangeOperationSettings() {
+    return requestOrderDateChangeOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1207,6 +1241,8 @@ public class GDCHardwareManagementStubSettings
     deleteOrderOperationSettings = settingsBuilder.deleteOrderOperationSettings().build();
     submitOrderSettings = settingsBuilder.submitOrderSettings().build();
     submitOrderOperationSettings = settingsBuilder.submitOrderOperationSettings().build();
+    cancelOrderSettings = settingsBuilder.cancelOrderSettings().build();
+    cancelOrderOperationSettings = settingsBuilder.cancelOrderOperationSettings().build();
     listSitesSettings = settingsBuilder.listSitesSettings().build();
     getSiteSettings = settingsBuilder.getSiteSettings().build();
     createSiteSettings = settingsBuilder.createSiteSettings().build();
@@ -1253,8 +1289,19 @@ public class GDCHardwareManagementStubSettings
     deleteZoneOperationSettings = settingsBuilder.deleteZoneOperationSettings().build();
     signalZoneStateSettings = settingsBuilder.signalZoneStateSettings().build();
     signalZoneStateOperationSettings = settingsBuilder.signalZoneStateOperationSettings().build();
+    requestOrderDateChangeSettings = settingsBuilder.requestOrderDateChangeSettings().build();
+    requestOrderDateChangeOperationSettings =
+        settingsBuilder.requestOrderDateChangeOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-gdchardwaremanagement")
+        .setRepository("googleapis/google-cloud-java")
+        .build();
   }
 
   /** Builder for GDCHardwareManagementStubSettings. */
@@ -1277,6 +1324,9 @@ public class GDCHardwareManagementStubSettings
     private final UnaryCallSettings.Builder<SubmitOrderRequest, Operation> submitOrderSettings;
     private final OperationCallSettings.Builder<SubmitOrderRequest, Order, OperationMetadata>
         submitOrderOperationSettings;
+    private final UnaryCallSettings.Builder<CancelOrderRequest, Operation> cancelOrderSettings;
+    private final OperationCallSettings.Builder<CancelOrderRequest, Order, OperationMetadata>
+        cancelOrderOperationSettings;
     private final PagedCallSettings.Builder<
             ListSitesRequest, ListSitesResponse, ListSitesPagedResponse>
         listSitesSettings;
@@ -1363,6 +1413,11 @@ public class GDCHardwareManagementStubSettings
         signalZoneStateSettings;
     private final OperationCallSettings.Builder<SignalZoneStateRequest, Zone, OperationMetadata>
         signalZoneStateOperationSettings;
+    private final UnaryCallSettings.Builder<RequestOrderDateChangeRequest, Operation>
+        requestOrderDateChangeSettings;
+    private final OperationCallSettings.Builder<
+            RequestOrderDateChangeRequest, Order, OperationMetadata>
+        requestOrderDateChangeOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -1428,6 +1483,8 @@ public class GDCHardwareManagementStubSettings
       deleteOrderOperationSettings = OperationCallSettings.newBuilder();
       submitOrderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       submitOrderOperationSettings = OperationCallSettings.newBuilder();
+      cancelOrderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      cancelOrderOperationSettings = OperationCallSettings.newBuilder();
       listSitesSettings = PagedCallSettings.newBuilder(LIST_SITES_PAGE_STR_FACT);
       getSiteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createSiteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1472,6 +1529,8 @@ public class GDCHardwareManagementStubSettings
       deleteZoneOperationSettings = OperationCallSettings.newBuilder();
       signalZoneStateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       signalZoneStateOperationSettings = OperationCallSettings.newBuilder();
+      requestOrderDateChangeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      requestOrderDateChangeOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -1483,6 +1542,7 @@ public class GDCHardwareManagementStubSettings
               updateOrderSettings,
               deleteOrderSettings,
               submitOrderSettings,
+              cancelOrderSettings,
               listSitesSettings,
               getSiteSettings,
               createSiteSettings,
@@ -1512,6 +1572,7 @@ public class GDCHardwareManagementStubSettings
               updateZoneSettings,
               deleteZoneSettings,
               signalZoneStateSettings,
+              requestOrderDateChangeSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -1530,6 +1591,8 @@ public class GDCHardwareManagementStubSettings
       deleteOrderOperationSettings = settings.deleteOrderOperationSettings.toBuilder();
       submitOrderSettings = settings.submitOrderSettings.toBuilder();
       submitOrderOperationSettings = settings.submitOrderOperationSettings.toBuilder();
+      cancelOrderSettings = settings.cancelOrderSettings.toBuilder();
+      cancelOrderOperationSettings = settings.cancelOrderOperationSettings.toBuilder();
       listSitesSettings = settings.listSitesSettings.toBuilder();
       getSiteSettings = settings.getSiteSettings.toBuilder();
       createSiteSettings = settings.createSiteSettings.toBuilder();
@@ -1576,6 +1639,9 @@ public class GDCHardwareManagementStubSettings
       deleteZoneOperationSettings = settings.deleteZoneOperationSettings.toBuilder();
       signalZoneStateSettings = settings.signalZoneStateSettings.toBuilder();
       signalZoneStateOperationSettings = settings.signalZoneStateOperationSettings.toBuilder();
+      requestOrderDateChangeSettings = settings.requestOrderDateChangeSettings.toBuilder();
+      requestOrderDateChangeOperationSettings =
+          settings.requestOrderDateChangeOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -1587,6 +1653,7 @@ public class GDCHardwareManagementStubSettings
               updateOrderSettings,
               deleteOrderSettings,
               submitOrderSettings,
+              cancelOrderSettings,
               listSitesSettings,
               getSiteSettings,
               createSiteSettings,
@@ -1616,6 +1683,7 @@ public class GDCHardwareManagementStubSettings
               updateZoneSettings,
               deleteZoneSettings,
               signalZoneStateSettings,
+              requestOrderDateChangeSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -1672,6 +1740,11 @@ public class GDCHardwareManagementStubSettings
 
       builder
           .submitOrderSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .cancelOrderSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1821,6 +1894,11 @@ public class GDCHardwareManagementStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .requestOrderDateChangeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -1903,6 +1981,29 @@ public class GDCHardwareManagementStubSettings
           .submitOrderOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<SubmitOrderRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Order.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .cancelOrderOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<CancelOrderRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
                   .build())
@@ -2247,6 +2348,30 @@ public class GDCHardwareManagementStubSettings
                       .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .requestOrderDateChangeOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RequestOrderDateChangeRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Order.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -2318,6 +2443,17 @@ public class GDCHardwareManagementStubSettings
     public OperationCallSettings.Builder<SubmitOrderRequest, Order, OperationMetadata>
         submitOrderOperationSettings() {
       return submitOrderOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to cancelOrder. */
+    public UnaryCallSettings.Builder<CancelOrderRequest, Operation> cancelOrderSettings() {
+      return cancelOrderSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to cancelOrder. */
+    public OperationCallSettings.Builder<CancelOrderRequest, Order, OperationMetadata>
+        cancelOrderOperationSettings() {
+      return cancelOrderOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listSites. */
@@ -2568,6 +2704,18 @@ public class GDCHardwareManagementStubSettings
     public OperationCallSettings.Builder<SignalZoneStateRequest, Zone, OperationMetadata>
         signalZoneStateOperationSettings() {
       return signalZoneStateOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to requestOrderDateChange. */
+    public UnaryCallSettings.Builder<RequestOrderDateChangeRequest, Operation>
+        requestOrderDateChangeSettings() {
+      return requestOrderDateChangeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to requestOrderDateChange. */
+    public OperationCallSettings.Builder<RequestOrderDateChangeRequest, Order, OperationMetadata>
+        requestOrderDateChangeOperationSettings() {
+      return requestOrderDateChangeOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

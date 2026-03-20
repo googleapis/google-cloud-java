@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -137,6 +137,8 @@ public class EndpointServiceClientTest {
             .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiAdvancedFeaturesConfig(GenAiAdvancedFeaturesConfig.newBuilder().build())
+            .setPrivateModelServerEnabled(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -211,6 +213,8 @@ public class EndpointServiceClientTest {
             .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiAdvancedFeaturesConfig(GenAiAdvancedFeaturesConfig.newBuilder().build())
+            .setPrivateModelServerEnabled(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -285,6 +289,8 @@ public class EndpointServiceClientTest {
             .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiAdvancedFeaturesConfig(GenAiAdvancedFeaturesConfig.newBuilder().build())
+            .setPrivateModelServerEnabled(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -362,6 +368,8 @@ public class EndpointServiceClientTest {
             .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiAdvancedFeaturesConfig(GenAiAdvancedFeaturesConfig.newBuilder().build())
+            .setPrivateModelServerEnabled(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -439,6 +447,8 @@ public class EndpointServiceClientTest {
             .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiAdvancedFeaturesConfig(GenAiAdvancedFeaturesConfig.newBuilder().build())
+            .setPrivateModelServerEnabled(true)
             .build();
     mockEndpointService.addResponse(expectedResponse);
 
@@ -504,6 +514,8 @@ public class EndpointServiceClientTest {
             .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiAdvancedFeaturesConfig(GenAiAdvancedFeaturesConfig.newBuilder().build())
+            .setPrivateModelServerEnabled(true)
             .build();
     mockEndpointService.addResponse(expectedResponse);
 
@@ -655,6 +667,8 @@ public class EndpointServiceClientTest {
             .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiAdvancedFeaturesConfig(GenAiAdvancedFeaturesConfig.newBuilder().build())
+            .setPrivateModelServerEnabled(true)
             .build();
     mockEndpointService.addResponse(expectedResponse);
 
@@ -721,6 +735,8 @@ public class EndpointServiceClientTest {
             .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiAdvancedFeaturesConfig(GenAiAdvancedFeaturesConfig.newBuilder().build())
+            .setPrivateModelServerEnabled(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

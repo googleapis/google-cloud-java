@@ -10,6 +10,9 @@
         "grpc": {
           "libraryClient": "GDCHardwareManagementClient",
           "rpcs": {
+            "CancelOrder": {
+              "methods": ["cancelOrderAsync", "cancelOrderAsync", "cancelOrderAsync", "cancelOrderOperationCallable", "cancelOrderCallable"]
+            },
             "CreateComment": {
               "methods": ["createCommentAsync", "createCommentAsync", "createCommentAsync", "createCommentOperationCallable", "createCommentCallable"]
             },
@@ -99,6 +102,9 @@
             },
             "RecordActionOnComment": {
               "methods": ["recordActionOnComment", "recordActionOnComment", "recordActionOnComment", "recordActionOnCommentCallable"]
+            },
+            "RequestOrderDateChange": {
+              "methods": ["requestOrderDateChangeAsync", "requestOrderDateChangeAsync", "requestOrderDateChangeAsync", "requestOrderDateChangeOperationCallable", "requestOrderDateChangeCallable"]
             },
             "SignalZoneState": {
               "methods": ["signalZoneStateAsync", "signalZoneStateAsync", "signalZoneStateAsync", "signalZoneStateOperationCallable", "signalZoneStateCallable"]

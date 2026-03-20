@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,6 +51,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
           .setFullMethodName("google.cloud.automl.v1.PredictionService/Predict")
           .setRequestMarshaller(ProtoUtils.marshaller(PredictRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(PredictResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<BatchPredictRequest, Operation>
@@ -60,6 +61,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
               .setFullMethodName("google.cloud.automl.v1.PredictionService/BatchPredict")
               .setRequestMarshaller(ProtoUtils.marshaller(BatchPredictRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<PredictRequest, PredictResponse> predictCallable;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service describing handlers for resources
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/modelarmor/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ModelArmorGrpc {
 
@@ -845,8 +842,9 @@ public final class ModelArmorGrpc {
      * </pre>
      */
     public com.google.cloud.modelarmor.v1.ListTemplatesResponse listTemplates(
-        com.google.cloud.modelarmor.v1.ListTemplatesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.modelarmor.v1.ListTemplatesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTemplatesMethod(), getCallOptions(), request);
     }
 
@@ -858,8 +856,8 @@ public final class ModelArmorGrpc {
      * </pre>
      */
     public com.google.cloud.modelarmor.v1.Template getTemplate(
-        com.google.cloud.modelarmor.v1.GetTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.modelarmor.v1.GetTemplateRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTemplateMethod(), getCallOptions(), request);
     }
 
@@ -871,8 +869,9 @@ public final class ModelArmorGrpc {
      * </pre>
      */
     public com.google.cloud.modelarmor.v1.Template createTemplate(
-        com.google.cloud.modelarmor.v1.CreateTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.modelarmor.v1.CreateTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTemplateMethod(), getCallOptions(), request);
     }
 
@@ -884,8 +883,9 @@ public final class ModelArmorGrpc {
      * </pre>
      */
     public com.google.cloud.modelarmor.v1.Template updateTemplate(
-        com.google.cloud.modelarmor.v1.UpdateTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.modelarmor.v1.UpdateTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTemplateMethod(), getCallOptions(), request);
     }
 
@@ -897,8 +897,9 @@ public final class ModelArmorGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteTemplate(
-        com.google.cloud.modelarmor.v1.DeleteTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.modelarmor.v1.DeleteTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTemplateMethod(), getCallOptions(), request);
     }
 
@@ -910,8 +911,9 @@ public final class ModelArmorGrpc {
      * </pre>
      */
     public com.google.cloud.modelarmor.v1.FloorSetting getFloorSetting(
-        com.google.cloud.modelarmor.v1.GetFloorSettingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.modelarmor.v1.GetFloorSettingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFloorSettingMethod(), getCallOptions(), request);
     }
 
@@ -923,8 +925,9 @@ public final class ModelArmorGrpc {
      * </pre>
      */
     public com.google.cloud.modelarmor.v1.FloorSetting updateFloorSetting(
-        com.google.cloud.modelarmor.v1.UpdateFloorSettingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.modelarmor.v1.UpdateFloorSettingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateFloorSettingMethod(), getCallOptions(), request);
     }
 
@@ -936,8 +939,9 @@ public final class ModelArmorGrpc {
      * </pre>
      */
     public com.google.cloud.modelarmor.v1.SanitizeUserPromptResponse sanitizeUserPrompt(
-        com.google.cloud.modelarmor.v1.SanitizeUserPromptRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.modelarmor.v1.SanitizeUserPromptRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSanitizeUserPromptMethod(), getCallOptions(), request);
     }
 
@@ -949,8 +953,9 @@ public final class ModelArmorGrpc {
      * </pre>
      */
     public com.google.cloud.modelarmor.v1.SanitizeModelResponseResponse sanitizeModelResponse(
-        com.google.cloud.modelarmor.v1.SanitizeModelResponseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.modelarmor.v1.SanitizeModelResponseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSanitizeModelResponseMethod(), getCallOptions(), request);
     }
   }

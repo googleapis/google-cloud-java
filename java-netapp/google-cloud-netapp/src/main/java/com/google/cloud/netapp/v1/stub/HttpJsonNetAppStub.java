@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import static com.google.cloud.netapp.v1.NetAppClient.ListActiveDirectoriesPaged
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupPoliciesPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupVaultsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupsPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListHostGroupsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListKmsConfigsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListLocationsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListQuotaRulesPagedResponse;
@@ -56,6 +57,7 @@ import com.google.cloud.netapp.v1.CreateActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.CreateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.CreateBackupRequest;
 import com.google.cloud.netapp.v1.CreateBackupVaultRequest;
+import com.google.cloud.netapp.v1.CreateHostGroupRequest;
 import com.google.cloud.netapp.v1.CreateKmsConfigRequest;
 import com.google.cloud.netapp.v1.CreateQuotaRuleRequest;
 import com.google.cloud.netapp.v1.CreateReplicationRequest;
@@ -66,6 +68,7 @@ import com.google.cloud.netapp.v1.DeleteActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.DeleteBackupPolicyRequest;
 import com.google.cloud.netapp.v1.DeleteBackupRequest;
 import com.google.cloud.netapp.v1.DeleteBackupVaultRequest;
+import com.google.cloud.netapp.v1.DeleteHostGroupRequest;
 import com.google.cloud.netapp.v1.DeleteKmsConfigRequest;
 import com.google.cloud.netapp.v1.DeleteQuotaRuleRequest;
 import com.google.cloud.netapp.v1.DeleteReplicationRequest;
@@ -78,12 +81,14 @@ import com.google.cloud.netapp.v1.GetActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.GetBackupPolicyRequest;
 import com.google.cloud.netapp.v1.GetBackupRequest;
 import com.google.cloud.netapp.v1.GetBackupVaultRequest;
+import com.google.cloud.netapp.v1.GetHostGroupRequest;
 import com.google.cloud.netapp.v1.GetKmsConfigRequest;
 import com.google.cloud.netapp.v1.GetQuotaRuleRequest;
 import com.google.cloud.netapp.v1.GetReplicationRequest;
 import com.google.cloud.netapp.v1.GetSnapshotRequest;
 import com.google.cloud.netapp.v1.GetStoragePoolRequest;
 import com.google.cloud.netapp.v1.GetVolumeRequest;
+import com.google.cloud.netapp.v1.HostGroup;
 import com.google.cloud.netapp.v1.KmsConfig;
 import com.google.cloud.netapp.v1.ListActiveDirectoriesRequest;
 import com.google.cloud.netapp.v1.ListActiveDirectoriesResponse;
@@ -93,6 +98,8 @@ import com.google.cloud.netapp.v1.ListBackupVaultsRequest;
 import com.google.cloud.netapp.v1.ListBackupVaultsResponse;
 import com.google.cloud.netapp.v1.ListBackupsRequest;
 import com.google.cloud.netapp.v1.ListBackupsResponse;
+import com.google.cloud.netapp.v1.ListHostGroupsRequest;
+import com.google.cloud.netapp.v1.ListHostGroupsResponse;
 import com.google.cloud.netapp.v1.ListKmsConfigsRequest;
 import com.google.cloud.netapp.v1.ListKmsConfigsResponse;
 import com.google.cloud.netapp.v1.ListQuotaRulesRequest;
@@ -108,6 +115,8 @@ import com.google.cloud.netapp.v1.ListVolumesResponse;
 import com.google.cloud.netapp.v1.OperationMetadata;
 import com.google.cloud.netapp.v1.QuotaRule;
 import com.google.cloud.netapp.v1.Replication;
+import com.google.cloud.netapp.v1.RestoreBackupFilesRequest;
+import com.google.cloud.netapp.v1.RestoreBackupFilesResponse;
 import com.google.cloud.netapp.v1.ResumeReplicationRequest;
 import com.google.cloud.netapp.v1.ReverseReplicationDirectionRequest;
 import com.google.cloud.netapp.v1.RevertVolumeRequest;
@@ -120,6 +129,7 @@ import com.google.cloud.netapp.v1.UpdateActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.UpdateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.UpdateBackupRequest;
 import com.google.cloud.netapp.v1.UpdateBackupVaultRequest;
+import com.google.cloud.netapp.v1.UpdateHostGroupRequest;
 import com.google.cloud.netapp.v1.UpdateKmsConfigRequest;
 import com.google.cloud.netapp.v1.UpdateQuotaRuleRequest;
 import com.google.cloud.netapp.v1.UpdateReplicationRequest;
@@ -153,16 +163,18 @@ public class HttpJsonNetAppStub extends NetAppStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
           .add(StoragePool.getDescriptor())
+          .add(BackupPolicy.getDescriptor())
+          .add(KmsConfig.getDescriptor())
+          .add(ActiveDirectory.getDescriptor())
+          .add(Replication.getDescriptor())
+          .add(HostGroup.getDescriptor())
           .add(Empty.getDescriptor())
           .add(QuotaRule.getDescriptor())
           .add(OperationMetadata.getDescriptor())
-          .add(BackupPolicy.getDescriptor())
+          .add(RestoreBackupFilesResponse.getDescriptor())
           .add(Volume.getDescriptor())
-          .add(KmsConfig.getDescriptor())
           .add(Snapshot.getDescriptor())
           .add(BackupVault.getDescriptor())
-          .add(ActiveDirectory.getDescriptor())
-          .add(Replication.getDescriptor())
           .add(Backup.getDescriptor())
           .build();
 
@@ -2493,6 +2505,239 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<RestoreBackupFilesRequest, Operation>
+      restoreBackupFilesMethodDescriptor =
+          ApiMethodDescriptor.<RestoreBackupFilesRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/RestoreBackupFiles")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RestoreBackupFilesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/volumes/*}:restore",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RestoreBackupFilesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RestoreBackupFilesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (RestoreBackupFilesRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ListHostGroupsRequest, ListHostGroupsResponse>
+      listHostGroupsMethodDescriptor =
+          ApiMethodDescriptor.<ListHostGroupsRequest, ListHostGroupsResponse>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ListHostGroups")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListHostGroupsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/hostGroups",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListHostGroupsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListHostGroupsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListHostGroupsResponse>newBuilder()
+                      .setDefaultInstance(ListHostGroupsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetHostGroupRequest, HostGroup>
+      getHostGroupMethodDescriptor =
+          ApiMethodDescriptor.<GetHostGroupRequest, HostGroup>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/GetHostGroup")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetHostGroupRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/hostGroups/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetHostGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetHostGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<HostGroup>newBuilder()
+                      .setDefaultInstance(HostGroup.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateHostGroupRequest, Operation>
+      createHostGroupMethodDescriptor =
+          ApiMethodDescriptor.<CreateHostGroupRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/CreateHostGroup")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateHostGroupRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/hostGroups",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateHostGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateHostGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "hostGroupId", request.getHostGroupId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("hostGroup", request.getHostGroup(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateHostGroupRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateHostGroupRequest, Operation>
+      updateHostGroupMethodDescriptor =
+          ApiMethodDescriptor.<UpdateHostGroupRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/UpdateHostGroup")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateHostGroupRequest>newBuilder()
+                      .setPath(
+                          "/v1/{hostGroup.name=projects/*/locations/*/hostGroups/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateHostGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "hostGroup.name", request.getHostGroup().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateHostGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("hostGroup", request.getHostGroup(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateHostGroupRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteHostGroupRequest, Operation>
+      deleteHostGroupMethodDescriptor =
+          ApiMethodDescriptor.<DeleteHostGroupRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/DeleteHostGroup")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteHostGroupRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/hostGroups/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteHostGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteHostGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteHostGroupRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -2733,6 +2978,23 @@ public class HttpJsonNetAppStub extends NetAppStub {
   private final UnaryCallable<DeleteQuotaRuleRequest, Operation> deleteQuotaRuleCallable;
   private final OperationCallable<DeleteQuotaRuleRequest, Empty, OperationMetadata>
       deleteQuotaRuleOperationCallable;
+  private final UnaryCallable<RestoreBackupFilesRequest, Operation> restoreBackupFilesCallable;
+  private final OperationCallable<
+          RestoreBackupFilesRequest, RestoreBackupFilesResponse, OperationMetadata>
+      restoreBackupFilesOperationCallable;
+  private final UnaryCallable<ListHostGroupsRequest, ListHostGroupsResponse> listHostGroupsCallable;
+  private final UnaryCallable<ListHostGroupsRequest, ListHostGroupsPagedResponse>
+      listHostGroupsPagedCallable;
+  private final UnaryCallable<GetHostGroupRequest, HostGroup> getHostGroupCallable;
+  private final UnaryCallable<CreateHostGroupRequest, Operation> createHostGroupCallable;
+  private final OperationCallable<CreateHostGroupRequest, HostGroup, OperationMetadata>
+      createHostGroupOperationCallable;
+  private final UnaryCallable<UpdateHostGroupRequest, Operation> updateHostGroupCallable;
+  private final OperationCallable<UpdateHostGroupRequest, HostGroup, OperationMetadata>
+      updateHostGroupOperationCallable;
+  private final UnaryCallable<DeleteHostGroupRequest, Operation> deleteHostGroupCallable;
+  private final OperationCallable<DeleteHostGroupRequest, Empty, OperationMetadata>
+      deleteHostGroupOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -3488,6 +3750,73 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<RestoreBackupFilesRequest, Operation> restoreBackupFilesTransportSettings =
+        HttpJsonCallSettings.<RestoreBackupFilesRequest, Operation>newBuilder()
+            .setMethodDescriptor(restoreBackupFilesMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListHostGroupsRequest, ListHostGroupsResponse>
+        listHostGroupsTransportSettings =
+            HttpJsonCallSettings.<ListHostGroupsRequest, ListHostGroupsResponse>newBuilder()
+                .setMethodDescriptor(listHostGroupsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetHostGroupRequest, HostGroup> getHostGroupTransportSettings =
+        HttpJsonCallSettings.<GetHostGroupRequest, HostGroup>newBuilder()
+            .setMethodDescriptor(getHostGroupMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<CreateHostGroupRequest, Operation> createHostGroupTransportSettings =
+        HttpJsonCallSettings.<CreateHostGroupRequest, Operation>newBuilder()
+            .setMethodDescriptor(createHostGroupMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateHostGroupRequest, Operation> updateHostGroupTransportSettings =
+        HttpJsonCallSettings.<UpdateHostGroupRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateHostGroupMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("host_group.name", String.valueOf(request.getHostGroup().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteHostGroupRequest, Operation> deleteHostGroupTransportSettings =
+        HttpJsonCallSettings.<DeleteHostGroupRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteHostGroupMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -4004,6 +4333,53 @@ public class HttpJsonNetAppStub extends NetAppStub {
             settings.deleteQuotaRuleOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.restoreBackupFilesCallable =
+        callableFactory.createUnaryCallable(
+            restoreBackupFilesTransportSettings,
+            settings.restoreBackupFilesSettings(),
+            clientContext);
+    this.restoreBackupFilesOperationCallable =
+        callableFactory.createOperationCallable(
+            restoreBackupFilesTransportSettings,
+            settings.restoreBackupFilesOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.listHostGroupsCallable =
+        callableFactory.createUnaryCallable(
+            listHostGroupsTransportSettings, settings.listHostGroupsSettings(), clientContext);
+    this.listHostGroupsPagedCallable =
+        callableFactory.createPagedCallable(
+            listHostGroupsTransportSettings, settings.listHostGroupsSettings(), clientContext);
+    this.getHostGroupCallable =
+        callableFactory.createUnaryCallable(
+            getHostGroupTransportSettings, settings.getHostGroupSettings(), clientContext);
+    this.createHostGroupCallable =
+        callableFactory.createUnaryCallable(
+            createHostGroupTransportSettings, settings.createHostGroupSettings(), clientContext);
+    this.createHostGroupOperationCallable =
+        callableFactory.createOperationCallable(
+            createHostGroupTransportSettings,
+            settings.createHostGroupOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateHostGroupCallable =
+        callableFactory.createUnaryCallable(
+            updateHostGroupTransportSettings, settings.updateHostGroupSettings(), clientContext);
+    this.updateHostGroupOperationCallable =
+        callableFactory.createOperationCallable(
+            updateHostGroupTransportSettings,
+            settings.updateHostGroupOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteHostGroupCallable =
+        callableFactory.createUnaryCallable(
+            deleteHostGroupTransportSettings, settings.deleteHostGroupSettings(), clientContext);
+    this.deleteHostGroupOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteHostGroupTransportSettings,
+            settings.deleteHostGroupOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -4081,6 +4457,12 @@ public class HttpJsonNetAppStub extends NetAppStub {
     methodDescriptors.add(createQuotaRuleMethodDescriptor);
     methodDescriptors.add(updateQuotaRuleMethodDescriptor);
     methodDescriptors.add(deleteQuotaRuleMethodDescriptor);
+    methodDescriptors.add(restoreBackupFilesMethodDescriptor);
+    methodDescriptors.add(listHostGroupsMethodDescriptor);
+    methodDescriptors.add(getHostGroupMethodDescriptor);
+    methodDescriptors.add(createHostGroupMethodDescriptor);
+    methodDescriptors.add(updateHostGroupMethodDescriptor);
+    methodDescriptors.add(deleteHostGroupMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -4688,6 +5070,66 @@ public class HttpJsonNetAppStub extends NetAppStub {
   public OperationCallable<DeleteQuotaRuleRequest, Empty, OperationMetadata>
       deleteQuotaRuleOperationCallable() {
     return deleteQuotaRuleOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RestoreBackupFilesRequest, Operation> restoreBackupFilesCallable() {
+    return restoreBackupFilesCallable;
+  }
+
+  @Override
+  public OperationCallable<RestoreBackupFilesRequest, RestoreBackupFilesResponse, OperationMetadata>
+      restoreBackupFilesOperationCallable() {
+    return restoreBackupFilesOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListHostGroupsRequest, ListHostGroupsResponse> listHostGroupsCallable() {
+    return listHostGroupsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListHostGroupsRequest, ListHostGroupsPagedResponse>
+      listHostGroupsPagedCallable() {
+    return listHostGroupsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetHostGroupRequest, HostGroup> getHostGroupCallable() {
+    return getHostGroupCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateHostGroupRequest, Operation> createHostGroupCallable() {
+    return createHostGroupCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateHostGroupRequest, HostGroup, OperationMetadata>
+      createHostGroupOperationCallable() {
+    return createHostGroupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateHostGroupRequest, Operation> updateHostGroupCallable() {
+    return updateHostGroupCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateHostGroupRequest, HostGroup, OperationMetadata>
+      updateHostGroupOperationCallable() {
+    return updateHostGroupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteHostGroupRequest, Operation> deleteHostGroupCallable() {
+    return deleteHostGroupCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteHostGroupRequest, Empty, OperationMetadata>
+      deleteHostGroupOperationCallable() {
+    return deleteHostGroupOperationCallable;
   }
 
   @Override

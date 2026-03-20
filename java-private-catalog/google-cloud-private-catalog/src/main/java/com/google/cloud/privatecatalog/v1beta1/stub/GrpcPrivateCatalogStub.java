@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,6 +60,7 @@ public class GrpcPrivateCatalogStub extends PrivateCatalogStub {
                   ProtoUtils.marshaller(SearchCatalogsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchCatalogsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchProductsRequest, SearchProductsResponse>
@@ -72,6 +73,7 @@ public class GrpcPrivateCatalogStub extends PrivateCatalogStub {
                   ProtoUtils.marshaller(SearchProductsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchProductsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchVersionsRequest, SearchVersionsResponse>
@@ -84,6 +86,7 @@ public class GrpcPrivateCatalogStub extends PrivateCatalogStub {
                   ProtoUtils.marshaller(SearchVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<SearchCatalogsRequest, SearchCatalogsResponse> searchCatalogsCallable;
