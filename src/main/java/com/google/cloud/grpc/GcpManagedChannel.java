@@ -94,6 +94,10 @@ public class GcpManagedChannel extends ManagedChannel {
   public static final Context.Key<String> AFFINITY_CTX_KEY = Context.key("AffinityKey");
   public static final CallOptions.Key<String> AFFINITY_KEY = CallOptions.Key.create("AffinityKey");
 
+  /** When set to true, the affinity key will be unbound after the call completes. */
+  public static final CallOptions.Key<Boolean> UNBIND_AFFINITY_KEY =
+      CallOptions.Key.createWithDefault("UnbindAffinityKey", false);
+
   /**
    * CallOptions key that will be set by grpc-gcp with the actual channel ID used for the call. This
    * can be read by downstream interceptors to get the real channel ID after channel selection.
@@ -1848,7 +1852,7 @@ public class GcpManagedChannel extends ManagedChannel {
         logger.finest(log("Channel affinity is disabled via context or call options."));
       }
       return new GcpClientCall.SimpleGcpClientCall<>(
-          getChannelRef(null), methodDescriptor, callOptions);
+          this, getChannelRef(null), methodDescriptor, callOptions);
     }
 
     AffinityConfig affinity = methodToAffinity.get(methodDescriptor.getFullMethodName());
@@ -1858,7 +1862,7 @@ public class GcpManagedChannel extends ManagedChannel {
     }
 
     return new GcpClientCall.SimpleGcpClientCall<>(
-        getChannelRef(key), methodDescriptor, callOptions);
+        this, getChannelRef(key), methodDescriptor, callOptions);
   }
 
   @Nullable

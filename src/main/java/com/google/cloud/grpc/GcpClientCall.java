@@ -27,6 +27,7 @@ import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.grpc.Status;
 import java.util.ArrayDeque;
+import java.util.Collections;
 import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -222,17 +223,24 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
    */
   public static class SimpleGcpClientCall<ReqT, RespT> extends ForwardingClientCall<ReqT, RespT> {
 
+    private final GcpManagedChannel delegateChannel;
     private final GcpManagedChannel.ChannelRef channelRef;
     private final ClientCall<ReqT, RespT> delegateCall;
+    @Nullable private final String affinityKey;
+    private final boolean unbindOnComplete;
     private long startNanos = 0;
 
     private final AtomicBoolean decremented = new AtomicBoolean(false);
 
     protected SimpleGcpClientCall(
+        GcpManagedChannel delegateChannel,
         GcpManagedChannel.ChannelRef channelRef,
         MethodDescriptor<ReqT, RespT> methodDescriptor,
         CallOptions callOptions) {
+      this.delegateChannel = delegateChannel;
       this.channelRef = channelRef;
+      this.affinityKey = callOptions.getOption(GcpManagedChannel.AFFINITY_KEY);
+      this.unbindOnComplete = callOptions.getOption(GcpManagedChannel.UNBIND_AFFINITY_KEY);
       // Set the actual channel ID in callOptions so downstream interceptors can access it.
       CallOptions callOptionsWithChannelId =
           callOptions.withOption(GcpManagedChannel.CHANNEL_ID_KEY, channelRef.getId());
@@ -257,6 +265,12 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
               if (!decremented.getAndSet(true)) {
                 channelRef.activeStreamsCountDecr(startNanos, status, false);
               }
+              // Unbind the affinity key when the caller explicitly requests it
+              // (e.g., on terminal RPCs like Commit or Rollback) to prevent
+              // unbounded growth of the affinity map.
+              if (unbindOnComplete && affinityKey != null) {
+                delegateChannel.unbind(Collections.singletonList(affinityKey));
+              }
               super.onClose(status, trailers);
             }
 
@@ -275,6 +289,10 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
     public void cancel(String message, Throwable cause) {
       if (!decremented.getAndSet(true)) {
         channelRef.activeStreamsCountDecr(startNanos, Status.CANCELLED, true);
+      }
+      // Always unbind on cancel — the transaction is being abandoned.
+      if (affinityKey != null) {
+        delegateChannel.unbind(Collections.singletonList(affinityKey));
       }
       delegateCall.cancel(message, cause);
     }
