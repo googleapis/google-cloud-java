@@ -162,6 +162,10 @@ final class BigQueryJdbcUrlUtility {
   static final int DEFAULT_SWA_APPEND_ROW_COUNT_VALUE = 1000;
   static final String SWA_ACTIVATION_ROW_COUNT_PROPERTY_NAME = "SWA_ActivationRowCount";
   static final int DEFAULT_SWA_ACTIVATION_ROW_COUNT_VALUE = 3;
+  static final String ENABLE_OPENTELEMETRY_PROPERTY_NAME = "EnableOpenTelemetry";
+  static final boolean DEFAULT_ENABLE_OPENTELEMETRY_VALUE = false;
+  static final String OPENTELEMETRY_EXPORTER_PROPERTY_NAME = "OpenTelemetryExporter";
+  static final String DEFAULT_OPENTELEMETRY_EXPORTER_VALUE = "none";
   private static final BigQueryJdbcCustomLogger LOG =
       new BigQueryJdbcCustomLogger(BigQueryJdbcUrlUtility.class.getName());
   static final String FILTER_TABLES_ON_DEFAULT_DATASET_PROPERTY_NAME =
@@ -607,6 +611,18 @@ final class BigQueryJdbcUrlUtility {
                       .setDescription(
                           "Reason for the request, which is passed as the x-goog-request-reason"
                               + " header.")
+                      .build(),
+                  BigQueryConnectionProperty.newBuilder()
+                      .setName(ENABLE_OPENTELEMETRY_PROPERTY_NAME)
+                      .setDescription(
+                          "Enables or disables OpenTelemetry features in the Driver. Disabled by default.")
+                      .setDefaultValue(String.valueOf(DEFAULT_ENABLE_OPENTELEMETRY_VALUE))
+                      .build(),
+                  BigQueryConnectionProperty.newBuilder()
+                      .setName(OPENTELEMETRY_EXPORTER_PROPERTY_NAME)
+                      .setDescription(
+                          "Specifies the auto-configured OpenTelemetry exporter (e.g., gcp).")
+                      .setDefaultValue(DEFAULT_OPENTELEMETRY_EXPORTER_VALUE)
                       .build())));
 
   private static final List<String> NETWORK_PROPERTIES =
