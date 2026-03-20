@@ -113,6 +113,8 @@ public class DataSource implements javax.sql.DataSource {
   private String privateServiceConnect;
   private Long connectionPoolSize;
   private Long listenerPoolSize;
+  private Boolean enableOpenTelemetry;
+  private String openTelemetryExporter;
 
   // Make sure the JDBC driver class is loaded.
   static {
@@ -324,6 +326,13 @@ public class DataSource implements javax.sql.DataSource {
           .put(
               BigQueryJdbcUrlUtility.LISTENER_POOL_SIZE_PROPERTY_NAME,
               (ds, val) -> ds.setListenerPoolSize(Long.parseLong(val)))
+          .put(
+              BigQueryJdbcUrlUtility.ENABLE_OPENTELEMETRY_PROPERTY_NAME,
+              (ds, val) ->
+                  ds.setEnableOpenTelemetry(
+                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                          val, BigQueryJdbcUrlUtility.ENABLE_OPENTELEMETRY_PROPERTY_NAME)))
+          .put(BigQueryJdbcUrlUtility.OPENTELEMETRY_EXPORTER_PROPERTY_NAME, DataSource::setOpenTelemetryExporter)
           .build();
 
   public static DataSource fromUrl(String url) {
@@ -616,6 +625,15 @@ public class DataSource implements javax.sql.DataSource {
           BigQueryJdbcUrlUtility.LISTENER_POOL_SIZE_PROPERTY_NAME,
           String.valueOf(this.listenerPoolSize));
     }
+    if (this.enableOpenTelemetry != null) {
+      connectionProperties.setProperty(
+          BigQueryJdbcUrlUtility.ENABLE_OPENTELEMETRY_PROPERTY_NAME,
+          String.valueOf(this.enableOpenTelemetry));
+    }
+    if (this.openTelemetryExporter != null) {
+      connectionProperties.setProperty(
+          BigQueryJdbcUrlUtility.OPENTELEMETRY_EXPORTER_PROPERTY_NAME, this.openTelemetryExporter);
+    }
     return connectionProperties;
   }
 
@@ -735,6 +753,26 @@ public class DataSource implements javax.sql.DataSource {
 
   public void setListenerPoolSize(Long listenerPoolSize) {
     this.listenerPoolSize = listenerPoolSize;
+  }
+
+  public Boolean getEnableOpenTelemetry() {
+    return enableOpenTelemetry != null
+        ? enableOpenTelemetry
+        : BigQueryJdbcUrlUtility.DEFAULT_ENABLE_OPENTELEMETRY_VALUE;
+  }
+
+  public void setEnableOpenTelemetry(Boolean enableOpenTelemetry) {
+    this.enableOpenTelemetry = enableOpenTelemetry;
+  }
+
+  public String getOpenTelemetryExporter() {
+    return openTelemetryExporter != null
+        ? openTelemetryExporter
+        : BigQueryJdbcUrlUtility.DEFAULT_OPENTELEMETRY_EXPORTER_VALUE;
+  }
+
+  public void setOpenTelemetryExporter(String openTelemetryExporter) {
+    this.openTelemetryExporter = openTelemetryExporter;
   }
 
   public void setHighThroughputMinTableSize(Integer highThroughputMinTableSize) {

@@ -41,6 +41,8 @@ import com.google.cloud.bigquery.storage.v1.BigQueryReadSettings;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings;
 import com.google.cloud.http.HttpTransportOptions;
+import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.trace.Tracer;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.CallableStatement;
@@ -138,6 +140,9 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   Long connectionPoolSize;
   Long listenerPoolSize;
   String partnerToken;
+  boolean enableOpenTelemetry;
+  String openTelemetryExporter;
+  Tracer tracer = OpenTelemetry.noop().getTracer("");
 
   BigQueryConnection(String url) throws IOException {
     this(url, DataSource.fromUrl(url));
@@ -242,6 +247,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     this.connectionPoolSize = ds.getConnectionPoolSize();
     this.listenerPoolSize = ds.getListenerPoolSize();
     this.partnerToken = ds.getPartnerToken();
+    this.enableOpenTelemetry = ds.getEnableOpenTelemetry();
+    this.openTelemetryExporter = ds.getOpenTelemetryExporter();
 
     this.headerProvider = createHeaderProvider();
     this.bigQuery = getBigQueryConnection();
@@ -935,6 +942,14 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       bigQueryOptions.setTransportOptions(this.httpTransportOptions);
     }
 
+    OpenTelemetry openTelemetry =
+        BigQueryJdbcOpenTelemetry.getOpenTelemetry(this.enableOpenTelemetry, this.openTelemetryExporter);
+    if (this.enableOpenTelemetry) {
+      this.tracer = BigQueryJdbcOpenTelemetry.getTracer(openTelemetry);
+      bigQueryOptions.setOpenTelemetryTracer(this.tracer);
+      BigQueryJdbcOpenTelemetry.attachLoggingBridge();
+    }
+
     BigQueryOptions options = bigQueryOptions.setHeaderProvider(this.headerProvider).build();
     options.setDefaultJobCreationMode(
         this.useStatelessQueryMode
@@ -1082,5 +1097,9 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
           "Unsupported CallableStatement feature");
     }
     return prepareCall(sql);
+  }
+
+  public Tracer getTracer() {
+    return this.tracer;
   }
 }
