@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.9.2 (2026-03-21)
+
+### Fixes
+
+* Use daemon threads for grpc-gcp background executors by default
+
+### Features
+
+* Support of Unbind manual affinity keys after terminal calls
+
+
 ## 1.9.1 (2025-12-27)
 
 ### Fixes
