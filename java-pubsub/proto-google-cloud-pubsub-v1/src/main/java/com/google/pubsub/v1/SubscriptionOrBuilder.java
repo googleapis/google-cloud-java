@@ -239,6 +239,52 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
+   * Optional. If delivery to Bigtable is used with this subscription, this
+   * field is used to configure it.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.BigtableConfig bigtable_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the bigtableConfig field is set.
+   */
+  boolean hasBigtableConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If delivery to Bigtable is used with this subscription, this
+   * field is used to configure it.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.BigtableConfig bigtable_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bigtableConfig.
+   */
+  com.google.pubsub.v1.BigtableConfig getBigtableConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If delivery to Bigtable is used with this subscription, this
+   * field is used to configure it.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.BigtableConfig bigtable_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.pubsub.v1.BigtableConfigOrBuilder getBigtableConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The approximate amount of time (on a best-effort basis) Pub/Sub
    * waits for the subscriber to acknowledge receipt before resending the
    * message. In the interval after the message is delivered and before it is

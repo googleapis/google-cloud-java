@@ -1458,6 +1458,68 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
         : cloudStorageConfig_;
   }
 
+  public static final int BIGTABLE_CONFIG_FIELD_NUMBER = 27;
+  private com.google.pubsub.v1.BigtableConfig bigtableConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If delivery to Bigtable is used with this subscription, this
+   * field is used to configure it.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.BigtableConfig bigtable_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the bigtableConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasBigtableConfig() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If delivery to Bigtable is used with this subscription, this
+   * field is used to configure it.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.BigtableConfig bigtable_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bigtableConfig.
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.BigtableConfig getBigtableConfig() {
+    return bigtableConfig_ == null
+        ? com.google.pubsub.v1.BigtableConfig.getDefaultInstance()
+        : bigtableConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If delivery to Bigtable is used with this subscription, this
+   * field is used to configure it.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.BigtableConfig bigtable_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.BigtableConfigOrBuilder getBigtableConfigOrBuilder() {
+    return bigtableConfig_ == null
+        ? com.google.pubsub.v1.BigtableConfig.getDefaultInstance()
+        : bigtableConfig_;
+  }
+
   public static final int ACK_DEADLINE_SECONDS_FIELD_NUMBER = 5;
   private int ackDeadlineSeconds_ = 0;
 
@@ -1542,7 +1604,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasMessageRetentionDuration() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -1748,7 +1810,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasExpirationPolicy() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -1887,7 +1949,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasDeadLetterPolicy() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -1966,7 +2028,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRetryPolicy() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -2095,7 +2157,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasTopicMessageRetentionDuration() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -2209,7 +2271,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasAnalyticsHubSubscriptionInfo() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -2509,7 +2571,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
     if (retainAckedMessages_ != false) {
       output.writeBool(7, retainAckedMessages_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(8, getMessageRetentionDuration());
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
@@ -2517,16 +2579,16 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
     if (enableMessageOrdering_ != false) {
       output.writeBool(10, enableMessageOrdering_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(11, getExpirationPolicy());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filter_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 12, filter_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(13, getDeadLetterPolicy());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(14, getRetryPolicy());
     }
     if (detached_ != false) {
@@ -2535,7 +2597,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
     if (enableExactlyOnceDelivery_ != false) {
       output.writeBool(16, enableExactlyOnceDelivery_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(17, getTopicMessageRetentionDuration());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -2547,7 +2609,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(22, getCloudStorageConfig());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(23, getAnalyticsHubSubscriptionInfo());
     }
     for (int i = 0; i < messageTransforms_.size(); i++) {
@@ -2555,6 +2617,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetTags(), TagsDefaultEntryHolder.defaultEntry, 26);
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(27, getBigtableConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2579,7 +2644,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
     if (retainAckedMessages_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, retainAckedMessages_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               8, getMessageRetentionDuration());
@@ -2597,16 +2662,16 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
     if (enableMessageOrdering_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, enableMessageOrdering_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getExpirationPolicy());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filter_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(12, filter_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getDeadLetterPolicy());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getRetryPolicy());
     }
     if (detached_ != false) {
@@ -2615,7 +2680,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
     if (enableExactlyOnceDelivery_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(16, enableExactlyOnceDelivery_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               17, getTopicMessageRetentionDuration());
@@ -2629,7 +2694,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getCloudStorageConfig());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               23, getAnalyticsHubSubscriptionInfo());
@@ -2647,6 +2712,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
               .setValue(entry.getValue())
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(26, tags__);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(27, getBigtableConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2676,6 +2744,10 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
     if (hasCloudStorageConfig() != other.hasCloudStorageConfig()) return false;
     if (hasCloudStorageConfig()) {
       if (!getCloudStorageConfig().equals(other.getCloudStorageConfig())) return false;
+    }
+    if (hasBigtableConfig() != other.hasBigtableConfig()) return false;
+    if (hasBigtableConfig()) {
+      if (!getBigtableConfig().equals(other.getBigtableConfig())) return false;
     }
     if (getAckDeadlineSeconds() != other.getAckDeadlineSeconds()) return false;
     if (getRetainAckedMessages() != other.getRetainAckedMessages()) return false;
@@ -2740,6 +2812,10 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
     if (hasCloudStorageConfig()) {
       hash = (37 * hash) + CLOUD_STORAGE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getCloudStorageConfig().hashCode();
+    }
+    if (hasBigtableConfig()) {
+      hash = (37 * hash) + BIGTABLE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getBigtableConfig().hashCode();
     }
     hash = (37 * hash) + ACK_DEADLINE_SECONDS_FIELD_NUMBER;
     hash = (53 * hash) + getAckDeadlineSeconds();
@@ -2962,6 +3038,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
         internalGetPushConfigFieldBuilder();
         internalGetBigqueryConfigFieldBuilder();
         internalGetCloudStorageConfigFieldBuilder();
+        internalGetBigtableConfigFieldBuilder();
         internalGetMessageRetentionDurationFieldBuilder();
         internalGetExpirationPolicyFieldBuilder();
         internalGetDeadLetterPolicyFieldBuilder();
@@ -2992,6 +3069,11 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
       if (cloudStorageConfigBuilder_ != null) {
         cloudStorageConfigBuilder_.dispose();
         cloudStorageConfigBuilder_ = null;
+      }
+      bigtableConfig_ = null;
+      if (bigtableConfigBuilder_ != null) {
+        bigtableConfigBuilder_.dispose();
+        bigtableConfigBuilder_ = null;
       }
       ackDeadlineSeconds_ = 0;
       retainAckedMessages_ = false;
@@ -3037,7 +3119,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
         messageTransforms_ = null;
         messageTransformsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       internalGetMutableTags().clear();
       return this;
     }
@@ -3075,9 +3157,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
 
     private void buildPartialRepeatedFields(com.google.pubsub.v1.Subscription result) {
       if (messageTransformsBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)) {
+        if (((bitField0_ & 0x00100000) != 0)) {
           messageTransforms_ = java.util.Collections.unmodifiableList(messageTransforms_);
-          bitField0_ = (bitField0_ & ~0x00080000);
+          bitField0_ = (bitField0_ & ~0x00100000);
         }
         result.messageTransforms_ = messageTransforms_;
       } else {
@@ -3111,67 +3193,72 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.ackDeadlineSeconds_ = ackDeadlineSeconds_;
+        result.bigtableConfig_ =
+            bigtableConfigBuilder_ == null ? bigtableConfig_ : bigtableConfigBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.retainAckedMessages_ = retainAckedMessages_;
+        result.ackDeadlineSeconds_ = ackDeadlineSeconds_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.retainAckedMessages_ = retainAckedMessages_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.messageRetentionDuration_ =
             messageRetentionDurationBuilder_ == null
                 ? messageRetentionDuration_
                 : messageRetentionDurationBuilder_.build();
-        to_bitField0_ |= 0x00000008;
+        to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.enableMessageOrdering_ = enableMessageOrdering_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.expirationPolicy_ =
             expirationPolicyBuilder_ == null ? expirationPolicy_ : expirationPolicyBuilder_.build();
-        to_bitField0_ |= 0x00000010;
-      }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.filter_ = filter_;
-      }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.deadLetterPolicy_ =
-            deadLetterPolicyBuilder_ == null ? deadLetterPolicy_ : deadLetterPolicyBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.filter_ = filter_;
+      }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.retryPolicy_ =
-            retryPolicyBuilder_ == null ? retryPolicy_ : retryPolicyBuilder_.build();
+        result.deadLetterPolicy_ =
+            deadLetterPolicyBuilder_ == null ? deadLetterPolicy_ : deadLetterPolicyBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.detached_ = detached_;
+        result.retryPolicy_ =
+            retryPolicyBuilder_ == null ? retryPolicy_ : retryPolicyBuilder_.build();
+        to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.enableExactlyOnceDelivery_ = enableExactlyOnceDelivery_;
+        result.detached_ = detached_;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.enableExactlyOnceDelivery_ = enableExactlyOnceDelivery_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.topicMessageRetentionDuration_ =
             topicMessageRetentionDurationBuilder_ == null
                 ? topicMessageRetentionDuration_
                 : topicMessageRetentionDurationBuilder_.build();
-        to_bitField0_ |= 0x00000080;
-      }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.state_ = state_;
+        to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.analyticsHubSubscriptionInfo_ =
             analyticsHubSubscriptionInfoBuilder_ == null
                 ? analyticsHubSubscriptionInfo_
                 : analyticsHubSubscriptionInfoBuilder_.build();
-        to_bitField0_ |= 0x00000100;
+        to_bitField0_ |= 0x00000200;
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.tags_ = internalGetTags();
         result.tags_.makeImmutable();
       }
@@ -3209,6 +3296,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
       if (other.hasCloudStorageConfig()) {
         mergeCloudStorageConfig(other.getCloudStorageConfig());
       }
+      if (other.hasBigtableConfig()) {
+        mergeBigtableConfig(other.getBigtableConfig());
+      }
       if (other.getAckDeadlineSeconds() != 0) {
         setAckDeadlineSeconds(other.getAckDeadlineSeconds());
       }
@@ -3219,7 +3309,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
         mergeMessageRetentionDuration(other.getMessageRetentionDuration());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       if (other.getEnableMessageOrdering() != false) {
         setEnableMessageOrdering(other.getEnableMessageOrdering());
       }
@@ -3228,7 +3318,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.hasDeadLetterPolicy()) {
@@ -3256,7 +3346,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
         if (!other.messageTransforms_.isEmpty()) {
           if (messageTransforms_.isEmpty()) {
             messageTransforms_ = other.messageTransforms_;
-            bitField0_ = (bitField0_ & ~0x00080000);
+            bitField0_ = (bitField0_ & ~0x00100000);
           } else {
             ensureMessageTransformsIsMutable();
             messageTransforms_.addAll(other.messageTransforms_);
@@ -3269,7 +3359,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
             messageTransformsBuilder_.dispose();
             messageTransformsBuilder_ = null;
             messageTransforms_ = other.messageTransforms_;
-            bitField0_ = (bitField0_ & ~0x00080000);
+            bitField0_ = (bitField0_ & ~0x00100000);
             messageTransformsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetMessageTransformsFieldBuilder()
@@ -3280,7 +3370,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
         }
       }
       internalGetMutableTags().mergeFrom(other.internalGetTags());
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3329,13 +3419,13 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
             case 40:
               {
                 ackDeadlineSeconds_ = input.readInt32();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 40
             case 56:
               {
                 retainAckedMessages_ = input.readBool();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 56
             case 66:
@@ -3343,7 +3433,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetMessageRetentionDurationFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
             case 74:
@@ -3355,52 +3445,52 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
             case 80:
               {
                 enableMessageOrdering_ = input.readBool();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 80
             case 90:
               {
                 input.readMessage(
                     internalGetExpirationPolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 90
             case 98:
               {
                 filter_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(
                     internalGetDeadLetterPolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 106
             case 114:
               {
                 input.readMessage(
                     internalGetRetryPolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 114
             case 120:
               {
                 detached_ = input.readBool();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 120
             case 128:
               {
                 enableExactlyOnceDelivery_ = input.readBool();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 128
             case 138:
@@ -3408,7 +3498,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetTopicMessageRetentionDurationFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 138
             case 146:
@@ -3421,7 +3511,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
             case 152:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 152
             case 178:
@@ -3436,7 +3526,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetAnalyticsHubSubscriptionInfoFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 186
             case 202:
@@ -3458,9 +3548,16 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
                     input.readMessage(
                         TagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                 internalGetMutableTags().getMutableMap().put(tags__.getKey(), tags__.getValue());
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 210
+            case 218:
+              {
+                input.readMessage(
+                    internalGetBigtableConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 218
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4413,6 +4510,227 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
       return cloudStorageConfigBuilder_;
     }
 
+    private com.google.pubsub.v1.BigtableConfig bigtableConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.pubsub.v1.BigtableConfig,
+            com.google.pubsub.v1.BigtableConfig.Builder,
+            com.google.pubsub.v1.BigtableConfigOrBuilder>
+        bigtableConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If delivery to Bigtable is used with this subscription, this
+     * field is used to configure it.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig bigtable_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the bigtableConfig field is set.
+     */
+    public boolean hasBigtableConfig() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If delivery to Bigtable is used with this subscription, this
+     * field is used to configure it.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig bigtable_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bigtableConfig.
+     */
+    public com.google.pubsub.v1.BigtableConfig getBigtableConfig() {
+      if (bigtableConfigBuilder_ == null) {
+        return bigtableConfig_ == null
+            ? com.google.pubsub.v1.BigtableConfig.getDefaultInstance()
+            : bigtableConfig_;
+      } else {
+        return bigtableConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If delivery to Bigtable is used with this subscription, this
+     * field is used to configure it.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig bigtable_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBigtableConfig(com.google.pubsub.v1.BigtableConfig value) {
+      if (bigtableConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bigtableConfig_ = value;
+      } else {
+        bigtableConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If delivery to Bigtable is used with this subscription, this
+     * field is used to configure it.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig bigtable_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBigtableConfig(com.google.pubsub.v1.BigtableConfig.Builder builderForValue) {
+      if (bigtableConfigBuilder_ == null) {
+        bigtableConfig_ = builderForValue.build();
+      } else {
+        bigtableConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If delivery to Bigtable is used with this subscription, this
+     * field is used to configure it.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig bigtable_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeBigtableConfig(com.google.pubsub.v1.BigtableConfig value) {
+      if (bigtableConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && bigtableConfig_ != null
+            && bigtableConfig_ != com.google.pubsub.v1.BigtableConfig.getDefaultInstance()) {
+          getBigtableConfigBuilder().mergeFrom(value);
+        } else {
+          bigtableConfig_ = value;
+        }
+      } else {
+        bigtableConfigBuilder_.mergeFrom(value);
+      }
+      if (bigtableConfig_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If delivery to Bigtable is used with this subscription, this
+     * field is used to configure it.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig bigtable_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearBigtableConfig() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      bigtableConfig_ = null;
+      if (bigtableConfigBuilder_ != null) {
+        bigtableConfigBuilder_.dispose();
+        bigtableConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If delivery to Bigtable is used with this subscription, this
+     * field is used to configure it.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig bigtable_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.pubsub.v1.BigtableConfig.Builder getBigtableConfigBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return internalGetBigtableConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If delivery to Bigtable is used with this subscription, this
+     * field is used to configure it.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig bigtable_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.pubsub.v1.BigtableConfigOrBuilder getBigtableConfigOrBuilder() {
+      if (bigtableConfigBuilder_ != null) {
+        return bigtableConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return bigtableConfig_ == null
+            ? com.google.pubsub.v1.BigtableConfig.getDefaultInstance()
+            : bigtableConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If delivery to Bigtable is used with this subscription, this
+     * field is used to configure it.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig bigtable_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.pubsub.v1.BigtableConfig,
+            com.google.pubsub.v1.BigtableConfig.Builder,
+            com.google.pubsub.v1.BigtableConfigOrBuilder>
+        internalGetBigtableConfigFieldBuilder() {
+      if (bigtableConfigBuilder_ == null) {
+        bigtableConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.pubsub.v1.BigtableConfig,
+                com.google.pubsub.v1.BigtableConfig.Builder,
+                com.google.pubsub.v1.BigtableConfigOrBuilder>(
+                getBigtableConfig(), getParentForChildren(), isClean());
+        bigtableConfig_ = null;
+      }
+      return bigtableConfigBuilder_;
+    }
+
     private int ackDeadlineSeconds_;
 
     /**
@@ -4484,7 +4802,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
     public Builder setAckDeadlineSeconds(int value) {
 
       ackDeadlineSeconds_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4520,7 +4838,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAckDeadlineSeconds() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       ackDeadlineSeconds_ = 0;
       onChanged();
       return this;
@@ -4569,7 +4887,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
     public Builder setRetainAckedMessages(boolean value) {
 
       retainAckedMessages_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4591,7 +4909,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRetainAckedMessages() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       retainAckedMessages_ = false;
       onChanged();
       return this;
@@ -4622,7 +4940,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * @return Whether the messageRetentionDuration field is set.
      */
     public boolean hasMessageRetentionDuration() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -4676,7 +4994,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
       } else {
         messageRetentionDurationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4703,7 +5021,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
       } else {
         messageRetentionDurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4725,7 +5043,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeMessageRetentionDuration(com.google.protobuf.Duration value) {
       if (messageRetentionDurationBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && messageRetentionDuration_ != null
             && messageRetentionDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getMessageRetentionDurationBuilder().mergeFrom(value);
@@ -4736,7 +5054,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
         messageRetentionDurationBuilder_.mergeFrom(value);
       }
       if (messageRetentionDuration_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -4758,7 +5076,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearMessageRetentionDuration() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       messageRetentionDuration_ = null;
       if (messageRetentionDurationBuilder_ != null) {
         messageRetentionDurationBuilder_.dispose();
@@ -4784,7 +5102,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Duration.Builder getMessageRetentionDurationBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return internalGetMessageRetentionDurationFieldBuilder().getBuilder();
     }
@@ -4863,7 +5181,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return labels_;
     }
@@ -4957,7 +5275,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -4983,7 +5301,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return internalGetMutableLabels().getMutableMap();
     }
 
@@ -5005,7 +5323,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
 
@@ -5021,7 +5339,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
 
@@ -5064,7 +5382,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
     public Builder setEnableMessageOrdering(boolean value) {
 
       enableMessageOrdering_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5084,7 +5402,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEnableMessageOrdering() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       enableMessageOrdering_ = false;
       onChanged();
       return this;
@@ -5117,7 +5435,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * @return Whether the expirationPolicy field is set.
      */
     public boolean hasExpirationPolicy() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -5175,7 +5493,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
       } else {
         expirationPolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5204,7 +5522,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
       } else {
         expirationPolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5228,7 +5546,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeExpirationPolicy(com.google.pubsub.v1.ExpirationPolicy value) {
       if (expirationPolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && expirationPolicy_ != null
             && expirationPolicy_ != com.google.pubsub.v1.ExpirationPolicy.getDefaultInstance()) {
           getExpirationPolicyBuilder().mergeFrom(value);
@@ -5239,7 +5557,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
         expirationPolicyBuilder_.mergeFrom(value);
       }
       if (expirationPolicy_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -5263,7 +5581,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearExpirationPolicy() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       expirationPolicy_ = null;
       if (expirationPolicyBuilder_ != null) {
         expirationPolicyBuilder_.dispose();
@@ -5291,7 +5609,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.pubsub.v1.ExpirationPolicy.Builder getExpirationPolicyBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return internalGetExpirationPolicyFieldBuilder().getBuilder();
     }
@@ -5434,7 +5752,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       filter_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5456,7 +5774,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearFilter() {
       filter_ = getDefaultInstance().getFilter();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -5483,7 +5801,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       filter_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5516,7 +5834,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * @return Whether the deadLetterPolicy field is set.
      */
     public boolean hasDeadLetterPolicy() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -5576,7 +5894,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
       } else {
         deadLetterPolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5606,7 +5924,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
       } else {
         deadLetterPolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5631,7 +5949,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeDeadLetterPolicy(com.google.pubsub.v1.DeadLetterPolicy value) {
       if (deadLetterPolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && deadLetterPolicy_ != null
             && deadLetterPolicy_ != com.google.pubsub.v1.DeadLetterPolicy.getDefaultInstance()) {
           getDeadLetterPolicyBuilder().mergeFrom(value);
@@ -5642,7 +5960,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
         deadLetterPolicyBuilder_.mergeFrom(value);
       }
       if (deadLetterPolicy_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -5667,7 +5985,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearDeadLetterPolicy() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       deadLetterPolicy_ = null;
       if (deadLetterPolicyBuilder_ != null) {
         deadLetterPolicyBuilder_.dispose();
@@ -5696,7 +6014,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.pubsub.v1.DeadLetterPolicy.Builder getDeadLetterPolicyBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return internalGetDeadLetterPolicyFieldBuilder().getBuilder();
     }
@@ -5791,7 +6109,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * @return Whether the retryPolicy field is set.
      */
     public boolean hasRetryPolicy() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -5849,7 +6167,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
       } else {
         retryPolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5877,7 +6195,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
       } else {
         retryPolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5901,7 +6219,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeRetryPolicy(com.google.pubsub.v1.RetryPolicy value) {
       if (retryPolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && retryPolicy_ != null
             && retryPolicy_ != com.google.pubsub.v1.RetryPolicy.getDefaultInstance()) {
           getRetryPolicyBuilder().mergeFrom(value);
@@ -5912,7 +6230,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
         retryPolicyBuilder_.mergeFrom(value);
       }
       if (retryPolicy_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -5936,7 +6254,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearRetryPolicy() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       retryPolicy_ = null;
       if (retryPolicyBuilder_ != null) {
         retryPolicyBuilder_.dispose();
@@ -5964,7 +6282,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.pubsub.v1.RetryPolicy.Builder getRetryPolicyBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return internalGetRetryPolicyFieldBuilder().getBuilder();
     }
@@ -6071,7 +6389,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
     public Builder setDetached(boolean value) {
 
       detached_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6092,7 +6410,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDetached() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       detached_ = false;
       onChanged();
       return this;
@@ -6155,7 +6473,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
     public Builder setEnableExactlyOnceDelivery(boolean value) {
 
       enableExactlyOnceDelivery_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6184,7 +6502,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEnableExactlyOnceDelivery() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       enableExactlyOnceDelivery_ = false;
       onChanged();
       return this;
@@ -6216,7 +6534,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * @return Whether the topicMessageRetentionDuration field is set.
      */
     public boolean hasTopicMessageRetentionDuration() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -6272,7 +6590,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
       } else {
         topicMessageRetentionDurationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6300,7 +6618,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
       } else {
         topicMessageRetentionDurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6323,7 +6641,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeTopicMessageRetentionDuration(com.google.protobuf.Duration value) {
       if (topicMessageRetentionDurationBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && topicMessageRetentionDuration_ != null
             && topicMessageRetentionDuration_
                 != com.google.protobuf.Duration.getDefaultInstance()) {
@@ -6335,7 +6653,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
         topicMessageRetentionDurationBuilder_.mergeFrom(value);
       }
       if (topicMessageRetentionDuration_ != null) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       return this;
@@ -6358,7 +6676,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearTopicMessageRetentionDuration() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       topicMessageRetentionDuration_ = null;
       if (topicMessageRetentionDurationBuilder_ != null) {
         topicMessageRetentionDurationBuilder_.dispose();
@@ -6385,7 +6703,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Duration.Builder getTopicMessageRetentionDurationBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return internalGetTopicMessageRetentionDurationFieldBuilder().getBuilder();
     }
@@ -6487,7 +6805,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6532,7 +6850,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -6553,7 +6871,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       state_ = 0;
       onChanged();
       return this;
@@ -6582,7 +6900,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * @return Whether the analyticsHubSubscriptionInfo field is set.
      */
     public boolean hasAnalyticsHubSubscriptionInfo() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -6632,7 +6950,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
       } else {
         analyticsHubSubscriptionInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6656,7 +6974,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
       } else {
         analyticsHubSubscriptionInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6676,7 +6994,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
     public Builder mergeAnalyticsHubSubscriptionInfo(
         com.google.pubsub.v1.Subscription.AnalyticsHubSubscriptionInfo value) {
       if (analyticsHubSubscriptionInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && analyticsHubSubscriptionInfo_ != null
             && analyticsHubSubscriptionInfo_
                 != com.google.pubsub.v1.Subscription.AnalyticsHubSubscriptionInfo
@@ -6689,7 +7007,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
         analyticsHubSubscriptionInfoBuilder_.mergeFrom(value);
       }
       if (analyticsHubSubscriptionInfo_ != null) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -6708,7 +7026,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearAnalyticsHubSubscriptionInfo() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       analyticsHubSubscriptionInfo_ = null;
       if (analyticsHubSubscriptionInfoBuilder_ != null) {
         analyticsHubSubscriptionInfoBuilder_.dispose();
@@ -6732,7 +7050,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      */
     public com.google.pubsub.v1.Subscription.AnalyticsHubSubscriptionInfo.Builder
         getAnalyticsHubSubscriptionInfoBuilder() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return internalGetAnalyticsHubSubscriptionInfoFieldBuilder().getBuilder();
     }
@@ -6793,10 +7111,10 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureMessageTransformsIsMutable() {
-      if (!((bitField0_ & 0x00080000) != 0)) {
+      if (!((bitField0_ & 0x00100000) != 0)) {
         messageTransforms_ =
             new java.util.ArrayList<com.google.pubsub.v1.MessageTransform>(messageTransforms_);
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
       }
     }
 
@@ -7055,7 +7373,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
     public Builder clearMessageTransforms() {
       if (messageTransformsBuilder_ == null) {
         messageTransforms_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x00100000);
         onChanged();
       } else {
         messageTransformsBuilder_.clear();
@@ -7206,7 +7524,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
                 com.google.pubsub.v1.MessageTransform.Builder,
                 com.google.pubsub.v1.MessageTransformOrBuilder>(
                 messageTransforms_,
-                ((bitField0_ & 0x00080000) != 0),
+                ((bitField0_ & 0x00100000) != 0),
                 getParentForChildren(),
                 isClean());
         messageTransforms_ = null;
@@ -7231,7 +7549,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
       if (!tags_.isMutable()) {
         tags_ = tags_.copy();
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return tags_;
     }
@@ -7349,7 +7667,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearTags() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       internalGetMutableTags().getMutableMap().clear();
       return this;
     }
@@ -7381,7 +7699,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableTags() {
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       return internalGetMutableTags().getMutableMap();
     }
 
@@ -7409,7 +7727,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableTags().getMutableMap().put(key, value);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       return this;
     }
 
@@ -7431,7 +7749,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllTags(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableTags().getMutableMap().putAll(values);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       return this;
     }
 

@@ -44,6 +44,7 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import com.google.pubsub.v1.BigQueryConfig;
+import com.google.pubsub.v1.BigtableConfig;
 import com.google.pubsub.v1.CloudStorageConfig;
 import com.google.pubsub.v1.DeadLetterPolicy;
 import com.google.pubsub.v1.ExpirationPolicy;
@@ -120,6 +121,7 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setPushConfig(PushConfig.newBuilder().build())
             .setBigqueryConfig(BigQueryConfig.newBuilder().build())
             .setCloudStorageConfig(CloudStorageConfig.newBuilder().build())
+            .setBigtableConfig(BigtableConfig.newBuilder().build())
             .setAckDeadlineSeconds(2135351438)
             .setRetainAckedMessages(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
@@ -191,6 +193,7 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setPushConfig(PushConfig.newBuilder().build())
             .setBigqueryConfig(BigQueryConfig.newBuilder().build())
             .setCloudStorageConfig(CloudStorageConfig.newBuilder().build())
+            .setBigtableConfig(BigtableConfig.newBuilder().build())
             .setAckDeadlineSeconds(2135351438)
             .setRetainAckedMessages(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
@@ -262,6 +265,7 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setPushConfig(PushConfig.newBuilder().build())
             .setBigqueryConfig(BigQueryConfig.newBuilder().build())
             .setCloudStorageConfig(CloudStorageConfig.newBuilder().build())
+            .setBigtableConfig(BigtableConfig.newBuilder().build())
             .setAckDeadlineSeconds(2135351438)
             .setRetainAckedMessages(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
@@ -333,6 +337,7 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setPushConfig(PushConfig.newBuilder().build())
             .setBigqueryConfig(BigQueryConfig.newBuilder().build())
             .setCloudStorageConfig(CloudStorageConfig.newBuilder().build())
+            .setBigtableConfig(BigtableConfig.newBuilder().build())
             .setAckDeadlineSeconds(2135351438)
             .setRetainAckedMessages(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
@@ -404,6 +409,7 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setPushConfig(PushConfig.newBuilder().build())
             .setBigqueryConfig(BigQueryConfig.newBuilder().build())
             .setCloudStorageConfig(CloudStorageConfig.newBuilder().build())
+            .setBigtableConfig(BigtableConfig.newBuilder().build())
             .setAckDeadlineSeconds(2135351438)
             .setRetainAckedMessages(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
@@ -468,6 +474,7 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setPushConfig(PushConfig.newBuilder().build())
             .setBigqueryConfig(BigQueryConfig.newBuilder().build())
             .setCloudStorageConfig(CloudStorageConfig.newBuilder().build())
+            .setBigtableConfig(BigtableConfig.newBuilder().build())
             .setAckDeadlineSeconds(2135351438)
             .setRetainAckedMessages(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
@@ -532,6 +539,7 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setPushConfig(PushConfig.newBuilder().build())
             .setBigqueryConfig(BigQueryConfig.newBuilder().build())
             .setCloudStorageConfig(CloudStorageConfig.newBuilder().build())
+            .setBigtableConfig(BigtableConfig.newBuilder().build())
             .setAckDeadlineSeconds(2135351438)
             .setRetainAckedMessages(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
@@ -558,6 +566,7 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setPushConfig(PushConfig.newBuilder().build())
             .setBigqueryConfig(BigQueryConfig.newBuilder().build())
             .setCloudStorageConfig(CloudStorageConfig.newBuilder().build())
+            .setBigtableConfig(BigtableConfig.newBuilder().build())
             .setAckDeadlineSeconds(2135351438)
             .setRetainAckedMessages(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
@@ -610,6 +619,7 @@ public class SubscriptionAdminClientHttpJsonTest {
               .setPushConfig(PushConfig.newBuilder().build())
               .setBigqueryConfig(BigQueryConfig.newBuilder().build())
               .setCloudStorageConfig(CloudStorageConfig.newBuilder().build())
+              .setBigtableConfig(BigtableConfig.newBuilder().build())
               .setAckDeadlineSeconds(2135351438)
               .setRetainAckedMessages(true)
               .setMessageRetentionDuration(Duration.newBuilder().build())
