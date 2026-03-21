@@ -294,6 +294,9 @@
             },
             "RunSession": {
               "methods": ["runSession", "runSessionCallable"]
+            },
+            "StreamRunSession": {
+              "methods": ["streamRunSessionCallable"]
             }
           }
         }

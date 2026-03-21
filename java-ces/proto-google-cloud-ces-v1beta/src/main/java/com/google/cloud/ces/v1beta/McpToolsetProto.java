@@ -44,6 +44,10 @@ public final class McpToolsetProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_ces_v1beta_McpToolset_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_ces_v1beta_McpToolset_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_McpToolset_CustomHeadersEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_McpToolset_CustomHeadersEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -57,16 +61,20 @@ public final class McpToolsetProto extends com.google.protobuf.GeneratedFile {
           + "oto\022\027google.cloud.ces.v1beta\032\037google/api"
           + "/field_behavior.proto\032\"google/cloud/ces/"
           + "v1beta/auth.proto\032$google/cloud/ces/v1be"
-          + "ta/common.proto\"\213\002\n\nMcpToolset\022\033\n\016server"
+          + "ta/common.proto\"\226\003\n\nMcpToolset\022\033\n\016server"
           + "_address\030\001 \001(\tB\003\340A\002\022K\n\022api_authenticatio"
           + "n\030\002 \001(\0132*.google.cloud.ces.v1beta.ApiAut"
           + "henticationB\003\340A\001\022V\n\030service_directory_co"
           + "nfig\030\003 \001(\0132/.google.cloud.ces.v1beta.Ser"
           + "viceDirectoryConfigB\003\340A\001\022;\n\ntls_config\030\004"
           + " \001(\0132\".google.cloud.ces.v1beta.TlsConfig"
-          + "B\003\340A\001B_\n\033com.google.cloud.ces.v1betaB\017Mc"
-          + "pToolsetProtoP\001Z-cloud.google.com/go/ces"
-          + "/apiv1beta/cespb;cespbb\006proto3"
+          + "B\003\340A\001\022S\n\016custom_headers\030\005 \003(\01326.google.c"
+          + "loud.ces.v1beta.McpToolset.CustomHeaders"
+          + "EntryB\003\340A\001\0324\n\022CustomHeadersEntry\022\013\n\003key\030"
+          + "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B_\n\033com.google.c"
+          + "loud.ces.v1betaB\017McpToolsetProtoP\001Z-clou"
+          + "d.google.com/go/ces/apiv1beta/cespb;cesp"
+          + "bb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -82,7 +90,19 @@ public final class McpToolsetProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_McpToolset_descriptor,
             new java.lang.String[] {
-              "ServerAddress", "ApiAuthentication", "ServiceDirectoryConfig", "TlsConfig",
+              "ServerAddress",
+              "ApiAuthentication",
+              "ServiceDirectoryConfig",
+              "TlsConfig",
+              "CustomHeaders",
+            });
+    internal_static_google_cloud_ces_v1beta_McpToolset_CustomHeadersEntry_descriptor =
+        internal_static_google_cloud_ces_v1beta_McpToolset_descriptor.getNestedType(0);
+    internal_static_google_cloud_ces_v1beta_McpToolset_CustomHeadersEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_McpToolset_CustomHeadersEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
