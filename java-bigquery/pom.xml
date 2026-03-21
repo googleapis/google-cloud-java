@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.62.0</version><!-- {x-version-update:google-cloud-bigquery:current} -->
+  <version>2.63.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
   <name>BigQuery Parent</name>
   <url>https://github.com/googleapis/google-cloud-java</url>
   <description>
@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>1.82.0</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.83.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -70,7 +70,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigquery</artifactId>
-        <version>2.62.0</version><!-- {x-version-update:google-cloud-bigquery:current} -->
+        <version>2.63.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
       </dependency>
 
       <dependency>
@@ -94,13 +94,13 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigqueryconnection</artifactId>
-        <version>2.90.0</version><!-- {x-version-update:google-cloud-bigqueryconnection:current} -->
+        <version>2.91.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigqueryconnection:current} -->
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-bigqueryconnection-v1</artifactId>
-        <version>2.90.0</version><!-- {x-version-update:proto-google-cloud-bigqueryconnection-v1:current} -->
+        <version>2.91.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigqueryconnection-v1:current} -->
         <scope>test</scope>
       </dependency>
       <dependency>
