@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.bigquery;
+package com.google.cloud.bigquery.telemetry;
 
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
@@ -23,10 +23,9 @@ import com.google.api.core.InternalApi;
  * Version class defines current google-cloud-bigquery artifact version to be referenced at runtime
  * for telemetry purposes.
  */
-@BetaApi
 @InternalApi("For internal use only")
-public final class Version {
+final class Version {
   // {x-version-update-start:google-cloud-bigquery:current}
-  public static final String VERSION = "2.63.0-SNAPSHOT";
+  static final String VERSION = "2.63.0-SNAPSHOT";
   // {x-version-update-end}
 }
