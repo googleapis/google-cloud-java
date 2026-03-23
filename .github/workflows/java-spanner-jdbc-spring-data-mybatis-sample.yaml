@@ -1,4 +1,4 @@
-# Copyright 2024 Google LLC
+# Copyright 2023 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,16 +15,35 @@
 # downstream client libraries before they are released.
 on:
   pull_request:
-name: samples
+name: java-spanner-jdbc spring-data-mybatis-sample
+env:
+  BUILD_SUBDIR: java-spanner-jdbc
 jobs:
-  test:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'java-spanner-jdbc/**'
+  spring-data-mybatis:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-java@v5
         with:
           distribution: temurin
-          java-version: 8
-      - name: Run sample tests
-        run: mvn --quiet --batch-mode test
-        working-directory: samples/snippets
+          java-version: 17
+      - name: Run GoogleSQL sample tests
+        run: mvn test
+        working-directory: samples/spring-data-mybatis/googlesql
+      - name: Run PostgreSQL sample tests
+        run: mvn test
+        working-directory: samples/spring-data-mybatis/postgresql

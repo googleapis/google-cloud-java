@@ -1,4 +1,4 @@
-# Copyright 2022 Google LLC
+# Copyright 2024 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,16 +15,32 @@
 # downstream client libraries before they are released.
 on:
   pull_request:
-name: samples
+name: java-spanner-jdbc quickperf
+env:
+  BUILD_SUBDIR: java-spanner-jdbc
 jobs:
-  checkstyle:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'java-spanner-jdbc/**'
+  quickperf:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
-          java-version: 8
-      - name: Run checkstyle
-        run: mvn -P lint --quiet --batch-mode checkstyle:check
-        working-directory: samples/snippets
+          java-version: 17
+      - name: Run tests
+        run: mvn test
+        working-directory: samples/quickperf
