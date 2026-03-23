@@ -800,7 +800,7 @@ public class HttpBigQueryRpcTest {
           "com.google.cloud.bigquery.BigQueryRpc.createJob",
           "JobService",
           "InsertJob",
-          null,
+          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/jobs",
           attributes);
     }
 
@@ -825,7 +825,7 @@ public class HttpBigQueryRpcTest {
           "com.google.cloud.bigquery.BigQueryRpc.createJobForQuery",
           "JobService",
           "InsertJob",
-          null,
+          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/jobs",
           attributes);
     }
 
