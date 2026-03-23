@@ -371,6 +371,45 @@ public abstract class Expression {
   }
 
   /**
+   * Creates an expression that performs a logical 'NOR' operation.
+   *
+   * @param condition The first {@link BooleanExpression}.
+   * @param conditions Additional {@link BooleanExpression}s.
+   * @return A new {@link BooleanExpression} representing the logical 'NOR' operation.
+   */
+  @BetaApi
+  public static BooleanExpression nor(
+      BooleanExpression condition, BooleanExpression... conditions) {
+    ImmutableList.Builder<Expression> builder = ImmutableList.builder();
+    builder.add(condition);
+    builder.add(conditions);
+    return new BooleanFunctionExpression("nor", builder.build());
+  }
+
+  /**
+   * Creates an expression that evaluates to the result corresponding to the first true condition.
+   *
+   * <p>This function behaves like a `switch` statement. It accepts an alternating sequence of
+   * conditions and their corresponding results. If an odd number of arguments is provided, the
+   * final argument serves as a default fallback result. If no default is provided and no condition
+   * evaluates to true, it throws an error.
+   *
+   * @param condition The first {@link BooleanExpression}.
+   * @param result The result if the first condition is true.
+   * @param others Additional conditions and results, and optionally a default value.
+   * @return A new {@link Expression} representing the switchOn operation.
+   */
+  @BetaApi
+  public static Expression switchOn(
+      BooleanExpression condition, Expression result, Object... others) {
+    ImmutableList.Builder<Expression> builder = ImmutableList.builder();
+    builder.add(condition);
+    builder.add(result);
+    builder.addAll(toArrayOfExprOrConstant(others));
+    return new FunctionExpression("switch_on", builder.build());
+  }
+
+  /**
    * Creates an expression that performs a logical 'XOR' operation.
    *
    * @param condition The first {@link BooleanExpression}.

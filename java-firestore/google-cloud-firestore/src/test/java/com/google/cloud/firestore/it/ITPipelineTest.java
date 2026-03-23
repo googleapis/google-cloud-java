@@ -67,6 +67,7 @@ import static com.google.cloud.firestore.pipeline.expressions.Expression.logical
 import static com.google.cloud.firestore.pipeline.expressions.Expression.logicalMinimum;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.mapMerge;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.mapRemove;
+import static com.google.cloud.firestore.pipeline.expressions.Expression.nor;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.notEqual;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.nullValue;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.or;
@@ -79,6 +80,7 @@ import static com.google.cloud.firestore.pipeline.expressions.Expression.startsW
 import static com.google.cloud.firestore.pipeline.expressions.Expression.stringConcat;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.substring;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.subtract;
+import static com.google.cloud.firestore.pipeline.expressions.Expression.switchOn;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.timestampAdd;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.timestampToUnixMicros;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.timestampToUnixMillis;
@@ -843,6 +845,80 @@ public class ITPipelineTest extends ITBaseTest {
                 map("title", "Pride and Prejudice"),
                 map("title", "The Handmaid's Tale"),
                 map("title", "1984")));
+  }
+
+  @Test
+  public void whereByNorCondition() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(
+                nor(
+                    equal("genre", "Romance"),
+                    equal("genre", "Dystopian"),
+                    equal("genre", "Fantasy"),
+                    greaterThan("published", 1949)))
+            .select("title")
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results))
+        .containsExactlyElementsIn(
+            Lists.newArrayList(
+                map("title", "Crime and Punishment"),
+                map("title", "The Great Gatsby"),
+                map("title", "Timestamp Book")));
+  }
+
+  @Test
+  public void selectWithSwitchOn() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .limit(1)
+            .replaceWith(Expression.map(map("value", 2)))
+            .select(
+                switchOn(equal(field("value"), 2), constant("two"), constant("NA")).as("result1"),
+                switchOn(equal(field("value"), 3), constant("three"), constant("NA")).as("result2"),
+                switchOn(
+                        equal(field("value"), 1),
+                        constant("one"),
+                        equal(field("value"), 2),
+                        constant("two"),
+                        equal(field("value"), 3),
+                        constant("three"),
+                        constant("default"))
+                    .as("result3"))
+            .execute()
+            .get()
+            .getResults();
+    assertThat(data(results))
+        .isEqualTo(Lists.newArrayList(map("result1", "two", "result2", "NA", "result3", "two")));
+  }
+
+  @Test
+  public void testSwitchOnWithNoDefaultValueAndNoMatchingCondition() throws Exception {
+    ExecutionException exception =
+        assertThrows(
+            ExecutionException.class,
+            () ->
+                firestore
+                    .pipeline()
+                    .createFrom(collection)
+                    .limit(1)
+                    .replaceWith(Expression.map(map("value", 5)))
+                    .select(
+                        switchOn(
+                                equal(field("value"), 1), constant("one"),
+                                equal(field("value"), 2), constant("two"))
+                            .as("result"))
+                    .execute()
+                    .get()
+                    .getResults());
+    assertThat(exception).hasMessageThat().contains("all switch cases evaluate to false");
   }
 
   @Test
