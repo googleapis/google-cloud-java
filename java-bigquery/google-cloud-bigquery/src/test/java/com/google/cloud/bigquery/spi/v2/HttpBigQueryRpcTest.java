@@ -156,7 +156,7 @@ public class HttpBigQueryRpcTest {
     assertEquals("http", rpcSpan.getAttributes().get(AttributeKey.stringKey("bq.rpc.system")));
 
     assertEquals(
-        gcpResourceDestinationId, rpcSpan.getAttributes().get(BigQueryTelemetryTracer.GCP_DESTINATION_ID));
+        gcpResourceDestinationId, rpcSpan.getAttributes().get(BigQueryTelemetryTracer.GCP_RESOURCE_DESTINATION_ID));
 
     if (attributes != null) {
       for (Map.Entry<String, String> entry : attributes.entrySet()) {

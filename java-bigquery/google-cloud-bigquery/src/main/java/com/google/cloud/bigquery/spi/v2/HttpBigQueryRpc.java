@@ -2061,7 +2061,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .setAttribute("bq.rpc.service", service)
             .setAttribute("bq.rpc.method", method)
             .setAttribute("bq.rpc.system", "http")
-            .setAttribute(BigQueryTelemetryTracer.GCP_DESTINATION_ID, gcpResourceDestinationId);
+            .setAttribute(BigQueryTelemetryTracer.GCP_RESOURCE_DESTINATION_ID, gcpResourceDestinationId);
 
     if (options != null) {
       builder.setAllAttributes(otelAttributesFromOptions(options));

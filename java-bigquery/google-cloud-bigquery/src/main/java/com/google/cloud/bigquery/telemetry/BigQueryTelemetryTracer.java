@@ -49,7 +49,7 @@ public final class BigQueryTelemetryTracer {
       AttributeKey.stringKey("gcp.client.artifact");
   public static final AttributeKey<String> GCP_CLIENT_LANGUAGE =
       AttributeKey.stringKey("gcp.client.language");
-  public static final AttributeKey<String> GCP_DESTINATION_ID =
+  public static final AttributeKey<String> GCP_RESOURCE_DESTINATION_ID =
       AttributeKey.stringKey("gcp.resource.destination.id");
   public static final AttributeKey<String> RPC_SYSTEM_NAME =
       AttributeKey.stringKey("rpc.system.name");
