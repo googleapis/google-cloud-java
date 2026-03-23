@@ -6,11 +6,10 @@
   "release_level": "stable",
   "language": "java",
   "min_java_version": 8,
-  "repo": "googleapis/java-spanner-jdbc",
-  "repo_short": "java-spanner-jdbc",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "google-cloud-java",
   "distribution_name": "com.google.cloud:google-cloud-spanner-jdbc",
   "library_type": "OTHER",
   "codeowner_team": "@googleapis/spanner-team",
   "recommended_package": "com.google.cloud.spanner.jdbc"
 }
-
