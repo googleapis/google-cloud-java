@@ -867,12 +867,14 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     String destinationId =
-        RESOURCE_PROJECT_PREFIX
-            + reference.getProjectId()
-            + "/datasets/"
-            + reference.getDatasetId()
-            + "/models/"
-            + reference.getModelId();
+        new StringBuilder()
+            .append(RESOURCE_PROJECT_PREFIX)
+            .append(reference.getProjectId())
+            .append("/datasets/")
+            .append(reference.getDatasetId())
+            .append("/models/")
+            .append(reference.getModelId())
+            .toString();
 
     return executeWithSpan(
         createRpcTracingSpan(
@@ -922,7 +924,14 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     String destinationId =
-        RESOURCE_PROJECT_PREFIX + projectId + "/datasets/" + datasetId + "/models/" + modelId;
+        new StringBuilder()
+            .append(RESOURCE_PROJECT_PREFIX)
+            .append(projectId)
+            .append("/datasets/")
+            .append(datasetId)
+            .append("/models/")
+            .append(modelId)
+            .toString();
 
     return executeWithSpan(
         createRpcTracingSpan(
@@ -968,7 +977,13 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     String destinationId =
-        RESOURCE_PROJECT_PREFIX + projectId + "/datasets/" + datasetId + "/models";
+        new StringBuilder()
+            .append(RESOURCE_PROJECT_PREFIX)
+            .append(projectId)
+            .append("/datasets/")
+            .append(datasetId)
+            .append("/models")
+            .toString();
 
     return executeWithSpan(
         createRpcTracingSpan(
@@ -1064,12 +1079,14 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     String destinationId =
-        RESOURCE_PROJECT_PREFIX
-            + reference.getProjectId()
-            + "/datasets/"
-            + reference.getDatasetId()
-            + "/routines/"
-            + reference.getRoutineId();
+        new StringBuilder()
+            .append(RESOURCE_PROJECT_PREFIX)
+            .append(reference.getProjectId())
+            .append("/datasets/")
+            .append(reference.getDatasetId())
+            .append("/routines/")
+            .append(reference.getRoutineId())
+            .toString();
 
     return executeWithSpan(
         createRpcTracingSpan(
@@ -1119,7 +1136,14 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     String destinationId =
-        RESOURCE_PROJECT_PREFIX + projectId + "/datasets/" + datasetId + "/routines/" + routineId;
+        new StringBuilder()
+            .append(RESOURCE_PROJECT_PREFIX)
+            .append(projectId)
+            .append("/datasets/")
+            .append(datasetId)
+            .append("/routines/")
+            .append(routineId)
+            .toString();
 
     return executeWithSpan(
         createRpcTracingSpan(
@@ -1165,7 +1189,13 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     String destinationId =
-        RESOURCE_PROJECT_PREFIX + projectId + "/datasets/" + datasetId + "/routines";
+        new StringBuilder()
+            .append(RESOURCE_PROJECT_PREFIX)
+            .append(projectId)
+            .append("/datasets/")
+            .append(datasetId)
+            .append("/routines")
+            .toString();
 
     return executeWithSpan(
         createRpcTracingSpan(
@@ -1256,7 +1286,14 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     String destinationId =
-        RESOURCE_PROJECT_PREFIX + projectId + "/datasets/" + datasetId + "/tables/" + tableId;
+        new StringBuilder()
+            .append(RESOURCE_PROJECT_PREFIX)
+            .append(projectId)
+            .append("/datasets/")
+            .append(datasetId)
+            .append("/tables/")
+            .append(tableId)
+            .toString();
 
     return executeWithSpan(
         createRpcTracingSpan(
@@ -1300,7 +1337,14 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     String destinationId =
-        RESOURCE_PROJECT_PREFIX + projectId + "/datasets/" + datasetId + "/tables/" + tableId;
+        new StringBuilder()
+            .append(RESOURCE_PROJECT_PREFIX)
+            .append(projectId)
+            .append("/datasets/")
+            .append(datasetId)
+            .append("/tables/")
+            .append(tableId)
+            .toString();
 
     return executeWithSpan(
         createRpcTracingSpan(
@@ -1354,7 +1398,14 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
     String destinationId =
-        RESOURCE_PROJECT_PREFIX + projectId + "/datasets/" + datasetId + "/tables/" + tableId;
+        new StringBuilder()
+            .append(RESOURCE_PROJECT_PREFIX)
+            .append(projectId)
+            .append("/datasets/")
+            .append(datasetId)
+            .append("/tables/")
+            .append(tableId)
+            .toString();
 
     return executeWithSpan(
         createRpcTracingSpan(
@@ -1400,7 +1451,13 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .getRequestHeaders()
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
-    String destinationId = RESOURCE_PROJECT_PREFIX + projectId + "/jobs/" + jobId;
+    String destinationId =
+        new StringBuilder()
+            .append(RESOURCE_PROJECT_PREFIX)
+            .append(projectId)
+            .append("/jobs/")
+            .append(jobId)
+            .toString();
 
     return executeWithSpan(
         createRpcTracingSpan(
@@ -1444,7 +1501,13 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .getRequestHeaders()
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
-    String destinationId = RESOURCE_PROJECT_PREFIX + projectId + "/jobs/" + jobId;
+    String destinationId =
+        new StringBuilder()
+            .append(RESOURCE_PROJECT_PREFIX)
+            .append(projectId)
+            .append("/jobs/")
+            .append(jobId)
+            .toString();
 
     return executeWithSpan(
         createRpcTracingSpan(
@@ -1572,7 +1635,13 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .getRequestHeaders()
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
-    String destinationId = RESOURCE_PROJECT_PREFIX + projectId + "/jobs/" + jobId;
+    String destinationId =
+        new StringBuilder()
+            .append(RESOURCE_PROJECT_PREFIX)
+            .append(projectId)
+            .append("/jobs/")
+            .append(jobId)
+            .toString();
 
     return executeWithSpan(
         createRpcTracingSpan(
@@ -1607,7 +1676,13 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .getRequestHeaders()
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
-    String destinationId = RESOURCE_PROJECT_PREFIX + projectId + "/jobs/" + jobName;
+    String destinationId =
+        new StringBuilder()
+            .append(RESOURCE_PROJECT_PREFIX)
+            .append(projectId)
+            .append("/jobs/")
+            .append(jobName)
+            .toString();
 
     return executeWithSpan(
         createRpcTracingSpan(
@@ -1654,7 +1729,13 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .getRequestHeaders()
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
-    String destinationId = RESOURCE_PROJECT_PREFIX + projectId + "/jobs/" + jobId;
+    String destinationId =
+        new StringBuilder()
+            .append(RESOURCE_PROJECT_PREFIX)
+            .append(projectId)
+            .append("/jobs/")
+            .append(jobId)
+            .toString();
 
     return executeWithSpan(
         createRpcTracingSpan(
@@ -1700,7 +1781,13 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         .getRequestHeaders()
         .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
-    String destinationId = RESOURCE_PROJECT_PREFIX + projectId + "/jobs/" + jobId;
+    String destinationId =
+        new StringBuilder()
+            .append(RESOURCE_PROJECT_PREFIX)
+            .append(projectId)
+            .append("/jobs/")
+            .append(jobId)
+            .toString();
 
     return executeWithSpan(
         createRpcTracingSpan(
