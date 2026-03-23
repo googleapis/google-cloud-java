@@ -252,25 +252,19 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
             setDestinationDatasetAndTableInJobConfig(getJobConfig(sql).build());
         runQuery(sql, jobConfiguration);
       } catch (InterruptedException ex) {
-        span.recordException(ex);
-        span.setStatus(StatusCode.ERROR, ex.getMessage());
         throw new BigQueryJdbcException(ex);
-      } catch (Exception ex) {
-        span.recordException(ex);
-        span.setStatus(StatusCode.ERROR, ex.getMessage());
-        throw ex;
       }
 
       if (!isSingularResultSet()) {
-        BigQueryJdbcException ex =
-            new BigQueryJdbcException(
-                "Query returned more than one or didn't return any ResultSet.");
-        span.recordException(ex);
-        span.setStatus(StatusCode.ERROR, ex.getMessage());
-        throw ex;
+        throw new BigQueryJdbcException(
+            "Query returned more than one or didn't return any ResultSet.");
       }
       // This contains all the other assertions spec required on this method
       return getCurrentResultSet();
+    } catch (Exception ex) {
+      span.recordException(ex);
+      span.setStatus(StatusCode.ERROR, ex.getMessage());
+      throw ex;
     } finally {
       span.end();
     }
@@ -289,23 +283,17 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         QueryJobConfiguration.Builder jobConfiguration = getJobConfig(sql);
         runQuery(sql, jobConfiguration.build());
       } catch (InterruptedException ex) {
-        span.recordException(ex);
-        span.setStatus(StatusCode.ERROR, ex.getMessage());
         throw new BigQueryJdbcRuntimeException(ex);
-      } catch (Exception ex) {
-        span.recordException(ex);
-        span.setStatus(StatusCode.ERROR, ex.getMessage());
-        throw ex;
       }
       if (this.currentUpdateCount == -1) {
-        BigQueryJdbcException ex =
-            new BigQueryJdbcException(
-                "Update query expected to return affected row count. Double check query type.");
-        span.recordException(ex);
-        span.setStatus(StatusCode.ERROR, ex.getMessage());
-        throw ex;
+        throw new BigQueryJdbcException(
+            "Update query expected to return affected row count. Double check query type.");
       }
       return this.currentUpdateCount;
+    } catch (Exception ex) {
+      span.recordException(ex);
+      span.setStatus(StatusCode.ERROR, ex.getMessage());
+      throw ex;
     } finally {
       span.end();
     }
@@ -344,15 +332,13 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         }
         runQuery(sql, jobConfiguration);
       } catch (InterruptedException ex) {
-        span.recordException(ex);
-        span.setStatus(StatusCode.ERROR, ex.getMessage());
         throw new BigQueryJdbcRuntimeException(ex);
-      } catch (Exception ex) {
-        span.recordException(ex);
-        span.setStatus(StatusCode.ERROR, ex.getMessage());
-        throw ex;
       }
       return getCurrentResultSet() != null;
+    } catch (Exception ex) {
+      span.recordException(ex);
+      span.setStatus(StatusCode.ERROR, ex.getMessage());
+      throw ex;
     } finally {
       span.end();
     }
