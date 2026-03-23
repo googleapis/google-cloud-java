@@ -1,0 +1,8 @@
+releaseType: java-yoshi
+bumpMinorPreMajor: true
+handleGHRelease: true
+branches:
+    - branch: 1.21.x
+    - branch: protobuf-4.x-rc
+      manifest: true
+extraFiles: ["README.md"]

@@ -1,0 +1,30 @@
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+name: Integration tests against emulator
+jobs:
+  units:
+    runs-on: ubuntu-latest
+
+    services:
+      emulator:
+        image: gcr.io/cloud-spanner-emulator/emulator:latest
+        ports:
+          - 9010:9010
+          - 9020:9020
+
+    steps:
+    - uses: actions/checkout@v6
+    - uses: actions/setup-java@v5
+      with:
+        distribution: temurin
+        java-version: 8
+    - run: java -version
+    - run: .kokoro/build.sh
+    - run: mvn -B -Dspanner.testenv.instance="" -Penable-integration-tests -DtrimStackTrace=false -Dclirr.skip=true -Denforcer.skip=true -fae verify
+      env:
+        JOB_TYPE: test
+        SPANNER_EMULATOR_HOST: localhost:9010
+        GOOGLE_CLOUD_PROJECT: emulator-test-project

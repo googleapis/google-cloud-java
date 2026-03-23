@@ -23,6 +23,7 @@ excluded_modules=(
   'java-bigquerystorage'
   'java-datastore'
   'java-logging-logback'
+  'java-spanner-jdbc'
 )
 
 function retry_with_backoff {
