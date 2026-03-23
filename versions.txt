@@ -982,3 +982,4 @@ proto-google-cloud-hypercomputecluster-v1:0.8.0:0.9.0-SNAPSHOT
 grpc-google-cloud-hypercomputecluster-v1:0.8.0:0.9.0-SNAPSHOT
 proto-google-cloud-biglake-v1beta:0.76.0:0.77.0-SNAPSHOT
 grpc-google-cloud-biglake-v1beta:0.76.0:0.77.0-SNAPSHOT
+google-cloud-spanner-jdbc:2.35.4:2.35.5-SNAPSHOT
