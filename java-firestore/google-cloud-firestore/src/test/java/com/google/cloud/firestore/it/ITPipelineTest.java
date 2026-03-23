@@ -3577,6 +3577,89 @@ public class ITPipelineTest extends ITBaseTest {
   }
 
   @Test
+  public void testIsType() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(collection.getPath())
+            .replaceWith(
+                Expression.map(
+                    map(
+                        "int",
+                        1,
+                        "float",
+                        1.1,
+                        "str",
+                        "a string",
+                        "bool",
+                        true,
+                        "null",
+                        null,
+                        "geoPoint",
+                        new GeoPoint(0.1, 0.2),
+                        "timestamp",
+                        Timestamp.ofTimeSecondsAndNanos(123456, 0),
+                        "bytes",
+                        com.google.cloud.firestore.Blob.fromBytes(new byte[] {1, 2, 3}),
+                        "docRef",
+                        collection.document("bar"),
+                        "vector",
+                        vector(new double[] {1.0, 2.0, 3.0}),
+                        "map",
+                        Expression.map(map("numberK", 1, "stringK", "a string")),
+                        "array",
+                        array(1, 2, true))))
+            .select(
+                Expression.isType("int", "int64").as("isInt64"),
+                Expression.isType("int", "number").as("isInt64IsNumber"),
+                Expression.isType("int", "decimal128").as("isInt64IsDecimal128"),
+                Expression.isType("float", "float64").as("isFloat64"),
+                Expression.isType("float", "number").as("isFloat64IsNumber"),
+                Expression.isType("float", "decimal128").as("isFloat64IsDecimal128"),
+                Expression.isType("str", "string").as("isStr"),
+                Expression.isType("str", "int64").as("isStrNum"),
+                Expression.isType("int", "string").as("isNumStr"),
+                Expression.isType("bool", "boolean").as("isBool"),
+                Expression.isType("null", "null").as("isNull"),
+                Expression.isType("geoPoint", "geo_point").as("isGeoPoint"),
+                Expression.isType("timestamp", "timestamp").as("isTimestamp"),
+                Expression.isType("bytes", "bytes").as("isBytes"),
+                Expression.isType("docRef", "reference").as("isDocRef"),
+                Expression.isType("vector", "vector").as("isVector"),
+                Expression.isType("map", "map").as("isMap"),
+                Expression.isType("array", "array").as("isArray"),
+                Expression.isType(constant(1), "int64").as("exprIsInt64"),
+                field("int").isType("int64").as("staticIsInt64"))
+            .limit(1)
+            .execute()
+            .get()
+            .getResults();
+    assertThat(data(results))
+        .containsExactly(
+            map(
+                "isInt64", true,
+                "isInt64IsNumber", true,
+                "isInt64IsDecimal128", false,
+                "isFloat64", true,
+                "isFloat64IsNumber", true,
+                "isFloat64IsDecimal128", false,
+                "isStr", true,
+                "isStrNum", false,
+                "isNumStr", false,
+                "isBool", true,
+                "isNull", true,
+                "isGeoPoint", true,
+                "isTimestamp", true,
+                "isBytes", true,
+                "isDocRef", true,
+                "isVector", true,
+                "isMap", true,
+                "isArray", true,
+                "exprIsInt64", true,
+                "staticIsInt64", true));
+  }
+
+  @Test
   public void testExplainWithError() {
     assumeFalse(
         "Explain with error is not supported against the emulator.",
