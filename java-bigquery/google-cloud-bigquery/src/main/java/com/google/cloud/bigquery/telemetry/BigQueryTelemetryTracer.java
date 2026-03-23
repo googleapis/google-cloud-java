@@ -20,6 +20,7 @@ import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
+import com.google.cloud.bigquery.Version;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.StatusCode;
@@ -70,8 +71,8 @@ public final class BigQueryTelemetryTracer {
     span.setAttribute(GCP_CLIENT_SERVICE, BQ_GCP_CLIENT_SERVICE)
         .setAttribute(GCP_CLIENT_REPO, BQ_GCP_CLIENT_REPO)
         .setAttribute(GCP_CLIENT_ARTIFACT, BQ_GCP_CLIENT_ARTIFACT)
-        .setAttribute(GCP_CLIENT_LANGUAGE, BQ_GCP_CLIENT_LANGUAGE);
-    // TODO: add version
+        .setAttribute(GCP_CLIENT_LANGUAGE, BQ_GCP_CLIENT_LANGUAGE)
+        .setAttribute(GCP_CLIENT_VERSION, Version.VERSION);
   }
 
   /**

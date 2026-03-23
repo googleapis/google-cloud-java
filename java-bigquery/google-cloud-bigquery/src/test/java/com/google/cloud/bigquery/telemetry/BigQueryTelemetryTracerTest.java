@@ -23,6 +23,7 @@ import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpResponseException;
+import com.google.cloud.bigquery.Version;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
@@ -162,6 +163,30 @@ public class BigQueryTelemetryTracerTest {
     assertEquals("Exception", spanData.getAttributes().get(BigQueryTelemetryTracer.STATUS_MESSAGE));
     assertEquals(
         "CLIENT_UNKNOWN_ERROR", spanData.getAttributes().get(BigQueryTelemetryTracer.ERROR_TYPE));
+  }
+
+  @Test
+  public void testAddCommonAttributeToSpan() {
+    BigQueryTelemetryTracer.addCommonAttributeToSpan(span);
+    span.end();
+
+    List<SpanData> spans = spanExporter.getFinishedSpanItems();
+    SpanData spanData = spans.get(0);
+
+    assertEquals(
+        BigQueryTelemetryTracer.BQ_GCP_CLIENT_SERVICE,
+        spanData.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_SERVICE));
+    assertEquals(
+        BigQueryTelemetryTracer.BQ_GCP_CLIENT_REPO,
+        spanData.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_REPO));
+    assertEquals(
+        BigQueryTelemetryTracer.BQ_GCP_CLIENT_ARTIFACT,
+        spanData.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_ARTIFACT));
+    assertEquals(
+        BigQueryTelemetryTracer.BQ_GCP_CLIENT_LANGUAGE,
+        spanData.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_LANGUAGE));
+    assertEquals(
+        Version.VERSION, spanData.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_VERSION));
   }
 
   private GoogleJsonResponseException createException(

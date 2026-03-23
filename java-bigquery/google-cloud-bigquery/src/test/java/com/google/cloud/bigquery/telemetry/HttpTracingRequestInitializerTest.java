@@ -42,6 +42,7 @@ import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.testing.http.MockHttpTransport;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
+import com.google.cloud.bigquery.Version;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.Tracer;
@@ -365,6 +366,8 @@ public class HttpTracingRequestInitializerTest {
     assertEquals(
         responseCode,
         span.getAttributes().get(HttpTracingRequestInitializer.HTTP_RESPONSE_STATUS_CODE));
+    assertEquals(
+        Version.VERSION, span.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_VERSION));
     assertEquals(
         method, span.getAttributes().get(HttpTracingRequestInitializer.HTTP_REQUEST_METHOD));
     if (requestBodySize >= 0) {
