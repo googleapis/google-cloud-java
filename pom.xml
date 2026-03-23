@@ -235,6 +235,7 @@
     <module>java-translate</module>
     <module>java-valkey</module>
     <module>java-vectorsearch</module>
+    <module>java-vertexai</module>
     <module>java-video-intelligence</module>
     <module>java-video-live-stream</module>
     <module>java-video-stitcher</module>
