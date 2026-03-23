@@ -141,6 +141,7 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
     // TODO handle chunked responses
   }
 
+  /* removes credentials from url */
   private static String getSanitizedUrl(HttpRequest request) {
     GenericUrl url = request.getUrl();
     if (url == null) {
@@ -154,7 +155,7 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
       }
     }
     String urlString = clone.build();
-    // redact credentials sent as part of the domain
+    // redact credentials sent as part of the address
     return urlString.replaceAll("^(https?://)[^@/]+@", "$1REDACTED:REDACTED@");
   }
 }
