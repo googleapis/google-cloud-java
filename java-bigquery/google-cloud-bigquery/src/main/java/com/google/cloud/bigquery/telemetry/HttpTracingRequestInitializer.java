@@ -158,5 +158,6 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
         clone.put(key, "REDACTED");
       }
     }
-    return clone.build();  }
+    return clone.build();
+  }
 }
