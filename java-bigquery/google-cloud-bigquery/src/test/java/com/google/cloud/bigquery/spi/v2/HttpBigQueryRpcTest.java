@@ -149,6 +149,11 @@ public class HttpBigQueryRpcTest {
     assertEquals(service, rpcSpan.getAttributes().get(AttributeKey.stringKey("bq.rpc.service")));
     assertEquals(method, rpcSpan.getAttributes().get(AttributeKey.stringKey("bq.rpc.method")));
     assertEquals("http", rpcSpan.getAttributes().get(AttributeKey.stringKey("bq.rpc.system")));
+    if (attributes != null && attributes.containsKey("gcp.resource.destination.id")) {
+      assertEquals(
+          attributes.get("gcp.resource.destination.id"),
+          rpcSpan.getAttributes().get(BigQueryTelemetryTracer.GCP_DESTINATION_ID));
+    }
 
     if (attributes != null) {
       for (Map.Entry<String, String> entry : attributes.entrySet()) {
@@ -234,11 +239,17 @@ public class HttpBigQueryRpcTest {
       rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
 
       verifyRequest("GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID);
+      Map<String, String> expectedAttributes = new HashMap<>();
+      expectedAttributes.put("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID);
+      expectedAttributes.put(
+          "gcp.resource.destination.id",
+          "//bigquery.googleapis.com/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID);
+
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.getDataset",
           "DatasetService",
           "GetDataset",
-          Collections.singletonMap("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID));
+          expectedAttributes);
     }
 
     @Test
@@ -249,11 +260,17 @@ public class HttpBigQueryRpcTest {
       rpc.listDatasetsSkipExceptionTranslation(PROJECT_ID, new HashMap<>());
 
       verifyRequest("GET", "/projects/" + PROJECT_ID + "/datasets");
+      Map<String, String> expectedAttributes = new HashMap<>();
+      expectedAttributes.put("bq.rpc.next_page_token", "next-page-token");
+      expectedAttributes.put(
+          "gcp.resource.destination.id",
+          "//bigquery.googleapis.com/projects/" + PROJECT_ID + "/datasets");
+
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.listDatasets",
           "DatasetService",
           "ListDatasets",
-          Collections.singletonMap("bq.rpc.next_page_token", "next-page-token"));
+          expectedAttributes);
     }
 
     @Test
@@ -267,11 +284,17 @@ public class HttpBigQueryRpcTest {
       rpc.createSkipExceptionTranslation(dataset, new HashMap<>());
 
       verifyRequest("POST", "/projects/" + PROJECT_ID + "/datasets");
+      Map<String, String> expectedAttributes = new HashMap<>();
+      expectedAttributes.put("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID);
+      expectedAttributes.put(
+          "gcp.resource.destination.id",
+          "//bigquery.googleapis.com/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID);
+
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.createDataset",
           "DatasetService",
           "InsertDataset",
-          Collections.singletonMap("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID));
+          expectedAttributes);
     }
 
     @Test
@@ -286,7 +309,9 @@ public class HttpBigQueryRpcTest {
           "com.google.cloud.bigquery.BigQueryRpc.deleteDataset",
           "DatasetService",
           "DeleteDataset",
-          null);
+          Collections.singletonMap(
+              "gcp.resource.destination.id",
+              "//bigquery.googleapis.com/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID));
     }
 
     @Test
@@ -300,11 +325,17 @@ public class HttpBigQueryRpcTest {
       rpc.patchSkipExceptionTranslation(dataset, new HashMap<>());
 
       verifyRequest("PATCH", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID);
+      Map<String, String> expectedAttributes = new HashMap<>();
+      expectedAttributes.put("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID);
+      expectedAttributes.put(
+          "gcp.resource.destination.id",
+          "//bigquery.googleapis.com/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID);
+
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.patchDataset",
           "DatasetService",
           "PatchDataset",
-          Collections.singletonMap("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID));
+          expectedAttributes);
     }
 
     @Test
