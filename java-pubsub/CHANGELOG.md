@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.150.0](https://github.com/googleapis/java-pubsub/compare/v1.149.0...v1.150.0) (2026-03-23)
+
+
+### Features
+
+* Add BigtableConfig type ([f69de7e](https://github.com/googleapis/java-pubsub/commit/f69de7ee2cb5b96adbf3fc5b11e1f8a3bbbd0bee))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.68.0 ([f69de7e](https://github.com/googleapis/java-pubsub/commit/f69de7ee2cb5b96adbf3fc5b11e1f8a3bbbd0bee))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.58.0 ([#2709](https://github.com/googleapis/java-pubsub/issues/2709)) ([e82a6ff](https://github.com/googleapis/java-pubsub/commit/e82a6ff52154f3acaaf8195a90e2966666353609))
+
 ## [1.149.0](https://github.com/googleapis/java-pubsub/compare/v1.148.0...v1.149.0) (2026-02-26)
 
 
