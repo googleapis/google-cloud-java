@@ -16,7 +16,6 @@
 
 package com.google.cloud.bigquery.telemetry;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 
 /**
