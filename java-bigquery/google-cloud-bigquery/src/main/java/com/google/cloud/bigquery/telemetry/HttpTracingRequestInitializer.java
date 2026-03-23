@@ -52,6 +52,10 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
 
   @VisibleForTesting static final String HTTP_RPC_SYSTEM_NAME = "http";
 
+  private static final java.util.Set<String> REDACTED_QUERY_PARAMETERS =
+      com.google.common.collect.ImmutableSet.of(
+          "AWSAccessKeyId", "Signature", "sig", "X-Goog-Signature", "upload_id");
+
   private final HttpRequestInitializer delegate;
   private final Tracer tracer;
 
@@ -74,9 +78,7 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
       // No active span to exists, skip instrumentation
       return;
     }
-    String host = request.getUrl().getHost();
-    int port = request.getUrl().getPort();
-    addInitialHttpAttributesToSpan(span, host, port);
+    addInitialHttpAttributesToSpan(span, request);
 
     HttpResponseInterceptor originalInterceptor = request.getResponseInterceptor();
     request.setResponseInterceptor(
@@ -99,14 +101,16 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
   }
 
   /** Add initial HTTP attributes to the existing active span */
-  private void addInitialHttpAttributesToSpan(Span span, String host, Integer port) {
+  private void addInitialHttpAttributesToSpan(Span span, HttpRequest request) {
     BigQueryTelemetryTracer.addCommonAttributeToSpan(span);
     span.setAttribute(BigQueryTelemetryTracer.RPC_SYSTEM_NAME, HTTP_RPC_SYSTEM_NAME);
+    String host = request.getUrl().getHost();
     span.setAttribute(BigQueryTelemetryTracer.SERVER_ADDRESS, host);
-    if (port != null && port > 0) {
-      span.setAttribute(BigQueryTelemetryTracer.SERVER_PORT, port.longValue());
+    int port = request.getUrl().getPort();
+    if (port > 0) {
+      span.setAttribute(BigQueryTelemetryTracer.SERVER_PORT, (long) port);
     }
-    // TODO add full sanitized url, url domain, request method
+    span.setAttribute(URL_FULL, getSanitizedUrl(request));
   }
 
   private static void addCommonResponseAttributesToSpan(
@@ -135,5 +139,22 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
       span.setAttribute(HTTP_RESPONSE_BODY_SIZE, contentLength);
     }
     // TODO handle chunked responses
+  }
+
+  private static String getSanitizedUrl(HttpRequest request) {
+    GenericUrl url = request.getUrl();
+    if (url == null) {
+      return null;
+    }
+    // redact credentials passes query params
+    GenericUrl clone = url.clone();
+    for (String key : clone.keySet()) {
+      if (REDACTED_QUERY_PARAMETERS.contains(key)) {
+        clone.put(key, "REDACTED");
+      }
+    }
+    String urlString = clone.build();
+    // redact credentials sent as part of the domain
+    return urlString.replaceAll("^(https?://)[^@/]+@", "$1REDACTED:REDACTED@");
   }
 }
