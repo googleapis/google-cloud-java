@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigquery.spi.v2;
 
+import static com.google.cloud.bigquery.spi.v2.HttpBigQueryRpc.RESOURCE_PROJECT_PREFIX;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -78,7 +79,6 @@ public class HttpBigQueryRpcTest {
   private static final String JOB_ID = "test-job";
   private static final String LOCATION = "test-location";
 
-  private static final String RESOURCE_PROJECT_PREFIX = "//bigquery.googleapis.com/projects/";
   private InMemorySpanExporter spanExporter;
   private MockLowLevelHttpResponse mockResponse;
   private String lastRequestMethod;

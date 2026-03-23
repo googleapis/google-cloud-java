@@ -90,7 +90,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   private static final String BASE_RESUMABLE_URI = "upload/bigquery/v2/projects/";
   static final String HTTP_TRACING_DEV_GATE_PROPERTY =
       "com.google.cloud.bigquery.http.tracing.dev.enabled";
-  private static final String RESOURCE_PROJECT_PREFIX = "//bigquery.googleapis.com/projects/";
+  static final String RESOURCE_PROJECT_PREFIX = "//bigquery.googleapis.com/projects/";
   // see:
   // https://cloud.google.com/bigquery/loading-data-post-request#resume-upload
   private static final int HTTP_RESUME_INCOMPLETE = 308;
