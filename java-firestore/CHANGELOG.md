@@ -1,5 +1,27 @@
 # Changelog
 
+## [3.39.0](https://github.com/googleapis/java-firestore/compare/v3.38.0...v3.39.0) (2026-03-23)
+
+
+### Features
+
+* Add arithmetic expressions ([#2333](https://github.com/googleapis/java-firestore/issues/2333)) ([491c211](https://github.com/googleapis/java-firestore/commit/491c211e226fcfbf007dd73e2ae6c2450f3b5311))
+* Add first, last, arrayAgg and arrayAggDistinct expressions ([#2334](https://github.com/googleapis/java-firestore/issues/2334)) ([2be5989](https://github.com/googleapis/java-firestore/commit/2be59896fef7a7bb458cfaf06344654e82acc74c))
+* Expose the variable definition in the Cloud Firestore API ([7b105c5](https://github.com/googleapis/java-firestore/commit/7b105c51347b6b6c60fdf4d59ec8c0a7780ace5b))
+* **firestore:** Add array expressions ([#2331](https://github.com/googleapis/java-firestore/issues/2331)) ([5272549](https://github.com/googleapis/java-firestore/commit/527254966b573093319cc4468c1dd6cde44d01e0))
+* **firestore:** Global option to turn on implicit orderby ([#2337](https://github.com/googleapis/java-firestore/issues/2337)) ([24d3e17](https://github.com/googleapis/java-firestore/commit/24d3e173cbcb077c6b89d4361e93f078cf23a2b7))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.68.0 ([8bcdd6b](https://github.com/googleapis/java-firestore/commit/8bcdd6bc102aaebe5194bac6f53fb75c32f86bba))
+* Fix the wrong return type for Pipeline.as(String alias) ([#2330](https://github.com/googleapis/java-firestore/issues/2330)) ([6371fd3](https://github.com/googleapis/java-firestore/commit/6371fd3332c26230500620e4df2ff71155f35cb7))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.58.0 ([#2332](https://github.com/googleapis/java-firestore/issues/2332)) ([f50a9e5](https://github.com/googleapis/java-firestore/commit/f50a9e59ab25ff30120f8ea69a8c4ed14e85061a))
+
 ## [3.38.0](https://github.com/googleapis/java-firestore/compare/v3.37.0...v3.38.0) (2026-02-26)
 
 
