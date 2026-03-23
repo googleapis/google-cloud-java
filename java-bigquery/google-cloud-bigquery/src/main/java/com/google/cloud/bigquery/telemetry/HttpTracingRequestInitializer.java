@@ -147,15 +147,16 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
     if (url == null) {
       return null;
     }
-    // redact credentials passes query params
     GenericUrl clone = url.clone();
+    // redact credentials sent as part of the address
+    if (clone.getUserInfo() != null) {
+      clone.setUserInfo("REDACTED:REDACTED");
+    }
+    // redact credentials passed as query params
     for (String key : clone.keySet()) {
       if (REDACTED_QUERY_PARAMETERS.contains(key)) {
         clone.put(key, "REDACTED");
       }
     }
-    String urlString = clone.build();
-    // redact credentials sent as part of the address
-    return urlString.replaceAll("^(https?://)[^@/]+@", "$1REDACTED:REDACTED@");
-  }
+    return clone.build();  }
 }

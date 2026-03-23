@@ -243,6 +243,7 @@ public class HttpTracingRequestInitializerTest {
     String urlFull = span.getAttributes().get(HttpTracingRequestInitializer.URL_FULL);
 
     assertFalse(urlFull.contains("user:pass"));
+    assertTrue(urlFull.contains("REDACTED:REDACTED@"));
   }
 
   @Test
