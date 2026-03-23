@@ -144,8 +144,8 @@ public class HttpBigQueryRpcTest {
       String spanName,
       String service,
       String method,
-      String destinationId,
-      Map<String, String> attributes) {
+      String gcpResourceDestinationId,
+          Map<String, String> attributes) {
     List<SpanData> spans = spanExporter.getFinishedSpanItems();
     assertThat(spans).isNotEmpty();
     SpanData rpcSpan =
@@ -156,7 +156,7 @@ public class HttpBigQueryRpcTest {
     assertEquals("http", rpcSpan.getAttributes().get(AttributeKey.stringKey("bq.rpc.system")));
 
     assertEquals(
-        destinationId, rpcSpan.getAttributes().get(BigQueryTelemetryTracer.GCP_DESTINATION_ID));
+        gcpResourceDestinationId, rpcSpan.getAttributes().get(BigQueryTelemetryTracer.GCP_DESTINATION_ID));
 
     if (attributes != null) {
       for (Map.Entry<String, String> entry : attributes.entrySet()) {
