@@ -43,7 +43,7 @@ jobs:
           java-version: 17
       - name: Run GoogleSQL sample tests
         run: mvn test
-        working-directory: samples/spring-data-mybatis/googlesql
+        working-directory: java-spanner-jdbc/samples/spring-data-mybatis/googlesql
       - name: Run PostgreSQL sample tests
         run: mvn test
-        working-directory: samples/spring-data-mybatis/postgresql
+        working-directory: java-spanner-jdbc/samples/spring-data-mybatis/postgresql

@@ -28,6 +28,7 @@ import java.util.stream.Collectors;
 public class ConnectionPropertiesFileGenerator {
 
   public static void main(String[] args) throws IOException {
+    String filename = args.length > 0 ? args[0] : "documentation/connection_properties.md";
     StringBuilder builder =
         new StringBuilder("# Supported Connection Properties\n\n")
             .append(
@@ -57,8 +58,7 @@ public class ConnectionPropertiesFileGenerator {
           .append(connectionProperty.getContext())
           .append(" |\n");
     }
-    try (BufferedWriter writer =
-        new BufferedWriter(new FileWriter("documentation/connection_properties.md"))) {
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
       writer.write(builder.toString());
     }
   }

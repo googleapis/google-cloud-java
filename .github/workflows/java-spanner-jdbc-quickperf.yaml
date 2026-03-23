@@ -43,4 +43,4 @@ jobs:
           java-version: 17
       - name: Run tests
         run: mvn test
-        working-directory: samples/quickperf
+        working-directory: java-spanner-jdbc/samples/quickperf
