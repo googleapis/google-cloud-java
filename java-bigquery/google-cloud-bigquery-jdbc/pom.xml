@@ -166,6 +166,22 @@
     <artifactId>google-cloud-bigquery-parent</artifactId>
     <version>2.62.0</version><!-- {x-version-update:google-cloud-bigquery:current} -->
   </parent>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>2.0.16</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.re2j</groupId>
+        <artifactId>re2j</artifactId>
+        <version>1.8</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <dependencies>
     <dependency>
       <groupId>com.google.cloud</groupId>
@@ -297,24 +313,15 @@
     <dependency>
       <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-sdk</artifactId>
-      <version>1.37.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.cloud.opentelemetry</groupId>
       <artifactId>exporter-trace</artifactId>
       <version>0.33.0</version>
     </dependency>
-
-    <!-- Explicitly pin versions to satisfy maven-enforcer RequireUpperBoundDeps -->
     <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>2.0.16</version>
-    </dependency>
-    <dependency>
-      <groupId>com.google.re2j</groupId>
-      <artifactId>re2j</artifactId>
-      <version>1.8</version>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk-trace</artifactId>
     </dependency>
 
     <!--  Test Dependencies  -->
