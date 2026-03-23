@@ -143,11 +143,7 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
 
   /** Removes credentials from URL. */
   private static String getSanitizedUrl(HttpRequest request) {
-    GenericUrl url = request.getUrl();
-    if (url == null) {
-      return null;
-    }
-    GenericUrl clone = url.clone();
+    GenericUrl clone = request.getUrl().clone();
     // redact credentials sent as part of the address
     if (clone.getUserInfo() != null) {
       clone.setUserInfo("REDACTED:REDACTED");
