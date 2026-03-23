@@ -53,6 +53,7 @@ public final class BigQueryTelemetryTracer {
       AttributeKey.stringKey("gcp.resource.destination.id");
   public static final AttributeKey<String> RPC_SYSTEM_NAME =
       AttributeKey.stringKey("rpc.system.name");
+  public static final AttributeKey<String> RPC_METHOD = AttributeKey.stringKey("rpc.method");
 
   // Common Error Attributes
   public static final AttributeKey<String> ERROR_TYPE = AttributeKey.stringKey("error.type");

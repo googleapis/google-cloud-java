@@ -1750,7 +1750,8 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .setSpanKind(SpanKind.CLIENT)
             .setAttribute("bq.rpc.service", service)
             .setAttribute("bq.rpc.method", method)
-            .setAttribute("bq.rpc.system", "http");
+            .setAttribute("bq.rpc.system", "http")
+            .setAttribute(BigQueryTelemetryTracer.RPC_METHOD, spanName);
 
     if (options != null) {
       builder.setAllAttributes(otelAttributesFromOptions(options));
