@@ -141,7 +141,7 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
     // TODO handle chunked responses
   }
 
-  /* removes credentials from url */
+  /** Removes credentials from URL. */
   private static String getSanitizedUrl(HttpRequest request) {
     GenericUrl url = request.getUrl();
     if (url == null) {
