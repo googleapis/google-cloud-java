@@ -78,6 +78,7 @@ public class HttpBigQueryRpcTest {
   private static final String JOB_ID = "test-job";
   private static final String LOCATION = "test-location";
 
+  private static final String RESOURCE_PROJECT_PREFIX = "//bigquery.googleapis.com/projects/";
   private InMemorySpanExporter spanExporter;
   private MockLowLevelHttpResponse mockResponse;
   private String lastRequestMethod;
@@ -243,7 +244,7 @@ public class HttpBigQueryRpcTest {
       expectedAttributes.put("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID);
       expectedAttributes.put(
           "gcp.resource.destination.id",
-          "//bigquery.googleapis.com/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID);
+          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID);
 
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.getDataset",
@@ -263,8 +264,7 @@ public class HttpBigQueryRpcTest {
       Map<String, String> expectedAttributes = new HashMap<>();
       expectedAttributes.put("bq.rpc.next_page_token", "next-page-token");
       expectedAttributes.put(
-          "gcp.resource.destination.id",
-          "//bigquery.googleapis.com/projects/" + PROJECT_ID + "/datasets");
+          "gcp.resource.destination.id", RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets");
 
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.listDatasets",
@@ -288,7 +288,7 @@ public class HttpBigQueryRpcTest {
       expectedAttributes.put("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID);
       expectedAttributes.put(
           "gcp.resource.destination.id",
-          "//bigquery.googleapis.com/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID);
+          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID);
 
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.createDataset",
@@ -311,7 +311,7 @@ public class HttpBigQueryRpcTest {
           "DeleteDataset",
           Collections.singletonMap(
               "gcp.resource.destination.id",
-              "//bigquery.googleapis.com/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID));
+          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID));
     }
 
     @Test
@@ -329,7 +329,7 @@ public class HttpBigQueryRpcTest {
       expectedAttributes.put("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID);
       expectedAttributes.put(
           "gcp.resource.destination.id",
-          "//bigquery.googleapis.com/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID);
+          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID);
 
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.patchDataset",
