@@ -50,13 +50,9 @@ case ${JOB_TYPE} in
     retry_with_backoff 3 10 \
       mvn install \
         -B -ntp \
+        -Pfast \
         -Dorg.slf4j.simpleLogger.showDateTime=true \
         -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-        -Dclirr.skip=true \
-        -Denforcer.skip=true \
-        -Dcheckstyle.skip=true \
-        -Dflatten.skip=true \
-        -Danimal.sniffer.skip=true \
         -Dmaven.wagon.http.retryHandler.count=5 \
         --also-make \
          ${SUREFIRE_JVM_OPT}

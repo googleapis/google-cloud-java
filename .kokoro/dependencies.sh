@@ -60,11 +60,9 @@ fi
 # this should run maven enforcer
 retry_with_backoff 3 10 \
   mvn install -B -V -ntp \
-    -DskipTests=true \
-    -Dmaven.javadoc.skip=true \
-    -Dclirr.skip=true
+  -Pfast -DskipTests=true -Dmaven.javadoc.skip=true
 
-mvn -B dependency:analyze -DfailOnWarning=true -Dcheckstyle.skip=true
+mvn -B dependency:analyze -Pfast -DfailOnWarning=true
 
 if [[ -n "${BUILD_SUBDIR}" ]]
 then
