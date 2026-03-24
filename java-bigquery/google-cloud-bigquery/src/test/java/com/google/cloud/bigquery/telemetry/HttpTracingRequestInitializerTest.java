@@ -338,22 +338,24 @@ public class HttpTracingRequestInitializerTest {
   @Test
   public void testResendCountIsSetFromBigQueryRetryAlgorithm() throws IOException {
     com.google.cloud.bigquery.BigQueryRetryAlgorithm.setCurrentAttempt(3);
-    HttpTransport transport = createTransport();
-    HttpRequest request = buildGetRequest(transport, initializer, BASE_URL);
+    try {
+      HttpTransport transport = createTransport();
+      HttpRequest request = buildGetRequest(transport, initializer, BASE_URL);
 
-    HttpResponse response = request.execute();
-    response.disconnect();
+      HttpResponse response = request.execute();
+      response.disconnect();
 
-    spanScope.close();
-    parentSpan.end();
+      spanScope.close();
+      parentSpan.end();
 
-    List<SpanData> spans = spanExporter.getFinishedSpanItems();
-    assertEquals(1, spans.size());
-    SpanData span = spans.get(0);
-    assertEquals(
-        3L, span.getAttributes().get(HttpTracingRequestInitializer.HTTP_REQUEST_RESEND_COUNT));
-
-    com.google.cloud.bigquery.BigQueryRetryAlgorithm.setCurrentAttempt(0);
+      List<SpanData> spans = spanExporter.getFinishedSpanItems();
+      assertEquals(1, spans.size());
+      SpanData span = spans.get(0);
+      assertEquals(
+          3L, span.getAttributes().get(HttpTracingRequestInitializer.HTTP_REQUEST_RESEND_COUNT));
+    } finally {
+      com.google.cloud.bigquery.BigQueryRetryAlgorithm.setCurrentAttempt(0);
+    }
   }
 
   private static HttpTransport createTransport() {
