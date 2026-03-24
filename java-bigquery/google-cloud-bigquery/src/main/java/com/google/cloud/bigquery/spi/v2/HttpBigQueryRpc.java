@@ -2144,10 +2144,13 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .setSpanKind(SpanKind.CLIENT)
             .setAttribute("bq.rpc.service", service)
             .setAttribute("bq.rpc.method", method)
-            .setAttribute("bq.rpc.system", "http")
-            .setAttribute(
-                BigQueryTelemetryTracer.GCP_RESOURCE_DESTINATION_ID, gcpResourceDestinationId)
-            .setAttribute(BigQueryTelemetryTracer.URL_TEMPLATE, urlTemplate);
+            .setAttribute("bq.rpc.system", "http");
+    if (isHttpTracingEnabled()) {
+      builder
+          .setAttribute(
+              BigQueryTelemetryTracer.GCP_RESOURCE_DESTINATION_ID, gcpResourceDestinationId)
+          .setAttribute(BigQueryTelemetryTracer.URL_TEMPLATE, urlTemplate);
+    }
 
     if (options != null) {
       builder.setAllAttributes(otelAttributesFromOptions(options));
