@@ -587,7 +587,7 @@ grpc-google-cloud-tpu-v2:2.89.0:2.90.0-SNAPSHOT
 google-cloud-datalineage:0.80.0:0.81.0-SNAPSHOT
 proto-google-cloud-datalineage-v1:0.80.0:0.81.0-SNAPSHOT
 grpc-google-cloud-datalineage-v1:0.80.0:0.81.0-SNAPSHOT
-google-iam-policy:1.86.0:1.87.0-SNAPSHOT
+google-iam-policy:1.62.0:1.62.1-SNAPSHOT
 proto-google-cloud-build-v2:3.90.0:3.91.0-SNAPSHOT
 grpc-google-cloud-build-v2:3.90.0:3.91.0-SNAPSHOT
 google-cloud-advisorynotifications:0.77.0:0.78.0-SNAPSHOT
@@ -993,7 +993,6 @@ proto-google-iam-v1:1.62.0:1.62.1-SNAPSHOT
 grpc-google-iam-v1:1.62.0:1.62.1-SNAPSHOT
 proto-google-iam-v2beta:1.62.0:1.62.1-SNAPSHOT
 grpc-google-iam-v2beta:1.62.0:1.62.1-SNAPSHOT
-google-iam-policy:1.62.0:1.62.1-SNAPSHOT
 proto-google-iam-v2:1.62.0:1.62.1-SNAPSHOT
 grpc-google-iam-v2:1.62.0:1.62.1-SNAPSHOT
 google-cloud-core:2.66.0:2.66.1-SNAPSHOT
@@ -1005,3 +1004,13 @@ proto-google-iam-v3:1.62.0:1.62.1-SNAPSHOT
 grpc-google-iam-v3:1.62.0:1.62.1-SNAPSHOT
 proto-google-iam-v3beta:1.62.0:1.62.1-SNAPSHOT
 grpc-google-iam-v3beta:1.62.0:1.62.1-SNAPSHOT
+proto-google-cloud-spanner-admin-instance-v1:6.112.0:6.112.1-SNAPSHOT
+proto-google-cloud-spanner-v1:6.112.0:6.112.1-SNAPSHOT
+proto-google-cloud-spanner-admin-database-v1:6.112.0:6.112.1-SNAPSHOT
+grpc-google-cloud-spanner-v1:6.112.0:6.112.1-SNAPSHOT
+grpc-google-cloud-spanner-admin-instance-v1:6.112.0:6.112.1-SNAPSHOT
+grpc-google-cloud-spanner-admin-database-v1:6.112.0:6.112.1-SNAPSHOT
+google-cloud-spanner:6.112.0:6.112.1-SNAPSHOT
+google-cloud-spanner-executor:6.112.0:6.112.1-SNAPSHOT
+proto-google-cloud-spanner-executor-v1:6.112.0:6.112.1-SNAPSHOT
+grpc-google-cloud-spanner-executor-v1:6.112.0:6.112.1-SNAPSHOT

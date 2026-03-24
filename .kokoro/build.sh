@@ -245,10 +245,12 @@ case ${JOB_TYPE} in
                 if [ -f "${dir}/pom.xml" ] && [ "${dir}" != "." ]; then
                     # Filter out directories not participating in the default formatting reactor:
                     # - samples are handwritten by developers
+                    # - benchmarks are handwritten by developers
                     # - proto-*/grpc-* are generated code and should use the compiler format
                     # - *-bom/parents are POM-only and contain no Java source
                     if [[ "${dir}" != *"samples"* ]] && \
                        [[ "${dir}" != *"java-showcase"* ]] && \
+                       [[ "$(basename "${dir}")" != *"benchmark"* ]] && \
                        [[ "$(basename "${dir}")" != "proto-google-"* ]] && \
                        [[ "$(basename "${dir}")" != "grpc-google-"* ]] && \
                        [[ "$(basename "${dir}")" != *"-bom" ]] && \
