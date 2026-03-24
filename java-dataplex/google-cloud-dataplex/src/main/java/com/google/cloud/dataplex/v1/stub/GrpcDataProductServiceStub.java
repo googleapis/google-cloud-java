@@ -320,6 +320,7 @@ public class GrpcDataProductServiceStub extends DataProductServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteDataProductRequest, Operation> deleteDataProductTransportSettings =
         GrpcCallSettings.<DeleteDataProductRequest, Operation>newBuilder()
@@ -330,6 +331,7 @@ public class GrpcDataProductServiceStub extends DataProductServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetDataProductRequest, DataProduct> getDataProductTransportSettings =
         GrpcCallSettings.<GetDataProductRequest, DataProduct>newBuilder()
@@ -340,6 +342,7 @@ public class GrpcDataProductServiceStub extends DataProductServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDataProductsRequest, ListDataProductsResponse>
         listDataProductsTransportSettings =
@@ -351,6 +354,7 @@ public class GrpcDataProductServiceStub extends DataProductServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateDataProductRequest, Operation> updateDataProductTransportSettings =
         GrpcCallSettings.<UpdateDataProductRequest, Operation>newBuilder()
@@ -372,6 +376,7 @@ public class GrpcDataProductServiceStub extends DataProductServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateDataAssetRequest, Operation> updateDataAssetTransportSettings =
         GrpcCallSettings.<UpdateDataAssetRequest, Operation>newBuilder()
@@ -392,6 +397,7 @@ public class GrpcDataProductServiceStub extends DataProductServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetDataAssetRequest, DataAsset> getDataAssetTransportSettings =
         GrpcCallSettings.<GetDataAssetRequest, DataAsset>newBuilder()
@@ -402,6 +408,7 @@ public class GrpcDataProductServiceStub extends DataProductServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDataAssetsRequest, ListDataAssetsResponse>
         listDataAssetsTransportSettings =
@@ -413,6 +420,7 @@ public class GrpcDataProductServiceStub extends DataProductServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -443,6 +451,7 @@ public class GrpcDataProductServiceStub extends DataProductServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -453,6 +462,7 @@ public class GrpcDataProductServiceStub extends DataProductServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -464,6 +474,7 @@ public class GrpcDataProductServiceStub extends DataProductServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createDataProductCallable =

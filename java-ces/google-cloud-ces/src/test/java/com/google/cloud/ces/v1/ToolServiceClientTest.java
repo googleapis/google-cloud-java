@@ -92,7 +92,10 @@ public class ToolServiceClientTest {
   @Test
   public void executeToolTest() throws Exception {
     ExecuteToolResponse expectedResponse =
-        ExecuteToolResponse.newBuilder().setResponse(Struct.newBuilder().build()).build();
+        ExecuteToolResponse.newBuilder()
+            .setResponse(Struct.newBuilder().build())
+            .setVariables(Struct.newBuilder().build())
+            .build();
     mockToolService.addResponse(expectedResponse);
 
     ExecuteToolRequest request =
@@ -110,6 +113,8 @@ public class ToolServiceClientTest {
 
     Assert.assertEquals(request.getTool(), actualRequest.getTool());
     Assert.assertEquals(request.getToolsetTool(), actualRequest.getToolsetTool());
+    Assert.assertEquals(request.getVariables(), actualRequest.getVariables());
+    Assert.assertEquals(request.getContext(), actualRequest.getContext());
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getArgs(), actualRequest.getArgs());
     Assert.assertTrue(

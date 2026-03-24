@@ -162,6 +162,7 @@ public class GrpcEncryptionSpecServiceStub extends EncryptionSpecServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<InitializeEncryptionSpecRequest, Operation>
         initializeEncryptionSpecTransportSettings =

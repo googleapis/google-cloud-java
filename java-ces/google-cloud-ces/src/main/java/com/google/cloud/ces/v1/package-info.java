@@ -101,6 +101,7 @@
  *           .setDeployment(
  *               DeploymentName.of("[PROJECT]", "[LOCATION]", "[APP]", "[DEPLOYMENT]").toString())
  *           .setRecaptchaToken("recaptchaToken1978277202")
+ *           .setLiveHandoffEnabled(true)
  *           .build();
  *   GenerateChatTokenResponse response = widgetServiceClient.generateChatToken(request);
  * }

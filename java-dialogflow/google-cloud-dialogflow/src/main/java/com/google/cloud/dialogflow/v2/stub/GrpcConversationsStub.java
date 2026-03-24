@@ -306,6 +306,7 @@ public class GrpcConversationsStub extends ConversationsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListConversationsRequest, ListConversationsResponse>
         listConversationsTransportSettings =
@@ -317,6 +318,7 @@ public class GrpcConversationsStub extends ConversationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetConversationRequest, Conversation> getConversationTransportSettings =
         GrpcCallSettings.<GetConversationRequest, Conversation>newBuilder()
@@ -327,6 +329,7 @@ public class GrpcConversationsStub extends ConversationsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CompleteConversationRequest, Conversation>
         completeConversationTransportSettings =
@@ -338,6 +341,7 @@ public class GrpcConversationsStub extends ConversationsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<IngestContextReferencesRequest, IngestContextReferencesResponse>
         ingestContextReferencesTransportSettings =
@@ -350,6 +354,7 @@ public class GrpcConversationsStub extends ConversationsStub {
                       builder.add("conversation", String.valueOf(request.getConversation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getConversation())
                 .build();
     GrpcCallSettings<ListMessagesRequest, ListMessagesResponse> listMessagesTransportSettings =
         GrpcCallSettings.<ListMessagesRequest, ListMessagesResponse>newBuilder()
@@ -360,6 +365,7 @@ public class GrpcConversationsStub extends ConversationsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<SuggestConversationSummaryRequest, SuggestConversationSummaryResponse>
         suggestConversationSummaryTransportSettings =
@@ -372,6 +378,7 @@ public class GrpcConversationsStub extends ConversationsStub {
                       builder.add("conversation", String.valueOf(request.getConversation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getConversation())
                 .build();
     GrpcCallSettings<GenerateStatelessSummaryRequest, GenerateStatelessSummaryResponse>
         generateStatelessSummaryTransportSettings =
@@ -386,6 +393,7 @@ public class GrpcConversationsStub extends ConversationsStub {
                           String.valueOf(request.getStatelessConversation().getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getLatestMessage())
                 .build();
     GrpcCallSettings<GenerateStatelessSuggestionRequest, GenerateStatelessSuggestionResponse>
         generateStatelessSuggestionTransportSettings =
@@ -399,6 +407,7 @@ public class GrpcConversationsStub extends ConversationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<SearchKnowledgeRequest, SearchKnowledgeResponse>
         searchKnowledgeTransportSettings =
@@ -411,6 +420,7 @@ public class GrpcConversationsStub extends ConversationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getConversationProfile())
                 .build();
     GrpcCallSettings<GenerateSuggestionsRequest, GenerateSuggestionsResponse>
         generateSuggestionsTransportSettings =
@@ -422,6 +432,7 @@ public class GrpcConversationsStub extends ConversationsStub {
                       builder.add("conversation", String.valueOf(request.getConversation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getConversation())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

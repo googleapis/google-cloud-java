@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.ces.v1.BidiSessionClientMessage;
 import com.google.cloud.ces.v1.BidiSessionServerMessage;
@@ -54,6 +55,16 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
           MethodDescriptor.<RunSessionRequest, RunSessionResponse>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName("google.cloud.ces.v1.SessionService/RunSession")
+              .setRequestMarshaller(ProtoUtils.marshaller(RunSessionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(RunSessionResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<RunSessionRequest, RunSessionResponse>
+      streamRunSessionMethodDescriptor =
+          MethodDescriptor.<RunSessionRequest, RunSessionResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName("google.cloud.ces.v1.SessionService/StreamRunSession")
               .setRequestMarshaller(ProtoUtils.marshaller(RunSessionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RunSessionResponse.getDefaultInstance()))
               .setSampledToLocalTracing(true)
@@ -93,6 +104,8 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
           .build();
 
   private final UnaryCallable<RunSessionRequest, RunSessionResponse> runSessionCallable;
+  private final ServerStreamingCallable<RunSessionRequest, RunSessionResponse>
+      streamRunSessionCallable;
   private final BidiStreamingCallable<BidiSessionClientMessage, BidiSessionServerMessage>
       bidiRunSessionCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
@@ -154,6 +167,16 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<RunSessionRequest, RunSessionResponse> streamRunSessionTransportSettings =
+        GrpcCallSettings.<RunSessionRequest, RunSessionResponse>newBuilder()
+            .setMethodDescriptor(streamRunSessionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("config.session", String.valueOf(request.getConfig().getSession()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<BidiSessionClientMessage, BidiSessionServerMessage>
         bidiRunSessionTransportSettings =
             GrpcCallSettings.<BidiSessionClientMessage, BidiSessionServerMessage>newBuilder()
@@ -183,6 +206,9 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
     this.runSessionCallable =
         callableFactory.createUnaryCallable(
             runSessionTransportSettings, settings.runSessionSettings(), clientContext);
+    this.streamRunSessionCallable =
+        callableFactory.createServerStreamingCallable(
+            streamRunSessionTransportSettings, settings.streamRunSessionSettings(), clientContext);
     this.bidiRunSessionCallable =
         callableFactory.createBidiStreamingCallable(
             bidiRunSessionTransportSettings, settings.bidiRunSessionSettings(), clientContext);
@@ -207,6 +233,11 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
   @Override
   public UnaryCallable<RunSessionRequest, RunSessionResponse> runSessionCallable() {
     return runSessionCallable;
+  }
+
+  @Override
+  public ServerStreamingCallable<RunSessionRequest, RunSessionResponse> streamRunSessionCallable() {
+    return streamRunSessionCallable;
   }
 
   @Override

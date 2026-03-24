@@ -168,6 +168,7 @@ public class GrpcToolServiceStub extends ToolServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getTool())
             .build();
     GrpcCallSettings<RetrieveToolSchemaRequest, RetrieveToolSchemaResponse>
         retrieveToolSchemaTransportSettings =
@@ -179,6 +180,7 @@ public class GrpcToolServiceStub extends ToolServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getTool())
                 .build();
     GrpcCallSettings<RetrieveToolsRequest, RetrieveToolsResponse> retrieveToolsTransportSettings =
         GrpcCallSettings.<RetrieveToolsRequest, RetrieveToolsResponse>newBuilder()
@@ -189,6 +191,7 @@ public class GrpcToolServiceStub extends ToolServiceStub {
                   builder.add("toolset", String.valueOf(request.getToolset()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getToolset())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

@@ -199,6 +199,7 @@ public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetKnowledgeBaseRequest, KnowledgeBase> getKnowledgeBaseTransportSettings =
         GrpcCallSettings.<GetKnowledgeBaseRequest, KnowledgeBase>newBuilder()
@@ -209,6 +210,7 @@ public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateKnowledgeBaseRequest, KnowledgeBase>
         createKnowledgeBaseTransportSettings =
@@ -220,6 +222,7 @@ public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteKnowledgeBaseRequest, Empty> deleteKnowledgeBaseTransportSettings =
         GrpcCallSettings.<DeleteKnowledgeBaseRequest, Empty>newBuilder()
@@ -230,6 +233,7 @@ public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateKnowledgeBaseRequest, KnowledgeBase>
         updateKnowledgeBaseTransportSettings =
