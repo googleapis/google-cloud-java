@@ -1,0 +1,96 @@
+name: sdk-platform-java SonarCloud Build
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+env:
+  BUILD_SUBDIR: sdk-platform-java
+jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'sdk-platform-java/**'
+  build:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    name: Build
+    if: github.event.pull_request.head.repo.full_name == github.repository || github.event_name != 'pull_request'
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: temurin
+      - name: Cache SonarCloud packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+      - name: Cache Maven packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+      - name: Install modules to local maven
+        run: |
+          mvn install -T 1C -DskipTests -ntp -B
+          cd java-showcase
+          mvn install -T 1C -DskipTests -ntp -B
+      - name: Parse showcase version
+        working-directory: java-showcase/gapic-showcase
+        run: echo "SHOWCASE_VERSION=$(mvn help:evaluate -Dexpression=gapic-showcase.version -q -DforceStdout)" >> "$GITHUB_ENV"
+      - name: Install showcase server
+        run: |
+            sudo mkdir -p /usr/src/showcase
+            sudo chown -R ${USER} /usr/src/
+            curl --location https://github.com/googleapis/gapic-showcase/releases/download/v${{env.SHOWCASE_VERSION}}/gapic-showcase-${{env.SHOWCASE_VERSION}}-linux-amd64.tar.gz --output /usr/src/showcase/showcase-${{env.SHOWCASE_VERSION}}-linux-amd64.tar.gz
+            cd /usr/src/showcase/
+            tar -xf showcase-*
+            ./gapic-showcase run &
+            cd -
+      # Intentionally do not run the Env Var Tests (no -PenvVarTests) as setting the Env Var
+      # may alter the results for other tests that use Env Var in the logic. Adding a Sonar
+      # step for a few tests (env var tests) may be overkill and should be better covered
+      # when we can upgrade to JUnit 5 (https://github.com/googleapis/sdk-platform-java/issues/1611#issuecomment-1970079325)
+      - name: Build and analyze for full test coverage
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: |
+          mvn -B verify -Dcheckstyle.skip \
+              -DenableFullTestCoverage \
+              -Penable-integration-tests \
+              org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+              -Dsonar.projectKey=googleapis_gapic-generator-java \
+              -Dsonar.organization=googleapis \
+              -Dsonar.host.url=https://sonarcloud.io
+      - name: Build and analyze Showcase Integration Tests Coverage
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: |
+          mvn -B clean verify -Dcheckstyle.skip \
+              -DskipUnitTests \
+              -Penable-integration-tests \
+              -DenableShowcaseTestCoverage \
+              org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+              -Dsonar.projectKey=googleapis_gapic-generator-java_integration_tests \
+              -Dsonar.organization=googleapis \
+              -Dsonar.host.url=https://sonarcloud.io \
+              -Dsonar.projectName=java_showcase_integration_tests

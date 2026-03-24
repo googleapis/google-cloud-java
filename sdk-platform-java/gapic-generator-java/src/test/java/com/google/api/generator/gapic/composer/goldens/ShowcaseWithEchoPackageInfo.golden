@@ -1,0 +1,27 @@
+/**
+ * The interfaces provided are listed below, along with usage samples.
+ *
+ * <p>======================= EchoClient =======================
+ *
+ * <p>Service Description: This service is used showcase the four main types of rpcs - unary, server
+ * side streaming, client side streaming, and bidirectional streaming. This service also exposes
+ * methods that explicitly implement server delay, and paginated calls. Set the 'showcase-trailer'
+ * metadata key on any method to have the values echoed in the response trailers.
+ *
+ * <p>Sample for EchoClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (EchoClient echoClient = EchoClient.create()) {
+ *   EchoResponse response = echoClient.echo();
+ * }
+ * }</pre>
+ */
+@Generated("by gapic-generator-java")
+package com.google.showcase.v1beta1;
+
+import javax.annotation.Generated;

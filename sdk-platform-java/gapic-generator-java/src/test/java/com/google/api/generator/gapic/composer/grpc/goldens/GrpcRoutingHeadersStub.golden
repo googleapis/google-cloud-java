@@ -1,0 +1,642 @@
+package com.google.explicit.dynamic.routing.header.stub;
+
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
+import com.google.explicit.dynamic.routing.header.EnumRequest;
+import com.google.explicit.dynamic.routing.header.EnumResponse;
+import com.google.explicit.dynamic.routing.header.Request;
+import com.google.explicit.dynamic.routing.header.RequestWithNestedField;
+import com.google.longrunning.stub.GrpcOperationsStub;
+import com.google.protobuf.Empty;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
+import java.io.IOException;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import javax.annotation.Generated;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * gRPC stub implementation for the ExplicitDynamicRoutingHeaderTesting service API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
+@Generated("by gapic-generator-java")
+public class GrpcExplicitDynamicRoutingHeaderTestingStub
+    extends ExplicitDynamicRoutingHeaderTestingStub {
+  private static final MethodDescriptor<Request, Empty> example1TestMethodDescriptor =
+      MethodDescriptor.<Request, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.explicit.dynamic.routing.header.ExplicitDynamicRoutingHeaderTesting/Example1Test")
+          .setRequestMarshaller(ProtoUtils.marshaller(Request.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<Request, Empty> example2TestMethodDescriptor =
+      MethodDescriptor.<Request, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.explicit.dynamic.routing.header.ExplicitDynamicRoutingHeaderTesting/Example2Test")
+          .setRequestMarshaller(ProtoUtils.marshaller(Request.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<Request, Empty> example3TestMethodDescriptor =
+      MethodDescriptor.<Request, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.explicit.dynamic.routing.header.ExplicitDynamicRoutingHeaderTesting/Example3Test")
+          .setRequestMarshaller(ProtoUtils.marshaller(Request.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<Request, Empty> example3CTestMethodDescriptor =
+      MethodDescriptor.<Request, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.explicit.dynamic.routing.header.ExplicitDynamicRoutingHeaderTesting/Example3CTest")
+          .setRequestMarshaller(ProtoUtils.marshaller(Request.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<Request, Empty> example4TestMethodDescriptor =
+      MethodDescriptor.<Request, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.explicit.dynamic.routing.header.ExplicitDynamicRoutingHeaderTesting/Example4Test")
+          .setRequestMarshaller(ProtoUtils.marshaller(Request.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<Request, Empty> example5TestMethodDescriptor =
+      MethodDescriptor.<Request, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.explicit.dynamic.routing.header.ExplicitDynamicRoutingHeaderTesting/Example5Test")
+          .setRequestMarshaller(ProtoUtils.marshaller(Request.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<Request, Empty> example6TestMethodDescriptor =
+      MethodDescriptor.<Request, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.explicit.dynamic.routing.header.ExplicitDynamicRoutingHeaderTesting/Example6Test")
+          .setRequestMarshaller(ProtoUtils.marshaller(Request.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<Request, Empty> example7TestMethodDescriptor =
+      MethodDescriptor.<Request, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.explicit.dynamic.routing.header.ExplicitDynamicRoutingHeaderTesting/Example7Test")
+          .setRequestMarshaller(ProtoUtils.marshaller(Request.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<Request, Empty> example8TestMethodDescriptor =
+      MethodDescriptor.<Request, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.explicit.dynamic.routing.header.ExplicitDynamicRoutingHeaderTesting/Example8Test")
+          .setRequestMarshaller(ProtoUtils.marshaller(Request.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<Request, Empty> example9TestMethodDescriptor =
+      MethodDescriptor.<Request, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.explicit.dynamic.routing.header.ExplicitDynamicRoutingHeaderTesting/Example9Test")
+          .setRequestMarshaller(ProtoUtils.marshaller(Request.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<Request, Empty> backwardsCompatible1TestMethodDescriptor =
+      MethodDescriptor.<Request, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.explicit.dynamic.routing.header.ExplicitDynamicRoutingHeaderTesting/BackwardsCompatible1Test")
+          .setRequestMarshaller(ProtoUtils.marshaller(Request.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<Request, Empty> backwardsCompatible2TestMethodDescriptor =
+      MethodDescriptor.<Request, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.explicit.dynamic.routing.header.ExplicitDynamicRoutingHeaderTesting/BackwardsCompatible2Test")
+          .setRequestMarshaller(ProtoUtils.marshaller(Request.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<Request, Empty> backwardsCompatible3TestMethodDescriptor =
+      MethodDescriptor.<Request, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.explicit.dynamic.routing.header.ExplicitDynamicRoutingHeaderTesting/BackwardsCompatible3Test")
+          .setRequestMarshaller(ProtoUtils.marshaller(Request.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<RequestWithNestedField, Empty>
+      nestedFieldTestMethodDescriptor =
+          MethodDescriptor.<RequestWithNestedField, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.explicit.dynamic.routing.header.ExplicitDynamicRoutingHeaderTesting/NestedFieldTest")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RequestWithNestedField.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<EnumRequest, EnumResponse>
+      implicitRoutingHeaderWithEnumTestMethodDescriptor =
+          MethodDescriptor.<EnumRequest, EnumResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.explicit.dynamic.routing.header.ExplicitDynamicRoutingHeaderTesting/ImplicitRoutingHeaderWithEnumTest")
+              .setRequestMarshaller(ProtoUtils.marshaller(EnumRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(EnumResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private final UnaryCallable<Request, Empty> example1TestCallable;
+  private final UnaryCallable<Request, Empty> example2TestCallable;
+  private final UnaryCallable<Request, Empty> example3TestCallable;
+  private final UnaryCallable<Request, Empty> example3CTestCallable;
+  private final UnaryCallable<Request, Empty> example4TestCallable;
+  private final UnaryCallable<Request, Empty> example5TestCallable;
+  private final UnaryCallable<Request, Empty> example6TestCallable;
+  private final UnaryCallable<Request, Empty> example7TestCallable;
+  private final UnaryCallable<Request, Empty> example8TestCallable;
+  private final UnaryCallable<Request, Empty> example9TestCallable;
+  private final UnaryCallable<Request, Empty> backwardsCompatible1TestCallable;
+  private final UnaryCallable<Request, Empty> backwardsCompatible2TestCallable;
+  private final UnaryCallable<Request, Empty> backwardsCompatible3TestCallable;
+  private final UnaryCallable<RequestWithNestedField, Empty> nestedFieldTestCallable;
+  private final UnaryCallable<EnumRequest, EnumResponse> implicitRoutingHeaderWithEnumTestCallable;
+
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
+  private final GrpcStubCallableFactory callableFactory;
+
+  private static final PathTemplate EXAMPLE1_TEST_0_PATH_TEMPLATE =
+      PathTemplate.create("{app_profile_id=**}");
+  private static final PathTemplate EXAMPLE2_TEST_0_PATH_TEMPLATE =
+      PathTemplate.create("{routing_id=**}");
+  private static final PathTemplate EXAMPLE3_TEST_0_PATH_TEMPLATE =
+      PathTemplate.create("{table_name=projects/*/instances/*/**}");
+  private static final PathTemplate EXAMPLE3_C_TEST_0_PATH_TEMPLATE =
+      PathTemplate.create("{table_name=regions/*/zones/*/**}");
+  private static final PathTemplate EXAMPLE3_C_TEST_1_PATH_TEMPLATE =
+      PathTemplate.create("{table_name=projects/*/instances/*/**}");
+  private static final PathTemplate EXAMPLE4_TEST_0_PATH_TEMPLATE =
+      PathTemplate.create("{routing_id=projects/*}/**");
+  private static final PathTemplate EXAMPLE5_TEST_0_PATH_TEMPLATE =
+      PathTemplate.create("{routing_id=projects/*}/**");
+  private static final PathTemplate EXAMPLE5_TEST_1_PATH_TEMPLATE =
+      PathTemplate.create("{routing_id=projects/*/instances/*}/**");
+  private static final PathTemplate EXAMPLE6_TEST_0_PATH_TEMPLATE =
+      PathTemplate.create("{project_id=projects/*}/instances/*/**");
+  private static final PathTemplate EXAMPLE6_TEST_1_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/{instance_id=instances/*}/**");
+  private static final PathTemplate EXAMPLE7_TEST_0_PATH_TEMPLATE =
+      PathTemplate.create("{project_id=projects/*}/**");
+  private static final PathTemplate EXAMPLE7_TEST_1_PATH_TEMPLATE =
+      PathTemplate.create("{routing_id=**}");
+  private static final PathTemplate EXAMPLE8_TEST_0_PATH_TEMPLATE =
+      PathTemplate.create("{routing_id=projects/*}/**");
+  private static final PathTemplate EXAMPLE8_TEST_1_PATH_TEMPLATE =
+      PathTemplate.create("{routing_id=regions/*}/**");
+  private static final PathTemplate EXAMPLE8_TEST_2_PATH_TEMPLATE =
+      PathTemplate.create("{routing_id=**}");
+  private static final PathTemplate EXAMPLE9_TEST_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/{table_location=instances/*}/tables/*");
+  private static final PathTemplate EXAMPLE9_TEST_1_PATH_TEMPLATE =
+      PathTemplate.create("{table_location=regions/*/zones/*}/tables/*");
+  private static final PathTemplate EXAMPLE9_TEST_2_PATH_TEMPLATE =
+      PathTemplate.create("{routing_id=projects/*}/**");
+  private static final PathTemplate EXAMPLE9_TEST_3_PATH_TEMPLATE =
+      PathTemplate.create("{routing_id=**}");
+  private static final PathTemplate EXAMPLE9_TEST_4_PATH_TEMPLATE =
+      PathTemplate.create("profiles/{routing_id=*}");
+  private static final PathTemplate BACKWARDS_COMPATIBLE1_TEST_0_PATH_TEMPLATE =
+      PathTemplate.create("{routing_id=projects/*}/**");
+  private static final PathTemplate NESTED_FIELD_TEST_0_PATH_TEMPLATE =
+      PathTemplate.create("{routing_id=projects/*}/**");
+
+  public static final GrpcExplicitDynamicRoutingHeaderTestingStub create(
+      ExplicitDynamicRoutingHeaderTestingStubSettings settings) throws IOException {
+    return new GrpcExplicitDynamicRoutingHeaderTestingStub(
+        settings, ClientContext.create(settings));
+  }
+
+  public static final GrpcExplicitDynamicRoutingHeaderTestingStub create(
+      ClientContext clientContext) throws IOException {
+    return new GrpcExplicitDynamicRoutingHeaderTestingStub(
+        ExplicitDynamicRoutingHeaderTestingStubSettings.newBuilder().build(), clientContext);
+  }
+
+  public static final GrpcExplicitDynamicRoutingHeaderTestingStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcExplicitDynamicRoutingHeaderTestingStub(
+        ExplicitDynamicRoutingHeaderTestingStubSettings.newBuilder().build(),
+        clientContext,
+        callableFactory);
+  }
+
+  /**
+   * Constructs an instance of GrpcExplicitDynamicRoutingHeaderTestingStub, using the given
+   * settings. This is protected so that it is easy to make a subclass, but otherwise, the static
+   * factory methods should be preferred.
+   */
+  protected GrpcExplicitDynamicRoutingHeaderTestingStub(
+      ExplicitDynamicRoutingHeaderTestingStubSettings settings, ClientContext clientContext)
+      throws IOException {
+    this(settings, clientContext, new GrpcExplicitDynamicRoutingHeaderTestingCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcExplicitDynamicRoutingHeaderTestingStub, using the given
+   * settings. This is protected so that it is easy to make a subclass, but otherwise, the static
+   * factory methods should be preferred.
+   */
+  protected GrpcExplicitDynamicRoutingHeaderTestingStub(
+      ExplicitDynamicRoutingHeaderTestingStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
+
+    GrpcCallSettings<Request, Empty> example1TestTransportSettings =
+        GrpcCallSettings.<Request, Empty>newBuilder()
+            .setMethodDescriptor(example1TestMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      request.getAppProfileId(), "app_profile_id", EXAMPLE1_TEST_0_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<Request, Empty> example2TestTransportSettings =
+        GrpcCallSettings.<Request, Empty>newBuilder()
+            .setMethodDescriptor(example2TestMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      request.getAppProfileId(), "routing_id", EXAMPLE2_TEST_0_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<Request, Empty> example3TestTransportSettings =
+        GrpcCallSettings.<Request, Empty>newBuilder()
+            .setMethodDescriptor(example3TestMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getTableName(), "table_name", EXAMPLE3_TEST_0_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<Request, Empty> example3CTestTransportSettings =
+        GrpcCallSettings.<Request, Empty>newBuilder()
+            .setMethodDescriptor(example3CTestMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      request.getTableName(), "table_name", EXAMPLE3_C_TEST_0_PATH_TEMPLATE);
+                  builder.add(
+                      request.getTableName(), "table_name", EXAMPLE3_C_TEST_1_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<Request, Empty> example4TestTransportSettings =
+        GrpcCallSettings.<Request, Empty>newBuilder()
+            .setMethodDescriptor(example4TestMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getTableName(), "routing_id", EXAMPLE4_TEST_0_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<Request, Empty> example5TestTransportSettings =
+        GrpcCallSettings.<Request, Empty>newBuilder()
+            .setMethodDescriptor(example5TestMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getTableName(), "routing_id", EXAMPLE5_TEST_0_PATH_TEMPLATE);
+                  builder.add(request.getTableName(), "routing_id", EXAMPLE5_TEST_1_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<Request, Empty> example6TestTransportSettings =
+        GrpcCallSettings.<Request, Empty>newBuilder()
+            .setMethodDescriptor(example6TestMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getTableName(), "project_id", EXAMPLE6_TEST_0_PATH_TEMPLATE);
+                  builder.add(request.getTableName(), "instance_id", EXAMPLE6_TEST_1_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<Request, Empty> example7TestTransportSettings =
+        GrpcCallSettings.<Request, Empty>newBuilder()
+            .setMethodDescriptor(example7TestMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getTableName(), "project_id", EXAMPLE7_TEST_0_PATH_TEMPLATE);
+                  builder.add(
+                      request.getAppProfileId(), "routing_id", EXAMPLE7_TEST_1_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<Request, Empty> example8TestTransportSettings =
+        GrpcCallSettings.<Request, Empty>newBuilder()
+            .setMethodDescriptor(example8TestMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getTableName(), "routing_id", EXAMPLE8_TEST_0_PATH_TEMPLATE);
+                  builder.add(request.getTableName(), "routing_id", EXAMPLE8_TEST_1_PATH_TEMPLATE);
+                  builder.add(
+                      request.getAppProfileId(), "routing_id", EXAMPLE8_TEST_2_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<Request, Empty> example9TestTransportSettings =
+        GrpcCallSettings.<Request, Empty>newBuilder()
+            .setMethodDescriptor(example9TestMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      request.getTableName(), "table_location", EXAMPLE9_TEST_0_PATH_TEMPLATE);
+                  builder.add(
+                      request.getTableName(), "table_location", EXAMPLE9_TEST_1_PATH_TEMPLATE);
+                  builder.add(request.getTableName(), "routing_id", EXAMPLE9_TEST_2_PATH_TEMPLATE);
+                  builder.add(
+                      request.getAppProfileId(), "routing_id", EXAMPLE9_TEST_3_PATH_TEMPLATE);
+                  builder.add(
+                      request.getAppProfileId(), "routing_id", EXAMPLE9_TEST_4_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<Request, Empty> backwardsCompatible1TestTransportSettings =
+        GrpcCallSettings.<Request, Empty>newBuilder()
+            .setMethodDescriptor(backwardsCompatible1TestMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      request.getTableName(),
+                      "routing_id",
+                      BACKWARDS_COMPATIBLE1_TEST_0_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<Request, Empty> backwardsCompatible2TestTransportSettings =
+        GrpcCallSettings.<Request, Empty>newBuilder()
+            .setMethodDescriptor(backwardsCompatible2TestMethodDescriptor)
+            .build();
+    GrpcCallSettings<Request, Empty> backwardsCompatible3TestTransportSettings =
+        GrpcCallSettings.<Request, Empty>newBuilder()
+            .setMethodDescriptor(backwardsCompatible3TestMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("table_name", String.valueOf(request.getTableName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<RequestWithNestedField, Empty> nestedFieldTestTransportSettings =
+        GrpcCallSettings.<RequestWithNestedField, Empty>newBuilder()
+            .setMethodDescriptor(nestedFieldTestMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  if (request.getNestedField() != null
+                      && request.getNestedField().getAnotherNestedField() != null) {
+                    builder.add(
+                        request.getNestedField().getAnotherNestedField().getName(),
+                        "routing_id",
+                        NESTED_FIELD_TEST_0_PATH_TEMPLATE);
+                  }
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<EnumRequest, EnumResponse> implicitRoutingHeaderWithEnumTestTransportSettings =
+        GrpcCallSettings.<EnumRequest, EnumResponse>newBuilder()
+            .setMethodDescriptor(implicitRoutingHeaderWithEnumTestMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "info.enum_test", String.valueOf(request.getInfo().getEnumTestValue()));
+                  return builder.build();
+                })
+            .build();
+
+    this.example1TestCallable =
+        callableFactory.createUnaryCallable(
+            example1TestTransportSettings, settings.example1TestSettings(), clientContext);
+    this.example2TestCallable =
+        callableFactory.createUnaryCallable(
+            example2TestTransportSettings, settings.example2TestSettings(), clientContext);
+    this.example3TestCallable =
+        callableFactory.createUnaryCallable(
+            example3TestTransportSettings, settings.example3TestSettings(), clientContext);
+    this.example3CTestCallable =
+        callableFactory.createUnaryCallable(
+            example3CTestTransportSettings, settings.example3CTestSettings(), clientContext);
+    this.example4TestCallable =
+        callableFactory.createUnaryCallable(
+            example4TestTransportSettings, settings.example4TestSettings(), clientContext);
+    this.example5TestCallable =
+        callableFactory.createUnaryCallable(
+            example5TestTransportSettings, settings.example5TestSettings(), clientContext);
+    this.example6TestCallable =
+        callableFactory.createUnaryCallable(
+            example6TestTransportSettings, settings.example6TestSettings(), clientContext);
+    this.example7TestCallable =
+        callableFactory.createUnaryCallable(
+            example7TestTransportSettings, settings.example7TestSettings(), clientContext);
+    this.example8TestCallable =
+        callableFactory.createUnaryCallable(
+            example8TestTransportSettings, settings.example8TestSettings(), clientContext);
+    this.example9TestCallable =
+        callableFactory.createUnaryCallable(
+            example9TestTransportSettings, settings.example9TestSettings(), clientContext);
+    this.backwardsCompatible1TestCallable =
+        callableFactory.createUnaryCallable(
+            backwardsCompatible1TestTransportSettings,
+            settings.backwardsCompatible1TestSettings(),
+            clientContext);
+    this.backwardsCompatible2TestCallable =
+        callableFactory.createUnaryCallable(
+            backwardsCompatible2TestTransportSettings,
+            settings.backwardsCompatible2TestSettings(),
+            clientContext);
+    this.backwardsCompatible3TestCallable =
+        callableFactory.createUnaryCallable(
+            backwardsCompatible3TestTransportSettings,
+            settings.backwardsCompatible3TestSettings(),
+            clientContext);
+    this.nestedFieldTestCallable =
+        callableFactory.createUnaryCallable(
+            nestedFieldTestTransportSettings, settings.nestedFieldTestSettings(), clientContext);
+    this.implicitRoutingHeaderWithEnumTestCallable =
+        callableFactory.createUnaryCallable(
+            implicitRoutingHeaderWithEnumTestTransportSettings,
+            settings.implicitRoutingHeaderWithEnumTestSettings(),
+            clientContext);
+
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
+  }
+
+  @Override
+  public UnaryCallable<Request, Empty> example1TestCallable() {
+    return example1TestCallable;
+  }
+
+  @Override
+  public UnaryCallable<Request, Empty> example2TestCallable() {
+    return example2TestCallable;
+  }
+
+  @Override
+  public UnaryCallable<Request, Empty> example3TestCallable() {
+    return example3TestCallable;
+  }
+
+  @Override
+  public UnaryCallable<Request, Empty> example3CTestCallable() {
+    return example3CTestCallable;
+  }
+
+  @Override
+  public UnaryCallable<Request, Empty> example4TestCallable() {
+    return example4TestCallable;
+  }
+
+  @Override
+  public UnaryCallable<Request, Empty> example5TestCallable() {
+    return example5TestCallable;
+  }
+
+  @Override
+  public UnaryCallable<Request, Empty> example6TestCallable() {
+    return example6TestCallable;
+  }
+
+  @Override
+  public UnaryCallable<Request, Empty> example7TestCallable() {
+    return example7TestCallable;
+  }
+
+  @Override
+  public UnaryCallable<Request, Empty> example8TestCallable() {
+    return example8TestCallable;
+  }
+
+  @Override
+  public UnaryCallable<Request, Empty> example9TestCallable() {
+    return example9TestCallable;
+  }
+
+  @Override
+  public UnaryCallable<Request, Empty> backwardsCompatible1TestCallable() {
+    return backwardsCompatible1TestCallable;
+  }
+
+  @Override
+  public UnaryCallable<Request, Empty> backwardsCompatible2TestCallable() {
+    return backwardsCompatible2TestCallable;
+  }
+
+  @Override
+  public UnaryCallable<Request, Empty> backwardsCompatible3TestCallable() {
+    return backwardsCompatible3TestCallable;
+  }
+
+  @Override
+  public UnaryCallable<RequestWithNestedField, Empty> nestedFieldTestCallable() {
+    return nestedFieldTestCallable;
+  }
+
+  @Override
+  public UnaryCallable<EnumRequest, EnumResponse> implicitRoutingHeaderWithEnumTestCallable() {
+    return implicitRoutingHeaderWithEnumTestCallable;
+  }
+
+  @Override
+  public final void close() {
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
+  }
+
+  @Override
+  public void shutdown() {
+    backgroundResources.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return backgroundResources.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return backgroundResources.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    backgroundResources.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return backgroundResources.awaitTermination(duration, unit);
+  }
+}

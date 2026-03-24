@@ -70,8 +70,8 @@ public final class BigQueryTelemetryTracer {
     span.setAttribute(GCP_CLIENT_SERVICE, BQ_GCP_CLIENT_SERVICE)
         .setAttribute(GCP_CLIENT_REPO, BQ_GCP_CLIENT_REPO)
         .setAttribute(GCP_CLIENT_ARTIFACT, BQ_GCP_CLIENT_ARTIFACT)
-        .setAttribute(GCP_CLIENT_LANGUAGE, BQ_GCP_CLIENT_LANGUAGE);
-    // TODO: add version
+        .setAttribute(GCP_CLIENT_LANGUAGE, BQ_GCP_CLIENT_LANGUAGE)
+        .setAttribute(GCP_CLIENT_VERSION, Version.VERSION);
   }
 
   /**

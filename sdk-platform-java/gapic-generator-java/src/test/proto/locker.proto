@@ -1,0 +1,119 @@
+// Copyright 2018 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+import "google/api/client.proto";
+import "google/api/field_behavior.proto";
+import "google/api/resource.proto";
+
+package google.testgapic;
+
+option java_package = "com.google.testgapic.v1beta1";
+option java_multiple_files = true;
+option java_outer_classname = "LockerProto";
+
+option (google.api.resource_definition) = {
+  type: "cloudbilling.googleapis.com/BillingAccount"
+  pattern: "billingAccounts/{billing_account}"
+};
+
+option (google.api.resource_definition) = {
+  type: "cloudresourcemanager.googleapis.com/Anything"
+  pattern: "*"
+};
+
+option (google.api.resource_definition) = {
+  type: "cloudresourcemanager.googleapis.com/Folder"
+  pattern: "projects/{project}/folders/{folder}"
+  pattern: "folders/{folder}"
+};
+
+option (google.api.resource_definition) = {
+  type: "pubsub.googleapis.com/Topic"
+  pattern: "_deleted-topic_"
+};
+
+service Locker {
+  // This service is meant to only run locally on the port 7469 (keypad digits
+  // for "show").
+  option (google.api.default_host) = "localhost:7469";
+  option (google.api.oauth_scopes) =
+      "https://www.googleapis.com/auth/cloud-platform,"
+      "https://www.googleapis.com/auth/cloud";
+
+  // Creates a user.
+  rpc CreateFolder(CreateFolderRequest) returns (Folder) {
+    option (google.api.http) = {
+      post: "/v1beta1/{parent=folders}"
+      body: "*"
+    };
+    option (google.api.method_signature) = "parent";
+  }
+
+  rpc GetFolder(GetFolderRequest) returns (Folder) {
+    option (google.api.http) = {
+      get: "/v1beta1/{name=users/*}"
+    };
+    option (google.api.method_signature) = "name";
+  }
+}
+
+message Document {
+  option (google.api.resource) = {
+    type: "testgapic.googleapis.com/Document"
+    pattern: "documents/{document}"
+    pattern: "folders/{folder}/documents/{document}"
+    pattern: "*"
+  };
+
+  // The resource name of the document.
+  string name = 1;
+}
+
+message Folder {
+  string name = 1 [(google.api.resource_reference).type =
+                       "cloudresourcemanager.googleapis.com/Folder"];
+}
+
+message Binder {
+  option (google.api.resource) = {
+    type: "testgapic.googleapis.com/Binder"
+    pattern: "binders/{binder}"
+  };
+
+  // The resource name of the binder.
+  string binder_name = 1 [(google.api.resource_reference).type =
+                              "testgapic.googleapis.com/Binder"];
+}
+
+message GetFolderRequest {
+  string name = 1 [
+    (google.api.resource_reference).type =
+        "cloudresourcemanager.googleapis.com/Folder",
+    (google.api.field_behavior) = REQUIRED
+  ];
+}
+
+message CreateFolderRequest {
+  string parent = 1 [
+    (google.api.resource_reference).child_type =
+        "cloudresourcemanager.googleapis.com/Folder",
+    (google.api.field_behavior) = REQUIRED
+  ];
+
+  // The folder to create.
+  Folder folder = 2 [(google.api.field_behavior) = REQUIRED];
+}

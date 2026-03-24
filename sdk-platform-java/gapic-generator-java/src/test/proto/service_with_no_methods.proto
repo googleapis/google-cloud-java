@@ -1,0 +1,131 @@
+// Copyright 2018 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+import "google/api/client.proto";
+import "google/api/field_behavior.proto";
+import "google/api/field_info.proto";
+import "google/api/resource.proto";
+import "google/longrunning/operations.proto";
+import "google/protobuf/duration.proto";
+import "google/protobuf/timestamp.proto";
+import "google/rpc/status.proto";
+
+package google.api.service.without.methods.test.v1;
+
+option java_package = "com.google.api.service.without.methods.test";
+option java_multiple_files = true;
+option java_outer_classname = "ServiceWithNoMethodsOuterClass";
+
+option (google.api.resource_definition) = {
+  type: "showcase.googleapis.com/AnythingGoes"
+  pattern: "*"
+};
+// This proto is used to test scenarios where a service does not have any rpc methods
+
+// This service is used as control group when it is not empty.
+service EchoWithMethods {
+  // This service is meant to only run locally on the port 7469 (keypad digits
+  // for "show").
+  option (google.api.default_host) = "localhost:7469";
+  option (google.api.oauth_scopes) =
+      "https://www.googleapis.com/auth/cloud-platform";
+
+  // This method simply echos the request. This method is showcases unary rpcs.
+  rpc EchoWithMethod(EchoRequest) returns (EchoResponse) {
+    option (google.api.http) = {
+      post: "/v1beta1/echo:echo"
+      body: "*"
+    };
+    option (google.api.method_signature) = "content";
+    option (google.api.method_signature) = "error";
+    option (google.api.method_signature) = "content,severity";
+    option (google.api.method_signature) = "name";
+    option (google.api.method_signature) = "parent";
+    option (google.api.method_signature) = "";
+  }
+}
+
+// This service is to test when no method specified.
+service EchoWithoutMethods {
+  // This service is meant to only run locally on the port 7469 (keypad digits
+  // for "show").
+  option (google.api.default_host) = "localhost:7469";
+  option (google.api.oauth_scopes) =
+    "https://www.googleapis.com/auth/cloud-platform";
+}
+
+// A severity enum used to test enum capabilities in GAPIC surfaces
+enum Severity {
+  UNNECESSARY = 0;
+  NECESSARY = 1;
+  URGENT = 2;
+  CRITICAL = 3;
+}
+
+message Foobar {
+  option (google.api.resource) = {
+    type: "showcase.googleapis.com/Foobar"
+    pattern: "projects/{project}/foobars/{foobar}"
+    pattern: "projects/{project}/chocolate/variants/{variant}/foobars/{foobar}"
+    pattern: "foobars/{foobar}"
+    pattern: "bar_foos/{bar_foo}/foobars/{foobar}"
+    pattern: "*"
+  };
+
+  string name = 1;
+  string info = 2;
+}
+
+// The request message used for the Echo, Collect and Chat methods.
+// If content or opt are set in this message then the request will succeed.
+// If status is set in this message
+// then the status will be returned as an error.
+message EchoRequest {
+  string name = 5 [
+    (google.api.resource_reference).type = "showcase.googleapis.com/Foobar",
+    (google.api.field_behavior) = REQUIRED
+  ];
+
+  string parent = 6 [
+    (google.api.resource_reference).child_type =
+        "showcase.googleapis.com/AnythingGoes",
+    (google.api.field_behavior) = REQUIRED
+  ];
+
+  oneof response {
+    // The content to be echoed by the server.
+    string content = 1;
+
+    // The error to be thrown by the server.
+    google.rpc.Status error = 2;
+  }
+
+  // The severity to be echoed by the server.
+  Severity severity = 3;
+
+  Foobar foobar = 4;
+}
+
+// The response message for the Echo methods.
+message EchoResponse {
+  // The content specified in the request.
+  string content = 1;
+
+  // The severity specified in the request.
+  Severity severity = 2;
+}
+

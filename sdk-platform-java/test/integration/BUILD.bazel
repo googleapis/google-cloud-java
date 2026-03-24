@@ -1,0 +1,264 @@
+load(
+    "//rules_java_gapic:java_gapic.bzl",
+    "java_gapic_library",
+    "java_gapic_test",
+)
+load("@io_grpc_grpc_java//:java_grpc_library.bzl", "java_grpc_library")
+load("@rules_gapic//:gapic.bzl", "proto_library_with_info")
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+####################################################
+# Integration Test Rules
+####################################################
+
+API_GAPIC_TARGETS = {
+    # basic case
+    "asset": "@com_google_googleapis//google/cloud/asset/v1:asset_java_gapic",
+    # Check that the capital name edge case is handled.
+    "credentials": "@com_google_googleapis//google/iam/credentials/v1:credentials_java_gapic",
+    # Mixin-only special-case API can build on its own.
+    "iam": ":iam_java_gapic",  # local target: Googleapis' LRO does not have a Java Gapic.
+    # mixins, with an override in the proto file
+    "kms": ":kms_java_gapic",  # local target: mixins are not rolled out yet.
+    # Special=case handling for "_deleted-topic_" resource name patterns.
+    "pubsub": ":pubsub_java_gapic",
+    # Java package remapping in gapic.yaml
+    "logging": "@com_google_googleapis//google/logging/v2:logging_java_gapic",
+    # Has a gapic.yaml.
+    "redis": "@com_google_googleapis//google/cloud/redis/v1beta1:redis_java_gapic",
+    # Exercises storage-specific edge cases.
+    "storage": "@com_google_googleapis//google/storage/v2:storage_java_gapic",
+    # No gRPC service config.
+    "library": "@com_google_googleapis//google/example/library/v1:library_java_gapic",
+    # REGAPIC test.
+    "compute": "@com_google_googleapis//google/cloud/compute/v1small:compute_small_java_gapic",
+    # Routing headers.
+    "bigtable": "@com_google_googleapis//google/bigtable/v2:bigtable_java_gapic",
+    # REGAPIC REST Client Generation
+    "apigeeconnect": "@com_google_googleapis//google/cloud/apigeeconnect/v1:apigeeconnect_java_gapic",
+}
+
+[filegroup(
+    name = "%s_goldens_files" % lib_name,
+    srcs = glob(
+        ["goldens/%s/**" % lib_name],
+        exclude = ["BUILD.bazel"],
+    ),
+) for lib_name in API_GAPIC_TARGETS]
+
+[sh_test(
+    name = lib_name,
+    srcs = ["//sdk-platform-java/scripts:diff_gen_and_golden.sh"],
+    args = [lib_name],
+    data = [
+        ":%s_goldens_files" % lib_name,
+        "%s_srcjar_raw.srcjar" % gapic_target,
+    ],
+) for lib_name, gapic_target in API_GAPIC_TARGETS.items()]
+
+[sh_binary(
+    name = "update_%s" % lib_name,
+    srcs = ["//sdk-platform-java/scripts:update_golden.sh"],
+    args = [lib_name],
+    data = [
+        ":%s_goldens_files" % lib_name,
+        "%s_srcjar_raw.srcjar" % gapic_target,
+    ],
+) for lib_name, gapic_target in API_GAPIC_TARGETS.items()]
+
+####################################################
+# API Library Rules
+####################################################
+# Asset API.
+java_gapic_test(
+    name = "asset_java_gapic_test_suite",
+    test_classes = [
+        "com.google.cloud.asset.v1.AssetServiceClientTest",
+    ],
+    runtime_deps = ["@com_google_googleapis//google/cloud/asset/v1:asset_java_gapic_test"],
+)
+
+# Redis API.
+java_gapic_test(
+    name = "redis_java_gapic_test_suite",
+    test_classes = [
+        "com.google.cloud.redis.v1beta1.CloudRedisClientTest",
+    ],
+    runtime_deps = ["@com_google_googleapis//google/cloud/redis/v1beta1:redis_java_gapic_test"],
+)
+
+# Storage API.
+java_gapic_test(
+    name = "storage_java_gapic_test_suite",
+    test_classes = [
+        "com.google.storage.v2.StorageClientTest",
+    ],
+    runtime_deps = ["@com_google_googleapis//google/storage/v2:storage_java_gapic_test"],
+)
+
+# Logging API
+java_gapic_test(
+    name = "logging_java_gapic_test_suite",
+    test_classes = [
+        "com.google.cloud.logging.v2.ConfigClientTest",
+        "com.google.cloud.logging.v2.LoggingClientTest",
+        "com.google.cloud.logging.v2.MetricsClientTest",
+    ],
+    runtime_deps = ["@com_google_googleapis//google/logging/v2:logging_java_gapic_test"],
+)
+
+# example/library API.
+# Tests the edge case of a legitimately missing gRPC service config file.
+java_gapic_test(
+    name = "library_java_gapic_test_suite",
+    test_classes = [
+        "com.google.cloud.example.library.v1.LibraryServiceClientTest",
+    ],
+    runtime_deps = ["@com_google_googleapis//google/example/library/v1:library_java_gapic_test"],
+)
+
+# IAMCredentials.
+# Check that the capital name edge case is handled.
+java_gapic_test(
+    name = "credentials_java_gapic_test_suite",
+    test_classes = [
+        # Match google3.
+        "com.google.cloud.iam.credentials.v1.IAMCredentialsClientTest",
+    ],
+    runtime_deps = ["@com_google_googleapis//google/iam/credentials/v1:credentials_java_gapic_test"],
+)
+
+# Bigtable API
+java_gapic_test(
+    name = "bigtable_java_gapic_test_suite",
+    test_classes = [
+        "com.google.cloud.bigtable.data.v2.BaseBigtableDataClientTest",
+    ],
+    runtime_deps = ["@com_google_googleapis//google/bigtable/v2:bigtable_java_gapic_test"],
+)
+
+# Apigee Connect V1 API
+java_gapic_test(
+    name = "apigeeconnect_java_gapic_test_suite",
+    test_classes = [],
+    runtime_deps = ["@com_google_googleapis//google/cloud/apigeeconnect/v1:apigeeconnect_java_gapic_test"],
+)
+
+# IAM (for a standalone mixed-in API).
+java_gapic_library(
+    name = "iam_java_gapic",
+    srcs = ["@com_google_googleapis//google/iam/v1:iam_proto_with_info"],
+    grpc_service_config = "iam_grpc_service_config.json",
+    test_deps = [
+        "@com_google_googleapis//google/iam/v1:iam_java_grpc",
+    ],
+    deps = [
+        "@com_google_googleapis//google/iam/v1:iam_java_proto",
+    ],
+)
+
+java_gapic_test(
+    name = "iam_java_gapic_test_suite",
+    test_classes = [
+        "com.google.iam.v1.IAMPolicyClientTest",
+    ],
+    runtime_deps = ["iam_java_gapic_test"],
+)
+
+# KMS (for mixins).
+proto_library(
+    name = "kms_proto",
+    srcs = [
+        "apis/kms/v1/resources.proto",
+        "apis/kms/v1/service.proto",
+    ],
+    deps = [
+        "@com_google_googleapis//google/api:annotations_proto",
+        "@com_google_googleapis//google/api:client_proto",
+        "@com_google_googleapis//google/api:field_behavior_proto",
+        "@com_google_googleapis//google/api:resource_proto",
+        "@com_google_googleapis//google/cloud/location:location_proto",
+        "@com_google_googleapis//google/iam/v1:iam_policy_proto",
+        "@com_google_googleapis//google/iam/v1:policy_proto",
+        "@com_google_protobuf//:duration_proto",
+        "@com_google_protobuf//:field_mask_proto",
+        "@com_google_protobuf//:struct_proto",
+        "@com_google_protobuf//:timestamp_proto",
+        "@com_google_protobuf//:wrappers_proto",
+    ],
+)
+
+proto_library_with_info(
+    name = "kms_proto_with_info",
+    deps = [
+        ":kms_proto",
+        "@com_google_googleapis//google/cloud:common_resources_proto",
+        "@com_google_googleapis//google/cloud/location:location_proto",
+        "@com_google_googleapis//google/iam/v1:iam_policy_proto",
+        "@com_google_googleapis//google/iam/v1:policy_proto",
+    ],
+)
+
+java_proto_library(
+    name = "kms_java_proto",
+    deps = [":kms_proto"],
+)
+
+java_grpc_library(
+    name = "kms_java_grpc",
+    srcs = [":kms_proto"],
+    deps = [":kms_java_proto"],
+)
+
+java_gapic_library(
+    name = "kms_java_gapic",
+    srcs = [":kms_proto_with_info"],
+    grpc_service_config = "@com_google_googleapis//google/cloud/kms/v1:cloudkms_grpc_service_config.json",
+    # For the IAM mixin.
+    service_yaml = "apis/kms/v1/cloudkms_test_mixins_v1.yaml",
+    test_deps = [
+        ":kms_java_grpc",
+        "@com_google_googleapis//google/cloud/location:location_java_grpc",
+        "@com_google_googleapis//google/iam/v1:iam_java_grpc",
+    ],
+    deps = [
+        ":kms_java_proto",
+        "@com_google_googleapis//google/cloud/location:location_java_proto",
+        "@com_google_googleapis//google/iam/v1:iam_java_proto",
+    ],
+)
+
+java_gapic_test(
+    name = "kms_java_gapic_test_suite",
+    test_classes = [
+        "com.google.cloud.kms.v1.KeyManagementServiceClientTest",
+    ],
+    runtime_deps = [":kms_java_gapic_test"],
+)
+
+# PubSub
+java_gapic_library(
+    name = "pubsub_java_gapic",
+    srcs = ["@com_google_googleapis//google/pubsub/v1:pubsub_proto_with_info"],
+    gapic_yaml = "@com_google_googleapis//google/pubsub/v1:pubsub_gapic.yaml",
+    grpc_service_config = "@com_google_googleapis//google/pubsub/v1:pubsub_grpc_service_config.json",
+    # For the IAM mixin.
+    service_yaml = "pubsub_v1.yaml",
+    test_deps = [
+        "@com_google_googleapis//google/pubsub/v1:pubsub_java_grpc",
+        "@com_google_googleapis//google/iam/v1:iam_java_grpc",
+    ],
+    deps = [
+        "@com_google_googleapis//google/iam/v1:iam_java_proto",
+        "@com_google_googleapis//google/pubsub/v1:pubsub_java_proto",
+    ],
+)
+
+java_gapic_test(
+    name = "pubsub_java_gapic_test_suite",
+    test_classes = [
+        "com.google.cloud.pubsub.v1.SubscriptionAdminClientTest",
+        "com.google.cloud.pubsub.v1.TopicAdminClientTest",
+    ],
+    runtime_deps = [":pubsub_java_gapic_test"],
+)

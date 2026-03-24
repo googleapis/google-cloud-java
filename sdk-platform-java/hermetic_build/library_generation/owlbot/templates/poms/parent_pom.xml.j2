@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>{{main_module.group_id}}</groupId>
+  <artifactId>{{main_module.artifact_id}}-parent</artifactId>
+  <packaging>pom</packaging>
+  <version>{{main_module.version}}</version><!-- {x-version-update:{{main_module.artifact_id}}:current} -->
+  <name>Google {{name}} Parent</name>
+  <description>
+    Java idiomatic client for Google Cloud Platform services.
+  </description>
+
+  {% if monorepo -%}
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-jar-parent</artifactId>
+    <version>{{ monorepo_version }}</version><!-- {x-version-update:google-cloud-java:current} -->
+    <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
+  </parent>
+  {%- else -%}
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-shared-config</artifactId>
+    <version>1.5.3</version>
+  </parent>
+  {%- endif %}
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <github.global.server>github</github.global.server>
+    <site.installationModule>{{main_module.artifact_id}}-parent</site.installationModule>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+{% for module in modules %}      <dependency>
+        <groupId>{{module.group_id}}</groupId>
+        <artifactId>{{module.artifact_id}}</artifactId>
+        <version>{{module.version}}</version><!-- {x-version-update:{{module.artifact_id}}:current} -->
+      </dependency>
+{% endfor %}
+    </dependencies>
+  </dependencyManagement>
+
+  <modules>
+{% for module in modules %}    <module>{{module.artifact_id}}</module>
+{% endfor %}    <module>{{main_module.artifact_id}}-bom</module>
+  </modules>
+
+</project>
