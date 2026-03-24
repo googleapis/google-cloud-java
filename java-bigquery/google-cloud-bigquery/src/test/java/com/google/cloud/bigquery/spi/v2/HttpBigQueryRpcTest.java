@@ -155,7 +155,7 @@ public class HttpBigQueryRpcTest {
     assertEquals(method, rpcSpan.getAttributes().get(AttributeKey.stringKey("bq.rpc.method")));
     assertEquals("http", rpcSpan.getAttributes().get(AttributeKey.stringKey("bq.rpc.system")));
     assertNotNull(
-        rpcSpan.getAttributes().get(AttributeKey.stringKey("url.template")),
+        rpcSpan.getAttributes().get(BigQueryTelemetryTracer.URL_TEMPLATE),
         "url.template attribute should be set");
 
     assertEquals(
