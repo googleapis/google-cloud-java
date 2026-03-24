@@ -141,17 +141,47 @@ public class SpanTracer implements ApiTracer {
 
   @Override
   public void attemptFailedDuration(Throwable error, java.time.Duration delay) {
-    endAttempt();
+    recordErrorAndEndAttempt(error);
   }
 
   @Override
   public void attemptFailedRetriesExhausted(Throwable error) {
-    endAttempt();
+    recordErrorAndEndAttempt(error);
   }
 
   @Override
   public void attemptPermanentFailure(Throwable error) {
-    endAttempt();
+    recordErrorAndEndAttempt(error);
+  }
+
+  private void recordErrorAndEndAttempt(Throwable error) {
+    if (attemptSpan != null) {
+      attemptSpan.setAttribute(
+          ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE, ObservabilityUtils.extractErrorType(error));
+
+      if (error != null) {
+        attemptSpan.setAttribute(
+            ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE, error.getClass().getName());
+
+        String errorMessage = extractErrorMessage(error);
+        if (errorMessage != null) {
+          attemptSpan.setAttribute(ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE, errorMessage);
+        }
+      }
+
+      endAttempt();
+    }
+  }
+
+  private String extractErrorMessage(Throwable error) {
+    Throwable cause = error;
+    while (cause != null) {
+      if (cause.getMessage() != null && !cause.getMessage().isEmpty()) {
+        return cause.getMessage();
+      }
+      cause = cause.getCause();
+    }
+    return null;
   }
 
   private void endAttempt() {

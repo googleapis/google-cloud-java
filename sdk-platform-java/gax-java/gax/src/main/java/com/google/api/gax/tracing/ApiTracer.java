@@ -184,6 +184,16 @@ public interface ApiTracer {
   ;
 
   /**
+   * Adds an annotation that a streaming request has been sent.
+   *
+   * @param requestSize the size of the request in bytes.
+   */
+  default void requestSent(long requestSize) {
+    requestSent();
+  }
+  ;
+
+  /**
    * Adds an annotation that a batch of writes has been flushed.
    *
    * @param elementCount the number of elements in the batch.

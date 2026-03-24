@@ -39,6 +39,15 @@ import javax.annotation.Nullable;
 
 class ObservabilityUtils {
 
+  /**
+   * Extracts a low-cardinality string representing the specific classification of the error to be
+   * used in the {@link ObservabilityAttributes#ERROR_TYPE_ATTRIBUTE} attribute. See {@link
+   * ErrorTypeUtil#extractErrorType} for extended documentation.
+   */
+  static String extractErrorType(@Nullable Throwable error) {
+    return ErrorTypeUtil.extractErrorType(error);
+  }
+
   /** Function to extract the status of the error as a string */
   static String extractStatus(@Nullable Throwable error) {
     final String statusString;

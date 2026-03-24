@@ -85,6 +85,18 @@ public class ObservabilityAttributes {
   /** The url template of the request (e.g. /v1/{name}:access). */
   public static final String URL_TEMPLATE_ATTRIBUTE = "url.template";
 
+  /**
+   * The specific error type. Value will be google.rpc.ErrorInfo.reason, a specific Server Error
+   * Code, Client-Side Network/Operational Error (e.g., CLIENT_TIMEOUT) or internal fallback.
+   */
+  public static final String ERROR_TYPE_ATTRIBUTE = "error.type";
+
+  /** A human-readable error message, which may include details from the exception or response. */
+  public static final String STATUS_MESSAGE_ATTRIBUTE = "status.message";
+
+  /** If the error was caused by an exception, the exception class name. */
+  public static final String EXCEPTION_TYPE_ATTRIBUTE = "exception.type";
+
   /** The resend count of the request. Only used in HTTP transport. */
   public static final String HTTP_RESEND_COUNT_ATTRIBUTE = "http.request.resend_count";
 
