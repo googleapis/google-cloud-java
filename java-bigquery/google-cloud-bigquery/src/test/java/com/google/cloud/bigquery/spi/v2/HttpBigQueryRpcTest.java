@@ -160,6 +160,9 @@ public class HttpBigQueryRpcTest {
     assertEquals(
         gcpResourceDestinationId,
         rpcSpan.getAttributes().get(BigQueryTelemetryTracer.GCP_RESOURCE_DESTINATION_ID));
+
+    // this attribute should never get set in a normal success flow
+    assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.HTTP_REQUEST_RESEND_COUNT));
   }
 
   private void verifySpanProductionAttributes(
@@ -1168,12 +1171,7 @@ public class HttpBigQueryRpcTest {
                 .orElse(null);
         assertNotNull(rpcSpan);
         assertEquals(
-            2L,
-            rpcSpan
-                .getAttributes()
-                .get(
-                    BigQueryTelemetryTracer
-                        .HTTP_REQUEST_RESEND_COUNT));
+            2L, rpcSpan.getAttributes().get(BigQueryTelemetryTracer.HTTP_REQUEST_RESEND_COUNT));
       } finally {
         com.google.cloud.bigquery.BigQueryRetryAlgorithm.setCurrentAttempt(0);
       }
@@ -1308,12 +1306,7 @@ public class HttpBigQueryRpcTest {
                 .findFirst()
                 .orElse(null);
         assertNotNull(rpcSpan);
-        assertNull(
-            rpcSpan
-                .getAttributes()
-                .get(
-                        BigQueryTelemetryTracer
-                        .HTTP_REQUEST_RESEND_COUNT));
+        assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.HTTP_REQUEST_RESEND_COUNT));
       } finally {
         com.google.cloud.bigquery.BigQueryRetryAlgorithm.setCurrentAttempt(0);
       }
