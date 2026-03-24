@@ -40,14 +40,19 @@ import java.util.Map;
 import java.util.concurrent.CancellationException;
 import javax.annotation.Nullable;
 
-class ObservabilityUtils {
+final class ObservabilityUtils {
 
+  private ObservabilityUtils() {
+  }
+
+  /** Constant for redacted values. */
   private static final String REDACTED_VALUE = "REDACTED";
 
   /**
-   * A set of lowercase query parameter keys whose values should be redacted in URLs for
-   * observability. These include direct credentials (access keys), cryptographic signatures (to
-   * prevent replay attacks or leak of authorization), and session identifiers (like upload_id).
+   * A set of lowercase query parameter keys whose values should be
+   * redacted in URLs for observability. These include direct credentials
+   * (access keys), cryptographic signatures (to prevent replay attacks
+   * or leak of authorization), and session identifiers (like upload_id).
    */
   private static final ImmutableSet<String> SENSITIVE_QUERY_KEYS =
       ImmutableSet.of(
@@ -61,34 +66,39 @@ class ObservabilityUtils {
           "api_key"); // API Keys
 
   /**
-   * Sanitizes an HTTP URL by redacting sensitive query parameters and credentials in the user-info
-   * component. If the provided URL cannot be parsed (e.g. invalid syntax), it gracefully returns
-   * the original string.
+   * Sanitizes an HTTP URL by redacting sensitive query parameters and
+   * credentials in the user-info component. If the provided URL cannot
+   * be parsed (e.g. invalid syntax), it returns the original string.
    *
-   * <p>This sanitization process conforms to the recommendations in footnote 3 of the OpenTelemetry
-   * semantic conventions for HTTP URL attributes:
+   * <p>This sanitization process conforms to the recommendations in footnote 3
+   * of the OpenTelemetry semantic conventions for HTTP URL attributes:
    * https://opentelemetry.io/docs/specs/semconv/registry/attributes/url/
    *
    * <ul>
    *   <li><i>"url.full MUST NOT contain credentials passed via URL in form of
-   *       https://username:password@www.example.com/. In such case username and password SHOULD be
-   *       redacted and attribute’s value SHOULD be https://REDACTED:REDACTED@www.example.com/."</i>
+   *       https://user:pass@example.com/. In such case username and password
+   *       SHOULD be redacted and attribute's value SHOULD be
+   *       https://REDACTED:REDACTED@example.com/."</i>
    *       - Handled by stripping the raw user info component.
-   *   <li><i>"url.full SHOULD capture the absolute URL when it is available (or can be
-   *       reconstructed)."</i> - Handled by parsing and rebuilding the generic URI.
-   *   <li><i>"When a query string value is redacted, the query string key SHOULD still be
-   *       preserved, e.g. https://www.example.com/path?color=blue&sig=REDACTED."</i> - Handled by
-   *       the redactSensitiveQueryValues method.
+   *   <li><i>"url.full SHOULD capture the absolute URL when it is available
+   *       (or can be reconstructed)."</i>
+   *       - Handled by parsing and rebuilding the generic URI.
+   *   <li><i>"When a query string value is redacted, the query string key
+   *       SHOULD still be preserved, e.g.
+   *       https://www.example.com/path?color=blue&sig=REDACTED."</i>
+   *       - Handled by the redactSensitiveQueryValues method.
    * </ul>
    *
    * @param url the raw URL string
    * @return the sanitized URL string, or the original if unparsable
    */
-  static String sanitizeUrlFull(String url) {
+  static String sanitizeUrlFull(final String url) {
     try {
       java.net.URI uri = new java.net.URI(url);
       String sanitizedUserInfo =
-          uri.getRawUserInfo() != null ? REDACTED_VALUE + ":" + REDACTED_VALUE : null;
+          uri.getRawUserInfo() != null
+              ? REDACTED_VALUE + ":" + REDACTED_VALUE
+              : null;
       String sanitizedQuery = redactSensitiveQueryValues(uri.getRawQuery());
       java.net.URI sanitizedUri =
           new java.net.URI(
@@ -108,19 +118,21 @@ class ObservabilityUtils {
   /**
    * Redacts the values of sensitive keys within a raw URI query string.
    *
-   * <p>This logic splits the query string by the `&` delimiter without full URL decoding, ensures
-   * only values belonging to predefined sensitive keys are replaced with {@code REDACTED_VALUE}.
+   * <p>This logic splits the query string by the {@code &} delimiter
+   * without full URL decoding, ensures only values belonging to predefined
+   * sensitive keys are replaced with {@code REDACTED_VALUE}.
    * The check is strictly case-insensitive.
    *
-   * <p>Note regarding Footnote 3: The OpenTelemetry spec recommends case-sensitive matching for
-   * query parameters. However, we intentionally utilize purely case-insensitive matching (by
-   * lowercasing all query keys during the lookup) to prevent credentials bypassing validation when
-   * sent with mixed casings (e.g., Sig=..., API_KEY=...).
+   * <p>Note regarding Footnote 3: The OpenTelemetry spec recommends
+   * case-sensitive matching for query parameters. However, we intentionally
+   * utilize case-insensitive matching (by lowercasing all query keys)
+   * to prevent credentials bypassing validation when sent with mixed
+   * casings (e.g., Sig=..., API_KEY=...).
    *
-   * @param rawQuery the raw query string from a java.net.URI (e.g., "key1=value1&key2=value2")
+   * @param rawQuery the raw query string from a java.net.URI
    * @return a reconstructed query sequence with sensitive values redacted
    */
-  private static String redactSensitiveQueryValues(String rawQuery) {
+  private static String redactSensitiveQueryValues(final String rawQuery) {
     if (rawQuery == null || rawQuery.isEmpty()) {
       return rawQuery;
     }
@@ -130,10 +142,13 @@ class ObservabilityUtils {
             .map(
                 param -> {
                   int equalsIndex = param.indexOf('=');
-                  String key = equalsIndex >= 0 ? param.substring(0, equalsIndex) : param;
-                  // Case-insensitive match utilizing the fact that all predefined keys are in
-                  // lowercase
-                  if (SENSITIVE_QUERY_KEYS.contains(key.toLowerCase(java.util.Locale.US))) {
+                  String key = equalsIndex >= 0
+                      ? param.substring(0, equalsIndex)
+                      : param;
+                  // Case-insensitive match utilizing the fact that all
+                  // predefined keys are in lowercase
+                  if (SENSITIVE_QUERY_KEYS.contains(
+                      key.toLowerCase(java.util.Locale.US))) {
                     return key + "=" + REDACTED_VALUE;
                   }
                   return param;
@@ -143,8 +158,13 @@ class ObservabilityUtils {
     return Joiner.on('&').join(redactedParams);
   }
 
-  /** Function to extract the status of the error as a string */
-  static String extractStatus(@Nullable Throwable error) {
+  /**
+   * Function to extract the status of the error as a string.
+   *
+   * @param error the thrown throwable error
+   * @return the extracted status string
+   */
+  static String extractStatus(@Nullable final Throwable error) {
     final String statusString;
 
     if (error == null) {
@@ -152,7 +172,8 @@ class ObservabilityUtils {
     } else if (error instanceof CancellationException) {
       statusString = StatusCode.Code.CANCELLED.toString();
     } else if (error instanceof ApiException) {
-      statusString = ((ApiException) error).getStatusCode().getCode().toString();
+      statusString =
+          ((ApiException) error).getStatusCode().getCode().toString();
     } else {
       statusString = StatusCode.Code.UNKNOWN.toString();
     }
@@ -160,7 +181,7 @@ class ObservabilityUtils {
     return statusString;
   }
 
-  static Attributes toOtelAttributes(Map<String, Object> attributes) {
+  static Attributes toOtelAttributes(final Map<String, Object> attributes) {
     AttributesBuilder attributesBuilder = Attributes.builder();
     if (attributes == null) {
       return attributesBuilder.build();
