@@ -108,6 +108,7 @@ jobs:
           java-datastore: java-datastore/**
           java-logging: java-logging/**
           java-logging-logback: java-logging-logback/**
+          java-spanner: java-spanner/**
           sdk-platform-java: sdk-platform-java/**
   split-units:
     runs-on: ubuntu-latest
