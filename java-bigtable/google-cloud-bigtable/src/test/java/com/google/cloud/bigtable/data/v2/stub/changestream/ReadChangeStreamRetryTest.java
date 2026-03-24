@@ -40,6 +40,7 @@ import com.google.cloud.bigtable.data.v2.models.ChangeStreamRecord;
 import com.google.cloud.bigtable.data.v2.models.CloseStream;
 import com.google.cloud.bigtable.data.v2.models.Heartbeat;
 import com.google.cloud.bigtable.data.v2.models.ReadChangeStreamQuery;
+import com.google.cloud.bigtable.data.v2.stub.metrics.NoopMetricsProvider;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Queues;
 import com.google.common.truth.Truth;
@@ -86,10 +87,12 @@ public class ReadChangeStreamRetryTest {
     serverRule.getServiceRegistry().addService(service);
 
     BigtableDataSettings.Builder settings =
-        BigtableDataSettings.newBuilderForEmulator(serverRule.getServer().getPort())
+        BigtableDataSettings.newBuilder()
             .setProjectId(PROJECT_ID)
             .setInstanceId(INSTANCE_ID)
-            .setCredentialsProvider(NoCredentialsProvider.create());
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setMetricsProvider(NoopMetricsProvider.INSTANCE)
+            .disableInternalMetrics();
 
     settings
         .stubSettings()
