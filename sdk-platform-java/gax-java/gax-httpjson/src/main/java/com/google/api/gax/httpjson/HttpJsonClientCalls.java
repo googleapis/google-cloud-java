@@ -76,8 +76,13 @@ class HttpJsonClientCalls {
     // if the Universe Domain is valid.
     httpJsonContext.validateUniverseDomain();
 
+    HttpJsonCallOptions callOptions = httpJsonContext.getCallOptions();
+    if (httpJsonContext.getTracer() != null) {
+      callOptions = callOptions.toBuilder().setTracer(httpJsonContext.getTracer()).build();
+    }
+
     // TODO: add headers interceptor logic
-    return httpJsonContext.getChannel().newCall(methodDescriptor, httpJsonContext.getCallOptions());
+    return httpJsonContext.getChannel().newCall(methodDescriptor, callOptions);
   }
 
   static <RequestT, ResponseT> ApiFuture<ResponseT> futureUnaryCall(

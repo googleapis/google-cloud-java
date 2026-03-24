@@ -186,4 +186,17 @@ class SpanTracerTest {
                 ObservabilityAttributes.HTTP_RESEND_COUNT_ATTRIBUTE),
             5L);
   }
+
+  @Test
+  void testRequestUrlResolved_setsAttribute() {
+    spanTracer.attemptStarted(new Object(), 1);
+
+    String rawUrl = "https://example.com?api_key=secret";
+    spanTracer.requestUrlResolved(rawUrl);
+
+    verify(span)
+        .setAttribute(
+            ObservabilityAttributes.HTTP_URL_FULL_ATTRIBUTE,
+            "https://example.com?api_key=REDACTED");
+  }
 }
