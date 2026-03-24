@@ -1101,6 +1101,43 @@ public class HttpBigQueryRpcTest {
           "Invalid request", rpcSpan.getAttributes().get(BigQueryTelemetryTracer.STATUS_MESSAGE));
       assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.EXCEPTION_TYPE));
     }
+
+    @Test
+    public void testResendCountOnRetry() throws Exception {
+      // Manually set attempt count to simulate being inside a retry loop
+      com.google.cloud.bigquery.BigQueryRetryAlgorithm.setCurrentAttempt(2);
+
+      setMockResponse(
+          "{\"kind\":\"bigquery#dataset\",\"id\":\""
+              + PROJECT_ID
+              + ":"
+              + DATASET_ID
+              + "\",\"datasetReference\":{\"projectId\":\""
+              + PROJECT_ID
+              + "\",\"datasetId\":\""
+              + DATASET_ID
+              + "\"}}");
+
+      rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
+
+      List<io.opentelemetry.sdk.trace.data.SpanData> spans = spanExporter.getFinishedSpanItems();
+      assertThat(spans).isNotEmpty();
+      io.opentelemetry.sdk.trace.data.SpanData rpcSpan =
+          spans.stream()
+              .filter(s -> s.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
+              .findFirst()
+              .orElse(null);
+      assertNotNull(rpcSpan);
+      assertEquals(
+          2L,
+          rpcSpan
+              .getAttributes()
+              .get(
+                  com.google.cloud.bigquery.telemetry.HttpTracingRequestInitializer
+                      .HTTP_REQUEST_RESEND_COUNT));
+
+      com.google.cloud.bigquery.BigQueryRetryAlgorithm.setCurrentAttempt(0);
+    }
   }
 
   @Nested
@@ -1198,6 +1235,42 @@ public class HttpBigQueryRpcTest {
       assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.EXCEPTION_TYPE));
       assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.ERROR_TYPE));
       assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.STATUS_MESSAGE));
+    }
+
+    @Test
+    public void testResendCountNotSetWhenDisabled() throws Exception {
+      // Manually set attempt count to simulate being inside a retry loop
+      com.google.cloud.bigquery.BigQueryRetryAlgorithm.setCurrentAttempt(2);
+
+      setMockResponse(
+          "{\"kind\":\"bigquery#dataset\",\"id\":\""
+              + PROJECT_ID
+              + ":"
+              + DATASET_ID
+              + "\",\"datasetReference\":{\"projectId\":\""
+              + PROJECT_ID
+              + "\",\"datasetId\":\""
+              + DATASET_ID
+              + "\"}}");
+
+      rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
+
+      List<io.opentelemetry.sdk.trace.data.SpanData> spans = spanExporter.getFinishedSpanItems();
+      assertThat(spans).isNotEmpty();
+      io.opentelemetry.sdk.trace.data.SpanData rpcSpan =
+          spans.stream()
+              .filter(s -> s.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
+              .findFirst()
+              .orElse(null);
+      assertNotNull(rpcSpan);
+      assertNull(
+          rpcSpan
+              .getAttributes()
+              .get(
+                  com.google.cloud.bigquery.telemetry.HttpTracingRequestInitializer
+                      .HTTP_REQUEST_RESEND_COUNT));
+
+      com.google.cloud.bigquery.BigQueryRetryAlgorithm.setCurrentAttempt(0);
     }
   }
 

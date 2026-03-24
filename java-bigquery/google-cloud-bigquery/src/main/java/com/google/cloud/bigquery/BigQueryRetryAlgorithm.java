@@ -18,6 +18,7 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.core.InternalApi;
 import com.google.api.gax.retrying.ResultRetryAlgorithm;
 import com.google.api.gax.retrying.ResultRetryAlgorithmWithContext;
 import com.google.api.gax.retrying.RetryAlgorithm;
@@ -44,6 +45,17 @@ public class BigQueryRetryAlgorithm<ResponseT> extends RetryAlgorithm<ResponseT>
 
   private static final Logger LOG = Logger.getLogger(BigQueryRetryAlgorithm.class.getName());
   private static final UUID RETRY_UUID = UUID.randomUUID();
+  private static final ThreadLocal<Integer> currentAttempt = ThreadLocal.withInitial(() -> 0);
+
+  @InternalApi("internal to java-bigquery")
+  public static int getCurrentAttempt() {
+    return currentAttempt.get();
+  }
+
+  @InternalApi("internal to java-bigquery")
+  public static void setCurrentAttempt(int attempt) {
+    currentAttempt.set(attempt);
+  }
 
   public BigQueryRetryAlgorithm(
       ResultRetryAlgorithm<ResponseT> resultAlgorithm,
@@ -77,6 +89,9 @@ public class BigQueryRetryAlgorithm<ResponseT> extends RetryAlgorithm<ResponseT>
                 || shouldRetryBasedOnBigQueryRetryConfig(
                     previousThrowable, bigQueryRetryConfig, previousResponse))
             && shouldRetryBasedOnTiming(context, nextAttemptSettings);
+
+    // Store retry attempt count in thread-local storage for tracing
+    setCurrentAttempt(attemptCount);
 
     if (LOG.isLoggable(Level.FINEST)) {
       LOG.log(

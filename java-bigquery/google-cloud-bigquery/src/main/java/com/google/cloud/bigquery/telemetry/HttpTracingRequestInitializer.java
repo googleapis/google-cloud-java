@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.telemetry;
 import com.google.api.client.http.*;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
+import com.google.cloud.bigquery.BigQueryRetryAlgorithm;
 import com.google.common.annotations.VisibleForTesting;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
@@ -111,6 +112,12 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
       span.setAttribute(BigQueryTelemetryTracer.SERVER_PORT, (long) port);
     }
     span.setAttribute(URL_FULL, getSanitizedUrl(request));
+    int retryAttempt = BigQueryRetryAlgorithm.getCurrentAttempt();
+    if (retryAttempt > 0) {
+      span.setAttribute(HTTP_REQUEST_RESEND_COUNT, (long) retryAttempt);
+    }
+    // Reset attempt count to 0 to avoid carrying over state across requests on the same thread
+    BigQueryRetryAlgorithm.setCurrentAttempt(0);
   }
 
   private static void addCommonResponseAttributesToSpan(
