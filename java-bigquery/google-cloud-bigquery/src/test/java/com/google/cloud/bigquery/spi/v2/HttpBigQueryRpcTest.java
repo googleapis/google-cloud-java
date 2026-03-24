@@ -1131,7 +1131,7 @@ public class HttpBigQueryRpcTest {
       assertNotNull(rpcSpan);
       assertEquals(
           "projects/{+projectId}/datasets/{+datasetId}",
-          rpcSpan.getAttributes().get(AttributeKey.stringKey("url.template")));
+          rpcSpan.getAttributes().get(BigQueryTelemetryTracer.URL_TEMPLATE));
     }
   }
 
