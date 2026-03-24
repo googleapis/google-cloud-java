@@ -51,6 +51,21 @@
   </distributionManagement>
   <profiles>
     <profile>
+      <id>fast</id>
+      <properties>
+        <checkstyle.skip>true</checkstyle.skip>
+        <enforcer.skip>true</enforcer.skip>
+        <jacoco.skip>true</jacoco.skip>
+        <clirr.skip>true</clirr.skip>
+        <spotbugs.skip>true</spotbugs.skip>
+        <pmd.skip>true</pmd.skip>
+        <animal.sniffer.skip>true</animal.sniffer.skip>
+        <fmt.skip>true</fmt.skip>
+        <flatten.skip>true</flatten.skip>
+        <mdep.analyze.skip>true</mdep.analyze.skip>
+      </properties>
+    </profile>
+    <profile>
       <!-- profile for nexus-staging:release invocation -->
       <id>release-staging-repository</id>
       <activation>
