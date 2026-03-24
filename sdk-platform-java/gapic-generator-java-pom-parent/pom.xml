@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" child.project.url.inherit.append.path="false">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.api</groupId>
+  <artifactId>gapic-generator-java-pom-parent</artifactId>
+  <version>2.68.1-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
+  <packaging>pom</packaging>
+  <name>GAPIC Generator Java POM Parent</name>
+  <url>https://github.com/googleapis/sdk-platform-java</url>
+  <description>
+    The top-level parent for all modules in the repository.
+  </description>
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-shared-config</artifactId>
+    <version>1.17.0</version>
+  </parent>
+
+  <properties>
+    <skipUnitTests>false</skipUnitTests>
+    <checkstyle.header.file>java.header</checkstyle.header.file>
+    <maven.compiler.release>8</maven.compiler.release>
+
+    <!-- External dependencies, especially gRPC and Protobuf version, should be
+        consistent across modules in this repository -->
+    <javax.annotation-api.version>1.3.2</javax.annotation-api.version>
+    <grpc.version>1.76.3</grpc.version>
+    <google.auth.version>1.43.0</google.auth.version>
+    <google.http-client.version>2.1.0</google.http-client.version>
+    <gson.version>2.12.1</gson.version>
+    <guava.version>33.5.0-jre</guava.version>
+    <protobuf.version>4.33.2</protobuf.version>
+    <opentelemetry.version>1.51.0</opentelemetry.version>
+    <errorprone.version>2.42.0</errorprone.version>
+    <j2objc-annotations.version>3.1</j2objc-annotations.version>
+    <threetenbp.version>1.7.0</threetenbp.version>
+    <junit.version>5.11.4</junit.version>
+    <mockito.version>4.11.0</mockito.version>
+    <slf4j.version>2.0.16</slf4j.version>
+    <!--  skipping clirr check for protobuf 4.x upgrade -->
+    <clirr.skip>true</clirr.skip>
+  </properties>
+
+  <developers>
+    <developer>
+      <id>suztomo</id>
+      <name>Tomo Suzuki</name>
+      <email>suztomo@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+  <organization>
+    <name>Google LLC</name>
+  </organization>
+  <scm child.scm.connection.inherit.append.path="false"  child.scm.developerConnection.inherit.append.path="false"
+      child.scm.url.inherit.append.path="false">
+    <connection>scm:git:git@github.com:googleapis/sdk-platform-java.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/sdk-platform-java.git</developerConnection>
+    <url>https://github.com/googleapis/sdk-platform-java</url>
+    <tag>HEAD</tag>
+  </scm>
+  <issueManagement>
+    <url>https://github.com/googleapis/sdk-platform-java/issues</url>
+    <system>GitHub Issues</system>
+  </issueManagement>
+
+  <licenses>
+    <license>
+      <name>Apache-2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+
+  <profiles>
+    <profile>
+      <!-- Only run checkstyle plugin on Java 11+ (checkstyle artifact only supports Java 11+) -->
+      <id>checkstyle-tests</id>
+      <activation>
+        <jdk>[11,)</jdk>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-checkstyle-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>checkstyle</id>
+                <phase>validate</phase>
+                <goals>
+                  <goal>check</goal>
+                </goals>
+                <configuration>
+                  <headerLocation>${checkstyle.header.file}</headerLocation>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>test-coverage</id>
+      <activation>
+        <property>
+          <name>enableShowcaseTestCoverage</name>
+        </property>
+      </activation>
+      <build>
+        <pluginManagement>
+          <plugins>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-surefire-plugin</artifactId>
+              <version>3.5.2</version>
+              <configuration>
+                <!-- Excludes integration tests and smoke tests when unit tests are run -->
+                <excludes>
+                  <exclude>**/*SmokeTest.java</exclude>
+                  <exclude>**/IT*.java</exclude>
+                </excludes>
+                <reportNameSuffix>sponge_log</reportNameSuffix>
+                <argLine>${surefire.jacoco.args}</argLine>
+                <skipTests>${skipUnitTests}</skipTests>
+              </configuration>
+            </plugin>
+
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-failsafe-plugin</artifactId>
+              <version>3.5.2</version>
+              <executions>
+                <execution>
+                  <goals>
+                    <goal>integration-test</goal>
+                    <goal>verify</goal>
+                  </goals>
+                </execution>
+              </executions>
+              <configuration>
+                <forkedProcessTimeoutInSeconds>3600</forkedProcessTimeoutInSeconds>
+                <reportNameSuffix>sponge_log</reportNameSuffix>
+                <includes>
+                  <include>**/IT*.java</include>
+                  <include>**/*SmokeTest.java</include>
+                </includes>
+                <argLine>${failsafe.jacoco.args}</argLine>
+              </configuration>
+            </plugin>
+          </plugins>
+        </pluginManagement>
+        <plugins>
+          <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.13</version>
+            <executions>
+              <execution>
+                <id>unit-test-execution</id>
+                <goals>
+                  <goal>prepare-agent</goal>
+                </goals>
+                <configuration>
+                  <propertyName>surefire.jacoco.args</propertyName>
+                </configuration>
+              </execution>
+              <execution>
+                <id>integration-test-execution</id>
+                <phase>pre-integration-test</phase>
+                <goals>
+                  <goal>prepare-agent</goal>
+                </goals>
+                <configuration>
+                  <propertyName>failsafe.jacoco.args</propertyName>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>envVarTest</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+              <!-- Unless overriden in the submodules, this profile run no tests in a submodule -->
+              <excludes>
+                <exclude>**/*.java</exclude>
+              </excludes>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+  <repositories>
+    <repository>
+      <id>google-maven-central-copy</id>
+      <name>Google Maven Central copy</name>
+      <url>https://maven-central.storage-download.googleapis.com/maven2</url>
+    </repository>
+    <repository>
+      <id>maven-central</id>
+      <name>Maven Central</name>
+      <url>https://repo1.maven.org/maven2</url>
+    </repository>
+  </repositories>
+</project>

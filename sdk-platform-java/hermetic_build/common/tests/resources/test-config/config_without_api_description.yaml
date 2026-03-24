@@ -1,0 +1,5 @@
+gapic_generator_version: 2.34.0
+libraries:
+  - api_shortname: apigeeconnect
+    GAPICs:
+    - proto_path: google/cloud/apigeeconnect/v1

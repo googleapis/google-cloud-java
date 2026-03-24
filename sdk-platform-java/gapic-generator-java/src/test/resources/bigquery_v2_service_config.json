@@ -1,0 +1,10 @@
+{
+  "methodConfig": [
+    {
+      "name": [
+        {"service": "google.cloud.bigquery.v2.JobService"}
+      ],
+      "timeout": "5s"
+    }
+  ]
+}

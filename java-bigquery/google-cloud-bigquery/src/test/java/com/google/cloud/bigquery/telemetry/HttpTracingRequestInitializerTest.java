@@ -366,6 +366,8 @@ public class HttpTracingRequestInitializerTest {
         responseCode,
         span.getAttributes().get(HttpTracingRequestInitializer.HTTP_RESPONSE_STATUS_CODE));
     assertEquals(
+        Version.VERSION, span.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_VERSION));
+    assertEquals(
         method, span.getAttributes().get(HttpTracingRequestInitializer.HTTP_REQUEST_METHOD));
     if (requestBodySize >= 0) {
       assertEquals(

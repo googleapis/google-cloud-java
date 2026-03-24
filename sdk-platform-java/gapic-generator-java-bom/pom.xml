@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.api</groupId>
+  <artifactId>gapic-generator-java-bom</artifactId>
+  <packaging>pom</packaging>
+  <version>2.68.1-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
+  <name>GAPIC Generator Java BOM</name>
+  <description>
+    BOM for the libraries in gapic-generator-java repository. Users should not
+    depend on this artifact explicitly because this BOM is an implementation
+    detail of the Libraries BOM.
+  </description>
+
+  <parent>
+    <groupId>com.google.api</groupId>
+    <artifactId>gapic-generator-java-pom-parent</artifactId>
+    <version>2.68.1-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
+    <relativePath>../gapic-generator-java-pom-parent</relativePath>
+  </parent>
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- Major external dependencies -->
+      <dependency>
+        <groupId>com.google.auth</groupId>
+        <artifactId>google-auth-library-bom</artifactId>
+        <version>${google.auth.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.auth</groupId>
+        <artifactId>google-auth-library-oauth2-http</artifactId>
+        <version>${google.auth.version}</version>
+        <type>test-jar</type>
+        <classifier>testlib</classifier>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.http-client</groupId>
+        <artifactId>google-http-client-bom</artifactId>
+        <version>${google.http-client.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>${gson.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava-bom</artifactId>
+        <version>${guava.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.protobuf</groupId>
+        <artifactId>protobuf-bom</artifactId>
+        <version>${protobuf.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.grpc</groupId>
+        <artifactId>grpc-bom</artifactId>
+        <version>${grpc.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <!-- Libraries published from this repositories -->
+      <dependency>
+        <groupId>com.google.api</groupId>
+        <artifactId>api-common</artifactId>
+        <version>2.59.1-SNAPSHOT</version><!-- {x-version-update:api-common:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api</groupId>
+        <artifactId>gax-bom</artifactId>
+        <version>2.76.1-SNAPSHOT</version><!-- {x-version-update:gax:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api</groupId>
+        <artifactId>gapic-generator-java</artifactId>
+        <version>2.68.1-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-common-protos</artifactId>
+        <version>2.67.1-SNAPSHOT</version><!-- {x-version-update:proto-google-common-protos:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-common-protos</artifactId>
+        <version>2.67.1-SNAPSHOT</version><!-- {x-version-update:proto-google-common-protos:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-iam-v1</artifactId>
+        <version>1.62.1-SNAPSHOT</version><!-- {x-version-update:proto-google-iam-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-iam-v2</artifactId>
+        <version>1.62.1-SNAPSHOT</version><!-- {x-version-update:proto-google-iam-v2:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-iam-v2beta</artifactId>
+        <version>1.62.1-SNAPSHOT</version><!-- {x-version-update:proto-google-iam-v2beta:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-iam-v3</artifactId>
+        <version>1.62.1-SNAPSHOT</version><!-- {x-version-update:proto-google-iam-v3:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-iam-v3beta</artifactId>
+        <version>1.62.1-SNAPSHOT</version><!-- {x-version-update:proto-google-iam-v3beta:current} -->
+      </dependency>
+
+      <!-- Following test deps are kept to keep them consistent with versions above -->
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-iam-v1</artifactId>
+        <version>1.62.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-iam-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-iam-v2</artifactId>
+        <version>1.62.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-iam-v2:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-iam-v2beta</artifactId>
+        <version>1.62.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-iam-v2beta:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-iam-v3</artifactId>
+        <version>1.62.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-iam-v3:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-iam-v3beta</artifactId>
+        <version>1.62.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-iam-v3beta:current} -->
+      </dependency>
+    </dependencies>
+
+  </dependencyManagement>
+
+</project>

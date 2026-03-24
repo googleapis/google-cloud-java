@@ -164,6 +164,30 @@ public class BigQueryTelemetryTracerTest {
         "CLIENT_UNKNOWN_ERROR", spanData.getAttributes().get(BigQueryTelemetryTracer.ERROR_TYPE));
   }
 
+  @Test
+  public void testAddCommonAttributeToSpan() {
+    BigQueryTelemetryTracer.addCommonAttributeToSpan(span);
+    span.end();
+
+    List<SpanData> spans = spanExporter.getFinishedSpanItems();
+    SpanData spanData = spans.get(0);
+
+    assertEquals(
+        BigQueryTelemetryTracer.BQ_GCP_CLIENT_SERVICE,
+        spanData.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_SERVICE));
+    assertEquals(
+        BigQueryTelemetryTracer.BQ_GCP_CLIENT_REPO,
+        spanData.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_REPO));
+    assertEquals(
+        BigQueryTelemetryTracer.BQ_GCP_CLIENT_ARTIFACT,
+        spanData.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_ARTIFACT));
+    assertEquals(
+        BigQueryTelemetryTracer.BQ_GCP_CLIENT_LANGUAGE,
+        spanData.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_LANGUAGE));
+    assertEquals(
+        Version.VERSION, spanData.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_VERSION));
+  }
+
   private GoogleJsonResponseException createException(
       String highLevelStatusCode, String errorMessage, String detailedErrorMessage, String reason) {
     GoogleJsonError googleJsonError = null;

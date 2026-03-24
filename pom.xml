@@ -252,6 +252,7 @@
     <module>java-workloadmanager</module>
     <module>java-workspaceevents</module>
     <module>java-workstations</module>
+    <module>sdk-platform-java</module>
   </modules>
 
   <!-- Do not deploy the aggregator POM -->
