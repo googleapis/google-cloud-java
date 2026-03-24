@@ -88,6 +88,7 @@ case ${JOB_TYPE} in
         -Danimal.sniffer.skip=true \
         -Dmaven.wagon.http.retryHandler.count=5 \
         -DskipTests=true \
+        --also-make \
         -T 1C
     fi
     ;;
