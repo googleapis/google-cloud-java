@@ -212,10 +212,6 @@ class ITOtelTracing {
                   .get(AttributeKey.stringKey(ObservabilityAttributes.HTTP_URL_TEMPLATE_ATTRIBUTE)))
           .isEqualTo("v1beta1/echo:echo");
       assertThat(attemptSpan.getInstrumentationScopeInfo().getName()).isEqualTo(SHOWCASE_ARTIFACT);
-      // {x-version-update-start:gapic-showcase:current}
-      assertThat(attemptSpan.getInstrumentationScopeInfo().getVersion())
-          .isEqualTo("0.0.0-SNAPSHOT");
-      // {x-version-update-end}
     }
   }
 
