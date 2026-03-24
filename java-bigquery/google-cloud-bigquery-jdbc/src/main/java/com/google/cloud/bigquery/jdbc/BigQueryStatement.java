@@ -241,62 +241,48 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   @Override
   public ResultSet executeQuery(String sql) throws SQLException {
     LOG.finest("++enter++");
-    Tracer tracer = getSafeTracer();
-    Span span = tracer.spanBuilder("BigQueryStatement.executeQuery").startSpan();
-    try (Scope scope = span.makeCurrent()) {
-      span.setAttribute("db.statement", sql);
-      this.otelContext = Context.current();
-      logQueryExecutionStart(sql);
-      try {
-        QueryJobConfiguration jobConfiguration =
-            setDestinationDatasetAndTableInJobConfig(getJobConfig(sql).build());
-        runQuery(sql, jobConfiguration);
-      } catch (InterruptedException ex) {
-        throw new BigQueryJdbcException(ex);
-      }
+    return withTracing(
+        "BigQueryStatement.executeQuery",
+        (span) -> {
+          span.setAttribute("db.statement", sql);
+          logQueryExecutionStart(sql);
+          try {
+            QueryJobConfiguration jobConfiguration =
+                setDestinationDatasetAndTableInJobConfig(getJobConfig(sql).build());
+            runQuery(sql, jobConfiguration);
+          } catch (InterruptedException ex) {
+            throw new BigQueryJdbcException(ex);
+          }
 
-      if (!isSingularResultSet()) {
-        throw new BigQueryJdbcException(
-            "Query returned more than one or didn't return any ResultSet.");
-      }
-      // This contains all the other assertions spec required on this method
-      return getCurrentResultSet();
-    } catch (Exception ex) {
-      span.recordException(ex);
-      span.setStatus(StatusCode.ERROR, ex.getMessage());
-      throw ex;
-    } finally {
-      span.end();
-    }
+          if (!isSingularResultSet()) {
+            throw new BigQueryJdbcException(
+                "Query returned more than one or didn't return any ResultSet.");
+          }
+          // This contains all the other assertions spec required on this method
+          return getCurrentResultSet();
+        });
   }
 
   @Override
   public long executeLargeUpdate(String sql) throws SQLException {
     LOG.finest("++enter++");
-    Tracer tracer = getSafeTracer();
-    Span span = tracer.spanBuilder("BigQueryStatement.executeLargeUpdate").startSpan();
-    try (Scope scope = span.makeCurrent()) {
-      span.setAttribute("db.statement", sql);
-      this.otelContext = Context.current();
-      logQueryExecutionStart(sql);
-      try {
-        QueryJobConfiguration.Builder jobConfiguration = getJobConfig(sql);
-        runQuery(sql, jobConfiguration.build());
-      } catch (InterruptedException ex) {
-        throw new BigQueryJdbcRuntimeException(ex);
-      }
-      if (this.currentUpdateCount == -1) {
-        throw new BigQueryJdbcException(
-            "Update query expected to return affected row count. Double check query type.");
-      }
-      return this.currentUpdateCount;
-    } catch (Exception ex) {
-      span.recordException(ex);
-      span.setStatus(StatusCode.ERROR, ex.getMessage());
-      throw ex;
-    } finally {
-      span.end();
-    }
+    return withTracing(
+        "BigQueryStatement.executeLargeUpdate",
+        (span) -> {
+          span.setAttribute("db.statement", sql);
+          logQueryExecutionStart(sql);
+          try {
+            QueryJobConfiguration.Builder jobConfiguration = getJobConfig(sql);
+            runQuery(sql, jobConfiguration.build());
+          } catch (InterruptedException ex) {
+            throw new BigQueryJdbcRuntimeException(ex);
+          }
+          if (this.currentUpdateCount == -1) {
+            throw new BigQueryJdbcException(
+                "Update query expected to return affected row count. Double check query type.");
+          }
+          return this.currentUpdateCount;
+        });
   }
 
   @Override
@@ -318,30 +304,23 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   @Override
   public boolean execute(String sql) throws SQLException {
     LOG.finest("++enter++");
-    Tracer tracer = getSafeTracer();
-    Span span = tracer.spanBuilder("BigQueryStatement.execute").startSpan();
-    try (Scope scope = span.makeCurrent()) {
-      span.setAttribute("db.statement", sql);
-      this.otelContext = Context.current();
-      logQueryExecutionStart(sql);
-      try {
-        QueryJobConfiguration jobConfiguration = getJobConfig(sql).build();
-        // If Large Results are enabled, ensure query type is SELECT
-        if (isLargeResultsEnabled() && getQueryType(jobConfiguration, null) == SqlType.SELECT) {
-          jobConfiguration = setDestinationDatasetAndTableInJobConfig(jobConfiguration);
-        }
-        runQuery(sql, jobConfiguration);
-      } catch (InterruptedException ex) {
-        throw new BigQueryJdbcRuntimeException(ex);
-      }
-      return getCurrentResultSet() != null;
-    } catch (Exception ex) {
-      span.recordException(ex);
-      span.setStatus(StatusCode.ERROR, ex.getMessage());
-      throw ex;
-    } finally {
-      span.end();
-    }
+    return withTracing(
+        "BigQueryStatement.execute",
+        (span) -> {
+          span.setAttribute("db.statement", sql);
+          logQueryExecutionStart(sql);
+          try {
+            QueryJobConfiguration jobConfiguration = getJobConfig(sql).build();
+            // If Large Results are enabled, ensure query type is SELECT
+            if (isLargeResultsEnabled() && getQueryType(jobConfiguration, null) == SqlType.SELECT) {
+              jobConfiguration = setDestinationDatasetAndTableInJobConfig(jobConfiguration);
+            }
+            runQuery(sql, jobConfiguration);
+          } catch (InterruptedException ex) {
+            throw new BigQueryJdbcRuntimeException(ex);
+          }
+          return getCurrentResultSet() != null;
+        });
   }
 
   StatementType getStatementType(QueryJobConfiguration queryJobConfiguration) throws SQLException {
@@ -1476,42 +1455,35 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   @Override
   public int[] executeBatch() throws SQLException {
     LOG.finest("++enter++");
-    Tracer tracer = getSafeTracer();
-    Span span = tracer.spanBuilder("BigQueryStatement.executeBatch").startSpan();
-    try (Scope scope = span.makeCurrent()) {
-      span.setAttribute("db.statement.count", this.batchQueries.size());
-      this.otelContext = Context.current();
+    return withTracing(
+        "BigQueryStatement.executeBatch",
+        (span) -> {
+          span.setAttribute("db.statement.count", this.batchQueries.size());
 
-      int[] result = new int[this.batchQueries.size()];
-      if (this.batchQueries.isEmpty()) {
-        return result;
-      }
+          int[] result = new int[this.batchQueries.size()];
+          if (this.batchQueries.isEmpty()) {
+            return result;
+          }
 
-      try {
-        String combinedQueries = String.join("", this.batchQueries);
-        QueryJobConfiguration.Builder jobConfiguration = getJobConfig(combinedQueries);
-        jobConfiguration.setPriority(QueryJobConfiguration.Priority.BATCH);
-        runQuery(combinedQueries, jobConfiguration.build());
-      } catch (InterruptedException ex) {
-        throw new BigQueryJdbcRuntimeException(ex);
-      }
+          try {
+            String combinedQueries = String.join("", this.batchQueries);
+            QueryJobConfiguration.Builder jobConfiguration = getJobConfig(combinedQueries);
+            jobConfiguration.setPriority(QueryJobConfiguration.Priority.BATCH);
+            runQuery(combinedQueries, jobConfiguration.build());
+          } catch (InterruptedException ex) {
+            throw new BigQueryJdbcRuntimeException(ex);
+          }
 
-      int i = 0;
-      while (getUpdateCount() != -1 && i < this.batchQueries.size()) {
-        result[i] = getUpdateCount();
-        getMoreResults();
-        i++;
-      }
+          int i = 0;
+          while (getUpdateCount() != -1 && i < this.batchQueries.size()) {
+            result[i] = getUpdateCount();
+            getMoreResults();
+            i++;
+          }
 
-      clearBatch();
-      return result;
-    } catch (Exception e) {
-      span.recordException(e);
-      span.setStatus(StatusCode.ERROR, e.getMessage());
-      throw e;
-    } finally {
-      span.end();
-    }
+          clearBatch();
+          return result;
+        });
   }
 
   @Override
@@ -1659,6 +1631,26 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   private void enqueueBufferEndOfStream(BlockingQueue<BigQueryFieldValueListWrapper> queue) {
     Uninterruptibles.putUninterruptibly(queue, BigQueryFieldValueListWrapper.of(null, null, true));
+  }
+
+  @FunctionalInterface
+  private interface TracedOperation<T> {
+    T run(Span span) throws SQLException;
+  }
+
+  private <T> T withTracing(String spanName, TracedOperation<T> operation) throws SQLException {
+    Tracer tracer = getSafeTracer();
+    Span span = tracer.spanBuilder(spanName).startSpan();
+    try (Scope scope = span.makeCurrent()) {
+      this.otelContext = Context.current();
+      return operation.run(span);
+    } catch (Exception ex) {
+      span.recordException(ex);
+      span.setStatus(StatusCode.ERROR, ex.getMessage());
+      throw ex;
+    } finally {
+      span.end();
+    }
   }
 
   /**
