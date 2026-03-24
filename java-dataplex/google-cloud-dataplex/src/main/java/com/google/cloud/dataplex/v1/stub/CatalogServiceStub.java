@@ -21,7 +21,9 @@ import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntriesPaged
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntryGroupsPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntryTypesPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListMetadataFeedsPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListMetadataJobsPagedResponse;
+import static com.google.cloud.dataplex.v1.CatalogServiceClient.LookupEntryLinksPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.SearchEntriesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -34,12 +36,14 @@ import com.google.cloud.dataplex.v1.CreateEntryGroupRequest;
 import com.google.cloud.dataplex.v1.CreateEntryLinkRequest;
 import com.google.cloud.dataplex.v1.CreateEntryRequest;
 import com.google.cloud.dataplex.v1.CreateEntryTypeRequest;
+import com.google.cloud.dataplex.v1.CreateMetadataFeedRequest;
 import com.google.cloud.dataplex.v1.CreateMetadataJobRequest;
 import com.google.cloud.dataplex.v1.DeleteAspectTypeRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryGroupRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryLinkRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryTypeRequest;
+import com.google.cloud.dataplex.v1.DeleteMetadataFeedRequest;
 import com.google.cloud.dataplex.v1.Entry;
 import com.google.cloud.dataplex.v1.EntryGroup;
 import com.google.cloud.dataplex.v1.EntryLink;
@@ -49,6 +53,7 @@ import com.google.cloud.dataplex.v1.GetEntryGroupRequest;
 import com.google.cloud.dataplex.v1.GetEntryLinkRequest;
 import com.google.cloud.dataplex.v1.GetEntryRequest;
 import com.google.cloud.dataplex.v1.GetEntryTypeRequest;
+import com.google.cloud.dataplex.v1.GetMetadataFeedRequest;
 import com.google.cloud.dataplex.v1.GetMetadataJobRequest;
 import com.google.cloud.dataplex.v1.ListAspectTypesRequest;
 import com.google.cloud.dataplex.v1.ListAspectTypesResponse;
@@ -58,21 +63,35 @@ import com.google.cloud.dataplex.v1.ListEntryGroupsRequest;
 import com.google.cloud.dataplex.v1.ListEntryGroupsResponse;
 import com.google.cloud.dataplex.v1.ListEntryTypesRequest;
 import com.google.cloud.dataplex.v1.ListEntryTypesResponse;
+import com.google.cloud.dataplex.v1.ListMetadataFeedsRequest;
+import com.google.cloud.dataplex.v1.ListMetadataFeedsResponse;
 import com.google.cloud.dataplex.v1.ListMetadataJobsRequest;
 import com.google.cloud.dataplex.v1.ListMetadataJobsResponse;
+import com.google.cloud.dataplex.v1.LookupContextRequest;
+import com.google.cloud.dataplex.v1.LookupContextResponse;
+import com.google.cloud.dataplex.v1.LookupEntryLinksRequest;
+import com.google.cloud.dataplex.v1.LookupEntryLinksResponse;
 import com.google.cloud.dataplex.v1.LookupEntryRequest;
+import com.google.cloud.dataplex.v1.MetadataFeed;
 import com.google.cloud.dataplex.v1.MetadataJob;
 import com.google.cloud.dataplex.v1.OperationMetadata;
 import com.google.cloud.dataplex.v1.SearchEntriesRequest;
 import com.google.cloud.dataplex.v1.SearchEntriesResponse;
 import com.google.cloud.dataplex.v1.UpdateAspectTypeRequest;
 import com.google.cloud.dataplex.v1.UpdateEntryGroupRequest;
+import com.google.cloud.dataplex.v1.UpdateEntryLinkRequest;
 import com.google.cloud.dataplex.v1.UpdateEntryRequest;
 import com.google.cloud.dataplex.v1.UpdateEntryTypeRequest;
+import com.google.cloud.dataplex.v1.UpdateMetadataFeedRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -284,12 +303,74 @@ public abstract class CatalogServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createEntryLinkCallable()");
   }
 
+  public UnaryCallable<UpdateEntryLinkRequest, EntryLink> updateEntryLinkCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateEntryLinkCallable()");
+  }
+
   public UnaryCallable<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteEntryLinkCallable()");
   }
 
+  public UnaryCallable<LookupEntryLinksRequest, LookupEntryLinksPagedResponse>
+      lookupEntryLinksPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: lookupEntryLinksPagedCallable()");
+  }
+
+  public UnaryCallable<LookupEntryLinksRequest, LookupEntryLinksResponse>
+      lookupEntryLinksCallable() {
+    throw new UnsupportedOperationException("Not implemented: lookupEntryLinksCallable()");
+  }
+
+  public UnaryCallable<LookupContextRequest, LookupContextResponse> lookupContextCallable() {
+    throw new UnsupportedOperationException("Not implemented: lookupContextCallable()");
+  }
+
   public UnaryCallable<GetEntryLinkRequest, EntryLink> getEntryLinkCallable() {
     throw new UnsupportedOperationException("Not implemented: getEntryLinkCallable()");
+  }
+
+  public OperationCallable<CreateMetadataFeedRequest, MetadataFeed, OperationMetadata>
+      createMetadataFeedOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createMetadataFeedOperationCallable()");
+  }
+
+  public UnaryCallable<CreateMetadataFeedRequest, Operation> createMetadataFeedCallable() {
+    throw new UnsupportedOperationException("Not implemented: createMetadataFeedCallable()");
+  }
+
+  public UnaryCallable<GetMetadataFeedRequest, MetadataFeed> getMetadataFeedCallable() {
+    throw new UnsupportedOperationException("Not implemented: getMetadataFeedCallable()");
+  }
+
+  public UnaryCallable<ListMetadataFeedsRequest, ListMetadataFeedsPagedResponse>
+      listMetadataFeedsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listMetadataFeedsPagedCallable()");
+  }
+
+  public UnaryCallable<ListMetadataFeedsRequest, ListMetadataFeedsResponse>
+      listMetadataFeedsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listMetadataFeedsCallable()");
+  }
+
+  public OperationCallable<DeleteMetadataFeedRequest, Empty, OperationMetadata>
+      deleteMetadataFeedOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteMetadataFeedOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteMetadataFeedRequest, Operation> deleteMetadataFeedCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteMetadataFeedCallable()");
+  }
+
+  public OperationCallable<UpdateMetadataFeedRequest, MetadataFeed, OperationMetadata>
+      updateMetadataFeedOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateMetadataFeedOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateMetadataFeedRequest, Operation> updateMetadataFeedCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateMetadataFeedCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
@@ -303,6 +384,19 @@ public abstract class CatalogServiceStub implements BackgroundResource {
 
   public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
     throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

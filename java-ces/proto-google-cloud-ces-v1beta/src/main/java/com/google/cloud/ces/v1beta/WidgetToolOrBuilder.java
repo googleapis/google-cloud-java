@@ -150,5 +150,88 @@ public interface WidgetToolOrBuilder
    */
   com.google.cloud.ces.v1beta.WidgetTool.WidgetType getWidgetType();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for rendering the widget.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct ui_config = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the uiConfig field is set.
+   */
+  boolean hasUiConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for rendering the widget.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct ui_config = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The uiConfig.
+   */
+  com.google.protobuf.Struct getUiConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for rendering the widget.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct ui_config = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  com.google.protobuf.StructOrBuilder getUiConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mapping that defines how data from a source tool is mapped to
+   * the widget's input parameters.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.WidgetTool.DataMapping data_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dataMapping field is set.
+   */
+  boolean hasDataMapping();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mapping that defines how data from a source tool is mapped to
+   * the widget's input parameters.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.WidgetTool.DataMapping data_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dataMapping.
+   */
+  com.google.cloud.ces.v1beta.WidgetTool.DataMapping getDataMapping();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mapping that defines how data from a source tool is mapped to
+   * the widget's input parameters.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.WidgetTool.DataMapping data_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1beta.WidgetTool.DataMappingOrBuilder getDataMappingOrBuilder();
+
   com.google.cloud.ces.v1beta.WidgetTool.InputCase getInputCase();
 }

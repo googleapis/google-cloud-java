@@ -61,6 +61,18 @@ public final class McpToolset extends com.google.protobuf.GeneratedMessage
         .internal_static_google_cloud_ces_v1beta_McpToolset_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 5:
+        return internalGetCustomHeaders();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -328,6 +340,135 @@ public final class McpToolset extends com.google.protobuf.GeneratedMessage
         : tlsConfig_;
   }
 
+  public static final int CUSTOM_HEADERS_FIELD_NUMBER = 5;
+
+  private static final class CustomHeadersDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.ces.v1beta.McpToolsetProto
+                .internal_static_google_cloud_ces_v1beta_McpToolset_CustomHeadersEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> customHeaders_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetCustomHeaders() {
+    if (customHeaders_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          CustomHeadersDefaultEntryHolder.defaultEntry);
+    }
+    return customHeaders_;
+  }
+
+  public int getCustomHeadersCount() {
+    return internalGetCustomHeaders().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The custom headers to send in the request to the MCP server. The
+   * values must be in the format `$context.variables.&lt;name_of_variable&gt;` and
+   * can be set in the session variables. See
+   * https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/open-api#openapi-injection
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; custom_headers = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsCustomHeaders(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetCustomHeaders().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getCustomHeadersMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getCustomHeaders() {
+    return getCustomHeadersMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The custom headers to send in the request to the MCP server. The
+   * values must be in the format `$context.variables.&lt;name_of_variable&gt;` and
+   * can be set in the session variables. See
+   * https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/open-api#openapi-injection
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; custom_headers = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getCustomHeadersMap() {
+    return internalGetCustomHeaders().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The custom headers to send in the request to the MCP server. The
+   * values must be in the format `$context.variables.&lt;name_of_variable&gt;` and
+   * can be set in the session variables. See
+   * https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/open-api#openapi-injection
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; custom_headers = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getCustomHeadersOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetCustomHeaders().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The custom headers to send in the request to the MCP server. The
+   * values must be in the format `$context.variables.&lt;name_of_variable&gt;` and
+   * can be set in the session variables. See
+   * https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/open-api#openapi-injection
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; custom_headers = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getCustomHeadersOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetCustomHeaders().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -354,6 +495,8 @@ public final class McpToolset extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(4, getTlsConfig());
     }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output, internalGetCustomHeaders(), CustomHeadersDefaultEntryHolder.defaultEntry, 5);
     getUnknownFields().writeTo(output);
   }
 
@@ -375,6 +518,16 @@ public final class McpToolset extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getTlsConfig());
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetCustomHeaders().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> customHeaders__ =
+          CustomHeadersDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, customHeaders__);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -404,6 +557,7 @@ public final class McpToolset extends com.google.protobuf.GeneratedMessage
     if (hasTlsConfig()) {
       if (!getTlsConfig().equals(other.getTlsConfig())) return false;
     }
+    if (!internalGetCustomHeaders().equals(other.internalGetCustomHeaders())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -428,6 +582,10 @@ public final class McpToolset extends com.google.protobuf.GeneratedMessage
     if (hasTlsConfig()) {
       hash = (37 * hash) + TLS_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getTlsConfig().hashCode();
+    }
+    if (!internalGetCustomHeaders().getMap().isEmpty()) {
+      hash = (37 * hash) + CUSTOM_HEADERS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetCustomHeaders().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -549,6 +707,28 @@ public final class McpToolset extends com.google.protobuf.GeneratedMessage
           .internal_static_google_cloud_ces_v1beta_McpToolset_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 5:
+          return internalGetCustomHeaders();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 5:
+          return internalGetMutableCustomHeaders();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -597,6 +777,7 @@ public final class McpToolset extends com.google.protobuf.GeneratedMessage
         tlsConfigBuilder_.dispose();
         tlsConfigBuilder_ = null;
       }
+      internalGetMutableCustomHeaders().clear();
       return this;
     }
 
@@ -655,6 +836,10 @@ public final class McpToolset extends com.google.protobuf.GeneratedMessage
         result.tlsConfig_ = tlsConfigBuilder_ == null ? tlsConfig_ : tlsConfigBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.customHeaders_ = internalGetCustomHeaders();
+        result.customHeaders_.makeImmutable();
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -684,6 +869,8 @@ public final class McpToolset extends com.google.protobuf.GeneratedMessage
       if (other.hasTlsConfig()) {
         mergeTlsConfig(other.getTlsConfig());
       }
+      internalGetMutableCustomHeaders().mergeFrom(other.internalGetCustomHeaders());
+      bitField0_ |= 0x00000010;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -738,6 +925,18 @@ public final class McpToolset extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> customHeaders__ =
+                    input.readMessage(
+                        CustomHeadersDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableCustomHeaders()
+                    .getMutableMap()
+                    .put(customHeaders__.getKey(), customHeaders__.getValue());
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1580,6 +1779,216 @@ public final class McpToolset extends com.google.protobuf.GeneratedMessage
         tlsConfig_ = null;
       }
       return tlsConfigBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> customHeaders_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetCustomHeaders() {
+      if (customHeaders_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            CustomHeadersDefaultEntryHolder.defaultEntry);
+      }
+      return customHeaders_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableCustomHeaders() {
+      if (customHeaders_ == null) {
+        customHeaders_ =
+            com.google.protobuf.MapField.newMapField(CustomHeadersDefaultEntryHolder.defaultEntry);
+      }
+      if (!customHeaders_.isMutable()) {
+        customHeaders_ = customHeaders_.copy();
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return customHeaders_;
+    }
+
+    public int getCustomHeadersCount() {
+      return internalGetCustomHeaders().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The custom headers to send in the request to the MCP server. The
+     * values must be in the format `$context.variables.&lt;name_of_variable&gt;` and
+     * can be set in the session variables. See
+     * https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/open-api#openapi-injection
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; custom_headers = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsCustomHeaders(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetCustomHeaders().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getCustomHeadersMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getCustomHeaders() {
+      return getCustomHeadersMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The custom headers to send in the request to the MCP server. The
+     * values must be in the format `$context.variables.&lt;name_of_variable&gt;` and
+     * can be set in the session variables. See
+     * https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/open-api#openapi-injection
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; custom_headers = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getCustomHeadersMap() {
+      return internalGetCustomHeaders().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The custom headers to send in the request to the MCP server. The
+     * values must be in the format `$context.variables.&lt;name_of_variable&gt;` and
+     * can be set in the session variables. See
+     * https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/open-api#openapi-injection
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; custom_headers = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getCustomHeadersOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetCustomHeaders().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The custom headers to send in the request to the MCP server. The
+     * values must be in the format `$context.variables.&lt;name_of_variable&gt;` and
+     * can be set in the session variables. See
+     * https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/open-api#openapi-injection
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; custom_headers = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getCustomHeadersOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetCustomHeaders().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearCustomHeaders() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      internalGetMutableCustomHeaders().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The custom headers to send in the request to the MCP server. The
+     * values must be in the format `$context.variables.&lt;name_of_variable&gt;` and
+     * can be set in the session variables. See
+     * https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/open-api#openapi-injection
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; custom_headers = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeCustomHeaders(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableCustomHeaders().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableCustomHeaders() {
+      bitField0_ |= 0x00000010;
+      return internalGetMutableCustomHeaders().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The custom headers to send in the request to the MCP server. The
+     * values must be in the format `$context.variables.&lt;name_of_variable&gt;` and
+     * can be set in the session variables. See
+     * https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/open-api#openapi-injection
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; custom_headers = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putCustomHeaders(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableCustomHeaders().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000010;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The custom headers to send in the request to the MCP server. The
+     * values must be in the format `$context.variables.&lt;name_of_variable&gt;` and
+     * can be set in the session variables. See
+     * https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/open-api#openapi-injection
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; custom_headers = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllCustomHeaders(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableCustomHeaders().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000010;
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.McpToolset)

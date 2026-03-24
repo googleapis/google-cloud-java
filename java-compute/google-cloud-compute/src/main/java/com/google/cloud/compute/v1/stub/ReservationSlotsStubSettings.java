@@ -34,6 +34,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -45,6 +46,7 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.GetReservationSlotRequest;
+import com.google.cloud.compute.v1.GetVersionReservationSlotRequest;
 import com.google.cloud.compute.v1.ListReservationSlotsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ReservationSlot;
@@ -112,7 +114,7 @@ import javax.annotation.Generated;
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
- * configure the RetrySettings for update:
+ * configure the RetrySettings for getVersion:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -137,6 +139,7 @@ import javax.annotation.Generated;
  * }</pre>
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class ReservationSlotsStubSettings extends StubSettings<ReservationSlotsStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -147,6 +150,9 @@ public class ReservationSlotsStubSettings extends StubSettings<ReservationSlotsS
 
   private final UnaryCallSettings<GetReservationSlotRequest, ReservationSlotsGetResponse>
       getSettings;
+  private final UnaryCallSettings<GetVersionReservationSlotRequest, Operation> getVersionSettings;
+  private final OperationCallSettings<GetVersionReservationSlotRequest, Operation, Operation>
+      getVersionOperationSettings;
   private final PagedCallSettings<
           ListReservationSlotsRequest, ReservationSlotsListResponse, ListPagedResponse>
       listSettings;
@@ -216,6 +222,17 @@ public class ReservationSlotsStubSettings extends StubSettings<ReservationSlotsS
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetReservationSlotRequest, ReservationSlotsGetResponse> getSettings() {
     return getSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getVersion. */
+  public UnaryCallSettings<GetVersionReservationSlotRequest, Operation> getVersionSettings() {
+    return getVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getVersion. */
+  public OperationCallSettings<GetVersionReservationSlotRequest, Operation, Operation>
+      getVersionOperationSettings() {
+    return getVersionOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -319,9 +336,19 @@ public class ReservationSlotsStubSettings extends StubSettings<ReservationSlotsS
     super(settingsBuilder);
 
     getSettings = settingsBuilder.getSettings().build();
+    getVersionSettings = settingsBuilder.getVersionSettings().build();
+    getVersionOperationSettings = settingsBuilder.getVersionOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
     updateSettings = settingsBuilder.updateSettings().build();
     updateOperationSettings = settingsBuilder.updateOperationSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-compute")
+        .setRepository("googleapis/google-cloud-java")
+        .build();
   }
 
   /** Builder for ReservationSlotsStubSettings. */
@@ -329,6 +356,11 @@ public class ReservationSlotsStubSettings extends StubSettings<ReservationSlotsS
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<GetReservationSlotRequest, ReservationSlotsGetResponse>
         getSettings;
+    private final UnaryCallSettings.Builder<GetVersionReservationSlotRequest, Operation>
+        getVersionSettings;
+    private final OperationCallSettings.Builder<
+            GetVersionReservationSlotRequest, Operation, Operation>
+        getVersionOperationSettings;
     private final PagedCallSettings.Builder<
             ListReservationSlotsRequest, ReservationSlotsListResponse, ListPagedResponse>
         listSettings;
@@ -386,13 +418,15 @@ public class ReservationSlotsStubSettings extends StubSettings<ReservationSlotsS
       super(clientContext);
 
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getVersionOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       updateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getSettings, listSettings, updateSettings);
+              getSettings, getVersionSettings, listSettings, updateSettings);
       initDefaults(this);
     }
 
@@ -400,13 +434,15 @@ public class ReservationSlotsStubSettings extends StubSettings<ReservationSlotsS
       super(settings);
 
       getSettings = settings.getSettings.toBuilder();
+      getVersionSettings = settings.getVersionSettings.toBuilder();
+      getVersionOperationSettings = settings.getVersionOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
       updateSettings = settings.updateSettings.toBuilder();
       updateOperationSettings = settings.updateOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getSettings, listSettings, updateSettings);
+              getSettings, getVersionSettings, listSettings, updateSettings);
     }
 
     private static Builder createDefault() {
@@ -428,6 +464,11 @@ public class ReservationSlotsStubSettings extends StubSettings<ReservationSlotsS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .getVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .listSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -436,6 +477,31 @@ public class ReservationSlotsStubSettings extends StubSettings<ReservationSlotsS
           .updateSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getVersionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<GetVersionReservationSlotRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
 
       builder
           .updateOperationSettings()
@@ -483,6 +549,18 @@ public class ReservationSlotsStubSettings extends StubSettings<ReservationSlotsS
     public UnaryCallSettings.Builder<GetReservationSlotRequest, ReservationSlotsGetResponse>
         getSettings() {
       return getSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getVersion. */
+    public UnaryCallSettings.Builder<GetVersionReservationSlotRequest, Operation>
+        getVersionSettings() {
+      return getVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getVersion. */
+    public OperationCallSettings.Builder<GetVersionReservationSlotRequest, Operation, Operation>
+        getVersionOperationSettings() {
+      return getVersionOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to list. */

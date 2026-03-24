@@ -21,6 +21,7 @@ import static com.google.cloud.ces.v1beta.SessionServiceClient.ListLocationsPage
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.BidiStreamingCallable;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.ces.v1beta.BidiSessionClientMessage;
 import com.google.cloud.ces.v1beta.BidiSessionServerMessage;
@@ -44,6 +45,10 @@ public abstract class SessionServiceStub implements BackgroundResource {
 
   public UnaryCallable<RunSessionRequest, RunSessionResponse> runSessionCallable() {
     throw new UnsupportedOperationException("Not implemented: runSessionCallable()");
+  }
+
+  public ServerStreamingCallable<RunSessionRequest, RunSessionResponse> streamRunSessionCallable() {
+    throw new UnsupportedOperationException("Not implemented: streamRunSessionCallable()");
   }
 
   public BidiStreamingCallable<BidiSessionClientMessage, BidiSessionServerMessage>

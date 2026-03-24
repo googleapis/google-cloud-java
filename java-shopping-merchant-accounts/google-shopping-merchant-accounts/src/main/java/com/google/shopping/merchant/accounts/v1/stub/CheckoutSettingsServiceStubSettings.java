@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
@@ -102,6 +103,7 @@ import javax.annotation.Generated;
  * retries.
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class CheckoutSettingsServiceStubSettings
     extends StubSettings<CheckoutSettingsServiceStubSettings> {
   /** The default scopes of the service. */
@@ -255,6 +257,14 @@ public class CheckoutSettingsServiceStubSettings
     createCheckoutSettingsSettings = settingsBuilder.createCheckoutSettingsSettings().build();
     updateCheckoutSettingsSettings = settingsBuilder.updateCheckoutSettingsSettings().build();
     deleteCheckoutSettingsSettings = settingsBuilder.deleteCheckoutSettingsSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.shopping:google-shopping-merchant-accounts")
+        .setRepository("googleapis/google-cloud-java")
+        .build();
   }
 
   /** Builder for CheckoutSettingsServiceStubSettings. */

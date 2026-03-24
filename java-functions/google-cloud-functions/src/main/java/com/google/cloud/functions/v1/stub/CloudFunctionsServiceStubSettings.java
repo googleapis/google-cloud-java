@@ -39,6 +39,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -161,6 +162,7 @@ import javax.annotation.Generated;
  * }</pre>
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class CloudFunctionsServiceStubSettings
     extends StubSettings<CloudFunctionsServiceStubSettings> {
   /** The default scopes of the service. */
@@ -505,6 +507,14 @@ public class CloudFunctionsServiceStubSettings
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-functions")
+        .setRepository("googleapis/google-cloud-java")
+        .build();
   }
 
   /** Builder for CloudFunctionsServiceStubSettings. */

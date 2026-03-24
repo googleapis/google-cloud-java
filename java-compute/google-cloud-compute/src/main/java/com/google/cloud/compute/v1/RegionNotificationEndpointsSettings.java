@@ -16,6 +16,7 @@
 
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.RegionNotificationEndpointsClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.RegionNotificationEndpointsClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -114,6 +115,15 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public class RegionNotificationEndpointsSettings
     extends ClientSettings<RegionNotificationEndpointsSettings> {
+
+  /** Returns the object with the settings used for calls to aggregatedList. */
+  public PagedCallSettings<
+          AggregatedListRegionNotificationEndpointsRequest,
+          NotificationEndpointAggregatedList,
+          AggregatedListPagedResponse>
+      aggregatedListSettings() {
+    return ((RegionNotificationEndpointsStubSettings) getStubSettings()).aggregatedListSettings();
+  }
 
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteRegionNotificationEndpointRequest, Operation> deleteSettings() {
@@ -254,6 +264,15 @@ public class RegionNotificationEndpointsSettings
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
+    }
+
+    /** Returns the builder for the settings used for calls to aggregatedList. */
+    public PagedCallSettings.Builder<
+            AggregatedListRegionNotificationEndpointsRequest,
+            NotificationEndpointAggregatedList,
+            AggregatedListPagedResponse>
+        aggregatedListSettings() {
+      return getStubSettingsBuilder().aggregatedListSettings();
     }
 
     /** Returns the builder for the settings used for calls to delete. */

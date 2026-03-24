@@ -21,7 +21,9 @@ import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntriesPaged
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntryGroupsPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntryTypesPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListMetadataFeedsPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListMetadataJobsPagedResponse;
+import static com.google.cloud.dataplex.v1.CatalogServiceClient.LookupEntryLinksPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.SearchEntriesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -39,12 +41,14 @@ import com.google.cloud.dataplex.v1.CreateEntryGroupRequest;
 import com.google.cloud.dataplex.v1.CreateEntryLinkRequest;
 import com.google.cloud.dataplex.v1.CreateEntryRequest;
 import com.google.cloud.dataplex.v1.CreateEntryTypeRequest;
+import com.google.cloud.dataplex.v1.CreateMetadataFeedRequest;
 import com.google.cloud.dataplex.v1.CreateMetadataJobRequest;
 import com.google.cloud.dataplex.v1.DeleteAspectTypeRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryGroupRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryLinkRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryTypeRequest;
+import com.google.cloud.dataplex.v1.DeleteMetadataFeedRequest;
 import com.google.cloud.dataplex.v1.Entry;
 import com.google.cloud.dataplex.v1.EntryGroup;
 import com.google.cloud.dataplex.v1.EntryLink;
@@ -54,6 +58,7 @@ import com.google.cloud.dataplex.v1.GetEntryGroupRequest;
 import com.google.cloud.dataplex.v1.GetEntryLinkRequest;
 import com.google.cloud.dataplex.v1.GetEntryRequest;
 import com.google.cloud.dataplex.v1.GetEntryTypeRequest;
+import com.google.cloud.dataplex.v1.GetMetadataFeedRequest;
 import com.google.cloud.dataplex.v1.GetMetadataJobRequest;
 import com.google.cloud.dataplex.v1.ListAspectTypesRequest;
 import com.google.cloud.dataplex.v1.ListAspectTypesResponse;
@@ -63,21 +68,35 @@ import com.google.cloud.dataplex.v1.ListEntryGroupsRequest;
 import com.google.cloud.dataplex.v1.ListEntryGroupsResponse;
 import com.google.cloud.dataplex.v1.ListEntryTypesRequest;
 import com.google.cloud.dataplex.v1.ListEntryTypesResponse;
+import com.google.cloud.dataplex.v1.ListMetadataFeedsRequest;
+import com.google.cloud.dataplex.v1.ListMetadataFeedsResponse;
 import com.google.cloud.dataplex.v1.ListMetadataJobsRequest;
 import com.google.cloud.dataplex.v1.ListMetadataJobsResponse;
+import com.google.cloud.dataplex.v1.LookupContextRequest;
+import com.google.cloud.dataplex.v1.LookupContextResponse;
+import com.google.cloud.dataplex.v1.LookupEntryLinksRequest;
+import com.google.cloud.dataplex.v1.LookupEntryLinksResponse;
 import com.google.cloud.dataplex.v1.LookupEntryRequest;
+import com.google.cloud.dataplex.v1.MetadataFeed;
 import com.google.cloud.dataplex.v1.MetadataJob;
 import com.google.cloud.dataplex.v1.OperationMetadata;
 import com.google.cloud.dataplex.v1.SearchEntriesRequest;
 import com.google.cloud.dataplex.v1.SearchEntriesResponse;
 import com.google.cloud.dataplex.v1.UpdateAspectTypeRequest;
 import com.google.cloud.dataplex.v1.UpdateEntryGroupRequest;
+import com.google.cloud.dataplex.v1.UpdateEntryLinkRequest;
 import com.google.cloud.dataplex.v1.UpdateEntryRequest;
 import com.google.cloud.dataplex.v1.UpdateEntryTypeRequest;
+import com.google.cloud.dataplex.v1.UpdateMetadataFeedRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -386,6 +405,17 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<UpdateEntryLinkRequest, EntryLink>
+      updateEntryLinkMethodDescriptor =
+          MethodDescriptor.<UpdateEntryLinkRequest, EntryLink>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/UpdateEntryLink")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateEntryLinkRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(EntryLink.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<DeleteEntryLinkRequest, EntryLink>
       deleteEntryLinkMethodDescriptor =
           MethodDescriptor.<DeleteEntryLinkRequest, EntryLink>newBuilder()
@@ -397,6 +427,30 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<LookupEntryLinksRequest, LookupEntryLinksResponse>
+      lookupEntryLinksMethodDescriptor =
+          MethodDescriptor.<LookupEntryLinksRequest, LookupEntryLinksResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/LookupEntryLinks")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(LookupEntryLinksRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(LookupEntryLinksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<LookupContextRequest, LookupContextResponse>
+      lookupContextMethodDescriptor =
+          MethodDescriptor.<LookupContextRequest, LookupContextResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/LookupContext")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(LookupContextRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(LookupContextResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<GetEntryLinkRequest, EntryLink>
       getEntryLinkMethodDescriptor =
           MethodDescriptor.<GetEntryLinkRequest, EntryLink>newBuilder()
@@ -404,6 +458,62 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setFullMethodName("google.cloud.dataplex.v1.CatalogService/GetEntryLink")
               .setRequestMarshaller(ProtoUtils.marshaller(GetEntryLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EntryLink.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateMetadataFeedRequest, Operation>
+      createMetadataFeedMethodDescriptor =
+          MethodDescriptor.<CreateMetadataFeedRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/CreateMetadataFeed")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateMetadataFeedRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetMetadataFeedRequest, MetadataFeed>
+      getMetadataFeedMethodDescriptor =
+          MethodDescriptor.<GetMetadataFeedRequest, MetadataFeed>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/GetMetadataFeed")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetMetadataFeedRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(MetadataFeed.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListMetadataFeedsRequest, ListMetadataFeedsResponse>
+      listMetadataFeedsMethodDescriptor =
+          MethodDescriptor.<ListMetadataFeedsRequest, ListMetadataFeedsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/ListMetadataFeeds")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListMetadataFeedsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListMetadataFeedsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteMetadataFeedRequest, Operation>
+      deleteMetadataFeedMethodDescriptor =
+          MethodDescriptor.<DeleteMetadataFeedRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/DeleteMetadataFeed")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteMetadataFeedRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateMetadataFeedRequest, Operation>
+      updateMetadataFeedMethodDescriptor =
+          MethodDescriptor.<UpdateMetadataFeedRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/UpdateMetadataFeed")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateMetadataFeedRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -427,6 +537,36 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
           .setSampledToLocalTracing(true)
           .build();
+
+  private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
+      MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
+      MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.iam.v1.IAMPolicy/TestIamPermissions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
 
   private final UnaryCallable<CreateEntryTypeRequest, Operation> createEntryTypeCallable;
   private final OperationCallable<CreateEntryTypeRequest, EntryType, OperationMetadata>
@@ -490,12 +630,36 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
       listMetadataJobsPagedCallable;
   private final UnaryCallable<CancelMetadataJobRequest, Empty> cancelMetadataJobCallable;
   private final UnaryCallable<CreateEntryLinkRequest, EntryLink> createEntryLinkCallable;
+  private final UnaryCallable<UpdateEntryLinkRequest, EntryLink> updateEntryLinkCallable;
   private final UnaryCallable<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkCallable;
+  private final UnaryCallable<LookupEntryLinksRequest, LookupEntryLinksResponse>
+      lookupEntryLinksCallable;
+  private final UnaryCallable<LookupEntryLinksRequest, LookupEntryLinksPagedResponse>
+      lookupEntryLinksPagedCallable;
+  private final UnaryCallable<LookupContextRequest, LookupContextResponse> lookupContextCallable;
   private final UnaryCallable<GetEntryLinkRequest, EntryLink> getEntryLinkCallable;
+  private final UnaryCallable<CreateMetadataFeedRequest, Operation> createMetadataFeedCallable;
+  private final OperationCallable<CreateMetadataFeedRequest, MetadataFeed, OperationMetadata>
+      createMetadataFeedOperationCallable;
+  private final UnaryCallable<GetMetadataFeedRequest, MetadataFeed> getMetadataFeedCallable;
+  private final UnaryCallable<ListMetadataFeedsRequest, ListMetadataFeedsResponse>
+      listMetadataFeedsCallable;
+  private final UnaryCallable<ListMetadataFeedsRequest, ListMetadataFeedsPagedResponse>
+      listMetadataFeedsPagedCallable;
+  private final UnaryCallable<DeleteMetadataFeedRequest, Operation> deleteMetadataFeedCallable;
+  private final OperationCallable<DeleteMetadataFeedRequest, Empty, OperationMetadata>
+      deleteMetadataFeedOperationCallable;
+  private final UnaryCallable<UpdateMetadataFeedRequest, Operation> updateMetadataFeedCallable;
+  private final OperationCallable<UpdateMetadataFeedRequest, MetadataFeed, OperationMetadata>
+      updateMetadataFeedOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
   private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
+  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -817,9 +981,40 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<UpdateEntryLinkRequest, EntryLink> updateEntryLinkTransportSettings =
+        GrpcCallSettings.<UpdateEntryLinkRequest, EntryLink>newBuilder()
+            .setMethodDescriptor(updateEntryLinkMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("entry_link.name", String.valueOf(request.getEntryLink().getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkTransportSettings =
         GrpcCallSettings.<DeleteEntryLinkRequest, EntryLink>newBuilder()
             .setMethodDescriptor(deleteEntryLinkMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<LookupEntryLinksRequest, LookupEntryLinksResponse>
+        lookupEntryLinksTransportSettings =
+            GrpcCallSettings.<LookupEntryLinksRequest, LookupEntryLinksResponse>newBuilder()
+                .setMethodDescriptor(lookupEntryLinksMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<LookupContextRequest, LookupContextResponse> lookupContextTransportSettings =
+        GrpcCallSettings.<LookupContextRequest, LookupContextResponse>newBuilder()
+            .setMethodDescriptor(lookupContextMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -834,6 +1029,58 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateMetadataFeedRequest, Operation> createMetadataFeedTransportSettings =
+        GrpcCallSettings.<CreateMetadataFeedRequest, Operation>newBuilder()
+            .setMethodDescriptor(createMetadataFeedMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetMetadataFeedRequest, MetadataFeed> getMetadataFeedTransportSettings =
+        GrpcCallSettings.<GetMetadataFeedRequest, MetadataFeed>newBuilder()
+            .setMethodDescriptor(getMetadataFeedMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListMetadataFeedsRequest, ListMetadataFeedsResponse>
+        listMetadataFeedsTransportSettings =
+            GrpcCallSettings.<ListMetadataFeedsRequest, ListMetadataFeedsResponse>newBuilder()
+                .setMethodDescriptor(listMetadataFeedsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteMetadataFeedRequest, Operation> deleteMetadataFeedTransportSettings =
+        GrpcCallSettings.<DeleteMetadataFeedRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteMetadataFeedMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateMetadataFeedRequest, Operation> updateMetadataFeedTransportSettings =
+        GrpcCallSettings.<UpdateMetadataFeedRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateMetadataFeedMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "metadata_feed.name", String.valueOf(request.getMetadataFeed().getName()));
                   return builder.build();
                 })
             .build();
@@ -857,6 +1104,37 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
+        GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .build();
 
     this.createEntryTypeCallable =
         callableFactory.createUnaryCallable(
@@ -1021,12 +1299,70 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
     this.createEntryLinkCallable =
         callableFactory.createUnaryCallable(
             createEntryLinkTransportSettings, settings.createEntryLinkSettings(), clientContext);
+    this.updateEntryLinkCallable =
+        callableFactory.createUnaryCallable(
+            updateEntryLinkTransportSettings, settings.updateEntryLinkSettings(), clientContext);
     this.deleteEntryLinkCallable =
         callableFactory.createUnaryCallable(
             deleteEntryLinkTransportSettings, settings.deleteEntryLinkSettings(), clientContext);
+    this.lookupEntryLinksCallable =
+        callableFactory.createUnaryCallable(
+            lookupEntryLinksTransportSettings, settings.lookupEntryLinksSettings(), clientContext);
+    this.lookupEntryLinksPagedCallable =
+        callableFactory.createPagedCallable(
+            lookupEntryLinksTransportSettings, settings.lookupEntryLinksSettings(), clientContext);
+    this.lookupContextCallable =
+        callableFactory.createUnaryCallable(
+            lookupContextTransportSettings, settings.lookupContextSettings(), clientContext);
     this.getEntryLinkCallable =
         callableFactory.createUnaryCallable(
             getEntryLinkTransportSettings, settings.getEntryLinkSettings(), clientContext);
+    this.createMetadataFeedCallable =
+        callableFactory.createUnaryCallable(
+            createMetadataFeedTransportSettings,
+            settings.createMetadataFeedSettings(),
+            clientContext);
+    this.createMetadataFeedOperationCallable =
+        callableFactory.createOperationCallable(
+            createMetadataFeedTransportSettings,
+            settings.createMetadataFeedOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getMetadataFeedCallable =
+        callableFactory.createUnaryCallable(
+            getMetadataFeedTransportSettings, settings.getMetadataFeedSettings(), clientContext);
+    this.listMetadataFeedsCallable =
+        callableFactory.createUnaryCallable(
+            listMetadataFeedsTransportSettings,
+            settings.listMetadataFeedsSettings(),
+            clientContext);
+    this.listMetadataFeedsPagedCallable =
+        callableFactory.createPagedCallable(
+            listMetadataFeedsTransportSettings,
+            settings.listMetadataFeedsSettings(),
+            clientContext);
+    this.deleteMetadataFeedCallable =
+        callableFactory.createUnaryCallable(
+            deleteMetadataFeedTransportSettings,
+            settings.deleteMetadataFeedSettings(),
+            clientContext);
+    this.deleteMetadataFeedOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteMetadataFeedTransportSettings,
+            settings.deleteMetadataFeedOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateMetadataFeedCallable =
+        callableFactory.createUnaryCallable(
+            updateMetadataFeedTransportSettings,
+            settings.updateMetadataFeedSettings(),
+            clientContext);
+    this.updateMetadataFeedOperationCallable =
+        callableFactory.createOperationCallable(
+            updateMetadataFeedTransportSettings,
+            settings.updateMetadataFeedOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1036,6 +1372,17 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
     this.getLocationCallable =
         callableFactory.createUnaryCallable(
             getLocationTransportSettings, settings.getLocationSettings(), clientContext);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1277,13 +1624,85 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
   }
 
   @Override
+  public UnaryCallable<UpdateEntryLinkRequest, EntryLink> updateEntryLinkCallable() {
+    return updateEntryLinkCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkCallable() {
     return deleteEntryLinkCallable;
   }
 
   @Override
+  public UnaryCallable<LookupEntryLinksRequest, LookupEntryLinksResponse>
+      lookupEntryLinksCallable() {
+    return lookupEntryLinksCallable;
+  }
+
+  @Override
+  public UnaryCallable<LookupEntryLinksRequest, LookupEntryLinksPagedResponse>
+      lookupEntryLinksPagedCallable() {
+    return lookupEntryLinksPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<LookupContextRequest, LookupContextResponse> lookupContextCallable() {
+    return lookupContextCallable;
+  }
+
+  @Override
   public UnaryCallable<GetEntryLinkRequest, EntryLink> getEntryLinkCallable() {
     return getEntryLinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateMetadataFeedRequest, Operation> createMetadataFeedCallable() {
+    return createMetadataFeedCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateMetadataFeedRequest, MetadataFeed, OperationMetadata>
+      createMetadataFeedOperationCallable() {
+    return createMetadataFeedOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetMetadataFeedRequest, MetadataFeed> getMetadataFeedCallable() {
+    return getMetadataFeedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMetadataFeedsRequest, ListMetadataFeedsResponse>
+      listMetadataFeedsCallable() {
+    return listMetadataFeedsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMetadataFeedsRequest, ListMetadataFeedsPagedResponse>
+      listMetadataFeedsPagedCallable() {
+    return listMetadataFeedsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteMetadataFeedRequest, Operation> deleteMetadataFeedCallable() {
+    return deleteMetadataFeedCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteMetadataFeedRequest, Empty, OperationMetadata>
+      deleteMetadataFeedOperationCallable() {
+    return deleteMetadataFeedOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateMetadataFeedRequest, Operation> updateMetadataFeedCallable() {
+    return updateMetadataFeedCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateMetadataFeedRequest, MetadataFeed, OperationMetadata>
+      updateMetadataFeedOperationCallable() {
+    return updateMetadataFeedOperationCallable;
   }
 
   @Override
@@ -1300,6 +1719,22 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
   @Override
   public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
     return getLocationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

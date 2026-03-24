@@ -24,4 +24,111 @@ package com.google.cloud.dataplex.v1;
 public interface DataDocumentationSpecOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataDocumentationSpec)
-    com.google.protobuf.MessageOrBuilder {}
+    com.google.protobuf.MessageOrBuilder {
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to publish result to Dataplex Catalog.
+   * </pre>
+   *
+   * <code>bool catalog_publishing_enabled = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The catalogPublishingEnabled.
+   */
+  boolean getCatalogPublishingEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies which components of the data documentation to generate.
+   * Any component that is required to generate the specified components will
+   * also be generated. If no generation scope is specified, all available
+   * documentation components will be generated.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope generation_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the generationScopes.
+   */
+  java.util.List<com.google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope>
+      getGenerationScopesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies which components of the data documentation to generate.
+   * Any component that is required to generate the specified components will
+   * also be generated. If no generation scope is specified, all available
+   * documentation components will be generated.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope generation_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of generationScopes.
+   */
+  int getGenerationScopesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies which components of the data documentation to generate.
+   * Any component that is required to generate the specified components will
+   * also be generated. If no generation scope is specified, all available
+   * documentation components will be generated.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope generation_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The generationScopes at the given index.
+   */
+  com.google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope getGenerationScopes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies which components of the data documentation to generate.
+   * Any component that is required to generate the specified components will
+   * also be generated. If no generation scope is specified, all available
+   * documentation components will be generated.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope generation_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for generationScopes.
+   */
+  java.util.List<java.lang.Integer> getGenerationScopesValueList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies which components of the data documentation to generate.
+   * Any component that is required to generate the specified components will
+   * also be generated. If no generation scope is specified, all available
+   * documentation components will be generated.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScope generation_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of generationScopes at the given index.
+   */
+  int getGenerationScopesValue(int index);
+}

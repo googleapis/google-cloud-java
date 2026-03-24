@@ -313,6 +313,238 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> CreateRagDataSchema</td>
+ *      <td><p> Creates a RagDataSchema.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createRagDataSchema(CreateRagDataSchemaRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createRagDataSchema(RagCorpusName parent, RagDataSchema ragDataSchema, String ragDataSchemaId)
+ *           <li><p> createRagDataSchema(String parent, RagDataSchema ragDataSchema, String ragDataSchemaId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createRagDataSchemaCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchCreateRagDataSchemas</td>
+ *      <td><p> Batch Create one or more RagDataSchemas</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchCreateRagDataSchemasAsync(BatchCreateRagDataSchemasRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchCreateRagDataSchemasOperationCallable()
+ *           <li><p> batchCreateRagDataSchemasCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetRagDataSchema</td>
+ *      <td><p> Gets a RagDataSchema.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getRagDataSchema(GetRagDataSchemaRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getRagDataSchema(RagDataSchemaName name)
+ *           <li><p> getRagDataSchema(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getRagDataSchemaCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListRagDataSchemas</td>
+ *      <td><p> Lists RagDataSchemas in a Location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listRagDataSchemas(ListRagDataSchemasRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listRagDataSchemas(RagCorpusName parent)
+ *           <li><p> listRagDataSchemas(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listRagDataSchemasPagedCallable()
+ *           <li><p> listRagDataSchemasCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteRagDataSchema</td>
+ *      <td><p> Deletes a RagDataSchema.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteRagDataSchema(DeleteRagDataSchemaRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteRagDataSchema(RagDataSchemaName name)
+ *           <li><p> deleteRagDataSchema(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteRagDataSchemaCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchDeleteRagDataSchemas</td>
+ *      <td><p> Batch Deletes one or more RagDataSchemas</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchDeleteRagDataSchemasAsync(BatchDeleteRagDataSchemasRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchDeleteRagDataSchemasOperationCallable()
+ *           <li><p> batchDeleteRagDataSchemasCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateRagMetadata</td>
+ *      <td><p> Creates a RagMetadata.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createRagMetadata(CreateRagMetadataRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createRagMetadata(RagFileName parent, RagMetadata ragMetadata, String ragMetadataId)
+ *           <li><p> createRagMetadata(String parent, RagMetadata ragMetadata, String ragMetadataId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createRagMetadataCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchCreateRagMetadata</td>
+ *      <td><p> Batch Create one or more RagMetadatas</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchCreateRagMetadataAsync(BatchCreateRagMetadataRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchCreateRagMetadataOperationCallable()
+ *           <li><p> batchCreateRagMetadataCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateRagMetadata</td>
+ *      <td><p> Updates a RagMetadata.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateRagMetadata(UpdateRagMetadataRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateRagMetadata(RagMetadata ragMetadata)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateRagMetadataCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetRagMetadata</td>
+ *      <td><p> Gets a RagMetadata.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getRagMetadata(GetRagMetadataRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getRagMetadata(RagMetadataName name)
+ *           <li><p> getRagMetadata(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getRagMetadataCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListRagMetadata</td>
+ *      <td><p> Lists RagMetadata in a RagFile.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listRagMetadata(ListRagMetadataRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listRagMetadata(RagFileName parent)
+ *           <li><p> listRagMetadata(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listRagMetadataPagedCallable()
+ *           <li><p> listRagMetadataCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteRagMetadata</td>
+ *      <td><p> Deletes a RagMetadata.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteRagMetadata(DeleteRagMetadataRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteRagMetadata(RagMetadataName name)
+ *           <li><p> deleteRagMetadata(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteRagMetadataCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchDeleteRagMetadata</td>
+ *      <td><p> Batch Deletes one or more RagMetadata.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchDeleteRagMetadataAsync(BatchDeleteRagMetadataRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchDeleteRagMetadataOperationCallable()
+ *           <li><p> batchDeleteRagMetadataCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -2208,6 +2440,1657 @@ public class VertexRagDataServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Creates a RagDataSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   RagCorpusName parent = RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]");
+   *   RagDataSchema ragDataSchema = RagDataSchema.newBuilder().build();
+   *   String ragDataSchemaId = "ragDataSchemaId-1094185826";
+   *   RagDataSchema response =
+   *       vertexRagDataServiceClient.createRagDataSchema(parent, ragDataSchema, ragDataSchemaId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the RagCorpus to create the RagDataSchema in.
+   *     Format: `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}`
+   * @param ragDataSchema Required. The RagDataSchema to create.
+   * @param ragDataSchemaId Optional. The ID to use for the RagDataSchema, which will become the
+   *     final component of the RagDataSchema's resource name if the user chooses to specify.
+   *     Otherwise, RagDataSchema id will be generated by system.
+   *     <p>This value should be up to 63 characters, and valid characters are /[a-z][0-9]-/. The
+   *     first character must be a letter, the last could be a letter or a number.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RagDataSchema createRagDataSchema(
+      RagCorpusName parent, RagDataSchema ragDataSchema, String ragDataSchemaId) {
+    CreateRagDataSchemaRequest request =
+        CreateRagDataSchemaRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setRagDataSchema(ragDataSchema)
+            .setRagDataSchemaId(ragDataSchemaId)
+            .build();
+    return createRagDataSchema(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a RagDataSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   String parent = RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]").toString();
+   *   RagDataSchema ragDataSchema = RagDataSchema.newBuilder().build();
+   *   String ragDataSchemaId = "ragDataSchemaId-1094185826";
+   *   RagDataSchema response =
+   *       vertexRagDataServiceClient.createRagDataSchema(parent, ragDataSchema, ragDataSchemaId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the RagCorpus to create the RagDataSchema in.
+   *     Format: `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}`
+   * @param ragDataSchema Required. The RagDataSchema to create.
+   * @param ragDataSchemaId Optional. The ID to use for the RagDataSchema, which will become the
+   *     final component of the RagDataSchema's resource name if the user chooses to specify.
+   *     Otherwise, RagDataSchema id will be generated by system.
+   *     <p>This value should be up to 63 characters, and valid characters are /[a-z][0-9]-/. The
+   *     first character must be a letter, the last could be a letter or a number.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RagDataSchema createRagDataSchema(
+      String parent, RagDataSchema ragDataSchema, String ragDataSchemaId) {
+    CreateRagDataSchemaRequest request =
+        CreateRagDataSchemaRequest.newBuilder()
+            .setParent(parent)
+            .setRagDataSchema(ragDataSchema)
+            .setRagDataSchemaId(ragDataSchemaId)
+            .build();
+    return createRagDataSchema(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a RagDataSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   CreateRagDataSchemaRequest request =
+   *       CreateRagDataSchemaRequest.newBuilder()
+   *           .setParent(RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]").toString())
+   *           .setRagDataSchema(RagDataSchema.newBuilder().build())
+   *           .setRagDataSchemaId("ragDataSchemaId-1094185826")
+   *           .build();
+   *   RagDataSchema response = vertexRagDataServiceClient.createRagDataSchema(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RagDataSchema createRagDataSchema(CreateRagDataSchemaRequest request) {
+    return createRagDataSchemaCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a RagDataSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   CreateRagDataSchemaRequest request =
+   *       CreateRagDataSchemaRequest.newBuilder()
+   *           .setParent(RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]").toString())
+   *           .setRagDataSchema(RagDataSchema.newBuilder().build())
+   *           .setRagDataSchemaId("ragDataSchemaId-1094185826")
+   *           .build();
+   *   ApiFuture<RagDataSchema> future =
+   *       vertexRagDataServiceClient.createRagDataSchemaCallable().futureCall(request);
+   *   // Do something.
+   *   RagDataSchema response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateRagDataSchemaRequest, RagDataSchema>
+      createRagDataSchemaCallable() {
+    return stub.createRagDataSchemaCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch Create one or more RagDataSchemas
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   BatchCreateRagDataSchemasRequest request =
+   *       BatchCreateRagDataSchemasRequest.newBuilder()
+   *           .setParent(RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]").toString())
+   *           .addAllRequests(new ArrayList<CreateRagDataSchemaRequest>())
+   *           .build();
+   *   BatchCreateRagDataSchemasResponse response =
+   *       vertexRagDataServiceClient.batchCreateRagDataSchemasAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          BatchCreateRagDataSchemasResponse, BatchCreateRagDataSchemasOperationMetadata>
+      batchCreateRagDataSchemasAsync(BatchCreateRagDataSchemasRequest request) {
+    return batchCreateRagDataSchemasOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch Create one or more RagDataSchemas
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   BatchCreateRagDataSchemasRequest request =
+   *       BatchCreateRagDataSchemasRequest.newBuilder()
+   *           .setParent(RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]").toString())
+   *           .addAllRequests(new ArrayList<CreateRagDataSchemaRequest>())
+   *           .build();
+   *   OperationFuture<BatchCreateRagDataSchemasResponse, BatchCreateRagDataSchemasOperationMetadata>
+   *       future =
+   *           vertexRagDataServiceClient
+   *               .batchCreateRagDataSchemasOperationCallable()
+   *               .futureCall(request);
+   *   // Do something.
+   *   BatchCreateRagDataSchemasResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          BatchCreateRagDataSchemasRequest,
+          BatchCreateRagDataSchemasResponse,
+          BatchCreateRagDataSchemasOperationMetadata>
+      batchCreateRagDataSchemasOperationCallable() {
+    return stub.batchCreateRagDataSchemasOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch Create one or more RagDataSchemas
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   BatchCreateRagDataSchemasRequest request =
+   *       BatchCreateRagDataSchemasRequest.newBuilder()
+   *           .setParent(RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]").toString())
+   *           .addAllRequests(new ArrayList<CreateRagDataSchemaRequest>())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vertexRagDataServiceClient.batchCreateRagDataSchemasCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchCreateRagDataSchemasRequest, Operation>
+      batchCreateRagDataSchemasCallable() {
+    return stub.batchCreateRagDataSchemasCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a RagDataSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   RagDataSchemaName name =
+   *       RagDataSchemaName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_DATA_SCHEMA]");
+   *   RagDataSchema response = vertexRagDataServiceClient.getRagDataSchema(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the RagDataSchema resource. Format:
+   *     `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}/ragDataSchemas/{rag_data_schema}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RagDataSchema getRagDataSchema(RagDataSchemaName name) {
+    GetRagDataSchemaRequest request =
+        GetRagDataSchemaRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getRagDataSchema(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a RagDataSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   String name =
+   *       RagDataSchemaName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_DATA_SCHEMA]")
+   *           .toString();
+   *   RagDataSchema response = vertexRagDataServiceClient.getRagDataSchema(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the RagDataSchema resource. Format:
+   *     `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}/ragDataSchemas/{rag_data_schema}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RagDataSchema getRagDataSchema(String name) {
+    GetRagDataSchemaRequest request = GetRagDataSchemaRequest.newBuilder().setName(name).build();
+    return getRagDataSchema(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a RagDataSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   GetRagDataSchemaRequest request =
+   *       GetRagDataSchemaRequest.newBuilder()
+   *           .setName(
+   *               RagDataSchemaName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_DATA_SCHEMA]")
+   *                   .toString())
+   *           .build();
+   *   RagDataSchema response = vertexRagDataServiceClient.getRagDataSchema(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RagDataSchema getRagDataSchema(GetRagDataSchemaRequest request) {
+    return getRagDataSchemaCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a RagDataSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   GetRagDataSchemaRequest request =
+   *       GetRagDataSchemaRequest.newBuilder()
+   *           .setName(
+   *               RagDataSchemaName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_DATA_SCHEMA]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<RagDataSchema> future =
+   *       vertexRagDataServiceClient.getRagDataSchemaCallable().futureCall(request);
+   *   // Do something.
+   *   RagDataSchema response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetRagDataSchemaRequest, RagDataSchema> getRagDataSchemaCallable() {
+    return stub.getRagDataSchemaCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RagDataSchemas in a Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   RagCorpusName parent = RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]");
+   *   for (RagDataSchema element :
+   *       vertexRagDataServiceClient.listRagDataSchemas(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the RagCorpus from which to list the
+   *     RagDataSchemas. Format: `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRagDataSchemasPagedResponse listRagDataSchemas(RagCorpusName parent) {
+    ListRagDataSchemasRequest request =
+        ListRagDataSchemasRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listRagDataSchemas(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RagDataSchemas in a Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   String parent = RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]").toString();
+   *   for (RagDataSchema element :
+   *       vertexRagDataServiceClient.listRagDataSchemas(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the RagCorpus from which to list the
+   *     RagDataSchemas. Format: `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRagDataSchemasPagedResponse listRagDataSchemas(String parent) {
+    ListRagDataSchemasRequest request =
+        ListRagDataSchemasRequest.newBuilder().setParent(parent).build();
+    return listRagDataSchemas(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RagDataSchemas in a Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   ListRagDataSchemasRequest request =
+   *       ListRagDataSchemasRequest.newBuilder()
+   *           .setParent(RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (RagDataSchema element :
+   *       vertexRagDataServiceClient.listRagDataSchemas(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRagDataSchemasPagedResponse listRagDataSchemas(
+      ListRagDataSchemasRequest request) {
+    return listRagDataSchemasPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RagDataSchemas in a Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   ListRagDataSchemasRequest request =
+   *       ListRagDataSchemasRequest.newBuilder()
+   *           .setParent(RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<RagDataSchema> future =
+   *       vertexRagDataServiceClient.listRagDataSchemasPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (RagDataSchema element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListRagDataSchemasRequest, ListRagDataSchemasPagedResponse>
+      listRagDataSchemasPagedCallable() {
+    return stub.listRagDataSchemasPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RagDataSchemas in a Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   ListRagDataSchemasRequest request =
+   *       ListRagDataSchemasRequest.newBuilder()
+   *           .setParent(RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListRagDataSchemasResponse response =
+   *         vertexRagDataServiceClient.listRagDataSchemasCallable().call(request);
+   *     for (RagDataSchema element : response.getRagDataSchemasList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListRagDataSchemasRequest, ListRagDataSchemasResponse>
+      listRagDataSchemasCallable() {
+    return stub.listRagDataSchemasCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a RagDataSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   RagDataSchemaName name =
+   *       RagDataSchemaName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_DATA_SCHEMA]");
+   *   vertexRagDataServiceClient.deleteRagDataSchema(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the RagDataSchema resource to be deleted. Format:
+   *     `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}/ragDataSchemas/{rag_data_schema}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteRagDataSchema(RagDataSchemaName name) {
+    DeleteRagDataSchemaRequest request =
+        DeleteRagDataSchemaRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteRagDataSchema(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a RagDataSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   String name =
+   *       RagDataSchemaName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_DATA_SCHEMA]")
+   *           .toString();
+   *   vertexRagDataServiceClient.deleteRagDataSchema(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the RagDataSchema resource to be deleted. Format:
+   *     `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}/ragDataSchemas/{rag_data_schema}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteRagDataSchema(String name) {
+    DeleteRagDataSchemaRequest request =
+        DeleteRagDataSchemaRequest.newBuilder().setName(name).build();
+    deleteRagDataSchema(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a RagDataSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   DeleteRagDataSchemaRequest request =
+   *       DeleteRagDataSchemaRequest.newBuilder()
+   *           .setName(
+   *               RagDataSchemaName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_DATA_SCHEMA]")
+   *                   .toString())
+   *           .build();
+   *   vertexRagDataServiceClient.deleteRagDataSchema(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteRagDataSchema(DeleteRagDataSchemaRequest request) {
+    deleteRagDataSchemaCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a RagDataSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   DeleteRagDataSchemaRequest request =
+   *       DeleteRagDataSchemaRequest.newBuilder()
+   *           .setName(
+   *               RagDataSchemaName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_DATA_SCHEMA]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       vertexRagDataServiceClient.deleteRagDataSchemaCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteRagDataSchemaRequest, Empty> deleteRagDataSchemaCallable() {
+    return stub.deleteRagDataSchemaCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch Deletes one or more RagDataSchemas
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   BatchDeleteRagDataSchemasRequest request =
+   *       BatchDeleteRagDataSchemasRequest.newBuilder()
+   *           .setParent(RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   vertexRagDataServiceClient.batchDeleteRagDataSchemasAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> batchDeleteRagDataSchemasAsync(
+      BatchDeleteRagDataSchemasRequest request) {
+    return batchDeleteRagDataSchemasOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch Deletes one or more RagDataSchemas
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   BatchDeleteRagDataSchemasRequest request =
+   *       BatchDeleteRagDataSchemasRequest.newBuilder()
+   *           .setParent(RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   OperationFuture<Empty, DeleteOperationMetadata> future =
+   *       vertexRagDataServiceClient
+   *           .batchDeleteRagDataSchemasOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<BatchDeleteRagDataSchemasRequest, Empty, DeleteOperationMetadata>
+      batchDeleteRagDataSchemasOperationCallable() {
+    return stub.batchDeleteRagDataSchemasOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch Deletes one or more RagDataSchemas
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   BatchDeleteRagDataSchemasRequest request =
+   *       BatchDeleteRagDataSchemasRequest.newBuilder()
+   *           .setParent(RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vertexRagDataServiceClient.batchDeleteRagDataSchemasCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchDeleteRagDataSchemasRequest, Operation>
+      batchDeleteRagDataSchemasCallable() {
+    return stub.batchDeleteRagDataSchemasCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a RagMetadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   RagFileName parent = RagFileName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]");
+   *   RagMetadata ragMetadata = RagMetadata.newBuilder().build();
+   *   String ragMetadataId = "ragMetadataId-818296094";
+   *   RagMetadata response =
+   *       vertexRagDataServiceClient.createRagMetadata(parent, ragMetadata, ragMetadataId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this metadata will be created. Format:
+   *     `projects/{project_number}/locations/{location_id}/ragCorpora/{rag_corpus}/ragFiles/{rag_file}`
+   * @param ragMetadata Required. The metadata to create.
+   * @param ragMetadataId Optional. The ID to use for the metadata, which will become the final
+   *     component of the metadata's resource name if the user chooses to specify. Otherwise,
+   *     metadata id will be generated by system.
+   *     <p>This value should be up to 63 characters, and valid characters are /[a-z][0-9]-/. The
+   *     first character must be a letter, the last could be a letter or a number.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RagMetadata createRagMetadata(
+      RagFileName parent, RagMetadata ragMetadata, String ragMetadataId) {
+    CreateRagMetadataRequest request =
+        CreateRagMetadataRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setRagMetadata(ragMetadata)
+            .setRagMetadataId(ragMetadataId)
+            .build();
+    return createRagMetadata(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a RagMetadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   String parent =
+   *       RagFileName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]").toString();
+   *   RagMetadata ragMetadata = RagMetadata.newBuilder().build();
+   *   String ragMetadataId = "ragMetadataId-818296094";
+   *   RagMetadata response =
+   *       vertexRagDataServiceClient.createRagMetadata(parent, ragMetadata, ragMetadataId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this metadata will be created. Format:
+   *     `projects/{project_number}/locations/{location_id}/ragCorpora/{rag_corpus}/ragFiles/{rag_file}`
+   * @param ragMetadata Required. The metadata to create.
+   * @param ragMetadataId Optional. The ID to use for the metadata, which will become the final
+   *     component of the metadata's resource name if the user chooses to specify. Otherwise,
+   *     metadata id will be generated by system.
+   *     <p>This value should be up to 63 characters, and valid characters are /[a-z][0-9]-/. The
+   *     first character must be a letter, the last could be a letter or a number.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RagMetadata createRagMetadata(
+      String parent, RagMetadata ragMetadata, String ragMetadataId) {
+    CreateRagMetadataRequest request =
+        CreateRagMetadataRequest.newBuilder()
+            .setParent(parent)
+            .setRagMetadata(ragMetadata)
+            .setRagMetadataId(ragMetadataId)
+            .build();
+    return createRagMetadata(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a RagMetadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   CreateRagMetadataRequest request =
+   *       CreateRagMetadataRequest.newBuilder()
+   *           .setParent(
+   *               RagFileName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]")
+   *                   .toString())
+   *           .setRagMetadata(RagMetadata.newBuilder().build())
+   *           .setRagMetadataId("ragMetadataId-818296094")
+   *           .build();
+   *   RagMetadata response = vertexRagDataServiceClient.createRagMetadata(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RagMetadata createRagMetadata(CreateRagMetadataRequest request) {
+    return createRagMetadataCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a RagMetadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   CreateRagMetadataRequest request =
+   *       CreateRagMetadataRequest.newBuilder()
+   *           .setParent(
+   *               RagFileName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]")
+   *                   .toString())
+   *           .setRagMetadata(RagMetadata.newBuilder().build())
+   *           .setRagMetadataId("ragMetadataId-818296094")
+   *           .build();
+   *   ApiFuture<RagMetadata> future =
+   *       vertexRagDataServiceClient.createRagMetadataCallable().futureCall(request);
+   *   // Do something.
+   *   RagMetadata response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateRagMetadataRequest, RagMetadata> createRagMetadataCallable() {
+    return stub.createRagMetadataCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch Create one or more RagMetadatas
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   BatchCreateRagMetadataRequest request =
+   *       BatchCreateRagMetadataRequest.newBuilder()
+   *           .setParent(
+   *               RagFileName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]")
+   *                   .toString())
+   *           .addAllRequests(new ArrayList<CreateRagMetadataRequest>())
+   *           .build();
+   *   BatchCreateRagMetadataResponse response =
+   *       vertexRagDataServiceClient.batchCreateRagMetadataAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          BatchCreateRagMetadataResponse, BatchCreateRagMetadataOperationMetadata>
+      batchCreateRagMetadataAsync(BatchCreateRagMetadataRequest request) {
+    return batchCreateRagMetadataOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch Create one or more RagMetadatas
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   BatchCreateRagMetadataRequest request =
+   *       BatchCreateRagMetadataRequest.newBuilder()
+   *           .setParent(
+   *               RagFileName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]")
+   *                   .toString())
+   *           .addAllRequests(new ArrayList<CreateRagMetadataRequest>())
+   *           .build();
+   *   OperationFuture<BatchCreateRagMetadataResponse, BatchCreateRagMetadataOperationMetadata>
+   *       future =
+   *           vertexRagDataServiceClient
+   *               .batchCreateRagMetadataOperationCallable()
+   *               .futureCall(request);
+   *   // Do something.
+   *   BatchCreateRagMetadataResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          BatchCreateRagMetadataRequest,
+          BatchCreateRagMetadataResponse,
+          BatchCreateRagMetadataOperationMetadata>
+      batchCreateRagMetadataOperationCallable() {
+    return stub.batchCreateRagMetadataOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch Create one or more RagMetadatas
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   BatchCreateRagMetadataRequest request =
+   *       BatchCreateRagMetadataRequest.newBuilder()
+   *           .setParent(
+   *               RagFileName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]")
+   *                   .toString())
+   *           .addAllRequests(new ArrayList<CreateRagMetadataRequest>())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vertexRagDataServiceClient.batchCreateRagMetadataCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchCreateRagMetadataRequest, Operation>
+      batchCreateRagMetadataCallable() {
+    return stub.batchCreateRagMetadataCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a RagMetadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   RagMetadata ragMetadata = RagMetadata.newBuilder().build();
+   *   RagMetadata response = vertexRagDataServiceClient.updateRagMetadata(ragMetadata);
+   * }
+   * }</pre>
+   *
+   * @param ragMetadata Required. The RagMetadata which replaces the resource on the server.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RagMetadata updateRagMetadata(RagMetadata ragMetadata) {
+    UpdateRagMetadataRequest request =
+        UpdateRagMetadataRequest.newBuilder().setRagMetadata(ragMetadata).build();
+    return updateRagMetadata(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a RagMetadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   UpdateRagMetadataRequest request =
+   *       UpdateRagMetadataRequest.newBuilder()
+   *           .setRagMetadata(RagMetadata.newBuilder().build())
+   *           .build();
+   *   RagMetadata response = vertexRagDataServiceClient.updateRagMetadata(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RagMetadata updateRagMetadata(UpdateRagMetadataRequest request) {
+    return updateRagMetadataCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a RagMetadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   UpdateRagMetadataRequest request =
+   *       UpdateRagMetadataRequest.newBuilder()
+   *           .setRagMetadata(RagMetadata.newBuilder().build())
+   *           .build();
+   *   ApiFuture<RagMetadata> future =
+   *       vertexRagDataServiceClient.updateRagMetadataCallable().futureCall(request);
+   *   // Do something.
+   *   RagMetadata response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateRagMetadataRequest, RagMetadata> updateRagMetadataCallable() {
+    return stub.updateRagMetadataCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a RagMetadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   RagMetadataName name =
+   *       RagMetadataName.of(
+   *           "[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]", "[RAG_METADATA]");
+   *   RagMetadata response = vertexRagDataServiceClient.getRagMetadata(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the RagMetadata resource. Format:
+   *     `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}/ragFiles/{rag_file}/ragMetadata/{rag_metadata}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RagMetadata getRagMetadata(RagMetadataName name) {
+    GetRagMetadataRequest request =
+        GetRagMetadataRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getRagMetadata(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a RagMetadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   String name =
+   *       RagMetadataName.of(
+   *               "[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]", "[RAG_METADATA]")
+   *           .toString();
+   *   RagMetadata response = vertexRagDataServiceClient.getRagMetadata(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the RagMetadata resource. Format:
+   *     `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}/ragFiles/{rag_file}/ragMetadata/{rag_metadata}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RagMetadata getRagMetadata(String name) {
+    GetRagMetadataRequest request = GetRagMetadataRequest.newBuilder().setName(name).build();
+    return getRagMetadata(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a RagMetadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   GetRagMetadataRequest request =
+   *       GetRagMetadataRequest.newBuilder()
+   *           .setName(
+   *               RagMetadataName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]", "[RAG_METADATA]")
+   *                   .toString())
+   *           .build();
+   *   RagMetadata response = vertexRagDataServiceClient.getRagMetadata(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RagMetadata getRagMetadata(GetRagMetadataRequest request) {
+    return getRagMetadataCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a RagMetadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   GetRagMetadataRequest request =
+   *       GetRagMetadataRequest.newBuilder()
+   *           .setName(
+   *               RagMetadataName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]", "[RAG_METADATA]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<RagMetadata> future =
+   *       vertexRagDataServiceClient.getRagMetadataCallable().futureCall(request);
+   *   // Do something.
+   *   RagMetadata response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetRagMetadataRequest, RagMetadata> getRagMetadataCallable() {
+    return stub.getRagMetadataCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RagMetadata in a RagFile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   RagFileName parent = RagFileName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]");
+   *   for (RagMetadata element : vertexRagDataServiceClient.listRagMetadata(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the RagFile from which to list the RagMetadata.
+   *     Format:
+   *     `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}/ragFiles/{rag_file}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRagMetadataPagedResponse listRagMetadata(RagFileName parent) {
+    ListRagMetadataRequest request =
+        ListRagMetadataRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listRagMetadata(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RagMetadata in a RagFile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   String parent =
+   *       RagFileName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]").toString();
+   *   for (RagMetadata element : vertexRagDataServiceClient.listRagMetadata(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the RagFile from which to list the RagMetadata.
+   *     Format:
+   *     `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}/ragFiles/{rag_file}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRagMetadataPagedResponse listRagMetadata(String parent) {
+    ListRagMetadataRequest request = ListRagMetadataRequest.newBuilder().setParent(parent).build();
+    return listRagMetadata(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RagMetadata in a RagFile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   ListRagMetadataRequest request =
+   *       ListRagMetadataRequest.newBuilder()
+   *           .setParent(
+   *               RagFileName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (RagMetadata element : vertexRagDataServiceClient.listRagMetadata(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRagMetadataPagedResponse listRagMetadata(ListRagMetadataRequest request) {
+    return listRagMetadataPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RagMetadata in a RagFile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   ListRagMetadataRequest request =
+   *       ListRagMetadataRequest.newBuilder()
+   *           .setParent(
+   *               RagFileName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<RagMetadata> future =
+   *       vertexRagDataServiceClient.listRagMetadataPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (RagMetadata element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListRagMetadataRequest, ListRagMetadataPagedResponse>
+      listRagMetadataPagedCallable() {
+    return stub.listRagMetadataPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RagMetadata in a RagFile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   ListRagMetadataRequest request =
+   *       ListRagMetadataRequest.newBuilder()
+   *           .setParent(
+   *               RagFileName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListRagMetadataResponse response =
+   *         vertexRagDataServiceClient.listRagMetadataCallable().call(request);
+   *     for (RagMetadata element : response.getRagMetadataList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListRagMetadataRequest, ListRagMetadataResponse>
+      listRagMetadataCallable() {
+    return stub.listRagMetadataCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a RagMetadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   RagMetadataName name =
+   *       RagMetadataName.of(
+   *           "[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]", "[RAG_METADATA]");
+   *   vertexRagDataServiceClient.deleteRagMetadata(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the RagMetadata resource to be deleted. Format:
+   *     `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}/ragFiles/{rag_file}/ragMetadata/{rag_metadata}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteRagMetadata(RagMetadataName name) {
+    DeleteRagMetadataRequest request =
+        DeleteRagMetadataRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteRagMetadata(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a RagMetadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   String name =
+   *       RagMetadataName.of(
+   *               "[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]", "[RAG_METADATA]")
+   *           .toString();
+   *   vertexRagDataServiceClient.deleteRagMetadata(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the RagMetadata resource to be deleted. Format:
+   *     `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}/ragFiles/{rag_file}/ragMetadata/{rag_metadata}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteRagMetadata(String name) {
+    DeleteRagMetadataRequest request = DeleteRagMetadataRequest.newBuilder().setName(name).build();
+    deleteRagMetadata(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a RagMetadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   DeleteRagMetadataRequest request =
+   *       DeleteRagMetadataRequest.newBuilder()
+   *           .setName(
+   *               RagMetadataName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]", "[RAG_METADATA]")
+   *                   .toString())
+   *           .build();
+   *   vertexRagDataServiceClient.deleteRagMetadata(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteRagMetadata(DeleteRagMetadataRequest request) {
+    deleteRagMetadataCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a RagMetadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   DeleteRagMetadataRequest request =
+   *       DeleteRagMetadataRequest.newBuilder()
+   *           .setName(
+   *               RagMetadataName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]", "[RAG_METADATA]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       vertexRagDataServiceClient.deleteRagMetadataCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteRagMetadataRequest, Empty> deleteRagMetadataCallable() {
+    return stub.deleteRagMetadataCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch Deletes one or more RagMetadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   BatchDeleteRagMetadataRequest request =
+   *       BatchDeleteRagMetadataRequest.newBuilder()
+   *           .setParent(
+   *               RagFileName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]")
+   *                   .toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   vertexRagDataServiceClient.batchDeleteRagMetadataAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> batchDeleteRagMetadataAsync(
+      BatchDeleteRagMetadataRequest request) {
+    return batchDeleteRagMetadataOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch Deletes one or more RagMetadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   BatchDeleteRagMetadataRequest request =
+   *       BatchDeleteRagMetadataRequest.newBuilder()
+   *           .setParent(
+   *               RagFileName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]")
+   *                   .toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   OperationFuture<Empty, DeleteOperationMetadata> future =
+   *       vertexRagDataServiceClient.batchDeleteRagMetadataOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<BatchDeleteRagMetadataRequest, Empty, DeleteOperationMetadata>
+      batchDeleteRagMetadataOperationCallable() {
+    return stub.batchDeleteRagMetadataOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch Deletes one or more RagMetadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+   *     VertexRagDataServiceClient.create()) {
+   *   BatchDeleteRagMetadataRequest request =
+   *       BatchDeleteRagMetadataRequest.newBuilder()
+   *           .setParent(
+   *               RagFileName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]")
+   *                   .toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vertexRagDataServiceClient.batchDeleteRagMetadataCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchDeleteRagMetadataRequest, Operation>
+      batchDeleteRagMetadataCallable() {
+    return stub.batchDeleteRagMetadataCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -2763,6 +4646,163 @@ public class VertexRagDataServiceClient implements BackgroundResource {
     protected ListRagFilesFixedSizeCollection createCollection(
         List<ListRagFilesPage> pages, int collectionSize) {
       return new ListRagFilesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListRagDataSchemasPagedResponse
+      extends AbstractPagedListResponse<
+          ListRagDataSchemasRequest,
+          ListRagDataSchemasResponse,
+          RagDataSchema,
+          ListRagDataSchemasPage,
+          ListRagDataSchemasFixedSizeCollection> {
+
+    public static ApiFuture<ListRagDataSchemasPagedResponse> createAsync(
+        PageContext<ListRagDataSchemasRequest, ListRagDataSchemasResponse, RagDataSchema> context,
+        ApiFuture<ListRagDataSchemasResponse> futureResponse) {
+      ApiFuture<ListRagDataSchemasPage> futurePage =
+          ListRagDataSchemasPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListRagDataSchemasPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListRagDataSchemasPagedResponse(ListRagDataSchemasPage page) {
+      super(page, ListRagDataSchemasFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListRagDataSchemasPage
+      extends AbstractPage<
+          ListRagDataSchemasRequest,
+          ListRagDataSchemasResponse,
+          RagDataSchema,
+          ListRagDataSchemasPage> {
+
+    private ListRagDataSchemasPage(
+        PageContext<ListRagDataSchemasRequest, ListRagDataSchemasResponse, RagDataSchema> context,
+        ListRagDataSchemasResponse response) {
+      super(context, response);
+    }
+
+    private static ListRagDataSchemasPage createEmptyPage() {
+      return new ListRagDataSchemasPage(null, null);
+    }
+
+    @Override
+    protected ListRagDataSchemasPage createPage(
+        PageContext<ListRagDataSchemasRequest, ListRagDataSchemasResponse, RagDataSchema> context,
+        ListRagDataSchemasResponse response) {
+      return new ListRagDataSchemasPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListRagDataSchemasPage> createPageAsync(
+        PageContext<ListRagDataSchemasRequest, ListRagDataSchemasResponse, RagDataSchema> context,
+        ApiFuture<ListRagDataSchemasResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListRagDataSchemasFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListRagDataSchemasRequest,
+          ListRagDataSchemasResponse,
+          RagDataSchema,
+          ListRagDataSchemasPage,
+          ListRagDataSchemasFixedSizeCollection> {
+
+    private ListRagDataSchemasFixedSizeCollection(
+        List<ListRagDataSchemasPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListRagDataSchemasFixedSizeCollection createEmptyCollection() {
+      return new ListRagDataSchemasFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListRagDataSchemasFixedSizeCollection createCollection(
+        List<ListRagDataSchemasPage> pages, int collectionSize) {
+      return new ListRagDataSchemasFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListRagMetadataPagedResponse
+      extends AbstractPagedListResponse<
+          ListRagMetadataRequest,
+          ListRagMetadataResponse,
+          RagMetadata,
+          ListRagMetadataPage,
+          ListRagMetadataFixedSizeCollection> {
+
+    public static ApiFuture<ListRagMetadataPagedResponse> createAsync(
+        PageContext<ListRagMetadataRequest, ListRagMetadataResponse, RagMetadata> context,
+        ApiFuture<ListRagMetadataResponse> futureResponse) {
+      ApiFuture<ListRagMetadataPage> futurePage =
+          ListRagMetadataPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListRagMetadataPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListRagMetadataPagedResponse(ListRagMetadataPage page) {
+      super(page, ListRagMetadataFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListRagMetadataPage
+      extends AbstractPage<
+          ListRagMetadataRequest, ListRagMetadataResponse, RagMetadata, ListRagMetadataPage> {
+
+    private ListRagMetadataPage(
+        PageContext<ListRagMetadataRequest, ListRagMetadataResponse, RagMetadata> context,
+        ListRagMetadataResponse response) {
+      super(context, response);
+    }
+
+    private static ListRagMetadataPage createEmptyPage() {
+      return new ListRagMetadataPage(null, null);
+    }
+
+    @Override
+    protected ListRagMetadataPage createPage(
+        PageContext<ListRagMetadataRequest, ListRagMetadataResponse, RagMetadata> context,
+        ListRagMetadataResponse response) {
+      return new ListRagMetadataPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListRagMetadataPage> createPageAsync(
+        PageContext<ListRagMetadataRequest, ListRagMetadataResponse, RagMetadata> context,
+        ApiFuture<ListRagMetadataResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListRagMetadataFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListRagMetadataRequest,
+          ListRagMetadataResponse,
+          RagMetadata,
+          ListRagMetadataPage,
+          ListRagMetadataFixedSizeCollection> {
+
+    private ListRagMetadataFixedSizeCollection(
+        List<ListRagMetadataPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListRagMetadataFixedSizeCollection createEmptyCollection() {
+      return new ListRagMetadataFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListRagMetadataFixedSizeCollection createCollection(
+        List<ListRagMetadataPage> pages, int collectionSize) {
+      return new ListRagMetadataFixedSizeCollection(pages, collectionSize);
     }
   }
 

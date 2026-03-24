@@ -18,14 +18,14 @@ package com.google.cloud.bigquery.jdbc;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class BigQueryResultSetFinalizersTest {
   Thread arrowWorker;
   Thread[] jsonWorkers;
 
-  @Before
+  @BeforeEach
   public void setUp() {
     // create and start the demon threads
     arrowWorker =

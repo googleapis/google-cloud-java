@@ -333,7 +333,7 @@ public final class AmbientSoundConfig extends com.google.protobuf.GeneratedMessa
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.AmbientSoundConfig.prebuilt_ambient_noise is deprecated.
-   *     See google/cloud/ces/v1beta/app.proto;l=301
+   *     See google/cloud/ces/v1beta/app.proto;l=305
    * @return Whether the prebuiltAmbientNoise field is set.
    */
   @java.lang.Deprecated
@@ -354,7 +354,7 @@ public final class AmbientSoundConfig extends com.google.protobuf.GeneratedMessa
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.AmbientSoundConfig.prebuilt_ambient_noise is deprecated.
-   *     See google/cloud/ces/v1beta/app.proto;l=301
+   *     See google/cloud/ces/v1beta/app.proto;l=305
    * @return The enum numeric value on the wire for prebuiltAmbientNoise.
    */
   @java.lang.Deprecated
@@ -378,7 +378,7 @@ public final class AmbientSoundConfig extends com.google.protobuf.GeneratedMessa
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.AmbientSoundConfig.prebuilt_ambient_noise is deprecated.
-   *     See google/cloud/ces/v1beta/app.proto;l=301
+   *     See google/cloud/ces/v1beta/app.proto;l=305
    * @return The prebuiltAmbientNoise.
    */
   @java.lang.Deprecated
@@ -1067,7 +1067,7 @@ public final class AmbientSoundConfig extends com.google.protobuf.GeneratedMessa
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.AmbientSoundConfig.prebuilt_ambient_noise is deprecated.
-     *     See google/cloud/ces/v1beta/app.proto;l=301
+     *     See google/cloud/ces/v1beta/app.proto;l=305
      * @return Whether the prebuiltAmbientNoise field is set.
      */
     @java.lang.Override
@@ -1089,7 +1089,7 @@ public final class AmbientSoundConfig extends com.google.protobuf.GeneratedMessa
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.AmbientSoundConfig.prebuilt_ambient_noise is deprecated.
-     *     See google/cloud/ces/v1beta/app.proto;l=301
+     *     See google/cloud/ces/v1beta/app.proto;l=305
      * @return The enum numeric value on the wire for prebuiltAmbientNoise.
      */
     @java.lang.Override
@@ -1114,7 +1114,7 @@ public final class AmbientSoundConfig extends com.google.protobuf.GeneratedMessa
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.AmbientSoundConfig.prebuilt_ambient_noise is deprecated.
-     *     See google/cloud/ces/v1beta/app.proto;l=301
+     *     See google/cloud/ces/v1beta/app.proto;l=305
      * @param value The enum numeric value on the wire for prebuiltAmbientNoise to set.
      * @return This builder for chaining.
      */
@@ -1139,7 +1139,7 @@ public final class AmbientSoundConfig extends com.google.protobuf.GeneratedMessa
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.AmbientSoundConfig.prebuilt_ambient_noise is deprecated.
-     *     See google/cloud/ces/v1beta/app.proto;l=301
+     *     See google/cloud/ces/v1beta/app.proto;l=305
      * @return The prebuiltAmbientNoise.
      */
     @java.lang.Override
@@ -1171,7 +1171,7 @@ public final class AmbientSoundConfig extends com.google.protobuf.GeneratedMessa
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.AmbientSoundConfig.prebuilt_ambient_noise is deprecated.
-     *     See google/cloud/ces/v1beta/app.proto;l=301
+     *     See google/cloud/ces/v1beta/app.proto;l=305
      * @param value The prebuiltAmbientNoise to set.
      * @return This builder for chaining.
      */
@@ -1200,7 +1200,7 @@ public final class AmbientSoundConfig extends com.google.protobuf.GeneratedMessa
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.AmbientSoundConfig.prebuilt_ambient_noise is deprecated.
-     *     See google/cloud/ces/v1beta/app.proto;l=301
+     *     See google/cloud/ces/v1beta/app.proto;l=305
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

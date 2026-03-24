@@ -281,6 +281,10 @@ public final class ProductStatus extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The destination status of the product status.
+   *
+   * Equivalent to
+   * [`StatusPerReportingContext`][google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext]
+   * in Reports API.
    * </pre>
    *
    * Protobuf type {@code google.shopping.merchant.products.v1.ProductStatus.DestinationStatus}
@@ -811,6 +815,10 @@ public final class ProductStatus extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The destination status of the product status.
+     *
+     * Equivalent to
+     * [`StatusPerReportingContext`][google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext]
+     * in Reports API.
      * </pre>
      *
      * Protobuf type {@code google.shopping.merchant.products.v1.ProductStatus.DestinationStatus}

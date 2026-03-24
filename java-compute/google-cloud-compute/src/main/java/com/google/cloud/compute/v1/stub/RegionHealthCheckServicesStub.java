@@ -16,14 +16,17 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.RegionHealthCheckServicesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.RegionHealthCheckServicesClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AggregatedListRegionHealthCheckServicesRequest;
 import com.google.cloud.compute.v1.DeleteRegionHealthCheckServiceRequest;
 import com.google.cloud.compute.v1.GetRegionHealthCheckServiceRequest;
 import com.google.cloud.compute.v1.HealthCheckService;
+import com.google.cloud.compute.v1.HealthCheckServiceAggregatedList;
 import com.google.cloud.compute.v1.HealthCheckServicesList;
 import com.google.cloud.compute.v1.InsertRegionHealthCheckServiceRequest;
 import com.google.cloud.compute.v1.ListRegionHealthCheckServicesRequest;
@@ -41,6 +44,17 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public abstract class RegionHealthCheckServicesStub implements BackgroundResource {
+
+  public UnaryCallable<AggregatedListRegionHealthCheckServicesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregatedListPagedCallable()");
+  }
+
+  public UnaryCallable<
+          AggregatedListRegionHealthCheckServicesRequest, HealthCheckServiceAggregatedList>
+      aggregatedListCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
+  }
 
   public OperationCallable<DeleteRegionHealthCheckServiceRequest, Operation, Operation>
       deleteOperationCallable() {

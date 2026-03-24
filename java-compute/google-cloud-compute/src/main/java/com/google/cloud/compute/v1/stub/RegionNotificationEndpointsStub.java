@@ -16,16 +16,19 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.RegionNotificationEndpointsClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.RegionNotificationEndpointsClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AggregatedListRegionNotificationEndpointsRequest;
 import com.google.cloud.compute.v1.DeleteRegionNotificationEndpointRequest;
 import com.google.cloud.compute.v1.GetRegionNotificationEndpointRequest;
 import com.google.cloud.compute.v1.InsertRegionNotificationEndpointRequest;
 import com.google.cloud.compute.v1.ListRegionNotificationEndpointsRequest;
 import com.google.cloud.compute.v1.NotificationEndpoint;
+import com.google.cloud.compute.v1.NotificationEndpointAggregatedList;
 import com.google.cloud.compute.v1.NotificationEndpointList;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.TestIamPermissionsRegionNotificationEndpointRequest;
@@ -40,6 +43,18 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public abstract class RegionNotificationEndpointsStub implements BackgroundResource {
+
+  public UnaryCallable<
+          AggregatedListRegionNotificationEndpointsRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregatedListPagedCallable()");
+  }
+
+  public UnaryCallable<
+          AggregatedListRegionNotificationEndpointsRequest, NotificationEndpointAggregatedList>
+      aggregatedListCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
+  }
 
   public OperationCallable<DeleteRegionNotificationEndpointRequest, Operation, Operation>
       deleteOperationCallable() {

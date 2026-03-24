@@ -245,6 +245,110 @@ public class AccountsServiceClientHttpJsonTest {
   }
 
   @Test
+  public void createTestAccountTest() throws Exception {
+    Account expectedResponse =
+        Account.newBuilder()
+            .setName(AccountName.of("[ACCOUNT]").toString())
+            .setAccountId(-803333011)
+            .setAccountName("accountName865966680")
+            .setAdultContent(true)
+            .setTestAccount(true)
+            .setTimeZone(TimeZone.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AccountName parent = AccountName.of("[ACCOUNT]");
+    Account account = Account.newBuilder().build();
+
+    Account actualResponse = client.createTestAccount(parent, account);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createTestAccountExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AccountName parent = AccountName.of("[ACCOUNT]");
+      Account account = Account.newBuilder().build();
+      client.createTestAccount(parent, account);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createTestAccountTest2() throws Exception {
+    Account expectedResponse =
+        Account.newBuilder()
+            .setName(AccountName.of("[ACCOUNT]").toString())
+            .setAccountId(-803333011)
+            .setAccountName("accountName865966680")
+            .setAdultContent(true)
+            .setTestAccount(true)
+            .setTimeZone(TimeZone.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "accounts/account-4811";
+    Account account = Account.newBuilder().build();
+
+    Account actualResponse = client.createTestAccount(parent, account);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createTestAccountExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "accounts/account-4811";
+      Account account = Account.newBuilder().build();
+      client.createTestAccount(parent, account);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void deleteAccountTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     mockService.addResponse(expectedResponse);

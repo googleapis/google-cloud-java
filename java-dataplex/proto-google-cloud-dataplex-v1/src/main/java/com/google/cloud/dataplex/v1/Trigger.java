@@ -1154,6 +1154,822 @@ public final class Trigger extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface OneTimeOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.Trigger.OneTime)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time to live for OneTime scans.
+     * default value is 24 hours, minimum value is 0 seconds, and maximum value
+     * is 365 days. The time is calculated from the data scan job completion
+     * time. If value is set as 0 seconds, the scan will be immediately deleted
+     * upon job completion, regardless of whether the job succeeded or failed.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration ttl_after_scan_completion = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the ttlAfterScanCompletion field is set.
+     */
+    boolean hasTtlAfterScanCompletion();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time to live for OneTime scans.
+     * default value is 24 hours, minimum value is 0 seconds, and maximum value
+     * is 365 days. The time is calculated from the data scan job completion
+     * time. If value is set as 0 seconds, the scan will be immediately deleted
+     * upon job completion, regardless of whether the job succeeded or failed.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration ttl_after_scan_completion = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The ttlAfterScanCompletion.
+     */
+    com.google.protobuf.Duration getTtlAfterScanCompletion();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time to live for OneTime scans.
+     * default value is 24 hours, minimum value is 0 seconds, and maximum value
+     * is 365 days. The time is calculated from the data scan job completion
+     * time. If value is set as 0 seconds, the scan will be immediately deleted
+     * upon job completion, regardless of whether the job succeeded or failed.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration ttl_after_scan_completion = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.protobuf.DurationOrBuilder getTtlAfterScanCompletionOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The scan runs once using create API.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataplex.v1.Trigger.OneTime}
+   */
+  public static final class OneTime extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Trigger.OneTime)
+      OneTimeOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "OneTime");
+    }
+
+    // Use OneTime.newBuilder() to construct.
+    private OneTime(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private OneTime() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataplex.v1.ProcessingProto
+          .internal_static_google_cloud_dataplex_v1_Trigger_OneTime_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dataplex.v1.ProcessingProto
+          .internal_static_google_cloud_dataplex_v1_Trigger_OneTime_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dataplex.v1.Trigger.OneTime.class,
+              com.google.cloud.dataplex.v1.Trigger.OneTime.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int TTL_AFTER_SCAN_COMPLETION_FIELD_NUMBER = 1;
+    private com.google.protobuf.Duration ttlAfterScanCompletion_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time to live for OneTime scans.
+     * default value is 24 hours, minimum value is 0 seconds, and maximum value
+     * is 365 days. The time is calculated from the data scan job completion
+     * time. If value is set as 0 seconds, the scan will be immediately deleted
+     * upon job completion, regardless of whether the job succeeded or failed.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration ttl_after_scan_completion = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the ttlAfterScanCompletion field is set.
+     */
+    @java.lang.Override
+    public boolean hasTtlAfterScanCompletion() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time to live for OneTime scans.
+     * default value is 24 hours, minimum value is 0 seconds, and maximum value
+     * is 365 days. The time is calculated from the data scan job completion
+     * time. If value is set as 0 seconds, the scan will be immediately deleted
+     * upon job completion, regardless of whether the job succeeded or failed.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration ttl_after_scan_completion = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The ttlAfterScanCompletion.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getTtlAfterScanCompletion() {
+      return ttlAfterScanCompletion_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : ttlAfterScanCompletion_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time to live for OneTime scans.
+     * default value is 24 hours, minimum value is 0 seconds, and maximum value
+     * is 365 days. The time is calculated from the data scan job completion
+     * time. If value is set as 0 seconds, the scan will be immediately deleted
+     * upon job completion, regardless of whether the job succeeded or failed.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration ttl_after_scan_completion = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getTtlAfterScanCompletionOrBuilder() {
+      return ttlAfterScanCompletion_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : ttlAfterScanCompletion_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getTtlAfterScanCompletion());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1, getTtlAfterScanCompletion());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dataplex.v1.Trigger.OneTime)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dataplex.v1.Trigger.OneTime other =
+          (com.google.cloud.dataplex.v1.Trigger.OneTime) obj;
+
+      if (hasTtlAfterScanCompletion() != other.hasTtlAfterScanCompletion()) return false;
+      if (hasTtlAfterScanCompletion()) {
+        if (!getTtlAfterScanCompletion().equals(other.getTtlAfterScanCompletion())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasTtlAfterScanCompletion()) {
+        hash = (37 * hash) + TTL_AFTER_SCAN_COMPLETION_FIELD_NUMBER;
+        hash = (53 * hash) + getTtlAfterScanCompletion().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dataplex.v1.Trigger.OneTime parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.Trigger.OneTime parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.Trigger.OneTime parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.Trigger.OneTime parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.Trigger.OneTime parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.Trigger.OneTime parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.Trigger.OneTime parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.Trigger.OneTime parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.Trigger.OneTime parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.Trigger.OneTime parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.Trigger.OneTime parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.Trigger.OneTime parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.dataplex.v1.Trigger.OneTime prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The scan runs once using create API.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.Trigger.OneTime}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.Trigger.OneTime)
+        com.google.cloud.dataplex.v1.Trigger.OneTimeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.ProcessingProto
+            .internal_static_google_cloud_dataplex_v1_Trigger_OneTime_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.ProcessingProto
+            .internal_static_google_cloud_dataplex_v1_Trigger_OneTime_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.Trigger.OneTime.class,
+                com.google.cloud.dataplex.v1.Trigger.OneTime.Builder.class);
+      }
+
+      // Construct using com.google.cloud.dataplex.v1.Trigger.OneTime.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetTtlAfterScanCompletionFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        ttlAfterScanCompletion_ = null;
+        if (ttlAfterScanCompletionBuilder_ != null) {
+          ttlAfterScanCompletionBuilder_.dispose();
+          ttlAfterScanCompletionBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dataplex.v1.ProcessingProto
+            .internal_static_google_cloud_dataplex_v1_Trigger_OneTime_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.Trigger.OneTime getDefaultInstanceForType() {
+        return com.google.cloud.dataplex.v1.Trigger.OneTime.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.Trigger.OneTime build() {
+        com.google.cloud.dataplex.v1.Trigger.OneTime result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.Trigger.OneTime buildPartial() {
+        com.google.cloud.dataplex.v1.Trigger.OneTime result =
+            new com.google.cloud.dataplex.v1.Trigger.OneTime(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.dataplex.v1.Trigger.OneTime result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.ttlAfterScanCompletion_ =
+              ttlAfterScanCompletionBuilder_ == null
+                  ? ttlAfterScanCompletion_
+                  : ttlAfterScanCompletionBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dataplex.v1.Trigger.OneTime) {
+          return mergeFrom((com.google.cloud.dataplex.v1.Trigger.OneTime) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.dataplex.v1.Trigger.OneTime other) {
+        if (other == com.google.cloud.dataplex.v1.Trigger.OneTime.getDefaultInstance()) return this;
+        if (other.hasTtlAfterScanCompletion()) {
+          mergeTtlAfterScanCompletion(other.getTtlAfterScanCompletion());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      internalGetTtlAfterScanCompletionFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.Duration ttlAfterScanCompletion_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          ttlAfterScanCompletionBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Time to live for OneTime scans.
+       * default value is 24 hours, minimum value is 0 seconds, and maximum value
+       * is 365 days. The time is calculated from the data scan job completion
+       * time. If value is set as 0 seconds, the scan will be immediately deleted
+       * upon job completion, regardless of whether the job succeeded or failed.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration ttl_after_scan_completion = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the ttlAfterScanCompletion field is set.
+       */
+      public boolean hasTtlAfterScanCompletion() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Time to live for OneTime scans.
+       * default value is 24 hours, minimum value is 0 seconds, and maximum value
+       * is 365 days. The time is calculated from the data scan job completion
+       * time. If value is set as 0 seconds, the scan will be immediately deleted
+       * upon job completion, regardless of whether the job succeeded or failed.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration ttl_after_scan_completion = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The ttlAfterScanCompletion.
+       */
+      public com.google.protobuf.Duration getTtlAfterScanCompletion() {
+        if (ttlAfterScanCompletionBuilder_ == null) {
+          return ttlAfterScanCompletion_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : ttlAfterScanCompletion_;
+        } else {
+          return ttlAfterScanCompletionBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Time to live for OneTime scans.
+       * default value is 24 hours, minimum value is 0 seconds, and maximum value
+       * is 365 days. The time is calculated from the data scan job completion
+       * time. If value is set as 0 seconds, the scan will be immediately deleted
+       * upon job completion, regardless of whether the job succeeded or failed.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration ttl_after_scan_completion = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setTtlAfterScanCompletion(com.google.protobuf.Duration value) {
+        if (ttlAfterScanCompletionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ttlAfterScanCompletion_ = value;
+        } else {
+          ttlAfterScanCompletionBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Time to live for OneTime scans.
+       * default value is 24 hours, minimum value is 0 seconds, and maximum value
+       * is 365 days. The time is calculated from the data scan job completion
+       * time. If value is set as 0 seconds, the scan will be immediately deleted
+       * upon job completion, regardless of whether the job succeeded or failed.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration ttl_after_scan_completion = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setTtlAfterScanCompletion(
+          com.google.protobuf.Duration.Builder builderForValue) {
+        if (ttlAfterScanCompletionBuilder_ == null) {
+          ttlAfterScanCompletion_ = builderForValue.build();
+        } else {
+          ttlAfterScanCompletionBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Time to live for OneTime scans.
+       * default value is 24 hours, minimum value is 0 seconds, and maximum value
+       * is 365 days. The time is calculated from the data scan job completion
+       * time. If value is set as 0 seconds, the scan will be immediately deleted
+       * upon job completion, regardless of whether the job succeeded or failed.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration ttl_after_scan_completion = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeTtlAfterScanCompletion(com.google.protobuf.Duration value) {
+        if (ttlAfterScanCompletionBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && ttlAfterScanCompletion_ != null
+              && ttlAfterScanCompletion_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getTtlAfterScanCompletionBuilder().mergeFrom(value);
+          } else {
+            ttlAfterScanCompletion_ = value;
+          }
+        } else {
+          ttlAfterScanCompletionBuilder_.mergeFrom(value);
+        }
+        if (ttlAfterScanCompletion_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Time to live for OneTime scans.
+       * default value is 24 hours, minimum value is 0 seconds, and maximum value
+       * is 365 days. The time is calculated from the data scan job completion
+       * time. If value is set as 0 seconds, the scan will be immediately deleted
+       * upon job completion, regardless of whether the job succeeded or failed.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration ttl_after_scan_completion = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearTtlAfterScanCompletion() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        ttlAfterScanCompletion_ = null;
+        if (ttlAfterScanCompletionBuilder_ != null) {
+          ttlAfterScanCompletionBuilder_.dispose();
+          ttlAfterScanCompletionBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Time to live for OneTime scans.
+       * default value is 24 hours, minimum value is 0 seconds, and maximum value
+       * is 365 days. The time is calculated from the data scan job completion
+       * time. If value is set as 0 seconds, the scan will be immediately deleted
+       * upon job completion, regardless of whether the job succeeded or failed.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration ttl_after_scan_completion = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.Duration.Builder getTtlAfterScanCompletionBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return internalGetTtlAfterScanCompletionFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Time to live for OneTime scans.
+       * default value is 24 hours, minimum value is 0 seconds, and maximum value
+       * is 365 days. The time is calculated from the data scan job completion
+       * time. If value is set as 0 seconds, the scan will be immediately deleted
+       * upon job completion, regardless of whether the job succeeded or failed.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration ttl_after_scan_completion = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.DurationOrBuilder getTtlAfterScanCompletionOrBuilder() {
+        if (ttlAfterScanCompletionBuilder_ != null) {
+          return ttlAfterScanCompletionBuilder_.getMessageOrBuilder();
+        } else {
+          return ttlAfterScanCompletion_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : ttlAfterScanCompletion_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Time to live for OneTime scans.
+       * default value is 24 hours, minimum value is 0 seconds, and maximum value
+       * is 365 days. The time is calculated from the data scan job completion
+       * time. If value is set as 0 seconds, the scan will be immediately deleted
+       * upon job completion, regardless of whether the job succeeded or failed.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration ttl_after_scan_completion = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          internalGetTtlAfterScanCompletionFieldBuilder() {
+        if (ttlAfterScanCompletionBuilder_ == null) {
+          ttlAfterScanCompletionBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  getTtlAfterScanCompletion(), getParentForChildren(), isClean());
+          ttlAfterScanCompletion_ = null;
+        }
+        return ttlAfterScanCompletionBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.Trigger.OneTime)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.Trigger.OneTime)
+    private static final com.google.cloud.dataplex.v1.Trigger.OneTime DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dataplex.v1.Trigger.OneTime();
+    }
+
+    public static com.google.cloud.dataplex.v1.Trigger.OneTime getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<OneTime> PARSER =
+        new com.google.protobuf.AbstractParser<OneTime>() {
+          @java.lang.Override
+          public OneTime parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<OneTime> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<OneTime> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.Trigger.OneTime getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int modeCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -1165,6 +1981,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     ON_DEMAND(100),
     SCHEDULE(101),
+    ONE_TIME(102),
     MODE_NOT_SET(0);
     private final int value;
 
@@ -1188,6 +2005,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessage
           return ON_DEMAND;
         case 101:
           return SCHEDULE;
+        case 102:
+          return ONE_TIME;
         case 0:
           return MODE_NOT_SET;
         default:
@@ -1312,6 +2131,63 @@ public final class Trigger extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.dataplex.v1.Trigger.Schedule.getDefaultInstance();
   }
 
+  public static final int ONE_TIME_FIELD_NUMBER = 102;
+
+  /**
+   *
+   *
+   * <pre>
+   * The scan runs once, and does not create an associated ScanJob child
+   * resource.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.Trigger.OneTime one_time = 102;</code>
+   *
+   * @return Whether the oneTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasOneTime() {
+    return modeCase_ == 102;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The scan runs once, and does not create an associated ScanJob child
+   * resource.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.Trigger.OneTime one_time = 102;</code>
+   *
+   * @return The oneTime.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.Trigger.OneTime getOneTime() {
+    if (modeCase_ == 102) {
+      return (com.google.cloud.dataplex.v1.Trigger.OneTime) mode_;
+    }
+    return com.google.cloud.dataplex.v1.Trigger.OneTime.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The scan runs once, and does not create an associated ScanJob child
+   * resource.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.Trigger.OneTime one_time = 102;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.Trigger.OneTimeOrBuilder getOneTimeOrBuilder() {
+    if (modeCase_ == 102) {
+      return (com.google.cloud.dataplex.v1.Trigger.OneTime) mode_;
+    }
+    return com.google.cloud.dataplex.v1.Trigger.OneTime.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1332,6 +2208,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessage
     if (modeCase_ == 101) {
       output.writeMessage(101, (com.google.cloud.dataplex.v1.Trigger.Schedule) mode_);
     }
+    if (modeCase_ == 102) {
+      output.writeMessage(102, (com.google.cloud.dataplex.v1.Trigger.OneTime) mode_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1350,6 +2229,11 @@ public final class Trigger extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               101, (com.google.cloud.dataplex.v1.Trigger.Schedule) mode_);
+    }
+    if (modeCase_ == 102) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              102, (com.google.cloud.dataplex.v1.Trigger.OneTime) mode_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1374,6 +2258,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessage
       case 101:
         if (!getSchedule().equals(other.getSchedule())) return false;
         break;
+      case 102:
+        if (!getOneTime().equals(other.getOneTime())) return false;
+        break;
       case 0:
       default:
     }
@@ -1396,6 +2283,10 @@ public final class Trigger extends com.google.protobuf.GeneratedMessage
       case 101:
         hash = (37 * hash) + SCHEDULE_FIELD_NUMBER;
         hash = (53 * hash) + getSchedule().hashCode();
+        break;
+      case 102:
+        hash = (37 * hash) + ONE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getOneTime().hashCode();
         break;
       case 0:
       default:
@@ -1545,6 +2436,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessage
       if (scheduleBuilder_ != null) {
         scheduleBuilder_.clear();
       }
+      if (oneTimeBuilder_ != null) {
+        oneTimeBuilder_.clear();
+      }
       modeCase_ = 0;
       mode_ = null;
       return this;
@@ -1594,6 +2488,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessage
       if (modeCase_ == 101 && scheduleBuilder_ != null) {
         result.mode_ = scheduleBuilder_.build();
       }
+      if (modeCase_ == 102 && oneTimeBuilder_ != null) {
+        result.mode_ = oneTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1617,6 +2514,11 @@ public final class Trigger extends com.google.protobuf.GeneratedMessage
         case SCHEDULE:
           {
             mergeSchedule(other.getSchedule());
+            break;
+          }
+        case ONE_TIME:
+          {
+            mergeOneTime(other.getOneTime());
             break;
           }
         case MODE_NOT_SET:
@@ -1664,6 +2566,12 @@ public final class Trigger extends com.google.protobuf.GeneratedMessage
                 modeCase_ = 101;
                 break;
               } // case 810
+            case 818:
+              {
+                input.readMessage(internalGetOneTimeFieldBuilder().getBuilder(), extensionRegistry);
+                modeCase_ = 102;
+                break;
+              } // case 818
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2131,6 +3039,233 @@ public final class Trigger extends com.google.protobuf.GeneratedMessage
       modeCase_ = 101;
       onChanged();
       return scheduleBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataplex.v1.Trigger.OneTime,
+            com.google.cloud.dataplex.v1.Trigger.OneTime.Builder,
+            com.google.cloud.dataplex.v1.Trigger.OneTimeOrBuilder>
+        oneTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The scan runs once, and does not create an associated ScanJob child
+     * resource.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.Trigger.OneTime one_time = 102;</code>
+     *
+     * @return Whether the oneTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasOneTime() {
+      return modeCase_ == 102;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The scan runs once, and does not create an associated ScanJob child
+     * resource.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.Trigger.OneTime one_time = 102;</code>
+     *
+     * @return The oneTime.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.Trigger.OneTime getOneTime() {
+      if (oneTimeBuilder_ == null) {
+        if (modeCase_ == 102) {
+          return (com.google.cloud.dataplex.v1.Trigger.OneTime) mode_;
+        }
+        return com.google.cloud.dataplex.v1.Trigger.OneTime.getDefaultInstance();
+      } else {
+        if (modeCase_ == 102) {
+          return oneTimeBuilder_.getMessage();
+        }
+        return com.google.cloud.dataplex.v1.Trigger.OneTime.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The scan runs once, and does not create an associated ScanJob child
+     * resource.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.Trigger.OneTime one_time = 102;</code>
+     */
+    public Builder setOneTime(com.google.cloud.dataplex.v1.Trigger.OneTime value) {
+      if (oneTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        mode_ = value;
+        onChanged();
+      } else {
+        oneTimeBuilder_.setMessage(value);
+      }
+      modeCase_ = 102;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The scan runs once, and does not create an associated ScanJob child
+     * resource.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.Trigger.OneTime one_time = 102;</code>
+     */
+    public Builder setOneTime(
+        com.google.cloud.dataplex.v1.Trigger.OneTime.Builder builderForValue) {
+      if (oneTimeBuilder_ == null) {
+        mode_ = builderForValue.build();
+        onChanged();
+      } else {
+        oneTimeBuilder_.setMessage(builderForValue.build());
+      }
+      modeCase_ = 102;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The scan runs once, and does not create an associated ScanJob child
+     * resource.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.Trigger.OneTime one_time = 102;</code>
+     */
+    public Builder mergeOneTime(com.google.cloud.dataplex.v1.Trigger.OneTime value) {
+      if (oneTimeBuilder_ == null) {
+        if (modeCase_ == 102
+            && mode_ != com.google.cloud.dataplex.v1.Trigger.OneTime.getDefaultInstance()) {
+          mode_ =
+              com.google.cloud.dataplex.v1.Trigger.OneTime.newBuilder(
+                      (com.google.cloud.dataplex.v1.Trigger.OneTime) mode_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          mode_ = value;
+        }
+        onChanged();
+      } else {
+        if (modeCase_ == 102) {
+          oneTimeBuilder_.mergeFrom(value);
+        } else {
+          oneTimeBuilder_.setMessage(value);
+        }
+      }
+      modeCase_ = 102;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The scan runs once, and does not create an associated ScanJob child
+     * resource.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.Trigger.OneTime one_time = 102;</code>
+     */
+    public Builder clearOneTime() {
+      if (oneTimeBuilder_ == null) {
+        if (modeCase_ == 102) {
+          modeCase_ = 0;
+          mode_ = null;
+          onChanged();
+        }
+      } else {
+        if (modeCase_ == 102) {
+          modeCase_ = 0;
+          mode_ = null;
+        }
+        oneTimeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The scan runs once, and does not create an associated ScanJob child
+     * resource.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.Trigger.OneTime one_time = 102;</code>
+     */
+    public com.google.cloud.dataplex.v1.Trigger.OneTime.Builder getOneTimeBuilder() {
+      return internalGetOneTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The scan runs once, and does not create an associated ScanJob child
+     * resource.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.Trigger.OneTime one_time = 102;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.Trigger.OneTimeOrBuilder getOneTimeOrBuilder() {
+      if ((modeCase_ == 102) && (oneTimeBuilder_ != null)) {
+        return oneTimeBuilder_.getMessageOrBuilder();
+      } else {
+        if (modeCase_ == 102) {
+          return (com.google.cloud.dataplex.v1.Trigger.OneTime) mode_;
+        }
+        return com.google.cloud.dataplex.v1.Trigger.OneTime.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The scan runs once, and does not create an associated ScanJob child
+     * resource.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.Trigger.OneTime one_time = 102;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataplex.v1.Trigger.OneTime,
+            com.google.cloud.dataplex.v1.Trigger.OneTime.Builder,
+            com.google.cloud.dataplex.v1.Trigger.OneTimeOrBuilder>
+        internalGetOneTimeFieldBuilder() {
+      if (oneTimeBuilder_ == null) {
+        if (!(modeCase_ == 102)) {
+          mode_ = com.google.cloud.dataplex.v1.Trigger.OneTime.getDefaultInstance();
+        }
+        oneTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dataplex.v1.Trigger.OneTime,
+                com.google.cloud.dataplex.v1.Trigger.OneTime.Builder,
+                com.google.cloud.dataplex.v1.Trigger.OneTimeOrBuilder>(
+                (com.google.cloud.dataplex.v1.Trigger.OneTime) mode_,
+                getParentForChildren(),
+                isClean());
+        mode_ = null;
+      }
+      modeCase_ = 102;
+      onChanged();
+      return oneTimeBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.Trigger)

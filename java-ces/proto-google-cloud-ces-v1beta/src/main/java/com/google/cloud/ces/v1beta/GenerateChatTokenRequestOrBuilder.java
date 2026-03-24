@@ -119,4 +119,17 @@ public interface GenerateChatTokenRequestOrBuilder
    * @return The bytes for recaptchaToken.
    */
   com.google.protobuf.ByteString getRecaptchaTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates if live handoff is enabled for the session.
+   * </pre>
+   *
+   * <code>bool live_handoff_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The liveHandoffEnabled.
+   */
+  boolean getLiveHandoffEnabled();
 }

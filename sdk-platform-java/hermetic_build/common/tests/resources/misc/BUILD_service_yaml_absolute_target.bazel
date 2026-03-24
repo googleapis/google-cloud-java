@@ -1,0 +1,3 @@
+java_gapic_library(
+    service_yaml = "//google/cloud/videointelligence:videointelligence_v1p3beta1.yaml",
+)

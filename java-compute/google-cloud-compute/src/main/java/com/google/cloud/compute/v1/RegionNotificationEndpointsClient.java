@@ -31,6 +31,7 @@ import com.google.cloud.compute.v1.stub.RegionNotificationEndpointsStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -67,6 +68,25 @@ import javax.annotation.Generated;
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AggregatedList</td>
+ *      <td><p> Retrieves the list of all NotificationEndpoint resources, regional and global, available to the specified project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> aggregatedList(AggregatedListRegionNotificationEndpointsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> aggregatedList(String project)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> aggregatedListPagedCallable()
+ *           <li><p> aggregatedListCallable()
+ *      </ul>
+ *       </td>
  *    </tr>
  *    <tr>
  *      <td><p> Delete</td>
@@ -255,6 +275,168 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
 
   public RegionNotificationEndpointsStub getStub() {
     return stub;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of all NotificationEndpoint resources, regional and global, available to the
+   * specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient =
+   *     RegionNotificationEndpointsClient.create()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, NotificationEndpointsScopedList> element :
+   *       regionNotificationEndpointsClient.aggregatedList(project).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param project Name of the project scoping this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AggregatedListPagedResponse aggregatedList(String project) {
+    AggregatedListRegionNotificationEndpointsRequest request =
+        AggregatedListRegionNotificationEndpointsRequest.newBuilder().setProject(project).build();
+    return aggregatedList(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of all NotificationEndpoint resources, regional and global, available to the
+   * specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient =
+   *     RegionNotificationEndpointsClient.create()) {
+   *   AggregatedListRegionNotificationEndpointsRequest request =
+   *       AggregatedListRegionNotificationEndpointsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
+   *           .build();
+   *   for (Map.Entry<String, NotificationEndpointsScopedList> element :
+   *       regionNotificationEndpointsClient.aggregatedList(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AggregatedListPagedResponse aggregatedList(
+      AggregatedListRegionNotificationEndpointsRequest request) {
+    return aggregatedListPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of all NotificationEndpoint resources, regional and global, available to the
+   * specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient =
+   *     RegionNotificationEndpointsClient.create()) {
+   *   AggregatedListRegionNotificationEndpointsRequest request =
+   *       AggregatedListRegionNotificationEndpointsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, NotificationEndpointsScopedList>> future =
+   *       regionNotificationEndpointsClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, NotificationEndpointsScopedList> element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          AggregatedListRegionNotificationEndpointsRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return stub.aggregatedListPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of all NotificationEndpoint resources, regional and global, available to the
+   * specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient =
+   *     RegionNotificationEndpointsClient.create()) {
+   *   AggregatedListRegionNotificationEndpointsRequest request =
+   *       AggregatedListRegionNotificationEndpointsRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
+   *           .build();
+   *   while (true) {
+   *     NotificationEndpointAggregatedList response =
+   *         regionNotificationEndpointsClient.aggregatedListCallable().call(request);
+   *     for (Map.Entry<String, NotificationEndpointsScopedList> element : response.getItemsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          AggregatedListRegionNotificationEndpointsRequest, NotificationEndpointAggregatedList>
+      aggregatedListCallable() {
+    return stub.aggregatedListCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -937,6 +1119,101 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class AggregatedListPagedResponse
+      extends AbstractPagedListResponse<
+          AggregatedListRegionNotificationEndpointsRequest,
+          NotificationEndpointAggregatedList,
+          Map.Entry<String, NotificationEndpointsScopedList>,
+          AggregatedListPage,
+          AggregatedListFixedSizeCollection> {
+
+    public static ApiFuture<AggregatedListPagedResponse> createAsync(
+        PageContext<
+                AggregatedListRegionNotificationEndpointsRequest,
+                NotificationEndpointAggregatedList,
+                Map.Entry<String, NotificationEndpointsScopedList>>
+            context,
+        ApiFuture<NotificationEndpointAggregatedList> futureResponse) {
+      ApiFuture<AggregatedListPage> futurePage =
+          AggregatedListPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new AggregatedListPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private AggregatedListPagedResponse(AggregatedListPage page) {
+      super(page, AggregatedListFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class AggregatedListPage
+      extends AbstractPage<
+          AggregatedListRegionNotificationEndpointsRequest,
+          NotificationEndpointAggregatedList,
+          Map.Entry<String, NotificationEndpointsScopedList>,
+          AggregatedListPage> {
+
+    private AggregatedListPage(
+        PageContext<
+                AggregatedListRegionNotificationEndpointsRequest,
+                NotificationEndpointAggregatedList,
+                Map.Entry<String, NotificationEndpointsScopedList>>
+            context,
+        NotificationEndpointAggregatedList response) {
+      super(context, response);
+    }
+
+    private static AggregatedListPage createEmptyPage() {
+      return new AggregatedListPage(null, null);
+    }
+
+    @Override
+    protected AggregatedListPage createPage(
+        PageContext<
+                AggregatedListRegionNotificationEndpointsRequest,
+                NotificationEndpointAggregatedList,
+                Map.Entry<String, NotificationEndpointsScopedList>>
+            context,
+        NotificationEndpointAggregatedList response) {
+      return new AggregatedListPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<AggregatedListPage> createPageAsync(
+        PageContext<
+                AggregatedListRegionNotificationEndpointsRequest,
+                NotificationEndpointAggregatedList,
+                Map.Entry<String, NotificationEndpointsScopedList>>
+            context,
+        ApiFuture<NotificationEndpointAggregatedList> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class AggregatedListFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          AggregatedListRegionNotificationEndpointsRequest,
+          NotificationEndpointAggregatedList,
+          Map.Entry<String, NotificationEndpointsScopedList>,
+          AggregatedListPage,
+          AggregatedListFixedSizeCollection> {
+
+    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static AggregatedListFixedSizeCollection createEmptyCollection() {
+      return new AggregatedListFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected AggregatedListFixedSizeCollection createCollection(
+        List<AggregatedListPage> pages, int collectionSize) {
+      return new AggregatedListFixedSizeCollection(pages, collectionSize);
+    }
   }
 
   public static class ListPagedResponse

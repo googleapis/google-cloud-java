@@ -44,6 +44,14 @@ public final class CloudDlpDataProfileProto extends com.google.protobuf.Generate
       internal_static_google_cloud_securitycenter_v1_CloudDlpDataProfile_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_securitycenter_v1_CloudDlpDataProfile_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_InfoType_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_InfoType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_SensitivityScore_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_SensitivityScore_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -53,26 +61,41 @@ public final class CloudDlpDataProfileProto extends com.google.protobuf.Generate
 
   static {
     java.lang.String[] descriptorData = {
-      "\n;google/cloud/securitycenter/v1/cloud_d"
-          + "lp_data_profile.proto\022\036google.cloud.secu"
-          + "ritycenter.v1\032\031google/api/resource.proto"
-          + "\"\364\001\n\023CloudDlpDataProfile\022>\n\014data_profile"
-          + "\030\001 \001(\tB(\372A%\n#dlp.googleapis.com/TableDat"
-          + "aProfile\022S\n\013parent_type\030\002 \001(\0162>.google.c"
-          + "loud.securitycenter.v1.CloudDlpDataProfi"
-          + "le.ParentType\"H\n\nParentType\022\033\n\027PARENT_TY"
-          + "PE_UNSPECIFIED\020\000\022\020\n\014ORGANIZATION\020\001\022\013\n\007PR"
-          + "OJECT\020\002B\224\003\n\"com.google.cloud.securitycen"
-          + "ter.v1B\030CloudDlpDataProfileProtoP\001ZJclou"
-          + "d.google.com/go/securitycenter/apiv1/sec"
-          + "uritycenterpb;securitycenterpb\252\002\036Google."
-          + "Cloud.SecurityCenter.V1\312\002\036Google\\Cloud\\S"
-          + "ecurityCenter\\V1\352\002!Google::Cloud::Securi"
-          + "tyCenter::V1\352A\236\001\n#dlp.googleapis.com/Tab"
-          + "leDataProfile\0220projects/{project}/tableP"
-          + "rofiles/{table_profile}\022Eprojects/{proje"
-          + "ct}/locations/{location}/tableProfiles/{"
-          + "table_profile}b\006proto3"
+      "\n"
+          + ";google/cloud/securitycenter/v1/cloud_dlp_data_profile.proto\022\036google.cloud.secu"
+          + "ritycenter.v1\032\031google/api/resource.proto\"\262\002\n"
+          + "\023CloudDlpDataProfile\022>\n"
+          + "\014data_profile\030\001 \001(\tB(\372A%\n"
+          + "#dlp.googleapis.com/TableDataProfile\022S\n"
+          + "\013parent_type\030\002 \001(\0162>.google.c"
+          + "loud.securitycenter.v1.CloudDlpDataProfile.ParentType\022<\n\n"
+          + "info_types\030\003 \003(\0132(.google.cloud.securitycenter.v1.InfoType\"H\n\n"
+          + "ParentType\022\033\n"
+          + "\027PARENT_TYPE_UNSPECIFIED\020\000\022\020\n"
+          + "\014ORGANIZATION\020\001\022\013\n"
+          + "\007PROJECT\020\002\"v\n"
+          + "\010InfoType\022\014\n"
+          + "\004name\030\001 \001(\t\022\017\n"
+          + "\007version\030\002 \001(\t\022K\n"
+          + "\021sensitivity_score\030\003"
+          + " \001(\01320.google.cloud.securitycenter.v1.SensitivityScore\"\212\002\n"
+          + "\020SensitivityScore\022U\n"
+          + "\005score\030\001 \001(\0162F.google.cloud"
+          + ".securitycenter.v1.SensitivityScore.SensitivityScoreLevel\"\236\001\n"
+          + "\025SensitivityScoreLevel\022\'\n"
+          + "#SENSITIVITY_SCORE_LEVEL_UNSPECIFIED\020\000\022\023\n"
+          + "\017SENSITIVITY_LOW\020\n"
+          + "\022\027\n"
+          + "\023SENSITIVITY_UNKNOWN\020\014\022\030\n"
+          + "\024SENSITIVITY_MODERATE\020\024\022\024\n"
+          + "\020SENSITIVITY_HIGH\020\036B\224\003\n"
+          + "\"com.google.cloud.securitycenter.v1B\030CloudDlpDataProfilePr"
+          + "otoP\001ZJcloud.google.com/go/securitycenter/apiv1/securitycenterpb;securitycenterp"
+          + "b\252\002\036Google.Cloud.SecurityCenter.V1\312\002\036Goo"
+          + "gle\\Cloud\\SecurityCenter\\V1\352\002!Google::Cloud::SecurityCenter::V1\352A\236\001\n"
+          + "#dlp.googleapis.com/TableDataProfile\0220projects/{proj"
+          + "ect}/tableProfiles/{table_profile}\022Eprojects/{project}/locations/{location}/tabl"
+          + "eProfiles/{table_profile}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -86,7 +109,23 @@ public final class CloudDlpDataProfileProto extends com.google.protobuf.Generate
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_CloudDlpDataProfile_descriptor,
             new java.lang.String[] {
-              "DataProfile", "ParentType",
+              "DataProfile", "ParentType", "InfoTypes",
+            });
+    internal_static_google_cloud_securitycenter_v1_InfoType_descriptor =
+        getDescriptor().getMessageType(1);
+    internal_static_google_cloud_securitycenter_v1_InfoType_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_InfoType_descriptor,
+            new java.lang.String[] {
+              "Name", "Version", "SensitivityScore",
+            });
+    internal_static_google_cloud_securitycenter_v1_SensitivityScore_descriptor =
+        getDescriptor().getMessageType(2);
+    internal_static_google_cloud_securitycenter_v1_SensitivityScore_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_SensitivityScore_descriptor,
+            new java.lang.String[] {
+              "Score",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.ResourceProto.getDescriptor();

@@ -63,7 +63,7 @@ public interface PlaybookOutputOrBuilder
    * </code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.PlaybookOutput.state is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/trace.proto;l=449
+   *     google/cloud/dialogflow/cx/v3beta1/trace.proto;l=526
    * @return The enum numeric value on the wire for state.
    */
   @java.lang.Deprecated
@@ -80,7 +80,7 @@ public interface PlaybookOutputOrBuilder
    * </code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.PlaybookOutput.state is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/trace.proto;l=449
+   *     google/cloud/dialogflow/cx/v3beta1/trace.proto;l=526
    * @return The state.
    */
   @java.lang.Deprecated

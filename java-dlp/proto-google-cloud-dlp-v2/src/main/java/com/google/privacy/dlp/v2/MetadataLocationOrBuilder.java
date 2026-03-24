@@ -89,5 +89,42 @@ public interface MetadataLocationOrBuilder
    */
   com.google.privacy.dlp.v2.StorageMetadataLabelOrBuilder getStorageLabelOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Metadata key that contains the finding.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.KeyValueMetadataLabel key_value_metadata_label = 4;</code>
+   *
+   * @return Whether the keyValueMetadataLabel field is set.
+   */
+  boolean hasKeyValueMetadataLabel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata key that contains the finding.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.KeyValueMetadataLabel key_value_metadata_label = 4;</code>
+   *
+   * @return The keyValueMetadataLabel.
+   */
+  com.google.privacy.dlp.v2.KeyValueMetadataLabel getKeyValueMetadataLabel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata key that contains the finding.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.KeyValueMetadataLabel key_value_metadata_label = 4;</code>
+   */
+  com.google.privacy.dlp.v2.KeyValueMetadataLabelOrBuilder getKeyValueMetadataLabelOrBuilder();
+
   com.google.privacy.dlp.v2.MetadataLocation.LabelCase getLabelCase();
 }

@@ -51,6 +51,16 @@ public enum MetadataType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STORAGE_METADATA = 2;</code>
    */
   STORAGE_METADATA(2),
+  /**
+   *
+   *
+   * <pre>
+   * Metadata extracted from the files.
+   * </pre>
+   *
+   * <code>CONTENT_METADATA = 3;</code>
+   */
+  CONTENT_METADATA(3),
   UNRECOGNIZED(-1),
   ;
 
@@ -86,6 +96,17 @@ public enum MetadataType implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int STORAGE_METADATA_VALUE = 2;
 
+  /**
+   *
+   *
+   * <pre>
+   * Metadata extracted from the files.
+   * </pre>
+   *
+   * <code>CONTENT_METADATA = 3;</code>
+   */
+  public static final int CONTENT_METADATA_VALUE = 3;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -114,6 +135,8 @@ public enum MetadataType implements com.google.protobuf.ProtocolMessageEnum {
         return METADATATYPE_UNSPECIFIED;
       case 2:
         return STORAGE_METADATA;
+      case 3:
+        return CONTENT_METADATA;
       default:
         return null;
     }

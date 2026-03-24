@@ -45,7 +45,7 @@ public enum TermsOfServiceKind implements com.google.protobuf.ProtocolMessageEnu
    *
    *
    * <pre>
-   * Merchant Center application.
+   * Terms of service for the Merchant Center application.
    * </pre>
    *
    * <code>MERCHANT_CENTER = 1;</code>
@@ -79,7 +79,7 @@ public enum TermsOfServiceKind implements com.google.protobuf.ProtocolMessageEnu
    *
    *
    * <pre>
-   * Merchant Center application.
+   * Terms of service for the Merchant Center application.
    * </pre>
    *
    * <code>MERCHANT_CENTER = 1;</code>

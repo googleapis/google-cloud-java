@@ -61,6 +61,16 @@ public enum SubscriptionPeriod implements com.google.protobuf.ProtocolMessageEnu
    * <code>YEAR = 2;</code>
    */
   YEAR(2),
+  /**
+   *
+   *
+   * <pre>
+   * Indicates that the subscription period is week.
+   * </pre>
+   *
+   * <code>WEEK = 3;</code>
+   */
+  WEEK(3),
   UNRECOGNIZED(-1),
   ;
 
@@ -107,6 +117,17 @@ public enum SubscriptionPeriod implements com.google.protobuf.ProtocolMessageEnu
    */
   public static final int YEAR_VALUE = 2;
 
+  /**
+   *
+   *
+   * <pre>
+   * Indicates that the subscription period is week.
+   * </pre>
+   *
+   * <code>WEEK = 3;</code>
+   */
+  public static final int WEEK_VALUE = 3;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -137,6 +158,8 @@ public enum SubscriptionPeriod implements com.google.protobuf.ProtocolMessageEnu
         return MONTH;
       case 2:
         return YEAR;
+      case 3:
+        return WEEK;
       default:
         return null;
     }

@@ -38,6 +38,18 @@ public interface MetricsRecorder {
   /** Records the number of attempts a transaction took. */
   void recordTransactionAttemptCount(long count, Map<String, String> attributes);
 
+  /** Records the latency of a single RPC attempt in milliseconds. */
+  void recordAttemptLatency(double latencyMs, Map<String, String> attributes);
+
+  /** Records the count of a single RPC attempt. */
+  void recordAttemptCount(long count, Map<String, String> attributes);
+
+  /** Records the total latency of an operation (including retries) in milliseconds. */
+  void recordOperationLatency(double latencyMs, Map<String, String> attributes);
+
+  /** Records the count of an operation. */
+  void recordOperationCount(long count, Map<String, String> attributes);
+
   /**
    * Returns a {@link MetricsRecorder} instance based on the provided OpenTelemetry options.
    *

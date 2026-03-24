@@ -68,7 +68,7 @@ public interface EmbedContentResponseOrBuilder
    *
    *
    * <pre>
-   * Metadata about the response(s).
+   * Usage metadata about the response(s).
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.UsageMetadata usage_metadata = 2;</code>
@@ -81,7 +81,7 @@ public interface EmbedContentResponseOrBuilder
    *
    *
    * <pre>
-   * Metadata about the response(s).
+   * Usage metadata about the response(s).
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.UsageMetadata usage_metadata = 2;</code>
@@ -94,7 +94,7 @@ public interface EmbedContentResponseOrBuilder
    *
    *
    * <pre>
-   * Metadata about the response(s).
+   * Usage metadata about the response(s).
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.UsageMetadata usage_metadata = 2;</code>

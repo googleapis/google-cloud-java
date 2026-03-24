@@ -85,6 +85,25 @@ public enum MatchingType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MATCHING_TYPE_INVERSE_MATCH = 3;</code>
    */
   MATCHING_TYPE_INVERSE_MATCH(3),
+  /**
+   *
+   *
+   * <pre>
+   * Rule-specific match.
+   *
+   * The matching logic is based on the specific rule being used. This is
+   * required for rules where the matching behavior is not a simple string
+   * comparison (e.g., image containment). This matching type can only be
+   * used with the `ExcludeByImageFindings` rule.
+   *
+   * - Exclude by image findings: The matching logic is defined within
+   * `ExcludeByImageFindings` based on spatial relationships between bounding
+   * boxes.
+   * </pre>
+   *
+   * <code>MATCHING_TYPE_RULE_SPECIFIC = 4;</code>
+   */
+  MATCHING_TYPE_RULE_SPECIFIC(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -154,6 +173,26 @@ public enum MatchingType implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int MATCHING_TYPE_INVERSE_MATCH_VALUE = 3;
 
+  /**
+   *
+   *
+   * <pre>
+   * Rule-specific match.
+   *
+   * The matching logic is based on the specific rule being used. This is
+   * required for rules where the matching behavior is not a simple string
+   * comparison (e.g., image containment). This matching type can only be
+   * used with the `ExcludeByImageFindings` rule.
+   *
+   * - Exclude by image findings: The matching logic is defined within
+   * `ExcludeByImageFindings` based on spatial relationships between bounding
+   * boxes.
+   * </pre>
+   *
+   * <code>MATCHING_TYPE_RULE_SPECIFIC = 4;</code>
+   */
+  public static final int MATCHING_TYPE_RULE_SPECIFIC_VALUE = 4;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -186,6 +225,8 @@ public enum MatchingType implements com.google.protobuf.ProtocolMessageEnum {
         return MATCHING_TYPE_PARTIAL_MATCH;
       case 3:
         return MATCHING_TYPE_INVERSE_MATCH;
+      case 4:
+        return MATCHING_TYPE_RULE_SPECIFIC;
       default:
         return null;
     }

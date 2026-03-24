@@ -82,7 +82,8 @@ public final class UpdateProductInputRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. The product input resource to update. Information you submit will
-   * be applied to the processed product as well.
+   * be applied to the processed product as well. The `name` field within this
+   * resource identifies the product input to be updated.
    * </pre>
    *
    * <code>
@@ -101,7 +102,8 @@ public final class UpdateProductInputRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. The product input resource to update. Information you submit will
-   * be applied to the processed product as well.
+   * be applied to the processed product as well. The `name` field within this
+   * resource identifies the product input to be updated.
    * </pre>
    *
    * <code>
@@ -122,7 +124,8 @@ public final class UpdateProductInputRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. The product input resource to update. Information you submit will
-   * be applied to the processed product as well.
+   * be applied to the processed product as well. The `name` field within this
+   * resource identifies the product input to be updated.
    * </pre>
    *
    * <code>
@@ -708,7 +711,8 @@ public final class UpdateProductInputRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The product input resource to update. Information you submit will
-     * be applied to the processed product as well.
+     * be applied to the processed product as well. The `name` field within this
+     * resource identifies the product input to be updated.
      * </pre>
      *
      * <code>
@@ -726,7 +730,8 @@ public final class UpdateProductInputRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The product input resource to update. Information you submit will
-     * be applied to the processed product as well.
+     * be applied to the processed product as well. The `name` field within this
+     * resource identifies the product input to be updated.
      * </pre>
      *
      * <code>
@@ -750,7 +755,8 @@ public final class UpdateProductInputRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The product input resource to update. Information you submit will
-     * be applied to the processed product as well.
+     * be applied to the processed product as well. The `name` field within this
+     * resource identifies the product input to be updated.
      * </pre>
      *
      * <code>
@@ -776,7 +782,8 @@ public final class UpdateProductInputRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The product input resource to update. Information you submit will
-     * be applied to the processed product as well.
+     * be applied to the processed product as well. The `name` field within this
+     * resource identifies the product input to be updated.
      * </pre>
      *
      * <code>
@@ -800,7 +807,8 @@ public final class UpdateProductInputRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The product input resource to update. Information you submit will
-     * be applied to the processed product as well.
+     * be applied to the processed product as well. The `name` field within this
+     * resource identifies the product input to be updated.
      * </pre>
      *
      * <code>
@@ -832,7 +840,8 @@ public final class UpdateProductInputRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The product input resource to update. Information you submit will
-     * be applied to the processed product as well.
+     * be applied to the processed product as well. The `name` field within this
+     * resource identifies the product input to be updated.
      * </pre>
      *
      * <code>
@@ -855,7 +864,8 @@ public final class UpdateProductInputRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The product input resource to update. Information you submit will
-     * be applied to the processed product as well.
+     * be applied to the processed product as well. The `name` field within this
+     * resource identifies the product input to be updated.
      * </pre>
      *
      * <code>
@@ -873,7 +883,8 @@ public final class UpdateProductInputRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The product input resource to update. Information you submit will
-     * be applied to the processed product as well.
+     * be applied to the processed product as well. The `name` field within this
+     * resource identifies the product input to be updated.
      * </pre>
      *
      * <code>
@@ -896,7 +907,8 @@ public final class UpdateProductInputRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The product input resource to update. Information you submit will
-     * be applied to the processed product as well.
+     * be applied to the processed product as well. The `name` field within this
+     * resource identifies the product input to be updated.
      * </pre>
      *
      * <code>

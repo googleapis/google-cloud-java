@@ -1,0 +1,81 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.spanner.admin.instance.v1",
+  "libraryPackage": "com.google.cloud.spanner.admin.instance.v1",
+  "services": {
+    "InstanceAdmin": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "InstanceAdminClient",
+          "rpcs": {
+            "CreateInstance": {
+              "methods": ["createInstanceAsync", "createInstanceAsync", "createInstanceAsync", "createInstanceOperationCallable", "createInstanceCallable"]
+            },
+            "CreateInstanceConfig": {
+              "methods": ["createInstanceConfigAsync", "createInstanceConfigAsync", "createInstanceConfigAsync", "createInstanceConfigOperationCallable", "createInstanceConfigCallable"]
+            },
+            "CreateInstancePartition": {
+              "methods": ["createInstancePartitionAsync", "createInstancePartitionAsync", "createInstancePartitionAsync", "createInstancePartitionOperationCallable", "createInstancePartitionCallable"]
+            },
+            "DeleteInstance": {
+              "methods": ["deleteInstance", "deleteInstance", "deleteInstance", "deleteInstanceCallable"]
+            },
+            "DeleteInstanceConfig": {
+              "methods": ["deleteInstanceConfig", "deleteInstanceConfig", "deleteInstanceConfig", "deleteInstanceConfigCallable"]
+            },
+            "DeleteInstancePartition": {
+              "methods": ["deleteInstancePartition", "deleteInstancePartition", "deleteInstancePartition", "deleteInstancePartitionCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetInstance": {
+              "methods": ["getInstance", "getInstance", "getInstance", "getInstanceCallable"]
+            },
+            "GetInstanceConfig": {
+              "methods": ["getInstanceConfig", "getInstanceConfig", "getInstanceConfig", "getInstanceConfigCallable"]
+            },
+            "GetInstancePartition": {
+              "methods": ["getInstancePartition", "getInstancePartition", "getInstancePartition", "getInstancePartitionCallable"]
+            },
+            "ListInstanceConfigOperations": {
+              "methods": ["listInstanceConfigOperations", "listInstanceConfigOperations", "listInstanceConfigOperations", "listInstanceConfigOperationsPagedCallable", "listInstanceConfigOperationsCallable"]
+            },
+            "ListInstanceConfigs": {
+              "methods": ["listInstanceConfigs", "listInstanceConfigs", "listInstanceConfigs", "listInstanceConfigsPagedCallable", "listInstanceConfigsCallable"]
+            },
+            "ListInstancePartitionOperations": {
+              "methods": ["listInstancePartitionOperations", "listInstancePartitionOperations", "listInstancePartitionOperations", "listInstancePartitionOperationsPagedCallable", "listInstancePartitionOperationsCallable"]
+            },
+            "ListInstancePartitions": {
+              "methods": ["listInstancePartitions", "listInstancePartitions", "listInstancePartitions", "listInstancePartitionsPagedCallable", "listInstancePartitionsCallable"]
+            },
+            "ListInstances": {
+              "methods": ["listInstances", "listInstances", "listInstances", "listInstancesPagedCallable", "listInstancesCallable"]
+            },
+            "MoveInstance": {
+              "methods": ["moveInstanceAsync", "moveInstanceOperationCallable", "moveInstanceCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateInstance": {
+              "methods": ["updateInstanceAsync", "updateInstanceAsync", "updateInstanceOperationCallable", "updateInstanceCallable"]
+            },
+            "UpdateInstanceConfig": {
+              "methods": ["updateInstanceConfigAsync", "updateInstanceConfigAsync", "updateInstanceConfigOperationCallable", "updateInstanceConfigCallable"]
+            },
+            "UpdateInstancePartition": {
+              "methods": ["updateInstancePartitionAsync", "updateInstancePartitionAsync", "updateInstancePartitionOperationCallable", "updateInstancePartitionCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

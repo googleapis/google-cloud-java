@@ -1757,7 +1757,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *
    * @param model Required. The name of the publisher model requested to serve the prediction.
    *     Format: `projects/{project}/locations/{location}/publishers/&#42;/models/&#42;`
-   * @param content Required. Input content to be embedded. Required.
+   * @param content Required. Input content to be embedded.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EmbedContentResponse embedContent(EndpointName model, Content content) {
@@ -1792,7 +1792,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *
    * @param model Required. The name of the publisher model requested to serve the prediction.
    *     Format: `projects/{project}/locations/{location}/publishers/&#42;/models/&#42;`
-   * @param content Required. Input content to be embedded. Required.
+   * @param content Required. Input content to be embedded.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EmbedContentResponse embedContent(String model, Content content) {
@@ -1824,6 +1824,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .setTitle("title110371416")
    *           .setOutputDimensionality(-495931909)
    *           .setAutoTruncate(true)
+   *           .setEmbedContentConfig(EmbedContentRequest.EmbedContentConfig.newBuilder().build())
    *           .build();
    *   EmbedContentResponse response = predictionServiceClient.embedContent(request);
    * }
@@ -1859,6 +1860,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .setTitle("title110371416")
    *           .setOutputDimensionality(-495931909)
    *           .setAutoTruncate(true)
+   *           .setEmbedContentConfig(EmbedContentRequest.EmbedContentConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<EmbedContentResponse> future =
    *       predictionServiceClient.embedContentCallable().futureCall(request);

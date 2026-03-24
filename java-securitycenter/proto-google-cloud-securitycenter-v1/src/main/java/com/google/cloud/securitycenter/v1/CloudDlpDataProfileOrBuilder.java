@@ -79,4 +79,70 @@ public interface CloudDlpDataProfileOrBuilder
    * @return The parentType.
    */
   com.google.cloud.securitycenter.v1.CloudDlpDataProfile.ParentType getParentType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of information detected by SDP.
+   * Info type includes name, version and sensitivity of the detected
+   * information type.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.InfoType info_types = 3;</code>
+   */
+  java.util.List<com.google.cloud.securitycenter.v1.InfoType> getInfoTypesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of information detected by SDP.
+   * Info type includes name, version and sensitivity of the detected
+   * information type.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.InfoType info_types = 3;</code>
+   */
+  com.google.cloud.securitycenter.v1.InfoType getInfoTypes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of information detected by SDP.
+   * Info type includes name, version and sensitivity of the detected
+   * information type.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.InfoType info_types = 3;</code>
+   */
+  int getInfoTypesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of information detected by SDP.
+   * Info type includes name, version and sensitivity of the detected
+   * information type.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.InfoType info_types = 3;</code>
+   */
+  java.util.List<? extends com.google.cloud.securitycenter.v1.InfoTypeOrBuilder>
+      getInfoTypesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of information detected by SDP.
+   * Info type includes name, version and sensitivity of the detected
+   * information type.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.InfoType info_types = 3;</code>
+   */
+  com.google.cloud.securitycenter.v1.InfoTypeOrBuilder getInfoTypesOrBuilder(int index);
 }

@@ -31,6 +31,7 @@ public interface GetCssProductRequestOrBuilder
    *
    * <pre>
    * Required. The name of the CSS product to retrieve.
+   * Format: `accounts/{account}/cssProducts/{css_product}`
    * </pre>
    *
    * <code>
@@ -46,6 +47,7 @@ public interface GetCssProductRequestOrBuilder
    *
    * <pre>
    * Required. The name of the CSS product to retrieve.
+   * Format: `accounts/{account}/cssProducts/{css_product}`
    * </pre>
    *
    * <code>

@@ -2023,7 +2023,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessage
    * <pre>
    * The cut of the item. It can be used to represent combined size types for
    * apparel items. Maximum two of size types can be provided (see
-   * [https://support.google.com/merchants/answer/6324497](size type)).
+   * [size type](https://support.google.com/merchants/answer/6324497).
    * </pre>
    *
    * <code>repeated string size_types = 28;</code>
@@ -2040,7 +2040,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessage
    * <pre>
    * The cut of the item. It can be used to represent combined size types for
    * apparel items. Maximum two of size types can be provided (see
-   * [https://support.google.com/merchants/answer/6324497](size type)).
+   * [size type](https://support.google.com/merchants/answer/6324497).
    * </pre>
    *
    * <code>repeated string size_types = 28;</code>
@@ -2057,7 +2057,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessage
    * <pre>
    * The cut of the item. It can be used to represent combined size types for
    * apparel items. Maximum two of size types can be provided (see
-   * [https://support.google.com/merchants/answer/6324497](size type)).
+   * [size type](https://support.google.com/merchants/answer/6324497).
    * </pre>
    *
    * <code>repeated string size_types = 28;</code>
@@ -2075,7 +2075,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessage
    * <pre>
    * The cut of the item. It can be used to represent combined size types for
    * apparel items. Maximum two of size types can be provided (see
-   * [https://support.google.com/merchants/answer/6324497](size type)).
+   * [size type](https://support.google.com/merchants/answer/6324497).
    * </pre>
    *
    * <code>repeated string size_types = 28;</code>
@@ -3357,6 +3357,172 @@ public final class Attributes extends com.google.protobuf.GeneratedMessage
         : headlineOfferSubscriptionCost_;
   }
 
+  public static final int REVIEW_COUNT_FIELD_NUMBER = 54;
+  private long reviewCount_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Number of reviews of the product. Required if
+   * [`rating`][google.shopping.css.v1.Attributes.rating] is provided.
+   * This field is for an upcoming feature and is not yet used.
+   * </pre>
+   *
+   * <code>optional int64 review_count = 54;</code>
+   *
+   * @return Whether the reviewCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasReviewCount() {
+    return ((bitField1_ & 0x00000400) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Number of reviews of the product. Required if
+   * [`rating`][google.shopping.css.v1.Attributes.rating] is provided.
+   * This field is for an upcoming feature and is not yet used.
+   * </pre>
+   *
+   * <code>optional int64 review_count = 54;</code>
+   *
+   * @return The reviewCount.
+   */
+  @java.lang.Override
+  public long getReviewCount() {
+    return reviewCount_;
+  }
+
+  public static final int MIN_RATING_FIELD_NUMBER = 55;
+  private long minRating_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Minimum rating score of the product. Required if
+   * [`rating`][google.shopping.css.v1.Attributes.rating] is provided.
+   * This field is for an upcoming feature and is not yet used.
+   * </pre>
+   *
+   * <code>optional int64 min_rating = 55;</code>
+   *
+   * @return Whether the minRating field is set.
+   */
+  @java.lang.Override
+  public boolean hasMinRating() {
+    return ((bitField1_ & 0x00000800) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Minimum rating score of the product. Required if
+   * [`rating`][google.shopping.css.v1.Attributes.rating] is provided.
+   * This field is for an upcoming feature and is not yet used.
+   * </pre>
+   *
+   * <code>optional int64 min_rating = 55;</code>
+   *
+   * @return The minRating.
+   */
+  @java.lang.Override
+  public long getMinRating() {
+    return minRating_;
+  }
+
+  public static final int MAX_RATING_FIELD_NUMBER = 56;
+  private long maxRating_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Maximum rating score of the product. Required if
+   * [`rating`][google.shopping.css.v1.Attributes.rating] is provided.
+   * This field is for an upcoming feature and is not yet used.
+   * </pre>
+   *
+   * <code>optional int64 max_rating = 56;</code>
+   *
+   * @return Whether the maxRating field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxRating() {
+    return ((bitField1_ & 0x00001000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Maximum rating score of the product. Required if
+   * [`rating`][google.shopping.css.v1.Attributes.rating] is provided.
+   * This field is for an upcoming feature and is not yet used.
+   * </pre>
+   *
+   * <code>optional int64 max_rating = 56;</code>
+   *
+   * @return The maxRating.
+   */
+  @java.lang.Override
+  public long getMaxRating() {
+    return maxRating_;
+  }
+
+  public static final int RATING_FIELD_NUMBER = 57;
+  private double rating_ = 0D;
+
+  /**
+   *
+   *
+   * <pre>
+   * Average rating score of the product. The value must be within the
+   * range of [`min_rating`, `max_rating`], inclusive. When displayed on the
+   * product page, this rating is normalized to a scale of [1, 5] with one
+   * decimal place. If provided,
+   * [`review_count`][google.shopping.css.v1.Attributes.review_count],
+   * [`min_rating`][google.shopping.css.v1.Attributes.min_rating], and
+   * [`max_rating`][google.shopping.css.v1.Attributes.max_rating] are also
+   * required. This field is for an upcoming feature and is not yet used.
+   * </pre>
+   *
+   * <code>optional double rating = 57;</code>
+   *
+   * @return Whether the rating field is set.
+   */
+  @java.lang.Override
+  public boolean hasRating() {
+    return ((bitField1_ & 0x00002000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Average rating score of the product. The value must be within the
+   * range of [`min_rating`, `max_rating`], inclusive. When displayed on the
+   * product page, this rating is normalized to a scale of [1, 5] with one
+   * decimal place. If provided,
+   * [`review_count`][google.shopping.css.v1.Attributes.review_count],
+   * [`min_rating`][google.shopping.css.v1.Attributes.min_rating], and
+   * [`max_rating`][google.shopping.css.v1.Attributes.max_rating] are also
+   * required. This field is for an upcoming feature and is not yet used.
+   * </pre>
+   *
+   * <code>optional double rating = 57;</code>
+   *
+   * @return The rating.
+   */
+  @java.lang.Override
+  public double getRating() {
+    return rating_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3520,6 +3686,18 @@ public final class Attributes extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField1_ & 0x00000200) != 0)) {
       output.writeMessage(52, getHeadlineOfferSubscriptionCost());
+    }
+    if (((bitField1_ & 0x00000400) != 0)) {
+      output.writeInt64(54, reviewCount_);
+    }
+    if (((bitField1_ & 0x00000800) != 0)) {
+      output.writeInt64(55, minRating_);
+    }
+    if (((bitField1_ & 0x00001000) != 0)) {
+      output.writeInt64(56, maxRating_);
+    }
+    if (((bitField1_ & 0x00002000) != 0)) {
+      output.writeDouble(57, rating_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -3716,6 +3894,18 @@ public final class Attributes extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               52, getHeadlineOfferSubscriptionCost());
     }
+    if (((bitField1_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(54, reviewCount_);
+    }
+    if (((bitField1_ & 0x00000800) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(55, minRating_);
+    }
+    if (((bitField1_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(56, maxRating_);
+    }
+    if (((bitField1_ & 0x00002000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(57, rating_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3909,6 +4099,23 @@ public final class Attributes extends com.google.protobuf.GeneratedMessage
     if (hasHeadlineOfferSubscriptionCost()) {
       if (!getHeadlineOfferSubscriptionCost().equals(other.getHeadlineOfferSubscriptionCost()))
         return false;
+    }
+    if (hasReviewCount() != other.hasReviewCount()) return false;
+    if (hasReviewCount()) {
+      if (getReviewCount() != other.getReviewCount()) return false;
+    }
+    if (hasMinRating() != other.hasMinRating()) return false;
+    if (hasMinRating()) {
+      if (getMinRating() != other.getMinRating()) return false;
+    }
+    if (hasMaxRating() != other.hasMaxRating()) return false;
+    if (hasMaxRating()) {
+      if (getMaxRating() != other.getMaxRating()) return false;
+    }
+    if (hasRating() != other.hasRating()) return false;
+    if (hasRating()) {
+      if (java.lang.Double.doubleToLongBits(getRating())
+          != java.lang.Double.doubleToLongBits(other.getRating())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -4120,6 +4327,25 @@ public final class Attributes extends com.google.protobuf.GeneratedMessage
     if (hasHeadlineOfferSubscriptionCost()) {
       hash = (37 * hash) + HEADLINE_OFFER_SUBSCRIPTION_COST_FIELD_NUMBER;
       hash = (53 * hash) + getHeadlineOfferSubscriptionCost().hashCode();
+    }
+    if (hasReviewCount()) {
+      hash = (37 * hash) + REVIEW_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getReviewCount());
+    }
+    if (hasMinRating()) {
+      hash = (37 * hash) + MIN_RATING_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMinRating());
+    }
+    if (hasMaxRating()) {
+      hash = (37 * hash) + MAX_RATING_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxRating());
+    }
+    if (hasRating()) {
+      hash = (37 * hash) + RATING_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getRating()));
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -4388,6 +4614,10 @@ public final class Attributes extends com.google.protobuf.GeneratedMessage
         headlineOfferSubscriptionCostBuilder_.dispose();
         headlineOfferSubscriptionCostBuilder_ = null;
       }
+      reviewCount_ = 0L;
+      minRating_ = 0L;
+      maxRating_ = 0L;
+      rating_ = 0D;
       return this;
     }
 
@@ -4665,6 +4895,22 @@ public final class Attributes extends com.google.protobuf.GeneratedMessage
                 ? headlineOfferSubscriptionCost_
                 : headlineOfferSubscriptionCostBuilder_.build();
         to_bitField1_ |= 0x00000200;
+      }
+      if (((from_bitField1_ & 0x00040000) != 0)) {
+        result.reviewCount_ = reviewCount_;
+        to_bitField1_ |= 0x00000400;
+      }
+      if (((from_bitField1_ & 0x00080000) != 0)) {
+        result.minRating_ = minRating_;
+        to_bitField1_ |= 0x00000800;
+      }
+      if (((from_bitField1_ & 0x00100000) != 0)) {
+        result.maxRating_ = maxRating_;
+        to_bitField1_ |= 0x00001000;
+      }
+      if (((from_bitField1_ & 0x00200000) != 0)) {
+        result.rating_ = rating_;
+        to_bitField1_ |= 0x00002000;
       }
       result.bitField0_ |= to_bitField0_;
       result.bitField1_ |= to_bitField1_;
@@ -4975,6 +5221,18 @@ public final class Attributes extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasHeadlineOfferSubscriptionCost()) {
         mergeHeadlineOfferSubscriptionCost(other.getHeadlineOfferSubscriptionCost());
+      }
+      if (other.hasReviewCount()) {
+        setReviewCount(other.getReviewCount());
+      }
+      if (other.hasMinRating()) {
+        setMinRating(other.getMinRating());
+      }
+      if (other.hasMaxRating()) {
+        setMaxRating(other.getMaxRating());
+      }
+      if (other.hasRating()) {
+        setRating(other.getRating());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -5336,6 +5594,30 @@ public final class Attributes extends com.google.protobuf.GeneratedMessage
                 bitField1_ |= 0x00020000;
                 break;
               } // case 418
+            case 432:
+              {
+                reviewCount_ = input.readInt64();
+                bitField1_ |= 0x00040000;
+                break;
+              } // case 432
+            case 440:
+              {
+                minRating_ = input.readInt64();
+                bitField1_ |= 0x00080000;
+                break;
+              } // case 440
+            case 448:
+              {
+                maxRating_ = input.readInt64();
+                bitField1_ |= 0x00100000;
+                break;
+              } // case 448
+            case 457:
+              {
+                rating_ = input.readDouble();
+                bitField1_ |= 0x00200000;
+                break;
+              } // case 457
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9410,7 +9692,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The cut of the item. It can be used to represent combined size types for
      * apparel items. Maximum two of size types can be provided (see
-     * [https://support.google.com/merchants/answer/6324497](size type)).
+     * [size type](https://support.google.com/merchants/answer/6324497).
      * </pre>
      *
      * <code>repeated string size_types = 28;</code>
@@ -9428,7 +9710,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The cut of the item. It can be used to represent combined size types for
      * apparel items. Maximum two of size types can be provided (see
-     * [https://support.google.com/merchants/answer/6324497](size type)).
+     * [size type](https://support.google.com/merchants/answer/6324497).
      * </pre>
      *
      * <code>repeated string size_types = 28;</code>
@@ -9445,7 +9727,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The cut of the item. It can be used to represent combined size types for
      * apparel items. Maximum two of size types can be provided (see
-     * [https://support.google.com/merchants/answer/6324497](size type)).
+     * [size type](https://support.google.com/merchants/answer/6324497).
      * </pre>
      *
      * <code>repeated string size_types = 28;</code>
@@ -9463,7 +9745,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The cut of the item. It can be used to represent combined size types for
      * apparel items. Maximum two of size types can be provided (see
-     * [https://support.google.com/merchants/answer/6324497](size type)).
+     * [size type](https://support.google.com/merchants/answer/6324497).
      * </pre>
      *
      * <code>repeated string size_types = 28;</code>
@@ -9481,7 +9763,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The cut of the item. It can be used to represent combined size types for
      * apparel items. Maximum two of size types can be provided (see
-     * [https://support.google.com/merchants/answer/6324497](size type)).
+     * [size type](https://support.google.com/merchants/answer/6324497).
      * </pre>
      *
      * <code>repeated string size_types = 28;</code>
@@ -9507,7 +9789,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The cut of the item. It can be used to represent combined size types for
      * apparel items. Maximum two of size types can be provided (see
-     * [https://support.google.com/merchants/answer/6324497](size type)).
+     * [size type](https://support.google.com/merchants/answer/6324497).
      * </pre>
      *
      * <code>repeated string size_types = 28;</code>
@@ -9532,7 +9814,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The cut of the item. It can be used to represent combined size types for
      * apparel items. Maximum two of size types can be provided (see
-     * [https://support.google.com/merchants/answer/6324497](size type)).
+     * [size type](https://support.google.com/merchants/answer/6324497).
      * </pre>
      *
      * <code>repeated string size_types = 28;</code>
@@ -9554,7 +9836,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The cut of the item. It can be used to represent combined size types for
      * apparel items. Maximum two of size types can be provided (see
-     * [https://support.google.com/merchants/answer/6324497](size type)).
+     * [size type](https://support.google.com/merchants/answer/6324497).
      * </pre>
      *
      * <code>repeated string size_types = 28;</code>
@@ -9575,7 +9857,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The cut of the item. It can be used to represent combined size types for
      * apparel items. Maximum two of size types can be provided (see
-     * [https://support.google.com/merchants/answer/6324497](size type)).
+     * [size type](https://support.google.com/merchants/answer/6324497).
      * </pre>
      *
      * <code>repeated string size_types = 28;</code>
@@ -13312,6 +13594,346 @@ public final class Attributes extends com.google.protobuf.GeneratedMessage
         headlineOfferSubscriptionCost_ = null;
       }
       return headlineOfferSubscriptionCostBuilder_;
+    }
+
+    private long reviewCount_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of reviews of the product. Required if
+     * [`rating`][google.shopping.css.v1.Attributes.rating] is provided.
+     * This field is for an upcoming feature and is not yet used.
+     * </pre>
+     *
+     * <code>optional int64 review_count = 54;</code>
+     *
+     * @return Whether the reviewCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasReviewCount() {
+      return ((bitField1_ & 0x00040000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of reviews of the product. Required if
+     * [`rating`][google.shopping.css.v1.Attributes.rating] is provided.
+     * This field is for an upcoming feature and is not yet used.
+     * </pre>
+     *
+     * <code>optional int64 review_count = 54;</code>
+     *
+     * @return The reviewCount.
+     */
+    @java.lang.Override
+    public long getReviewCount() {
+      return reviewCount_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of reviews of the product. Required if
+     * [`rating`][google.shopping.css.v1.Attributes.rating] is provided.
+     * This field is for an upcoming feature and is not yet used.
+     * </pre>
+     *
+     * <code>optional int64 review_count = 54;</code>
+     *
+     * @param value The reviewCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReviewCount(long value) {
+
+      reviewCount_ = value;
+      bitField1_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of reviews of the product. Required if
+     * [`rating`][google.shopping.css.v1.Attributes.rating] is provided.
+     * This field is for an upcoming feature and is not yet used.
+     * </pre>
+     *
+     * <code>optional int64 review_count = 54;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReviewCount() {
+      bitField1_ = (bitField1_ & ~0x00040000);
+      reviewCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long minRating_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Minimum rating score of the product. Required if
+     * [`rating`][google.shopping.css.v1.Attributes.rating] is provided.
+     * This field is for an upcoming feature and is not yet used.
+     * </pre>
+     *
+     * <code>optional int64 min_rating = 55;</code>
+     *
+     * @return Whether the minRating field is set.
+     */
+    @java.lang.Override
+    public boolean hasMinRating() {
+      return ((bitField1_ & 0x00080000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Minimum rating score of the product. Required if
+     * [`rating`][google.shopping.css.v1.Attributes.rating] is provided.
+     * This field is for an upcoming feature and is not yet used.
+     * </pre>
+     *
+     * <code>optional int64 min_rating = 55;</code>
+     *
+     * @return The minRating.
+     */
+    @java.lang.Override
+    public long getMinRating() {
+      return minRating_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Minimum rating score of the product. Required if
+     * [`rating`][google.shopping.css.v1.Attributes.rating] is provided.
+     * This field is for an upcoming feature and is not yet used.
+     * </pre>
+     *
+     * <code>optional int64 min_rating = 55;</code>
+     *
+     * @param value The minRating to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMinRating(long value) {
+
+      minRating_ = value;
+      bitField1_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Minimum rating score of the product. Required if
+     * [`rating`][google.shopping.css.v1.Attributes.rating] is provided.
+     * This field is for an upcoming feature and is not yet used.
+     * </pre>
+     *
+     * <code>optional int64 min_rating = 55;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMinRating() {
+      bitField1_ = (bitField1_ & ~0x00080000);
+      minRating_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long maxRating_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Maximum rating score of the product. Required if
+     * [`rating`][google.shopping.css.v1.Attributes.rating] is provided.
+     * This field is for an upcoming feature and is not yet used.
+     * </pre>
+     *
+     * <code>optional int64 max_rating = 56;</code>
+     *
+     * @return Whether the maxRating field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxRating() {
+      return ((bitField1_ & 0x00100000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Maximum rating score of the product. Required if
+     * [`rating`][google.shopping.css.v1.Attributes.rating] is provided.
+     * This field is for an upcoming feature and is not yet used.
+     * </pre>
+     *
+     * <code>optional int64 max_rating = 56;</code>
+     *
+     * @return The maxRating.
+     */
+    @java.lang.Override
+    public long getMaxRating() {
+      return maxRating_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Maximum rating score of the product. Required if
+     * [`rating`][google.shopping.css.v1.Attributes.rating] is provided.
+     * This field is for an upcoming feature and is not yet used.
+     * </pre>
+     *
+     * <code>optional int64 max_rating = 56;</code>
+     *
+     * @param value The maxRating to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxRating(long value) {
+
+      maxRating_ = value;
+      bitField1_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Maximum rating score of the product. Required if
+     * [`rating`][google.shopping.css.v1.Attributes.rating] is provided.
+     * This field is for an upcoming feature and is not yet used.
+     * </pre>
+     *
+     * <code>optional int64 max_rating = 56;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxRating() {
+      bitField1_ = (bitField1_ & ~0x00100000);
+      maxRating_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private double rating_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Average rating score of the product. The value must be within the
+     * range of [`min_rating`, `max_rating`], inclusive. When displayed on the
+     * product page, this rating is normalized to a scale of [1, 5] with one
+     * decimal place. If provided,
+     * [`review_count`][google.shopping.css.v1.Attributes.review_count],
+     * [`min_rating`][google.shopping.css.v1.Attributes.min_rating], and
+     * [`max_rating`][google.shopping.css.v1.Attributes.max_rating] are also
+     * required. This field is for an upcoming feature and is not yet used.
+     * </pre>
+     *
+     * <code>optional double rating = 57;</code>
+     *
+     * @return Whether the rating field is set.
+     */
+    @java.lang.Override
+    public boolean hasRating() {
+      return ((bitField1_ & 0x00200000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Average rating score of the product. The value must be within the
+     * range of [`min_rating`, `max_rating`], inclusive. When displayed on the
+     * product page, this rating is normalized to a scale of [1, 5] with one
+     * decimal place. If provided,
+     * [`review_count`][google.shopping.css.v1.Attributes.review_count],
+     * [`min_rating`][google.shopping.css.v1.Attributes.min_rating], and
+     * [`max_rating`][google.shopping.css.v1.Attributes.max_rating] are also
+     * required. This field is for an upcoming feature and is not yet used.
+     * </pre>
+     *
+     * <code>optional double rating = 57;</code>
+     *
+     * @return The rating.
+     */
+    @java.lang.Override
+    public double getRating() {
+      return rating_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Average rating score of the product. The value must be within the
+     * range of [`min_rating`, `max_rating`], inclusive. When displayed on the
+     * product page, this rating is normalized to a scale of [1, 5] with one
+     * decimal place. If provided,
+     * [`review_count`][google.shopping.css.v1.Attributes.review_count],
+     * [`min_rating`][google.shopping.css.v1.Attributes.min_rating], and
+     * [`max_rating`][google.shopping.css.v1.Attributes.max_rating] are also
+     * required. This field is for an upcoming feature and is not yet used.
+     * </pre>
+     *
+     * <code>optional double rating = 57;</code>
+     *
+     * @param value The rating to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRating(double value) {
+
+      rating_ = value;
+      bitField1_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Average rating score of the product. The value must be within the
+     * range of [`min_rating`, `max_rating`], inclusive. When displayed on the
+     * product page, this rating is normalized to a scale of [1, 5] with one
+     * decimal place. If provided,
+     * [`review_count`][google.shopping.css.v1.Attributes.review_count],
+     * [`min_rating`][google.shopping.css.v1.Attributes.min_rating], and
+     * [`max_rating`][google.shopping.css.v1.Attributes.max_rating] are also
+     * required. This field is for an upcoming feature and is not yet used.
+     * </pre>
+     *
+     * <code>optional double rating = 57;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRating() {
+      bitField1_ = (bitField1_ & ~0x00200000);
+      rating_ = 0D;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.shopping.css.v1.Attributes)

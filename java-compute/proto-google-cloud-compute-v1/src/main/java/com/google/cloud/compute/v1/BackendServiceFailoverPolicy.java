@@ -89,7 +89,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * This can be set to true only if the protocol isTCP.
+   * This can be set to true if the protocol isTCP, UDP, or UNSPECIFIED.
    *
    * The default is false.
    * </pre>
@@ -107,7 +107,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * This can be set to true only if the protocol isTCP.
+   * This can be set to true if the protocol isTCP, UDP, or UNSPECIFIED.
    *
    * The default is false.
    * </pre>
@@ -635,7 +635,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * This can be set to true only if the protocol isTCP.
+     * This can be set to true if the protocol isTCP, UDP, or UNSPECIFIED.
      *
      * The default is false.
      * </pre>
@@ -653,7 +653,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * This can be set to true only if the protocol isTCP.
+     * This can be set to true if the protocol isTCP, UDP, or UNSPECIFIED.
      *
      * The default is false.
      * </pre>
@@ -671,7 +671,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * This can be set to true only if the protocol isTCP.
+     * This can be set to true if the protocol isTCP, UDP, or UNSPECIFIED.
      *
      * The default is false.
      * </pre>
@@ -693,7 +693,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * This can be set to true only if the protocol isTCP.
+     * This can be set to true if the protocol isTCP, UDP, or UNSPECIFIED.
      *
      * The default is false.
      * </pre>

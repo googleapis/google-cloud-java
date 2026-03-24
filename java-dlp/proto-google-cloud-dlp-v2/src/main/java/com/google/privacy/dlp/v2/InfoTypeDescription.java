@@ -60,6 +60,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     versions_ = java.util.Collections.emptyList();
     categories_ = java.util.Collections.emptyList();
     specificInfoTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    launchStatus_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -75,6 +76,201 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         .ensureFieldAccessorsInitialized(
             com.google.privacy.dlp.v2.InfoTypeDescription.class,
             com.google.privacy.dlp.v2.InfoTypeDescription.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The launch status of an infoType.
+   * </pre>
+   *
+   * Protobuf enum {@code google.privacy.dlp.v2.InfoTypeDescription.InfoTypeLaunchStatus}
+   */
+  public enum InfoTypeLaunchStatus implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified.
+     * </pre>
+     *
+     * <code>INFO_TYPE_LAUNCH_STATUS_UNSPECIFIED = 0;</code>
+     */
+    INFO_TYPE_LAUNCH_STATUS_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * InfoType is generally available.
+     * </pre>
+     *
+     * <code>GENERAL_AVAILABILITY = 1;</code>
+     */
+    GENERAL_AVAILABILITY(1),
+    /**
+     *
+     *
+     * <pre>
+     * InfoType is in public preview.
+     * </pre>
+     *
+     * <code>PUBLIC_PREVIEW = 2;</code>
+     */
+    PUBLIC_PREVIEW(2),
+    /**
+     *
+     *
+     * <pre>
+     * InfoType is in private preview.
+     * </pre>
+     *
+     * <code>PRIVATE_PREVIEW = 3;</code>
+     */
+    PRIVATE_PREVIEW(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "InfoTypeLaunchStatus");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified.
+     * </pre>
+     *
+     * <code>INFO_TYPE_LAUNCH_STATUS_UNSPECIFIED = 0;</code>
+     */
+    public static final int INFO_TYPE_LAUNCH_STATUS_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * InfoType is generally available.
+     * </pre>
+     *
+     * <code>GENERAL_AVAILABILITY = 1;</code>
+     */
+    public static final int GENERAL_AVAILABILITY_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * InfoType is in public preview.
+     * </pre>
+     *
+     * <code>PUBLIC_PREVIEW = 2;</code>
+     */
+    public static final int PUBLIC_PREVIEW_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * InfoType is in private preview.
+     * </pre>
+     *
+     * <code>PRIVATE_PREVIEW = 3;</code>
+     */
+    public static final int PRIVATE_PREVIEW_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static InfoTypeLaunchStatus valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static InfoTypeLaunchStatus forNumber(int value) {
+      switch (value) {
+        case 0:
+          return INFO_TYPE_LAUNCH_STATUS_UNSPECIFIED;
+        case 1:
+          return GENERAL_AVAILABILITY;
+        case 2:
+          return PUBLIC_PREVIEW;
+        case 3:
+          return PRIVATE_PREVIEW;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<InfoTypeLaunchStatus>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<InfoTypeLaunchStatus>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<InfoTypeLaunchStatus>() {
+              public InfoTypeLaunchStatus findValueByNumber(int number) {
+                return InfoTypeLaunchStatus.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.InfoTypeDescription.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final InfoTypeLaunchStatus[] VALUES = values();
+
+    public static InfoTypeLaunchStatus valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private InfoTypeLaunchStatus(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.privacy.dlp.v2.InfoTypeDescription.InfoTypeLaunchStatus)
   }
 
   private int bitField0_;
@@ -738,6 +934,47 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     return specificInfoTypes_.getByteString(index);
   }
 
+  public static final int LAUNCH_STATUS_FIELD_NUMBER = 13;
+  private int launchStatus_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * The launch status of the infoType.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.InfoTypeDescription.InfoTypeLaunchStatus launch_status = 13;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for launchStatus.
+   */
+  @java.lang.Override
+  public int getLaunchStatusValue() {
+    return launchStatus_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The launch status of the infoType.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.InfoTypeDescription.InfoTypeLaunchStatus launch_status = 13;
+   * </code>
+   *
+   * @return The launchStatus.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.InfoTypeDescription.InfoTypeLaunchStatus getLaunchStatus() {
+    com.google.privacy.dlp.v2.InfoTypeDescription.InfoTypeLaunchStatus result =
+        com.google.privacy.dlp.v2.InfoTypeDescription.InfoTypeLaunchStatus.forNumber(launchStatus_);
+    return result == null
+        ? com.google.privacy.dlp.v2.InfoTypeDescription.InfoTypeLaunchStatus.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -786,6 +1023,12 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     }
     for (int i = 0; i < specificInfoTypes_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 12, specificInfoTypes_.getRaw(i));
+    }
+    if (launchStatus_
+        != com.google.privacy.dlp.v2.InfoTypeDescription.InfoTypeLaunchStatus
+            .INFO_TYPE_LAUNCH_STATUS_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(13, launchStatus_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -841,6 +1084,12 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       size += dataSize;
       size += 1 * getSpecificInfoTypesList().size();
     }
+    if (launchStatus_
+        != com.google.privacy.dlp.v2.InfoTypeDescription.InfoTypeLaunchStatus
+            .INFO_TYPE_LAUNCH_STATUS_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(13, launchStatus_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -873,6 +1122,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       if (!getSensitivityScore().equals(other.getSensitivityScore())) return false;
     }
     if (!getSpecificInfoTypesList().equals(other.getSpecificInfoTypesList())) return false;
+    if (launchStatus_ != other.launchStatus_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -916,6 +1166,8 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       hash = (37 * hash) + SPECIFIC_INFO_TYPES_FIELD_NUMBER;
       hash = (53 * hash) + getSpecificInfoTypesList().hashCode();
     }
+    hash = (37 * hash) + LAUNCH_STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + launchStatus_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1098,6 +1350,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         sensitivityScoreBuilder_ = null;
       }
       specificInfoTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      launchStatus_ = 0;
       return this;
     }
 
@@ -1186,6 +1439,9 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       if (((from_bitField0_ & 0x00000200) != 0)) {
         specificInfoTypes_.makeImmutable();
         result.specificInfoTypes_ = specificInfoTypes_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.launchStatus_ = launchStatus_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1303,6 +1559,9 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         }
         onChanged();
       }
+      if (other.launchStatus_ != 0) {
+        setLaunchStatusValue(other.getLaunchStatusValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1418,6 +1677,12 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
                 specificInfoTypes_.add(s);
                 break;
               } // case 98
+            case 104:
+              {
+                launchStatus_ = input.readEnum();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 104
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3461,6 +3726,110 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       ensureSpecificInfoTypesIsMutable();
       specificInfoTypes_.add(value);
       bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private int launchStatus_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The launch status of the infoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InfoTypeDescription.InfoTypeLaunchStatus launch_status = 13;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for launchStatus.
+     */
+    @java.lang.Override
+    public int getLaunchStatusValue() {
+      return launchStatus_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The launch status of the infoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InfoTypeDescription.InfoTypeLaunchStatus launch_status = 13;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for launchStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLaunchStatusValue(int value) {
+      launchStatus_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The launch status of the infoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InfoTypeDescription.InfoTypeLaunchStatus launch_status = 13;
+     * </code>
+     *
+     * @return The launchStatus.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.InfoTypeDescription.InfoTypeLaunchStatus getLaunchStatus() {
+      com.google.privacy.dlp.v2.InfoTypeDescription.InfoTypeLaunchStatus result =
+          com.google.privacy.dlp.v2.InfoTypeDescription.InfoTypeLaunchStatus.forNumber(
+              launchStatus_);
+      return result == null
+          ? com.google.privacy.dlp.v2.InfoTypeDescription.InfoTypeLaunchStatus.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The launch status of the infoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InfoTypeDescription.InfoTypeLaunchStatus launch_status = 13;
+     * </code>
+     *
+     * @param value The launchStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLaunchStatus(
+        com.google.privacy.dlp.v2.InfoTypeDescription.InfoTypeLaunchStatus value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000400;
+      launchStatus_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The launch status of the infoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InfoTypeDescription.InfoTypeLaunchStatus launch_status = 13;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLaunchStatus() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      launchStatus_ = 0;
       onChanged();
       return this;
     }

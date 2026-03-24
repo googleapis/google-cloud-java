@@ -18,7 +18,9 @@ package com.google.cloud.aiplatform.v1beta1;
 
 import static com.google.cloud.aiplatform.v1beta1.VertexRagDataServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.VertexRagDataServiceClient.ListRagCorporaPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.VertexRagDataServiceClient.ListRagDataSchemasPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.VertexRagDataServiceClient.ListRagFilesPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.VertexRagDataServiceClient.ListRagMetadataPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -1134,6 +1136,958 @@ public class VertexRagDataServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void createRagDataSchemaTest() throws Exception {
+    RagDataSchema expectedResponse =
+        RagDataSchema.newBuilder()
+            .setName(
+                RagDataSchemaName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_DATA_SCHEMA]")
+                    .toString())
+            .setKey("key106079")
+            .setSchemaDetails(RagMetadataSchemaDetails.newBuilder().build())
+            .build();
+    mockVertexRagDataService.addResponse(expectedResponse);
+
+    RagCorpusName parent = RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]");
+    RagDataSchema ragDataSchema = RagDataSchema.newBuilder().build();
+    String ragDataSchemaId = "ragDataSchemaId-1094185826";
+
+    RagDataSchema actualResponse =
+        client.createRagDataSchema(parent, ragDataSchema, ragDataSchemaId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVertexRagDataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateRagDataSchemaRequest actualRequest = ((CreateRagDataSchemaRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(ragDataSchema, actualRequest.getRagDataSchema());
+    Assert.assertEquals(ragDataSchemaId, actualRequest.getRagDataSchemaId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createRagDataSchemaExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagDataService.addException(exception);
+
+    try {
+      RagCorpusName parent = RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]");
+      RagDataSchema ragDataSchema = RagDataSchema.newBuilder().build();
+      String ragDataSchemaId = "ragDataSchemaId-1094185826";
+      client.createRagDataSchema(parent, ragDataSchema, ragDataSchemaId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createRagDataSchemaTest2() throws Exception {
+    RagDataSchema expectedResponse =
+        RagDataSchema.newBuilder()
+            .setName(
+                RagDataSchemaName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_DATA_SCHEMA]")
+                    .toString())
+            .setKey("key106079")
+            .setSchemaDetails(RagMetadataSchemaDetails.newBuilder().build())
+            .build();
+    mockVertexRagDataService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    RagDataSchema ragDataSchema = RagDataSchema.newBuilder().build();
+    String ragDataSchemaId = "ragDataSchemaId-1094185826";
+
+    RagDataSchema actualResponse =
+        client.createRagDataSchema(parent, ragDataSchema, ragDataSchemaId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVertexRagDataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateRagDataSchemaRequest actualRequest = ((CreateRagDataSchemaRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(ragDataSchema, actualRequest.getRagDataSchema());
+    Assert.assertEquals(ragDataSchemaId, actualRequest.getRagDataSchemaId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createRagDataSchemaExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagDataService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      RagDataSchema ragDataSchema = RagDataSchema.newBuilder().build();
+      String ragDataSchemaId = "ragDataSchemaId-1094185826";
+      client.createRagDataSchema(parent, ragDataSchema, ragDataSchemaId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCreateRagDataSchemasTest() throws Exception {
+    BatchCreateRagDataSchemasResponse expectedResponse =
+        BatchCreateRagDataSchemasResponse.newBuilder()
+            .addAllRagDataSchemas(new ArrayList<RagDataSchema>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchCreateRagDataSchemasTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVertexRagDataService.addResponse(resultOperation);
+
+    BatchCreateRagDataSchemasRequest request =
+        BatchCreateRagDataSchemasRequest.newBuilder()
+            .setParent(RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]").toString())
+            .addAllRequests(new ArrayList<CreateRagDataSchemaRequest>())
+            .build();
+
+    BatchCreateRagDataSchemasResponse actualResponse =
+        client.batchCreateRagDataSchemasAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVertexRagDataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchCreateRagDataSchemasRequest actualRequest =
+        ((BatchCreateRagDataSchemasRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getRequestsList(), actualRequest.getRequestsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchCreateRagDataSchemasExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagDataService.addException(exception);
+
+    try {
+      BatchCreateRagDataSchemasRequest request =
+          BatchCreateRagDataSchemasRequest.newBuilder()
+              .setParent(RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]").toString())
+              .addAllRequests(new ArrayList<CreateRagDataSchemaRequest>())
+              .build();
+      client.batchCreateRagDataSchemasAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getRagDataSchemaTest() throws Exception {
+    RagDataSchema expectedResponse =
+        RagDataSchema.newBuilder()
+            .setName(
+                RagDataSchemaName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_DATA_SCHEMA]")
+                    .toString())
+            .setKey("key106079")
+            .setSchemaDetails(RagMetadataSchemaDetails.newBuilder().build())
+            .build();
+    mockVertexRagDataService.addResponse(expectedResponse);
+
+    RagDataSchemaName name =
+        RagDataSchemaName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_DATA_SCHEMA]");
+
+    RagDataSchema actualResponse = client.getRagDataSchema(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVertexRagDataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRagDataSchemaRequest actualRequest = ((GetRagDataSchemaRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRagDataSchemaExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagDataService.addException(exception);
+
+    try {
+      RagDataSchemaName name =
+          RagDataSchemaName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_DATA_SCHEMA]");
+      client.getRagDataSchema(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRagDataSchemaTest2() throws Exception {
+    RagDataSchema expectedResponse =
+        RagDataSchema.newBuilder()
+            .setName(
+                RagDataSchemaName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_DATA_SCHEMA]")
+                    .toString())
+            .setKey("key106079")
+            .setSchemaDetails(RagMetadataSchemaDetails.newBuilder().build())
+            .build();
+    mockVertexRagDataService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    RagDataSchema actualResponse = client.getRagDataSchema(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVertexRagDataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRagDataSchemaRequest actualRequest = ((GetRagDataSchemaRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRagDataSchemaExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagDataService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getRagDataSchema(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRagDataSchemasTest() throws Exception {
+    RagDataSchema responsesElement = RagDataSchema.newBuilder().build();
+    ListRagDataSchemasResponse expectedResponse =
+        ListRagDataSchemasResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRagDataSchemas(Arrays.asList(responsesElement))
+            .build();
+    mockVertexRagDataService.addResponse(expectedResponse);
+
+    RagCorpusName parent = RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]");
+
+    ListRagDataSchemasPagedResponse pagedListResponse = client.listRagDataSchemas(parent);
+
+    List<RagDataSchema> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRagDataSchemasList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockVertexRagDataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRagDataSchemasRequest actualRequest = ((ListRagDataSchemasRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRagDataSchemasExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagDataService.addException(exception);
+
+    try {
+      RagCorpusName parent = RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]");
+      client.listRagDataSchemas(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRagDataSchemasTest2() throws Exception {
+    RagDataSchema responsesElement = RagDataSchema.newBuilder().build();
+    ListRagDataSchemasResponse expectedResponse =
+        ListRagDataSchemasResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRagDataSchemas(Arrays.asList(responsesElement))
+            .build();
+    mockVertexRagDataService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListRagDataSchemasPagedResponse pagedListResponse = client.listRagDataSchemas(parent);
+
+    List<RagDataSchema> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRagDataSchemasList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockVertexRagDataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRagDataSchemasRequest actualRequest = ((ListRagDataSchemasRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRagDataSchemasExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagDataService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listRagDataSchemas(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteRagDataSchemaTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockVertexRagDataService.addResponse(expectedResponse);
+
+    RagDataSchemaName name =
+        RagDataSchemaName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_DATA_SCHEMA]");
+
+    client.deleteRagDataSchema(name);
+
+    List<AbstractMessage> actualRequests = mockVertexRagDataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteRagDataSchemaRequest actualRequest = ((DeleteRagDataSchemaRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteRagDataSchemaExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagDataService.addException(exception);
+
+    try {
+      RagDataSchemaName name =
+          RagDataSchemaName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_DATA_SCHEMA]");
+      client.deleteRagDataSchema(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteRagDataSchemaTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockVertexRagDataService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteRagDataSchema(name);
+
+    List<AbstractMessage> actualRequests = mockVertexRagDataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteRagDataSchemaRequest actualRequest = ((DeleteRagDataSchemaRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteRagDataSchemaExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagDataService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteRagDataSchema(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchDeleteRagDataSchemasTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchDeleteRagDataSchemasTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVertexRagDataService.addResponse(resultOperation);
+
+    BatchDeleteRagDataSchemasRequest request =
+        BatchDeleteRagDataSchemasRequest.newBuilder()
+            .setParent(RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]").toString())
+            .addAllNames(new ArrayList<String>())
+            .build();
+
+    client.batchDeleteRagDataSchemasAsync(request).get();
+
+    List<AbstractMessage> actualRequests = mockVertexRagDataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchDeleteRagDataSchemasRequest actualRequest =
+        ((BatchDeleteRagDataSchemasRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getNamesList(), actualRequest.getNamesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchDeleteRagDataSchemasExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagDataService.addException(exception);
+
+    try {
+      BatchDeleteRagDataSchemasRequest request =
+          BatchDeleteRagDataSchemasRequest.newBuilder()
+              .setParent(RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]").toString())
+              .addAllNames(new ArrayList<String>())
+              .build();
+      client.batchDeleteRagDataSchemasAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createRagMetadataTest() throws Exception {
+    RagMetadata expectedResponse =
+        RagMetadata.newBuilder()
+            .setName(
+                RagMetadataName.of(
+                        "[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]", "[RAG_METADATA]")
+                    .toString())
+            .setUserSpecifiedMetadata(UserSpecifiedMetadata.newBuilder().build())
+            .build();
+    mockVertexRagDataService.addResponse(expectedResponse);
+
+    RagFileName parent = RagFileName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]");
+    RagMetadata ragMetadata = RagMetadata.newBuilder().build();
+    String ragMetadataId = "ragMetadataId-818296094";
+
+    RagMetadata actualResponse = client.createRagMetadata(parent, ragMetadata, ragMetadataId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVertexRagDataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateRagMetadataRequest actualRequest = ((CreateRagMetadataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(ragMetadata, actualRequest.getRagMetadata());
+    Assert.assertEquals(ragMetadataId, actualRequest.getRagMetadataId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createRagMetadataExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagDataService.addException(exception);
+
+    try {
+      RagFileName parent = RagFileName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]");
+      RagMetadata ragMetadata = RagMetadata.newBuilder().build();
+      String ragMetadataId = "ragMetadataId-818296094";
+      client.createRagMetadata(parent, ragMetadata, ragMetadataId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createRagMetadataTest2() throws Exception {
+    RagMetadata expectedResponse =
+        RagMetadata.newBuilder()
+            .setName(
+                RagMetadataName.of(
+                        "[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]", "[RAG_METADATA]")
+                    .toString())
+            .setUserSpecifiedMetadata(UserSpecifiedMetadata.newBuilder().build())
+            .build();
+    mockVertexRagDataService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    RagMetadata ragMetadata = RagMetadata.newBuilder().build();
+    String ragMetadataId = "ragMetadataId-818296094";
+
+    RagMetadata actualResponse = client.createRagMetadata(parent, ragMetadata, ragMetadataId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVertexRagDataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateRagMetadataRequest actualRequest = ((CreateRagMetadataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(ragMetadata, actualRequest.getRagMetadata());
+    Assert.assertEquals(ragMetadataId, actualRequest.getRagMetadataId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createRagMetadataExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagDataService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      RagMetadata ragMetadata = RagMetadata.newBuilder().build();
+      String ragMetadataId = "ragMetadataId-818296094";
+      client.createRagMetadata(parent, ragMetadata, ragMetadataId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCreateRagMetadataTest() throws Exception {
+    BatchCreateRagMetadataResponse expectedResponse =
+        BatchCreateRagMetadataResponse.newBuilder()
+            .addAllRagMetadata(new ArrayList<RagMetadata>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchCreateRagMetadataTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVertexRagDataService.addResponse(resultOperation);
+
+    BatchCreateRagMetadataRequest request =
+        BatchCreateRagMetadataRequest.newBuilder()
+            .setParent(
+                RagFileName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]").toString())
+            .addAllRequests(new ArrayList<CreateRagMetadataRequest>())
+            .build();
+
+    BatchCreateRagMetadataResponse actualResponse =
+        client.batchCreateRagMetadataAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVertexRagDataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchCreateRagMetadataRequest actualRequest =
+        ((BatchCreateRagMetadataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getRequestsList(), actualRequest.getRequestsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchCreateRagMetadataExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagDataService.addException(exception);
+
+    try {
+      BatchCreateRagMetadataRequest request =
+          BatchCreateRagMetadataRequest.newBuilder()
+              .setParent(
+                  RagFileName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]")
+                      .toString())
+              .addAllRequests(new ArrayList<CreateRagMetadataRequest>())
+              .build();
+      client.batchCreateRagMetadataAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateRagMetadataTest() throws Exception {
+    RagMetadata expectedResponse =
+        RagMetadata.newBuilder()
+            .setName(
+                RagMetadataName.of(
+                        "[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]", "[RAG_METADATA]")
+                    .toString())
+            .setUserSpecifiedMetadata(UserSpecifiedMetadata.newBuilder().build())
+            .build();
+    mockVertexRagDataService.addResponse(expectedResponse);
+
+    RagMetadata ragMetadata = RagMetadata.newBuilder().build();
+
+    RagMetadata actualResponse = client.updateRagMetadata(ragMetadata);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVertexRagDataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateRagMetadataRequest actualRequest = ((UpdateRagMetadataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(ragMetadata, actualRequest.getRagMetadata());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateRagMetadataExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagDataService.addException(exception);
+
+    try {
+      RagMetadata ragMetadata = RagMetadata.newBuilder().build();
+      client.updateRagMetadata(ragMetadata);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRagMetadataTest() throws Exception {
+    RagMetadata expectedResponse =
+        RagMetadata.newBuilder()
+            .setName(
+                RagMetadataName.of(
+                        "[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]", "[RAG_METADATA]")
+                    .toString())
+            .setUserSpecifiedMetadata(UserSpecifiedMetadata.newBuilder().build())
+            .build();
+    mockVertexRagDataService.addResponse(expectedResponse);
+
+    RagMetadataName name =
+        RagMetadataName.of(
+            "[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]", "[RAG_METADATA]");
+
+    RagMetadata actualResponse = client.getRagMetadata(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVertexRagDataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRagMetadataRequest actualRequest = ((GetRagMetadataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRagMetadataExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagDataService.addException(exception);
+
+    try {
+      RagMetadataName name =
+          RagMetadataName.of(
+              "[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]", "[RAG_METADATA]");
+      client.getRagMetadata(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRagMetadataTest2() throws Exception {
+    RagMetadata expectedResponse =
+        RagMetadata.newBuilder()
+            .setName(
+                RagMetadataName.of(
+                        "[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]", "[RAG_METADATA]")
+                    .toString())
+            .setUserSpecifiedMetadata(UserSpecifiedMetadata.newBuilder().build())
+            .build();
+    mockVertexRagDataService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    RagMetadata actualResponse = client.getRagMetadata(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVertexRagDataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRagMetadataRequest actualRequest = ((GetRagMetadataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRagMetadataExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagDataService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getRagMetadata(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRagMetadataTest() throws Exception {
+    RagMetadata responsesElement = RagMetadata.newBuilder().build();
+    ListRagMetadataResponse expectedResponse =
+        ListRagMetadataResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRagMetadata(Arrays.asList(responsesElement))
+            .build();
+    mockVertexRagDataService.addResponse(expectedResponse);
+
+    RagFileName parent = RagFileName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]");
+
+    ListRagMetadataPagedResponse pagedListResponse = client.listRagMetadata(parent);
+
+    List<RagMetadata> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRagMetadataList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockVertexRagDataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRagMetadataRequest actualRequest = ((ListRagMetadataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRagMetadataExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagDataService.addException(exception);
+
+    try {
+      RagFileName parent = RagFileName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]");
+      client.listRagMetadata(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRagMetadataTest2() throws Exception {
+    RagMetadata responsesElement = RagMetadata.newBuilder().build();
+    ListRagMetadataResponse expectedResponse =
+        ListRagMetadataResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRagMetadata(Arrays.asList(responsesElement))
+            .build();
+    mockVertexRagDataService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListRagMetadataPagedResponse pagedListResponse = client.listRagMetadata(parent);
+
+    List<RagMetadata> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRagMetadataList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockVertexRagDataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRagMetadataRequest actualRequest = ((ListRagMetadataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRagMetadataExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagDataService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listRagMetadata(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteRagMetadataTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockVertexRagDataService.addResponse(expectedResponse);
+
+    RagMetadataName name =
+        RagMetadataName.of(
+            "[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]", "[RAG_METADATA]");
+
+    client.deleteRagMetadata(name);
+
+    List<AbstractMessage> actualRequests = mockVertexRagDataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteRagMetadataRequest actualRequest = ((DeleteRagMetadataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteRagMetadataExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagDataService.addException(exception);
+
+    try {
+      RagMetadataName name =
+          RagMetadataName.of(
+              "[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]", "[RAG_METADATA]");
+      client.deleteRagMetadata(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteRagMetadataTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockVertexRagDataService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteRagMetadata(name);
+
+    List<AbstractMessage> actualRequests = mockVertexRagDataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteRagMetadataRequest actualRequest = ((DeleteRagMetadataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteRagMetadataExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagDataService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteRagMetadata(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchDeleteRagMetadataTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchDeleteRagMetadataTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVertexRagDataService.addResponse(resultOperation);
+
+    BatchDeleteRagMetadataRequest request =
+        BatchDeleteRagMetadataRequest.newBuilder()
+            .setParent(
+                RagFileName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]").toString())
+            .addAllNames(new ArrayList<String>())
+            .build();
+
+    client.batchDeleteRagMetadataAsync(request).get();
+
+    List<AbstractMessage> actualRequests = mockVertexRagDataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchDeleteRagMetadataRequest actualRequest =
+        ((BatchDeleteRagMetadataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getNamesList(), actualRequest.getNamesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchDeleteRagMetadataExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagDataService.addException(exception);
+
+    try {
+      BatchDeleteRagMetadataRequest request =
+          BatchDeleteRagMetadataRequest.newBuilder()
+              .setParent(
+                  RagFileName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]")
+                      .toString())
+              .addAllNames(new ArrayList<String>())
+              .build();
+      client.batchDeleteRagMetadataAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

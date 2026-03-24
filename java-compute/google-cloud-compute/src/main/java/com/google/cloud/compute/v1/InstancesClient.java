@@ -7432,6 +7432,7 @@ public class InstancesClient implements BackgroundResource {
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   UpdateInstanceRequest request =
    *       UpdateInstanceRequest.newBuilder()
+   *           .setDiscardLocalSsd(true)
    *           .setInstance("instance555127957")
    *           .setInstanceResource(Instance.newBuilder().build())
    *           .setMinimalAction("minimalAction624261943")
@@ -7468,6 +7469,7 @@ public class InstancesClient implements BackgroundResource {
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   UpdateInstanceRequest request =
    *       UpdateInstanceRequest.newBuilder()
+   *           .setDiscardLocalSsd(true)
    *           .setInstance("instance555127957")
    *           .setInstanceResource(Instance.newBuilder().build())
    *           .setMinimalAction("minimalAction624261943")
@@ -7505,6 +7507,7 @@ public class InstancesClient implements BackgroundResource {
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   UpdateInstanceRequest request =
    *       UpdateInstanceRequest.newBuilder()
+   *           .setDiscardLocalSsd(true)
    *           .setInstance("instance555127957")
    *           .setInstanceResource(Instance.newBuilder().build())
    *           .setMinimalAction("minimalAction624261943")
