@@ -1172,7 +1172,7 @@ public class HttpBigQueryRpcTest {
             rpcSpan
                 .getAttributes()
                 .get(
-                    com.google.cloud.bigquery.telemetry.HttpTracingRequestInitializer
+                    BigQueryTelemetryTracer
                         .HTTP_REQUEST_RESEND_COUNT));
       } finally {
         com.google.cloud.bigquery.BigQueryRetryAlgorithm.setCurrentAttempt(0);
@@ -1312,7 +1312,7 @@ public class HttpBigQueryRpcTest {
             rpcSpan
                 .getAttributes()
                 .get(
-                    com.google.cloud.bigquery.telemetry.HttpTracingRequestInitializer
+                        BigQueryTelemetryTracer
                         .HTTP_REQUEST_RESEND_COUNT));
       } finally {
         com.google.cloud.bigquery.BigQueryRetryAlgorithm.setCurrentAttempt(0);

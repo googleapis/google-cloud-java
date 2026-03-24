@@ -335,29 +335,6 @@ public class HttpTracingRequestInitializerTest {
     assertNull(span.getAttributes().get(HttpTracingRequestInitializer.HTTP_RESPONSE_BODY_SIZE));
   }
 
-  @Test
-  public void testResendCountIsSetFromBigQueryRetryAlgorithm() throws IOException {
-    com.google.cloud.bigquery.BigQueryRetryAlgorithm.setCurrentAttempt(3);
-    try {
-      HttpTransport transport = createTransport();
-      HttpRequest request = buildGetRequest(transport, initializer, BASE_URL);
-
-      HttpResponse response = request.execute();
-      response.disconnect();
-
-      spanScope.close();
-      parentSpan.end();
-
-      List<SpanData> spans = spanExporter.getFinishedSpanItems();
-      assertEquals(1, spans.size());
-      SpanData span = spans.get(0);
-      assertEquals(
-          3L, span.getAttributes().get(HttpTracingRequestInitializer.HTTP_REQUEST_RESEND_COUNT));
-    } finally {
-      com.google.cloud.bigquery.BigQueryRetryAlgorithm.setCurrentAttempt(0);
-    }
-  }
-
   private static HttpTransport createTransport() {
     return createTransport(200, null);
   }
@@ -452,6 +429,5 @@ public class HttpTracingRequestInitializerTest {
     } else {
       assertNull(span.getAttributes().get(HttpTracingRequestInitializer.HTTP_RESPONSE_BODY_SIZE));
     }
-    assertNull(span.getAttributes().get(HttpTracingRequestInitializer.HTTP_REQUEST_RESEND_COUNT));
   }
 }

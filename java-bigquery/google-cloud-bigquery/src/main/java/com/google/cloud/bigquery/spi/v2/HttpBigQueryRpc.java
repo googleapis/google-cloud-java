@@ -66,6 +66,7 @@ import com.google.api.services.bigquery.model.TestIamPermissionsResponse;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
+import com.google.cloud.bigquery.BigQueryRetryAlgorithm;
 import com.google.cloud.bigquery.telemetry.BigQueryTelemetryTracer;
 import com.google.cloud.bigquery.telemetry.HttpTracingRequestInitializer;
 import com.google.cloud.http.HttpTransportOptions;
@@ -2150,6 +2151,11 @@ public class HttpBigQueryRpc implements BigQueryRpc {
           .setAttribute(
               BigQueryTelemetryTracer.GCP_RESOURCE_DESTINATION_ID, gcpResourceDestinationId)
           .setAttribute(BigQueryTelemetryTracer.URL_TEMPLATE, urlTemplate);
+      int retryAttempt = BigQueryRetryAlgorithm.getCurrentAttempt();
+      if (retryAttempt > 0) {
+        builder.setAttribute(
+            BigQueryTelemetryTracer.HTTP_REQUEST_RESEND_COUNT, (long) retryAttempt);
+      }
     }
 
     if (options != null) {
@@ -2182,6 +2188,8 @@ public class HttpBigQueryRpc implements BigQueryRpc {
       }
       throw e;
     } finally {
+      // Reset attempt count to 0 to avoid carrying over state across requests on the same thread
+      BigQueryRetryAlgorithm.setCurrentAttempt(0);
       span.end();
     }
   }
