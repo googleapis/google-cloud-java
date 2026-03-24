@@ -1,0 +1,661 @@
+package com.google.showcase.v1beta1;
+
+import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.httpjson.GaxHttpJsonProperties;
+import com.google.api.gax.httpjson.testing.MockHttpService;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.ApiExceptionFactory;
+import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.protobuf.ByteString;
+import com.google.showcase.v1beta1.stub.HttpJsonComplianceStub;
+import java.io.IOException;
+import java.util.List;
+import javax.annotation.Generated;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+@Generated("by gapic-generator-java")
+public class ComplianceClientTest {
+  private static MockHttpService mockService;
+  private static ComplianceClient client;
+
+  @BeforeClass
+  public static void startStaticServer() throws IOException {
+    mockService =
+        new MockHttpService(
+            HttpJsonComplianceStub.getMethodDescriptors(), ComplianceSettings.getDefaultEndpoint());
+    ComplianceSettings settings =
+        ComplianceSettings.newBuilder()
+            .setTransportChannelProvider(
+                ComplianceSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(mockService)
+                    .build())
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .build();
+    client = ComplianceClient.create(settings);
+  }
+
+  @AfterClass
+  public static void stopServer() {
+    client.close();
+  }
+
+  @Before
+  public void setUp() {}
+
+  @After
+  public void tearDown() throws Exception {
+    mockService.reset();
+  }
+
+  @Test
+  public void repeatDataBodyTest() throws Exception {
+    RepeatResponse expectedResponse =
+        RepeatResponse.newBuilder().setInfo(ComplianceData.newBuilder().build()).build();
+    mockService.addResponse(expectedResponse);
+
+    RepeatRequest request =
+        RepeatRequest.newBuilder()
+            .setName("name3373707")
+            .setInfo(ComplianceData.newBuilder().build())
+            .setServerVerify(true)
+            .build();
+
+    RepeatResponse actualResponse = client.repeatDataBody(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void repeatDataBodyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RepeatRequest request =
+          RepeatRequest.newBuilder()
+              .setName("name3373707")
+              .setInfo(ComplianceData.newBuilder().build())
+              .setServerVerify(true)
+              .build();
+      client.repeatDataBody(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void repeatDataBodyInfoTest() throws Exception {
+    RepeatResponse expectedResponse =
+        RepeatResponse.newBuilder().setInfo(ComplianceData.newBuilder().build()).build();
+    mockService.addResponse(expectedResponse);
+
+    RepeatRequest request =
+        RepeatRequest.newBuilder()
+            .setName("name3373707")
+            .setInfo(ComplianceData.newBuilder().build())
+            .setServerVerify(true)
+            .build();
+
+    RepeatResponse actualResponse = client.repeatDataBodyInfo(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void repeatDataBodyInfoExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RepeatRequest request =
+          RepeatRequest.newBuilder()
+              .setName("name3373707")
+              .setInfo(ComplianceData.newBuilder().build())
+              .setServerVerify(true)
+              .build();
+      client.repeatDataBodyInfo(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void repeatDataQueryTest() throws Exception {
+    RepeatResponse expectedResponse =
+        RepeatResponse.newBuilder().setInfo(ComplianceData.newBuilder().build()).build();
+    mockService.addResponse(expectedResponse);
+
+    RepeatRequest request =
+        RepeatRequest.newBuilder()
+            .setName("name3373707")
+            .setInfo(ComplianceData.newBuilder().build())
+            .setServerVerify(true)
+            .build();
+
+    RepeatResponse actualResponse = client.repeatDataQuery(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void repeatDataQueryExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RepeatRequest request =
+          RepeatRequest.newBuilder()
+              .setName("name3373707")
+              .setInfo(ComplianceData.newBuilder().build())
+              .setServerVerify(true)
+              .build();
+      client.repeatDataQuery(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void repeatDataSimplePathTest() throws Exception {
+    RepeatResponse expectedResponse =
+        RepeatResponse.newBuilder().setInfo(ComplianceData.newBuilder().build()).build();
+    mockService.addResponse(expectedResponse);
+
+    RepeatRequest request =
+        RepeatRequest.newBuilder()
+            .setName("name3373707")
+            .setInfo(
+                ComplianceData.newBuilder()
+                    .setFString("fString-9139")
+                    .setFInt32(-1143775883)
+                    .setFSint32(-815756300)
+                    .setFSfixed32(-763212615)
+                    .setFUint32(-758497998)
+                    .setFFixed32(1837548026)
+                    .setFInt64(-1143775788)
+                    .setFSint64(-815756205)
+                    .setFSfixed64(-763212520)
+                    .setFUint64(-758497903)
+                    .setFFixed64(1837548121)
+                    .setFDouble(-1239459382)
+                    .setFFloat(-1146609341)
+                    .setFBool(true)
+                    .setFBytes(ByteString.EMPTY)
+                    .setFChild(ComplianceDataChild.newBuilder().build())
+                    .setPString("pString-1191954271")
+                    .setPInt32(-858673665)
+                    .setPDouble(-991225216)
+                    .setPBool(true)
+                    .setPChild(ComplianceDataChild.newBuilder().build())
+                    .build())
+            .setServerVerify(true)
+            .build();
+
+    RepeatResponse actualResponse = client.repeatDataSimplePath(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void repeatDataSimplePathExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RepeatRequest request =
+          RepeatRequest.newBuilder()
+              .setName("name3373707")
+              .setInfo(
+                  ComplianceData.newBuilder()
+                      .setFString("fString-9139")
+                      .setFInt32(-1143775883)
+                      .setFSint32(-815756300)
+                      .setFSfixed32(-763212615)
+                      .setFUint32(-758497998)
+                      .setFFixed32(1837548026)
+                      .setFInt64(-1143775788)
+                      .setFSint64(-815756205)
+                      .setFSfixed64(-763212520)
+                      .setFUint64(-758497903)
+                      .setFFixed64(1837548121)
+                      .setFDouble(-1239459382)
+                      .setFFloat(-1146609341)
+                      .setFBool(true)
+                      .setFBytes(ByteString.EMPTY)
+                      .setFChild(ComplianceDataChild.newBuilder().build())
+                      .setPString("pString-1191954271")
+                      .setPInt32(-858673665)
+                      .setPDouble(-991225216)
+                      .setPBool(true)
+                      .setPChild(ComplianceDataChild.newBuilder().build())
+                      .build())
+              .setServerVerify(true)
+              .build();
+      client.repeatDataSimplePath(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void repeatDataPathResourceTest() throws Exception {
+    RepeatResponse expectedResponse =
+        RepeatResponse.newBuilder().setInfo(ComplianceData.newBuilder().build()).build();
+    mockService.addResponse(expectedResponse);
+
+    RepeatRequest request =
+        RepeatRequest.newBuilder()
+            .setName("name3373707")
+            .setInfo(
+                ComplianceData.newBuilder()
+                    .setFString("first/firs-9148")
+                    .setFInt32(-1143775883)
+                    .setFSint32(-815756300)
+                    .setFSfixed32(-763212615)
+                    .setFUint32(-758497998)
+                    .setFFixed32(1837548026)
+                    .setFInt64(-1143775788)
+                    .setFSint64(-815756205)
+                    .setFSfixed64(-763212520)
+                    .setFUint64(-758497903)
+                    .setFFixed64(1837548121)
+                    .setFDouble(-1239459382)
+                    .setFFloat(-1146609341)
+                    .setFBool(true)
+                    .setFBytes(ByteString.EMPTY)
+                    .setFChild(
+                        ComplianceDataChild.newBuilder()
+                            .setFString("second/secon-5446")
+                            .setFFloat(-1146609341)
+                            .setFDouble(-1239459382)
+                            .setFBool(true)
+                            .setFContinent(Continent.forNumber(0))
+                            .setFChild(ComplianceDataGrandchild.newBuilder().build())
+                            .setPString("pString-1191954271")
+                            .setPFloat(-861507123)
+                            .setPDouble(-991225216)
+                            .setPBool(true)
+                            .setPContinent(Continent.forNumber(0))
+                            .setPChild(ComplianceDataGrandchild.newBuilder().build())
+                            .build())
+                    .setPString("pString-1191954271")
+                    .setPInt32(-858673665)
+                    .setPDouble(-991225216)
+                    .setPBool(true)
+                    .setPChild(ComplianceDataChild.newBuilder().build())
+                    .build())
+            .setServerVerify(true)
+            .build();
+
+    RepeatResponse actualResponse = client.repeatDataPathResource(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void repeatDataPathResourceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RepeatRequest request =
+          RepeatRequest.newBuilder()
+              .setName("name3373707")
+              .setInfo(
+                  ComplianceData.newBuilder()
+                      .setFString("first/firs-9148")
+                      .setFInt32(-1143775883)
+                      .setFSint32(-815756300)
+                      .setFSfixed32(-763212615)
+                      .setFUint32(-758497998)
+                      .setFFixed32(1837548026)
+                      .setFInt64(-1143775788)
+                      .setFSint64(-815756205)
+                      .setFSfixed64(-763212520)
+                      .setFUint64(-758497903)
+                      .setFFixed64(1837548121)
+                      .setFDouble(-1239459382)
+                      .setFFloat(-1146609341)
+                      .setFBool(true)
+                      .setFBytes(ByteString.EMPTY)
+                      .setFChild(
+                          ComplianceDataChild.newBuilder()
+                              .setFString("second/secon-5446")
+                              .setFFloat(-1146609341)
+                              .setFDouble(-1239459382)
+                              .setFBool(true)
+                              .setFContinent(Continent.forNumber(0))
+                              .setFChild(ComplianceDataGrandchild.newBuilder().build())
+                              .setPString("pString-1191954271")
+                              .setPFloat(-861507123)
+                              .setPDouble(-991225216)
+                              .setPBool(true)
+                              .setPContinent(Continent.forNumber(0))
+                              .setPChild(ComplianceDataGrandchild.newBuilder().build())
+                              .build())
+                      .setPString("pString-1191954271")
+                      .setPInt32(-858673665)
+                      .setPDouble(-991225216)
+                      .setPBool(true)
+                      .setPChild(ComplianceDataChild.newBuilder().build())
+                      .build())
+              .setServerVerify(true)
+              .build();
+      client.repeatDataPathResource(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void repeatDataPathTrailingResourceTest() throws Exception {
+    RepeatResponse expectedResponse =
+        RepeatResponse.newBuilder().setInfo(ComplianceData.newBuilder().build()).build();
+    mockService.addResponse(expectedResponse);
+
+    RepeatRequest request =
+        RepeatRequest.newBuilder()
+            .setName("name3373707")
+            .setInfo(
+                ComplianceData.newBuilder()
+                    .setFString("first/firs-9148")
+                    .setFInt32(-1143775883)
+                    .setFSint32(-815756300)
+                    .setFSfixed32(-763212615)
+                    .setFUint32(-758497998)
+                    .setFFixed32(1837548026)
+                    .setFInt64(-1143775788)
+                    .setFSint64(-815756205)
+                    .setFSfixed64(-763212520)
+                    .setFUint64(-758497903)
+                    .setFFixed64(1837548121)
+                    .setFDouble(-1239459382)
+                    .setFFloat(-1146609341)
+                    .setFBool(true)
+                    .setFBytes(ByteString.EMPTY)
+                    .setFChild(
+                        ComplianceDataChild.newBuilder()
+                            .setFString("second/secon-3276")
+                            .setFFloat(-1146609341)
+                            .setFDouble(-1239459382)
+                            .setFBool(true)
+                            .setFContinent(Continent.forNumber(0))
+                            .setFChild(ComplianceDataGrandchild.newBuilder().build())
+                            .setPString("pString-1191954271")
+                            .setPFloat(-861507123)
+                            .setPDouble(-991225216)
+                            .setPBool(true)
+                            .setPContinent(Continent.forNumber(0))
+                            .setPChild(ComplianceDataGrandchild.newBuilder().build())
+                            .build())
+                    .setPString("pString-1191954271")
+                    .setPInt32(-858673665)
+                    .setPDouble(-991225216)
+                    .setPBool(true)
+                    .setPChild(ComplianceDataChild.newBuilder().build())
+                    .build())
+            .setServerVerify(true)
+            .build();
+
+    RepeatResponse actualResponse = client.repeatDataPathTrailingResource(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void repeatDataPathTrailingResourceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RepeatRequest request =
+          RepeatRequest.newBuilder()
+              .setName("name3373707")
+              .setInfo(
+                  ComplianceData.newBuilder()
+                      .setFString("first/firs-9148")
+                      .setFInt32(-1143775883)
+                      .setFSint32(-815756300)
+                      .setFSfixed32(-763212615)
+                      .setFUint32(-758497998)
+                      .setFFixed32(1837548026)
+                      .setFInt64(-1143775788)
+                      .setFSint64(-815756205)
+                      .setFSfixed64(-763212520)
+                      .setFUint64(-758497903)
+                      .setFFixed64(1837548121)
+                      .setFDouble(-1239459382)
+                      .setFFloat(-1146609341)
+                      .setFBool(true)
+                      .setFBytes(ByteString.EMPTY)
+                      .setFChild(
+                          ComplianceDataChild.newBuilder()
+                              .setFString("second/secon-3276")
+                              .setFFloat(-1146609341)
+                              .setFDouble(-1239459382)
+                              .setFBool(true)
+                              .setFContinent(Continent.forNumber(0))
+                              .setFChild(ComplianceDataGrandchild.newBuilder().build())
+                              .setPString("pString-1191954271")
+                              .setPFloat(-861507123)
+                              .setPDouble(-991225216)
+                              .setPBool(true)
+                              .setPContinent(Continent.forNumber(0))
+                              .setPChild(ComplianceDataGrandchild.newBuilder().build())
+                              .build())
+                      .setPString("pString-1191954271")
+                      .setPInt32(-858673665)
+                      .setPDouble(-991225216)
+                      .setPBool(true)
+                      .setPChild(ComplianceDataChild.newBuilder().build())
+                      .build())
+              .setServerVerify(true)
+              .build();
+      client.repeatDataPathTrailingResource(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEnumTest() throws Exception {
+    EnumResponse expectedResponse =
+        EnumResponse.newBuilder()
+            .setRequest(EnumRequest.newBuilder().build())
+            .setContinent(Continent.forNumber(0))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    EnumRequest request = EnumRequest.newBuilder().setUnknownEnum(true).build();
+
+    EnumResponse actualResponse = client.getEnum(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getEnumExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EnumRequest request = EnumRequest.newBuilder().setUnknownEnum(true).build();
+      client.getEnum(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void verifyEnumTest() throws Exception {
+    EnumResponse expectedResponse =
+        EnumResponse.newBuilder()
+            .setRequest(EnumRequest.newBuilder().build())
+            .setContinent(Continent.forNumber(0))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    EnumResponse request =
+        EnumResponse.newBuilder()
+            .setRequest(EnumRequest.newBuilder().build())
+            .setContinent(Continent.forNumber(0))
+            .build();
+
+    EnumResponse actualResponse = client.verifyEnum(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void verifyEnumExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EnumResponse request =
+          EnumResponse.newBuilder()
+              .setRequest(EnumRequest.newBuilder().build())
+              .setContinent(Continent.forNumber(0))
+              .build();
+      client.verifyEnum(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+}

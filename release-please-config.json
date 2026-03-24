@@ -6,6 +6,22 @@
   "include-component-in-tag": false,
   "group-pull-request-title-pattern": "chore(${branch}): release ${version}",
   "packages": {
-    ".": {}
+    ".": {
+      "extra-files": [
+        ".github/workflows/generated_files_sync.yaml",
+        ".github/workflows/hermetic_library_generation.yaml",
+        "sdk-platform-java/WORKSPACE",
+        "sdk-platform-java/.cloudbuild/graalvm/cloudbuild.yaml",
+        "sdk-platform-java/.cloudbuild/graalvm/cloudbuild-test-a.yaml",
+        "sdk-platform-java/.cloudbuild/graalvm/cloudbuild-test-b.yaml",
+        "sdk-platform-java/.cloudbuild/graalvm/cloudbuild-test-c.yaml",
+        "sdk-platform-java/.cloudbuild/library_generation/cloudbuild-library-generation-push.yaml",
+        "sdk-platform-java/.cloudbuild/library_generation/library_generation.Dockerfile",
+        "sdk-platform-java/.cloudbuild/library_generation/library_generation_airlock.Dockerfile",
+        "sdk-platform-java/hermetic_build/library_generation/owlbot/templates/java_library/.kokoro/presubmit/graalvm-native-a.cfg",
+        "sdk-platform-java/hermetic_build/library_generation/owlbot/templates/java_library/.kokoro/presubmit/graalvm-native-b.cfg",
+        "sdk-platform-java/hermetic_build/library_generation/owlbot/templates/java_library/.kokoro/presubmit/graalvm-native-c.cfg"
+      ]
+    }
   }
 }

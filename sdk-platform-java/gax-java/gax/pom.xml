@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>gax</artifactId>
+  <version>2.76.1-SNAPSHOT</version><!-- {x-version-update:gax:current} -->
+  <packaging>jar</packaging>
+  <name>GAX (Google Api eXtensions) for Java (Core)</name>
+  <description>Google Api eXtensions for Java (Core)</description>
+
+  <parent>
+    <groupId>com.google.api</groupId>
+    <artifactId>gax-parent</artifactId>
+    <version>2.76.1-SNAPSHOT</version><!-- {x-version-update:gax:current} -->
+  </parent>
+
+  <properties>
+    <!-- mvn install runs the sonar plugin which injects an argLine value to surefire -->
+    <!-- mvn surefire:test doesn't run sonar and errors as it does not  have an argLine value to expand -->
+    <!-- An empty argLine user property can still be expanded and won't throw an error -->
+    <argLine />
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>api-common</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.auth</groupId>
+      <artifactId>google-auth-library-credentials</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-common-protos</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+    </dependency>
+    <dependency>
+      <groupId> com.google.protobuf</groupId>
+      <artifactId>protobuf-java-util</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.threeten</groupId>
+      <artifactId>threetenbp</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opencensus</groupId>
+      <artifactId>opencensus-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.auth</groupId>
+      <artifactId>google-auth-library-oauth2-http</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jsr305</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.graalvm.sdk</groupId>
+      <artifactId>nativeimage</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-api</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-context</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk-testing</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava-testlib</artifactId>
+      <version>${guava.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <!--    Logging dependency    -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <optional>true</optional>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>test-jar</goal>
+            </goals>
+            <configuration>
+              <skip>false</skip>
+              <classifier>testlib</classifier>
+              <includes>
+                <include>com/google/api/gax/core/**</include>
+                <include>com/google/api/gax/rpc/testing/**</include>
+                <include>com/google/api/gax/rpc/mtls/**</include>
+                <include>com/google/api/gax/util/**</include>
+                <include>**/native-image.properties</include>
+              </includes>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>clirr-maven-plugin</artifactId>
+        <configuration>
+          <!-- Ignore any files marked as @InternalApi -->
+          <excludes>
+            <exclude>com/google/api/gax/rpc/RequestUrlParamsEncoder</exclude>
+            <exclude>com/google/api/gax/batching/BatchingDescriptor</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+      <plugin>
+        <!-- Troubleshooting a flaky test in https://github.com/googleapis/sdk-platform-java/issues/1931 -->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <argLine>@{argLine} -Djava.util.logging.SimpleFormatter.format="%1$tY %1$tl:%1$tM:%1$tS.%1$tL %2$s %4$s: %5$s%6$s%n"</argLine>
+          <!-- These tests require an Env Var to be set. Use -PenvVarTest to ONLY run these tests -->
+          <test>!EndpointContextTest#endpointContextBuild_universeDomainEnvVarSet+endpointContextBuild_multipleUniverseDomainConfigurations_clientSettingsHasPriority,!LoggingEnabledTest</test>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>envVarTest</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+              <test>EndpointContextTest#endpointContextBuild_universeDomainEnvVarSet+endpointContextBuild_multipleUniverseDomainConfigurations_clientSettingsHasPriority,LoggingEnabledTest</test>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+  </profiles>
+</project>

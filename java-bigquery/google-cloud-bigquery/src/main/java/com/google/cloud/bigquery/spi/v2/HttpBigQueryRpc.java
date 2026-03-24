@@ -21,6 +21,7 @@ import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import static java.net.HttpURLConnection.HTTP_OK;
 import static java.net.HttpURLConnection.HTTP_UNAUTHORIZED;
 
+import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.client.http.ByteArrayContent;
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpRequest;
@@ -65,6 +66,7 @@ import com.google.api.services.bigquery.model.TestIamPermissionsResponse;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
+import com.google.cloud.bigquery.telemetry.BigQueryTelemetryTracer;
 import com.google.cloud.bigquery.telemetry.HttpTracingRequestInitializer;
 import com.google.cloud.http.HttpTransportOptions;
 import com.google.common.base.Function;
@@ -1769,6 +1771,16 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     }
     try (Scope scope = span.makeCurrent()) {
       return operation.execute(span);
+    } catch (Exception e) {
+      if (isHttpTracingEnabled()) {
+        if (e instanceof GoogleJsonResponseException) {
+          BigQueryTelemetryTracer.addServerErrorResponseToSpan(
+              ((GoogleJsonResponseException) e), span);
+        } else {
+          BigQueryTelemetryTracer.addExceptionToSpan(e, span);
+        }
+      }
+      throw e;
     } finally {
       span.end();
     }

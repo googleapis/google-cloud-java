@@ -1294,6 +1294,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
      * Required. Full resource name of
      * [DataStore][google.cloud.discoveryengine.v1beta.DataStore], such as
      * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
+     * The path must include the project number, project id is not supported for
+     * this field.
      * </pre>
      *
      * <code>
@@ -1311,6 +1313,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
      * Required. Full resource name of
      * [DataStore][google.cloud.discoveryengine.v1beta.DataStore], such as
      * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
+     * The path must include the project number, project id is not supported for
+     * this field.
      * </pre>
      *
      * <code>
@@ -1350,6 +1354,56 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
      * @return The bytes for filter.
      */
     com.google.protobuf.ByteString getFilterBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boost specification to boost certain documents.
+     * For more information on boosting, see
+     * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec boost_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the boostSpec field is set.
+     */
+    boolean hasBoostSpec();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boost specification to boost certain documents.
+     * For more information on boosting, see
+     * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec boost_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The boostSpec.
+     */
+    com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec getBoostSpec();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boost specification to boost certain documents.
+     * For more information on boosting, see
+     * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec boost_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpecOrBuilder
+        getBoostSpecOrBuilder();
   }
 
   /**
@@ -1404,6 +1458,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
               com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec.Builder.class);
     }
 
+    private int bitField0_;
     public static final int DATA_STORE_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -1416,6 +1471,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
      * Required. Full resource name of
      * [DataStore][google.cloud.discoveryengine.v1beta.DataStore], such as
      * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
+     * The path must include the project number, project id is not supported for
+     * this field.
      * </pre>
      *
      * <code>
@@ -1444,6 +1501,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
      * Required. Full resource name of
      * [DataStore][google.cloud.discoveryengine.v1beta.DataStore], such as
      * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
+     * The path must include the project number, project id is not supported for
+     * this field.
      * </pre>
      *
      * <code>
@@ -1522,6 +1581,72 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public static final int BOOST_SPEC_FIELD_NUMBER = 6;
+    private com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec boostSpec_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boost specification to boost certain documents.
+     * For more information on boosting, see
+     * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec boost_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the boostSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasBoostSpec() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boost specification to boost certain documents.
+     * For more information on boosting, see
+     * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec boost_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The boostSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec getBoostSpec() {
+      return boostSpec_ == null
+          ? com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec.getDefaultInstance()
+          : boostSpec_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boost specification to boost certain documents.
+     * For more information on boosting, see
+     * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec boost_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpecOrBuilder
+        getBoostSpecOrBuilder() {
+      return boostSpec_ == null
+          ? com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec.getDefaultInstance()
+          : boostSpec_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1542,6 +1667,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filter_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 5, filter_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(6, getBoostSpec());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1556,6 +1684,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filter_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(5, filter_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getBoostSpec());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1575,6 +1706,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
 
       if (!getDataStore().equals(other.getDataStore())) return false;
       if (!getFilter().equals(other.getFilter())) return false;
+      if (hasBoostSpec() != other.hasBoostSpec()) return false;
+      if (hasBoostSpec()) {
+        if (!getBoostSpec().equals(other.getBoostSpec())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1590,6 +1725,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + getDataStore().hashCode();
       hash = (37 * hash) + FILTER_FIELD_NUMBER;
       hash = (53 * hash) + getFilter().hashCode();
+      if (hasBoostSpec()) {
+        hash = (37 * hash) + BOOST_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getBoostSpec().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1725,10 +1864,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
 
       // Construct using
       // com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetBoostSpecFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -1737,6 +1885,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
         bitField0_ = 0;
         dataStore_ = "";
         filter_ = "";
+        boostSpec_ = null;
+        if (boostSpecBuilder_ != null) {
+          boostSpecBuilder_.dispose();
+          boostSpecBuilder_ = null;
+        }
         return this;
       }
 
@@ -1782,6 +1935,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.filter_ = filter_;
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.boostSpec_ = boostSpecBuilder_ == null ? boostSpec_ : boostSpecBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -1809,6 +1968,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
           filter_ = other.filter_;
           bitField0_ |= 0x00000002;
           onChanged();
+        }
+        if (other.hasBoostSpec()) {
+          mergeBoostSpec(other.getBoostSpec());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1848,6 +2010,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 42
+              case 50:
+                {
+                  input.readMessage(
+                      internalGetBoostSpecFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1876,6 +2045,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
        * Required. Full resource name of
        * [DataStore][google.cloud.discoveryengine.v1beta.DataStore], such as
        * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
+       * The path must include the project number, project id is not supported for
+       * this field.
        * </pre>
        *
        * <code>
@@ -1903,6 +2074,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
        * Required. Full resource name of
        * [DataStore][google.cloud.discoveryengine.v1beta.DataStore], such as
        * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
+       * The path must include the project number, project id is not supported for
+       * this field.
        * </pre>
        *
        * <code>
@@ -1930,6 +2103,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
        * Required. Full resource name of
        * [DataStore][google.cloud.discoveryengine.v1beta.DataStore], such as
        * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
+       * The path must include the project number, project id is not supported for
+       * this field.
        * </pre>
        *
        * <code>
@@ -1956,6 +2131,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
        * Required. Full resource name of
        * [DataStore][google.cloud.discoveryengine.v1beta.DataStore], such as
        * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
+       * The path must include the project number, project id is not supported for
+       * this field.
        * </pre>
        *
        * <code>
@@ -1978,6 +2155,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
        * Required. Full resource name of
        * [DataStore][google.cloud.discoveryengine.v1beta.DataStore], such as
        * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
+       * The path must include the project number, project id is not supported for
+       * this field.
        * </pre>
        *
        * <code>
@@ -2117,6 +2296,243 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000002;
         onChanged();
         return this;
+      }
+
+      private com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec boostSpec_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec,
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec.Builder,
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpecOrBuilder>
+          boostSpecBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boost specification to boost certain documents.
+       * For more information on boosting, see
+       * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec boost_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the boostSpec field is set.
+       */
+      public boolean hasBoostSpec() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boost specification to boost certain documents.
+       * For more information on boosting, see
+       * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec boost_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The boostSpec.
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec getBoostSpec() {
+        if (boostSpecBuilder_ == null) {
+          return boostSpec_ == null
+              ? com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec.getDefaultInstance()
+              : boostSpec_;
+        } else {
+          return boostSpecBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boost specification to boost certain documents.
+       * For more information on boosting, see
+       * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec boost_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setBoostSpec(
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec value) {
+        if (boostSpecBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          boostSpec_ = value;
+        } else {
+          boostSpecBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boost specification to boost certain documents.
+       * For more information on boosting, see
+       * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec boost_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setBoostSpec(
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec.Builder builderForValue) {
+        if (boostSpecBuilder_ == null) {
+          boostSpec_ = builderForValue.build();
+        } else {
+          boostSpecBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boost specification to boost certain documents.
+       * For more information on boosting, see
+       * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec boost_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeBoostSpec(
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec value) {
+        if (boostSpecBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && boostSpec_ != null
+              && boostSpec_
+                  != com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec
+                      .getDefaultInstance()) {
+            getBoostSpecBuilder().mergeFrom(value);
+          } else {
+            boostSpec_ = value;
+          }
+        } else {
+          boostSpecBuilder_.mergeFrom(value);
+        }
+        if (boostSpec_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boost specification to boost certain documents.
+       * For more information on boosting, see
+       * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec boost_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearBoostSpec() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        boostSpec_ = null;
+        if (boostSpecBuilder_ != null) {
+          boostSpecBuilder_.dispose();
+          boostSpecBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boost specification to boost certain documents.
+       * For more information on boosting, see
+       * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec boost_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec.Builder
+          getBoostSpecBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return internalGetBoostSpecFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boost specification to boost certain documents.
+       * For more information on boosting, see
+       * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec boost_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpecOrBuilder
+          getBoostSpecOrBuilder() {
+        if (boostSpecBuilder_ != null) {
+          return boostSpecBuilder_.getMessageOrBuilder();
+        } else {
+          return boostSpec_ == null
+              ? com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec.getDefaultInstance()
+              : boostSpec_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boost specification to boost certain documents.
+       * For more information on boosting, see
+       * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec boost_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec,
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec.Builder,
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpecOrBuilder>
+          internalGetBoostSpecFieldBuilder() {
+        if (boostSpecBuilder_ == null) {
+          boostSpecBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec,
+                  com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec.Builder,
+                  com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpecOrBuilder>(
+                  getBoostSpec(), getParentForChildren(), isClean());
+          boostSpec_ = null;
+        }
+        return boostSpecBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec)
@@ -15150,7 +15566,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
        *
        * @deprecated
        *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-       *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=439
+       *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=446
        * @return The maxSnippetCount.
        */
       @java.lang.Deprecated
@@ -15168,7 +15584,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
        *
        * @deprecated
        *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-       *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=443
+       *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=450
        * @return The referenceOnly.
        */
       @java.lang.Deprecated
@@ -15256,7 +15672,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
        *
        * @deprecated
        *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-       *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=439
+       *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=446
        * @return The maxSnippetCount.
        */
       @java.lang.Override
@@ -15280,7 +15696,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
        *
        * @deprecated
        *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-       *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=443
+       *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=450
        * @return The referenceOnly.
        */
       @java.lang.Override
@@ -15726,7 +16142,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=439
+         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=446
          * @return The maxSnippetCount.
          */
         @java.lang.Override
@@ -15748,7 +16164,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=439
+         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=446
          * @param value The maxSnippetCount to set.
          * @return This builder for chaining.
          */
@@ -15774,7 +16190,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=439
+         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=446
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -15799,7 +16215,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=443
+         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=450
          * @return The referenceOnly.
          */
         @java.lang.Override
@@ -15820,7 +16236,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=443
+         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=450
          * @param value The referenceOnly to set.
          * @return This builder for chaining.
          */
@@ -15845,7 +16261,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=443
+         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=450
          * @return This builder for chaining.
          */
         @java.lang.Deprecated

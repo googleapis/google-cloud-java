@@ -20,6 +20,7 @@ package com.google.cloud.ces.v1beta.samples;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.ces.v1beta.AgentServiceClient;
 import com.google.cloud.ces.v1beta.AppName;
+import com.google.cloud.ces.v1beta.AppVersionName;
 import com.google.cloud.ces.v1beta.ExportAppRequest;
 import com.google.cloud.ces.v1beta.ExportAppResponse;
 import com.google.cloud.ces.v1beta.OperationMetadata;
@@ -41,6 +42,8 @@ public class AsyncExportAppLRO {
           ExportAppRequest.newBuilder()
               .setName(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
               .setGcsUri("gcsUri-1251224875")
+              .setAppVersion(
+                  AppVersionName.of("[PROJECT]", "[LOCATION]", "[APP]", "[VERSION]").toString())
               .build();
       OperationFuture<ExportAppResponse, OperationMetadata> future =
           agentServiceClient.exportAppOperationCallable().futureCall(request);

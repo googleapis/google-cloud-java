@@ -405,4 +405,22 @@ public interface SessionConfigOrBuilder
    */
   com.google.cloud.ces.v1beta.SessionConfig.RemoteDialogflowQueryParametersOrBuilder
       getRemoteDialogflowQueryParametersOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to enable streaming text outputs from the model.
+   * By default, text outputs from the model are collected before sending to the
+   * client.
+   * NOTE: This is only supported for text (non-voice) sessions via
+   * [StreamRunSession][google.cloud.ces.v1beta.SessionService.StreamRunSession]
+   * or [BidiRunSession][google.cloud.ces.v1beta.SessionService.BidiRunSession].
+   * </pre>
+   *
+   * <code>bool enable_text_streaming = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableTextStreaming.
+   */
+  boolean getEnableTextStreaming();
 }

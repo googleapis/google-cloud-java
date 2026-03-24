@@ -87,7 +87,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.BargeInConfig.disable_barge_in is deprecated. See
-   *     google/cloud/ces/v1beta/app.proto;l=349
+   *     google/cloud/ces/v1beta/app.proto;l=353
    * @return The disableBargeIn.
    */
   @java.lang.Override
@@ -465,7 +465,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.BargeInConfig.disable_barge_in is deprecated. See
-     *     google/cloud/ces/v1beta/app.proto;l=349
+     *     google/cloud/ces/v1beta/app.proto;l=353
      * @return The disableBargeIn.
      */
     @java.lang.Override
@@ -490,7 +490,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.BargeInConfig.disable_barge_in is deprecated. See
-     *     google/cloud/ces/v1beta/app.proto;l=349
+     *     google/cloud/ces/v1beta/app.proto;l=353
      * @param value The disableBargeIn to set.
      * @return This builder for chaining.
      */
@@ -519,7 +519,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.BargeInConfig.disable_barge_in is deprecated. See
-     *     google/cloud/ces/v1beta/app.proto;l=349
+     *     google/cloud/ces/v1beta/app.proto;l=353
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

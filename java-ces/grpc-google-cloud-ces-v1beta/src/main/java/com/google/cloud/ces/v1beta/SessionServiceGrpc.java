@@ -77,6 +77,51 @@ public final class SessionServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.ces.v1beta.RunSessionRequest,
+          com.google.cloud.ces.v1beta.RunSessionResponse>
+      getStreamRunSessionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StreamRunSession",
+      requestType = com.google.cloud.ces.v1beta.RunSessionRequest.class,
+      responseType = com.google.cloud.ces.v1beta.RunSessionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.ces.v1beta.RunSessionRequest,
+          com.google.cloud.ces.v1beta.RunSessionResponse>
+      getStreamRunSessionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.ces.v1beta.RunSessionRequest,
+            com.google.cloud.ces.v1beta.RunSessionResponse>
+        getStreamRunSessionMethod;
+    if ((getStreamRunSessionMethod = SessionServiceGrpc.getStreamRunSessionMethod) == null) {
+      synchronized (SessionServiceGrpc.class) {
+        if ((getStreamRunSessionMethod = SessionServiceGrpc.getStreamRunSessionMethod) == null) {
+          SessionServiceGrpc.getStreamRunSessionMethod =
+              getStreamRunSessionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.ces.v1beta.RunSessionRequest,
+                          com.google.cloud.ces.v1beta.RunSessionResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StreamRunSession"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.ces.v1beta.RunSessionRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.ces.v1beta.RunSessionResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SessionServiceMethodDescriptorSupplier("StreamRunSession"))
+                      .build();
+        }
+      }
+    }
+    return getStreamRunSessionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.ces.v1beta.BidiSessionClientMessage,
           com.google.cloud.ces.v1beta.BidiSessionServerMessage>
       getBidiRunSessionMethod;
@@ -190,8 +235,7 @@ public final class SessionServiceGrpc {
      *
      *
      * <pre>
-     * Initiates a single turn interaction with the CES agent within a
-     * session.
+     * Initiates a single-turn interaction with the CES agent within a session.
      * </pre>
      */
     default void runSession(
@@ -199,6 +243,28 @@ public final class SessionServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.ces.v1beta.RunSessionResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRunSessionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates a single-turn interaction with the CES agent. Uses server-side
+     * streaming to deliver incremental results and partial responses as they are
+     * generated.
+     * By default, complete responses (e.g., messages from callbacks or full LLM
+     * responses) are sent to the client as soon as they are available. To enable
+     * streaming individual text chunks directly from the model, set
+     * [enable_text_streaming][google.cloud.ces.v1beta.SessionConfig.enable_text_streaming]
+     * to true.
+     * </pre>
+     */
+    default void streamRunSession(
+        com.google.cloud.ces.v1beta.RunSessionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.ces.v1beta.RunSessionResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getStreamRunSessionMethod(), responseObserver);
     }
 
     /**
@@ -308,8 +374,7 @@ public final class SessionServiceGrpc {
      *
      *
      * <pre>
-     * Initiates a single turn interaction with the CES agent within a
-     * session.
+     * Initiates a single-turn interaction with the CES agent within a session.
      * </pre>
      */
     public void runSession(
@@ -318,6 +383,30 @@ public final class SessionServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRunSessionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates a single-turn interaction with the CES agent. Uses server-side
+     * streaming to deliver incremental results and partial responses as they are
+     * generated.
+     * By default, complete responses (e.g., messages from callbacks or full LLM
+     * responses) are sent to the client as soon as they are available. To enable
+     * streaming individual text chunks directly from the model, set
+     * [enable_text_streaming][google.cloud.ces.v1beta.SessionConfig.enable_text_streaming]
+     * to true.
+     * </pre>
+     */
+    public void streamRunSession(
+        com.google.cloud.ces.v1beta.RunSessionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.ces.v1beta.RunSessionResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
+          getChannel().newCall(getStreamRunSessionMethod(), getCallOptions()),
+          request,
+          responseObserver);
     }
 
     /**
@@ -412,14 +501,34 @@ public final class SessionServiceGrpc {
      *
      *
      * <pre>
-     * Initiates a single turn interaction with the CES agent within a
-     * session.
+     * Initiates a single-turn interaction with the CES agent within a session.
      * </pre>
      */
     public com.google.cloud.ces.v1beta.RunSessionResponse runSession(
         com.google.cloud.ces.v1beta.RunSessionRequest request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRunSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates a single-turn interaction with the CES agent. Uses server-side
+     * streaming to deliver incremental results and partial responses as they are
+     * generated.
+     * By default, complete responses (e.g., messages from callbacks or full LLM
+     * responses) are sent to the client as soon as they are available. To enable
+     * streaming individual text chunks directly from the model, set
+     * [enable_text_streaming][google.cloud.ces.v1beta.SessionConfig.enable_text_streaming]
+     * to true.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<?, com.google.cloud.ces.v1beta.RunSessionResponse>
+        streamRunSession(com.google.cloud.ces.v1beta.RunSessionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
+          getChannel(), getStreamRunSessionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -515,14 +624,33 @@ public final class SessionServiceGrpc {
      *
      *
      * <pre>
-     * Initiates a single turn interaction with the CES agent within a
-     * session.
+     * Initiates a single-turn interaction with the CES agent within a session.
      * </pre>
      */
     public com.google.cloud.ces.v1beta.RunSessionResponse runSession(
         com.google.cloud.ces.v1beta.RunSessionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRunSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates a single-turn interaction with the CES agent. Uses server-side
+     * streaming to deliver incremental results and partial responses as they are
+     * generated.
+     * By default, complete responses (e.g., messages from callbacks or full LLM
+     * responses) are sent to the client as soon as they are available. To enable
+     * streaming individual text chunks directly from the model, set
+     * [enable_text_streaming][google.cloud.ces.v1beta.SessionConfig.enable_text_streaming]
+     * to true.
+     * </pre>
+     */
+    public java.util.Iterator<com.google.cloud.ces.v1beta.RunSessionResponse> streamRunSession(
+        com.google.cloud.ces.v1beta.RunSessionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
+          getChannel(), getStreamRunSessionMethod(), getCallOptions(), request);
     }
   }
 
@@ -549,8 +677,7 @@ public final class SessionServiceGrpc {
      *
      *
      * <pre>
-     * Initiates a single turn interaction with the CES agent within a
-     * session.
+     * Initiates a single-turn interaction with the CES agent within a session.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -562,7 +689,8 @@ public final class SessionServiceGrpc {
   }
 
   private static final int METHODID_RUN_SESSION = 0;
-  private static final int METHODID_BIDI_RUN_SESSION = 1;
+  private static final int METHODID_STREAM_RUN_SESSION = 1;
+  private static final int METHODID_BIDI_RUN_SESSION = 2;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -583,6 +711,12 @@ public final class SessionServiceGrpc {
       switch (methodId) {
         case METHODID_RUN_SESSION:
           serviceImpl.runSession(
+              (com.google.cloud.ces.v1beta.RunSessionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.ces.v1beta.RunSessionResponse>)
+                  responseObserver);
+          break;
+        case METHODID_STREAM_RUN_SESSION:
+          serviceImpl.streamRunSession(
               (com.google.cloud.ces.v1beta.RunSessionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.ces.v1beta.RunSessionResponse>)
                   responseObserver);
@@ -617,6 +751,13 @@ public final class SessionServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.ces.v1beta.RunSessionRequest,
                     com.google.cloud.ces.v1beta.RunSessionResponse>(service, METHODID_RUN_SESSION)))
+        .addMethod(
+            getStreamRunSessionMethod(),
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.ces.v1beta.RunSessionRequest,
+                    com.google.cloud.ces.v1beta.RunSessionResponse>(
+                    service, METHODID_STREAM_RUN_SESSION)))
         .addMethod(
             getBidiRunSessionMethod(),
             io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
@@ -676,6 +817,7 @@ public final class SessionServiceGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new SessionServiceFileDescriptorSupplier())
                       .addMethod(getRunSessionMethod())
+                      .addMethod(getStreamRunSessionMethod())
                       .addMethod(getBidiRunSessionMethod())
                       .build();
         }
