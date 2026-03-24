@@ -39,7 +39,6 @@ import com.google.api.gax.rpc.DeadlineExceededException;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.UnavailableException;
 import com.google.api.gax.tracing.ObservabilityAttributes;
-import com.google.api.gax.tracing.OpenTelemetryTraceManager;
 import com.google.api.gax.tracing.SpanTracerFactory;
 import com.google.auth.Credentials;
 import com.google.common.collect.ImmutableList;
@@ -129,8 +128,7 @@ class ITOtelErrorType {
   }
 
   private EchoClient createInterceptorClient(Throwable toThrow) throws IOException {
-    SpanTracerFactory tracingFactory =
-        new SpanTracerFactory(new OpenTelemetryTraceManager(openTelemetrySdk));
+    SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
 
     ClientInterceptor interceptor =
         new ClientInterceptor() {
@@ -164,8 +162,7 @@ class ITOtelErrorType {
 
   @Test
   void testTracing_failedEcho_grpc_recordsErrorType() throws Exception {
-    SpanTracerFactory tracingFactory =
-        new SpanTracerFactory(new OpenTelemetryTraceManager(openTelemetrySdk));
+    SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
 
     try (EchoClient client =
         TestClientInitializer.createGrpcEchoClientOpentelemetry(tracingFactory)) {
@@ -182,8 +179,7 @@ class ITOtelErrorType {
 
   @Test
   void testTracing_failedEcho_httpjson_recordsErrorType() throws Exception {
-    SpanTracerFactory tracingFactory =
-        new SpanTracerFactory(new OpenTelemetryTraceManager(openTelemetrySdk));
+    SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
 
     try (EchoClient client =
         TestClientInitializer.createHttpJsonEchoClientOpentelemetry(tracingFactory)) {
@@ -205,8 +201,7 @@ class ITOtelErrorType {
       port = socket.getLocalPort();
     }
 
-    SpanTracerFactory tracingFactory =
-        new SpanTracerFactory(new OpenTelemetryTraceManager(openTelemetrySdk));
+    SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
     EchoSettings grpcEchoSettings =
         EchoSettings.newBuilder()
             .setTransportChannelProvider(
@@ -236,8 +231,7 @@ class ITOtelErrorType {
 
   @Test
   void testTracing_clientConnectionError_UnknownHost_grpc() throws Exception {
-    SpanTracerFactory tracingFactory =
-        new SpanTracerFactory(new OpenTelemetryTraceManager(openTelemetrySdk));
+    SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
     EchoSettings grpcEchoSettings =
         EchoSettings.newBuilder()
             .setTransportChannelProvider(
@@ -318,8 +312,7 @@ class ITOtelErrorType {
 
   @Test
   void testTracing_clientTimeout_DeadlineExceededException_grpc() throws Exception {
-    SpanTracerFactory tracingFactory =
-        new SpanTracerFactory(new OpenTelemetryTraceManager(openTelemetrySdk));
+    SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
 
     try (ServerSocket serverSocket = new ServerSocket(0)) {
       int port = serverSocket.getLocalPort();
@@ -396,8 +389,7 @@ class ITOtelErrorType {
           public void refresh() throws IOException {}
         };
 
-    SpanTracerFactory tracingFactory =
-        new SpanTracerFactory(new OpenTelemetryTraceManager(openTelemetrySdk));
+    SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
     EchoSettings grpcEchoSettings =
         EchoSettings.newBuilder()
             .setCredentialsProvider(FixedCredentialsProvider.create(credentials))
