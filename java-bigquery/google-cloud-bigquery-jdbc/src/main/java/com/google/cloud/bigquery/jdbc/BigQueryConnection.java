@@ -141,7 +141,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   Long listenerPoolSize;
   String partnerToken;
   boolean enableOpenTelemetry;
-  String openTelemetryExporter;
+  OpenTelemetry customOpenTelemetry;
   Tracer tracer = OpenTelemetry.noop().getTracer("");
 
   BigQueryConnection(String url) throws IOException {
@@ -248,7 +248,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     this.listenerPoolSize = ds.getListenerPoolSize();
     this.partnerToken = ds.getPartnerToken();
     this.enableOpenTelemetry = ds.getEnableOpenTelemetry();
-    this.openTelemetryExporter = ds.getOpenTelemetryExporter();
+    this.customOpenTelemetry = ds.getCustomOpenTelemetry();
 
     this.headerProvider = createHeaderProvider();
     this.bigQuery = getBigQueryConnection();
@@ -944,11 +944,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
     OpenTelemetry openTelemetry =
         BigQueryJdbcOpenTelemetry.getOpenTelemetry(
-            this.enableOpenTelemetry, this.openTelemetryExporter);
+            this.enableOpenTelemetry, this.customOpenTelemetry);
     if (this.enableOpenTelemetry) {
       this.tracer = BigQueryJdbcOpenTelemetry.getTracer(openTelemetry);
       bigQueryOptions.setOpenTelemetryTracer(this.tracer);
-      BigQueryJdbcOpenTelemetry.attachLoggingBridge();
     }
 
     BigQueryOptions options = bigQueryOptions.setHeaderProvider(this.headerProvider).build();

@@ -20,6 +20,7 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
+import io.opentelemetry.api.OpenTelemetry;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -114,7 +115,7 @@ public class DataSource implements javax.sql.DataSource {
   private Long connectionPoolSize;
   private Long listenerPoolSize;
   private Boolean enableOpenTelemetry;
-  private String openTelemetryExporter;
+  private OpenTelemetry customOpenTelemetry;
 
   // Make sure the JDBC driver class is loaded.
   static {
@@ -332,9 +333,6 @@ public class DataSource implements javax.sql.DataSource {
                   ds.setEnableOpenTelemetry(
                       BigQueryJdbcUrlUtility.convertIntToBoolean(
                           val, BigQueryJdbcUrlUtility.ENABLE_OPENTELEMETRY_PROPERTY_NAME)))
-          .put(
-              BigQueryJdbcUrlUtility.OPENTELEMETRY_EXPORTER_PROPERTY_NAME,
-              DataSource::setOpenTelemetryExporter)
           .build();
 
   public static DataSource fromUrl(String url) {
@@ -386,7 +384,11 @@ public class DataSource implements javax.sql.DataSource {
       throw new BigQueryJdbcException(
           "The URL " + getURL() + " is invalid. Please specify a valid Connection URL. ");
     }
-    return DriverManager.getConnection(getURL(), createProperties());
+    Properties props = createProperties();
+    if (this.customOpenTelemetry != null) {
+      props.put("customOpenTelemetry", this.customOpenTelemetry);
+    }
+    return DriverManager.getConnection(getURL(), props);
   }
 
   private Properties createProperties() {
@@ -632,10 +634,6 @@ public class DataSource implements javax.sql.DataSource {
           BigQueryJdbcUrlUtility.ENABLE_OPENTELEMETRY_PROPERTY_NAME,
           String.valueOf(this.enableOpenTelemetry));
     }
-    if (this.openTelemetryExporter != null) {
-      connectionProperties.setProperty(
-          BigQueryJdbcUrlUtility.OPENTELEMETRY_EXPORTER_PROPERTY_NAME, this.openTelemetryExporter);
-    }
     return connectionProperties;
   }
 
@@ -767,14 +765,12 @@ public class DataSource implements javax.sql.DataSource {
     this.enableOpenTelemetry = enableOpenTelemetry;
   }
 
-  public String getOpenTelemetryExporter() {
-    return openTelemetryExporter != null
-        ? openTelemetryExporter
-        : BigQueryJdbcUrlUtility.DEFAULT_OPENTELEMETRY_EXPORTER_VALUE;
+  public OpenTelemetry getCustomOpenTelemetry() {
+    return customOpenTelemetry;
   }
 
-  public void setOpenTelemetryExporter(String openTelemetryExporter) {
-    this.openTelemetryExporter = openTelemetryExporter;
+  public void setCustomOpenTelemetry(OpenTelemetry customOpenTelemetry) {
+    this.customOpenTelemetry = customOpenTelemetry;
   }
 
   public void setHighThroughputMinTableSize(Integer highThroughputMinTableSize) {
