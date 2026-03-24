@@ -77,6 +77,7 @@ case ${JOB_TYPE} in
       echo "Compiling and building all modules for ${BUILD_SUBDIR}"
       install_modules "${BUILD_SUBDIR}"
     else
+      install_modules "sdk-platform-java"
       mvn install \
         -B -ntp \
         -Dorg.slf4j.simpleLogger.showDateTime=true \
