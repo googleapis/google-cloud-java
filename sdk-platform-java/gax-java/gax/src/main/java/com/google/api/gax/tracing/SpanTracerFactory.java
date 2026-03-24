@@ -105,9 +105,6 @@ public class SpanTracerFactory implements ApiTracerFactory {
   public ApiTracerFactory withContext(ApiTracerContext context) {
     ApiTracerContext mergedContext = this.apiTracerContext.merge(context);
     LibraryMetadata metadata = mergedContext.libraryMetadata();
-    // Using io.opentelemetry.api.trace.Tracer.getTracer(String instrumentationScopeName, String
-    // instrumentationScopeVersion)
-    // This allows us to specify both the artifact name and version for better observability.
     Tracer newTracer = openTelemetry.getTracer(metadata.artifactName(), metadata.version());
     return new SpanTracerFactory(openTelemetry, newTracer, mergedContext);
   }
