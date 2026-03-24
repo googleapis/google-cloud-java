@@ -1,0 +1,212 @@
+package com.google.extractor.testing.stub;
+
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.extractor.testing.Bar;
+import com.google.extractor.testing.Foo;
+import com.google.extractor.testing.GetBarRequest;
+import com.google.extractor.testing.GetFooRequest;
+import com.google.extractor.testing.ListFoosRequest;
+import com.google.extractor.testing.ListFoosResponse;
+import com.google.longrunning.stub.GrpcOperationsStub;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
+import java.io.IOException;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import javax.annotation.Generated;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * gRPC stub implementation for the ResourceNameExtractorTesting service API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
+@Generated("by gapic-generator-java")
+public class GrpcResourceNameExtractorTestingStub extends ResourceNameExtractorTestingStub {
+  private static final MethodDescriptor<GetFooRequest, Foo> getFooMethodDescriptor =
+      MethodDescriptor.<GetFooRequest, Foo>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.extractor.testing.ResourceNameExtractorTesting/GetFoo")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetFooRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Foo.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<GetBarRequest, Bar> getBarMethodDescriptor =
+      MethodDescriptor.<GetBarRequest, Bar>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.extractor.testing.ResourceNameExtractorTesting/GetBar")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetBarRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Bar.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<ListFoosRequest, ListFoosResponse>
+      listFoosMethodDescriptor =
+          MethodDescriptor.<ListFoosRequest, ListFoosResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.extractor.testing.ResourceNameExtractorTesting/ListFoos")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListFoosRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ListFoosResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private final UnaryCallable<GetFooRequest, Foo> getFooCallable;
+  private final UnaryCallable<GetBarRequest, Bar> getBarCallable;
+  private final UnaryCallable<ListFoosRequest, ListFoosResponse> listFoosCallable;
+
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
+  private final GrpcStubCallableFactory callableFactory;
+
+  public static final GrpcResourceNameExtractorTestingStub create(
+      ResourceNameExtractorTestingStubSettings settings) throws IOException {
+    return new GrpcResourceNameExtractorTestingStub(settings, ClientContext.create(settings));
+  }
+
+  public static final GrpcResourceNameExtractorTestingStub create(ClientContext clientContext)
+      throws IOException {
+    return new GrpcResourceNameExtractorTestingStub(
+        ResourceNameExtractorTestingStubSettings.newBuilder().build(), clientContext);
+  }
+
+  public static final GrpcResourceNameExtractorTestingStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcResourceNameExtractorTestingStub(
+        ResourceNameExtractorTestingStubSettings.newBuilder().build(),
+        clientContext,
+        callableFactory);
+  }
+
+  /**
+   * Constructs an instance of GrpcResourceNameExtractorTestingStub, using the given settings. This
+   * is protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected GrpcResourceNameExtractorTestingStub(
+      ResourceNameExtractorTestingStubSettings settings, ClientContext clientContext)
+      throws IOException {
+    this(settings, clientContext, new GrpcResourceNameExtractorTestingCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcResourceNameExtractorTestingStub, using the given settings. This
+   * is protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected GrpcResourceNameExtractorTestingStub(
+      ResourceNameExtractorTestingStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
+
+    GrpcCallSettings<GetFooRequest, Foo> getFooTransportSettings =
+        GrpcCallSettings.<GetFooRequest, Foo>newBuilder()
+            .setMethodDescriptor(getFooMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<GetBarRequest, Bar> getBarTransportSettings =
+        GrpcCallSettings.<GetBarRequest, Bar>newBuilder()
+            .setMethodDescriptor(getBarMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("bar", String.valueOf(request.getBar()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListFoosRequest, ListFoosResponse> listFoosTransportSettings =
+        GrpcCallSettings.<ListFoosRequest, ListFoosResponse>newBuilder()
+            .setMethodDescriptor(listFoosMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+
+    this.getFooCallable =
+        callableFactory.createUnaryCallable(
+            getFooTransportSettings, settings.getFooSettings(), clientContext);
+    this.getBarCallable =
+        callableFactory.createUnaryCallable(
+            getBarTransportSettings, settings.getBarSettings(), clientContext);
+    this.listFoosCallable =
+        callableFactory.createUnaryCallable(
+            listFoosTransportSettings, settings.listFoosSettings(), clientContext);
+
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
+  }
+
+  @Override
+  public UnaryCallable<GetFooRequest, Foo> getFooCallable() {
+    return getFooCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetBarRequest, Bar> getBarCallable() {
+    return getBarCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListFoosRequest, ListFoosResponse> listFoosCallable() {
+    return listFoosCallable;
+  }
+
+  @Override
+  public final void close() {
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
+  }
+
+  @Override
+  public void shutdown() {
+    backgroundResources.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return backgroundResources.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return backgroundResources.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    backgroundResources.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return backgroundResources.awaitTermination(duration, unit);
+  }
+}

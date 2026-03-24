@@ -1,0 +1,715 @@
+package com.google.showcase.grpcrest.v1beta1.stub;
+
+import static com.google.showcase.grpcrest.v1beta1.EchoClient.PagedExpandPagedResponse;
+import static com.google.showcase.grpcrest.v1beta1.EchoClient.SimplePagedExpandPagedResponse;
+
+import com.google.api.HttpRule;
+import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.httpjson.ApiMethodDescriptor;
+import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
+import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
+import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
+import com.google.api.gax.httpjson.ProtoMessageResponseParser;
+import com.google.api.gax.httpjson.ProtoRestSerializer;
+import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.rpc.BidiStreamingCallable;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.ServerStreamingCallable;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.Operation;
+import com.google.protobuf.TypeRegistry;
+import com.google.showcase.grpcrest.v1beta1.BlockRequest;
+import com.google.showcase.grpcrest.v1beta1.BlockResponse;
+import com.google.showcase.grpcrest.v1beta1.Case;
+import com.google.showcase.grpcrest.v1beta1.EchoRequest;
+import com.google.showcase.grpcrest.v1beta1.EchoResponse;
+import com.google.showcase.grpcrest.v1beta1.ExpandRequest;
+import com.google.showcase.grpcrest.v1beta1.Object;
+import com.google.showcase.grpcrest.v1beta1.PagedExpandRequest;
+import com.google.showcase.grpcrest.v1beta1.PagedExpandResponse;
+import com.google.showcase.grpcrest.v1beta1.UpdateCaseRequest;
+import com.google.showcase.grpcrest.v1beta1.WaitMetadata;
+import com.google.showcase.grpcrest.v1beta1.WaitRequest;
+import com.google.showcase.grpcrest.v1beta1.WaitResponse;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import javax.annotation.Generated;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * REST stub implementation for the Echo service API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
+@BetaApi
+@Generated("by gapic-generator-java")
+public class HttpJsonEchoStub extends EchoStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder()
+          .add(WaitResponse.getDescriptor())
+          .add(WaitMetadata.getDescriptor())
+          .build();
+
+  private static final ApiMethodDescriptor<EchoRequest, EchoResponse> echoMethodDescriptor =
+      ApiMethodDescriptor.<EchoRequest, EchoResponse>newBuilder()
+          .setFullMethodName("google.showcase.grpcrest.v1beta1.Echo/Echo")
+          .setHttpMethod("POST")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<EchoRequest>newBuilder()
+                  .setPath(
+                      "/v1beta1/echo:echo",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<EchoRequest> serializer = ProtoRestSerializer.create();
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<EchoRequest> serializer = ProtoRestSerializer.create();
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("*", request.toBuilder().build(), false))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<EchoResponse>newBuilder()
+                  .setDefaultInstance(EchoResponse.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<ExpandRequest, EchoResponse> expandMethodDescriptor =
+      ApiMethodDescriptor.<ExpandRequest, EchoResponse>newBuilder()
+          .setFullMethodName("google.showcase.grpcrest.v1beta1.Echo/Expand")
+          .setHttpMethod("POST")
+          .setType(ApiMethodDescriptor.MethodType.SERVER_STREAMING)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<ExpandRequest>newBuilder()
+                  .setPath(
+                      "/v1beta1/echo:expand",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<ExpandRequest> serializer =
+                            ProtoRestSerializer.create();
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<ExpandRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "content", request.getContent());
+                        serializer.putQueryParam(fields, "info", request.getInfoList());
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request ->
+                          ProtoRestSerializer.create().toBody("error", request.getError(), false))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<EchoResponse>newBuilder()
+                  .setDefaultInstance(EchoResponse.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<PagedExpandRequest, PagedExpandResponse>
+      pagedExpandMethodDescriptor =
+          ApiMethodDescriptor.<PagedExpandRequest, PagedExpandResponse>newBuilder()
+              .setFullMethodName("google.showcase.grpcrest.v1beta1.Echo/PagedExpand")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<PagedExpandRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/echo:pagedExpand",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PagedExpandRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PagedExpandRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<PagedExpandResponse>newBuilder()
+                      .setDefaultInstance(PagedExpandResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<PagedExpandRequest, PagedExpandResponse>
+      simplePagedExpandMethodDescriptor =
+          ApiMethodDescriptor.<PagedExpandRequest, PagedExpandResponse>newBuilder()
+              .setFullMethodName("google.showcase.grpcrest.v1beta1.Echo/SimplePagedExpand")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<PagedExpandRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/echo:pagedExpand",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PagedExpandRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PagedExpandRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<PagedExpandResponse>newBuilder()
+                      .setDefaultInstance(PagedExpandResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<WaitRequest, Operation> waitMethodDescriptor =
+      ApiMethodDescriptor.<WaitRequest, Operation>newBuilder()
+          .setFullMethodName("google.showcase.grpcrest.v1beta1.Echo/Wait")
+          .setHttpMethod("POST")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<WaitRequest>newBuilder()
+                  .setPath(
+                      "/v1beta1/echo:wait",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<WaitRequest> serializer = ProtoRestSerializer.create();
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<WaitRequest> serializer = ProtoRestSerializer.create();
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("*", request.toBuilder().build(), false))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Operation>newBuilder()
+                  .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .setOperationSnapshotFactory(
+              (WaitRequest request, Operation response) ->
+                  HttpJsonOperationSnapshot.create(response))
+          .build();
+
+  private static final ApiMethodDescriptor<BlockRequest, BlockResponse> blockMethodDescriptor =
+      ApiMethodDescriptor.<BlockRequest, BlockResponse>newBuilder()
+          .setFullMethodName("google.showcase.grpcrest.v1beta1.Echo/Block")
+          .setHttpMethod("POST")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<BlockRequest>newBuilder()
+                  .setPath(
+                      "/v1beta1/echo:block",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<BlockRequest> serializer = ProtoRestSerializer.create();
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<BlockRequest> serializer = ProtoRestSerializer.create();
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("*", request.toBuilder().build(), false))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<BlockResponse>newBuilder()
+                  .setDefaultInstance(BlockResponse.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<EchoRequest, Object> collideNameMethodDescriptor =
+      ApiMethodDescriptor.<EchoRequest, Object>newBuilder()
+          .setFullMethodName("google.showcase.grpcrest.v1beta1.Echo/CollideName")
+          .setHttpMethod("POST")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<EchoRequest>newBuilder()
+                  .setPath(
+                      "/v1beta1/echo:foo",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<EchoRequest> serializer = ProtoRestSerializer.create();
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<EchoRequest> serializer = ProtoRestSerializer.create();
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("*", request.toBuilder().build(), false))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Object>newBuilder()
+                  .setDefaultInstance(Object.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<EchoRequest, Object> nestedBindingMethodDescriptor =
+      ApiMethodDescriptor.<EchoRequest, Object>newBuilder()
+          .setFullMethodName("google.showcase.grpcrest.v1beta1.Echo/NestedBinding")
+          .setHttpMethod("POST")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<EchoRequest>newBuilder()
+                  .setPath(
+                      "/v1beta1/{fooBar.name=projects/*/foobars/*}/echo:foo",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<EchoRequest> serializer = ProtoRestSerializer.create();
+                        serializer.putPathParam(
+                            fields, "fooBar.name", request.getFooBar().getName());
+                        return fields;
+                      })
+                  .setAdditionalPaths(
+                      "/v1beta1/{fooBar.name=cats/*/dogs/*}/echo:foo",
+                      "/v1beta1/{fooBar.name=turtles/*/parrots/*}/echo:foo")
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<EchoRequest> serializer = ProtoRestSerializer.create();
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("*", request.toBuilder().build(), false))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Object>newBuilder()
+                  .setDefaultInstance(Object.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<UpdateCaseRequest, Case> updateCaseMethodDescriptor =
+      ApiMethodDescriptor.<UpdateCaseRequest, Case>newBuilder()
+          .setFullMethodName("google.showcase.grpcrest.v1beta1.Echo/UpdateCase")
+          .setHttpMethod("PATCH")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<UpdateCaseRequest>newBuilder()
+                  .setPath(
+                      "/v2beta/{case.name=projects/*/cases/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<UpdateCaseRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "case.name", request.getCase().getName());
+                        return fields;
+                      })
+                  .setAdditionalPaths("/v2beta/{case.name=organizations/*/cases/*}")
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<UpdateCaseRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request ->
+                          ProtoRestSerializer.create().toBody("case_", request.getCase(), false))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Case>newBuilder()
+                  .setDefaultInstance(Case.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private final UnaryCallable<EchoRequest, EchoResponse> echoCallable;
+  private final ServerStreamingCallable<ExpandRequest, EchoResponse> expandCallable;
+  private final UnaryCallable<PagedExpandRequest, PagedExpandResponse> pagedExpandCallable;
+  private final UnaryCallable<PagedExpandRequest, PagedExpandPagedResponse>
+      pagedExpandPagedCallable;
+  private final UnaryCallable<PagedExpandRequest, PagedExpandResponse> simplePagedExpandCallable;
+  private final UnaryCallable<PagedExpandRequest, SimplePagedExpandPagedResponse>
+      simplePagedExpandPagedCallable;
+  private final UnaryCallable<WaitRequest, Operation> waitCallable;
+  private final OperationCallable<WaitRequest, WaitResponse, WaitMetadata> waitOperationCallable;
+  private final UnaryCallable<BlockRequest, BlockResponse> blockCallable;
+  private final UnaryCallable<EchoRequest, Object> collideNameCallable;
+  private final UnaryCallable<EchoRequest, Object> nestedBindingCallable;
+  private final UnaryCallable<UpdateCaseRequest, Case> updateCaseCallable;
+
+  private final BackgroundResource backgroundResources;
+  private final HttpJsonOperationsStub httpJsonOperationsStub;
+  private final HttpJsonStubCallableFactory callableFactory;
+
+  public static final HttpJsonEchoStub create(EchoStubSettings settings) throws IOException {
+    return new HttpJsonEchoStub(settings, ClientContext.create(settings));
+  }
+
+  public static final HttpJsonEchoStub create(ClientContext clientContext) throws IOException {
+    return new HttpJsonEchoStub(EchoStubSettings.newHttpJsonBuilder().build(), clientContext);
+  }
+
+  public static final HttpJsonEchoStub create(
+      ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
+    return new HttpJsonEchoStub(
+        EchoStubSettings.newHttpJsonBuilder().build(), clientContext, callableFactory);
+  }
+
+  /**
+   * Constructs an instance of HttpJsonEchoStub, using the given settings. This is protected so that
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   */
+  protected HttpJsonEchoStub(EchoStubSettings settings, ClientContext clientContext)
+      throws IOException {
+    this(settings, clientContext, new HttpJsonEchoCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of HttpJsonEchoStub, using the given settings. This is protected so that
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   */
+  protected HttpJsonEchoStub(
+      EchoStubSettings settings,
+      ClientContext clientContext,
+      HttpJsonStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost("/v1beta1/{name=operations/**}:cancel")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost("/v1beta2/{name=operations/**}:cancel")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost("/v1beta3/{name=operations/**}:cancel")
+                                .build())
+                        .build())
+                .put(
+                    "google.longrunning.Operations.DeleteOperation",
+                    HttpRule.newBuilder()
+                        .setDelete("/v1beta1/{name=operations/**}")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setDelete("/v1beta2/{name=operations/**}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setDelete("/v1beta3/{name=operations/**}")
+                                .build())
+                        .build())
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v1beta1/{name=operations/**}")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder().setGet("/v1beta2/{name=operations/**}").build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder().setGet("/v1beta3/{name=operations/**}").build())
+                        .build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder()
+                        .setGet("/v1beta1/operations")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder().setGet("/v1beta2/operations").build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder().setGet("/v1beta3/operations").build())
+                        .build())
+                .build());
+
+    HttpJsonCallSettings<EchoRequest, EchoResponse> echoTransportSettings =
+        HttpJsonCallSettings.<EchoRequest, EchoResponse>newBuilder()
+            .setMethodDescriptor(echoMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<ExpandRequest, EchoResponse> expandTransportSettings =
+        HttpJsonCallSettings.<ExpandRequest, EchoResponse>newBuilder()
+            .setMethodDescriptor(expandMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<PagedExpandRequest, PagedExpandResponse> pagedExpandTransportSettings =
+        HttpJsonCallSettings.<PagedExpandRequest, PagedExpandResponse>newBuilder()
+            .setMethodDescriptor(pagedExpandMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<PagedExpandRequest, PagedExpandResponse>
+        simplePagedExpandTransportSettings =
+            HttpJsonCallSettings.<PagedExpandRequest, PagedExpandResponse>newBuilder()
+                .setMethodDescriptor(simplePagedExpandMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<WaitRequest, Operation> waitTransportSettings =
+        HttpJsonCallSettings.<WaitRequest, Operation>newBuilder()
+            .setMethodDescriptor(waitMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<BlockRequest, BlockResponse> blockTransportSettings =
+        HttpJsonCallSettings.<BlockRequest, BlockResponse>newBuilder()
+            .setMethodDescriptor(blockMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<EchoRequest, Object> collideNameTransportSettings =
+        HttpJsonCallSettings.<EchoRequest, Object>newBuilder()
+            .setMethodDescriptor(collideNameMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<EchoRequest, Object> nestedBindingTransportSettings =
+        HttpJsonCallSettings.<EchoRequest, Object>newBuilder()
+            .setMethodDescriptor(nestedBindingMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("foo_bar.name", String.valueOf(request.getFooBar().getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<UpdateCaseRequest, Case> updateCaseTransportSettings =
+        HttpJsonCallSettings.<UpdateCaseRequest, Case>newBuilder()
+            .setMethodDescriptor(updateCaseMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("case.name", String.valueOf(request.getCase().getName()));
+                  return builder.build();
+                })
+            .build();
+
+    this.echoCallable =
+        callableFactory.createUnaryCallable(
+            echoTransportSettings, settings.echoSettings(), clientContext);
+    this.expandCallable =
+        callableFactory.createServerStreamingCallable(
+            expandTransportSettings, settings.expandSettings(), clientContext);
+    this.pagedExpandCallable =
+        callableFactory.createUnaryCallable(
+            pagedExpandTransportSettings, settings.pagedExpandSettings(), clientContext);
+    this.pagedExpandPagedCallable =
+        callableFactory.createPagedCallable(
+            pagedExpandTransportSettings, settings.pagedExpandSettings(), clientContext);
+    this.simplePagedExpandCallable =
+        callableFactory.createUnaryCallable(
+            simplePagedExpandTransportSettings,
+            settings.simplePagedExpandSettings(),
+            clientContext);
+    this.simplePagedExpandPagedCallable =
+        callableFactory.createPagedCallable(
+            simplePagedExpandTransportSettings,
+            settings.simplePagedExpandSettings(),
+            clientContext);
+    this.waitCallable =
+        callableFactory.createUnaryCallable(
+            waitTransportSettings, settings.waitSettings(), clientContext);
+    this.waitOperationCallable =
+        callableFactory.createOperationCallable(
+            waitTransportSettings,
+            settings.waitOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.blockCallable =
+        callableFactory.createUnaryCallable(
+            blockTransportSettings, settings.blockSettings(), clientContext);
+    this.collideNameCallable =
+        callableFactory.createUnaryCallable(
+            collideNameTransportSettings, settings.collideNameSettings(), clientContext);
+    this.nestedBindingCallable =
+        callableFactory.createUnaryCallable(
+            nestedBindingTransportSettings, settings.nestedBindingSettings(), clientContext);
+    this.updateCaseCallable =
+        callableFactory.createUnaryCallable(
+            updateCaseTransportSettings, settings.updateCaseSettings(), clientContext);
+
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(echoMethodDescriptor);
+    methodDescriptors.add(expandMethodDescriptor);
+    methodDescriptors.add(pagedExpandMethodDescriptor);
+    methodDescriptors.add(simplePagedExpandMethodDescriptor);
+    methodDescriptors.add(waitMethodDescriptor);
+    methodDescriptors.add(blockMethodDescriptor);
+    methodDescriptors.add(collideNameMethodDescriptor);
+    methodDescriptors.add(nestedBindingMethodDescriptor);
+    methodDescriptors.add(updateCaseMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  public HttpJsonOperationsStub getHttpJsonOperationsStub() {
+    return httpJsonOperationsStub;
+  }
+
+  @Override
+  public UnaryCallable<EchoRequest, EchoResponse> echoCallable() {
+    return echoCallable;
+  }
+
+  @Override
+  public ServerStreamingCallable<ExpandRequest, EchoResponse> expandCallable() {
+    return expandCallable;
+  }
+
+  @Override
+  public UnaryCallable<PagedExpandRequest, PagedExpandResponse> pagedExpandCallable() {
+    return pagedExpandCallable;
+  }
+
+  @Override
+  public UnaryCallable<PagedExpandRequest, PagedExpandPagedResponse> pagedExpandPagedCallable() {
+    return pagedExpandPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<PagedExpandRequest, PagedExpandResponse> simplePagedExpandCallable() {
+    return simplePagedExpandCallable;
+  }
+
+  @Override
+  public UnaryCallable<PagedExpandRequest, SimplePagedExpandPagedResponse>
+      simplePagedExpandPagedCallable() {
+    return simplePagedExpandPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<WaitRequest, Operation> waitCallable() {
+    return waitCallable;
+  }
+
+  @Override
+  public OperationCallable<WaitRequest, WaitResponse, WaitMetadata> waitOperationCallable() {
+    return waitOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<BlockRequest, BlockResponse> blockCallable() {
+    return blockCallable;
+  }
+
+  @Override
+  public UnaryCallable<EchoRequest, Object> collideNameCallable() {
+    return collideNameCallable;
+  }
+
+  @Override
+  public UnaryCallable<EchoRequest, Object> nestedBindingCallable() {
+    return nestedBindingCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCaseRequest, Case> updateCaseCallable() {
+    return updateCaseCallable;
+  }
+
+  @Override
+  public BidiStreamingCallable<EchoRequest, EchoResponse> chatCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: chatCallable(). REST transport is not implemented for this method yet.");
+  }
+
+  @Override
+  public UnaryCallable<EchoRequest, EchoResponse> noBindingCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: noBindingCallable(). REST transport is not implemented for this method yet.");
+  }
+
+  @Override
+  public final void close() {
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
+  }
+
+  @Override
+  public void shutdown() {
+    backgroundResources.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return backgroundResources.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return backgroundResources.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    backgroundResources.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return backgroundResources.awaitTermination(duration, unit);
+  }
+}

@@ -1,0 +1,316 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.showcase.v1beta1",
+  "libraryPackage": "com.google.showcase.v1beta1",
+  "services": {
+    "Compliance": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ComplianceClient",
+          "rpcs": {
+            "GetEnum": {
+              "methods": ["getEnum", "getEnumCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "RepeatDataBody": {
+              "methods": ["repeatDataBody", "repeatDataBodyCallable"]
+            },
+            "RepeatDataBodyInfo": {
+              "methods": ["repeatDataBodyInfo", "repeatDataBodyInfoCallable"]
+            },
+            "RepeatDataBodyPatch": {
+              "methods": ["repeatDataBodyPatch", "repeatDataBodyPatchCallable"]
+            },
+            "RepeatDataBodyPut": {
+              "methods": ["repeatDataBodyPut", "repeatDataBodyPutCallable"]
+            },
+            "RepeatDataPathResource": {
+              "methods": ["repeatDataPathResource", "repeatDataPathResourceCallable"]
+            },
+            "RepeatDataPathTrailingResource": {
+              "methods": ["repeatDataPathTrailingResource", "repeatDataPathTrailingResourceCallable"]
+            },
+            "RepeatDataQuery": {
+              "methods": ["repeatDataQuery", "repeatDataQueryCallable"]
+            },
+            "RepeatDataSimplePath": {
+              "methods": ["repeatDataSimplePath", "repeatDataSimplePathCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "VerifyEnum": {
+              "methods": ["verifyEnum", "verifyEnumCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Echo": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "EchoClient",
+          "rpcs": {
+            "Block": {
+              "methods": ["block", "blockCallable"]
+            },
+            "Chat": {
+              "methods": ["chatCallable"]
+            },
+            "Collect": {
+              "methods": ["collectCallable"]
+            },
+            "Echo": {
+              "methods": ["echo", "echoCallable"]
+            },
+            "EchoErrorDetails": {
+              "methods": ["echoErrorDetails", "echoErrorDetailsCallable"]
+            },
+            "Expand": {
+              "methods": ["expandCallable"]
+            },
+            "FailEchoWithDetails": {
+              "methods": ["failEchoWithDetails", "failEchoWithDetailsCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "PagedExpand": {
+              "methods": ["pagedExpand", "pagedExpandPagedCallable", "pagedExpandCallable"]
+            },
+            "PagedExpandLegacy": {
+              "methods": ["pagedExpandLegacy", "pagedExpandLegacyCallable"]
+            },
+            "PagedExpandLegacyMapped": {
+              "methods": ["pagedExpandLegacyMapped", "pagedExpandLegacyMappedPagedCallable", "pagedExpandLegacyMappedCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "Wait": {
+              "methods": ["waitAsync", "waitOperationCallable", "waitCallable"]
+            }
+          }
+        }
+      },
+      "apiVersion": "v1_20240408"
+    },
+    "Identity": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "IdentityClient",
+          "rpcs": {
+            "CreateUser": {
+              "methods": ["createUser", "createUser", "createUser", "createUserCallable"]
+            },
+            "DeleteUser": {
+              "methods": ["deleteUser", "deleteUser", "deleteUser", "deleteUserCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetUser": {
+              "methods": ["getUser", "getUser", "getUser", "getUserCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListUsers": {
+              "methods": ["listUsers", "listUsersPagedCallable", "listUsersCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateUser": {
+              "methods": ["updateUser", "updateUserCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Messaging": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "MessagingClient",
+          "rpcs": {
+            "Connect": {
+              "methods": ["connectCallable"]
+            },
+            "CreateBlurb": {
+              "methods": ["createBlurb", "createBlurb", "createBlurb", "createBlurb", "createBlurb", "createBlurb", "createBlurb", "createBlurb", "createBlurb", "createBlurb", "createBlurb", "createBlurb", "createBlurb", "createBlurbCallable"]
+            },
+            "CreateRoom": {
+              "methods": ["createRoom", "createRoom", "createRoomCallable"]
+            },
+            "DeleteBlurb": {
+              "methods": ["deleteBlurb", "deleteBlurb", "deleteBlurb", "deleteBlurbCallable"]
+            },
+            "DeleteRoom": {
+              "methods": ["deleteRoom", "deleteRoom", "deleteRoom", "deleteRoomCallable"]
+            },
+            "GetBlurb": {
+              "methods": ["getBlurb", "getBlurb", "getBlurb", "getBlurbCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetRoom": {
+              "methods": ["getRoom", "getRoom", "getRoom", "getRoomCallable"]
+            },
+            "ListBlurbs": {
+              "methods": ["listBlurbs", "listBlurbs", "listBlurbs", "listBlurbs", "listBlurbsPagedCallable", "listBlurbsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListRooms": {
+              "methods": ["listRooms", "listRoomsPagedCallable", "listRoomsCallable"]
+            },
+            "SearchBlurbs": {
+              "methods": ["searchBlurbsAsync", "searchBlurbsAsync", "searchBlurbsAsync", "searchBlurbsAsync", "searchBlurbsOperationCallable", "searchBlurbsCallable"]
+            },
+            "SendBlurbs": {
+              "methods": ["sendBlurbsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "StreamBlurbs": {
+              "methods": ["streamBlurbsCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateBlurb": {
+              "methods": ["updateBlurb", "updateBlurbCallable"]
+            },
+            "UpdateRoom": {
+              "methods": ["updateRoom", "updateRoomCallable"]
+            }
+          }
+        }
+      }
+    },
+    "SequenceService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SequenceServiceClient",
+          "rpcs": {
+            "AttemptSequence": {
+              "methods": ["attemptSequence", "attemptSequence", "attemptSequence", "attemptSequenceCallable"]
+            },
+            "AttemptStreamingSequence": {
+              "methods": ["attemptStreamingSequenceCallable"]
+            },
+            "CreateSequence": {
+              "methods": ["createSequence", "createSequence", "createSequenceCallable"]
+            },
+            "CreateStreamingSequence": {
+              "methods": ["createStreamingSequence", "createStreamingSequence", "createStreamingSequenceCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetSequenceReport": {
+              "methods": ["getSequenceReport", "getSequenceReport", "getSequenceReport", "getSequenceReportCallable"]
+            },
+            "GetStreamingSequenceReport": {
+              "methods": ["getStreamingSequenceReport", "getStreamingSequenceReport", "getStreamingSequenceReport", "getStreamingSequenceReportCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Testing": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TestingClient",
+          "rpcs": {
+            "CreateSession": {
+              "methods": ["createSession", "createSessionCallable"]
+            },
+            "DeleteSession": {
+              "methods": ["deleteSession", "deleteSessionCallable"]
+            },
+            "DeleteTest": {
+              "methods": ["deleteTest", "deleteTestCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetSession": {
+              "methods": ["getSession", "getSessionCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListSessions": {
+              "methods": ["listSessions", "listSessionsPagedCallable", "listSessionsCallable"]
+            },
+            "ListTests": {
+              "methods": ["listTests", "listTestsPagedCallable", "listTestsCallable"]
+            },
+            "ReportSession": {
+              "methods": ["reportSession", "reportSessionCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "VerifyTest": {
+              "methods": ["verifyTest", "verifyTestCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

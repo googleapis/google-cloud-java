@@ -62,7 +62,12 @@ import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
 
+// same thread execution temporarily required for using java system properties will get removed in
+// issue https://github.com/googleapis/google-cloud-java/issues/12100
+@Execution(ExecutionMode.SAME_THREAD)
 public class HttpBigQueryRpcTest {
 
   private static final String PROJECT_ID = "test-project";
@@ -196,6 +201,7 @@ public class HttpBigQueryRpcTest {
     @BeforeEach
     public void setUp() {
       setUpServer();
+      System.setProperty("com.google.cloud.bigquery.http.tracing.dev.enabled", "true");
       rpc = createRpc(true);
     }
 
@@ -911,88 +917,186 @@ public class HttpBigQueryRpcTest {
 
     @Test
     public void testHttpTracingEnabledAddsAdditionalAttributes() throws Exception {
-      try {
-        System.setProperty("com.google.cloud.bigquery.http.tracing.dev.enabled", "true");
-        HttpBigQueryRpc customRpc = createRpc(true);
+      setMockResponse(
+          "{\"kind\":\"bigquery#dataset\",\"id\":\""
+              + PROJECT_ID
+              + ":"
+              + DATASET_ID
+              + "\",\"datasetReference\":{\"projectId\":\""
+              + PROJECT_ID
+              + "\",\"datasetId\":\""
+              + DATASET_ID
+              + "\"}}");
 
-        setMockResponse(
-            "{\"kind\":\"bigquery#dataset\",\"id\":\""
-                + PROJECT_ID
-                + ":"
-                + DATASET_ID
-                + "\",\"datasetReference\":{\"projectId\":\""
-                + PROJECT_ID
-                + "\",\"datasetId\":\""
-                + DATASET_ID
-                + "\"}}");
+      rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
 
-        customRpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
+      verifyRequest("GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID);
+      verifySpan(
+          "com.google.cloud.bigquery.BigQueryRpc.getDataset",
+          "DatasetService",
+          "GetDataset",
+          Collections.singletonMap("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID));
 
-        verifyRequest("GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID);
-        verifySpan(
-            "com.google.cloud.bigquery.BigQueryRpc.getDataset",
-            "DatasetService",
-            "GetDataset",
-            Collections.singletonMap("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID));
+      List<SpanData> spans = spanExporter.getFinishedSpanItems();
+      assertThat(spans).isNotEmpty();
+      SpanData rpcSpan =
+          spans.stream()
+              .filter(
+                  span -> span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
+              .findFirst()
+              .orElse(null);
+      assertNotNull(rpcSpan);
+      assertEquals("http", rpcSpan.getAttributes().get(BigQueryTelemetryTracer.RPC_SYSTEM_NAME));
+      assertNotNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_SERVICE));
+    }
 
-        List<SpanData> spans = spanExporter.getFinishedSpanItems();
-        assertThat(spans).isNotEmpty();
-        SpanData rpcSpan =
-            spans.stream()
-                .filter(
-                    span ->
-                        span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
-                .findFirst()
-                .orElse(null);
-        assertNotNull(rpcSpan);
-        assertEquals("http", rpcSpan.getAttributes().get(BigQueryTelemetryTracer.RPC_SYSTEM_NAME));
-        assertNotNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_SERVICE));
-      } finally {
-        System.clearProperty("com.google.cloud.bigquery.http.tracing.dev.enabled");
-      }
+    @Test
+    public void testHttpTracingEnabled_GenericException_SetsAttributes() throws Exception {
+      assertThrows(
+          IOException.class,
+          () -> {
+            rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
+          });
+
+      List<SpanData> spans = spanExporter.getFinishedSpanItems();
+      assertThat(spans).isNotEmpty();
+      SpanData rpcSpan =
+          spans.stream()
+              .filter(
+                  span -> span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
+              .findFirst()
+              .orElse(null);
+      assertNotNull(rpcSpan);
+      assertEquals(
+          "java.io.IOException",
+          rpcSpan.getAttributes().get(BigQueryTelemetryTracer.EXCEPTION_TYPE));
+      assertEquals(
+          "CLIENT_UNKNOWN_ERROR", rpcSpan.getAttributes().get(BigQueryTelemetryTracer.ERROR_TYPE));
+    }
+
+    @Test
+    public void testHttpTracingEnabled_JsonResponseException_SetsAttributes() throws Exception {
+      mockResponse.setStatusCode(400);
+      mockResponse.setContentType(Json.MEDIA_TYPE);
+      mockResponse.setContent(
+          "{\"error\":{\"code\":400,\"message\":\"Invalid request\",\"errors\":[{\"message\":\"Invalid request\",\"domain\":\"global\",\"reason\":\"invalid\"}]}}");
+
+      assertThrows(
+          IOException.class,
+          () -> {
+            rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
+          });
+
+      List<SpanData> spans = spanExporter.getFinishedSpanItems();
+      assertThat(spans).isNotEmpty();
+      SpanData rpcSpan =
+          spans.stream()
+              .filter(
+                  span -> span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
+              .findFirst()
+              .orElse(null);
+      assertNotNull(rpcSpan);
+      assertEquals("invalid", rpcSpan.getAttributes().get(BigQueryTelemetryTracer.ERROR_TYPE));
+      assertEquals(
+          "Invalid request", rpcSpan.getAttributes().get(BigQueryTelemetryTracer.STATUS_MESSAGE));
+      assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.EXCEPTION_TYPE));
+    }
+  }
+
+  @Nested
+  class TelemetryEnabledDevDisabled {
+    private HttpBigQueryRpc rpc;
+
+    @BeforeEach
+    public void setUp() {
+      setUpServer();
+      System.clearProperty("com.google.cloud.bigquery.http.tracing.dev.enabled");
+      rpc = createRpc(true);
     }
 
     @Test
     public void testHttpTracingDisabledDoesNotAddAdditionalAttributes() throws Exception {
-      try {
-        System.setProperty("com.google.cloud.bigquery.http.tracing.dev.enabled", "false");
-        HttpBigQueryRpc customRpc = createRpc(true);
+      setMockResponse(
+          "{\"kind\":\"bigquery#dataset\",\"id\":\""
+              + PROJECT_ID
+              + ":"
+              + DATASET_ID
+              + "\",\"datasetReference\":{\"projectId\":\""
+              + PROJECT_ID
+              + "\",\"datasetId\":\""
+              + DATASET_ID
+              + "\"}}");
 
-        setMockResponse(
-            "{\"kind\":\"bigquery#dataset\",\"id\":\""
-                + PROJECT_ID
-                + ":"
-                + DATASET_ID
-                + "\",\"datasetReference\":{\"projectId\":\""
-                + PROJECT_ID
-                + "\",\"datasetId\":\""
-                + DATASET_ID
-                + "\"}}");
+      rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
 
-        customRpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
+      verifyRequest("GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID);
+      verifySpan(
+          "com.google.cloud.bigquery.BigQueryRpc.getDataset",
+          "DatasetService",
+          "GetDataset",
+          Collections.singletonMap("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID));
 
-        verifyRequest("GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID);
-        verifySpan(
-            "com.google.cloud.bigquery.BigQueryRpc.getDataset",
-            "DatasetService",
-            "GetDataset",
-            Collections.singletonMap("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID));
+      List<SpanData> spans = spanExporter.getFinishedSpanItems();
+      assertThat(spans).isNotEmpty();
+      SpanData rpcSpan =
+          spans.stream()
+              .filter(
+                  span -> span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
+              .findFirst()
+              .orElse(null);
+      assertNotNull(rpcSpan);
+      assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.RPC_SYSTEM_NAME));
+      assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_SERVICE));
+    }
 
-        List<SpanData> spans = spanExporter.getFinishedSpanItems();
-        assertThat(spans).isNotEmpty();
-        SpanData rpcSpan =
-            spans.stream()
-                .filter(
-                    span ->
-                        span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
-                .findFirst()
-                .orElse(null);
-        assertNotNull(rpcSpan);
-        assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.RPC_SYSTEM_NAME));
-        assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_SERVICE));
-      } finally {
-        System.clearProperty("com.google.cloud.bigquery.http.tracing.dev.enabled");
-      }
+    @Test
+    public void testHttpTracingDisabled_GenericException_DoesNotSetAttributes() throws Exception {
+      assertThrows(
+          IOException.class,
+          () -> {
+            rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
+          });
+
+      List<io.opentelemetry.sdk.trace.data.SpanData> spans = spanExporter.getFinishedSpanItems();
+      assertThat(spans).isNotEmpty();
+      io.opentelemetry.sdk.trace.data.SpanData rpcSpan =
+          spans.stream()
+              .filter(
+                  span -> span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
+              .findFirst()
+              .orElse(null);
+      assertNotNull(rpcSpan);
+      assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.EXCEPTION_TYPE));
+      assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.ERROR_TYPE));
+      assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.STATUS_MESSAGE));
+    }
+
+    @Test
+    public void testHttpTracingDisabled_GoogleJsonResponseException_DoesNotSetAttributes()
+        throws Exception {
+      mockResponse.setStatusCode(400);
+      mockResponse.setContentType(Json.MEDIA_TYPE);
+      mockResponse.setContent(
+          "{\"error\":{\"code\":400,\"message\":\"Invalid request\",\"errors\":[{\"message\":\"Invalid request\",\"domain\":\"global\",\"reason\":\"invalid\"}]}}");
+
+      assertThrows(
+          IOException.class,
+          () -> {
+            rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
+          });
+
+      List<io.opentelemetry.sdk.trace.data.SpanData> spans = spanExporter.getFinishedSpanItems();
+      assertThat(spans).isNotEmpty();
+      io.opentelemetry.sdk.trace.data.SpanData rpcSpan =
+          spans.stream()
+              .filter(
+                  span -> span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
+              .findFirst()
+              .orElse(null);
+      assertNotNull(rpcSpan);
+      assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.EXCEPTION_TYPE));
+      assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.ERROR_TYPE));
+      assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.STATUS_MESSAGE));
     }
   }
 
@@ -1003,6 +1107,7 @@ public class HttpBigQueryRpcTest {
     @BeforeEach
     public void setUp() {
       setUpServer();
+      System.clearProperty("com.google.cloud.bigquery.http.tracing.dev.enabled");
       rpc = createRpc(false);
     }
 
@@ -1542,6 +1647,21 @@ public class HttpBigQueryRpcTest {
               + "/tables/"
               + TABLE_ID
               + ":testIamPermissions");
+      verifyNoSpans();
+    }
+
+    @Test
+    public void testExecuteWithSpan_IgnoresHttpResponseException() throws Exception {
+      setMockResponse("");
+      mockResponse.setStatusCode(404);
+
+      try {
+        rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
+        org.junit.jupiter.api.Assertions.fail("Expected HttpResponseException was not thrown");
+      } catch (com.google.api.client.http.HttpResponseException e) {
+        assertEquals(404, e.getStatusCode());
+      }
+
       verifyNoSpans();
     }
   }

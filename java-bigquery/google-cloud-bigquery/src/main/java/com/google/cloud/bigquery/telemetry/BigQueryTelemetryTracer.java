@@ -16,10 +16,13 @@
 
 package com.google.cloud.bigquery.telemetry;
 
+import com.google.api.client.googleapis.json.GoogleJsonError;
+import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.StatusCode;
 
 /** BigQuery Telemetry class that stores generic telemetry attributes and values */
 @BetaApi
@@ -67,7 +70,58 @@ public final class BigQueryTelemetryTracer {
     span.setAttribute(GCP_CLIENT_SERVICE, BQ_GCP_CLIENT_SERVICE)
         .setAttribute(GCP_CLIENT_REPO, BQ_GCP_CLIENT_REPO)
         .setAttribute(GCP_CLIENT_ARTIFACT, BQ_GCP_CLIENT_ARTIFACT)
-        .setAttribute(GCP_CLIENT_LANGUAGE, BQ_GCP_CLIENT_LANGUAGE);
-    // TODO: add version
+        .setAttribute(GCP_CLIENT_LANGUAGE, BQ_GCP_CLIENT_LANGUAGE)
+        .setAttribute(GCP_CLIENT_VERSION, Version.VERSION);
+  }
+
+  /**
+   * Adds the following error attributes to trace span: STATUS_MESSAGE: the name of the exception +
+   * message if available EXCEPTION_TYPE: full name of exception ex: java.net.UnknownHostException
+   * ERROR_TYPE: mapped string based on {@link ErrorTypeUtil#getClientErrorType(Exception)}
+   */
+  public static void addExceptionToSpan(Exception e, Span span) {
+    span.recordException(e);
+    String message = e.getMessage();
+    String simpleName = e.getClass().getSimpleName();
+    String statusMessage = simpleName + (message != null ? ": " + message : "");
+    span.setAttribute(BigQueryTelemetryTracer.EXCEPTION_TYPE, e.getClass().getName());
+    span.setAttribute(
+        BigQueryTelemetryTracer.ERROR_TYPE, ErrorTypeUtil.getClientErrorType(e).toString());
+    span.setAttribute(BigQueryTelemetryTracer.STATUS_MESSAGE, statusMessage);
+    span.setStatus(StatusCode.ERROR, statusMessage);
+  }
+
+  /**
+   * Adds the following error attributes to trace span from GoogleJsonResponseException:
+   * STATUS_MESSAGE: user readable error message ERROR_TYPE: reason if available otherwise the
+   * status code
+   */
+  public static void addServerErrorResponseToSpan(
+      GoogleJsonResponseException errorResponse, Span span) {
+    span.setStatus(StatusCode.ERROR);
+    // set default values in case details aren't available below
+    if (errorResponse.getDetails() != null) {
+      span.setAttribute(
+          BigQueryTelemetryTracer.STATUS_MESSAGE, errorResponse.getDetails().getMessage());
+    } else {
+      span.setAttribute(BigQueryTelemetryTracer.STATUS_MESSAGE, errorResponse.getStatusMessage());
+    }
+    span.setAttribute(
+        BigQueryTelemetryTracer.ERROR_TYPE, Integer.toString(errorResponse.getStatusCode()));
+
+    // reads error details from GoogleJsonResponseException and override any available error details
+    if (errorResponse.getDetails() != null
+        && errorResponse.getDetails().getErrors() != null
+        && !errorResponse.getDetails().getErrors().isEmpty()) {
+      GoogleJsonError.ErrorInfo errorInfo = errorResponse.getDetails().getErrors().get(0);
+      String message = errorInfo.getMessage();
+      if (message != null) {
+        span.setAttribute(BigQueryTelemetryTracer.STATUS_MESSAGE, message);
+      }
+      String reason = errorInfo.getReason();
+      if (reason != null) {
+        span.setAttribute(BigQueryTelemetryTracer.ERROR_TYPE, reason);
+      }
+    }
   }
 }

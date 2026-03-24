@@ -1,0 +1,43 @@
+package com.google.showcase.v1beta1;
+
+import com.google.api.core.BetaApi;
+import com.google.api.gax.grpc.testing.MockGrpcService;
+import com.google.protobuf.AbstractMessage;
+import io.grpc.ServerServiceDefinition;
+import java.util.List;
+import javax.annotation.Generated;
+
+@BetaApi
+@Generated("by gapic-generator-java")
+public class MockEcho implements MockGrpcService {
+  private final MockEchoImpl serviceImpl;
+
+  public MockEcho() {
+    serviceImpl = new MockEchoImpl();
+  }
+
+  @Override
+  public List<AbstractMessage> getRequests() {
+    return serviceImpl.getRequests();
+  }
+
+  @Override
+  public void addResponse(AbstractMessage response) {
+    serviceImpl.addResponse(response);
+  }
+
+  @Override
+  public void addException(Exception exception) {
+    serviceImpl.addException(exception);
+  }
+
+  @Override
+  public ServerServiceDefinition getServiceDefinition() {
+    return serviceImpl.bindService();
+  }
+
+  @Override
+  public void reset() {
+    serviceImpl.reset();
+  }
+}

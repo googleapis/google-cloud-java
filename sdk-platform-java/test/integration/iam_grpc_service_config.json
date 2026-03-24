@@ -1,0 +1,21 @@
+{
+  "methodConfig": [
+    {
+      "name": [
+        {
+          "service": "google.iam.v1.IAMPolicy"
+        }
+      ],
+      "timeout": "10s",
+      "retryPolicy": {
+        "maxAttempts": 5,
+        "initialBackoff": "0.5s",
+        "maxBackoff": "10s",
+        "backoffMultiplier": 2.0,
+        "retryableStatusCodes": [
+          "UNAVAILABLE"
+        ]
+      }
+    }
+  ]
+}

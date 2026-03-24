@@ -43,10 +43,12 @@ case ${JOB_TYPE} in
       install_modules "${BUILD_SUBDIR}"
       echo "Running in subdir: ${BUILD_SUBDIR}"
       pushd "${BUILD_SUBDIR}"
+    else
+      install_modules "sdk-platform-java"
     fi
     echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
     retry_with_backoff 3 10 \
-      mvn test \
+      mvn install \
         -B -ntp \
         -Dorg.slf4j.simpleLogger.showDateTime=true \
         -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
@@ -56,7 +58,8 @@ case ${JOB_TYPE} in
         -Dflatten.skip=true \
         -Danimal.sniffer.skip=true \
         -Dmaven.wagon.http.retryHandler.count=5 \
-        -T 1C ${SUREFIRE_JVM_OPT}
+        --also-make \
+         ${SUREFIRE_JVM_OPT}
     RETURN_CODE=$?
 
     if [[ -n "${BUILD_SUBDIR}" ]]
@@ -117,6 +120,7 @@ case ${JOB_TYPE} in
       echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
       echo "INTEGRATION_TEST_ARGS: ${INTEGRATION_TEST_ARGS}"
       mvn verify -Penable-integration-tests \
+        --also-make \
         ${INTEGRATION_TEST_ARGS} \
         -B -ntp -fae \
         -DtrimStackTrace=false \
@@ -175,6 +179,7 @@ case ${JOB_TYPE} in
       pushd "${BUILD_SUBDIR}"
       echo "INTEGRATION_TEST_ARGS: ${INTEGRATION_TEST_ARGS}"
       mvn test -Pnative \
+        --also-make \
         ${INTEGRATION_TEST_ARGS} \
         -B -ntp -fae \
         -DtrimStackTrace=false \
@@ -243,10 +248,14 @@ case ${JOB_TYPE} in
                     # - proto-*/grpc-* are generated code and should use the compiler format
                     # - *-bom/parents are POM-only and contain no Java source
                     if [[ "${dir}" != *"samples"* ]] && \
+                       [[ "${dir}" != *"java-showcase"* ]] && \
                        [[ "$(basename "${dir}")" != "proto-google-"* ]] && \
                        [[ "$(basename "${dir}")" != "grpc-google-"* ]] && \
                        [[ "$(basename "${dir}")" != *"-bom" ]] && \
                        [[ "$(basename "${dir}")" != "google-cloud-pom-parent" ]] && \
+                       [[ "$(basename "${dir}")" != "dependency-analyzer" ]] && \
+                       [[ "$(basename "${dir}")" != "dependency-convergence-check" ]] && \
+                       [[ "$(basename "${dir}")" != "unmanaged-dependency-check" ]] && \
                        [[ "$(basename "${dir}")" != "google-cloud-jar-parent" ]]; then
 
                         changed_modules+=("${dir}")

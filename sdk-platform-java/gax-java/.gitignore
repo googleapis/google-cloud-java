@@ -1,0 +1,25 @@
+# Build results
+bin
+build
+.gradle
+tmp_docs
+bazel-*
+target
+
+# Eclipse
+.apt_generated*
+.classpath
+.factorypath
+.project
+.settings
+
+# IntelliJ
+.idea
+.ijwb
+*.iml
+out
+
+# Vim.
+*.sw*
+*.vim
+
