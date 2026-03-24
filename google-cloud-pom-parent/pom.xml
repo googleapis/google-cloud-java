@@ -93,6 +93,7 @@
                 </goals>
                 <configuration>
                   <headerLocation>${checkstyle.header.file}</headerLocation>
+                  <skip>${checkstyle.skip}</skip>
                 </configuration>
               </execution>
             </executions>
