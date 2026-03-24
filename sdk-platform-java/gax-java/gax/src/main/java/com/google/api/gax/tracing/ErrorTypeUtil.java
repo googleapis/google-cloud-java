@@ -61,11 +61,6 @@ public class ErrorTypeUtil {
     /** Placeholder for potential future unknown errors. */
     CLIENT_UNKNOWN_ERROR,
     INTERNAL;
-
-    @Override
-    public String toString() {
-      return name();
-    }
   }
 
   private static final Set<Class<? extends Throwable>> AUTHENTICATION_EXCEPTION_CLASSES =
