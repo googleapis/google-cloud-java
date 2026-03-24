@@ -1,5 +1,32 @@
 # Changelog
 
+## [2.75.0](https://github.com/googleapis/java-bigtable/compare/v2.74.0...v2.75.0) (2026-03-24)
+
+
+### Features
+
+* Expose generated GAPIC instance admin client ([#2828](https://github.com/googleapis/java-bigtable/issues/2828)) ([7c42799](https://github.com/googleapis/java-bigtable/commit/7c42799d45dbefb172c567ab6242f2a6f27a1eba))
+
+
+### Bug Fixes
+
+* **bigtable:** Add gauge handling ([#2830](https://github.com/googleapis/java-bigtable/issues/2830)) ([915733b](https://github.com/googleapis/java-bigtable/commit/915733bbaf21626c87bb868070087c382ba0932e))
+* **bigtable:** Plumb transport type correctly ([#2824](https://github.com/googleapis/java-bigtable/issues/2824)) ([d25f39c](https://github.com/googleapis/java-bigtable/commit/d25f39c1f46263bd635731aa37ba71374c64c31c))
+* Fix automated backup ([#2844](https://github.com/googleapis/java-bigtable/issues/2844)) ([5dc6829](https://github.com/googleapis/java-bigtable/commit/5dc68297dc1f002cb527a710443d5c208d712bc1))
+* Fix race in emulator controller ([#2836](https://github.com/googleapis/java-bigtable/issues/2836)) ([17707be](https://github.com/googleapis/java-bigtable/commit/17707be3f4bfede9e4541d00350c400de937e3b6))
+* Use all known headers to detect connectivity errors ([#2841](https://github.com/googleapis/java-bigtable/issues/2841)) ([6466166](https://github.com/googleapis/java-bigtable/commit/6466166b417c9a5052c512f38047a7fac19b5d75))
+
+
+### Dependencies
+
+* Update shared dependencies ([#2850](https://github.com/googleapis/java-bigtable/issues/2850)) ([fb437e0](https://github.com/googleapis/java-bigtable/commit/fb437e074ee328d57c00807d4afcaf26dd78aea7))
+
+
+### Documentation
+
+* **bigtable:** Expose Admin API Stubs in Javadoc ([#2835](https://github.com/googleapis/java-bigtable/issues/2835)) ([b7a0232](https://github.com/googleapis/java-bigtable/commit/b7a0232b1cf9639f5c529240482a99c94d950931))
+* **bigtable:** Expose Base Admin Clients in Javadoc ([#2833](https://github.com/googleapis/java-bigtable/issues/2833)) ([2933ef6](https://github.com/googleapis/java-bigtable/commit/2933ef6419ec6ec6e3220a6bab03bb0c2cf7cd0d))
+
 ## [2.74.0](https://github.com/googleapis/java-bigtable/compare/v2.73.1...v2.74.0) (2026-03-02)
 
 
