@@ -1,0 +1,47 @@
+# Copyright 2024 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+timeout: 7200s # 2 hours
+substitutions:
+  _SHARED_DEPENDENCIES_VERSION: '3.30.1-SNAPSHOT' # {x-version-update:google-cloud-shared-dependencies:current}
+  _JAVA_SHARED_CONFIG_VERSION: '1.17.0'
+options:
+  machineType: 'E2_HIGHCPU_8'
+  logging: CLOUD_LOGGING_ONLY
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args: [
+      "build",
+      "-t", "gcr.io/cloud-devrel-public-resources/graalvm_sdk_platform_b:${_SHARED_DEPENDENCIES_VERSION}",
+      "--file", "graalvm_b.Dockerfile",
+      "--build-arg", "JAVA_SHARED_CONFIG_VERSION=$_JAVA_SHARED_CONFIG_VERSION",
+      "."
+    ]
+    dir: .cloudbuild/graalvm
+    id: graalvm-b-build
+    waitFor: ["-"]
+
+  - name: gcr.io/cloud-devrel-public-resources/graalvm_sdk_platform_b:${_SHARED_DEPENDENCIES_VERSION}
+    waitFor: [ "graalvm-b-build" ]
+    entrypoint: java
+    args: [ '-version' ]
+    id: java-version
+
+  - name: gcr.io/cloud-devrel-public-resources/graalvm_sdk_platform_b:${_SHARED_DEPENDENCIES_VERSION}
+    entrypoint: bash
+    args: [ './.kokoro/presubmit/downstream-build.sh' ]
+    waitFor: [ "graalvm-b-build" ]
+    env:
+      - 'MODULES_UNDER_TEST=java-kms'
+      - 'GOOGLE_CLOUD_PROJECT=java-graalvm-ci-prod'

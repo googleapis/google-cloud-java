@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+package google.extractor.testing;
+
+option java_multiple_files = true;
+option java_outer_classname = "ResourceNameExtractorTestingOuterClass";
+option java_package = "com.google.extractor.testing";
+
+import "google/api/annotations.proto";
+import "google/api/client.proto";
+import "google/api/resource.proto";
+
+service ResourceNameExtractorTesting {
+  option (google.api.default_host) = "extractor.googleapis.com";
+
+  rpc GetFoo(GetFooRequest) returns (Foo) {
+    option (google.api.http) = {
+      get: "/v1/{name=projects/*/locations/*/foos/*}"
+    };
+    option (google.api.method_signature) = "name";
+  }
+
+  rpc GetBar(GetBarRequest) returns (Bar) {
+    option (google.api.http) = {
+      get: "/v1/{bar=projects/*/locations/*/bars/*}"
+    };
+    option (google.api.method_signature) = "bar";
+  }
+
+  rpc ListFoos(ListFoosRequest) returns (ListFoosResponse) {
+    option (google.api.http) = {
+      get: "/v1/{parent=projects/*/locations/*}/foos"
+    };
+    option (google.api.method_signature) = "parent";
+  }
+}
+
+message Foo {
+  option (google.api.resource) = {
+    type: "extractor.googleapis.com/Foo"
+    pattern: "projects/{project}/locations/{location}/foos/{foo}"
+  };
+  string name = 1;
+}
+
+message Bar {
+  string name = 1;
+}
+
+message GetFooRequest {
+  string name = 1 [
+    (google.api.resource_reference) = {
+      type: "extractor.googleapis.com/Foo"
+    }
+  ];
+}
+
+message GetBarRequest {
+  string bar = 1;
+}
+message ListFoosRequest {
+  string parent = 1 [
+    (google.api.resource_reference) = {
+      child_type: "extractor.googleapis.com/Foo"
+    }
+  ];
+}
+
+message ListFoosResponse {
+  repeated Foo foos = 1;
+}

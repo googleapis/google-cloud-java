@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <!-- Add AutoValue abstract method isDirectPath -->
+  <difference>
+    <differenceType>7013</differenceType>
+    <className>com/google/api/gax/grpc/GrpcTransportChannel</className>
+    <method>boolean isDirectPath()</method>
+  </difference>
+</differences>

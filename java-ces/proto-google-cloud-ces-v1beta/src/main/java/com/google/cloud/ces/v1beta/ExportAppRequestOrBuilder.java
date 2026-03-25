@@ -117,4 +117,38 @@ public interface ExportAppRequestOrBuilder
    * @return The bytes for gcsUri.
    */
   com.google.protobuf.ByteString getGcsUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the app version to export.
+   * Format:
+   * `projects/{project}/locations/{location}/apps/{app}/versions/{version}`.
+   * </pre>
+   *
+   * <code>
+   * string app_version = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The appVersion.
+   */
+  java.lang.String getAppVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the app version to export.
+   * Format:
+   * `projects/{project}/locations/{location}/apps/{app}/versions/{version}`.
+   * </pre>
+   *
+   * <code>
+   * string app_version = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for appVersion.
+   */
+  com.google.protobuf.ByteString getAppVersionBytes();
 }

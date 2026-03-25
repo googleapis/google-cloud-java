@@ -1,0 +1,45 @@
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+name: java-spanner integration-tests-against-emulator
+jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'java-spanner/**'
+  units:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-latest
+
+    services:
+      emulator:
+        image: gcr.io/cloud-spanner-emulator/emulator:latest
+        ports:
+          - 9010:9010
+          - 9020:9020
+
+    steps:
+    - uses: actions/checkout@v6
+    - uses: actions/setup-java@v5
+      with:
+        distribution: temurin
+        java-version: 11
+    - name: Running tests
+      run: .kokoro/build.sh
+      env:
+        JOB_TYPE: test
+        BUILD_SUBDIR: java-spanner
+        SPANNER_EMULATOR_HOST: localhost:9010
+        GOOGLE_CLOUD_PROJECT: emulator-test-project
+        SUREFIRE_JVM_OPT: '-Penable-integration-tests -DskipUnitTests=true -Dspanner.testenv.instance="" -Dmaven.main.skip=true'

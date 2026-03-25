@@ -1244,6 +1244,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-spanner-bom</artifactId>
+        <version>6.112.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanner:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-spanneradapter-bom</artifactId>
         <version>0.25.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanneradapter:current} -->
         <type>pom</type>

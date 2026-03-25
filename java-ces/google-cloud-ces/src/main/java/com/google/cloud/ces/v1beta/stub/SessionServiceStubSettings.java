@@ -40,6 +40,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.StubSettings;
@@ -125,6 +126,8 @@ public class SessionServiceStubSettings extends StubSettings<SessionServiceStubS
           .build();
 
   private final UnaryCallSettings<RunSessionRequest, RunSessionResponse> runSessionSettings;
+  private final ServerStreamingCallSettings<RunSessionRequest, RunSessionResponse>
+      streamRunSessionSettings;
   private final StreamingCallSettings<BidiSessionClientMessage, BidiSessionServerMessage>
       bidiRunSessionSettings;
   private final PagedCallSettings<
@@ -186,6 +189,12 @@ public class SessionServiceStubSettings extends StubSettings<SessionServiceStubS
   /** Returns the object with the settings used for calls to runSession. */
   public UnaryCallSettings<RunSessionRequest, RunSessionResponse> runSessionSettings() {
     return runSessionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to streamRunSession. */
+  public ServerStreamingCallSettings<RunSessionRequest, RunSessionResponse>
+      streamRunSessionSettings() {
+    return streamRunSessionSettings;
   }
 
   /** Returns the object with the settings used for calls to bidiRunSession. */
@@ -317,6 +326,7 @@ public class SessionServiceStubSettings extends StubSettings<SessionServiceStubS
     super(settingsBuilder);
 
     runSessionSettings = settingsBuilder.runSessionSettings().build();
+    streamRunSessionSettings = settingsBuilder.streamRunSessionSettings().build();
     bidiRunSessionSettings = settingsBuilder.bidiRunSessionSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
@@ -335,6 +345,8 @@ public class SessionServiceStubSettings extends StubSettings<SessionServiceStubS
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<RunSessionRequest, RunSessionResponse>
         runSessionSettings;
+    private final ServerStreamingCallSettings.Builder<RunSessionRequest, RunSessionResponse>
+        streamRunSessionSettings;
     private final StreamingCallSettings.Builder<BidiSessionClientMessage, BidiSessionServerMessage>
         bidiRunSessionSettings;
     private final PagedCallSettings.Builder<
@@ -350,12 +362,12 @@ public class SessionServiceStubSettings extends StubSettings<SessionServiceStubS
       definitions.put(
           "retry_policy_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
-          "retry_policy_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "retry_policy_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -380,23 +392,23 @@ public class SessionServiceStubSettings extends StubSettings<SessionServiceStubS
               .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
-              .setInitialRpcTimeoutDuration(Duration.ofMillis(3600000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeoutDuration(Duration.ofMillis(3600000L))
-              .setTotalTimeoutDuration(Duration.ofMillis(3600000L))
-              .build();
-      definitions.put("retry_policy_2_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
               .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(3600000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(3600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(3600000L))
+              .build();
+      definitions.put("retry_policy_2_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -408,6 +420,7 @@ public class SessionServiceStubSettings extends StubSettings<SessionServiceStubS
       super(clientContext);
 
       runSessionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      streamRunSessionSettings = ServerStreamingCallSettings.newBuilder();
       bidiRunSessionSettings = StreamingCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -422,6 +435,7 @@ public class SessionServiceStubSettings extends StubSettings<SessionServiceStubS
       super(settings);
 
       runSessionSettings = settings.runSessionSettings.toBuilder();
+      streamRunSessionSettings = settings.streamRunSessionSettings.toBuilder();
       bidiRunSessionSettings = settings.bidiRunSessionSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
@@ -462,6 +476,11 @@ public class SessionServiceStubSettings extends StubSettings<SessionServiceStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
+          .streamRunSessionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -492,6 +511,12 @@ public class SessionServiceStubSettings extends StubSettings<SessionServiceStubS
     /** Returns the builder for the settings used for calls to runSession. */
     public UnaryCallSettings.Builder<RunSessionRequest, RunSessionResponse> runSessionSettings() {
       return runSessionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to streamRunSession. */
+    public ServerStreamingCallSettings.Builder<RunSessionRequest, RunSessionResponse>
+        streamRunSessionSettings() {
+      return streamRunSessionSettings;
     }
 
     /** Returns the builder for the settings used for calls to bidiRunSession. */

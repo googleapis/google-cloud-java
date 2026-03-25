@@ -15,8 +15,8 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>sdk-platform-java-config</artifactId>
-    <version>3.58.0</version>
-    <relativePath/>
+    <version>3.58.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
+    <relativePath>../sdk-platform-java/sdk-platform-java-config</relativePath>
   </parent>
 
   <properties>

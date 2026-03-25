@@ -400,4 +400,30 @@ public interface IntentOrBuilder
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Matching DTMF pattern for the intent.
+   * </pre>
+   *
+   * <code>string dtmf_pattern = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The dtmfPattern.
+   */
+  java.lang.String getDtmfPattern();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Matching DTMF pattern for the intent.
+   * </pre>
+   *
+   * <code>string dtmf_pattern = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for dtmfPattern.
+   */
+  com.google.protobuf.ByteString getDtmfPatternBytes();
 }
