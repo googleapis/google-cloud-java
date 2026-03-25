@@ -73,7 +73,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          mvn -B verify -PquickBuild \
+          mvn -B verify -Pquick-build \
               -DenableFullTestCoverage \
               -Penable-integration-tests \
               org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
@@ -85,7 +85,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          mvn -B clean verify -PquickBuild \
+          mvn -B clean verify -Pquick-build \
               -DskipUnitTests \
               -Penable-integration-tests \
               -DenableShowcaseTestCoverage \

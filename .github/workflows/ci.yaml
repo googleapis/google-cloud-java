@@ -158,7 +158,7 @@ jobs:
       run: |
         mvn test \
           -B -ntp \
-          -PquickBuild \
+          -Pquick-build \
           -Dorg.slf4j.simpleLogger.showDateTime=true \
           -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
           -Dmaven.wagon.http.retryHandler.count=5 \
@@ -216,7 +216,7 @@ jobs:
     - run: java -version
     - name: Install Maven modules to local Maven repository
       run: |
-        mvn install -B -ntp -T 1C -PquickBuild -DskipTests
+        mvn install -B -ntp -T 1C -Pquick-build -DskipTests
     - run: java -version
     - run: mvn -B -ntp enforcer:enforce@enforce -T 1C
   gapic-libraries-bom:
@@ -230,7 +230,7 @@ jobs:
         cache: maven
     - name: Install Maven modules to local Maven repository
       run: |
-        mvn install -B -ntp -T 1C -PquickBuild -DskipTests
+        mvn install -B -ntp -T 1C -Pquick-build -DskipTests
     - name: Validate gapic-libraries-bom
       uses: googleapis/java-cloud-bom/tests/validate-bom@v26.54.0
       with:
