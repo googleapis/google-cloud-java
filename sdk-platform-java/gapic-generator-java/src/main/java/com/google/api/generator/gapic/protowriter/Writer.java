@@ -124,7 +124,7 @@ public class Writer {
     String jarEntryLocation =
         String.format("src/main/resources/META-INF/native-image/%s/reflect-config.json", pakkage);
     try {
-      jos.putNextEntry(new JarEntry(jarEntryLocation));
+      jos.putNextEntry(jarEntry(jarEntryLocation));
       jos.write(prettyGson.toJson(reflectConfigInfo).getBytes(StandardCharsets.UTF_8));
     } catch (IOException e) {
       throw new GapicWriterException("Could not write reflect-config.json", e);
@@ -141,7 +141,7 @@ public class Writer {
 
     String path = getPath(clazz.packageString(), clazz.classIdentifier().name());
     String className = clazz.classIdentifier().name();
-    JarEntry jarEntry = new JarEntry(String.format("%s/%s.java", path, className));
+    JarEntry jarEntry = jarEntry(String.format("%s/%s.java", path, className));
     try {
       jos.putNextEntry(jarEntry);
       jos.write(code.getBytes(StandardCharsets.UTF_8));
@@ -159,7 +159,7 @@ public class Writer {
       GapicClass gapicClazz, String pakkage, String clazzPath, JarOutputStream jos) {
     for (Sample sample : gapicClazz.samples()) {
       JarEntry jarEntry =
-          new JarEntry(
+          jarEntry(
               String.format(
                   "samples/snippets/generated/%s/%s/%s/%s.java",
                   clazzPath,
@@ -189,7 +189,7 @@ public class Writer {
     codeWriter.clear();
 
     String packagePath = "src/main/java/" + packageInfo.pakkage().replaceAll("\\.", "/");
-    JarEntry jarEntry = new JarEntry(String.format("%s/package-info.java", packagePath));
+    JarEntry jarEntry = jarEntry(String.format("%s/package-info.java", packagePath));
     try {
       jos.putNextEntry(jarEntry);
       jos.write(code.getBytes(StandardCharsets.UTF_8));
@@ -201,7 +201,7 @@ public class Writer {
 
   private static void writeMetadataFile(GapicContext context, String path, JarOutputStream jos) {
     if (context.gapicMetadataEnabled()) {
-      JarEntry jarEntry = new JarEntry(String.format("%s/gapic_metadata.json", path));
+      JarEntry jarEntry = jarEntry(String.format("%s/gapic_metadata.json", path));
       try {
         jos.putNextEntry(jarEntry);
         jos.write(
@@ -229,5 +229,11 @@ public class Writer {
 
   private static String getSamplePackage(GapicClass gapicClazz) {
     return gapicClazz.classDefinition().packageString().concat(".samples");
+  }
+
+  private static JarEntry jarEntry(String name) {
+    JarEntry entry = new JarEntry(name);
+    entry.setTime(1262304000000L);
+    return entry;
   }
 }
