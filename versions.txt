@@ -1014,3 +1014,4 @@ google-cloud-spanner:6.112.0:6.112.1-SNAPSHOT
 google-cloud-spanner-executor:6.112.0:6.112.1-SNAPSHOT
 proto-google-cloud-spanner-executor-v1:6.112.0:6.112.1-SNAPSHOT
 grpc-google-cloud-spanner-executor-v1:6.112.0:6.112.1-SNAPSHOT
+google-cloud-spanner-jdbc:2.35.4:2.35.5-SNAPSHOT
