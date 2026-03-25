@@ -1,5 +1,5 @@
 gapic_generator_version: 2.68.0
-googleapis_commitish: 0b3dec847f1045e47991c1539d4c69d8b025cfe8
+googleapis_commitish: 59d5f2b46924714af627ac29ea6de78641a00835
 libraries_bom_version: 26.78.0
 libraries:
 - api_shortname: accessapproval
