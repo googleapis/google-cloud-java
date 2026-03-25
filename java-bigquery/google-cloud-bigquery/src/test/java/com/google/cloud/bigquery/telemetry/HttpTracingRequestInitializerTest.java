@@ -53,13 +53,11 @@ import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.sdk.trace.data.SpanData;
 import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.zip.GZIPOutputStream;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -475,7 +473,7 @@ public class HttpTracingRequestInitializerTest {
     SpanData span = spans.get(0);
 
     assertEquals(
-        (long) responseBody.length(),
+        compressedData.length,
         span.getAttributes().get(HttpTracingRequestInitializer.HTTP_RESPONSE_BODY_SIZE));
   }
 }

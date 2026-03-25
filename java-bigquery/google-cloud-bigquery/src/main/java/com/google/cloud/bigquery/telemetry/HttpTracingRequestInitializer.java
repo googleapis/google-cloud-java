@@ -20,15 +20,11 @@ import com.google.api.client.http.*;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.common.annotations.VisibleForTesting;
-import com.google.common.io.CountingInputStream;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.Tracer;
-import java.io.FilterInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.lang.reflect.Field;
-import org.jspecify.annotations.NonNull;
 
 /**
  * HttpRequestInitializer that wraps a delegate initializer, intercepts all HTTP requests, adds
@@ -151,34 +147,21 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
   }
 
   /**
-   * Wraps the response's input stream with a CountingInputStream to track bytes read. This handles
-   * compressed transfer encoding where Content-Length is not available.
+   * Wraps the LowLevelHttpResponse with a HttpTracingLowLevelHttpResponse to give us access to get
+   * response body size for compressed responses.
    */
   private static void getResponseBodySizeForCompressedResponse(HttpResponse response, Span span) {
     try {
-      InputStream content = response.getContent();
-      if (content == null) {
-        return;
-      }
-
-      InputStream wrappedStream = getWrappedInputStream(span, content);
-      Field contentField = HttpResponse.class.getDeclaredField("content");
-      contentField.setAccessible(true);
-      contentField.set(response, wrappedStream);
-    } catch (Exception e) {
+      Field lowlevelField = HttpResponse.class.getDeclaredField("response");
+      lowlevelField.setAccessible(true);
+      LowLevelHttpResponse lowLevelHttpResponse =
+          (LowLevelHttpResponse) lowlevelField.get(response);
+      HttpTracingLowLevelHttpResponse wrappedResponse =
+          new HttpTracingLowLevelHttpResponse(lowLevelHttpResponse, span);
+      lowlevelField.set(response, wrappedResponse);
+    } catch (NoSuchFieldException | SecurityException | IllegalAccessException e) {
       // Ignore - stream wrapping failed, we will not track response size
     }
-  }
-
-  private static @NonNull InputStream getWrappedInputStream(Span span, InputStream content) {
-    CountingInputStream counter = new CountingInputStream(content);
-    return new FilterInputStream(counter) {
-      @Override
-      public void close() throws IOException {
-        super.close();
-        span.setAttribute(HTTP_RESPONSE_BODY_SIZE, counter.getCount());
-      }
-    };
   }
 
   /** Removes credentials from URL. */
