@@ -53,8 +53,13 @@ import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.sdk.trace.data.SpanData;
 import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
+
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.zip.GZIPOutputStream;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -429,5 +434,48 @@ public class HttpTracingRequestInitializerTest {
     } else {
       assertNull(span.getAttributes().get(HttpTracingRequestInitializer.HTTP_RESPONSE_BODY_SIZE));
     }
+  }
+
+  @Test
+  public void testCompressedResponseBodySizeTracking() throws IOException {
+    String responseBody = "chunked response data";
+    ByteArrayOutputStream responseStream = new ByteArrayOutputStream();
+    try (GZIPOutputStream gzipOut = new GZIPOutputStream(responseStream)) {
+      gzipOut.write(responseBody.getBytes(StandardCharsets.UTF_8));
+    }
+    byte[] compressedData = responseStream.toByteArray();
+
+    HttpTransport transport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest() {
+              @Override
+              public LowLevelHttpResponse execute() {
+                MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
+                response.setContentEncoding(HttpTracingRequestInitializer.GZIP_ENCODING);
+                response.setStatusCode(200);
+                response.setContent(new java.io.ByteArrayInputStream(compressedData));
+                return response;
+              }
+            };
+          }
+        };
+
+    HttpRequest request = buildGetRequest(transport, initializer, BASE_URL);
+    HttpResponse response = request.execute();
+    // Read the entire response body (this triggers the counting)
+    response.parseAsString();
+
+    response.disconnect();
+    spanScope.close();
+    parentSpan.end();
+    List<SpanData> spans = spanExporter.getFinishedSpanItems();
+    assertEquals(1, spans.size());
+    SpanData span = spans.get(0);
+
+    assertEquals(
+        (long) responseBody.length(),
+        span.getAttributes().get(HttpTracingRequestInitializer.HTTP_RESPONSE_BODY_SIZE));
   }
 }
