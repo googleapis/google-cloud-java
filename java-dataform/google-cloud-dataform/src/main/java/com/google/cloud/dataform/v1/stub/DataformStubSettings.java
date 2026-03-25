@@ -26,9 +26,13 @@ import static com.google.cloud.dataform.v1.DataformClient.ListWorkflowInvocation
 import static com.google.cloud.dataform.v1.DataformClient.ListWorkspacesPagedResponse;
 import static com.google.cloud.dataform.v1.DataformClient.QueryCompilationResultActionsPagedResponse;
 import static com.google.cloud.dataform.v1.DataformClient.QueryDirectoryContentsPagedResponse;
+import static com.google.cloud.dataform.v1.DataformClient.QueryFolderContentsPagedResponse;
 import static com.google.cloud.dataform.v1.DataformClient.QueryRepositoryDirectoryContentsPagedResponse;
+import static com.google.cloud.dataform.v1.DataformClient.QueryTeamFolderContentsPagedResponse;
+import static com.google.cloud.dataform.v1.DataformClient.QueryUserRootContentsPagedResponse;
 import static com.google.cloud.dataform.v1.DataformClient.QueryWorkflowInvocationActionsPagedResponse;
 import static com.google.cloud.dataform.v1.DataformClient.SearchFilesPagedResponse;
+import static com.google.cloud.dataform.v1.DataformClient.SearchTeamFoldersPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -40,14 +44,18 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.LibraryMetadata;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -70,13 +78,20 @@ import com.google.cloud.dataform.v1.ComputeRepositoryAccessTokenStatusRequest;
 import com.google.cloud.dataform.v1.ComputeRepositoryAccessTokenStatusResponse;
 import com.google.cloud.dataform.v1.Config;
 import com.google.cloud.dataform.v1.CreateCompilationResultRequest;
+import com.google.cloud.dataform.v1.CreateFolderRequest;
 import com.google.cloud.dataform.v1.CreateReleaseConfigRequest;
 import com.google.cloud.dataform.v1.CreateRepositoryRequest;
+import com.google.cloud.dataform.v1.CreateTeamFolderRequest;
 import com.google.cloud.dataform.v1.CreateWorkflowConfigRequest;
 import com.google.cloud.dataform.v1.CreateWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1.CreateWorkspaceRequest;
+import com.google.cloud.dataform.v1.DeleteFolderRequest;
+import com.google.cloud.dataform.v1.DeleteFolderTreeMetadata;
+import com.google.cloud.dataform.v1.DeleteFolderTreeRequest;
 import com.google.cloud.dataform.v1.DeleteReleaseConfigRequest;
 import com.google.cloud.dataform.v1.DeleteRepositoryRequest;
+import com.google.cloud.dataform.v1.DeleteTeamFolderRequest;
+import com.google.cloud.dataform.v1.DeleteTeamFolderTreeRequest;
 import com.google.cloud.dataform.v1.DeleteWorkflowConfigRequest;
 import com.google.cloud.dataform.v1.DeleteWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1.DeleteWorkspaceRequest;
@@ -91,10 +106,13 @@ import com.google.cloud.dataform.v1.FetchRemoteBranchesRequest;
 import com.google.cloud.dataform.v1.FetchRemoteBranchesResponse;
 import com.google.cloud.dataform.v1.FetchRepositoryHistoryRequest;
 import com.google.cloud.dataform.v1.FetchRepositoryHistoryResponse;
+import com.google.cloud.dataform.v1.Folder;
 import com.google.cloud.dataform.v1.GetCompilationResultRequest;
 import com.google.cloud.dataform.v1.GetConfigRequest;
+import com.google.cloud.dataform.v1.GetFolderRequest;
 import com.google.cloud.dataform.v1.GetReleaseConfigRequest;
 import com.google.cloud.dataform.v1.GetRepositoryRequest;
+import com.google.cloud.dataform.v1.GetTeamFolderRequest;
 import com.google.cloud.dataform.v1.GetWorkflowConfigRequest;
 import com.google.cloud.dataform.v1.GetWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1.GetWorkspaceRequest;
@@ -118,6 +136,10 @@ import com.google.cloud.dataform.v1.MoveDirectoryRequest;
 import com.google.cloud.dataform.v1.MoveDirectoryResponse;
 import com.google.cloud.dataform.v1.MoveFileRequest;
 import com.google.cloud.dataform.v1.MoveFileResponse;
+import com.google.cloud.dataform.v1.MoveFolderMetadata;
+import com.google.cloud.dataform.v1.MoveFolderRequest;
+import com.google.cloud.dataform.v1.MoveRepositoryMetadata;
+import com.google.cloud.dataform.v1.MoveRepositoryRequest;
 import com.google.cloud.dataform.v1.PullGitCommitsRequest;
 import com.google.cloud.dataform.v1.PullGitCommitsResponse;
 import com.google.cloud.dataform.v1.PushGitCommitsRequest;
@@ -126,8 +148,14 @@ import com.google.cloud.dataform.v1.QueryCompilationResultActionsRequest;
 import com.google.cloud.dataform.v1.QueryCompilationResultActionsResponse;
 import com.google.cloud.dataform.v1.QueryDirectoryContentsRequest;
 import com.google.cloud.dataform.v1.QueryDirectoryContentsResponse;
+import com.google.cloud.dataform.v1.QueryFolderContentsRequest;
+import com.google.cloud.dataform.v1.QueryFolderContentsResponse;
 import com.google.cloud.dataform.v1.QueryRepositoryDirectoryContentsRequest;
 import com.google.cloud.dataform.v1.QueryRepositoryDirectoryContentsResponse;
+import com.google.cloud.dataform.v1.QueryTeamFolderContentsRequest;
+import com.google.cloud.dataform.v1.QueryTeamFolderContentsResponse;
+import com.google.cloud.dataform.v1.QueryUserRootContentsRequest;
+import com.google.cloud.dataform.v1.QueryUserRootContentsResponse;
 import com.google.cloud.dataform.v1.QueryWorkflowInvocationActionsRequest;
 import com.google.cloud.dataform.v1.QueryWorkflowInvocationActionsResponse;
 import com.google.cloud.dataform.v1.ReadFileRequest;
@@ -145,9 +173,14 @@ import com.google.cloud.dataform.v1.ResetWorkspaceChangesResponse;
 import com.google.cloud.dataform.v1.SearchFilesRequest;
 import com.google.cloud.dataform.v1.SearchFilesResponse;
 import com.google.cloud.dataform.v1.SearchResult;
+import com.google.cloud.dataform.v1.SearchTeamFoldersRequest;
+import com.google.cloud.dataform.v1.SearchTeamFoldersResponse;
+import com.google.cloud.dataform.v1.TeamFolder;
 import com.google.cloud.dataform.v1.UpdateConfigRequest;
+import com.google.cloud.dataform.v1.UpdateFolderRequest;
 import com.google.cloud.dataform.v1.UpdateReleaseConfigRequest;
 import com.google.cloud.dataform.v1.UpdateRepositoryRequest;
+import com.google.cloud.dataform.v1.UpdateTeamFolderRequest;
 import com.google.cloud.dataform.v1.UpdateWorkflowConfigRequest;
 import com.google.cloud.dataform.v1.WorkflowConfig;
 import com.google.cloud.dataform.v1.WorkflowInvocation;
@@ -168,8 +201,10 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -190,7 +225,7 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of getRepository:
+ * of getTeamFolder:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -200,10 +235,10 @@ import javax.annotation.Generated;
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * DataformStubSettings.Builder dataformSettingsBuilder = DataformStubSettings.newBuilder();
  * dataformSettingsBuilder
- *     .getRepositorySettings()
+ *     .getTeamFolderSettings()
  *     .setRetrySettings(
  *         dataformSettingsBuilder
- *             .getRepositorySettings()
+ *             .getTeamFolderSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -221,6 +256,31 @@ import javax.annotation.Generated;
  * Please refer to the [Client Side Retry
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for deleteTeamFolderTree:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * DataformStubSettings.Builder dataformSettingsBuilder = DataformStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * dataformSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
@@ -232,6 +292,40 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
           .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
+  private final UnaryCallSettings<GetTeamFolderRequest, TeamFolder> getTeamFolderSettings;
+  private final UnaryCallSettings<CreateTeamFolderRequest, TeamFolder> createTeamFolderSettings;
+  private final UnaryCallSettings<UpdateTeamFolderRequest, TeamFolder> updateTeamFolderSettings;
+  private final UnaryCallSettings<DeleteTeamFolderRequest, Empty> deleteTeamFolderSettings;
+  private final UnaryCallSettings<DeleteTeamFolderTreeRequest, Operation>
+      deleteTeamFolderTreeSettings;
+  private final OperationCallSettings<DeleteTeamFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+      deleteTeamFolderTreeOperationSettings;
+  private final PagedCallSettings<
+          QueryTeamFolderContentsRequest,
+          QueryTeamFolderContentsResponse,
+          QueryTeamFolderContentsPagedResponse>
+      queryTeamFolderContentsSettings;
+  private final PagedCallSettings<
+          SearchTeamFoldersRequest, SearchTeamFoldersResponse, SearchTeamFoldersPagedResponse>
+      searchTeamFoldersSettings;
+  private final UnaryCallSettings<GetFolderRequest, Folder> getFolderSettings;
+  private final UnaryCallSettings<CreateFolderRequest, Folder> createFolderSettings;
+  private final UnaryCallSettings<UpdateFolderRequest, Folder> updateFolderSettings;
+  private final UnaryCallSettings<DeleteFolderRequest, Empty> deleteFolderSettings;
+  private final UnaryCallSettings<DeleteFolderTreeRequest, Operation> deleteFolderTreeSettings;
+  private final OperationCallSettings<DeleteFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+      deleteFolderTreeOperationSettings;
+  private final PagedCallSettings<
+          QueryFolderContentsRequest, QueryFolderContentsResponse, QueryFolderContentsPagedResponse>
+      queryFolderContentsSettings;
+  private final PagedCallSettings<
+          QueryUserRootContentsRequest,
+          QueryUserRootContentsResponse,
+          QueryUserRootContentsPagedResponse>
+      queryUserRootContentsSettings;
+  private final UnaryCallSettings<MoveFolderRequest, Operation> moveFolderSettings;
+  private final OperationCallSettings<MoveFolderRequest, Empty, MoveFolderMetadata>
+      moveFolderOperationSettings;
   private final PagedCallSettings<
           ListRepositoriesRequest, ListRepositoriesResponse, ListRepositoriesPagedResponse>
       listRepositoriesSettings;
@@ -239,6 +333,9 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
   private final UnaryCallSettings<CreateRepositoryRequest, Repository> createRepositorySettings;
   private final UnaryCallSettings<UpdateRepositoryRequest, Repository> updateRepositorySettings;
   private final UnaryCallSettings<DeleteRepositoryRequest, Empty> deleteRepositorySettings;
+  private final UnaryCallSettings<MoveRepositoryRequest, Operation> moveRepositorySettings;
+  private final OperationCallSettings<MoveRepositoryRequest, Empty, MoveRepositoryMetadata>
+      moveRepositoryOperationSettings;
   private final UnaryCallSettings<CommitRepositoryChangesRequest, CommitRepositoryChangesResponse>
       commitRepositoryChangesSettings;
   private final UnaryCallSettings<ReadRepositoryFileRequest, ReadRepositoryFileResponse>
@@ -350,14 +447,188 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       queryWorkflowInvocationActionsSettings;
   private final UnaryCallSettings<GetConfigRequest, Config> getConfigSettings;
   private final UnaryCallSettings<UpdateConfigRequest, Config> updateConfigSettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
   private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
-  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
-  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
-  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsSettings;
+
+  private static final PagedListDescriptor<
+          QueryTeamFolderContentsRequest,
+          QueryTeamFolderContentsResponse,
+          QueryTeamFolderContentsResponse.TeamFolderContentsEntry>
+      QUERY_TEAM_FOLDER_CONTENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              QueryTeamFolderContentsRequest,
+              QueryTeamFolderContentsResponse,
+              QueryTeamFolderContentsResponse.TeamFolderContentsEntry>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public QueryTeamFolderContentsRequest injectToken(
+                QueryTeamFolderContentsRequest payload, String token) {
+              return QueryTeamFolderContentsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public QueryTeamFolderContentsRequest injectPageSize(
+                QueryTeamFolderContentsRequest payload, int pageSize) {
+              return QueryTeamFolderContentsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(QueryTeamFolderContentsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(QueryTeamFolderContentsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<QueryTeamFolderContentsResponse.TeamFolderContentsEntry>
+                extractResources(QueryTeamFolderContentsResponse payload) {
+              return payload.getEntriesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          SearchTeamFoldersRequest,
+          SearchTeamFoldersResponse,
+          SearchTeamFoldersResponse.TeamFolderSearchResult>
+      SEARCH_TEAM_FOLDERS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              SearchTeamFoldersRequest,
+              SearchTeamFoldersResponse,
+              SearchTeamFoldersResponse.TeamFolderSearchResult>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public SearchTeamFoldersRequest injectToken(
+                SearchTeamFoldersRequest payload, String token) {
+              return SearchTeamFoldersRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public SearchTeamFoldersRequest injectPageSize(
+                SearchTeamFoldersRequest payload, int pageSize) {
+              return SearchTeamFoldersRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(SearchTeamFoldersRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(SearchTeamFoldersResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SearchTeamFoldersResponse.TeamFolderSearchResult> extractResources(
+                SearchTeamFoldersResponse payload) {
+              return payload.getResultsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          QueryFolderContentsRequest,
+          QueryFolderContentsResponse,
+          QueryFolderContentsResponse.FolderContentsEntry>
+      QUERY_FOLDER_CONTENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              QueryFolderContentsRequest,
+              QueryFolderContentsResponse,
+              QueryFolderContentsResponse.FolderContentsEntry>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public QueryFolderContentsRequest injectToken(
+                QueryFolderContentsRequest payload, String token) {
+              return QueryFolderContentsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public QueryFolderContentsRequest injectPageSize(
+                QueryFolderContentsRequest payload, int pageSize) {
+              return QueryFolderContentsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(QueryFolderContentsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(QueryFolderContentsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<QueryFolderContentsResponse.FolderContentsEntry> extractResources(
+                QueryFolderContentsResponse payload) {
+              return payload.getEntriesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          QueryUserRootContentsRequest,
+          QueryUserRootContentsResponse,
+          QueryUserRootContentsResponse.RootContentsEntry>
+      QUERY_USER_ROOT_CONTENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              QueryUserRootContentsRequest,
+              QueryUserRootContentsResponse,
+              QueryUserRootContentsResponse.RootContentsEntry>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public QueryUserRootContentsRequest injectToken(
+                QueryUserRootContentsRequest payload, String token) {
+              return QueryUserRootContentsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public QueryUserRootContentsRequest injectPageSize(
+                QueryUserRootContentsRequest payload, int pageSize) {
+              return QueryUserRootContentsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(QueryUserRootContentsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(QueryUserRootContentsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<QueryUserRootContentsResponse.RootContentsEntry> extractResources(
+                QueryUserRootContentsResponse payload) {
+              return payload.getEntriesList();
+            }
+          };
 
   private static final PagedListDescriptor<
           ListRepositoriesRequest, ListRepositoriesResponse, Repository>
@@ -883,6 +1154,107 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
           };
 
   private static final PagedListResponseFactory<
+          QueryTeamFolderContentsRequest,
+          QueryTeamFolderContentsResponse,
+          QueryTeamFolderContentsPagedResponse>
+      QUERY_TEAM_FOLDER_CONTENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              QueryTeamFolderContentsRequest,
+              QueryTeamFolderContentsResponse,
+              QueryTeamFolderContentsPagedResponse>() {
+            @Override
+            public ApiFuture<QueryTeamFolderContentsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<QueryTeamFolderContentsRequest, QueryTeamFolderContentsResponse>
+                    callable,
+                QueryTeamFolderContentsRequest request,
+                ApiCallContext context,
+                ApiFuture<QueryTeamFolderContentsResponse> futureResponse) {
+              PageContext<
+                      QueryTeamFolderContentsRequest,
+                      QueryTeamFolderContentsResponse,
+                      QueryTeamFolderContentsResponse.TeamFolderContentsEntry>
+                  pageContext =
+                      PageContext.create(
+                          callable, QUERY_TEAM_FOLDER_CONTENTS_PAGE_STR_DESC, request, context);
+              return QueryTeamFolderContentsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          SearchTeamFoldersRequest, SearchTeamFoldersResponse, SearchTeamFoldersPagedResponse>
+      SEARCH_TEAM_FOLDERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              SearchTeamFoldersRequest,
+              SearchTeamFoldersResponse,
+              SearchTeamFoldersPagedResponse>() {
+            @Override
+            public ApiFuture<SearchTeamFoldersPagedResponse> getFuturePagedResponse(
+                UnaryCallable<SearchTeamFoldersRequest, SearchTeamFoldersResponse> callable,
+                SearchTeamFoldersRequest request,
+                ApiCallContext context,
+                ApiFuture<SearchTeamFoldersResponse> futureResponse) {
+              PageContext<
+                      SearchTeamFoldersRequest,
+                      SearchTeamFoldersResponse,
+                      SearchTeamFoldersResponse.TeamFolderSearchResult>
+                  pageContext =
+                      PageContext.create(
+                          callable, SEARCH_TEAM_FOLDERS_PAGE_STR_DESC, request, context);
+              return SearchTeamFoldersPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          QueryFolderContentsRequest, QueryFolderContentsResponse, QueryFolderContentsPagedResponse>
+      QUERY_FOLDER_CONTENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              QueryFolderContentsRequest,
+              QueryFolderContentsResponse,
+              QueryFolderContentsPagedResponse>() {
+            @Override
+            public ApiFuture<QueryFolderContentsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<QueryFolderContentsRequest, QueryFolderContentsResponse> callable,
+                QueryFolderContentsRequest request,
+                ApiCallContext context,
+                ApiFuture<QueryFolderContentsResponse> futureResponse) {
+              PageContext<
+                      QueryFolderContentsRequest,
+                      QueryFolderContentsResponse,
+                      QueryFolderContentsResponse.FolderContentsEntry>
+                  pageContext =
+                      PageContext.create(
+                          callable, QUERY_FOLDER_CONTENTS_PAGE_STR_DESC, request, context);
+              return QueryFolderContentsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          QueryUserRootContentsRequest,
+          QueryUserRootContentsResponse,
+          QueryUserRootContentsPagedResponse>
+      QUERY_USER_ROOT_CONTENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              QueryUserRootContentsRequest,
+              QueryUserRootContentsResponse,
+              QueryUserRootContentsPagedResponse>() {
+            @Override
+            public ApiFuture<QueryUserRootContentsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<QueryUserRootContentsRequest, QueryUserRootContentsResponse> callable,
+                QueryUserRootContentsRequest request,
+                ApiCallContext context,
+                ApiFuture<QueryUserRootContentsResponse> futureResponse) {
+              PageContext<
+                      QueryUserRootContentsRequest,
+                      QueryUserRootContentsResponse,
+                      QueryUserRootContentsResponse.RootContentsEntry>
+                  pageContext =
+                      PageContext.create(
+                          callable, QUERY_USER_ROOT_CONTENTS_PAGE_STR_DESC, request, context);
+              return QueryUserRootContentsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListRepositoriesRequest, ListRepositoriesResponse, ListRepositoriesPagedResponse>
       LIST_REPOSITORIES_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -1196,6 +1568,111 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
             }
           };
 
+  /** Returns the object with the settings used for calls to getTeamFolder. */
+  public UnaryCallSettings<GetTeamFolderRequest, TeamFolder> getTeamFolderSettings() {
+    return getTeamFolderSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createTeamFolder. */
+  public UnaryCallSettings<CreateTeamFolderRequest, TeamFolder> createTeamFolderSettings() {
+    return createTeamFolderSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateTeamFolder. */
+  public UnaryCallSettings<UpdateTeamFolderRequest, TeamFolder> updateTeamFolderSettings() {
+    return updateTeamFolderSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteTeamFolder. */
+  public UnaryCallSettings<DeleteTeamFolderRequest, Empty> deleteTeamFolderSettings() {
+    return deleteTeamFolderSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteTeamFolderTree. */
+  public UnaryCallSettings<DeleteTeamFolderTreeRequest, Operation> deleteTeamFolderTreeSettings() {
+    return deleteTeamFolderTreeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteTeamFolderTree. */
+  public OperationCallSettings<DeleteTeamFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+      deleteTeamFolderTreeOperationSettings() {
+    return deleteTeamFolderTreeOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to queryTeamFolderContents. */
+  public PagedCallSettings<
+          QueryTeamFolderContentsRequest,
+          QueryTeamFolderContentsResponse,
+          QueryTeamFolderContentsPagedResponse>
+      queryTeamFolderContentsSettings() {
+    return queryTeamFolderContentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to searchTeamFolders. */
+  public PagedCallSettings<
+          SearchTeamFoldersRequest, SearchTeamFoldersResponse, SearchTeamFoldersPagedResponse>
+      searchTeamFoldersSettings() {
+    return searchTeamFoldersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getFolder. */
+  public UnaryCallSettings<GetFolderRequest, Folder> getFolderSettings() {
+    return getFolderSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createFolder. */
+  public UnaryCallSettings<CreateFolderRequest, Folder> createFolderSettings() {
+    return createFolderSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateFolder. */
+  public UnaryCallSettings<UpdateFolderRequest, Folder> updateFolderSettings() {
+    return updateFolderSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteFolder. */
+  public UnaryCallSettings<DeleteFolderRequest, Empty> deleteFolderSettings() {
+    return deleteFolderSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteFolderTree. */
+  public UnaryCallSettings<DeleteFolderTreeRequest, Operation> deleteFolderTreeSettings() {
+    return deleteFolderTreeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteFolderTree. */
+  public OperationCallSettings<DeleteFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+      deleteFolderTreeOperationSettings() {
+    return deleteFolderTreeOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to queryFolderContents. */
+  public PagedCallSettings<
+          QueryFolderContentsRequest, QueryFolderContentsResponse, QueryFolderContentsPagedResponse>
+      queryFolderContentsSettings() {
+    return queryFolderContentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to queryUserRootContents. */
+  public PagedCallSettings<
+          QueryUserRootContentsRequest,
+          QueryUserRootContentsResponse,
+          QueryUserRootContentsPagedResponse>
+      queryUserRootContentsSettings() {
+    return queryUserRootContentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to moveFolder. */
+  public UnaryCallSettings<MoveFolderRequest, Operation> moveFolderSettings() {
+    return moveFolderSettings;
+  }
+
+  /** Returns the object with the settings used for calls to moveFolder. */
+  public OperationCallSettings<MoveFolderRequest, Empty, MoveFolderMetadata>
+      moveFolderOperationSettings() {
+    return moveFolderOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listRepositories. */
   public PagedCallSettings<
           ListRepositoriesRequest, ListRepositoriesResponse, ListRepositoriesPagedResponse>
@@ -1221,6 +1698,17 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
   /** Returns the object with the settings used for calls to deleteRepository. */
   public UnaryCallSettings<DeleteRepositoryRequest, Empty> deleteRepositorySettings() {
     return deleteRepositorySettings;
+  }
+
+  /** Returns the object with the settings used for calls to moveRepository. */
+  public UnaryCallSettings<MoveRepositoryRequest, Operation> moveRepositorySettings() {
+    return moveRepositorySettings;
+  }
+
+  /** Returns the object with the settings used for calls to moveRepository. */
+  public OperationCallSettings<MoveRepositoryRequest, Empty, MoveRepositoryMetadata>
+      moveRepositoryOperationSettings() {
+    return moveRepositoryOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to commitRepositoryChanges. */
@@ -1524,6 +2012,22 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     return updateConfigSettings;
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1533,22 +2037,6 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
   /** Returns the object with the settings used for calls to getLocation. */
   public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
     return getLocationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to setIamPolicy. */
-  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
-    return setIamPolicySettings;
-  }
-
-  /** Returns the object with the settings used for calls to getIamPolicy. */
-  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
-    return getIamPolicySettings;
-  }
-
-  /** Returns the object with the settings used for calls to testIamPermissions. */
-  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsSettings() {
-    return testIamPermissionsSettings;
   }
 
   public DataformStub createStub() throws IOException {
@@ -1660,11 +2148,32 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
   protected DataformStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    getTeamFolderSettings = settingsBuilder.getTeamFolderSettings().build();
+    createTeamFolderSettings = settingsBuilder.createTeamFolderSettings().build();
+    updateTeamFolderSettings = settingsBuilder.updateTeamFolderSettings().build();
+    deleteTeamFolderSettings = settingsBuilder.deleteTeamFolderSettings().build();
+    deleteTeamFolderTreeSettings = settingsBuilder.deleteTeamFolderTreeSettings().build();
+    deleteTeamFolderTreeOperationSettings =
+        settingsBuilder.deleteTeamFolderTreeOperationSettings().build();
+    queryTeamFolderContentsSettings = settingsBuilder.queryTeamFolderContentsSettings().build();
+    searchTeamFoldersSettings = settingsBuilder.searchTeamFoldersSettings().build();
+    getFolderSettings = settingsBuilder.getFolderSettings().build();
+    createFolderSettings = settingsBuilder.createFolderSettings().build();
+    updateFolderSettings = settingsBuilder.updateFolderSettings().build();
+    deleteFolderSettings = settingsBuilder.deleteFolderSettings().build();
+    deleteFolderTreeSettings = settingsBuilder.deleteFolderTreeSettings().build();
+    deleteFolderTreeOperationSettings = settingsBuilder.deleteFolderTreeOperationSettings().build();
+    queryFolderContentsSettings = settingsBuilder.queryFolderContentsSettings().build();
+    queryUserRootContentsSettings = settingsBuilder.queryUserRootContentsSettings().build();
+    moveFolderSettings = settingsBuilder.moveFolderSettings().build();
+    moveFolderOperationSettings = settingsBuilder.moveFolderOperationSettings().build();
     listRepositoriesSettings = settingsBuilder.listRepositoriesSettings().build();
     getRepositorySettings = settingsBuilder.getRepositorySettings().build();
     createRepositorySettings = settingsBuilder.createRepositorySettings().build();
     updateRepositorySettings = settingsBuilder.updateRepositorySettings().build();
     deleteRepositorySettings = settingsBuilder.deleteRepositorySettings().build();
+    moveRepositorySettings = settingsBuilder.moveRepositorySettings().build();
+    moveRepositoryOperationSettings = settingsBuilder.moveRepositoryOperationSettings().build();
     commitRepositoryChangesSettings = settingsBuilder.commitRepositoryChangesSettings().build();
     readRepositoryFileSettings = settingsBuilder.readRepositoryFileSettings().build();
     queryRepositoryDirectoryContentsSettings =
@@ -1718,11 +2227,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
         settingsBuilder.queryWorkflowInvocationActionsSettings().build();
     getConfigSettings = settingsBuilder.getConfigSettings().build();
     updateConfigSettings = settingsBuilder.updateConfigSettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
-    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
-    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
-    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   @Override
@@ -1730,12 +2239,55 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-dataform")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 
   /** Builder for DataformStubSettings. */
   public static class Builder extends StubSettings.Builder<DataformStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
+    private final UnaryCallSettings.Builder<GetTeamFolderRequest, TeamFolder> getTeamFolderSettings;
+    private final UnaryCallSettings.Builder<CreateTeamFolderRequest, TeamFolder>
+        createTeamFolderSettings;
+    private final UnaryCallSettings.Builder<UpdateTeamFolderRequest, TeamFolder>
+        updateTeamFolderSettings;
+    private final UnaryCallSettings.Builder<DeleteTeamFolderRequest, Empty>
+        deleteTeamFolderSettings;
+    private final UnaryCallSettings.Builder<DeleteTeamFolderTreeRequest, Operation>
+        deleteTeamFolderTreeSettings;
+    private final OperationCallSettings.Builder<
+            DeleteTeamFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+        deleteTeamFolderTreeOperationSettings;
+    private final PagedCallSettings.Builder<
+            QueryTeamFolderContentsRequest,
+            QueryTeamFolderContentsResponse,
+            QueryTeamFolderContentsPagedResponse>
+        queryTeamFolderContentsSettings;
+    private final PagedCallSettings.Builder<
+            SearchTeamFoldersRequest, SearchTeamFoldersResponse, SearchTeamFoldersPagedResponse>
+        searchTeamFoldersSettings;
+    private final UnaryCallSettings.Builder<GetFolderRequest, Folder> getFolderSettings;
+    private final UnaryCallSettings.Builder<CreateFolderRequest, Folder> createFolderSettings;
+    private final UnaryCallSettings.Builder<UpdateFolderRequest, Folder> updateFolderSettings;
+    private final UnaryCallSettings.Builder<DeleteFolderRequest, Empty> deleteFolderSettings;
+    private final UnaryCallSettings.Builder<DeleteFolderTreeRequest, Operation>
+        deleteFolderTreeSettings;
+    private final OperationCallSettings.Builder<
+            DeleteFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+        deleteFolderTreeOperationSettings;
+    private final PagedCallSettings.Builder<
+            QueryFolderContentsRequest,
+            QueryFolderContentsResponse,
+            QueryFolderContentsPagedResponse>
+        queryFolderContentsSettings;
+    private final PagedCallSettings.Builder<
+            QueryUserRootContentsRequest,
+            QueryUserRootContentsResponse,
+            QueryUserRootContentsPagedResponse>
+        queryUserRootContentsSettings;
+    private final UnaryCallSettings.Builder<MoveFolderRequest, Operation> moveFolderSettings;
+    private final OperationCallSettings.Builder<MoveFolderRequest, Empty, MoveFolderMetadata>
+        moveFolderOperationSettings;
     private final PagedCallSettings.Builder<
             ListRepositoriesRequest, ListRepositoriesResponse, ListRepositoriesPagedResponse>
         listRepositoriesSettings;
@@ -1746,6 +2298,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
         updateRepositorySettings;
     private final UnaryCallSettings.Builder<DeleteRepositoryRequest, Empty>
         deleteRepositorySettings;
+    private final UnaryCallSettings.Builder<MoveRepositoryRequest, Operation>
+        moveRepositorySettings;
+    private final OperationCallSettings.Builder<
+            MoveRepositoryRequest, Empty, MoveRepositoryMetadata>
+        moveRepositoryOperationSettings;
     private final UnaryCallSettings.Builder<
             CommitRepositoryChangesRequest, CommitRepositoryChangesResponse>
         commitRepositoryChangesSettings;
@@ -1870,14 +2427,14 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
         queryWorkflowInvocationActionsSettings;
     private final UnaryCallSettings.Builder<GetConfigRequest, Config> getConfigSettings;
     private final UnaryCallSettings.Builder<UpdateConfigRequest, Config> updateConfigSettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
     private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
-    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
-    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
-    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -1905,11 +2462,34 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      getTeamFolderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createTeamFolderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateTeamFolderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteTeamFolderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteTeamFolderTreeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteTeamFolderTreeOperationSettings = OperationCallSettings.newBuilder();
+      queryTeamFolderContentsSettings =
+          PagedCallSettings.newBuilder(QUERY_TEAM_FOLDER_CONTENTS_PAGE_STR_FACT);
+      searchTeamFoldersSettings = PagedCallSettings.newBuilder(SEARCH_TEAM_FOLDERS_PAGE_STR_FACT);
+      getFolderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createFolderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateFolderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteFolderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteFolderTreeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteFolderTreeOperationSettings = OperationCallSettings.newBuilder();
+      queryFolderContentsSettings =
+          PagedCallSettings.newBuilder(QUERY_FOLDER_CONTENTS_PAGE_STR_FACT);
+      queryUserRootContentsSettings =
+          PagedCallSettings.newBuilder(QUERY_USER_ROOT_CONTENTS_PAGE_STR_FACT);
+      moveFolderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      moveFolderOperationSettings = OperationCallSettings.newBuilder();
       listRepositoriesSettings = PagedCallSettings.newBuilder(LIST_REPOSITORIES_PAGE_STR_FACT);
       getRepositorySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createRepositorySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateRepositorySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteRepositorySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      moveRepositorySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      moveRepositoryOperationSettings = OperationCallSettings.newBuilder();
       commitRepositoryChangesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       readRepositoryFileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       queryRepositoryDirectoryContentsSettings =
@@ -1967,19 +2547,35 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
           PagedCallSettings.newBuilder(QUERY_WORKFLOW_INVOCATION_ACTIONS_PAGE_STR_FACT);
       getConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              getTeamFolderSettings,
+              createTeamFolderSettings,
+              updateTeamFolderSettings,
+              deleteTeamFolderSettings,
+              deleteTeamFolderTreeSettings,
+              queryTeamFolderContentsSettings,
+              searchTeamFoldersSettings,
+              getFolderSettings,
+              createFolderSettings,
+              updateFolderSettings,
+              deleteFolderSettings,
+              deleteFolderTreeSettings,
+              queryFolderContentsSettings,
+              queryUserRootContentsSettings,
+              moveFolderSettings,
               listRepositoriesSettings,
               getRepositorySettings,
               createRepositorySettings,
               updateRepositorySettings,
               deleteRepositorySettings,
+              moveRepositorySettings,
               commitRepositoryChangesSettings,
               readRepositoryFileSettings,
               queryRepositoryDirectoryContentsSettings,
@@ -2029,22 +2625,43 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               queryWorkflowInvocationActionsSettings,
               getConfigSettings,
               updateConfigSettings,
-              listLocationsSettings,
-              getLocationSettings,
-              setIamPolicySettings,
               getIamPolicySettings,
-              testIamPermissionsSettings);
+              setIamPolicySettings,
+              testIamPermissionsSettings,
+              listLocationsSettings,
+              getLocationSettings);
       initDefaults(this);
     }
 
     protected Builder(DataformStubSettings settings) {
       super(settings);
 
+      getTeamFolderSettings = settings.getTeamFolderSettings.toBuilder();
+      createTeamFolderSettings = settings.createTeamFolderSettings.toBuilder();
+      updateTeamFolderSettings = settings.updateTeamFolderSettings.toBuilder();
+      deleteTeamFolderSettings = settings.deleteTeamFolderSettings.toBuilder();
+      deleteTeamFolderTreeSettings = settings.deleteTeamFolderTreeSettings.toBuilder();
+      deleteTeamFolderTreeOperationSettings =
+          settings.deleteTeamFolderTreeOperationSettings.toBuilder();
+      queryTeamFolderContentsSettings = settings.queryTeamFolderContentsSettings.toBuilder();
+      searchTeamFoldersSettings = settings.searchTeamFoldersSettings.toBuilder();
+      getFolderSettings = settings.getFolderSettings.toBuilder();
+      createFolderSettings = settings.createFolderSettings.toBuilder();
+      updateFolderSettings = settings.updateFolderSettings.toBuilder();
+      deleteFolderSettings = settings.deleteFolderSettings.toBuilder();
+      deleteFolderTreeSettings = settings.deleteFolderTreeSettings.toBuilder();
+      deleteFolderTreeOperationSettings = settings.deleteFolderTreeOperationSettings.toBuilder();
+      queryFolderContentsSettings = settings.queryFolderContentsSettings.toBuilder();
+      queryUserRootContentsSettings = settings.queryUserRootContentsSettings.toBuilder();
+      moveFolderSettings = settings.moveFolderSettings.toBuilder();
+      moveFolderOperationSettings = settings.moveFolderOperationSettings.toBuilder();
       listRepositoriesSettings = settings.listRepositoriesSettings.toBuilder();
       getRepositorySettings = settings.getRepositorySettings.toBuilder();
       createRepositorySettings = settings.createRepositorySettings.toBuilder();
       updateRepositorySettings = settings.updateRepositorySettings.toBuilder();
       deleteRepositorySettings = settings.deleteRepositorySettings.toBuilder();
+      moveRepositorySettings = settings.moveRepositorySettings.toBuilder();
+      moveRepositoryOperationSettings = settings.moveRepositoryOperationSettings.toBuilder();
       commitRepositoryChangesSettings = settings.commitRepositoryChangesSettings.toBuilder();
       readRepositoryFileSettings = settings.readRepositoryFileSettings.toBuilder();
       queryRepositoryDirectoryContentsSettings =
@@ -2098,19 +2715,35 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
           settings.queryWorkflowInvocationActionsSettings.toBuilder();
       getConfigSettings = settings.getConfigSettings.toBuilder();
       updateConfigSettings = settings.updateConfigSettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
-      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
-      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
-      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              getTeamFolderSettings,
+              createTeamFolderSettings,
+              updateTeamFolderSettings,
+              deleteTeamFolderSettings,
+              deleteTeamFolderTreeSettings,
+              queryTeamFolderContentsSettings,
+              searchTeamFoldersSettings,
+              getFolderSettings,
+              createFolderSettings,
+              updateFolderSettings,
+              deleteFolderSettings,
+              deleteFolderTreeSettings,
+              queryFolderContentsSettings,
+              queryUserRootContentsSettings,
+              moveFolderSettings,
               listRepositoriesSettings,
               getRepositorySettings,
               createRepositorySettings,
               updateRepositorySettings,
               deleteRepositorySettings,
+              moveRepositorySettings,
               commitRepositoryChangesSettings,
               readRepositoryFileSettings,
               queryRepositoryDirectoryContentsSettings,
@@ -2160,11 +2793,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               queryWorkflowInvocationActionsSettings,
               getConfigSettings,
               updateConfigSettings,
-              listLocationsSettings,
-              getLocationSettings,
-              setIamPolicySettings,
               getIamPolicySettings,
-              testIamPermissionsSettings);
+              setIamPolicySettings,
+              testIamPermissionsSettings,
+              listLocationsSettings,
+              getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -2193,6 +2826,81 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
 
     private static Builder initDefaults(Builder builder) {
       builder
+          .getTeamFolderSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createTeamFolderSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateTeamFolderSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteTeamFolderSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteTeamFolderTreeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .queryTeamFolderContentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .searchTeamFoldersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getFolderSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createFolderSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateFolderSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteFolderSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteFolderTreeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .queryFolderContentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .queryUserRootContentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .moveFolderSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .listRepositoriesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -2214,6 +2922,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
 
       builder
           .deleteRepositorySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .moveRepositorySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -2463,6 +3176,21 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -2473,19 +3201,99 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
-          .setIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .deleteTeamFolderTreeOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteTeamFolderTreeRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(DeleteFolderTreeMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
 
       builder
-          .getIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .deleteFolderTreeOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteFolderTreeRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(DeleteFolderTreeMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
 
       builder
-          .testIamPermissionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .moveFolderOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<MoveFolderRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(MoveFolderMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .moveRepositoryOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<MoveRepositoryRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(MoveRepositoryMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
 
       return builder;
     }
@@ -2503,6 +3311,118 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to getTeamFolder. */
+    public UnaryCallSettings.Builder<GetTeamFolderRequest, TeamFolder> getTeamFolderSettings() {
+      return getTeamFolderSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createTeamFolder. */
+    public UnaryCallSettings.Builder<CreateTeamFolderRequest, TeamFolder>
+        createTeamFolderSettings() {
+      return createTeamFolderSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateTeamFolder. */
+    public UnaryCallSettings.Builder<UpdateTeamFolderRequest, TeamFolder>
+        updateTeamFolderSettings() {
+      return updateTeamFolderSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTeamFolder. */
+    public UnaryCallSettings.Builder<DeleteTeamFolderRequest, Empty> deleteTeamFolderSettings() {
+      return deleteTeamFolderSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTeamFolderTree. */
+    public UnaryCallSettings.Builder<DeleteTeamFolderTreeRequest, Operation>
+        deleteTeamFolderTreeSettings() {
+      return deleteTeamFolderTreeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTeamFolderTree. */
+    public OperationCallSettings.Builder<
+            DeleteTeamFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+        deleteTeamFolderTreeOperationSettings() {
+      return deleteTeamFolderTreeOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to queryTeamFolderContents. */
+    public PagedCallSettings.Builder<
+            QueryTeamFolderContentsRequest,
+            QueryTeamFolderContentsResponse,
+            QueryTeamFolderContentsPagedResponse>
+        queryTeamFolderContentsSettings() {
+      return queryTeamFolderContentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to searchTeamFolders. */
+    public PagedCallSettings.Builder<
+            SearchTeamFoldersRequest, SearchTeamFoldersResponse, SearchTeamFoldersPagedResponse>
+        searchTeamFoldersSettings() {
+      return searchTeamFoldersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getFolder. */
+    public UnaryCallSettings.Builder<GetFolderRequest, Folder> getFolderSettings() {
+      return getFolderSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createFolder. */
+    public UnaryCallSettings.Builder<CreateFolderRequest, Folder> createFolderSettings() {
+      return createFolderSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateFolder. */
+    public UnaryCallSettings.Builder<UpdateFolderRequest, Folder> updateFolderSettings() {
+      return updateFolderSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFolder. */
+    public UnaryCallSettings.Builder<DeleteFolderRequest, Empty> deleteFolderSettings() {
+      return deleteFolderSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFolderTree. */
+    public UnaryCallSettings.Builder<DeleteFolderTreeRequest, Operation>
+        deleteFolderTreeSettings() {
+      return deleteFolderTreeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFolderTree. */
+    public OperationCallSettings.Builder<DeleteFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+        deleteFolderTreeOperationSettings() {
+      return deleteFolderTreeOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to queryFolderContents. */
+    public PagedCallSettings.Builder<
+            QueryFolderContentsRequest,
+            QueryFolderContentsResponse,
+            QueryFolderContentsPagedResponse>
+        queryFolderContentsSettings() {
+      return queryFolderContentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to queryUserRootContents. */
+    public PagedCallSettings.Builder<
+            QueryUserRootContentsRequest,
+            QueryUserRootContentsResponse,
+            QueryUserRootContentsPagedResponse>
+        queryUserRootContentsSettings() {
+      return queryUserRootContentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to moveFolder. */
+    public UnaryCallSettings.Builder<MoveFolderRequest, Operation> moveFolderSettings() {
+      return moveFolderSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to moveFolder. */
+    public OperationCallSettings.Builder<MoveFolderRequest, Empty, MoveFolderMetadata>
+        moveFolderOperationSettings() {
+      return moveFolderOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listRepositories. */
@@ -2532,6 +3452,17 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     /** Returns the builder for the settings used for calls to deleteRepository. */
     public UnaryCallSettings.Builder<DeleteRepositoryRequest, Empty> deleteRepositorySettings() {
       return deleteRepositorySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to moveRepository. */
+    public UnaryCallSettings.Builder<MoveRepositoryRequest, Operation> moveRepositorySettings() {
+      return moveRepositorySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to moveRepository. */
+    public OperationCallSettings.Builder<MoveRepositoryRequest, Empty, MoveRepositoryMetadata>
+        moveRepositoryOperationSettings() {
+      return moveRepositoryOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to commitRepositoryChanges. */
@@ -2851,6 +3782,22 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       return updateConfigSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listLocations. */
     public PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
@@ -2861,22 +3808,6 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     /** Returns the builder for the settings used for calls to getLocation. */
     public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
       return getLocationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to setIamPolicy. */
-    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
-      return setIamPolicySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getIamPolicy. */
-    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
-      return getIamPolicySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to testIamPermissions. */
-    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsSettings() {
-      return testIamPermissionsSettings;
     }
 
     @Override

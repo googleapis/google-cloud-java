@@ -3161,6 +3161,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateTeamFolderRequest, TeamFolder> createTeamFolderTransportSettings =
         HttpJsonCallSettings.<CreateTeamFolderRequest, TeamFolder>newBuilder()
@@ -3172,6 +3173,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateTeamFolderRequest, TeamFolder> updateTeamFolderTransportSettings =
         HttpJsonCallSettings.<UpdateTeamFolderRequest, TeamFolder>newBuilder()
@@ -3195,6 +3197,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<QueryTeamFolderContentsRequest, QueryTeamFolderContentsResponse>
         queryTeamFolderContentsTransportSettings =
@@ -3208,6 +3211,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("team_folder", String.valueOf(request.getTeamFolder()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getTeamFolder())
                 .build();
     HttpJsonCallSettings<SearchTeamFoldersRequest, SearchTeamFoldersResponse>
         searchTeamFoldersTransportSettings =
@@ -3220,6 +3224,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("location", String.valueOf(request.getLocation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getLocation())
                 .build();
     HttpJsonCallSettings<GetFolderRequest, Folder> getFolderTransportSettings =
         HttpJsonCallSettings.<GetFolderRequest, Folder>newBuilder()
@@ -3231,6 +3236,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateFolderRequest, Folder> createFolderTransportSettings =
         HttpJsonCallSettings.<CreateFolderRequest, Folder>newBuilder()
@@ -3242,6 +3248,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateFolderRequest, Folder> updateFolderTransportSettings =
         HttpJsonCallSettings.<UpdateFolderRequest, Folder>newBuilder()
@@ -3264,6 +3271,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<QueryFolderContentsRequest, QueryFolderContentsResponse>
         queryFolderContentsTransportSettings =
@@ -3277,6 +3285,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("folder", String.valueOf(request.getFolder()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getFolder())
                 .build();
     HttpJsonCallSettings<QueryUserRootContentsRequest, QueryUserRootContentsResponse>
         queryUserRootContentsTransportSettings =
@@ -3290,6 +3299,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("location", String.valueOf(request.getLocation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getLocation())
                 .build();
     HttpJsonCallSettings<MoveFolderRequest, Operation> moveFolderTransportSettings =
         HttpJsonCallSettings.<MoveFolderRequest, Operation>newBuilder()
@@ -3301,6 +3311,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListRepositoriesRequest, ListRepositoriesResponse>
         listRepositoriesTransportSettings =
@@ -3313,6 +3324,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetRepositoryRequest, Repository> getRepositoryTransportSettings =
         HttpJsonCallSettings.<GetRepositoryRequest, Repository>newBuilder()
@@ -3324,6 +3336,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateRepositoryRequest, Repository> createRepositoryTransportSettings =
         HttpJsonCallSettings.<CreateRepositoryRequest, Repository>newBuilder()
@@ -3335,6 +3348,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateRepositoryRequest, Repository> updateRepositoryTransportSettings =
         HttpJsonCallSettings.<UpdateRepositoryRequest, Repository>newBuilder()
@@ -3357,6 +3371,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<MoveRepositoryRequest, Operation> moveRepositoryTransportSettings =
         HttpJsonCallSettings.<MoveRepositoryRequest, Operation>newBuilder()
@@ -3368,6 +3383,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CommitRepositoryChangesRequest, CommitRepositoryChangesResponse>
         commitRepositoryChangesTransportSettings =
@@ -3381,6 +3397,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ReadRepositoryFileRequest, ReadRepositoryFileResponse>
         readRepositoryFileTransportSettings =
@@ -3393,6 +3410,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             QueryRepositoryDirectoryContentsRequest, QueryRepositoryDirectoryContentsResponse>
@@ -3408,6 +3426,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<FetchRepositoryHistoryRequest, FetchRepositoryHistoryResponse>
         fetchRepositoryHistoryTransportSettings =
@@ -3421,6 +3440,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             ComputeRepositoryAccessTokenStatusRequest, ComputeRepositoryAccessTokenStatusResponse>
@@ -3437,6 +3457,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<FetchRemoteBranchesRequest, FetchRemoteBranchesResponse>
         fetchRemoteBranchesTransportSettings =
@@ -3450,6 +3471,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListWorkspacesRequest, ListWorkspacesResponse>
         listWorkspacesTransportSettings =
@@ -3462,6 +3484,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetWorkspaceRequest, Workspace> getWorkspaceTransportSettings =
         HttpJsonCallSettings.<GetWorkspaceRequest, Workspace>newBuilder()
@@ -3473,6 +3496,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateWorkspaceRequest, Workspace> createWorkspaceTransportSettings =
         HttpJsonCallSettings.<CreateWorkspaceRequest, Workspace>newBuilder()
@@ -3484,6 +3508,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteWorkspaceRequest, Empty> deleteWorkspaceTransportSettings =
         HttpJsonCallSettings.<DeleteWorkspaceRequest, Empty>newBuilder()
@@ -3495,6 +3520,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<InstallNpmPackagesRequest, InstallNpmPackagesResponse>
         installNpmPackagesTransportSettings =
@@ -3507,6 +3533,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("workspace", String.valueOf(request.getWorkspace()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getWorkspace())
                 .build();
     HttpJsonCallSettings<PullGitCommitsRequest, PullGitCommitsResponse>
         pullGitCommitsTransportSettings =
@@ -3519,6 +3546,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<PushGitCommitsRequest, PushGitCommitsResponse>
         pushGitCommitsTransportSettings =
@@ -3531,6 +3559,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<FetchFileGitStatusesRequest, FetchFileGitStatusesResponse>
         fetchFileGitStatusesTransportSettings =
@@ -3544,6 +3573,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<FetchGitAheadBehindRequest, FetchGitAheadBehindResponse>
         fetchGitAheadBehindTransportSettings =
@@ -3557,6 +3587,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>
         commitWorkspaceChangesTransportSettings =
@@ -3570,6 +3601,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ResetWorkspaceChangesRequest, ResetWorkspaceChangesResponse>
         resetWorkspaceChangesTransportSettings =
@@ -3583,6 +3615,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<FetchFileDiffRequest, FetchFileDiffResponse>
         fetchFileDiffTransportSettings =
@@ -3595,6 +3628,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("workspace", String.valueOf(request.getWorkspace()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getWorkspace())
                 .build();
     HttpJsonCallSettings<QueryDirectoryContentsRequest, QueryDirectoryContentsResponse>
         queryDirectoryContentsTransportSettings =
@@ -3608,6 +3642,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("workspace", String.valueOf(request.getWorkspace()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getWorkspace())
                 .build();
     HttpJsonCallSettings<SearchFilesRequest, SearchFilesResponse> searchFilesTransportSettings =
         HttpJsonCallSettings.<SearchFilesRequest, SearchFilesResponse>newBuilder()
@@ -3619,6 +3654,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("workspace", String.valueOf(request.getWorkspace()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getWorkspace())
             .build();
     HttpJsonCallSettings<MakeDirectoryRequest, MakeDirectoryResponse>
         makeDirectoryTransportSettings =
@@ -3631,6 +3667,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("workspace", String.valueOf(request.getWorkspace()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getWorkspace())
                 .build();
     HttpJsonCallSettings<RemoveDirectoryRequest, RemoveDirectoryResponse>
         removeDirectoryTransportSettings =
@@ -3643,6 +3680,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("workspace", String.valueOf(request.getWorkspace()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getWorkspace())
                 .build();
     HttpJsonCallSettings<MoveDirectoryRequest, MoveDirectoryResponse>
         moveDirectoryTransportSettings =
@@ -3655,6 +3693,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("workspace", String.valueOf(request.getWorkspace()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getWorkspace())
                 .build();
     HttpJsonCallSettings<ReadFileRequest, ReadFileResponse> readFileTransportSettings =
         HttpJsonCallSettings.<ReadFileRequest, ReadFileResponse>newBuilder()
@@ -3666,6 +3705,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("workspace", String.valueOf(request.getWorkspace()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getWorkspace())
             .build();
     HttpJsonCallSettings<RemoveFileRequest, RemoveFileResponse> removeFileTransportSettings =
         HttpJsonCallSettings.<RemoveFileRequest, RemoveFileResponse>newBuilder()
@@ -3677,6 +3717,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("workspace", String.valueOf(request.getWorkspace()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getWorkspace())
             .build();
     HttpJsonCallSettings<MoveFileRequest, MoveFileResponse> moveFileTransportSettings =
         HttpJsonCallSettings.<MoveFileRequest, MoveFileResponse>newBuilder()
@@ -3688,6 +3729,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("workspace", String.valueOf(request.getWorkspace()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getWorkspace())
             .build();
     HttpJsonCallSettings<WriteFileRequest, WriteFileResponse> writeFileTransportSettings =
         HttpJsonCallSettings.<WriteFileRequest, WriteFileResponse>newBuilder()
@@ -3699,6 +3741,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("workspace", String.valueOf(request.getWorkspace()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getWorkspace())
             .build();
     HttpJsonCallSettings<ListReleaseConfigsRequest, ListReleaseConfigsResponse>
         listReleaseConfigsTransportSettings =
@@ -3711,6 +3754,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetReleaseConfigRequest, ReleaseConfig> getReleaseConfigTransportSettings =
         HttpJsonCallSettings.<GetReleaseConfigRequest, ReleaseConfig>newBuilder()
@@ -3722,6 +3766,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateReleaseConfigRequest, ReleaseConfig>
         createReleaseConfigTransportSettings =
@@ -3734,6 +3779,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateReleaseConfigRequest, ReleaseConfig>
         updateReleaseConfigTransportSettings =
@@ -3759,6 +3805,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListCompilationResultsRequest, ListCompilationResultsResponse>
         listCompilationResultsTransportSettings =
@@ -3772,6 +3819,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetCompilationResultRequest, CompilationResult>
         getCompilationResultTransportSettings =
@@ -3784,6 +3832,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateCompilationResultRequest, CompilationResult>
         createCompilationResultTransportSettings =
@@ -3796,6 +3845,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             QueryCompilationResultActionsRequest, QueryCompilationResultActionsResponse>
@@ -3811,6 +3861,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListWorkflowConfigsRequest, ListWorkflowConfigsResponse>
         listWorkflowConfigsTransportSettings =
@@ -3824,6 +3875,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetWorkflowConfigRequest, WorkflowConfig>
         getWorkflowConfigTransportSettings =
@@ -3836,6 +3888,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateWorkflowConfigRequest, WorkflowConfig>
         createWorkflowConfigTransportSettings =
@@ -3848,6 +3901,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateWorkflowConfigRequest, WorkflowConfig>
         updateWorkflowConfigTransportSettings =
@@ -3873,6 +3927,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListWorkflowInvocationsRequest, ListWorkflowInvocationsResponse>
         listWorkflowInvocationsTransportSettings =
@@ -3886,6 +3941,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetWorkflowInvocationRequest, WorkflowInvocation>
         getWorkflowInvocationTransportSettings =
@@ -3898,6 +3954,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateWorkflowInvocationRequest, WorkflowInvocation>
         createWorkflowInvocationTransportSettings =
@@ -3910,6 +3967,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteWorkflowInvocationRequest, Empty>
         deleteWorkflowInvocationTransportSettings =
@@ -3922,6 +3980,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CancelWorkflowInvocationRequest, CancelWorkflowInvocationResponse>
         cancelWorkflowInvocationTransportSettings =
@@ -3935,6 +3994,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             QueryWorkflowInvocationActionsRequest, QueryWorkflowInvocationActionsResponse>
@@ -3950,6 +4010,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetConfigRequest, Config> getConfigTransportSettings =
         HttpJsonCallSettings.<GetConfigRequest, Config>newBuilder()
@@ -3961,6 +4022,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateConfigRequest, Config> updateConfigTransportSettings =
         HttpJsonCallSettings.<UpdateConfigRequest, Config>newBuilder()
@@ -3983,6 +4045,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -3994,6 +4057,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -4006,6 +4070,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

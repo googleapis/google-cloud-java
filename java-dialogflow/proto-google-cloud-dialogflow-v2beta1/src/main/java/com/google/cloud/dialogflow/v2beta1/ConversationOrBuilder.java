@@ -361,6 +361,56 @@ public interface ConversationOrBuilder
    *
    *
    * <pre>
+   * Optional. Output only. The initial conversation profile to be used to
+   * configure this conversation, which is a copy of the conversation profile
+   * config read at conversation creation time.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.ConversationProfile initial_conversation_profile = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the initialConversationProfile field is set.
+   */
+  boolean hasInitialConversationProfile();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The initial conversation profile to be used to
+   * configure this conversation, which is a copy of the conversation profile
+   * config read at conversation creation time.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.ConversationProfile initial_conversation_profile = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The initialConversationProfile.
+   */
+  com.google.cloud.dialogflow.v2beta1.ConversationProfile getInitialConversationProfile();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The initial conversation profile to be used to
+   * configure this conversation, which is a copy of the conversation profile
+   * config read at conversation creation time.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.ConversationProfile initial_conversation_profile = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2beta1.ConversationProfileOrBuilder
+      getInitialConversationProfileOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The context reference updates provided by external systems.
    * </pre>
    *
@@ -433,4 +483,86 @@ public interface ConversationOrBuilder
    */
   com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference
       getIngestedContextReferencesOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A map with generator name as key and generator context as
+   * value.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext&gt; initial_generator_contexts = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getInitialGeneratorContextsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A map with generator name as key and generator context as
+   * value.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext&gt; initial_generator_contexts = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  boolean containsInitialGeneratorContexts(java.lang.String key);
+
+  /** Use {@link #getInitialGeneratorContextsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext>
+      getInitialGeneratorContexts();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A map with generator name as key and generator context as
+   * value.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext&gt; initial_generator_contexts = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext>
+      getInitialGeneratorContextsMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A map with generator name as key and generator context as
+   * value.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext&gt; initial_generator_contexts = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext
+      getInitialGeneratorContextsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A map with generator name as key and generator context as
+   * value.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext&gt; initial_generator_contexts = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext
+      getInitialGeneratorContextsOrThrow(java.lang.String key);
 }

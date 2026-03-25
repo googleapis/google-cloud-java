@@ -304,6 +304,7 @@ public class HttpJsonConversationHistoryStub extends ConversationHistoryStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetConversationRequest, Conversation> getConversationTransportSettings =
         HttpJsonCallSettings.<GetConversationRequest, Conversation>newBuilder()
@@ -315,6 +316,7 @@ public class HttpJsonConversationHistoryStub extends ConversationHistoryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteConversationRequest, Empty> deleteConversationTransportSettings =
         HttpJsonCallSettings.<DeleteConversationRequest, Empty>newBuilder()
@@ -326,6 +328,7 @@ public class HttpJsonConversationHistoryStub extends ConversationHistoryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

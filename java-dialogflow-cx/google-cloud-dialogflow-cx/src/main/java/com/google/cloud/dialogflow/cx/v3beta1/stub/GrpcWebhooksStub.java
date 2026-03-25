@@ -187,6 +187,7 @@ public class GrpcWebhooksStub extends WebhooksStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetWebhookRequest, Webhook> getWebhookTransportSettings =
         GrpcCallSettings.<GetWebhookRequest, Webhook>newBuilder()
@@ -197,6 +198,7 @@ public class GrpcWebhooksStub extends WebhooksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateWebhookRequest, Webhook> createWebhookTransportSettings =
         GrpcCallSettings.<CreateWebhookRequest, Webhook>newBuilder()
@@ -207,6 +209,7 @@ public class GrpcWebhooksStub extends WebhooksStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateWebhookRequest, Webhook> updateWebhookTransportSettings =
         GrpcCallSettings.<UpdateWebhookRequest, Webhook>newBuilder()
@@ -227,6 +230,7 @@ public class GrpcWebhooksStub extends WebhooksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

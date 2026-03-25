@@ -561,6 +561,7 @@ public class HttpJsonToolsStub extends ToolsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListToolsRequest, ListToolsResponse> listToolsTransportSettings =
         HttpJsonCallSettings.<ListToolsRequest, ListToolsResponse>newBuilder()
@@ -572,6 +573,7 @@ public class HttpJsonToolsStub extends ToolsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetToolRequest, Tool> getToolTransportSettings =
         HttpJsonCallSettings.<GetToolRequest, Tool>newBuilder()
@@ -583,6 +585,7 @@ public class HttpJsonToolsStub extends ToolsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateToolRequest, Tool> updateToolTransportSettings =
         HttpJsonCallSettings.<UpdateToolRequest, Tool>newBuilder()
@@ -605,6 +608,7 @@ public class HttpJsonToolsStub extends ToolsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListToolVersionsRequest, ListToolVersionsResponse>
         listToolVersionsTransportSettings =
@@ -617,6 +621,7 @@ public class HttpJsonToolsStub extends ToolsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateToolVersionRequest, ToolVersion> createToolVersionTransportSettings =
         HttpJsonCallSettings.<CreateToolVersionRequest, ToolVersion>newBuilder()
@@ -628,6 +633,7 @@ public class HttpJsonToolsStub extends ToolsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetToolVersionRequest, ToolVersion> getToolVersionTransportSettings =
         HttpJsonCallSettings.<GetToolVersionRequest, ToolVersion>newBuilder()
@@ -639,6 +645,7 @@ public class HttpJsonToolsStub extends ToolsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteToolVersionRequest, Empty> deleteToolVersionTransportSettings =
         HttpJsonCallSettings.<DeleteToolVersionRequest, Empty>newBuilder()
@@ -650,6 +657,7 @@ public class HttpJsonToolsStub extends ToolsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RestoreToolVersionRequest, RestoreToolVersionResponse>
         restoreToolVersionTransportSettings =
@@ -662,6 +670,7 @@ public class HttpJsonToolsStub extends ToolsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

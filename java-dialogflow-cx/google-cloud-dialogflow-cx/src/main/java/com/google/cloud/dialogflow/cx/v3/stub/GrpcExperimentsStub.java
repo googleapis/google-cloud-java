@@ -221,6 +221,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetExperimentRequest, Experiment> getExperimentTransportSettings =
         GrpcCallSettings.<GetExperimentRequest, Experiment>newBuilder()
@@ -231,6 +232,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateExperimentRequest, Experiment> createExperimentTransportSettings =
         GrpcCallSettings.<CreateExperimentRequest, Experiment>newBuilder()
@@ -241,6 +243,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateExperimentRequest, Experiment> updateExperimentTransportSettings =
         GrpcCallSettings.<UpdateExperimentRequest, Experiment>newBuilder()
@@ -261,6 +264,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<StartExperimentRequest, Experiment> startExperimentTransportSettings =
         GrpcCallSettings.<StartExperimentRequest, Experiment>newBuilder()
@@ -271,6 +275,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<StopExperimentRequest, Experiment> stopExperimentTransportSettings =
         GrpcCallSettings.<StopExperimentRequest, Experiment>newBuilder()
@@ -281,6 +286,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

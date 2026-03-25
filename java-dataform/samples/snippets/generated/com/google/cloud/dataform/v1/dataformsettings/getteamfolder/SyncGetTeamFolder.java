@@ -16,17 +16,17 @@
 
 package com.google.cloud.dataform.v1.samples;
 
-// [START dataform_v1_generated_DataformSettings_GetRepository_sync]
+// [START dataform_v1_generated_DataformSettings_GetTeamFolder_sync]
 import com.google.cloud.dataform.v1.DataformSettings;
 import java.time.Duration;
 
-public class SyncGetRepository {
+public class SyncGetTeamFolder {
 
   public static void main(String[] args) throws Exception {
-    syncGetRepository();
+    syncGetTeamFolder();
   }
 
-  public static void syncGetRepository() throws Exception {
+  public static void syncGetTeamFolder() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
@@ -34,10 +34,10 @@ public class SyncGetRepository {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     DataformSettings.Builder dataformSettingsBuilder = DataformSettings.newBuilder();
     dataformSettingsBuilder
-        .getRepositorySettings()
+        .getTeamFolderSettings()
         .setRetrySettings(
             dataformSettingsBuilder
-                .getRepositorySettings()
+                .getTeamFolderSettings()
                 .getRetrySettings()
                 .toBuilder()
                 .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -52,4 +52,4 @@ public class SyncGetRepository {
     DataformSettings dataformSettings = dataformSettingsBuilder.build();
   }
 }
-// [END dataform_v1_generated_DataformSettings_GetRepository_sync]
+// [END dataform_v1_generated_DataformSettings_GetTeamFolder_sync]
