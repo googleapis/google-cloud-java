@@ -64,7 +64,7 @@ jobs:
       # Install the modules for showcase (Shared-Deps is required to run showcase)
       - name: Install sdk-platform-java's modules
         # gapic-generator-java requires Java 8 and is irrelevant for this CI
-        run: mvn -q -B -ntp install --projects '!gapic-generator-java' -Dcheckstyle.skip -Dfmt.skip -DskipTests -Dclirr.skip -T 1C
+        run: mvn -q -B -ntp install --projects '!gapic-generator-java' -PquickBuild -DskipTests -PquickBuild -T 1C
         working-directory: sdk-platform-java
 
       # Set up local showcase server to run the showcase ITs

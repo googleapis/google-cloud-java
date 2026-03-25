@@ -44,7 +44,7 @@ jobs:
         cache: maven
     - name: Install sdk-platform-modules to local Maven repository
       run: |
-        mvn install -B -ntp  -T 1C -DskipTests -Dclirr.skip -Dcheckstyle.skip -Denforcer.skip
+        mvn install -B -ntp -T 1C -DskipTests -PquickBuild
       working-directory: sdk-platform-java
     - name: Check Java 8 compatibility for class files
       shell: bash

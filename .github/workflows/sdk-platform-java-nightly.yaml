@@ -40,7 +40,7 @@ jobs:
           cache: maven
       - run: mvn -version
       - name: Install
-        run: mvn install --errors --batch-mode --no-transfer-progress -Dcheckstyle.skip -Dfmt.skip
+        run: mvn install --errors --batch-mode --no-transfer-progress -PquickBuild
       - name: Create issue if previous step fails
         if: ${{ failure() }}
         env:
@@ -67,7 +67,7 @@ jobs:
           cache: maven
       - run: mvn -version
       - name: Install with Java 11
-        run: mvn install --errors --batch-mode --no-transfer-progress -Dcheckstyle.skip -DskipTests -Dfmt.skip
+        run: mvn install --errors --batch-mode --no-transfer-progress -PquickBuild -DskipTests -PquickBuild
 
       - uses: actions/setup-java@v5
         with:
