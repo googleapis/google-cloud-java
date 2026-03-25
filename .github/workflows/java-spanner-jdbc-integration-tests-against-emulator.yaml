@@ -42,7 +42,7 @@ jobs:
       run: .kokoro/build.sh
       env:
         JOB_TYPE: test
-    - run: mvn -B -Dspanner.testenv.instance="" -Penable-integration-tests -DtrimStackTrace=false -PquickBuild -fae verify
+    - run: mvn -B -Dspanner.testenv.instance="" -Penable-integration-tests -DtrimStackTrace=false -Dclirr.skip=true -Denforcer.skip=true -fae verify
       working-directory: java-spanner-jdbc
       env:
         SPANNER_EMULATOR_HOST: localhost:9010
