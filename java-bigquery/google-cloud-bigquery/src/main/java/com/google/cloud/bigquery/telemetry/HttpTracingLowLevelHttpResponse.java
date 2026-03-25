@@ -26,8 +26,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * Class that wraps LowLevelHttpResponse to be able to inject an InputStream wrapper that allows us
- * to track response size in trace spans.
+ * Class that wraps a LowLevelHttpResponse to be able to inject wrapper on the delegate InputStream
+ * that allows us to capture response size for telemetry purposes.
  */
 class HttpTracingLowLevelHttpResponse extends LowLevelHttpResponse {
   private final LowLevelHttpResponse delegate;
