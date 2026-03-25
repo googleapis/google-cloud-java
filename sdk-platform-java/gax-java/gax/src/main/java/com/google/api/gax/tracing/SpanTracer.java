@@ -138,11 +138,12 @@ public class SpanTracer implements ApiTracer {
 
   @Override
   public void responseHeadersReceived(java.util.Map<String, Object> headers) {
-    if (attemptSpan != null) {
-      long contentLength = extractContentLength(headers);
-      if (contentLength >= 0) {
-        attemptSpan.setAttribute(ObservabilityAttributes.HTTP_RESPONSE_BODY_SIZE, contentLength);
-      }
+    if (attemptSpan == null) {
+      return;
+    }
+    long contentLength = extractContentLength(headers);
+    if (contentLength >= 0) {
+      attemptSpan.setAttribute(ObservabilityAttributes.HTTP_RESPONSE_BODY_SIZE, contentLength);
     }
   }
 
@@ -157,23 +158,22 @@ public class SpanTracer implements ApiTracer {
    * @return the content length in bytes, or -1 if the header is missing or malformed.
    */
   private long extractContentLength(java.util.Map<String, Object> headers) {
-    if (headers == null || headers.isEmpty()) return -1;
-    // google-http-client HttpHeaders uses a case-insensitive map but we copy it for safety
-    // and to handle potential different implementations.
-    Object value =
-        headers.entrySet().stream()
-            .filter(e -> CONTENT_LENGTH_KEY.equalsIgnoreCase(e.getKey()))
-            .map(Map.Entry::getValue)
-            .findFirst()
-            .orElse(null);
-
-    if (value instanceof java.util.Collection) {
-      value = ((java.util.Collection<?>) value).stream().findFirst().orElse(null);
-    }
-
     try {
+      if (headers == null || headers.isEmpty()) return -1;
+      // google-http-client HttpHeaders uses a case-insensitive map but we copy it for safety
+      // and to handle potential different implementations.
+      Object value =
+          headers.entrySet().stream()
+              .filter(e -> CONTENT_LENGTH_KEY.equalsIgnoreCase(e.getKey()))
+              .map(Map.Entry::getValue)
+              .findFirst()
+              .orElse(null);
+
+      if (value instanceof java.util.Collection) {
+        value = ((java.util.Collection<?>) value).stream().findFirst().orElse(null);
+      }
       return Long.parseLong(value.toString());
-    } catch (NumberFormatException | NullPointerException e) {
+    } catch (Exception e) {
       return -1;
     }
   }
