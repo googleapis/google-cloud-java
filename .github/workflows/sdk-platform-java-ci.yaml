@@ -34,13 +34,13 @@ jobs:
       - run: java -version
       - name: Unit Tests
         run: |
-mvn test --batch-mode --no-transfer-progress -PquickBuild \
+          mvn test --batch-mode --no-transfer-progress -PquickBuild \
               -DenableTestCoverage
         working-directory: sdk-platform-java
       # The `envVarTest` profile runs tests that require an environment variable
       - name: Env Var Tests
         run: |
-mvn test --batch-mode --no-transfer-progress -PquickBuild \
+          mvn test --batch-mode --no-transfer-progress -PquickBuild \
               -DenableTestCoverage -PenvVarTest
         # Set the Env Var for this step only
         env:
@@ -51,7 +51,7 @@ mvn test --batch-mode --no-transfer-progress -PquickBuild \
       - run: bazelisk version
       - name: Install Maven modules
         run: |
-mvn install -B -ntp -PquickBuild -DskipTests
+          mvn install -B -ntp -PquickBuild -DskipTests
         working-directory: sdk-platform-java
       - name: Integration Tests
         run: |
@@ -90,13 +90,13 @@ mvn install -B -ntp -PquickBuild -DskipTests
       - run: java -version
       - name: Unit Tests
         run: |
-mvn test --batch-mode --no-transfer-progress -PquickBuild \
+          mvn test --batch-mode --no-transfer-progress -PquickBuild \
               -DenableTestCoverage
         working-directory: sdk-platform-java
       # The `envVarTest` profile runs tests that require an environment variable
       - name: Env Var Tests
         run: |
-mvn test --batch-mode --no-transfer-progress -PquickBuild \
+          mvn test --batch-mode --no-transfer-progress -PquickBuild \
               -DenableTestCoverage -PenvVarTest
         # Set the Env Var for this step only
         env:
@@ -107,11 +107,7 @@ mvn test --batch-mode --no-transfer-progress -PquickBuild \
       - run: bazelisk version
       - name: Install Maven modules
         run: |
-<<<<<<< Updated upstream
-          mvn install -B -ntp -Pfast -DskipTests
-=======
           mvn install -B -ntp -PquickBuild -DskipTests
->>>>>>> Stashed changes
         working-directory: sdk-platform-java
       - name: Integration Tests
         run: |
@@ -132,13 +128,13 @@ mvn test --batch-mode --no-transfer-progress -PquickBuild \
       - run: java -version
       - name: Unit Tests
         run: |
-mvn test --batch-mode --no-transfer-progress -PquickBuild \
+          mvn test --batch-mode --no-transfer-progress -PquickBuild \
               -DenableTestCoverage
         working-directory: sdk-platform-java
       # The `envVarTest` profile runs tests that require an environment variable
       - name: Env Var Tests
         run: |
-mvn test --batch-mode --no-transfer-progress -PquickBuild \
+          mvn test --batch-mode --no-transfer-progress -PquickBuild \
               -DenableTestCoverage -PenvVarTest
         # Set the Env Var for this step only
         env:
@@ -149,7 +145,7 @@ mvn test --batch-mode --no-transfer-progress -PquickBuild \
       - run: bazelisk version
       - name: Install Maven modules
         run: |
-mvn install -B -ntp -PquickBuild -DskipTests
+          mvn install -B -ntp -PquickBuild -DskipTests
         working-directory: sdk-platform-java
       - name: Integration Tests
         # note need to set shouldInstallTestSecurityManager=false due to https://github.com/bazelbuild/bazel/issues/24354
@@ -194,7 +190,7 @@ mvn install -B -ntp -PquickBuild -DskipTests
           # Maven surefire plugin lets us to specify the JVM when running tests via
           # the "jvm" system property.
           export GOOGLE_CLOUD_UNIVERSE_DOMAIN=random.com
-mvn test --batch-mode --no-transfer-progress -PquickBuild \
+          mvn test --batch-mode --no-transfer-progress -PquickBuild \
               -DenableTestCoverage -Dsurefire.failIfNoSpecifiedTests=false \
               -PenvVarTest
         # Set the Env Var for this step only
@@ -269,7 +265,7 @@ mvn test --batch-mode --no-transfer-progress -PquickBuild \
       - name: Install all modules using Java 11
         shell: bash
         run: |
-mvn install -B -ntp -PquickBuild -DskipTests
+          mvn install -B -ntp -PquickBuild -DskipTests
         working-directory: sdk-platform-java
       - uses: actions/setup-java@v3
         with:
@@ -343,7 +339,7 @@ mvn install -B -ntp -PquickBuild -DskipTests
       - run: mvn -version
       - name: Install Maven modules
         run: |
-mvn install -B -ntp -PquickBuild -DskipTests
+          mvn install -B -ntp -PquickBuild -DskipTests
         working-directory: sdk-platform-java        
       - name: Showcase golden tests
         working-directory: sdk-platform-java/java-showcase
@@ -422,7 +418,7 @@ mvn install -B -ntp -PquickBuild -DskipTests
           cache: maven
       - name: Install Maven modules
         run: |
-mvn install -B -ntp -PquickBuild -DskipTests
+          mvn install -B -ntp -PquickBuild -DskipTests
         working-directory: sdk-platform-java
       - name: Install showcase to local maven repository
         run: |

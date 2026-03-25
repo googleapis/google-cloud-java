@@ -216,7 +216,7 @@ jobs:
     - run: java -version
     - name: Install Maven modules to local Maven repository
       run: |
-mvn install -B -ntp  -T 1C -PquickBuild -DskipTests
+        mvn install -B -ntp -T 1C -PquickBuild -DskipTests
     - run: java -version
     - run: mvn -B -ntp enforcer:enforce@enforce -T 1C
   gapic-libraries-bom:
@@ -230,7 +230,7 @@ mvn install -B -ntp  -T 1C -PquickBuild -DskipTests
         cache: maven
     - name: Install Maven modules to local Maven repository
       run: |
-mvn install -B -ntp  -T 1C -PquickBuild -DskipTests
+        mvn install -B -ntp -T 1C -PquickBuild -DskipTests
     - name: Validate gapic-libraries-bom
       uses: googleapis/java-cloud-bom/tests/validate-bom@v26.54.0
       with:
