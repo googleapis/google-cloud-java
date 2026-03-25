@@ -42,8 +42,11 @@ class HttpTracingLowLevelHttpResponse extends LowLevelHttpResponse {
   @Override
   public InputStream getContent() throws IOException {
     if (countingInputStream == null) {
-      if (span != null && span.getSpanContext().isValid()) {
-        countingInputStream = getWrappedInputStream(span, delegate.getContent());
+      InputStream originalContent = delegate.getContent();
+      if (originalContent != null && span != null && span.getSpanContext().isValid()) {
+        countingInputStream = getWrappedInputStream(span, originalContent);
+      } else {
+        countingInputStream = originalContent;
       }
     }
     return countingInputStream;
