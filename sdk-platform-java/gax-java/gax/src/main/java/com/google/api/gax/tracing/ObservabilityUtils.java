@@ -31,6 +31,7 @@ package com.google.api.gax.tracing;
 
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.rpc.ErrorInfo;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
 import java.util.Map;
@@ -54,6 +55,18 @@ class ObservabilityUtils {
     }
 
     return statusString;
+  }
+
+  /** Function to extract the ErrorInfo payload from the error, if available */
+  @Nullable
+  static ErrorInfo extractErrorInfo(@Nullable Throwable error) {
+    if (error instanceof ApiException) {
+      ApiException apiException = (ApiException) error;
+      if (apiException.getErrorDetails() != null) {
+        return apiException.getErrorDetails().getErrorInfo();
+      }
+    }
+    return null;
   }
 
   static Attributes toOtelAttributes(Map<String, Object> attributes) {

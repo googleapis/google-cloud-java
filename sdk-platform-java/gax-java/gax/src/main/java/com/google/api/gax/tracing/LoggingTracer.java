@@ -34,7 +34,6 @@ import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.logging.LoggerProvider;
 import com.google.api.gax.logging.LoggingUtils;
-import com.google.api.gax.rpc.ApiException;
 import com.google.rpc.ErrorInfo;
 import java.util.HashMap;
 import java.util.Map;
@@ -104,17 +103,12 @@ public class LoggingTracer extends BaseApiTracer {
           ObservabilityUtils.extractStatus(error));
     }
 
-    if (error instanceof ApiException) {
-      ApiException apiException = (ApiException) error;
-      if (apiException.getErrorDetails() != null) {
-        ErrorInfo errorInfo = apiException.getErrorDetails().getErrorInfo();
-        if (errorInfo != null) {
-          logContext.put("error.type", errorInfo.getReason());
-          logContext.put("gcp.errors.domain", errorInfo.getDomain());
-          for (Map.Entry<String, String> entry : errorInfo.getMetadataMap().entrySet()) {
-            logContext.put("gcp.errors.metadata." + entry.getKey(), entry.getValue());
-          }
-        }
+    ErrorInfo errorInfo = ObservabilityUtils.extractErrorInfo(error);
+    if (errorInfo != null) {
+      logContext.put("error.type", errorInfo.getReason());
+      logContext.put("gcp.errors.domain", errorInfo.getDomain());
+      for (Map.Entry<String, String> entry : errorInfo.getMetadataMap().entrySet()) {
+        logContext.put("gcp.errors.metadata." + entry.getKey(), entry.getValue());
       }
     }
 
