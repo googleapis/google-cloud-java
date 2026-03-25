@@ -158,7 +158,7 @@ jobs:
       run: |
         mvn test \
           -B -ntp \
-          -Pfast \
+          -PquickBuild \
           -Dorg.slf4j.simpleLogger.showDateTime=true \
           -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
           -Dmaven.wagon.http.retryHandler.count=5 \

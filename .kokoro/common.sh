@@ -388,11 +388,7 @@ function install_modules() {
   if [ -z "$1" ]; then
     mvn install \
       -B -ntp \
-<<<<<<< Updated upstream
-      -Pfast \
-=======
       -PquickBuild \
->>>>>>> Stashed changes
       -DtrimStackTrace=false \
       -Dorg.slf4j.simpleLogger.showDateTime=true \
       -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
@@ -440,11 +436,7 @@ function install_modules() {
     #      Correctly builds dependencies without building dependents.
     mvn install --projects "$all_submodules,$always_install_deps" --also-make \
       -B -ntp \
-<<<<<<< Updated upstream
-      -Pfast \
-=======
       -PquickBuild \
->>>>>>> Stashed changes
       -DtrimStackTrace=false \
       -Dorg.slf4j.simpleLogger.showDateTime=true \
       -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
