@@ -67,7 +67,7 @@ jobs:
           cache: maven
       - run: mvn -version
       - name: Install with Java 11
-        run: mvn install --errors --batch-mode --no-transfer-progress -PquickBuild -DskipTests -PquickBuild
+        run: mvn install --errors --batch-mode --no-transfer-progress -PquickBuild -DskipTests
 
       - uses: actions/setup-java@v5
         with:
