@@ -17,7 +17,9 @@
 package com.google.cloud.bigquery.telemetry;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.Mockito.mock;
@@ -202,6 +204,49 @@ public class HttpTracingRequestInitializerTest {
   }
 
   @Test
+  public void testUrlQueryParametersAreRedacted() throws IOException {
+    HttpTransport transport = createTransport();
+    String urlWithQuery = BASE_URL + "?upload_id=secret_id&Signature=secret_sig&keep_me=ok";
+    HttpRequest request = buildGetRequest(transport, initializer, urlWithQuery);
+
+    HttpResponse response = request.execute();
+    response.disconnect();
+
+    spanScope.close();
+    parentSpan.end();
+
+    List<SpanData> spans = spanExporter.getFinishedSpanItems();
+    assertEquals(1, spans.size());
+    SpanData span = spans.get(0);
+    String urlFull = span.getAttributes().get(HttpTracingRequestInitializer.URL_FULL);
+
+    assertTrue(urlFull.contains("upload_id=REDACTED"));
+    assertTrue(urlFull.contains("Signature=REDACTED"));
+    assertTrue(urlFull.contains("keep_me=ok"));
+  }
+
+  @Test
+  public void testUrlCredentialsAreRedacted() throws IOException {
+    HttpTransport transport = createTransport();
+    String credUrl = "https://user:pass@bigquery.googleapis.com/bigquery/v2/projects/test/datasets";
+    HttpRequest request = buildGetRequest(transport, initializer, credUrl);
+
+    HttpResponse response = request.execute();
+    response.disconnect();
+
+    spanScope.close();
+    parentSpan.end();
+
+    List<SpanData> spans = spanExporter.getFinishedSpanItems();
+    assertEquals(1, spans.size());
+    SpanData span = spans.get(0);
+    String urlFull = span.getAttributes().get(HttpTracingRequestInitializer.URL_FULL);
+
+    assertFalse(urlFull.contains("user:pass"));
+    assertTrue(urlFull.contains("REDACTED:REDACTED@"));
+  }
+
+  @Test
   public void testAddRequestBodySizeToSpan_ExceptionHandled() throws IOException {
     HttpContent content = mock(HttpContent.class);
     when(content.getLength()).thenThrow(new IOException("test"));
@@ -369,6 +414,7 @@ public class HttpTracingRequestInitializerTest {
         Version.VERSION, span.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_VERSION));
     assertEquals(
         method, span.getAttributes().get(HttpTracingRequestInitializer.HTTP_REQUEST_METHOD));
+    assertEquals(BASE_URL, span.getAttributes().get(HttpTracingRequestInitializer.URL_FULL));
     if (requestBodySize >= 0) {
       assertEquals(
           requestBodySize,

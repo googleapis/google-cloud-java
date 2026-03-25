@@ -1,0 +1,1113 @@
+{
+  "statements":
+  [
+    {
+      "name": "SHOW [VARIABLE] AUTOCOMMIT",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_AUTOCOMMIT",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?autocommit\\s*\\z",
+      "method": "statementShowAutocommit",
+      "exampleStatements": ["show autocommit","show variable autocommit"]
+    },
+    {
+      "name": "SHOW [VARIABLE] SPANNER.READONLY",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_READONLY",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?spanner\\.readonly\\s*\\z",
+      "method": "statementShowReadOnly",
+      "exampleStatements": ["show spanner.readonly","show variable spanner.readonly"]
+    },
+    {
+      "name": "SHOW [VARIABLE] SPANNER.RETRY_ABORTS_INTERNALLY",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_RETRY_ABORTS_INTERNALLY",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?spanner\\.retry_aborts_internally\\s*\\z",
+      "method": "statementShowRetryAbortsInternally",
+      "exampleStatements": ["show spanner.retry_aborts_internally","show variable spanner.retry_aborts_internally"],
+      "examplePrerequisiteStatements": ["set spanner.readonly=false", "set autocommit=false"]
+    },
+    {
+      "name": "SHOW [VARIABLE] SPANNER.AUTOCOMMIT_DML_MODE",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_AUTOCOMMIT_DML_MODE",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?spanner\\.autocommit_dml_mode\\s*\\z",
+      "method": "statementShowAutocommitDmlMode",
+      "exampleStatements": ["show spanner.autocommit_dml_mode","show variable spanner.autocommit_dml_mode"]
+    },
+    {
+      "name": "SHOW [VARIABLE] STATEMENT_TIMEOUT",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_STATEMENT_TIMEOUT",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?statement_timeout\\s*\\z",
+      "method": "statementShowStatementTimeout",
+      "exampleStatements": ["show statement_timeout","show variable statement_timeout"]
+    },
+    {
+      "name": "SHOW [VARIABLE] SPANNER.TRANSACTION_TIMEOUT",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_TRANSACTION_TIMEOUT",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?spanner\\.transaction_timeout\\s*\\z",
+      "method": "statementShowTransactionTimeout",
+      "exampleStatements": ["show spanner.transaction_timeout","show variable spanner.transaction_timeout"]
+    },
+    {
+      "name": "SHOW [VARIABLE] SPANNER.READ_TIMESTAMP",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_READ_TIMESTAMP",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?spanner\\.read_timestamp\\s*\\z",
+      "method": "statementShowReadTimestamp",
+      "exampleStatements": ["show spanner.read_timestamp","show variable spanner.read_timestamp"],
+      "examplePrerequisiteStatements": ["set spanner.readonly = true", "SELECT 1 AS TEST"]
+    },
+    {
+      "name": "SHOW [VARIABLE] SPANNER.COMMIT_TIMESTAMP",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_COMMIT_TIMESTAMP",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?spanner\\.commit_timestamp\\s*\\z",
+      "method": "statementShowCommitTimestamp",
+      "exampleStatements": ["show spanner.commit_timestamp","show variable spanner.commit_timestamp"],
+      "examplePrerequisiteStatements": ["update foo set bar=1"]
+    },
+    {
+      "name": "SHOW [VARIABLE] SPANNER.READ_ONLY_STALENESS",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_READ_ONLY_STALENESS",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?spanner\\.read_only_staleness\\s*\\z",
+      "method": "statementShowReadOnlyStaleness",
+      "exampleStatements": ["show spanner.read_only_staleness","show variable spanner.read_only_staleness"]
+    },
+    {
+      "name": "SHOW [VARIABLE] SPANNER.DIRECTED_READ",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_DIRECTED_READ",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?spanner\\.directed_read\\s*\\z",
+      "method": "statementShowDirectedRead",
+      "exampleStatements": ["show spanner.directed_read", "show variable spanner.directed_read"]
+    },
+    {
+      "name": "SHOW [VARIABLE] SPANNER.OPTIMIZER_VERSION",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_OPTIMIZER_VERSION",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?spanner\\.optimizer_version\\s*\\z",
+      "method": "statementShowOptimizerVersion",
+      "exampleStatements": ["show spanner.optimizer_version","show variable spanner.optimizer_version"]
+    },
+    {
+      "name": "SHOW [VARIABLE] SPANNER.OPTIMIZER_STATISTICS_PACKAGE",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_OPTIMIZER_STATISTICS_PACKAGE",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?spanner\\.optimizer_statistics_package\\s*\\z",
+      "method": "statementShowOptimizerStatisticsPackage",
+      "exampleStatements": ["show spanner.optimizer_statistics_package","show variable spanner.optimizer_statistics_package"]
+    },
+    {
+      "name": "SHOW [VARIABLE] SPANNER.RETURN_COMMIT_STATS",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_RETURN_COMMIT_STATS",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?spanner\\.return_commit_stats\\s*\\z",
+      "method": "statementShowReturnCommitStats",
+      "exampleStatements": ["show spanner.return_commit_stats","show variable spanner.return_commit_stats"]
+    },
+    {
+      "name": "SHOW [VARIABLE] SPANNER.MAX_COMMIT_DELAY",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_MAX_COMMIT_DELAY",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?spanner\\.max_commit_delay\\s*\\z",
+      "method": "statementShowMaxCommitDelay",
+      "exampleStatements": ["show spanner.max_commit_delay", "show variable spanner.max_commit_delay"]
+    },
+    {
+      "name": "SHOW [VARIABLE] SPANNER.COMMIT_RESPONSE",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_COMMIT_RESPONSE",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?spanner\\.commit_response\\s*\\z",
+      "method": "statementShowCommitResponse",
+      "exampleStatements": ["show spanner.commit_response","show variable spanner.commit_response"],
+      "examplePrerequisiteStatements": ["update foo set bar=1"]
+    },
+    {
+      "name": "SHOW [VARIABLE] SPANNER.STATEMENT_TAG",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_STATEMENT_TAG",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?spanner\\.statement_tag\\s*\\z",
+      "method": "statementShowStatementTag",
+      "exampleStatements": ["show spanner.statement_tag","show variable spanner.statement_tag"]
+    },
+    {
+      "name": "SHOW [VARIABLE] SPANNER.TRANSACTION_TAG",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_TRANSACTION_TAG",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?spanner\\.transaction_tag\\s*\\z",
+      "method": "statementShowTransactionTag",
+      "exampleStatements": ["show spanner.transaction_tag","show variable spanner.transaction_tag"]
+    },
+    {
+      "name": "SHOW [VARIABLE] SPANNER.EXCLUDE_TXN_FROM_CHANGE_STREAMS",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_EXCLUDE_TXN_FROM_CHANGE_STREAMS",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?spanner\\.exclude_txn_from_change_streams\\s*\\z",
+      "method": "statementShowExcludeTxnFromChangeStreams",
+      "exampleStatements": ["show spanner.exclude_txn_from_change_streams","show variable spanner.exclude_txn_from_change_streams"]
+    },
+    {
+      "name": "SHOW [VARIABLE] SPANNER.RPC_PRIORITY",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_RPC_PRIORITY",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?spanner\\.rpc_priority\\s*\\z",
+      "method": "statementShowRPCPriority",
+      "exampleStatements": ["show spanner.rpc_priority","show variable spanner.rpc_priority"]
+    },
+    {
+      "name": "SHOW [VARIABLE] SPANNER.SAVEPOINT_SUPPORT",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_SAVEPOINT_SUPPORT",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?spanner\\.savepoint_support\\s*\\z",
+      "method": "statementShowSavepointSupport",
+      "exampleStatements": ["show spanner.savepoint_support","show variable spanner.savepoint_support"]
+    },
+    {
+      "name": "SHOW [VARIABLE] SPANNER.READ_LOCK_MODE",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_READ_LOCK_MODE",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?spanner\\.read_lock_mode\\s*\\z",
+      "method": "statementShowReadLockMode",
+      "exampleStatements": ["show spanner.read_lock_mode","show variable spanner.read_lock_mode"]
+    },
+    {
+      "name": "SHOW [VARIABLE] SPANNER.DELAY_TRANSACTION_START_UNTIL_FIRST_WRITE",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_DELAY_TRANSACTION_START_UNTIL_FIRST_WRITE",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?spanner\\.delay_transaction_start_until_first_write\\s*\\z",
+      "method": "statementShowDelayTransactionStartUntilFirstWrite",
+      "exampleStatements": ["show spanner.delay_transaction_start_until_first_write","show variable spanner.delay_transaction_start_until_first_write"]
+    },
+    {
+      "name": "SHOW [VARIABLE] SPANNER.KEEP_TRANSACTION_ALIVE",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_KEEP_TRANSACTION_ALIVE",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?spanner\\.keep_transaction_alive\\s*\\z",
+      "method": "statementShowKeepTransactionAlive",
+      "exampleStatements": ["show spanner.keep_transaction_alive","show variable spanner.keep_transaction_alive"]
+    },
+    {
+      "name": "SHOW [VARIABLE] SPANNER.AUTO_BATCH_DML",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_AUTO_BATCH_DML",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?spanner\\.auto_batch_dml\\s*\\z",
+      "method": "statementShowAutoBatchDml",
+      "exampleStatements": ["show spanner.auto_batch_dml", "show variable spanner.auto_batch_dml"]
+    },
+    {
+      "name": "SHOW [VARIABLE] SPANNER.AUTO_BATCH_DML_UPDATE_COUNT",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_AUTO_BATCH_DML_UPDATE_COUNT",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?spanner\\.auto_batch_dml_update_count\\s*\\z",
+      "method": "statementShowAutoBatchDmlUpdateCount",
+      "exampleStatements": ["show spanner.auto_batch_dml_update_count","show variable spanner.auto_batch_dml_update_count"]
+    },
+    {
+      "name": "SHOW [VARIABLE] SPANNER.AUTO_BATCH_DML_UPDATE_COUNT_VERIFICATION",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_AUTO_BATCH_DML_UPDATE_COUNT_VERIFICATION",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?spanner\\.auto_batch_dml_update_count_verification\\s*\\z",
+      "method": "statementShowAutoBatchDmlUpdateCountVerification",
+      "exampleStatements": ["show spanner.auto_batch_dml_update_count_verification","show variable spanner.auto_batch_dml_update_count_verification"]
+    },
+    {
+      "name": "SHOW [VARIABLE] TRANSACTION ISOLATION LEVEL",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_TRANSACTION_ISOLATION_LEVEL",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?transaction\\s*isolation\\s*level\\s*\\z",
+      "method": "statementShowTransactionIsolationLevel",
+      "exampleStatements": ["show transaction isolation level","show variable transaction isolation level"]
+    },
+    {
+      "name": "SHOW [VARIABLE] DEFAULT_TRANSACTION_ISOLATION",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_DEFAULT_TRANSACTION_ISOLATION",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?default_transaction_isolation\\s*\\z",
+      "method": "statementShowDefaultTransactionIsolation",
+      "exampleStatements": ["show default_transaction_isolation","show variable default_transaction_isolation"]
+    },
+    {
+      "name": "EXPLAIN <sql>",
+      "executorName": "ClientSideStatementExplainExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "EXPLAIN",
+      "regex": "(?is)\\A\\s*explain(\\s+|\\()(.*)\\z",
+      "method": "statementExplain",
+      "exampleStatements": []
+    },
+    {
+      "name": "PARTITION <sql>",
+      "executorName": "ClientSideStatementPartitionExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "PARTITION",
+      "regex": "(?is)\\A\\s*partition(\\s+|\\()(.*)\\z",
+      "method": "statementPartition",
+      "exampleStatements": []
+    },
+    {
+      "name": "RUN PARTITION ['<partition_id>']",
+      "executorName": "ClientSideStatementRunPartitionExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "RUN_PARTITION",
+      "regex": "(?is)\\A\\s*run\\s+partition(?:\\s*'(.*)')?\\s*\\z",
+      "method": "statementRunPartition",
+      "exampleStatements": []
+    },
+    {
+      "name": "RUN PARTITIONED QUERY <sql>",
+      "executorName": "ClientSideStatementRunPartitionedQueryExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "RUN_PARTITIONED_QUERY",
+      "regex": "(?is)\\A\\s*run\\s+partitioned\\s+query(\\s+|\\()(.*)\\z",
+      "method": "statementRunPartitionedQuery",
+      "exampleStatements": []
+    },
+    {
+      "name": "{START | BEGIN} [TRANSACTION | WORK] [{ (READ ONLY|READ WRITE) [[,] (ISOLATION LEVEL (DEFAULT|SERIALIZABLE|REPEATABLE READ))] [[,] NOT DEFERRABLE]}]",
+      "executorName": "ClientSideStatementPgBeginExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "BEGIN",
+      "regex": "(?is)\\A\\s*(?:begin|start)(?:\\s+transaction|\\s+work)?((?:(?:\\s+|\\s*,\\s*)read\\s+only|(?:\\s+|\\s*,\\s*)read\\s+write|(?:\\s+|\\s*,\\s*)isolation\\s+level\\s+default|(?:\\s+|\\s*,\\s*)isolation\\s+level\\s+serializable|(?:\\s+|\\s*,\\s*)isolation\\s+level\\s+repeatable\\s+read|(?:\\s+|\\s*,\\s*)not\\s+deferrable)*)?\\s*\\z",
+      "method": "statementBeginPgTransaction",
+      "exampleStatements": [
+        "begin", "start", "begin transaction", "start transaction", "begin work", "start work",
+        "begin read only", "start read only", "begin transaction read only", "start transaction read only", "begin work read only", "start work read only",
+        "begin read write", "start read write", "begin transaction read write", "start transaction read write", "begin work read write", "start work read write",
+        "begin isolation level default", "start isolation level default", "begin transaction isolation level default", "start transaction isolation level default", "begin work isolation level default", "start work isolation level default",
+        "begin isolation level serializable", "start isolation level serializable", "begin transaction isolation level serializable", "start transaction isolation level serializable", "begin work isolation level serializable", "start work isolation level serializable",
+        "begin isolation level repeatable read", "start isolation level repeatable read", "begin transaction isolation level repeatable read", "start transaction isolation level repeatable read", "begin work isolation level repeatable read", "start work isolation level repeatable read",
+        "begin isolation level default read write", "start isolation level default read only", "begin transaction isolation level default read only", "start transaction isolation level default read write", "begin work isolation level default read write", "start work isolation level default read only",
+        "begin isolation level serializable read write", "start isolation level serializable read write", "begin transaction isolation level serializable read only", "start transaction isolation level serializable read write", "begin work isolation level serializable read write", "start work isolation level serializable read only",
+        "begin isolation level repeatable read read write", "start isolation level repeatable read read write", "begin transaction isolation level repeatable read read only", "start transaction isolation level repeatable read read write", "begin work isolation level repeatable read read write", "start work isolation level repeatable read read only",
+        "begin isolation level serializable, read write", "start isolation level serializable, read write", "begin transaction isolation level serializable, read only", "start transaction isolation level serializable, read write", "begin work isolation level serializable, read write", "start work isolation level serializable, read only",
+        "begin isolation level repeatable read, read write", "start isolation level repeatable read, read write", "begin transaction isolation level repeatable read, read only", "start transaction isolation level repeatable read, read write", "begin work isolation level repeatable read, read write", "start work isolation level repeatable read, read only",
+        "begin not deferrable", "start not deferrable", "begin transaction not deferrable", "start transaction not deferrable", "begin work not deferrable", "start work not deferrable",
+        "begin read only not deferrable", "start read only not deferrable", "begin transaction read only not deferrable", "start transaction read only not deferrable", "begin work read only not deferrable", "start work read only not deferrable",
+        "begin read write not deferrable", "start read write not deferrable", "begin transaction read write not deferrable", "start transaction read write not deferrable", "begin work read write not deferrable", "start work read write not deferrable",
+        "begin isolation level default not deferrable", "start isolation level default not deferrable", "begin transaction isolation level default not deferrable", "start transaction isolation level default not deferrable", "begin work isolation level default not deferrable", "start work isolation level default not deferrable",
+        "begin isolation level serializable not deferrable", "start isolation level serializable not deferrable", "begin transaction isolation level serializable not deferrable", "start transaction isolation level serializable not deferrable", "begin work isolation level serializable not deferrable", "start work isolation level serializable not deferrable",
+        "begin isolation level default read write not deferrable", "start isolation level default read only not deferrable", "begin transaction isolation level default read only not deferrable", "start transaction isolation level default read write not deferrable", "begin work isolation level default read write not deferrable", "start work isolation level default read only not deferrable",
+        "begin isolation level serializable read write not deferrable", "start isolation level serializable read write not deferrable", "begin transaction isolation level serializable read only not deferrable", "start transaction isolation level serializable read write not deferrable", "begin work isolation level serializable read write not deferrable", "start work isolation level serializable read only not deferrable",
+        "begin isolation level serializable, read write, not deferrable", "start isolation level serializable, read write, not deferrable", "begin transaction isolation level serializable, read only, not deferrable", "start transaction isolation level serializable, read write, not deferrable", "begin work isolation level serializable, read write, not deferrable", "start work isolation level serializable, read only",
+        "begin transaction not deferrable", "start transaction not deferrable", "begin work not deferrable", "start work not deferrable",
+        "begin not deferrable read only", "start read only", "begin transaction not deferrable read only", "start transaction read only", "begin work not deferrable read only", "start work read only",
+        "begin not deferrable read write", "start read write", "begin transaction not deferrable read write", "start transaction read write", "begin work not deferrable read write", "start work read write",
+        "begin not deferrable isolation level default", "start isolation level default", "begin transaction not deferrable isolation level default", "start transaction isolation level default", "begin work not deferrable isolation level default", "start work isolation level default",
+        "begin not deferrable isolation level serializable", "start isolation level serializable", "begin transaction not deferrable isolation level serializable", "start transaction isolation level serializable", "begin work not deferrable isolation level serializable", "start work isolation level serializable",
+        "begin not deferrable isolation level default read write", "start isolation level default read only", "begin transaction not deferrable isolation level default read only", "start transaction isolation level default read write", "begin work not deferrable isolation level default read write", "start work isolation level default read only",
+        "begin not deferrable isolation level serializable read write", "start isolation level serializable read write", "begin transaction not deferrable isolation level serializable read only", "start transaction isolation level serializable read write", "begin work not deferrable isolation level serializable read write", "start work isolation level serializable read only",
+        "begin not deferrable isolation level serializable, read write", "start isolation level serializable, read write", "begin transaction not deferrable isolation level serializable, read only", "start transaction isolation level serializable, read write", "begin work not deferrable isolation level serializable, read write", "start work isolation level serializable, read only",
+        "begin not deferrable isolation level repeatable read, read write", "start isolation level repeatable read, read write", "begin transaction not deferrable isolation level repeatable read, read only", "start transaction isolation level repeatable read, read write", "begin work not deferrable isolation level repeatable read, read write", "start work isolation level repeatable read, read only"
+      ]
+    },
+    {
+      "name": "{END | COMMIT} [TRANSACTION | WORK] [AND NO CHAIN]",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "COMMIT",
+      "regex": "(?is)\\A\\s*(?:commit|end)(?:\\s+transaction|\\s+work)?(?:\\s+and\\s+no\\s+chain)?\\s*\\z",
+      "method": "statementCommit",
+      "exampleStatements": [
+        "commit", "commit transaction", "commit work", "commit and no chain", "commit transaction and no chain", "commit work and no chain",
+        "end", "end transaction", "end work", "end and no chain", "end transaction and no chain", "end work and no chain"
+      ],
+      "examplePrerequisiteStatements": ["begin transaction"]
+    },
+    {
+      "name": "{ROLLBACK | ABORT} [TRANSACTION | WORK] [AND NO CHAIN]",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "ROLLBACK",
+      "regex": "(?is)\\A\\s*(?:rollback|abort)(?:\\s+transaction|\\s+work)?(?:\\s+and\\s+no\\s+chain)?\\s*\\z",
+      "method": "statementRollback",
+      "exampleStatements": [
+        "rollback", "rollback transaction", "rollback work", "rollback and no chain", "rollback transaction and no chain", "rollback work and no chain",
+        "abort", "abort transaction", "abort work", "abort and no chain", "abort transaction and no chain", "abort work and no chain"
+      ],
+      "examplePrerequisiteStatements": ["begin transaction"]
+    },
+    {
+      "name": "START BATCH DDL",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "START_BATCH_DDL",
+      "regex": "(?is)\\A\\s*(?:start)(?:\\s+batch)(?:\\s+ddl)\\s*\\z",
+      "method": "statementStartBatchDdl",
+      "exampleStatements": ["start batch ddl"]
+    },
+    {
+      "name": "START BATCH DML",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "START_BATCH_DML",
+      "regex": "(?is)\\A\\s*(?:start)(?:\\s+batch)(?:\\s+dml)\\s*\\z",
+      "method": "statementStartBatchDml",
+      "exampleStatements": ["start batch dml"]
+    },
+    {
+      "name": "RUN BATCH",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "RUN_BATCH",
+      "regex": "(?is)\\A\\s*(?:run)(?:\\s+batch)\\s*\\z",
+      "method": "statementRunBatch",
+      "exampleStatements": ["run batch"],
+      "examplePrerequisiteStatements": ["start batch ddl"]
+    },
+    {
+      "name": "ABORT BATCH",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "ABORT_BATCH",
+      "regex": "(?is)\\A\\s*(?:abort)(?:\\s+batch)\\s*\\z",
+      "method": "statementAbortBatch",
+      "exampleStatements": ["abort batch"],
+      "examplePrerequisiteStatements": ["start batch ddl"]
+    },
+    {
+      "name": "RESET ALL",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "RESET_ALL",
+      "regex": "(?is)\\A\\s*(?:reset)(?:\\s+all)\\s*\\z",
+      "method": "statementResetAll",
+      "exampleStatements": ["reset all"]
+    },
+    {
+      "name": "SET AUTOCOMMIT =|TO TRUE|FALSE",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_AUTOCOMMIT",
+      "regex": "(?is)\\A\\s*set\\s+autocommit(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetAutocommit",
+      "exampleStatements": ["set autocommit = true", "set autocommit = false", "set autocommit to true", "set autocommit to false"],
+      "setStatement": {
+        "propertyName": "AUTOCOMMIT",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "(TRUE|FALSE)",
+        "converterName": "ClientSideStatementValueConverters$BooleanConverter"
+      }
+    },
+    {
+      "name": "SET SPANNER.READONLY =|TO TRUE|FALSE",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_READONLY",
+      "regex": "(?is)\\A\\s*set\\s+spanner\\.readonly(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetReadOnly",
+      "exampleStatements": ["set spanner.readonly = true", "set spanner.readonly = false", "set spanner.readonly to true", "set spanner.readonly to false"],
+      "setStatement": {
+        "propertyName": "SPANNER.READONLY",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "(TRUE|FALSE)",
+        "converterName": "ClientSideStatementValueConverters$BooleanConverter"
+      }
+    },
+    {
+      "name": "SET [SESSION|LOCAL] SPANNER.RETRY_ABORTS_INTERNALLY =|TO TRUE|FALSE",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_RETRY_ABORTS_INTERNALLY",
+      "regex": "(?is)\\A\\s*set\\s+((?:session|local)\\s+)?spanner\\.retry_aborts_internally(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetRetryAbortsInternally",
+      "exampleStatements": [
+        "set spanner.retry_aborts_internally = true",
+        "set spanner.retry_aborts_internally = false",
+        "set spanner.retry_aborts_internally to true",
+        "set spanner.retry_aborts_internally to false",
+        "set local spanner.retry_aborts_internally = true",
+        "set local spanner.retry_aborts_internally = false",
+        "set local spanner.retry_aborts_internally to true",
+        "set local spanner.retry_aborts_internally to false",
+        "set session spanner.retry_aborts_internally = true",
+        "set session spanner.retry_aborts_internally = false",
+        "set session spanner.retry_aborts_internally to true",
+        "set session spanner.retry_aborts_internally to false"
+      ],
+      "examplePrerequisiteStatements": ["set spanner.readonly = false", "set autocommit = false"],
+      "setStatement": {
+        "propertyName": "SPANNER.RETRY_ABORTS_INTERNALLY",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "(TRUE|FALSE)",
+        "converterName": "ClientSideStatementValueConverters$BooleanConverter"
+      }
+    },
+    {
+      "name": "SET SPANNER.AUTOCOMMIT_DML_MODE =|TO 'PARTITIONED_NON_ATOMIC'|'TRANSACTIONAL'|'TRANSACTIONAL_WITH_FALLBACK_TO_PARTITIONED_NON_ATOMIC'",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_AUTOCOMMIT_DML_MODE",
+      "regex": "(?is)\\A\\s*set\\s+spanner\\.autocommit_dml_mode(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetAutocommitDmlMode",
+      "exampleStatements": [
+        "set spanner.autocommit_dml_mode='PARTITIONED_NON_ATOMIC'",
+        "set spanner.autocommit_dml_mode='TRANSACTIONAL'",
+        "set spanner.autocommit_dml_mode='TRANSACTIONAL_WITH_FALLBACK_TO_PARTITIONED_NON_ATOMIC'",
+        "set spanner.autocommit_dml_mode to 'PARTITIONED_NON_ATOMIC'",
+        "set spanner.autocommit_dml_mode to 'TRANSACTIONAL'",
+        "set spanner.autocommit_dml_mode to 'TRANSACTIONAL_WITH_FALLBACK_TO_PARTITIONED_NON_ATOMIC'"
+      ],
+      "setStatement": {
+        "propertyName": "SPANNER.AUTOCOMMIT_DML_MODE",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "'(PARTITIONED_NON_ATOMIC|TRANSACTIONAL|TRANSACTIONAL_WITH_FALLBACK_TO_PARTITIONED_NON_ATOMIC)'",
+        "converterName": "ClientSideStatementValueConverters$AutocommitDmlModeConverter"
+      }
+    },
+    {
+      "name": "SET STATEMENT_TIMEOUT =|TO '<duration>'|INT8|DEFAULT",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_STATEMENT_TIMEOUT",
+      "regex": "(?is)\\A\\s*set\\s+statement_timeout(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetStatementTimeout",
+      "exampleStatements": [
+        "set statement_timeout=default",
+        "set statement_timeout = default ",
+        "set statement_timeout = DEFAULT ",
+        "set statement_timeout='1s'",
+        "set statement_timeout = '1s' ",
+        "set statement_timeout='100ms'",
+        "set statement_timeout=100",
+        "set statement_timeout = 100 ",
+        "set statement_timeout='10000us'",
+        "set statement_timeout='9223372036854775807ns'",
+        "set statement_timeout to default",
+        "set statement_timeout to '1s'",
+        "set statement_timeout to '100ms'",
+        "set statement_timeout to 100",
+        "set statement_timeout to '10000us'",
+        "set statement_timeout to '9223372036854775807ns'"
+      ],
+      "setStatement": {
+        "propertyName": "STATEMENT_TIMEOUT",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "('(\\d{1,19})(s|ms|us|ns)'|\\d{1,19}|DEFAULT)",
+        "converterName": "ClientSideStatementValueConverters$PgDurationConverter"
+      }
+    },
+    {
+      "name": "SET SPANNER.TRANSACTION_TIMEOUT =|TO '<duration>'|INT8|DEFAULT",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_TRANSACTION_TIMEOUT",
+      "regex": "(?is)\\A\\s*set\\s+spanner\\.transaction_timeout(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetTransactionTimeout",
+      "exampleStatements": [
+        "set spanner.transaction_timeout=default",
+        "set spanner.transaction_timeout = default ",
+        "set spanner.transaction_timeout = DEFAULT ",
+        "set spanner.transaction_timeout='1s'",
+        "set spanner.transaction_timeout = '1s' ",
+        "set spanner.transaction_timeout='100ms'",
+        "set spanner.transaction_timeout=100",
+        "set spanner.transaction_timeout = 100 ",
+        "set spanner.transaction_timeout='10000us'",
+        "set spanner.transaction_timeout='9223372036854775807ns'",
+        "set spanner.transaction_timeout to default",
+        "set spanner.transaction_timeout to '1s'",
+        "set spanner.transaction_timeout to '100ms'",
+        "set spanner.transaction_timeout to 100",
+        "set spanner.transaction_timeout to '10000us'",
+        "set spanner.transaction_timeout to '9223372036854775807ns'"
+      ],
+      "setStatement": {
+        "propertyName": "SPANNER.TRANSACTION_TIMEOUT",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "('(\\d{1,19})(s|ms|us|ns)'|\\d{1,19}|DEFAULT)",
+        "converterName": "ClientSideStatementValueConverters$PgDurationConverter"
+      }
+    },
+    {
+      "name": "SET TRANSACTION { (READ ONLY|READ WRITE) [[,] (ISOLATION LEVEL (DEFAULT|SERIALIZABLE|REPEATABLE READ))] }",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_TRANSACTION_MODE",
+      "regex": "(?is)\\A\\s*set\\s+transaction\\s*(?:\\s+)\\s*(.*)\\z",
+      "method": "statementSetPgTransactionMode",
+      "exampleStatements": ["set transaction read only", "set transaction read write", "set transaction isolation level default", "set transaction isolation level serializable", "set transaction isolation level repeatable read"],
+      "examplePrerequisiteStatements": ["set autocommit = false"],
+      "setStatement": {
+        "propertyName": "TRANSACTION",
+        "separator": "\\s+",
+        "allowedValues": "(((?:\\s*|\\s*,\\s*)READ\\s+ONLY|(?:\\s*|\\s*,\\s*)READ\\s+WRITE|(?:\\s*|\\s*,\\s*)ISOLATION\\s+LEVEL\\s+DEFAULT|(?:\\s*|\\s*,\\s*)ISOLATION\\s+LEVEL\\s+SERIALIZABLE|(?:\\s*|\\s*,\\s*)ISOLATION\\s+LEVEL\\s+REPEATABLE\\s+READ)+)",
+        "converterName": "ClientSideStatementValueConverters$PgTransactionModeConverter"
+      }
+    },
+    {
+      "name": "SET SESSION CHARACTERISTICS AS TRANSACTION { (READ ONLY|READ WRITE) [[,] (ISOLATION LEVEL (DEFAULT|SERIALIZABLE|REPEATABLE READ))] }",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_READONLY",
+      "regex": "(?is)\\A\\s*set\\s+session\\s+characteristics\\s+as\\s+transaction\\s*(?:\\s+)\\s*(.*)\\z",
+      "method": "statementSetPgSessionCharacteristicsTransactionMode",
+      "exampleStatements": ["set session characteristics as transaction read only", "set session characteristics as transaction read write", "set session characteristics as transaction isolation level default", "set session characteristics as transaction isolation level serializable", "set session characteristics as transaction isolation level repeatable read"],
+      "setStatement": {
+        "propertyName": "SESSION\\s+CHARACTERISTICS\\s+AS\\s+TRANSACTION",
+        "separator": "\\s+",
+        "allowedValues": "(((?:\\s*|\\s*,\\s*)READ\\s+ONLY|(?:\\s*|\\s*,\\s*)READ\\s+WRITE|(?:\\s*|\\s*,\\s*)ISOLATION\\s+LEVEL\\s+DEFAULT|(?:\\s*|\\s*,\\s*)ISOLATION\\s+LEVEL\\s+SERIALIZABLE|(?:\\s*|\\s*,\\s*)ISOLATION\\s+LEVEL\\s+REPEATABLE\\s+READ)+)",
+        "converterName": "ClientSideStatementValueConverters$PgTransactionModeConverter"
+      }
+    },
+    {
+      "name": "SET DEFAULT_TRANSACTION_ISOLATION =|TO 'SERIALIZABLE'|SERIALIZABLE|'REPEATABLE READ'|REPEATABLE READ|DEFAULT",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_READONLY",
+      "regex": "(?is)\\A\\s*set\\s+default_transaction_isolation(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetPgDefaultTransactionIsolation",
+      "exampleStatements": [
+        "set default_transaction_isolation=serializable",
+        "set default_transaction_isolation to serializable",
+        "set default_transaction_isolation to 'serializable'",
+        "set default_transaction_isolation = 'serializable'",
+        "set default_transaction_isolation = \"SERIALIZABLE\"",
+        "set default_transaction_isolation=repeatable read",
+        "set default_transaction_isolation to repeatable read",
+        "set default_transaction_isolation to 'repeatable read'",
+        "set default_transaction_isolation = 'repeatable read'",
+        "set default_transaction_isolation = \"REPEATABLE READ\"",
+        "set default_transaction_isolation = DEFAULT",
+        "set default_transaction_isolation to DEFAULT"
+      ],
+      "setStatement": {
+        "propertyName": "default_transaction_isolation",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "(SERIALIZABLE|'SERIALIZABLE'|\"SERIALIZABLE\"|REPEATABLE\\s+READ|'REPEATABLE\\s+READ'|\"REPEATABLE\\s+READ\"|DEFAULT)",
+        "converterName": "ClientSideStatementValueConverters$PgTransactionIsolationConverter"
+      }
+    },
+    {
+      "name": "SET DEFAULT_TRANSACTION_READ_ONLY =|TO TRUE|FALSE",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_READONLY",
+      "regex": "(?is)\\A\\s*set\\s+default_transaction_read_only(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetReadOnly",
+      "exampleStatements": [
+        "set default_transaction_read_only = true",
+        "set default_transaction_read_only = false",
+        "set default_transaction_read_only = t",
+        "set default_transaction_read_only = f",
+        "set default_transaction_read_only to 't'",
+        "set default_transaction_read_only to \"f\"",
+        "set default_transaction_read_only = on",
+        "set default_transaction_read_only = off",
+        "set default_transaction_read_only = 1",
+        "set default_transaction_read_only = 0",
+        "set default_transaction_read_only = yes",
+        "set default_transaction_read_only = no",
+        "set default_transaction_read_only = y",
+        "set default_transaction_read_only = n"
+      ],
+      "setStatement": {
+        "propertyName": "DEFAULT_TRANSACTION_READ_ONLY",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "(.+)",
+        "converterName": "ClientSideStatementValueConverters$PgBooleanConverter"
+      }
+    },
+    {
+      "name": "SET SPANNER.READ_ONLY_STALENESS =|TO 'STRONG' | 'MIN_READ_TIMESTAMP <timestamp>' | 'READ_TIMESTAMP <timestamp>' | 'MAX_STALENESS <int64>s|ms|us|ns' | 'EXACT_STALENESS (<int64>s|ms|us|ns)'",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_READ_ONLY_STALENESS",
+      "regex": "(?is)\\A\\s*set\\s+spanner\\.read_only_staleness(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetReadOnlyStaleness",
+      "exampleStatements": [
+        "set spanner.read_only_staleness='STRONG'",
+        "set spanner.read_only_staleness='MIN_READ_TIMESTAMP 2018-01-02T03:04:05.123-08:00'",
+        "set spanner.read_only_staleness='MIN_READ_TIMESTAMP 2018-01-02T03:04:05.123Z'",
+        "set spanner.read_only_staleness='MIN_READ_TIMESTAMP 2018-01-02T03:04:05.123+07:45'",
+        "set spanner.read_only_staleness='READ_TIMESTAMP 2018-01-02T03:04:05.54321-07:00'",
+        "set spanner.read_only_staleness='READ_TIMESTAMP 2018-01-02T03:04:05.54321Z'",
+        "set spanner.read_only_staleness='READ_TIMESTAMP 2018-01-02T03:04:05.54321+05:30'",
+        "set spanner.read_only_staleness='MAX_STALENESS 12s'",
+        "set spanner.read_only_staleness='MAX_STALENESS 100ms'",
+        "set spanner.read_only_staleness='MAX_STALENESS 99999us'",
+        "set spanner.read_only_staleness='MAX_STALENESS 10ns'",
+        "set spanner.read_only_staleness='EXACT_STALENESS 15s'",
+        "set spanner.read_only_staleness='EXACT_STALENESS 1500ms'",
+        "set spanner.read_only_staleness='EXACT_STALENESS 15000000us'",
+        "set spanner.read_only_staleness='EXACT_STALENESS 9999ns'",
+        "set spanner.read_only_staleness to 'STRONG'",
+        "set spanner.read_only_staleness to 'MIN_READ_TIMESTAMP 2018-01-02T03:04:05.123-08:00'",
+        "set spanner.read_only_staleness to 'MIN_READ_TIMESTAMP 2018-01-02T03:04:05.123Z'",
+        "set spanner.read_only_staleness to 'MIN_READ_TIMESTAMP 2018-01-02T03:04:05.123+07:45'",
+        "set spanner.read_only_staleness to 'READ_TIMESTAMP 2018-01-02T03:04:05.54321-07:00'",
+        "set spanner.read_only_staleness to 'READ_TIMESTAMP 2018-01-02T03:04:05.54321Z'",
+        "set spanner.read_only_staleness to 'READ_TIMESTAMP 2018-01-02T03:04:05.54321+05:30'",
+        "set spanner.read_only_staleness to 'MAX_STALENESS 12s'",
+        "set spanner.read_only_staleness to 'MAX_STALENESS 100ms'",
+        "set spanner.read_only_staleness to 'MAX_STALENESS 99999us'",
+        "set spanner.read_only_staleness to 'MAX_STALENESS 10ns'",
+        "set spanner.read_only_staleness to 'EXACT_STALENESS 15s'",
+        "set spanner.read_only_staleness to 'EXACT_STALENESS 1500ms'",
+        "set spanner.read_only_staleness to 'EXACT_STALENESS 15000000us'",
+        "set spanner.read_only_staleness to 'EXACT_STALENESS 9999ns'"
+      ],
+      "setStatement": {
+        "propertyName": "SPANNER.READ_ONLY_STALENESS",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "'((STRONG)|(MIN_READ_TIMESTAMP)[\\t ]+((\\d{4})-(\\d{2})-(\\d{2})([Tt](\\d{2}):(\\d{2}):(\\d{2})(\\.\\d{1,9})?)([Zz]|([+-])(\\d{2}):(\\d{2})))|(READ_TIMESTAMP)[\\t ]+((\\d{4})-(\\d{2})-(\\d{2})([Tt](\\d{2}):(\\d{2}):(\\d{2})(\\.\\d{1,9})?)([Zz]|([+-])(\\d{2}):(\\d{2})))|(MAX_STALENESS)[\\t ]+((\\d{1,19})(s|ms|us|ns))|(EXACT_STALENESS)[\\t ]+((\\d{1,19})(s|ms|us|ns)))'",
+        "converterName": "ClientSideStatementValueConverters$ReadOnlyStalenessConverter"
+      }
+    },
+    {
+      "name": "SET SPANNER.DIRECTED_READ =|TO '<directed-read-options>'|''",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_DIRECTED_READ",
+      "regex": "(?is)\\A\\s*set\\s+spanner\\.directed_read(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetDirectedRead",
+      "exampleStatements": ["set spanner.directed_read='{\"includeReplicas\":{\"replicaSelections\":[{\"location\":\"eu-west1\",\"type\":\"READ_ONLY\"}]}}'", "set spanner.directed_read=''"],
+      "setStatement": {
+        "propertyName": "SPANNER.DIRECTED_READ",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "'((\\S+)|())'",
+        "converterName": "ClientSideStatementValueConverters$DirectedReadOptionsConverter"
+      }
+    },
+    {
+      "name": "SET SPANNER.OPTIMIZER_VERSION =|TO '<version>'|'LATEST'|''",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_OPTIMIZER_VERSION",
+      "regex": "(?is)\\A\\s*set\\s+spanner\\.optimizer_version(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetOptimizerVersion",
+      "exampleStatements": [
+        "set spanner.optimizer_version='1'",
+        "set spanner.optimizer_version='200'",
+        "set spanner.optimizer_version='LATEST'",
+        "set spanner.optimizer_version=''",
+        "set spanner.optimizer_version to '1'",
+        "set spanner.optimizer_version to '200'",
+        "set spanner.optimizer_version to 'LATEST'",
+        "set spanner.optimizer_version to ''"
+      ],
+      "setStatement": {
+        "propertyName": "SPANNER.OPTIMIZER_VERSION",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "'((\\d{1,20})|(LATEST)|())'",
+        "converterName": "ClientSideStatementValueConverters$StringValueConverter"
+      }
+    },
+    {
+      "name": "SET SPANNER.OPTIMIZER_STATISTICS_PACKAGE =|TO '<package>'|''",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_OPTIMIZER_STATISTICS_PACKAGE",
+      "regex": "(?is)\\A\\s*set\\s+spanner\\.optimizer_statistics_package(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetOptimizerStatisticsPackage",
+      "exampleStatements": [
+        "set spanner.optimizer_statistics_package='auto_20191128_14_47_22UTC'",
+        "set spanner.optimizer_statistics_package=''",
+        "set spanner.optimizer_statistics_package to 'auto_20191128_14_47_22UTC'",
+        "set spanner.optimizer_statistics_package to ''"
+      ],
+      "setStatement": {
+        "propertyName": "SPANNER.OPTIMIZER_STATISTICS_PACKAGE",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "'((\\S+)|())'",
+        "converterName": "ClientSideStatementValueConverters$StringValueConverter"
+      }
+    },
+    {
+      "name": "SET SPANNER.RETURN_COMMIT_STATS =|TO TRUE|FALSE",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_RETURN_COMMIT_STATS",
+      "regex": "(?is)\\A\\s*set\\s+spanner\\.return_commit_stats(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetReturnCommitStats",
+      "exampleStatements": ["set spanner.return_commit_stats = true", "set spanner.return_commit_stats = false", "set spanner.return_commit_stats to true", "set spanner.return_commit_stats to false"],
+      "setStatement": {
+        "propertyName": "SPANNER.RETURN_COMMIT_STATS",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "(TRUE|FALSE)",
+        "converterName": "ClientSideStatementValueConverters$BooleanConverter"
+      }
+    },
+    {
+      "name": "SET SPANNER.MAX_COMMIT_DELAY =|TO '<duration>'|NULL",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_MAX_COMMIT_DELAY",
+      "regex": "(?is)\\A\\s*set\\s+spanner\\.max_commit_delay(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetMaxCommitDelay",
+      "exampleStatements": [
+        "set spanner.max_commit_delay=null",
+        "set spanner.max_commit_delay = NULL",
+        "set spanner.max_commit_delay = null ",
+        "set spanner.max_commit_delay='1s'",
+        "set spanner.max_commit_delay = '1s'",
+        "set spanner.max_commit_delay = '1s' ",
+        "set spanner.max_commit_delay=1000",
+        "set spanner.max_commit_delay = 1000",
+        "set spanner.max_commit_delay = 1000 ",
+        "set spanner.max_commit_delay='100ms'",
+        "set spanner.max_commit_delay to '10000us'",
+        "set spanner.max_commit_delay TO '9223372036854775807ns'"],
+      "setStatement": {
+        "propertyName": "SPANNER.MAX_COMMIT_DELAY",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "('(\\d{1,19})(s|ms|us|ns)'|\\d{1,19}|NULL)",
+        "converterName": "ClientSideStatementValueConverters$DurationConverter"
+      }
+    },
+    {
+      "name": "SET SPANNER.STATEMENT_TAG =|TO '<tag>'",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_STATEMENT_TAG",
+      "regex": "(?is)\\A\\s*set\\s+spanner\\.statement_tag(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetStatementTag",
+      "exampleStatements": [
+        "set spanner.statement_tag='tag1'",
+        "set spanner.statement_tag='tag2'",
+        "set spanner.statement_tag=''",
+        "set spanner.statement_tag to 'tag1'",
+        "set spanner.statement_tag to 'tag2'",
+        "set spanner.statement_tag to ''",
+        "set spanner.statement_tag to 'test_tag'"
+      ],
+      "setStatement": {
+        "propertyName": "SPANNER.STATEMENT_TAG",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "'(.*)'",
+        "converterName": "ClientSideStatementValueConverters$StringValueConverter"
+      }
+    },
+    {
+      "name": "SET SPANNER.TRANSACTION_TAG =|TO '<tag>'",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_TRANSACTION_TAG",
+      "regex": "(?is)\\A\\s*set\\s+spanner\\.transaction_tag(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetTransactionTag",
+      "exampleStatements": [
+        "set spanner.transaction_tag='tag1'",
+        "set spanner.transaction_tag='tag2'",
+        "set spanner.transaction_tag=''",
+        "set spanner.transaction_tag to 'tag1'",
+        "set spanner.transaction_tag to 'tag2'",
+        "set spanner.transaction_tag to ''",
+        "set spanner.transaction_tag to 'test_tag'"
+      ],
+      "examplePrerequisiteStatements": ["set autocommit = false"],
+      "setStatement": {
+        "propertyName": "SPANNER.TRANSACTION_TAG",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "'(.*)'",
+        "converterName": "ClientSideStatementValueConverters$StringValueConverter"
+      }
+    },
+    {
+      "name": "SET SPANNER.EXCLUDE_TXN_FROM_CHANGE_STREAMS =|TO TRUE|FALSE",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_EXCLUDE_TXN_FROM_CHANGE_STREAMS",
+      "regex": "(?is)\\A\\s*set\\s+spanner\\.exclude_txn_from_change_streams(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetReturnCommitStats",
+      "exampleStatements": ["set spanner.exclude_txn_from_change_streams = true", "set spanner.exclude_txn_from_change_streams = false", "set spanner.exclude_txn_from_change_streams to true", "set spanner.exclude_txn_from_change_streams to false"],
+      "setStatement": {
+        "propertyName": "SPANNER.EXCLUDE_TXN_FROM_CHANGE_STREAMS",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "(TRUE|FALSE)",
+        "converterName": "ClientSideStatementValueConverters$BooleanConverter"
+      }
+    },
+    {
+      "name": "SET SPANNER.RPC_PRIORITY =|TO 'HIGH'|'MEDIUM'|'LOW'|'NULL'",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_RPC_PRIORITY",
+      "regex": "(?is)\\A\\s*set\\s+spanner\\.rpc_priority(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetRPCPriority",
+      "exampleStatements": [
+        "set spanner.rpc_priority='HIGH'",
+        "set spanner.rpc_priority='MEDIUM'",
+        "set spanner.rpc_priority='LOW'",
+        "set spanner.rpc_priority='NULL'",
+        "set spanner.rpc_priority to 'HIGH'",
+        "set spanner.rpc_priority to 'MEDIUM'",
+        "set spanner.rpc_priority to 'LOW'",
+        "set spanner.rpc_priority to 'NULL'"
+      ],
+      "setStatement": {
+        "propertyName": "SPANNER.RPC_PRIORITY",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "'(HIGH|MEDIUM|LOW|NULL)'",
+        "converterName": "ClientSideStatementValueConverters$RpcPriorityConverter"
+      }
+    },
+    {
+      "name": "SET SPANNER.SAVEPOINT_SUPPORT =|TO 'ENABLED'|'FAIL_AFTER_ROLLBACK'|'DISABLED'",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_SAVEPOINT_SUPPORT",
+      "regex": "(?is)\\A\\s*set\\s+spanner\\.savepoint_support(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetSavepointSupport",
+      "exampleStatements": [
+        "set spanner.savepoint_support='ENABLED'",
+        "set spanner.savepoint_support='FAIL_AFTER_ROLLBACK'",
+        "set spanner.savepoint_support='DISABLED'",
+        "set spanner.savepoint_support to 'ENABLED'",
+        "set spanner.savepoint_support to 'FAIL_AFTER_ROLLBACK'",
+        "set spanner.savepoint_support to 'DISABLED'"
+      ],
+      "setStatement": {
+        "propertyName": "SPANNER.SAVEPOINT_SUPPORT",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "'(ENABLED|FAIL_AFTER_ROLLBACK|DISABLED)'",
+        "converterName": "ClientSideStatementValueConverters$SavepointSupportConverter"
+      }
+    },
+    {
+      "name": "SET SPANNER.READ_LOCK_MODE =|TO 'OPTIMISTIC'|'PESSIMISTIC'|'UNSPECIFIED'",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_READ_LOCK_MODE",
+      "regex": "(?is)\\A\\s*set\\s+spanner\\.read_lock_mode(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetReadLockMode",
+      "exampleStatements": [
+        "set spanner.read_lock_mode='OPTIMISTIC'",
+        "set spanner.read_lock_mode='PESSIMISTIC'",
+        "set spanner.read_lock_mode='UNSPECIFIED'",
+        "set spanner.read_lock_mode to 'OPTIMISTIC'",
+        "set spanner.read_lock_mode to 'PESSIMISTIC'",
+        "set spanner.read_lock_mode to 'UNSPECIFIED'"
+      ],
+      "setStatement": {
+        "propertyName": "SPANNER.READ_LOCK_MODE",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "'(OPTIMISTIC|PESSIMISTIC|UNSPECIFIED|READ_LOCK_MODE_UNSPECIFIED)'",
+        "converterName": "ClientSideStatementValueConverters$ReadLockModeConverter"
+      }
+    },
+    {
+      "name": "SET SPANNER.DELAY_TRANSACTION_START_UNTIL_FIRST_WRITE = TRUE|FALSE",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_DELAY_TRANSACTION_START_UNTIL_FIRST_WRITE",
+      "regex": "(?is)\\A\\s*set\\s+spanner\\.delay_transaction_start_until_first_write(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetDelayTransactionStartUntilFirstWrite",
+      "exampleStatements": ["set spanner.delay_transaction_start_until_first_write = true", "set spanner.delay_transaction_start_until_first_write = false", "set spanner.delay_transaction_start_until_first_write to true", "set spanner.delay_transaction_start_until_first_write to false"],
+      "setStatement": {
+        "propertyName": "SPANNER.DELAY_TRANSACTION_START_UNTIL_FIRST_WRITE",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "(TRUE|FALSE)",
+        "converterName": "ClientSideStatementValueConverters$BooleanConverter"
+      }
+    },
+    {
+      "name": "SET SPANNER.KEEP_TRANSACTION_ALIVE = TRUE|FALSE",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_KEEP_TRANSACTION_ALIVE",
+      "regex": "(?is)\\A\\s*set\\s+spanner\\.keep_transaction_alive(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetKeepTransactionAlive",
+      "exampleStatements": ["set spanner.keep_transaction_alive = true", "set spanner.keep_transaction_alive = false", "set spanner.keep_transaction_alive to true", "set spanner.keep_transaction_alive to false"],
+      "setStatement": {
+        "propertyName": "SPANNER.KEEP_TRANSACTION_ALIVE",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "(TRUE|FALSE)",
+        "converterName": "ClientSideStatementValueConverters$BooleanConverter"
+      }
+    },
+    {
+      "name": "SET SPANNER.AUTO_BATCH_DML = TRUE|FALSE",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_AUTO_BATCH_DML",
+      "regex": "(?is)\\A\\s*set\\s+spanner\\.auto_batch_dml(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetAutoBatchDml",
+      "exampleStatements": ["set spanner.auto_batch_dml = true", "set spanner.auto_batch_dml = false", "set spanner.auto_batch_dml to true", "set spanner.auto_batch_dml to false", "set spanner.auto_batch_dml to off"],
+      "setStatement": {
+        "propertyName": "SPANNER.AUTO_BATCH_DML",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "(.+)",
+        "converterName": "ClientSideStatementValueConverters$PgBooleanConverter"
+      }
+    },
+    {
+      "name": "SET SPANNER.AUTO_BATCH_DML_UPDATE_COUNT = <bigint>",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_AUTO_BATCH_DML_UPDATE_COUNT",
+      "regex": "(?is)\\A\\s*set\\s+spanner\\.auto_batch_dml_update_count(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetAutoBatchDmlUpdateCount",
+      "exampleStatements": ["set spanner.auto_batch_dml_update_count = 0", "set spanner.auto_batch_dml_update_count = 100", "set spanner.auto_batch_dml_update_count to 1"],
+      "setStatement": {
+        "propertyName": "SPANNER.AUTO_BATCH_DML_UPDATE_COUNT",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "(\\d{1,19})",
+        "converterName": "ClientSideStatementValueConverters$LongConverter"
+      }
+    },
+    {
+      "name": "SET [LOCAL] SPANNER.BATCH_DML_UPDATE_COUNT =|TO <bigint>",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_BATCH_DML_UPDATE_COUNT",
+      "regex": "(?is)\\A\\s*set\\s+((?:session|local)\\s+)?spanner\\.batch_dml_update_count(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetBatchDmlUpdateCount",
+      "exampleStatements": [
+        "set local spanner.batch_dml_update_count = 0",
+        "set local spanner.batch_dml_update_count = 100",
+        "set local spanner.batch_dml_update_count to 1",
+        "set spanner.batch_dml_update_count to 1",
+        "set spanner.batch_dml_update_count = 1"
+      ],
+      "examplePrerequisiteStatements": ["set spanner.readonly = false", "set autocommit = false"],
+      "setStatement": {
+        "propertyName": "SPANNER.BATCH_DML_UPDATE_COUNT",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "(\\d{1,19})",
+        "converterName": "ClientSideStatementValueConverters$LongConverter"
+      }
+    },
+    {
+      "name": "SET SPANNER.AUTO_BATCH_DML_UPDATE_COUNT_VERIFICATION = TRUE|FALSE",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_AUTO_BATCH_DML_UPDATE_COUNT_VERIFICATION",
+      "regex": "(?is)\\A\\s*set\\s+spanner\\.auto_batch_dml_update_count_verification(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetAutoBatchDmlUpdateCountVerification",
+      "exampleStatements": ["set spanner.auto_batch_dml_update_count_verification = true", "set spanner.auto_batch_dml_update_count_verification = false", "set spanner.auto_batch_dml_update_count_verification to true", "set spanner.auto_batch_dml_update_count_verification to false", "set spanner.auto_batch_dml_update_count_verification to off"],
+      "setStatement": {
+        "propertyName": "SPANNER.AUTO_BATCH_DML_UPDATE_COUNT_VERIFICATION",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "(.+)",
+        "converterName": "ClientSideStatementValueConverters$PgBooleanConverter"
+      }
+    },
+    
+    {
+      "name": "SHOW [VARIABLE] SPANNER.DATA_BOOST_ENABLED",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_DATA_BOOST_ENABLED",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?spanner\\.data_boost_enabled\\s*\\z",
+      "method": "statementShowDataBoostEnabled",
+      "exampleStatements": ["show spanner.data_boost_enabled","show variable spanner.data_boost_enabled"]
+    },
+    {
+      "name": "SET SPANNER.DATA_BOOST_ENABLED = TRUE|FALSE",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_DATA_BOOST_ENABLED",
+      "regex": "(?is)\\A\\s*set\\s+spanner\\.data_boost_enabled(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetDataBoostEnabled",
+      "exampleStatements": ["set spanner.data_boost_enabled = true", "set spanner.data_boost_enabled = false", "set spanner.data_boost_enabled to true", "set spanner.data_boost_enabled to false"],
+      "setStatement": {
+        "propertyName": "SPANNER.DATA_BOOST_ENABLED",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "(TRUE|FALSE)",
+        "converterName": "ClientSideStatementValueConverters$BooleanConverter"
+      }
+    },
+    {
+      "name": "SHOW [VARIABLE] SPANNER.AUTO_PARTITION_MODE",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_AUTO_PARTITION_MODE",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?spanner\\.auto_partition_mode\\s*\\z",
+      "method": "statementShowAutoPartitionMode",
+      "exampleStatements": ["show spanner.auto_partition_mode","show variable spanner.auto_partition_mode"]
+    },
+    {
+      "name": "SET SPANNER.AUTO_PARTITION_MODE = TRUE|FALSE",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_AUTO_PARTITION_MODE",
+      "regex": "(?is)\\A\\s*set\\s+spanner\\.auto_partition_mode(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetAutoPartitionMode",
+      "exampleStatements": ["set spanner.auto_partition_mode = true", "set spanner.auto_partition_mode = false", "set spanner.auto_partition_mode to true", "set spanner.auto_partition_mode to false"],
+      "setStatement": {
+        "propertyName": "SPANNER.AUTO_PARTITION_MODE",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "(TRUE|FALSE)",
+        "converterName": "ClientSideStatementValueConverters$BooleanConverter"
+      }
+    },
+    {
+      "name": "SHOW [VARIABLE] SPANNER.MAX_PARTITIONS",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_MAX_PARTITIONS",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?spanner\\.max_partitions\\s*\\z",
+      "method": "statementShowMaxPartitions",
+      "exampleStatements": ["show spanner.max_partitions","show variable spanner.max_partitions"]
+    },
+    {
+      "name": "SET SPANNER.MAX_PARTITIONS = <INT64>",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_MAX_PARTITIONS",
+      "regex": "(?is)\\A\\s*set\\s+spanner\\.max_partitions(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetMaxPartitions",
+      "exampleStatements": ["set spanner.max_partitions = 1", "set spanner.max_partitions = 10", "set spanner.max_partitions to 5", "set spanner.max_partitions to 20"],
+      "setStatement": {
+        "propertyName": "SPANNER.MAX_PARTITIONS",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "(\\d{1,9})",
+        "converterName": "ClientSideStatementValueConverters$NonNegativeIntegerConverter"
+      }
+    },
+    {
+      "name": "SHOW [VARIABLE] SPANNER.MAX_PARTITIONED_PARALLELISM",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_MAX_PARTITIONED_PARALLELISM",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?spanner\\.max_partitioned_parallelism\\s*\\z",
+      "method": "statementShowMaxPartitionedParallelism",
+      "exampleStatements": ["show spanner.max_partitioned_parallelism","show variable spanner.max_partitioned_parallelism"]
+    },
+    {
+      "name": "SET SPANNER.MAX_PARTITIONED_PARALLELISM = <INT64>",
+      "executorName": "ClientSideStatementSetExecutor",
+      "resultType": "NO_RESULT",
+      "statementType": "SET_MAX_PARTITIONED_PARALLELISM",
+      "regex": "(?is)\\A\\s*set\\s+spanner\\.max_partitioned_parallelism(?:\\s*=\\s*|\\s+to\\s+)(.*)\\z",
+      "method": "statementSetMaxPartitionedParallelism",
+      "exampleStatements": ["set spanner.max_partitioned_parallelism = 1", "set spanner.max_partitioned_parallelism = 10", "set spanner.max_partitioned_parallelism to 5", "set spanner.max_partitioned_parallelism to 20"],
+      "setStatement": {
+        "propertyName": "SPANNER.MAX_PARTITIONED_PARALLELISM",
+        "separator": "(?:=|\\s+TO\\s+)",
+        "allowedValues": "(\\d{1,9})",
+        "converterName": "ClientSideStatementValueConverters$NonNegativeIntegerConverter"
+      }
+    }
+  ]
+}
