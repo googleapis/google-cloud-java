@@ -54,7 +54,7 @@ public class LoggingTracerFactory implements ApiTracerFactory {
 
   @Override
   public ApiTracer newTracer(ApiTracer parent, ApiTracerContext context) {
-    return new LoggingTracer(context);
+    return new LoggingTracer(apiTracerContext.merge(context));
   }
 
   @Override

@@ -63,7 +63,8 @@ class LoggingTracerFactoryTest {
   @Test
   void testWithContext_ReturnsNewFactoryWithMergedContext() {
     LoggingTracerFactory factory = new LoggingTracerFactory();
-    ApiTracerContext context = ApiTracerContext.newBuilder().setServerAddress("address").build();
+    ApiTracerContext context =
+        ApiTracerContext.empty().toBuilder().setServerAddress("address").build();
     ApiTracerFactory updatedFactory = factory.withContext(context);
 
     assertNotNull(updatedFactory);

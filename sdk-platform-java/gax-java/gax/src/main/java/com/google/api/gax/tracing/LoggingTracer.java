@@ -55,11 +55,6 @@ public class LoggingTracer extends BaseApiTracer {
   }
 
   @Override
-  public void attemptFailed(Throwable error, org.threeten.bp.Duration delay) {
-    recordActionableError(error);
-  }
-
-  @Override
   public void attemptFailedDuration(Throwable error, java.time.Duration delay) {
     recordActionableError(error);
   }
@@ -75,47 +70,39 @@ public class LoggingTracer extends BaseApiTracer {
   }
 
   private void recordActionableError(Throwable error) {
-    Map<String, Object> logContext = new HashMap<>();
-
-    if (apiTracerContext.rpcSystemName() != null) {
-      logContext.put(
-          ObservabilityAttributes.RPC_SYSTEM_NAME_ATTRIBUTE, apiTracerContext.rpcSystemName());
-    }
-    if (apiTracerContext.fullMethodName() != null) {
-      logContext.put(
-          ObservabilityAttributes.GRPC_RPC_METHOD_ATTRIBUTE, apiTracerContext.fullMethodName());
-    }
-    if (apiTracerContext.serverPort() != null) {
-      logContext.put(ObservabilityAttributes.SERVER_PORT_ATTRIBUTE, apiTracerContext.serverPort());
-    }
-    if (apiTracerContext.libraryMetadata() != null
-        && !apiTracerContext.libraryMetadata().isEmpty()) {
-      if (apiTracerContext.libraryMetadata().repository() != null) {
-        logContext.put(
-            ObservabilityAttributes.REPO_ATTRIBUTE,
-            apiTracerContext.libraryMetadata().repository());
-      }
+    if (error == null) {
+      return;
     }
 
-    if (error != null) {
+    Map<String, Object> logContext = new HashMap<>(apiTracerContext.getAttemptAttributes());
+
+    if (apiTracerContext.serviceName() != null) {
       logContext.put(
-          ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE,
-          ObservabilityUtils.extractStatus(error));
+          ObservabilityAttributes.GCP_CLIENT_SERVICE_ATTRIBUTE, apiTracerContext.serviceName());
     }
+
+    logContext.put(
+        ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE,
+        ObservabilityUtils.extractStatus(error));
 
     ErrorInfo errorInfo = ObservabilityUtils.extractErrorInfo(error);
     if (errorInfo != null) {
-      logContext.put("error.type", errorInfo.getReason());
-      logContext.put("gcp.errors.domain", errorInfo.getDomain());
-      for (Map.Entry<String, String> entry : errorInfo.getMetadataMap().entrySet()) {
-        logContext.put("gcp.errors.metadata." + entry.getKey(), entry.getValue());
+      if (errorInfo.getReason() != null && !errorInfo.getReason().isEmpty()) {
+        logContext.put(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE, errorInfo.getReason());
+      }
+      if (errorInfo.getDomain() != null && !errorInfo.getDomain().isEmpty()) {
+        logContext.put(ObservabilityAttributes.ERROR_DOMAIN_ATTRIBUTE, errorInfo.getDomain());
+      }
+      if (errorInfo.getMetadataMap() != null) {
+        for (Map.Entry<String, String> entry : errorInfo.getMetadataMap().entrySet()) {
+          logContext.put(
+              ObservabilityAttributes.ERROR_METADATA_ATTRIBUTE_PREFIX + entry.getKey(),
+              entry.getValue());
+        }
       }
     }
 
-    String message = "Unknown Error";
-    if (error != null) {
-      message = error.getMessage() != null ? error.getMessage() : error.getClass().getName();
-    }
+    String message = error.getMessage() != null ? error.getMessage() : error.getClass().getName();
     LoggingUtils.logActionableError(logContext, LOGGER_PROVIDER, message);
   }
 }
