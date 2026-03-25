@@ -34,13 +34,13 @@ jobs:
       - run: java -version
       - name: Unit Tests
         run: |
-          mvn test --batch-mode --no-transfer-progress -Pfast \
+mvn test --batch-mode --no-transfer-progress -PquickBuild \
               -DenableTestCoverage
         working-directory: sdk-platform-java
       # The `envVarTest` profile runs tests that require an environment variable
       - name: Env Var Tests
         run: |
-          mvn test --batch-mode --no-transfer-progress -Pfast \
+mvn test --batch-mode --no-transfer-progress -PquickBuild \
               -DenableTestCoverage -PenvVarTest
         # Set the Env Var for this step only
         env:
@@ -51,7 +51,7 @@ jobs:
       - run: bazelisk version
       - name: Install Maven modules
         run: |
-          mvn install -B -ntp -Pfast -DskipTests
+mvn install -B -ntp -PquickBuild -DskipTests
         working-directory: sdk-platform-java
       - name: Integration Tests
         run: |
@@ -90,13 +90,13 @@ jobs:
       - run: java -version
       - name: Unit Tests
         run: |
-          mvn test --batch-mode --no-transfer-progress -Pfast \
+mvn test --batch-mode --no-transfer-progress -PquickBuild \
               -DenableTestCoverage
         working-directory: sdk-platform-java
       # The `envVarTest` profile runs tests that require an environment variable
       - name: Env Var Tests
         run: |
-          mvn test --batch-mode --no-transfer-progress -Pfast \
+mvn test --batch-mode --no-transfer-progress -PquickBuild \
               -DenableTestCoverage -PenvVarTest
         # Set the Env Var for this step only
         env:
@@ -107,7 +107,11 @@ jobs:
       - run: bazelisk version
       - name: Install Maven modules
         run: |
+<<<<<<< Updated upstream
           mvn install -B -ntp -Pfast -DskipTests
+=======
+          mvn install -B -ntp -PquickBuild -DskipTests
+>>>>>>> Stashed changes
         working-directory: sdk-platform-java
       - name: Integration Tests
         run: |
@@ -128,13 +132,13 @@ jobs:
       - run: java -version
       - name: Unit Tests
         run: |
-          mvn test --batch-mode --no-transfer-progress -Pfast \
+mvn test --batch-mode --no-transfer-progress -PquickBuild \
               -DenableTestCoverage
         working-directory: sdk-platform-java
       # The `envVarTest` profile runs tests that require an environment variable
       - name: Env Var Tests
         run: |
-          mvn test --batch-mode --no-transfer-progress -Pfast \
+mvn test --batch-mode --no-transfer-progress -PquickBuild \
               -DenableTestCoverage -PenvVarTest
         # Set the Env Var for this step only
         env:
@@ -145,7 +149,7 @@ jobs:
       - run: bazelisk version
       - name: Install Maven modules
         run: |
-          mvn install -B -ntp -Pfast -DskipTests
+mvn install -B -ntp -PquickBuild -DskipTests
         working-directory: sdk-platform-java
       - name: Integration Tests
         # note need to set shouldInstallTestSecurityManager=false due to https://github.com/bazelbuild/bazel/issues/24354
@@ -177,7 +181,7 @@ jobs:
           export PATH=${JAVA_HOME}/bin:$PATH
           # Maven surefire plugin lets us to specify the JVM when running tests via
           # the "jvm" system property.
-          mvn verify --batch-mode --no-transfer-progress -Pfast \
+          mvn verify --batch-mode --no-transfer-progress -PquickBuild \
               -Djvm="${JAVA8_HOME}/bin/java"
         working-directory: sdk-platform-java
       # The `envVarTest` profile runs tests that require an environment variable
@@ -190,7 +194,7 @@ jobs:
           # Maven surefire plugin lets us to specify the JVM when running tests via
           # the "jvm" system property.
           export GOOGLE_CLOUD_UNIVERSE_DOMAIN=random.com
-          mvn test --batch-mode --no-transfer-progress -Pfast \
+mvn test --batch-mode --no-transfer-progress -PquickBuild \
               -DenableTestCoverage -Dsurefire.failIfNoSpecifiedTests=false \
               -PenvVarTest
         # Set the Env Var for this step only
@@ -215,7 +219,7 @@ jobs:
       - name: Install all modules using Java 11
         shell: bash
         run: |
-          mvn -V -B -ntp clean install -Pfast -DskipTests
+          mvn -V -B -ntp clean install -PquickBuild -DskipTests
         working-directory: sdk-platform-java
       - uses: actions/setup-java@v3
         with:
@@ -265,7 +269,7 @@ jobs:
       - name: Install all modules using Java 11
         shell: bash
         run: |
-          mvn install -B -ntp -Pfast -DskipTests
+mvn install -B -ntp -PquickBuild -DskipTests
         working-directory: sdk-platform-java
       - uses: actions/setup-java@v3
         with:
@@ -339,7 +343,7 @@ jobs:
       - run: mvn -version
       - name: Install Maven modules
         run: |
-          mvn install -B -ntp -Pfast -DskipTests
+mvn install -B -ntp -PquickBuild -DskipTests
         working-directory: sdk-platform-java        
       - name: Showcase golden tests
         working-directory: sdk-platform-java/java-showcase
@@ -418,7 +422,7 @@ jobs:
           cache: maven
       - name: Install Maven modules
         run: |
-          mvn install -B -ntp -Pfast -DskipTests
+mvn install -B -ntp -PquickBuild -DskipTests
         working-directory: sdk-platform-java
       - name: Install showcase to local maven repository
         run: |
@@ -456,13 +460,13 @@ jobs:
       run: |
         mvn install \
           -B -ntp \
-          -Pfast \
+          -PquickBuild \
           -Dorg.slf4j.simpleLogger.showDateTime=true \
           -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
           -DskipTests \
           -Dmaven.wagon.http.retryHandler.count=5 \
           -T 1C
-      working-directory: sdk-platform-java
+        working-directory: sdk-platform-java
     - name: Validate gapic-generator-java-bom
       uses: googleapis/java-cloud-bom/tests/validate-bom@47ad868794c5d38ee7eb95d69371a7a79f84d890
       with:
@@ -487,7 +491,7 @@ jobs:
       working-directory: sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check
     - name: Install Maven modules
       run: |
-        mvn install -B -ntp -Pfast -DskipTests
+        mvn install -B -ntp -PquickBuild -DskipTests
       working-directory: sdk-platform-java
     - name: Unmanaged dependency check
       uses: ./sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check

@@ -297,7 +297,7 @@ function run_integration_tests() {
   parse_all_submodules "$1"
   printf "Running integration tests for submodules:\n%s\n" "$all_submodules"
 
-  mvn verify -Penable-integration-tests -Pfast --projects "$all_submodules" \
+  mvn verify -Penable-integration-tests -PquickBuild --projects "$all_submodules" \
     ${INTEGRATION_TEST_ARGS} \
     -B -ntp -fae \
     --also-make \
@@ -317,7 +317,7 @@ function run_graalvm_tests() {
   parse_all_submodules "$1"
   printf "Running GraalVM ITs for submodules:\n%s\n" "$all_submodules"
 
-  mvn test -Pnative -Pfast --projects "$all_submodules" \
+  mvn test -Pnative -PquickBuild --projects "$all_submodules" \
     ${INTEGRATION_TEST_ARGS} \
     -B -ntp -fae \
     -DtrimStackTrace=false \
@@ -387,7 +387,11 @@ function install_modules() {
   if [ -z "$1" ]; then
     mvn install \
       -B -ntp \
+<<<<<<< Updated upstream
       -Pfast \
+=======
+      -PquickBuild \
+>>>>>>> Stashed changes
       -DtrimStackTrace=false \
       -Dorg.slf4j.simpleLogger.showDateTime=true \
       -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
@@ -435,7 +439,11 @@ function install_modules() {
     #      Correctly builds dependencies without building dependents.
     mvn install --projects "$all_submodules,$always_install_deps" --also-make \
       -B -ntp \
+<<<<<<< Updated upstream
       -Pfast \
+=======
+      -PquickBuild \
+>>>>>>> Stashed changes
       -DtrimStackTrace=false \
       -Dorg.slf4j.simpleLogger.showDateTime=true \
       -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
