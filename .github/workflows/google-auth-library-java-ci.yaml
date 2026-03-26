@@ -1,0 +1,56 @@
+# Copyright 2022 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# GitHub action job to test core java library features on
+# downstream client libraries before they are released.
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+name: google-auth-library-java ci
+env:
+  BUILD_SUBDIR: google-auth-library-java
+jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'google-auth-library-java/**'
+  units-logging:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [11, 17, 21, 25]
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: ${{matrix.java}}
+    - run: java -version
+    - run: .kokoro/build.sh
+      env:
+        BUILD_SUBDIR: google-auth-library-java
+        JOB_TYPE: test
+        SUREFIRE_JVM_OPT: "-P '!slf4j2x,slf4j2x-test'"

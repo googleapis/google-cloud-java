@@ -14,6 +14,7 @@
     <module>gapic-libraries-bom</module>
     <module>google-cloud-jar-parent</module>
     <module>google-cloud-pom-parent</module>
+    <module>google-auth-library-java</module>
     <module>java-accessapproval</module>
     <module>java-accesscontextmanager</module>
     <module>java-admanager</module>
