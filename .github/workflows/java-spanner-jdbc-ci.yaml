@@ -18,9 +18,9 @@ on:
     branches:
     - main
   pull_request:
-name: java-bigquery ci
+name: java-spanner-jdbc ci
 env:
-  BUILD_SUBDIR: java-bigquery
+  BUILD_SUBDIR: java-spanner-jdbc
 jobs:
   filter:
     runs-on: ubuntu-latest
@@ -33,7 +33,7 @@ jobs:
       with:
         filters: |
           library:
-            - 'java-bigquery/**'
+            - 'java-spanner-jdbc/**'
   units:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}

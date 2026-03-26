@@ -1,0 +1,13 @@
+{
+    "project": "xxx",
+    "instance": "xxx",
+    "database": "users",
+    "threads": 1,
+    "iterations": 10,
+    "query": "SELECT users.user_id, membership.enrolled, GroupMgmt.grpname FROM users, GroupMgmt, membership WHERE users.user_id = ? AND users.user_id = membership.user_id AND GroupMgmt.group_id = membership.group_id",
+    "samplingQuery": "SELECT user_id FROM Users TABLESAMPLE RESERVOIR (100000 ROWS)",
+    "writeMetricToFile": false,
+    "queryParams": [
+        {"order": 1, "value": "#pi"}
+    ]
+}

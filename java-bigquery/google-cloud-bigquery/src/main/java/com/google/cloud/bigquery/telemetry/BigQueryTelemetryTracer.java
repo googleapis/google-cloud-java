@@ -65,6 +65,7 @@ public final class BigQueryTelemetryTracer {
   public static final AttributeKey<String> SERVER_ADDRESS =
       AttributeKey.stringKey("server.address");
   public static final AttributeKey<Long> SERVER_PORT = AttributeKey.longKey("server.port");
+  public static final AttributeKey<String> URL_TEMPLATE = AttributeKey.stringKey("url.template");
 
   public static void addCommonAttributeToSpan(Span span) {
     span.setAttribute(GCP_CLIENT_SERVICE, BQ_GCP_CLIENT_SERVICE)

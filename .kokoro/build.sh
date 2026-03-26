@@ -43,7 +43,9 @@ case ${JOB_TYPE} in
       install_modules "${BUILD_SUBDIR}"
       echo "Running in subdir: ${BUILD_SUBDIR}"
       pushd "${BUILD_SUBDIR}"
+      EXTRA_PROFILE_OPTS=()
     else
+      EXTRA_PROFILE_OPTS=("-PbulkTests")
       install_modules "sdk-platform-java"
     fi
     echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
@@ -59,7 +61,7 @@ case ${JOB_TYPE} in
         -Danimal.sniffer.skip=true \
         -Dmaven.wagon.http.retryHandler.count=5 \
         --also-make \
-         ${SUREFIRE_JVM_OPT}
+        ${SUREFIRE_JVM_OPT} "${EXTRA_PROFILE_OPTS[@]}"
     RETURN_CODE=$?
 
     if [[ -n "${BUILD_SUBDIR}" ]]
@@ -68,6 +70,28 @@ case ${JOB_TYPE} in
       popd
     fi
     echo "Finished running unit tests"
+    ;;
+  install)
+    if [[ -n "${BUILD_SUBDIR}" ]]
+    then
+      echo "Compiling and building all modules for ${BUILD_SUBDIR}"
+      install_modules "${BUILD_SUBDIR}"
+    else
+      install_modules "sdk-platform-java"
+      mvn install \
+        -B -ntp \
+        -Dorg.slf4j.simpleLogger.showDateTime=true \
+        -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+        -Dclirr.skip=true \
+        -Denforcer.skip=true \
+        -Dcheckstyle.skip=true \
+        -Dflatten.skip=true \
+        -Danimal.sniffer.skip=true \
+        -Dmaven.wagon.http.retryHandler.count=5 \
+        -DskipTests=true \
+        --also-make \
+        -T 1C
+    fi
     ;;
   integration)
     generate_modified_modules_list

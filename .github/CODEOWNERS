@@ -10,3 +10,4 @@
 /java-bigquerystorage/ @googleapis/bigquery-team @googleapis/cloud-sdk-java-team
 /java-bigquery/ @googleapis/bigquery-team @googleapis/cloud-sdk-java-team
 /java-spanner/ @googleapis/spanner-team @googleapis/cloud-sdk-java-team
+/java-spanner-jdbc/ @googleapis/spanner-team @googleapis/cloud-sdk-java-team
