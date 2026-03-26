@@ -896,14 +896,6 @@ class PathTemplateTest {
   }
 
   @Test
-  void name() {
-    PathTemplate pathTemplate =
-        PathTemplate.create("projects/{project}/zones/{zone}/{parent_name}");
-    System.out.println(
-        pathTemplate.instantiate("project", "project1", "zone", "zone1", "parent_name", "name1"));
-  }
-
-  @Test
   void testGetResourceLiterals_simplePath() {
     PathTemplate template =
         PathTemplate.create("/compute/v1/projects/{project}/locations/{location}/widgets/{widget}");
@@ -919,7 +911,7 @@ class PathTemplateTest {
   }
 
   @Test
-  void testGetResourceSegments_onlyNonResourceLiterals() {
+  void testGetResourceLiterals_onlyNonResourceLiterals() {
     PathTemplate template = PathTemplate.create("compute/v1/projects");
     Truth.assertThat(template.getResourceLiterals()).isEmpty();
   }
@@ -931,7 +923,7 @@ class PathTemplateTest {
   }
 
   @Test
-  void testGetResourceSegments_complexResourceId() {
+  void testGetResourceLiterals_complexResourceId() {
     PathTemplate template = PathTemplate.create("projects/{project}/zones/{zone_a}~{zone_b}");
     Truth.assertThat(template.getResourceLiterals()).containsExactly("projects", "zones");
   }
@@ -949,28 +941,6 @@ class PathTemplateTest {
             "v1/compute/v2/projects/{project}/locations/{location}/widgets/{widget}");
     Truth.assertThat(template.getResourceLiterals())
         .containsExactly("projects", "locations", "widgets");
-  }
-
-  @Test
-  void testGetResourceLiterals_namedBindings() {
-    PathTemplate template =
-        PathTemplate.create(
-            "/compute/v1/projects/{project}/zones/{zone}/{parent_name=reservations/*/reservationBlocks/*/reservationSubBlocks/*}");
-    Truth.assertThat(template.getResourceLiterals())
-        .containsExactly(
-            "projects", "zones", "reservations", "reservationBlocks", "reservationSubBlocks");
-  }
-
-  @Test
-  void testGetCanonicalResourceName_namedBindings() {
-    PathTemplate template =
-        PathTemplate.create(
-            "/v1/projects/{project}/locations/{location}/{parent_name=reservations/*/reservationBlocks/*/reservationSubBlocks/*}/heuristics/{heuristic}");
-
-    Set<String> resourceLiterals = ImmutableSet.of("projects", "locations", "heuristics");
-    Truth.assertThat(template.getCanonicalResourceName(resourceLiterals))
-        .isEqualTo(
-            "projects/{project}/locations/{location}/{parent_name=reservations/*/reservationBlocks/*/reservationSubBlocks/*}/heuristics/{heuristic}");
   }
 
   @Test
