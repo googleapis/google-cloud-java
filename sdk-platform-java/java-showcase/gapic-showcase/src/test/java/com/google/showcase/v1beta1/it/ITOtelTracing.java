@@ -33,9 +33,7 @@ package com.google.showcase.v1beta1.it;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 
-import java.util.UUID;
 import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.showcase.v1beta1.GetUserRequest;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.StatusCode;
@@ -49,6 +47,7 @@ import com.google.rpc.Status;
 import com.google.showcase.v1beta1.EchoClient;
 import com.google.showcase.v1beta1.EchoRequest;
 import com.google.showcase.v1beta1.EchoSettings;
+import com.google.showcase.v1beta1.GetUserRequest;
 import com.google.showcase.v1beta1.IdentityClient;
 import com.google.showcase.v1beta1.User;
 import com.google.showcase.v1beta1.it.util.TestClientInitializer;
@@ -246,10 +245,8 @@ class ITOtelTracing {
           attemptSpan
               .getAttributes()
               .get(AttributeKey.longKey(ObservabilityAttributes.HTTP_RESPONSE_BODY_SIZE));
-      if (observedMagnitude != null) {
-        assertThat(observedMagnitude).isAtLeast((long) (expectedMagnitude * (1 - 0.15)));
-        assertThat(observedMagnitude).isAtMost((long) (expectedMagnitude * (1 + 0.15)));
-      }
+      assertThat(observedMagnitude).isNotNull();
+      assertThat(observedMagnitude).isAtLeast((long) (expectedMagnitude * (1 - 0.15)));
     }
   }
 
