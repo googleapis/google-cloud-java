@@ -325,6 +325,7 @@ class ITOtelErrorType {
     SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
     EchoSettings grpcEchoSettings =
         EchoSettings.newBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
             .setTransportChannelProvider(
                 EchoSettings.defaultGrpcTransportProviderBuilder()
                     .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
@@ -355,6 +356,7 @@ class ITOtelErrorType {
     SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
     EchoSettings grpcEchoSettings =
         EchoSettings.newBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
             .setTransportChannelProvider(
                 EchoSettings.defaultGrpcTransportProviderBuilder()
                     .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
@@ -451,6 +453,7 @@ class ITOtelErrorType {
 
       EchoSettings grpcEchoSettings =
           EchoSettings.newBuilder()
+              .setCredentialsProvider(NoCredentialsProvider.create())
               .setTransportChannelProvider(
                   EchoSettings.defaultGrpcTransportProviderBuilder()
                       .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
