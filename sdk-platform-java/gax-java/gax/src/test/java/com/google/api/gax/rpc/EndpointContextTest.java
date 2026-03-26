@@ -690,10 +690,10 @@ class EndpointContextTest {
     String endpoint = "localhost:-1";
 
     EndpointContext endpointContext =
-            defaultEndpointContextBuilder
-                    .setClientSettingsEndpoint(endpoint)
-                    .setTransportChannelProviderEndpoint(null)
-                    .build();
+        defaultEndpointContextBuilder
+            .setClientSettingsEndpoint(endpoint)
+            .setTransportChannelProviderEndpoint(null)
+            .build();
 
     Truth.assertThat(endpointContext.resolvedServerAddress()).isNull();
     Truth.assertThat(endpointContext.resolvedServerPort()).isNull();
