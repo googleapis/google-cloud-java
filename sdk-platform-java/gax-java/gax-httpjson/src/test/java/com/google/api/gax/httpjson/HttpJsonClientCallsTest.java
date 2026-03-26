@@ -93,7 +93,9 @@ class HttpJsonClientCallsTest {
   @Test
   void testValidUniverseDomain() {
     HttpJsonClientCalls.newCall(descriptor, callContext);
-    Mockito.verify(mockChannel, Mockito.times(1)).newCall(descriptor, callOptions);
+    HttpJsonCallOptions expectedCallOptions =
+        callOptions.toBuilder().setTracer(callContext.getTracer()).build();
+    Mockito.verify(mockChannel, Mockito.times(1)).newCall(descriptor, expectedCallOptions);
   }
 
   // This test is when the universe domain does not match

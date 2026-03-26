@@ -137,6 +137,13 @@ class ObservabilityUtilsTest {
   }
 
   @Test
+  void testSanitizeUrlFull_handlesKeyOnlyParameters() {
+    String url = "https://example.com/some/path?api_key&foo=bar";
+    String sanitized = ObservabilityUtils.sanitizeUrlFull(url);
+    assertThat(sanitized).isEqualTo("https://example.com/some/path?api_key&foo=bar");
+  }
+
+  @Test
   void testSanitizeUrlFull_handlesMalformedUrl() {
     String url = "invalid::url:";
     String sanitized = ObservabilityUtils.sanitizeUrlFull(url);
