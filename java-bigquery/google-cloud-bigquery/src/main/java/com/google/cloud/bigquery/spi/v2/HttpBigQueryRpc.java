@@ -193,6 +193,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "DatasetService",
             "GetDataset",
             gcpResourceDestinationId,
+            bqGetRequest.getUriTemplate(),
             options),
         span -> {
           Dataset dataset = bqGetRequest.execute();
@@ -243,6 +244,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "DatasetService",
             "ListDatasets",
             gcpResourceDestinationId,
+            datasetsListRequest.getUriTemplate(),
             options),
         span -> {
           if (span != null) {
@@ -301,6 +303,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "DatasetService",
             "InsertDataset",
             gcpResourceDestinationId,
+            bqCreateRequest.getUriTemplate(),
             options),
         span -> {
           Dataset datasetResponse = bqCreateRequest.execute();
@@ -354,6 +357,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "TableService",
             "InsertTable",
             gcpResourceDestinationId,
+            bqCreateRequest.getUriTemplate(),
             options),
         span -> {
           Table tableResponse = bqCreateRequest.execute();
@@ -405,6 +409,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "RoutineService",
             "InsertRoutine",
             gcpResourceDestinationId,
+            bqCreateRequest.getUriTemplate(),
             options),
         span -> {
           Routine routineResponse = bqCreateRequest.execute();
@@ -456,6 +461,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "JobService",
             "InsertJob",
             gcpResourceDestinationId,
+            bqCreateRequest.getUriTemplate(),
             options),
         span -> {
           Job jobResponse = bqCreateRequest.execute();
@@ -504,6 +510,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "JobService",
             "InsertJob",
             gcpResourceDestinationId,
+            bqCreateRequest.getUriTemplate(),
             null),
         span -> {
           Job jobResponse = bqCreateRequest.execute();
@@ -558,6 +565,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "DatasetService",
             "DeleteDataset",
             gcpResourceDestinationId,
+            bqDeleteRequest.getUriTemplate(),
             options),
         span -> {
           bqDeleteRequest.execute();
@@ -609,6 +617,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "DatasetService",
             "PatchDataset",
             gcpResourceDestinationId,
+            bqPatchRequest.getUriTemplate(),
             options),
         span -> {
           Dataset datasetResponse = bqPatchRequest.execute();
@@ -664,6 +673,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "TableService",
             "PatchTable",
             gcpResourceDestinationId,
+            bqPatchRequest.getUriTemplate(),
             options),
         span -> {
           Table tableResponse = bqPatchRequest.execute();
@@ -721,6 +731,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "TableService",
             "GetTable",
             gcpResourceDestinationId,
+            bqGetRequest.getUriTemplate(),
             options),
         span -> {
           Table tableResponse = bqGetRequest.execute();
@@ -779,6 +790,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "TableService",
             "ListTables",
             gcpResourceDestinationId,
+            tableListRequest.getUriTemplate(),
             options),
         span -> {
           if (span != null) {
@@ -853,6 +865,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "TableService",
             "DeleteTable",
             gcpResourceDestinationId,
+            bqDeleteRequest.getUriTemplate(),
             null),
         span -> {
           bqDeleteRequest.execute();
@@ -903,6 +916,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "ModelService",
             "PatchModel",
             gcpResourceDestinationId,
+            bqPatchRequest.getUriTemplate(),
             options),
         span -> {
           Model modelResponse = bqPatchRequest.execute();
@@ -960,6 +974,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "ModelService",
             "GetModel",
             gcpResourceDestinationId,
+            bqGetRequest.getUriTemplate(),
             options),
         span -> {
           Model modelResponse = bqGetRequest.execute();
@@ -1012,6 +1027,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "ModelService",
             "ListModels",
             gcpResourceDestinationId,
+            modelListRequest.getUriTemplate(),
             options),
         span -> {
           if (span != null) {
@@ -1070,6 +1086,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "ModelService",
             "DeleteModel",
             gcpResourceDestinationId,
+            bqDeleteRequest.getUriTemplate(),
             null),
         span -> {
           bqDeleteRequest.execute();
@@ -1122,6 +1139,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "RoutineService",
             "UpdateRoutine",
             gcpResourceDestinationId,
+            bqUpdateRequest.getUriTemplate(),
             options),
         span -> {
           Routine routineResponse = bqUpdateRequest.execute();
@@ -1179,6 +1197,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "RoutineService",
             "GetRoutine",
             gcpResourceDestinationId,
+            bqGetRequest.getUriTemplate(),
             options),
         span -> {
           Routine routineResponse = bqGetRequest.execute();
@@ -1231,6 +1250,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "RoutineService",
             "ListRoutines",
             gcpResourceDestinationId,
+            routineListRequest.getUriTemplate(),
             options),
         span -> {
           if (span != null) {
@@ -1288,6 +1308,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "RoutineService",
             "DeleteRoutine",
             gcpResourceDestinationId,
+            bqDeleteRequest.getUriTemplate(),
             null),
         span -> {
           bqDeleteRequest.execute();
@@ -1336,6 +1357,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "TableDataService",
             "InsertAll",
             gcpResourceDestinationId,
+            insertAllRequest.getUriTemplate(),
             null),
         span -> insertAllRequest.execute());
   }
@@ -1387,6 +1409,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "TableDataService",
             "List",
             gcpResourceDestinationId,
+            bqListRequest.getUriTemplate(),
             options),
         span -> {
           if (span != null) {
@@ -1448,6 +1471,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "TableDataService",
             "List",
             gcpResourceDestinationId,
+            bqListRequest.getUriTemplate(),
             null),
         span -> {
           if (span != null) {
@@ -1500,6 +1524,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "JobService",
             "GetJob",
             gcpResourceDestinationId,
+            bqGetRequest.getUriTemplate(),
             options),
         span -> {
           Job jobResponse = bqGetRequest.execute();
@@ -1550,6 +1575,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "JobService",
             "GetJob",
             gcpResourceDestinationId,
+            bqGetRequest.getUriTemplate(),
             null),
         span -> {
           Job jobResponse = bqGetRequest.execute();
@@ -1612,6 +1638,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "JobService",
             "ListJobs",
             gcpResourceDestinationId,
+            listJobsRequest.getUriTemplate(),
             options),
         span -> {
           if (span != null) {
@@ -1689,6 +1716,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "JobService",
             "CancelJob",
             gcpResourceDestinationId,
+            bqCancelRequest.getUriTemplate(),
             null),
         span -> {
           bqCancelRequest.execute();
@@ -1730,6 +1758,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "JobService",
             "DeleteJob",
             gcpResourceDestinationId,
+            bqDeleteRequest.getUriTemplate(),
             null),
         span -> {
           bqDeleteRequest.execute();
@@ -1783,6 +1812,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "JobService",
             "GetQueryResults",
             gcpResourceDestinationId,
+            queryRequest.getUriTemplate(),
             options),
         span -> {
           if (span != null) {
@@ -1835,6 +1865,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "JobService",
             "GetQueryResults",
             gcpResourceDestinationId,
+            queryRequest.getUriTemplate(),
             null),
         span -> {
           if (span != null) {
@@ -1875,6 +1906,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "JobService",
             "Query",
             gcpResourceDestinationId,
+            queryRequest.getUriTemplate(),
             null),
         span -> {
           return queryRequest.execute();
@@ -2006,6 +2038,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "TableService",
             "GetIamPolicy",
             gcpResourceDestinationId,
+            bqGetRequest.getUriTemplate(),
             options),
         span -> {
           return bqGetRequest.execute();
@@ -2042,6 +2075,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "TableService",
             "SetIamPolicy",
             gcpResourceDestinationId,
+            bqSetRequest.getUriTemplate(),
             options),
         span -> {
           return bqSetRequest.execute();
@@ -2079,6 +2113,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             "TableService",
             "TestIamPermissions",
             gcpResourceDestinationId,
+            bqTestRequest.getUriTemplate(),
             options),
         span -> {
           return bqTestRequest.execute();
@@ -2095,6 +2130,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
       String service,
       String method,
       String gcpResourceDestinationId,
+      String urlTemplate,
       Map<Option, ?> options) {
     if (!this.options.isOpenTelemetryTracingEnabled()
         || this.options.getOpenTelemetryTracer() == null) {
@@ -2108,9 +2144,13 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .setSpanKind(SpanKind.CLIENT)
             .setAttribute("bq.rpc.service", service)
             .setAttribute("bq.rpc.method", method)
-            .setAttribute("bq.rpc.system", "http")
-            .setAttribute(
-                BigQueryTelemetryTracer.GCP_RESOURCE_DESTINATION_ID, gcpResourceDestinationId);
+            .setAttribute("bq.rpc.system", "http");
+    if (isHttpTracingEnabled()) {
+      builder
+          .setAttribute(
+              BigQueryTelemetryTracer.GCP_RESOURCE_DESTINATION_ID, gcpResourceDestinationId)
+          .setAttribute(BigQueryTelemetryTracer.URL_TEMPLATE, urlTemplate);
+    }
 
     if (options != null) {
       builder.setAllAttributes(otelAttributesFromOptions(options));

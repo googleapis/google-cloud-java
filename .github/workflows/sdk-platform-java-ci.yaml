@@ -430,8 +430,11 @@ jobs:
       - name: Checkout sdk-platform-java @ PR merge commit
         uses: actions/checkout@v3
       - name: Install sdk-platform-java @ PR merge commit
-        run: mvn install -B -ntp -T 1C -DskipTests
-        working-directory: sdk-platform-java
+        shell: bash
+        run: .kokoro/build.sh
+        env:
+          JOB_TYPE: install
+          BUILD_SUBDIR: sdk-platform-java
         # Showcase golden test ensures that src changes are already reflected in the PR.
       - name: Clirr check
         working-directory: sdk-platform-java/java-showcase
