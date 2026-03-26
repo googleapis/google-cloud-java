@@ -34,9 +34,11 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 
 import com.google.api.gax.core.FixedCredentialsProvider;
+import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.RestSerializationException;
 import com.google.api.gax.rpc.DeadlineExceededException;
 import com.google.api.gax.rpc.StatusCode.Code;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnavailableException;
 import com.google.api.gax.tracing.ObservabilityAttributes;
 import com.google.api.gax.tracing.SpanTracerFactory;
@@ -48,12 +50,14 @@ import com.google.showcase.v1beta1.EchoRequest;
 import com.google.showcase.v1beta1.EchoSettings;
 import com.google.showcase.v1beta1.it.util.TestClientInitializer;
 import com.google.showcase.v1beta1.stub.EchoStubSettings;
+import com.google.api.client.http.HttpTransport;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
 import io.grpc.ClientCall;
 import io.grpc.ClientInterceptor;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.MethodDescriptor;
+import io.grpc.Metadata;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
@@ -61,8 +65,10 @@ import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.sdk.trace.data.SpanData;
 import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
+import java.io.ByteArrayInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.BindException;
 import java.net.NoRouteToHostException;
 import java.net.ServerSocket;
@@ -164,35 +170,156 @@ class ITOtelErrorType {
   void testTracing_failedEcho_grpc_recordsErrorType() throws Exception {
     SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
 
+    ClientInterceptor interceptor =
+        new ClientInterceptor() {
+          @Override
+          public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
+              MethodDescriptor<ReqT, RespT> method,
+              CallOptions callOptions,
+              Channel next) {
+            return new ClientCall<ReqT, RespT>() {
+              @Override
+              public void start(Listener<RespT> responseListener, Metadata headers) {
+                responseListener.onClose(io.grpc.Status.UNAVAILABLE, new Metadata());
+              }
+
+              @Override
+              public void request(int numMessages) {}
+
+              @Override
+              public void cancel(String message, Throwable cause) {}
+
+              @Override
+              public void halfClose() {}
+
+              @Override
+              public void sendMessage(ReqT message) {}
+            };
+          }
+        };
+
+    TransportChannelProvider transportChannelProvider =
+        EchoSettings.defaultGrpcTransportProviderBuilder()
+            .setChannelConfigurator(io.grpc.ManagedChannelBuilder::usePlaintext)
+            .setInterceptorProvider(() -> ImmutableList.of(interceptor))
+            .build();
+
     try (EchoClient client =
-        TestClientInitializer.createGrpcEchoClientOpentelemetry(tracingFactory)) {
+        TestClientInitializer.createGrpcEchoClientOpentelemetry(
+            tracingFactory, transportChannelProvider)) {
 
       EchoRequest echoRequest =
           EchoRequest.newBuilder()
-              .setError(Status.newBuilder().setCode(Code.UNAVAILABLE.ordinal()).build())
+              .setError(Status.newBuilder().setCode(com.google.rpc.Code.UNAVAILABLE.ordinal()).build())
               .build();
 
       assertThrows(UnavailableException.class, () -> client.echo(echoRequest));
       verifyErrorTypeAttribute("UNAVAILABLE");
     }
+
   }
+
 
   @Test
   void testTracing_failedEcho_httpjson_recordsErrorType() throws Exception {
     SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
 
-    try (EchoClient client =
-        TestClientInitializer.createHttpJsonEchoClientOpentelemetry(tracingFactory)) {
+    HttpTransport mockTransport =
+        new HttpTransport() {
+          @Override
+          protected com.google.api.client.http.LowLevelHttpRequest buildRequest(
+              String method, String url) {
+            return new com.google.api.client.http.LowLevelHttpRequest() {
+              @Override
+              public void addHeader(String name, String value) {}
 
+              @Override
+              public com.google.api.client.http.LowLevelHttpResponse execute() {
+                return new com.google.api.client.http.LowLevelHttpResponse() {
+                  @Override
+                  public InputStream getContent() {
+                    return new ByteArrayInputStream("{}".getBytes());
+                  }
+
+
+                  @Override
+                  public String getContentEncoding() {
+                    return null;
+                  }
+
+                  @Override
+                  public long getContentLength() {
+                    return 2;
+                  }
+
+                  @Override
+                  public String getContentType() {
+                    return "application/json";
+                  }
+
+                  @Override
+                  public String getStatusLine() {
+                    return "HTTP/1.1 503 Service Unavailable";
+                  }
+
+                  @Override
+                  public int getStatusCode() {
+                    return 503;
+                  }
+
+                  @Override
+                  public String getReasonPhrase() {
+                    return "Service Unavailable";
+                  }
+
+                  @Override
+                  public int getHeaderCount() {
+                    return 0;
+                  }
+
+                  @Override
+                  public String getHeaderName(int index) {
+                    return null;
+                  }
+
+                  @Override
+                  public String getHeaderValue(int index) {
+                    return null;
+                  }
+                };
+              }
+            };
+          }
+        };
+
+    EchoSettings httpJsonEchoSettings =
+        EchoSettings.newHttpJsonBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(
+                EchoSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(mockTransport)
+                    .setEndpoint(TestClientInitializer.DEFAULT_HTTPJSON_ENDPOINT)
+                    .build())
+            .build();
+
+    EchoStubSettings echoStubSettings =
+        (EchoStubSettings)
+            httpJsonEchoSettings.getStubSettings().toBuilder()
+                .setTracerFactory(tracingFactory)
+                .build();
+
+    try (EchoClient client = EchoClient.create(echoStubSettings.createStub())) {
       EchoRequest echoRequest =
           EchoRequest.newBuilder()
-              .setError(Status.newBuilder().setCode(Code.UNAVAILABLE.ordinal()).build())
+              .setError(Status.newBuilder().setCode(com.google.rpc.Code.UNAVAILABLE.ordinal()).build())
               .build();
+
 
       assertThrows(UnavailableException.class, () -> client.echo(echoRequest));
       verifyErrorTypeAttribute("503");
     }
   }
+
 
   @Test
   void testTracing_clientConnectionError_ConnectException_grpc() throws Exception {
@@ -363,53 +490,14 @@ class ITOtelErrorType {
 
   @Test
   void testTracing_clientAuthenticationError_GeneralSecurityException_grpc() throws Exception {
-    Credentials credentials =
-        new Credentials() {
-          @Override
-          public String getAuthenticationType() {
-            return "mock";
-          }
-
-          @Override
-          public Map<String, List<String>> getRequestMetadata(URI uri) throws IOException {
-            throw new IOException("Mock auth failure", new GeneralSecurityException("Root cause"));
-          }
-
-          @Override
-          public boolean hasRequestMetadata() {
-            return true;
-          }
-
-          @Override
-          public boolean hasRequestMetadataOnly() {
-            return true;
-          }
-
-          @Override
-          public void refresh() throws IOException {}
-        };
-
-    SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
-    EchoSettings grpcEchoSettings =
-        EchoSettings.newBuilder()
-            .setCredentialsProvider(FixedCredentialsProvider.create(credentials))
-            .setTransportChannelProvider(
-                EchoSettings.defaultGrpcTransportProviderBuilder()
-                    .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
-                    .build())
-            .setEndpoint(TestClientInitializer.DEFAULT_GRPC_ENDPOINT)
-            .build();
-
-    EchoStubSettings.Builder echoStubSettingsBuilder =
-        (EchoStubSettings.Builder) grpcEchoSettings.getStubSettings().toBuilder();
-    echoStubSettingsBuilder.setTracerFactory(tracingFactory);
-
-    try (EchoClient client = EchoClient.create(echoStubSettingsBuilder.build().createStub())) {
+    try (EchoClient client = createInterceptorClient(new GeneralSecurityException("Mock auth failure"))) {
       assertThrows(
           Exception.class, () -> client.echo(EchoRequest.newBuilder().setContent("test").build()));
       verifyErrorTypeAttribute("CLIENT_AUTHENTICATION_ERROR");
     }
   }
+
+
 
   @Test
   void testTracing_clientAuthenticationError_FileNotFoundException_grpc() throws Exception {
