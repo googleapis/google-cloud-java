@@ -683,5 +683,4 @@ class EndpointContextTest {
             .build();
     Truth.assertThat(endpointContext.resolvedServerPort()).isNull();
   }
-
 }
