@@ -149,6 +149,7 @@ class ITOtelErrorType {
 
     EchoSettings grpcEchoSettings =
         EchoSettings.newBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
             .setTransportChannelProvider(
                 EchoSettings.defaultGrpcTransportProviderBuilder()
                     .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
