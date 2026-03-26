@@ -174,9 +174,7 @@ class SpanTracerFactoryTest {
   @ValueSource(booleans = {false, true})
   void testWithContext_noEndpointContext_doesNotAddServerAddressAttribute(boolean useContext) {
     ApiTracerContext context =
-        ApiTracerContext.newBuilder()
-            .setLibraryMetadata(LibraryMetadata.empty())
-            .build();
+        ApiTracerContext.newBuilder().setLibraryMetadata(LibraryMetadata.empty()).build();
 
     SpanTracerFactory factory =
         new SpanTracerFactory(openTelemetry, tracer, ApiTracerContext.empty());
@@ -346,14 +344,13 @@ class SpanTracerFactoryTest {
   @Test
   void testWithContext_nullTracer_returnsBaseApiTracerFactory() {
     OpenTelemetry mockOpenTelemetry = mock(OpenTelemetry.class);
-    when(mockOpenTelemetry.getTracer(nullable(String.class), nullable(String.class))).thenReturn(null);
+    when(mockOpenTelemetry.getTracer(nullable(String.class), nullable(String.class)))
+        .thenReturn(null);
 
     SpanTracerFactory factory =
         new SpanTracerFactory(mockOpenTelemetry, tracer, ApiTracerContext.empty());
     ApiTracerContext context =
-        ApiTracerContext.newBuilder()
-            .setLibraryMetadata(LibraryMetadata.empty())
-            .build();
+        ApiTracerContext.newBuilder().setLibraryMetadata(LibraryMetadata.empty()).build();
 
     ApiTracerFactory factoryWithContext = factory.withContext(context);
     assertThat(factoryWithContext).isInstanceOf(BaseApiTracerFactory.class);
