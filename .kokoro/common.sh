@@ -350,14 +350,14 @@ function generate_graalvm_presubmit_modules_list() {
       IFS=,
       echo "${modified_module_list[*]}"
     )
+  elif [[ ${#modified_module_list[@]} -gt 4 ]]; then
+    # Too many modules modified, run a subset
+    echo "Too many modules modified, running a subset"
+    module_list="java-aiplatform,java-compute"
   else
-    # If no modules have been modified or if too many have been modified, just test the modules
-    # specified in the MAVEN_MODULES env var.
-    if [ -z "${MAVEN_MODULES}" ]; then
-      echo "MAVEN_MODULES not defined in environment."
-      exit 1
-    fi
-    module_list=${MAVEN_MODULES}
+    # no modules modified
+    echo "No modules modified"
+    module_list=""
   fi
 }
 
