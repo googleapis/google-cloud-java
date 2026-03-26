@@ -173,7 +173,10 @@ class SpanTracerFactoryTest {
   @ParameterizedTest
   @ValueSource(booleans = {false, true})
   void testWithContext_noEndpointContext_doesNotAddServerAddressAttribute(boolean useContext) {
-    ApiTracerContext context = ApiTracerContext.empty();
+    ApiTracerContext context =
+        ApiTracerContext.newBuilder()
+            .setLibraryMetadata(LibraryMetadata.empty())
+            .build();
 
     SpanTracerFactory factory =
         new SpanTracerFactory(openTelemetry, tracer, ApiTracerContext.empty());
@@ -321,5 +324,38 @@ class SpanTracerFactoryTest {
     ApiTracer tracerInstance2 = factory.newTracer(null, ApiTracerContext.empty());
 
     assertThat(tracerInstance2).isInstanceOf(BaseApiTracer.class);
+  }
+
+  @Test
+  void testWithContext_nullContext_returnsBaseApiTracerFactory() {
+    SpanTracerFactory factory =
+        new SpanTracerFactory(openTelemetry, tracer, ApiTracerContext.empty());
+    ApiTracerFactory factoryWithContext = factory.withContext(null);
+    assertThat(factoryWithContext).isInstanceOf(BaseApiTracerFactory.class);
+  }
+
+  @Test
+  void testWithContext_nullMetadata_returnsBaseApiTracerFactory() {
+    SpanTracerFactory factory =
+        new SpanTracerFactory(openTelemetry, tracer, ApiTracerContext.empty());
+    // Assuming ApiTracerContext.empty() has null libraryMetadata
+    ApiTracerFactory factoryWithContext = factory.withContext(ApiTracerContext.empty());
+    assertThat(factoryWithContext).isInstanceOf(BaseApiTracerFactory.class);
+  }
+
+  @Test
+  void testWithContext_nullTracer_returnsBaseApiTracerFactory() {
+    OpenTelemetry mockOpenTelemetry = mock(OpenTelemetry.class);
+    when(mockOpenTelemetry.getTracer(nullable(String.class), nullable(String.class))).thenReturn(null);
+
+    SpanTracerFactory factory =
+        new SpanTracerFactory(mockOpenTelemetry, tracer, ApiTracerContext.empty());
+    ApiTracerContext context =
+        ApiTracerContext.newBuilder()
+            .setLibraryMetadata(LibraryMetadata.empty())
+            .build();
+
+    ApiTracerFactory factoryWithContext = factory.withContext(context);
+    assertThat(factoryWithContext).isInstanceOf(BaseApiTracerFactory.class);
   }
 }
