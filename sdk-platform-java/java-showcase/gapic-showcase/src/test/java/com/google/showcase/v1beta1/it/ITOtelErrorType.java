@@ -84,7 +84,10 @@ import javax.net.ssl.SSLHandshakeException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
+import java.util.concurrent.TimeUnit;
 
+@Timeout(value = 30, unit = TimeUnit.SECONDS)
 class ITOtelErrorType {
   private InMemorySpanExporter spanExporter;
   private OpenTelemetrySdk openTelemetrySdk;
