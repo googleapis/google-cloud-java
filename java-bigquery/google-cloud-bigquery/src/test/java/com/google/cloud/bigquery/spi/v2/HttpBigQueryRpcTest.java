@@ -60,6 +60,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -225,6 +226,14 @@ public class HttpBigQueryRpcTest {
       setUpServer();
       System.setProperty("com.google.cloud.bigquery.http.tracing.dev.enabled", "true");
       rpc = createRpc(true);
+    }
+
+    @AfterEach
+    public void tearDown() {
+      assertEquals(
+          0,
+          com.google.cloud.bigquery.BigQueryRetryAlgorithm.getCurrentAttempt(),
+          "ThreadLocal should be 0 at the end of the request!");
     }
 
     @Test

@@ -57,6 +57,11 @@ public class BigQueryRetryAlgorithm<ResponseT> extends RetryAlgorithm<ResponseT>
     currentAttempt.set(attempt);
   }
 
+  @InternalApi("internal to java-bigquery")
+  public static void clearCurrentAttempt() {
+    currentAttempt.remove();
+  }
+
   public BigQueryRetryAlgorithm(
       ResultRetryAlgorithm<ResponseT> resultAlgorithm,
       TimedRetryAlgorithm timedAlgorithm,
@@ -91,7 +96,9 @@ public class BigQueryRetryAlgorithm<ResponseT> extends RetryAlgorithm<ResponseT>
             && shouldRetryBasedOnTiming(context, nextAttemptSettings);
 
     // Store retry attempt count in thread-local storage for tracing
-    setCurrentAttempt(attemptCount);
+    if (shouldRetry) {
+      setCurrentAttempt(attemptCount);
+    }
 
     if (LOG.isLoggable(Level.FINEST)) {
       LOG.log(

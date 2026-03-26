@@ -2189,7 +2189,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
       throw e;
     } finally {
       // Reset attempt count to 0 to avoid carrying over state across requests on the same thread
-      BigQueryRetryAlgorithm.setCurrentAttempt(0);
+      BigQueryRetryAlgorithm.clearCurrentAttempt();
       span.end();
     }
   }
