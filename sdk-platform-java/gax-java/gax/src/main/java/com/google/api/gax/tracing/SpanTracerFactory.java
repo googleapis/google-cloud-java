@@ -108,7 +108,7 @@ public class SpanTracerFactory implements ApiTracerFactory {
     }
     ApiTracerContext mergedContext = this.apiTracerContext.merge(context);
     LibraryMetadata metadata = mergedContext.libraryMetadata();
-    if (metadata == null) {
+    if (metadata == null || metadata.isEmpty()) {
       return new BaseApiTracerFactory();
     }
     Tracer newTracer = openTelemetry.getTracer(metadata.artifactName(), metadata.version());
