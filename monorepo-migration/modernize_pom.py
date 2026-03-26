@@ -171,7 +171,7 @@ def get_monorepo_versions(monorepo_root='.'):
                 versions[artifactId] = version
     return versions
 
-def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artifactId='google-cloud-jar-parent', relative_path='../google-cloud-jar-parent/pom.xml', monorepo_versions=None, parent_managed_deps=None, keep_parent=False):
+def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artifactId='google-cloud-jar-parent', relative_path='../google-cloud-jar-parent/pom.xml', monorepo_versions=None, parent_managed_deps=None, keep_parent=False, add_bulk_tests_profile=False):
     with open(file_path, 'r') as f:
         lines = f.readlines()
 
@@ -196,6 +196,15 @@ def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artif
     should_preserve = False
     current_group_id = None
     has_version = False
+    in_profiles = False
+    has_bulk_tests_profile = False
+    profiles_lines = []
+    
+    # Check if bulkTests profile already exists if we might add it
+    if add_bulk_tests_profile:
+        bulk_tests_pattern = r'<id>\s*bulkTests\s*</id>'
+        if re.search(bulk_tests_pattern, "".join(lines)):
+            has_bulk_tests_profile = True
 
     for line in lines:
         # URL Modernization
@@ -230,6 +239,17 @@ def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artif
             line = line.replace('<id>customNative</id>', '<id>native</id>')
         if '<id>native-test</id>' in line:
             line = line.replace('<id>native-test</id>', '<id>native</id>')
+
+        # Track if we are in profiles section to potentially add bulkTests there
+        if '<profiles>' in line:
+            in_profiles = True
+        if '</profiles>' in line:
+            in_profiles = False
+            if add_bulk_tests_profile and not has_bulk_tests_profile:
+                # Add bulkTests profile before closing </profiles>
+                indent = "    "
+                line = f"{indent}<profile>\n{indent}  <id>bulkTests</id>\n{indent}  <properties>\n{indent}    <skipTests>true</skipTests>\n{indent}  </properties>\n{indent}</profile>\n{line}"
+                has_bulk_tests_profile = True
 
         # Parent section modernization
         if not keep_parent:
@@ -469,6 +489,25 @@ def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artif
 
         new_lines.append(line)
 
+    # If bulkTests profile was requested but no <profiles> section existed
+    if add_bulk_tests_profile and not has_bulk_tests_profile:
+        # Find the last line that isn't </project> and empty space
+        for i in range(len(new_lines) - 1, -1, -1):
+            if '</project>' in new_lines[i]:
+                indent = "  "
+                profile_block = (
+                    f"\n{indent}<profiles>\n"
+                    f"{indent}  <profile>\n"
+                    f"{indent}    <id>bulkTests</id>\n"
+                    f"{indent}    <properties>\n"
+                    f"{indent}      <skipTests>true</skipTests>\n"
+                    f"{indent}    </properties>\n"
+                    f"{indent}  </profile>\n"
+                    f"{indent}</profiles>\n"
+                )
+                new_lines.insert(i, profile_block)
+                break
+
     with open(file_path, 'w') as f:
         # Clean up double empty lines potentially introduced by pruning
         content = "".join(new_lines)
@@ -483,6 +522,7 @@ if __name__ == "__main__":
     parser.add_argument("--parent-artifactId", default="google-cloud-jar-parent", help="Artifact ID of the parent POM.")
     parser.add_argument("--relative-path", default="../google-cloud-jar-parent/pom.xml", help="Relative path to the parent POM.")
     parser.add_argument("--keep-parent", action="store_true", help="Keep the existing parent section.")
+    parser.add_argument("--add-bulk-tests-profile", action="store_true", help="Add bulkTests profile to skip tests.")
 
     args = parser.parse_args()
 
@@ -506,6 +546,7 @@ if __name__ == "__main__":
         args.relative_path,
         monorepo_versions,
         parent_managed_deps,
-        args.keep_parent
+        args.keep_parent,
+        args.add_bulk_tests_profile
     )
 

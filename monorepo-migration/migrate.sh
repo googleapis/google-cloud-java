@@ -59,6 +59,7 @@ UPDATE_GENERATION_CONFIG_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_generation_config.
 UPDATE_OWLBOT_HERMETIC_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_owlbot_hermetic.py"
 TRANSFORM_OWLBOT_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_owlbot.py"
 UPDATE_DEP_MGMT_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_dependency_management.py"
+UPDATE_CI_FILTERS_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_ci_filters.py"
 
 # Track number of commits made by this script
 COMMIT_COUNT=0
@@ -378,8 +379,8 @@ if [ -d "$SOURCE_REPO_NAME/.github/workflows" ]; then
         if [ -f "$workflow" ]; then
             filename=$(basename "$workflow")
 
-            if [[ "${filename}" == "ci.yaml" && "${SKIP_CI_WORKFLOW}" == "true" ]]; then
-                echo "Skipping ci.yaml workflow as requested by user"
+            if [[ "${filename}" == "ci.yaml" && ( "${SKIP_CI_WORKFLOW}" == "true" || "${SPLIT_CI}" == "true" ) ]]; then
+                echo "Skipping ci.yaml workflow as requested by user (SKIP_CI_WORKFLOW=${SKIP_CI_WORKFLOW}, SPLIT_CI=${SPLIT_CI})"
                 continue
             fi
 
@@ -410,6 +411,19 @@ if [ -d "$SOURCE_REPO_NAME/.github/workflows" ]; then
     git add .github/workflows
     git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): migrate and adapt GitHub Actions workflows"
     COMMIT_COUNT=$((COMMIT_COUNT + 1))
+fi
+
+# 7.5b Update central ci.yaml filters if SPLIT_CI is true
+if [ "${SPLIT_CI}" == "true" ]; then
+    CI_YAML=".github/workflows/ci.yaml"
+    if [ -f "$CI_YAML" ]; then
+        echo "Adding $SOURCE_REPO_NAME to $CI_YAML filters..."
+        python3 "$UPDATE_CI_FILTERS_SCRIPT" "$CI_YAML" "$SOURCE_REPO_NAME"
+        echo "Committing ci.yaml filter update..."
+        git add "$CI_YAML"
+        git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): add to filters in $CI_YAML"
+        COMMIT_COUNT=$((COMMIT_COUNT + 1))
+    fi
 fi
 
 # 7.6 Update generation_config.yaml
@@ -524,7 +538,11 @@ modernize_and_extract() {
 # 7.11 Modernize root pom.xml
 echo "Modernizing root pom.xml..."
 PARENT_VERSION=$(grep -m 1 "<version>.*{x-version-update:google-cloud-java:current}" google-cloud-jar-parent/pom.xml | sed -E 's/.*<version>(.*)<\/version>.*/\1/')
-modernize_and_extract "$SOURCE_REPO_NAME/pom.xml" "$PARENT_VERSION" --source-repo "$SOURCE_REPO_NAME"
+EXTRA_MODERNIZE_ARGS=""
+if [ "${SPLIT_CI}" == "true" ]; then
+    EXTRA_MODERNIZE_ARGS="--add-bulk-tests-profile"
+fi
+modernize_and_extract "$SOURCE_REPO_NAME/pom.xml" "$PARENT_VERSION" --source-repo "$SOURCE_REPO_NAME" $EXTRA_MODERNIZE_ARGS
 
 echo "Committing root pom.xml modernization..."
 git add "$SOURCE_REPO_NAME/pom.xml"
