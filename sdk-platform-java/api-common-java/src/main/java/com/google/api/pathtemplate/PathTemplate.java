@@ -297,6 +297,162 @@ public class PathTemplate {
   }
 
   /**
+   * Returns the set of resource literals. A resource literal is a literal followed by a binding or
+   * inside a binding.
+   */
+  public Set<String> getResourceLiterals() {
+    Set<String> canonicalSegments = new java.util.LinkedHashSet<>();
+    boolean inBinding = false;
+    for (int i = 0; i < segments.size(); i++) {
+      Segment seg = segments.get(i);
+      if (seg.kind() == SegmentKind.BINDING) {
+        inBinding = true;
+      } else if (seg.kind() == SegmentKind.END_BINDING) {
+        inBinding = false;
+      } else if (seg.kind() == SegmentKind.LITERAL) {
+        String value = seg.value();
+        if (value.matches("^v\\d+.*") || value.matches("^u\\d+.*")) { // just in case
+          continue;
+        }
+        if (inBinding) {
+          canonicalSegments.add(value);
+        } else if (i + 1 < segments.size() && segments.get(i + 1).kind() == SegmentKind.BINDING) {
+          canonicalSegments.add(value);
+        }
+      }
+    }
+    return canonicalSegments;
+  }
+
+  /**
+   * Returns the canonical resource name string. A segment is canonical if it is a literal followed
+   * by a binding or inside a binding. If a literal is not in knownResources, the extraction stops.
+   */
+  public String getCanonicalResourceName(Set<String> knownResources) {
+    if (knownResources == null) {
+      return "";
+    }
+    StringBuilder canonical = new StringBuilder();
+    StringBuilder currentSequence = new StringBuilder();
+    boolean inBinding = false;
+    String currentBindingName = "";
+    boolean keepBinding = true;
+    List<Segment> bindingSegments = new ArrayList<>();
+    boolean afterKeptNamedBinding = false;
+
+    for (int i = 0; i < segments.size(); i++) {
+      Segment seg = segments.get(i);
+      if (seg.kind() == SegmentKind.BINDING) {
+        inBinding = true;
+        currentBindingName = seg.value();
+        bindingSegments.clear();
+        keepBinding = true;
+      } else if (seg.kind() == SegmentKind.END_BINDING) {
+        inBinding = false;
+        StringBuilder innerPattern = new StringBuilder();
+        int literalCount = 0;
+        for (Segment innerSeg : bindingSegments) {
+          if (innerSeg.kind() == SegmentKind.LITERAL) {
+            String value = innerSeg.value();
+            if (value.matches("^v\\d+.*") || value.matches("^u\\d+.*")) {
+              continue;
+            }
+            literalCount++;
+            if (innerPattern.length() > 0) {
+              innerPattern.append("/");
+            }
+            innerPattern.append(value);
+          } else if (innerSeg.kind() == SegmentKind.WILDCARD) {
+            if (innerPattern.length() > 0) {
+              innerPattern.append("/");
+            }
+            innerPattern.append("*");
+          }
+        }
+
+        boolean extractInner = false;
+        if (canonical.length() == 0 && currentSequence.length() == 0) {
+          if (i + 1 < segments.size()) {
+            Segment nextSeg = segments.get(i + 1);
+            if (nextSeg.kind() == SegmentKind.LITERAL) {
+              String nextValue = nextSeg.value();
+              if (knownResources.contains(nextValue)) {
+                extractInner = true;
+              }
+            }
+          }
+        }
+
+        if (extractInner) {
+          if (innerPattern.length() > 0) {
+            if (canonical.length() > 0) {
+              canonical.append("/");
+            }
+            canonical.append(innerPattern);
+          }
+        } else {
+          if (currentSequence.length() > 0) {
+            if (canonical.length() > 0) {
+              canonical.append("/");
+            }
+            canonical.append(currentSequence);
+            currentSequence.setLength(0);
+          }
+          if (canonical.length() > 0) {
+            canonical.append("/");
+          }
+
+          if (literalCount <= 1 || innerPattern.toString().equals("*")) {
+            canonical.append("{").append(currentBindingName).append("}");
+          } else {
+            canonical
+                .append("{")
+                .append(currentBindingName)
+                .append("=")
+                .append(innerPattern)
+                .append("}");
+            afterKeptNamedBinding = true;
+          }
+        }
+      } else if (seg.kind() == SegmentKind.LITERAL) {
+        String value = seg.value();
+        if (value.matches("^v\\d+.*") || value.matches("^u\\d+.*")) {
+          continue;
+        }
+        if (inBinding) {
+          bindingSegments.add(seg);
+          if (!knownResources.contains(value)) {
+            keepBinding = false;
+          }
+        } else {
+          if (knownResources.contains(value)) {
+            if (currentSequence.length() > 0) {
+              currentSequence.append("/");
+            }
+            currentSequence.append(value);
+          } else {
+            if (afterKeptNamedBinding) {
+              if (currentSequence.length() > 0) {
+                currentSequence.append("/");
+              }
+              currentSequence.append(value);
+            } else {
+              if (canonical.length() > 0 || currentSequence.length() > 0) {
+                break;
+              }
+            }
+          }
+        }
+      } else if (seg.kind() == SegmentKind.WILDCARD) {
+        if (inBinding) {
+          bindingSegments.add(seg);
+        }
+      }
+    }
+    return canonical.toString();
+  }
+
+  /**
    * Returns a template for the parent of this template.
    *
    * @throws ValidationException if the template has no parent.
@@ -997,6 +1153,9 @@ public class PathTemplate {
   }
 
   private static boolean isSegmentBeginOrEndInvalid(String seg) {
+    if (seg.isEmpty()) {
+      return false;
+    }
     // A segment is invalid if it contains only one character and the character is a delimiter
     if (seg.length() == 1 && COMPLEX_DELIMITER_PATTERN.matcher(seg).find()) {
       return true;

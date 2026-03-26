@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package google.extractor.testing;
+package google.cloud.bigquery.testing;
 
 option java_multiple_files = true;
 option java_outer_classname = "ResourceNameExtractorTestingOuterClass";
-option java_package = "com.google.extractor.testing";
+option java_package = "com.google.cloud.bigquery.testing";
 
 import "google/api/annotations.proto";
 import "google/api/client.proto";
@@ -27,13 +27,72 @@ service ResourceNameExtractorTesting {
     option (google.api.method_signature) = "bar";
   }
 
+  rpc GetHeuristic(GetHeuristicRequest) returns (Heuristic) {
+    option (google.api.http) = {
+      get: "/v1/projects/{project}/locations/{location}/heuristics/{heuristic}"
+    };
+  }
+
   rpc ListFoos(ListFoosRequest) returns (ListFoosResponse) {
     option (google.api.http) = {
       get: "/v1/{parent=projects/*/locations/*}/foos"
     };
     option (google.api.method_signature) = "parent";
   }
+
+  // Exact AIP Method for populating known resources
+  rpc Get(GetHeuristicWithNamedBindingRequest) returns (Heuristic) {
+    option (google.api.http) = {
+      get: "/v1/projects/{project}/locations/{location}/{parent_name=reservations/*/reservationBlocks/*/reservationSubBlocks/*}/heuristics/{heuristic}"
+    };
+  }
+
+  rpc List(ListHeuristicsRequest) returns (ListHeuristicsResponse) {
+    option (google.api.http) = {
+      get: "/v1/projects/{project}/locations/{location}/heuristics"
+    };
+  }
+
+  // Should NOT generate a heuristic, because it has a resource_reference field
+  rpc GetHeuristicWithResourceReference(GetHeuristicWithResourceReferenceRequest) returns (Heuristic) {
+    option (google.api.http) = {
+      get: "/v1/projects/{project}/locations/{location}/heuristics/{heuristic}"
+    };
+  }
+
+
+  rpc GetHeuristicWithNestedFields(GetHeuristicWithNestedFieldsRequest) returns (Heuristic) {
+    option (google.api.http) = {
+      get: "/v1/projects/{project}/locations/{location}/heuristics/{heuristic.name}"
+    };
+  }
+
+  rpc GetHeuristicWithNamedBinding(GetHeuristicWithNamedBindingRequest) returns (Heuristic) {
+    option (google.api.http) = {
+      get: "/v1/projects/{project}/locations/{location}/{parent_name=reservations/*/reservationBlocks/*/reservationSubBlocks/*}/heuristics/{heuristic}"
+    };
+  }
 }
+
+message ListHeuristicsRequest {
+  string project = 1;
+  string location = 2;
+}
+message ListHeuristicsResponse {
+  repeated Heuristic heuristics = 1;
+}
+
+message GetHeuristicWithResourceReferenceRequest {
+  string project = 1;
+  string location = 2;
+  string heuristic = 3;
+  string foo = 4 [
+    (google.api.resource_reference) = {
+      type: "extractor.googleapis.com/Foo"
+    }
+  ];
+}
+
 
 message Foo {
   option (google.api.resource) = {
@@ -44,6 +103,29 @@ message Foo {
 }
 
 message Bar {
+  string name = 1;
+}
+
+message GetHeuristicRequest {
+  string project = 1;
+  string location = 2;
+  string heuristic = 3;
+}
+
+message GetHeuristicWithNestedFieldsRequest {
+  string project = 1;
+  string location = 2;
+  Heuristic heuristic = 3;
+}
+
+message GetHeuristicWithNamedBindingRequest {
+  string project = 1;
+  string location = 2;
+  string parent_name = 3;
+  string heuristic = 4;
+}
+
+message Heuristic {
   string name = 1;
 }
 
