@@ -26,9 +26,8 @@ import java.util.List;
 /**
  * An immutable object containing settings for the datastore.
  *
- * <p>Example for connecting to a datastore:
- *
  * <pre>
+ * // Example for connecting to a datastore:
  * DatastoreOptions options = new DatastoreOptions.Builder()
  *     .projectId("my-project-id")
  *     .credential(DatastoreHelper.getComputeEngineCredential())
