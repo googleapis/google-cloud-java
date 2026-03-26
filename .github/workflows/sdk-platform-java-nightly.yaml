@@ -84,4 +84,4 @@ jobs:
         run: |
           gh issue create \
             --title "Nightly-java8 build on ${{ matrix.os }} failed." \
-            --body "The build has failed : https://github.com/googleapis/gapic-generator-java/actions/runs/${GITHUB_RUN_ID}"
+            --body "The build has failed : https://github.com/googleapis/google-cloud-java/actions/runs/${GITHUB_RUN_ID}"

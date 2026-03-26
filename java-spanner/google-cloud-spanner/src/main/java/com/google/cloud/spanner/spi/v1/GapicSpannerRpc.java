@@ -201,6 +201,7 @@ import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.MethodDescriptor;
 import io.grpc.auth.MoreCallCredentials;
+import io.opentelemetry.api.OpenTelemetry;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -567,6 +568,17 @@ public class GapicSpannerRpc implements SpannerRpc {
         .build();
   }
 
+  @VisibleForTesting
+  OpenTelemetry getFallbackOpenTelemetry(SpannerOptions options) {
+    if (options.isEnableBuiltInMetrics()) {
+      OpenTelemetry builtInOtel = options.getBuiltInOpenTelemetry();
+      if (builtInOtel != null) {
+        return builtInOtel;
+      }
+    }
+    return OpenTelemetry.noop();
+  }
+
   private static KeyAwareChannel extractKeyAwareChannel(TransportChannel transportChannel) {
     if (transportChannel instanceof GrpcTransportChannel) {
       Channel channel = ((GrpcTransportChannel) transportChannel).getChannel();
@@ -671,7 +683,7 @@ public class GapicSpannerRpc implements SpannerRpc {
 
           GcpFallbackOpenTelemetry fallbackTelemetry =
               GcpFallbackOpenTelemetry.newBuilder()
-                  .withSdk(options.getOpenTelemetry())
+                  .withSdk(getFallbackOpenTelemetry(options))
                   .disableAllMetrics()
                   .enableMetrics(Arrays.asList("fallback_count", "call_status"))
                   .build();

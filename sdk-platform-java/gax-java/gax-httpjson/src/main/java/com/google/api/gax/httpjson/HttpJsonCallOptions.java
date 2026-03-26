@@ -35,6 +35,7 @@ import static com.google.api.gax.util.TimeConversionUtils.toThreetenDuration;
 import static com.google.api.gax.util.TimeConversionUtils.toThreetenInstant;
 
 import com.google.api.core.ObsoleteApi;
+import com.google.api.gax.tracing.ApiTracer;
 import com.google.auth.Credentials;
 import com.google.auto.value.AutoValue;
 import com.google.protobuf.TypeRegistry;
@@ -71,6 +72,9 @@ public abstract class HttpJsonCallOptions {
   @Nullable
   public abstract TypeRegistry getTypeRegistry();
 
+  @Nullable
+  public abstract ApiTracer getTracer();
+
   public abstract Builder toBuilder();
 
   public static Builder newBuilder() {
@@ -106,6 +110,11 @@ public abstract class HttpJsonCallOptions {
       builder.setTypeRegistry(newTypeRegistry);
     }
 
+    ApiTracer newTracer = inputOptions.getTracer();
+    if (newTracer != null) {
+      builder.setTracer(newTracer);
+    }
+
     return builder.build();
   }
 
@@ -130,6 +139,8 @@ public abstract class HttpJsonCallOptions {
     public abstract Builder setCredentials(Credentials value);
 
     public abstract Builder setTypeRegistry(TypeRegistry value);
+
+    public abstract Builder setTracer(ApiTracer value);
 
     public abstract HttpJsonCallOptions build();
   }
