@@ -344,16 +344,16 @@ function run_graalvm_tests() {
 function generate_graalvm_presubmit_modules_list() {
   modules_assigned_list=()
   generate_modified_modules_list
-  if [[ ${#modified_module_list[@]} -gt 0 && ${#modified_module_list[@]} -lt 5 ]]; then
+  if [[ ${#modified_module_list[@]} -gt 4 ]]; then
+    # Too many modules modified, run a subset
+    echo "Too many modules modified, running a subset"
+    module_list="java-aiplatform,java-compute"
+  elif [[ ${#modified_module_list[@]} -gt 0 ]]; then
     # If only a few modules have been modified, focus presubmit testing only on them.
     module_list=$(
       IFS=,
       echo "${modified_module_list[*]}"
     )
-  elif [[ ${#modified_module_list[@]} -gt 4 ]]; then
-    # Too many modules modified, run a subset
-    echo "Too many modules modified, running a subset"
-    module_list="java-aiplatform,java-compute"
   else
     # no modules modified
     echo "No modules modified"
