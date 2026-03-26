@@ -33,16 +33,14 @@ package com.google.showcase.v1beta1.it;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 
-import com.google.api.gax.core.FixedCredentialsProvider;
+import com.google.api.client.http.HttpTransport;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.RestSerializationException;
 import com.google.api.gax.rpc.DeadlineExceededException;
-import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnavailableException;
 import com.google.api.gax.tracing.ObservabilityAttributes;
 import com.google.api.gax.tracing.SpanTracerFactory;
-import com.google.auth.Credentials;
 import com.google.common.collect.ImmutableList;
 import com.google.rpc.Status;
 import com.google.showcase.v1beta1.EchoClient;
@@ -50,14 +48,13 @@ import com.google.showcase.v1beta1.EchoRequest;
 import com.google.showcase.v1beta1.EchoSettings;
 import com.google.showcase.v1beta1.it.util.TestClientInitializer;
 import com.google.showcase.v1beta1.stub.EchoStubSettings;
-import com.google.api.client.http.HttpTransport;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
 import io.grpc.ClientCall;
 import io.grpc.ClientInterceptor;
 import io.grpc.ManagedChannelBuilder;
-import io.grpc.MethodDescriptor;
 import io.grpc.Metadata;
+import io.grpc.MethodDescriptor;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
@@ -74,18 +71,16 @@ import java.net.NoRouteToHostException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
-import java.net.URI;
 import java.nio.channels.UnresolvedAddressException;
 import java.security.GeneralSecurityException;
 import java.time.Duration;
 import java.util.List;
-import java.util.Map;
+import java.util.concurrent.TimeUnit;
 import javax.net.ssl.SSLHandshakeException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
-import java.util.concurrent.TimeUnit;
 
 @Timeout(value = 30, unit = TimeUnit.SECONDS)
 class ITOtelErrorType {
@@ -177,9 +172,7 @@ class ITOtelErrorType {
         new ClientInterceptor() {
           @Override
           public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
-              MethodDescriptor<ReqT, RespT> method,
-              CallOptions callOptions,
-              Channel next) {
+              MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
             return new ClientCall<ReqT, RespT>() {
               @Override
               public void start(Listener<RespT> responseListener, Metadata headers) {
@@ -213,15 +206,14 @@ class ITOtelErrorType {
 
       EchoRequest echoRequest =
           EchoRequest.newBuilder()
-              .setError(Status.newBuilder().setCode(com.google.rpc.Code.UNAVAILABLE.ordinal()).build())
+              .setError(
+                  Status.newBuilder().setCode(com.google.rpc.Code.UNAVAILABLE.ordinal()).build())
               .build();
 
       assertThrows(UnavailableException.class, () -> client.echo(echoRequest));
       verifyErrorTypeAttribute("UNAVAILABLE");
     }
-
   }
-
 
   @Test
   void testTracing_failedEcho_httpjson_recordsErrorType() throws Exception {
@@ -243,7 +235,6 @@ class ITOtelErrorType {
                   public InputStream getContent() {
                     return new ByteArrayInputStream("{}".getBytes());
                   }
-
 
                   @Override
                   public String getContentEncoding() {
@@ -314,15 +305,14 @@ class ITOtelErrorType {
     try (EchoClient client = EchoClient.create(echoStubSettings.createStub())) {
       EchoRequest echoRequest =
           EchoRequest.newBuilder()
-              .setError(Status.newBuilder().setCode(com.google.rpc.Code.UNAVAILABLE.ordinal()).build())
+              .setError(
+                  Status.newBuilder().setCode(com.google.rpc.Code.UNAVAILABLE.ordinal()).build())
               .build();
-
 
       assertThrows(UnavailableException.class, () -> client.echo(echoRequest));
       verifyErrorTypeAttribute("503");
     }
   }
-
 
   @Test
   void testTracing_clientConnectionError_ConnectException_grpc() throws Exception {
@@ -493,14 +483,13 @@ class ITOtelErrorType {
 
   @Test
   void testTracing_clientAuthenticationError_GeneralSecurityException_grpc() throws Exception {
-    try (EchoClient client = createInterceptorClient(new GeneralSecurityException("Mock auth failure"))) {
+    try (EchoClient client =
+        createInterceptorClient(new GeneralSecurityException("Mock auth failure"))) {
       assertThrows(
           Exception.class, () -> client.echo(EchoRequest.newBuilder().setContent("test").build()));
       verifyErrorTypeAttribute("CLIENT_AUTHENTICATION_ERROR");
     }
   }
-
-
 
   @Test
   void testTracing_clientAuthenticationError_FileNotFoundException_grpc() throws Exception {
