@@ -124,7 +124,6 @@ class SpanTracerTest {
   }
 
   @Test
-  @Test
   void testResponseHeadersReceived_badFormat() {
     spanTracer.attemptStarted(new Object(), 1);
 
