@@ -81,7 +81,7 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
     }
     // propagate the W3C Trace Context (traceID and spanID) from the active span in headers
     W3CTraceContextPropagator.getInstance()
-        .inject(Context.current(), request.getHeaders(), (headers, k, v) -> headers.set(k, v));
+        .inject(Context.current(), request.getHeaders(), HttpHeaders::set);
 
     addInitialHttpAttributesToSpan(span, request);
 
