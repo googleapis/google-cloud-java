@@ -90,9 +90,16 @@ class GrpcClientCalls {
       channel = ((ChannelPool) channel).getChannel(grpcContext.getChannelAffinity());
     }
 
-    if (!grpcContext.getExtraHeaders().isEmpty()) {
-      ClientInterceptor interceptor =
-          MetadataUtils.newAttachHeadersInterceptor(grpcContext.getMetadata());
+    java.util.Map<String, String> traceContext = new java.util.HashMap<>();
+    grpcContext.getTracer().injectTraceContext(traceContext);
+
+    if (!grpcContext.getExtraHeaders().isEmpty() || !traceContext.isEmpty()) {
+      Metadata metadata = grpcContext.getMetadata();
+      for (java.util.Map.Entry<String, String> entry : traceContext.entrySet()) {
+        metadata.put(
+            Metadata.Key.of(entry.getKey(), Metadata.ASCII_STRING_MARSHALLER), entry.getValue());
+      }
+      ClientInterceptor interceptor = MetadataUtils.newAttachHeadersInterceptor(metadata);
       channel = ClientInterceptors.intercept(channel, interceptor);
     }
 

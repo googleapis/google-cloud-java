@@ -55,6 +55,27 @@ public class SpanTracer implements ApiTracer {
   private final ApiTracerContext apiTracerContext;
   private Span attemptSpan;
 
+  @Override
+  public void injectTraceContext(java.util.Map<String, String> carrier) {
+    if (attemptSpan != null) {
+      try {
+        io.opentelemetry.context.Context context =
+            io.opentelemetry.context.Context.current().with(attemptSpan);
+        io.opentelemetry.api.trace.propagation.W3CTraceContextPropagator.getInstance()
+            .inject(
+                context,
+                carrier,
+                (c, k, v) -> {
+                  if (c != null) {
+                    c.put(k, v);
+                  }
+                });
+      } catch (NoSuchMethodError e) {
+        // Silently ignore if incompatible OpenTelemetry version
+      }
+    }
+  }
+
   /**
    * Creates a new instance of {@code SpanTracer}.
    *
