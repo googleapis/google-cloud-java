@@ -33,6 +33,7 @@ import com.google.cloud.bigtable.data.v2.internal.csm.tracers.ChannelPoolMetrics
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.CompositeTracerFactory;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.Pacemaker;
 import com.google.common.base.Preconditions;
+import com.google.common.base.Suppliers;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import io.grpc.ManagedChannelBuilder;
@@ -190,7 +191,8 @@ public class MetricsImpl implements Metrics, Closeable {
     BigtableCloudMonitoringExporter exporter =
         BigtableCloudMonitoringExporter.create(
             metricRegistry,
-            EnvInfo::detect,
+            // Lazily compute EnvInfo, but memoize it to make sure it stays constant
+            Suppliers.memoize(EnvInfo::detect),
             clientInfo,
             credentials,
             metricsEndpoint,
