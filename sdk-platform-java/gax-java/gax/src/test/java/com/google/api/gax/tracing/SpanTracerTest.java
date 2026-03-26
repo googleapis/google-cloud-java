@@ -124,17 +124,18 @@ class SpanTracerTest {
   }
 
   @Test
+  @Test
   void testResponseHeadersReceived_badFormat() {
     spanTracer.attemptStarted(new Object(), 1);
 
     java.util.Map<String, Object> headers = new java.util.HashMap<>();
-    headers.put("Other-Header", "12X3");
+    headers.put("Content-Length", "12X3");
     spanTracer.responseHeadersReceived(headers);
 
     verify(span, org.mockito.Mockito.never())
         .setAttribute(
             org.mockito.ArgumentMatchers.eq(ObservabilityAttributes.HTTP_RESPONSE_BODY_SIZE),
-            org.mockito.ArgumentMatchers.eq(-1));
+            org.mockito.ArgumentMatchers.anyLong());
   }
 
   @Test
