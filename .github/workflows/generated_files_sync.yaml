@@ -173,6 +173,7 @@ jobs:
             |grep --invert-match 'java/com/google' \
             |grep --invert-match '/test/' \
             |grep --invert-match '/tests/' \
+            |grep --invert-match '/javatests/' \
             |grep --invert-match samples \
             |grep --invert-match benchmark \
             |grep --invert-match grafeas \

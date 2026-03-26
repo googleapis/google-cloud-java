@@ -47,6 +47,8 @@ public class SpanTracer implements ApiTracer {
 
   public static final String DEFAULT_LANGUAGE = "Java";
 
+  static final String CONTENT_LENGTH_KEY = "Content-Length";
+
   private final Tracer tracer;
   private final Map<String, Object> attemptAttributes;
   private final String attemptSpanName;
@@ -132,6 +134,48 @@ public class SpanTracer implements ApiTracer {
   @Override
   public void attemptSucceeded() {
     endAttempt();
+  }
+
+  @Override
+  public void responseHeadersReceived(java.util.Map<String, Object> headers) {
+    if (attemptSpan == null) {
+      return;
+    }
+    long contentLength = extractContentLength(headers);
+    if (contentLength >= 0) {
+      attemptSpan.setAttribute(ObservabilityAttributes.HTTP_RESPONSE_BODY_SIZE, contentLength);
+    }
+  }
+
+  /**
+   * Extracts the Content-Length header value from the response headers, if available.
+   *
+   * <p>Note: google-http-java-client's HttpHeaders.java returns some headers (like Content-Length)
+   * as a List<Long> instead of a single value.
+   * https://github.com/googleapis/google-http-java-client/blob/main/google-http-client/src/main/java/com/google/api/client/http/HttpHeaders.java#L162
+   *
+   * @param headers the map of response headers.
+   * @return the content length in bytes, or -1 if the header is missing or malformed.
+   */
+  private long extractContentLength(java.util.Map<String, Object> headers) {
+    try {
+      if (headers == null || headers.isEmpty()) return -1;
+      // google-http-client HttpHeaders uses a case-insensitive map but we copy it for safety
+      // and to handle potential different implementations.
+      Object value =
+          headers.entrySet().stream()
+              .filter(e -> CONTENT_LENGTH_KEY.equalsIgnoreCase(e.getKey()))
+              .map(Map.Entry::getValue)
+              .findFirst()
+              .orElse(null);
+
+      if (value instanceof java.util.Collection) {
+        value = ((java.util.Collection<?>) value).stream().findFirst().orElse(null);
+      }
+      return Long.parseLong(value.toString());
+    } catch (Exception e) {
+      return -1;
+    }
   }
 
   @Override

@@ -15,6 +15,7 @@ for pomFile in $(find . -mindepth 2 -name pom.xml | sort ); do
       [[ "${pomFile}" =~ .*sdk-platform-java.* ]] || \
       [[ "${pomFile}" =~ .*java-spanner.* ]] || \
       [[ "${pomFile}" =~ .*java-spanner-jdbc.* ]] || \
+      [[ "${pomFile}" =~ .*google-auth-library-java.* ]] || \
       [[ "${pomFile}" =~ .*.github*. ]]; then
     continue
   fi
