@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.75.1](https://github.com/googleapis/java-bigtable/compare/v2.75.0...v2.75.1) (2026-03-26)
+
+
+### Bug Fixes
+
+* Ensure that EnvInfo stays constant between metric exports ([#2853](https://github.com/googleapis/java-bigtable/issues/2853)) ([cfc616d](https://github.com/googleapis/java-bigtable/commit/cfc616d708e1ca7714598535aa56585480414479))
+
 ## [2.75.0](https://github.com/googleapis/java-bigtable/compare/v2.74.0...v2.75.0) (2026-03-24)
 
 
