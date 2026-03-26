@@ -41,6 +41,8 @@ import com.google.api.gax.rpc.UnavailableException;
 import com.google.api.gax.tracing.ObservabilityAttributes;
 import com.google.api.gax.tracing.SpanTracer;
 import com.google.api.gax.tracing.SpanTracerFactory;
+import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.protobuf.Message;
 import com.google.rpc.Status;
 import com.google.showcase.v1beta1.EchoClient;
 import com.google.showcase.v1beta1.EchoRequest;
@@ -56,6 +58,7 @@ import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.sdk.trace.data.SpanData;
 import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -207,13 +210,22 @@ class ITOtelTracing {
     }
   }
 
+  private long computeExpectedHttpJsonResponseSize(Message message)
+      throws InvalidProtocolBufferException {
+    String jsonPayload = com.google.protobuf.util.JsonFormat.printer().print(message);
+    return jsonPayload.getBytes(StandardCharsets.UTF_8).length;
+  }
+
   @Test
   void testTracing_retry_grpc() throws Exception {
     final int attempts = 5;
     final StatusCode.Code statusCode = StatusCode.Code.UNAVAILABLE;
-    // A custom EchoClient is used in this test because retries have jitter, and we cannot
-    // predict the number of attempts that are scheduled for an RPC invocation otherwise.
-    // The custom retrySettings limit to a set number of attempts before the call gives up.
+    // A custom EchoClient is used in this test because retries have jitter, and we
+    // cannot
+    // predict the number of attempts that are scheduled for an RPC invocation
+    // otherwise.
+    // The custom retrySettings limit to a set number of attempts before the call
+    // gives up.
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
             .setTotalTimeout(org.threeten.bp.Duration.ofMillis(5000L))
@@ -252,7 +264,8 @@ class ITOtelTracing {
     assertThat(spans).hasSize(attempts); // Expect exactly one span for the successful retry
 
     // This single span represents the successful retry, which has resend_count=1
-    // The first attempt has no resend_count. The subsequent retries will have a resend_count,
+    // The first attempt has no resend_count. The subsequent retries will have a
+    // resend_count,
     // starting from 1.
     List<Long> resendCounts =
         spans.stream()
@@ -279,9 +292,12 @@ class ITOtelTracing {
   void testTracing_retry_httpjson() throws Exception {
     final int attempts = 5;
     final StatusCode.Code statusCode = StatusCode.Code.UNAVAILABLE;
-    // A custom EchoClient is used in this test because retries have jitter, and we cannot
-    // predict the number of attempts that are scheduled for an RPC invocation otherwise.
-    // The custom retrySettings limit to a set number of attempts before the call gives up.
+    // A custom EchoClient is used in this test because retries have jitter, and we
+    // cannot
+    // predict the number of attempts that are scheduled for an RPC invocation
+    // otherwise.
+    // The custom retrySettings limit to a set number of attempts before the call
+    // gives up.
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
             .setTotalTimeout(org.threeten.bp.Duration.ofMillis(5000L))
@@ -326,7 +342,8 @@ class ITOtelTracing {
     assertThat(spans).hasSize(attempts); // Expect exactly one span for the successful retry
 
     // This single span represents the successful retry, which has resend_count=1
-    // The first attempt has no resend_count. The subsequent retries will have a resend_count,
+    // The first attempt has no resend_count. The subsequent retries will have a
+    // resend_count,
     // starting from 1.
     List<Long> resendCounts =
         spans.stream()
