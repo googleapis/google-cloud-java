@@ -61,6 +61,18 @@ public class GrpcChannelEndpointCacheTest {
   }
 
   @Test
+  public void routedChannelsReuseDefaultAuthority() throws Exception {
+    GrpcChannelEndpointCache cache = new GrpcChannelEndpointCache(createProvider("localhost:1234"));
+    try {
+      ChannelEndpoint routed = cache.get("localhost:1111");
+
+      assertThat(routed.getChannel().authority()).isEqualTo("localhost:1234");
+    } finally {
+      cache.shutdown();
+    }
+  }
+
+  @Test
   public void evictRemovesNonDefaultServer() throws Exception {
     GrpcChannelEndpointCache cache = new GrpcChannelEndpointCache(createProvider("localhost:1234"));
     try {

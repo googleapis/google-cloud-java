@@ -23,6 +23,7 @@ import com.google.common.cache.CacheBuilder;
 import com.google.protobuf.ByteString;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
+import com.google.spanner.v1.CommitResponse;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.PartialResultSet;
 import com.google.spanner.v1.ReadRequest;
@@ -47,9 +48,10 @@ import javax.annotation.Nullable;
 /**
  * ManagedChannel that routes eligible requests using location-aware routing hints.
  *
- * <p>Routing hints are applied to streaming read/query and unary ExecuteSql. Commit/Rollback use
- * transaction affinity when available. BeginTransaction is routed only when a mutation key is
- * provided.
+ * <p>Routing hints are applied to streaming read/query and unary ExecuteSql. Mutation-based
+ * BeginTransaction and Commit requests also carry routing hints when recipes are available.
+ * Commit/Rollback use transaction affinity when available. BeginTransaction is routed only when a
+ * mutation key is provided.
  */
 @InternalApi
 final class KeyAwareChannel extends ManagedChannel {
@@ -355,8 +357,10 @@ final class KeyAwareChannel extends ManagedChannel {
           BeginTransactionRequest.Builder reqBuilder =
               ((BeginTransactionRequest) message).toBuilder();
           String databaseId = parentChannel.extractDatabaseIdFromSession(reqBuilder.getSession());
-          if (databaseId != null && reqBuilder.hasMutationKey()) {
+          if (databaseId != null) {
             finder = parentChannel.getOrCreateChannelFinder(databaseId);
+          }
+          if (finder != null && reqBuilder.hasMutationKey()) {
             endpoint = finder.findServer(reqBuilder);
           }
           if (reqBuilder.hasOptions() && reqBuilder.getOptions().hasReadOnly()) {
@@ -368,9 +372,26 @@ final class KeyAwareChannel extends ManagedChannel {
           message = (RequestT) reqBuilder.build();
         } else if (message instanceof CommitRequest) {
           CommitRequest request = (CommitRequest) message;
+          String databaseId = parentChannel.extractDatabaseIdFromSession(request.getSession());
+          if (databaseId != null) {
+            finder = parentChannel.getOrCreateChannelFinder(databaseId);
+          }
+          CommitRequest.Builder reqBuilder = null;
+          if (finder != null && request.getMutationsCount() > 0) {
+            reqBuilder = request.toBuilder();
+            endpoint = finder.fillRoutingHint(reqBuilder);
+            request = reqBuilder.build();
+          }
           if (!request.getTransactionId().isEmpty()) {
-            endpoint = parentChannel.affinityEndpoint(request.getTransactionId());
+            ChannelEndpoint affinityEndpoint =
+                parentChannel.affinityEndpoint(request.getTransactionId());
+            if (affinityEndpoint != null) {
+              endpoint = affinityEndpoint;
+            }
             transactionIdToClear = request.getTransactionId();
+          }
+          if (reqBuilder != null) {
+            message = (RequestT) request;
           }
         } else if (message instanceof RollbackRequest) {
           RollbackRequest request = (RollbackRequest) message;
@@ -610,7 +631,15 @@ final class KeyAwareChannel extends ManagedChannel {
         transactionId = transactionIdFromMetadata(response);
       } else if (message instanceof Transaction) {
         Transaction response = (Transaction) message;
+        if (response.hasCacheUpdate() && call.channelFinder != null) {
+          call.channelFinder.update(response.getCacheUpdate());
+        }
         transactionId = transactionIdFromTransaction(response);
+      } else if (message instanceof CommitResponse) {
+        CommitResponse response = (CommitResponse) message;
+        if (response.hasCacheUpdate() && call.channelFinder != null) {
+          call.channelFinder.update(response.getCacheUpdate());
+        }
       }
       if (transactionId != null) {
         if (call.isReadOnlyBegin) {
