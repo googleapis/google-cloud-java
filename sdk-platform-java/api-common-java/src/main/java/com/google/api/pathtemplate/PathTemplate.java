@@ -296,11 +296,8 @@ public class PathTemplate {
     return bindings.keySet();
   }
 
-  /**
-   * Returns the set of resource literals. A resource literal is a literal followed by a binding.
-   * For example, projects/&#123;project&#125; is a literal/binding pair and projects is a resource
-   * literal.
-   */
+  /** Returns the set of resource literals. A resource literal is a literal followed by a binding */
+  // For example, projects/{project} is a literal/binding pair and projects is a resource literal.
   public Set<String> getResourceLiterals() {
     Set<String> canonicalSegments = new java.util.LinkedHashSet<>();
     boolean inBinding = false;
