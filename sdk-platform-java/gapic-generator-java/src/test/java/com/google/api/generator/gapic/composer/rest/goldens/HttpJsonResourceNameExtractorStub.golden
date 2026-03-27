@@ -1,0 +1,295 @@
+package com.google.extractor.testing.stub;
+
+import com.google.api.core.InternalApi;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.httpjson.ApiMethodDescriptor;
+import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
+import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
+import com.google.api.gax.httpjson.ProtoMessageResponseParser;
+import com.google.api.gax.httpjson.ProtoRestSerializer;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.extractor.testing.Bar;
+import com.google.extractor.testing.Foo;
+import com.google.extractor.testing.GetBarRequest;
+import com.google.extractor.testing.GetFooRequest;
+import com.google.extractor.testing.ListFoosRequest;
+import com.google.extractor.testing.ListFoosResponse;
+import com.google.protobuf.TypeRegistry;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import javax.annotation.Generated;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * REST stub implementation for the ResourceNameExtractorTesting service API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
+@Generated("by gapic-generator-java")
+public class HttpJsonResourceNameExtractorTestingStub extends ResourceNameExtractorTestingStub {
+  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+
+  private static final ApiMethodDescriptor<GetFooRequest, Foo> getFooMethodDescriptor =
+      ApiMethodDescriptor.<GetFooRequest, Foo>newBuilder()
+          .setFullMethodName("google.extractor.testing.ResourceNameExtractorTesting/GetFoo")
+          .setHttpMethod("GET")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<GetFooRequest>newBuilder()
+                  .setPath(
+                      "/v1/{name=projects/*/locations/*/foos/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetFooRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetFooRequest> serializer =
+                            ProtoRestSerializer.create();
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Foo>newBuilder()
+                  .setDefaultInstance(Foo.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<GetBarRequest, Bar> getBarMethodDescriptor =
+      ApiMethodDescriptor.<GetBarRequest, Bar>newBuilder()
+          .setFullMethodName("google.extractor.testing.ResourceNameExtractorTesting/GetBar")
+          .setHttpMethod("GET")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<GetBarRequest>newBuilder()
+                  .setPath(
+                      "/v1/{bar=projects/*/locations/*/bars/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetBarRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "bar", request.getBar());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetBarRequest> serializer =
+                            ProtoRestSerializer.create();
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Bar>newBuilder()
+                  .setDefaultInstance(Bar.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<ListFoosRequest, ListFoosResponse>
+      listFoosMethodDescriptor =
+          ApiMethodDescriptor.<ListFoosRequest, ListFoosResponse>newBuilder()
+              .setFullMethodName("google.extractor.testing.ResourceNameExtractorTesting/ListFoos")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListFoosRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/foos",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListFoosRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListFoosRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListFoosResponse>newBuilder()
+                      .setDefaultInstance(ListFoosResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private final UnaryCallable<GetFooRequest, Foo> getFooCallable;
+  private final UnaryCallable<GetBarRequest, Bar> getBarCallable;
+  private final UnaryCallable<ListFoosRequest, ListFoosResponse> listFoosCallable;
+
+  private final BackgroundResource backgroundResources;
+  private final HttpJsonStubCallableFactory callableFactory;
+
+  public static final HttpJsonResourceNameExtractorTestingStub create(
+      ResourceNameExtractorTestingStubSettings settings) throws IOException {
+    return new HttpJsonResourceNameExtractorTestingStub(settings, ClientContext.create(settings));
+  }
+
+  public static final HttpJsonResourceNameExtractorTestingStub create(ClientContext clientContext)
+      throws IOException {
+    return new HttpJsonResourceNameExtractorTestingStub(
+        ResourceNameExtractorTestingStubSettings.newBuilder().build(), clientContext);
+  }
+
+  public static final HttpJsonResourceNameExtractorTestingStub create(
+      ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
+    return new HttpJsonResourceNameExtractorTestingStub(
+        ResourceNameExtractorTestingStubSettings.newBuilder().build(),
+        clientContext,
+        callableFactory);
+  }
+
+  /**
+   * Constructs an instance of HttpJsonResourceNameExtractorTestingStub, using the given settings.
+   * This is protected so that it is easy to make a subclass, but otherwise, the static factory
+   * methods should be preferred.
+   */
+  protected HttpJsonResourceNameExtractorTestingStub(
+      ResourceNameExtractorTestingStubSettings settings, ClientContext clientContext)
+      throws IOException {
+    this(settings, clientContext, new HttpJsonResourceNameExtractorTestingCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of HttpJsonResourceNameExtractorTestingStub, using the given settings.
+   * This is protected so that it is easy to make a subclass, but otherwise, the static factory
+   * methods should be preferred.
+   */
+  protected HttpJsonResourceNameExtractorTestingStub(
+      ResourceNameExtractorTestingStubSettings settings,
+      ClientContext clientContext,
+      HttpJsonStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+
+    HttpJsonCallSettings<GetFooRequest, Foo> getFooTransportSettings =
+        HttpJsonCallSettings.<GetFooRequest, Foo>newBuilder()
+            .setMethodDescriptor(getFooMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<GetBarRequest, Bar> getBarTransportSettings =
+        HttpJsonCallSettings.<GetBarRequest, Bar>newBuilder()
+            .setMethodDescriptor(getBarMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("bar", String.valueOf(request.getBar()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListFoosRequest, ListFoosResponse> listFoosTransportSettings =
+        HttpJsonCallSettings.<ListFoosRequest, ListFoosResponse>newBuilder()
+            .setMethodDescriptor(listFoosMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+
+    this.getFooCallable =
+        callableFactory.createUnaryCallable(
+            getFooTransportSettings, settings.getFooSettings(), clientContext);
+    this.getBarCallable =
+        callableFactory.createUnaryCallable(
+            getBarTransportSettings, settings.getBarSettings(), clientContext);
+    this.listFoosCallable =
+        callableFactory.createUnaryCallable(
+            listFoosTransportSettings, settings.listFoosSettings(), clientContext);
+
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(getFooMethodDescriptor);
+    methodDescriptors.add(getBarMethodDescriptor);
+    methodDescriptors.add(listFoosMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
+  public UnaryCallable<GetFooRequest, Foo> getFooCallable() {
+    return getFooCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetBarRequest, Bar> getBarCallable() {
+    return getBarCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListFoosRequest, ListFoosResponse> listFoosCallable() {
+    return listFoosCallable;
+  }
+
+  @Override
+  public final void close() {
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
+  }
+
+  @Override
+  public void shutdown() {
+    backgroundResources.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return backgroundResources.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return backgroundResources.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    backgroundResources.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return backgroundResources.awaitTermination(duration, unit);
+  }
+}

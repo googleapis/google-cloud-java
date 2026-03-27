@@ -1,0 +1,5 @@
+# this file is only used in testing `get_include_samples_from_BUILD` in utilities.sh
+
+java_gapic_assembly_gradle_pkg(
+
+)

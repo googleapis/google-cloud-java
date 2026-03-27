@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.api</groupId>
+  <artifactId>gax-bom</artifactId>
+  <version>2.76.1-SNAPSHOT</version><!-- {x-version-update:gax:current} -->
+  <packaging>pom</packaging>
+  <name>GAX (Google Api eXtensions) for Java (BOM)</name>
+  <description>Google Api eXtensions for Java (BOM)</description>
+
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-shared-config</artifactId>
+    <version>1.17.0</version>
+    <relativePath/>
+  </parent>
+
+  <developers>
+    <developer>
+      <id>GoogleAPIs</id>
+      <name>GoogleAPIs</name>
+      <email>googleapis@googlegroups.com</email>
+      <url>https://github.com/googleapis/gax-java</url>
+      <organization>Google, LLC</organization>
+      <organizationUrl>https://www.google.com</organizationUrl>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:https://github.com/googleapis/gax-java.git</connection>
+    <url>https://github.com/googleapis/gax-java</url>
+  </scm>
+
+  <licenses>
+    <license>
+      <name>BSD-3-Clause</name>
+      <url>https://github.com/googleapis/gax-java/blob/master/LICENSE</url>
+    </license>
+  </licenses>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.api</groupId>
+        <artifactId>gax</artifactId>
+        <version>2.76.1-SNAPSHOT</version><!-- {x-version-update:gax:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api</groupId>
+        <artifactId>gax</artifactId>
+        <version>2.76.1-SNAPSHOT</version><!-- {x-version-update:gax:current} -->
+        <type>test-jar</type>
+        <classifier>testlib</classifier>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api</groupId>
+        <artifactId>gax</artifactId>
+        <version>2.76.1-SNAPSHOT</version><!-- {x-version-update:gax:current} -->
+        <classifier>testlib</classifier>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api</groupId>
+        <artifactId>gax-grpc</artifactId>
+        <version>2.76.1-SNAPSHOT</version><!-- {x-version-update:gax-grpc:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api</groupId>
+        <artifactId>gax-grpc</artifactId>
+        <version>2.76.1-SNAPSHOT</version><!-- {x-version-update:gax-grpc:current} -->
+        <type>test-jar</type>
+        <classifier>testlib</classifier>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api</groupId>
+        <artifactId>gax-grpc</artifactId>
+        <version>2.76.1-SNAPSHOT</version><!-- {x-version-update:gax-grpc:current} -->
+        <classifier>testlib</classifier>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api</groupId>
+        <artifactId>gax-httpjson</artifactId>
+        <version>2.76.1-SNAPSHOT</version><!-- {x-version-update:gax:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api</groupId>
+        <artifactId>gax-httpjson</artifactId>
+        <version>2.76.1-SNAPSHOT</version><!-- {x-version-update:gax:current} -->
+        <type>test-jar</type>
+        <classifier>testlib</classifier>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api</groupId>
+        <artifactId>gax-httpjson</artifactId>
+        <version>2.76.1-SNAPSHOT</version><!-- {x-version-update:gax:current} -->
+        <classifier>testlib</classifier>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>test-jar</goal>
+            </goals>
+            <configuration>
+              <skip>true</skip>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
