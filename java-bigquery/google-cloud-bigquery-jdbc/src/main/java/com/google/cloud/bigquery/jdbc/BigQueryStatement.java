@@ -60,7 +60,6 @@ import com.google.common.util.concurrent.Uninterruptibles;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanBuilder;
-import io.opentelemetry.api.trace.SpanContext;
 import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.context.Context;
@@ -1059,78 +1058,75 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     // calls
     populateFirstPage(result, rpcResponseQueue);
 
-    SpanContext parentSpanContext = null;
-    if (this.otelContext != null) {
-      parentSpanContext = Span.fromContext(this.otelContext).getSpanContext();
-    }
-    final SpanContext finalParentSpanContext = parentSpanContext;
-
     // This thread makes the RPC calls and paginates
     Runnable nextPageTask =
-        () -> {
-          Tracer tracer = getSafeTracer();
-          String currentPageToken = firstPageToken;
-          TableResult currentResults = result;
-          TableId destinationTable = null;
-          if (firstPageToken != null) {
-            destinationTable = getDestinationTable(jobId);
-          }
+        Context.current()
+            .wrap(
+                () -> {
+                  Tracer tracer = getSafeTracer();
+                  String currentPageToken = firstPageToken;
+                  TableResult currentResults = result;
+                  TableId destinationTable = null;
+                  if (firstPageToken != null) {
+                    destinationTable = getDestinationTable(jobId);
+                  }
 
-          try {
-            while (currentPageToken != null) {
-              // do not process further pages and shutdown
-              if (Thread.currentThread().isInterrupted() || queryTaskExecutor.isShutdown()) {
-                LOG.warning(
-                    "%s Interrupted @ runNextPageTaskAsync", Thread.currentThread().getName());
-                break;
-              }
+                  try {
+                    while (currentPageToken != null) {
+                      // do not process further pages and shutdown
+                      if (Thread.currentThread().isInterrupted()
+                          || queryTaskExecutor.isShutdown()) {
+                        LOG.warning(
+                            "%s Interrupted @ runNextPageTaskAsync",
+                            Thread.currentThread().getName());
+                        break;
+                      }
 
-              SpanBuilder spanBuilder = tracer.spanBuilder("BigQueryStatement.pagination");
-              if (finalParentSpanContext != null && finalParentSpanContext.isValid()) {
-                spanBuilder.addLink(finalParentSpanContext);
-              }
-              Span paginationSpan = spanBuilder.startSpan();
-              try (Scope scope = paginationSpan.makeCurrent()) {
-                paginationSpan.setAttribute("db.pagination.page_token", currentPageToken);
+                      SpanBuilder spanBuilder = tracer.spanBuilder("BigQueryStatement.pagination");
+                      Span paginationSpan = spanBuilder.startSpan();
+                      try (Scope scope = paginationSpan.makeCurrent()) {
+                        paginationSpan.setAttribute("db.pagination.page_token", currentPageToken);
 
-                long startTime = System.nanoTime();
-                currentResults =
-                    this.bigQuery.listTableData(
-                        destinationTable,
-                        TableDataListOption.pageSize(querySettings.getMaxResultPerPage()),
-                        TableDataListOption.pageToken(currentPageToken));
+                        long startTime = System.nanoTime();
+                        currentResults =
+                            this.bigQuery.listTableData(
+                                destinationTable,
+                                TableDataListOption.pageSize(querySettings.getMaxResultPerPage()),
+                                TableDataListOption.pageToken(currentPageToken));
 
-                long duration = (System.nanoTime() - startTime) / 1000000;
-                paginationSpan.setAttribute("db.pagination.duration_ms", duration);
-                paginationSpan.setAttribute(
-                    "db.pagination.rows_fetched", querySettings.getMaxResultPerPage());
+                        long duration = (System.nanoTime() - startTime) / 1000000;
+                        paginationSpan.setAttribute("db.pagination.duration_ms", duration);
+                        paginationSpan.setAttribute(
+                            "db.pagination.rows_fetched", querySettings.getMaxResultPerPage());
 
-                currentPageToken = currentResults.getNextPageToken();
-                // this will be parsed asynchronously without blocking the current thread
-                Uninterruptibles.putUninterruptibly(
-                    rpcResponseQueue, Tuple.of(currentResults, true));
-                LOG.fine(
-                    "Fetched %d results from the server in %d ms.",
-                    querySettings.getMaxResultPerPage(), (int) duration);
-              } catch (Exception e) {
-                paginationSpan.recordException(e);
-                paginationSpan.setStatus(StatusCode.ERROR, e.getMessage());
-                throw e;
-              } finally {
-                paginationSpan.end();
-              }
-            }
-          } catch (Exception ex) {
-            Uninterruptibles.putUninterruptibly(
-                bigQueryFieldValueListWrapperBlockingQueue,
-                BigQueryFieldValueListWrapper.ofError(new BigQueryJdbcRuntimeException(ex)));
-          } finally {
-            // this will stop the parseDataTask as well when the pagination completes
-            Uninterruptibles.putUninterruptibly(rpcResponseQueue, Tuple.of(null, false));
-          }
-          // We cannot do queryTaskExecutor.shutdownNow() here as populate buffer method may not
-          // have finished processing the records and even that will be interrupted
-        };
+                        currentPageToken = currentResults.getNextPageToken();
+                        // this will be parsed asynchronously without blocking the current thread
+                        Uninterruptibles.putUninterruptibly(
+                            rpcResponseQueue, Tuple.of(currentResults, true));
+                        LOG.fine(
+                            "Fetched %d results from the server in %d ms.",
+                            querySettings.getMaxResultPerPage(), (int) duration);
+                      } catch (Exception e) {
+                        paginationSpan.recordException(e);
+                        paginationSpan.setStatus(StatusCode.ERROR, e.getMessage());
+                        throw e;
+                      } finally {
+                        paginationSpan.end();
+                      }
+                    }
+                  } catch (Exception ex) {
+                    Uninterruptibles.putUninterruptibly(
+                        bigQueryFieldValueListWrapperBlockingQueue,
+                        BigQueryFieldValueListWrapper.ofError(
+                            new BigQueryJdbcRuntimeException(ex)));
+                  } finally {
+                    // this will stop the parseDataTask as well when the pagination completes
+                    Uninterruptibles.putUninterruptibly(rpcResponseQueue, Tuple.of(null, false));
+                  }
+                  // We cannot do queryTaskExecutor.shutdownNow() here as populate buffer method may
+                  // not
+                  // have finished processing the records and even that will be interrupted
+                });
 
     Thread nextPageWorker = JDBC_THREAD_FACTORY.newThread(nextPageTask);
     nextPageWorker.start();
