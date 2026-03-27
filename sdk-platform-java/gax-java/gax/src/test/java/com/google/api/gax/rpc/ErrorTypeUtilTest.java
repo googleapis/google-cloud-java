@@ -169,11 +169,10 @@ class ErrorTypeUtilTest {
   }
 
   @Test
-  void testExtractErrorType_causeChainTraversal() {
+  void testExtractErrorType_noCauseChainTraversal() {
     Exception root = new ConnectException("refused");
     Exception wrapped = new IOException("io fail", root);
-    assertThat(ErrorTypeUtil.extractErrorType(wrapped))
-        .isEqualTo(ErrorTypeUtil.ErrorType.CLIENT_CONNECTION_ERROR.toString());
+    assertThat(ErrorTypeUtil.extractErrorType(wrapped)).isEqualTo("IOException");
   }
 
   @Test

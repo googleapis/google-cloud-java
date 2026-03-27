@@ -114,6 +114,7 @@ public class ErrorTypeUtil {
    * @return a low-cardinality string representing the specific error type, or {@code
    *     ErrorType.INTERNAL.toString()} if the provided error is {@code null} or non-determined.
    */
+  // Requirement source: go/clo:product-requirements-v1
   public static String extractErrorType(@Nullable Throwable error) {
     if (error == null) {
       // No information about the error; we default to INTERNAL.
@@ -162,12 +163,8 @@ public class ErrorTypeUtil {
   private static String extractServerErrorCode(ApiException apiException) {
     if (apiException.getStatusCode() != null) {
       Object transportCode = apiException.getStatusCode().getTransportCode();
-      if (transportCode instanceof Integer) {
-        // HTTP Status Code
+      if (transportCode != null) {
         return String.valueOf(transportCode);
-      } else if (apiException.getStatusCode().getCode() != null) {
-        // gRPC Status Code name
-        return apiException.getStatusCode().getCode().name();
       }
     }
     return null;
@@ -206,7 +203,7 @@ public class ErrorTypeUtil {
    * @return true if the error is a client timeout, false otherwise.
    */
   private static boolean isClientTimeout(Throwable e) {
-    return hasErrorClassInCauseChain(e, CLIENT_TIMEOUT_EXCEPTION_CLASSES);
+    return hasErrorClass(e, CLIENT_TIMEOUT_EXCEPTION_CLASSES);
   }
 
   /**
@@ -217,11 +214,11 @@ public class ErrorTypeUtil {
    * @return true if the error is a client connection error, false otherwise.
    */
   private static boolean isClientConnectionError(Throwable e) {
-    return hasErrorClassInCauseChain(e, CLIENT_CONNECTION_EXCEPTIONS);
+    return hasErrorClass(e, CLIENT_CONNECTION_EXCEPTIONS);
   }
 
   private static boolean isClientAuthenticationError(Throwable e) {
-    return hasErrorClassInCauseChain(e, AUTHENTICATION_EXCEPTION_CLASSES);
+    return hasErrorClass(e, AUTHENTICATION_EXCEPTION_CLASSES);
   }
 
   /**
@@ -231,16 +228,11 @@ public class ErrorTypeUtil {
    * @param errorClasses A set of class objects to check against.
    * @return true if an error from the set is found in the cause chain, false otherwise.
    */
-  private static boolean hasErrorClassInCauseChain(
-      Throwable t, Set<Class<? extends Throwable>> errorClasses) {
-    Throwable current = t;
-    while (current != null) {
-      for (Class<? extends Throwable> errorClass : errorClasses) {
-        if (errorClass.isInstance(current)) {
-          return true;
-        }
+  private static boolean hasErrorClass(Throwable t, Set<Class<? extends Throwable>> errorClasses) {
+    for (Class<? extends Throwable> errorClass : errorClasses) {
+      if (errorClass.isInstance(t)) {
+        return true;
       }
-      current = current.getCause();
     }
     return false;
   }
