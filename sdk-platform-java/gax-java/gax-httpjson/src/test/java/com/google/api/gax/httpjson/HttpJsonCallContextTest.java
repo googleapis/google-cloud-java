@@ -253,6 +253,16 @@ class HttpJsonCallContextTest {
   }
 
   @Test
+  void testWithTracer() {
+    ApiTracer tracer = Mockito.mock(ApiTracer.class);
+    HttpJsonCallContext emptyContext = HttpJsonCallContext.createDefault();
+    // Default context has a default tracer.
+    assertNotNull(emptyContext.getTracer());
+    HttpJsonCallContext context = emptyContext.withTracer(tracer);
+    Truth.assertThat(context.getTracer()).isSameInstanceAs(tracer);
+  }
+
+  @Test
   void testWithRetrySettings() {
     RetrySettings retrySettings = Mockito.mock(RetrySettings.class);
     HttpJsonCallContext emptyContext = HttpJsonCallContext.createDefault();

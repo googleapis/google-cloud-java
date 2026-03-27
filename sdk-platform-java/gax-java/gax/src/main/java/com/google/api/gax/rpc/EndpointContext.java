@@ -134,6 +134,7 @@ public abstract class EndpointContext {
 
   public abstract String resolvedEndpoint();
 
+  @Nullable
   public abstract String resolvedServerAddress();
 
   @Nullable
@@ -410,7 +411,7 @@ public abstract class EndpointContext {
         return null;
       }
       HostAndPort hostAndPort = parseServerHostAndPort(endpoint);
-      if (!hostAndPort.hasPort()) {
+      if (hostAndPort == null || !hostAndPort.hasPort()) {
         return null;
       }
       return hostAndPort.getPort();
@@ -466,8 +467,13 @@ public abstract class EndpointContext {
       setResolvedUniverseDomain(determineUniverseDomain());
       String endpoint = determineEndpoint();
       setResolvedEndpoint(endpoint);
-      setResolvedServerAddress(parseServerAddress(resolvedEndpoint()));
-      setResolvedServerPort(parseServerPort(resolvedEndpoint()));
+      try {
+        setResolvedServerAddress(parseServerAddress(resolvedEndpoint()));
+        setResolvedServerPort(parseServerPort(resolvedEndpoint()));
+      } catch (Exception throwable) {
+        // Server address and server port are only used for observability.
+        // We should ignore any errors parsing them and not affect the main client requests.
+      }
       setUseS2A(shouldUseS2A());
       return autoBuild();
     }
