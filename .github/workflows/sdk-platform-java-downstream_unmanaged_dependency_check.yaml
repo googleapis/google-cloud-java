@@ -33,7 +33,6 @@ jobs:
         repo:
           - java-bigtable
           - java-firestore
-          - java-logging
     steps:
       - name: Checkout sdk-platform-java
         uses: actions/checkout@v3

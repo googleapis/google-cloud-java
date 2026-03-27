@@ -41,14 +41,10 @@ jobs:
       fail-fast: false
       matrix:
         repo:
-          - google-cloud-java
           - java-bigtable
-          - java-bigquery
           - java-firestore
           - java-pubsub
           - java-pubsublite
-          - java-spanner-jdbc
-          - java-spanner
           - java-storage
           - java-storage-nio
         # Default Protobuf-Java versions to use are specified here. Without this, the nightly workflow won't know

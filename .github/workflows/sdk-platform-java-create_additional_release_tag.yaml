@@ -8,21 +8,7 @@ on:
 env:
   BUILD_SUBDIR: sdk-platform-java
 jobs:
-  filter:
-    runs-on: ubuntu-latest
-    outputs:
-      library: ${{ steps.filter.outputs.library }}
-    steps:
-    - uses: actions/checkout@v4
-    - uses: dorny/paths-filter@v3
-      id: filter
-      with:
-        filters: |
-          library:
-            - 'sdk-platform-java/**'
   build:
-    needs: filter
-    if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-latest
     permissions:
       # Permission to create tag
