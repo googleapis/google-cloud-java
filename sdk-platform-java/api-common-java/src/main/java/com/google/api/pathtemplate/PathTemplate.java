@@ -313,8 +313,11 @@ public class PathTemplate {
           continue;
         }
         if (inBinding) {
+          // This is for extracting "projects" and "locations" from named binding
+          // {name=projects/*/locations/*}
           canonicalSegments.add(value);
         } else if (i + 1 < segments.size() && segments.get(i + 1).kind() == SegmentKind.BINDING) {
+          // This is for regular cases projects/{project}/locations/{location}
           canonicalSegments.add(value);
         }
       }
@@ -330,6 +333,9 @@ public class PathTemplate {
    */
   // For example, projects/{project} is a literal/binding pair. {bar=projects/*/locations/*/bars/*}
   // is a named binding.
+  // If a template is /compute/v1/projects/{project}/locations/{location}, known resources are
+  // "projects" and "locations", the canonical resource name is
+  // projects/{project}/locations/{location}. See unit tests for all cases.
   public String getCanonicalResourceName(Set<String> knownResources) {
     if (knownResources == null) {
       return "";

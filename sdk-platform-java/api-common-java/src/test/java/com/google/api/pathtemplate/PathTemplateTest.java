@@ -904,6 +904,15 @@ class PathTemplateTest {
   }
 
   @Test
+  void testGetResourceLiterals_multipleLiterals() {
+    PathTemplate template =
+        PathTemplate.create(
+            "/compute/v1/projects/{project}/global/locations/{location}/widgets/{widget}");
+    Truth.assertThat(template.getResourceLiterals())
+        .containsExactly("projects", "locations", "widgets");
+  }
+
+  @Test
   void testGetResourceLiterals_regexPath() {
     PathTemplate template =
         PathTemplate.create("v1/projects/{project=projects/*}/instances/{instance_id=instances/*}");
