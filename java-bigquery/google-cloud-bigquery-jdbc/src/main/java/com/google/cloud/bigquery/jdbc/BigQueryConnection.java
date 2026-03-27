@@ -60,6 +60,8 @@ import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -138,6 +140,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   Long connectionPoolSize;
   Long listenerPoolSize;
   String partnerToken;
+  private int queryTaskThreadCount;
+  private ExecutorService queryTaskExecutor;
 
   BigQueryConnection(String url) throws IOException {
     this(url, DataSource.fromUrl(url));
@@ -238,6 +242,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     this.filterTablesOnDefaultDataset = ds.getFilterTablesOnDefaultDataset();
     this.requestGoogleDriveScope = ds.getRequestGoogleDriveScope();
     this.metadataFetchThreadCount = ds.getMetadataFetchThreadCount();
+    this.queryTaskThreadCount = ds.getQueryTaskThreadCount();
+    this.queryTaskExecutor =
+        Executors.newFixedThreadPool(
+            this.queryTaskThreadCount, new BigQueryThreadFactory("BigQuery-query-task-"));
     this.requestReason = ds.getRequestReason();
     this.connectionPoolSize = ds.getConnectionPoolSize();
     this.listenerPoolSize = ds.getListenerPoolSize();
@@ -596,6 +604,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     return this.metadataFetchThreadCount;
   }
 
+  public ExecutorService getQueryTaskExecutor() {
+    return this.queryTaskExecutor;
+  }
+
   boolean isEnableWriteAPI() {
     return enableWriteAPI;
   }
@@ -836,6 +848,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         statement.close();
       }
       this.openStatements.clear();
+
+      if (this.queryTaskExecutor != null) {
+        this.queryTaskExecutor.shutdown();
+      }
     } catch (ConcurrentModificationException ex) {
       throw new BigQueryJdbcException(ex);
     } catch (InterruptedException e) {

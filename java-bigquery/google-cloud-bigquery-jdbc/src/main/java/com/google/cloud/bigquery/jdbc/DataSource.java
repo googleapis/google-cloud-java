@@ -84,6 +84,7 @@ public class DataSource implements javax.sql.DataSource {
   private Boolean filterTablesOnDefaultDataset;
   private Integer requestGoogleDriveScope;
   private Integer metadataFetchThreadCount;
+  private Integer queryTaskThreadCount;
   private String sslTrustStorePath;
   private String sslTrustStorePassword;
   private Map<String, String> labels;
@@ -240,6 +241,9 @@ public class DataSource implements javax.sql.DataSource {
           .put(
               BigQueryJdbcUrlUtility.METADATA_FETCH_THREAD_COUNT_PROPERTY_NAME,
               (ds, val) -> ds.setMetadataFetchThreadCount(Integer.parseInt(val)))
+          .put(
+              BigQueryJdbcUrlUtility.QUERY_TASK_THREAD_COUNT_PROPERTY_NAME,
+              (ds, val) -> ds.setQueryTaskThreadCount(Integer.parseInt(val)))
           .put(
               BigQueryJdbcUrlUtility.SSL_TRUST_STORE_PROPERTY_NAME,
               DataSource::setSSLTrustStorePath)
@@ -545,6 +549,11 @@ public class DataSource implements javax.sql.DataSource {
       connectionProperties.setProperty(
           BigQueryJdbcUrlUtility.METADATA_FETCH_THREAD_COUNT_PROPERTY_NAME,
           String.valueOf(this.metadataFetchThreadCount));
+    }
+    if (this.queryTaskThreadCount != null) {
+      connectionProperties.setProperty(
+          BigQueryJdbcUrlUtility.QUERY_TASK_THREAD_COUNT_PROPERTY_NAME,
+          String.valueOf(this.queryTaskThreadCount));
     }
     if (this.sslTrustStorePath != null) {
       connectionProperties.setProperty(
@@ -1022,6 +1031,16 @@ public class DataSource implements javax.sql.DataSource {
 
   public void setMetadataFetchThreadCount(Integer metadataFetchThreadCount) {
     this.metadataFetchThreadCount = metadataFetchThreadCount;
+  }
+
+  public Integer getQueryTaskThreadCount() {
+    return queryTaskThreadCount != null
+        ? queryTaskThreadCount
+        : BigQueryJdbcUrlUtility.DEFAULT_QUERY_TASK_THREAD_COUNT_VALUE;
+  }
+
+  public void setQueryTaskThreadCount(Integer queryTaskThreadCount) {
+    this.queryTaskThreadCount = queryTaskThreadCount;
   }
 
   public String getSSLTrustStorePath() {

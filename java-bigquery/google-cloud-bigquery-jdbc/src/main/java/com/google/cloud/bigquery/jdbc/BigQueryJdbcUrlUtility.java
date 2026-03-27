@@ -142,6 +142,8 @@ final class BigQueryJdbcUrlUtility {
           Pattern.CASE_INSENSITIVE);
   static final String METADATA_FETCH_THREAD_COUNT_PROPERTY_NAME = "MetaDataFetchThreadCount";
   static final int DEFAULT_METADATA_FETCH_THREAD_COUNT_VALUE = 32;
+  static final String QUERY_TASK_THREAD_COUNT_PROPERTY_NAME = "QueryTaskThreadCount";
+  static final int DEFAULT_QUERY_TASK_THREAD_COUNT_VALUE = 16;
   static final String RETRY_TIMEOUT_IN_SECS_PROPERTY_NAME = "Timeout";
   static final long DEFAULT_RETRY_TIMEOUT_IN_SECS_VALUE = 0L;
   static final String JOB_TIMEOUT_PROPERTY_NAME = "JobTimeout";
@@ -534,6 +536,12 @@ final class BigQueryJdbcUrlUtility {
                       .setDescription(
                           "The number of threads used to call a DatabaseMetaData method.")
                       .setDefaultValue(String.valueOf(DEFAULT_METADATA_FETCH_THREAD_COUNT_VALUE))
+                      .build(),
+                  BigQueryConnectionProperty.newBuilder()
+                      .setName(QUERY_TASK_THREAD_COUNT_PROPERTY_NAME)
+                      .setDescription(
+                          "The number of background threads used for executing queries parallel tasks.")
+                      .setDefaultValue(String.valueOf(DEFAULT_QUERY_TASK_THREAD_COUNT_VALUE))
                       .build(),
                   BigQueryConnectionProperty.newBuilder()
                       .setName(ENABLE_WRITE_API_PROPERTY_NAME)

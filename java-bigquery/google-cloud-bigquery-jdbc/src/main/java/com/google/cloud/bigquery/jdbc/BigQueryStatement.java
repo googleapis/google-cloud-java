@@ -72,8 +72,8 @@ import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadFactory;
 import java.util.logging.Level;
@@ -88,9 +88,6 @@ import java.util.logging.Level;
 public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   // TODO (obada): Update this after benchmarking
-  private static final int MAX_PROCESS_QUERY_THREADS_CNT = 50;
-  protected static ExecutorService queryTaskExecutor =
-      Executors.newFixedThreadPool(MAX_PROCESS_QUERY_THREADS_CNT);
   private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
   private static final String DEFAULT_DATASET_NAME = "_google_jdbc";
   private static final String DEFAULT_TABLE_NAME = "temp_table_";
@@ -594,15 +591,20 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
     try {
       resetStatementFields();
+
+      final QueryJobConfiguration finalJobConfiguration = jobConfiguration;
+      Future<StatementType> statementTypeFuture =
+          connection.getQueryTaskExecutor().submit(() -> getStatementType(finalJobConfiguration));
+
       ExecuteResult executeResult = executeJob(jobConfiguration);
-      StatementType statementType =
-          executeResult.job == null
-              ? getStatementType(jobConfiguration)
-              : ((QueryStatistics) executeResult.job.getStatistics()).getStatementType();
+
+      StatementType statementType = statementTypeFuture.get();
       SqlType queryType = getQueryType(jobConfiguration, statementType);
       handleQueryResult(query, executeResult.tableResult, queryType);
     } catch (InterruptedException ex) {
       throw new BigQueryJdbcRuntimeException(ex);
+    } catch (ExecutionException e) {
+      throw new BigQueryJdbcException(e.getCause());
     } catch (BigQueryException ex) {
       if (ex.getMessage().contains("Syntax error")) {
         throw new BigQueryJdbcSqlSyntaxErrorException(ex);
@@ -829,7 +831,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                 com.google.api.gax.rpc.ServerStream<ReadRowsResponse> stream =
                     bqReadClient.readRowsCallable().call(readRowsRequest);
                 for (ReadRowsResponse response : stream) {
-                  if (Thread.currentThread().isInterrupted() || queryTaskExecutor.isShutdown()) {
+                  if (Thread.currentThread().isInterrupted()
+                      || connection.getQueryTaskExecutor().isShutdown()) {
                     break;
                   }
 
@@ -1042,7 +1045,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           try {
             while (currentPageToken != null) {
               // do not process further pages and shutdown
-              if (Thread.currentThread().isInterrupted() || queryTaskExecutor.isShutdown()) {
+              if (Thread.currentThread().isInterrupted()
+                  || connection.getQueryTaskExecutor().isShutdown()) {
                 LOG.warning(
                     "%s Interrupted @ runNextPageTaskAsync", Thread.currentThread().getName());
                 break;
@@ -1073,7 +1077,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
             // completes
             Uninterruptibles.putUninterruptibly(rpcResponseQueue, Tuple.of(null, false));
           }
-          // We cannot do queryTaskExecutor.shutdownNow() here as populate buffer method may not
+          // We cannot do connection.getQueryTaskExecutor().shutdownNow() here as populate buffer
+          // method may not
           // have finished processing the records and even that will be interrupted
         };
 
@@ -1117,7 +1122,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
               }
 
               if (Thread.currentThread().isInterrupted()
-                  || queryTaskExecutor.isShutdown()
+                  || connection.getQueryTaskExecutor().isShutdown()
                   || fieldValueLists == null) {
                 // do not process further pages and shutdown (outerloop)
                 break;
@@ -1127,7 +1132,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
               long results = 0;
               for (FieldValueList fieldValueList : fieldValueLists) {
 
-                if (Thread.currentThread().isInterrupted() || queryTaskExecutor.isShutdown()) {
+                if (Thread.currentThread().isInterrupted()
+                    || connection.getQueryTaskExecutor().isShutdown()) {
                   // do not process further pages and shutdown (inner loop)
                   break;
                 }

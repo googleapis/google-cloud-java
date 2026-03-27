@@ -60,11 +60,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import org.apache.arrow.memory.RootAllocator;
 import org.apache.arrow.vector.BitVector;
 import org.apache.arrow.vector.FieldVector;
 import org.apache.arrow.vector.IntVector;
 import org.apache.arrow.vector.VectorSchemaRoot;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -83,6 +86,8 @@ public class BigQueryStatementTest {
   private BigQuery bigquery;
 
   private BigQueryStatement bigQueryStatement;
+
+  private ExecutorService queryTaskExecutor;
 
   private final String query = "select * from test";
 
@@ -126,12 +131,15 @@ public class BigQueryStatementTest {
 
   @BeforeEach
   public void setUp() throws IOException, SQLException {
+    queryTaskExecutor = Executors.newFixedThreadPool(1);
     bigQueryConnection = mock(BigQueryConnection.class);
     rpcFactoryMock = mock(BigQueryRpcFactory.class);
     bigquery = mock(BigQuery.class);
     bigQueryConnection.bigQuery = bigquery;
     storageReadClient = mock(BigQueryReadClient.class);
     jobId = JobId.newBuilder().setJob(jobIdVal).build();
+
+    doReturn(queryTaskExecutor).when(bigQueryConnection).getQueryTaskExecutor();
 
     doReturn(bigquery).when(bigQueryConnection).getBigQuery();
     doReturn(10L).when(bigQueryConnection).getJobTimeoutInSeconds();
@@ -148,7 +156,13 @@ public class BigQueryStatementTest {
             .setSerializedSchema(serializeSchema(vectorSchemaRoot.getSchema()))
             .build();
     // bigQueryConnection.addOpenStatements(bigQueryStatement);
+  }
 
+  @AfterEach
+  public void tearDown() {
+    if (queryTaskExecutor != null) {
+      queryTaskExecutor.shutdown();
+    }
   }
 
   private VectorSchemaRoot getTestVectorSchemaRoot() {
@@ -303,8 +317,13 @@ public class BigQueryStatementTest {
     ArgumentCaptor<JobInfo> captor = ArgumentCaptor.forClass(JobInfo.class);
 
     bigQueryStatementSpy.runQuery(query, jobConfiguration);
-    verify(bigquery).create(captor.capture());
-    QueryJobConfiguration jobConfig = captor.getValue().getConfiguration();
+    verify(bigquery, Mockito.times(2)).create(captor.capture());
+    QueryJobConfiguration jobConfig =
+        captor.getAllValues().stream()
+            .map(jobInfo -> (QueryJobConfiguration) jobInfo.getConfiguration())
+            .filter(config -> config.dryRun() == null || !config.dryRun())
+            .findFirst()
+            .get();
     assertEquals(3000L, jobConfig.getJobTimeoutMs().longValue());
   }
 
@@ -401,10 +420,10 @@ public class BigQueryStatementTest {
 
     jobfulStatementSpy.executeQuery("SELECT 1");
 
-    verify(bigquery).create(any(JobInfo.class));
+    verify(bigquery, Mockito.times(2)).create(any(JobInfo.class));
     assertTrue(
         jobfulCaptor.getAllValues().stream()
-            .noneMatch(
+            .anyMatch(
                 jobInfo ->
                     Boolean.TRUE.equals(
                         ((QueryJobConfiguration) jobInfo.getConfiguration()).dryRun())));
