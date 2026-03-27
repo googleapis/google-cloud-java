@@ -3802,7 +3802,7 @@ public abstract class Expression {
    * @return A new {@link Expression} representing the truncated timestamp.
    */
   @BetaApi
-  public static Expression timestampTruncate(
+  public static Expression timestampTruncateWithTimezone(
       Expression timestamp, String granularity, String timezone) {
     return new FunctionExpression(
         "timestamp_trunc", ImmutableList.of(timestamp, constant(granularity), constant(timezone)));
@@ -3822,7 +3822,7 @@ public abstract class Expression {
    * @return A new {@link Expression} representing the truncated timestamp.
    */
   @BetaApi
-  public static Expression timestampTruncate(
+  public static Expression timestampTruncateWithTimezone(
       Expression timestamp, Expression granularity, String timezone) {
     return new FunctionExpression(
         "timestamp_trunc", ImmutableList.of(timestamp, granularity, constant(timezone)));
@@ -3842,9 +3842,9 @@ public abstract class Expression {
    * @return A new {@link Expression} representing the truncated timestamp.
    */
   @BetaApi
-  public static Expression timestampTruncate(
+  public static Expression timestampTruncateWithTimezone(
       String fieldName, String granularity, String timezone) {
-    return timestampTruncate(field(fieldName), constant(granularity), timezone);
+    return timestampTruncateWithTimezone(field(fieldName), constant(granularity), timezone);
   }
 
   /**
@@ -3861,9 +3861,364 @@ public abstract class Expression {
    * @return A new {@link Expression} representing the truncated timestamp.
    */
   @BetaApi
-  public static Expression timestampTruncate(
+  public static Expression timestampTruncateWithTimezone(
       String fieldName, Expression granularity, String timezone) {
-    return timestampTruncate(field(fieldName), granularity, timezone);
+    return timestampTruncateWithTimezone(field(fieldName), granularity, timezone);
+  }
+
+  /**
+   * Creates an expression that truncates a timestamp to a specified granularity in a given
+   * timezone.
+   *
+   * @param timestamp The timestamp expression.
+   * @param granularity The granularity expression to truncate to. Valid values are "microsecond",
+   *     "millisecond", "second", "minute", "hour", "day", "week", "week(monday)", "week(tuesday)",
+   *     "week(wednesday)", "week(thursday)", "week(friday)", "week(saturday)", "week(sunday)",
+   *     "isoweek", "month", "quarter", "year", and "isoyear".
+   * @param timezone The timezone expression to use for truncation. Valid values are from the TZ
+   *     database (e.g., "America/Los_Angeles") or in the format "Etc/GMT-1".
+   * @return A new {@link Expression} representing the truncated timestamp.
+   */
+  @BetaApi
+  public static Expression timestampTruncateWithTimezone(
+      Expression timestamp, Expression granularity, Expression timezone) {
+    return new FunctionExpression(
+        "timestamp_trunc", ImmutableList.of(timestamp, granularity, timezone));
+  }
+
+  /**
+   * Creates an expression that truncates a timestamp to a specified granularity in a given
+   * timezone.
+   *
+   * @param timestamp The timestamp expression.
+   * @param granularity The granularity to truncate to. Valid values are "microsecond",
+   *     "millisecond", "second", "minute", "hour", "day", "week", "week(monday)", "week(tuesday)",
+   *     "week(wednesday)", "week(thursday)", "week(friday)", "week(saturday)", "week(sunday)",
+   *     "isoweek", "month", "quarter", "year", and "isoyear".
+   * @param timezone The timezone expression to use for truncation. Valid values are from the TZ
+   *     database (e.g., "America/Los_Angeles") or in the format "Etc/GMT-1".
+   * @return A new {@link Expression} representing the truncated timestamp.
+   */
+  @BetaApi
+  public static Expression timestampTruncateWithTimezone(
+      Expression timestamp, String granularity, Expression timezone) {
+    return timestampTruncateWithTimezone(timestamp, constant(granularity), timezone);
+  }
+
+  /**
+   * Creates an expression that truncates a timestamp to a specified granularity in a given
+   * timezone.
+   *
+   * @param fieldName The name of the field containing the timestamp.
+   * @param granularity The granularity to truncate to. Valid values are "microsecond",
+   *     "millisecond", "second", "minute", "hour", "day", "week", "week(monday)", "week(tuesday)",
+   *     "week(wednesday)", "week(thursday)", "week(friday)", "week(saturday)", "week(sunday)",
+   *     "isoweek", "month", "quarter", "year", and "isoyear".
+   * @param timezone The timezone expression to use for truncation. Valid values are from the TZ
+   *     database (e.g., "America/Los_Angeles") or in the format "Etc/GMT-1".
+   * @return A new {@link Expression} representing the truncated timestamp.
+   */
+  @BetaApi
+  public static Expression timestampTruncateWithTimezone(
+      String fieldName, String granularity, Expression timezone) {
+    return timestampTruncateWithTimezone(field(fieldName), constant(granularity), timezone);
+  }
+
+  /**
+   * Creates an expression that truncates a timestamp to a specified granularity in a given
+   * timezone.
+   *
+   * @param fieldName The name of the field containing the timestamp.
+   * @param granularity The granularity expression to truncate to. Valid values are "microsecond",
+   *     "millisecond", "second", "minute", "hour", "day", "week", "week(monday)", "week(tuesday)",
+   *     "week(wednesday)", "week(thursday)", "week(friday)", "week(saturday)", "week(sunday)",
+   *     "isoweek", "month", "quarter", "year", and "isoyear".
+   * @param timezone The timezone expression to use for truncation. Valid values are from the TZ
+   *     database (e.g., "America/Los_Angeles") or in the format "Etc/GMT-1".
+   * @return A new {@link Expression} representing the truncated timestamp.
+   */
+  @BetaApi
+  public static Expression timestampTruncateWithTimezone(
+      String fieldName, Expression granularity, Expression timezone) {
+    return timestampTruncateWithTimezone(field(fieldName), granularity, timezone);
+  }
+
+  /**
+   * Creates an expression that calculates the difference between two timestamps.
+   *
+   * @param end The ending timestamp expression.
+   * @param start The starting timestamp expression.
+   * @param unit The unit of time for the difference. Valid values include "microsecond",
+   *     "millisecond", "second", "minute", "hour" and "day".
+   * @return A new {@link Expression} representing the difference.
+   */
+  @BetaApi
+  public static Expression timestampDiff(Expression end, Expression start, Expression unit) {
+    return new FunctionExpression("timestamp_diff", ImmutableList.of(end, start, unit));
+  }
+
+  /**
+   * Creates an expression that calculates the difference between two timestamps.
+   *
+   * @param end The ending timestamp expression.
+   * @param start The starting timestamp expression.
+   * @param unit The unit of time for the difference. Valid values include "microsecond",
+   *     "millisecond", "second", "minute", "hour" and "day".
+   * @return A new {@link Expression} representing the difference.
+   */
+  @BetaApi
+  public static Expression timestampDiff(Expression end, Expression start, String unit) {
+    return timestampDiff(end, start, constant(unit));
+  }
+
+  /**
+   * Creates an expression that calculates the difference between two timestamps.
+   *
+   * @param endFieldName The ending timestamp field name.
+   * @param startFieldName The starting timestamp field name.
+   * @param unit The unit of time for the difference. Valid values include "microsecond",
+   *     "millisecond", "second", "minute", "hour" and "day".
+   * @return A new {@link Expression} representing the difference.
+   */
+  @BetaApi
+  public static Expression timestampDiff(String endFieldName, String startFieldName, String unit) {
+    return timestampDiff(field(endFieldName), field(startFieldName), constant(unit));
+  }
+
+  /**
+   * Creates an expression that calculates the difference between two timestamps.
+   *
+   * @param endFieldName The ending timestamp field name.
+   * @param start The starting timestamp expression.
+   * @param unit The unit of time for the difference. Valid values include "microsecond",
+   *     "millisecond", "second", "minute", "hour" and "day".
+   * @return A new {@link Expression} representing the difference.
+   */
+  @BetaApi
+  public static Expression timestampDiff(String endFieldName, Expression start, String unit) {
+    return timestampDiff(field(endFieldName), start, constant(unit));
+  }
+
+  /**
+   * Creates an expression that calculates the difference between two timestamps.
+   *
+   * @param end The ending timestamp expression.
+   * @param startFieldName The starting timestamp field name.
+   * @param unit The unit of time for the difference. Valid values include "microsecond",
+   *     "millisecond", "second", "minute", "hour" and "day".
+   * @return A new {@link Expression} representing the difference.
+   */
+  @BetaApi
+  public static Expression timestampDiff(Expression end, String startFieldName, String unit) {
+    return timestampDiff(end, field(startFieldName), constant(unit));
+  }
+
+  /**
+   * Creates an expression that extracts a specified part from a timestamp.
+   *
+   * @param timestamp The timestamp expression.
+   * @param part The part to extract from the timestamp. Valid values are "microsecond",
+   *     "millisecond", "second", "minute", "hour", "dayofweek", "day", "dayofyear", "week",
+   *     "week(monday)", "week(tuesday)", "week(wednesday)", "week(thursday)", "week(friday)",
+   *     "week(saturday)", "week(sunday)", "isoweek", "month", "quarter", "year", and "isoyear".
+   * @return A new {@link Expression} representing the extracted part.
+   */
+  @BetaApi
+  public static Expression timestampExtract(Expression timestamp, Expression part) {
+    return new FunctionExpression("timestamp_extract", ImmutableList.of(timestamp, part));
+  }
+
+  /**
+   * Creates an expression that extracts a specified part from a timestamp.
+   *
+   * @param timestamp The timestamp expression.
+   * @param part The part to extract from the timestamp. Valid values are "microsecond",
+   *     "millisecond", "second", "minute", "hour", "dayofweek", "day", "dayofyear", "week",
+   *     "week(monday)", "week(tuesday)", "week(wednesday)", "week(thursday)", "week(friday)",
+   *     "week(saturday)", "week(sunday)", "isoweek", "month", "quarter", "year", and "isoyear".
+   * @return A new {@link Expression} representing the extracted part.
+   */
+  @BetaApi
+  public static Expression timestampExtract(Expression timestamp, String part) {
+    return timestampExtract(timestamp, constant(part));
+  }
+
+  /**
+   * Creates an expression that extracts a specified part from a timestamp.
+   *
+   * @param fieldName The name of the field containing the timestamp.
+   * @param part The part to extract from the timestamp. Valid values are "microsecond",
+   *     "millisecond", "second", "minute", "hour", "dayofweek", "day", "dayofyear", "week",
+   *     "week(monday)", "week(tuesday)", "week(wednesday)", "week(thursday)", "week(friday)",
+   *     "week(saturday)", "week(sunday)", "isoweek", "month", "quarter", "year", and "isoyear".
+   * @return A new {@link Expression} representing the extracted part.
+   */
+  @BetaApi
+  public static Expression timestampExtract(String fieldName, Expression part) {
+    return timestampExtract(field(fieldName), part);
+  }
+
+  /**
+   * Creates an expression that extracts a specified part from a timestamp.
+   *
+   * @param fieldName The name of the field containing the timestamp.
+   * @param part The part to extract from the timestamp. Valid values are "microsecond",
+   *     "millisecond", "second", "minute", "hour", "dayofweek", "day", "dayofyear", "week",
+   *     "week(monday)", "week(tuesday)", "week(wednesday)", "week(thursday)", "week(friday)",
+   *     "week(saturday)", "week(sunday)", "isoweek", "month", "quarter", "year", and "isoyear".
+   * @return A new {@link Expression} representing the extracted part.
+   */
+  @BetaApi
+  public static Expression timestampExtract(String fieldName, String part) {
+    return timestampExtract(field(fieldName), constant(part));
+  }
+
+  /**
+   * Creates an expression that extracts a specified part from a timestamp in a given timezone.
+   *
+   * @param timestamp The timestamp expression.
+   * @param part The part to extract from the timestamp. Valid values are "microsecond",
+   *     "millisecond", "second", "minute", "hour", "dayofweek", "day", "dayofyear", "week",
+   *     "week(monday)", "week(tuesday)", "week(wednesday)", "week(thursday)", "week(friday)",
+   *     "week(saturday)", "week(sunday)", "isoweek", "month", "quarter", "year", and "isoyear".
+   * @param timezone The timezone expression to use for extraction.Valid values are from the TZ
+   *     database (e.g., "America/Los_Angeles") or in the format "Etc/GMT-1". Defaults to "UTC" if
+   *     not specified.
+   * @return A new {@link Expression} representing the extracted part.
+   */
+  @BetaApi
+  public static Expression timestampExtractWithTimezone(
+      Expression timestamp, Expression part, Expression timezone) {
+    return new FunctionExpression("timestamp_extract", ImmutableList.of(timestamp, part, timezone));
+  }
+
+  /**
+   * Creates an expression that extracts a specified part from a timestamp in a given timezone.
+   *
+   * @param timestamp The timestamp expression.
+   * @param part The part to extract from the timestamp. Valid values are "microsecond",
+   *     "millisecond", "second", "minute", "hour", "dayofweek", "day", "dayofyear", "week",
+   *     "week(monday)", "week(tuesday)", "week(wednesday)", "week(thursday)", "week(friday)",
+   *     "week(saturday)", "week(sunday)", "isoweek", "month", "quarter", "year", and "isoyear".
+   * @param timezone The timezone to use for extraction.Valid values are from the TZ database (e.g.,
+   *     "America/Los_Angeles") or in the format "Etc/GMT-1". Defaults to "UTC" if not specified.
+   * @return A new {@link Expression} representing the extracted part.
+   */
+  @BetaApi
+  public static Expression timestampExtractWithTimezone(
+      Expression timestamp, Expression part, String timezone) {
+    return timestampExtractWithTimezone(timestamp, part, constant(timezone));
+  }
+
+  /**
+   * Creates an expression that extracts a specified part from a timestamp in a given timezone.
+   *
+   * @param timestamp The timestamp expression.
+   * @param part The part to extract from the timestamp. Valid values are "microsecond",
+   *     "millisecond", "second", "minute", "hour", "dayofweek", "day", "dayofyear", "week",
+   *     "week(monday)", "week(tuesday)", "week(wednesday)", "week(thursday)", "week(friday)",
+   *     "week(saturday)", "week(sunday)", "isoweek", "month", "quarter", "year", and "isoyear".
+   * @param timezone The timezone to use for extraction.Valid values are from the TZ database (e.g.,
+   *     "America/Los_Angeles") or in the format "Etc/GMT-1". Defaults to "UTC" if not specified.
+   * @return A new {@link Expression} representing the extracted part.
+   */
+  @BetaApi
+  public static Expression timestampExtractWithTimezone(
+      Expression timestamp, String part, String timezone) {
+    return timestampExtractWithTimezone(timestamp, constant(part), constant(timezone));
+  }
+
+  /**
+   * Creates an expression that extracts a specified part from a timestamp in a given timezone.
+   *
+   * @param fieldName The name of the field containing the timestamp.
+   * @param part The part to extract from the timestamp. Valid values are "microsecond",
+   *     "millisecond", "second", "minute", "hour", "dayofweek", "day", "dayofyear", "week",
+   *     "week(monday)", "week(tuesday)", "week(wednesday)", "week(thursday)", "week(friday)",
+   *     "week(saturday)", "week(sunday)", "isoweek", "month", "quarter", "year", and "isoyear".
+   * @param timezone The timezone to use for extraction.Valid values are from the TZ database (e.g.,
+   *     "America/Los_Angeles") or in the format "Etc/GMT-1". Defaults to "UTC" if not specified.
+   * @return A new {@link Expression} representing the extracted part.
+   */
+  @BetaApi
+  public static Expression timestampExtractWithTimezone(
+      String fieldName, Expression part, String timezone) {
+    return timestampExtractWithTimezone(field(fieldName), part, constant(timezone));
+  }
+
+  /**
+   * Creates an expression that extracts a specified part from a timestamp in a given timezone.
+   *
+   * @param fieldName The name of the field containing the timestamp.
+   * @param part The part to extract from the timestamp. Valid values are "microsecond",
+   *     "millisecond", "second", "minute", "hour", "dayofweek", "day", "dayofyear", "week",
+   *     "week(monday)", "week(tuesday)", "week(wednesday)", "week(thursday)", "week(friday)",
+   *     "week(saturday)", "week(sunday)", "isoweek", "month", "quarter", "year", and "isoyear".
+   * @param timezone The timezone to use for extraction.Valid values are from the TZ database (e.g.,
+   *     "America/Los_Angeles") or in the format "Etc/GMT-1". Defaults to "UTC" if not specified.
+   * @return A new {@link Expression} representing the extracted part.
+   */
+  @BetaApi
+  public static Expression timestampExtractWithTimezone(
+      String fieldName, String part, String timezone) {
+    return timestampExtractWithTimezone(field(fieldName), constant(part), constant(timezone));
+  }
+
+  /**
+   * Creates an expression that extracts a specified part from a timestamp in a given timezone.
+   *
+   * @param timestamp The timestamp expression.
+   * @param part The part to extract from the timestamp. Valid values are "microsecond",
+   *     "millisecond", "second", "minute", "hour", "dayofweek", "day", "dayofyear", "week",
+   *     "week(monday)", "week(tuesday)", "week(wednesday)", "week(thursday)", "week(friday)",
+   *     "week(saturday)", "week(sunday)", "isoweek", "month", "quarter", "year", and "isoyear".
+   * @param timezone The timezone expression to use for extraction.Valid values are from the TZ
+   *     database (e.g., "America/Los_Angeles") or in the format "Etc/GMT-1". Defaults to "UTC" if
+   *     not specified.
+   * @return A new {@link Expression} representing the extracted part.
+   */
+  @BetaApi
+  public static Expression timestampExtractWithTimezone(
+      Expression timestamp, String part, Expression timezone) {
+    return timestampExtractWithTimezone(timestamp, constant(part), timezone);
+  }
+
+  /**
+   * Creates an expression that extracts a specified part from a timestamp in a given timezone.
+   *
+   * @param fieldName The name of the field containing the timestamp.
+   * @param part The part to extract from the timestamp. Valid values are "microsecond",
+   *     "millisecond", "second", "minute", "hour", "dayofweek", "day", "dayofyear", "week",
+   *     "week(monday)", "week(tuesday)", "week(wednesday)", "week(thursday)", "week(friday)",
+   *     "week(saturday)", "week(sunday)", "isoweek", "month", "quarter", "year", and "isoyear".
+   * @param timezone The timezone expression to use for extraction.Valid values are from the TZ
+   *     database (e.g., "America/Los_Angeles") or in the format "Etc/GMT-1". Defaults to "UTC" if
+   *     not specified.
+   * @return A new {@link Expression} representing the extracted part.
+   */
+  @BetaApi
+  public static Expression timestampExtractWithTimezone(
+      String fieldName, Expression part, Expression timezone) {
+    return timestampExtractWithTimezone(field(fieldName), part, timezone);
+  }
+
+  /**
+   * Creates an expression that extracts a specified part from a timestamp in a given timezone.
+   *
+   * @param fieldName The name of the field containing the timestamp.
+   * @param part The part to extract from the timestamp. Valid values are "microsecond",
+   *     "millisecond", "second", "minute", "hour", "dayofweek", "day", "dayofyear", "week",
+   *     "week(monday)", "week(tuesday)", "week(wednesday)", "week(thursday)", "week(friday)",
+   *     "week(saturday)", "week(sunday)", "isoweek", "month", "quarter", "year", and "isoyear".
+   * @param timezone The timezone expression to use for extraction.Valid values are from the TZ
+   *     database (e.g., "America/Los_Angeles") or in the format "Etc/GMT-1". Defaults to "UTC" if
+   *     not specified.
+   * @return A new {@link Expression} representing the extracted part.
+   */
+  @BetaApi
+  public static Expression timestampExtractWithTimezone(
+      String fieldName, String part, Expression timezone) {
+    return timestampExtractWithTimezone(field(fieldName), constant(part), timezone);
   }
 
   // Conditional Functions
@@ -6384,6 +6739,215 @@ public abstract class Expression {
   @BetaApi
   public final Expression timestampTruncate(Expression granularity) {
     return timestampTruncate(this, granularity);
+  }
+
+  /**
+   * Creates an expression that truncates this timestamp expression to a specified granularity in a
+   * given timezone.
+   *
+   * @param granularity The granularity to truncate to. Valid values are "microsecond",
+   *     "millisecond", "second", "minute", "hour", "day", "week", "week(monday)", "week(tuesday)",
+   *     "week(wednesday)", "week(thursday)", "week(friday)", "week(saturday)", "week(sunday)",
+   *     "isoweek", "month", "quarter", "year", and "isoyear".
+   * @param timezone The timezone to use for truncation. Valid values are from the TZ database
+   *     (e.g., "America/Los_Angeles") or in the format "Etc/GMT-1". Defaults to "UTC" if not
+   *     specified.
+   * @return A new {@link Expression} representing the truncated timestamp.
+   */
+  @BetaApi
+  public final Expression timestampTruncateWithTimezone(String granularity, String timezone) {
+    return timestampTruncateWithTimezone(this, granularity, timezone);
+  }
+
+  /**
+   * Creates an expression that truncates this timestamp expression to a specified granularity in a
+   * given timezone.
+   *
+   * @param granularity The granularity expression to truncate to. Valid values are "microsecond",
+   *     "millisecond", "second", "minute", "hour", "day", "week", "week(monday)", "week(tuesday)",
+   *     "week(wednesday)", "week(thursday)", "week(friday)", "week(saturday)", "week(sunday)",
+   *     "isoweek", "month", "quarter", "year", and "isoyear".
+   * @param timezone The timezone to use for truncation. Valid values are from the TZ database
+   *     (e.g., "America/Los_Angeles") or in the format "Etc/GMT-1".
+   * @return A new {@link Expression} representing the truncated timestamp.
+   */
+  @BetaApi
+  public final Expression timestampTruncateWithTimezone(Expression granularity, String timezone) {
+    return timestampTruncateWithTimezone(this, granularity, timezone);
+  }
+
+  /**
+   * Creates an expression that truncates this timestamp expression to a specified granularity in a
+   * given timezone.
+   *
+   * @param granularity The granularity to truncate to. Valid values are "microsecond",
+   *     "millisecond", "second", "minute", "hour", "day", "week", "week(monday)", "week(tuesday)",
+   *     "week(wednesday)", "week(thursday)", "week(friday)", "week(saturday)", "week(sunday)",
+   *     "isoweek", "month", "quarter", "year", and "isoyear".
+   * @param timezone The timezone expression to use for truncation. Valid values are from the TZ
+   *     database (e.g., "America/Los_Angeles") or in the format "Etc/GMT-1".
+   * @return A new {@link Expression} representing the truncated timestamp.
+   */
+  @BetaApi
+  public final Expression timestampTruncateWithTimezone(String granularity, Expression timezone) {
+    return timestampTruncateWithTimezone(this, granularity, timezone);
+  }
+
+  /**
+   * Creates an expression that truncates this timestamp expression to a specified granularity in a
+   * given timezone.
+   *
+   * @param granularity The granularity expression to truncate to. Valid values are "microsecond",
+   *     "millisecond", "second", "minute", "hour", "day", "week", "week(monday)", "week(tuesday)",
+   *     "week(wednesday)", "week(thursday)", "week(friday)", "week(saturday)", "week(sunday)",
+   *     "isoweek", "month", "quarter", "year", and "isoyear".
+   * @param timezone The timezone expression to use for truncation. Valid values are from the TZ
+   *     database (e.g., "America/Los_Angeles") or in the format "Etc/GMT-1".
+   * @return A new {@link Expression} representing the truncated timestamp.
+   */
+  @BetaApi
+  public final Expression timestampTruncateWithTimezone(
+      Expression granularity, Expression timezone) {
+    return timestampTruncateWithTimezone(this, granularity, timezone);
+  }
+
+  /**
+   * Calculates the difference between this timestamp and another timestamp.
+   *
+   * @param start The starting timestamp expression.
+   * @param unit The unit of time for the difference. Valid values include "microsecond",
+   *     "millisecond", "second", "minute", "hour" and "day".
+   * @return A new {@link Expression} representing the difference.
+   */
+  @BetaApi
+  public final Expression timestampDiff(Expression start, Expression unit) {
+    return timestampDiff(this, start, unit);
+  }
+
+  /**
+   * Calculates the difference between this timestamp and another timestamp.
+   *
+   * @param start The starting timestamp expression.
+   * @param unit The unit of time for the difference. Valid values include "microsecond",
+   *     "millisecond", "second", "minute", "hour" and "day".
+   * @return A new {@link Expression} representing the difference.
+   */
+  @BetaApi
+  public final Expression timestampDiff(Expression start, String unit) {
+    return timestampDiff(this, start, unit);
+  }
+
+  /**
+   * Calculates the difference between this timestamp and another timestamp.
+   *
+   * @param startFieldName The name of the field containing the starting timestamp.
+   * @param unit The unit of time for the difference. Valid values include "microsecond",
+   *     "millisecond", "second", "minute", "hour" and "day".
+   * @return A new {@link Expression} representing the difference.
+   */
+  @BetaApi
+  public final Expression timestampDiff(String startFieldName, String unit) {
+    return timestampDiff(this, startFieldName, unit);
+  }
+
+  /**
+   * Creates an expression that extracts a specified part from this timestamp expression.
+   *
+   * @param part The part to extract. Valid values are "microsecond", "millisecond", "second",
+   *     "minute", "hour", "dayofweek", "day", "dayofyear", "week", "week(monday)", "week(tuesday)",
+   *     "week(wednesday)", "week(thursday)", "week(friday)", "week(saturday)", "week(sunday)",
+   *     "isoweek", "month", "quarter", "year", and "isoyear".
+   * @return A new {@link Expression} representing the extracted part.
+   */
+  @BetaApi
+  public final Expression timestampExtract(Expression part) {
+    return timestampExtract(this, part);
+  }
+
+  /**
+   * Creates an expression that extracts a specified part from this timestamp expression.
+   *
+   * @param part The part to extract. Valid values are "microsecond", "millisecond", "second",
+   *     "minute", "hour", "dayofweek", "day", "dayofyear", "week", "week(monday)", "week(tuesday)",
+   *     "week(wednesday)", "week(thursday)", "week(friday)", "week(saturday)", "week(sunday)",
+   *     "isoweek", "month", "quarter", "year", and "isoyear".
+   * @return A new {@link Expression} representing the extracted part.
+   */
+  @BetaApi
+  public final Expression timestampExtract(String part) {
+    return timestampExtract(this, part);
+  }
+
+  /**
+   * Creates an expression that extracts a specified part from this timestamp expression in a given
+   * timezone.
+   *
+   * @param part The part to extract. Valid values are "microsecond", "millisecond", "second",
+   *     "minute", "hour", "dayofweek", "day", "dayofyear", "week", "week(monday)", "week(tuesday)",
+   *     "week(wednesday)", "week(thursday)", "week(friday)", "week(saturday)", "week(sunday)",
+   *     "isoweek", "month", "quarter", "year", and "isoyear".
+   * @param timezone The timezone to use for extraction. Valid values are from the TZ database
+   *     (e.g., "America/Los_Angeles") or in the format "Etc/GMT-1". Defaults to "UTC" if not
+   *     specified.
+   * @return A new {@link Expression} representing the extracted part.
+   */
+  @BetaApi
+  public final Expression timestampExtractWithTimezone(Expression part, String timezone) {
+    return timestampExtractWithTimezone(this, part, timezone);
+  }
+
+  /**
+   * Creates an expression that extracts a specified part from this timestamp expression in a given
+   * timezone.
+   *
+   * @param part The part to extract. Valid values are "microsecond", "millisecond", "second",
+   *     "minute", "hour", "dayofweek", "day", "dayofyear", "week", "week(monday)", "week(tuesday)",
+   *     "week(wednesday)", "week(thursday)", "week(friday)", "week(saturday)", "week(sunday)",
+   *     "isoweek", "month", "quarter", "year", and "isoyear".
+   * @param timezone The timezone to use for extraction. Valid values are from the TZ database
+   *     (e.g., "America/Los_Angeles") or in the format "Etc/GMT-1". Defaults to "UTC" if not
+   *     specified.
+   * @return A new {@link Expression} representing the extracted part.
+   */
+  @BetaApi
+  public final Expression timestampExtractWithTimezone(String part, String timezone) {
+    return timestampExtractWithTimezone(this, part, timezone);
+  }
+
+  /**
+   * Creates an expression that extracts a specified part from this timestamp expression in a given
+   * timezone.
+   *
+   * @param part The part to extract. Valid values are "microsecond", "millisecond", "second",
+   *     "minute", "hour", "dayofweek", "day", "dayofyear", "week", "week(monday)", "week(tuesday)",
+   *     "week(wednesday)", "week(thursday)", "week(friday)", "week(saturday)", "week(sunday)",
+   *     "isoweek", "month", "quarter", "year", and "isoyear".
+   * @param timezone The timezone expression to use for extraction. Valid values are from the TZ
+   *     database (e.g., "America/Los_Angeles") or in the format "Etc/GMT-1". Defaults to "UTC" if
+   *     not specified.
+   * @return A new {@link Expression} representing the extracted part.
+   */
+  @BetaApi
+  public final Expression timestampExtractWithTimezone(Expression part, Expression timezone) {
+    return timestampExtractWithTimezone(this, part, timezone);
+  }
+
+  /**
+   * Creates an expression that extracts a specified part from this timestamp expression in a given
+   * timezone.
+   *
+   * @param part The part to extract. Valid values are "microsecond", "millisecond", "second",
+   *     "minute", "hour", "dayofweek", "day", "dayofyear", "week", "week(monday)", "week(tuesday)",
+   *     "week(wednesday)", "week(thursday)", "week(friday)", "week(saturday)", "week(sunday)",
+   *     "isoweek", "month", "quarter", "year", and "isoyear".
+   * @param timezone The timezone expression to use for extraction. Valid values are from the TZ
+   *     database (e.g., "America/Los_Angeles") or in the format "Etc/GMT-1". Defaults to "UTC" if
+   *     not specified.
+   * @return A new {@link Expression} representing the extracted part.
+   */
+  @BetaApi
+  public final Expression timestampExtractWithTimezone(String part, Expression timezone) {
+    return timestampExtractWithTimezone(this, part, timezone);
   }
 
   /**

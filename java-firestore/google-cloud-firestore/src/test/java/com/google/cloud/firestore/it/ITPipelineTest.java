@@ -84,9 +84,14 @@ import static com.google.cloud.firestore.pipeline.expressions.Expression.substri
 import static com.google.cloud.firestore.pipeline.expressions.Expression.subtract;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.switchOn;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.timestampAdd;
+import static com.google.cloud.firestore.pipeline.expressions.Expression.timestampDiff;
+import static com.google.cloud.firestore.pipeline.expressions.Expression.timestampExtract;
+import static com.google.cloud.firestore.pipeline.expressions.Expression.timestampExtractWithTimezone;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.timestampToUnixMicros;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.timestampToUnixMillis;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.timestampToUnixSeconds;
+import static com.google.cloud.firestore.pipeline.expressions.Expression.timestampTruncate;
+import static com.google.cloud.firestore.pipeline.expressions.Expression.timestampTruncateWithTimezone;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.trunc;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.truncToPrecision;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.unixMicrosToTimestamp;
@@ -2648,28 +2653,27 @@ public class ITPipelineTest extends ITBaseTest {
             .collection(collection.getPath())
             .where(equal("title", "Timestamp Book"))
             .select(
-                Expression.timestampTruncate(field("timestamp"), "year").as("trunc_year"),
-                Expression.timestampTruncate(field("timestamp"), "month").as("trunc_month"),
-                Expression.timestampTruncate(field("timestamp"), "day").as("trunc_day"),
-                Expression.timestampTruncate(field("timestamp"), "hour").as("trunc_hour"),
-                Expression.timestampTruncate(field("timestamp"), "minute").as("trunc_minute"),
-                Expression.timestampTruncate(field("timestamp"), "second").as("trunc_second"))
+                timestampTruncate(field("timestamp"), "year").as("standalone_str"),
+                field("timestamp").timestampTruncate("month").as("fluid_str"),
+                timestampTruncate(field("timestamp"), constant("day")).as("standalone_expr"),
+                field("timestamp").timestampTruncate(constant("hour")).as("fluid_expr"))
             .execute()
             .get()
             .getResults();
+
     assertThat(results).hasSize(1);
     Map<String, Object> data = results.get(0).getData();
     Date originalDate = (Date) bookDocs.get("book11").get("timestamp");
     java.util.Calendar cal = java.util.Calendar.getInstance(java.util.TimeZone.getTimeZone("UTC"));
-    cal.setTime(originalDate);
 
+    cal.setTime(originalDate);
     cal.set(java.util.Calendar.MONTH, java.util.Calendar.JANUARY);
     cal.set(java.util.Calendar.DAY_OF_MONTH, 1);
     cal.set(java.util.Calendar.HOUR_OF_DAY, 0);
     cal.set(java.util.Calendar.MINUTE, 0);
     cal.set(java.util.Calendar.SECOND, 0);
     cal.set(java.util.Calendar.MILLISECOND, 0);
-    assertThat(data.get("trunc_year")).isEqualTo(Timestamp.of(cal.getTime()));
+    assertThat(data.get("standalone_str")).isEqualTo(Timestamp.of(cal.getTime()));
 
     cal.setTime(originalDate);
     cal.set(java.util.Calendar.DAY_OF_MONTH, 1);
@@ -2677,29 +2681,164 @@ public class ITPipelineTest extends ITBaseTest {
     cal.set(java.util.Calendar.MINUTE, 0);
     cal.set(java.util.Calendar.SECOND, 0);
     cal.set(java.util.Calendar.MILLISECOND, 0);
-    assertThat(data.get("trunc_month")).isEqualTo(Timestamp.of(cal.getTime()));
+    assertThat(data.get("fluid_str")).isEqualTo(Timestamp.of(cal.getTime()));
 
     cal.setTime(originalDate);
     cal.set(java.util.Calendar.HOUR_OF_DAY, 0);
     cal.set(java.util.Calendar.MINUTE, 0);
     cal.set(java.util.Calendar.SECOND, 0);
     cal.set(java.util.Calendar.MILLISECOND, 0);
-    assertThat(data.get("trunc_day")).isEqualTo(Timestamp.of(cal.getTime()));
+    assertThat(data.get("standalone_expr")).isEqualTo(Timestamp.of(cal.getTime()));
 
     cal.setTime(originalDate);
     cal.set(java.util.Calendar.MINUTE, 0);
     cal.set(java.util.Calendar.SECOND, 0);
     cal.set(java.util.Calendar.MILLISECOND, 0);
-    assertThat(data.get("trunc_hour")).isEqualTo(Timestamp.of(cal.getTime()));
+    assertThat(data.get("fluid_expr")).isEqualTo(Timestamp.of(cal.getTime()));
+  }
+
+  @Test
+  public void testTimestampTruncWithTimezone() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(collection.getPath())
+            .where(equal("title", "Timestamp Book"))
+            .select(
+                timestampTruncateWithTimezone(field("timestamp"), "year", "America/Los_Angeles")
+                    .as("st_str_str"),
+                field("timestamp")
+                    .timestampTruncateWithTimezone("month", "America/Los_Angeles")
+                    .as("fl_str_str"),
+                timestampTruncateWithTimezone(
+                        field("timestamp"), constant("day"), constant("America/Los_Angeles"))
+                    .as("st_expr_expr"),
+                field("timestamp")
+                    .timestampTruncateWithTimezone(
+                        constant("hour"), constant("America/Los_Angeles"))
+                    .as("fl_expr_expr"))
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(results).hasSize(1);
+    Map<String, Object> data = results.get(0).getData();
+    Date originalDate = (Date) bookDocs.get("book11").get("timestamp");
+    java.util.Calendar cal =
+        java.util.Calendar.getInstance(java.util.TimeZone.getTimeZone("America/Los_Angeles"));
 
     cal.setTime(originalDate);
+    cal.set(java.util.Calendar.MONTH, java.util.Calendar.JANUARY);
+    cal.set(java.util.Calendar.DAY_OF_MONTH, 1);
+    cal.set(java.util.Calendar.HOUR_OF_DAY, 0);
+    cal.set(java.util.Calendar.MINUTE, 0);
     cal.set(java.util.Calendar.SECOND, 0);
     cal.set(java.util.Calendar.MILLISECOND, 0);
-    assertThat(data.get("trunc_minute")).isEqualTo(Timestamp.of(cal.getTime()));
+    assertThat(data.get("st_str_str")).isEqualTo(Timestamp.of(cal.getTime()));
 
     cal.setTime(originalDate);
+    cal.set(java.util.Calendar.DAY_OF_MONTH, 1);
+    cal.set(java.util.Calendar.HOUR_OF_DAY, 0);
+    cal.set(java.util.Calendar.MINUTE, 0);
+    cal.set(java.util.Calendar.SECOND, 0);
     cal.set(java.util.Calendar.MILLISECOND, 0);
-    assertThat(data.get("trunc_second")).isEqualTo(Timestamp.of(cal.getTime()));
+    assertThat(data.get("fl_str_str")).isEqualTo(Timestamp.of(cal.getTime()));
+  }
+
+  @Test
+  public void testTimestampDiff() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .limit(1)
+            .replaceWith(
+                Expression.map(
+                    ImmutableMap.of(
+                        "end", Timestamp.ofTimeSecondsAndNanos(1741437296, 123456789),
+                        "start", Timestamp.ofTimeSecondsAndNanos(1741428000, 0))))
+            .select(
+                timestampDiff("end", "start", "hour").as("diff_hour"),
+                field("end").timestampDiff(field("start"), "minute").as("diff_minute"),
+                timestampDiff(field("end"), "start", "second").as("diff_second"),
+                field("start").timestampDiff("end", "hour").as("diff_hour_neg"))
+            .execute()
+            .get()
+            .getResults();
+
+    Map<String, Object> data = data(results).get(0);
+    assertThat(data.get("diff_hour")).isEqualTo(2L);
+    assertThat(data.get("diff_minute")).isEqualTo(154L);
+    assertThat(data.get("diff_second")).isEqualTo(9296L);
+    assertThat(data.get("diff_hour_neg")).isEqualTo(-2L);
+  }
+
+  @Test
+  public void testTimestampExtract() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .limit(1)
+            .replaceWith(
+                Expression.map(
+                    ImmutableMap.of("ts", Timestamp.ofTimeSecondsAndNanos(1741437296, 123456789))))
+            .select(
+                timestampExtract("ts", "year").as("year"),
+                field("ts").timestampExtract("month").as("month"),
+                timestampExtract(field("ts"), constant("day")).as("day"),
+                field("ts").timestampExtract(constant("hour")).as("hour"),
+                timestampExtract("ts", constant("minute")).as("minute"),
+                field("ts").timestampExtract("second").as("second"),
+                timestampExtract(field("ts"), "millisecond").as("millis"),
+                field("ts").timestampExtract("microsecond").as("micros"),
+                timestampExtract(field("ts"), "dayofyear").as("day_of_year"))
+            .execute()
+            .get()
+            .getResults();
+
+    Map<String, Object> data = data(results).get(0);
+    assertThat(data.get("year")).isEqualTo(2025L);
+    assertThat(data.get("month")).isEqualTo(3L);
+    assertThat(data.get("day")).isEqualTo(8L);
+    assertThat(data.get("hour")).isEqualTo(12L);
+    assertThat(data.get("minute")).isEqualTo(34L);
+    assertThat(data.get("second")).isEqualTo(56L);
+    assertThat(data.get("millis")).isEqualTo(123L);
+    assertThat(data.get("micros")).isEqualTo(123456L);
+    assertThat(data.get("day_of_year")).isEqualTo(67L);
+  }
+
+  @Test
+  public void testTimestampExtractWithTimezone() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .limit(1)
+            .replaceWith(
+                Expression.map(
+                    ImmutableMap.of("ts", Timestamp.ofTimeSecondsAndNanos(1741437296, 123456789))))
+            .select(
+                timestampExtractWithTimezone("ts", "hour", "America/Los_Angeles").as("st_str_str"),
+                field("ts")
+                    .timestampExtractWithTimezone("hour", "America/Los_Angeles")
+                    .as("fl_str_str"),
+                timestampExtractWithTimezone(
+                        field("ts"), constant("hour"), constant("America/Los_Angeles"))
+                    .as("st_expr_expr"),
+                field("ts")
+                    .timestampExtractWithTimezone(constant("hour"), constant("America/Los_Angeles"))
+                    .as("fl_expr_expr"))
+            .execute()
+            .get()
+            .getResults();
+
+    Map<String, Object> data = data(results).get(0);
+    assertThat(data.get("st_str_str")).isEqualTo(4L);
+    assertThat(data.get("fl_str_str")).isEqualTo(4L);
+    assertThat(data.get("st_expr_expr")).isEqualTo(4L);
+    assertThat(data.get("fl_expr_expr")).isEqualTo(4L);
   }
 
   @Test
