@@ -1652,7 +1652,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     try (Scope scope = span.makeCurrent()) {
       this.otelContext = Context.current();
       return operation.run(span);
-    } catch (Exception ex) {
+    } catch (SQLException | RuntimeException ex) {
       span.recordException(ex);
       span.setStatus(StatusCode.ERROR, ex.getMessage());
       throw ex;
