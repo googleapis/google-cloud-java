@@ -90,7 +90,7 @@ public class RegionOperationsClientTest {
             .setName("name3373707")
             .setOperationType("operationType91999553")
             .setProgress(-1001078227)
-            .setRegion("region-934795532")
+            .setRegion("region-9622")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
@@ -103,9 +103,9 @@ public class RegionOperationsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String operation = "operation1662702951";
+    String project = "project-6911";
+    String region = "region-9622";
+    String operation = "operation-3971";
 
     Operation actualResponse = client.get(project, region, operation);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -133,9 +133,9 @@ public class RegionOperationsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String operation = "operation1662702951";
+      String project = "project-6911";
+      String region = "region-9622";
+      String operation = "operation-3971";
       client.get(project, region, operation);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -160,7 +160,7 @@ public class RegionOperationsClientTest {
             .setName("name3373707")
             .setOperationType("operationType91999553")
             .setProgress(-1001078227)
-            .setRegion("region-934795532")
+            .setRegion("region-9622")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
@@ -173,9 +173,9 @@ public class RegionOperationsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
-    String region = "region-934795532";
-    String operation = "operation1662702951";
+    String project = "project-6911";
+    String region = "region-9622";
+    String operation = "operation-3971";
 
     Operation actualResponse = client.wait(project, region, operation);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -203,9 +203,9 @@ public class RegionOperationsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
-      String region = "region-934795532";
-      String operation = "operation1662702951";
+      String project = "project-6911";
+      String region = "region-9622";
+      String operation = "operation-3971";
       client.wait(project, region, operation);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
