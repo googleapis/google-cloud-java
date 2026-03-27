@@ -86,8 +86,6 @@ import java.util.logging.Level;
  * @see ResultSet
  */
 public class BigQueryStatement extends BigQueryNoOpsStatement {
-
-  // TODO (obada): Update this after benchmarking
   private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
   private static final String DEFAULT_DATASET_NAME = "_google_jdbc";
   private static final String DEFAULT_TABLE_NAME = "temp_table_";

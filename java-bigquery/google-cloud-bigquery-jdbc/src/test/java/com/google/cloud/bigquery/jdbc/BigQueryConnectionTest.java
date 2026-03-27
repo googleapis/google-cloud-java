@@ -30,6 +30,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.Properties;
+import java.util.concurrent.ThreadPoolExecutor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -373,9 +374,8 @@ public class BigQueryConnectionTest {
             + "OAuthClientSecret=redactedToken;";
     try (BigQueryConnection connectionDefault = new BigQueryConnection(urlDefault)) {
       assertEquals(
-          4,
-          ((java.util.concurrent.ThreadPoolExecutor) connectionDefault.getQueryTaskExecutor())
-              .getCorePoolSize(),
+          16,
+          ((ThreadPoolExecutor) connectionDefault.getQueryTaskExecutor()).getCorePoolSize(),
           "Should use the default value of 4 when the property is not provided");
     }
 
@@ -389,8 +389,7 @@ public class BigQueryConnectionTest {
     try (BigQueryConnection connectionCustom = new BigQueryConnection(urlCustom)) {
       assertEquals(
           16,
-          ((java.util.concurrent.ThreadPoolExecutor) connectionCustom.getQueryTaskExecutor())
-              .getCorePoolSize(),
+          ((ThreadPoolExecutor) connectionCustom.getQueryTaskExecutor()).getCorePoolSize(),
           "Should use the custom value when a valid integer is provided");
     }
   }
