@@ -77,9 +77,6 @@ class HttpJsonClientCalls {
     httpJsonContext.validateUniverseDomain();
 
     HttpJsonCallOptions callOptions = httpJsonContext.getCallOptions();
-    if (httpJsonContext.getTracer() != null) {
-      callOptions = callOptions.toBuilder().setTracer(httpJsonContext.getTracer()).build();
-    }
 
     // TODO: add headers interceptor logic
     return httpJsonContext.getChannel().newCall(methodDescriptor, callOptions);

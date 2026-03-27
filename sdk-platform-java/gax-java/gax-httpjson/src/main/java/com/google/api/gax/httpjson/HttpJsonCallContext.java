@@ -608,9 +608,10 @@ public final class HttpJsonCallContext implements ApiCallContext {
   public HttpJsonCallContext withTracer(@Nonnull ApiTracer newTracer) {
     Preconditions.checkNotNull(newTracer);
 
+    HttpJsonCallOptions newOptions = callOptions.toBuilder().setTracer(newTracer).build();
     return new HttpJsonCallContext(
         this.channel,
-        this.callOptions,
+        newOptions,
         this.timeout,
         this.streamWaitTimeout,
         this.streamIdleTimeout,
