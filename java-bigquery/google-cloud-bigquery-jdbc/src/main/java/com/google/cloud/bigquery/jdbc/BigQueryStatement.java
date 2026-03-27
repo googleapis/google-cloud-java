@@ -57,7 +57,6 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterators;
 import com.google.common.util.concurrent.Uninterruptibles;
-import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanBuilder;
 import io.opentelemetry.api.trace.StatusCode;
@@ -1663,11 +1662,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   private Tracer getSafeTracer() {
     if (connection != null) {
-      Tracer tracer = connection.getTracer();
-      if (tracer != null) {
-        return tracer;
-      }
+      return connection.getTracer();
     }
-    return GlobalOpenTelemetry.getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME);
+    return BigQueryJdbcOpenTelemetry.getOpenTelemetry(false, null)
+        .getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME);
   }
 }
