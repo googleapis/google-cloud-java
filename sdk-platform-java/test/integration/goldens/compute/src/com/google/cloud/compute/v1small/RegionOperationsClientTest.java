@@ -103,9 +103,9 @@ public class RegionOperationsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-6911";
-    String region = "region-9622";
-    String operation = "operation-3971";
+    String project = "project-309310695";
+    String region = "region-934795532";
+    String operation = "operation1662702951";
 
     Operation actualResponse = client.get(project, region, operation);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -133,9 +133,9 @@ public class RegionOperationsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-6911";
-      String region = "region-9622";
-      String operation = "operation-3971";
+      String project = "project-309310695";
+      String region = "region-934795532";
+      String operation = "operation1662702951";
       client.get(project, region, operation);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -173,9 +173,9 @@ public class RegionOperationsClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String project = "project-6911";
-    String region = "region-9622";
-    String operation = "operation-3971";
+    String project = "project-309310695";
+    String region = "region-934795532";
+    String operation = "operation1662702951";
 
     Operation actualResponse = client.wait(project, region, operation);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -203,9 +203,9 @@ public class RegionOperationsClientTest {
     mockService.addException(exception);
 
     try {
-      String project = "project-6911";
-      String region = "region-9622";
-      String operation = "operation-3971";
+      String project = "project-309310695";
+      String region = "region-934795532";
+      String operation = "operation1662702951";
       client.wait(project, region, operation);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
