@@ -29,11 +29,10 @@ import com.google.auth.oauth2.UserAuthorizer;
 import com.google.auth.oauth2.UserCredentials;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.security.PrivateKey;
 import java.util.Collections;
 import java.util.HashMap;
@@ -503,11 +502,12 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
   //   -keypass  notasecret -storetype pkcs12 -keystore ./fake.p12
   @Test
   public void testPrivateKeyFromP12Bytes() {
-    URL resource = BigQueryJdbcOAuthUtilityTest.class.getResource("/fake.p12");
+    InputStream stream = BigQueryJdbcOAuthUtilityTest.class.getResourceAsStream("/fake.p12");
     try {
-      PrivateKey pk =
-          BigQueryJdbcOAuthUtility.privateKeyFromP12Bytes(
-              Files.readAllBytes(Paths.get(resource.toURI())), "notasecret");
+      int size = 16 * 1024;
+      byte[] data = new byte[size];
+      stream.read(data, 0, data.length);
+      PrivateKey pk = BigQueryJdbcOAuthUtility.privateKeyFromP12Bytes(data, "notasecret");
       assertNotNull(pk);
     } catch (Exception e) {
       assertTrue(false);
@@ -516,11 +516,12 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
 
   @Test
   public void testPrivateKeyFromP12Bytes_wrong_password() {
-    URL resource = BigQueryJdbcOAuthUtilityTest.class.getResource("/fake.p12");
+    InputStream stream = BigQueryJdbcOAuthUtilityTest.class.getResourceAsStream("/fake.p12");
     try {
-      PrivateKey pk =
-          BigQueryJdbcOAuthUtility.privateKeyFromP12Bytes(
-              Files.readAllBytes(Paths.get(resource.toURI())), "fake");
+      int size = 16 * 1024;
+      byte[] data = new byte[size];
+      stream.read(data, 0, data.length);
+      PrivateKey pk = BigQueryJdbcOAuthUtility.privateKeyFromP12Bytes(data, "fake");
       assertNull(pk);
     } catch (Exception e) {
       assertTrue(false);
