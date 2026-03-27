@@ -124,7 +124,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   private int fetchSize;
   private String scriptQuery;
   private Map<String, String> extraLabels = new HashMap<>();
-  protected Context otelContext = null;
 
   private BigQueryReadClient bigQueryReadClient = null;
   private final BigQuery bigQuery;
@@ -1470,7 +1469,13 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           }
 
           try {
-            String combinedQueries = String.join("", this.batchQueries);
+            StringBuilder sb = new StringBuilder();
+            for (String query : this.batchQueries) {
+              sb.append(query);
+            }
+            String combinedQueries = sb.toString();
+            span.setAttribute("db.statement", combinedQueries);
+
             QueryJobConfiguration.Builder jobConfiguration = getJobConfig(combinedQueries);
             jobConfiguration.setPriority(QueryJobConfiguration.Priority.BATCH);
             runQuery(combinedQueries, jobConfiguration.build());
@@ -1646,7 +1651,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     Tracer tracer = getSafeTracer();
     Span span = tracer.spanBuilder(spanName).startSpan();
     try (Scope scope = span.makeCurrent()) {
-      this.otelContext = Context.current();
       return operation.run(span);
     } catch (SQLException | RuntimeException ex) {
       span.recordException(ex);
@@ -1657,10 +1661,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     }
   }
 
-  /**
-   * Gets the OpenTelemetry Context from the statement execution. Used by ResultSet for pagination
-   * span context.
-   */
   private Tracer getSafeTracer() {
     if (connection != null) {
       Tracer tracer = connection.getTracer();
@@ -1669,9 +1669,5 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       }
     }
     return GlobalOpenTelemetry.getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME);
-  }
-
-  public Context getOtelContext() {
-    return this.otelContext;
   }
 }

@@ -142,7 +142,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   String partnerToken;
   boolean enableDefaultTelemetryExporter;
   OpenTelemetry customOpenTelemetry;
-  Tracer tracer = OpenTelemetry.noop().getTracer("");
+  Tracer tracer =
+      OpenTelemetry.noop().getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME);
 
   BigQueryConnection(String url) throws IOException {
     this(url, DataSource.fromUrl(url));
