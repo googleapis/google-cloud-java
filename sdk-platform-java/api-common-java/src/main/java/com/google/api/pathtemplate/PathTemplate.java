@@ -414,7 +414,7 @@ public class PathTemplate {
     }
 
     List<Segment> canonicalSegments = segments.subList(startIndex, lastValidEndBindingIndex + 1);
-    return toSyntax(canonicalSegments, true);
+    return toSyntax(canonicalSegments, true).replace("=*}", "}");
   }
 
   /**
@@ -1118,9 +1118,6 @@ public class PathTemplate {
   }
 
   private static boolean isSegmentBeginOrEndInvalid(String seg) {
-    if (seg.isEmpty()) {
-      return false;
-    }
     // A segment is invalid if it contains only one character and the character is a delimiter
     if (seg.length() == 1 && COMPLEX_DELIMITER_PATTERN.matcher(seg).find()) {
       return true;
@@ -1243,7 +1240,7 @@ public class PathTemplate {
   // the list iterator in its state.
   private static boolean peek(ListIterator<Segment> segments, SegmentKind... kinds) {
     int start = segments.nextIndex();
-    boolean success = true;
+    boolean success = false;
     for (SegmentKind kind : kinds) {
       if (!segments.hasNext() || segments.next().kind() != kind) {
         success = false;
