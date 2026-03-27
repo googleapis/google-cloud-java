@@ -298,7 +298,8 @@ public class PathTemplate {
 
   /**
    * Returns the set of resource literals. A resource literal is a literal followed by a binding.
-   * For example, projects/{project} is a literal/binding pair and projects is a resource literal.
+   * For example, projects/&#123;project&#125; is a literal/binding pair and projects is a resource
+   * literal.
    */
   public Set<String> getResourceLiterals() {
     Set<String> canonicalSegments = new java.util.LinkedHashSet<>();
@@ -311,7 +312,7 @@ public class PathTemplate {
         inBinding = false;
       } else if (seg.kind() == SegmentKind.LITERAL) {
         String value = seg.value();
-        if (value.matches("^v\\d+.*") || value.matches("^u\\d+.*")) { // just in case
+        if (value.matches("^v\\d+[a-zA-Z0-9]*$")) { // just in case
           continue;
         }
         if (inBinding) {
@@ -325,16 +326,18 @@ public class PathTemplate {
   }
 
   /**
-   * Returns the canonical resource name string. A canonical resource name is extracted from the template by finding the version literal, 
-   * then finding the last binding that is a literal/binding pair or named binding, 
-   * and then extracting the segments between the version literal and the last binding.
-   * For examplem, projects/{project} is a literal/binding pair. {bar=projects/*/locations/*/bars/*} is a named binding.
+   * Returns the canonical resource name string. A canonical resource name is extracted from the
+   * template by finding the version literal, then finding the last binding that is a
+   * literal/binding pair or named binding, and then extracting the segments between the version
+   * literal and the last binding.
    */
+  // For example, projects/{project} is a literal/binding pair. {bar=projects/*/locations/*/bars/*}
+  // is a named binding.
   public String getCanonicalResourceName(Set<String> knownResources) {
     if (knownResources == null) {
       return "";
     }
-    
+
     int firstBindingIndex = -1;
     for (int i = 0; i < segments.size(); i++) {
       if (segments.get(i).kind() == SegmentKind.BINDING) {
@@ -352,7 +355,7 @@ public class PathTemplate {
       Segment seg = segments.get(i);
       if (seg.kind() == SegmentKind.LITERAL) {
         String value = seg.value();
-        if (value.matches("^v\\d+.*") || value.matches("^u\\d+.*")) {
+        if (value.matches("^v\\d+[a-zA-Z0-9]*$")) {
           startIndex = i + 1;
           break;
         }
@@ -373,7 +376,7 @@ public class PathTemplate {
       } else if (seg.kind() == SegmentKind.END_BINDING) {
         inBinding = false;
         boolean isValidPair = false;
-        
+
         if (literalCountInBinding > 1) {
           // Named bindings are unconditionally considered pairs
           isValidPair = true;
@@ -395,14 +398,14 @@ public class PathTemplate {
             }
           }
         }
-        
+
         if (isValidPair) {
           lastValidEndBindingIndex = i;
         }
       } else if (seg.kind() == SegmentKind.LITERAL) {
         if (inBinding) {
           String value = seg.value();
-          if (!value.matches("^v\\d+.*") && !value.matches("^u\\d+.*")) {
+          if (!value.matches("^v\\d+[a-zA-Z0-9]*$")) {
             literalCountInBinding++;
           }
         }

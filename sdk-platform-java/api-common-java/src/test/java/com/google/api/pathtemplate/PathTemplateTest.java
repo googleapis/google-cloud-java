@@ -961,6 +961,16 @@ class PathTemplateTest {
   }
 
   @Test
+  void testGetCanonicalResourceName_v1beta1WithSimplePath() {
+    Set<String> knownResources = ImmutableSet.of("projects", "locations", "instances", "widgets");
+    PathTemplate template =
+        PathTemplate.create(
+            "/compute/v1beta1/projects/{project}/locations/{location}/widgets/{widget}");
+    Truth.assertThat(template.getCanonicalResourceName(knownResources))
+        .isEqualTo("projects/{project}/locations/{location}/widgets/{widget}");
+  }
+
+  @Test
   void testGetCanonicalResourceName_regexVariables() {
     Set<String> knownResources = ImmutableSet.of("projects", "locations", "instances", "widgets");
     PathTemplate template =
