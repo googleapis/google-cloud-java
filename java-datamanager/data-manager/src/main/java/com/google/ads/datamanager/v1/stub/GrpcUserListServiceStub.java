@@ -163,6 +163,7 @@ public class GrpcUserListServiceStub extends UserListServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListUserListsRequest, ListUserListsResponse> listUserListsTransportSettings =
         GrpcCallSettings.<ListUserListsRequest, ListUserListsResponse>newBuilder()
@@ -173,6 +174,7 @@ public class GrpcUserListServiceStub extends UserListServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateUserListRequest, UserList> createUserListTransportSettings =
         GrpcCallSettings.<CreateUserListRequest, UserList>newBuilder()
@@ -183,6 +185,7 @@ public class GrpcUserListServiceStub extends UserListServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateUserListRequest, UserList> updateUserListTransportSettings =
         GrpcCallSettings.<UpdateUserListRequest, UserList>newBuilder()
@@ -203,6 +206,7 @@ public class GrpcUserListServiceStub extends UserListServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getUserListCallable =

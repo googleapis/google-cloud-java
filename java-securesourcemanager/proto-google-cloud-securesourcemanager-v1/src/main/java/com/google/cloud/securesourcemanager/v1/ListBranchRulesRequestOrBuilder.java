@@ -45,6 +45,13 @@ public interface ListBranchRulesRequestOrBuilder
   com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * Optional. Requested page size. If unspecified, a default size of 30 will be
+   * used. The maximum value is 100; values above 100 will be coerced to 100.
+   * </pre>
+   *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
@@ -52,6 +59,12 @@ public interface ListBranchRulesRequestOrBuilder
   int getPageSize();
 
   /**
+   *
+   *
+   * <pre>
+   * Optional. A token identifying a page of results the server should return.
+   * </pre>
+   *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
@@ -59,6 +72,12 @@ public interface ListBranchRulesRequestOrBuilder
   java.lang.String getPageToken();
 
   /**
+   *
+   *
+   * <pre>
+   * Optional. A token identifying a page of results the server should return.
+   * </pre>
+   *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.

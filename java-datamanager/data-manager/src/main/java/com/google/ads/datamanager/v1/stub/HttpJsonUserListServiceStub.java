@@ -304,6 +304,7 @@ public class HttpJsonUserListServiceStub extends UserListServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListUserListsRequest, ListUserListsResponse>
         listUserListsTransportSettings =
@@ -316,6 +317,7 @@ public class HttpJsonUserListServiceStub extends UserListServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateUserListRequest, UserList> createUserListTransportSettings =
         HttpJsonCallSettings.<CreateUserListRequest, UserList>newBuilder()
@@ -327,6 +329,7 @@ public class HttpJsonUserListServiceStub extends UserListServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateUserListRequest, UserList> updateUserListTransportSettings =
         HttpJsonCallSettings.<UpdateUserListRequest, UserList>newBuilder()
@@ -349,6 +352,7 @@ public class HttpJsonUserListServiceStub extends UserListServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getUserListCallable =
