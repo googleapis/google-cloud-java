@@ -58,12 +58,11 @@ public final class TelemetryUtils {
   }
 
   /**
-   * Method to record operation level metrics for HttpJson transport. This method should be called
-   * after the entire operation across all retry attempts has completed.
+   * Records operation-level metrics. This method should be called after the entire operation across
+   * all retry attempts has completed.
    *
    * @param metricsRecorder The metrics recorder.
    * @param datastoreOptions The DatastoreOptions object.
-   * @param isHttpTransport Whether the current transport is HTTP.
    * @param operationStopwatch The stopwatch tracking the duration of the entire operation.
    * @param methodName The name of the API method.
    * @param status The final status of the operation after all retries.
@@ -71,16 +70,9 @@ public final class TelemetryUtils {
   public static void recordOperationMetrics(
       MetricsRecorder metricsRecorder,
       DatastoreOptions datastoreOptions,
-      boolean isHttpTransport,
       Stopwatch operationStopwatch,
       String methodName,
       String status) {
-    // Operation metrics are only recorded for HttpJson transport as Gax already records
-    // operation metrics for gRPC transport. This prevents metrics from being recorded twice
-    // for gRPC transport.
-    if (!isHttpTransport) {
-      return;
-    }
     if (methodName != null) {
       Map<String, String> attributes = buildMetricAttributes(datastoreOptions, methodName, status);
       metricsRecorder.recordOperationLatency(
@@ -90,14 +82,12 @@ public final class TelemetryUtils {
   }
 
   /**
-   * Wraps a callable with logic to record attempt-level metrics for HttpJson transport. Attempt
-   * metrics are recorded for each individual execution of the callable, regardless of whether it
-   * succeeds or fails.
+   * Wraps a callable with logic to record attempt-level metrics. Attempt metrics are recorded for
+   * each individual execution of the callable, regardless of whether it succeeds or fails.
    *
    * @param callable The original callable to execute.
    * @param metricsRecorder The metrics recorder.
    * @param datastoreOptions The DatastoreOptions object.
-   * @param isHttpTransport Whether the current transport is HTTP.
    * @param methodName The name of the API method.
    * @param <T> The return type of the callable.
    * @return A wrapped callable that includes attempt-level metrics recording.
@@ -106,13 +96,7 @@ public final class TelemetryUtils {
       Callable<T> callable,
       MetricsRecorder metricsRecorder,
       DatastoreOptions datastoreOptions,
-      boolean isHttpTransport,
       String methodName) {
-    // Attempt metrics are already recorded by Gax for gRPC transport. This
-    // prevents the metrics from being recorded twice for gRPC transport.
-    if (!isHttpTransport) {
-      return callable;
-    }
     return () -> {
       Stopwatch stopwatch = Stopwatch.createStarted();
       String status = StatusCode.Code.UNKNOWN.toString();

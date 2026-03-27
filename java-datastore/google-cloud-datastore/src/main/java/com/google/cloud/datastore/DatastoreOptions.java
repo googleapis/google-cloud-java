@@ -223,7 +223,7 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
             ? builder.openTelemetryOptions
             : DatastoreOpenTelemetryOptions.newBuilder().build();
     this.traceUtil = com.google.cloud.datastore.telemetry.TraceUtil.getInstance(this);
-    this.metricsRecorder = MetricsRecorder.getInstance(openTelemetryOptions);
+    this.metricsRecorder = MetricsRecorder.getInstance(this);
 
     namespace = MoreObjects.firstNonNull(builder.namespace, defaultNamespace());
     databaseId = MoreObjects.firstNonNull(builder.databaseId, DEFAULT_DATABASE_ID);

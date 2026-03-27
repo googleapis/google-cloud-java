@@ -38,48 +38,63 @@ class OpenTelemetryMetricsRecorder implements MetricsRecorder {
   private final DoubleHistogram operationLatency;
   private final LongCounter operationCount;
 
+  /**
+   * Creates a new recorder using the default metric prefix ({@link
+   * TelemetryConstants#SERVICE_NAME}).
+   */
   OpenTelemetryMetricsRecorder(@Nonnull OpenTelemetry openTelemetry) {
+    this(openTelemetry, TelemetryConstants.SERVICE_NAME);
+  }
+
+  /**
+   * Creates a new recorder with a configurable metric prefix.
+   *
+   * @param openTelemetry the OpenTelemetry instance to record metrics to
+   * @param metricPrefix the prefix for metric names (e.g. "custom.googleapis.com" or
+   *     "datastore.googleapis.com/internal/client")
+   */
+  OpenTelemetryMetricsRecorder(@Nonnull OpenTelemetry openTelemetry, String metricPrefix) {
     this.openTelemetry = openTelemetry;
 
     Meter meter = openTelemetry.getMeter(TelemetryConstants.METER_NAME);
 
     this.transactionLatency =
         meter
-            .histogramBuilder(TelemetryConstants.METRIC_NAME_TRANSACTION_LATENCY)
+            .histogramBuilder(metricPrefix + "/client/transaction_latency")
             .setDescription("Total latency of transaction operations")
             .setUnit("ms")
             .build();
 
     this.transactionAttemptCount =
         meter
-            .counterBuilder(TelemetryConstants.METRIC_NAME_TRANSACTION_ATTEMPT_COUNT)
+            .counterBuilder(metricPrefix + "/client/transaction_attempt_count")
             .setDescription("Number of attempts to commit a transaction")
             .build();
 
     this.attemptLatency =
         meter
-            .histogramBuilder(TelemetryConstants.METRIC_NAME_ATTEMPT_LATENCY)
+            .histogramBuilder(metricPrefix + "/attempt_latency")
             .setDescription("Latency of a single RPC attempt")
             .setUnit("ms")
             .build();
 
     this.attemptCount =
         meter
-            .counterBuilder(TelemetryConstants.METRIC_NAME_ATTEMPT_COUNT)
+            .counterBuilder(metricPrefix + "/attempt_count")
             .setDescription("Number of RPC attempts")
             .setUnit("1")
             .build();
 
     this.operationLatency =
         meter
-            .histogramBuilder(TelemetryConstants.METRIC_NAME_OPERATION_LATENCY)
+            .histogramBuilder(metricPrefix + "/operation_latency")
             .setDescription("Total latency of an operation including retries")
             .setUnit("ms")
             .build();
 
     this.operationCount =
         meter
-            .counterBuilder(TelemetryConstants.METRIC_NAME_OPERATION_COUNT)
+            .counterBuilder(metricPrefix + "/operation_count")
             .setDescription("Number of operations")
             .setUnit("1")
             .build();

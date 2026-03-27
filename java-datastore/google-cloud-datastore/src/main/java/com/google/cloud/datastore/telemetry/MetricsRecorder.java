@@ -18,9 +18,14 @@ package com.google.cloud.datastore.telemetry;
 
 import com.google.api.core.InternalExtensionOnly;
 import com.google.cloud.datastore.DatastoreOpenTelemetryOptions;
+import com.google.cloud.datastore.DatastoreOptions;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.annotation.Nonnull;
 
 /**
@@ -32,6 +37,9 @@ import javax.annotation.Nonnull;
  */
 @InternalExtensionOnly
 public interface MetricsRecorder {
+
+  Logger logger = Logger.getLogger(MetricsRecorder.class.getName());
+
   /** Records the total latency of a transaction in milliseconds. */
   void recordTransactionLatency(double latencyMs, Map<String, String> attributes);
 
@@ -51,24 +59,69 @@ public interface MetricsRecorder {
   void recordOperationCount(long count, Map<String, String> attributes);
 
   /**
-   * Returns a {@link MetricsRecorder} instance based on the provided OpenTelemetry options.
+   * Returns a {@link MetricsRecorder} instance based on the provided {@link DatastoreOptions}.
    *
-   * @param options The {@link com.google.cloud.datastore.DatastoreOpenTelemetryOptions} configuring
-   *     telemetry.
-   * @return An {@link OpenTelemetryMetricsRecorder} if metrics are enabled, otherwise a {@link
-   *     NoOpMetricsRecorder}.
+   * <p>This factory method creates a {@link CompositeMetricsRecorder} that delegates to multiple
+   * backends:
+   *
+   * <ul>
+   *   <li><b>Default provider</b>: Always exports metrics to Google Cloud Monitoring via a
+   *       privately-constructed {@link OpenTelemetrySdk} with a {@link
+   *       DatastoreCloudMonitoringExporter}, unless explicitly disabled via {@link
+   *       DatastoreOpenTelemetryOptions#isExportBuiltinMetricsToGoogleCloudMonitoring()}.
+   *   <li><b>Custom provider</b>: If the user has enabled metrics and provided an {@link
+   *       OpenTelemetry} instance (or {@link GlobalOpenTelemetry} is used as fallback), metrics are
+   *       also recorded to that backend.
+   * </ul>
+   *
+   * @param datastoreOptions the {@link DatastoreOptions} configuring the Datastore client
+   * @return a {@link MetricsRecorder} that fans out to all configured backends
    */
-  static MetricsRecorder getInstance(@Nonnull DatastoreOpenTelemetryOptions options) {
-    boolean isMetricsEnabled = options.isMetricsEnabled();
+  static MetricsRecorder getInstance(@Nonnull DatastoreOptions datastoreOptions) {
+    DatastoreOpenTelemetryOptions otelOptions = datastoreOptions.getOpenTelemetryOptions();
+    List<MetricsRecorder> recorders = new ArrayList<>();
 
-    if (isMetricsEnabled) {
-      OpenTelemetry openTelemetry = options.getOpenTelemetry();
-      if (openTelemetry == null) {
-        return new OpenTelemetryMetricsRecorder(GlobalOpenTelemetry.get());
+    // Default provider: export built-in metrics to Cloud Monitoring
+    String emulatorHost = System.getenv(DatastoreOptions.LOCAL_HOST_ENV_VAR);
+    boolean emulatorEnabled = emulatorHost != null && !emulatorHost.isEmpty();
+    String metricsEnvVar = System.getenv(TelemetryConstants.ENABLE_METRICS_ENV_VAR);
+    boolean metricsDisabledViaEnv = "false".equalsIgnoreCase(metricsEnvVar);
+
+    if (otelOptions.isExportBuiltinMetricsToGoogleCloudMonitoring()
+        && !emulatorEnabled
+        && !metricsDisabledViaEnv) {
+      try {
+        OpenTelemetry builtInOtel =
+            BuiltInMetricsProvider.INSTANCE.getOrCreateOpenTelemetry(
+                datastoreOptions.getProjectId(), datastoreOptions.getCredentials());
+        if (builtInOtel != null) {
+          recorders.add(
+              new OpenTelemetryMetricsRecorder(builtInOtel, TelemetryConstants.METRIC_PREFIX));
+        }
+      } catch (Exception e) {
+        logger.log(
+            Level.WARNING,
+            "Failed to create built-in metrics provider for Cloud Monitoring export.",
+            e);
       }
-      return new OpenTelemetryMetricsRecorder(openTelemetry);
-    } else {
+    }
+
+    // Custom provider: export metrics to user-provided OpenTelemetry backend
+    if (otelOptions.isMetricsEnabled()) {
+      OpenTelemetry customOtel = otelOptions.getOpenTelemetry();
+      if (customOtel == null) {
+        customOtel = GlobalOpenTelemetry.get();
+      }
+      recorders.add(new OpenTelemetryMetricsRecorder(customOtel));
+    }
+
+    if (recorders.isEmpty()) {
       return new NoOpMetricsRecorder();
     }
+    if (recorders.size() == 1) {
+      return recorders.get(0);
+    }
+    return new CompositeMetricsRecorder(recorders);
   }
+
 }

@@ -17,8 +17,12 @@
 package com.google.cloud.datastore.telemetry;
 
 import com.google.api.core.InternalApi;
+import com.google.api.gax.tracing.OpenTelemetryMetricsRecorder;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.common.collect.ImmutableSet;
+import io.opentelemetry.api.common.AttributeKey;
+import java.util.Set;
 
 /**
  * Internal telemetry constants shared between OpenTelemetry tracing and metrics.
@@ -35,6 +39,72 @@ public class TelemetryConstants {
   public static final String SERVICE_NAME = "custom.googleapis.com";
   static final String METER_NAME = "com.google.cloud.datastore";
 
+  // Built-in metrics constants for Cloud Monitoring export
+  public static final String METRIC_PREFIX = "datastore.googleapis.com/internal/client";
+  public static final String GAX_METER_NAME = OpenTelemetryMetricsRecorder.GAX_METER_NAME;
+  public static final String DATASTORE_METER_NAME = METRIC_PREFIX;
+
+  // Monitored resource type for Cloud Monitoring
+  public static final String DATASTORE_RESOURCE_TYPE = "firestore.googleapis.com/Database";
+
+  // Resource label keys
+  public static final String RESOURCE_KEY_RESOURCE_CONTAINER = "resource_container";
+  public static final String RESOURCE_KEY_LOCATION = "location";
+  public static final String RESOURCE_KEY_DATABASE_ID = "database_id";
+  public static final Set<String> DATASTORE_RESOURCE_LABELS =
+      ImmutableSet.of(
+          RESOURCE_KEY_RESOURCE_CONTAINER, RESOURCE_KEY_LOCATION, RESOURCE_KEY_DATABASE_ID);
+
+  // Resource attribute keys (used on OTel Resource)
+  public static final AttributeKey<String> PROJECT_ID_KEY = AttributeKey.stringKey("project_id");
+  public static final AttributeKey<String> LOCATION_ID_KEY = AttributeKey.stringKey("location");
+
+  // Metric attribute keys (used on metric data points)
+  public static final AttributeKey<String> CLIENT_UID_KEY = AttributeKey.stringKey("client_uid");
+  public static final AttributeKey<String> CLIENT_NAME_KEY = AttributeKey.stringKey("client_name");
+  public static final AttributeKey<String> METHOD_KEY = AttributeKey.stringKey("method");
+  public static final AttributeKey<String> STATUS_KEY = AttributeKey.stringKey("status");
+  public static final AttributeKey<String> DATABASE_KEY = AttributeKey.stringKey("database_id");
+  public static final AttributeKey<String> LIBRARY_VERSION_KEY =
+      AttributeKey.stringKey("library_version");
+  public static final AttributeKey<String> TRANSPORT_KEY = AttributeKey.stringKey("transport");
+
+  // Set of all common metric attributes for view filtering
+  public static final Set<AttributeKey> COMMON_ATTRIBUTES =
+      ImmutableSet.of(
+          CLIENT_UID_KEY,
+          CLIENT_NAME_KEY,
+          METHOD_KEY,
+          STATUS_KEY,
+          DATABASE_KEY,
+          LIBRARY_VERSION_KEY,
+          TRANSPORT_KEY);
+
+  // Metric names (short names, without prefix)
+  public static final String METRIC_NAME_SHORT_OPERATION_LATENCY = "operation_latency";
+  public static final String METRIC_NAME_SHORT_ATTEMPT_LATENCY = "attempt_latency";
+  public static final String METRIC_NAME_SHORT_OPERATION_COUNT = "operation_count";
+  public static final String METRIC_NAME_SHORT_ATTEMPT_COUNT = "attempt_count";
+  public static final String METRIC_NAME_SHORT_TRANSACTION_LATENCY = "transaction_latency";
+  public static final String METRIC_NAME_SHORT_TRANSACTION_ATTEMPT_COUNT =
+      "transaction_attempt_count";
+
+  // Metrics collected at the GAX layer vs Datastore SDK layer
+  public static final Set<String> GAX_METRICS =
+      ImmutableSet.of(
+          METRIC_NAME_SHORT_OPERATION_LATENCY,
+          METRIC_NAME_SHORT_ATTEMPT_LATENCY,
+          METRIC_NAME_SHORT_OPERATION_COUNT,
+          METRIC_NAME_SHORT_ATTEMPT_COUNT);
+
+  public static final Set<String> DATASTORE_METRICS =
+      ImmutableSet.of(
+          METRIC_NAME_SHORT_TRANSACTION_LATENCY, METRIC_NAME_SHORT_TRANSACTION_ATTEMPT_COUNT);
+
+  // Environment variable to enable/disable built-in metrics
+  public static final String ENABLE_METRICS_ENV_VAR = "DATASTORE_ENABLE_METRICS";
+
+  // Existing attribute key constants (string-based, used by MetricsHelper/TelemetryUtils)
   public static final String ATTRIBUTES_KEY_DOCUMENT_COUNT = "doc_count";
   public static final String ATTRIBUTES_KEY_TRANSACTIONAL = "transactional";
   public static final String ATTRIBUTES_KEY_TRANSACTION_ID = "transaction_id";

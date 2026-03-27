@@ -53,7 +53,6 @@ import com.google.cloud.datastore.telemetry.TelemetryConstants;
 import com.google.cloud.datastore.telemetry.TelemetryUtils;
 import com.google.cloud.datastore.telemetry.TraceUtil;
 import com.google.cloud.datastore.telemetry.TraceUtil.Scope;
-import com.google.cloud.http.HttpTransportOptions;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Stopwatch;
@@ -102,15 +101,12 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   private final com.google.cloud.datastore.telemetry.TraceUtil otelTraceUtil =
       getOptions().getTraceUtil();
   private final MetricsRecorder metricsRecorder = getOptions().getMetricsRecorder();
-  private final boolean isHttpTransport;
-
   private final ReadOptionProtoPreparer readOptionProtoPreparer;
   private final AggregationQueryExecutor aggregationQueryExecutor;
 
   DatastoreImpl(DatastoreOptions options) {
     super(options);
     this.datastoreRpc = options.getDatastoreRpcV1();
-    this.isHttpTransport = options.getTransportOptions() instanceof HttpTransportOptions;
     retrySettings =
         MoreObjects.firstNonNull(options.getRetrySettings(), ServiceOptions.getNoRetrySettings());
 
@@ -805,15 +801,12 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       ResultRetryAlgorithm<?> exceptionHandler) {
     com.google.cloud.datastore.telemetry.TraceUtil.Span span = otelTraceUtil.startSpan(spanName);
 
-    // Gax already records operation and attempt metrics. Since Datastore HttpJson does not
-    // integrate with Gax, manually instrument these metrics when using HttpJson for parity
-    Stopwatch operationStopwatch = isHttpTransport ? Stopwatch.createStarted() : null;
+    Stopwatch operationStopwatch = Stopwatch.createStarted();
     String operationStatus = StatusCode.Code.OK.toString();
 
     DatastoreOptions options = getOptions();
     Callable<T> attemptCallable =
-        TelemetryUtils.attemptMetricsCallable(
-            callable, metricsRecorder, options, isHttpTransport, methodName);
+        TelemetryUtils.attemptMetricsCallable(callable, metricsRecorder, options, methodName);
     try (TraceUtil.Scope ignored = span.makeCurrent()) {
       return RetryHelper.runWithRetries(
           attemptCallable, retrySettings, exceptionHandler, options.getClock());
@@ -823,12 +816,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       throw DatastoreException.translateAndThrow(e);
     } finally {
       TelemetryUtils.recordOperationMetrics(
-          metricsRecorder,
-          options,
-          isHttpTransport,
-          operationStopwatch,
-          methodName,
-          operationStatus);
+          metricsRecorder, options, operationStopwatch, methodName, operationStatus);
       span.end();
     }
   }

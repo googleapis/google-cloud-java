@@ -17,7 +17,9 @@ package com.google.cloud.datastore.telemetry;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.cloud.NoCredentials;
 import com.google.cloud.datastore.DatastoreOpenTelemetryOptions;
+import com.google.cloud.datastore.DatastoreOptions;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
@@ -26,30 +28,47 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Tests for {@link MetricsRecorder#getInstance(DatastoreOpenTelemetryOptions)}. */
+/** Tests for {@link MetricsRecorder#getInstance(DatastoreOptions)}. */
 @RunWith(JUnit4.class)
 public class MetricsRecorderTest {
 
-  // TODO(lawrenceqiu): For now, the default behavior is no-op. Add a test for
-  // instance being OpenTelemetryMetricsRecorder later (visibility changes)
+  private static final String PROJECT_ID = "test-project";
+
+  private DatastoreOptions.Builder baseOptions() {
+    return DatastoreOptions.newBuilder()
+        .setProjectId(PROJECT_ID)
+        .setCredentials(NoCredentials.getInstance());
+  }
+
   @Test
-  public void defaultOptionsReturnNoOp() {
-    DatastoreOpenTelemetryOptions options = DatastoreOpenTelemetryOptions.newBuilder().build();
+  public void defaultOptionsWithBuiltInMetricsDisabled_returnsNoOp() {
+    // When both custom metrics and built-in metrics export are disabled, should return NoOp
+    DatastoreOptions options =
+        baseOptions()
+            .setOpenTelemetryOptions(
+                DatastoreOpenTelemetryOptions.newBuilder()
+                    .setExportBuiltinMetricsToGoogleCloudMonitoring(false)
+                    .build())
+            .build();
     MetricsRecorder recorder = MetricsRecorder.getInstance(options);
     assertThat(recorder).isInstanceOf(NoOpMetricsRecorder.class);
   }
 
   @Test
-  public void tracingEnabledButMetricsDisabledReturnsNoOp() {
+  public void tracingEnabledButMetricsDisabledAndBuiltInDisabled_returnsNoOp() {
     // Enabling tracing alone should not enable metrics
-    DatastoreOpenTelemetryOptions options =
-        DatastoreOpenTelemetryOptions.newBuilder().setTracingEnabled(true).build();
+    DatastoreOptions options =
+        baseOptions()
+            .setOpenTelemetryOptions(
+                DatastoreOpenTelemetryOptions.newBuilder()
+                    .setTracingEnabled(true)
+                    .setExportBuiltinMetricsToGoogleCloudMonitoring(false)
+                    .build())
+            .build();
     MetricsRecorder recorder = MetricsRecorder.getInstance(options);
     assertThat(recorder).isInstanceOf(NoOpMetricsRecorder.class);
   }
 
-  // TODO(lawrenceqiu): Temporary test to ensure that OpenTelemetryMetricsRecorder can
-  // be created by the DatastoreOpenTelemetryOptions and creates with Otel object
   @Test
   public void openTelemetryRecorderCreatedWithExplicitOpenTelemetry() {
     InMemoryMetricReader metricReader = InMemoryMetricReader.create();

@@ -29,7 +29,6 @@ import com.google.cloud.datastore.telemetry.NoOpMetricsRecorder;
 import com.google.cloud.datastore.telemetry.TelemetryConstants;
 import com.google.cloud.datastore.telemetry.TelemetryUtils;
 import com.google.cloud.datastore.telemetry.TraceUtil;
-import com.google.cloud.http.HttpTransportOptions;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Stopwatch;
 import com.google.datastore.v1.AllocateIdsRequest;
@@ -63,7 +62,6 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
   private final RetrySettings retrySettings;
   private final DatastoreOptions datastoreOptions;
   private final MetricsRecorder metricsRecorder;
-  private final boolean isHttpTransport;
 
   @ObsoleteApi("Prefer to create RetryAndTraceDatastoreRpcDecorator via the Builder")
   public RetryAndTraceDatastoreRpcDecorator(
@@ -76,7 +74,6 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
     this.datastoreOptions = datastoreOptions;
     this.otelTraceUtil = otelTraceUtil;
     this.metricsRecorder = new NoOpMetricsRecorder();
-    this.isHttpTransport = datastoreOptions.getTransportOptions() instanceof HttpTransportOptions;
   }
 
   private RetryAndTraceDatastoreRpcDecorator(Builder builder) {
@@ -85,7 +82,6 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
     this.retrySettings = builder.retrySettings;
     this.datastoreOptions = builder.datastoreOptions;
     this.metricsRecorder = builder.metricsRecorder;
-    this.isHttpTransport = builder.isHttpTransport;
   }
 
   public static Builder newBuilder() {
@@ -100,7 +96,6 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
 
     // Defaults configured for this class
     private MetricsRecorder metricsRecorder = new NoOpMetricsRecorder();
-    private boolean isHttpTransport = false;
 
     private Builder() {}
 
@@ -135,7 +130,6 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
       Preconditions.checkNotNull(otelTraceUtil, "otelTraceUtil is required");
       Preconditions.checkNotNull(retrySettings, "retrySettings is required");
       Preconditions.checkNotNull(datastoreOptions, "datastoreOptions is required");
-      this.isHttpTransport = datastoreOptions.getTransportOptions() instanceof HttpTransportOptions;
       return new RetryAndTraceDatastoreRpcDecorator(this);
     }
   }
@@ -207,12 +201,12 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
 
   <O> O invokeRpc(Callable<O> block, String startSpan, String methodName) {
     TraceUtil.Span span = otelTraceUtil.startSpan(startSpan);
-    Stopwatch stopwatch = isHttpTransport ? Stopwatch.createStarted() : null;
+    Stopwatch stopwatch = Stopwatch.createStarted();
     String operationStatus = StatusCode.Code.UNKNOWN.toString();
     try (TraceUtil.Scope ignored = span.makeCurrent()) {
       Callable<O> callable =
           TelemetryUtils.attemptMetricsCallable(
-              block, metricsRecorder, datastoreOptions, isHttpTransport, methodName);
+              block, metricsRecorder, datastoreOptions, methodName);
       O result =
           RetryHelper.runWithRetries(
               callable, this.retrySettings, EXCEPTION_HANDLER, this.datastoreOptions.getClock());
@@ -224,12 +218,7 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
       throw DatastoreException.translateAndThrow(e);
     } finally {
       TelemetryUtils.recordOperationMetrics(
-          metricsRecorder,
-          datastoreOptions,
-          isHttpTransport,
-          stopwatch,
-          methodName,
-          operationStatus);
+          metricsRecorder, datastoreOptions, stopwatch, methodName, operationStatus);
       span.end();
     }
   }
