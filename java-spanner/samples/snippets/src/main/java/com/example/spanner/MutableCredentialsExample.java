@@ -40,8 +40,8 @@ public class MutableCredentialsExample {
         final String credentialsPath = "location_of_service_account_credential_json";
         Path path = Paths.get(credentialsPath);
         // Use an AtomicReference to hold the mutable lastModifiedTime so it can be accessed in the lambda
-        final java.util.concurrent.atomic.AtomicReference<FileTime> lastModifiedTime =
-                new java.util.concurrent.atomic.AtomicReference<>(Files.getLastModifiedTime(path));
+        final AtomicReference<FileTime> lastModifiedTime =
+            new AtomicReference<>(Files.getLastModifiedTime(path));
 
         // 1 - create service account credentials
         ServiceAccountCredentials serviceAccountCredentials;
