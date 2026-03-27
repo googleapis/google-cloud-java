@@ -158,9 +158,7 @@ public final class KeyRecipeCache {
     long reqFp = fingerprint(reqBuilder.buildPartial());
 
     RoutingHint.Builder hintBuilder = reqBuilder.getRoutingHintBuilder();
-    if (!schemaGeneration.isEmpty()) {
-      hintBuilder.setSchemaGeneration(schemaGeneration);
-    }
+    applySchemaGeneration(hintBuilder);
 
     PreparedRead preparedRead = getIfPresent(preparedReads, reqFp);
     if (preparedRead == null) {
@@ -186,10 +184,7 @@ public final class KeyRecipeCache {
 
     try {
       TargetRange target = recipe.keySetToTargetRange(reqBuilder.getKeySet());
-      hintBuilder.setKey(target.start);
-      if (!target.limit.isEmpty()) {
-        hintBuilder.setLimitKey(target.limit);
-      }
+      applyTargetRange(hintBuilder, target);
     } catch (IllegalArgumentException e) {
       logger.fine("Failed key encoding: " + e.getMessage());
     }
@@ -199,9 +194,7 @@ public final class KeyRecipeCache {
     long reqFp = fingerprint(reqBuilder.buildPartial());
 
     RoutingHint.Builder hintBuilder = reqBuilder.getRoutingHintBuilder();
-    if (!schemaGeneration.isEmpty()) {
-      hintBuilder.setSchemaGeneration(schemaGeneration);
-    }
+    applySchemaGeneration(hintBuilder);
 
     PreparedQuery preparedQuery = getIfPresent(preparedQueries, reqFp);
     if (preparedQuery == null) {
@@ -221,12 +214,22 @@ public final class KeyRecipeCache {
 
     try {
       TargetRange target = recipe.queryParamsToTargetRange(reqBuilder.getParams());
-      hintBuilder.setKey(target.start);
-      if (!target.limit.isEmpty()) {
-        hintBuilder.setLimitKey(target.limit);
-      }
+      applyTargetRange(hintBuilder, target);
     } catch (IllegalArgumentException e) {
       logger.fine("Failed query param encoding: " + e.getMessage());
+    }
+  }
+
+  void applySchemaGeneration(RoutingHint.Builder hintBuilder) {
+    if (!schemaGeneration.isEmpty()) {
+      hintBuilder.setSchemaGeneration(schemaGeneration);
+    }
+  }
+
+  void applyTargetRange(RoutingHint.Builder hintBuilder, TargetRange target) {
+    hintBuilder.setKey(target.start);
+    if (!target.limit.isEmpty()) {
+      hintBuilder.setLimitKey(target.limit);
     }
   }
 

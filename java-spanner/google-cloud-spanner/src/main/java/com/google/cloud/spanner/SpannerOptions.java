@@ -2380,6 +2380,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     return createApiTracerFactory(false, false);
   }
 
+  /** Returns the internal OpenTelemetry instance used for built-in metrics. */
+  @InternalApi
+  public OpenTelemetry getBuiltInOpenTelemetry() {
+    return this.builtInMetricsProvider.getOrCreateOpenTelemetry(
+        this.getProjectId(), getCredentials(), this.monitoringHost, getUniverseDomain());
+  }
+
   public void enablegRPCMetrics(InstantiatingGrpcChannelProvider.Builder channelProviderBuilder) {
     if (SpannerOptions.environment.isEnableGRPCBuiltInMetrics()) {
       this.builtInMetricsProvider.enableGrpcMetrics(
