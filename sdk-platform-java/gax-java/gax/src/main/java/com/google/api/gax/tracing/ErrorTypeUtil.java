@@ -112,7 +112,7 @@ public class ErrorTypeUtil {
    *
    * @param error the Throwable from which to extract the error type string.
    * @return a low-cardinality string representing the specific error type, or {@code
-   *     ErrorType.INTERNAL.toString()} if the provided error is {@code null}.
+   *     ErrorType.INTERNAL.toString()} if the provided error is {@code null} or non-determined.
    */
   public static String extractErrorType(@Nullable Throwable error) {
     if (error == null) {
