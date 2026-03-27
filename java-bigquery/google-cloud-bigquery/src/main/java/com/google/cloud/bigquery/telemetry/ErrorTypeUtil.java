@@ -23,9 +23,9 @@ import com.google.api.core.BetaApi;
  * https://github.com/googleapis/google-cloud-java/issues/12105
  */
 @BetaApi
-class ErrorTypeUtil {
+public class ErrorTypeUtil {
 
-  enum ErrorType {
+  public enum ErrorType {
     CLIENT_TIMEOUT,
     CLIENT_CONNECTION_ERROR,
     CLIENT_REQUEST_ERROR,
