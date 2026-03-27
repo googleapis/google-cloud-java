@@ -1444,6 +1444,84 @@ class PipelineSnippets {
     System.out.println(result.getResults());
   }
 
+  void strLTrimFunction() throws ExecutionException, InterruptedException {
+    // [START ltrim_function]
+    Pipeline.Snapshot result =
+        firestore
+            .pipeline()
+            .collection("books")
+            .select(ltrim(field("name")).as("ltrimmedName"))
+            .execute()
+            .get();
+    // [END ltrim_function]
+    System.out.println(result.getResults());
+  }
+
+  void strRTrimFunction() throws ExecutionException, InterruptedException {
+    // [START rtrim_function]
+    Pipeline.Snapshot result =
+        firestore
+            .pipeline()
+            .collection("books")
+            .select(rtrim(field("name")).as("rtrimmedName"))
+            .execute()
+            .get();
+    // [END rtrim_function]
+    System.out.println(result.getResults());
+  }
+
+  void strRepeatFunction() throws ExecutionException, InterruptedException {
+    // [START string_repeat_function]
+    Pipeline.Snapshot result =
+        firestore
+            .pipeline()
+            .collection("books")
+            .select(stringRepeat(field("title"), 2).as("repeatedTitle"))
+            .execute()
+            .get();
+    // [END string_repeat_function]
+    System.out.println(result.getResults());
+  }
+
+  void strReplaceAllFunction() throws ExecutionException, InterruptedException {
+    // [START string_replace_all_function]
+    Pipeline.Snapshot result =
+        firestore
+            .pipeline()
+            .collection("books")
+            .select(stringReplaceAll(field("title"), "The", "A").as("replacedTitle"))
+            .execute()
+            .get();
+    // [END string_replace_all_function]
+    System.out.println(result.getResults());
+  }
+
+  void strReplaceOneFunction() throws ExecutionException, InterruptedException {
+    // [START string_replace_one_function]
+    Pipeline.Snapshot result =
+        firestore
+            .pipeline()
+            .collection("books")
+            .select(stringReplaceOne(field("title"), "The", "A").as("replacedTitle"))
+            .execute()
+            .get();
+    // [END string_replace_one_function]
+    System.out.println(result.getResults());
+  }
+
+  void strIndexOfFunction() throws ExecutionException, InterruptedException {
+    // [START string_index_of_function]
+    Pipeline.Snapshot result =
+        firestore
+            .pipeline()
+            .collection("books")
+            .select(stringIndexOf(field("title"), "The").as("indexOfThe"))
+            .execute()
+            .get();
+    // [END string_index_of_function]
+    System.out.println(result.getResults());
+  }
+
   void unixMicrosToTimestampFunction() throws ExecutionException, InterruptedException {
     // [START unix_micros_timestamp]
     Pipeline.Snapshot result =

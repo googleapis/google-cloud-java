@@ -1732,6 +1732,352 @@ public abstract class Expression {
   }
 
   /**
+   * Creates an expression that removes whitespace from the beginning of a string or blob.
+   *
+   * @param value The expression representing the string or blob to trim.
+   * @return A new {@link Expression} representing the trimmed string or blob.
+   */
+  @BetaApi
+  public static Expression ltrim(Expression value) {
+    return new FunctionExpression("ltrim", ImmutableList.of(value));
+  }
+
+  /**
+   * Creates an expression that removes whitespace from the beginning of a string or blob.
+   *
+   * @param fieldName The name of the field containing the string or blob to trim.
+   * @return A new {@link Expression} representing the trimmed string.
+   */
+  @BetaApi
+  public static Expression ltrim(String fieldName) {
+    return ltrim(field(fieldName));
+  }
+
+  /**
+   * Creates an expression that removes specified characters from the beginning of a string or blob.
+   *
+   * @param value The expression representing the string or blob to trim.
+   * @param characters The characters to remove.
+   * @return A new {@link Expression} representing the trimmed string or blob.
+   */
+  @BetaApi
+  public static Expression ltrimValue(Expression value, String characters) {
+    return new FunctionExpression("ltrim", ImmutableList.of(value, constant(characters)));
+  }
+
+  /**
+   * Creates an expression that removes specified characters from the beginning of a string or blob.
+   *
+   * @param fieldName The name of the field containing the string or blob to trim.
+   * @param characters The characters to remove.
+   * @return A new {@link Expression} representing the trimmed string or blob.
+   */
+  @BetaApi
+  public static Expression ltrimValue(String fieldName, String characters) {
+    return ltrimValue(field(fieldName), characters);
+  }
+
+  /**
+   * Creates an expression that removes specified characters from the beginning of a string or blob.
+   *
+   * @param value The expression representing the string or blob to trim.
+   * @param characters The expression representing the characters to remove.
+   * @return A new {@link Expression} representing the trimmed string or blob.
+   */
+  @BetaApi
+  public static Expression ltrimValue(Expression value, Expression characters) {
+    return new FunctionExpression("ltrim", ImmutableList.of(value, characters));
+  }
+
+  /**
+   * Creates an expression that removes specified characters from the beginning of a string or blob.
+   *
+   * @param fieldName The name of the field containing the string or blob to trim.
+   * @param characters The expression representing the characters to remove.
+   * @return A new {@link Expression} representing the trimmed string or blob.
+   */
+  @BetaApi
+  public static Expression ltrimValue(String fieldName, Expression characters) {
+    return ltrimValue(field(fieldName), characters);
+  }
+
+  /**
+   * Creates an expression that removes whitespace from the end of a string or blob.
+   *
+   * @param value The expression representing the string or blob to trim.
+   * @return A new {@link Expression} representing the trimmed string or blob.
+   */
+  @BetaApi
+  public static Expression rtrim(Expression value) {
+    return new FunctionExpression("rtrim", ImmutableList.of(value));
+  }
+
+  /**
+   * Creates an expression that removes whitespace from the end of a string or blob.
+   *
+   * @param fieldName The name of the field containing the string to trim.
+   * @return A new {@link Expression} representing the trimmed string.
+   */
+  @BetaApi
+  public static Expression rtrim(String fieldName) {
+    return rtrim(field(fieldName));
+  }
+
+  /**
+   * Creates an expression that removes specified characters from the end of a string or blob.
+   *
+   * @param value The expression representing the string or blob to trim.
+   * @param characters The characters to remove.
+   * @return A new {@link Expression} representing the trimmed string or blob.
+   */
+  @BetaApi
+  public static Expression rtrimValue(Expression value, String characters) {
+    return new FunctionExpression("rtrim", ImmutableList.of(value, constant(characters)));
+  }
+
+  /**
+   * Creates an expression that removes specified characters from the end of a string or blob.
+   *
+   * @param fieldName The name of the field containing the string or blob to trim.
+   * @param characters The characters to remove.
+   * @return A new {@link Expression} representing the trimmed string or blob.
+   */
+  @BetaApi
+  public static Expression rtrimValue(String fieldName, String characters) {
+    return rtrimValue(field(fieldName), characters);
+  }
+
+  /**
+   * Creates an expression that removes specified characters from the end of a string or blob.
+   *
+   * @param value The expression representing the string or blob to trim.
+   * @param characters The expression representing the characters to remove.
+   * @return A new {@link Expression} representing the trimmed string or blob.
+   */
+  @BetaApi
+  public static Expression rtrimValue(Expression value, Expression characters) {
+    return new FunctionExpression("rtrim", ImmutableList.of(value, characters));
+  }
+
+  /**
+   * Creates an expression that removes specified characters from the end of a string or blob.
+   *
+   * @param fieldName The name of the field containing the string or blob to trim.
+   * @param characters The expression representing the characters to remove.
+   * @return A new {@link Expression} representing the trimmed string or blob.
+   */
+  @BetaApi
+  public static Expression rtrimValue(String fieldName, Expression characters) {
+    return rtrimValue(field(fieldName), characters);
+  }
+
+  /**
+   * Creates an expression that repeats a string or blob a specified number of times.
+   *
+   * @param value The expression representing the string or blob to repeat.
+   * @param repetitions The number of times to repeat the string or blob.
+   * @return A new {@link Expression} representing the repeated string or blob.
+   */
+  @BetaApi
+  public static Expression stringRepeat(Expression value, Number repetitions) {
+    return new FunctionExpression("string_repeat", ImmutableList.of(value, constant(repetitions)));
+  }
+
+  /**
+   * Creates an expression that repeats a string or blob a specified number of times.
+   *
+   * @param fieldName The name of the field containing the string or blob to repeat.
+   * @param repetitions The number of times to repeat the string or blob.
+   * @return A new {@link Expression} representing the repeated string or blob.
+   */
+  @BetaApi
+  public static Expression stringRepeat(String fieldName, Number repetitions) {
+    return stringRepeat(field(fieldName), repetitions);
+  }
+
+  /**
+   * Creates an expression that repeats a string or blob a specified number of times.
+   *
+   * @param value The expression representing the string or blob to repeat.
+   * @param repetitions The expression representing the number of times to repeat.
+   * @return A new {@link Expression} representing the repeated string or blob.
+   */
+  @BetaApi
+  public static Expression stringRepeat(Expression value, Expression repetitions) {
+    return new FunctionExpression("string_repeat", ImmutableList.of(value, repetitions));
+  }
+
+  /**
+   * Creates an expression that repeats a string or blob a specified number of times.
+   *
+   * @param fieldName The name of the field containing the string or blob to repeat.
+   * @param repetitions The expression representing the number of times to repeat.
+   * @return A new {@link Expression} representing the repeated string or blob.
+   */
+  @BetaApi
+  public static Expression stringRepeat(String fieldName, Expression repetitions) {
+    return stringRepeat(field(fieldName), repetitions);
+  }
+
+  /**
+   * Creates an expression that replaces all occurrences of a substring or byte sequence.
+   *
+   * @param value The expression representing the input string or blob.
+   * @param find The match pattern.
+   * @param replacement The replacement string/bytes.
+   * @return A new {@link Expression} representing the replaced value.
+   */
+  @BetaApi
+  public static Expression stringReplaceAll(Expression value, String find, String replacement) {
+    return new FunctionExpression(
+        "string_replace_all", ImmutableList.of(value, constant(find), constant(replacement)));
+  }
+
+  /**
+   * Creates an expression that replaces all occurrences of a substring or byte sequence.
+   *
+   * @param fieldName The name of the field containing the input string or blob.
+   * @param find The match pattern.
+   * @param replacement The replacement string/bytes.
+   * @return A new {@link Expression} representing the replaced value.
+   */
+  @BetaApi
+  public static Expression stringReplaceAll(String fieldName, String find, String replacement) {
+    return stringReplaceAll(field(fieldName), find, replacement);
+  }
+
+  /**
+   * Creates an expression that replaces all occurrences of a substring or byte sequence.
+   *
+   * @param value The expression representing the input string or blob.
+   * @param find The expression representing the match pattern.
+   * @param replacement The expression representing the replacement value.
+   * @return A new {@link Expression} representing the replaced value.
+   */
+  @BetaApi
+  public static Expression stringReplaceAll(
+      Expression value, Expression find, Expression replacement) {
+    return new FunctionExpression("string_replace_all", ImmutableList.of(value, find, replacement));
+  }
+
+  /**
+   * Creates an expression that replaces all occurrences of a substring or byte sequence.
+   *
+   * @param fieldName The name of the field containing the input string or blob.
+   * @param find The expression representing the match pattern.
+   * @param replacement The expression representing the replacement value.
+   * @return A new {@link Expression} representing the replaced value.
+   */
+  @BetaApi
+  public static Expression stringReplaceAll(
+      String fieldName, Expression find, Expression replacement) {
+    return stringReplaceAll(field(fieldName), find, replacement);
+  }
+
+  /**
+   * Creates an expression that replaces the first occurrence of a substring or byte sequence.
+   *
+   * @param value The expression representing the input string or blob.
+   * @param find The match pattern.
+   * @param replacement The replacement string/bytes.
+   * @return A new {@link Expression} representing the replaced value.
+   */
+  @BetaApi
+  public static Expression stringReplaceOne(Expression value, String find, String replacement) {
+    return new FunctionExpression(
+        "string_replace_one", ImmutableList.of(value, constant(find), constant(replacement)));
+  }
+
+  /**
+   * Creates an expression that replaces the first occurrence of a substring or byte sequence.
+   *
+   * @param fieldName The name of the field containing the input string or blob.
+   * @param find The match pattern.
+   * @param replacement The replacement string/bytes.
+   * @return A new {@link Expression} representing the replaced value.
+   */
+  @BetaApi
+  public static Expression stringReplaceOne(String fieldName, String find, String replacement) {
+    return stringReplaceOne(field(fieldName), find, replacement);
+  }
+
+  /**
+   * Creates an expression that replaces the first occurrence of a substring or byte sequence.
+   *
+   * @param value The expression representing the input string or blob.
+   * @param find The expression representing the match pattern.
+   * @param replacement The expression representing the replacement value.
+   * @return A new {@link Expression} representing the replaced value.
+   */
+  @BetaApi
+  public static Expression stringReplaceOne(
+      Expression value, Expression find, Expression replacement) {
+    return new FunctionExpression("string_replace_one", ImmutableList.of(value, find, replacement));
+  }
+
+  /**
+   * Creates an expression that replaces the first occurrence of a substring or byte sequence.
+   *
+   * @param fieldName The name of the field containing the input string or blob.
+   * @param find The expression representing the match pattern.
+   * @param replacement The expression representing the replacement value.
+   * @return A new {@link Expression} representing the replaced value.
+   */
+  @BetaApi
+  public static Expression stringReplaceOne(
+      String fieldName, Expression find, Expression replacement) {
+    return stringReplaceOne(field(fieldName), find, replacement);
+  }
+
+  /**
+   * Creates an expression that returns the index of the first occurrence of a substring or bytes.
+   *
+   * @param value The expression representing the input string or blob.
+   * @param search The search pattern.
+   * @return A new {@link Expression} representing the index.
+   */
+  @BetaApi
+  public static Expression stringIndexOf(Expression value, String search) {
+    return new FunctionExpression("string_index_of", ImmutableList.of(value, constant(search)));
+  }
+
+  /**
+   * Creates an expression that returns the index of the first occurrence of a substring or bytes.
+   *
+   * @param fieldName The name of the field containing the input string or blob.
+   * @param search The search pattern.
+   * @return A new {@link Expression} representing the index.
+   */
+  @BetaApi
+  public static Expression stringIndexOf(String fieldName, String search) {
+    return stringIndexOf(field(fieldName), search);
+  }
+
+  /**
+   * Creates an expression that returns the index of the first occurrence of a substring or bytes.
+   *
+   * @param value The expression representing the input string or blob.
+   * @param search The expression representing the search pattern.
+   * @return A new {@link Expression} representing the index.
+   */
+  @BetaApi
+  public static Expression stringIndexOf(Expression value, Expression search) {
+    return new FunctionExpression("string_index_of", ImmutableList.of(value, search));
+  }
+
+  /**
+   * Creates an expression that returns the index of the first occurrence of a substring or bytes.
+   *
+   * @param fieldName The name of the field containing the input string or blob.
+   * @param search The expression representing the search pattern.
+   * @return A new {@link Expression} representing the index.
+   */
+  @BetaApi
+  public static Expression stringIndexOf(String fieldName, Expression search) {
+    return stringIndexOf(field(fieldName), search);
+  }
+
+  /**
    * Creates an expression that splits a string or blob by a delimiter.
    *
    * @param value The expression representing the string or blob to split.
@@ -4968,6 +5314,167 @@ public abstract class Expression {
   @BetaApi
   public Expression trimValue(Expression characters) {
     return trimValue(this, characters);
+  }
+
+  /**
+   * Creates an expression that removes whitespace from the beginning of this string or blob
+   * expression.
+   *
+   * @return A new {@link Expression} representing the trimmed string or blob.
+   */
+  @BetaApi
+  public Expression ltrim() {
+    return ltrim(this);
+  }
+
+  /**
+   * Creates an expression that removes the specified set of characters from the beginning of this
+   * string or blob expression.
+   *
+   * @param characters The characters to remove.
+   * @return A new {@link Expression} representing the trimmed string or blob.
+   */
+  @BetaApi
+  public Expression ltrimValue(String characters) {
+    return ltrimValue(this, characters);
+  }
+
+  /**
+   * Creates an expression that removes the specified characters or bytes from the beginning of this
+   * string or blob expression.
+   *
+   * @param characters The expression representing the characters or bytes to remove.
+   * @return A new {@link Expression} representing the trimmed string or blob.
+   */
+  @BetaApi
+  public Expression ltrimValue(Expression characters) {
+    return ltrimValue(this, characters);
+  }
+
+  /**
+   * Creates an expression that removes whitespace from the end of this string or blob expression.
+   *
+   * @return A new {@link Expression} representing the trimmed string or blob.
+   */
+  @BetaApi
+  public Expression rtrim() {
+    return rtrim(this);
+  }
+
+  /**
+   * Creates an expression that removes the specified set of characters from the end of this string
+   * or blob expression.
+   *
+   * @param characters The characters to remove.
+   * @return A new {@link Expression} representing the trimmed string or blob.
+   */
+  @BetaApi
+  public Expression rtrimValue(String characters) {
+    return rtrimValue(this, characters);
+  }
+
+  /**
+   * Creates an expression that removes the specified characters or bytes from the end of this
+   * string or blob expression.
+   *
+   * @param characters The expression representing the characters or bytes to remove.
+   * @return A new {@link Expression} representing the trimmed string or blob.
+   */
+  @BetaApi
+  public Expression rtrimValue(Expression characters) {
+    return rtrimValue(this, characters);
+  }
+
+  /**
+   * Creates an expression that repeats a string or blob a specified number of times.
+   *
+   * @param repetitions The number of times to repeat the string or blob.
+   * @return A new {@link Expression} representing the repeated string or blob.
+   */
+  @BetaApi
+  public Expression stringRepeat(Number repetitions) {
+    return stringRepeat(this, repetitions);
+  }
+
+  /**
+   * Creates an expression that repeats a string or blob a specified number of times.
+   *
+   * @param repetitions The expression representing the number of times to repeat.
+   * @return A new {@link Expression} representing the repeated string or blob.
+   */
+  @BetaApi
+  public Expression stringRepeat(Expression repetitions) {
+    return stringRepeat(this, repetitions);
+  }
+
+  /**
+   * Creates an expression that replaces all occurrences of a substring or byte sequence.
+   *
+   * @param find The match pattern.
+   * @param replacement The replacement string/bytes.
+   * @return A new {@link Expression} representing the replaced value.
+   */
+  @BetaApi
+  public Expression stringReplaceAll(String find, String replacement) {
+    return stringReplaceAll(this, find, replacement);
+  }
+
+  /**
+   * Creates an expression that replaces all occurrences of a substring or byte sequence.
+   *
+   * @param find The expression representing the match pattern.
+   * @param replacement The expression representing the replacement value.
+   * @return A new {@link Expression} representing the replaced value.
+   */
+  @BetaApi
+  public Expression stringReplaceAll(Expression find, Expression replacement) {
+    return stringReplaceAll(this, find, replacement);
+  }
+
+  /**
+   * Creates an expression that replaces the first occurrence of a substring or byte sequence.
+   *
+   * @param find The match pattern.
+   * @param replacement The replacement string/bytes.
+   * @return A new {@link Expression} representing the replaced value.
+   */
+  @BetaApi
+  public Expression stringReplaceOne(String find, String replacement) {
+    return stringReplaceOne(this, find, replacement);
+  }
+
+  /**
+   * Creates an expression that replaces the first occurrence of a substring or byte sequence.
+   *
+   * @param find The expression representing the match pattern.
+   * @param replacement The expression representing the replacement value.
+   * @return A new {@link Expression} representing the replaced value.
+   */
+  @BetaApi
+  public Expression stringReplaceOne(Expression find, Expression replacement) {
+    return stringReplaceOne(this, find, replacement);
+  }
+
+  /**
+   * Creates an expression that returns the index of the first occurrence of a substring or bytes.
+   *
+   * @param search The search pattern.
+   * @return A new {@link Expression} representing the index.
+   */
+  @BetaApi
+  public Expression stringIndexOf(String search) {
+    return stringIndexOf(this, search);
+  }
+
+  /**
+   * Creates an expression that returns the index of the first occurrence of a substring or bytes.
+   *
+   * @param search The expression representing the search pattern.
+   * @return A new {@link Expression} representing the index.
+   */
+  @BetaApi
+  public Expression stringIndexOf(Expression search) {
+    return stringIndexOf(this, search);
   }
 
   /**

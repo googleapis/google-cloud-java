@@ -65,6 +65,7 @@ import static com.google.cloud.firestore.pipeline.expressions.Expression.ln;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.log;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.logicalMaximum;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.logicalMinimum;
+import static com.google.cloud.firestore.pipeline.expressions.Expression.ltrim;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.mapMerge;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.mapRemove;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.nor;
@@ -75,6 +76,7 @@ import static com.google.cloud.firestore.pipeline.expressions.Expression.pow;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.rand;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.regexMatch;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.round;
+import static com.google.cloud.firestore.pipeline.expressions.Expression.rtrim;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.sqrt;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.startsWith;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.stringConcat;
@@ -1825,6 +1827,184 @@ public class ITPipelineTest extends ITBaseTest {
                     "_-The Hitchhiker's Guide to the Galaxy-_",
                     "trimmedTitle",
                     "The Hitchhiker's Guide to the Galaxy")));
+  }
+
+  @Test
+  public void testLTrim() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(equal("title", "The Hitchhiker's Guide to the Galaxy"))
+            .addFields(constant(" The Hitchhiker's Guide to the Galaxy ").as("spacedTitle"))
+            .addFields(constant("\"alice\"").as("userNameWithQuotes"))
+            .addFields(
+                constant(Blob.fromBytes(new byte[] {0x00, 0x01, 0x02, 0x00, 0x00})).as("bytes"))
+            .select(
+                ltrim("spacedTitle").as("ltrimmedTitle"),
+                field("userNameWithQuotes").ltrimValue("\"").as("userName"),
+                field("bytes").ltrimValue(constant(Blob.fromBytes(new byte[] {0x00}))).as("bytes"))
+            .limit(1)
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results))
+        .isEqualTo(
+            Lists.newArrayList(
+                map(
+                    "ltrimmedTitle", "The Hitchhiker's Guide to the Galaxy ",
+                    "userName", "alice\"",
+                    "bytes", Blob.fromBytes(new byte[] {0x01, 0x02, 0x00, 0x00}))));
+  }
+
+  @Test
+  public void testRTrim() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(equal("title", "The Hitchhiker's Guide to the Galaxy"))
+            .addFields(constant(" The Hitchhiker's Guide to the Galaxy ").as("spacedTitle"))
+            .addFields(constant("\"alice\"").as("userNameWithQuotes"))
+            .addFields(
+                constant(Blob.fromBytes(new byte[] {0x00, 0x01, 0x02, 0x00, 0x00})).as("bytes"))
+            .select(
+                rtrim("spacedTitle").as("rtrimmedTitle"),
+                field("userNameWithQuotes").rtrimValue("\"").as("userName"),
+                field("bytes").rtrimValue(constant(Blob.fromBytes(new byte[] {0x00}))).as("bytes"))
+            .limit(1)
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results))
+        .isEqualTo(
+            Lists.newArrayList(
+                map(
+                    "rtrimmedTitle", " The Hitchhiker's Guide to the Galaxy",
+                    "userName", "\"alice",
+                    "bytes", Blob.fromBytes(new byte[] {0x00, 0x01, 0x02}))));
+  }
+
+  @Test
+  public void testStringRepeat() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(equal("title", "The Hitchhiker's Guide to the Galaxy"))
+            .addFields(constant(Blob.fromBytes(new byte[] {0x01, 0x02, 0x03})).as("bytes"))
+            .select(
+                field("title").stringRepeat(2).as("repeatedTitle"),
+                Expression.stringRepeat(field("title"), 2).as("repeatedTitleStatic"),
+                field("bytes").stringRepeat(2).as("repeatedBytes"))
+            .limit(1)
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results))
+        .isEqualTo(
+            Lists.newArrayList(
+                map(
+                    "repeatedTitle",
+                    "The Hitchhiker's Guide to the GalaxyThe Hitchhiker's Guide to the Galaxy",
+                    "repeatedTitleStatic",
+                    "The Hitchhiker's Guide to the GalaxyThe Hitchhiker's Guide to the Galaxy",
+                    "repeatedBytes",
+                    Blob.fromBytes(new byte[] {0x01, 0x02, 0x03, 0x01, 0x02, 0x03}))));
+  }
+
+  @Test
+  public void testStringReplaceAll() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(equal("title", "The Hitchhiker's Guide to the Galaxy"))
+            .addFields(constant(Blob.fromBytes(new byte[] {0x01, 0x02, 0x02})).as("bytes"))
+            .select(
+                field("title").stringReplaceAll("e", "X").as("replacedAll"),
+                Expression.stringReplaceAll(field("title"), "e", "X").as("replacedAllStatic"),
+                field("bytes")
+                    .stringReplaceAll(
+                        constant(Blob.fromBytes(new byte[] {0x02})),
+                        constant(Blob.fromBytes(new byte[] {0x03})))
+                    .as("replacedMultipleBytes"))
+            .limit(1)
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results))
+        .isEqualTo(
+            Lists.newArrayList(
+                map(
+                    "replacedAll",
+                    "ThX HitchhikXr's GuidX to thX Galaxy",
+                    "replacedAllStatic",
+                    "ThX HitchhikXr's GuidX to thX Galaxy",
+                    "replacedMultipleBytes",
+                    Blob.fromBytes(new byte[] {0x01, 0x03, 0x03}))));
+  }
+
+  @Test
+  public void testStringReplaceOne() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(equal("title", "The Hitchhiker's Guide to the Galaxy"))
+            .addFields(constant(Blob.fromBytes(new byte[] {0x01, 0x02, 0x02})).as("bytes"))
+            .select(
+                field("title").stringReplaceOne("e", "X").as("replacedOne"),
+                Expression.stringReplaceOne("title", "e", "X").as("replacedOneStatic"),
+                field("bytes")
+                    .stringReplaceOne(
+                        constant(Blob.fromBytes(new byte[] {0x02})),
+                        constant(Blob.fromBytes(new byte[] {0x03})))
+                    .as("replacedOneByte"))
+            .limit(1)
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results))
+        .isEqualTo(
+            Lists.newArrayList(
+                map(
+                    "replacedOne",
+                    "ThX Hitchhiker's Guide to the Galaxy",
+                    "replacedOneStatic",
+                    "ThX Hitchhiker's Guide to the Galaxy",
+                    "replacedOneByte",
+                    Blob.fromBytes(new byte[] {0x01, 0x03, 0x02}))));
+  }
+
+  @Test
+  public void testStringIndexOf() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(collection)
+            .where(equal("title", "The Hitchhiker's Guide to the Galaxy"))
+            .addFields(constant(Blob.fromBytes(new byte[] {0x01, 0x02, 0x03})).as("bytes"))
+            .select(
+                field("title").stringIndexOf("Guide").as("indexOfGuide"),
+                Expression.stringIndexOf(field("title"), "Guide").as("indexOfGuideStatic"),
+                field("bytes")
+                    .stringIndexOf(constant(Blob.fromBytes(new byte[] {0x02})))
+                    .as("indexOfByte"))
+            .limit(1)
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results))
+        .isEqualTo(
+            Lists.newArrayList(
+                map("indexOfGuide", 17L, "indexOfGuideStatic", 17L, "indexOfByte", 1L)));
   }
 
   @Test
