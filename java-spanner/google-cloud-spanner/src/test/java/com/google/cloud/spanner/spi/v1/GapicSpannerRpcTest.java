@@ -1137,6 +1137,11 @@ public class GapicSpannerRpcTest {
     }
 
     @Override
+    OpenTelemetry getFallbackOpenTelemetry(SpannerOptions options) {
+      return options.getOpenTelemetry();
+    }
+
+    @Override
     GcpFallbackChannelOptions createFallbackChannelOptions(
         GcpFallbackOpenTelemetry fallbackTelemetry, int minFailedCalls) {
       // Override default 1-minute period to 10ms for instant testing
@@ -1220,6 +1225,11 @@ public class GapicSpannerRpcTest {
   static class TestableGapicSpannerRpcWithLowerMinFailedCalls extends GapicSpannerRpc {
     public TestableGapicSpannerRpcWithLowerMinFailedCalls(SpannerOptions options) {
       super(options);
+    }
+
+    @Override
+    OpenTelemetry getFallbackOpenTelemetry(SpannerOptions options) {
+      return options.getOpenTelemetry();
     }
 
     @Override

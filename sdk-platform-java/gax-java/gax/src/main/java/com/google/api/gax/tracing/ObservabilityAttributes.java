@@ -85,6 +85,9 @@ public class ObservabilityAttributes {
   /** The url template of the request (e.g. /v1/{name}:access). */
   public static final String URL_TEMPLATE_ATTRIBUTE = "url.template";
 
+  /** Size of the response body in bytes. */
+  public static final String HTTP_RESPONSE_BODY_SIZE = "http.response.body.size";
+
   /** The resend count of the request. Only used in HTTP transport. */
   public static final String HTTP_RESEND_COUNT_ATTRIBUTE = "http.request.resend_count";
 

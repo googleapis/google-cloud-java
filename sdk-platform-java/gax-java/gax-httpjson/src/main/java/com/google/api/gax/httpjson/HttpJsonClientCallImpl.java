@@ -156,6 +156,11 @@ final class HttpJsonClientCallImpl<RequestT, ResponseT>
       if (runnableResult.getResponseHeaders() != null) {
         pendingNotifications.offer(
             new OnHeadersNotificationTask<>(listener, runnableResult.getResponseHeaders()));
+        if (callOptions.getTracer() != null) {
+          callOptions
+              .getTracer()
+              .responseHeadersReceived(runnableResult.getResponseHeaders().getHeaders());
+        }
       }
     }
 
@@ -428,6 +433,7 @@ final class HttpJsonClientCallImpl<RequestT, ResponseT>
 
     ResponseT message =
         methodDescriptor.getResponseParser().parse(responseReader, callOptions.getTypeRegistry());
+
     pendingNotifications.offer(new OnMessageNotificationTask<>(listener, message));
 
     return allMessagesConsumed;

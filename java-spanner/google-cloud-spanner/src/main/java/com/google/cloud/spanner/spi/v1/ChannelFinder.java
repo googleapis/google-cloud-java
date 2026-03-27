@@ -19,13 +19,18 @@ package com.google.cloud.spanner.spi.v1;
 import com.google.api.core.InternalApi;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CacheUpdate;
+import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.DirectedReadOptions;
 import com.google.spanner.v1.ExecuteSqlRequest;
+import com.google.spanner.v1.Mutation;
 import com.google.spanner.v1.ReadRequest;
 import com.google.spanner.v1.RoutingHint;
 import com.google.spanner.v1.TransactionOptions;
 import com.google.spanner.v1.TransactionSelector;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
@@ -95,29 +100,57 @@ public final class ChannelFinder {
     if (!reqBuilder.hasMutationKey()) {
       return null;
     }
-    TargetRange target = recipeCache.mutationToTargetRange(reqBuilder.getMutationKey());
+    return routeMutation(
+        reqBuilder.getMutationKey(),
+        preferLeader(reqBuilder.getOptions()),
+        reqBuilder.getRoutingHintBuilder());
+  }
+
+  public ChannelEndpoint fillRoutingHint(CommitRequest.Builder reqBuilder) {
+    Mutation mutation = selectMutationForRouting(reqBuilder.getMutationsList());
+    if (mutation == null) {
+      return null;
+    }
+    return routeMutation(mutation, /* preferLeader= */ true, reqBuilder.getRoutingHintBuilder());
+  }
+
+  private static Mutation selectMutationForRouting(List<Mutation> mutations) {
+    if (mutations.isEmpty()) {
+      return null;
+    }
+    List<Mutation> mutationsExcludingInsert = new ArrayList<>();
+    Mutation largestInsertMutation = null;
+    for (Mutation mutation : mutations) {
+      if (!mutation.hasInsert()) {
+        mutationsExcludingInsert.add(mutation);
+        continue;
+      }
+      if (largestInsertMutation == null
+          || mutation.getInsert().getValuesCount()
+              > largestInsertMutation.getInsert().getValuesCount()) {
+        largestInsertMutation = mutation;
+      }
+    }
+    if (!mutationsExcludingInsert.isEmpty()) {
+      return mutationsExcludingInsert.get(
+          ThreadLocalRandom.current().nextInt(mutationsExcludingInsert.size()));
+    }
+    return largestInsertMutation;
+  }
+
+  private ChannelEndpoint routeMutation(
+      Mutation mutation, boolean preferLeader, RoutingHint.Builder hintBuilder) {
+    recipeCache.applySchemaGeneration(hintBuilder);
+    TargetRange target = recipeCache.mutationToTargetRange(mutation);
     if (target == null) {
       return null;
     }
-    RoutingHint.Builder hintBuilder = RoutingHint.newBuilder();
-    hintBuilder.setKey(target.start);
-    if (!target.limit.isEmpty()) {
-      hintBuilder.setLimitKey(target.limit);
-    }
+    recipeCache.applyTargetRange(hintBuilder, target);
     return fillRoutingHint(
-        preferLeader(reqBuilder.getOptions()),
+        preferLeader,
         KeyRangeCache.RangeMode.COVERING_SPLIT,
         DirectedReadOptions.getDefaultInstance(),
         hintBuilder);
-  }
-
-  private ChannelEndpoint fillRoutingHint(
-      TransactionSelector transactionSelector,
-      DirectedReadOptions directedReadOptions,
-      KeyRangeCache.RangeMode rangeMode,
-      RoutingHint.Builder hintBuilder) {
-    return fillRoutingHint(
-        preferLeader(transactionSelector), rangeMode, directedReadOptions, hintBuilder);
   }
 
   private ChannelEndpoint fillRoutingHint(

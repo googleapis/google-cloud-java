@@ -12,7 +12,7 @@ files.
 If they are not identical, then the integration test will fail.
 
 ```sh
-bazelisk test //test/integration:redis
+bazelisk test //sdk-platform-java/test/integration:redis
 ```
 
 ## How To Update Goldens
@@ -24,7 +24,7 @@ in `redis` folder.
 ```sh
 # In repository's root directory
 mvn clean install -DskipTests
-bazelisk run //test/integration:update_redis
+bazelisk run //sdk-platform-java/test/integration:update_redis
 ```
 
 ## Adding new integration tests

@@ -19,14 +19,17 @@ package com.google.cloud.spanner.spi.v1;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.Builder;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.common.annotations.VisibleForTesting;
 import io.grpc.ConnectivityState;
 import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -47,6 +50,7 @@ class GrpcChannelEndpointCache implements ChannelEndpointCache {
   private final InstantiatingGrpcChannelProvider baseProvider;
   private final Map<String, GrpcChannelEndpoint> servers = new ConcurrentHashMap<>();
   private final GrpcChannelEndpoint defaultEndpoint;
+  private final String defaultAuthority;
   private final AtomicBoolean isShutdown = new AtomicBoolean(false);
 
   /**
@@ -61,6 +65,7 @@ class GrpcChannelEndpointCache implements ChannelEndpointCache {
     this.baseProvider = channelProvider;
     String defaultEndpoint = channelProvider.getEndpoint();
     this.defaultEndpoint = new GrpcChannelEndpoint(defaultEndpoint, channelProvider);
+    this.defaultAuthority = this.defaultEndpoint.getChannel().authority();
     this.servers.put(defaultEndpoint, this.defaultEndpoint);
   }
 
@@ -82,13 +87,33 @@ class GrpcChannelEndpointCache implements ChannelEndpointCache {
           try {
             // Create a new provider with the same config but different endpoint.
             // This is thread-safe as withEndpoint() returns a new provider instance.
-            TransportChannelProvider newProvider = baseProvider.withEndpoint(addr);
+            TransportChannelProvider newProvider = createProviderWithAuthorityOverride(addr);
             return new GrpcChannelEndpoint(addr, newProvider);
           } catch (IOException e) {
             throw SpannerExceptionFactory.newSpannerException(
                 ErrorCode.INTERNAL, "Failed to create channel for address: " + addr, e);
           }
         });
+  }
+
+  private TransportChannelProvider createProviderWithAuthorityOverride(String address) {
+    InstantiatingGrpcChannelProvider endpointProvider =
+        (InstantiatingGrpcChannelProvider) baseProvider.withEndpoint(address);
+    if (Objects.equals(defaultAuthority, address)) {
+      return endpointProvider;
+    }
+    Builder builder = endpointProvider.toBuilder();
+    final com.google.api.core.ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>
+        baseConfigurator = builder.getChannelConfigurator();
+    builder.setChannelConfigurator(
+        channelBuilder -> {
+          ManagedChannelBuilder effectiveBuilder = channelBuilder;
+          if (baseConfigurator != null) {
+            effectiveBuilder = baseConfigurator.apply(effectiveBuilder);
+          }
+          return effectiveBuilder.overrideAuthority(defaultAuthority);
+        });
+    return builder.build();
   }
 
   @Override
