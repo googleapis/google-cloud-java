@@ -96,7 +96,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-spanner</artifactId>
-      <version>6.112.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanner:current} -->
+      <version>6.113.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanner:current} -->
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
@@ -137,7 +137,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-spanner-v1</artifactId>
-      <version>6.112.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-spanner-v1:current} -->
+      <version>6.113.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-spanner-v1:current} -->
     </dependency>
     <dependency>
       <groupId>io.opentelemetry</groupId>
@@ -147,7 +147,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-spanner</artifactId>
-      <version>6.112.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanner:current} -->
+      <version>6.113.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanner:current} -->
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>

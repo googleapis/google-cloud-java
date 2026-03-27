@@ -41,6 +41,7 @@ public class BuiltInMetricsConstant {
 
   public static final String METER_NAME = "spanner.googleapis.com/internal/client";
   public static final String GAX_METER_NAME = OpenTelemetryMetricsRecorder.GAX_METER_NAME;
+  public static final String GRPC_GCP_METER_NAME = "grpc-gcp";
   static final String SPANNER_METER_NAME = "spanner-java";
   static final String GRPC_METER_NAME = "grpc-java";
   static final String GFE_LATENCIES_NAME = "gfe_latencies";
@@ -53,6 +54,8 @@ public class BuiltInMetricsConstant {
   static final String ATTEMPT_LATENCY_NAME = "attempt_latency";
   static final String OPERATION_COUNT_NAME = "operation_count";
   static final String ATTEMPT_COUNT_NAME = "attempt_count";
+  static final String EEF_FALLBACK_COUNT_NAME = "eef.fallback_count";
+  static final String EEF_CALL_STATUS_NAME = "eef.call_status";
 
   public static final Set<String> SPANNER_METRICS =
       ImmutableSet.of(
@@ -116,6 +119,29 @@ public class BuiltInMetricsConstant {
           "grpc.xds_client.server_failure",
           "grpc.xds_client.resource_updates_invalid",
           "grpc.xds_client.resource_updates_valid");
+
+  public static final AttributeKey<String> CHANNEL_NAME_KEY =
+      AttributeKey.stringKey("channel_name");
+  public static final AttributeKey<String> FROM_CHANNEL_NAME_KEY =
+      AttributeKey.stringKey("from_channel_name");
+  public static final AttributeKey<String> TO_CHANNEL_NAME_KEY =
+      AttributeKey.stringKey("to_channel_name");
+  public static final AttributeKey<String> STATUS_CODE_KEY = AttributeKey.stringKey("status_code");
+
+  static final Set<String> GRPC_GCP_EEF_FALLBACK_COUNT_ATTRIBUTES =
+      ImmutableSet.of(FROM_CHANNEL_NAME_KEY.getKey(), TO_CHANNEL_NAME_KEY.getKey());
+
+  static final Set<String> GRPC_GCP_EEF_CALL_STATUS_ATTRIBUTES =
+      ImmutableSet.of(CHANNEL_NAME_KEY.getKey(), STATUS_CODE_KEY.getKey());
+
+  static final Map<String, Set<String>> GRPC_GCP_METRIC_ADDITIONAL_ATTRIBUTES =
+      ImmutableMap.<String, Set<String>>builder()
+          .put(EEF_FALLBACK_COUNT_NAME, GRPC_GCP_EEF_FALLBACK_COUNT_ATTRIBUTES)
+          .put(EEF_CALL_STATUS_NAME, GRPC_GCP_EEF_CALL_STATUS_ATTRIBUTES)
+          .build();
+
+  static final Collection<String> GRPC_GCP_METRICS_TO_ENABLE =
+      ImmutableList.of(EEF_FALLBACK_COUNT_NAME, EEF_CALL_STATUS_NAME);
 
   public static final String SPANNER_RESOURCE_TYPE = "spanner_instance_client";
 
@@ -215,6 +241,7 @@ public class BuiltInMetricsConstant {
         "1");
     defineSpannerView(views);
     defineGRPCView(views);
+    defineGrpcGcpView(views);
     return views.build();
   }
 
@@ -278,6 +305,33 @@ public class BuiltInMetricsConstant {
               .setName(BuiltInMetricsConstant.METER_NAME + '/' + metric.replace(".", "/"))
               .setAttributeFilter(attributesFilter)
               .build();
+      viewMap.put(selector, view);
+    }
+  }
+
+  private static void defineGrpcGcpView(ImmutableMap.Builder<InstrumentSelector, View> viewMap) {
+    for (String metric : GRPC_GCP_METRICS_TO_ENABLE) {
+      InstrumentSelector selector =
+          InstrumentSelector.builder()
+              .setName(metric)
+              .setMeterName(BuiltInMetricsConstant.GRPC_GCP_METER_NAME)
+              .build();
+
+      Set<String> attributesFilter =
+          BuiltInMetricsConstant.COMMON_ATTRIBUTES.stream()
+              .map(AttributeKey::getKey)
+              .collect(Collectors.toSet());
+
+      attributesFilter.addAll(
+          GRPC_GCP_METRIC_ADDITIONAL_ATTRIBUTES.getOrDefault(metric, ImmutableSet.of()));
+
+      View view =
+          View.builder()
+              .setName(BuiltInMetricsConstant.METER_NAME + '/' + metric.replace(".", "/"))
+              .setAggregation(Aggregation.sum())
+              .setAttributeFilter(attributesFilter)
+              .build();
+
       viewMap.put(selector, view);
     }
   }
