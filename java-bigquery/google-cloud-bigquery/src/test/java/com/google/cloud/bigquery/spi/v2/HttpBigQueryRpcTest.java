@@ -150,14 +150,24 @@ public class HttpBigQueryRpcTest {
     assertThat(spans).isNotEmpty();
     SpanData rpcSpan =
         spans.stream().filter(span -> span.getName().equals(spanName)).findFirst().orElse(null);
-    assertNotNull(rpcSpan);
-    assertEquals(service, rpcSpan.getAttributes().get(AttributeKey.stringKey("bq.rpc.service")));
-    assertEquals(method, rpcSpan.getAttributes().get(AttributeKey.stringKey("bq.rpc.method")));
-    assertEquals("http", rpcSpan.getAttributes().get(AttributeKey.stringKey("bq.rpc.system")));
+
+    verifySpanProductionAttributes(service, method, attributes, rpcSpan);
+
+    assertNotNull(
+        rpcSpan.getAttributes().get(AttributeKey.stringKey("url.template")),
+        "url.template attribute should be set");
 
     assertEquals(
         gcpResourceDestinationId,
         rpcSpan.getAttributes().get(BigQueryTelemetryTracer.GCP_RESOURCE_DESTINATION_ID));
+  }
+
+  private void verifySpanProductionAttributes(
+      String service, String method, Map<String, String> attributes, SpanData rpcSpan) {
+    assertNotNull(rpcSpan);
+    assertEquals(service, rpcSpan.getAttributes().get(AttributeKey.stringKey("bq.rpc.service")));
+    assertEquals(method, rpcSpan.getAttributes().get(AttributeKey.stringKey("bq.rpc.method")));
+    assertEquals("http", rpcSpan.getAttributes().get(AttributeKey.stringKey("bq.rpc.system")));
 
     if (attributes != null) {
       for (Map.Entry<String, String> entry : attributes.entrySet()) {
@@ -1101,6 +1111,35 @@ public class HttpBigQueryRpcTest {
           "Invalid request", rpcSpan.getAttributes().get(BigQueryTelemetryTracer.STATUS_MESSAGE));
       assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.EXCEPTION_TYPE));
     }
+
+    @Test
+    public void testGetUriTemplateValueTelemetry() throws Exception {
+      setMockResponse(
+          "{\"kind\":\"bigquery#dataset\",\"id\":\""
+              + PROJECT_ID
+              + ":"
+              + DATASET_ID
+              + "\",\"datasetReference\":{\"projectId\":\""
+              + PROJECT_ID
+              + "\",\"datasetId\":\""
+              + DATASET_ID
+              + "\"}}");
+
+      rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
+
+      List<SpanData> spans = spanExporter.getFinishedSpanItems();
+      assertThat(spans).isNotEmpty();
+      SpanData rpcSpan =
+          spans.stream()
+              .filter(
+                  span -> span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
+              .findFirst()
+              .orElse(null);
+      assertNotNull(rpcSpan);
+      assertEquals(
+          "projects/{+projectId}/datasets/{+datasetId}",
+          rpcSpan.getAttributes().get(BigQueryTelemetryTracer.URL_TEMPLATE));
+    }
   }
 
   @Nested
@@ -1130,12 +1169,6 @@ public class HttpBigQueryRpcTest {
       rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
 
       verifyRequest("GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID);
-      verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.getDataset",
-          "DatasetService",
-          "GetDataset",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID,
-          Collections.singletonMap("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID));
 
       List<SpanData> spans = spanExporter.getFinishedSpanItems();
       assertThat(spans).isNotEmpty();
@@ -1146,8 +1179,19 @@ public class HttpBigQueryRpcTest {
               .findFirst()
               .orElse(null);
       assertNotNull(rpcSpan);
+      verifySpanProductionAttributes(
+          "DatasetService",
+          "GetDataset",
+          Collections.singletonMap("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID),
+          rpcSpan);
+
       assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.RPC_SYSTEM_NAME));
       assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_SERVICE));
+      assertNull(
+          rpcSpan.getAttributes().get(AttributeKey.stringKey("url.template")),
+          "url.template attribute should not be set");
+
+      assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.GCP_RESOURCE_DESTINATION_ID));
     }
 
     @Test

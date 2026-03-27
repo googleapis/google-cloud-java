@@ -32,6 +32,7 @@ package com.google.api.gax.httpjson.testing;
 import com.google.api.gax.tracing.ApiTracer;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 import org.threeten.bp.Duration;
 
 /**
@@ -43,6 +44,8 @@ public class TestApiTracer implements ApiTracer {
   private final AtomicInteger attemptsStarted = new AtomicInteger();
   private final AtomicInteger attemptsFailed = new AtomicInteger();
   private final AtomicBoolean retriesExhausted = new AtomicBoolean(false);
+  private final AtomicLong responseReceivedSize = new AtomicLong();
+  private final AtomicInteger responsesReceived = new AtomicInteger();
 
   public TestApiTracer() {}
 
@@ -56,6 +59,14 @@ public class TestApiTracer implements ApiTracer {
 
   public AtomicBoolean getRetriesExhausted() {
     return retriesExhausted;
+  }
+
+  public long getResponseReceivedSize() {
+    return responseReceivedSize.get();
+  }
+
+  public int getResponsesReceived() {
+    return responsesReceived.get();
   }
 
   @Override
@@ -77,6 +88,39 @@ public class TestApiTracer implements ApiTracer {
   public void attemptFailedRetriesExhausted(Throwable error) {
     attemptsFailed.incrementAndGet();
     retriesExhausted.set(true);
+  }
+
+  @Override
+  public void responseReceived() {
+    responsesReceived.incrementAndGet();
+  }
+
+  @Override
+  public void responseHeadersReceived(java.util.Map<String, Object> headers) {
+    long contentLength = extractContentLength(headers);
+    if (contentLength >= 0) {
+      responseReceivedSize.addAndGet(contentLength);
+    }
+  }
+
+  private long extractContentLength(java.util.Map<String, Object> headers) {
+    if (headers == null || headers.isEmpty()) return -1;
+    Object value =
+        headers.entrySet().stream()
+            .filter(e -> "Content-Length".equalsIgnoreCase(e.getKey()))
+            .map(java.util.Map.Entry::getValue)
+            .findFirst()
+            .orElse(null);
+
+    if (value instanceof java.util.Collection) {
+      value = ((java.util.Collection<?>) value).stream().findFirst().orElse(null);
+    }
+
+    try {
+      return Long.parseLong(String.valueOf(value));
+    } catch (NumberFormatException | NullPointerException e) {
+      return -1;
+    }
   }
 }
 ;

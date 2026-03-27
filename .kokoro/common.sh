@@ -29,6 +29,9 @@ excluded_modules=(
   'sdk-platform-java/java-showcase'
   'sdk-platform-java/java-showcase-3.21.0'
   'sdk-platform-java/java-showcase-3.25.8'
+  'java-spanner'
+  'java-spanner-jdbc'
+  'google-auth-library-java'
 )
 
 function retry_with_backoff {
@@ -257,7 +260,7 @@ function generate_modified_modules_list() {
     modified_module_list=(${maven_modules[*]})
     echo "Testing the entire monorepo"
   else
-    modules=$(echo "${modified_files}" | grep -E 'java-.*' || true)
+    modules=$(echo "${modified_files}" | grep -E '(google-auth|java)-.*' || true)
     printf "Files in java modules:\n%s\n" "${modules}"
     if [[ -n $modules ]]; then
       modules=$(echo "${modules}" | cut -d '/' -f1 | sort -u)
@@ -341,20 +344,20 @@ function run_graalvm_tests() {
 function generate_graalvm_presubmit_modules_list() {
   modules_assigned_list=()
   generate_modified_modules_list
-  if [[ ${#modified_module_list[@]} -gt 0 && ${#modified_module_list[@]} -lt 5 ]]; then
+  if [[ ${#modified_module_list[@]} -gt 4 ]]; then
+    # Too many modules modified, run a subset
+    echo "Too many modules modified, running a subset"
+    module_list="java-aiplatform,java-compute"
+  elif [[ ${#modified_module_list[@]} -gt 0 ]]; then
     # If only a few modules have been modified, focus presubmit testing only on them.
     module_list=$(
       IFS=,
       echo "${modified_module_list[*]}"
     )
   else
-    # If no modules have been modified or if too many have been modified, just test the modules
-    # specified in the MAVEN_MODULES env var.
-    if [ -z "${MAVEN_MODULES}" ]; then
-      echo "MAVEN_MODULES not defined in environment."
-      exit 1
-    fi
-    module_list=${MAVEN_MODULES}
+    # no modules modified
+    echo "No modules modified"
+    module_list=""
   fi
 }
 
