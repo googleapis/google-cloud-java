@@ -32,12 +32,9 @@ jobs:
       matrix:
         repo:
           - java-bigtable
-          - java-bigquery
           - java-firestore
           - java-pubsub
           - java-pubsublite
-          - java-spanner-jdbc
-          - java-spanner
           - java-storage
           - java-storage-nio
     steps:
