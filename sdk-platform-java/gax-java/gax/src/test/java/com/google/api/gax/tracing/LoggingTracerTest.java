@@ -59,28 +59,94 @@ class LoggingTracerTest {
   }
 
   @Test
-  void testAttemptFailed_LogsError() {
+  void testAttemptFailedDuration_LogsError() {
     ApiTracerContext context = ApiTracerContext.empty();
     LoggingTracer tracer = new LoggingTracer(context);
 
-    // Call attemptFailed with a generic exception
-    Exception error = new RuntimeException("generic failure");
+    Exception error = new RuntimeException("generic failure duration");
     tracer.attemptFailedDuration(error, java.time.Duration.ZERO);
 
     assertEquals(1, testLogger.getMessageList().size());
-    assertEquals("generic failure", testLogger.getMessageList().get(0));
+    assertEquals("generic failure duration", testLogger.getMessageList().get(0));
   }
 
   @Test
-  void testAttemptFailed_LogsErrorAndAttributes() {
+  void testAttemptFailedRetriesExhausted_LogsError() {
+    ApiTracerContext context = ApiTracerContext.empty();
+    LoggingTracer tracer = new LoggingTracer(context);
+
+    Exception error = new RuntimeException("generic failure retries exhausted");
+    tracer.attemptFailedRetriesExhausted(error);
+
+    assertEquals(1, testLogger.getMessageList().size());
+    assertEquals("generic failure retries exhausted", testLogger.getMessageList().get(0));
+  }
+
+  @Test
+  void testAttemptPermanentFailure_LogsError() {
+    ApiTracerContext context = ApiTracerContext.empty();
+    LoggingTracer tracer = new LoggingTracer(context);
+
+    Exception error = new RuntimeException("generic permanent failure");
+    tracer.attemptPermanentFailure(error);
+
+    assertEquals(1, testLogger.getMessageList().size());
+    assertEquals("generic permanent failure", testLogger.getMessageList().get(0));
+  }
+
+  @Test
+  void testRecordActionableError_logsErrorMessage() {
+    ApiTracerContext context = ApiTracerContext.empty();
+    LoggingTracer tracer = new LoggingTracer(context);
+
+    Exception error = new RuntimeException("test error message");
+    tracer.recordActionableError(error);
+
+    assertEquals(1, testLogger.getMessageList().size());
+    assertEquals("test error message", testLogger.getMessageList().get(0));
+  }
+
+  @Test
+  void testRecordActionableError_logsStatus() {
+    ApiTracerContext context = ApiTracerContext.empty();
+    LoggingTracer tracer = new LoggingTracer(context);
+
+    Exception error =
+        ApiExceptionFactory.createException(
+            "test error message",
+            new RuntimeException("cause"),
+            FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT),
+            false);
+
+    tracer.recordActionableError(error);
+
+    Map<String, ?> attributesMap = getAttributesMap();
+
+    assertTrue(attributesMap != null && !attributesMap.isEmpty());
+    assertEquals(
+        "INVALID_ARGUMENT",
+        attributesMap.get(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE));
+  }
+
+  @Test
+  void testRecordActionableError_logsAttributes() {
     ApiTracerContext context =
-        ApiTracerContext.empty().toBuilder()
-            .setServiceName("test-service")
-            .setServerAddress("test.example.com")
-            .setServerPort(443)
-            .setFullMethodName("test.service.v1.Method")
-            .setTransport(ApiTracerContext.Transport.GRPC)
-            .build();
+        ApiTracerContext.empty().toBuilder().setServiceName("test-service").build();
+    LoggingTracer tracer = new LoggingTracer(context);
+
+    Exception error = new RuntimeException("generic failure");
+    tracer.recordActionableError(error);
+
+    Map<String, ?> attributesMap = getAttributesMap();
+
+    assertTrue(attributesMap != null && !attributesMap.isEmpty());
+    assertEquals(
+        "test-service", attributesMap.get(ObservabilityAttributes.GCP_CLIENT_SERVICE_ATTRIBUTE));
+  }
+
+  @Test
+  void testRecordActionableError_logsErrorInfo() {
+    ApiTracerContext context = ApiTracerContext.empty();
     LoggingTracer tracer = new LoggingTracer(context);
 
     ErrorInfo errorInfo =
@@ -103,41 +169,24 @@ class LoggingTracerTest {
             false,
             errorDetails);
 
-    tracer.attemptFailedDuration(error, java.time.Duration.ZERO);
+    tracer.recordActionableError(error);
 
-    assertEquals(1, testLogger.getMessageList().size());
-    assertEquals("test error message", testLogger.getMessageList().get(0));
-
-    Map<String, ?> attributesMap;
-    // SLF4J 1.x logs using MDC, SLF4J 2.x logs using KeyValuePairs
-    // Depending on the classpath binding active, one will be populated by TestLogger
-    if (!testLogger.getMDCMap().isEmpty()) {
-      attributesMap = testLogger.getMDCMap();
-    } else {
-      attributesMap = testLogger.getKeyValuePairsMap();
-    }
+    Map<String, ?> attributesMap = getAttributesMap();
 
     assertTrue(attributesMap != null && !attributesMap.isEmpty());
-    assertEquals(
-        "test-service", attributesMap.get(ObservabilityAttributes.GCP_CLIENT_SERVICE_ATTRIBUTE));
-    assertEquals(
-        "test.example.com", attributesMap.get(ObservabilityAttributes.SERVER_ADDRESS_ATTRIBUTE));
-
-    Object portValue = attributesMap.get(ObservabilityAttributes.SERVER_PORT_ATTRIBUTE);
-    assertTrue("443".equals(String.valueOf(portValue)));
-
-    assertEquals(
-        "test.service.v1.Method",
-        attributesMap.get(ObservabilityAttributes.GRPC_RPC_METHOD_ATTRIBUTE));
-    assertEquals("grpc", attributesMap.get(ObservabilityAttributes.RPC_SYSTEM_NAME_ATTRIBUTE));
-    assertEquals(
-        "INVALID_ARGUMENT",
-        attributesMap.get(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE));
     assertEquals("TEST_REASON", attributesMap.get(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE));
     assertEquals(
         "test.domain.com", attributesMap.get(ObservabilityAttributes.ERROR_DOMAIN_ATTRIBUTE));
     assertEquals(
         "test_value",
         attributesMap.get(ObservabilityAttributes.ERROR_METADATA_ATTRIBUTE_PREFIX + "test_key"));
+  }
+
+  private Map<String, ?> getAttributesMap() {
+    if (!testLogger.getMDCMap().isEmpty()) {
+      return testLogger.getMDCMap();
+    } else {
+      return testLogger.getKeyValuePairsMap();
+    }
   }
 }

@@ -34,6 +34,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.logging.LoggerProvider;
 import com.google.api.gax.logging.LoggingUtils;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.rpc.ErrorInfo;
 import java.util.HashMap;
 import java.util.Map;
@@ -44,13 +45,13 @@ import java.util.Map;
  */
 @BetaApi
 @InternalApi
-public class LoggingTracer extends BaseApiTracer {
+class LoggingTracer extends BaseApiTracer {
   private static final LoggerProvider LOGGER_PROVIDER =
       LoggerProvider.forClazz(LoggingTracer.class);
 
   private final ApiTracerContext apiTracerContext;
 
-  public LoggingTracer(ApiTracerContext apiTracerContext) {
+  LoggingTracer(ApiTracerContext apiTracerContext) {
     this.apiTracerContext = apiTracerContext;
   }
 
@@ -69,17 +70,13 @@ public class LoggingTracer extends BaseApiTracer {
     recordActionableError(error);
   }
 
-  private void recordActionableError(Throwable error) {
+  @VisibleForTesting
+  void recordActionableError(Throwable error) {
     if (error == null) {
       return;
     }
 
     Map<String, Object> logContext = new HashMap<>(apiTracerContext.getAttemptAttributes());
-
-    if (apiTracerContext.serviceName() != null) {
-      logContext.put(
-          ObservabilityAttributes.GCP_CLIENT_SERVICE_ATTRIBUTE, apiTracerContext.serviceName());
-    }
 
     logContext.put(
         ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE,
