@@ -332,124 +332,87 @@ public class PathTemplate {
     if (knownResources == null) {
       return "";
     }
-    StringBuilder canonical = new StringBuilder();
-    StringBuilder currentSequence = new StringBuilder();
+
+    int firstBindingIndex = -1;
+    for (int i = 0; i < segments.size(); i++) {
+      if (segments.get(i).kind() == SegmentKind.BINDING) {
+        firstBindingIndex = i;
+        break;
+      }
+    }
+
+    if (firstBindingIndex == -1) {
+      return "";
+    }
+
+    int startIndex = 0;
+    for (int i = firstBindingIndex - 1; i >= 0; i--) {
+      Segment seg = segments.get(i);
+      if (seg.kind() == SegmentKind.LITERAL) {
+        String value = seg.value();
+        if (value.matches("^v\\d+.*") || value.matches("^u\\d+.*")) {
+          startIndex = i + 1;
+          break;
+        }
+      }
+    }
+
+    int lastValidEndBindingIndex = -1;
     boolean inBinding = false;
-    String currentBindingName = "";
-    boolean keepBinding = true;
-    List<Segment> bindingSegments = new ArrayList<>();
-    boolean afterKeptNamedBinding = false;
+    int literalCountInBinding = 0;
+    int currentBindingStartIndex = -1;
 
     for (int i = 0; i < segments.size(); i++) {
       Segment seg = segments.get(i);
       if (seg.kind() == SegmentKind.BINDING) {
         inBinding = true;
-        currentBindingName = seg.value();
-        bindingSegments.clear();
-        keepBinding = true;
+        literalCountInBinding = 0;
+        currentBindingStartIndex = i;
       } else if (seg.kind() == SegmentKind.END_BINDING) {
         inBinding = false;
-        StringBuilder innerPattern = new StringBuilder();
-        int literalCount = 0;
-        for (Segment innerSeg : bindingSegments) {
-          if (innerSeg.kind() == SegmentKind.LITERAL) {
-            String value = innerSeg.value();
-            if (value.matches("^v\\d+.*") || value.matches("^u\\d+.*")) {
-              continue;
-            }
-            literalCount++;
-            if (innerPattern.length() > 0) {
-              innerPattern.append("/");
-            }
-            innerPattern.append(value);
-          } else if (innerSeg.kind() == SegmentKind.WILDCARD) {
-            if (innerPattern.length() > 0) {
-              innerPattern.append("/");
-            }
-            innerPattern.append("*");
-          }
-        }
+        boolean isValidPair = false;
 
-        boolean extractInner = false;
-        if (canonical.length() == 0 && currentSequence.length() == 0) {
-          if (i + 1 < segments.size()) {
-            Segment nextSeg = segments.get(i + 1);
-            if (nextSeg.kind() == SegmentKind.LITERAL) {
-              String nextValue = nextSeg.value();
-              if (knownResources.contains(nextValue)) {
-                extractInner = true;
-              }
-            }
-          }
-        }
-
-        if (extractInner) {
-          if (innerPattern.length() > 0) {
-            if (canonical.length() > 0) {
-              canonical.append("/");
-            }
-            canonical.append(innerPattern);
-          }
+        if (literalCountInBinding > 1) {
+          // Named bindings are unconditionally considered pairs
+          isValidPair = true;
         } else {
-          if (currentSequence.length() > 0) {
-            if (canonical.length() > 0) {
-              canonical.append("/");
-            }
-            canonical.append(currentSequence);
-            currentSequence.setLength(0);
-          }
-          if (canonical.length() > 0) {
-            canonical.append("/");
-          }
-
-          if (literalCount <= 1 || innerPattern.toString().equals("*")) {
-            canonical.append("{").append(currentBindingName).append("}");
-          } else {
-            canonical
-                .append("{")
-                .append(currentBindingName)
-                .append("=")
-                .append(innerPattern)
-                .append("}");
-            afterKeptNamedBinding = true;
-          }
-        }
-      } else if (seg.kind() == SegmentKind.LITERAL) {
-        String value = seg.value();
-        if (value.matches("^v\\d+.*") || value.matches("^u\\d+.*")) {
-          continue;
-        }
-        if (inBinding) {
-          bindingSegments.add(seg);
-          if (!knownResources.contains(value)) {
-            keepBinding = false;
-          }
-        } else {
-          if (knownResources.contains(value)) {
-            if (currentSequence.length() > 0) {
-              currentSequence.append("/");
-            }
-            currentSequence.append(value);
-          } else {
-            if (afterKeptNamedBinding) {
-              if (currentSequence.length() > 0) {
-                currentSequence.append("/");
-              }
-              currentSequence.append(value);
-            } else {
-              if (canonical.length() > 0 || currentSequence.length() > 0) {
+          // Check inner literals
+          for (int j = currentBindingStartIndex + 1; j < i; j++) {
+            if (segments.get(j).kind() == SegmentKind.LITERAL) {
+              if (knownResources.contains(segments.get(j).value())) {
+                isValidPair = true;
                 break;
               }
             }
           }
+          // If not valid yet, check preceding literal
+          if (!isValidPair && currentBindingStartIndex > 0) {
+            Segment prevSeg = segments.get(currentBindingStartIndex - 1);
+            if (prevSeg.kind() == SegmentKind.LITERAL && knownResources.contains(prevSeg.value())) {
+              isValidPair = true;
+            }
+          }
         }
-      } else if (seg.kind() == SegmentKind.WILDCARD) {
+
+        if (isValidPair) {
+          lastValidEndBindingIndex = i;
+        }
+      } else if (seg.kind() == SegmentKind.LITERAL) {
         if (inBinding) {
-          bindingSegments.add(seg);
+          String value = seg.value();
+          if (!value.matches("^v\\d+.*") && !value.matches("^u\\d+.*")) {
+            literalCountInBinding++;
+          }
         }
       }
     }
-    return canonical.toString();
+
+    if (lastValidEndBindingIndex == -1 || lastValidEndBindingIndex < startIndex) {
+      return "";
+    }
+
+    List<Segment> canonicalSegments = segments.subList(startIndex, lastValidEndBindingIndex + 1);
+    return toSyntax(canonicalSegments, true);
   }
 
   /**
@@ -1278,7 +1241,7 @@ public class PathTemplate {
   // the list iterator in its state.
   private static boolean peek(ListIterator<Segment> segments, SegmentKind... kinds) {
     int start = segments.nextIndex();
-    boolean success = false;
+    boolean success = true;
     for (SegmentKind kind : kinds) {
       if (!segments.hasNext() || segments.next().kind() != kind) {
         success = false;

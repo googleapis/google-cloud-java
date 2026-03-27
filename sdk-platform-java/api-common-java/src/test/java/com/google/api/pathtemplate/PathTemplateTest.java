@@ -966,7 +966,7 @@ class PathTemplateTest {
     PathTemplate template =
         PathTemplate.create("v1/projects/{project=projects/*}/instances/{instance_id=instances/*}");
     Truth.assertThat(template.getCanonicalResourceName(knownResources))
-        .isEqualTo("projects/{project}/instances/{instance_id}");
+        .isEqualTo("projects/{project=projects/*}/instances/{instance_id=instances/*}");
   }
 
   @Test
@@ -1004,40 +1004,38 @@ class PathTemplateTest {
   }
 
   @Test
-  void testGetCanonicalResourceName_nameBinding() {
-    Set<String> knownResources = ImmutableSet.of("projects", "locations", "instances", "widgets");
-    PathTemplate template = PathTemplate.create("v1/{field=projects/*/instances/*}");
-    Truth.assertThat(template.getCanonicalResourceName(knownResources))
-        .isEqualTo("{field=projects/*/instances/*}");
-  }
-
-  @Test
   void testGetCanonicalResourceName_nameBindingMixedWithSimpleBinding() {
     Set<String> knownResources = ImmutableSet.of("projects", "locations", "instances", "widgets");
     PathTemplate template =
         PathTemplate.create("v1/{field=projects/*/instances/*}/actions/{action}");
     Truth.assertThat(template.getCanonicalResourceName(knownResources))
-        .isEqualTo("{field=projects/*/instances/*}/actions/{action}");
+        .isEqualTo("{field=projects/*/instances/*}");
   }
 
   @Test
-  void testGetCanonicalResourceName_nameBindingWithUnknownLiterals() {
-    PathTemplate template =
-        PathTemplate.create(
-            "/compute/v1/projects/{project}/zones/{zone}/{parent_name=reservations/*/reservationBlocks/*/reservationSubBlocks/*}/reservationSlots/{reservation_slot}");
-    String canonical = template.getCanonicalResourceName(template.getResourceLiterals());
-    Truth.assertThat(canonical)
-        .isEqualTo(
-            "projects/{project}/zones/{zone}/{parent_name=reservations/*/reservationBlocks/*/reservationSubBlocks/*}/reservationSlots/{reservation_slot}");
+  void testGetCanonicalResourceName_multipleLiteralsWithSimpleBinding() {
+    Set<String> knownResources = ImmutableSet.of("actions");
+    PathTemplate template = PathTemplate.create("v1/locations/global/actions/{action}");
+    Truth.assertThat(template.getCanonicalResourceName(knownResources))
+        .isEqualTo("locations/global/actions/{action}");
   }
 
   @Test
-  void testGetCanonicalResourceName_nameBindingMixedWithSimpleBinding_moreKnownResources() {
-    Set<String> moreKnownResources = ImmutableSet.of("projects", "instances", "actions");
+  void testGetCanonicalResourceName_multipleLiteralsWithMultipleBindings() {
+    Set<String> knownResources = ImmutableSet.of("instances", "actions");
     PathTemplate template =
-        PathTemplate.create("v1/{name=projects/*/instances/*}/actions/{action}");
-    Truth.assertThat(template.getCanonicalResourceName(moreKnownResources))
-        .isEqualTo("projects/*/instances/*/actions/{action}");
+        PathTemplate.create("v1/locations/global/instances/{instance}/actions/{action}");
+    Truth.assertThat(template.getCanonicalResourceName(knownResources))
+        .isEqualTo("locations/global/instances/{instance}/actions/{action}");
+  }
+
+  @Test
+  void testGetCanonicalResourceName_multipleLiteralsBetweenMultipleBindings() {
+    Set<String> knownResources = ImmutableSet.of("instances", "actions");
+    PathTemplate template =
+        PathTemplate.create("v1/instances/{instance}/locations/global/actions/{action}");
+    Truth.assertThat(template.getCanonicalResourceName(knownResources))
+        .isEqualTo("instances/{instance}/locations/global/actions/{action}");
   }
 
   @Test
