@@ -149,7 +149,7 @@ public class AddressesClientTest {
             .setName("name3373707")
             .setOperationType("operationType91999553")
             .setProgress(-1001078227)
-            .setRegion("region-9622")
+            .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
@@ -164,7 +164,7 @@ public class AddressesClientTest {
 
     String project = "project-6911";
     String region = "region-9622";
-    String address = "address-1147692044";
+    String address = "address-4954";
 
     Operation actualResponse = client.deleteAsync(project, region, address).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -194,7 +194,7 @@ public class AddressesClientTest {
     try {
       String project = "project-6911";
       String region = "region-9622";
-      String address = "address-1147692044";
+      String address = "address-4954";
       client.deleteAsync(project, region, address).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -218,7 +218,7 @@ public class AddressesClientTest {
             .setName("name3373707")
             .setOperationType("operationType91999553")
             .setProgress(-1001078227)
-            .setRegion("region-9622")
+            .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
