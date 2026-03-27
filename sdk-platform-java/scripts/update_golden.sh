@@ -11,8 +11,8 @@ cd srcjar_unpacked
 UNPACK_DIR=$PWD
 unzip -q -c "../${RAW_SRCJAR}" temp-codegen.srcjar | jar x
 
-mkdir -p ${BUILD_WORKSPACE_DIRECTORY}/test/integration/goldens/${API_NAME}
-cd ${BUILD_WORKSPACE_DIRECTORY}/test/integration/goldens/${API_NAME}
+mkdir -p ${BUILD_WORKSPACE_DIRECTORY}/sdk-platform-java/test/integration/goldens/${API_NAME}
+cd ${BUILD_WORKSPACE_DIRECTORY}/sdk-platform-java/test/integration/goldens/${API_NAME}
 
 # clear out existing Java and JSON files.
 find . -name '*.java' -delete

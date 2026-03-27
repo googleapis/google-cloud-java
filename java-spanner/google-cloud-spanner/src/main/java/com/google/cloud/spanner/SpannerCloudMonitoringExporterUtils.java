@@ -24,6 +24,7 @@ import static com.google.api.MetricDescriptor.ValueType.DOUBLE;
 import static com.google.api.MetricDescriptor.ValueType.INT64;
 import static com.google.cloud.spanner.BuiltInMetricsConstant.ALLOWED_EXEMPLARS_ATTRIBUTES;
 import static com.google.cloud.spanner.BuiltInMetricsConstant.GAX_METER_NAME;
+import static com.google.cloud.spanner.BuiltInMetricsConstant.GRPC_GCP_METER_NAME;
 import static com.google.cloud.spanner.BuiltInMetricsConstant.GRPC_METER_NAME;
 import static com.google.cloud.spanner.BuiltInMetricsConstant.PROJECT_ID_KEY;
 import static com.google.cloud.spanner.BuiltInMetricsConstant.SPANNER_METER_NAME;
@@ -86,7 +87,8 @@ class SpannerCloudMonitoringExporterUtils {
       // Get metrics data from GAX library, GRPC library and Spanner library
       if (!(metricData.getInstrumentationScopeInfo().getName().equals(GAX_METER_NAME)
           || metricData.getInstrumentationScopeInfo().getName().equals(SPANNER_METER_NAME)
-          || metricData.getInstrumentationScopeInfo().getName().equals(GRPC_METER_NAME))) {
+          || metricData.getInstrumentationScopeInfo().getName().equals(GRPC_METER_NAME)
+          || metricData.getInstrumentationScopeInfo().getName().equals(GRPC_GCP_METER_NAME))) {
         // Filter out metric data for instruments that are not part of the spanner metrics list
         continue;
       }

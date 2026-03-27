@@ -29,15 +29,35 @@
  */
 package com.google.api.gax.httpjson;
 
+import static com.google.common.truth.Truth.assertThat;
+
 import com.google.api.client.http.HttpTransport;
+import com.google.api.gax.httpjson.testing.MockHttpService;
+import com.google.api.gax.httpjson.testing.TestApiTracer;
+import com.google.api.gax.rpc.EndpointContext;
+import com.google.api.gax.rpc.ResponseObserver;
+import com.google.api.gax.rpc.StreamController;
+import com.google.auth.Credentials;
 import com.google.common.truth.Truth;
+import com.google.protobuf.Field;
 import com.google.protobuf.TypeRegistry;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.Reader;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -134,5 +154,171 @@ class HttpJsonClientCallImplTest {
     deadlineSchedulerExecutor.awaitTermination(5, TimeUnit.SECONDS);
     // Scheduler is not waiting for any task and should terminate quickly
     Truth.assertThat(deadlineSchedulerExecutor.isTerminated()).isTrue();
+  }
+
+  private static final ApiMethodDescriptor<Field, Field> FAKE_METHOD_DESCRIPTOR =
+      ApiMethodDescriptor.<Field, Field>newBuilder()
+          .setFullMethodName("google.cloud.v1.Fake/FakeMethod")
+          .setHttpMethod("POST")
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<Field>newBuilder()
+                  .setPath(
+                      "/fake/v1/name/{name}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<Field> serializer = ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(request -> new HashMap<>())
+                  .setRequestBodyExtractor(
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("*", request.toBuilder().clearName().build(), false))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Field>newBuilder()
+                  .setDefaultInstance(Field.getDefaultInstance())
+                  .build())
+          .build();
+
+  private static final MockHttpService MOCK_SERVICE =
+      new MockHttpService(Collections.singletonList(FAKE_METHOD_DESCRIPTOR), "google.com:443");
+
+  private static ExecutorService executorService;
+  private ManagedHttpJsonChannel channel;
+  private TestApiTracer tracer;
+
+  @BeforeAll
+  static void initialize() {
+    executorService = Executors.newFixedThreadPool(2);
+  }
+
+  @AfterAll
+  static void destroy() {
+    executorService.shutdownNow();
+  }
+
+  @BeforeEach
+  void setUp() {
+    channel =
+        ManagedHttpJsonChannel.newBuilder()
+            .setEndpoint("google.com:443")
+            .setExecutor(executorService)
+            .setHttpTransport(MOCK_SERVICE)
+            .build();
+    tracer = new TestApiTracer();
+  }
+
+  @AfterEach
+  void tearDown() {
+    MOCK_SERVICE.reset();
+  }
+
+  @Test
+  void testBodySizeRecording() throws Exception {
+    HttpJsonDirectCallable<Field, Field> callable =
+        new HttpJsonDirectCallable<>(FAKE_METHOD_DESCRIPTOR);
+
+    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+    Mockito.lenient()
+        .doNothing()
+        .when(endpointContext)
+        .validateUniverseDomain(
+            Mockito.any(Credentials.class), Mockito.any(HttpJsonStatusCode.class));
+
+    HttpJsonCallContext callContext =
+        HttpJsonCallContext.createDefault()
+            .withChannel(channel)
+            .withEndpointContext(endpointContext)
+            .withTracer(tracer);
+
+    Field request = Field.newBuilder().setName("bob").setNumber(42).build();
+    Field response = Field.newBuilder().setName("alice").setNumber(43).build();
+
+    MOCK_SERVICE.addResponse(response);
+
+    callable.futureCall(request, callContext).get();
+
+    // Verify response size
+    // MockHttpService uses ProtoRestSerializer which pretty-prints.
+    String expectedResponseBody = ProtoRestSerializer.create().toBody("*", response, false);
+    long expectedResponseSize = expectedResponseBody.getBytes("UTF-8").length;
+    assertThat(tracer.getResponseReceivedSize()).isEqualTo(expectedResponseSize);
+  }
+
+  @Test
+  void testBodySizeRecordingServerStreaming() throws Exception {
+    ApiMethodDescriptor<Field, Field> methodServerStreaming =
+        FAKE_METHOD_DESCRIPTOR.toBuilder()
+            .setType(ApiMethodDescriptor.MethodType.SERVER_STREAMING)
+            .build();
+
+    MockHttpService streamingMockService =
+        new MockHttpService(Collections.singletonList(methodServerStreaming), "google.com:443");
+    ManagedHttpJsonChannel streamingChannel =
+        ManagedHttpJsonChannel.newBuilder()
+            .setEndpoint("google.com:443")
+            .setExecutor(executorService)
+            .setHttpTransport(streamingMockService)
+            .build();
+
+    HttpJsonDirectServerStreamingCallable<Field, Field> callable =
+        new HttpJsonDirectServerStreamingCallable<>(methodServerStreaming);
+
+    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+    Mockito.lenient()
+        .doNothing()
+        .when(endpointContext)
+        .validateUniverseDomain(
+            Mockito.any(Credentials.class), Mockito.any(HttpJsonStatusCode.class));
+
+    HttpJsonCallContext callContext =
+        HttpJsonCallContext.createDefault()
+            .withChannel(streamingChannel)
+            .withEndpointContext(endpointContext)
+            .withTracer(tracer);
+
+    Field request = Field.newBuilder().setName("bob").setNumber(42).build();
+    Field response1 = Field.newBuilder().setName("alice1").setNumber(43).build();
+    Field response2 = Field.newBuilder().setName("alice2").setNumber(44).build();
+
+    streamingMockService.addResponse(new Field[] {response1, response2});
+
+    final List<Field> receivedResponses = new java.util.ArrayList<>();
+    final CountDownLatch latch = new CountDownLatch(1);
+
+    callable.call(
+        request,
+        new ResponseObserver<Field>() {
+          @Override
+          public void onStart(StreamController controller) {
+            // no behavior needed
+          }
+
+          @Override
+          public void onResponse(Field response) {
+            receivedResponses.add(response);
+          }
+
+          @Override
+          public void onError(Throwable t) {
+            latch.countDown();
+          }
+
+          @Override
+          public void onComplete() {
+            latch.countDown();
+          }
+        },
+        callContext);
+
+    latch.await(10, TimeUnit.SECONDS);
+
+    assertThat(receivedResponses).hasSize(2);
+
+    // Verify response size (0 because streaming chunked responses don't include Content-Length)
+    assertThat(tracer.getResponseReceivedSize()).isEqualTo(0);
+    streamingChannel.shutdownNow();
   }
 }

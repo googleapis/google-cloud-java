@@ -31,11 +31,21 @@ package com.google.api.gax.httpjson;
 
 import static com.google.api.gax.util.TimeConversionTestUtils.testDurationMethod;
 import static com.google.api.gax.util.TimeConversionTestUtils.testInstantMethod;
+import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.gax.tracing.ApiTracer;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 public class HttpJsonCallOptionsTest {
   private final HttpJsonCallOptions.Builder OPTIONS_BUILDER = HttpJsonCallOptions.newBuilder();
+
+  @Test
+  void testTracer() {
+    ApiTracer tracer = Mockito.mock(ApiTracer.class);
+    HttpJsonCallOptions options = OPTIONS_BUILDER.setTracer(tracer).build();
+    assertThat(options.getTracer()).isSameInstanceAs(tracer);
+  }
 
   @Test
   public void testDeadline() {
