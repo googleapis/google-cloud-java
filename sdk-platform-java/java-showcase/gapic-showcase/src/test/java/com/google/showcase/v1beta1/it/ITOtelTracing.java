@@ -33,7 +33,6 @@ package com.google.showcase.v1beta1.it;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 
-import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.StatusCode;
@@ -356,7 +355,71 @@ class ITOtelTracing {
             .setTransportChannelProvider(
                 EchoSettings.defaultHttpJsonTransportProviderBuilder()
                     .setHttpTransport(
-                        new NetHttpTransport.Builder().doNotValidateCertificate().build())
+                        new com.google.api.client.http.HttpTransport() {
+                          @Override
+                          protected com.google.api.client.http.LowLevelHttpRequest buildRequest(
+                              String method, String url) {
+                            return new com.google.api.client.http.LowLevelHttpRequest() {
+                              @Override
+                              public void addHeader(String name, String value) {}
+
+                              @Override
+                              public com.google.api.client.http.LowLevelHttpResponse execute() {
+                                return new com.google.api.client.http.LowLevelHttpResponse() {
+                                  @Override
+                                  public java.io.InputStream getContent() {
+                                    return new java.io.ByteArrayInputStream("{}".getBytes());
+                                  }
+
+                                  @Override
+                                  public String getContentEncoding() {
+                                    return null;
+                                  }
+
+                                  @Override
+                                  public long getContentLength() {
+                                    return 2;
+                                  }
+
+                                  @Override
+                                  public String getContentType() {
+                                    return "application/json";
+                                  }
+
+                                  @Override
+                                  public String getStatusLine() {
+                                    return "HTTP/1.1 503 Service Unavailable";
+                                  }
+
+                                  @Override
+                                  public int getStatusCode() {
+                                    return 503;
+                                  }
+
+                                  @Override
+                                  public String getReasonPhrase() {
+                                    return "Service Unavailable";
+                                  }
+
+                                  @Override
+                                  public int getHeaderCount() {
+                                    return 0;
+                                  }
+
+                                  @Override
+                                  public String getHeaderName(int index) {
+                                    return null;
+                                  }
+
+                                  @Override
+                                  public String getHeaderValue(int index) {
+                                    return null;
+                                  }
+                                };
+                              }
+                            };
+                          }
+                        })
                     .setEndpoint("http://localhost:7469")
                     .build())
             .build();
