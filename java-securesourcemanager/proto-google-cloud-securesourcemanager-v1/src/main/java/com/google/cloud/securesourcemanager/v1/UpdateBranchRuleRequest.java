@@ -137,14 +137,14 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. Field mask is used to specify the fields to be overwritten in the
+   * Optional. Field mask is used to specify the fields to be overwritten in the
    * branchRule resource by the update.
    * The fields specified in the update_mask are relative to the resource, not
    * the full request. A field will be overwritten if it is in the mask.
    * The special value "*" means full replacement.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the updateMask field is set.
@@ -158,14 +158,14 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. Field mask is used to specify the fields to be overwritten in the
+   * Optional. Field mask is used to specify the fields to be overwritten in the
    * branchRule resource by the update.
    * The fields specified in the update_mask are relative to the resource, not
    * the full request. A field will be overwritten if it is in the mask.
    * The special value "*" means full replacement.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The updateMask.
@@ -179,14 +179,14 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. Field mask is used to specify the fields to be overwritten in the
+   * Optional. Field mask is used to specify the fields to be overwritten in the
    * branchRule resource by the update.
    * The fields specified in the update_mask are relative to the resource, not
    * the full request. A field will be overwritten if it is in the mask.
    * The special value "*" means full replacement.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -815,14 +815,14 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Field mask is used to specify the fields to be overwritten in the
+     * Optional. Field mask is used to specify the fields to be overwritten in the
      * branchRule resource by the update.
      * The fields specified in the update_mask are relative to the resource, not
      * the full request. A field will be overwritten if it is in the mask.
      * The special value "*" means full replacement.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the updateMask field is set.
@@ -835,14 +835,14 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Field mask is used to specify the fields to be overwritten in the
+     * Optional. Field mask is used to specify the fields to be overwritten in the
      * branchRule resource by the update.
      * The fields specified in the update_mask are relative to the resource, not
      * the full request. A field will be overwritten if it is in the mask.
      * The special value "*" means full replacement.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The updateMask.
@@ -861,14 +861,14 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Field mask is used to specify the fields to be overwritten in the
+     * Optional. Field mask is used to specify the fields to be overwritten in the
      * branchRule resource by the update.
      * The fields specified in the update_mask are relative to the resource, not
      * the full request. A field will be overwritten if it is in the mask.
      * The special value "*" means full replacement.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
@@ -889,14 +889,14 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Field mask is used to specify the fields to be overwritten in the
+     * Optional. Field mask is used to specify the fields to be overwritten in the
      * branchRule resource by the update.
      * The fields specified in the update_mask are relative to the resource, not
      * the full request. A field will be overwritten if it is in the mask.
      * The special value "*" means full replacement.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
@@ -914,14 +914,14 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Field mask is used to specify the fields to be overwritten in the
+     * Optional. Field mask is used to specify the fields to be overwritten in the
      * branchRule resource by the update.
      * The fields specified in the update_mask are relative to the resource, not
      * the full request. A field will be overwritten if it is in the mask.
      * The special value "*" means full replacement.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
@@ -947,14 +947,14 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Field mask is used to specify the fields to be overwritten in the
+     * Optional. Field mask is used to specify the fields to be overwritten in the
      * branchRule resource by the update.
      * The fields specified in the update_mask are relative to the resource, not
      * the full request. A field will be overwritten if it is in the mask.
      * The special value "*" means full replacement.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearUpdateMask() {
@@ -972,14 +972,14 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Field mask is used to specify the fields to be overwritten in the
+     * Optional. Field mask is used to specify the fields to be overwritten in the
      * branchRule resource by the update.
      * The fields specified in the update_mask are relative to the resource, not
      * the full request. A field will be overwritten if it is in the mask.
      * The special value "*" means full replacement.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
@@ -992,14 +992,14 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Field mask is used to specify the fields to be overwritten in the
+     * Optional. Field mask is used to specify the fields to be overwritten in the
      * branchRule resource by the update.
      * The fields specified in the update_mask are relative to the resource, not
      * the full request. A field will be overwritten if it is in the mask.
      * The special value "*" means full replacement.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
@@ -1016,14 +1016,14 @@ public final class UpdateBranchRuleRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Field mask is used to specify the fields to be overwritten in the
+     * Optional. Field mask is used to specify the fields to be overwritten in the
      * branchRule resource by the update.
      * The fields specified in the update_mask are relative to the resource, not
      * the full request. A field will be overwritten if it is in the mask.
      * The special value "*" means full replacement.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<

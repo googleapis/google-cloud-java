@@ -715,6 +715,7 @@ public class HttpJsonMetadataServiceStub extends MetadataServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateEntityRequest, Entity> updateEntityTransportSettings =
         HttpJsonCallSettings.<UpdateEntityRequest, Entity>newBuilder()
@@ -737,6 +738,7 @@ public class HttpJsonMetadataServiceStub extends MetadataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetEntityRequest, Entity> getEntityTransportSettings =
         HttpJsonCallSettings.<GetEntityRequest, Entity>newBuilder()
@@ -748,6 +750,7 @@ public class HttpJsonMetadataServiceStub extends MetadataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListEntitiesRequest, ListEntitiesResponse> listEntitiesTransportSettings =
         HttpJsonCallSettings.<ListEntitiesRequest, ListEntitiesResponse>newBuilder()
@@ -759,6 +762,7 @@ public class HttpJsonMetadataServiceStub extends MetadataServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreatePartitionRequest, Partition> createPartitionTransportSettings =
         HttpJsonCallSettings.<CreatePartitionRequest, Partition>newBuilder()
@@ -770,6 +774,7 @@ public class HttpJsonMetadataServiceStub extends MetadataServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeletePartitionRequest, Empty> deletePartitionTransportSettings =
         HttpJsonCallSettings.<DeletePartitionRequest, Empty>newBuilder()
@@ -781,6 +786,7 @@ public class HttpJsonMetadataServiceStub extends MetadataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetPartitionRequest, Partition> getPartitionTransportSettings =
         HttpJsonCallSettings.<GetPartitionRequest, Partition>newBuilder()
@@ -792,6 +798,7 @@ public class HttpJsonMetadataServiceStub extends MetadataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListPartitionsRequest, ListPartitionsResponse>
         listPartitionsTransportSettings =
@@ -804,6 +811,7 @@ public class HttpJsonMetadataServiceStub extends MetadataServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -838,6 +846,7 @@ public class HttpJsonMetadataServiceStub extends MetadataServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -849,6 +858,7 @@ public class HttpJsonMetadataServiceStub extends MetadataServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -861,6 +871,7 @@ public class HttpJsonMetadataServiceStub extends MetadataServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createEntityCallable =

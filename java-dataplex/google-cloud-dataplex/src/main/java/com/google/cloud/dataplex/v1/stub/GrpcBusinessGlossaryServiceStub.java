@@ -400,6 +400,7 @@ public class GrpcBusinessGlossaryServiceStub extends BusinessGlossaryServiceStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateGlossaryRequest, Operation> updateGlossaryTransportSettings =
         GrpcCallSettings.<UpdateGlossaryRequest, Operation>newBuilder()
@@ -420,6 +421,7 @@ public class GrpcBusinessGlossaryServiceStub extends BusinessGlossaryServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetGlossaryRequest, Glossary> getGlossaryTransportSettings =
         GrpcCallSettings.<GetGlossaryRequest, Glossary>newBuilder()
@@ -430,6 +432,7 @@ public class GrpcBusinessGlossaryServiceStub extends BusinessGlossaryServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListGlossariesRequest, ListGlossariesResponse>
         listGlossariesTransportSettings =
@@ -441,6 +444,7 @@ public class GrpcBusinessGlossaryServiceStub extends BusinessGlossaryServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateGlossaryCategoryRequest, GlossaryCategory>
         createGlossaryCategoryTransportSettings =
@@ -452,6 +456,7 @@ public class GrpcBusinessGlossaryServiceStub extends BusinessGlossaryServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateGlossaryCategoryRequest, GlossaryCategory>
         updateGlossaryCategoryTransportSettings =
@@ -473,6 +478,7 @@ public class GrpcBusinessGlossaryServiceStub extends BusinessGlossaryServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetGlossaryCategoryRequest, GlossaryCategory>
         getGlossaryCategoryTransportSettings =
@@ -484,6 +490,7 @@ public class GrpcBusinessGlossaryServiceStub extends BusinessGlossaryServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListGlossaryCategoriesRequest, ListGlossaryCategoriesResponse>
         listGlossaryCategoriesTransportSettings =
@@ -496,6 +503,7 @@ public class GrpcBusinessGlossaryServiceStub extends BusinessGlossaryServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateGlossaryTermRequest, GlossaryTerm> createGlossaryTermTransportSettings =
         GrpcCallSettings.<CreateGlossaryTermRequest, GlossaryTerm>newBuilder()
@@ -506,6 +514,7 @@ public class GrpcBusinessGlossaryServiceStub extends BusinessGlossaryServiceStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateGlossaryTermRequest, GlossaryTerm> updateGlossaryTermTransportSettings =
         GrpcCallSettings.<UpdateGlossaryTermRequest, GlossaryTerm>newBuilder()
@@ -526,6 +535,7 @@ public class GrpcBusinessGlossaryServiceStub extends BusinessGlossaryServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetGlossaryTermRequest, GlossaryTerm> getGlossaryTermTransportSettings =
         GrpcCallSettings.<GetGlossaryTermRequest, GlossaryTerm>newBuilder()
@@ -536,6 +546,7 @@ public class GrpcBusinessGlossaryServiceStub extends BusinessGlossaryServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListGlossaryTermsRequest, ListGlossaryTermsResponse>
         listGlossaryTermsTransportSettings =
@@ -547,6 +558,7 @@ public class GrpcBusinessGlossaryServiceStub extends BusinessGlossaryServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -577,6 +589,7 @@ public class GrpcBusinessGlossaryServiceStub extends BusinessGlossaryServiceStub
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -587,6 +600,7 @@ public class GrpcBusinessGlossaryServiceStub extends BusinessGlossaryServiceStub
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -598,6 +612,7 @@ public class GrpcBusinessGlossaryServiceStub extends BusinessGlossaryServiceStub
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createGlossaryCallable =

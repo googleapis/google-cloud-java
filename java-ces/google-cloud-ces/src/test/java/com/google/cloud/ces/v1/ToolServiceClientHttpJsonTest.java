@@ -86,7 +86,10 @@ public class ToolServiceClientHttpJsonTest {
   @Test
   public void executeToolTest() throws Exception {
     ExecuteToolResponse expectedResponse =
-        ExecuteToolResponse.newBuilder().setResponse(Struct.newBuilder().build()).build();
+        ExecuteToolResponse.newBuilder()
+            .setResponse(Struct.newBuilder().build())
+            .setVariables(Struct.newBuilder().build())
+            .build();
     mockService.addResponse(expectedResponse);
 
     ExecuteToolRequest request =

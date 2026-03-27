@@ -1236,6 +1236,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateTeamFolderRequest, TeamFolder> createTeamFolderTransportSettings =
         GrpcCallSettings.<CreateTeamFolderRequest, TeamFolder>newBuilder()
@@ -1246,6 +1247,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateTeamFolderRequest, TeamFolder> updateTeamFolderTransportSettings =
         GrpcCallSettings.<UpdateTeamFolderRequest, TeamFolder>newBuilder()
@@ -1267,6 +1269,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<QueryTeamFolderContentsRequest, QueryTeamFolderContentsResponse>
         queryTeamFolderContentsTransportSettings =
@@ -1279,6 +1282,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("team_folder", String.valueOf(request.getTeamFolder()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getTeamFolder())
                 .build();
     GrpcCallSettings<SearchTeamFoldersRequest, SearchTeamFoldersResponse>
         searchTeamFoldersTransportSettings =
@@ -1290,6 +1294,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("location", String.valueOf(request.getLocation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getLocation())
                 .build();
     GrpcCallSettings<GetFolderRequest, Folder> getFolderTransportSettings =
         GrpcCallSettings.<GetFolderRequest, Folder>newBuilder()
@@ -1300,6 +1305,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateFolderRequest, Folder> createFolderTransportSettings =
         GrpcCallSettings.<CreateFolderRequest, Folder>newBuilder()
@@ -1310,6 +1316,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateFolderRequest, Folder> updateFolderTransportSettings =
         GrpcCallSettings.<UpdateFolderRequest, Folder>newBuilder()
@@ -1330,6 +1337,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<QueryFolderContentsRequest, QueryFolderContentsResponse>
         queryFolderContentsTransportSettings =
@@ -1341,6 +1349,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("folder", String.valueOf(request.getFolder()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getFolder())
                 .build();
     GrpcCallSettings<QueryUserRootContentsRequest, QueryUserRootContentsResponse>
         queryUserRootContentsTransportSettings =
@@ -1353,6 +1362,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("location", String.valueOf(request.getLocation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getLocation())
                 .build();
     GrpcCallSettings<MoveFolderRequest, Operation> moveFolderTransportSettings =
         GrpcCallSettings.<MoveFolderRequest, Operation>newBuilder()
@@ -1363,6 +1373,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRepositoriesRequest, ListRepositoriesResponse>
         listRepositoriesTransportSettings =
@@ -1374,6 +1385,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetRepositoryRequest, Repository> getRepositoryTransportSettings =
         GrpcCallSettings.<GetRepositoryRequest, Repository>newBuilder()
@@ -1384,6 +1396,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateRepositoryRequest, Repository> createRepositoryTransportSettings =
         GrpcCallSettings.<CreateRepositoryRequest, Repository>newBuilder()
@@ -1394,6 +1407,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateRepositoryRequest, Repository> updateRepositoryTransportSettings =
         GrpcCallSettings.<UpdateRepositoryRequest, Repository>newBuilder()
@@ -1414,6 +1428,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<MoveRepositoryRequest, Operation> moveRepositoryTransportSettings =
         GrpcCallSettings.<MoveRepositoryRequest, Operation>newBuilder()
@@ -1424,6 +1439,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CommitRepositoryChangesRequest, CommitRepositoryChangesResponse>
         commitRepositoryChangesTransportSettings =
@@ -1436,6 +1452,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ReadRepositoryFileRequest, ReadRepositoryFileResponse>
         readRepositoryFileTransportSettings =
@@ -1447,6 +1464,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             QueryRepositoryDirectoryContentsRequest, QueryRepositoryDirectoryContentsResponse>
@@ -1461,6 +1479,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<FetchRepositoryHistoryRequest, FetchRepositoryHistoryResponse>
         fetchRepositoryHistoryTransportSettings =
@@ -1473,6 +1492,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             ComputeRepositoryAccessTokenStatusRequest, ComputeRepositoryAccessTokenStatusResponse>
@@ -1488,6 +1508,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<FetchRemoteBranchesRequest, FetchRemoteBranchesResponse>
         fetchRemoteBranchesTransportSettings =
@@ -1499,6 +1520,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListWorkspacesRequest, ListWorkspacesResponse>
         listWorkspacesTransportSettings =
@@ -1510,6 +1532,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetWorkspaceRequest, Workspace> getWorkspaceTransportSettings =
         GrpcCallSettings.<GetWorkspaceRequest, Workspace>newBuilder()
@@ -1520,6 +1543,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateWorkspaceRequest, Workspace> createWorkspaceTransportSettings =
         GrpcCallSettings.<CreateWorkspaceRequest, Workspace>newBuilder()
@@ -1530,6 +1554,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteWorkspaceRequest, Empty> deleteWorkspaceTransportSettings =
         GrpcCallSettings.<DeleteWorkspaceRequest, Empty>newBuilder()
@@ -1540,6 +1565,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<InstallNpmPackagesRequest, InstallNpmPackagesResponse>
         installNpmPackagesTransportSettings =
@@ -1551,6 +1577,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("workspace", String.valueOf(request.getWorkspace()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getWorkspace())
                 .build();
     GrpcCallSettings<PullGitCommitsRequest, PullGitCommitsResponse>
         pullGitCommitsTransportSettings =
@@ -1562,6 +1589,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<PushGitCommitsRequest, PushGitCommitsResponse>
         pushGitCommitsTransportSettings =
@@ -1573,6 +1601,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<FetchFileGitStatusesRequest, FetchFileGitStatusesResponse>
         fetchFileGitStatusesTransportSettings =
@@ -1584,6 +1613,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<FetchGitAheadBehindRequest, FetchGitAheadBehindResponse>
         fetchGitAheadBehindTransportSettings =
@@ -1595,6 +1625,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>
         commitWorkspaceChangesTransportSettings =
@@ -1607,6 +1638,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ResetWorkspaceChangesRequest, ResetWorkspaceChangesResponse>
         resetWorkspaceChangesTransportSettings =
@@ -1619,6 +1651,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<FetchFileDiffRequest, FetchFileDiffResponse> fetchFileDiffTransportSettings =
         GrpcCallSettings.<FetchFileDiffRequest, FetchFileDiffResponse>newBuilder()
@@ -1629,6 +1662,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("workspace", String.valueOf(request.getWorkspace()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getWorkspace())
             .build();
     GrpcCallSettings<QueryDirectoryContentsRequest, QueryDirectoryContentsResponse>
         queryDirectoryContentsTransportSettings =
@@ -1641,6 +1675,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("workspace", String.valueOf(request.getWorkspace()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getWorkspace())
                 .build();
     GrpcCallSettings<SearchFilesRequest, SearchFilesResponse> searchFilesTransportSettings =
         GrpcCallSettings.<SearchFilesRequest, SearchFilesResponse>newBuilder()
@@ -1651,6 +1686,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("workspace", String.valueOf(request.getWorkspace()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getWorkspace())
             .build();
     GrpcCallSettings<MakeDirectoryRequest, MakeDirectoryResponse> makeDirectoryTransportSettings =
         GrpcCallSettings.<MakeDirectoryRequest, MakeDirectoryResponse>newBuilder()
@@ -1661,6 +1697,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("workspace", String.valueOf(request.getWorkspace()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getWorkspace())
             .build();
     GrpcCallSettings<RemoveDirectoryRequest, RemoveDirectoryResponse>
         removeDirectoryTransportSettings =
@@ -1672,6 +1709,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("workspace", String.valueOf(request.getWorkspace()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getWorkspace())
                 .build();
     GrpcCallSettings<MoveDirectoryRequest, MoveDirectoryResponse> moveDirectoryTransportSettings =
         GrpcCallSettings.<MoveDirectoryRequest, MoveDirectoryResponse>newBuilder()
@@ -1682,6 +1720,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("workspace", String.valueOf(request.getWorkspace()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getWorkspace())
             .build();
     GrpcCallSettings<ReadFileRequest, ReadFileResponse> readFileTransportSettings =
         GrpcCallSettings.<ReadFileRequest, ReadFileResponse>newBuilder()
@@ -1692,6 +1731,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("workspace", String.valueOf(request.getWorkspace()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getWorkspace())
             .build();
     GrpcCallSettings<RemoveFileRequest, RemoveFileResponse> removeFileTransportSettings =
         GrpcCallSettings.<RemoveFileRequest, RemoveFileResponse>newBuilder()
@@ -1702,6 +1742,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("workspace", String.valueOf(request.getWorkspace()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getWorkspace())
             .build();
     GrpcCallSettings<MoveFileRequest, MoveFileResponse> moveFileTransportSettings =
         GrpcCallSettings.<MoveFileRequest, MoveFileResponse>newBuilder()
@@ -1712,6 +1753,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("workspace", String.valueOf(request.getWorkspace()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getWorkspace())
             .build();
     GrpcCallSettings<WriteFileRequest, WriteFileResponse> writeFileTransportSettings =
         GrpcCallSettings.<WriteFileRequest, WriteFileResponse>newBuilder()
@@ -1722,6 +1764,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("workspace", String.valueOf(request.getWorkspace()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getWorkspace())
             .build();
     GrpcCallSettings<ListReleaseConfigsRequest, ListReleaseConfigsResponse>
         listReleaseConfigsTransportSettings =
@@ -1733,6 +1776,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetReleaseConfigRequest, ReleaseConfig> getReleaseConfigTransportSettings =
         GrpcCallSettings.<GetReleaseConfigRequest, ReleaseConfig>newBuilder()
@@ -1743,6 +1787,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateReleaseConfigRequest, ReleaseConfig>
         createReleaseConfigTransportSettings =
@@ -1754,6 +1799,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateReleaseConfigRequest, ReleaseConfig>
         updateReleaseConfigTransportSettings =
@@ -1777,6 +1823,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListCompilationResultsRequest, ListCompilationResultsResponse>
         listCompilationResultsTransportSettings =
@@ -1789,6 +1836,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetCompilationResultRequest, CompilationResult>
         getCompilationResultTransportSettings =
@@ -1800,6 +1848,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateCompilationResultRequest, CompilationResult>
         createCompilationResultTransportSettings =
@@ -1811,6 +1860,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<QueryCompilationResultActionsRequest, QueryCompilationResultActionsResponse>
         queryCompilationResultActionsTransportSettings =
@@ -1824,6 +1874,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListWorkflowConfigsRequest, ListWorkflowConfigsResponse>
         listWorkflowConfigsTransportSettings =
@@ -1835,6 +1886,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetWorkflowConfigRequest, WorkflowConfig> getWorkflowConfigTransportSettings =
         GrpcCallSettings.<GetWorkflowConfigRequest, WorkflowConfig>newBuilder()
@@ -1845,6 +1897,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateWorkflowConfigRequest, WorkflowConfig>
         createWorkflowConfigTransportSettings =
@@ -1856,6 +1909,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateWorkflowConfigRequest, WorkflowConfig>
         updateWorkflowConfigTransportSettings =
@@ -1879,6 +1933,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListWorkflowInvocationsRequest, ListWorkflowInvocationsResponse>
         listWorkflowInvocationsTransportSettings =
@@ -1891,6 +1946,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetWorkflowInvocationRequest, WorkflowInvocation>
         getWorkflowInvocationTransportSettings =
@@ -1902,6 +1958,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateWorkflowInvocationRequest, WorkflowInvocation>
         createWorkflowInvocationTransportSettings =
@@ -1913,6 +1970,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteWorkflowInvocationRequest, Empty>
         deleteWorkflowInvocationTransportSettings =
@@ -1924,6 +1982,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CancelWorkflowInvocationRequest, CancelWorkflowInvocationResponse>
         cancelWorkflowInvocationTransportSettings =
@@ -1936,6 +1995,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<QueryWorkflowInvocationActionsRequest, QueryWorkflowInvocationActionsResponse>
         queryWorkflowInvocationActionsTransportSettings =
@@ -1949,6 +2009,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetConfigRequest, Config> getConfigTransportSettings =
         GrpcCallSettings.<GetConfigRequest, Config>newBuilder()
@@ -1959,6 +2020,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateConfigRequest, Config> updateConfigTransportSettings =
         GrpcCallSettings.<UpdateConfigRequest, Config>newBuilder()
@@ -1979,6 +2041,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -1989,6 +2052,7 @@ public class GrpcDataformStub extends DataformStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -2000,6 +2064,7 @@ public class GrpcDataformStub extends DataformStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

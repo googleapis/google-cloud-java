@@ -24,8 +24,7 @@ package com.google.cloud.databasecenter.v1beta;
  *
  *
  * <pre>
- * Proto representing the edition of the instance.
- * NextId: 4.
+ * Represents the edition of a database resource.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.databasecenter.v1beta.Edition}

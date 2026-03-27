@@ -628,6 +628,7 @@ public class HttpJsonFlowsStub extends FlowsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteFlowRequest, Empty> deleteFlowTransportSettings =
         HttpJsonCallSettings.<DeleteFlowRequest, Empty>newBuilder()
@@ -639,6 +640,7 @@ public class HttpJsonFlowsStub extends FlowsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListFlowsRequest, ListFlowsResponse> listFlowsTransportSettings =
         HttpJsonCallSettings.<ListFlowsRequest, ListFlowsResponse>newBuilder()
@@ -650,6 +652,7 @@ public class HttpJsonFlowsStub extends FlowsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetFlowRequest, Flow> getFlowTransportSettings =
         HttpJsonCallSettings.<GetFlowRequest, Flow>newBuilder()
@@ -661,6 +664,7 @@ public class HttpJsonFlowsStub extends FlowsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateFlowRequest, Flow> updateFlowTransportSettings =
         HttpJsonCallSettings.<UpdateFlowRequest, Flow>newBuilder()
@@ -683,6 +687,7 @@ public class HttpJsonFlowsStub extends FlowsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ValidateFlowRequest, FlowValidationResult> validateFlowTransportSettings =
         HttpJsonCallSettings.<ValidateFlowRequest, FlowValidationResult>newBuilder()
@@ -694,6 +699,7 @@ public class HttpJsonFlowsStub extends FlowsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetFlowValidationResultRequest, FlowValidationResult>
         getFlowValidationResultTransportSettings =
@@ -706,6 +712,7 @@ public class HttpJsonFlowsStub extends FlowsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ImportFlowRequest, Operation> importFlowTransportSettings =
         HttpJsonCallSettings.<ImportFlowRequest, Operation>newBuilder()
@@ -717,6 +724,7 @@ public class HttpJsonFlowsStub extends FlowsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ExportFlowRequest, Operation> exportFlowTransportSettings =
         HttpJsonCallSettings.<ExportFlowRequest, Operation>newBuilder()
@@ -728,6 +736,7 @@ public class HttpJsonFlowsStub extends FlowsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

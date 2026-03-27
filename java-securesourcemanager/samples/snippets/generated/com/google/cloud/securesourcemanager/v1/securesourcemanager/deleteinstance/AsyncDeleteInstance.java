@@ -40,6 +40,7 @@ public class AsyncDeleteInstance {
           DeleteInstanceRequest.newBuilder()
               .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
               .setRequestId("requestId693933066")
+              .setForce(true)
               .build();
       ApiFuture<Operation> future =
           secureSourceManagerClient.deleteInstanceCallable().futureCall(request);

@@ -124,6 +124,16 @@ public final class ComputeRepositoryAccessTokenStatusResponse
      * <code>VALID = 3;</code>
      */
     VALID(3),
+    /**
+     *
+     *
+     * <pre>
+     * The token is not accessible due to permission issues.
+     * </pre>
+     *
+     * <code>PERMISSION_DENIED = 4;</code>
+     */
+    PERMISSION_DENIED(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -182,6 +192,17 @@ public final class ComputeRepositoryAccessTokenStatusResponse
      */
     public static final int VALID_VALUE = 3;
 
+    /**
+     *
+     *
+     * <pre>
+     * The token is not accessible due to permission issues.
+     * </pre>
+     *
+     * <code>PERMISSION_DENIED = 4;</code>
+     */
+    public static final int PERMISSION_DENIED_VALUE = 4;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -214,6 +235,8 @@ public final class ComputeRepositoryAccessTokenStatusResponse
           return INVALID;
         case 3:
           return VALID;
+        case 4:
+          return PERMISSION_DENIED;
         default:
           return null;
       }

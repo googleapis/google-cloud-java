@@ -200,6 +200,7 @@ public class GrpcUserListGlobalLicenseServiceStub extends UserListGlobalLicenseS
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateUserListGlobalLicenseRequest, UserListGlobalLicense>
         updateUserListGlobalLicenseTransportSettings =
@@ -224,6 +225,7 @@ public class GrpcUserListGlobalLicenseServiceStub extends UserListGlobalLicenseS
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListUserListGlobalLicensesRequest, ListUserListGlobalLicensesResponse>
         listUserListGlobalLicensesTransportSettings =
@@ -236,6 +238,7 @@ public class GrpcUserListGlobalLicenseServiceStub extends UserListGlobalLicenseS
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             ListUserListGlobalLicenseCustomerInfosRequest,
@@ -252,6 +255,7 @@ public class GrpcUserListGlobalLicenseServiceStub extends UserListGlobalLicenseS
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createUserListGlobalLicenseCallable =

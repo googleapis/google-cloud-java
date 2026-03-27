@@ -39,6 +39,7 @@ public class SyncDeleteInstance {
           DeleteInstanceRequest.newBuilder()
               .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
               .setRequestId("requestId693933066")
+              .setForce(true)
               .build();
       secureSourceManagerClient.deleteInstanceAsync(request).get();
     }

@@ -313,6 +313,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<BatchDeleteTestCasesRequest, Empty> batchDeleteTestCasesTransportSettings =
         GrpcCallSettings.<BatchDeleteTestCasesRequest, Empty>newBuilder()
@@ -323,6 +324,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetTestCaseRequest, TestCase> getTestCaseTransportSettings =
         GrpcCallSettings.<GetTestCaseRequest, TestCase>newBuilder()
@@ -333,6 +335,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateTestCaseRequest, TestCase> createTestCaseTransportSettings =
         GrpcCallSettings.<CreateTestCaseRequest, TestCase>newBuilder()
@@ -343,6 +346,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateTestCaseRequest, TestCase> updateTestCaseTransportSettings =
         GrpcCallSettings.<UpdateTestCaseRequest, TestCase>newBuilder()
@@ -363,6 +367,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<BatchRunTestCasesRequest, Operation> batchRunTestCasesTransportSettings =
         GrpcCallSettings.<BatchRunTestCasesRequest, Operation>newBuilder()
@@ -373,6 +378,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CalculateCoverageRequest, CalculateCoverageResponse>
         calculateCoverageTransportSettings =
@@ -384,6 +390,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                       builder.add("agent", String.valueOf(request.getAgent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAgent())
                 .build();
     GrpcCallSettings<ImportTestCasesRequest, Operation> importTestCasesTransportSettings =
         GrpcCallSettings.<ImportTestCasesRequest, Operation>newBuilder()
@@ -394,6 +401,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ExportTestCasesRequest, Operation> exportTestCasesTransportSettings =
         GrpcCallSettings.<ExportTestCasesRequest, Operation>newBuilder()
@@ -404,6 +412,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListTestCaseResultsRequest, ListTestCaseResultsResponse>
         listTestCaseResultsTransportSettings =
@@ -415,6 +424,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetTestCaseResultRequest, TestCaseResult> getTestCaseResultTransportSettings =
         GrpcCallSettings.<GetTestCaseResultRequest, TestCaseResult>newBuilder()
@@ -425,6 +435,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

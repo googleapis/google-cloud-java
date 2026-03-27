@@ -60,11 +60,11 @@ public interface ListInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * Requested page size. Server may return fewer items than requested.
-   * If unspecified, server will pick an appropriate default.
+   * Optional. Requested page size. Server may return fewer items than
+   * requested. If unspecified, server will pick an appropriate default.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -74,10 +74,10 @@ public interface ListInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * A token identifying a page of results the server should return.
+   * Optional. A token identifying a page of results the server should return.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -87,10 +87,10 @@ public interface ListInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * A token identifying a page of results the server should return.
+   * Optional. A token identifying a page of results the server should return.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */
@@ -100,10 +100,10 @@ public interface ListInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * Filter for filtering results.
+   * Optional. Filter for filtering results.
    * </pre>
    *
-   * <code>string filter = 4;</code>
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -113,10 +113,10 @@ public interface ListInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * Filter for filtering results.
+   * Optional. Filter for filtering results.
    * </pre>
    *
-   * <code>string filter = 4;</code>
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */
@@ -126,10 +126,10 @@ public interface ListInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * Hint for how to order the results.
+   * Optional. Hint for how to order the results.
    * </pre>
    *
-   * <code>string order_by = 5;</code>
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The orderBy.
    */
@@ -139,10 +139,10 @@ public interface ListInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * Hint for how to order the results.
+   * Optional. Hint for how to order the results.
    * </pre>
    *
-   * <code>string order_by = 5;</code>
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for orderBy.
    */

@@ -388,6 +388,7 @@ public class AnswerRecordsStubSettings extends StubSettings<AnswerRecordsStubSet
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-dialogflow")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

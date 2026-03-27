@@ -254,6 +254,18 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
     return ((NetAppStubSettings) getStubSettings()).revertVolumeOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to establishVolumePeering. */
+  public UnaryCallSettings<EstablishVolumePeeringRequest, Operation>
+      establishVolumePeeringSettings() {
+    return ((NetAppStubSettings) getStubSettings()).establishVolumePeeringSettings();
+  }
+
+  /** Returns the object with the settings used for calls to establishVolumePeering. */
+  public OperationCallSettings<EstablishVolumePeeringRequest, Volume, OperationMetadata>
+      establishVolumePeeringOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).establishVolumePeeringOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listSnapshots. */
   public PagedCallSettings<ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
       listSnapshotsSettings() {
@@ -748,6 +760,30 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
     return ((NetAppStubSettings) getStubSettings()).deleteHostGroupOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to executeOntapPost. */
+  public UnaryCallSettings<ExecuteOntapPostRequest, ExecuteOntapPostResponse>
+      executeOntapPostSettings() {
+    return ((NetAppStubSettings) getStubSettings()).executeOntapPostSettings();
+  }
+
+  /** Returns the object with the settings used for calls to executeOntapGet. */
+  public UnaryCallSettings<ExecuteOntapGetRequest, ExecuteOntapGetResponse>
+      executeOntapGetSettings() {
+    return ((NetAppStubSettings) getStubSettings()).executeOntapGetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to executeOntapDelete. */
+  public UnaryCallSettings<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>
+      executeOntapDeleteSettings() {
+    return ((NetAppStubSettings) getStubSettings()).executeOntapDeleteSettings();
+  }
+
+  /** Returns the object with the settings used for calls to executeOntapPatch. */
+  public UnaryCallSettings<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
+      executeOntapPatchSettings() {
+    return ((NetAppStubSettings) getStubSettings()).executeOntapPatchSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -997,6 +1033,18 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
     public OperationCallSettings.Builder<RevertVolumeRequest, Volume, OperationMetadata>
         revertVolumeOperationSettings() {
       return getStubSettingsBuilder().revertVolumeOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to establishVolumePeering. */
+    public UnaryCallSettings.Builder<EstablishVolumePeeringRequest, Operation>
+        establishVolumePeeringSettings() {
+      return getStubSettingsBuilder().establishVolumePeeringSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to establishVolumePeering. */
+    public OperationCallSettings.Builder<EstablishVolumePeeringRequest, Volume, OperationMetadata>
+        establishVolumePeeringOperationSettings() {
+      return getStubSettingsBuilder().establishVolumePeeringOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listSnapshots. */
@@ -1509,6 +1557,30 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
     public OperationCallSettings.Builder<DeleteHostGroupRequest, Empty, OperationMetadata>
         deleteHostGroupOperationSettings() {
       return getStubSettingsBuilder().deleteHostGroupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to executeOntapPost. */
+    public UnaryCallSettings.Builder<ExecuteOntapPostRequest, ExecuteOntapPostResponse>
+        executeOntapPostSettings() {
+      return getStubSettingsBuilder().executeOntapPostSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to executeOntapGet. */
+    public UnaryCallSettings.Builder<ExecuteOntapGetRequest, ExecuteOntapGetResponse>
+        executeOntapGetSettings() {
+      return getStubSettingsBuilder().executeOntapGetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to executeOntapDelete. */
+    public UnaryCallSettings.Builder<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>
+        executeOntapDeleteSettings() {
+      return getStubSettingsBuilder().executeOntapDeleteSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to executeOntapPatch. */
+    public UnaryCallSettings.Builder<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
+        executeOntapPatchSettings() {
+      return getStubSettingsBuilder().executeOntapPatchSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */
