@@ -35,6 +35,7 @@ import static org.junit.Assert.assertThrows;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.UnavailableException;
 import com.google.api.gax.tracing.ObservabilityAttributes;
@@ -330,7 +331,7 @@ class ITOtelTracing {
   @Test
   void testTracing_retry_httpjson() throws Exception {
     final int attempts = 5;
-    final StatusCode.Code statusCode = StatusCode.Code.UNAVAILABLE;
+    final StatusCode.Code statusCode = StatusCode.Code.INVALID_ARGUMENT;
     // A custom EchoClient is used in this test because retries have jitter, and we
     // cannot
     // predict the number of attempts that are scheduled for an RPC invocation
@@ -354,72 +355,6 @@ class ITOtelTracing {
             .setCredentialsProvider(NoCredentialsProvider.create())
             .setTransportChannelProvider(
                 EchoSettings.defaultHttpJsonTransportProviderBuilder()
-                    .setHttpTransport(
-                        new com.google.api.client.http.HttpTransport() {
-                          @Override
-                          protected com.google.api.client.http.LowLevelHttpRequest buildRequest(
-                              String method, String url) {
-                            return new com.google.api.client.http.LowLevelHttpRequest() {
-                              @Override
-                              public void addHeader(String name, String value) {}
-
-                              @Override
-                              public com.google.api.client.http.LowLevelHttpResponse execute() {
-                                return new com.google.api.client.http.LowLevelHttpResponse() {
-                                  @Override
-                                  public java.io.InputStream getContent() {
-                                    return new java.io.ByteArrayInputStream("{}".getBytes());
-                                  }
-
-                                  @Override
-                                  public String getContentEncoding() {
-                                    return null;
-                                  }
-
-                                  @Override
-                                  public long getContentLength() {
-                                    return 2;
-                                  }
-
-                                  @Override
-                                  public String getContentType() {
-                                    return "application/json";
-                                  }
-
-                                  @Override
-                                  public String getStatusLine() {
-                                    return "HTTP/1.1 503 Service Unavailable";
-                                  }
-
-                                  @Override
-                                  public int getStatusCode() {
-                                    return 503;
-                                  }
-
-                                  @Override
-                                  public String getReasonPhrase() {
-                                    return "Service Unavailable";
-                                  }
-
-                                  @Override
-                                  public int getHeaderCount() {
-                                    return 0;
-                                  }
-
-                                  @Override
-                                  public String getHeaderName(int index) {
-                                    return null;
-                                  }
-
-                                  @Override
-                                  public String getHeaderValue(int index) {
-                                    return null;
-                                  }
-                                };
-                              }
-                            };
-                          }
-                        })
                     .setEndpoint("http://localhost:7469")
                     .build())
             .build();
@@ -439,7 +374,7 @@ class ITOtelTracing {
             .setError(Status.newBuilder().setCode(statusCode.ordinal()).build())
             .build();
 
-    assertThrows(UnavailableException.class, () -> httpClient.echo(echoRequest));
+    assertThrows(InvalidArgumentException.class, () -> httpClient.echo(echoRequest));
 
     List<SpanData> spans = spanExporter.getFinishedSpanItems();
     assertThat(spans).hasSize(attempts); // Expect exactly one span for the successful retry
