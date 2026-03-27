@@ -114,7 +114,7 @@ public class DataSource implements javax.sql.DataSource {
   private String privateServiceConnect;
   private Long connectionPoolSize;
   private Long listenerPoolSize;
-  private Boolean enableOpenTelemetry;
+  private Boolean enableDefaultTelemetryExporter;
   private OpenTelemetry customOpenTelemetry;
 
   // Make sure the JDBC driver class is loaded.
@@ -328,11 +328,12 @@ public class DataSource implements javax.sql.DataSource {
               BigQueryJdbcUrlUtility.LISTENER_POOL_SIZE_PROPERTY_NAME,
               (ds, val) -> ds.setListenerPoolSize(Long.parseLong(val)))
           .put(
-              BigQueryJdbcUrlUtility.ENABLE_OPENTELEMETRY_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.ENABLE_DEFAULT_TELEMETRY_EXPORTER_PROPERTY_NAME,
               (ds, val) ->
-                  ds.setEnableOpenTelemetry(
+                  ds.setEnableDefaultTelemetryExporter(
                       BigQueryJdbcUrlUtility.convertIntToBoolean(
-                          val, BigQueryJdbcUrlUtility.ENABLE_OPENTELEMETRY_PROPERTY_NAME)))
+                          val,
+                          BigQueryJdbcUrlUtility.ENABLE_DEFAULT_TELEMETRY_EXPORTER_PROPERTY_NAME)))
           .build();
 
   public static DataSource fromUrl(String url) {
@@ -629,10 +630,10 @@ public class DataSource implements javax.sql.DataSource {
           BigQueryJdbcUrlUtility.LISTENER_POOL_SIZE_PROPERTY_NAME,
           String.valueOf(this.listenerPoolSize));
     }
-    if (this.enableOpenTelemetry != null) {
+    if (this.enableDefaultTelemetryExporter != null) {
       connectionProperties.setProperty(
-          BigQueryJdbcUrlUtility.ENABLE_OPENTELEMETRY_PROPERTY_NAME,
-          String.valueOf(this.enableOpenTelemetry));
+          BigQueryJdbcUrlUtility.ENABLE_DEFAULT_TELEMETRY_EXPORTER_PROPERTY_NAME,
+          String.valueOf(this.enableDefaultTelemetryExporter));
     }
     return connectionProperties;
   }
@@ -755,14 +756,14 @@ public class DataSource implements javax.sql.DataSource {
     this.listenerPoolSize = listenerPoolSize;
   }
 
-  public Boolean getEnableOpenTelemetry() {
-    return enableOpenTelemetry != null
-        ? enableOpenTelemetry
-        : BigQueryJdbcUrlUtility.DEFAULT_ENABLE_OPENTELEMETRY_VALUE;
+  public Boolean getEnableDefaultTelemetryExporter() {
+    return enableDefaultTelemetryExporter != null
+        ? enableDefaultTelemetryExporter
+        : BigQueryJdbcUrlUtility.DEFAULT_ENABLE_DEFAULT_TELEMETRY_EXPORTER_VALUE;
   }
 
-  public void setEnableOpenTelemetry(Boolean enableOpenTelemetry) {
-    this.enableOpenTelemetry = enableOpenTelemetry;
+  public void setEnableDefaultTelemetryExporter(Boolean enableDefaultTelemetryExporter) {
+    this.enableDefaultTelemetryExporter = enableDefaultTelemetryExporter;
   }
 
   public OpenTelemetry getCustomOpenTelemetry() {

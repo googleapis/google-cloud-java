@@ -140,7 +140,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   Long connectionPoolSize;
   Long listenerPoolSize;
   String partnerToken;
-  boolean enableOpenTelemetry;
+  boolean enableDefaultTelemetryExporter;
   OpenTelemetry customOpenTelemetry;
   Tracer tracer = OpenTelemetry.noop().getTracer("");
 
@@ -247,7 +247,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     this.connectionPoolSize = ds.getConnectionPoolSize();
     this.listenerPoolSize = ds.getListenerPoolSize();
     this.partnerToken = ds.getPartnerToken();
-    this.enableOpenTelemetry = ds.getEnableOpenTelemetry();
+    this.enableDefaultTelemetryExporter = ds.getEnableDefaultTelemetryExporter();
     this.customOpenTelemetry = ds.getCustomOpenTelemetry();
 
     this.headerProvider = createHeaderProvider();
@@ -944,8 +944,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
     OpenTelemetry openTelemetry =
         BigQueryJdbcOpenTelemetry.getOpenTelemetry(
-            this.enableOpenTelemetry, this.customOpenTelemetry);
-    if (this.enableOpenTelemetry) {
+            this.enableDefaultTelemetryExporter, this.customOpenTelemetry);
+    if (this.enableDefaultTelemetryExporter || this.customOpenTelemetry != null) {
       this.tracer = BigQueryJdbcOpenTelemetry.getTracer(openTelemetry);
       bigQueryOptions.setOpenTelemetryTracer(this.tracer);
     }

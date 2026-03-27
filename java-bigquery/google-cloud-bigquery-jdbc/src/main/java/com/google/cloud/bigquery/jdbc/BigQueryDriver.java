@@ -20,7 +20,6 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import io.grpc.LoadBalancerRegistry;
 import io.grpc.internal.PickFirstLoadBalancerProvider;
-import io.opentelemetry.api.OpenTelemetry;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Driver;
@@ -123,10 +122,6 @@ public class BigQueryDriver implements Driver {
     try {
       if (acceptsURL(url)) {
         Properties connectInfo = info == null ? new Properties() : (Properties) info.clone();
-        OpenTelemetry customOpenTelemetry = null;
-        if (connectInfo.containsKey("customOpenTelemetry")) {
-          customOpenTelemetry = (OpenTelemetry) connectInfo.remove("customOpenTelemetry");
-        }
         String connectionUri =
             BigQueryJdbcUrlUtility.appendPropertiesToURL(
                 url.substring(5), this.toString(), connectInfo);
@@ -137,7 +132,6 @@ public class BigQueryDriver implements Driver {
         }
 
         DataSource ds = DataSource.fromUrl(connectionUri);
-        ds.setCustomOpenTelemetry(customOpenTelemetry);
 
         // LogLevel
         String logLevelStr = ds.getLogLevel();

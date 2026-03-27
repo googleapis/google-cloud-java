@@ -26,19 +26,20 @@ public class BigQueryJdbcOpenTelemetry {
 
   /**
    * Initializes or returns the OpenTelemetry instance based on hybrid logic. Prefer
-   * GlobalOpenTelemetry; fallback to an auto-configured GCP exporter if requested.
+   * customOpenTelemetry if provided; fallback to an auto-configured GCP exporter if requested.
    */
   public static OpenTelemetry getOpenTelemetry(
-      boolean enableOpenTelemetry, OpenTelemetry customOpenTelemetry) {
-    if (!enableOpenTelemetry) {
-      return OpenTelemetry.noop();
-    }
-
+      boolean enableDefaultTelemetryExporter, OpenTelemetry customOpenTelemetry) {
     if (customOpenTelemetry != null) {
       return customOpenTelemetry;
     }
 
-    return GlobalOpenTelemetry.get();
+    if (enableDefaultTelemetryExporter) {
+      // TODO(b/491245568): Initialize and return GCP-specific auto-configured SDK
+      return GlobalOpenTelemetry.get();
+    }
+
+    return OpenTelemetry.noop();
   }
 
   /** Gets a Tracer for the JDBC driver instrumentation scope. */
