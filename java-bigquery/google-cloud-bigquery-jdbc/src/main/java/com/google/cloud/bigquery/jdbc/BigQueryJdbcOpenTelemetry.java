@@ -22,7 +22,7 @@ import io.opentelemetry.api.trace.Tracer;
 
 public class BigQueryJdbcOpenTelemetry {
 
-  private static final String INSTRUMENTATION_SCOPE_NAME = "com.google.cloud.bigquery.jdbc";
+  static final String INSTRUMENTATION_SCOPE_NAME = "com.google.cloud.bigquery.jdbc";
 
   /**
    * Initializes or returns the OpenTelemetry instance based on hybrid logic. Prefer

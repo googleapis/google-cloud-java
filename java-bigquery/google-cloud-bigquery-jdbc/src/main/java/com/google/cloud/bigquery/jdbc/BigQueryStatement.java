@@ -1672,7 +1672,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         return tracer;
       }
     }
-    return GlobalOpenTelemetry.getTracer("google-cloud-bigquery-jdbc-noop");
+    return GlobalOpenTelemetry.getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME);
   }
 
   public Context getOtelContext() {
