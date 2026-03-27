@@ -147,8 +147,8 @@ class ObservabilityUtilsTest {
   void testSanitizeUrlFull_handlesMalformedUrl() {
     String url = "invalid::url:";
     String sanitized = ObservabilityUtils.sanitizeUrlFull(url);
-    // Unparsable URLs should be returned as-is
-    assertThat(sanitized).isEqualTo(url);
+    // Unparsable URLs should be returned as empty string
+    assertThat(sanitized).isEmpty();
   }
 
   @Test

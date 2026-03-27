@@ -104,7 +104,7 @@ final class ObservabilityUtils {
               uri.getRawFragment());
       return sanitizedUri.toString();
     } catch (java.net.URISyntaxException | IllegalArgumentException ex) {
-      return url;
+      return "";
     }
   }
 
