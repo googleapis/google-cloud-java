@@ -61,6 +61,8 @@ class SpanTracerFactoryTest {
   private SpanBuilder spanBuilder;
   private Span span;
 
+  private LibraryMetadata validMetadata;
+
   @BeforeEach
   void setUp() {
     openTelemetry = mock(OpenTelemetry.class);
@@ -73,6 +75,10 @@ class SpanTracerFactoryTest {
     when(spanBuilder.setSpanKind(any())).thenReturn(spanBuilder);
     when(spanBuilder.setAllAttributes(any(Attributes.class))).thenReturn(spanBuilder);
     when(spanBuilder.startSpan()).thenReturn(span);
+
+    validMetadata = mock(LibraryMetadata.class);
+    when(validMetadata.artifactName()).thenReturn("gax-java");
+    when(validMetadata.version()).thenReturn("2.1.0");
   }
 
   @ParameterizedTest
@@ -104,7 +110,7 @@ class SpanTracerFactoryTest {
     factory =
         factory.withContext(
             ApiTracerContext.newBuilder()
-                .setLibraryMetadata(LibraryMetadata.empty())
+                .setLibraryMetadata(validMetadata)
                 .setServerAddress("test-address")
                 .build());
     ApiTracer tracerInstance;
@@ -113,7 +119,7 @@ class SpanTracerFactoryTest {
           ApiTracerContext.newBuilder()
               .setFullMethodName("service/method")
               .setTransport(Transport.GRPC)
-              .setLibraryMetadata(LibraryMetadata.empty())
+              .setLibraryMetadata(validMetadata)
               .build();
       tracerInstance = factory.newTracer(null, context);
     } else {
@@ -136,7 +142,7 @@ class SpanTracerFactoryTest {
   void testWithContext_addsInferredAttributes(boolean useContext) {
     ApiTracerContext context =
         ApiTracerContext.newBuilder()
-            .setLibraryMetadata(LibraryMetadata.empty())
+            .setLibraryMetadata(validMetadata)
             .setServerAddress("example.com")
             .build();
 
@@ -150,7 +156,7 @@ class SpanTracerFactoryTest {
           ApiTracerContext.newBuilder()
               .setFullMethodName("service/method")
               .setTransport(Transport.GRPC)
-              .setLibraryMetadata(LibraryMetadata.empty())
+              .setLibraryMetadata(validMetadata)
               .build();
       tracerInstance = factoryWithContext.newTracer(null, callContext);
     } else {
@@ -174,7 +180,7 @@ class SpanTracerFactoryTest {
   @ValueSource(booleans = {false, true})
   void testWithContext_noEndpointContext_doesNotAddServerAddressAttribute(boolean useContext) {
     ApiTracerContext context =
-        ApiTracerContext.newBuilder().setLibraryMetadata(LibraryMetadata.empty()).build();
+        ApiTracerContext.newBuilder().setLibraryMetadata(validMetadata).build();
 
     SpanTracerFactory factory =
         new SpanTracerFactory(openTelemetry, tracer, ApiTracerContext.empty());
@@ -186,7 +192,7 @@ class SpanTracerFactoryTest {
           ApiTracerContext.newBuilder()
               .setFullMethodName("service/method")
               .setTransport(Transport.GRPC)
-              .setLibraryMetadata(LibraryMetadata.empty())
+              .setLibraryMetadata(validMetadata)
               .build();
       tracerInstance = factoryWithContext.newTracer(null, callContext);
     } else {
