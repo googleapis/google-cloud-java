@@ -1995,6 +1995,184 @@ public abstract class Expression {
   }
 
   /**
+   * Creates an expression that returns a new map with the specified entries added or updated.
+   *
+   * <ul>
+   *   <li>Only performs shallow updates to the map.
+   *   <li>Setting a value to {@code null} will retain the key with a {@code null} value. To remove
+   *       a key entirely, use {@code mapRemove}.
+   * </ul>
+   *
+   * @param mapExpr The expression representing the map.
+   * @param key The key to set. Must be an expression representing a string.
+   * @param value The value to set.
+   * @param moreKeyValues Additional key-value pairs to set.
+   * @return A new {@link Expression} representing the map with the entries set.
+   */
+  @BetaApi
+  public static Expression mapSet(
+      Expression mapExpr, Expression key, Expression value, Expression... moreKeyValues) {
+    ImmutableList.Builder<Expression> builder = ImmutableList.builder();
+    builder.add(mapExpr);
+    builder.add(key);
+    builder.add(value);
+    builder.add(moreKeyValues);
+    return new FunctionExpression("map_set", builder.build());
+  }
+
+  /**
+   * Creates an expression that returns a new map with the specified entries added or updated.
+   *
+   * <ul>
+   *   <li>Only performs shallow updates to the map.
+   *   <li>Setting a value to {@code null} will retain the key with a {@code null} value. To remove
+   *       a key entirely, use {@code mapRemove}.
+   * </ul>
+   *
+   * @param mapExpr The map field to set entries in.
+   * @param key The key to set.
+   * @param value The value to set.
+   * @param moreKeyValues Additional key-value pairs to set.
+   * @return A new {@link Expression} representing the map with the entries set.
+   */
+  @BetaApi
+  public static Expression mapSet(
+      Expression mapExpr, String key, Object value, Object... moreKeyValues) {
+    return mapSet(
+        mapExpr,
+        constant(key),
+        toExprOrConstant(value),
+        toArrayOfExprOrConstant(moreKeyValues).toArray(new Expression[0]));
+  }
+
+  /**
+   * Creates an expression that returns a new map with the specified entries added or updated.
+   *
+   * <ul>
+   *   <li>Only performs shallow updates to the map.
+   *   <li>Setting a value to {@code null} will retain the key with a {@code null} value. To remove
+   *       a key entirely, use {@code mapRemove}.
+   * </ul>
+   *
+   * @param mapField The map field to set entries in.
+   * @param key The key to set. Must be an expression representing a string.
+   * @param value The value to set.
+   * @param moreKeyValues Additional key-value pairs to set.
+   * @return A new {@link Expression} representing the map with the entries set.
+   */
+  @BetaApi
+  public static Expression mapSet(
+      String mapField, Expression key, Expression value, Expression... moreKeyValues) {
+    return mapSet(field(mapField), key, value, moreKeyValues);
+  }
+
+  /**
+   * Creates an expression that returns a new map with the specified entries added or updated.
+   *
+   * <ul>
+   *   <li>Only performs shallow updates to the map.
+   *   <li>Setting a value to {@code null} will retain the key with a {@code null} value. To remove
+   *       a key entirely, use {@code mapRemove}.
+   * </ul>
+   *
+   * @param mapField The map field to set entries in.
+   * @param key The key to set. Must be an expression representing a string.
+   * @param value The value to set.
+   * @param moreKeyValues Additional key-value pairs to set.
+   * @return A new {@link Expression} representing the map with the entries set.
+   */
+  @BetaApi
+  public static Expression mapSet(
+      String mapField, String key, Object value, Object... moreKeyValues) {
+    return mapSet(field(mapField), key, value, moreKeyValues);
+  }
+
+  /**
+   * Creates an expression that returns the keys of a map.
+   *
+   * <p>While the backend generally preserves insertion order, relying on the order of the output
+   * array is not guaranteed and should be avoided.
+   *
+   * @param mapExpr The expression representing the map to get the keys of.
+   * @return A new {@link Expression} representing the keys of the map.
+   */
+  @BetaApi
+  public static Expression mapKeys(Expression mapExpr) {
+    return new FunctionExpression("map_keys", ImmutableList.of(mapExpr));
+  }
+
+  /**
+   * Creates an expression that returns the keys of a map.
+   *
+   * <p>While the backend generally preserves insertion order, relying on the order of the output
+   * array is not guaranteed and should be avoided.
+   *
+   * @param mapField The map field to get the keys of.
+   * @return A new {@link Expression} representing the keys of the map.
+   */
+  @BetaApi
+  public static Expression mapKeys(String mapField) {
+    return mapKeys(field(mapField));
+  }
+
+  /**
+   * Creates an expression that returns the values of a map.
+   *
+   * <p>While the backend generally preserves insertion order, relying on the order of the output
+   * array is not guaranteed and should be avoided.
+   *
+   * @param mapExpr The expression representing the map to get the values of.
+   * @return A new {@link Expression} representing the values of the map.
+   */
+  @BetaApi
+  public static Expression mapValues(Expression mapExpr) {
+    return new FunctionExpression("map_values", ImmutableList.of(mapExpr));
+  }
+
+  /**
+   * Creates an expression that returns the values of a map.
+   *
+   * <p>While the backend generally preserves insertion order, relying on the order of the output
+   * array is not guaranteed and should be avoided.
+   *
+   * @param mapField The map field to get the values of.
+   * @return A new {@link Expression} representing the values of the map.
+   */
+  @BetaApi
+  public static Expression mapValues(String mapField) {
+    return mapValues(field(mapField));
+  }
+
+  /**
+   * Creates an expression that returns the entries of a map as an array of maps, where each map
+   * contains a "k" property for the key and a "v" property for the value.
+   *
+   * <p>While the backend generally preserves insertion order, relying on the order of the output
+   * array is not guaranteed and should be avoided.
+   *
+   * @param mapExpr The expression representing the map to get the entries of.
+   * @return A new {@link Expression} representing the entries of the map.
+   */
+  @BetaApi
+  public static Expression mapEntries(Expression mapExpr) {
+    return new FunctionExpression("map_entries", ImmutableList.of(mapExpr));
+  }
+
+  /**
+   * Creates an expression that returns the entries of a map as an array of maps.
+   *
+   * <p>While the backend generally preserves insertion order, relying on the order of the output
+   * array is not guaranteed and should be avoided.
+   *
+   * @param mapField The map field to get the entries of.
+   * @return A new {@link Expression} representing the entries of the map.
+   */
+  @BetaApi
+  public static Expression mapEntries(String mapField) {
+    return mapEntries(field(mapField));
+  }
+
+  /**
    * Creates an expression that reverses a string, blob, or array.
    *
    * @param expr An expression evaluating to a string, blob, or array value, which will be reversed.
@@ -5075,6 +5253,80 @@ public abstract class Expression {
   @BetaApi
   public final Expression mapRemove(String key) {
     return mapRemove(this, key);
+  }
+
+  /**
+   * Creates an expression that returns a new map with the specified entries added or updated.
+   *
+   * <p>Note that {@code mapSet} only performs shallow updates to the map. Setting a value to {@code
+   * null} will retain the key with a {@code null} value. To remove a key entirely, use {@code
+   * mapRemove}.
+   *
+   * @param key The key to set.
+   * @param value The value to set.
+   * @param moreKeyValues Additional key-value pairs to set.
+   * @return A new {@link Expression} representing the map with the entries set.
+   */
+  @BetaApi
+  public final Expression mapSet(Expression key, Expression value, Expression... moreKeyValues) {
+    return mapSet(this, key, value, moreKeyValues);
+  }
+
+  /**
+   * Creates an expression that returns a new map with the specified entries added or updated.
+   *
+   * @param key The key to set.
+   * @param value The value to set.
+   * @param moreKeyValues Additional key-value pairs to set.
+   * @return A new {@link Expression} representing the map with the entries set.
+   */
+  @BetaApi
+  public final Expression mapSet(String key, Object value, Object... moreKeyValues) {
+    return mapSet(
+        this,
+        constant(key),
+        toExprOrConstant(value),
+        toArrayOfExprOrConstant(moreKeyValues).toArray(new Expression[0]));
+  }
+
+  /**
+   * Creates an expression that returns the keys of this map expression.
+   *
+   * <p>While the backend generally preserves insertion order, relying on the order of the output
+   * array is not guaranteed and should be avoided.
+   *
+   * @return A new {@link Expression} representing the keys of the map.
+   */
+  @BetaApi
+  public final Expression mapKeys() {
+    return mapKeys(this);
+  }
+
+  /**
+   * Creates an expression that returns the values of this map expression.
+   *
+   * <p>While the backend generally preserves insertion order, relying on the order of the output
+   * array is not guaranteed and should be avoided.
+   *
+   * @return A new {@link Expression} representing the values of the map.
+   */
+  @BetaApi
+  public final Expression mapValues() {
+    return mapValues(this);
+  }
+
+  /**
+   * Creates an expression that returns the entries of this map expression as an array of maps,
+   * where each map contains a "k" property for the key and a "v" property for the value.
+   *
+   * <p>While the backend generally preserves insertion order, relying on the order of the output
+   * array is not guaranteed and should be avoided.
+   *
+   * @return A new {@link Expression} representing the entries of the map.
+   */
+  @BetaApi
+  public final Expression mapEntries() {
+    return mapEntries(this);
   }
 
   /**

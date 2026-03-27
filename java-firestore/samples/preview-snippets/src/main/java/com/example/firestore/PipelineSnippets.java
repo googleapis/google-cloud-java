@@ -1177,6 +1177,58 @@ class PipelineSnippets {
     System.out.println(result.getResults());
   }
 
+  void mapSetFunction() throws ExecutionException, InterruptedException {
+    // [START map_set]
+    Pipeline.Snapshot result =
+        firestore
+            .pipeline()
+            .collection("books")
+            .select(mapSet(field("awards"), "pulitzer", true).as("awards"))
+            .execute()
+            .get();
+    // [END map_set]
+    System.out.println(result.getResults());
+  }
+
+  void mapKeysFunction() throws ExecutionException, InterruptedException {
+    // [START map_keys]
+    Pipeline.Snapshot result =
+        firestore
+            .pipeline()
+            .collection("books")
+            .select(mapKeys(field("awards")).as("award_categories"))
+            .execute()
+            .get();
+    // [END map_keys]
+    System.out.println(result.getResults());
+  }
+
+  void mapValuesFunction() throws ExecutionException, InterruptedException {
+    // [START map_values]
+    Pipeline.Snapshot result =
+        firestore
+            .pipeline()
+            .collection("books")
+            .select(mapValues(field("awards")).as("award_details"))
+            .execute()
+            .get();
+    // [END map_values]
+    System.out.println(result.getResults());
+  }
+
+  void mapEntriesFunction() throws ExecutionException, InterruptedException {
+    // [START map_entries]
+    Pipeline.Snapshot result =
+        firestore
+            .pipeline()
+            .collection("books")
+            .select(mapEntries(field("awards")).as("awards_list"))
+            .execute()
+            .get();
+    // [END map_entries]
+    System.out.println(result.getResults());
+  }
+
   void byteLengthFunction() throws ExecutionException, InterruptedException {
     // [START byte_length]
     Pipeline.Snapshot result =
