@@ -30,6 +30,7 @@
 
 package com.google.api.gax.tracing;
 
+import com.google.api.client.util.Strings;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.LibraryMetadata;
@@ -106,15 +107,12 @@ public class SpanTracerFactory implements ApiTracerFactory {
     if (context == null) {
       return new BaseApiTracerFactory();
     }
-    ApiTracerContext mergedContext = this.apiTracerContext.merge(context);
-    LibraryMetadata metadata = mergedContext.libraryMetadata();
-    if (metadata == null || metadata.isEmpty()) {
+    LibraryMetadata metadata = context.libraryMetadata();
+    if (metadata == null || metadata.isEmpty() || Strings.isNullOrEmpty(metadata.artifactName())) {
       return new BaseApiTracerFactory();
     }
     Tracer newTracer = openTelemetry.getTracer(metadata.artifactName(), metadata.version());
-    if (newTracer == null) {
-      return new BaseApiTracerFactory();
-    }
+    ApiTracerContext mergedContext = this.apiTracerContext.merge(context);
     return new SpanTracerFactory(openTelemetry, newTracer, mergedContext);
   }
 }
