@@ -30,6 +30,7 @@
 
 package com.google.api.gax.tracing;
 
+import com.google.api.client.util.Strings;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import io.opentelemetry.api.trace.Span;
@@ -218,14 +219,10 @@ public class SpanTracer implements ApiTracer {
   }
 
   private String extractErrorMessage(Throwable error) {
-    Throwable cause = error;
-    while (cause != null) {
-      if (cause.getMessage() != null && !cause.getMessage().isEmpty()) {
-        return cause.getMessage();
-      }
-      cause = cause.getCause();
+    if (Strings.isNullOrEmpty(error.getMessage())) {
+      return null;
     }
-    return null;
+    return error.getMessage();
   }
 
   private void endAttempt() {

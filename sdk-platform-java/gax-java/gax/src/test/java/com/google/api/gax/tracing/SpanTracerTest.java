@@ -456,23 +456,6 @@ class SpanTracerTest {
     verify(span).end();
   }
 
-  @Test
-  void testAttemptFailed_recursiveMessageSearch() {
-    spanTracer.attemptStarted(new Object(), 1);
-
-    Throwable cause = new IllegalArgumentException("root cause message");
-    Throwable wrapper = new IllegalStateException("", cause);
-
-    spanTracer.attemptFailedRetriesExhausted(wrapper);
-
-    verify(span)
-        .setAttribute(
-            ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE, "java.lang.IllegalStateException");
-    verify(span)
-        .setAttribute(ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE, "root cause message");
-    verify(span).end();
-  }
-
   private static class RedirectException extends RuntimeException {
     public RedirectException(String message) {
       super(message);
