@@ -200,22 +200,27 @@ public class SpanTracer implements ApiTracer {
   }
 
   private void recordErrorAndEndAttempt(Throwable error) {
-    if (attemptSpan != null) {
-      attemptSpan.setAttribute(
-          ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE, ObservabilityUtils.extractErrorType(error));
-
-      if (error != null) {
-        attemptSpan.setAttribute(
-            ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE, error.getClass().getName());
-
-        String errorMessage = extractErrorMessage(error);
-        if (errorMessage != null) {
-          attemptSpan.setAttribute(ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE, errorMessage);
-        }
-      }
-
-      endAttempt();
+    if (attemptSpan == null) {
+      return;
     }
+
+    attemptSpan.setAttribute(
+        ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE, ObservabilityUtils.extractErrorType(error));
+
+    if (error == null) {
+      endAttempt();
+      return;
+    }
+
+    attemptSpan.setAttribute(
+        ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE, error.getClass().getName());
+
+    if (!Strings.isNullOrEmpty(error.getMessage())) {
+      attemptSpan.setAttribute(
+          ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE, error.getMessage());
+    }
+
+    endAttempt();
   }
 
   private String extractErrorMessage(Throwable error) {
