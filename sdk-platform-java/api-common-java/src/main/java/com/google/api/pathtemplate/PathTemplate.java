@@ -358,7 +358,7 @@ public class PathTemplate {
     // Searching backwards allows us to stop immediately once the last valid pair is found.
     for (int i = segments.size() - 1; i >= 0; i--) {
       Segment seg = segments.get(i);
-      
+
       // We are looking for the end of a binding (e.g., "}" in "{project}" or "{name=projects/*}")
       if (seg.kind() == SegmentKind.END_BINDING) {
         int bindingStartIndex = -1;
@@ -378,11 +378,13 @@ public class PathTemplate {
         }
 
         if (bindingStartIndex != -1) {
-          // 1. If the binding contains any literals, it is considered a valid named resource binding.
+          // 1. If the binding contains any literals, it is considered a valid named resource
+          // binding.
           if (literalCountInBinding > 0) {
             isValidPair = true;
           } else if (bindingStartIndex > 0) {
-            // 2. For simple bindings like "{project}", the binding itself has no inner literal resources.
+            // 2. For simple bindings like "{project}", the binding itself has no inner literal
+            // resources.
             // Instead, we check if the literal segment immediately preceding it (e.g., "projects/")
             // is a known resource.
             Segment prevSeg = segments.get(bindingStartIndex - 1);
@@ -392,7 +394,8 @@ public class PathTemplate {
           }
 
           if (isValidPair) {
-            // We successfully found the last valid binding! Record its end index and terminate the search.
+            // We successfully found the last valid binding! Record its end index and terminate the
+            // search.
             lastValidEndBindingIndex = i;
             break;
           }

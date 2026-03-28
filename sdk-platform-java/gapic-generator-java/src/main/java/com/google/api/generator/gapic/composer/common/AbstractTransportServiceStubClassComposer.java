@@ -96,6 +96,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
@@ -1632,7 +1633,9 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
     // For each httpBinding,
     // generates resourceNameSegments.put("field",String.valueOf(request.getField()));
     for (HttpBindings.HttpBinding httpBinding : httpBindings) {
-      if (!canonicalPath.contains(httpBinding.name())) {
+      if (!Pattern.compile("\\{" + httpBinding.name() + "(?:=.*?)?\\}")
+          .matcher(canonicalPath)
+          .find()) {
         continue;
       }
       MethodInvocationExpr getFieldExpr =
