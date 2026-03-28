@@ -77,13 +77,14 @@ class HttpJsonClientCallsTest {
     endpointContext = Mockito.mock(EndpointContext.class);
     mockChannel = Mockito.mock(HttpJsonChannel.class);
     descriptor = Mockito.mock(ApiMethodDescriptor.class);
-    callOptions = HttpJsonCallOptions.newBuilder().setCredentials(credentials).build();
+    callOptions = Mockito.mock(HttpJsonCallOptions.class);
 
     callContext =
         HttpJsonCallContext.of(mockChannel, callOptions)
             .withEndpointContext(endpointContext)
             .withChannel(mockChannel);
 
+    Mockito.when(callOptions.getCredentials()).thenReturn(credentials);
     Mockito.doNothing()
         .when(endpointContext)
         .validateUniverseDomain(
