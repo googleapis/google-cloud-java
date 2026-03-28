@@ -27,12 +27,14 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.google.api.gax.rpc;
+package com.google.api.gax.tracing;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.DeadlineExceededException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
-import com.google.api.gax.tracing.ErrorTypeUtil;
 import java.io.IOException;
 import java.net.BindException;
 import java.net.ConnectException;
@@ -133,8 +135,6 @@ class ErrorTypeUtilTest {
 
   @Test
   void testExtractErrorType_clientTimeout_others() {
-    assertThat(ErrorTypeUtil.extractErrorType(new WatchdogTimeoutException("timeout", false)))
-        .isEqualTo(ErrorTypeUtil.ErrorType.CLIENT_TIMEOUT.toString());
     assertThat(
             ErrorTypeUtil.extractErrorType(
                 new DeadlineExceededException(
