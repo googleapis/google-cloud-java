@@ -788,6 +788,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListOrgDataExchangesRequest, ListOrgDataExchangesResponse>
         listOrgDataExchangesTransportSettings =
@@ -812,6 +813,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateDataExchangeRequest, DataExchange>
         createDataExchangeTransportSettings =
@@ -824,6 +826,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateDataExchangeRequest, DataExchange>
         updateDataExchangeTransportSettings =
@@ -849,6 +852,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListListingsRequest, ListListingsResponse> listListingsTransportSettings =
         HttpJsonCallSettings.<ListListingsRequest, ListListingsResponse>newBuilder()
@@ -860,6 +864,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetListingRequest, Listing> getListingTransportSettings =
         HttpJsonCallSettings.<GetListingRequest, Listing>newBuilder()
@@ -871,6 +876,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateListingRequest, Listing> createListingTransportSettings =
         HttpJsonCallSettings.<CreateListingRequest, Listing>newBuilder()
@@ -882,6 +888,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateListingRequest, Listing> updateListingTransportSettings =
         HttpJsonCallSettings.<UpdateListingRequest, Listing>newBuilder()
@@ -904,6 +911,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<SubscribeListingRequest, SubscribeListingResponse>
         subscribeListingTransportSettings =
@@ -916,6 +924,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -927,6 +936,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -938,6 +948,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -950,6 +961,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

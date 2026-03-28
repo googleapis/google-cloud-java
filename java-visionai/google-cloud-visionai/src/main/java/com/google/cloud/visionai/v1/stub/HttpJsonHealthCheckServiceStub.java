@@ -217,6 +217,7 @@ public class HttpJsonHealthCheckServiceStub extends HealthCheckServiceStub {
                   builder.add("cluster", String.valueOf(request.getCluster()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getCluster())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

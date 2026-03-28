@@ -122,6 +122,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<BatchPredictRequest, Operation> batchPredictTransportSettings =
         GrpcCallSettings.<BatchPredictRequest, Operation>newBuilder()
@@ -132,6 +133,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.predictCallable =

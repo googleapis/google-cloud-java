@@ -777,6 +777,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListBackupPlansRequest, ListBackupPlansResponse>
         listBackupPlansTransportSettings =
@@ -788,6 +789,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetBackupPlanRequest, BackupPlan> getBackupPlanTransportSettings =
         GrpcCallSettings.<GetBackupPlanRequest, BackupPlan>newBuilder()
@@ -798,6 +800,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateBackupPlanRequest, Operation> updateBackupPlanTransportSettings =
         GrpcCallSettings.<UpdateBackupPlanRequest, Operation>newBuilder()
@@ -819,6 +822,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateBackupChannelRequest, Operation> createBackupChannelTransportSettings =
         GrpcCallSettings.<CreateBackupChannelRequest, Operation>newBuilder()
@@ -829,6 +833,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListBackupChannelsRequest, ListBackupChannelsResponse>
         listBackupChannelsTransportSettings =
@@ -840,6 +845,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetBackupChannelRequest, BackupChannel> getBackupChannelTransportSettings =
         GrpcCallSettings.<GetBackupChannelRequest, BackupChannel>newBuilder()
@@ -850,6 +856,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateBackupChannelRequest, Operation> updateBackupChannelTransportSettings =
         GrpcCallSettings.<UpdateBackupChannelRequest, Operation>newBuilder()
@@ -871,6 +878,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListBackupPlanBindingsRequest, ListBackupPlanBindingsResponse>
         listBackupPlanBindingsTransportSettings =
@@ -883,6 +891,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetBackupPlanBindingRequest, BackupPlanBinding>
         getBackupPlanBindingTransportSettings =
@@ -894,6 +903,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateBackupRequest, Operation> createBackupTransportSettings =
         GrpcCallSettings.<CreateBackupRequest, Operation>newBuilder()
@@ -904,6 +914,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
         GrpcCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
@@ -914,6 +925,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
         GrpcCallSettings.<GetBackupRequest, Backup>newBuilder()
@@ -924,6 +936,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateBackupRequest, Operation> updateBackupTransportSettings =
         GrpcCallSettings.<UpdateBackupRequest, Operation>newBuilder()
@@ -944,6 +957,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListVolumeBackupsRequest, ListVolumeBackupsResponse>
         listVolumeBackupsTransportSettings =
@@ -955,6 +969,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetVolumeBackupRequest, VolumeBackup> getVolumeBackupTransportSettings =
         GrpcCallSettings.<GetVolumeBackupRequest, VolumeBackup>newBuilder()
@@ -965,6 +980,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateRestorePlanRequest, Operation> createRestorePlanTransportSettings =
         GrpcCallSettings.<CreateRestorePlanRequest, Operation>newBuilder()
@@ -975,6 +991,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListRestorePlansRequest, ListRestorePlansResponse>
         listRestorePlansTransportSettings =
@@ -986,6 +1003,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetRestorePlanRequest, RestorePlan> getRestorePlanTransportSettings =
         GrpcCallSettings.<GetRestorePlanRequest, RestorePlan>newBuilder()
@@ -996,6 +1014,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateRestorePlanRequest, Operation> updateRestorePlanTransportSettings =
         GrpcCallSettings.<UpdateRestorePlanRequest, Operation>newBuilder()
@@ -1017,6 +1036,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateRestoreChannelRequest, Operation> createRestoreChannelTransportSettings =
         GrpcCallSettings.<CreateRestoreChannelRequest, Operation>newBuilder()
@@ -1027,6 +1047,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListRestoreChannelsRequest, ListRestoreChannelsResponse>
         listRestoreChannelsTransportSettings =
@@ -1038,6 +1059,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetRestoreChannelRequest, RestoreChannel> getRestoreChannelTransportSettings =
         GrpcCallSettings.<GetRestoreChannelRequest, RestoreChannel>newBuilder()
@@ -1048,6 +1070,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateRestoreChannelRequest, Operation> updateRestoreChannelTransportSettings =
         GrpcCallSettings.<UpdateRestoreChannelRequest, Operation>newBuilder()
@@ -1070,6 +1093,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRestorePlanBindingsRequest, ListRestorePlanBindingsResponse>
         listRestorePlanBindingsTransportSettings =
@@ -1082,6 +1106,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetRestorePlanBindingRequest, RestorePlanBinding>
         getRestorePlanBindingTransportSettings =
@@ -1093,6 +1118,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateRestoreRequest, Operation> createRestoreTransportSettings =
         GrpcCallSettings.<CreateRestoreRequest, Operation>newBuilder()
@@ -1103,6 +1129,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListRestoresRequest, ListRestoresResponse> listRestoresTransportSettings =
         GrpcCallSettings.<ListRestoresRequest, ListRestoresResponse>newBuilder()
@@ -1113,6 +1140,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetRestoreRequest, Restore> getRestoreTransportSettings =
         GrpcCallSettings.<GetRestoreRequest, Restore>newBuilder()
@@ -1123,6 +1151,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateRestoreRequest, Operation> updateRestoreTransportSettings =
         GrpcCallSettings.<UpdateRestoreRequest, Operation>newBuilder()
@@ -1143,6 +1172,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListVolumeRestoresRequest, ListVolumeRestoresResponse>
         listVolumeRestoresTransportSettings =
@@ -1154,6 +1184,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetVolumeRestoreRequest, VolumeRestore> getVolumeRestoreTransportSettings =
         GrpcCallSettings.<GetVolumeRestoreRequest, VolumeRestore>newBuilder()
@@ -1164,6 +1195,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetBackupIndexDownloadUrlRequest, GetBackupIndexDownloadUrlResponse>
         getBackupIndexDownloadUrlTransportSettings =
@@ -1176,6 +1208,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                       builder.add("backup", String.valueOf(request.getBackup()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getBackup())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1206,6 +1239,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1216,6 +1250,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1227,6 +1262,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createBackupPlanCallable =

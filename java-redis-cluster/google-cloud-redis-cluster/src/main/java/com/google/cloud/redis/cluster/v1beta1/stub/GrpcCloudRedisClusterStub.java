@@ -349,6 +349,7 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
         GrpcCallSettings.<GetClusterRequest, Cluster>newBuilder()
@@ -359,6 +360,7 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateClusterRequest, Operation> updateClusterTransportSettings =
         GrpcCallSettings.<UpdateClusterRequest, Operation>newBuilder()
@@ -379,6 +381,7 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
         GrpcCallSettings.<CreateClusterRequest, Operation>newBuilder()
@@ -389,6 +392,7 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetClusterCertificateAuthorityRequest, CertificateAuthority>
         getClusterCertificateAuthorityTransportSettings =
@@ -401,6 +405,7 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<RescheduleClusterMaintenanceRequest, Operation>
         rescheduleClusterMaintenanceTransportSettings =
@@ -412,6 +417,7 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListBackupCollectionsRequest, ListBackupCollectionsResponse>
         listBackupCollectionsTransportSettings =
@@ -424,6 +430,7 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetBackupCollectionRequest, BackupCollection>
         getBackupCollectionTransportSettings =
@@ -435,6 +442,7 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
         GrpcCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
@@ -445,6 +453,7 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
         GrpcCallSettings.<GetBackupRequest, Backup>newBuilder()
@@ -455,6 +464,7 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteBackupRequest, Operation> deleteBackupTransportSettings =
         GrpcCallSettings.<DeleteBackupRequest, Operation>newBuilder()
@@ -465,6 +475,7 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ExportBackupRequest, Operation> exportBackupTransportSettings =
         GrpcCallSettings.<ExportBackupRequest, Operation>newBuilder()
@@ -475,6 +486,7 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<BackupClusterRequest, Operation> backupClusterTransportSettings =
         GrpcCallSettings.<BackupClusterRequest, Operation>newBuilder()
@@ -485,6 +497,7 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

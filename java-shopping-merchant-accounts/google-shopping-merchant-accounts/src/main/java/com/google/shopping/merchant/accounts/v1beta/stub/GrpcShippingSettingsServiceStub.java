@@ -127,6 +127,7 @@ public class GrpcShippingSettingsServiceStub extends ShippingSettingsServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<InsertShippingSettingsRequest, ShippingSettings>
         insertShippingSettingsTransportSettings =

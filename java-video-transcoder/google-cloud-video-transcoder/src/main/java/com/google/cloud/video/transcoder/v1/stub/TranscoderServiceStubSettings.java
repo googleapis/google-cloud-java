@@ -414,6 +414,7 @@ public class TranscoderServiceStubSettings extends StubSettings<TranscoderServic
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-video-transcoder")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

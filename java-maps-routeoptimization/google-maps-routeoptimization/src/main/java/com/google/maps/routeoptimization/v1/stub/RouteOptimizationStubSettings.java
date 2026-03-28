@@ -327,6 +327,7 @@ public class RouteOptimizationStubSettings extends StubSettings<RouteOptimizatio
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.maps:google-maps-routeoptimization")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

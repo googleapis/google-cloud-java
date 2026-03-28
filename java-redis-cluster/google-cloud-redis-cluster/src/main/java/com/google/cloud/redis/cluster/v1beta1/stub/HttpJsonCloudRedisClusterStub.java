@@ -819,6 +819,7 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
         HttpJsonCallSettings.<GetClusterRequest, Cluster>newBuilder()
@@ -830,6 +831,7 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateClusterRequest, Operation> updateClusterTransportSettings =
         HttpJsonCallSettings.<UpdateClusterRequest, Operation>newBuilder()
@@ -852,6 +854,7 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
         HttpJsonCallSettings.<CreateClusterRequest, Operation>newBuilder()
@@ -863,6 +866,7 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetClusterCertificateAuthorityRequest, CertificateAuthority>
         getClusterCertificateAuthorityTransportSettings =
@@ -876,6 +880,7 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<RescheduleClusterMaintenanceRequest, Operation>
         rescheduleClusterMaintenanceTransportSettings =
@@ -888,6 +893,7 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListBackupCollectionsRequest, ListBackupCollectionsResponse>
         listBackupCollectionsTransportSettings =
@@ -901,6 +907,7 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetBackupCollectionRequest, BackupCollection>
         getBackupCollectionTransportSettings =
@@ -913,6 +920,7 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
         HttpJsonCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
@@ -924,6 +932,7 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
         HttpJsonCallSettings.<GetBackupRequest, Backup>newBuilder()
@@ -935,6 +944,7 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteBackupRequest, Operation> deleteBackupTransportSettings =
         HttpJsonCallSettings.<DeleteBackupRequest, Operation>newBuilder()
@@ -946,6 +956,7 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ExportBackupRequest, Operation> exportBackupTransportSettings =
         HttpJsonCallSettings.<ExportBackupRequest, Operation>newBuilder()
@@ -957,6 +968,7 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<BackupClusterRequest, Operation> backupClusterTransportSettings =
         HttpJsonCallSettings.<BackupClusterRequest, Operation>newBuilder()
@@ -968,6 +980,7 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

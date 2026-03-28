@@ -333,6 +333,7 @@ public class ProductReviewsServiceStubSettings
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.shopping:google-shopping-merchant-reviews")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

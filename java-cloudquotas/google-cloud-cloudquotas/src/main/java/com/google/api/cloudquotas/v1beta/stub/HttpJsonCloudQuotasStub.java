@@ -380,6 +380,7 @@ public class HttpJsonCloudQuotasStub extends CloudQuotasStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetQuotaInfoRequest, QuotaInfo> getQuotaInfoTransportSettings =
         HttpJsonCallSettings.<GetQuotaInfoRequest, QuotaInfo>newBuilder()
@@ -391,6 +392,7 @@ public class HttpJsonCloudQuotasStub extends CloudQuotasStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListQuotaPreferencesRequest, ListQuotaPreferencesResponse>
         listQuotaPreferencesTransportSettings =
@@ -404,6 +406,7 @@ public class HttpJsonCloudQuotasStub extends CloudQuotasStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetQuotaPreferenceRequest, QuotaPreference>
         getQuotaPreferenceTransportSettings =
@@ -416,6 +419,7 @@ public class HttpJsonCloudQuotasStub extends CloudQuotasStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateQuotaPreferenceRequest, QuotaPreference>
         createQuotaPreferenceTransportSettings =
@@ -428,6 +432,7 @@ public class HttpJsonCloudQuotasStub extends CloudQuotasStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateQuotaPreferenceRequest, QuotaPreference>
         updateQuotaPreferenceTransportSettings =

@@ -272,6 +272,7 @@ public class GrpcAppConnectionsServiceStub extends AppConnectionsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetAppConnectionRequest, AppConnection> getAppConnectionTransportSettings =
         GrpcCallSettings.<GetAppConnectionRequest, AppConnection>newBuilder()
@@ -282,6 +283,7 @@ public class GrpcAppConnectionsServiceStub extends AppConnectionsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateAppConnectionRequest, Operation> createAppConnectionTransportSettings =
         GrpcCallSettings.<CreateAppConnectionRequest, Operation>newBuilder()
@@ -292,6 +294,7 @@ public class GrpcAppConnectionsServiceStub extends AppConnectionsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateAppConnectionRequest, Operation> updateAppConnectionTransportSettings =
         GrpcCallSettings.<UpdateAppConnectionRequest, Operation>newBuilder()
@@ -313,6 +316,7 @@ public class GrpcAppConnectionsServiceStub extends AppConnectionsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ResolveAppConnectionsRequest, ResolveAppConnectionsResponse>
         resolveAppConnectionsTransportSettings =
@@ -325,6 +329,7 @@ public class GrpcAppConnectionsServiceStub extends AppConnectionsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -355,6 +360,7 @@ public class GrpcAppConnectionsServiceStub extends AppConnectionsServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -365,6 +371,7 @@ public class GrpcAppConnectionsServiceStub extends AppConnectionsServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -376,6 +383,7 @@ public class GrpcAppConnectionsServiceStub extends AppConnectionsServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listAppConnectionsCallable =

@@ -705,6 +705,7 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-redis-cluster")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

@@ -146,6 +146,7 @@ public class GrpcHomepageServiceStub extends HomepageServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateHomepageRequest, Homepage> updateHomepageTransportSettings =
         GrpcCallSettings.<UpdateHomepageRequest, Homepage>newBuilder()
@@ -166,6 +167,7 @@ public class GrpcHomepageServiceStub extends HomepageServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UnclaimHomepageRequest, Homepage> unclaimHomepageTransportSettings =
         GrpcCallSettings.<UnclaimHomepageRequest, Homepage>newBuilder()
@@ -176,6 +178,7 @@ public class GrpcHomepageServiceStub extends HomepageServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getHomepageCallable =

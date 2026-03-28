@@ -137,6 +137,7 @@ public class GrpcHealthCheckServiceStub extends HealthCheckServiceStub {
                   builder.add("cluster", String.valueOf(request.getCluster()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getCluster())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

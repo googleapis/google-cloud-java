@@ -459,6 +459,7 @@ public class HttpJsonBatchControllerStub extends BatchControllerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetBatchRequest, Batch> getBatchTransportSettings =
         HttpJsonCallSettings.<GetBatchRequest, Batch>newBuilder()
@@ -470,6 +471,7 @@ public class HttpJsonBatchControllerStub extends BatchControllerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListBatchesRequest, ListBatchesResponse> listBatchesTransportSettings =
         HttpJsonCallSettings.<ListBatchesRequest, ListBatchesResponse>newBuilder()
@@ -481,6 +483,7 @@ public class HttpJsonBatchControllerStub extends BatchControllerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteBatchRequest, Empty> deleteBatchTransportSettings =
         HttpJsonCallSettings.<DeleteBatchRequest, Empty>newBuilder()
@@ -492,6 +495,7 @@ public class HttpJsonBatchControllerStub extends BatchControllerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -503,6 +507,7 @@ public class HttpJsonBatchControllerStub extends BatchControllerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -514,6 +519,7 @@ public class HttpJsonBatchControllerStub extends BatchControllerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -526,6 +532,7 @@ public class HttpJsonBatchControllerStub extends BatchControllerStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createBatchCallable =

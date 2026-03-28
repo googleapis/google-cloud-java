@@ -821,6 +821,7 @@ public class HttpJsonStorageInsightsStub extends StorageInsightsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetReportConfigRequest, ReportConfig> getReportConfigTransportSettings =
         HttpJsonCallSettings.<GetReportConfigRequest, ReportConfig>newBuilder()
@@ -832,6 +833,7 @@ public class HttpJsonStorageInsightsStub extends StorageInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateReportConfigRequest, ReportConfig>
         createReportConfigTransportSettings =
@@ -844,6 +846,7 @@ public class HttpJsonStorageInsightsStub extends StorageInsightsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateReportConfigRequest, ReportConfig>
         updateReportConfigTransportSettings =
@@ -869,6 +872,7 @@ public class HttpJsonStorageInsightsStub extends StorageInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListReportDetailsRequest, ListReportDetailsResponse>
         listReportDetailsTransportSettings =
@@ -881,6 +885,7 @@ public class HttpJsonStorageInsightsStub extends StorageInsightsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetReportDetailRequest, ReportDetail> getReportDetailTransportSettings =
         HttpJsonCallSettings.<GetReportDetailRequest, ReportDetail>newBuilder()
@@ -892,6 +897,7 @@ public class HttpJsonStorageInsightsStub extends StorageInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListDatasetConfigsRequest, ListDatasetConfigsResponse>
         listDatasetConfigsTransportSettings =
@@ -904,6 +910,7 @@ public class HttpJsonStorageInsightsStub extends StorageInsightsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDatasetConfigRequest, DatasetConfig> getDatasetConfigTransportSettings =
         HttpJsonCallSettings.<GetDatasetConfigRequest, DatasetConfig>newBuilder()
@@ -915,6 +922,7 @@ public class HttpJsonStorageInsightsStub extends StorageInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateDatasetConfigRequest, Operation>
         createDatasetConfigTransportSettings =
@@ -927,6 +935,7 @@ public class HttpJsonStorageInsightsStub extends StorageInsightsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateDatasetConfigRequest, Operation>
         updateDatasetConfigTransportSettings =
@@ -953,6 +962,7 @@ public class HttpJsonStorageInsightsStub extends StorageInsightsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<LinkDatasetRequest, Operation> linkDatasetTransportSettings =
         HttpJsonCallSettings.<LinkDatasetRequest, Operation>newBuilder()
@@ -964,6 +974,7 @@ public class HttpJsonStorageInsightsStub extends StorageInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UnlinkDatasetRequest, Operation> unlinkDatasetTransportSettings =
         HttpJsonCallSettings.<UnlinkDatasetRequest, Operation>newBuilder()
@@ -975,6 +986,7 @@ public class HttpJsonStorageInsightsStub extends StorageInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

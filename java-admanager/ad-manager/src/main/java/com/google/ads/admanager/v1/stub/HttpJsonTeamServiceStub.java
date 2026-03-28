@@ -421,6 +421,7 @@ public class HttpJsonTeamServiceStub extends TeamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListTeamsRequest, ListTeamsResponse> listTeamsTransportSettings =
         HttpJsonCallSettings.<ListTeamsRequest, ListTeamsResponse>newBuilder()
@@ -432,6 +433,7 @@ public class HttpJsonTeamServiceStub extends TeamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateTeamRequest, Team> createTeamTransportSettings =
         HttpJsonCallSettings.<CreateTeamRequest, Team>newBuilder()
@@ -443,6 +445,7 @@ public class HttpJsonTeamServiceStub extends TeamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<BatchCreateTeamsRequest, BatchCreateTeamsResponse>
         batchCreateTeamsTransportSettings =
@@ -455,6 +458,7 @@ public class HttpJsonTeamServiceStub extends TeamServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateTeamRequest, Team> updateTeamTransportSettings =
         HttpJsonCallSettings.<UpdateTeamRequest, Team>newBuilder()
@@ -478,6 +482,7 @@ public class HttpJsonTeamServiceStub extends TeamServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<BatchActivateTeamsRequest, BatchActivateTeamsResponse>
         batchActivateTeamsTransportSettings =
@@ -490,6 +495,7 @@ public class HttpJsonTeamServiceStub extends TeamServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<BatchDeactivateTeamsRequest, BatchDeactivateTeamsResponse>
         batchDeactivateTeamsTransportSettings =
@@ -503,6 +509,7 @@ public class HttpJsonTeamServiceStub extends TeamServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getTeamCallable =

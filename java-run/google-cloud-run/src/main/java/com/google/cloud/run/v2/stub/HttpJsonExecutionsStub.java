@@ -305,6 +305,7 @@ public class HttpJsonExecutionsStub extends ExecutionsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListExecutionsRequest, ListExecutionsResponse>
         listExecutionsTransportSettings =
@@ -317,6 +318,7 @@ public class HttpJsonExecutionsStub extends ExecutionsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteExecutionRequest, Operation> deleteExecutionTransportSettings =
         HttpJsonCallSettings.<DeleteExecutionRequest, Operation>newBuilder()
@@ -328,6 +330,7 @@ public class HttpJsonExecutionsStub extends ExecutionsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CancelExecutionRequest, Operation> cancelExecutionTransportSettings =
         HttpJsonCallSettings.<CancelExecutionRequest, Operation>newBuilder()
@@ -339,6 +342,7 @@ public class HttpJsonExecutionsStub extends ExecutionsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getExecutionCallable =

@@ -391,6 +391,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetCatalogItemRequest, CatalogItem> getCatalogItemTransportSettings =
         HttpJsonCallSettings.<GetCatalogItemRequest, CatalogItem>newBuilder()
@@ -402,6 +403,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListCatalogItemsRequest, ListCatalogItemsResponse>
         listCatalogItemsTransportSettings =
@@ -414,6 +416,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateCatalogItemRequest, CatalogItem> updateCatalogItemTransportSettings =
         HttpJsonCallSettings.<UpdateCatalogItemRequest, CatalogItem>newBuilder()
@@ -425,6 +428,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteCatalogItemRequest, Empty> deleteCatalogItemTransportSettings =
         HttpJsonCallSettings.<DeleteCatalogItemRequest, Empty>newBuilder()
@@ -436,6 +440,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ImportCatalogItemsRequest, Operation> importCatalogItemsTransportSettings =
         HttpJsonCallSettings.<ImportCatalogItemsRequest, Operation>newBuilder()
@@ -447,6 +452,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.createCatalogItemCallable =

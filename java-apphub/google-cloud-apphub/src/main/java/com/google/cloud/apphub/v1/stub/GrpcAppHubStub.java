@@ -616,6 +616,7 @@ public class GrpcAppHubStub extends AppHubStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListServiceProjectAttachmentsRequest, ListServiceProjectAttachmentsResponse>
         listServiceProjectAttachmentsTransportSettings =
@@ -629,6 +630,7 @@ public class GrpcAppHubStub extends AppHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateServiceProjectAttachmentRequest, Operation>
         createServiceProjectAttachmentTransportSettings =
@@ -640,6 +642,7 @@ public class GrpcAppHubStub extends AppHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetServiceProjectAttachmentRequest, ServiceProjectAttachment>
         getServiceProjectAttachmentTransportSettings =
@@ -652,6 +655,7 @@ public class GrpcAppHubStub extends AppHubStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteServiceProjectAttachmentRequest, Operation>
         deleteServiceProjectAttachmentTransportSettings =
@@ -663,6 +667,7 @@ public class GrpcAppHubStub extends AppHubStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DetachServiceProjectAttachmentRequest, DetachServiceProjectAttachmentResponse>
         detachServiceProjectAttachmentTransportSettings =
@@ -676,6 +681,7 @@ public class GrpcAppHubStub extends AppHubStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListDiscoveredServicesRequest, ListDiscoveredServicesResponse>
         listDiscoveredServicesTransportSettings =
@@ -688,6 +694,7 @@ public class GrpcAppHubStub extends AppHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetDiscoveredServiceRequest, DiscoveredService>
         getDiscoveredServiceTransportSettings =
@@ -699,6 +706,7 @@ public class GrpcAppHubStub extends AppHubStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<LookupDiscoveredServiceRequest, LookupDiscoveredServiceResponse>
         lookupDiscoveredServiceTransportSettings =
@@ -711,6 +719,7 @@ public class GrpcAppHubStub extends AppHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListServicesRequest, ListServicesResponse> listServicesTransportSettings =
         GrpcCallSettings.<ListServicesRequest, ListServicesResponse>newBuilder()
@@ -721,6 +730,7 @@ public class GrpcAppHubStub extends AppHubStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateServiceRequest, Operation> createServiceTransportSettings =
         GrpcCallSettings.<CreateServiceRequest, Operation>newBuilder()
@@ -731,6 +741,7 @@ public class GrpcAppHubStub extends AppHubStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetServiceRequest, Service> getServiceTransportSettings =
         GrpcCallSettings.<GetServiceRequest, Service>newBuilder()
@@ -741,6 +752,7 @@ public class GrpcAppHubStub extends AppHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateServiceRequest, Operation> updateServiceTransportSettings =
         GrpcCallSettings.<UpdateServiceRequest, Operation>newBuilder()
@@ -761,6 +773,7 @@ public class GrpcAppHubStub extends AppHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDiscoveredWorkloadsRequest, ListDiscoveredWorkloadsResponse>
         listDiscoveredWorkloadsTransportSettings =
@@ -773,6 +786,7 @@ public class GrpcAppHubStub extends AppHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetDiscoveredWorkloadRequest, DiscoveredWorkload>
         getDiscoveredWorkloadTransportSettings =
@@ -784,6 +798,7 @@ public class GrpcAppHubStub extends AppHubStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<LookupDiscoveredWorkloadRequest, LookupDiscoveredWorkloadResponse>
         lookupDiscoveredWorkloadTransportSettings =
@@ -796,6 +811,7 @@ public class GrpcAppHubStub extends AppHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsTransportSettings =
         GrpcCallSettings.<ListWorkloadsRequest, ListWorkloadsResponse>newBuilder()
@@ -806,6 +822,7 @@ public class GrpcAppHubStub extends AppHubStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateWorkloadRequest, Operation> createWorkloadTransportSettings =
         GrpcCallSettings.<CreateWorkloadRequest, Operation>newBuilder()
@@ -816,6 +833,7 @@ public class GrpcAppHubStub extends AppHubStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetWorkloadRequest, Workload> getWorkloadTransportSettings =
         GrpcCallSettings.<GetWorkloadRequest, Workload>newBuilder()
@@ -826,6 +844,7 @@ public class GrpcAppHubStub extends AppHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateWorkloadRequest, Operation> updateWorkloadTransportSettings =
         GrpcCallSettings.<UpdateWorkloadRequest, Operation>newBuilder()
@@ -846,6 +865,7 @@ public class GrpcAppHubStub extends AppHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListApplicationsRequest, ListApplicationsResponse>
         listApplicationsTransportSettings =
@@ -857,6 +877,7 @@ public class GrpcAppHubStub extends AppHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateApplicationRequest, Operation> createApplicationTransportSettings =
         GrpcCallSettings.<CreateApplicationRequest, Operation>newBuilder()
@@ -867,6 +888,7 @@ public class GrpcAppHubStub extends AppHubStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetApplicationRequest, Application> getApplicationTransportSettings =
         GrpcCallSettings.<GetApplicationRequest, Application>newBuilder()
@@ -877,6 +899,7 @@ public class GrpcAppHubStub extends AppHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateApplicationRequest, Operation> updateApplicationTransportSettings =
         GrpcCallSettings.<UpdateApplicationRequest, Operation>newBuilder()
@@ -898,6 +921,7 @@ public class GrpcAppHubStub extends AppHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -928,6 +952,7 @@ public class GrpcAppHubStub extends AppHubStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -938,6 +963,7 @@ public class GrpcAppHubStub extends AppHubStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -949,6 +975,7 @@ public class GrpcAppHubStub extends AppHubStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.lookupServiceProjectAttachmentCallable =

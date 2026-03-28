@@ -181,6 +181,7 @@ public class GrpcTripServiceStub extends TripServiceStub {
                   builder.add(request.getParent(), "provider_id", CREATE_TRIP_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetTripRequest, Trip> getTripTransportSettings =
         GrpcCallSettings.<GetTripRequest, Trip>newBuilder()
@@ -191,6 +192,7 @@ public class GrpcTripServiceStub extends TripServiceStub {
                   builder.add(request.getName(), "provider_id", GET_TRIP_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteTripRequest, Empty> deleteTripTransportSettings =
         GrpcCallSettings.<DeleteTripRequest, Empty>newBuilder()
@@ -201,6 +203,7 @@ public class GrpcTripServiceStub extends TripServiceStub {
                   builder.add(request.getName(), "provider_id", DELETE_TRIP_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ReportBillableTripRequest, Empty> reportBillableTripTransportSettings =
         GrpcCallSettings.<ReportBillableTripRequest, Empty>newBuilder()

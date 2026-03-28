@@ -120,6 +120,7 @@ public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
                   builder.add("group_name", String.valueOf(request.getGroupName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getGroupName())
             .build();
     GrpcCallSettings<UpdateGroupRequest, ErrorGroup> updateGroupTransportSettings =
         GrpcCallSettings.<UpdateGroupRequest, ErrorGroup>newBuilder()

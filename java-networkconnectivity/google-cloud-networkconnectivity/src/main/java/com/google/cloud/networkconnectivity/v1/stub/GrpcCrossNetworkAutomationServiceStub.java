@@ -502,6 +502,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetServiceConnectionMapRequest, ServiceConnectionMap>
         getServiceConnectionMapTransportSettings =
@@ -513,6 +514,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateServiceConnectionMapRequest, Operation>
         createServiceConnectionMapTransportSettings =
@@ -524,6 +526,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateServiceConnectionMapRequest, Operation>
         updateServiceConnectionMapTransportSettings =
@@ -548,6 +551,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListServiceConnectionPoliciesRequest, ListServiceConnectionPoliciesResponse>
         listServiceConnectionPoliciesTransportSettings =
@@ -561,6 +565,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetServiceConnectionPolicyRequest, ServiceConnectionPolicy>
         getServiceConnectionPolicyTransportSettings =
@@ -573,6 +578,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateServiceConnectionPolicyRequest, Operation>
         createServiceConnectionPolicyTransportSettings =
@@ -584,6 +590,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateServiceConnectionPolicyRequest, Operation>
         updateServiceConnectionPolicyTransportSettings =
@@ -608,6 +615,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListServiceClassesRequest, ListServiceClassesResponse>
         listServiceClassesTransportSettings =
@@ -619,6 +627,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetServiceClassRequest, ServiceClass> getServiceClassTransportSettings =
         GrpcCallSettings.<GetServiceClassRequest, ServiceClass>newBuilder()
@@ -629,6 +638,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateServiceClassRequest, Operation> updateServiceClassTransportSettings =
         GrpcCallSettings.<UpdateServiceClassRequest, Operation>newBuilder()
@@ -650,6 +660,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetServiceConnectionTokenRequest, ServiceConnectionToken>
         getServiceConnectionTokenTransportSettings =
@@ -661,6 +672,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListServiceConnectionTokensRequest, ListServiceConnectionTokensResponse>
         listServiceConnectionTokensTransportSettings =
@@ -674,6 +686,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateServiceConnectionTokenRequest, Operation>
         createServiceConnectionTokenTransportSettings =
@@ -685,6 +698,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteServiceConnectionTokenRequest, Operation>
         deleteServiceConnectionTokenTransportSettings =
@@ -696,6 +710,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -726,6 +741,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -736,6 +752,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -747,6 +764,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listServiceConnectionMapsCallable =

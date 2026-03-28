@@ -1298,6 +1298,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CheckUpgradeRequest, Operation> checkUpgradeTransportSettings =
         HttpJsonCallSettings.<CheckUpgradeRequest, Operation>newBuilder()
@@ -1321,6 +1322,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>
         getUserWorkloadsSecretTransportSettings =
@@ -1333,6 +1335,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListUserWorkloadsSecretsRequest, ListUserWorkloadsSecretsResponse>
         listUserWorkloadsSecretsTransportSettings =
@@ -1346,6 +1349,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateUserWorkloadsSecretRequest, UserWorkloadsSecret>
         updateUserWorkloadsSecretTransportSettings =
@@ -1372,6 +1376,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
         createUserWorkloadsConfigMapTransportSettings =
@@ -1385,6 +1390,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
         getUserWorkloadsConfigMapTransportSettings =
@@ -1398,6 +1404,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListUserWorkloadsConfigMapsRequest, ListUserWorkloadsConfigMapsResponse>
         listUserWorkloadsConfigMapsTransportSettings =
@@ -1412,6 +1419,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
         updateUserWorkloadsConfigMapTransportSettings =
@@ -1439,6 +1447,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<SaveSnapshotRequest, Operation> saveSnapshotTransportSettings =
         HttpJsonCallSettings.<SaveSnapshotRequest, Operation>newBuilder()
@@ -1485,6 +1494,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       builder.add("environment", String.valueOf(request.getEnvironment()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getEnvironment())
                 .build();
 
     this.createEnvironmentCallable =

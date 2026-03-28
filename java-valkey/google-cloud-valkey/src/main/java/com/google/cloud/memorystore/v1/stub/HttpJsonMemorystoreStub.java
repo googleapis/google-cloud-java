@@ -810,6 +810,7 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         HttpJsonCallSettings.<GetInstanceRequest, Instance>newBuilder()
@@ -821,6 +822,7 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateInstanceRequest, Operation> createInstanceTransportSettings =
         HttpJsonCallSettings.<CreateInstanceRequest, Operation>newBuilder()
@@ -832,6 +834,7 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateInstanceRequest, Operation> updateInstanceTransportSettings =
         HttpJsonCallSettings.<UpdateInstanceRequest, Operation>newBuilder()
@@ -854,6 +857,7 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetCertificateAuthorityRequest, CertificateAuthority>
         getCertificateAuthorityTransportSettings =
@@ -866,6 +870,7 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<RescheduleMaintenanceRequest, Operation>
         rescheduleMaintenanceTransportSettings =
@@ -878,6 +883,7 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListBackupCollectionsRequest, ListBackupCollectionsResponse>
         listBackupCollectionsTransportSettings =
@@ -891,6 +897,7 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetBackupCollectionRequest, BackupCollection>
         getBackupCollectionTransportSettings =
@@ -903,6 +910,7 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
         HttpJsonCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
@@ -914,6 +922,7 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
         HttpJsonCallSettings.<GetBackupRequest, Backup>newBuilder()
@@ -925,6 +934,7 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteBackupRequest, Operation> deleteBackupTransportSettings =
         HttpJsonCallSettings.<DeleteBackupRequest, Operation>newBuilder()
@@ -936,6 +946,7 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ExportBackupRequest, Operation> exportBackupTransportSettings =
         HttpJsonCallSettings.<ExportBackupRequest, Operation>newBuilder()
@@ -947,6 +958,7 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<BackupInstanceRequest, Operation> backupInstanceTransportSettings =
         HttpJsonCallSettings.<BackupInstanceRequest, Operation>newBuilder()
@@ -958,6 +970,7 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

@@ -526,6 +526,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetFeaturestoreRequest, Featurestore> getFeaturestoreTransportSettings =
         GrpcCallSettings.<GetFeaturestoreRequest, Featurestore>newBuilder()
@@ -536,6 +537,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListFeaturestoresRequest, ListFeaturestoresResponse>
         listFeaturestoresTransportSettings =
@@ -547,6 +549,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateFeaturestoreRequest, Operation> updateFeaturestoreTransportSettings =
         GrpcCallSettings.<UpdateFeaturestoreRequest, Operation>newBuilder()
@@ -568,6 +571,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateEntityTypeRequest, Operation> createEntityTypeTransportSettings =
         GrpcCallSettings.<CreateEntityTypeRequest, Operation>newBuilder()
@@ -578,6 +582,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetEntityTypeRequest, EntityType> getEntityTypeTransportSettings =
         GrpcCallSettings.<GetEntityTypeRequest, EntityType>newBuilder()
@@ -588,6 +593,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListEntityTypesRequest, ListEntityTypesResponse>
         listEntityTypesTransportSettings =
@@ -599,6 +605,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateEntityTypeRequest, EntityType> updateEntityTypeTransportSettings =
         GrpcCallSettings.<UpdateEntityTypeRequest, EntityType>newBuilder()
@@ -620,6 +627,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateFeatureRequest, Operation> createFeatureTransportSettings =
         GrpcCallSettings.<CreateFeatureRequest, Operation>newBuilder()
@@ -630,6 +638,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<BatchCreateFeaturesRequest, Operation> batchCreateFeaturesTransportSettings =
         GrpcCallSettings.<BatchCreateFeaturesRequest, Operation>newBuilder()
@@ -640,6 +649,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetFeatureRequest, Feature> getFeatureTransportSettings =
         GrpcCallSettings.<GetFeatureRequest, Feature>newBuilder()
@@ -650,6 +660,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListFeaturesRequest, ListFeaturesResponse> listFeaturesTransportSettings =
         GrpcCallSettings.<ListFeaturesRequest, ListFeaturesResponse>newBuilder()
@@ -660,6 +671,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateFeatureRequest, Feature> updateFeatureTransportSettings =
         GrpcCallSettings.<UpdateFeatureRequest, Feature>newBuilder()
@@ -680,6 +692,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ImportFeatureValuesRequest, Operation> importFeatureValuesTransportSettings =
         GrpcCallSettings.<ImportFeatureValuesRequest, Operation>newBuilder()
@@ -690,6 +703,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("entity_type", String.valueOf(request.getEntityType()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEntityType())
             .build();
     GrpcCallSettings<BatchReadFeatureValuesRequest, Operation>
         batchReadFeatureValuesTransportSettings =
@@ -701,6 +715,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                       builder.add("featurestore", String.valueOf(request.getFeaturestore()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getFeaturestore())
                 .build();
     GrpcCallSettings<ExportFeatureValuesRequest, Operation> exportFeatureValuesTransportSettings =
         GrpcCallSettings.<ExportFeatureValuesRequest, Operation>newBuilder()
@@ -711,6 +726,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("entity_type", String.valueOf(request.getEntityType()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEntityType())
             .build();
     GrpcCallSettings<DeleteFeatureValuesRequest, Operation> deleteFeatureValuesTransportSettings =
         GrpcCallSettings.<DeleteFeatureValuesRequest, Operation>newBuilder()
@@ -721,6 +737,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("entity_type", String.valueOf(request.getEntityType()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEntityType())
             .build();
     GrpcCallSettings<SearchFeaturesRequest, SearchFeaturesResponse>
         searchFeaturesTransportSettings =
@@ -732,6 +749,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                       builder.add("location", String.valueOf(request.getLocation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getLocation())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -762,6 +780,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -772,6 +791,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -783,6 +803,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createFeaturestoreCallable =

@@ -959,6 +959,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<
             CheckCloudIdentityAccountsExistRequest, CheckCloudIdentityAccountsExistResponse>
@@ -1003,6 +1004,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ImportCustomerRequest, Customer> importCustomerTransportSettings =
         GrpcCallSettings.<ImportCustomerRequest, Customer>newBuilder()
@@ -1013,6 +1015,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getCustomer())
             .build();
     GrpcCallSettings<ProvisionCloudIdentityRequest, Operation>
         provisionCloudIdentityTransportSettings =
@@ -1024,6 +1027,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("customer", String.valueOf(request.getCustomer()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCustomer())
                 .build();
     GrpcCallSettings<ListEntitlementsRequest, ListEntitlementsResponse>
         listEntitlementsTransportSettings =
@@ -1035,6 +1039,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListTransferableSkusRequest, ListTransferableSkusResponse>
         listTransferableSkusTransportSettings =
@@ -1068,6 +1073,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateEntitlementRequest, Operation> createEntitlementTransportSettings =
         GrpcCallSettings.<CreateEntitlementRequest, Operation>newBuilder()
@@ -1078,6 +1084,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ChangeParametersRequest, Operation> changeParametersTransportSettings =
         GrpcCallSettings.<ChangeParametersRequest, Operation>newBuilder()
@@ -1109,6 +1116,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getOffer())
             .build();
     GrpcCallSettings<StartPaidServiceRequest, Operation> startPaidServiceTransportSettings =
         GrpcCallSettings.<StartPaidServiceRequest, Operation>newBuilder()
@@ -1227,6 +1235,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListCustomerRepricingConfigsRequest, ListCustomerRepricingConfigsResponse>
         listCustomerRepricingConfigsTransportSettings =
@@ -1240,6 +1249,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateCustomerRepricingConfigRequest, CustomerRepricingConfig>
         createCustomerRepricingConfigTransportSettings =
@@ -1252,6 +1262,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateCustomerRepricingConfigRequest, CustomerRepricingConfig>
         updateCustomerRepricingConfigTransportSettings =
@@ -1277,6 +1288,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
         getChannelPartnerRepricingConfigTransportSettings =
@@ -1290,6 +1302,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             ListChannelPartnerRepricingConfigsRequest, ListChannelPartnerRepricingConfigsResponse>
@@ -1305,6 +1318,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
         createChannelPartnerRepricingConfigTransportSettings =
@@ -1318,6 +1332,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
         updateChannelPartnerRepricingConfigTransportSettings =
@@ -1344,6 +1359,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListSkuGroupsRequest, ListSkuGroupsResponse> listSkuGroupsTransportSettings =
         GrpcCallSettings.<ListSkuGroupsRequest, ListSkuGroupsResponse>newBuilder()
@@ -1366,6 +1382,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<LookupOfferRequest, Offer> lookupOfferTransportSettings =
         GrpcCallSettings.<LookupOfferRequest, Offer>newBuilder()
@@ -1376,6 +1393,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   builder.add("entitlement", String.valueOf(request.getEntitlement()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEntitlement())
             .build();
     GrpcCallSettings<ListProductsRequest, ListProductsResponse> listProductsTransportSettings =
         GrpcCallSettings.<ListProductsRequest, ListProductsResponse>newBuilder()
@@ -1390,6 +1408,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListOffersRequest, ListOffersResponse> listOffersTransportSettings =
         GrpcCallSettings.<ListOffersRequest, ListOffersResponse>newBuilder()
@@ -1411,6 +1430,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("customer", String.valueOf(request.getCustomer()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCustomer())
                 .build();
     GrpcCallSettings<ListPurchasableOffersRequest, ListPurchasableOffersResponse>
         listPurchasableOffersTransportSettings =
@@ -1423,6 +1443,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("customer", String.valueOf(request.getCustomer()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCustomer())
                 .build();
     GrpcCallSettings<QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
         queryEligibleBillingAccountsTransportSettings =
@@ -1436,6 +1457,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("customer", String.valueOf(request.getCustomer()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCustomer())
                 .build();
     GrpcCallSettings<RegisterSubscriberRequest, RegisterSubscriberResponse>
         registerSubscriberTransportSettings =
@@ -1448,6 +1470,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("integrator", String.valueOf(request.getIntegrator()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAccount())
                 .build();
     GrpcCallSettings<UnregisterSubscriberRequest, UnregisterSubscriberResponse>
         unregisterSubscriberTransportSettings =
@@ -1460,6 +1483,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("integrator", String.valueOf(request.getIntegrator()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAccount())
                 .build();
     GrpcCallSettings<ListSubscribersRequest, ListSubscribersResponse>
         listSubscribersTransportSettings =
@@ -1472,6 +1496,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("integrator", String.valueOf(request.getIntegrator()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAccount())
                 .build();
     GrpcCallSettings<ListEntitlementChangesRequest, ListEntitlementChangesResponse>
         listEntitlementChangesTransportSettings =
@@ -1484,6 +1509,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.listCustomersCallable =

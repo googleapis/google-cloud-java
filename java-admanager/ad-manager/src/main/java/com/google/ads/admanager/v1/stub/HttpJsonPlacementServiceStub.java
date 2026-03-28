@@ -479,6 +479,7 @@ public class HttpJsonPlacementServiceStub extends PlacementServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListPlacementsRequest, ListPlacementsResponse>
         listPlacementsTransportSettings =
@@ -491,6 +492,7 @@ public class HttpJsonPlacementServiceStub extends PlacementServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreatePlacementRequest, Placement> createPlacementTransportSettings =
         HttpJsonCallSettings.<CreatePlacementRequest, Placement>newBuilder()
@@ -502,6 +504,7 @@ public class HttpJsonPlacementServiceStub extends PlacementServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdatePlacementRequest, Placement> updatePlacementTransportSettings =
         HttpJsonCallSettings.<UpdatePlacementRequest, Placement>newBuilder()
@@ -526,6 +529,7 @@ public class HttpJsonPlacementServiceStub extends PlacementServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<BatchUpdatePlacementsRequest, BatchUpdatePlacementsResponse>
         batchUpdatePlacementsTransportSettings =
@@ -539,6 +543,7 @@ public class HttpJsonPlacementServiceStub extends PlacementServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<BatchActivatePlacementsRequest, BatchActivatePlacementsResponse>
         batchActivatePlacementsTransportSettings =
@@ -552,6 +557,7 @@ public class HttpJsonPlacementServiceStub extends PlacementServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<BatchDeactivatePlacementsRequest, BatchDeactivatePlacementsResponse>
         batchDeactivatePlacementsTransportSettings =
@@ -565,6 +571,7 @@ public class HttpJsonPlacementServiceStub extends PlacementServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<BatchArchivePlacementsRequest, BatchArchivePlacementsResponse>
         batchArchivePlacementsTransportSettings =
@@ -578,6 +585,7 @@ public class HttpJsonPlacementServiceStub extends PlacementServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getPlacementCallable =

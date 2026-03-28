@@ -272,6 +272,7 @@ public class HttpJsonOnlineReturnPolicyServiceStub extends OnlineReturnPolicySer
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListOnlineReturnPoliciesRequest, ListOnlineReturnPoliciesResponse>
         listOnlineReturnPoliciesTransportSettings =
@@ -285,6 +286,7 @@ public class HttpJsonOnlineReturnPolicyServiceStub extends OnlineReturnPolicySer
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateOnlineReturnPolicyRequest, OnlineReturnPolicy>
         createOnlineReturnPolicyTransportSettings =
@@ -297,6 +299,7 @@ public class HttpJsonOnlineReturnPolicyServiceStub extends OnlineReturnPolicySer
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteOnlineReturnPolicyRequest, Empty>
         deleteOnlineReturnPolicyTransportSettings =
@@ -309,6 +312,7 @@ public class HttpJsonOnlineReturnPolicyServiceStub extends OnlineReturnPolicySer
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.getOnlineReturnPolicyCallable =

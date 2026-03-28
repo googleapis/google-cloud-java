@@ -193,6 +193,7 @@ public class GrpcMatchServiceStub extends MatchServiceStub {
                   builder.add("index_endpoint", String.valueOf(request.getIndexEndpoint()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getIndexEndpoint())
             .build();
     GrpcCallSettings<ReadIndexDatapointsRequest, ReadIndexDatapointsResponse>
         readIndexDatapointsTransportSettings =
@@ -204,6 +205,7 @@ public class GrpcMatchServiceStub extends MatchServiceStub {
                       builder.add("index_endpoint", String.valueOf(request.getIndexEndpoint()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getIndexEndpoint())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -234,6 +236,7 @@ public class GrpcMatchServiceStub extends MatchServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -244,6 +247,7 @@ public class GrpcMatchServiceStub extends MatchServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -255,6 +259,7 @@ public class GrpcMatchServiceStub extends MatchServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.findNeighborsCallable =

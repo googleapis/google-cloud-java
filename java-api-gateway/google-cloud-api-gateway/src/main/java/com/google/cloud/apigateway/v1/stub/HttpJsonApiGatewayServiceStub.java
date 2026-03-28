@@ -774,6 +774,7 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetGatewayRequest, Gateway> getGatewayTransportSettings =
         HttpJsonCallSettings.<GetGatewayRequest, Gateway>newBuilder()
@@ -785,6 +786,7 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateGatewayRequest, Operation> createGatewayTransportSettings =
         HttpJsonCallSettings.<CreateGatewayRequest, Operation>newBuilder()
@@ -796,6 +798,7 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateGatewayRequest, Operation> updateGatewayTransportSettings =
         HttpJsonCallSettings.<UpdateGatewayRequest, Operation>newBuilder()
@@ -818,6 +821,7 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListApisRequest, ListApisResponse> listApisTransportSettings =
         HttpJsonCallSettings.<ListApisRequest, ListApisResponse>newBuilder()
@@ -829,6 +833,7 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetApiRequest, Api> getApiTransportSettings =
         HttpJsonCallSettings.<GetApiRequest, Api>newBuilder()
@@ -840,6 +845,7 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateApiRequest, Operation> createApiTransportSettings =
         HttpJsonCallSettings.<CreateApiRequest, Operation>newBuilder()
@@ -851,6 +857,7 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateApiRequest, Operation> updateApiTransportSettings =
         HttpJsonCallSettings.<UpdateApiRequest, Operation>newBuilder()
@@ -873,6 +880,7 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListApiConfigsRequest, ListApiConfigsResponse>
         listApiConfigsTransportSettings =
@@ -885,6 +893,7 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetApiConfigRequest, ApiConfig> getApiConfigTransportSettings =
         HttpJsonCallSettings.<GetApiConfigRequest, ApiConfig>newBuilder()
@@ -896,6 +905,7 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateApiConfigRequest, Operation> createApiConfigTransportSettings =
         HttpJsonCallSettings.<CreateApiConfigRequest, Operation>newBuilder()
@@ -907,6 +917,7 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateApiConfigRequest, Operation> updateApiConfigTransportSettings =
         HttpJsonCallSettings.<UpdateApiConfigRequest, Operation>newBuilder()
@@ -929,6 +940,7 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.listGatewaysCallable =

@@ -411,6 +411,7 @@ public class HttpJsonRuntimeProjectAttachmentServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetRuntimeProjectAttachmentRequest, RuntimeProjectAttachment>
         getRuntimeProjectAttachmentTransportSettings =
@@ -424,6 +425,7 @@ public class HttpJsonRuntimeProjectAttachmentServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             ListRuntimeProjectAttachmentsRequest, ListRuntimeProjectAttachmentsResponse>
@@ -439,6 +441,7 @@ public class HttpJsonRuntimeProjectAttachmentServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteRuntimeProjectAttachmentRequest, Empty>
         deleteRuntimeProjectAttachmentTransportSettings =
@@ -451,6 +454,7 @@ public class HttpJsonRuntimeProjectAttachmentServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             LookupRuntimeProjectAttachmentRequest, LookupRuntimeProjectAttachmentResponse>
@@ -466,6 +470,7 @@ public class HttpJsonRuntimeProjectAttachmentServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

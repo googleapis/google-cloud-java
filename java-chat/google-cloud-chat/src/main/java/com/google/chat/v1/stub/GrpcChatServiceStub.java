@@ -592,6 +592,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListMessagesRequest, ListMessagesResponse> listMessagesTransportSettings =
         GrpcCallSettings.<ListMessagesRequest, ListMessagesResponse>newBuilder()
@@ -602,6 +603,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListMembershipsRequest, ListMembershipsResponse>
         listMembershipsTransportSettings =
@@ -613,6 +615,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetMembershipRequest, Membership> getMembershipTransportSettings =
         GrpcCallSettings.<GetMembershipRequest, Membership>newBuilder()
@@ -623,6 +626,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetMessageRequest, Message> getMessageTransportSettings =
         GrpcCallSettings.<GetMessageRequest, Message>newBuilder()
@@ -633,6 +637,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateMessageRequest, Message> updateMessageTransportSettings =
         GrpcCallSettings.<UpdateMessageRequest, Message>newBuilder()
@@ -653,6 +658,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetAttachmentRequest, Attachment> getAttachmentTransportSettings =
         GrpcCallSettings.<GetAttachmentRequest, Attachment>newBuilder()
@@ -663,6 +669,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UploadAttachmentRequest, UploadAttachmentResponse>
         uploadAttachmentTransportSettings =
@@ -674,6 +681,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListSpacesRequest, ListSpacesResponse> listSpacesTransportSettings =
         GrpcCallSettings.<ListSpacesRequest, ListSpacesResponse>newBuilder()
@@ -692,6 +700,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateSpaceRequest, Space> createSpaceTransportSettings =
         GrpcCallSettings.<CreateSpaceRequest, Space>newBuilder()
@@ -720,6 +729,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CompleteImportSpaceRequest, CompleteImportSpaceResponse>
         completeImportSpaceTransportSettings =
@@ -731,6 +741,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<FindDirectMessageRequest, Space> findDirectMessageTransportSettings =
         GrpcCallSettings.<FindDirectMessageRequest, Space>newBuilder()
@@ -745,6 +756,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateMembershipRequest, Membership> updateMembershipTransportSettings =
         GrpcCallSettings.<UpdateMembershipRequest, Membership>newBuilder()
@@ -765,6 +777,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateReactionRequest, Reaction> createReactionTransportSettings =
         GrpcCallSettings.<CreateReactionRequest, Reaction>newBuilder()
@@ -775,6 +788,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListReactionsRequest, ListReactionsResponse> listReactionsTransportSettings =
         GrpcCallSettings.<ListReactionsRequest, ListReactionsResponse>newBuilder()
@@ -785,6 +799,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteReactionRequest, Empty> deleteReactionTransportSettings =
         GrpcCallSettings.<DeleteReactionRequest, Empty>newBuilder()
@@ -795,6 +810,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateCustomEmojiRequest, CustomEmoji> createCustomEmojiTransportSettings =
         GrpcCallSettings.<CreateCustomEmojiRequest, CustomEmoji>newBuilder()
@@ -809,6 +825,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListCustomEmojisRequest, ListCustomEmojisResponse>
         listCustomEmojisTransportSettings =
@@ -824,6 +841,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetSpaceReadStateRequest, SpaceReadState> getSpaceReadStateTransportSettings =
         GrpcCallSettings.<GetSpaceReadStateRequest, SpaceReadState>newBuilder()
@@ -834,6 +852,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateSpaceReadStateRequest, SpaceReadState>
         updateSpaceReadStateTransportSettings =
@@ -858,6 +877,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetSpaceEventRequest, SpaceEvent> getSpaceEventTransportSettings =
         GrpcCallSettings.<GetSpaceEventRequest, SpaceEvent>newBuilder()
@@ -868,6 +888,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListSpaceEventsRequest, ListSpaceEventsResponse>
         listSpaceEventsTransportSettings =
@@ -879,6 +900,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
         getSpaceNotificationSettingTransportSettings =
@@ -891,6 +913,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
         updateSpaceNotificationSettingTransportSettings =

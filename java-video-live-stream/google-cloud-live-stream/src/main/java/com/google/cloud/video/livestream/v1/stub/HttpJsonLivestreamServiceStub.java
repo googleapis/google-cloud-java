@@ -1667,6 +1667,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListChannelsRequest, ListChannelsResponse> listChannelsTransportSettings =
         HttpJsonCallSettings.<ListChannelsRequest, ListChannelsResponse>newBuilder()
@@ -1678,6 +1679,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetChannelRequest, Channel> getChannelTransportSettings =
         HttpJsonCallSettings.<GetChannelRequest, Channel>newBuilder()
@@ -1689,6 +1691,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteChannelRequest, Operation> deleteChannelTransportSettings =
         HttpJsonCallSettings.<DeleteChannelRequest, Operation>newBuilder()
@@ -1700,6 +1703,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateChannelRequest, Operation> updateChannelTransportSettings =
         HttpJsonCallSettings.<UpdateChannelRequest, Operation>newBuilder()
@@ -1722,6 +1726,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<StopChannelRequest, Operation> stopChannelTransportSettings =
         HttpJsonCallSettings.<StopChannelRequest, Operation>newBuilder()
@@ -1733,6 +1738,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<StartDistributionRequest, Operation> startDistributionTransportSettings =
         HttpJsonCallSettings.<StartDistributionRequest, Operation>newBuilder()
@@ -1744,6 +1750,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<StopDistributionRequest, Operation> stopDistributionTransportSettings =
         HttpJsonCallSettings.<StopDistributionRequest, Operation>newBuilder()
@@ -1755,6 +1762,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateInputRequest, Operation> createInputTransportSettings =
         HttpJsonCallSettings.<CreateInputRequest, Operation>newBuilder()
@@ -1766,6 +1774,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListInputsRequest, ListInputsResponse> listInputsTransportSettings =
         HttpJsonCallSettings.<ListInputsRequest, ListInputsResponse>newBuilder()
@@ -1777,6 +1786,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetInputRequest, Input> getInputTransportSettings =
         HttpJsonCallSettings.<GetInputRequest, Input>newBuilder()
@@ -1788,6 +1798,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteInputRequest, Operation> deleteInputTransportSettings =
         HttpJsonCallSettings.<DeleteInputRequest, Operation>newBuilder()
@@ -1799,6 +1810,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateInputRequest, Operation> updateInputTransportSettings =
         HttpJsonCallSettings.<UpdateInputRequest, Operation>newBuilder()
@@ -1821,6 +1833,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateEventRequest, Event> createEventTransportSettings =
         HttpJsonCallSettings.<CreateEventRequest, Event>newBuilder()
@@ -1832,6 +1845,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListEventsRequest, ListEventsResponse> listEventsTransportSettings =
         HttpJsonCallSettings.<ListEventsRequest, ListEventsResponse>newBuilder()
@@ -1843,6 +1857,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetEventRequest, Event> getEventTransportSettings =
         HttpJsonCallSettings.<GetEventRequest, Event>newBuilder()
@@ -1854,6 +1869,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteEventRequest, Empty> deleteEventTransportSettings =
         HttpJsonCallSettings.<DeleteEventRequest, Empty>newBuilder()
@@ -1865,6 +1881,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListClipsRequest, ListClipsResponse> listClipsTransportSettings =
         HttpJsonCallSettings.<ListClipsRequest, ListClipsResponse>newBuilder()
@@ -1876,6 +1893,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetClipRequest, Clip> getClipTransportSettings =
         HttpJsonCallSettings.<GetClipRequest, Clip>newBuilder()
@@ -1887,6 +1905,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateClipRequest, Operation> createClipTransportSettings =
         HttpJsonCallSettings.<CreateClipRequest, Operation>newBuilder()
@@ -1898,6 +1917,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteClipRequest, Operation> deleteClipTransportSettings =
         HttpJsonCallSettings.<DeleteClipRequest, Operation>newBuilder()
@@ -1909,6 +1929,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateDvrSessionRequest, Operation> createDvrSessionTransportSettings =
         HttpJsonCallSettings.<CreateDvrSessionRequest, Operation>newBuilder()
@@ -1920,6 +1941,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListDvrSessionsRequest, ListDvrSessionsResponse>
         listDvrSessionsTransportSettings =
@@ -1932,6 +1954,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDvrSessionRequest, DvrSession> getDvrSessionTransportSettings =
         HttpJsonCallSettings.<GetDvrSessionRequest, DvrSession>newBuilder()
@@ -1943,6 +1966,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteDvrSessionRequest, Operation> deleteDvrSessionTransportSettings =
         HttpJsonCallSettings.<DeleteDvrSessionRequest, Operation>newBuilder()
@@ -1954,6 +1978,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateDvrSessionRequest, Operation> updateDvrSessionTransportSettings =
         HttpJsonCallSettings.<UpdateDvrSessionRequest, Operation>newBuilder()
@@ -1977,6 +2002,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteAssetRequest, Operation> deleteAssetTransportSettings =
         HttpJsonCallSettings.<DeleteAssetRequest, Operation>newBuilder()
@@ -1988,6 +2014,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetAssetRequest, Asset> getAssetTransportSettings =
         HttpJsonCallSettings.<GetAssetRequest, Asset>newBuilder()
@@ -1999,6 +2026,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListAssetsRequest, ListAssetsResponse> listAssetsTransportSettings =
         HttpJsonCallSettings.<ListAssetsRequest, ListAssetsResponse>newBuilder()
@@ -2010,6 +2038,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetPoolRequest, Pool> getPoolTransportSettings =
         HttpJsonCallSettings.<GetPoolRequest, Pool>newBuilder()
@@ -2021,6 +2050,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdatePoolRequest, Operation> updatePoolTransportSettings =
         HttpJsonCallSettings.<UpdatePoolRequest, Operation>newBuilder()

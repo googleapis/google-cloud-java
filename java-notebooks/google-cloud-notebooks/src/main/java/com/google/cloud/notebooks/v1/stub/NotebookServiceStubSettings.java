@@ -1076,6 +1076,7 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-notebooks")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

@@ -153,6 +153,7 @@ public class HttpJsonAccountIssueServiceStub extends AccountIssueServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.listAccountIssuesCallable =

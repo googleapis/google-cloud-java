@@ -378,6 +378,7 @@ public class HttpJsonNotificationsApiServiceStub extends NotificationsApiService
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateNotificationSubscriptionRequest, NotificationSubscription>
         createNotificationSubscriptionTransportSettings =
@@ -391,6 +392,7 @@ public class HttpJsonNotificationsApiServiceStub extends NotificationsApiService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateNotificationSubscriptionRequest, NotificationSubscription>
         updateNotificationSubscriptionTransportSettings =
@@ -418,6 +420,7 @@ public class HttpJsonNotificationsApiServiceStub extends NotificationsApiService
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             ListNotificationSubscriptionsRequest, ListNotificationSubscriptionsResponse>
@@ -433,6 +436,7 @@ public class HttpJsonNotificationsApiServiceStub extends NotificationsApiService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             GetNotificationSubscriptionHealthMetricsRequest, NotificationSubscriptionHealthMetrics>
@@ -449,6 +453,7 @@ public class HttpJsonNotificationsApiServiceStub extends NotificationsApiService
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.getNotificationSubscriptionCallable =

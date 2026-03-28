@@ -2705,6 +2705,7 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-oracledatabase")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

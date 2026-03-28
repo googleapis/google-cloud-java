@@ -164,6 +164,7 @@ public class GrpcMerchantCenterAccountLinkServiceStub extends MerchantCenterAcco
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateMerchantCenterAccountLinkRequest, Operation>
         createMerchantCenterAccountLinkTransportSettings =
@@ -175,6 +176,7 @@ public class GrpcMerchantCenterAccountLinkServiceStub extends MerchantCenterAcco
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteMerchantCenterAccountLinkRequest, Empty>
         deleteMerchantCenterAccountLinkTransportSettings =
@@ -186,6 +188,7 @@ public class GrpcMerchantCenterAccountLinkServiceStub extends MerchantCenterAcco
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.listMerchantCenterAccountLinksCallable =

@@ -253,6 +253,7 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetWorkflowTemplateRequest, WorkflowTemplate>
         getWorkflowTemplateTransportSettings =
@@ -264,6 +265,7 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<InstantiateWorkflowTemplateRequest, Operation>
         instantiateWorkflowTemplateTransportSettings =
@@ -275,6 +277,7 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<InstantiateInlineWorkflowTemplateRequest, Operation>
         instantiateInlineWorkflowTemplateTransportSettings =
@@ -286,6 +289,7 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateWorkflowTemplateRequest, WorkflowTemplate>
         updateWorkflowTemplateTransportSettings =
@@ -309,6 +313,7 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteWorkflowTemplateRequest, Empty> deleteWorkflowTemplateTransportSettings =
         GrpcCallSettings.<DeleteWorkflowTemplateRequest, Empty>newBuilder()
@@ -319,6 +324,7 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -329,6 +335,7 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -339,6 +346,7 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -350,6 +358,7 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createWorkflowTemplateCallable =

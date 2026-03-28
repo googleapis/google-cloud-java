@@ -1511,6 +1511,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListMessagesRequest, ListMessagesResponse> listMessagesTransportSettings =
         HttpJsonCallSettings.<ListMessagesRequest, ListMessagesResponse>newBuilder()
@@ -1522,6 +1523,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListMembershipsRequest, ListMembershipsResponse>
         listMembershipsTransportSettings =
@@ -1534,6 +1536,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetMembershipRequest, Membership> getMembershipTransportSettings =
         HttpJsonCallSettings.<GetMembershipRequest, Membership>newBuilder()
@@ -1545,6 +1548,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetMessageRequest, Message> getMessageTransportSettings =
         HttpJsonCallSettings.<GetMessageRequest, Message>newBuilder()
@@ -1556,6 +1560,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateMessageRequest, Message> updateMessageTransportSettings =
         HttpJsonCallSettings.<UpdateMessageRequest, Message>newBuilder()
@@ -1578,6 +1583,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetAttachmentRequest, Attachment> getAttachmentTransportSettings =
         HttpJsonCallSettings.<GetAttachmentRequest, Attachment>newBuilder()
@@ -1589,6 +1595,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UploadAttachmentRequest, UploadAttachmentResponse>
         uploadAttachmentTransportSettings =
@@ -1601,6 +1608,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListSpacesRequest, ListSpacesResponse> listSpacesTransportSettings =
         HttpJsonCallSettings.<ListSpacesRequest, ListSpacesResponse>newBuilder()
@@ -1622,6 +1630,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateSpaceRequest, Space> createSpaceTransportSettings =
         HttpJsonCallSettings.<CreateSpaceRequest, Space>newBuilder()
@@ -1654,6 +1663,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CompleteImportSpaceRequest, CompleteImportSpaceResponse>
         completeImportSpaceTransportSettings =
@@ -1667,6 +1677,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<FindDirectMessageRequest, Space> findDirectMessageTransportSettings =
         HttpJsonCallSettings.<FindDirectMessageRequest, Space>newBuilder()
@@ -1683,6 +1694,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateMembershipRequest, Membership> updateMembershipTransportSettings =
         HttpJsonCallSettings.<UpdateMembershipRequest, Membership>newBuilder()
@@ -1705,6 +1717,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateReactionRequest, Reaction> createReactionTransportSettings =
         HttpJsonCallSettings.<CreateReactionRequest, Reaction>newBuilder()
@@ -1716,6 +1729,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListReactionsRequest, ListReactionsResponse>
         listReactionsTransportSettings =
@@ -1728,6 +1742,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteReactionRequest, Empty> deleteReactionTransportSettings =
         HttpJsonCallSettings.<DeleteReactionRequest, Empty>newBuilder()
@@ -1739,6 +1754,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateCustomEmojiRequest, CustomEmoji> createCustomEmojiTransportSettings =
         HttpJsonCallSettings.<CreateCustomEmojiRequest, CustomEmoji>newBuilder()
@@ -1755,6 +1771,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListCustomEmojisRequest, ListCustomEmojisResponse>
         listCustomEmojisTransportSettings =
@@ -1772,6 +1789,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetSpaceReadStateRequest, SpaceReadState>
         getSpaceReadStateTransportSettings =
@@ -1784,6 +1802,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateSpaceReadStateRequest, SpaceReadState>
         updateSpaceReadStateTransportSettings =
@@ -1810,6 +1829,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetSpaceEventRequest, SpaceEvent> getSpaceEventTransportSettings =
         HttpJsonCallSettings.<GetSpaceEventRequest, SpaceEvent>newBuilder()
@@ -1821,6 +1841,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListSpaceEventsRequest, ListSpaceEventsResponse>
         listSpaceEventsTransportSettings =
@@ -1833,6 +1854,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
         getSpaceNotificationSettingTransportSettings =
@@ -1846,6 +1868,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
         updateSpaceNotificationSettingTransportSettings =

@@ -547,6 +547,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetSaasRequest, Saas> getSaasTransportSettings =
         GrpcCallSettings.<GetSaasRequest, Saas>newBuilder()
@@ -557,6 +558,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateSaasRequest, Saas> createSaasTransportSettings =
         GrpcCallSettings.<CreateSaasRequest, Saas>newBuilder()
@@ -567,6 +569,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateSaasRequest, Saas> updateSaasTransportSettings =
         GrpcCallSettings.<UpdateSaasRequest, Saas>newBuilder()
@@ -587,6 +590,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListTenantsRequest, ListTenantsResponse> listTenantsTransportSettings =
         GrpcCallSettings.<ListTenantsRequest, ListTenantsResponse>newBuilder()
@@ -597,6 +601,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetTenantRequest, Tenant> getTenantTransportSettings =
         GrpcCallSettings.<GetTenantRequest, Tenant>newBuilder()
@@ -607,6 +612,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateTenantRequest, Tenant> createTenantTransportSettings =
         GrpcCallSettings.<CreateTenantRequest, Tenant>newBuilder()
@@ -617,6 +623,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateTenantRequest, Tenant> updateTenantTransportSettings =
         GrpcCallSettings.<UpdateTenantRequest, Tenant>newBuilder()
@@ -637,6 +644,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListUnitKindsRequest, ListUnitKindsResponse> listUnitKindsTransportSettings =
         GrpcCallSettings.<ListUnitKindsRequest, ListUnitKindsResponse>newBuilder()
@@ -647,6 +655,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetUnitKindRequest, UnitKind> getUnitKindTransportSettings =
         GrpcCallSettings.<GetUnitKindRequest, UnitKind>newBuilder()
@@ -657,6 +666,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateUnitKindRequest, UnitKind> createUnitKindTransportSettings =
         GrpcCallSettings.<CreateUnitKindRequest, UnitKind>newBuilder()
@@ -667,6 +677,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateUnitKindRequest, UnitKind> updateUnitKindTransportSettings =
         GrpcCallSettings.<UpdateUnitKindRequest, UnitKind>newBuilder()
@@ -687,6 +698,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListUnitsRequest, ListUnitsResponse> listUnitsTransportSettings =
         GrpcCallSettings.<ListUnitsRequest, ListUnitsResponse>newBuilder()
@@ -697,6 +709,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetUnitRequest, Unit> getUnitTransportSettings =
         GrpcCallSettings.<GetUnitRequest, Unit>newBuilder()
@@ -707,6 +720,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateUnitRequest, Unit> createUnitTransportSettings =
         GrpcCallSettings.<CreateUnitRequest, Unit>newBuilder()
@@ -717,6 +731,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateUnitRequest, Unit> updateUnitTransportSettings =
         GrpcCallSettings.<UpdateUnitRequest, Unit>newBuilder()
@@ -737,6 +752,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListUnitOperationsRequest, ListUnitOperationsResponse>
         listUnitOperationsTransportSettings =
@@ -748,6 +764,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetUnitOperationRequest, UnitOperation> getUnitOperationTransportSettings =
         GrpcCallSettings.<GetUnitOperationRequest, UnitOperation>newBuilder()
@@ -758,6 +775,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateUnitOperationRequest, UnitOperation>
         createUnitOperationTransportSettings =
@@ -769,6 +787,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateUnitOperationRequest, UnitOperation>
         updateUnitOperationTransportSettings =
@@ -792,6 +811,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListReleasesRequest, ListReleasesResponse> listReleasesTransportSettings =
         GrpcCallSettings.<ListReleasesRequest, ListReleasesResponse>newBuilder()
@@ -802,6 +822,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetReleaseRequest, Release> getReleaseTransportSettings =
         GrpcCallSettings.<GetReleaseRequest, Release>newBuilder()
@@ -812,6 +833,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateReleaseRequest, Release> createReleaseTransportSettings =
         GrpcCallSettings.<CreateReleaseRequest, Release>newBuilder()
@@ -822,6 +844,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateReleaseRequest, Release> updateReleaseTransportSettings =
         GrpcCallSettings.<UpdateReleaseRequest, Release>newBuilder()
@@ -842,6 +865,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

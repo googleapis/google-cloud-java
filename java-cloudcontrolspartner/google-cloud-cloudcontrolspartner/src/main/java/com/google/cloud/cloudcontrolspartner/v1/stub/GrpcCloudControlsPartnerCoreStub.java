@@ -268,6 +268,7 @@ public class GrpcCloudControlsPartnerCoreStub extends CloudControlsPartnerCoreSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsTransportSettings =
         GrpcCallSettings.<ListWorkloadsRequest, ListWorkloadsResponse>newBuilder()
@@ -278,6 +279,7 @@ public class GrpcCloudControlsPartnerCoreStub extends CloudControlsPartnerCoreSt
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetCustomerRequest, Customer> getCustomerTransportSettings =
         GrpcCallSettings.<GetCustomerRequest, Customer>newBuilder()
@@ -288,6 +290,7 @@ public class GrpcCloudControlsPartnerCoreStub extends CloudControlsPartnerCoreSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListCustomersRequest, ListCustomersResponse> listCustomersTransportSettings =
         GrpcCallSettings.<ListCustomersRequest, ListCustomersResponse>newBuilder()
@@ -298,6 +301,7 @@ public class GrpcCloudControlsPartnerCoreStub extends CloudControlsPartnerCoreSt
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetEkmConnectionsRequest, EkmConnections> getEkmConnectionsTransportSettings =
         GrpcCallSettings.<GetEkmConnectionsRequest, EkmConnections>newBuilder()
@@ -308,6 +312,7 @@ public class GrpcCloudControlsPartnerCoreStub extends CloudControlsPartnerCoreSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetPartnerPermissionsRequest, PartnerPermissions>
         getPartnerPermissionsTransportSettings =
@@ -319,6 +324,7 @@ public class GrpcCloudControlsPartnerCoreStub extends CloudControlsPartnerCoreSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListAccessApprovalRequestsRequest, ListAccessApprovalRequestsResponse>
         listAccessApprovalRequestsTransportSettings =
@@ -331,6 +337,7 @@ public class GrpcCloudControlsPartnerCoreStub extends CloudControlsPartnerCoreSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetPartnerRequest, Partner> getPartnerTransportSettings =
         GrpcCallSettings.<GetPartnerRequest, Partner>newBuilder()
@@ -341,6 +348,7 @@ public class GrpcCloudControlsPartnerCoreStub extends CloudControlsPartnerCoreSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateCustomerRequest, Customer> createCustomerTransportSettings =
         GrpcCallSettings.<CreateCustomerRequest, Customer>newBuilder()
@@ -351,6 +359,7 @@ public class GrpcCloudControlsPartnerCoreStub extends CloudControlsPartnerCoreSt
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateCustomerRequest, Customer> updateCustomerTransportSettings =
         GrpcCallSettings.<UpdateCustomerRequest, Customer>newBuilder()
@@ -371,6 +380,7 @@ public class GrpcCloudControlsPartnerCoreStub extends CloudControlsPartnerCoreSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getWorkloadCallable =

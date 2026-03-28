@@ -144,6 +144,7 @@ public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSeria
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ImportTaxonomiesRequest, ImportTaxonomiesResponse>
         importTaxonomiesTransportSettings =
@@ -155,6 +156,7 @@ public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSeria
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ExportTaxonomiesRequest, ExportTaxonomiesResponse>
         exportTaxonomiesTransportSettings =
@@ -166,6 +168,7 @@ public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSeria
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.replaceTaxonomyCallable =

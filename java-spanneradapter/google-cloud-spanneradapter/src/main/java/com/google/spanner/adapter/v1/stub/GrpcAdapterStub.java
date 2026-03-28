@@ -117,6 +117,7 @@ public class GrpcAdapterStub extends AdapterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<AdaptMessageRequest, AdaptMessageResponse> adaptMessageTransportSettings =
         GrpcCallSettings.<AdaptMessageRequest, AdaptMessageResponse>newBuilder()
@@ -127,6 +128,7 @@ public class GrpcAdapterStub extends AdapterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createSessionCallable =

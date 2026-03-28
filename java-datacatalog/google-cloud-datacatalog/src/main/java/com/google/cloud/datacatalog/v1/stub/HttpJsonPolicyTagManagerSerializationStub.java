@@ -226,6 +226,7 @@ public class HttpJsonPolicyTagManagerSerializationStub extends PolicyTagManagerS
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ImportTaxonomiesRequest, ImportTaxonomiesResponse>
         importTaxonomiesTransportSettings =
@@ -238,6 +239,7 @@ public class HttpJsonPolicyTagManagerSerializationStub extends PolicyTagManagerS
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ExportTaxonomiesRequest, ExportTaxonomiesResponse>
         exportTaxonomiesTransportSettings =
@@ -250,6 +252,7 @@ public class HttpJsonPolicyTagManagerSerializationStub extends PolicyTagManagerS
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.replaceTaxonomyCallable =

@@ -300,6 +300,7 @@ public class HttpJsonSynonymSetServiceStub extends SynonymSetServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetSynonymSetRequest, SynonymSet> getSynonymSetTransportSettings =
         HttpJsonCallSettings.<GetSynonymSetRequest, SynonymSet>newBuilder()
@@ -311,6 +312,7 @@ public class HttpJsonSynonymSetServiceStub extends SynonymSetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateSynonymSetRequest, SynonymSet> updateSynonymSetTransportSettings =
         HttpJsonCallSettings.<UpdateSynonymSetRequest, SynonymSet>newBuilder()
@@ -322,6 +324,7 @@ public class HttpJsonSynonymSetServiceStub extends SynonymSetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteSynonymSetRequest, Empty> deleteSynonymSetTransportSettings =
         HttpJsonCallSettings.<DeleteSynonymSetRequest, Empty>newBuilder()
@@ -333,6 +336,7 @@ public class HttpJsonSynonymSetServiceStub extends SynonymSetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListSynonymSetsRequest, ListSynonymSetsResponse>
         listSynonymSetsTransportSettings =
@@ -345,6 +349,7 @@ public class HttpJsonSynonymSetServiceStub extends SynonymSetServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createSynonymSetCallable =

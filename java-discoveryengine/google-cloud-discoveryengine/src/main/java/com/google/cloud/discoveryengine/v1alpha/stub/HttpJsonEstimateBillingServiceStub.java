@@ -339,6 +339,7 @@ public class HttpJsonEstimateBillingServiceStub extends EstimateBillingServiceSt
                   builder.add("location", String.valueOf(request.getLocation()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getLocation())
             .build();
 
     this.estimateDataSizeCallable =

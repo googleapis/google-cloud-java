@@ -551,6 +551,7 @@ public class HttpJsonModelArmorStub extends ModelArmorStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetTemplateRequest, Template> getTemplateTransportSettings =
         HttpJsonCallSettings.<GetTemplateRequest, Template>newBuilder()
@@ -562,6 +563,7 @@ public class HttpJsonModelArmorStub extends ModelArmorStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateTemplateRequest, Template> createTemplateTransportSettings =
         HttpJsonCallSettings.<CreateTemplateRequest, Template>newBuilder()
@@ -573,6 +575,7 @@ public class HttpJsonModelArmorStub extends ModelArmorStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateTemplateRequest, Template> updateTemplateTransportSettings =
         HttpJsonCallSettings.<UpdateTemplateRequest, Template>newBuilder()
@@ -595,6 +598,7 @@ public class HttpJsonModelArmorStub extends ModelArmorStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetFloorSettingRequest, FloorSetting> getFloorSettingTransportSettings =
         HttpJsonCallSettings.<GetFloorSettingRequest, FloorSetting>newBuilder()
@@ -606,6 +610,7 @@ public class HttpJsonModelArmorStub extends ModelArmorStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateFloorSettingRequest, FloorSetting>
         updateFloorSettingTransportSettings =
@@ -632,6 +637,7 @@ public class HttpJsonModelArmorStub extends ModelArmorStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<SanitizeModelResponseRequest, SanitizeModelResponseResponse>
         sanitizeModelResponseTransportSettings =
@@ -645,6 +651,7 @@ public class HttpJsonModelArmorStub extends ModelArmorStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

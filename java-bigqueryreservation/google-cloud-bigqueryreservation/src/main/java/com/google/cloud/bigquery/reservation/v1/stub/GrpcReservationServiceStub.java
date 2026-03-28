@@ -554,6 +554,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListReservationsRequest, ListReservationsResponse>
         listReservationsTransportSettings =
@@ -565,6 +566,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetReservationRequest, Reservation> getReservationTransportSettings =
         GrpcCallSettings.<GetReservationRequest, Reservation>newBuilder()
@@ -575,6 +577,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteReservationRequest, Empty> deleteReservationTransportSettings =
         GrpcCallSettings.<DeleteReservationRequest, Empty>newBuilder()
@@ -585,6 +588,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateReservationRequest, Reservation> updateReservationTransportSettings =
         GrpcCallSettings.<UpdateReservationRequest, Reservation>newBuilder()
@@ -606,6 +610,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateCapacityCommitmentRequest, CapacityCommitment>
         createCapacityCommitmentTransportSettings =
@@ -617,6 +622,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse>
         listCapacityCommitmentsTransportSettings =
@@ -629,6 +635,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetCapacityCommitmentRequest, CapacityCommitment>
         getCapacityCommitmentTransportSettings =
@@ -640,6 +647,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteCapacityCommitmentRequest, Empty>
         deleteCapacityCommitmentTransportSettings =
@@ -651,6 +659,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateCapacityCommitmentRequest, CapacityCommitment>
         updateCapacityCommitmentTransportSettings =
@@ -676,6 +685,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<MergeCapacityCommitmentsRequest, CapacityCommitment>
         mergeCapacityCommitmentsTransportSettings =
@@ -687,6 +697,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateAssignmentRequest, Assignment> createAssignmentTransportSettings =
         GrpcCallSettings.<CreateAssignmentRequest, Assignment>newBuilder()
@@ -697,6 +708,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListAssignmentsRequest, ListAssignmentsResponse>
         listAssignmentsTransportSettings =
@@ -708,6 +720,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteAssignmentRequest, Empty> deleteAssignmentTransportSettings =
         GrpcCallSettings.<DeleteAssignmentRequest, Empty>newBuilder()
@@ -718,6 +731,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SearchAssignmentsRequest, SearchAssignmentsResponse>
         searchAssignmentsTransportSettings =
@@ -729,6 +743,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<SearchAllAssignmentsRequest, SearchAllAssignmentsResponse>
         searchAllAssignmentsTransportSettings =
@@ -740,6 +755,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<MoveAssignmentRequest, Assignment> moveAssignmentTransportSettings =
         GrpcCallSettings.<MoveAssignmentRequest, Assignment>newBuilder()
@@ -750,6 +766,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateAssignmentRequest, Assignment> updateAssignmentTransportSettings =
         GrpcCallSettings.<UpdateAssignmentRequest, Assignment>newBuilder()
@@ -770,6 +787,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateBiReservationRequest, BiReservation>
         updateBiReservationTransportSettings =
@@ -793,6 +811,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -803,6 +822,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -814,6 +834,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     GrpcCallSettings<CreateReservationGroupRequest, ReservationGroup>
         createReservationGroupTransportSettings =
@@ -825,6 +846,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetReservationGroupRequest, ReservationGroup>
         getReservationGroupTransportSettings =
@@ -836,6 +858,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteReservationGroupRequest, Empty> deleteReservationGroupTransportSettings =
         GrpcCallSettings.<DeleteReservationGroupRequest, Empty>newBuilder()
@@ -846,6 +869,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListReservationGroupsRequest, ListReservationGroupsResponse>
         listReservationGroupsTransportSettings =
@@ -858,6 +882,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createReservationCallable =

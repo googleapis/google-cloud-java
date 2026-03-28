@@ -581,6 +581,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetFrameworkRequest, Framework> getFrameworkTransportSettings =
         HttpJsonCallSettings.<GetFrameworkRequest, Framework>newBuilder()
@@ -592,6 +593,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateFrameworkRequest, Framework> createFrameworkTransportSettings =
         HttpJsonCallSettings.<CreateFrameworkRequest, Framework>newBuilder()
@@ -603,6 +605,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateFrameworkRequest, Framework> updateFrameworkTransportSettings =
         HttpJsonCallSettings.<UpdateFrameworkRequest, Framework>newBuilder()
@@ -625,6 +628,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListCloudControlsRequest, ListCloudControlsResponse>
         listCloudControlsTransportSettings =
@@ -637,6 +641,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetCloudControlRequest, CloudControl> getCloudControlTransportSettings =
         HttpJsonCallSettings.<GetCloudControlRequest, CloudControl>newBuilder()
@@ -648,6 +653,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateCloudControlRequest, CloudControl>
         createCloudControlTransportSettings =
@@ -660,6 +666,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateCloudControlRequest, CloudControl>
         updateCloudControlTransportSettings =
@@ -685,6 +692,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
