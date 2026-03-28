@@ -32,6 +32,8 @@ package com.google.api.gax.tracing;
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -258,5 +260,16 @@ class SpanTracerTest {
         .setAttribute(
             ObservabilityAttributes.HTTP_URL_FULL_ATTRIBUTE,
             "https://example.com?api_key=REDACTED");
+  }
+
+  @Test
+  void testRequestUrlResolved_badUrl_notSet() {
+    spanTracer.attemptStarted(new Object(), 1);
+
+    String rawUrl = "htps:::://the-example";
+    spanTracer.requestUrlResolved(rawUrl);
+
+    verify(span, never())
+        .setAttribute(eq(ObservabilityAttributes.HTTP_URL_FULL_ATTRIBUTE), anyString());
   }
 }
