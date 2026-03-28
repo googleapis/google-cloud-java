@@ -47,7 +47,7 @@ import javax.net.ssl.SSLHandshakeException;
 
 public class ErrorTypeUtil {
 
-  public enum ErrorType {
+  enum ErrorType {
     CLIENT_TIMEOUT,
     CLIENT_CONNECTION_ERROR,
     CLIENT_REQUEST_ERROR,
