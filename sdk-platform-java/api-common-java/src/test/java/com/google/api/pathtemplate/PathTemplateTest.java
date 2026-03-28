@@ -952,6 +952,14 @@ class PathTemplateTest {
   }
 
   @Test
+  void testGetCanonicalResourceName_namedBindingsWithUnknownResource() {
+    Set<String> knownResources = ImmutableSet.of();
+    PathTemplate template = PathTemplate.create("/v1/{bar=projects/*/locations/*/unknown/*}");
+    Truth.assertThat(template.getCanonicalResourceName(knownResources))
+        .isEqualTo("{bar=projects/*/locations/*/unknown/*}");
+  }
+
+  @Test
   void testGetCanonicalResourceName_simplePath() {
     Set<String> knownResources = ImmutableSet.of("projects", "locations", "instances", "widgets");
     PathTemplate template =

@@ -354,51 +354,51 @@ public class PathTemplate {
     }
 
     int lastValidEndBindingIndex = -1;
-    boolean inBinding = false;
-    int literalCountInBinding = 0;
-    int currentBindingStartIndex = -1;
-
-    for (int i = 0; i < segments.size(); i++) {
+    // Iterate from the end of the segments to find the last valid resource binding.
+    // Searching backwards allows us to stop immediately once the last valid pair is found.
+    for (int i = segments.size() - 1; i >= 0; i--) {
       Segment seg = segments.get(i);
-      if (seg.kind() == SegmentKind.BINDING) {
-        inBinding = true;
-        literalCountInBinding = 0;
-        currentBindingStartIndex = i;
-      } else if (seg.kind() == SegmentKind.END_BINDING) {
-        inBinding = false;
+      
+      // We are looking for the end of a binding (e.g., "}" in "{project}" or "{name=projects/*}")
+      if (seg.kind() == SegmentKind.END_BINDING) {
+        int bindingStartIndex = -1;
+        int literalCountInBinding = 0;
         boolean isValidPair = false;
 
-        if (literalCountInBinding > 1) {
-          // Named bindings are unconditionally considered pairs
-          isValidPair = true;
-        } else {
-          // Check inner literals
-          for (int j = currentBindingStartIndex + 1; j < i; j++) {
-            if (segments.get(j).kind() == SegmentKind.LITERAL) {
-              if (knownResources.contains(segments.get(j).value())) {
-                isValidPair = true;
-                break;
-              }
-            }
+        // Traverse backwards to find the start of this specific binding
+        // and count the literals captured inside it.
+        for (int j = i - 1; j >= 0; j--) {
+          Segment innerSeg = segments.get(j);
+          if (innerSeg.kind() == SegmentKind.BINDING) {
+            bindingStartIndex = j;
+            break;
+          } else if (innerSeg.kind() == SegmentKind.LITERAL) {
+            literalCountInBinding++;
           }
-          // If not valid yet, check preceding literal
-          if (!isValidPair && currentBindingStartIndex > 0) {
-            Segment prevSeg = segments.get(currentBindingStartIndex - 1);
+        }
+
+        if (bindingStartIndex != -1) {
+          // 1. If the binding contains any literals, it is considered a valid named resource binding.
+          if (literalCountInBinding > 0) {
+            isValidPair = true;
+          } else if (bindingStartIndex > 0) {
+            // 2. For simple bindings like "{project}", the binding itself has no inner literal resources.
+            // Instead, we check if the literal segment immediately preceding it (e.g., "projects/")
+            // is a known resource.
+            Segment prevSeg = segments.get(bindingStartIndex - 1);
             if (prevSeg.kind() == SegmentKind.LITERAL && knownResources.contains(prevSeg.value())) {
               isValidPair = true;
             }
           }
-        }
 
-        if (isValidPair) {
-          lastValidEndBindingIndex = i;
-        }
-      } else if (seg.kind() == SegmentKind.LITERAL) {
-        if (inBinding) {
-          String value = seg.value();
-          if (!value.matches("^v\\d+[a-zA-Z0-9]*$")) {
-            literalCountInBinding++;
+          if (isValidPair) {
+            // We successfully found the last valid binding! Record its end index and terminate the search.
+            lastValidEndBindingIndex = i;
+            break;
           }
+          // The current binding wasn't a valid resource pair.
+          // Skip over all inner segments of this invalid binding so we don't evaluate them again.
+          i = bindingStartIndex;
         }
       }
     }
