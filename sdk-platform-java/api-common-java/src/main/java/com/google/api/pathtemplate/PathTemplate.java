@@ -341,20 +341,8 @@ public class PathTemplate {
       return "";
     }
 
-    int firstBindingIndex = -1;
-    for (int i = 0; i < segments.size(); i++) {
-      if (segments.get(i).kind() == SegmentKind.BINDING) {
-        firstBindingIndex = i;
-        break;
-      }
-    }
-
-    if (firstBindingIndex == -1) {
-      return "";
-    }
-
     int startIndex = 0;
-    for (int i = firstBindingIndex - 1; i >= 0; i--) {
+    for (int i = 0; i < segments.size(); i++) {
       Segment seg = segments.get(i);
       if (seg.kind() == SegmentKind.LITERAL) {
         String value = seg.value();

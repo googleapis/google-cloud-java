@@ -944,15 +944,6 @@ class PathTemplateTest {
   }
 
   @Test
-  void testGetResourceLiterals_multipleVersions() {
-    PathTemplate template =
-        PathTemplate.create(
-            "v1/compute/v2/projects/{project}/locations/{location}/widgets/{widget}");
-    Truth.assertThat(template.getResourceLiterals())
-        .containsExactly("projects", "locations", "widgets");
-  }
-
-  @Test
   void testGetCanonicalResourceName_namedBindingsSimple() {
     Set<String> moreKnownResources = ImmutableSet.of("projects", "locations", "bars");
     PathTemplate template = PathTemplate.create("/v1/{bar=projects/*/locations/*/bars/*}");
@@ -1002,16 +993,6 @@ class PathTemplateTest {
         PathTemplate.create("v1/projects/{project}/unknownResource/{unknownResource}");
     Truth.assertThat(template.getCanonicalResourceName(knownResources))
         .isEqualTo("projects/{project}");
-  }
-
-  @Test
-  void testGetCanonicalResourceName_ignoreVersions() {
-    Set<String> knownResources = ImmutableSet.of("projects", "locations", "instances", "widgets");
-    PathTemplate template =
-        PathTemplate.create(
-            "v1/compute/v2/projects/{project}/locations/{location}/widgets/{widget}");
-    Truth.assertThat(template.getCanonicalResourceName(knownResources))
-        .isEqualTo("projects/{project}/locations/{location}/widgets/{widget}");
   }
 
   @Test
