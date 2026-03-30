@@ -272,9 +272,10 @@ public abstract class ClientContext {
       backgroundResources.add(watchdog);
     }
     String serviceName = endpointContext.serviceName();
+    String universeDomain = endpointContext.resolvedUniverseDomain();
     String urlDomain = null;
-    if (!Strings.isNullOrEmpty(serviceName)) {
-      urlDomain = serviceName + "." + endpointContext.resolvedUniverseDomain();
+    if (!Strings.isNullOrEmpty(serviceName) && !Strings.isNullOrEmpty(universeDomain)) {
+      urlDomain = serviceName + "." + universeDomain;
     }
 
     ApiTracerContext apiTracerContext =
