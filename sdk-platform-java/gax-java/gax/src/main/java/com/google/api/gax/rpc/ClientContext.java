@@ -271,11 +271,18 @@ public abstract class ClientContext {
     if (watchdogProvider != null && watchdogProvider.shouldAutoClose()) {
       backgroundResources.add(watchdog);
     }
+    String serviceName = endpointContext.serviceName();
+    String urlDomain = null;
+    if (!Strings.isNullOrEmpty(serviceName)) {
+      urlDomain = serviceName + "." + endpointContext.resolvedUniverseDomain();
+    }
+
     ApiTracerContext apiTracerContext =
         ApiTracerContext.newBuilder()
             .setServerAddress(endpointContext.resolvedServerAddress())
             .setServerPort(endpointContext.resolvedServerPort())
             .setLibraryMetadata(settings.getLibraryMetadata())
+            .setUrlDomain(urlDomain)
             .build();
     ApiTracerFactory apiTracerFactory = settings.getTracerFactory();
     if (apiTracerFactory instanceof SpanTracerFactory) {

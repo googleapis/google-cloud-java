@@ -34,6 +34,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 
 import com.google.api.client.http.javanet.NetHttpTransport;
+import io.grpc.ManagedChannelBuilder;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.StatusCode;
@@ -98,8 +99,28 @@ class ITOtelTracing {
   void testTracing_successfulEcho_grpc() throws Exception {
     SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
 
-    try (EchoClient client =
-        TestClientInitializer.createGrpcEchoClientOpentelemetry(tracingFactory)) {
+    EchoSettings grpcEchoSettings =
+        EchoSettings.newBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(
+                EchoSettings.defaultGrpcTransportProviderBuilder()
+                    .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+                    .build())
+            .setEndpoint("localhost:7469")
+            .build();
+
+    EchoStubSettings.Builder stubSettingsBuilder = (EchoStubSettings.Builder) grpcEchoSettings.getStubSettings().toBuilder();
+    stubSettingsBuilder.setTracerFactory(tracingFactory);
+
+    EchoStubSettings stubSettings =
+        new EchoStubSettings(stubSettingsBuilder) {
+          @Override
+          public String getServiceName() {
+            return "showcase";
+          }
+        };
+
+    try (EchoClient client = EchoClient.create(stubSettings.createStub())) {
 
       client.echo(EchoRequest.newBuilder().setContent("tracing-test").build());
 
@@ -147,8 +168,12 @@ class ITOtelTracing {
                   .getAttributes()
                   .get(AttributeKey.stringKey(ObservabilityAttributes.GRPC_RPC_METHOD_ATTRIBUTE)))
           .isEqualTo("google.showcase.v1beta1.Echo/Echo");
+      assertThat(
+              attemptSpan
+                  .getAttributes()
+                  .get(AttributeKey.stringKey(ObservabilityAttributes.URL_DOMAIN_ATTRIBUTE)))
+          .isEqualTo("showcase.googleapis.com");
       assertThat(attemptSpan.getInstrumentationScopeInfo().getName()).isEqualTo(SHOWCASE_ARTIFACT);
-      // {x-version-update-end}
     }
   }
 
@@ -156,8 +181,29 @@ class ITOtelTracing {
   void testTracing_successfulEcho_httpjson() throws Exception {
     SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
 
-    try (EchoClient client =
-        TestClientInitializer.createHttpJsonEchoClientOpentelemetry(tracingFactory)) {
+    EchoSettings httpJsonEchoSettings =
+        EchoSettings.newHttpJsonBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(
+                EchoSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(
+                        new NetHttpTransport.Builder().doNotValidateCertificate().build())
+                    .setEndpoint("http://localhost:7469")
+                    .build())
+            .build();
+
+    EchoStubSettings.Builder stubSettingsBuilder = (EchoStubSettings.Builder) httpJsonEchoSettings.getStubSettings().toBuilder();
+    stubSettingsBuilder.setTracerFactory(tracingFactory);
+
+    EchoStubSettings stubSettings =
+        new EchoStubSettings(stubSettingsBuilder) {
+          @Override
+          public String getServiceName() {
+            return "showcase";
+          }
+        };
+
+    try (EchoClient client = EchoClient.create(stubSettings.createStub())) {
 
       client.echo(EchoRequest.newBuilder().setContent("tracing-test").build());
 
@@ -206,6 +252,11 @@ class ITOtelTracing {
                   .getAttributes()
                   .get(AttributeKey.stringKey(ObservabilityAttributes.HTTP_URL_TEMPLATE_ATTRIBUTE)))
           .isEqualTo("v1beta1/echo:echo");
+      assertThat(
+              attemptSpan
+                  .getAttributes()
+                  .get(AttributeKey.stringKey(ObservabilityAttributes.URL_DOMAIN_ATTRIBUTE)))
+          .isEqualTo("showcase.googleapis.com");
       assertThat(attemptSpan.getInstrumentationScopeInfo().getName()).isEqualTo(SHOWCASE_ARTIFACT);
     }
   }
