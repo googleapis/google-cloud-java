@@ -23,6 +23,8 @@ import com.google.common.annotations.VisibleForTesting;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.api.trace.propagation.W3CTraceContextPropagator;
+import io.opentelemetry.context.Context;
 import java.io.IOException;
 
 /**
@@ -76,6 +78,10 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
       // No active span to exists, skip instrumentation
       return;
     }
+    // propagate the W3C Trace Context (traceID and spanID) from the active span in headers
+    W3CTraceContextPropagator.getInstance()
+        .inject(Context.current(), request.getHeaders(), HttpHeaders::set);
+
     addInitialHttpAttributesToSpan(span, request);
 
     HttpResponseInterceptor originalInterceptor = request.getResponseInterceptor();

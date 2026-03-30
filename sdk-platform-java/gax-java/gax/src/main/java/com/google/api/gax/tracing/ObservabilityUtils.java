@@ -34,6 +34,7 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.common.base.Joiner;
 import com.google.common.base.Splitter;
 import com.google.common.collect.ImmutableSet;
+import com.google.rpc.ErrorInfo;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
 import java.util.Map;
@@ -171,7 +172,19 @@ final class ObservabilityUtils {
     return statusString;
   }
 
-  static Attributes toOtelAttributes(final Map<String, Object> attributes) {
+  /** Function to extract the ErrorInfo payload from the error, if available */
+  @Nullable
+  static ErrorInfo extractErrorInfo(@Nullable Throwable error) {
+    if (error instanceof ApiException) {
+      ApiException apiException = (ApiException) error;
+      if (apiException.getErrorDetails() != null) {
+        return apiException.getErrorDetails().getErrorInfo();
+      }
+    }
+    return null;
+  }
+
+  static Attributes toOtelAttributes(Map<String, Object> attributes) {
     AttributesBuilder attributesBuilder = Attributes.builder();
     if (attributes == null) {
       return attributesBuilder.build();

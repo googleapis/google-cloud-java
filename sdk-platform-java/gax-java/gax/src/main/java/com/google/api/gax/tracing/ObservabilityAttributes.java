@@ -99,4 +99,13 @@ public class ObservabilityAttributes {
 
   /** The full URL of the HTTP request, with sensitive query parameters redacted. */
   public static final String HTTP_URL_FULL_ATTRIBUTE = "url.full";
+
+  /** The type of error that occurred (e.g., from google.rpc.ErrorInfo.reason). */
+  public static final String ERROR_TYPE_ATTRIBUTE = "error.type";
+
+  /** The domain of the error (e.g., from google.rpc.ErrorInfo.domain). */
+  public static final String ERROR_DOMAIN_ATTRIBUTE = "gcp.errors.domain";
+
+  /** The prefix for error metadata (e.g., from google.rpc.ErrorInfo.metadata). */
+  public static final String ERROR_METADATA_ATTRIBUTE_PREFIX = "gcp.errors.metadata.";
 }
