@@ -94,7 +94,7 @@ public class ErrorTypeUtil {
    *       error cause.
    *   <li><b>Client-Side Network/Operational Errors:</b> For errors occurring within the client
    *       library or network stack, mapping to specific enum representations from {@link
-   *       ErrorType}. This includes checking the cause chain for diagnostic markers (e.g., {@code
+   *       ErrorType}. This includes checking the exception for diagnostic markers (e.g., {@code
    *       ConnectException} or {@code SocketTimeoutException}).
    *   <li><b>Specific Server Error Code:</b> If no {@code ErrorInfo.reason} is available and it is
    *       not a client-side failure, but a server error code was received:
@@ -222,11 +222,11 @@ public class ErrorTypeUtil {
   }
 
   /**
-   * Recursively checks the throwable and its cause chain for any of the specified error classes.
+   * Checks if the throwable is an instance of any of the specified error classes.
    *
    * @param t The Throwable to check.
    * @param errorClasses A set of class objects to check against.
-   * @return true if an error from the set is found in the cause chain, false otherwise.
+   * @return true if the error is an instance of a class from the set, false otherwise.
    */
   private static boolean hasErrorClass(Throwable t, Set<Class<? extends Throwable>> errorClasses) {
     for (Class<? extends Throwable> errorClass : errorClasses) {
