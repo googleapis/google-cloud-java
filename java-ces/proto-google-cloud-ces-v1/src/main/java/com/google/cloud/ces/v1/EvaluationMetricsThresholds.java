@@ -4750,7 +4750,7 @@ public final class EvaluationMetricsThresholds extends com.google.protobuf.Gener
    * </code>
    *
    * @deprecated google.cloud.ces.v1.EvaluationMetricsThresholds.hallucination_metric_behavior is
-   *     deprecated. See google/cloud/ces/v1/app.proto;l=502
+   *     deprecated. See google/cloud/ces/v1/app.proto;l=534
    * @return The enum numeric value on the wire for hallucinationMetricBehavior.
    */
   @java.lang.Override
@@ -4772,7 +4772,7 @@ public final class EvaluationMetricsThresholds extends com.google.protobuf.Gener
    * </code>
    *
    * @deprecated google.cloud.ces.v1.EvaluationMetricsThresholds.hallucination_metric_behavior is
-   *     deprecated. See google/cloud/ces/v1/app.proto;l=502
+   *     deprecated. See google/cloud/ces/v1/app.proto;l=534
    * @return The hallucinationMetricBehavior.
    */
   @java.lang.Override
@@ -5562,7 +5562,7 @@ public final class EvaluationMetricsThresholds extends com.google.protobuf.Gener
      * </code>
      *
      * @deprecated google.cloud.ces.v1.EvaluationMetricsThresholds.hallucination_metric_behavior is
-     *     deprecated. See google/cloud/ces/v1/app.proto;l=502
+     *     deprecated. See google/cloud/ces/v1/app.proto;l=534
      * @return The enum numeric value on the wire for hallucinationMetricBehavior.
      */
     @java.lang.Override
@@ -5584,7 +5584,7 @@ public final class EvaluationMetricsThresholds extends com.google.protobuf.Gener
      * </code>
      *
      * @deprecated google.cloud.ces.v1.EvaluationMetricsThresholds.hallucination_metric_behavior is
-     *     deprecated. See google/cloud/ces/v1/app.proto;l=502
+     *     deprecated. See google/cloud/ces/v1/app.proto;l=534
      * @param value The enum numeric value on the wire for hallucinationMetricBehavior to set.
      * @return This builder for chaining.
      */
@@ -5609,7 +5609,7 @@ public final class EvaluationMetricsThresholds extends com.google.protobuf.Gener
      * </code>
      *
      * @deprecated google.cloud.ces.v1.EvaluationMetricsThresholds.hallucination_metric_behavior is
-     *     deprecated. See google/cloud/ces/v1/app.proto;l=502
+     *     deprecated. See google/cloud/ces/v1/app.proto;l=534
      * @return The hallucinationMetricBehavior.
      */
     @java.lang.Override
@@ -5638,7 +5638,7 @@ public final class EvaluationMetricsThresholds extends com.google.protobuf.Gener
      * </code>
      *
      * @deprecated google.cloud.ces.v1.EvaluationMetricsThresholds.hallucination_metric_behavior is
-     *     deprecated. See google/cloud/ces/v1/app.proto;l=502
+     *     deprecated. See google/cloud/ces/v1/app.proto;l=534
      * @param value The hallucinationMetricBehavior to set.
      * @return This builder for chaining.
      */
@@ -5667,7 +5667,7 @@ public final class EvaluationMetricsThresholds extends com.google.protobuf.Gener
      * </code>
      *
      * @deprecated google.cloud.ces.v1.EvaluationMetricsThresholds.hallucination_metric_behavior is
-     *     deprecated. See google/cloud/ces/v1/app.proto;l=502
+     *     deprecated. See google/cloud/ces/v1/app.proto;l=534
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

@@ -1046,6 +1046,27 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MEMBERSHIP_DURATION_TOO_LONG = 99;</code>
    */
   MEMBERSHIP_DURATION_TOO_LONG(99),
+  /**
+   *
+   *
+   * <pre>
+   * The `merchant_id` field is not valid.
+   * </pre>
+   *
+   * <code>INVALID_MERCHANT_ID = 100;</code>
+   */
+  INVALID_MERCHANT_ID(100),
+  /**
+   *
+   *
+   * <pre>
+   * The customer contains non-exempt campaigns without the EU political
+   * advertising declaration.
+   * </pre>
+   *
+   * <code>EU_POLITICAL_ADVERTISING_DECLARATION_REQUIRED = 101;</code>
+   */
+  EU_POLITICAL_ADVERTISING_DECLARATION_REQUIRED(101),
   UNRECOGNIZED(-1),
   ;
 
@@ -2172,6 +2193,29 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int MEMBERSHIP_DURATION_TOO_LONG_VALUE = 99;
 
+  /**
+   *
+   *
+   * <pre>
+   * The `merchant_id` field is not valid.
+   * </pre>
+   *
+   * <code>INVALID_MERCHANT_ID = 100;</code>
+   */
+  public static final int INVALID_MERCHANT_ID_VALUE = 100;
+
+  /**
+   *
+   *
+   * <pre>
+   * The customer contains non-exempt campaigns without the EU political
+   * advertising declaration.
+   * </pre>
+   *
+   * <code>EU_POLITICAL_ADVERTISING_DECLARATION_REQUIRED = 101;</code>
+   */
+  public static final int EU_POLITICAL_ADVERTISING_DECLARATION_REQUIRED_VALUE = 101;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -2396,6 +2440,10 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
         return UNSUPPORTED_ACCOUNT_TYPE_FOR_PARTNER_LINK;
       case 99:
         return MEMBERSHIP_DURATION_TOO_LONG;
+      case 100:
+        return INVALID_MERCHANT_ID;
+      case 101:
+        return EU_POLITICAL_ADVERTISING_DECLARATION_REQUIRED;
       default:
         return null;
     }

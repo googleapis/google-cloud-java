@@ -41,6 +41,7 @@ public class AsyncDeleteInstanceLRO {
           DeleteInstanceRequest.newBuilder()
               .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
               .setRequestId("requestId693933066")
+              .setForce(true)
               .build();
       OperationFuture<Empty, OperationMetadata> future =
           secureSourceManagerClient.deleteInstanceOperationCallable().futureCall(request);

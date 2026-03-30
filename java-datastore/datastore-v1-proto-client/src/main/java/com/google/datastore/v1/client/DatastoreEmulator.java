@@ -35,9 +35,8 @@ import java.util.concurrent.TimeUnit;
 /**
  * An extension to {@link Datastore} that provides lifecycle management for a datastore emulator.
  *
- * <p>In order to use the emulator for a JUnit 4 test you might do something like this:
- *
  * <pre>
+ * // In order to use the emulator for a JUnit 4 test you might do something like this:
  * public class MyTest {
  *
  *   static DatastoreEmulator datastore;

@@ -257,6 +257,7 @@ public class GrpcConversationProfilesStub extends ConversationProfilesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetConversationProfileRequest, ConversationProfile>
         getConversationProfileTransportSettings =
@@ -268,6 +269,7 @@ public class GrpcConversationProfilesStub extends ConversationProfilesStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateConversationProfileRequest, ConversationProfile>
         createConversationProfileTransportSettings =
@@ -279,6 +281,7 @@ public class GrpcConversationProfilesStub extends ConversationProfilesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateConversationProfileRequest, ConversationProfile>
         updateConversationProfileTransportSettings =
@@ -303,6 +306,7 @@ public class GrpcConversationProfilesStub extends ConversationProfilesStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<SetSuggestionFeatureConfigRequest, Operation>
         setSuggestionFeatureConfigTransportSettings =

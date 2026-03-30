@@ -31,7 +31,7 @@ public interface ClientTlsPolicyOrBuilder
    *
    * <pre>
    * Required. Name of the ClientTlsPolicy resource. It matches the pattern
-   * `projects/&#42;&#47;locations/{location}/clientTlsPolicies/{client_tls_policy}`
+   * `projects/{project}/locations/{location}/clientTlsPolicies/{client_tls_policy}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -45,7 +45,7 @@ public interface ClientTlsPolicyOrBuilder
    *
    * <pre>
    * Required. Name of the ClientTlsPolicy resource. It matches the pattern
-   * `projects/&#42;&#47;locations/{location}/clientTlsPolicies/{client_tls_policy}`
+   * `projects/{project}/locations/{location}/clientTlsPolicies/{client_tls_policy}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -255,8 +255,9 @@ public interface ClientTlsPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Defines a mechanism to provision client identity (public and private keys)
-   * for peer to peer authentication. The presence of this dictates mTLS.
+   * Optional. Defines a mechanism to provision client identity (public and
+   * private keys) for peer to peer authentication. The presence of this
+   * dictates mTLS.
    * </pre>
    *
    * <code>
@@ -271,8 +272,9 @@ public interface ClientTlsPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Defines a mechanism to provision client identity (public and private keys)
-   * for peer to peer authentication. The presence of this dictates mTLS.
+   * Optional. Defines a mechanism to provision client identity (public and
+   * private keys) for peer to peer authentication. The presence of this
+   * dictates mTLS.
    * </pre>
    *
    * <code>
@@ -287,8 +289,9 @@ public interface ClientTlsPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Defines a mechanism to provision client identity (public and private keys)
-   * for peer to peer authentication. The presence of this dictates mTLS.
+   * Optional. Defines a mechanism to provision client identity (public and
+   * private keys) for peer to peer authentication. The presence of this
+   * dictates mTLS.
    * </pre>
    *
    * <code>
@@ -301,9 +304,9 @@ public interface ClientTlsPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Defines the mechanism to obtain the Certificate Authority certificate to
-   * validate the server certificate. If empty, client does not validate the
-   * server certificate.
+   * Optional. Defines the mechanism to obtain the Certificate Authority
+   * certificate to validate the server certificate. If empty, client does not
+   * validate the server certificate.
    * </pre>
    *
    * <code>
@@ -316,9 +319,9 @@ public interface ClientTlsPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Defines the mechanism to obtain the Certificate Authority certificate to
-   * validate the server certificate. If empty, client does not validate the
-   * server certificate.
+   * Optional. Defines the mechanism to obtain the Certificate Authority
+   * certificate to validate the server certificate. If empty, client does not
+   * validate the server certificate.
    * </pre>
    *
    * <code>
@@ -331,9 +334,9 @@ public interface ClientTlsPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Defines the mechanism to obtain the Certificate Authority certificate to
-   * validate the server certificate. If empty, client does not validate the
-   * server certificate.
+   * Optional. Defines the mechanism to obtain the Certificate Authority
+   * certificate to validate the server certificate. If empty, client does not
+   * validate the server certificate.
    * </pre>
    *
    * <code>
@@ -346,9 +349,9 @@ public interface ClientTlsPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Defines the mechanism to obtain the Certificate Authority certificate to
-   * validate the server certificate. If empty, client does not validate the
-   * server certificate.
+   * Optional. Defines the mechanism to obtain the Certificate Authority
+   * certificate to validate the server certificate. If empty, client does not
+   * validate the server certificate.
    * </pre>
    *
    * <code>
@@ -362,9 +365,9 @@ public interface ClientTlsPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Defines the mechanism to obtain the Certificate Authority certificate to
-   * validate the server certificate. If empty, client does not validate the
-   * server certificate.
+   * Optional. Defines the mechanism to obtain the Certificate Authority
+   * certificate to validate the server certificate. If empty, client does not
+   * validate the server certificate.
    * </pre>
    *
    * <code>

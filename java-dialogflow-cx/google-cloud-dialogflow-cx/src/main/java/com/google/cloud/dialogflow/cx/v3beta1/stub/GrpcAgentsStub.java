@@ -272,6 +272,7 @@ public class GrpcAgentsStub extends AgentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetAgentRequest, Agent> getAgentTransportSettings =
         GrpcCallSettings.<GetAgentRequest, Agent>newBuilder()
@@ -282,6 +283,7 @@ public class GrpcAgentsStub extends AgentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateAgentRequest, Agent> createAgentTransportSettings =
         GrpcCallSettings.<CreateAgentRequest, Agent>newBuilder()
@@ -292,6 +294,7 @@ public class GrpcAgentsStub extends AgentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateAgentRequest, Agent> updateAgentTransportSettings =
         GrpcCallSettings.<UpdateAgentRequest, Agent>newBuilder()
@@ -312,6 +315,7 @@ public class GrpcAgentsStub extends AgentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ExportAgentRequest, Operation> exportAgentTransportSettings =
         GrpcCallSettings.<ExportAgentRequest, Operation>newBuilder()
@@ -322,6 +326,7 @@ public class GrpcAgentsStub extends AgentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RestoreAgentRequest, Operation> restoreAgentTransportSettings =
         GrpcCallSettings.<RestoreAgentRequest, Operation>newBuilder()
@@ -332,6 +337,7 @@ public class GrpcAgentsStub extends AgentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ValidateAgentRequest, AgentValidationResult> validateAgentTransportSettings =
         GrpcCallSettings.<ValidateAgentRequest, AgentValidationResult>newBuilder()
@@ -342,6 +348,7 @@ public class GrpcAgentsStub extends AgentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetAgentValidationResultRequest, AgentValidationResult>
         getAgentValidationResultTransportSettings =
@@ -353,6 +360,7 @@ public class GrpcAgentsStub extends AgentsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetGenerativeSettingsRequest, GenerativeSettings>
         getGenerativeSettingsTransportSettings =
@@ -364,6 +372,7 @@ public class GrpcAgentsStub extends AgentsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateGenerativeSettingsRequest, GenerativeSettings>
         updateGenerativeSettingsTransportSettings =

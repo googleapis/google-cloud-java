@@ -334,6 +334,28 @@ public class MockNetAppImpl extends NetAppImplBase {
   }
 
   @Override
+  public void establishVolumePeering(
+      EstablishVolumePeeringRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method EstablishVolumePeering, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listSnapshots(
       ListSnapshotsRequest request, StreamObserver<ListSnapshotsResponse> responseObserver) {
     Object response = responses.poll();
@@ -1447,6 +1469,92 @@ public class MockNetAppImpl extends NetAppImplBase {
                   "Unrecognized response type %s for method DeleteHostGroup, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void executeOntapPost(
+      ExecuteOntapPostRequest request, StreamObserver<ExecuteOntapPostResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ExecuteOntapPostResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ExecuteOntapPostResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ExecuteOntapPost, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ExecuteOntapPostResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void executeOntapGet(
+      ExecuteOntapGetRequest request, StreamObserver<ExecuteOntapGetResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ExecuteOntapGetResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ExecuteOntapGetResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ExecuteOntapGet, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ExecuteOntapGetResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void executeOntapDelete(
+      ExecuteOntapDeleteRequest request,
+      StreamObserver<ExecuteOntapDeleteResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ExecuteOntapDeleteResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ExecuteOntapDeleteResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ExecuteOntapDelete, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ExecuteOntapDeleteResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void executeOntapPatch(
+      ExecuteOntapPatchRequest request,
+      StreamObserver<ExecuteOntapPatchResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ExecuteOntapPatchResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ExecuteOntapPatchResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ExecuteOntapPatch, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ExecuteOntapPatchResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

@@ -386,6 +386,7 @@ public class HttpJsonGeneratorsStub extends GeneratorsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetGeneratorRequest, Generator> getGeneratorTransportSettings =
         HttpJsonCallSettings.<GetGeneratorRequest, Generator>newBuilder()
@@ -397,6 +398,7 @@ public class HttpJsonGeneratorsStub extends GeneratorsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateGeneratorRequest, Generator> createGeneratorTransportSettings =
         HttpJsonCallSettings.<CreateGeneratorRequest, Generator>newBuilder()
@@ -408,6 +410,7 @@ public class HttpJsonGeneratorsStub extends GeneratorsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateGeneratorRequest, Generator> updateGeneratorTransportSettings =
         HttpJsonCallSettings.<UpdateGeneratorRequest, Generator>newBuilder()
@@ -430,6 +433,7 @@ public class HttpJsonGeneratorsStub extends GeneratorsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

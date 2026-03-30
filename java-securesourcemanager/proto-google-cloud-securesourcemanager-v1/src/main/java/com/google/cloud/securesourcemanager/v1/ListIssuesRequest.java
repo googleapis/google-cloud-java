@@ -138,8 +138,8 @@ public final class ListIssuesRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. Requested page size. Server may return fewer items than
-   * requested. If unspecified, server will pick an appropriate default.
+   * Optional. Requested page size. If unspecified, a default size of 30 will be
+   * used. The maximum value is 100; values above 100 will be coerced to 100.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -770,8 +770,8 @@ public final class ListIssuesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Requested page size. Server may return fewer items than
-     * requested. If unspecified, server will pick an appropriate default.
+     * Optional. Requested page size. If unspecified, a default size of 30 will be
+     * used. The maximum value is 100; values above 100 will be coerced to 100.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -787,8 +787,8 @@ public final class ListIssuesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Requested page size. Server may return fewer items than
-     * requested. If unspecified, server will pick an appropriate default.
+     * Optional. Requested page size. If unspecified, a default size of 30 will be
+     * used. The maximum value is 100; values above 100 will be coerced to 100.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -808,8 +808,8 @@ public final class ListIssuesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Requested page size. Server may return fewer items than
-     * requested. If unspecified, server will pick an appropriate default.
+     * Optional. Requested page size. If unspecified, a default size of 30 will be
+     * used. The maximum value is 100; values above 100 will be coerced to 100.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

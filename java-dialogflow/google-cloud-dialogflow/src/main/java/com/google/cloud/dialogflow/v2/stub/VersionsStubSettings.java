@@ -400,6 +400,7 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-dialogflow")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(com.google.cloud.dialogflow.v2.stub.Version.VERSION)
         .build();
   }
 

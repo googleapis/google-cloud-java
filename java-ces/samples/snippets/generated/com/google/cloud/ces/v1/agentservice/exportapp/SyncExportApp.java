@@ -19,6 +19,7 @@ package com.google.cloud.ces.v1.samples;
 // [START ces_v1_generated_AgentService_ExportApp_sync]
 import com.google.cloud.ces.v1.AgentServiceClient;
 import com.google.cloud.ces.v1.AppName;
+import com.google.cloud.ces.v1.AppVersionName;
 import com.google.cloud.ces.v1.ExportAppRequest;
 import com.google.cloud.ces.v1.ExportAppResponse;
 
@@ -39,6 +40,8 @@ public class SyncExportApp {
           ExportAppRequest.newBuilder()
               .setName(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
               .setGcsUri("gcsUri-1251224875")
+              .setAppVersion(
+                  AppVersionName.of("[PROJECT]", "[LOCATION]", "[APP]", "[VERSION]").toString())
               .build();
       ExportAppResponse response = agentServiceClient.exportAppAsync(request).get();
     }

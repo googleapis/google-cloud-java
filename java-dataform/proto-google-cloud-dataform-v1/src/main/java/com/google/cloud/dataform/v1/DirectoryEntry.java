@@ -68,6 +68,7 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dataform.v1.DirectoryEntry.Builder.class);
   }
 
+  private int bitField0_;
   private int entryCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -264,6 +265,59 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int METADATA_FIELD_NUMBER = 3;
+  private com.google.cloud.dataform.v1.FilesystemEntryMetadata metadata_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Entry with metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.dataform.v1.FilesystemEntryMetadata metadata = 3;</code>
+   *
+   * @return Whether the metadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasMetadata() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Entry with metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.dataform.v1.FilesystemEntryMetadata metadata = 3;</code>
+   *
+   * @return The metadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1.FilesystemEntryMetadata getMetadata() {
+    return metadata_ == null
+        ? com.google.cloud.dataform.v1.FilesystemEntryMetadata.getDefaultInstance()
+        : metadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Entry with metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.dataform.v1.FilesystemEntryMetadata metadata = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1.FilesystemEntryMetadataOrBuilder getMetadataOrBuilder() {
+    return metadata_ == null
+        ? com.google.cloud.dataform.v1.FilesystemEntryMetadata.getDefaultInstance()
+        : metadata_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -284,6 +338,9 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
     if (entryCase_ == 2) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, entry_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(3, getMetadata());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -298,6 +355,9 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
     }
     if (entryCase_ == 2) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, entry_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getMetadata());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -315,6 +375,10 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
     com.google.cloud.dataform.v1.DirectoryEntry other =
         (com.google.cloud.dataform.v1.DirectoryEntry) obj;
 
+    if (hasMetadata() != other.hasMetadata()) return false;
+    if (hasMetadata()) {
+      if (!getMetadata().equals(other.getMetadata())) return false;
+    }
     if (!getEntryCase().equals(other.getEntryCase())) return false;
     switch (entryCase_) {
       case 1:
@@ -337,6 +401,10 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasMetadata()) {
+      hash = (37 * hash) + METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getMetadata().hashCode();
+    }
     switch (entryCase_) {
       case 1:
         hash = (37 * hash) + FILE_FIELD_NUMBER;
@@ -479,16 +547,30 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.dataform.v1.DirectoryEntry.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetMetadataFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
+        metadataBuilder_ = null;
+      }
       entryCase_ = 0;
       entry_ = null;
       return this;
@@ -528,6 +610,12 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.cloud.dataform.v1.DirectoryEntry result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(com.google.cloud.dataform.v1.DirectoryEntry result) {
@@ -547,6 +635,9 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
 
     public Builder mergeFrom(com.google.cloud.dataform.v1.DirectoryEntry other) {
       if (other == com.google.cloud.dataform.v1.DirectoryEntry.getDefaultInstance()) return this;
+      if (other.hasMetadata()) {
+        mergeMetadata(other.getMetadata());
+      }
       switch (other.getEntryCase()) {
         case FILE:
           {
@@ -607,6 +698,13 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
                 entry_ = s;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    internalGetMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -916,6 +1014,202 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
       entry_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.dataform.v1.FilesystemEntryMetadata metadata_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataform.v1.FilesystemEntryMetadata,
+            com.google.cloud.dataform.v1.FilesystemEntryMetadata.Builder,
+            com.google.cloud.dataform.v1.FilesystemEntryMetadataOrBuilder>
+        metadataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Entry with metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1.FilesystemEntryMetadata metadata = 3;</code>
+     *
+     * @return Whether the metadata field is set.
+     */
+    public boolean hasMetadata() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Entry with metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1.FilesystemEntryMetadata metadata = 3;</code>
+     *
+     * @return The metadata.
+     */
+    public com.google.cloud.dataform.v1.FilesystemEntryMetadata getMetadata() {
+      if (metadataBuilder_ == null) {
+        return metadata_ == null
+            ? com.google.cloud.dataform.v1.FilesystemEntryMetadata.getDefaultInstance()
+            : metadata_;
+      } else {
+        return metadataBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Entry with metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1.FilesystemEntryMetadata metadata = 3;</code>
+     */
+    public Builder setMetadata(com.google.cloud.dataform.v1.FilesystemEntryMetadata value) {
+      if (metadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metadata_ = value;
+      } else {
+        metadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Entry with metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1.FilesystemEntryMetadata metadata = 3;</code>
+     */
+    public Builder setMetadata(
+        com.google.cloud.dataform.v1.FilesystemEntryMetadata.Builder builderForValue) {
+      if (metadataBuilder_ == null) {
+        metadata_ = builderForValue.build();
+      } else {
+        metadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Entry with metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1.FilesystemEntryMetadata metadata = 3;</code>
+     */
+    public Builder mergeMetadata(com.google.cloud.dataform.v1.FilesystemEntryMetadata value) {
+      if (metadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && metadata_ != null
+            && metadata_
+                != com.google.cloud.dataform.v1.FilesystemEntryMetadata.getDefaultInstance()) {
+          getMetadataBuilder().mergeFrom(value);
+        } else {
+          metadata_ = value;
+        }
+      } else {
+        metadataBuilder_.mergeFrom(value);
+      }
+      if (metadata_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Entry with metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1.FilesystemEntryMetadata metadata = 3;</code>
+     */
+    public Builder clearMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
+        metadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Entry with metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1.FilesystemEntryMetadata metadata = 3;</code>
+     */
+    public com.google.cloud.dataform.v1.FilesystemEntryMetadata.Builder getMetadataBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return internalGetMetadataFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Entry with metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1.FilesystemEntryMetadata metadata = 3;</code>
+     */
+    public com.google.cloud.dataform.v1.FilesystemEntryMetadataOrBuilder getMetadataOrBuilder() {
+      if (metadataBuilder_ != null) {
+        return metadataBuilder_.getMessageOrBuilder();
+      } else {
+        return metadata_ == null
+            ? com.google.cloud.dataform.v1.FilesystemEntryMetadata.getDefaultInstance()
+            : metadata_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Entry with metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1.FilesystemEntryMetadata metadata = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataform.v1.FilesystemEntryMetadata,
+            com.google.cloud.dataform.v1.FilesystemEntryMetadata.Builder,
+            com.google.cloud.dataform.v1.FilesystemEntryMetadataOrBuilder>
+        internalGetMetadataFieldBuilder() {
+      if (metadataBuilder_ == null) {
+        metadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dataform.v1.FilesystemEntryMetadata,
+                com.google.cloud.dataform.v1.FilesystemEntryMetadata.Builder,
+                com.google.cloud.dataform.v1.FilesystemEntryMetadataOrBuilder>(
+                getMetadata(), getParentForChildren(), isClean());
+        metadata_ = null;
+      }
+      return metadataBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dataform.v1.DirectoryEntry)

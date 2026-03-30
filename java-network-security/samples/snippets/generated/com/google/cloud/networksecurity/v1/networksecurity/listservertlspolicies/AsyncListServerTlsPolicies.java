@@ -41,6 +41,7 @@ public class AsyncListServerTlsPolicies {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setReturnPartialSuccess(true)
               .build();
       ApiFuture<ServerTlsPolicy> future =
           networkSecurityClient.listServerTlsPoliciesPagedCallable().futureCall(request);

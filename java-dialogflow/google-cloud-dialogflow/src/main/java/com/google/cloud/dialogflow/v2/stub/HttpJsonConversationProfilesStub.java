@@ -567,6 +567,7 @@ public class HttpJsonConversationProfilesStub extends ConversationProfilesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetConversationProfileRequest, ConversationProfile>
         getConversationProfileTransportSettings =
@@ -579,6 +580,7 @@ public class HttpJsonConversationProfilesStub extends ConversationProfilesStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateConversationProfileRequest, ConversationProfile>
         createConversationProfileTransportSettings =
@@ -591,6 +593,7 @@ public class HttpJsonConversationProfilesStub extends ConversationProfilesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateConversationProfileRequest, ConversationProfile>
         updateConversationProfileTransportSettings =
@@ -617,6 +620,7 @@ public class HttpJsonConversationProfilesStub extends ConversationProfilesStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<SetSuggestionFeatureConfigRequest, Operation>
         setSuggestionFeatureConfigTransportSettings =

@@ -330,6 +330,7 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CLOUD_SQL_INSTANCE_BACKUP_PLAN_ASSOCIATION_PROPERTIES(10),
+    ALLOYDB_CLUSTER_BACKUP_PLAN_ASSOCIATION_PROPERTIES(15),
     RESOURCEPROPERTIES_NOT_SET(0);
     private final int value;
 
@@ -351,6 +352,8 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       switch (value) {
         case 10:
           return CLOUD_SQL_INSTANCE_BACKUP_PLAN_ASSOCIATION_PROPERTIES;
+        case 15:
+          return ALLOYDB_CLUSTER_BACKUP_PLAN_ASSOCIATION_PROPERTIES;
         case 0:
           return RESOURCEPROPERTIES_NOT_SET;
         default:
@@ -974,6 +977,72 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
         .getDefaultInstance();
   }
 
+  public static final int ALLOYDB_CLUSTER_BACKUP_PLAN_ASSOCIATION_PROPERTIES_FIELD_NUMBER = 15;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. AlloyDB cluster's backup plan association properties.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties alloydb_cluster_backup_plan_association_properties = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the alloydbClusterBackupPlanAssociationProperties field is set.
+   */
+  @java.lang.Override
+  public boolean hasAlloydbClusterBackupPlanAssociationProperties() {
+    return resourcePropertiesCase_ == 15;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. AlloyDB cluster's backup plan association properties.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties alloydb_cluster_backup_plan_association_properties = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The alloydbClusterBackupPlanAssociationProperties.
+   */
+  @java.lang.Override
+  public com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties
+      getAlloydbClusterBackupPlanAssociationProperties() {
+    if (resourcePropertiesCase_ == 15) {
+      return (com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties)
+          resourceProperties_;
+    }
+    return com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties
+        .getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. AlloyDB cluster's backup plan association properties.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties alloydb_cluster_backup_plan_association_properties = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationPropertiesOrBuilder
+      getAlloydbClusterBackupPlanAssociationPropertiesOrBuilder() {
+    if (resourcePropertiesCase_ == 15) {
+      return (com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties)
+          resourceProperties_;
+    }
+    return com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties
+        .getDefaultInstance();
+  }
+
   public static final int BACKUP_PLAN_REVISION_ID_FIELD_NUMBER = 11;
 
   @SuppressWarnings("serial")
@@ -1146,6 +1215,12 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(backupPlanRevisionName_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 12, backupPlanRevisionName_);
     }
+    if (resourcePropertiesCase_ == 15) {
+      output.writeMessage(
+          15,
+          (com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties)
+              resourceProperties_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1196,6 +1271,13 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(backupPlanRevisionName_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(12, backupPlanRevisionName_);
     }
+    if (resourcePropertiesCase_ == 15) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              15,
+              (com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties)
+                  resourceProperties_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1234,6 +1316,10 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       case 10:
         if (!getCloudSqlInstanceBackupPlanAssociationProperties()
             .equals(other.getCloudSqlInstanceBackupPlanAssociationProperties())) return false;
+        break;
+      case 15:
+        if (!getAlloydbClusterBackupPlanAssociationProperties()
+            .equals(other.getAlloydbClusterBackupPlanAssociationProperties())) return false;
         break;
       case 0:
       default:
@@ -1281,6 +1367,10 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       case 10:
         hash = (37 * hash) + CLOUD_SQL_INSTANCE_BACKUP_PLAN_ASSOCIATION_PROPERTIES_FIELD_NUMBER;
         hash = (53 * hash) + getCloudSqlInstanceBackupPlanAssociationProperties().hashCode();
+        break;
+      case 15:
+        hash = (37 * hash) + ALLOYDB_CLUSTER_BACKUP_PLAN_ASSOCIATION_PROPERTIES_FIELD_NUMBER;
+        hash = (53 * hash) + getAlloydbClusterBackupPlanAssociationProperties().hashCode();
         break;
       case 0:
       default:
@@ -1463,6 +1553,9 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       if (cloudSqlInstanceBackupPlanAssociationPropertiesBuilder_ != null) {
         cloudSqlInstanceBackupPlanAssociationPropertiesBuilder_.clear();
       }
+      if (alloydbClusterBackupPlanAssociationPropertiesBuilder_ != null) {
+        alloydbClusterBackupPlanAssociationPropertiesBuilder_.clear();
+      }
       backupPlanRevisionId_ = "";
       backupPlanRevisionName_ = "";
       resourcePropertiesCase_ = 0;
@@ -1545,10 +1638,10 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.dataSource_ = dataSource_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.backupPlanRevisionId_ = backupPlanRevisionId_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.backupPlanRevisionName_ = backupPlanRevisionName_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1561,6 +1654,10 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
           && cloudSqlInstanceBackupPlanAssociationPropertiesBuilder_ != null) {
         result.resourceProperties_ =
             cloudSqlInstanceBackupPlanAssociationPropertiesBuilder_.build();
+      }
+      if (resourcePropertiesCase_ == 15
+          && alloydbClusterBackupPlanAssociationPropertiesBuilder_ != null) {
+        result.resourceProperties_ = alloydbClusterBackupPlanAssociationPropertiesBuilder_.build();
       }
     }
 
@@ -1640,12 +1737,12 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       }
       if (!other.getBackupPlanRevisionId().isEmpty()) {
         backupPlanRevisionId_ = other.backupPlanRevisionId_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (!other.getBackupPlanRevisionName().isEmpty()) {
         backupPlanRevisionName_ = other.backupPlanRevisionName_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       switch (other.getResourcePropertiesCase()) {
@@ -1653,6 +1750,12 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
           {
             mergeCloudSqlInstanceBackupPlanAssociationProperties(
                 other.getCloudSqlInstanceBackupPlanAssociationProperties());
+            break;
+          }
+        case ALLOYDB_CLUSTER_BACKUP_PLAN_ASSOCIATION_PROPERTIES:
+          {
+            mergeAlloydbClusterBackupPlanAssociationProperties(
+                other.getAlloydbClusterBackupPlanAssociationProperties());
             break;
           }
         case RESOURCEPROPERTIES_NOT_SET:
@@ -1761,15 +1864,24 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
             case 90:
               {
                 backupPlanRevisionId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 90
             case 98:
               {
                 backupPlanRevisionName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 98
+            case 122:
+              {
+                input.readMessage(
+                    internalGetAlloydbClusterBackupPlanAssociationPropertiesFieldBuilder()
+                        .getBuilder(),
+                    extensionRegistry);
+                resourcePropertiesCase_ = 15;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3663,6 +3775,261 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       return cloudSqlInstanceBackupPlanAssociationPropertiesBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties,
+            com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties.Builder,
+            com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationPropertiesOrBuilder>
+        alloydbClusterBackupPlanAssociationPropertiesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. AlloyDB cluster's backup plan association properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties alloydb_cluster_backup_plan_association_properties = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the alloydbClusterBackupPlanAssociationProperties field is set.
+     */
+    @java.lang.Override
+    public boolean hasAlloydbClusterBackupPlanAssociationProperties() {
+      return resourcePropertiesCase_ == 15;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. AlloyDB cluster's backup plan association properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties alloydb_cluster_backup_plan_association_properties = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The alloydbClusterBackupPlanAssociationProperties.
+     */
+    @java.lang.Override
+    public com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties
+        getAlloydbClusterBackupPlanAssociationProperties() {
+      if (alloydbClusterBackupPlanAssociationPropertiesBuilder_ == null) {
+        if (resourcePropertiesCase_ == 15) {
+          return (com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties)
+              resourceProperties_;
+        }
+        return com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties
+            .getDefaultInstance();
+      } else {
+        if (resourcePropertiesCase_ == 15) {
+          return alloydbClusterBackupPlanAssociationPropertiesBuilder_.getMessage();
+        }
+        return com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. AlloyDB cluster's backup plan association properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties alloydb_cluster_backup_plan_association_properties = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAlloydbClusterBackupPlanAssociationProperties(
+        com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties value) {
+      if (alloydbClusterBackupPlanAssociationPropertiesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resourceProperties_ = value;
+        onChanged();
+      } else {
+        alloydbClusterBackupPlanAssociationPropertiesBuilder_.setMessage(value);
+      }
+      resourcePropertiesCase_ = 15;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. AlloyDB cluster's backup plan association properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties alloydb_cluster_backup_plan_association_properties = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAlloydbClusterBackupPlanAssociationProperties(
+        com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties.Builder
+            builderForValue) {
+      if (alloydbClusterBackupPlanAssociationPropertiesBuilder_ == null) {
+        resourceProperties_ = builderForValue.build();
+        onChanged();
+      } else {
+        alloydbClusterBackupPlanAssociationPropertiesBuilder_.setMessage(builderForValue.build());
+      }
+      resourcePropertiesCase_ = 15;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. AlloyDB cluster's backup plan association properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties alloydb_cluster_backup_plan_association_properties = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeAlloydbClusterBackupPlanAssociationProperties(
+        com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties value) {
+      if (alloydbClusterBackupPlanAssociationPropertiesBuilder_ == null) {
+        if (resourcePropertiesCase_ == 15
+            && resourceProperties_
+                != com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties
+                    .getDefaultInstance()) {
+          resourceProperties_ =
+              com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties.newBuilder(
+                      (com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties)
+                          resourceProperties_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          resourceProperties_ = value;
+        }
+        onChanged();
+      } else {
+        if (resourcePropertiesCase_ == 15) {
+          alloydbClusterBackupPlanAssociationPropertiesBuilder_.mergeFrom(value);
+        } else {
+          alloydbClusterBackupPlanAssociationPropertiesBuilder_.setMessage(value);
+        }
+      }
+      resourcePropertiesCase_ = 15;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. AlloyDB cluster's backup plan association properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties alloydb_cluster_backup_plan_association_properties = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearAlloydbClusterBackupPlanAssociationProperties() {
+      if (alloydbClusterBackupPlanAssociationPropertiesBuilder_ == null) {
+        if (resourcePropertiesCase_ == 15) {
+          resourcePropertiesCase_ = 0;
+          resourceProperties_ = null;
+          onChanged();
+        }
+      } else {
+        if (resourcePropertiesCase_ == 15) {
+          resourcePropertiesCase_ = 0;
+          resourceProperties_ = null;
+        }
+        alloydbClusterBackupPlanAssociationPropertiesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. AlloyDB cluster's backup plan association properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties alloydb_cluster_backup_plan_association_properties = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties.Builder
+        getAlloydbClusterBackupPlanAssociationPropertiesBuilder() {
+      return internalGetAlloydbClusterBackupPlanAssociationPropertiesFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. AlloyDB cluster's backup plan association properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties alloydb_cluster_backup_plan_association_properties = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationPropertiesOrBuilder
+        getAlloydbClusterBackupPlanAssociationPropertiesOrBuilder() {
+      if ((resourcePropertiesCase_ == 15)
+          && (alloydbClusterBackupPlanAssociationPropertiesBuilder_ != null)) {
+        return alloydbClusterBackupPlanAssociationPropertiesBuilder_.getMessageOrBuilder();
+      } else {
+        if (resourcePropertiesCase_ == 15) {
+          return (com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties)
+              resourceProperties_;
+        }
+        return com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. AlloyDB cluster's backup plan association properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties alloydb_cluster_backup_plan_association_properties = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties,
+            com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties.Builder,
+            com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationPropertiesOrBuilder>
+        internalGetAlloydbClusterBackupPlanAssociationPropertiesFieldBuilder() {
+      if (alloydbClusterBackupPlanAssociationPropertiesBuilder_ == null) {
+        if (!(resourcePropertiesCase_ == 15)) {
+          resourceProperties_ =
+              com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties
+                  .getDefaultInstance();
+        }
+        alloydbClusterBackupPlanAssociationPropertiesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties,
+                com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties.Builder,
+                com.google.cloud.backupdr.v1
+                    .AlloyDBClusterBackupPlanAssociationPropertiesOrBuilder>(
+                (com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties)
+                    resourceProperties_,
+                getParentForChildren(),
+                isClean());
+        resourceProperties_ = null;
+      }
+      resourcePropertiesCase_ = 15;
+      onChanged();
+      return alloydbClusterBackupPlanAssociationPropertiesBuilder_;
+    }
+
     private java.lang.Object backupPlanRevisionId_ = "";
 
     /**
@@ -3737,7 +4104,7 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       backupPlanRevisionId_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3758,7 +4125,7 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
      */
     public Builder clearBackupPlanRevisionId() {
       backupPlanRevisionId_ = getDefaultInstance().getBackupPlanRevisionId();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3784,7 +4151,7 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       backupPlanRevisionId_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3866,7 +4233,7 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       backupPlanRevisionName_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3888,7 +4255,7 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
      */
     public Builder clearBackupPlanRevisionName() {
       backupPlanRevisionName_ = getDefaultInstance().getBackupPlanRevisionName();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3915,7 +4282,7 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       backupPlanRevisionName_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

@@ -96,6 +96,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   private static final int HTTP_RESUME_INCOMPLETE = 308;
   private final BigQueryOptions options;
   private final Bigquery bigquery;
+  private final String urlDomain;
 
   @InternalApi("Visible for testing")
   static final Function<DatasetList.Datasets, Dataset> LIST_TO_DATASET =
@@ -117,6 +118,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
     HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
     this.options = options;
+    this.urlDomain = new GenericUrl(options.getResolvedApiaryHost("bigquery")).getHost();
 
     if (options.isOpenTelemetryTracingEnabled()
         && options.getOpenTelemetryTracer() != null
@@ -2149,7 +2151,8 @@ public class HttpBigQueryRpc implements BigQueryRpc {
       builder
           .setAttribute(
               BigQueryTelemetryTracer.GCP_RESOURCE_DESTINATION_ID, gcpResourceDestinationId)
-          .setAttribute(BigQueryTelemetryTracer.URL_TEMPLATE, urlTemplate);
+          .setAttribute(BigQueryTelemetryTracer.URL_TEMPLATE, urlTemplate)
+          .setAttribute(BigQueryTelemetryTracer.URL_DOMAIN, this.urlDomain);
     }
 
     if (options != null) {

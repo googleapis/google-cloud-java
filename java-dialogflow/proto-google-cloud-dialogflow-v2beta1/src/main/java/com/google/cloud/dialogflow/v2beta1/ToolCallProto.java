@@ -61,49 +61,44 @@ public final class ToolCallProto extends com.google.protobuf.GeneratedFile {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n"
-          + "/google/cloud/dialogflow/v2beta1/tool_call.proto\022\037google.cloud.dialogflow.v2bet"
+      "\n/google/cloud/dialogflow/v2beta1/tool_c"
+          + "all.proto\022\037google.cloud.dialogflow.v2bet"
           + "a1\032\037google/api/field_behavior.proto\032\031goo"
           + "gle/api/resource.proto\032\034google/protobuf/"
-          + "struct.proto\032\037google/protobuf/timestamp.proto\"\272\003\n"
-          + "\010ToolCall\0226\n"
-          + "\004tool\030\001 \001(\tB&\340A\001\372A \n"
-          + "\036dialogflow.googleapis.com/ToolH\000\022\036\n"
-          + "\021tool_display_name\030\t \001(\tB\003\340A\001\022!\n"
-          + "\024tool_display_details\030\n"
-          + " \001(\tB\003\340A\001\022\023\n"
-          + "\006action\030\002 \001(\tB\003\340A\001\0226\n"
-          + "\020input_parameters\030\003"
-          + " \001(\0132\027.google.protobuf.StructB\003\340A\001\0224\n"
-          + "\013create_time\030\004"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\032\n\r"
-          + "answer_record\030\006 \001(\tB\003\340A\001\022C\n"
-          + "\005state\030\007 \001(\0162/.go"
-          + "ogle.cloud.dialogflow.v2beta1.ToolCall.StateB\003\340A\003\"E\n"
-          + "\005State\022\025\n"
-          + "\021STATE_UNSPECIFIED\020\000\022\r\n"
-          + "\tTRIGGERED\020\001\022\026\n"
-          + "\022NEEDS_CONFIRMATION\020\002B\010\n"
-          + "\006source\"\324\002\n"
-          + "\016ToolCallResult\0226\n"
-          + "\004tool\030\001 \001(\tB&\340A\001\372A \n"
-          + "\036dialogflow.googleapis.com/ToolH\000\022\023\n"
-          + "\006action\030\002 \001(\tB\003\340A\001\022F\n"
-          + "\005error\030\003 \001("
-          + "\01325.google.cloud.dialogflow.v2beta1.ToolCallResult.ErrorH\001\022\025\n"
-          + "\013raw_content\030\005 \001(\014H\001\022\021\n"
-          + "\007content\030\006 \001(\tH\001\0224\n"
-          + "\013create_time\030\007"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\032\n\r"
-          + "answer_record\030\t \001(\tB\003\340A\001\032\035\n"
-          + "\005Error\022\024\n"
-          + "\007message\030\001 \001(\tB\003\340A\001B\010\n"
-          + "\006sourceB\010\n"
-          + "\006resultB\242\001\n"
-          + "#com.google.cloud.dialogflow.v2beta1B\r"
-          + "ToolCallProtoP\001ZCcloud.google.com/go/dialogfl"
-          + "ow/apiv2beta1/dialogflowpb;dialogflowpb\242"
-          + "\002\002DF\252\002\037Google.Cloud.Dialogflow.V2Beta1b\006proto3"
+          + "struct.proto\032\037google/protobuf/timestamp."
+          + "proto\"\335\004\n\010ToolCall\0226\n\004tool\030\001 \001(\tB&\340A\001\372A "
+          + "\n\036dialogflow.googleapis.com/ToolH\000\0223\n\010ce"
+          + "s_tool\030\013 \001(\tB\037\340A\001\372A\031\n\027ces.googleapis.com"
+          + "/ToolH\000\0229\n\013ces_toolset\030\014 \001(\tB\"\340A\001\372A\034\n\032ce"
+          + "s.googleapis.com/ToolsetH\000\0221\n\007ces_app\030\010 "
+          + "\001(\tB\036\340A\001\372A\030\n\026ces.googleapis.com/AppH\000\022\036\n"
+          + "\021tool_display_name\030\t \001(\tB\003\340A\001\022!\n\024tool_di"
+          + "splay_details\030\n \001(\tB\003\340A\001\022\023\n\006action\030\002 \001(\t"
+          + "B\003\340A\001\0226\n\020input_parameters\030\003 \001(\0132\027.google"
+          + ".protobuf.StructB\003\340A\001\0224\n\013create_time\030\004 \001"
+          + "(\0132\032.google.protobuf.TimestampB\003\340A\003\022\032\n\ra"
+          + "nswer_record\030\006 \001(\tB\003\340A\001\022C\n\005state\030\007 \001(\0162/"
+          + ".google.cloud.dialogflow.v2beta1.ToolCal"
+          + "l.StateB\003\340A\003\"E\n\005State\022\025\n\021STATE_UNSPECIFI"
+          + "ED\020\000\022\r\n\tTRIGGERED\020\001\022\026\n\022NEEDS_CONFIRMATIO"
+          + "N\020\002B\010\n\006source\"\367\003\n\016ToolCallResult\0226\n\004tool"
+          + "\030\001 \001(\tB&\340A\001\372A \n\036dialogflow.googleapis.co"
+          + "m/ToolH\000\0223\n\010ces_tool\030\014 \001(\tB\037\340A\001\372A\031\n\027ces."
+          + "googleapis.com/ToolH\000\0229\n\013ces_toolset\030\r \001"
+          + "(\tB\"\340A\001\372A\034\n\032ces.googleapis.com/ToolsetH\000"
+          + "\0221\n\007ces_app\030\013 \001(\tB\036\340A\001\372A\030\n\026ces.googleapi"
+          + "s.com/AppH\000\022\023\n\006action\030\002 \001(\tB\003\340A\001\022F\n\005erro"
+          + "r\030\003 \001(\01325.google.cloud.dialogflow.v2beta"
+          + "1.ToolCallResult.ErrorH\001\022\025\n\013raw_content\030"
+          + "\005 \001(\014H\001\022\021\n\007content\030\006 \001(\tH\001\0224\n\013create_tim"
+          + "e\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340A\003"
+          + "\022\032\n\ranswer_record\030\t \001(\tB\003\340A\001\032\035\n\005Error\022\024\n"
+          + "\007message\030\001 \001(\tB\003\340A\001B\010\n\006sourceB\010\n\006resultB"
+          + "\242\001\n#com.google.cloud.dialogflow.v2beta1B"
+          + "\rToolCallProtoP\001ZCcloud.google.com/go/di"
+          + "alogflow/apiv2beta1/dialogflowpb;dialogf"
+          + "lowpb\242\002\002DF\252\002\037Google.Cloud.Dialogflow.V2B"
+          + "eta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -121,6 +116,9 @@ public final class ToolCallProto extends com.google.protobuf.GeneratedFile {
             internal_static_google_cloud_dialogflow_v2beta1_ToolCall_descriptor,
             new java.lang.String[] {
               "Tool",
+              "CesTool",
+              "CesToolset",
+              "CesApp",
               "ToolDisplayName",
               "ToolDisplayDetails",
               "Action",
@@ -137,6 +135,9 @@ public final class ToolCallProto extends com.google.protobuf.GeneratedFile {
             internal_static_google_cloud_dialogflow_v2beta1_ToolCallResult_descriptor,
             new java.lang.String[] {
               "Tool",
+              "CesTool",
+              "CesToolset",
+              "CesApp",
               "Action",
               "Error",
               "RawContent",

@@ -420,6 +420,7 @@ public class HttpJsonTransitionRouteGroupsStub extends TransitionRouteGroupsStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetTransitionRouteGroupRequest, TransitionRouteGroup>
         getTransitionRouteGroupTransportSettings =
@@ -432,6 +433,7 @@ public class HttpJsonTransitionRouteGroupsStub extends TransitionRouteGroupsStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateTransitionRouteGroupRequest, TransitionRouteGroup>
         createTransitionRouteGroupTransportSettings =
@@ -445,6 +447,7 @@ public class HttpJsonTransitionRouteGroupsStub extends TransitionRouteGroupsStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateTransitionRouteGroupRequest, TransitionRouteGroup>
         updateTransitionRouteGroupTransportSettings =
@@ -472,6 +475,7 @@ public class HttpJsonTransitionRouteGroupsStub extends TransitionRouteGroupsStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

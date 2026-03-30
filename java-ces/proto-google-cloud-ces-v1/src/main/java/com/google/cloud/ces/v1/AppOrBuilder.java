@@ -327,6 +327,49 @@ public interface AppOrBuilder
    *
    *
    * <pre>
+   * Optional. Error handling settings of the app.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.ErrorHandlingSettings error_handling_settings = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the errorHandlingSettings field is set.
+   */
+  boolean hasErrorHandlingSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Error handling settings of the app.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.ErrorHandlingSettings error_handling_settings = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The errorHandlingSettings.
+   */
+  com.google.cloud.ces.v1.ErrorHandlingSettings getErrorHandlingSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Error handling settings of the app.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.ErrorHandlingSettings error_handling_settings = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1.ErrorHandlingSettingsOrBuilder getErrorHandlingSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The default LLM model settings for the app.
    * Individual resources (e.g. agents, guardrails) can override these
    * configurations as needed.

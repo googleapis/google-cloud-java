@@ -393,6 +393,7 @@ public class HttpJsonSecuritySettingsServiceStub extends SecuritySettingsService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetSecuritySettingsRequest, SecuritySettings>
         getSecuritySettingsTransportSettings =
@@ -405,6 +406,7 @@ public class HttpJsonSecuritySettingsServiceStub extends SecuritySettingsService
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateSecuritySettingsRequest, SecuritySettings>
         updateSecuritySettingsTransportSettings =
@@ -432,6 +434,7 @@ public class HttpJsonSecuritySettingsServiceStub extends SecuritySettingsService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteSecuritySettingsRequest, Empty>
         deleteSecuritySettingsTransportSettings =
@@ -444,6 +447,7 @@ public class HttpJsonSecuritySettingsServiceStub extends SecuritySettingsService
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

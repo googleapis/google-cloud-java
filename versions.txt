@@ -1014,7 +1014,7 @@ google-cloud-spanner:6.112.0:6.113.1-SNAPSHOT
 google-cloud-spanner-executor:6.112.0:6.113.1-SNAPSHOT
 proto-google-cloud-spanner-executor-v1:6.112.0:6.113.1-SNAPSHOT
 grpc-google-cloud-spanner-executor-v1:6.112.0:6.113.1-SNAPSHOT
-google-cloud-spanner-jdbc:2.35.4:2.35.5-SNAPSHOT
+google-cloud-spanner-jdbc:2.35.5:2.35.6-SNAPSHOT
 google-auth-library:1.43.0:1.43.1-SNAPSHOT
 google-auth-library-bom:1.43.0:1.43.1-SNAPSHOT
 google-auth-library-parent:1.43.0:1.43.1-SNAPSHOT
