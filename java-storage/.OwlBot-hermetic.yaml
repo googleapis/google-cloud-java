@@ -1,0 +1,38 @@
+# Copyright 2021 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+deep-preserve-regex:
+- /java-storage/google-.*/src/test/java/com/google/storage/control/v2/ITFoldersTest.java
+deep-remove-regex:
+- /java-storage/grpc-google-.*/src
+- /java-storage/proto-google-.*/src
+- /java-storage/gapic-google-.*/src
+- /java-storage/google-cloud-storage-control/src
+deep-copy-regex:
+- source: /google/storage/v2/.*-java/proto-google-.*/src
+  dest: /owl-bot-staging/java-storage/v2/proto-google-cloud-storage-v2/src
+- source: /google/storage/v2/.*-java/grpc-google-.*/src
+  dest: /owl-bot-staging/java-storage/v2/grpc-google-cloud-storage-v2/src
+- source: /google/storage/v2/.*-java/gapic-google-.*/src
+  dest: /owl-bot-staging/java-storage/v2/gapic-google-cloud-storage-v2/src
+- source: /google/storage/v2/.*-java/gapic-google-.*/src/main/java/com/google/storage/v2/gapic_metadata.json
+  dest: /owl-bot-staging/java-storage/v2/gapic-google-cloud-storage-v2/src/main/resources/com/google/storage/v2/gapic_metadata.json
+- source: /google/storage/control/v2/.*-java/proto-google-.*/src
+  dest: /owl-bot-staging/java-storage/v2/proto-google-cloud-storage-control-v2/src
+- source: /google/storage/control/v2/.*-java/grpc-google-.*/src
+  dest: /owl-bot-staging/java-storage/v2/grpc-google-cloud-storage-control-v2/src
+- source: /google/storage/control/v2/.*-java/gapic-google-.*/src
+  dest: /owl-bot-staging/java-storage/v2/google-cloud-storage-control/src
+- source: /google/storage/control/v2/.*-java/gapic-google-.*/src/main/java/com/google/storage/control/v2/gapic_metadata.json
+  dest: /owl-bot-staging/java-storage/v2/google-cloud-storage-control/src/main/resources/com/google/storage/control/v2/gapic_metadata.json

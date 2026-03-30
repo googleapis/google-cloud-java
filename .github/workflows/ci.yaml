@@ -92,9 +92,10 @@ jobs:
           java-bigquery: java-bigquery/**
           java-bigquerystorage: java-bigquerystorage/**
           java-datastore: java-datastore/**
-          java-logging: java-logging/**
           java-logging-logback: java-logging-logback/**
+          java-logging: java-logging/**
           java-spanner: java-spanner/**
+          java-storage: java-storage/**
           sdk-platform-java: sdk-platform-java/**
   split-units:
     runs-on: ubuntu-latest
