@@ -64,7 +64,7 @@ public class BigQueryRetryHelper extends RetryHelper {
     if (runWithRetries != null) {
       retryContext = retryContext.with(runWithRetries);
     }
-    try (Scope runWithRetriesScope = retryContext != null ? retryContext.makeCurrent() : null) {
+    try (Scope runWithRetriesScope = retryContext.makeCurrent()) {
       // Suppressing should be ok as a workaraund. Current and only ResultRetryAlgorithm
       // implementation does not use response at all, so ignoring its type is ok.
       @SuppressWarnings("unchecked")
