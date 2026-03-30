@@ -106,7 +106,8 @@ public class ObservabilityAttributes {
   /** The full URL of the HTTP request, with sensitive query parameters redacted. */
   public static final String HTTP_URL_FULL_ATTRIBUTE = "url.full";
 
-  /** * The specific error type. Value will be google.rpc.ErrorInfo.reason, a specific Server Error
+  /**
+   * * The specific error type. Value will be google.rpc.ErrorInfo.reason, a specific Server Error
    * Code, Client-Side Network/Operational Error (e.g., CLIENT_TIMEOUT) or internal fallback.
    */
   public static final String ERROR_TYPE_ATTRIBUTE = "error.type";
