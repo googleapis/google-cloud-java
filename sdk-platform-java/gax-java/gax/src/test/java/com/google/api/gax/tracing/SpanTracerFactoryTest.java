@@ -348,6 +348,29 @@ class SpanTracerFactoryTest {
   }
 
   @Test
+  void testWithContext_emptyArtifactName_returnsBaseApiTracerFactory() {
+    SpanTracerFactory factory =
+        new SpanTracerFactory(openTelemetry, tracer, ApiTracerContext.empty());
+    LibraryMetadata metadata =
+        LibraryMetadata.newBuilder().setArtifactName("").setVersion("1.0").build();
+    ApiTracerContext context = ApiTracerContext.newBuilder().setLibraryMetadata(metadata).build();
+
+    ApiTracerFactory factoryWithContext = factory.withContext(context);
+    assertThat(factoryWithContext).isInstanceOf(BaseApiTracerFactory.class);
+  }
+
+  @Test
+  void testWithContext_nullArtifactName_returnsBaseApiTracerFactory() {
+    SpanTracerFactory factory =
+        new SpanTracerFactory(openTelemetry, tracer, ApiTracerContext.empty());
+    LibraryMetadata metadata = LibraryMetadata.newBuilder().setVersion("1.0").build();
+    ApiTracerContext context = ApiTracerContext.newBuilder().setLibraryMetadata(metadata).build();
+
+    ApiTracerFactory factoryWithContext = factory.withContext(context);
+    assertThat(factoryWithContext).isInstanceOf(BaseApiTracerFactory.class);
+  }
+
+  @Test
   void testWithContext_nullTracer_returnsBaseApiTracerFactory() {
     OpenTelemetry mockOpenTelemetry = mock(OpenTelemetry.class);
     when(mockOpenTelemetry.getTracer(nullable(String.class), nullable(String.class)))

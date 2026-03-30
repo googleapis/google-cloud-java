@@ -146,6 +146,23 @@ public class HttpTracingRequestInitializerTest {
   }
 
   @Test
+  public void testTraceContextIsPropagatedInHeaders() throws IOException {
+    HttpTransport transport = createTransport();
+    HttpRequest request = buildGetRequest(transport, initializer, BASE_URL);
+
+    HttpResponse response = request.execute();
+    response.disconnect();
+
+    assertEquals(
+        String.format(
+            "00-%s-%s-%s",
+            parentSpan.getSpanContext().getTraceId(),
+            parentSpan.getSpanContext().getSpanId(),
+            parentSpan.getSpanContext().getTraceFlags().asHex()),
+        request.getHeaders().get("traceparent"));
+  }
+
+  @Test
   public void testDelegateInitializerIsCalled() throws IOException {
     HttpRequestInitializer delegateInitializer = mock(HttpRequestInitializer.class);
     HttpTracingRequestInitializer tracingInitializer =

@@ -48,7 +48,19 @@ public class TestLogger implements Logger, LoggingEventAware {
   List<String> messageList = new ArrayList<>();
   Level level;
 
+  public List<String> getMessageList() {
+    return messageList;
+  }
+
   Map<String, Object> keyValuePairsMap = new HashMap<>();
+
+  public Map<String, String> getMDCMap() {
+    return MDCMap;
+  }
+
+  public Map<String, Object> getKeyValuePairsMap() {
+    return keyValuePairsMap;
+  }
 
   private String loggerName;
   private boolean infoEnabled;
