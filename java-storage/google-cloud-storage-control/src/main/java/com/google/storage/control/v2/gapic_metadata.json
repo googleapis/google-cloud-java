@@ -1,0 +1,99 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.storage.control.v2",
+  "libraryPackage": "com.google.storage.control.v2",
+  "services": {
+    "StorageControl": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "StorageControlClient",
+          "rpcs": {
+            "CreateAnywhereCache": {
+              "methods": ["createAnywhereCacheAsync", "createAnywhereCacheAsync", "createAnywhereCacheAsync", "createAnywhereCacheOperationCallable", "createAnywhereCacheCallable"]
+            },
+            "CreateFolder": {
+              "methods": ["createFolder", "createFolder", "createFolder", "createFolderCallable"]
+            },
+            "CreateManagedFolder": {
+              "methods": ["createManagedFolder", "createManagedFolder", "createManagedFolder", "createManagedFolderCallable"]
+            },
+            "DeleteFolder": {
+              "methods": ["deleteFolder", "deleteFolder", "deleteFolder", "deleteFolderCallable"]
+            },
+            "DeleteFolderRecursive": {
+              "methods": ["deleteFolderRecursiveAsync", "deleteFolderRecursiveAsync", "deleteFolderRecursiveAsync", "deleteFolderRecursiveOperationCallable", "deleteFolderRecursiveCallable"]
+            },
+            "DeleteManagedFolder": {
+              "methods": ["deleteManagedFolder", "deleteManagedFolder", "deleteManagedFolder", "deleteManagedFolderCallable"]
+            },
+            "DisableAnywhereCache": {
+              "methods": ["disableAnywhereCache", "disableAnywhereCache", "disableAnywhereCache", "disableAnywhereCacheCallable"]
+            },
+            "GetAnywhereCache": {
+              "methods": ["getAnywhereCache", "getAnywhereCache", "getAnywhereCache", "getAnywhereCacheCallable"]
+            },
+            "GetFolder": {
+              "methods": ["getFolder", "getFolder", "getFolder", "getFolderCallable"]
+            },
+            "GetFolderIntelligenceConfig": {
+              "methods": ["getFolderIntelligenceConfig", "getFolderIntelligenceConfig", "getFolderIntelligenceConfig", "getFolderIntelligenceConfigCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetManagedFolder": {
+              "methods": ["getManagedFolder", "getManagedFolder", "getManagedFolder", "getManagedFolderCallable"]
+            },
+            "GetOrganizationIntelligenceConfig": {
+              "methods": ["getOrganizationIntelligenceConfig", "getOrganizationIntelligenceConfig", "getOrganizationIntelligenceConfig", "getOrganizationIntelligenceConfigCallable"]
+            },
+            "GetProjectIntelligenceConfig": {
+              "methods": ["getProjectIntelligenceConfig", "getProjectIntelligenceConfig", "getProjectIntelligenceConfig", "getProjectIntelligenceConfigCallable"]
+            },
+            "GetStorageLayout": {
+              "methods": ["getStorageLayout", "getStorageLayout", "getStorageLayout", "getStorageLayoutCallable"]
+            },
+            "ListAnywhereCaches": {
+              "methods": ["listAnywhereCaches", "listAnywhereCaches", "listAnywhereCaches", "listAnywhereCachesPagedCallable", "listAnywhereCachesCallable"]
+            },
+            "ListFolders": {
+              "methods": ["listFolders", "listFolders", "listFolders", "listFoldersPagedCallable", "listFoldersCallable"]
+            },
+            "ListManagedFolders": {
+              "methods": ["listManagedFolders", "listManagedFolders", "listManagedFolders", "listManagedFoldersPagedCallable", "listManagedFoldersCallable"]
+            },
+            "PauseAnywhereCache": {
+              "methods": ["pauseAnywhereCache", "pauseAnywhereCache", "pauseAnywhereCache", "pauseAnywhereCacheCallable"]
+            },
+            "RenameFolder": {
+              "methods": ["renameFolderAsync", "renameFolderAsync", "renameFolderAsync", "renameFolderOperationCallable", "renameFolderCallable"]
+            },
+            "ResumeAnywhereCache": {
+              "methods": ["resumeAnywhereCache", "resumeAnywhereCache", "resumeAnywhereCache", "resumeAnywhereCacheCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateAnywhereCache": {
+              "methods": ["updateAnywhereCacheAsync", "updateAnywhereCacheAsync", "updateAnywhereCacheOperationCallable", "updateAnywhereCacheCallable"]
+            },
+            "UpdateFolderIntelligenceConfig": {
+              "methods": ["updateFolderIntelligenceConfig", "updateFolderIntelligenceConfig", "updateFolderIntelligenceConfigCallable"]
+            },
+            "UpdateOrganizationIntelligenceConfig": {
+              "methods": ["updateOrganizationIntelligenceConfig", "updateOrganizationIntelligenceConfig", "updateOrganizationIntelligenceConfigCallable"]
+            },
+            "UpdateProjectIntelligenceConfig": {
+              "methods": ["updateProjectIntelligenceConfig", "updateProjectIntelligenceConfig", "updateProjectIntelligenceConfigCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
