@@ -3802,8 +3802,8 @@ public class CloudClientExecutor extends CloudExecutor {
 
   /** Define the Allowlist: ONLY allow specific, safe internal classes */
   private static final Set<String> ALLOWED_CLASSES = new HashSet<>(Arrays.asList(
-          "com.google.cloud.spanner.partitionOptions",
-          "com.google.cloud.spanner.partition",
+          "com.google.cloud.spanner.PartitionOptions",
+          "com.google.cloud.spanner.Partition",
           "com.google.cloud.spanner.BatchTransactionId",
           "java.util.ArrayList",
           "java.lang.Number",
@@ -3812,7 +3812,7 @@ public class CloudClientExecutor extends CloudExecutor {
   ));
 
   /** Unmarshall ByteString to serializable object. */
-  private <T extends Serializable> T unmarshall(ByteString input) throws Exception {
+  private <T extends Serializable> T unmarshall(ByteString input) throws IOException, ClassNotFoundException {
       try (InputStream is = input.newInput();
             ObjectInputStream ois = new SecureObjectInputStream(is)) {
           return (T) ois.readObject();
