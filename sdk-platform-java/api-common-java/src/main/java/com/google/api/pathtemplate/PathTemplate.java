@@ -309,7 +309,8 @@ public class PathTemplate {
         inBinding = false;
       } else if (seg.kind() == SegmentKind.LITERAL) {
         String value = seg.value();
-        if (value.matches("^v\\d+[a-zA-Z0-9]*$")) { // just in case
+        // Skipping version literals such as v1, v1beta1
+        if (value.matches("^v\\d+[a-zA-Z0-9]*$")) {
           continue;
         }
         if (inBinding) {
@@ -329,16 +330,17 @@ public class PathTemplate {
    * Returns the canonical resource name string. A canonical resource name is extracted from the
    * template by finding the version literal, then finding the last binding that is a
    * literal/binding pair or named binding, and then extracting the segments between the version
-   * literal and the last binding.
+   * literal and the last binding (inclusive). This is a heuristic method that should only be used
+   * for allowlisted services. There are also known gaps, such as the fact that it does not work
+   * properly for singleton resources.
    */
   // For example, projects/{project} is a literal/binding pair. {bar=projects/*/locations/*/bars/*}
   // is a named binding.
-  // If a template is /compute/v1/projects/{project}/locations/{location}, known resources are
-  // "projects" and "locations", the canonical resource name is
+  // If a template is /compute/v1/projects/{project}/locations/{location}, known resource literals
+  // are "projects" and "locations", the canonical resource name would be
   // projects/{project}/locations/{location}. See unit tests for all cases.
-  // Canonical resource names may be incorrect if the http template contains singleton resources.
-  public String getCanonicalResourceName(Set<String> knownResources) {
-    if (knownResources == null) {
+  public String getCanonicalResourceName(Set<String> knownResourceLiterals) {
+    if (knownResourceLiterals == null) {
       return "";
     }
 
@@ -390,7 +392,8 @@ public class PathTemplate {
             // Instead, we check if the literal segment immediately preceding it (e.g., "projects/")
             // is a known resource.
             Segment prevSeg = segments.get(bindingStartIndex - 1);
-            if (prevSeg.kind() == SegmentKind.LITERAL && knownResources.contains(prevSeg.value())) {
+            if (prevSeg.kind() == SegmentKind.LITERAL
+                && knownResourceLiterals.contains(prevSeg.value())) {
               isValidPair = true;
             }
           }
