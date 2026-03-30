@@ -36,8 +36,6 @@ import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanBuilder;
 import io.opentelemetry.api.trace.SpanKind;
 import io.opentelemetry.api.trace.Tracer;
-
-import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CancellationException;
@@ -136,7 +134,7 @@ public class SpanTracer implements ApiTracer {
 
   @Override
   public void attemptSucceeded() {
-		endAttempt(null);
+    endAttempt(null);
   }
 
   @Override
@@ -183,33 +181,33 @@ public class SpanTracer implements ApiTracer {
 
   @Override
   public void attemptCancelled() {
-		endAttempt(new CancellationException());
+    endAttempt(new CancellationException());
   }
 
   @Override
   public void attemptFailedDuration(Throwable error, java.time.Duration delay) {
-		endAttempt(error);
+    endAttempt(error);
   }
 
   @Override
   public void attemptFailedRetriesExhausted(Throwable error) {
-		endAttempt(error);
+    endAttempt(error);
   }
 
   @Override
   public void attemptPermanentFailure(Throwable error) {
-		endAttempt(error);
+    endAttempt(error);
   }
 
-	private void endAttempt(Throwable error) {
+  private void endAttempt(Throwable error) {
     if (attemptSpan != null) {
-			Map<String, Object> endAttributes = new HashMap<>();
-			ObservabilityUtils.populateStatusAttributes(
-					endAttributes, error, this.apiTracerContext.transport());
+      Map<String, Object> endAttributes = new HashMap<>();
+      ObservabilityUtils.populateStatusAttributes(
+          endAttributes, error, this.apiTracerContext.transport());
 
-			if (!endAttributes.isEmpty()) {
-				attemptSpan.setAllAttributes(ObservabilityUtils.toOtelAttributes(endAttributes));
-			}
+      if (!endAttributes.isEmpty()) {
+        attemptSpan.setAllAttributes(ObservabilityUtils.toOtelAttributes(endAttributes));
+      }
 
       attemptSpan.end();
       attemptSpan = null;

@@ -39,11 +39,6 @@ import javax.annotation.Nullable;
 
 class ObservabilityUtils {
 
-  /** Function to extract the status of the error as a string (defaults to gRPC canonical codes). */
-  static String extractStatus(@Nullable Throwable error) {
-    return (String) extractStatus(error, ApiTracerContext.Transport.GRPC);
-  }
-
   static Object extractStatus(@Nullable Throwable error, ApiTracerContext.Transport transport) {
     if (transport == ApiTracerContext.Transport.HTTP) {
       return extractHttpStatus(error);
@@ -70,12 +65,16 @@ class ObservabilityUtils {
       return 200L;
     } else if (error instanceof ApiException) {
       Object transportCode = ((ApiException) error).getStatusCode().getTransportCode();
+      // HttpJsonStatusCode.getTransportCode() returns an Integer (HTTP status code).
+      // GrpcStatusCode returns a Status.Code enum, and FakeStatusCode (in tests) returns
+      // a StatusCode.Code enum. If it's not an Integer, we fall back to the mapped
+      // HTTP status code of the canonical code.
       if (transportCode instanceof Integer) {
         return ((Integer) transportCode).longValue();
       } else {
         return (long) ((ApiException) error).getStatusCode().getCode().getHttpStatusCode();
       }
-    } 
+    }
     StatusCode.Code code = StatusCode.Code.UNKNOWN;
     if (error instanceof CancellationException) {
       code = StatusCode.Code.CANCELLED;
