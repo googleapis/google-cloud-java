@@ -127,7 +127,7 @@ public class ErrorTypeUtil {
     Throwable realError = unwrapError(error);
 
     // 2. Attempt to extract specific error type from the main exception
-    String specificError = extractSpecificErrorType(realError);
+    String specificError = extractKnownErrorType(realError);
     if (specificError != null) {
       return specificError;
     }
@@ -158,7 +158,7 @@ public class ErrorTypeUtil {
    * it cannot be specifically classified.
    */
   @Nullable
-  private static String extractSpecificErrorType(Throwable error) {
+  private static String extractKnownErrorType(Throwable error) {
     // 1. Extract error info reason
     if (error instanceof ApiException) {
       String reason = ((ApiException) error).getReason();
