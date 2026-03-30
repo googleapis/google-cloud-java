@@ -18,6 +18,7 @@ from synthtool.languages import java
 'This script is used to synthesize generated parts of this library.'
 import os
 
+# trivial change
 for library in s.get_staging_dirs():
     # put any special-case replacements here
     if os.path.exists('owl-bot-staging/v2/gapic-google-cloud-storage-v2/src/main/java/com/google/storage/v2/gapic_metadata.json'):
