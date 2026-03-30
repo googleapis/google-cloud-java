@@ -41,6 +41,22 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3_TraceBlock_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3_TraceBlock_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3_SpeechProcessingMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3_SpeechProcessingMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3_PlaybookTraceMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3_PlaybookTraceMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3_FlowTraceMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3_FlowTraceMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_cx_v3_PlaybookInput_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3_PlaybookInput_fieldAccessorTable;
@@ -89,79 +105,86 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n"
-          + ")google/cloud/dialogflow/cx/v3/trace.pr"
+      "\n)google/cloud/dialogflow/cx/v3/trace.pr"
           + "oto\022\035google.cloud.dialogflow.cx.v3\032\037goog"
           + "le/api/field_behavior.proto\032\031google/api/"
-          + "resource.proto\032\034google/protobuf/struct.proto\"<\n\r"
-          + "PlaybookInput\022+\n"
-          + "\036preceding_conversation_summary\030\001 \001(\tB\003\340A\001\"0\n"
-          + "\016PlaybookOutput\022\036\n"
-          + "\021execution_summary\030\001 \001(\tB\003\340A\001\"\273\004\n"
-          + "\006Action\022K\n"
-          + "\016user_utterance\030\001 \001(\0132,.google"
-          + ".cloud.dialogflow.cx.v3.UserUtteranceB\003\340A\001H\000\022M\n"
-          + "\017agent_utterance\030\002 \001(\0132-.google.c"
-          + "loud.dialogflow.cx.v3.AgentUtteranceB\003\340A\001H\000\022?\n"
-          + "\010tool_use\030\003"
-          + " \001(\0132&.google.cloud.dialogflow.cx.v3.ToolUseB\003\340A\001H\000\022U\n"
-          + "\023playbook_invocation\030\004"
-          + " \001(\01321.google.cloud.dialogflow.cx.v3.PlaybookInvocationB\003\340A\001H\000\022M\n"
-          + "\017flow_invocation\030\005"
-          + " \001(\0132-.google.cloud.dialogflow.cx.v3.FlowInvocationB\003\340A\001H\000\022U\n"
-          + "\023playbook_transition\030\014 \001(\01321.google.cloud.d"
-          + "ialogflow.cx.v3.PlaybookTransitionB\003\340A\001H\000\022M\n"
-          + "\017flow_transition\030\r"
-          + " \001(\0132-.google.cloud.dialogflow.cx.v3.FlowTransitionB\003\340A\001H\000B\010\n"
-          + "\006action\"\"\n\r"
-          + "UserUtterance\022\021\n"
-          + "\004text\030\001 \001(\tB\003\340A\002\"#\n"
-          + "\016AgentUtterance\022\021\n"
-          + "\004text\030\001 \001(\tB\003\340A\002\"\356\001\n"
-          + "\007ToolUse\0224\n"
-          + "\004tool\030\001 \001(\tB&\340A\002\372A \n"
-          + "\036dialogflow.googleapis.com/Tool\022\031\n"
-          + "\014display_name\030\010 \001(\tB\003\340A\003\022\023\n"
-          + "\006action\030\002 \001(\tB\003\340A\001\022=\n"
-          + "\027input_action_parameters\030\005"
-          + " \001(\0132\027.google.protobuf.StructB\003\340A\001\022>\n"
-          + "\030output_action_parameters\030\006"
-          + " \001(\0132\027.google.protobuf.StructB\003\340A\001\"\316\002\n"
-          + "\022PlaybookInvocation\022<\n"
-          + "\010playbook\030\001 \001(\tB*\340A\002\372A$\n"
-          + "\"dialogflow.googleapis.com/Playbook\022\031\n"
-          + "\014display_name\030\005 \001(\tB\003\340A\003\022I\n"
-          + "\016playbook_input\030\002"
-          + " \001(\0132,.google.cloud.dialogflow.cx.v3.PlaybookInputB\003\340A\001\022K\n"
-          + "\017playbook_output\030\003"
-          + " \001(\0132-.google.cloud.dialogflow.cx.v3.PlaybookOutputB\003\340A\001\022G\n"
-          + "\016playbook_state\030\004"
-          + " \001(\0162*.google.cloud.dialogflow.cx.v3.OutputStateB\003\340A\002\"\246\001\n"
-          + "\016FlowInvocation\0224\n"
-          + "\004flow\030\001 \001(\tB&\340A\002\372A \n"
-          + "\036dialogflow.googleapis.com/Flow\022\031\n"
-          + "\014display_name\030\007 \001(\tB\003\340A\003\022C\n\n"
-          + "flow_state\030\004"
-          + " \001(\0162*.google.cloud.dialogflow.cx.v3.OutputStateB\003\340A\002\"m\n"
-          + "\022PlaybookTransition\022<\n"
-          + "\010playbook\030\001 \001(\tB*\340A\002\372A$\n"
-          + "\"dialogflow.googleapis.com/Playbook\022\031\n"
-          + "\014display_name\030\003 \001(\tB\003\340A\003\"a\n"
-          + "\016FlowTransition\0224\n"
-          + "\004flow\030\001 \001(\tB&\340A\002\372A \n"
-          + "\036dialogflow.googleapis.com/Flow\022\031\n"
-          + "\014display_name\030\003 \001(\tB\003\340A\003*\253\001\n"
-          + "\013OutputState\022\034\n"
-          + "\030OUTPUT_STATE_UNSPECIFIED\020\000\022\023\n"
-          + "\017OUTPUT_STATE_OK\020\001\022\032\n"
-          + "\026OUTPUT_STATE_CANCELLED\020\002\022\027\n"
-          + "\023OUTPUT_STATE_FAILED\020\003\022\032\n"
-          + "\026OUTPUT_STATE_ESCALATED\020\004\022\030\n"
-          + "\024OUTPUT_STATE_PENDING\020\005B\255\001\n"
-          + "!com.google.cloud.dialogflow.cx.v3B\n"
-          + "TraceProtoP\001Z1cloud.google.com/go/dialogflow/cx/apiv3/cxpb;cxpb\242\002\002"
-          + "DF\252\002\035Google.Cloud.Dialogflow.Cx.V3\352\002!Goo"
-          + "gle::Cloud::Dialogflow::CX::V3b\006proto3"
+          + "resource.proto\032\034google/protobuf/struct.p"
+          + "roto\032\037google/protobuf/timestamp.proto\"\204\005"
+          + "\n\nTraceBlock\022W\n\027playbook_trace_metadata\030"
+          + "\001 \001(\01324.google.cloud.dialogflow.cx.v3.Pl"
+          + "aybookTraceMetadataH\000\022O\n\023flow_trace_meta"
+          + "data\030\002 \001(\01320.google.cloud.dialogflow.cx."
+          + "v3.FlowTraceMetadataH\000\022]\n\032speech_process"
+          + "ing_metadata\030\010 \001(\01327.google.cloud.dialog"
+          + "flow.cx.v3.SpeechProcessingMetadataH\000\0226\n"
+          + "\007actions\030\003 \003(\0132%.google.cloud.dialogflow"
+          + ".cx.v3.Action\0223\n\nstart_time\030\004 \001(\0132\032.goog"
+          + "le.protobuf.TimestampB\003\340A\003\0226\n\rcomplete_t"
+          + "ime\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340"
+          + "A\003\0226\n\020input_parameters\030\t \001(\0132\027.google.pr"
+          + "otobuf.StructB\003\340A\001\0227\n\021output_parameters\030"
+          + "\006 \001(\0132\027.google.protobuf.StructB\003\340A\001\022E\n\te"
+          + "nd_state\030\007 \001(\0162*.google.cloud.dialogflow"
+          + ".cx.v3.OutputStateB\006\340A\003\340A\001B\020\n\016trace_meta"
+          + "data\"5\n\030SpeechProcessingMetadata\022\031\n\014disp"
+          + "lay_name\030\001 \001(\tB\003\340A\003\"p\n\025PlaybookTraceMeta"
+          + "data\022<\n\010playbook\030\001 \001(\tB*\340A\002\372A$\n\"dialogfl"
+          + "ow.googleapis.com/Playbook\022\031\n\014display_na"
+          + "me\030\002 \001(\tB\003\340A\003\"d\n\021FlowTraceMetadata\0224\n\004fl"
+          + "ow\030\001 \001(\tB&\340A\002\372A \n\036dialogflow.googleapis."
+          + "com/Flow\022\031\n\014display_name\030\002 \001(\tB\003\340A\003\"<\n\rP"
+          + "laybookInput\022+\n\036preceding_conversation_s"
+          + "ummary\030\001 \001(\tB\003\340A\001\"0\n\016PlaybookOutput\022\036\n\021e"
+          + "xecution_summary\030\001 \001(\tB\003\340A\001\"\273\004\n\006Action\022K"
+          + "\n\016user_utterance\030\001 \001(\0132,.google.cloud.di"
+          + "alogflow.cx.v3.UserUtteranceB\003\340A\001H\000\022M\n\017a"
+          + "gent_utterance\030\002 \001(\0132-.google.cloud.dial"
+          + "ogflow.cx.v3.AgentUtteranceB\003\340A\001H\000\022?\n\010to"
+          + "ol_use\030\003 \001(\0132&.google.cloud.dialogflow.c"
+          + "x.v3.ToolUseB\003\340A\001H\000\022U\n\023playbook_invocati"
+          + "on\030\004 \001(\01321.google.cloud.dialogflow.cx.v3"
+          + ".PlaybookInvocationB\003\340A\001H\000\022M\n\017flow_invoc"
+          + "ation\030\005 \001(\0132-.google.cloud.dialogflow.cx"
+          + ".v3.FlowInvocationB\003\340A\001H\000\022U\n\023playbook_tr"
+          + "ansition\030\014 \001(\01321.google.cloud.dialogflow"
+          + ".cx.v3.PlaybookTransitionB\003\340A\001H\000\022M\n\017flow"
+          + "_transition\030\r \001(\0132-.google.cloud.dialogf"
+          + "low.cx.v3.FlowTransitionB\003\340A\001H\000B\010\n\006actio"
+          + "n\"\"\n\rUserUtterance\022\021\n\004text\030\001 \001(\tB\003\340A\002\"#\n"
+          + "\016AgentUtterance\022\021\n\004text\030\001 \001(\tB\003\340A\002\"\356\001\n\007T"
+          + "oolUse\0224\n\004tool\030\001 \001(\tB&\340A\002\372A \n\036dialogflow"
+          + ".googleapis.com/Tool\022\031\n\014display_name\030\010 \001"
+          + "(\tB\003\340A\003\022\023\n\006action\030\002 \001(\tB\003\340A\001\022=\n\027input_ac"
+          + "tion_parameters\030\005 \001(\0132\027.google.protobuf."
+          + "StructB\003\340A\001\022>\n\030output_action_parameters\030"
+          + "\006 \001(\0132\027.google.protobuf.StructB\003\340A\001\"\316\002\n\022"
+          + "PlaybookInvocation\022<\n\010playbook\030\001 \001(\tB*\340A"
+          + "\002\372A$\n\"dialogflow.googleapis.com/Playbook"
+          + "\022\031\n\014display_name\030\005 \001(\tB\003\340A\003\022I\n\016playbook_"
+          + "input\030\002 \001(\0132,.google.cloud.dialogflow.cx"
+          + ".v3.PlaybookInputB\003\340A\001\022K\n\017playbook_outpu"
+          + "t\030\003 \001(\0132-.google.cloud.dialogflow.cx.v3."
+          + "PlaybookOutputB\003\340A\001\022G\n\016playbook_state\030\004 "
+          + "\001(\0162*.google.cloud.dialogflow.cx.v3.Outp"
+          + "utStateB\003\340A\002\"\246\001\n\016FlowInvocation\0224\n\004flow\030"
+          + "\001 \001(\tB&\340A\002\372A \n\036dialogflow.googleapis.com"
+          + "/Flow\022\031\n\014display_name\030\007 \001(\tB\003\340A\003\022C\n\nflow"
+          + "_state\030\004 \001(\0162*.google.cloud.dialogflow.c"
+          + "x.v3.OutputStateB\003\340A\002\"m\n\022PlaybookTransit"
+          + "ion\022<\n\010playbook\030\001 \001(\tB*\340A\002\372A$\n\"dialogflo"
+          + "w.googleapis.com/Playbook\022\031\n\014display_nam"
+          + "e\030\003 \001(\tB\003\340A\003\"a\n\016FlowTransition\0224\n\004flow\030\001"
+          + " \001(\tB&\340A\002\372A \n\036dialogflow.googleapis.com/"
+          + "Flow\022\031\n\014display_name\030\003 \001(\tB\003\340A\003*\253\001\n\013Outp"
+          + "utState\022\034\n\030OUTPUT_STATE_UNSPECIFIED\020\000\022\023\n"
+          + "\017OUTPUT_STATE_OK\020\001\022\032\n\026OUTPUT_STATE_CANCE"
+          + "LLED\020\002\022\027\n\023OUTPUT_STATE_FAILED\020\003\022\032\n\026OUTPU"
+          + "T_STATE_ESCALATED\020\004\022\030\n\024OUTPUT_STATE_PEND"
+          + "ING\020\005B\255\001\n!com.google.cloud.dialogflow.cx"
+          + ".v3B\nTraceProtoP\001Z1cloud.google.com/go/d"
+          + "ialogflow/cx/apiv3/cxpb;cxpb\242\002\002DF\252\002\035Goog"
+          + "le.Cloud.Dialogflow.Cx.V3\352\002!Google::Clou"
+          + "d::Dialogflow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -170,9 +193,51 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+            });
+    internal_static_google_cloud_dialogflow_cx_v3_TraceBlock_descriptor =
+        getDescriptor().getMessageType(0);
+    internal_static_google_cloud_dialogflow_cx_v3_TraceBlock_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3_TraceBlock_descriptor,
+            new java.lang.String[] {
+              "PlaybookTraceMetadata",
+              "FlowTraceMetadata",
+              "SpeechProcessingMetadata",
+              "Actions",
+              "StartTime",
+              "CompleteTime",
+              "InputParameters",
+              "OutputParameters",
+              "EndState",
+              "TraceMetadata",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3_SpeechProcessingMetadata_descriptor =
+        getDescriptor().getMessageType(1);
+    internal_static_google_cloud_dialogflow_cx_v3_SpeechProcessingMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3_SpeechProcessingMetadata_descriptor,
+            new java.lang.String[] {
+              "DisplayName",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3_PlaybookTraceMetadata_descriptor =
+        getDescriptor().getMessageType(2);
+    internal_static_google_cloud_dialogflow_cx_v3_PlaybookTraceMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3_PlaybookTraceMetadata_descriptor,
+            new java.lang.String[] {
+              "Playbook", "DisplayName",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3_FlowTraceMetadata_descriptor =
+        getDescriptor().getMessageType(3);
+    internal_static_google_cloud_dialogflow_cx_v3_FlowTraceMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3_FlowTraceMetadata_descriptor,
+            new java.lang.String[] {
+              "Flow", "DisplayName",
             });
     internal_static_google_cloud_dialogflow_cx_v3_PlaybookInput_descriptor =
-        getDescriptor().getMessageType(0);
+        getDescriptor().getMessageType(4);
     internal_static_google_cloud_dialogflow_cx_v3_PlaybookInput_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3_PlaybookInput_descriptor,
@@ -180,7 +245,7 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
               "PrecedingConversationSummary",
             });
     internal_static_google_cloud_dialogflow_cx_v3_PlaybookOutput_descriptor =
-        getDescriptor().getMessageType(1);
+        getDescriptor().getMessageType(5);
     internal_static_google_cloud_dialogflow_cx_v3_PlaybookOutput_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3_PlaybookOutput_descriptor,
@@ -188,7 +253,7 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
               "ExecutionSummary",
             });
     internal_static_google_cloud_dialogflow_cx_v3_Action_descriptor =
-        getDescriptor().getMessageType(2);
+        getDescriptor().getMessageType(6);
     internal_static_google_cloud_dialogflow_cx_v3_Action_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3_Action_descriptor,
@@ -203,7 +268,7 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
               "Action",
             });
     internal_static_google_cloud_dialogflow_cx_v3_UserUtterance_descriptor =
-        getDescriptor().getMessageType(3);
+        getDescriptor().getMessageType(7);
     internal_static_google_cloud_dialogflow_cx_v3_UserUtterance_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3_UserUtterance_descriptor,
@@ -211,7 +276,7 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
               "Text",
             });
     internal_static_google_cloud_dialogflow_cx_v3_AgentUtterance_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(8);
     internal_static_google_cloud_dialogflow_cx_v3_AgentUtterance_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3_AgentUtterance_descriptor,
@@ -219,7 +284,7 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
               "Text",
             });
     internal_static_google_cloud_dialogflow_cx_v3_ToolUse_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(9);
     internal_static_google_cloud_dialogflow_cx_v3_ToolUse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3_ToolUse_descriptor,
@@ -227,7 +292,7 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
               "Tool", "DisplayName", "Action", "InputActionParameters", "OutputActionParameters",
             });
     internal_static_google_cloud_dialogflow_cx_v3_PlaybookInvocation_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(10);
     internal_static_google_cloud_dialogflow_cx_v3_PlaybookInvocation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3_PlaybookInvocation_descriptor,
@@ -235,7 +300,7 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
               "Playbook", "DisplayName", "PlaybookInput", "PlaybookOutput", "PlaybookState",
             });
     internal_static_google_cloud_dialogflow_cx_v3_FlowInvocation_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(11);
     internal_static_google_cloud_dialogflow_cx_v3_FlowInvocation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3_FlowInvocation_descriptor,
@@ -243,7 +308,7 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
               "Flow", "DisplayName", "FlowState",
             });
     internal_static_google_cloud_dialogflow_cx_v3_PlaybookTransition_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(12);
     internal_static_google_cloud_dialogflow_cx_v3_PlaybookTransition_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3_PlaybookTransition_descriptor,
@@ -251,7 +316,7 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
               "Playbook", "DisplayName",
             });
     internal_static_google_cloud_dialogflow_cx_v3_FlowTransition_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(13);
     internal_static_google_cloud_dialogflow_cx_v3_FlowTransition_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3_FlowTransition_descriptor,
@@ -262,6 +327,7 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);

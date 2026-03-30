@@ -55,6 +55,7 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
     workspace_ = "";
     path_ = "";
     pageToken_ = "";
+    view_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -268,6 +269,55 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
     }
   }
 
+  public static final int VIEW_FIELD_NUMBER = 5;
+  private int view_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the metadata to return for each directory entry.
+   * If unspecified, the default is `DIRECTORY_CONTENTS_VIEW_BASIC`.
+   * Currently the `DIRECTORY_CONTENTS_VIEW_METADATA` view is not supported by
+   * CMEK-protected workspaces.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1.DirectoryContentsView view = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for view.
+   */
+  @java.lang.Override
+  public int getViewValue() {
+    return view_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the metadata to return for each directory entry.
+   * If unspecified, the default is `DIRECTORY_CONTENTS_VIEW_BASIC`.
+   * Currently the `DIRECTORY_CONTENTS_VIEW_METADATA` view is not supported by
+   * CMEK-protected workspaces.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1.DirectoryContentsView view = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The view.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1.DirectoryContentsView getView() {
+    com.google.cloud.dataform.v1.DirectoryContentsView result =
+        com.google.cloud.dataform.v1.DirectoryContentsView.forNumber(view_);
+    return result == null
+        ? com.google.cloud.dataform.v1.DirectoryContentsView.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -294,6 +344,11 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 4, pageToken_);
     }
+    if (view_
+        != com.google.cloud.dataform.v1.DirectoryContentsView.DIRECTORY_CONTENTS_VIEW_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(5, view_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -315,6 +370,11 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(4, pageToken_);
     }
+    if (view_
+        != com.google.cloud.dataform.v1.DirectoryContentsView.DIRECTORY_CONTENTS_VIEW_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, view_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -335,6 +395,7 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
     if (!getPath().equals(other.getPath())) return false;
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
+    if (view_ != other.view_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -354,6 +415,8 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
+    hash = (37 * hash) + VIEW_FIELD_NUMBER;
+    hash = (53 * hash) + view_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -499,6 +562,7 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
       path_ = "";
       pageSize_ = 0;
       pageToken_ = "";
+      view_ = 0;
       return this;
     }
 
@@ -547,6 +611,9 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.pageToken_ = pageToken_;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.view_ = view_;
+      }
     }
 
     @java.lang.Override
@@ -579,6 +646,9 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
         pageToken_ = other.pageToken_;
         bitField0_ |= 0x00000008;
         onChanged();
+      }
+      if (other.view_ != 0) {
+        setViewValue(other.getViewValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -630,6 +700,12 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 40:
+              {
+                view_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1080,6 +1156,128 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
       checkByteStringIsUtf8(value);
       pageToken_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private int view_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the metadata to return for each directory entry.
+     * If unspecified, the default is `DIRECTORY_CONTENTS_VIEW_BASIC`.
+     * Currently the `DIRECTORY_CONTENTS_VIEW_METADATA` view is not supported by
+     * CMEK-protected workspaces.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1.DirectoryContentsView view = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for view.
+     */
+    @java.lang.Override
+    public int getViewValue() {
+      return view_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the metadata to return for each directory entry.
+     * If unspecified, the default is `DIRECTORY_CONTENTS_VIEW_BASIC`.
+     * Currently the `DIRECTORY_CONTENTS_VIEW_METADATA` view is not supported by
+     * CMEK-protected workspaces.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1.DirectoryContentsView view = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for view to set.
+     * @return This builder for chaining.
+     */
+    public Builder setViewValue(int value) {
+      view_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the metadata to return for each directory entry.
+     * If unspecified, the default is `DIRECTORY_CONTENTS_VIEW_BASIC`.
+     * Currently the `DIRECTORY_CONTENTS_VIEW_METADATA` view is not supported by
+     * CMEK-protected workspaces.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1.DirectoryContentsView view = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The view.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataform.v1.DirectoryContentsView getView() {
+      com.google.cloud.dataform.v1.DirectoryContentsView result =
+          com.google.cloud.dataform.v1.DirectoryContentsView.forNumber(view_);
+      return result == null
+          ? com.google.cloud.dataform.v1.DirectoryContentsView.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the metadata to return for each directory entry.
+     * If unspecified, the default is `DIRECTORY_CONTENTS_VIEW_BASIC`.
+     * Currently the `DIRECTORY_CONTENTS_VIEW_METADATA` view is not supported by
+     * CMEK-protected workspaces.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1.DirectoryContentsView view = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The view to set.
+     * @return This builder for chaining.
+     */
+    public Builder setView(com.google.cloud.dataform.v1.DirectoryContentsView value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      view_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the metadata to return for each directory entry.
+     * If unspecified, the default is `DIRECTORY_CONTENTS_VIEW_BASIC`.
+     * Currently the `DIRECTORY_CONTENTS_VIEW_METADATA` view is not supported by
+     * CMEK-protected workspaces.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1.DirectoryContentsView view = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearView() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      view_ = 0;
       onChanged();
       return this;
     }

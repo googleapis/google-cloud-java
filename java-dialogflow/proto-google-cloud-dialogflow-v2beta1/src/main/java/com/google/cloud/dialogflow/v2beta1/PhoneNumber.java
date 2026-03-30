@@ -245,6 +245,1197 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2beta1.PhoneNumber.LifecycleState)
   }
 
+  public interface AllowedSipTrunksOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * List of SIP trunks that are allowed to make calls to this phone number.
+     * If empty, any SIP trunk is allowed.
+     * </pre>
+     *
+     * <code>repeated string sip_trunks = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return A list containing the sipTrunks.
+     */
+    java.util.List<java.lang.String> getSipTrunksList();
+
+    /**
+     *
+     *
+     * <pre>
+     * List of SIP trunks that are allowed to make calls to this phone number.
+     * If empty, any SIP trunk is allowed.
+     * </pre>
+     *
+     * <code>repeated string sip_trunks = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The count of sipTrunks.
+     */
+    int getSipTrunksCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * List of SIP trunks that are allowed to make calls to this phone number.
+     * If empty, any SIP trunk is allowed.
+     * </pre>
+     *
+     * <code>repeated string sip_trunks = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param index The index of the element to return.
+     * @return The sipTrunks at the given index.
+     */
+    java.lang.String getSipTrunks(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * List of SIP trunks that are allowed to make calls to this phone number.
+     * If empty, any SIP trunk is allowed.
+     * </pre>
+     *
+     * <code>repeated string sip_trunks = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the sipTrunks at the given index.
+     */
+    com.google.protobuf.ByteString getSipTrunksBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of GTP carrier IDs allowed to make calls to this phone
+     * number. Used for private interconnects where standard SIP trunks aren't
+     * applicable.
+     * </pre>
+     *
+     * <code>repeated string carrier_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the carrierIds.
+     */
+    java.util.List<java.lang.String> getCarrierIdsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of GTP carrier IDs allowed to make calls to this phone
+     * number. Used for private interconnects where standard SIP trunks aren't
+     * applicable.
+     * </pre>
+     *
+     * <code>repeated string carrier_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of carrierIds.
+     */
+    int getCarrierIdsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of GTP carrier IDs allowed to make calls to this phone
+     * number. Used for private interconnects where standard SIP trunks aren't
+     * applicable.
+     * </pre>
+     *
+     * <code>repeated string carrier_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The carrierIds at the given index.
+     */
+    java.lang.String getCarrierIds(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of GTP carrier IDs allowed to make calls to this phone
+     * number. Used for private interconnects where standard SIP trunks aren't
+     * applicable.
+     * </pre>
+     *
+     * <code>repeated string carrier_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the carrierIds at the given index.
+     */
+    com.google.protobuf.ByteString getCarrierIdsBytes(int index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * List of SIP trunks that are allowed to make calls to this phone number.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks}
+   */
+  public static final class AllowedSipTrunks extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks)
+      AllowedSipTrunksOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "AllowedSipTrunks");
+    }
+
+    // Use AllowedSipTrunks.newBuilder() to construct.
+    private AllowedSipTrunks(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AllowedSipTrunks() {
+      sipTrunks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      carrierIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2beta1.PhoneNumberProto
+          .internal_static_google_cloud_dialogflow_v2beta1_PhoneNumber_AllowedSipTrunks_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.v2beta1.PhoneNumberProto
+          .internal_static_google_cloud_dialogflow_v2beta1_PhoneNumber_AllowedSipTrunks_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks.class,
+              com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks.Builder.class);
+    }
+
+    public static final int SIP_TRUNKS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList sipTrunks_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    /**
+     *
+     *
+     * <pre>
+     * List of SIP trunks that are allowed to make calls to this phone number.
+     * If empty, any SIP trunk is allowed.
+     * </pre>
+     *
+     * <code>repeated string sip_trunks = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return A list containing the sipTrunks.
+     */
+    public com.google.protobuf.ProtocolStringList getSipTrunksList() {
+      return sipTrunks_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of SIP trunks that are allowed to make calls to this phone number.
+     * If empty, any SIP trunk is allowed.
+     * </pre>
+     *
+     * <code>repeated string sip_trunks = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The count of sipTrunks.
+     */
+    public int getSipTrunksCount() {
+      return sipTrunks_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of SIP trunks that are allowed to make calls to this phone number.
+     * If empty, any SIP trunk is allowed.
+     * </pre>
+     *
+     * <code>repeated string sip_trunks = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param index The index of the element to return.
+     * @return The sipTrunks at the given index.
+     */
+    public java.lang.String getSipTrunks(int index) {
+      return sipTrunks_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of SIP trunks that are allowed to make calls to this phone number.
+     * If empty, any SIP trunk is allowed.
+     * </pre>
+     *
+     * <code>repeated string sip_trunks = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the sipTrunks at the given index.
+     */
+    public com.google.protobuf.ByteString getSipTrunksBytes(int index) {
+      return sipTrunks_.getByteString(index);
+    }
+
+    public static final int CARRIER_IDS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList carrierIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of GTP carrier IDs allowed to make calls to this phone
+     * number. Used for private interconnects where standard SIP trunks aren't
+     * applicable.
+     * </pre>
+     *
+     * <code>repeated string carrier_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the carrierIds.
+     */
+    public com.google.protobuf.ProtocolStringList getCarrierIdsList() {
+      return carrierIds_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of GTP carrier IDs allowed to make calls to this phone
+     * number. Used for private interconnects where standard SIP trunks aren't
+     * applicable.
+     * </pre>
+     *
+     * <code>repeated string carrier_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of carrierIds.
+     */
+    public int getCarrierIdsCount() {
+      return carrierIds_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of GTP carrier IDs allowed to make calls to this phone
+     * number. Used for private interconnects where standard SIP trunks aren't
+     * applicable.
+     * </pre>
+     *
+     * <code>repeated string carrier_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The carrierIds at the given index.
+     */
+    public java.lang.String getCarrierIds(int index) {
+      return carrierIds_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of GTP carrier IDs allowed to make calls to this phone
+     * number. Used for private interconnects where standard SIP trunks aren't
+     * applicable.
+     * </pre>
+     *
+     * <code>repeated string carrier_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the carrierIds at the given index.
+     */
+    public com.google.protobuf.ByteString getCarrierIdsBytes(int index) {
+      return carrierIds_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < sipTrunks_.size(); i++) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, sipTrunks_.getRaw(i));
+      }
+      for (int i = 0; i < carrierIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, carrierIds_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < sipTrunks_.size(); i++) {
+          dataSize += computeStringSizeNoTag(sipTrunks_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getSipTrunksList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < carrierIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(carrierIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getCarrierIdsList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks other =
+          (com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks) obj;
+
+      if (!getSipTrunksList().equals(other.getSipTrunksList())) return false;
+      if (!getCarrierIdsList().equals(other.getCarrierIdsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getSipTrunksCount() > 0) {
+        hash = (37 * hash) + SIP_TRUNKS_FIELD_NUMBER;
+        hash = (53 * hash) + getSipTrunksList().hashCode();
+      }
+      if (getCarrierIdsCount() > 0) {
+        hash = (37 * hash) + CARRIER_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getCarrierIdsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of SIP trunks that are allowed to make calls to this phone number.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks)
+        com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunksOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2beta1.PhoneNumberProto
+            .internal_static_google_cloud_dialogflow_v2beta1_PhoneNumber_AllowedSipTrunks_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2beta1.PhoneNumberProto
+            .internal_static_google_cloud_dialogflow_v2beta1_PhoneNumber_AllowedSipTrunks_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks.class,
+                com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        sipTrunks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        carrierIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.v2beta1.PhoneNumberProto
+            .internal_static_google_cloud_dialogflow_v2beta1_PhoneNumber_AllowedSipTrunks_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks build() {
+        com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks buildPartial() {
+        com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks result =
+            new com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          sipTrunks_.makeImmutable();
+          result.sipTrunks_ = sipTrunks_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          carrierIds_.makeImmutable();
+          result.carrierIds_ = carrierIds_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks other) {
+        if (other
+            == com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks
+                .getDefaultInstance()) return this;
+        if (!other.sipTrunks_.isEmpty()) {
+          if (sipTrunks_.isEmpty()) {
+            sipTrunks_ = other.sipTrunks_;
+            bitField0_ |= 0x00000001;
+          } else {
+            ensureSipTrunksIsMutable();
+            sipTrunks_.addAll(other.sipTrunks_);
+          }
+          onChanged();
+        }
+        if (!other.carrierIds_.isEmpty()) {
+          if (carrierIds_.isEmpty()) {
+            carrierIds_ = other.carrierIds_;
+            bitField0_ |= 0x00000002;
+          } else {
+            ensureCarrierIdsIsMutable();
+            carrierIds_.addAll(other.carrierIds_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureSipTrunksIsMutable();
+                  sipTrunks_.add(s);
+                  break;
+                } // case 10
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureCarrierIdsIsMutable();
+                  carrierIds_.add(s);
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringArrayList sipTrunks_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureSipTrunksIsMutable() {
+        if (!sipTrunks_.isModifiable()) {
+          sipTrunks_ = new com.google.protobuf.LazyStringArrayList(sipTrunks_);
+        }
+        bitField0_ |= 0x00000001;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of SIP trunks that are allowed to make calls to this phone number.
+       * If empty, any SIP trunk is allowed.
+       * </pre>
+       *
+       * <code>repeated string sip_trunks = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return A list containing the sipTrunks.
+       */
+      public com.google.protobuf.ProtocolStringList getSipTrunksList() {
+        sipTrunks_.makeImmutable();
+        return sipTrunks_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of SIP trunks that are allowed to make calls to this phone number.
+       * If empty, any SIP trunk is allowed.
+       * </pre>
+       *
+       * <code>repeated string sip_trunks = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The count of sipTrunks.
+       */
+      public int getSipTrunksCount() {
+        return sipTrunks_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of SIP trunks that are allowed to make calls to this phone number.
+       * If empty, any SIP trunk is allowed.
+       * </pre>
+       *
+       * <code>repeated string sip_trunks = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param index The index of the element to return.
+       * @return The sipTrunks at the given index.
+       */
+      public java.lang.String getSipTrunks(int index) {
+        return sipTrunks_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of SIP trunks that are allowed to make calls to this phone number.
+       * If empty, any SIP trunk is allowed.
+       * </pre>
+       *
+       * <code>repeated string sip_trunks = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the sipTrunks at the given index.
+       */
+      public com.google.protobuf.ByteString getSipTrunksBytes(int index) {
+        return sipTrunks_.getByteString(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of SIP trunks that are allowed to make calls to this phone number.
+       * If empty, any SIP trunk is allowed.
+       * </pre>
+       *
+       * <code>repeated string sip_trunks = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The sipTrunks to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSipTrunks(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSipTrunksIsMutable();
+        sipTrunks_.set(index, value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of SIP trunks that are allowed to make calls to this phone number.
+       * If empty, any SIP trunk is allowed.
+       * </pre>
+       *
+       * <code>repeated string sip_trunks = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param value The sipTrunks to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSipTrunks(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSipTrunksIsMutable();
+        sipTrunks_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of SIP trunks that are allowed to make calls to this phone number.
+       * If empty, any SIP trunk is allowed.
+       * </pre>
+       *
+       * <code>repeated string sip_trunks = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param values The sipTrunks to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllSipTrunks(java.lang.Iterable<java.lang.String> values) {
+        ensureSipTrunksIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sipTrunks_);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of SIP trunks that are allowed to make calls to this phone number.
+       * If empty, any SIP trunk is allowed.
+       * </pre>
+       *
+       * <code>repeated string sip_trunks = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSipTrunks() {
+        sipTrunks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        ;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of SIP trunks that are allowed to make calls to this phone number.
+       * If empty, any SIP trunk is allowed.
+       * </pre>
+       *
+       * <code>repeated string sip_trunks = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param value The bytes of the sipTrunks to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSipTrunksBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureSipTrunksIsMutable();
+        sipTrunks_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList carrierIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureCarrierIdsIsMutable() {
+        if (!carrierIds_.isModifiable()) {
+          carrierIds_ = new com.google.protobuf.LazyStringArrayList(carrierIds_);
+        }
+        bitField0_ |= 0x00000002;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of GTP carrier IDs allowed to make calls to this phone
+       * number. Used for private interconnects where standard SIP trunks aren't
+       * applicable.
+       * </pre>
+       *
+       * <code>repeated string carrier_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the carrierIds.
+       */
+      public com.google.protobuf.ProtocolStringList getCarrierIdsList() {
+        carrierIds_.makeImmutable();
+        return carrierIds_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of GTP carrier IDs allowed to make calls to this phone
+       * number. Used for private interconnects where standard SIP trunks aren't
+       * applicable.
+       * </pre>
+       *
+       * <code>repeated string carrier_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of carrierIds.
+       */
+      public int getCarrierIdsCount() {
+        return carrierIds_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of GTP carrier IDs allowed to make calls to this phone
+       * number. Used for private interconnects where standard SIP trunks aren't
+       * applicable.
+       * </pre>
+       *
+       * <code>repeated string carrier_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The carrierIds at the given index.
+       */
+      public java.lang.String getCarrierIds(int index) {
+        return carrierIds_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of GTP carrier IDs allowed to make calls to this phone
+       * number. Used for private interconnects where standard SIP trunks aren't
+       * applicable.
+       * </pre>
+       *
+       * <code>repeated string carrier_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the carrierIds at the given index.
+       */
+      public com.google.protobuf.ByteString getCarrierIdsBytes(int index) {
+        return carrierIds_.getByteString(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of GTP carrier IDs allowed to make calls to this phone
+       * number. Used for private interconnects where standard SIP trunks aren't
+       * applicable.
+       * </pre>
+       *
+       * <code>repeated string carrier_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The carrierIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCarrierIds(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCarrierIdsIsMutable();
+        carrierIds_.set(index, value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of GTP carrier IDs allowed to make calls to this phone
+       * number. Used for private interconnects where standard SIP trunks aren't
+       * applicable.
+       * </pre>
+       *
+       * <code>repeated string carrier_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The carrierIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addCarrierIds(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCarrierIdsIsMutable();
+        carrierIds_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of GTP carrier IDs allowed to make calls to this phone
+       * number. Used for private interconnects where standard SIP trunks aren't
+       * applicable.
+       * </pre>
+       *
+       * <code>repeated string carrier_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param values The carrierIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllCarrierIds(java.lang.Iterable<java.lang.String> values) {
+        ensureCarrierIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, carrierIds_);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of GTP carrier IDs allowed to make calls to this phone
+       * number. Used for private interconnects where standard SIP trunks aren't
+       * applicable.
+       * </pre>
+       *
+       * <code>repeated string carrier_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCarrierIds() {
+        carrierIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        ;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of GTP carrier IDs allowed to make calls to this phone
+       * number. Used for private interconnects where standard SIP trunks aren't
+       * applicable.
+       * </pre>
+       *
+       * <code>repeated string carrier_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes of the carrierIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addCarrierIdsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureCarrierIdsIsMutable();
+        carrierIds_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks)
+    private static final com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks();
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AllowedSipTrunks> PARSER =
+        new com.google.protobuf.AbstractParser<AllowedSipTrunks>() {
+          @java.lang.Override
+          public AllowedSipTrunks parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AllowedSipTrunks> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AllowedSipTrunks> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
+  private int inboundRestrictionCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object inboundRestriction_;
+
+  public enum InboundRestrictionCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    ALLOWED_SIP_TRUNKS(7),
+    INBOUNDRESTRICTION_NOT_SET(0);
+    private final int value;
+
+    private InboundRestrictionCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static InboundRestrictionCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static InboundRestrictionCase forNumber(int value) {
+      switch (value) {
+        case 7:
+          return ALLOWED_SIP_TRUNKS;
+        case 0:
+          return INBOUNDRESTRICTION_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public InboundRestrictionCase getInboundRestrictionCase() {
+    return InboundRestrictionCase.forNumber(inboundRestrictionCase_);
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -475,6 +1666,119 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
         : result;
   }
 
+  public static final int ALLOWED_SIP_TRUNKS_FIELD_NUMBER = 7;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only allow calls from the specified SIP trunks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks allowed_sip_trunks = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the allowedSipTrunks field is set.
+   */
+  @java.lang.Override
+  public boolean hasAllowedSipTrunks() {
+    return inboundRestrictionCase_ == 7;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only allow calls from the specified SIP trunks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks allowed_sip_trunks = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The allowedSipTrunks.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks getAllowedSipTrunks() {
+    if (inboundRestrictionCase_ == 7) {
+      return (com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks) inboundRestriction_;
+    }
+    return com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only allow calls from the specified SIP trunks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks allowed_sip_trunks = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunksOrBuilder
+      getAllowedSipTrunksOrBuilder() {
+    if (inboundRestrictionCase_ == 7) {
+      return (com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks) inboundRestriction_;
+    }
+    return com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks.getDefaultInstance();
+  }
+
+  public static final int PURGE_TIME_FIELD_NUMBER = 8;
+  private com.google.protobuf.Timestamp purgeTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time at which this resource will be purged.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp purge_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the purgeTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasPurgeTime() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time at which this resource will be purged.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp purge_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The purgeTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getPurgeTime() {
+    return purgeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : purgeTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time at which this resource will be purged.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp purge_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getPurgeTimeOrBuilder() {
+    return purgeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : purgeTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -504,6 +1808,14 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       output.writeEnum(4, lifecycleState_);
     }
+    if (inboundRestrictionCase_ == 7) {
+      output.writeMessage(
+          7,
+          (com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks) inboundRestriction_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(8, getPurgeTime());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -528,6 +1840,16 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, lifecycleState_);
     }
+    if (inboundRestrictionCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7,
+              (com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks)
+                  inboundRestriction_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getPurgeTime());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -548,6 +1870,18 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
     if (!getPhoneNumber().equals(other.getPhoneNumber())) return false;
     if (!getConversationProfile().equals(other.getConversationProfile())) return false;
     if (lifecycleState_ != other.lifecycleState_) return false;
+    if (hasPurgeTime() != other.hasPurgeTime()) return false;
+    if (hasPurgeTime()) {
+      if (!getPurgeTime().equals(other.getPurgeTime())) return false;
+    }
+    if (!getInboundRestrictionCase().equals(other.getInboundRestrictionCase())) return false;
+    switch (inboundRestrictionCase_) {
+      case 7:
+        if (!getAllowedSipTrunks().equals(other.getAllowedSipTrunks())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -567,6 +1901,18 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getConversationProfile().hashCode();
     hash = (37 * hash) + LIFECYCLE_STATE_FIELD_NUMBER;
     hash = (53 * hash) + lifecycleState_;
+    if (hasPurgeTime()) {
+      hash = (37 * hash) + PURGE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getPurgeTime().hashCode();
+    }
+    switch (inboundRestrictionCase_) {
+      case 7:
+        hash = (37 * hash) + ALLOWED_SIP_TRUNKS_FIELD_NUMBER;
+        hash = (53 * hash) + getAllowedSipTrunks().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -700,10 +2046,19 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.dialogflow.v2beta1.PhoneNumber.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetPurgeTimeFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -714,6 +2069,16 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
       phoneNumber_ = "";
       conversationProfile_ = "";
       lifecycleState_ = 0;
+      if (allowedSipTrunksBuilder_ != null) {
+        allowedSipTrunksBuilder_.clear();
+      }
+      purgeTime_ = null;
+      if (purgeTimeBuilder_ != null) {
+        purgeTimeBuilder_.dispose();
+        purgeTimeBuilder_ = null;
+      }
+      inboundRestrictionCase_ = 0;
+      inboundRestriction_ = null;
       return this;
     }
 
@@ -744,6 +2109,7 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -761,6 +2127,20 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.lifecycleState_ = lifecycleState_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.purgeTime_ = purgeTimeBuilder_ == null ? purgeTime_ : purgeTimeBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dialogflow.v2beta1.PhoneNumber result) {
+      result.inboundRestrictionCase_ = inboundRestrictionCase_;
+      result.inboundRestriction_ = this.inboundRestriction_;
+      if (inboundRestrictionCase_ == 7 && allowedSipTrunksBuilder_ != null) {
+        result.inboundRestriction_ = allowedSipTrunksBuilder_.build();
       }
     }
 
@@ -794,6 +2174,20 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
       }
       if (other.lifecycleState_ != 0) {
         setLifecycleStateValue(other.getLifecycleStateValue());
+      }
+      if (other.hasPurgeTime()) {
+        mergePurgeTime(other.getPurgeTime());
+      }
+      switch (other.getInboundRestrictionCase()) {
+        case ALLOWED_SIP_TRUNKS:
+          {
+            mergeAllowedSipTrunks(other.getAllowedSipTrunks());
+            break;
+          }
+        case INBOUNDRESTRICTION_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -845,6 +2239,20 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
+            case 58:
+              {
+                input.readMessage(
+                    internalGetAllowedSipTrunksFieldBuilder().getBuilder(), extensionRegistry);
+                inboundRestrictionCase_ = 7;
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    internalGetPurgeTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -859,6 +2267,20 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int inboundRestrictionCase_ = 0;
+    private java.lang.Object inboundRestriction_;
+
+    public InboundRestrictionCase getInboundRestrictionCase() {
+      return InboundRestrictionCase.forNumber(inboundRestrictionCase_);
+    }
+
+    public Builder clearInboundRestriction() {
+      inboundRestrictionCase_ = 0;
+      inboundRestriction_ = null;
+      onChanged();
       return this;
     }
 
@@ -1373,6 +2795,455 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
       lifecycleState_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks,
+            com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks.Builder,
+            com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunksOrBuilder>
+        allowedSipTrunksBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only allow calls from the specified SIP trunks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks allowed_sip_trunks = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the allowedSipTrunks field is set.
+     */
+    @java.lang.Override
+    public boolean hasAllowedSipTrunks() {
+      return inboundRestrictionCase_ == 7;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only allow calls from the specified SIP trunks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks allowed_sip_trunks = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The allowedSipTrunks.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks getAllowedSipTrunks() {
+      if (allowedSipTrunksBuilder_ == null) {
+        if (inboundRestrictionCase_ == 7) {
+          return (com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks)
+              inboundRestriction_;
+        }
+        return com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks
+            .getDefaultInstance();
+      } else {
+        if (inboundRestrictionCase_ == 7) {
+          return allowedSipTrunksBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only allow calls from the specified SIP trunks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks allowed_sip_trunks = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAllowedSipTrunks(
+        com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks value) {
+      if (allowedSipTrunksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        inboundRestriction_ = value;
+        onChanged();
+      } else {
+        allowedSipTrunksBuilder_.setMessage(value);
+      }
+      inboundRestrictionCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only allow calls from the specified SIP trunks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks allowed_sip_trunks = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAllowedSipTrunks(
+        com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks.Builder builderForValue) {
+      if (allowedSipTrunksBuilder_ == null) {
+        inboundRestriction_ = builderForValue.build();
+        onChanged();
+      } else {
+        allowedSipTrunksBuilder_.setMessage(builderForValue.build());
+      }
+      inboundRestrictionCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only allow calls from the specified SIP trunks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks allowed_sip_trunks = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAllowedSipTrunks(
+        com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks value) {
+      if (allowedSipTrunksBuilder_ == null) {
+        if (inboundRestrictionCase_ == 7
+            && inboundRestriction_
+                != com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks
+                    .getDefaultInstance()) {
+          inboundRestriction_ =
+              com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks.newBuilder(
+                      (com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks)
+                          inboundRestriction_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          inboundRestriction_ = value;
+        }
+        onChanged();
+      } else {
+        if (inboundRestrictionCase_ == 7) {
+          allowedSipTrunksBuilder_.mergeFrom(value);
+        } else {
+          allowedSipTrunksBuilder_.setMessage(value);
+        }
+      }
+      inboundRestrictionCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only allow calls from the specified SIP trunks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks allowed_sip_trunks = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAllowedSipTrunks() {
+      if (allowedSipTrunksBuilder_ == null) {
+        if (inboundRestrictionCase_ == 7) {
+          inboundRestrictionCase_ = 0;
+          inboundRestriction_ = null;
+          onChanged();
+        }
+      } else {
+        if (inboundRestrictionCase_ == 7) {
+          inboundRestrictionCase_ = 0;
+          inboundRestriction_ = null;
+        }
+        allowedSipTrunksBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only allow calls from the specified SIP trunks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks allowed_sip_trunks = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks.Builder
+        getAllowedSipTrunksBuilder() {
+      return internalGetAllowedSipTrunksFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only allow calls from the specified SIP trunks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks allowed_sip_trunks = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunksOrBuilder
+        getAllowedSipTrunksOrBuilder() {
+      if ((inboundRestrictionCase_ == 7) && (allowedSipTrunksBuilder_ != null)) {
+        return allowedSipTrunksBuilder_.getMessageOrBuilder();
+      } else {
+        if (inboundRestrictionCase_ == 7) {
+          return (com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks)
+              inboundRestriction_;
+        }
+        return com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only allow calls from the specified SIP trunks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks allowed_sip_trunks = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks,
+            com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks.Builder,
+            com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunksOrBuilder>
+        internalGetAllowedSipTrunksFieldBuilder() {
+      if (allowedSipTrunksBuilder_ == null) {
+        if (!(inboundRestrictionCase_ == 7)) {
+          inboundRestriction_ =
+              com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks.getDefaultInstance();
+        }
+        allowedSipTrunksBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks,
+                com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks.Builder,
+                com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunksOrBuilder>(
+                (com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks)
+                    inboundRestriction_,
+                getParentForChildren(),
+                isClean());
+        inboundRestriction_ = null;
+      }
+      inboundRestrictionCase_ = 7;
+      onChanged();
+      return allowedSipTrunksBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp purgeTime_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        purgeTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this resource will be purged.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp purge_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the purgeTime field is set.
+     */
+    public boolean hasPurgeTime() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this resource will be purged.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp purge_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The purgeTime.
+     */
+    public com.google.protobuf.Timestamp getPurgeTime() {
+      if (purgeTimeBuilder_ == null) {
+        return purgeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : purgeTime_;
+      } else {
+        return purgeTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this resource will be purged.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp purge_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPurgeTime(com.google.protobuf.Timestamp value) {
+      if (purgeTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        purgeTime_ = value;
+      } else {
+        purgeTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this resource will be purged.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp purge_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPurgeTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (purgeTimeBuilder_ == null) {
+        purgeTime_ = builderForValue.build();
+      } else {
+        purgeTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this resource will be purged.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp purge_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergePurgeTime(com.google.protobuf.Timestamp value) {
+      if (purgeTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && purgeTime_ != null
+            && purgeTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getPurgeTimeBuilder().mergeFrom(value);
+        } else {
+          purgeTime_ = value;
+        }
+      } else {
+        purgeTimeBuilder_.mergeFrom(value);
+      }
+      if (purgeTime_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this resource will be purged.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp purge_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearPurgeTime() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      purgeTime_ = null;
+      if (purgeTimeBuilder_ != null) {
+        purgeTimeBuilder_.dispose();
+        purgeTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this resource will be purged.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp purge_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getPurgeTimeBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return internalGetPurgeTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this resource will be purged.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp purge_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getPurgeTimeOrBuilder() {
+      if (purgeTimeBuilder_ != null) {
+        return purgeTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return purgeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : purgeTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this resource will be purged.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp purge_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        internalGetPurgeTimeFieldBuilder() {
+      if (purgeTimeBuilder_ == null) {
+        purgeTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getPurgeTime(), getParentForChildren(), isClean());
+        purgeTime_ = null;
+      }
+      return purgeTimeBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.PhoneNumber)

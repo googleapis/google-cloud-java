@@ -374,6 +374,7 @@ public class HttpJsonExamplesStub extends ExamplesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteExampleRequest, Empty> deleteExampleTransportSettings =
         HttpJsonCallSettings.<DeleteExampleRequest, Empty>newBuilder()
@@ -385,6 +386,7 @@ public class HttpJsonExamplesStub extends ExamplesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListExamplesRequest, ListExamplesResponse> listExamplesTransportSettings =
         HttpJsonCallSettings.<ListExamplesRequest, ListExamplesResponse>newBuilder()
@@ -396,6 +398,7 @@ public class HttpJsonExamplesStub extends ExamplesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetExampleRequest, Example> getExampleTransportSettings =
         HttpJsonCallSettings.<GetExampleRequest, Example>newBuilder()
@@ -407,6 +410,7 @@ public class HttpJsonExamplesStub extends ExamplesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateExampleRequest, Example> updateExampleTransportSettings =
         HttpJsonCallSettings.<UpdateExampleRequest, Example>newBuilder()

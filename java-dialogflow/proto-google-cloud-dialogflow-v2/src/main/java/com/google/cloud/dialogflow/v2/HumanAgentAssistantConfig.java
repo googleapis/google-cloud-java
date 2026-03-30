@@ -16904,6 +16904,40 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * @return The enableSentimentAnalysis.
      */
     boolean getEnableSentimentAnalysis();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables sentiment analysis for audio input and conversation
+     * messages. If unspecified, defaults to false. If this flag is set to true,
+     * other 'enable_sentiment_analysis' fields will be ignored.
+     *
+     * Sentiment analysis inspects user input and identifies the prevailing
+     * subjective opinion, especially to determine a user's attitude as
+     * positive, negative, or neutral.
+     * https://cloud.google.com/natural-language/docs/basics#sentiment_analysis
+     * For
+     * [Participants.StreamingAnalyzeContent][google.cloud.dialogflow.v2.Participants.StreamingAnalyzeContent]
+     * method, result will be in
+     * [StreamingAnalyzeContentResponse.message.SentimentAnalysisResult][google.cloud.dialogflow.v2.StreamingAnalyzeContentResponse.message].
+     * For
+     * [Participants.AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent]
+     * method, result will be in
+     * [AnalyzeContentResponse.message.SentimentAnalysisResult][google.cloud.dialogflow.v2.AnalyzeContentResponse.message]
+     * For
+     * [Conversations.ListMessages][google.cloud.dialogflow.v2.Conversations.ListMessages]
+     * method, result will be in
+     * [ListMessagesResponse.messages.SentimentAnalysisResult][google.cloud.dialogflow.v2.ListMessagesResponse.messages]
+     * If Pub/Sub notification is configured, result will be in
+     * [ConversationEvent.new_message_payload.SentimentAnalysisResult][google.cloud.dialogflow.v2.ConversationEvent.new_message_payload].
+     * </pre>
+     *
+     * <code>bool enable_sentiment_analysis_v3 = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableSentimentAnalysisV3.
+     */
+    boolean getEnableSentimentAnalysisV3();
   }
 
   /**
@@ -17017,6 +17051,46 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       return enableSentimentAnalysis_;
     }
 
+    public static final int ENABLE_SENTIMENT_ANALYSIS_V3_FIELD_NUMBER = 5;
+    private boolean enableSentimentAnalysisV3_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables sentiment analysis for audio input and conversation
+     * messages. If unspecified, defaults to false. If this flag is set to true,
+     * other 'enable_sentiment_analysis' fields will be ignored.
+     *
+     * Sentiment analysis inspects user input and identifies the prevailing
+     * subjective opinion, especially to determine a user's attitude as
+     * positive, negative, or neutral.
+     * https://cloud.google.com/natural-language/docs/basics#sentiment_analysis
+     * For
+     * [Participants.StreamingAnalyzeContent][google.cloud.dialogflow.v2.Participants.StreamingAnalyzeContent]
+     * method, result will be in
+     * [StreamingAnalyzeContentResponse.message.SentimentAnalysisResult][google.cloud.dialogflow.v2.StreamingAnalyzeContentResponse.message].
+     * For
+     * [Participants.AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent]
+     * method, result will be in
+     * [AnalyzeContentResponse.message.SentimentAnalysisResult][google.cloud.dialogflow.v2.AnalyzeContentResponse.message]
+     * For
+     * [Conversations.ListMessages][google.cloud.dialogflow.v2.Conversations.ListMessages]
+     * method, result will be in
+     * [ListMessagesResponse.messages.SentimentAnalysisResult][google.cloud.dialogflow.v2.ListMessagesResponse.messages]
+     * If Pub/Sub notification is configured, result will be in
+     * [ConversationEvent.new_message_payload.SentimentAnalysisResult][google.cloud.dialogflow.v2.ConversationEvent.new_message_payload].
+     * </pre>
+     *
+     * <code>bool enable_sentiment_analysis_v3 = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableSentimentAnalysisV3.
+     */
+    @java.lang.Override
+    public boolean getEnableSentimentAnalysisV3() {
+      return enableSentimentAnalysisV3_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -17037,6 +17111,9 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (enableSentimentAnalysis_ != false) {
         output.writeBool(3, enableSentimentAnalysis_);
       }
+      if (enableSentimentAnalysisV3_ != false) {
+        output.writeBool(5, enableSentimentAnalysisV3_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -17051,6 +17128,10 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       }
       if (enableSentimentAnalysis_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, enableSentimentAnalysis_);
+      }
+      if (enableSentimentAnalysisV3_ != false) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(5, enableSentimentAnalysisV3_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -17072,6 +17153,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
       if (getEnableEntityExtraction() != other.getEnableEntityExtraction()) return false;
       if (getEnableSentimentAnalysis() != other.getEnableSentimentAnalysis()) return false;
+      if (getEnableSentimentAnalysisV3() != other.getEnableSentimentAnalysisV3()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -17087,6 +17169,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableEntityExtraction());
       hash = (37 * hash) + ENABLE_SENTIMENT_ANALYSIS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableSentimentAnalysis());
+      hash = (37 * hash) + ENABLE_SENTIMENT_ANALYSIS_V3_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableSentimentAnalysisV3());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -17240,6 +17324,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         bitField0_ = 0;
         enableEntityExtraction_ = false;
         enableSentimentAnalysis_ = false;
+        enableSentimentAnalysisV3_ = false;
         return this;
       }
 
@@ -17289,6 +17374,9 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.enableSentimentAnalysis_ = enableSentimentAnalysis_;
         }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.enableSentimentAnalysisV3_ = enableSentimentAnalysisV3_;
+        }
       }
 
       @java.lang.Override
@@ -17315,6 +17403,9 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
         if (other.getEnableSentimentAnalysis() != false) {
           setEnableSentimentAnalysis(other.getEnableSentimentAnalysis());
+        }
+        if (other.getEnableSentimentAnalysisV3() != false) {
+          setEnableSentimentAnalysisV3(other.getEnableSentimentAnalysisV3());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -17354,6 +17445,12 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 24
+              case 40:
+                {
+                  enableSentimentAnalysisV3_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 40
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -17553,6 +17650,128 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public Builder clearEnableSentimentAnalysis() {
         bitField0_ = (bitField0_ & ~0x00000002);
         enableSentimentAnalysis_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean enableSentimentAnalysisV3_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enables sentiment analysis for audio input and conversation
+       * messages. If unspecified, defaults to false. If this flag is set to true,
+       * other 'enable_sentiment_analysis' fields will be ignored.
+       *
+       * Sentiment analysis inspects user input and identifies the prevailing
+       * subjective opinion, especially to determine a user's attitude as
+       * positive, negative, or neutral.
+       * https://cloud.google.com/natural-language/docs/basics#sentiment_analysis
+       * For
+       * [Participants.StreamingAnalyzeContent][google.cloud.dialogflow.v2.Participants.StreamingAnalyzeContent]
+       * method, result will be in
+       * [StreamingAnalyzeContentResponse.message.SentimentAnalysisResult][google.cloud.dialogflow.v2.StreamingAnalyzeContentResponse.message].
+       * For
+       * [Participants.AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent]
+       * method, result will be in
+       * [AnalyzeContentResponse.message.SentimentAnalysisResult][google.cloud.dialogflow.v2.AnalyzeContentResponse.message]
+       * For
+       * [Conversations.ListMessages][google.cloud.dialogflow.v2.Conversations.ListMessages]
+       * method, result will be in
+       * [ListMessagesResponse.messages.SentimentAnalysisResult][google.cloud.dialogflow.v2.ListMessagesResponse.messages]
+       * If Pub/Sub notification is configured, result will be in
+       * [ConversationEvent.new_message_payload.SentimentAnalysisResult][google.cloud.dialogflow.v2.ConversationEvent.new_message_payload].
+       * </pre>
+       *
+       * <code>bool enable_sentiment_analysis_v3 = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enableSentimentAnalysisV3.
+       */
+      @java.lang.Override
+      public boolean getEnableSentimentAnalysisV3() {
+        return enableSentimentAnalysisV3_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enables sentiment analysis for audio input and conversation
+       * messages. If unspecified, defaults to false. If this flag is set to true,
+       * other 'enable_sentiment_analysis' fields will be ignored.
+       *
+       * Sentiment analysis inspects user input and identifies the prevailing
+       * subjective opinion, especially to determine a user's attitude as
+       * positive, negative, or neutral.
+       * https://cloud.google.com/natural-language/docs/basics#sentiment_analysis
+       * For
+       * [Participants.StreamingAnalyzeContent][google.cloud.dialogflow.v2.Participants.StreamingAnalyzeContent]
+       * method, result will be in
+       * [StreamingAnalyzeContentResponse.message.SentimentAnalysisResult][google.cloud.dialogflow.v2.StreamingAnalyzeContentResponse.message].
+       * For
+       * [Participants.AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent]
+       * method, result will be in
+       * [AnalyzeContentResponse.message.SentimentAnalysisResult][google.cloud.dialogflow.v2.AnalyzeContentResponse.message]
+       * For
+       * [Conversations.ListMessages][google.cloud.dialogflow.v2.Conversations.ListMessages]
+       * method, result will be in
+       * [ListMessagesResponse.messages.SentimentAnalysisResult][google.cloud.dialogflow.v2.ListMessagesResponse.messages]
+       * If Pub/Sub notification is configured, result will be in
+       * [ConversationEvent.new_message_payload.SentimentAnalysisResult][google.cloud.dialogflow.v2.ConversationEvent.new_message_payload].
+       * </pre>
+       *
+       * <code>bool enable_sentiment_analysis_v3 = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enableSentimentAnalysisV3 to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableSentimentAnalysisV3(boolean value) {
+
+        enableSentimentAnalysisV3_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enables sentiment analysis for audio input and conversation
+       * messages. If unspecified, defaults to false. If this flag is set to true,
+       * other 'enable_sentiment_analysis' fields will be ignored.
+       *
+       * Sentiment analysis inspects user input and identifies the prevailing
+       * subjective opinion, especially to determine a user's attitude as
+       * positive, negative, or neutral.
+       * https://cloud.google.com/natural-language/docs/basics#sentiment_analysis
+       * For
+       * [Participants.StreamingAnalyzeContent][google.cloud.dialogflow.v2.Participants.StreamingAnalyzeContent]
+       * method, result will be in
+       * [StreamingAnalyzeContentResponse.message.SentimentAnalysisResult][google.cloud.dialogflow.v2.StreamingAnalyzeContentResponse.message].
+       * For
+       * [Participants.AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent]
+       * method, result will be in
+       * [AnalyzeContentResponse.message.SentimentAnalysisResult][google.cloud.dialogflow.v2.AnalyzeContentResponse.message]
+       * For
+       * [Conversations.ListMessages][google.cloud.dialogflow.v2.Conversations.ListMessages]
+       * method, result will be in
+       * [ListMessagesResponse.messages.SentimentAnalysisResult][google.cloud.dialogflow.v2.ListMessagesResponse.messages]
+       * If Pub/Sub notification is configured, result will be in
+       * [ConversationEvent.new_message_payload.SentimentAnalysisResult][google.cloud.dialogflow.v2.ConversationEvent.new_message_payload].
+       * </pre>
+       *
+       * <code>bool enable_sentiment_analysis_v3 = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableSentimentAnalysisV3() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        enableSentimentAnalysisV3_ = false;
         onChanged();
         return this;
       }

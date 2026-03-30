@@ -102,4 +102,21 @@ public interface ListServerTlsPoliciesRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Setting this field to `true` will opt the request into returning
+   * the resources that are reachable, and into including the names of those
+   * that were unreachable in the [ListServerTlsPoliciesResponse.unreachable]
+   * field. This can only be `true` when reading across collections e.g. when
+   * `parent` is set to `"projects/example/locations/-"`.
+   * </pre>
+   *
+   * <code>bool return_partial_success = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The returnPartialSuccess.
+   */
+  boolean getReturnPartialSuccess();
 }

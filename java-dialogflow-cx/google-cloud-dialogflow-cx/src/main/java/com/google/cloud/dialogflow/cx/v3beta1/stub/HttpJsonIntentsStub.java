@@ -523,6 +523,7 @@ public class HttpJsonIntentsStub extends IntentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetIntentRequest, Intent> getIntentTransportSettings =
         HttpJsonCallSettings.<GetIntentRequest, Intent>newBuilder()
@@ -534,6 +535,7 @@ public class HttpJsonIntentsStub extends IntentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateIntentRequest, Intent> createIntentTransportSettings =
         HttpJsonCallSettings.<CreateIntentRequest, Intent>newBuilder()
@@ -545,6 +547,7 @@ public class HttpJsonIntentsStub extends IntentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateIntentRequest, Intent> updateIntentTransportSettings =
         HttpJsonCallSettings.<UpdateIntentRequest, Intent>newBuilder()
@@ -567,6 +570,7 @@ public class HttpJsonIntentsStub extends IntentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ImportIntentsRequest, Operation> importIntentsTransportSettings =
         HttpJsonCallSettings.<ImportIntentsRequest, Operation>newBuilder()
@@ -578,6 +582,7 @@ public class HttpJsonIntentsStub extends IntentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ExportIntentsRequest, Operation> exportIntentsTransportSettings =
         HttpJsonCallSettings.<ExportIntentsRequest, Operation>newBuilder()
@@ -589,6 +594,7 @@ public class HttpJsonIntentsStub extends IntentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

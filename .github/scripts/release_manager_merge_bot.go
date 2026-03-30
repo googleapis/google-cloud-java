@@ -213,7 +213,16 @@ func main() {
 		}
 
 		state = *status.State
-		log.Printf("Overall status: %s", state)
+		log.Printf("Overall commit status: %s", state)
+		if pr.MergeableState != nil {
+			log.Printf("PR mergeable state: %s", *pr.MergeableState)
+			if *pr.MergeableState == "dirty" {
+				fatalError("PR #%d has merge conflicts (dirty).", prNumber)
+			}
+			if *pr.MergeableState == "draft" {
+				fatalError("PR #%d is a draft.", prNumber)
+			}
+		}
 
 		switch state {
 		case "failure":
@@ -230,7 +239,19 @@ func main() {
 			}
 			retryCount++
 		case "success":
-			log.Println("All checks have passed. Merging the pull request...")
+			// Check if the PR is truly mergeable. MergeableState can be "blocked" if required
+			// check runs (e.g. GitHub Actions) or reviews are missing, even if CombinedStatus is "success".
+			// If it's nil, GitHub is still calculating mergeability.
+			if pr.MergeableState == nil || *pr.MergeableState == "blocked" || *pr.MergeableState == "behind" {
+				stateStr := "nil"
+				if pr.MergeableState != nil {
+					stateStr = *pr.MergeableState
+				}
+				log.Printf("Commit status is success, but PR mergeable state is %q. Waiting...", stateStr)
+				goto wait
+			}
+
+			log.Println("All checks have passed and PR is mergeable. Merging the pull request...")
 			commitMessage := fmt.Sprintf("Merge pull request #%d from %s/%s", prNumber, owner, repo)
 			mergeResult, _, err := client.PullRequests.Merge(ctx, owner, repo, prNumber, commitMessage, &github.PullRequestOptions{
 				MergeMethod: "squash",

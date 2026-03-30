@@ -155,6 +155,7 @@ public class GrpcAnswerRecordsStub extends AnswerRecordsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateAnswerRecordRequest, AnswerRecord> updateAnswerRecordTransportSettings =
         GrpcCallSettings.<UpdateAnswerRecordRequest, AnswerRecord>newBuilder()

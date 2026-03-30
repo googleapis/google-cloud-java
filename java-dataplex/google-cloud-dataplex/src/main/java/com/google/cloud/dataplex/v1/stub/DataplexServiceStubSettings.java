@@ -1143,6 +1143,7 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-dataplex")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

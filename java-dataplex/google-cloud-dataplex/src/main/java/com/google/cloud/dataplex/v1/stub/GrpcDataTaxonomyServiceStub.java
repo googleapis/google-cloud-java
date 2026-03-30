@@ -418,6 +418,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateDataTaxonomyRequest, Operation> updateDataTaxonomyTransportSettings =
         GrpcCallSettings.<UpdateDataTaxonomyRequest, Operation>newBuilder()
@@ -439,6 +440,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDataTaxonomiesRequest, ListDataTaxonomiesResponse>
         listDataTaxonomiesTransportSettings =
@@ -450,6 +452,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetDataTaxonomyRequest, DataTaxonomy> getDataTaxonomyTransportSettings =
         GrpcCallSettings.<GetDataTaxonomyRequest, DataTaxonomy>newBuilder()
@@ -460,6 +463,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateDataAttributeBindingRequest, Operation>
         createDataAttributeBindingTransportSettings =
@@ -471,6 +475,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateDataAttributeBindingRequest, Operation>
         updateDataAttributeBindingTransportSettings =
@@ -495,6 +500,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListDataAttributeBindingsRequest, ListDataAttributeBindingsResponse>
         listDataAttributeBindingsTransportSettings =
@@ -507,6 +513,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetDataAttributeBindingRequest, DataAttributeBinding>
         getDataAttributeBindingTransportSettings =
@@ -518,6 +525,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateDataAttributeRequest, Operation> createDataAttributeTransportSettings =
         GrpcCallSettings.<CreateDataAttributeRequest, Operation>newBuilder()
@@ -528,6 +536,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateDataAttributeRequest, Operation> updateDataAttributeTransportSettings =
         GrpcCallSettings.<UpdateDataAttributeRequest, Operation>newBuilder()
@@ -549,6 +558,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDataAttributesRequest, ListDataAttributesResponse>
         listDataAttributesTransportSettings =
@@ -560,6 +570,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetDataAttributeRequest, DataAttribute> getDataAttributeTransportSettings =
         GrpcCallSettings.<GetDataAttributeRequest, DataAttribute>newBuilder()
@@ -570,6 +581,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -600,6 +612,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -610,6 +623,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -621,6 +635,7 @@ public class GrpcDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createDataTaxonomyCallable =

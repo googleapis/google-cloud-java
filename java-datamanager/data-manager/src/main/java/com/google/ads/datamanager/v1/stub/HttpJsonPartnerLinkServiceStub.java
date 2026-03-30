@@ -224,6 +224,7 @@ public class HttpJsonPartnerLinkServiceStub extends PartnerLinkServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeletePartnerLinkRequest, Empty> deletePartnerLinkTransportSettings =
         HttpJsonCallSettings.<DeletePartnerLinkRequest, Empty>newBuilder()
@@ -235,6 +236,7 @@ public class HttpJsonPartnerLinkServiceStub extends PartnerLinkServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<SearchPartnerLinksRequest, SearchPartnerLinksResponse>
         searchPartnerLinksTransportSettings =
@@ -247,6 +249,7 @@ public class HttpJsonPartnerLinkServiceStub extends PartnerLinkServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createPartnerLinkCallable =

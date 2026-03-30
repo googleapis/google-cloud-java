@@ -336,4 +336,92 @@ public interface McpToolOrBuilder
    * </code>
    */
   com.google.cloud.ces.v1.ServiceDirectoryConfigOrBuilder getServiceDirectoryConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The custom headers to send in the request to the MCP server. The
+   * values must be in the format `$context.variables.&lt;name_of_variable&gt;` and
+   * can be set in the session variables. See
+   * https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/open-api#openapi-injection
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; custom_headers = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getCustomHeadersCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The custom headers to send in the request to the MCP server. The
+   * values must be in the format `$context.variables.&lt;name_of_variable&gt;` and
+   * can be set in the session variables. See
+   * https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/open-api#openapi-injection
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; custom_headers = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsCustomHeaders(java.lang.String key);
+
+  /** Use {@link #getCustomHeadersMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getCustomHeaders();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The custom headers to send in the request to the MCP server. The
+   * values must be in the format `$context.variables.&lt;name_of_variable&gt;` and
+   * can be set in the session variables. See
+   * https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/open-api#openapi-injection
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; custom_headers = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getCustomHeadersMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The custom headers to send in the request to the MCP server. The
+   * values must be in the format `$context.variables.&lt;name_of_variable&gt;` and
+   * can be set in the session variables. See
+   * https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/open-api#openapi-injection
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; custom_headers = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getCustomHeadersOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The custom headers to send in the request to the MCP server. The
+   * values must be in the format `$context.variables.&lt;name_of_variable&gt;` and
+   * can be set in the session variables. See
+   * https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/open-api#openapi-injection
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; custom_headers = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getCustomHeadersOrThrow(java.lang.String key);
 }

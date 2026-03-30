@@ -20,6 +20,7 @@ package com.google.cloud.ces.v1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.ces.v1.AgentServiceClient;
 import com.google.cloud.ces.v1.AppName;
+import com.google.cloud.ces.v1.AppVersionName;
 import com.google.cloud.ces.v1.ExportAppRequest;
 import com.google.longrunning.Operation;
 
@@ -40,6 +41,8 @@ public class AsyncExportApp {
           ExportAppRequest.newBuilder()
               .setName(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
               .setGcsUri("gcsUri-1251224875")
+              .setAppVersion(
+                  AppVersionName.of("[PROJECT]", "[LOCATION]", "[APP]", "[VERSION]").toString())
               .build();
       ApiFuture<Operation> future = agentServiceClient.exportAppCallable().futureCall(request);
       // Do something.

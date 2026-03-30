@@ -1218,7 +1218,9 @@ public final class Hook extends com.google.protobuf.GeneratedMessage
    * Output only. Unique identifier of the hook.
    * </pre>
    *
-   * <code>string uid = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The uid.
    */
@@ -1242,7 +1244,9 @@ public final class Hook extends com.google.protobuf.GeneratedMessage
    * Output only. Unique identifier of the hook.
    * </pre>
    *
-   * <code>string uid = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for uid.
    */
@@ -2929,7 +2933,9 @@ public final class Hook extends com.google.protobuf.GeneratedMessage
      * Output only. Unique identifier of the hook.
      * </pre>
      *
-     * <code>string uid = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The uid.
      */
@@ -2952,7 +2958,9 @@ public final class Hook extends com.google.protobuf.GeneratedMessage
      * Output only. Unique identifier of the hook.
      * </pre>
      *
-     * <code>string uid = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The bytes for uid.
      */
@@ -2975,7 +2983,9 @@ public final class Hook extends com.google.protobuf.GeneratedMessage
      * Output only. Unique identifier of the hook.
      * </pre>
      *
-     * <code>string uid = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The uid to set.
      * @return This builder for chaining.
@@ -2997,7 +3007,9 @@ public final class Hook extends com.google.protobuf.GeneratedMessage
      * Output only. Unique identifier of the hook.
      * </pre>
      *
-     * <code>string uid = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -3015,7 +3027,9 @@ public final class Hook extends com.google.protobuf.GeneratedMessage
      * Output only. Unique identifier of the hook.
      * </pre>
      *
-     * <code>string uid = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The bytes for uid to set.
      * @return This builder for chaining.

@@ -344,20 +344,20 @@ function run_graalvm_tests() {
 function generate_graalvm_presubmit_modules_list() {
   modules_assigned_list=()
   generate_modified_modules_list
-  if [[ ${#modified_module_list[@]} -gt 4 ]]; then
-    # Too many modules modified, run a subset
-    echo "Too many modules modified, running a subset"
-    module_list="java-aiplatform,java-compute"
-  elif [[ ${#modified_module_list[@]} -gt 0 ]]; then
+  if [[ ${#modified_module_list[@]} -gt 0 && ${#modified_module_list[@]} -lt 5 ]]; then
     # If only a few modules have been modified, focus presubmit testing only on them.
     module_list=$(
       IFS=,
       echo "${modified_module_list[*]}"
     )
   else
-    # no modules modified
-    echo "No modules modified"
-    module_list=""
+    # If no modules have been modified or if too many have been modified, just test the modules
+    # specified in the MAVEN_MODULES env var.
+    if [ -z "${MAVEN_MODULES}" ]; then
+      echo "MAVEN_MODULES not defined in environment."
+      exit 1
+    fi
+    module_list=${MAVEN_MODULES}
   fi
 }
 

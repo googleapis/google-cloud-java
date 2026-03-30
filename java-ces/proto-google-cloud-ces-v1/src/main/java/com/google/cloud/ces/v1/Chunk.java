@@ -78,6 +78,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TEXT(1),
     TRANSCRIPT(9),
+    BLOB(7),
     PAYLOAD(11),
     IMAGE(5),
     TOOL_CALL(2),
@@ -108,6 +109,8 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
           return TEXT;
         case 9:
           return TRANSCRIPT;
+        case 7:
+          return BLOB;
         case 11:
           return PAYLOAD;
         case 5:
@@ -282,6 +285,60 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int BLOB_FIELD_NUMBER = 7;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Blob data.
+   * </pre>
+   *
+   * <code>.google.cloud.ces.v1.Blob blob = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the blob field is set.
+   */
+  @java.lang.Override
+  public boolean hasBlob() {
+    return dataCase_ == 7;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Blob data.
+   * </pre>
+   *
+   * <code>.google.cloud.ces.v1.Blob blob = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The blob.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1.Blob getBlob() {
+    if (dataCase_ == 7) {
+      return (com.google.cloud.ces.v1.Blob) data_;
+    }
+    return com.google.cloud.ces.v1.Blob.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Blob data.
+   * </pre>
+   *
+   * <code>.google.cloud.ces.v1.Blob blob = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1.BlobOrBuilder getBlobOrBuilder() {
+    if (dataCase_ == 7) {
+      return (com.google.cloud.ces.v1.Blob) data_;
+    }
+    return com.google.cloud.ces.v1.Blob.getDefaultInstance();
   }
 
   public static final int PAYLOAD_FIELD_NUMBER = 11;
@@ -712,6 +769,9 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
     if (dataCase_ == 5) {
       output.writeMessage(5, (com.google.cloud.ces.v1.Image) data_);
     }
+    if (dataCase_ == 7) {
+      output.writeMessage(7, (com.google.cloud.ces.v1.Blob) data_);
+    }
     if (dataCase_ == 8) {
       output.writeMessage(8, (com.google.protobuf.Struct) data_);
     }
@@ -756,6 +816,11 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, (com.google.cloud.ces.v1.Image) data_);
     }
+    if (dataCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.cloud.ces.v1.Blob) data_);
+    }
     if (dataCase_ == 8) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -796,6 +861,9 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
         break;
       case 9:
         if (!getTranscript().equals(other.getTranscript())) return false;
+        break;
+      case 7:
+        if (!getBlob().equals(other.getBlob())) return false;
         break;
       case 11:
         if (!getPayload().equals(other.getPayload())) return false;
@@ -840,6 +908,10 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
       case 9:
         hash = (37 * hash) + TRANSCRIPT_FIELD_NUMBER;
         hash = (53 * hash) + getTranscript().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + BLOB_FIELD_NUMBER;
+        hash = (53 * hash) + getBlob().hashCode();
         break;
       case 11:
         hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
@@ -1010,6 +1082,9 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (blobBuilder_ != null) {
+        blobBuilder_.clear();
+      }
       if (payloadBuilder_ != null) {
         payloadBuilder_.clear();
       }
@@ -1074,6 +1149,9 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
     private void buildPartialOneofs(com.google.cloud.ces.v1.Chunk result) {
       result.dataCase_ = dataCase_;
       result.data_ = this.data_;
+      if (dataCase_ == 7 && blobBuilder_ != null) {
+        result.data_ = blobBuilder_.build();
+      }
       if (dataCase_ == 11 && payloadBuilder_ != null) {
         result.data_ = payloadBuilder_.build();
       }
@@ -1122,6 +1200,11 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
             dataCase_ = 9;
             data_ = other.data_;
             onChanged();
+            break;
+          }
+        case BLOB:
+          {
+            mergeBlob(other.getBlob());
             break;
           }
         case PAYLOAD:
@@ -1224,6 +1307,12 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
                 dataCase_ = 5;
                 break;
               } // case 42
+            case 58:
+              {
+                input.readMessage(internalGetBlobFieldBuilder().getBuilder(), extensionRegistry);
+                dataCase_ = 7;
+                break;
+              } // case 58
             case 66:
               {
                 input.readMessage(
@@ -1560,6 +1649,219 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
       data_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1.Blob,
+            com.google.cloud.ces.v1.Blob.Builder,
+            com.google.cloud.ces.v1.BlobOrBuilder>
+        blobBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Blob data.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1.Blob blob = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the blob field is set.
+     */
+    @java.lang.Override
+    public boolean hasBlob() {
+      return dataCase_ == 7;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Blob data.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1.Blob blob = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The blob.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1.Blob getBlob() {
+      if (blobBuilder_ == null) {
+        if (dataCase_ == 7) {
+          return (com.google.cloud.ces.v1.Blob) data_;
+        }
+        return com.google.cloud.ces.v1.Blob.getDefaultInstance();
+      } else {
+        if (dataCase_ == 7) {
+          return blobBuilder_.getMessage();
+        }
+        return com.google.cloud.ces.v1.Blob.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Blob data.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1.Blob blob = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setBlob(com.google.cloud.ces.v1.Blob value) {
+      if (blobBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        data_ = value;
+        onChanged();
+      } else {
+        blobBuilder_.setMessage(value);
+      }
+      dataCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Blob data.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1.Blob blob = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setBlob(com.google.cloud.ces.v1.Blob.Builder builderForValue) {
+      if (blobBuilder_ == null) {
+        data_ = builderForValue.build();
+        onChanged();
+      } else {
+        blobBuilder_.setMessage(builderForValue.build());
+      }
+      dataCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Blob data.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1.Blob blob = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergeBlob(com.google.cloud.ces.v1.Blob value) {
+      if (blobBuilder_ == null) {
+        if (dataCase_ == 7 && data_ != com.google.cloud.ces.v1.Blob.getDefaultInstance()) {
+          data_ =
+              com.google.cloud.ces.v1.Blob.newBuilder((com.google.cloud.ces.v1.Blob) data_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          data_ = value;
+        }
+        onChanged();
+      } else {
+        if (dataCase_ == 7) {
+          blobBuilder_.mergeFrom(value);
+        } else {
+          blobBuilder_.setMessage(value);
+        }
+      }
+      dataCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Blob data.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1.Blob blob = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearBlob() {
+      if (blobBuilder_ == null) {
+        if (dataCase_ == 7) {
+          dataCase_ = 0;
+          data_ = null;
+          onChanged();
+        }
+      } else {
+        if (dataCase_ == 7) {
+          dataCase_ = 0;
+          data_ = null;
+        }
+        blobBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Blob data.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1.Blob blob = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.cloud.ces.v1.Blob.Builder getBlobBuilder() {
+      return internalGetBlobFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Blob data.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1.Blob blob = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1.BlobOrBuilder getBlobOrBuilder() {
+      if ((dataCase_ == 7) && (blobBuilder_ != null)) {
+        return blobBuilder_.getMessageOrBuilder();
+      } else {
+        if (dataCase_ == 7) {
+          return (com.google.cloud.ces.v1.Blob) data_;
+        }
+        return com.google.cloud.ces.v1.Blob.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Blob data.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1.Blob blob = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1.Blob,
+            com.google.cloud.ces.v1.Blob.Builder,
+            com.google.cloud.ces.v1.BlobOrBuilder>
+        internalGetBlobFieldBuilder() {
+      if (blobBuilder_ == null) {
+        if (!(dataCase_ == 7)) {
+          data_ = com.google.cloud.ces.v1.Blob.getDefaultInstance();
+        }
+        blobBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1.Blob,
+                com.google.cloud.ces.v1.Blob.Builder,
+                com.google.cloud.ces.v1.BlobOrBuilder>(
+                (com.google.cloud.ces.v1.Blob) data_, getParentForChildren(), isClean());
+        data_ = null;
+      }
+      dataCase_ = 7;
+      onChanged();
+      return blobBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilder<

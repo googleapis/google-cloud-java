@@ -436,6 +436,1015 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(enum_scope:google.cloud.netapp.v1.Volume.State)
   }
 
+  public interface CloneDetailsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.netapp.v1.Volume.CloneDetails)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the full resource name of the source snapshot from
+     * which this volume was cloned. Format:
+     * projects/{project}/locations/{location}/volumes/{volume}/snapshots/{snapshot}
+     * </pre>
+     *
+     * <code>
+     * string source_snapshot = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The sourceSnapshot.
+     */
+    java.lang.String getSourceSnapshot();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the full resource name of the source snapshot from
+     * which this volume was cloned. Format:
+     * projects/{project}/locations/{location}/volumes/{volume}/snapshots/{snapshot}
+     * </pre>
+     *
+     * <code>
+     * string source_snapshot = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for sourceSnapshot.
+     */
+    com.google.protobuf.ByteString getSourceSnapshotBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Full name of the source volume resource.
+     * Format:
+     * projects/{project}/locations/{location}/volumes/{volume}
+     * </pre>
+     *
+     * <code>
+     * string source_volume = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The sourceVolume.
+     */
+    java.lang.String getSourceVolume();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Full name of the source volume resource.
+     * Format:
+     * projects/{project}/locations/{location}/volumes/{volume}
+     * </pre>
+     *
+     * <code>
+     * string source_volume = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for sourceVolume.
+     */
+    com.google.protobuf.ByteString getSourceVolumeBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Shared space in GiB. Determined at volume creation time
+     * based on size of source snapshot.
+     * </pre>
+     *
+     * <code>int64 shared_space_gib = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The sharedSpaceGib.
+     */
+    long getSharedSpaceGib();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Details about a clone volume.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.netapp.v1.Volume.CloneDetails}
+   */
+  public static final class CloneDetails extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.netapp.v1.Volume.CloneDetails)
+      CloneDetailsOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "CloneDetails");
+    }
+
+    // Use CloneDetails.newBuilder() to construct.
+    private CloneDetails(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private CloneDetails() {
+      sourceSnapshot_ = "";
+      sourceVolume_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.netapp.v1.VolumeProto
+          .internal_static_google_cloud_netapp_v1_Volume_CloneDetails_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.netapp.v1.VolumeProto
+          .internal_static_google_cloud_netapp_v1_Volume_CloneDetails_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.netapp.v1.Volume.CloneDetails.class,
+              com.google.cloud.netapp.v1.Volume.CloneDetails.Builder.class);
+    }
+
+    public static final int SOURCE_SNAPSHOT_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sourceSnapshot_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the full resource name of the source snapshot from
+     * which this volume was cloned. Format:
+     * projects/{project}/locations/{location}/volumes/{volume}/snapshots/{snapshot}
+     * </pre>
+     *
+     * <code>
+     * string source_snapshot = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The sourceSnapshot.
+     */
+    @java.lang.Override
+    public java.lang.String getSourceSnapshot() {
+      java.lang.Object ref = sourceSnapshot_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceSnapshot_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the full resource name of the source snapshot from
+     * which this volume was cloned. Format:
+     * projects/{project}/locations/{location}/volumes/{volume}/snapshots/{snapshot}
+     * </pre>
+     *
+     * <code>
+     * string source_snapshot = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for sourceSnapshot.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSourceSnapshotBytes() {
+      java.lang.Object ref = sourceSnapshot_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sourceSnapshot_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SOURCE_VOLUME_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sourceVolume_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Full name of the source volume resource.
+     * Format:
+     * projects/{project}/locations/{location}/volumes/{volume}
+     * </pre>
+     *
+     * <code>
+     * string source_volume = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The sourceVolume.
+     */
+    @java.lang.Override
+    public java.lang.String getSourceVolume() {
+      java.lang.Object ref = sourceVolume_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceVolume_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Full name of the source volume resource.
+     * Format:
+     * projects/{project}/locations/{location}/volumes/{volume}
+     * </pre>
+     *
+     * <code>
+     * string source_volume = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for sourceVolume.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSourceVolumeBytes() {
+      java.lang.Object ref = sourceVolume_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sourceVolume_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SHARED_SPACE_GIB_FIELD_NUMBER = 3;
+    private long sharedSpaceGib_ = 0L;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Shared space in GiB. Determined at volume creation time
+     * based on size of source snapshot.
+     * </pre>
+     *
+     * <code>int64 shared_space_gib = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The sharedSpaceGib.
+     */
+    @java.lang.Override
+    public long getSharedSpaceGib() {
+      return sharedSpaceGib_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sourceSnapshot_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, sourceSnapshot_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sourceVolume_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, sourceVolume_);
+      }
+      if (sharedSpaceGib_ != 0L) {
+        output.writeInt64(3, sharedSpaceGib_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sourceSnapshot_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, sourceSnapshot_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sourceVolume_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, sourceVolume_);
+      }
+      if (sharedSpaceGib_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, sharedSpaceGib_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.netapp.v1.Volume.CloneDetails)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.netapp.v1.Volume.CloneDetails other =
+          (com.google.cloud.netapp.v1.Volume.CloneDetails) obj;
+
+      if (!getSourceSnapshot().equals(other.getSourceSnapshot())) return false;
+      if (!getSourceVolume().equals(other.getSourceVolume())) return false;
+      if (getSharedSpaceGib() != other.getSharedSpaceGib()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SOURCE_SNAPSHOT_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceSnapshot().hashCode();
+      hash = (37 * hash) + SOURCE_VOLUME_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceVolume().hashCode();
+      hash = (37 * hash) + SHARED_SPACE_GIB_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSharedSpaceGib());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.netapp.v1.Volume.CloneDetails parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.netapp.v1.Volume.CloneDetails parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.netapp.v1.Volume.CloneDetails parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.netapp.v1.Volume.CloneDetails parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.netapp.v1.Volume.CloneDetails parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.netapp.v1.Volume.CloneDetails parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.netapp.v1.Volume.CloneDetails parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.netapp.v1.Volume.CloneDetails parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.netapp.v1.Volume.CloneDetails parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.netapp.v1.Volume.CloneDetails parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.netapp.v1.Volume.CloneDetails parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.netapp.v1.Volume.CloneDetails parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.netapp.v1.Volume.CloneDetails prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Details about a clone volume.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.netapp.v1.Volume.CloneDetails}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.netapp.v1.Volume.CloneDetails)
+        com.google.cloud.netapp.v1.Volume.CloneDetailsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.netapp.v1.VolumeProto
+            .internal_static_google_cloud_netapp_v1_Volume_CloneDetails_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.netapp.v1.VolumeProto
+            .internal_static_google_cloud_netapp_v1_Volume_CloneDetails_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.netapp.v1.Volume.CloneDetails.class,
+                com.google.cloud.netapp.v1.Volume.CloneDetails.Builder.class);
+      }
+
+      // Construct using com.google.cloud.netapp.v1.Volume.CloneDetails.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        sourceSnapshot_ = "";
+        sourceVolume_ = "";
+        sharedSpaceGib_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.netapp.v1.VolumeProto
+            .internal_static_google_cloud_netapp_v1_Volume_CloneDetails_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.netapp.v1.Volume.CloneDetails getDefaultInstanceForType() {
+        return com.google.cloud.netapp.v1.Volume.CloneDetails.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.netapp.v1.Volume.CloneDetails build() {
+        com.google.cloud.netapp.v1.Volume.CloneDetails result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.netapp.v1.Volume.CloneDetails buildPartial() {
+        com.google.cloud.netapp.v1.Volume.CloneDetails result =
+            new com.google.cloud.netapp.v1.Volume.CloneDetails(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.netapp.v1.Volume.CloneDetails result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.sourceSnapshot_ = sourceSnapshot_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.sourceVolume_ = sourceVolume_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.sharedSpaceGib_ = sharedSpaceGib_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.netapp.v1.Volume.CloneDetails) {
+          return mergeFrom((com.google.cloud.netapp.v1.Volume.CloneDetails) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.netapp.v1.Volume.CloneDetails other) {
+        if (other == com.google.cloud.netapp.v1.Volume.CloneDetails.getDefaultInstance())
+          return this;
+        if (!other.getSourceSnapshot().isEmpty()) {
+          sourceSnapshot_ = other.sourceSnapshot_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getSourceVolume().isEmpty()) {
+          sourceVolume_ = other.sourceVolume_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.getSharedSpaceGib() != 0L) {
+          setSharedSpaceGib(other.getSharedSpaceGib());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  sourceSnapshot_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  sourceVolume_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 24:
+                {
+                  sharedSpaceGib_ = input.readInt64();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object sourceSnapshot_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Specifies the full resource name of the source snapshot from
+       * which this volume was cloned. Format:
+       * projects/{project}/locations/{location}/volumes/{volume}/snapshots/{snapshot}
+       * </pre>
+       *
+       * <code>
+       * string source_snapshot = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The sourceSnapshot.
+       */
+      public java.lang.String getSourceSnapshot() {
+        java.lang.Object ref = sourceSnapshot_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sourceSnapshot_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Specifies the full resource name of the source snapshot from
+       * which this volume was cloned. Format:
+       * projects/{project}/locations/{location}/volumes/{volume}/snapshots/{snapshot}
+       * </pre>
+       *
+       * <code>
+       * string source_snapshot = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for sourceSnapshot.
+       */
+      public com.google.protobuf.ByteString getSourceSnapshotBytes() {
+        java.lang.Object ref = sourceSnapshot_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          sourceSnapshot_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Specifies the full resource name of the source snapshot from
+       * which this volume was cloned. Format:
+       * projects/{project}/locations/{location}/volumes/{volume}/snapshots/{snapshot}
+       * </pre>
+       *
+       * <code>
+       * string source_snapshot = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The sourceSnapshot to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourceSnapshot(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceSnapshot_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Specifies the full resource name of the source snapshot from
+       * which this volume was cloned. Format:
+       * projects/{project}/locations/{location}/volumes/{volume}/snapshots/{snapshot}
+       * </pre>
+       *
+       * <code>
+       * string source_snapshot = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSourceSnapshot() {
+        sourceSnapshot_ = getDefaultInstance().getSourceSnapshot();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Specifies the full resource name of the source snapshot from
+       * which this volume was cloned. Format:
+       * projects/{project}/locations/{location}/volumes/{volume}/snapshots/{snapshot}
+       * </pre>
+       *
+       * <code>
+       * string source_snapshot = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for sourceSnapshot to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourceSnapshotBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        sourceSnapshot_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sourceVolume_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Full name of the source volume resource.
+       * Format:
+       * projects/{project}/locations/{location}/volumes/{volume}
+       * </pre>
+       *
+       * <code>
+       * string source_volume = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The sourceVolume.
+       */
+      public java.lang.String getSourceVolume() {
+        java.lang.Object ref = sourceVolume_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sourceVolume_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Full name of the source volume resource.
+       * Format:
+       * projects/{project}/locations/{location}/volumes/{volume}
+       * </pre>
+       *
+       * <code>
+       * string source_volume = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for sourceVolume.
+       */
+      public com.google.protobuf.ByteString getSourceVolumeBytes() {
+        java.lang.Object ref = sourceVolume_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          sourceVolume_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Full name of the source volume resource.
+       * Format:
+       * projects/{project}/locations/{location}/volumes/{volume}
+       * </pre>
+       *
+       * <code>
+       * string source_volume = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The sourceVolume to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourceVolume(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceVolume_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Full name of the source volume resource.
+       * Format:
+       * projects/{project}/locations/{location}/volumes/{volume}
+       * </pre>
+       *
+       * <code>
+       * string source_volume = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSourceVolume() {
+        sourceVolume_ = getDefaultInstance().getSourceVolume();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Full name of the source volume resource.
+       * Format:
+       * projects/{project}/locations/{location}/volumes/{volume}
+       * </pre>
+       *
+       * <code>
+       * string source_volume = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for sourceVolume to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourceVolumeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        sourceVolume_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private long sharedSpaceGib_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Shared space in GiB. Determined at volume creation time
+       * based on size of source snapshot.
+       * </pre>
+       *
+       * <code>int64 shared_space_gib = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The sharedSpaceGib.
+       */
+      @java.lang.Override
+      public long getSharedSpaceGib() {
+        return sharedSpaceGib_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Shared space in GiB. Determined at volume creation time
+       * based on size of source snapshot.
+       * </pre>
+       *
+       * <code>int64 shared_space_gib = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The sharedSpaceGib to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSharedSpaceGib(long value) {
+
+        sharedSpaceGib_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Shared space in GiB. Determined at volume creation time
+       * based on size of source snapshot.
+       * </pre>
+       *
+       * <code>int64 shared_space_gib = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSharedSpaceGib() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        sharedSpaceGib_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.netapp.v1.Volume.CloneDetails)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.netapp.v1.Volume.CloneDetails)
+    private static final com.google.cloud.netapp.v1.Volume.CloneDetails DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.netapp.v1.Volume.CloneDetails();
+    }
+
+    public static com.google.cloud.netapp.v1.Volume.CloneDetails getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CloneDetails> PARSER =
+        new com.google.protobuf.AbstractParser<CloneDetails>() {
+          @java.lang.Override
+          public CloneDetails parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<CloneDetails> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CloneDetails> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.netapp.v1.Volume.CloneDetails getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -2575,6 +3584,68 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
     return blockDevices_.get(index);
   }
 
+  public static final int CLONE_DETAILS_FIELD_NUMBER = 47;
+  private com.google.cloud.netapp.v1.Volume.CloneDetails cloneDetails_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If this volume is a clone, this field contains details about
+   * the clone.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.Volume.CloneDetails clone_details = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the cloneDetails field is set.
+   */
+  @java.lang.Override
+  public boolean hasCloneDetails() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If this volume is a clone, this field contains details about
+   * the clone.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.Volume.CloneDetails clone_details = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The cloneDetails.
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.Volume.CloneDetails getCloneDetails() {
+    return cloneDetails_ == null
+        ? com.google.cloud.netapp.v1.Volume.CloneDetails.getDefaultInstance()
+        : cloneDetails_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If this volume is a clone, this field contains details about
+   * the clone.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.Volume.CloneDetails clone_details = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.Volume.CloneDetailsOrBuilder getCloneDetailsOrBuilder() {
+    return cloneDetails_ == null
+        ? com.google.cloud.netapp.v1.Volume.CloneDetails.getDefaultInstance()
+        : cloneDetails_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2729,6 +3800,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
     }
     for (int i = 0; i < blockDevices_.size(); i++) {
       output.writeMessage(45, blockDevices_.get(i));
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeMessage(47, getCloneDetails());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2908,6 +3982,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < blockDevices_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(45, blockDevices_.get(i));
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(47, getCloneDetails());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2992,6 +4069,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
     }
     if (getHotTierSizeUsedGib() != other.getHotTierSizeUsedGib()) return false;
     if (!getBlockDevicesList().equals(other.getBlockDevicesList())) return false;
+    if (hasCloneDetails() != other.hasCloneDetails()) return false;
+    if (hasCloneDetails()) {
+      if (!getCloneDetails().equals(other.getCloneDetails())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3120,6 +4201,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
     if (getBlockDevicesCount() > 0) {
       hash = (37 * hash) + BLOCK_DEVICES_FIELD_NUMBER;
       hash = (53 * hash) + getBlockDevicesList().hashCode();
+    }
+    if (hasCloneDetails()) {
+      hash = (37 * hash) + CLONE_DETAILS_FIELD_NUMBER;
+      hash = (53 * hash) + getCloneDetails().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -3293,6 +4378,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
         internalGetHybridReplicationParametersFieldBuilder();
         internalGetCacheParametersFieldBuilder();
         internalGetBlockDevicesFieldBuilder();
+        internalGetCloneDetailsFieldBuilder();
       }
     }
 
@@ -3387,6 +4473,11 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
         blockDevicesBuilder_.clear();
       }
       bitField1_ = (bitField1_ & ~0x00000200);
+      cloneDetails_ = null;
+      if (cloneDetailsBuilder_ != null) {
+        cloneDetailsBuilder_.dispose();
+        cloneDetailsBuilder_ = null;
+      }
       return this;
     }
 
@@ -3596,6 +4687,11 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField1_ & 0x00000100) != 0)) {
         result.hotTierSizeUsedGib_ = hotTierSizeUsedGib_;
+      }
+      if (((from_bitField1_ & 0x00000400) != 0)) {
+        result.cloneDetails_ =
+            cloneDetailsBuilder_ == null ? cloneDetails_ : cloneDetailsBuilder_.build();
+        to_bitField0_ |= 0x00000100;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3832,6 +4928,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
             blockDevicesBuilder_.addAllMessages(other.blockDevices_);
           }
         }
+      }
+      if (other.hasCloneDetails()) {
+        mergeCloneDetails(other.getCloneDetails());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -4176,6 +5275,13 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 362
+            case 378:
+              {
+                input.readMessage(
+                    internalGetCloneDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000400;
+                break;
+              } // case 378
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10149,6 +11255,229 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
         blockDevices_ = null;
       }
       return blockDevicesBuilder_;
+    }
+
+    private com.google.cloud.netapp.v1.Volume.CloneDetails cloneDetails_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.netapp.v1.Volume.CloneDetails,
+            com.google.cloud.netapp.v1.Volume.CloneDetails.Builder,
+            com.google.cloud.netapp.v1.Volume.CloneDetailsOrBuilder>
+        cloneDetailsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If this volume is a clone, this field contains details about
+     * the clone.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.Volume.CloneDetails clone_details = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the cloneDetails field is set.
+     */
+    public boolean hasCloneDetails() {
+      return ((bitField1_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If this volume is a clone, this field contains details about
+     * the clone.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.Volume.CloneDetails clone_details = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The cloneDetails.
+     */
+    public com.google.cloud.netapp.v1.Volume.CloneDetails getCloneDetails() {
+      if (cloneDetailsBuilder_ == null) {
+        return cloneDetails_ == null
+            ? com.google.cloud.netapp.v1.Volume.CloneDetails.getDefaultInstance()
+            : cloneDetails_;
+      } else {
+        return cloneDetailsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If this volume is a clone, this field contains details about
+     * the clone.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.Volume.CloneDetails clone_details = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCloneDetails(com.google.cloud.netapp.v1.Volume.CloneDetails value) {
+      if (cloneDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cloneDetails_ = value;
+      } else {
+        cloneDetailsBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If this volume is a clone, this field contains details about
+     * the clone.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.Volume.CloneDetails clone_details = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCloneDetails(
+        com.google.cloud.netapp.v1.Volume.CloneDetails.Builder builderForValue) {
+      if (cloneDetailsBuilder_ == null) {
+        cloneDetails_ = builderForValue.build();
+      } else {
+        cloneDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If this volume is a clone, this field contains details about
+     * the clone.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.Volume.CloneDetails clone_details = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCloneDetails(com.google.cloud.netapp.v1.Volume.CloneDetails value) {
+      if (cloneDetailsBuilder_ == null) {
+        if (((bitField1_ & 0x00000400) != 0)
+            && cloneDetails_ != null
+            && cloneDetails_
+                != com.google.cloud.netapp.v1.Volume.CloneDetails.getDefaultInstance()) {
+          getCloneDetailsBuilder().mergeFrom(value);
+        } else {
+          cloneDetails_ = value;
+        }
+      } else {
+        cloneDetailsBuilder_.mergeFrom(value);
+      }
+      if (cloneDetails_ != null) {
+        bitField1_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If this volume is a clone, this field contains details about
+     * the clone.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.Volume.CloneDetails clone_details = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCloneDetails() {
+      bitField1_ = (bitField1_ & ~0x00000400);
+      cloneDetails_ = null;
+      if (cloneDetailsBuilder_ != null) {
+        cloneDetailsBuilder_.dispose();
+        cloneDetailsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If this volume is a clone, this field contains details about
+     * the clone.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.Volume.CloneDetails clone_details = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.netapp.v1.Volume.CloneDetails.Builder getCloneDetailsBuilder() {
+      bitField1_ |= 0x00000400;
+      onChanged();
+      return internalGetCloneDetailsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If this volume is a clone, this field contains details about
+     * the clone.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.Volume.CloneDetails clone_details = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.netapp.v1.Volume.CloneDetailsOrBuilder getCloneDetailsOrBuilder() {
+      if (cloneDetailsBuilder_ != null) {
+        return cloneDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        return cloneDetails_ == null
+            ? com.google.cloud.netapp.v1.Volume.CloneDetails.getDefaultInstance()
+            : cloneDetails_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If this volume is a clone, this field contains details about
+     * the clone.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.Volume.CloneDetails clone_details = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.netapp.v1.Volume.CloneDetails,
+            com.google.cloud.netapp.v1.Volume.CloneDetails.Builder,
+            com.google.cloud.netapp.v1.Volume.CloneDetailsOrBuilder>
+        internalGetCloneDetailsFieldBuilder() {
+      if (cloneDetailsBuilder_ == null) {
+        cloneDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.netapp.v1.Volume.CloneDetails,
+                com.google.cloud.netapp.v1.Volume.CloneDetails.Builder,
+                com.google.cloud.netapp.v1.Volume.CloneDetailsOrBuilder>(
+                getCloneDetails(), getParentForChildren(), isClean());
+        cloneDetails_ = null;
+      }
+      return cloneDetailsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.netapp.v1.Volume)

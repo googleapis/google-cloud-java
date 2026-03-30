@@ -140,6 +140,7 @@ public class GrpcPartnerLinkServiceStub extends PartnerLinkServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeletePartnerLinkRequest, Empty> deletePartnerLinkTransportSettings =
         GrpcCallSettings.<DeletePartnerLinkRequest, Empty>newBuilder()
@@ -150,6 +151,7 @@ public class GrpcPartnerLinkServiceStub extends PartnerLinkServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SearchPartnerLinksRequest, SearchPartnerLinksResponse>
         searchPartnerLinksTransportSettings =
@@ -161,6 +163,7 @@ public class GrpcPartnerLinkServiceStub extends PartnerLinkServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createPartnerLinkCallable =

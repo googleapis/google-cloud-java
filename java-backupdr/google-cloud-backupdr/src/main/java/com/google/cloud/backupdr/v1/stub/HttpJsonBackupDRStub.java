@@ -2043,6 +2043,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetManagementServerRequest, ManagementServer>
         getManagementServerTransportSettings =
@@ -2055,6 +2056,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateManagementServerRequest, Operation>
         createManagementServerTransportSettings =
@@ -2067,6 +2069,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteManagementServerRequest, Operation>
         deleteManagementServerTransportSettings =
@@ -2079,6 +2082,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateBackupVaultRequest, Operation> createBackupVaultTransportSettings =
         HttpJsonCallSettings.<CreateBackupVaultRequest, Operation>newBuilder()
@@ -2090,6 +2094,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListBackupVaultsRequest, ListBackupVaultsResponse>
         listBackupVaultsTransportSettings =
@@ -2102,6 +2107,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<FetchUsableBackupVaultsRequest, FetchUsableBackupVaultsResponse>
         fetchUsableBackupVaultsTransportSettings =
@@ -2115,6 +2121,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetBackupVaultRequest, BackupVault> getBackupVaultTransportSettings =
         HttpJsonCallSettings.<GetBackupVaultRequest, BackupVault>newBuilder()
@@ -2126,6 +2133,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateBackupVaultRequest, Operation> updateBackupVaultTransportSettings =
         HttpJsonCallSettings.<UpdateBackupVaultRequest, Operation>newBuilder()
@@ -2149,6 +2157,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListDataSourcesRequest, ListDataSourcesResponse>
         listDataSourcesTransportSettings =
@@ -2161,6 +2170,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDataSourceRequest, DataSource> getDataSourceTransportSettings =
         HttpJsonCallSettings.<GetDataSourceRequest, DataSource>newBuilder()
@@ -2172,6 +2182,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateDataSourceRequest, Operation> updateDataSourceTransportSettings =
         HttpJsonCallSettings.<UpdateDataSourceRequest, Operation>newBuilder()
@@ -2195,6 +2206,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse>
         fetchBackupsForResourceTypeTransportSettings =
@@ -2209,6 +2221,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
         HttpJsonCallSettings.<GetBackupRequest, Backup>newBuilder()
@@ -2220,6 +2233,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateBackupRequest, Operation> updateBackupTransportSettings =
         HttpJsonCallSettings.<UpdateBackupRequest, Operation>newBuilder()
@@ -2242,6 +2256,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RestoreBackupRequest, Operation> restoreBackupTransportSettings =
         HttpJsonCallSettings.<RestoreBackupRequest, Operation>newBuilder()
@@ -2253,6 +2268,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateBackupPlanRequest, Operation> createBackupPlanTransportSettings =
         HttpJsonCallSettings.<CreateBackupPlanRequest, Operation>newBuilder()
@@ -2264,6 +2280,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateBackupPlanRequest, Operation> updateBackupPlanTransportSettings =
         HttpJsonCallSettings.<UpdateBackupPlanRequest, Operation>newBuilder()
@@ -2287,6 +2304,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListBackupPlansRequest, ListBackupPlansResponse>
         listBackupPlansTransportSettings =
@@ -2299,6 +2317,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteBackupPlanRequest, Operation> deleteBackupPlanTransportSettings =
         HttpJsonCallSettings.<DeleteBackupPlanRequest, Operation>newBuilder()
@@ -2310,6 +2329,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetBackupPlanRevisionRequest, BackupPlanRevision>
         getBackupPlanRevisionTransportSettings =
@@ -2322,6 +2342,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListBackupPlanRevisionsRequest, ListBackupPlanRevisionsResponse>
         listBackupPlanRevisionsTransportSettings =
@@ -2335,6 +2356,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateBackupPlanAssociationRequest, Operation>
         createBackupPlanAssociationTransportSettings =
@@ -2347,6 +2369,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateBackupPlanAssociationRequest, Operation>
         updateBackupPlanAssociationTransportSettings =
@@ -2374,6 +2397,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListBackupPlanAssociationsRequest, ListBackupPlanAssociationsResponse>
         listBackupPlanAssociationsTransportSettings =
@@ -2387,6 +2411,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             FetchBackupPlanAssociationsForResourceTypeRequest,
@@ -2404,6 +2429,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteBackupPlanAssociationRequest, Operation>
         deleteBackupPlanAssociationTransportSettings =
@@ -2416,6 +2442,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<TriggerBackupRequest, Operation> triggerBackupTransportSettings =
         HttpJsonCallSettings.<TriggerBackupRequest, Operation>newBuilder()
@@ -2427,6 +2454,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetDataSourceReferenceRequest, DataSourceReference>
         getDataSourceReferenceTransportSettings =
@@ -2439,6 +2467,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListDataSourceReferencesRequest, ListDataSourceReferencesResponse>
         listDataSourceReferencesTransportSettings =
@@ -2452,6 +2481,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             FetchDataSourceReferencesForResourceTypeRequest,
@@ -2469,6 +2499,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<InitializeServiceRequest, Operation> initializeServiceTransportSettings =
         HttpJsonCallSettings.<InitializeServiceRequest, Operation>newBuilder()
@@ -2514,6 +2545,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -2525,6 +2557,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -2537,6 +2570,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listManagementServersCallable =

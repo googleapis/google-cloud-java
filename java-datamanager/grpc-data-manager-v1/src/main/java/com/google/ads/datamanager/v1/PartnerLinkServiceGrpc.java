@@ -248,9 +248,6 @@ public final class PartnerLinkServiceGrpc {
      *   Google Account of the credentials is a user. If not set, defaults to the
      *   account of the request. Format:
      *   `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
-     * * `linked-account`: (Optional) The resource name of the account with an
-     *    established product link to the `login-account`. Format:
-     *    `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
      * </pre>
      */
     default void createPartnerLink(
@@ -272,9 +269,6 @@ public final class PartnerLinkServiceGrpc {
      *   Google Account of the credentials is a user. If not set, defaults to the
      *   account of the request. Format:
      *   `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
-     * * `linked-account`: (Optional) The resource name of the account with an
-     *    established product link to the `login-account`. Format:
-     *    `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
      * </pre>
      */
     default void deletePartnerLink(
@@ -296,9 +290,6 @@ public final class PartnerLinkServiceGrpc {
      *   Google Account of the credentials is a user. If not set, defaults to the
      *   account of the request. Format:
      *   `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
-     * * `linked-account`: (Optional) The resource name of the account with an
-     *    established product link to the `login-account`. Format:
-     *    `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
      * </pre>
      */
     default void searchPartnerLinks(
@@ -357,9 +348,6 @@ public final class PartnerLinkServiceGrpc {
      *   Google Account of the credentials is a user. If not set, defaults to the
      *   account of the request. Format:
      *   `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
-     * * `linked-account`: (Optional) The resource name of the account with an
-     *    established product link to the `login-account`. Format:
-     *    `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
      * </pre>
      */
     public void createPartnerLink(
@@ -383,9 +371,6 @@ public final class PartnerLinkServiceGrpc {
      *   Google Account of the credentials is a user. If not set, defaults to the
      *   account of the request. Format:
      *   `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
-     * * `linked-account`: (Optional) The resource name of the account with an
-     *    established product link to the `login-account`. Format:
-     *    `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
      * </pre>
      */
     public void deletePartnerLink(
@@ -409,9 +394,6 @@ public final class PartnerLinkServiceGrpc {
      *   Google Account of the credentials is a user. If not set, defaults to the
      *   account of the request. Format:
      *   `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
-     * * `linked-account`: (Optional) The resource name of the account with an
-     *    established product link to the `login-account`. Format:
-     *    `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
      * </pre>
      */
     public void searchPartnerLinks(
@@ -457,9 +439,6 @@ public final class PartnerLinkServiceGrpc {
      *   Google Account of the credentials is a user. If not set, defaults to the
      *   account of the request. Format:
      *   `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
-     * * `linked-account`: (Optional) The resource name of the account with an
-     *    established product link to the `login-account`. Format:
-     *    `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
      * </pre>
      */
     public com.google.ads.datamanager.v1.PartnerLink createPartnerLink(
@@ -481,9 +460,6 @@ public final class PartnerLinkServiceGrpc {
      *   Google Account of the credentials is a user. If not set, defaults to the
      *   account of the request. Format:
      *   `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
-     * * `linked-account`: (Optional) The resource name of the account with an
-     *    established product link to the `login-account`. Format:
-     *    `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
      * </pre>
      */
     public com.google.protobuf.Empty deletePartnerLink(
@@ -505,9 +481,6 @@ public final class PartnerLinkServiceGrpc {
      *   Google Account of the credentials is a user. If not set, defaults to the
      *   account of the request. Format:
      *   `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
-     * * `linked-account`: (Optional) The resource name of the account with an
-     *    established product link to the `login-account`. Format:
-     *    `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
      * </pre>
      */
     public com.google.ads.datamanager.v1.SearchPartnerLinksResponse searchPartnerLinks(
@@ -550,9 +523,6 @@ public final class PartnerLinkServiceGrpc {
      *   Google Account of the credentials is a user. If not set, defaults to the
      *   account of the request. Format:
      *   `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
-     * * `linked-account`: (Optional) The resource name of the account with an
-     *    established product link to the `login-account`. Format:
-     *    `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
      * </pre>
      */
     public com.google.ads.datamanager.v1.PartnerLink createPartnerLink(
@@ -573,9 +543,6 @@ public final class PartnerLinkServiceGrpc {
      *   Google Account of the credentials is a user. If not set, defaults to the
      *   account of the request. Format:
      *   `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
-     * * `linked-account`: (Optional) The resource name of the account with an
-     *    established product link to the `login-account`. Format:
-     *    `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
      * </pre>
      */
     public com.google.protobuf.Empty deletePartnerLink(
@@ -596,9 +563,6 @@ public final class PartnerLinkServiceGrpc {
      *   Google Account of the credentials is a user. If not set, defaults to the
      *   account of the request. Format:
      *   `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
-     * * `linked-account`: (Optional) The resource name of the account with an
-     *    established product link to the `login-account`. Format:
-     *    `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
      * </pre>
      */
     public com.google.ads.datamanager.v1.SearchPartnerLinksResponse searchPartnerLinks(
@@ -639,9 +603,6 @@ public final class PartnerLinkServiceGrpc {
      *   Google Account of the credentials is a user. If not set, defaults to the
      *   account of the request. Format:
      *   `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
-     * * `linked-account`: (Optional) The resource name of the account with an
-     *    established product link to the `login-account`. Format:
-     *    `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -663,9 +624,6 @@ public final class PartnerLinkServiceGrpc {
      *   Google Account of the credentials is a user. If not set, defaults to the
      *   account of the request. Format:
      *   `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
-     * * `linked-account`: (Optional) The resource name of the account with an
-     *    established product link to the `login-account`. Format:
-     *    `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -686,9 +644,6 @@ public final class PartnerLinkServiceGrpc {
      *   Google Account of the credentials is a user. If not set, defaults to the
      *   account of the request. Format:
      *   `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
-     * * `linked-account`: (Optional) The resource name of the account with an
-     *    established product link to the `login-account`. Format:
-     *    `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

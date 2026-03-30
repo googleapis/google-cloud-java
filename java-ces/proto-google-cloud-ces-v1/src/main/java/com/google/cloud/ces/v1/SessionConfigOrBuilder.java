@@ -239,7 +239,7 @@ public interface SessionConfigOrBuilder
    * Optional. The entry agent to handle the session. If not specified, the
    * session will be handled by the [root
    * agent][google.cloud.ces.v1.App.root_agent] of the app. Format:
-   * `projects/{project}/locations/{location}/agents/{agent}`
+   * `projects/{project}/locations/{location}/apps/{app}/agents/{agent}`
    * </pre>
    *
    * <code>
@@ -257,7 +257,7 @@ public interface SessionConfigOrBuilder
    * Optional. The entry agent to handle the session. If not specified, the
    * session will be handled by the [root
    * agent][google.cloud.ces.v1.App.root_agent] of the app. Format:
-   * `projects/{project}/locations/{location}/agents/{agent}`
+   * `projects/{project}/locations/{location}/apps/{app}/agents/{agent}`
    * </pre>
    *
    * <code>
@@ -338,6 +338,21 @@ public interface SessionConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. Whether to use tool fakes for the session.
+   * If this field is set, the agent will attempt use tool fakes instead of
+   * calling the real tools.
+   * </pre>
+   *
+   * <code>bool use_tool_fakes = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The useToolFakes.
+   */
+  boolean getUseToolFakes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional.
    * [QueryParameters](https://cloud.google.com/dialogflow/cx/docs/reference/rpc/google.cloud.dialogflow.cx.v3#queryparameters)
    * to send to the remote
@@ -390,4 +405,22 @@ public interface SessionConfigOrBuilder
    */
   com.google.cloud.ces.v1.SessionConfig.RemoteDialogflowQueryParametersOrBuilder
       getRemoteDialogflowQueryParametersOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to enable streaming text outputs from the model.
+   * By default, text outputs from the model are collected before sending to the
+   * client.
+   * NOTE: This is only supported for text (non-voice) sessions via
+   * [StreamRunSession][google.cloud.ces.v1.SessionService.StreamRunSession] or
+   * [BidiRunSession][google.cloud.ces.v1.SessionService.BidiRunSession].
+   * </pre>
+   *
+   * <code>bool enable_text_streaming = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableTextStreaming.
+   */
+  boolean getEnableTextStreaming();
 }

@@ -349,6 +349,7 @@ public class HttpJsonBackupDrProtectionSummaryStub extends BackupDrProtectionSum
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -383,6 +384,7 @@ public class HttpJsonBackupDrProtectionSummaryStub extends BackupDrProtectionSum
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -394,6 +396,7 @@ public class HttpJsonBackupDrProtectionSummaryStub extends BackupDrProtectionSum
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -406,6 +409,7 @@ public class HttpJsonBackupDrProtectionSummaryStub extends BackupDrProtectionSum
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listResourceBackupConfigsCallable =
