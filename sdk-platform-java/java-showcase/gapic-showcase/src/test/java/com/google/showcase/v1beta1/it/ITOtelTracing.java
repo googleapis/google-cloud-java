@@ -50,6 +50,8 @@ import com.google.showcase.v1beta1.EchoSettings;
 import com.google.showcase.v1beta1.it.util.TestClientInitializer;
 import com.google.showcase.v1beta1.stub.EchoStub;
 import com.google.showcase.v1beta1.stub.EchoStubSettings;
+import io.grpc.ManagedChannelBuilder;
+import java.io.IOException;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.SpanKind;
@@ -98,8 +100,22 @@ class ITOtelTracing {
   void testTracing_successfulEcho_grpc() throws Exception {
     SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
 
-    try (EchoClient client =
-        TestClientInitializer.createGrpcEchoClientOpentelemetry(tracingFactory)) {
+    EchoSettings grpcEchoSettings =
+        EchoSettings.newBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(
+                EchoSettings.defaultGrpcTransportProviderBuilder()
+                    .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+                    .build())
+            .setEndpoint("localhost:7469")
+            .build();
+
+    EchoStubSettings.Builder builder = (EchoStubSettings.Builder) grpcEchoSettings.getStubSettings().toBuilder();
+    builder.setTracerFactory(tracingFactory);
+    ExtendedEchoStubSettings echoStubSettings = new ExtendedEchoStubSettings(builder);
+    EchoStub stub = echoStubSettings.createStub();
+
+    try (EchoClient client = EchoClient.create(stub)) {
 
       client.echo(EchoRequest.newBuilder().setContent("tracing-test").build());
 
@@ -145,6 +161,11 @@ class ITOtelTracing {
       assertThat(
               attemptSpan
                   .getAttributes()
+                  .get(AttributeKey.stringKey(ObservabilityAttributes.GCP_CLIENT_SERVICE_ATTRIBUTE)))
+          .isEqualTo("showcase");
+      assertThat(
+              attemptSpan
+                  .getAttributes()
                   .get(AttributeKey.stringKey(ObservabilityAttributes.GRPC_RPC_METHOD_ATTRIBUTE)))
           .isEqualTo("google.showcase.v1beta1.Echo/Echo");
       assertThat(attemptSpan.getInstrumentationScopeInfo().getName()).isEqualTo(SHOWCASE_ARTIFACT);
@@ -156,8 +177,23 @@ class ITOtelTracing {
   void testTracing_successfulEcho_httpjson() throws Exception {
     SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
 
-    try (EchoClient client =
-        TestClientInitializer.createHttpJsonEchoClientOpentelemetry(tracingFactory)) {
+    EchoSettings httpJsonEchoSettings =
+        EchoSettings.newHttpJsonBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(
+                EchoSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(
+                        new NetHttpTransport.Builder().doNotValidateCertificate().build())
+                    .build())
+            .setEndpoint("http://localhost:7469")
+            .build();
+
+    EchoStubSettings.Builder builder = (EchoStubSettings.Builder) httpJsonEchoSettings.getStubSettings().toBuilder();
+    builder.setTracerFactory(tracingFactory);
+    ExtendedEchoStubSettings echoStubSettings = new ExtendedEchoStubSettings(builder);
+    EchoStub stub = echoStubSettings.createStub();
+
+    try (EchoClient client = EchoClient.create(stub)) {
 
       client.echo(EchoRequest.newBuilder().setContent("tracing-test").build());
 
@@ -196,6 +232,11 @@ class ITOtelTracing {
                   .getAttributes()
                   .get(AttributeKey.stringKey(ObservabilityAttributes.ARTIFACT_ATTRIBUTE)))
           .isEqualTo(SHOWCASE_ARTIFACT);
+      assertThat(
+              attemptSpan
+                  .getAttributes()
+                  .get(AttributeKey.stringKey(ObservabilityAttributes.GCP_CLIENT_SERVICE_ATTRIBUTE)))
+          .isEqualTo("showcase");
       assertThat(
               attemptSpan
                   .getAttributes()
@@ -364,5 +405,19 @@ class ITOtelTracing {
             .boxed()
             .collect(java.util.stream.Collectors.toList());
     assertThat(resendCounts).containsExactlyElementsIn(expectedCounts).inOrder();
+  }
+
+  /**
+   * Custom wrapper to set a service name for showcase clients, which lack one by default.
+   */
+  private static class ExtendedEchoStubSettings extends EchoStubSettings {
+    protected ExtendedEchoStubSettings(EchoStubSettings.Builder builder) throws IOException {
+      super(builder);
+    }
+
+    @Override
+    public String getServiceName() {
+      return "showcase";
+    }
   }
 }

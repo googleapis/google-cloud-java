@@ -276,6 +276,7 @@ public abstract class ClientContext {
             .setServerAddress(endpointContext.resolvedServerAddress())
             .setServerPort(endpointContext.resolvedServerPort())
             .setLibraryMetadata(settings.getLibraryMetadata())
+            .setServiceName(endpointContext.serviceName())
             .build();
     ApiTracerFactory apiTracerFactory = settings.getTracerFactory();
     if (apiTracerFactory instanceof SpanTracerFactory) {
