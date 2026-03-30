@@ -205,6 +205,9 @@ public abstract class ApiTracerContext {
         attributes.put(ObservabilityAttributes.HTTP_URL_TEMPLATE_ATTRIBUTE, httpPathTemplate());
       }
     }
+    if (!Strings.isNullOrEmpty(serviceName())) {
+      attributes.put(ObservabilityAttributes.GCP_CLIENT_SERVICE_ATTRIBUTE, serviceName());
+    }
     if (!Strings.isNullOrEmpty(destinationResourceId())) {
       attributes.put(
           ObservabilityAttributes.DESTINATION_RESOURCE_ID_ATTRIBUTE, destinationResourceId());

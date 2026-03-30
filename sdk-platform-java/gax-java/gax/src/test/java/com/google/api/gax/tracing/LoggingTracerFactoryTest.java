@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -28,51 +28,47 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.google.api.gax.logging;
+package com.google.api.gax.tracing;
 
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
-import org.slf4j.ILoggerFactory;
-import org.slf4j.IMarkerFactory;
-import org.slf4j.Logger;
-import org.slf4j.spi.MDCAdapter;
-import org.slf4j.spi.SLF4JServiceProvider;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-/**
- * This provider is made discoverable to SFL4J's LoggerFactory in
- * resources/META-INF/services/org.slf4j.spi.SLF4JServiceProvider
- */
-public class TestServiceProvider implements SLF4JServiceProvider {
+import org.junit.jupiter.api.Test;
 
-  private final ConcurrentMap<String, Logger> loggers = new ConcurrentHashMap<>();
-  private final ILoggerFactory loggerFactory =
-      new ILoggerFactory() {
-        @Override
-        public Logger getLogger(String name) {
-          return loggers.computeIfAbsent(name, TestLogger::new);
-        }
-      };
+class LoggingTracerFactoryTest {
 
-  @Override
-  public ILoggerFactory getLoggerFactory() {
-    return loggerFactory;
+  @Test
+  void testNewTracer_CreatesLoggingTracer() {
+    LoggingTracerFactory factory = new LoggingTracerFactory();
+    ApiTracer tracer =
+        factory.newTracer(
+            BaseApiTracer.getInstance(),
+            SpanName.of("client", "method"),
+            ApiTracerFactory.OperationType.Unary);
+
+    assertNotNull(tracer);
+    assertTrue(tracer instanceof LoggingTracer);
   }
 
-  @Override
-  public IMarkerFactory getMarkerFactory() {
-    return null;
+  @Test
+  void testNewTracer_WithContext_CreatesLoggingTracer() {
+    LoggingTracerFactory factory = new LoggingTracerFactory();
+    ApiTracer tracer = factory.newTracer(BaseApiTracer.getInstance(), ApiTracerContext.empty());
+
+    assertNotNull(tracer);
+    assertTrue(tracer instanceof LoggingTracer);
   }
 
-  @Override
-  public MDCAdapter getMDCAdapter() {
-    return new TestMDCAdapter();
-  }
+  @Test
+  void testWithContext_ReturnsNewFactoryWithMergedContext() {
+    LoggingTracerFactory factory = new LoggingTracerFactory();
+    ApiTracerContext context =
+        ApiTracerContext.empty().toBuilder().setServerAddress("address").build();
+    ApiTracerFactory updatedFactory = factory.withContext(context);
 
-  @Override
-  public String getRequestedApiVersion() {
-    return "";
+    assertNotNull(updatedFactory);
+    assertTrue(updatedFactory instanceof LoggingTracerFactory);
+    assertEquals("address", updatedFactory.getApiTracerContext().serverAddress());
   }
-
-  @Override
-  public void initialize() {}
 }
