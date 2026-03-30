@@ -94,16 +94,16 @@ public class ErrorTypeUtil {
    *       includes {@code google.rpc.ErrorInfo} details, the reason field (e.g.,
    *       "RATE_LIMIT_EXCEEDED", "SERVICE_DISABLED") will be used. This offers the most precise
    *       error cause.
-   *   <li><b>Client-Side Network/Operational Errors:</b> For errors occurring within the client
-   *       library or network stack, mapping to specific enum representations from {@link
-   *       ErrorType}. This includes checking the exception for diagnostic markers (e.g., {@code
-   *       ConnectException} or {@code SocketTimeoutException}).
    *   <li><b>Specific Server Error Code:</b> If no {@code ErrorInfo.reason} is available and it is
    *       not a client-side failure, but a server error code was received:
    *       <ul>
    *         <li>For HTTP: The HTTP status code (e.g., "403", "503").
    *         <li>For gRPC: The gRPC status code name (e.g., "PERMISSION_DENIED", "UNAVAILABLE").
    *       </ul>
+   *   <li><b>Client-Side Network/Operational Errors:</b> For errors occurring within the client
+   *       library or network stack, mapping to specific enum representations from {@link
+   *       ErrorType}. This includes checking the exception for diagnostic markers (e.g., {@code
+   *       ConnectException} or {@code SocketTimeoutException}).
    *   <li><b>Language-specific error type:</b> The class or struct name of the exception or error
    *       if available. This must be low-cardinality, meaning it returns the short name of the
    *       exception class (e.g. {@code "IllegalStateException"}) rather than its message.
