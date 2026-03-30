@@ -249,6 +249,7 @@ public class GrpcCmekServiceStub extends CmekServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateEncryptionConfigRequest, Operation>
         updateEncryptionConfigTransportSettings =
@@ -273,6 +274,7 @@ public class GrpcCmekServiceStub extends CmekServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListEncryptionConfigsRequest, ListEncryptionConfigsResponse>
         listEncryptionConfigsTransportSettings =
@@ -285,6 +287,7 @@ public class GrpcCmekServiceStub extends CmekServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetEncryptionConfigRequest, EncryptionConfig>
         getEncryptionConfigTransportSettings =
@@ -296,6 +299,7 @@ public class GrpcCmekServiceStub extends CmekServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -326,6 +330,7 @@ public class GrpcCmekServiceStub extends CmekServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -336,6 +341,7 @@ public class GrpcCmekServiceStub extends CmekServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -347,6 +353,7 @@ public class GrpcCmekServiceStub extends CmekServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createEncryptionConfigCallable =

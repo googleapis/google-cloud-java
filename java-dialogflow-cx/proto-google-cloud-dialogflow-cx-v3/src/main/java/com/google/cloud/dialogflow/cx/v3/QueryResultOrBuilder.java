@@ -647,7 +647,7 @@ public interface QueryResultOrBuilder
    * <code>.google.cloud.dialogflow.cx.v3.Intent intent = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.QueryResult.intent is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/session.proto;l=1080
+   *     google/cloud/dialogflow/cx/v3/session.proto;l=1081
    * @return Whether the intent field is set.
    */
   @java.lang.Deprecated
@@ -668,7 +668,7 @@ public interface QueryResultOrBuilder
    * <code>.google.cloud.dialogflow.cx.v3.Intent intent = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.QueryResult.intent is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/session.proto;l=1080
+   *     google/cloud/dialogflow/cx/v3/session.proto;l=1081
    * @return The intent.
    */
   @java.lang.Deprecated
@@ -709,7 +709,7 @@ public interface QueryResultOrBuilder
    * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.QueryResult.intent_detection_confidence is
-   *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=1091
+   *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=1092
    * @return The intentDetectionConfidence.
    */
   @java.lang.Deprecated
@@ -996,6 +996,87 @@ public interface QueryResultOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3.DataStoreConnectionSignalsOrBuilder
       getDataStoreConnectionSignalsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains the sequence of trace blocks from the current
+   * conversation turn. Trace blocks are ordered chronologically and contain
+   * detailed traces of runtime behavior such as tool calls, LLM calls, flow and
+   * playbook invocations, agent utterances and user utterances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3.TraceBlock trace_blocks = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.dialogflow.cx.v3.TraceBlock> getTraceBlocksList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains the sequence of trace blocks from the current
+   * conversation turn. Trace blocks are ordered chronologically and contain
+   * detailed traces of runtime behavior such as tool calls, LLM calls, flow and
+   * playbook invocations, agent utterances and user utterances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3.TraceBlock trace_blocks = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3.TraceBlock getTraceBlocks(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains the sequence of trace blocks from the current
+   * conversation turn. Trace blocks are ordered chronologically and contain
+   * detailed traces of runtime behavior such as tool calls, LLM calls, flow and
+   * playbook invocations, agent utterances and user utterances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3.TraceBlock trace_blocks = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getTraceBlocksCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains the sequence of trace blocks from the current
+   * conversation turn. Trace blocks are ordered chronologically and contain
+   * detailed traces of runtime behavior such as tool calls, LLM calls, flow and
+   * playbook invocations, agent utterances and user utterances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3.TraceBlock trace_blocks = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.dialogflow.cx.v3.TraceBlockOrBuilder>
+      getTraceBlocksOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains the sequence of trace blocks from the current
+   * conversation turn. Trace blocks are ordered chronologically and contain
+   * detailed traces of runtime behavior such as tool calls, LLM calls, flow and
+   * playbook invocations, agent utterances and user utterances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3.TraceBlock trace_blocks = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3.TraceBlockOrBuilder getTraceBlocksOrBuilder(int index);
 
   com.google.cloud.dialogflow.cx.v3.QueryResult.QueryCase getQueryCase();
 }

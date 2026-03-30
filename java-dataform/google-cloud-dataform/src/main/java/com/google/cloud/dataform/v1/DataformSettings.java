@@ -26,9 +26,13 @@ import static com.google.cloud.dataform.v1.DataformClient.ListWorkflowInvocation
 import static com.google.cloud.dataform.v1.DataformClient.ListWorkspacesPagedResponse;
 import static com.google.cloud.dataform.v1.DataformClient.QueryCompilationResultActionsPagedResponse;
 import static com.google.cloud.dataform.v1.DataformClient.QueryDirectoryContentsPagedResponse;
+import static com.google.cloud.dataform.v1.DataformClient.QueryFolderContentsPagedResponse;
 import static com.google.cloud.dataform.v1.DataformClient.QueryRepositoryDirectoryContentsPagedResponse;
+import static com.google.cloud.dataform.v1.DataformClient.QueryTeamFolderContentsPagedResponse;
+import static com.google.cloud.dataform.v1.DataformClient.QueryUserRootContentsPagedResponse;
 import static com.google.cloud.dataform.v1.DataformClient.QueryWorkflowInvocationActionsPagedResponse;
 import static com.google.cloud.dataform.v1.DataformClient.SearchFilesPagedResponse;
+import static com.google.cloud.dataform.v1.DataformClient.SearchTeamFoldersPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -39,6 +43,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -52,6 +57,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -74,7 +80,7 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of getRepository:
+ * of getTeamFolder:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -84,10 +90,10 @@ import javax.annotation.Generated;
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * DataformSettings.Builder dataformSettingsBuilder = DataformSettings.newBuilder();
  * dataformSettingsBuilder
- *     .getRepositorySettings()
+ *     .getTeamFolderSettings()
  *     .setRetrySettings(
  *         dataformSettingsBuilder
- *             .getRepositorySettings()
+ *             .getTeamFolderSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -105,9 +111,139 @@ import javax.annotation.Generated;
  * Please refer to the [Client Side Retry
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for deleteTeamFolderTree:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * DataformSettings.Builder dataformSettingsBuilder = DataformSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * dataformSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 public class DataformSettings extends ClientSettings<DataformSettings> {
+
+  /** Returns the object with the settings used for calls to getTeamFolder. */
+  public UnaryCallSettings<GetTeamFolderRequest, TeamFolder> getTeamFolderSettings() {
+    return ((DataformStubSettings) getStubSettings()).getTeamFolderSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createTeamFolder. */
+  public UnaryCallSettings<CreateTeamFolderRequest, TeamFolder> createTeamFolderSettings() {
+    return ((DataformStubSettings) getStubSettings()).createTeamFolderSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateTeamFolder. */
+  public UnaryCallSettings<UpdateTeamFolderRequest, TeamFolder> updateTeamFolderSettings() {
+    return ((DataformStubSettings) getStubSettings()).updateTeamFolderSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteTeamFolder. */
+  public UnaryCallSettings<DeleteTeamFolderRequest, Empty> deleteTeamFolderSettings() {
+    return ((DataformStubSettings) getStubSettings()).deleteTeamFolderSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteTeamFolderTree. */
+  public UnaryCallSettings<DeleteTeamFolderTreeRequest, Operation> deleteTeamFolderTreeSettings() {
+    return ((DataformStubSettings) getStubSettings()).deleteTeamFolderTreeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteTeamFolderTree. */
+  public OperationCallSettings<DeleteTeamFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+      deleteTeamFolderTreeOperationSettings() {
+    return ((DataformStubSettings) getStubSettings()).deleteTeamFolderTreeOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to queryTeamFolderContents. */
+  public PagedCallSettings<
+          QueryTeamFolderContentsRequest,
+          QueryTeamFolderContentsResponse,
+          QueryTeamFolderContentsPagedResponse>
+      queryTeamFolderContentsSettings() {
+    return ((DataformStubSettings) getStubSettings()).queryTeamFolderContentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to searchTeamFolders. */
+  public PagedCallSettings<
+          SearchTeamFoldersRequest, SearchTeamFoldersResponse, SearchTeamFoldersPagedResponse>
+      searchTeamFoldersSettings() {
+    return ((DataformStubSettings) getStubSettings()).searchTeamFoldersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getFolder. */
+  public UnaryCallSettings<GetFolderRequest, Folder> getFolderSettings() {
+    return ((DataformStubSettings) getStubSettings()).getFolderSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createFolder. */
+  public UnaryCallSettings<CreateFolderRequest, Folder> createFolderSettings() {
+    return ((DataformStubSettings) getStubSettings()).createFolderSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateFolder. */
+  public UnaryCallSettings<UpdateFolderRequest, Folder> updateFolderSettings() {
+    return ((DataformStubSettings) getStubSettings()).updateFolderSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteFolder. */
+  public UnaryCallSettings<DeleteFolderRequest, Empty> deleteFolderSettings() {
+    return ((DataformStubSettings) getStubSettings()).deleteFolderSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteFolderTree. */
+  public UnaryCallSettings<DeleteFolderTreeRequest, Operation> deleteFolderTreeSettings() {
+    return ((DataformStubSettings) getStubSettings()).deleteFolderTreeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteFolderTree. */
+  public OperationCallSettings<DeleteFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+      deleteFolderTreeOperationSettings() {
+    return ((DataformStubSettings) getStubSettings()).deleteFolderTreeOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to queryFolderContents. */
+  public PagedCallSettings<
+          QueryFolderContentsRequest, QueryFolderContentsResponse, QueryFolderContentsPagedResponse>
+      queryFolderContentsSettings() {
+    return ((DataformStubSettings) getStubSettings()).queryFolderContentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to queryUserRootContents. */
+  public PagedCallSettings<
+          QueryUserRootContentsRequest,
+          QueryUserRootContentsResponse,
+          QueryUserRootContentsPagedResponse>
+      queryUserRootContentsSettings() {
+    return ((DataformStubSettings) getStubSettings()).queryUserRootContentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to moveFolder. */
+  public UnaryCallSettings<MoveFolderRequest, Operation> moveFolderSettings() {
+    return ((DataformStubSettings) getStubSettings()).moveFolderSettings();
+  }
+
+  /** Returns the object with the settings used for calls to moveFolder. */
+  public OperationCallSettings<MoveFolderRequest, Empty, MoveFolderMetadata>
+      moveFolderOperationSettings() {
+    return ((DataformStubSettings) getStubSettings()).moveFolderOperationSettings();
+  }
 
   /** Returns the object with the settings used for calls to listRepositories. */
   public PagedCallSettings<
@@ -134,6 +270,17 @@ public class DataformSettings extends ClientSettings<DataformSettings> {
   /** Returns the object with the settings used for calls to deleteRepository. */
   public UnaryCallSettings<DeleteRepositoryRequest, Empty> deleteRepositorySettings() {
     return ((DataformStubSettings) getStubSettings()).deleteRepositorySettings();
+  }
+
+  /** Returns the object with the settings used for calls to moveRepository. */
+  public UnaryCallSettings<MoveRepositoryRequest, Operation> moveRepositorySettings() {
+    return ((DataformStubSettings) getStubSettings()).moveRepositorySettings();
+  }
+
+  /** Returns the object with the settings used for calls to moveRepository. */
+  public OperationCallSettings<MoveRepositoryRequest, Empty, MoveRepositoryMetadata>
+      moveRepositoryOperationSettings() {
+    return ((DataformStubSettings) getStubSettings()).moveRepositoryOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to commitRepositoryChanges. */
@@ -437,6 +584,22 @@ public class DataformSettings extends ClientSettings<DataformSettings> {
     return ((DataformStubSettings) getStubSettings()).updateConfigSettings();
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return ((DataformStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return ((DataformStubSettings) getStubSettings()).setIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((DataformStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -446,22 +609,6 @@ public class DataformSettings extends ClientSettings<DataformSettings> {
   /** Returns the object with the settings used for calls to getLocation. */
   public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
     return ((DataformStubSettings) getStubSettings()).getLocationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to setIamPolicy. */
-  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
-    return ((DataformStubSettings) getStubSettings()).setIamPolicySettings();
-  }
-
-  /** Returns the object with the settings used for calls to getIamPolicy. */
-  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
-    return ((DataformStubSettings) getStubSettings()).getIamPolicySettings();
-  }
-
-  /** Returns the object with the settings used for calls to testIamPermissions. */
-  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsSettings() {
-    return ((DataformStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
   public static final DataformSettings create(DataformStubSettings stub) throws IOException {
@@ -575,6 +722,118 @@ public class DataformSettings extends ClientSettings<DataformSettings> {
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to getTeamFolder. */
+    public UnaryCallSettings.Builder<GetTeamFolderRequest, TeamFolder> getTeamFolderSettings() {
+      return getStubSettingsBuilder().getTeamFolderSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createTeamFolder. */
+    public UnaryCallSettings.Builder<CreateTeamFolderRequest, TeamFolder>
+        createTeamFolderSettings() {
+      return getStubSettingsBuilder().createTeamFolderSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateTeamFolder. */
+    public UnaryCallSettings.Builder<UpdateTeamFolderRequest, TeamFolder>
+        updateTeamFolderSettings() {
+      return getStubSettingsBuilder().updateTeamFolderSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTeamFolder. */
+    public UnaryCallSettings.Builder<DeleteTeamFolderRequest, Empty> deleteTeamFolderSettings() {
+      return getStubSettingsBuilder().deleteTeamFolderSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTeamFolderTree. */
+    public UnaryCallSettings.Builder<DeleteTeamFolderTreeRequest, Operation>
+        deleteTeamFolderTreeSettings() {
+      return getStubSettingsBuilder().deleteTeamFolderTreeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTeamFolderTree. */
+    public OperationCallSettings.Builder<
+            DeleteTeamFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+        deleteTeamFolderTreeOperationSettings() {
+      return getStubSettingsBuilder().deleteTeamFolderTreeOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to queryTeamFolderContents. */
+    public PagedCallSettings.Builder<
+            QueryTeamFolderContentsRequest,
+            QueryTeamFolderContentsResponse,
+            QueryTeamFolderContentsPagedResponse>
+        queryTeamFolderContentsSettings() {
+      return getStubSettingsBuilder().queryTeamFolderContentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to searchTeamFolders. */
+    public PagedCallSettings.Builder<
+            SearchTeamFoldersRequest, SearchTeamFoldersResponse, SearchTeamFoldersPagedResponse>
+        searchTeamFoldersSettings() {
+      return getStubSettingsBuilder().searchTeamFoldersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getFolder. */
+    public UnaryCallSettings.Builder<GetFolderRequest, Folder> getFolderSettings() {
+      return getStubSettingsBuilder().getFolderSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createFolder. */
+    public UnaryCallSettings.Builder<CreateFolderRequest, Folder> createFolderSettings() {
+      return getStubSettingsBuilder().createFolderSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateFolder. */
+    public UnaryCallSettings.Builder<UpdateFolderRequest, Folder> updateFolderSettings() {
+      return getStubSettingsBuilder().updateFolderSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFolder. */
+    public UnaryCallSettings.Builder<DeleteFolderRequest, Empty> deleteFolderSettings() {
+      return getStubSettingsBuilder().deleteFolderSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFolderTree. */
+    public UnaryCallSettings.Builder<DeleteFolderTreeRequest, Operation>
+        deleteFolderTreeSettings() {
+      return getStubSettingsBuilder().deleteFolderTreeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFolderTree. */
+    public OperationCallSettings.Builder<DeleteFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+        deleteFolderTreeOperationSettings() {
+      return getStubSettingsBuilder().deleteFolderTreeOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to queryFolderContents. */
+    public PagedCallSettings.Builder<
+            QueryFolderContentsRequest,
+            QueryFolderContentsResponse,
+            QueryFolderContentsPagedResponse>
+        queryFolderContentsSettings() {
+      return getStubSettingsBuilder().queryFolderContentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to queryUserRootContents. */
+    public PagedCallSettings.Builder<
+            QueryUserRootContentsRequest,
+            QueryUserRootContentsResponse,
+            QueryUserRootContentsPagedResponse>
+        queryUserRootContentsSettings() {
+      return getStubSettingsBuilder().queryUserRootContentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to moveFolder. */
+    public UnaryCallSettings.Builder<MoveFolderRequest, Operation> moveFolderSettings() {
+      return getStubSettingsBuilder().moveFolderSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to moveFolder. */
+    public OperationCallSettings.Builder<MoveFolderRequest, Empty, MoveFolderMetadata>
+        moveFolderOperationSettings() {
+      return getStubSettingsBuilder().moveFolderOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listRepositories. */
     public PagedCallSettings.Builder<
             ListRepositoriesRequest, ListRepositoriesResponse, ListRepositoriesPagedResponse>
@@ -602,6 +861,17 @@ public class DataformSettings extends ClientSettings<DataformSettings> {
     /** Returns the builder for the settings used for calls to deleteRepository. */
     public UnaryCallSettings.Builder<DeleteRepositoryRequest, Empty> deleteRepositorySettings() {
       return getStubSettingsBuilder().deleteRepositorySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to moveRepository. */
+    public UnaryCallSettings.Builder<MoveRepositoryRequest, Operation> moveRepositorySettings() {
+      return getStubSettingsBuilder().moveRepositorySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to moveRepository. */
+    public OperationCallSettings.Builder<MoveRepositoryRequest, Empty, MoveRepositoryMetadata>
+        moveRepositoryOperationSettings() {
+      return getStubSettingsBuilder().moveRepositoryOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to commitRepositoryChanges. */
@@ -921,6 +1191,22 @@ public class DataformSettings extends ClientSettings<DataformSettings> {
       return getStubSettingsBuilder().updateConfigSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listLocations. */
     public PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
@@ -931,22 +1217,6 @@ public class DataformSettings extends ClientSettings<DataformSettings> {
     /** Returns the builder for the settings used for calls to getLocation. */
     public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
       return getStubSettingsBuilder().getLocationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to setIamPolicy. */
-    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
-      return getStubSettingsBuilder().setIamPolicySettings();
-    }
-
-    /** Returns the builder for the settings used for calls to getIamPolicy. */
-    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
-      return getStubSettingsBuilder().getIamPolicySettings();
-    }
-
-    /** Returns the builder for the settings used for calls to testIamPermissions. */
-    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsSettings() {
-      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

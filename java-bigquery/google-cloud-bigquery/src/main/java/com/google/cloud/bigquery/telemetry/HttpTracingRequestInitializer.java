@@ -23,6 +23,8 @@ import com.google.common.annotations.VisibleForTesting;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.api.trace.propagation.W3CTraceContextPropagator;
+import io.opentelemetry.context.Context;
 import java.io.IOException;
 
 /**
@@ -39,7 +41,6 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
   public static final AttributeKey<String> HTTP_REQUEST_METHOD =
       AttributeKey.stringKey("http.request.method");
   public static final AttributeKey<String> URL_FULL = AttributeKey.stringKey("url.full");
-  public static final AttributeKey<String> URL_DOMAIN = AttributeKey.stringKey("url.domain");
   public static final AttributeKey<Long> HTTP_RESPONSE_STATUS_CODE =
       AttributeKey.longKey("http.response.status_code");
   public static final AttributeKey<Long> HTTP_REQUEST_RESEND_COUNT =
@@ -77,6 +78,10 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
       // No active span to exists, skip instrumentation
       return;
     }
+    // propagate the W3C Trace Context (traceID and spanID) from the active span in headers
+    W3CTraceContextPropagator.getInstance()
+        .inject(Context.current(), request.getHeaders(), HttpHeaders::set);
+
     addInitialHttpAttributesToSpan(span, request);
 
     HttpResponseInterceptor originalInterceptor = request.getResponseInterceptor();

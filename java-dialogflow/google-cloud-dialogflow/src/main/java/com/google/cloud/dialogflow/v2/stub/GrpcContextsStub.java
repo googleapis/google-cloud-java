@@ -198,6 +198,7 @@ public class GrpcContextsStub extends ContextsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetContextRequest, Context> getContextTransportSettings =
         GrpcCallSettings.<GetContextRequest, Context>newBuilder()
@@ -208,6 +209,7 @@ public class GrpcContextsStub extends ContextsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateContextRequest, Context> createContextTransportSettings =
         GrpcCallSettings.<CreateContextRequest, Context>newBuilder()
@@ -218,6 +220,7 @@ public class GrpcContextsStub extends ContextsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateContextRequest, Context> updateContextTransportSettings =
         GrpcCallSettings.<UpdateContextRequest, Context>newBuilder()
@@ -238,6 +241,7 @@ public class GrpcContextsStub extends ContextsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteAllContextsRequest, Empty> deleteAllContextsTransportSettings =
         GrpcCallSettings.<DeleteAllContextsRequest, Empty>newBuilder()
@@ -248,6 +252,7 @@ public class GrpcContextsStub extends ContextsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

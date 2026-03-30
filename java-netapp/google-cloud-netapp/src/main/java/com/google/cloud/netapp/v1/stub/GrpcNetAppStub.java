@@ -69,6 +69,15 @@ import com.google.cloud.netapp.v1.DeleteStoragePoolRequest;
 import com.google.cloud.netapp.v1.DeleteVolumeRequest;
 import com.google.cloud.netapp.v1.EncryptVolumesRequest;
 import com.google.cloud.netapp.v1.EstablishPeeringRequest;
+import com.google.cloud.netapp.v1.EstablishVolumePeeringRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapDeleteRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapDeleteResponse;
+import com.google.cloud.netapp.v1.ExecuteOntapGetRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapGetResponse;
+import com.google.cloud.netapp.v1.ExecuteOntapPatchRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapPatchResponse;
+import com.google.cloud.netapp.v1.ExecuteOntapPostRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapPostResponse;
 import com.google.cloud.netapp.v1.GetActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.GetBackupPolicyRequest;
 import com.google.cloud.netapp.v1.GetBackupRequest;
@@ -283,6 +292,17 @@ public class GrpcNetAppStub extends NetAppStub {
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName("google.cloud.netapp.v1.NetApp/RevertVolume")
               .setRequestMarshaller(ProtoUtils.marshaller(RevertVolumeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<EstablishVolumePeeringRequest, Operation>
+      establishVolumePeeringMethodDescriptor =
+          MethodDescriptor.<EstablishVolumePeeringRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/EstablishVolumePeering")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(EstablishVolumePeeringRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
@@ -869,6 +889,54 @@ public class GrpcNetAppStub extends NetAppStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<ExecuteOntapPostRequest, ExecuteOntapPostResponse>
+      executeOntapPostMethodDescriptor =
+          MethodDescriptor.<ExecuteOntapPostRequest, ExecuteOntapPostResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ExecuteOntapPost")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExecuteOntapPostRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ExecuteOntapPostResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ExecuteOntapGetRequest, ExecuteOntapGetResponse>
+      executeOntapGetMethodDescriptor =
+          MethodDescriptor.<ExecuteOntapGetRequest, ExecuteOntapGetResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ExecuteOntapGet")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExecuteOntapGetRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ExecuteOntapGetResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>
+      executeOntapDeleteMethodDescriptor =
+          MethodDescriptor.<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ExecuteOntapDelete")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExecuteOntapDeleteRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ExecuteOntapDeleteResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
+      executeOntapPatchMethodDescriptor =
+          MethodDescriptor.<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ExecuteOntapPatch")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExecuteOntapPatchRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ExecuteOntapPatchResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -928,6 +996,10 @@ public class GrpcNetAppStub extends NetAppStub {
   private final UnaryCallable<RevertVolumeRequest, Operation> revertVolumeCallable;
   private final OperationCallable<RevertVolumeRequest, Volume, OperationMetadata>
       revertVolumeOperationCallable;
+  private final UnaryCallable<EstablishVolumePeeringRequest, Operation>
+      establishVolumePeeringCallable;
+  private final OperationCallable<EstablishVolumePeeringRequest, Volume, OperationMetadata>
+      establishVolumePeeringOperationCallable;
   private final UnaryCallable<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsCallable;
   private final UnaryCallable<ListSnapshotsRequest, ListSnapshotsPagedResponse>
       listSnapshotsPagedCallable;
@@ -1079,6 +1151,14 @@ public class GrpcNetAppStub extends NetAppStub {
   private final UnaryCallable<DeleteHostGroupRequest, Operation> deleteHostGroupCallable;
   private final OperationCallable<DeleteHostGroupRequest, Empty, OperationMetadata>
       deleteHostGroupOperationCallable;
+  private final UnaryCallable<ExecuteOntapPostRequest, ExecuteOntapPostResponse>
+      executeOntapPostCallable;
+  private final UnaryCallable<ExecuteOntapGetRequest, ExecuteOntapGetResponse>
+      executeOntapGetCallable;
+  private final UnaryCallable<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>
+      executeOntapDeleteCallable;
+  private final UnaryCallable<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
+      executeOntapPatchCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1133,6 +1213,7 @@ public class GrpcNetAppStub extends NetAppStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateStoragePoolRequest, Operation> createStoragePoolTransportSettings =
         GrpcCallSettings.<CreateStoragePoolRequest, Operation>newBuilder()
@@ -1143,6 +1224,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetStoragePoolRequest, StoragePool> getStoragePoolTransportSettings =
         GrpcCallSettings.<GetStoragePoolRequest, StoragePool>newBuilder()
@@ -1153,6 +1235,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateStoragePoolRequest, Operation> updateStoragePoolTransportSettings =
         GrpcCallSettings.<UpdateStoragePoolRequest, Operation>newBuilder()
@@ -1174,6 +1257,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ValidateDirectoryServiceRequest, Operation>
         validateDirectoryServiceTransportSettings =
@@ -1185,6 +1269,7 @@ public class GrpcNetAppStub extends NetAppStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<SwitchActiveReplicaZoneRequest, Operation>
         switchActiveReplicaZoneTransportSettings =
@@ -1196,6 +1281,7 @@ public class GrpcNetAppStub extends NetAppStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListVolumesRequest, ListVolumesResponse> listVolumesTransportSettings =
         GrpcCallSettings.<ListVolumesRequest, ListVolumesResponse>newBuilder()
@@ -1206,6 +1292,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetVolumeRequest, Volume> getVolumeTransportSettings =
         GrpcCallSettings.<GetVolumeRequest, Volume>newBuilder()
@@ -1216,6 +1303,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateVolumeRequest, Operation> createVolumeTransportSettings =
         GrpcCallSettings.<CreateVolumeRequest, Operation>newBuilder()
@@ -1226,6 +1314,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateVolumeRequest, Operation> updateVolumeTransportSettings =
         GrpcCallSettings.<UpdateVolumeRequest, Operation>newBuilder()
@@ -1246,6 +1335,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RevertVolumeRequest, Operation> revertVolumeTransportSettings =
         GrpcCallSettings.<RevertVolumeRequest, Operation>newBuilder()
@@ -1256,7 +1346,20 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<EstablishVolumePeeringRequest, Operation>
+        establishVolumePeeringTransportSettings =
+            GrpcCallSettings.<EstablishVolumePeeringRequest, Operation>newBuilder()
+                .setMethodDescriptor(establishVolumePeeringMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     GrpcCallSettings<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsTransportSettings =
         GrpcCallSettings.<ListSnapshotsRequest, ListSnapshotsResponse>newBuilder()
             .setMethodDescriptor(listSnapshotsMethodDescriptor)
@@ -1266,6 +1369,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetSnapshotRequest, Snapshot> getSnapshotTransportSettings =
         GrpcCallSettings.<GetSnapshotRequest, Snapshot>newBuilder()
@@ -1276,6 +1380,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateSnapshotRequest, Operation> createSnapshotTransportSettings =
         GrpcCallSettings.<CreateSnapshotRequest, Operation>newBuilder()
@@ -1286,6 +1391,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteSnapshotRequest, Operation> deleteSnapshotTransportSettings =
         GrpcCallSettings.<DeleteSnapshotRequest, Operation>newBuilder()
@@ -1296,6 +1402,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateSnapshotRequest, Operation> updateSnapshotTransportSettings =
         GrpcCallSettings.<UpdateSnapshotRequest, Operation>newBuilder()
@@ -1318,6 +1425,7 @@ public class GrpcNetAppStub extends NetAppStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetActiveDirectoryRequest, ActiveDirectory>
         getActiveDirectoryTransportSettings =
@@ -1329,6 +1437,7 @@ public class GrpcNetAppStub extends NetAppStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateActiveDirectoryRequest, Operation>
         createActiveDirectoryTransportSettings =
@@ -1340,6 +1449,7 @@ public class GrpcNetAppStub extends NetAppStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateActiveDirectoryRequest, Operation>
         updateActiveDirectoryTransportSettings =
@@ -1364,6 +1474,7 @@ public class GrpcNetAppStub extends NetAppStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListKmsConfigsRequest, ListKmsConfigsResponse>
         listKmsConfigsTransportSettings =
@@ -1375,6 +1486,7 @@ public class GrpcNetAppStub extends NetAppStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateKmsConfigRequest, Operation> createKmsConfigTransportSettings =
         GrpcCallSettings.<CreateKmsConfigRequest, Operation>newBuilder()
@@ -1385,6 +1497,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetKmsConfigRequest, KmsConfig> getKmsConfigTransportSettings =
         GrpcCallSettings.<GetKmsConfigRequest, KmsConfig>newBuilder()
@@ -1395,6 +1508,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateKmsConfigRequest, Operation> updateKmsConfigTransportSettings =
         GrpcCallSettings.<UpdateKmsConfigRequest, Operation>newBuilder()
@@ -1415,6 +1529,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<VerifyKmsConfigRequest, VerifyKmsConfigResponse>
         verifyKmsConfigTransportSettings =
@@ -1426,6 +1541,7 @@ public class GrpcNetAppStub extends NetAppStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteKmsConfigRequest, Operation> deleteKmsConfigTransportSettings =
         GrpcCallSettings.<DeleteKmsConfigRequest, Operation>newBuilder()
@@ -1436,6 +1552,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListReplicationsRequest, ListReplicationsResponse>
         listReplicationsTransportSettings =
@@ -1447,6 +1564,7 @@ public class GrpcNetAppStub extends NetAppStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetReplicationRequest, Replication> getReplicationTransportSettings =
         GrpcCallSettings.<GetReplicationRequest, Replication>newBuilder()
@@ -1457,6 +1575,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateReplicationRequest, Operation> createReplicationTransportSettings =
         GrpcCallSettings.<CreateReplicationRequest, Operation>newBuilder()
@@ -1467,6 +1586,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteReplicationRequest, Operation> deleteReplicationTransportSettings =
         GrpcCallSettings.<DeleteReplicationRequest, Operation>newBuilder()
@@ -1477,6 +1597,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateReplicationRequest, Operation> updateReplicationTransportSettings =
         GrpcCallSettings.<UpdateReplicationRequest, Operation>newBuilder()
@@ -1498,6 +1619,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ResumeReplicationRequest, Operation> resumeReplicationTransportSettings =
         GrpcCallSettings.<ResumeReplicationRequest, Operation>newBuilder()
@@ -1508,6 +1630,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ReverseReplicationDirectionRequest, Operation>
         reverseReplicationDirectionTransportSettings =
@@ -1519,6 +1642,7 @@ public class GrpcNetAppStub extends NetAppStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<EstablishPeeringRequest, Operation> establishPeeringTransportSettings =
         GrpcCallSettings.<EstablishPeeringRequest, Operation>newBuilder()
@@ -1529,6 +1653,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SyncReplicationRequest, Operation> syncReplicationTransportSettings =
         GrpcCallSettings.<SyncReplicationRequest, Operation>newBuilder()
@@ -1539,6 +1664,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateBackupVaultRequest, Operation> createBackupVaultTransportSettings =
         GrpcCallSettings.<CreateBackupVaultRequest, Operation>newBuilder()
@@ -1549,6 +1675,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetBackupVaultRequest, BackupVault> getBackupVaultTransportSettings =
         GrpcCallSettings.<GetBackupVaultRequest, BackupVault>newBuilder()
@@ -1559,6 +1686,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListBackupVaultsRequest, ListBackupVaultsResponse>
         listBackupVaultsTransportSettings =
@@ -1570,6 +1698,7 @@ public class GrpcNetAppStub extends NetAppStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateBackupVaultRequest, Operation> updateBackupVaultTransportSettings =
         GrpcCallSettings.<UpdateBackupVaultRequest, Operation>newBuilder()
@@ -1591,6 +1720,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateBackupRequest, Operation> createBackupTransportSettings =
         GrpcCallSettings.<CreateBackupRequest, Operation>newBuilder()
@@ -1601,6 +1731,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
         GrpcCallSettings.<GetBackupRequest, Backup>newBuilder()
@@ -1611,6 +1742,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
         GrpcCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
@@ -1621,6 +1753,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteBackupRequest, Operation> deleteBackupTransportSettings =
         GrpcCallSettings.<DeleteBackupRequest, Operation>newBuilder()
@@ -1631,6 +1764,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateBackupRequest, Operation> updateBackupTransportSettings =
         GrpcCallSettings.<UpdateBackupRequest, Operation>newBuilder()
@@ -1651,6 +1785,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetBackupPolicyRequest, BackupPolicy> getBackupPolicyTransportSettings =
         GrpcCallSettings.<GetBackupPolicyRequest, BackupPolicy>newBuilder()
@@ -1661,6 +1796,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListBackupPoliciesRequest, ListBackupPoliciesResponse>
         listBackupPoliciesTransportSettings =
@@ -1672,6 +1808,7 @@ public class GrpcNetAppStub extends NetAppStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateBackupPolicyRequest, Operation> updateBackupPolicyTransportSettings =
         GrpcCallSettings.<UpdateBackupPolicyRequest, Operation>newBuilder()
@@ -1693,6 +1830,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListQuotaRulesRequest, ListQuotaRulesResponse>
         listQuotaRulesTransportSettings =
@@ -1704,6 +1842,7 @@ public class GrpcNetAppStub extends NetAppStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetQuotaRuleRequest, QuotaRule> getQuotaRuleTransportSettings =
         GrpcCallSettings.<GetQuotaRuleRequest, QuotaRule>newBuilder()
@@ -1714,6 +1853,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateQuotaRuleRequest, Operation> createQuotaRuleTransportSettings =
         GrpcCallSettings.<CreateQuotaRuleRequest, Operation>newBuilder()
@@ -1724,6 +1864,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateQuotaRuleRequest, Operation> updateQuotaRuleTransportSettings =
         GrpcCallSettings.<UpdateQuotaRuleRequest, Operation>newBuilder()
@@ -1744,6 +1885,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RestoreBackupFilesRequest, Operation> restoreBackupFilesTransportSettings =
         GrpcCallSettings.<RestoreBackupFilesRequest, Operation>newBuilder()
@@ -1754,6 +1896,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListHostGroupsRequest, ListHostGroupsResponse>
         listHostGroupsTransportSettings =
@@ -1765,6 +1908,7 @@ public class GrpcNetAppStub extends NetAppStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetHostGroupRequest, HostGroup> getHostGroupTransportSettings =
         GrpcCallSettings.<GetHostGroupRequest, HostGroup>newBuilder()
@@ -1775,6 +1919,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateHostGroupRequest, Operation> createHostGroupTransportSettings =
         GrpcCallSettings.<CreateHostGroupRequest, Operation>newBuilder()
@@ -1785,6 +1930,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateHostGroupRequest, Operation> updateHostGroupTransportSettings =
         GrpcCallSettings.<UpdateHostGroupRequest, Operation>newBuilder()
@@ -1805,7 +1951,52 @@ public class GrpcNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<ExecuteOntapPostRequest, ExecuteOntapPostResponse>
+        executeOntapPostTransportSettings =
+            GrpcCallSettings.<ExecuteOntapPostRequest, ExecuteOntapPostResponse>newBuilder()
+                .setMethodDescriptor(executeOntapPostMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("ontap_path", String.valueOf(request.getOntapPath()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ExecuteOntapGetRequest, ExecuteOntapGetResponse>
+        executeOntapGetTransportSettings =
+            GrpcCallSettings.<ExecuteOntapGetRequest, ExecuteOntapGetResponse>newBuilder()
+                .setMethodDescriptor(executeOntapGetMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("ontap_path", String.valueOf(request.getOntapPath()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>
+        executeOntapDeleteTransportSettings =
+            GrpcCallSettings.<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>newBuilder()
+                .setMethodDescriptor(executeOntapDeleteMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("ontap_path", String.valueOf(request.getOntapPath()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
+        executeOntapPatchTransportSettings =
+            GrpcCallSettings.<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>newBuilder()
+                .setMethodDescriptor(executeOntapPatchMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("ontap_path", String.valueOf(request.getOntapPath()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -1934,6 +2125,17 @@ public class GrpcNetAppStub extends NetAppStub {
         callableFactory.createOperationCallable(
             revertVolumeTransportSettings,
             settings.revertVolumeOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.establishVolumePeeringCallable =
+        callableFactory.createUnaryCallable(
+            establishVolumePeeringTransportSettings,
+            settings.establishVolumePeeringSettings(),
+            clientContext);
+    this.establishVolumePeeringOperationCallable =
+        callableFactory.createOperationCallable(
+            establishVolumePeeringTransportSettings,
+            settings.establishVolumePeeringOperationSettings(),
             clientContext,
             operationsStub);
     this.listSnapshotsCallable =
@@ -2366,6 +2568,22 @@ public class GrpcNetAppStub extends NetAppStub {
             settings.deleteHostGroupOperationSettings(),
             clientContext,
             operationsStub);
+    this.executeOntapPostCallable =
+        callableFactory.createUnaryCallable(
+            executeOntapPostTransportSettings, settings.executeOntapPostSettings(), clientContext);
+    this.executeOntapGetCallable =
+        callableFactory.createUnaryCallable(
+            executeOntapGetTransportSettings, settings.executeOntapGetSettings(), clientContext);
+    this.executeOntapDeleteCallable =
+        callableFactory.createUnaryCallable(
+            executeOntapDeleteTransportSettings,
+            settings.executeOntapDeleteSettings(),
+            clientContext);
+    this.executeOntapPatchCallable =
+        callableFactory.createUnaryCallable(
+            executeOntapPatchTransportSettings,
+            settings.executeOntapPatchSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -2515,6 +2733,17 @@ public class GrpcNetAppStub extends NetAppStub {
   public OperationCallable<RevertVolumeRequest, Volume, OperationMetadata>
       revertVolumeOperationCallable() {
     return revertVolumeOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<EstablishVolumePeeringRequest, Operation> establishVolumePeeringCallable() {
+    return establishVolumePeeringCallable;
+  }
+
+  @Override
+  public OperationCallable<EstablishVolumePeeringRequest, Volume, OperationMetadata>
+      establishVolumePeeringOperationCallable() {
+    return establishVolumePeeringOperationCallable;
   }
 
   @Override
@@ -3042,6 +3271,29 @@ public class GrpcNetAppStub extends NetAppStub {
   public OperationCallable<DeleteHostGroupRequest, Empty, OperationMetadata>
       deleteHostGroupOperationCallable() {
     return deleteHostGroupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExecuteOntapPostRequest, ExecuteOntapPostResponse>
+      executeOntapPostCallable() {
+    return executeOntapPostCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExecuteOntapGetRequest, ExecuteOntapGetResponse> executeOntapGetCallable() {
+    return executeOntapGetCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>
+      executeOntapDeleteCallable() {
+    return executeOntapDeleteCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
+      executeOntapPatchCallable() {
+    return executeOntapPatchCallable;
   }
 
   @Override

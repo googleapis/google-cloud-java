@@ -736,6 +736,7 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<BatchDeleteTestCasesRequest, Empty> batchDeleteTestCasesTransportSettings =
         HttpJsonCallSettings.<BatchDeleteTestCasesRequest, Empty>newBuilder()
@@ -747,6 +748,7 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetTestCaseRequest, TestCase> getTestCaseTransportSettings =
         HttpJsonCallSettings.<GetTestCaseRequest, TestCase>newBuilder()
@@ -758,6 +760,7 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateTestCaseRequest, TestCase> createTestCaseTransportSettings =
         HttpJsonCallSettings.<CreateTestCaseRequest, TestCase>newBuilder()
@@ -769,6 +772,7 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateTestCaseRequest, TestCase> updateTestCaseTransportSettings =
         HttpJsonCallSettings.<UpdateTestCaseRequest, TestCase>newBuilder()
@@ -791,6 +795,7 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<BatchRunTestCasesRequest, Operation> batchRunTestCasesTransportSettings =
         HttpJsonCallSettings.<BatchRunTestCasesRequest, Operation>newBuilder()
@@ -802,6 +807,7 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CalculateCoverageRequest, CalculateCoverageResponse>
         calculateCoverageTransportSettings =
@@ -814,6 +820,7 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                       builder.add("agent", String.valueOf(request.getAgent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAgent())
                 .build();
     HttpJsonCallSettings<ImportTestCasesRequest, Operation> importTestCasesTransportSettings =
         HttpJsonCallSettings.<ImportTestCasesRequest, Operation>newBuilder()
@@ -825,6 +832,7 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ExportTestCasesRequest, Operation> exportTestCasesTransportSettings =
         HttpJsonCallSettings.<ExportTestCasesRequest, Operation>newBuilder()
@@ -836,6 +844,7 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListTestCaseResultsRequest, ListTestCaseResultsResponse>
         listTestCaseResultsTransportSettings =
@@ -849,6 +858,7 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetTestCaseResultRequest, TestCaseResult>
         getTestCaseResultTransportSettings =
@@ -861,6 +871,7 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

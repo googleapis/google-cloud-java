@@ -61,16 +61,6 @@ public enum StoragePoolType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UNIFIED = 2;</code>
    */
   UNIFIED(2),
-  /**
-   *
-   *
-   * <pre>
-   * Storage pool type is unified large capacity.
-   * </pre>
-   *
-   * <code>UNIFIED_LARGE_CAPACITY = 3;</code>
-   */
-  UNIFIED_LARGE_CAPACITY(3),
   UNRECOGNIZED(-1),
   ;
 
@@ -117,17 +107,6 @@ public enum StoragePoolType implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int UNIFIED_VALUE = 2;
 
-  /**
-   *
-   *
-   * <pre>
-   * Storage pool type is unified large capacity.
-   * </pre>
-   *
-   * <code>UNIFIED_LARGE_CAPACITY = 3;</code>
-   */
-  public static final int UNIFIED_LARGE_CAPACITY_VALUE = 3;
-
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -158,8 +137,6 @@ public enum StoragePoolType implements com.google.protobuf.ProtocolMessageEnum {
         return FILE;
       case 2:
         return UNIFIED;
-      case 3:
-        return UNIFIED_LARGE_CAPACITY;
       default:
         return null;
     }

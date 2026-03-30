@@ -112,4 +112,48 @@ public interface SearchKnowledgeResponseOrBuilder
    * @return The bytes for rewrittenQuery.
    */
   com.google.protobuf.ByteString getRewrittenQueryBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Debug info for SearchKnowledge.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SearchKnowledgeDebugInfo search_knowledge_debug_info = 4;
+   * </code>
+   *
+   * @return Whether the searchKnowledgeDebugInfo field is set.
+   */
+  boolean hasSearchKnowledgeDebugInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Debug info for SearchKnowledge.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SearchKnowledgeDebugInfo search_knowledge_debug_info = 4;
+   * </code>
+   *
+   * @return The searchKnowledgeDebugInfo.
+   */
+  com.google.cloud.dialogflow.v2beta1.SearchKnowledgeDebugInfo getSearchKnowledgeDebugInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Debug info for SearchKnowledge.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SearchKnowledgeDebugInfo search_knowledge_debug_info = 4;
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2beta1.SearchKnowledgeDebugInfoOrBuilder
+      getSearchKnowledgeDebugInfoOrBuilder();
 }

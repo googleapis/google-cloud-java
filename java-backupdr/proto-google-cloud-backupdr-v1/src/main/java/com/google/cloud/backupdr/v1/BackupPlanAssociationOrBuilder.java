@@ -423,6 +423,51 @@ public interface BackupPlanAssociationOrBuilder
    *
    *
    * <pre>
+   * Output only. AlloyDB cluster's backup plan association properties.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties alloydb_cluster_backup_plan_association_properties = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the alloydbClusterBackupPlanAssociationProperties field is set.
+   */
+  boolean hasAlloydbClusterBackupPlanAssociationProperties();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. AlloyDB cluster's backup plan association properties.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties alloydb_cluster_backup_plan_association_properties = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The alloydbClusterBackupPlanAssociationProperties.
+   */
+  com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties
+      getAlloydbClusterBackupPlanAssociationProperties();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. AlloyDB cluster's backup plan association properties.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties alloydb_cluster_backup_plan_association_properties = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationPropertiesOrBuilder
+      getAlloydbClusterBackupPlanAssociationPropertiesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The user friendly revision ID of the `BackupPlanRevision`.
    *
    * Example: v0, v1, v2, etc.

@@ -310,6 +310,7 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeletePlaybookRequest, Empty> deletePlaybookTransportSettings =
         GrpcCallSettings.<DeletePlaybookRequest, Empty>newBuilder()
@@ -320,6 +321,7 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListPlaybooksRequest, ListPlaybooksResponse> listPlaybooksTransportSettings =
         GrpcCallSettings.<ListPlaybooksRequest, ListPlaybooksResponse>newBuilder()
@@ -330,6 +332,7 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetPlaybookRequest, Playbook> getPlaybookTransportSettings =
         GrpcCallSettings.<GetPlaybookRequest, Playbook>newBuilder()
@@ -340,6 +343,7 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ExportPlaybookRequest, Operation> exportPlaybookTransportSettings =
         GrpcCallSettings.<ExportPlaybookRequest, Operation>newBuilder()
@@ -350,6 +354,7 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ImportPlaybookRequest, Operation> importPlaybookTransportSettings =
         GrpcCallSettings.<ImportPlaybookRequest, Operation>newBuilder()
@@ -360,6 +365,7 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdatePlaybookRequest, Playbook> updatePlaybookTransportSettings =
         GrpcCallSettings.<UpdatePlaybookRequest, Playbook>newBuilder()
@@ -381,6 +387,7 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetPlaybookVersionRequest, PlaybookVersion>
         getPlaybookVersionTransportSettings =
@@ -392,6 +399,7 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<RestorePlaybookVersionRequest, RestorePlaybookVersionResponse>
         restorePlaybookVersionTransportSettings =
@@ -404,6 +412,7 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListPlaybookVersionsRequest, ListPlaybookVersionsResponse>
         listPlaybookVersionsTransportSettings =
@@ -415,6 +424,7 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeletePlaybookVersionRequest, Empty> deletePlaybookVersionTransportSettings =
         GrpcCallSettings.<DeletePlaybookVersionRequest, Empty>newBuilder()
@@ -425,6 +435,7 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

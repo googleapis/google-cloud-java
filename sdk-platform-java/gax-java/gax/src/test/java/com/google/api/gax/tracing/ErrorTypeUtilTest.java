@@ -35,6 +35,7 @@ import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.DeadlineExceededException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.common.util.concurrent.UncheckedExecutionException;
 import java.io.IOException;
 import java.net.BindException;
 import java.net.ConnectException;
@@ -45,6 +46,7 @@ import java.net.Socket;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
 import java.security.GeneralSecurityException;
+import java.util.concurrent.ExecutionException;
 import javax.net.ssl.SSLHandshakeException;
 import org.junit.jupiter.api.Test;
 
@@ -139,7 +141,7 @@ class ErrorTypeUtilTest {
             ErrorTypeUtil.extractErrorType(
                 new DeadlineExceededException(
                     "timeout", null, new FakeStatusCode(StatusCode.Code.DEADLINE_EXCEEDED), false)))
-        .isEqualTo(ErrorTypeUtil.ErrorType.CLIENT_TIMEOUT.toString());
+        .isEqualTo(StatusCode.Code.DEADLINE_EXCEEDED.toString());
   }
 
   @Test
@@ -191,5 +193,21 @@ class ErrorTypeUtilTest {
     class UnknownClientException extends Exception {}
     assertThat(ErrorTypeUtil.extractErrorType(new UnknownClientException()))
         .isEqualTo("UnknownClientException");
+  }
+
+  @Test
+  void testExtractErrorType_executionException_unwraps() {
+    Exception cause = new ConnectException("refused");
+    Exception wrapper = new ExecutionException(cause);
+    assertThat(ErrorTypeUtil.extractErrorType(wrapper))
+        .isEqualTo(ErrorTypeUtil.ErrorType.CLIENT_CONNECTION_ERROR.toString());
+  }
+
+  @Test
+  void testExtractErrorType_uncheckedExecutionException_unwraps() {
+    Exception cause = new SocketTimeoutException("timeout");
+    Exception wrapper = new UncheckedExecutionException(cause);
+    assertThat(ErrorTypeUtil.extractErrorType(wrapper))
+        .isEqualTo(ErrorTypeUtil.ErrorType.CLIENT_TIMEOUT.toString());
   }
 }

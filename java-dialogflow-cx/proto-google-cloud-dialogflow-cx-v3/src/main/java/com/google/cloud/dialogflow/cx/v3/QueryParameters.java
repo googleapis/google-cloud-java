@@ -1342,7 +1342,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessage
    *
    * @deprecated
    *     google.cloud.dialogflow.cx.v3.QueryParameters.populate_data_store_connection_signals is
-   *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=770
+   *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=771
    * @return The populateDataStoreConnectionSignals.
    */
   @java.lang.Override
@@ -5903,7 +5903,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessage
      *
      * @deprecated
      *     google.cloud.dialogflow.cx.v3.QueryParameters.populate_data_store_connection_signals is
-     *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=770
+     *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=771
      * @return The populateDataStoreConnectionSignals.
      */
     @java.lang.Override
@@ -5928,7 +5928,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessage
      *
      * @deprecated
      *     google.cloud.dialogflow.cx.v3.QueryParameters.populate_data_store_connection_signals is
-     *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=770
+     *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=771
      * @param value The populateDataStoreConnectionSignals to set.
      * @return This builder for chaining.
      */
@@ -5957,7 +5957,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessage
      *
      * @deprecated
      *     google.cloud.dialogflow.cx.v3.QueryParameters.populate_data_store_connection_signals is
-     *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=770
+     *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=771
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

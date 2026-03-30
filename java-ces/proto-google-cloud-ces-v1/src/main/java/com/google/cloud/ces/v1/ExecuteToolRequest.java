@@ -122,6 +122,56 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
     return ToolIdentifierCase.forNumber(toolIdentifierCase_);
   }
 
+  private int toolExecutionContextCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object toolExecutionContext_;
+
+  public enum ToolExecutionContextCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    VARIABLES(5),
+    CONTEXT(6),
+    TOOLEXECUTIONCONTEXT_NOT_SET(0);
+    private final int value;
+
+    private ToolExecutionContextCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ToolExecutionContextCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ToolExecutionContextCase forNumber(int value) {
+      switch (value) {
+        case 5:
+          return VARIABLES;
+        case 6:
+          return CONTEXT;
+        case 0:
+          return TOOLEXECUTIONCONTEXT_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ToolExecutionContextCase getToolExecutionContextCase() {
+    return ToolExecutionContextCase.forNumber(toolExecutionContextCase_);
+  }
+
   public static final int TOOL_FIELD_NUMBER = 1;
 
   /**
@@ -270,6 +320,120 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
     return com.google.cloud.ces.v1.ToolsetTool.getDefaultInstance();
   }
 
+  public static final int VARIABLES_FIELD_NUMBER = 5;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The variables that are available for the tool execution.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct variables = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the variables field is set.
+   */
+  @java.lang.Override
+  public boolean hasVariables() {
+    return toolExecutionContextCase_ == 5;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The variables that are available for the tool execution.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct variables = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The variables.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getVariables() {
+    if (toolExecutionContextCase_ == 5) {
+      return (com.google.protobuf.Struct) toolExecutionContext_;
+    }
+    return com.google.protobuf.Struct.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The variables that are available for the tool execution.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct variables = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getVariablesOrBuilder() {
+    if (toolExecutionContextCase_ == 5) {
+      return (com.google.protobuf.Struct) toolExecutionContext_;
+    }
+    return com.google.protobuf.Struct.getDefaultInstance();
+  }
+
+  public static final int CONTEXT_FIELD_NUMBER = 6;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The
+   * [ToolCallContext](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/python#environment
+   * for details) to be passed to the Python tool.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct context = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the context field is set.
+   */
+  @java.lang.Override
+  public boolean hasContext() {
+    return toolExecutionContextCase_ == 6;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The
+   * [ToolCallContext](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/python#environment
+   * for details) to be passed to the Python tool.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct context = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The context.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getContext() {
+    if (toolExecutionContextCase_ == 6) {
+      return (com.google.protobuf.Struct) toolExecutionContext_;
+    }
+    return com.google.protobuf.Struct.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The
+   * [ToolCallContext](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/python#environment
+   * for details) to be passed to the Python tool.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct context = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getContextOrBuilder() {
+    if (toolExecutionContextCase_ == 6) {
+      return (com.google.protobuf.Struct) toolExecutionContext_;
+    }
+    return com.google.protobuf.Struct.getDefaultInstance();
+  }
+
   public static final int PARENT_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
@@ -407,6 +571,12 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 4, parent_);
     }
+    if (toolExecutionContextCase_ == 5) {
+      output.writeMessage(5, (com.google.protobuf.Struct) toolExecutionContext_);
+    }
+    if (toolExecutionContextCase_ == 6) {
+      output.writeMessage(6, (com.google.protobuf.Struct) toolExecutionContext_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -429,6 +599,16 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(4, parent_);
+    }
+    if (toolExecutionContextCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.protobuf.Struct) toolExecutionContext_);
+    }
+    if (toolExecutionContextCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.protobuf.Struct) toolExecutionContext_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -462,6 +642,17 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
       case 0:
       default:
     }
+    if (!getToolExecutionContextCase().equals(other.getToolExecutionContextCase())) return false;
+    switch (toolExecutionContextCase_) {
+      case 5:
+        if (!getVariables().equals(other.getVariables())) return false;
+        break;
+      case 6:
+        if (!getContext().equals(other.getContext())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -487,6 +678,18 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
       case 3:
         hash = (37 * hash) + TOOLSET_TOOL_FIELD_NUMBER;
         hash = (53 * hash) + getToolsetTool().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (toolExecutionContextCase_) {
+      case 5:
+        hash = (37 * hash) + VARIABLES_FIELD_NUMBER;
+        hash = (53 * hash) + getVariables().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + CONTEXT_FIELD_NUMBER;
+        hash = (53 * hash) + getContext().hashCode();
         break;
       case 0:
       default:
@@ -644,6 +847,12 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
       if (toolsetToolBuilder_ != null) {
         toolsetToolBuilder_.clear();
       }
+      if (variablesBuilder_ != null) {
+        variablesBuilder_.clear();
+      }
+      if (contextBuilder_ != null) {
+        contextBuilder_.clear();
+      }
       parent_ = "";
       args_ = null;
       if (argsBuilder_ != null) {
@@ -652,6 +861,8 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
       }
       toolIdentifierCase_ = 0;
       toolIdentifier_ = null;
+      toolExecutionContextCase_ = 0;
+      toolExecutionContext_ = null;
       return this;
     }
 
@@ -689,11 +900,11 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
 
     private void buildPartial0(com.google.cloud.ces.v1.ExecuteToolRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.parent_ = parent_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.args_ = argsBuilder_ == null ? args_ : argsBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
@@ -705,6 +916,14 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
       result.toolIdentifier_ = this.toolIdentifier_;
       if (toolIdentifierCase_ == 3 && toolsetToolBuilder_ != null) {
         result.toolIdentifier_ = toolsetToolBuilder_.build();
+      }
+      result.toolExecutionContextCase_ = toolExecutionContextCase_;
+      result.toolExecutionContext_ = this.toolExecutionContext_;
+      if (toolExecutionContextCase_ == 5 && variablesBuilder_ != null) {
+        result.toolExecutionContext_ = variablesBuilder_.build();
+      }
+      if (toolExecutionContextCase_ == 6 && contextBuilder_ != null) {
+        result.toolExecutionContext_ = contextBuilder_.build();
       }
     }
 
@@ -722,7 +941,7 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
       if (other == com.google.cloud.ces.v1.ExecuteToolRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasArgs()) {
@@ -742,6 +961,22 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
             break;
           }
         case TOOLIDENTIFIER_NOT_SET:
+          {
+            break;
+          }
+      }
+      switch (other.getToolExecutionContextCase()) {
+        case VARIABLES:
+          {
+            mergeVariables(other.getVariables());
+            break;
+          }
+        case CONTEXT:
+          {
+            mergeContext(other.getContext());
+            break;
+          }
+        case TOOLEXECUTIONCONTEXT_NOT_SET:
           {
             break;
           }
@@ -782,7 +1017,7 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
             case 18:
               {
                 input.readMessage(internalGetArgsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 18
             case 26:
@@ -795,9 +1030,22 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
             case 34:
               {
                 parent_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    internalGetVariablesFieldBuilder().getBuilder(), extensionRegistry);
+                toolExecutionContextCase_ = 5;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(internalGetContextFieldBuilder().getBuilder(), extensionRegistry);
+                toolExecutionContextCase_ = 6;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -825,6 +1073,20 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
     public Builder clearToolIdentifier() {
       toolIdentifierCase_ = 0;
       toolIdentifier_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int toolExecutionContextCase_ = 0;
+    private java.lang.Object toolExecutionContext_;
+
+    public ToolExecutionContextCase getToolExecutionContextCase() {
+      return ToolExecutionContextCase.forNumber(toolExecutionContextCase_);
+    }
+
+    public Builder clearToolExecutionContext() {
+      toolExecutionContextCase_ = 0;
+      toolExecutionContext_ = null;
       onChanged();
       return this;
     }
@@ -1238,6 +1500,458 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
       return toolsetToolBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        variablesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The variables that are available for the tool execution.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct variables = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the variables field is set.
+     */
+    @java.lang.Override
+    public boolean hasVariables() {
+      return toolExecutionContextCase_ == 5;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The variables that are available for the tool execution.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct variables = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The variables.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Struct getVariables() {
+      if (variablesBuilder_ == null) {
+        if (toolExecutionContextCase_ == 5) {
+          return (com.google.protobuf.Struct) toolExecutionContext_;
+        }
+        return com.google.protobuf.Struct.getDefaultInstance();
+      } else {
+        if (toolExecutionContextCase_ == 5) {
+          return variablesBuilder_.getMessage();
+        }
+        return com.google.protobuf.Struct.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The variables that are available for the tool execution.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct variables = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setVariables(com.google.protobuf.Struct value) {
+      if (variablesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        toolExecutionContext_ = value;
+        onChanged();
+      } else {
+        variablesBuilder_.setMessage(value);
+      }
+      toolExecutionContextCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The variables that are available for the tool execution.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct variables = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setVariables(com.google.protobuf.Struct.Builder builderForValue) {
+      if (variablesBuilder_ == null) {
+        toolExecutionContext_ = builderForValue.build();
+        onChanged();
+      } else {
+        variablesBuilder_.setMessage(builderForValue.build());
+      }
+      toolExecutionContextCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The variables that are available for the tool execution.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct variables = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergeVariables(com.google.protobuf.Struct value) {
+      if (variablesBuilder_ == null) {
+        if (toolExecutionContextCase_ == 5
+            && toolExecutionContext_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          toolExecutionContext_ =
+              com.google.protobuf.Struct.newBuilder(
+                      (com.google.protobuf.Struct) toolExecutionContext_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          toolExecutionContext_ = value;
+        }
+        onChanged();
+      } else {
+        if (toolExecutionContextCase_ == 5) {
+          variablesBuilder_.mergeFrom(value);
+        } else {
+          variablesBuilder_.setMessage(value);
+        }
+      }
+      toolExecutionContextCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The variables that are available for the tool execution.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct variables = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearVariables() {
+      if (variablesBuilder_ == null) {
+        if (toolExecutionContextCase_ == 5) {
+          toolExecutionContextCase_ = 0;
+          toolExecutionContext_ = null;
+          onChanged();
+        }
+      } else {
+        if (toolExecutionContextCase_ == 5) {
+          toolExecutionContextCase_ = 0;
+          toolExecutionContext_ = null;
+        }
+        variablesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The variables that are available for the tool execution.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct variables = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.protobuf.Struct.Builder getVariablesBuilder() {
+      return internalGetVariablesFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The variables that are available for the tool execution.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct variables = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.StructOrBuilder getVariablesOrBuilder() {
+      if ((toolExecutionContextCase_ == 5) && (variablesBuilder_ != null)) {
+        return variablesBuilder_.getMessageOrBuilder();
+      } else {
+        if (toolExecutionContextCase_ == 5) {
+          return (com.google.protobuf.Struct) toolExecutionContext_;
+        }
+        return com.google.protobuf.Struct.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The variables that are available for the tool execution.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct variables = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        internalGetVariablesFieldBuilder() {
+      if (variablesBuilder_ == null) {
+        if (!(toolExecutionContextCase_ == 5)) {
+          toolExecutionContext_ = com.google.protobuf.Struct.getDefaultInstance();
+        }
+        variablesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(
+                (com.google.protobuf.Struct) toolExecutionContext_,
+                getParentForChildren(),
+                isClean());
+        toolExecutionContext_ = null;
+      }
+      toolExecutionContextCase_ = 5;
+      onChanged();
+      return variablesBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        contextBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The
+     * [ToolCallContext](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/python#environment
+     * for details) to be passed to the Python tool.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct context = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the context field is set.
+     */
+    @java.lang.Override
+    public boolean hasContext() {
+      return toolExecutionContextCase_ == 6;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The
+     * [ToolCallContext](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/python#environment
+     * for details) to be passed to the Python tool.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct context = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The context.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Struct getContext() {
+      if (contextBuilder_ == null) {
+        if (toolExecutionContextCase_ == 6) {
+          return (com.google.protobuf.Struct) toolExecutionContext_;
+        }
+        return com.google.protobuf.Struct.getDefaultInstance();
+      } else {
+        if (toolExecutionContextCase_ == 6) {
+          return contextBuilder_.getMessage();
+        }
+        return com.google.protobuf.Struct.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The
+     * [ToolCallContext](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/python#environment
+     * for details) to be passed to the Python tool.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct context = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setContext(com.google.protobuf.Struct value) {
+      if (contextBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        toolExecutionContext_ = value;
+        onChanged();
+      } else {
+        contextBuilder_.setMessage(value);
+      }
+      toolExecutionContextCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The
+     * [ToolCallContext](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/python#environment
+     * for details) to be passed to the Python tool.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct context = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setContext(com.google.protobuf.Struct.Builder builderForValue) {
+      if (contextBuilder_ == null) {
+        toolExecutionContext_ = builderForValue.build();
+        onChanged();
+      } else {
+        contextBuilder_.setMessage(builderForValue.build());
+      }
+      toolExecutionContextCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The
+     * [ToolCallContext](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/python#environment
+     * for details) to be passed to the Python tool.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct context = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergeContext(com.google.protobuf.Struct value) {
+      if (contextBuilder_ == null) {
+        if (toolExecutionContextCase_ == 6
+            && toolExecutionContext_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          toolExecutionContext_ =
+              com.google.protobuf.Struct.newBuilder(
+                      (com.google.protobuf.Struct) toolExecutionContext_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          toolExecutionContext_ = value;
+        }
+        onChanged();
+      } else {
+        if (toolExecutionContextCase_ == 6) {
+          contextBuilder_.mergeFrom(value);
+        } else {
+          contextBuilder_.setMessage(value);
+        }
+      }
+      toolExecutionContextCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The
+     * [ToolCallContext](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/python#environment
+     * for details) to be passed to the Python tool.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct context = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearContext() {
+      if (contextBuilder_ == null) {
+        if (toolExecutionContextCase_ == 6) {
+          toolExecutionContextCase_ = 0;
+          toolExecutionContext_ = null;
+          onChanged();
+        }
+      } else {
+        if (toolExecutionContextCase_ == 6) {
+          toolExecutionContextCase_ = 0;
+          toolExecutionContext_ = null;
+        }
+        contextBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The
+     * [ToolCallContext](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/python#environment
+     * for details) to be passed to the Python tool.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct context = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.protobuf.Struct.Builder getContextBuilder() {
+      return internalGetContextFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The
+     * [ToolCallContext](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/python#environment
+     * for details) to be passed to the Python tool.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct context = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.StructOrBuilder getContextOrBuilder() {
+      if ((toolExecutionContextCase_ == 6) && (contextBuilder_ != null)) {
+        return contextBuilder_.getMessageOrBuilder();
+      } else {
+        if (toolExecutionContextCase_ == 6) {
+          return (com.google.protobuf.Struct) toolExecutionContext_;
+        }
+        return com.google.protobuf.Struct.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The
+     * [ToolCallContext](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/python#environment
+     * for details) to be passed to the Python tool.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct context = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        internalGetContextFieldBuilder() {
+      if (contextBuilder_ == null) {
+        if (!(toolExecutionContextCase_ == 6)) {
+          toolExecutionContext_ = com.google.protobuf.Struct.getDefaultInstance();
+        }
+        contextBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(
+                (com.google.protobuf.Struct) toolExecutionContext_,
+                getParentForChildren(),
+                isClean());
+        toolExecutionContext_ = null;
+      }
+      toolExecutionContextCase_ = 6;
+      onChanged();
+      return contextBuilder_;
+    }
+
     private java.lang.Object parent_ = "";
 
     /**
@@ -1312,7 +2026,7 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       parent_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1333,7 +2047,7 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearParent() {
       parent_ = getDefaultInstance().getParent();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1359,7 +2073,7 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
       }
       checkByteStringIsUtf8(value);
       parent_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1384,7 +2098,7 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the args field is set.
      */
     public boolean hasArgs() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -1426,7 +2140,7 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
       } else {
         argsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1447,7 +2161,7 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
       } else {
         argsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1464,7 +2178,7 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeArgs(com.google.protobuf.Struct value) {
       if (argsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && args_ != null
             && args_ != com.google.protobuf.Struct.getDefaultInstance()) {
           getArgsBuilder().mergeFrom(value);
@@ -1475,7 +2189,7 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
         argsBuilder_.mergeFrom(value);
       }
       if (args_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -1492,7 +2206,7 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.Struct args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearArgs() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       args_ = null;
       if (argsBuilder_ != null) {
         argsBuilder_.dispose();
@@ -1513,7 +2227,7 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.Struct args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.Struct.Builder getArgsBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return internalGetArgsFieldBuilder().getBuilder();
     }

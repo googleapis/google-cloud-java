@@ -82,6 +82,21 @@
             "EstablishPeering": {
               "methods": ["establishPeeringAsync", "establishPeeringOperationCallable", "establishPeeringCallable"]
             },
+            "EstablishVolumePeering": {
+              "methods": ["establishVolumePeeringAsync", "establishVolumePeeringOperationCallable", "establishVolumePeeringCallable"]
+            },
+            "ExecuteOntapDelete": {
+              "methods": ["executeOntapDelete", "executeOntapDeleteCallable"]
+            },
+            "ExecuteOntapGet": {
+              "methods": ["executeOntapGet", "executeOntapGetCallable"]
+            },
+            "ExecuteOntapPatch": {
+              "methods": ["executeOntapPatch", "executeOntapPatchCallable"]
+            },
+            "ExecuteOntapPost": {
+              "methods": ["executeOntapPost", "executeOntapPostCallable"]
+            },
             "GetActiveDirectory": {
               "methods": ["getActiveDirectory", "getActiveDirectory", "getActiveDirectory", "getActiveDirectoryCallable"]
             },

@@ -34,6 +34,7 @@ import com.google.api.gax.rpc.DeadlineExceededException;
 import com.google.api.gax.rpc.WatchdogTimeoutException;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableSet;
+import com.google.common.util.concurrent.UncheckedExecutionException;
 import java.net.BindException;
 import java.net.ConnectException;
 import java.net.NoRouteToHostException;
@@ -42,6 +43,7 @@ import java.net.UnknownHostException;
 import java.nio.channels.UnresolvedAddressException;
 import java.security.GeneralSecurityException;
 import java.util.Set;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Nullable;
 import javax.net.ssl.SSLHandshakeException;
 
@@ -121,7 +123,43 @@ public class ErrorTypeUtil {
       return ErrorType.INTERNAL.toString();
     }
 
-    // 1. Extract error info reason (most specific server-side info)
+    // 1. Unwrap standard wrapper exceptions if present
+    Throwable realError = getRealCause(error);
+
+    // 2. Attempt to extract specific error type from the main exception
+    String specificError = extractSpecificErrorType(realError);
+    if (specificError != null) {
+      return specificError;
+    }
+
+    // 3. Language-specific error type fallback
+    String exceptionName = realError.getClass().getSimpleName();
+    if (!Strings.isNullOrEmpty(exceptionName)) {
+      return exceptionName;
+    }
+
+    // 4. Internal Fallback
+    return ErrorType.INTERNAL.toString();
+  }
+
+  /** Unwraps standard execution wrappers to find the real cause. */
+  private static Throwable getRealCause(Throwable t) {
+    if (t.getCause() == null) {
+      return t;
+    }
+    if (t instanceof ExecutionException || t instanceof UncheckedExecutionException) {
+      return t.getCause();
+    }
+    return t;
+  }
+
+  /**
+   * Attempts to extract a specific error type (reason, code, or client error) but returns null if
+   * it cannot be specifically classified.
+   */
+  @Nullable
+  private static String extractSpecificErrorType(Throwable error) {
+    // 1. Extract error info reason
     if (error instanceof ApiException) {
       String reason = ((ApiException) error).getReason();
       if (!Strings.isNullOrEmpty(reason)) {
@@ -129,13 +167,7 @@ public class ErrorTypeUtil {
       }
     }
 
-    // 2. Attempt client side error (includes checking cause chains)
-    String clientError = getClientSideError(error);
-    if (clientError != null) {
-      return clientError;
-    }
-
-    // 3. Extract server status code if available
+    // 2. Extract server status code (swapped order)
     if (error instanceof ApiException) {
       String errorCode = extractServerErrorCode((ApiException) error);
       if (errorCode != null) {
@@ -143,14 +175,13 @@ public class ErrorTypeUtil {
       }
     }
 
-    // 4. Language-specific error type fallback
-    String exceptionName = error.getClass().getSimpleName();
-    if (!Strings.isNullOrEmpty(exceptionName)) {
-      return exceptionName;
+    // 3. Attempt client side error
+    String clientError = getClientSideError(error);
+    if (clientError != null) {
+      return clientError;
     }
 
-    // 5. Internal Fallback
-    return ErrorType.INTERNAL.toString();
+    return null;
   }
 
   /**

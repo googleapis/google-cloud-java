@@ -255,7 +255,7 @@ public final class BidiSessionServerMessage extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. Interruption signal detected from the audio input.
+   * Optional. Indicates the agent's audio response has been interrupted.
    * </pre>
    *
    * <code>
@@ -273,7 +273,7 @@ public final class BidiSessionServerMessage extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. Interruption signal detected from the audio input.
+   * Optional. Indicates the agent's audio response has been interrupted.
    * </pre>
    *
    * <code>
@@ -294,7 +294,7 @@ public final class BidiSessionServerMessage extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. Interruption signal detected from the audio input.
+   * Optional. Indicates the agent's audio response has been interrupted.
    * </pre>
    *
    * <code>
@@ -1396,7 +1396,7 @@ public final class BidiSessionServerMessage extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. Interruption signal detected from the audio input.
+     * Optional. Indicates the agent's audio response has been interrupted.
      * </pre>
      *
      * <code>
@@ -1414,7 +1414,7 @@ public final class BidiSessionServerMessage extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. Interruption signal detected from the audio input.
+     * Optional. Indicates the agent's audio response has been interrupted.
      * </pre>
      *
      * <code>
@@ -1442,7 +1442,7 @@ public final class BidiSessionServerMessage extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. Interruption signal detected from the audio input.
+     * Optional. Indicates the agent's audio response has been interrupted.
      * </pre>
      *
      * <code>
@@ -1467,7 +1467,7 @@ public final class BidiSessionServerMessage extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. Interruption signal detected from the audio input.
+     * Optional. Indicates the agent's audio response has been interrupted.
      * </pre>
      *
      * <code>
@@ -1490,7 +1490,7 @@ public final class BidiSessionServerMessage extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. Interruption signal detected from the audio input.
+     * Optional. Indicates the agent's audio response has been interrupted.
      * </pre>
      *
      * <code>
@@ -1525,7 +1525,7 @@ public final class BidiSessionServerMessage extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. Interruption signal detected from the audio input.
+     * Optional. Indicates the agent's audio response has been interrupted.
      * </pre>
      *
      * <code>
@@ -1553,7 +1553,7 @@ public final class BidiSessionServerMessage extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. Interruption signal detected from the audio input.
+     * Optional. Indicates the agent's audio response has been interrupted.
      * </pre>
      *
      * <code>
@@ -1568,7 +1568,7 @@ public final class BidiSessionServerMessage extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. Interruption signal detected from the audio input.
+     * Optional. Indicates the agent's audio response has been interrupted.
      * </pre>
      *
      * <code>
@@ -1591,7 +1591,7 @@ public final class BidiSessionServerMessage extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. Interruption signal detected from the audio input.
+     * Optional. Indicates the agent's audio response has been interrupted.
      * </pre>
      *
      * <code>

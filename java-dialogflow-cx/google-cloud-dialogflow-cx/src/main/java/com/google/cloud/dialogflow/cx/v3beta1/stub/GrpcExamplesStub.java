@@ -187,6 +187,7 @@ public class GrpcExamplesStub extends ExamplesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteExampleRequest, Empty> deleteExampleTransportSettings =
         GrpcCallSettings.<DeleteExampleRequest, Empty>newBuilder()
@@ -197,6 +198,7 @@ public class GrpcExamplesStub extends ExamplesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListExamplesRequest, ListExamplesResponse> listExamplesTransportSettings =
         GrpcCallSettings.<ListExamplesRequest, ListExamplesResponse>newBuilder()
@@ -207,6 +209,7 @@ public class GrpcExamplesStub extends ExamplesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetExampleRequest, Example> getExampleTransportSettings =
         GrpcCallSettings.<GetExampleRequest, Example>newBuilder()
@@ -217,6 +220,7 @@ public class GrpcExamplesStub extends ExamplesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateExampleRequest, Example> updateExampleTransportSettings =
         GrpcCallSettings.<UpdateExampleRequest, Example>newBuilder()

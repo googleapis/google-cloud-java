@@ -49,7 +49,7 @@ public final class ErrorProto extends com.google.protobuf.GeneratedFile {
   static {
     java.lang.String[] descriptorData = {
       "\n%google/ads/datamanager/v1/error.proto\022"
-          + "\031google.ads.datamanager.v1*\273\033\n\013ErrorReas"
+          + "\031google.ads.datamanager.v1*\207\034\n\013ErrorReas"
           + "on\022\034\n\030ERROR_REASON_UNSPECIFIED\020\000\022\022\n\016INTE"
           + "RNAL_ERROR\020\001\022\025\n\021DEADLINE_EXCEEDED\020\002\022\026\n\022R"
           + "ESOURCE_EXHAUSTED\020\003\022\r\n\tNOT_FOUND\020\004\022\025\n\021PE"
@@ -137,12 +137,14 @@ public final class ErrorProto extends com.google.protobuf.GeneratedFile {
           + "INFO_CONFIG\020`\0220\n,UNSUPPORTED_ACCOUNT_TYP"
           + "ES_FOR_USER_LIST_TYPE\020a\022-\n)UNSUPPORTED_A"
           + "CCOUNT_TYPE_FOR_PARTNER_LINK\020b\022 \n\034MEMBER"
-          + "SHIP_DURATION_TOO_LONG\020cB\307\001\n\035com.google."
-          + "ads.datamanager.v1B\nErrorProtoP\001ZAcloud."
-          + "google.com/go/datamanager/apiv1/datamana"
-          + "gerpb;datamanagerpb\252\002\031Google.Ads.DataMan"
-          + "ager.V1\312\002\031Google\\Ads\\DataManager\\V1\352\002\034Go"
-          + "ogle::Ads::DataManager::V1b\006proto3"
+          + "SHIP_DURATION_TOO_LONG\020c\022\027\n\023INVALID_MERC"
+          + "HANT_ID\020d\0221\n-EU_POLITICAL_ADVERTISING_DE"
+          + "CLARATION_REQUIRED\020eB\307\001\n\035com.google.ads."
+          + "datamanager.v1B\nErrorProtoP\001ZAcloud.goog"
+          + "le.com/go/datamanager/apiv1/datamanagerp"
+          + "b;datamanagerpb\252\002\031Google.Ads.DataManager"
+          + ".V1\312\002\031Google\\Ads\\DataManager\\V1\352\002\034Google"
+          + "::Ads::DataManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

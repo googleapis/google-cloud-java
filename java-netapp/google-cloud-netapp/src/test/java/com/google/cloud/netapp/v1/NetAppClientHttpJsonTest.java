@@ -48,6 +48,7 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Struct;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -233,6 +234,7 @@ public class NetAppClientHttpJsonTest {
             .setColdTierSizeUsedGib(-1242809254)
             .setHotTierSizeUsedGib(-151116719)
             .setType(StoragePoolType.forNumber(0))
+            .setMode(Mode.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -318,6 +320,7 @@ public class NetAppClientHttpJsonTest {
             .setColdTierSizeUsedGib(-1242809254)
             .setHotTierSizeUsedGib(-151116719)
             .setType(StoragePoolType.forNumber(0))
+            .setMode(Mode.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -403,6 +406,7 @@ public class NetAppClientHttpJsonTest {
             .setColdTierSizeUsedGib(-1242809254)
             .setHotTierSizeUsedGib(-151116719)
             .setType(StoragePoolType.forNumber(0))
+            .setMode(Mode.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -478,6 +482,7 @@ public class NetAppClientHttpJsonTest {
             .setColdTierSizeUsedGib(-1242809254)
             .setHotTierSizeUsedGib(-151116719)
             .setType(StoragePoolType.forNumber(0))
+            .setMode(Mode.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -553,6 +558,7 @@ public class NetAppClientHttpJsonTest {
             .setColdTierSizeUsedGib(-1242809254)
             .setHotTierSizeUsedGib(-151116719)
             .setType(StoragePoolType.forNumber(0))
+            .setMode(Mode.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -596,6 +602,7 @@ public class NetAppClientHttpJsonTest {
             .setColdTierSizeUsedGib(-1242809254)
             .setHotTierSizeUsedGib(-151116719)
             .setType(StoragePoolType.forNumber(0))
+            .setMode(Mode.forNumber(0))
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -660,6 +667,7 @@ public class NetAppClientHttpJsonTest {
               .setColdTierSizeUsedGib(-1242809254)
               .setHotTierSizeUsedGib(-151116719)
               .setType(StoragePoolType.forNumber(0))
+              .setMode(Mode.forNumber(0))
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateStoragePoolAsync(storagePool, updateMask).get();
@@ -847,6 +855,7 @@ public class NetAppClientHttpJsonTest {
             .setColdTierSizeUsedGib(-1242809254)
             .setHotTierSizeUsedGib(-151116719)
             .setType(StoragePoolType.forNumber(0))
+            .setMode(Mode.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1044,6 +1053,7 @@ public class NetAppClientHttpJsonTest {
             .setCacheParameters(CacheParameters.newBuilder().build())
             .setHotTierSizeUsedGib(-151116719)
             .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setCloneDetails(Volume.CloneDetails.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1130,6 +1140,7 @@ public class NetAppClientHttpJsonTest {
             .setCacheParameters(CacheParameters.newBuilder().build())
             .setHotTierSizeUsedGib(-151116719)
             .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setCloneDetails(Volume.CloneDetails.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1216,6 +1227,7 @@ public class NetAppClientHttpJsonTest {
             .setCacheParameters(CacheParameters.newBuilder().build())
             .setHotTierSizeUsedGib(-151116719)
             .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setCloneDetails(Volume.CloneDetails.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1311,6 +1323,7 @@ public class NetAppClientHttpJsonTest {
             .setCacheParameters(CacheParameters.newBuilder().build())
             .setHotTierSizeUsedGib(-151116719)
             .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setCloneDetails(Volume.CloneDetails.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1406,6 +1419,7 @@ public class NetAppClientHttpJsonTest {
             .setCacheParameters(CacheParameters.newBuilder().build())
             .setHotTierSizeUsedGib(-151116719)
             .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setCloneDetails(Volume.CloneDetails.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1460,6 +1474,7 @@ public class NetAppClientHttpJsonTest {
             .setCacheParameters(CacheParameters.newBuilder().build())
             .setHotTierSizeUsedGib(-151116719)
             .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setCloneDetails(Volume.CloneDetails.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1535,6 +1550,7 @@ public class NetAppClientHttpJsonTest {
               .setCacheParameters(CacheParameters.newBuilder().build())
               .setHotTierSizeUsedGib(-151116719)
               .addAllBlockDevices(new ArrayList<BlockDevice>())
+              .setCloneDetails(Volume.CloneDetails.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateVolumeAsync(volume, updateMask).get();
@@ -1680,6 +1696,7 @@ public class NetAppClientHttpJsonTest {
             .setCacheParameters(CacheParameters.newBuilder().build())
             .setHotTierSizeUsedGib(-151116719)
             .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setCloneDetails(Volume.CloneDetails.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1727,6 +1744,112 @@ public class NetAppClientHttpJsonTest {
               .setSnapshotId("snapshotId-1113817601")
               .build();
       client.revertVolumeAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void establishVolumePeeringTest() throws Exception {
+    Volume expectedResponse =
+        Volume.newBuilder()
+            .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setStateDetails("stateDetails1730982001")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setShareName("shareName-1582221558")
+            .setPsaRange("psaRange-534274785")
+            .setStoragePool(
+                StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+            .setNetwork("network1843485230")
+            .setServiceLevel(ServiceLevel.forNumber(0))
+            .setCapacityGib(498394811)
+            .setExportPolicy(ExportPolicy.newBuilder().build())
+            .addAllProtocols(new ArrayList<Protocols>())
+            .addAllSmbSettings(new ArrayList<SMBSettings>())
+            .addAllMountOptions(new ArrayList<MountOption>())
+            .setUnixPermissions("unixPermissions882114012")
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setSnapshotPolicy(SnapshotPolicy.newBuilder().build())
+            .setSnapReserve(-1429587641)
+            .setSnapshotDirectory(true)
+            .setUsedGib(-279083970)
+            .setSecurityStyle(SecurityStyle.forNumber(0))
+            .setKerberosEnabled(true)
+            .setLdapEnabled(true)
+            .setActiveDirectory(
+                ActiveDirectoryName.of("[PROJECT]", "[LOCATION]", "[ACTIVE_DIRECTORY]").toString())
+            .setRestoreParameters(RestoreParameters.newBuilder().build())
+            .setKmsConfig(KmsConfigName.of("[PROJECT]", "[LOCATION]", "[KMS_CONFIG]").toString())
+            .setEncryptionType(EncryptionType.forNumber(0))
+            .setHasReplication(true)
+            .setBackupConfig(BackupConfig.newBuilder().build())
+            .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setLargeCapacity(true)
+            .setMultipleEndpoints(true)
+            .setTieringPolicy(TieringPolicy.newBuilder().build())
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
+            .setColdTierSizeGib(212809252)
+            .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
+            .setThroughputMibps(1498696820)
+            .setCacheParameters(CacheParameters.newBuilder().build())
+            .setHotTierSizeUsedGib(-151116719)
+            .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setCloneDetails(Volume.CloneDetails.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("establishVolumePeeringTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    EstablishVolumePeeringRequest request =
+        EstablishVolumePeeringRequest.newBuilder()
+            .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setPeerClusterName("peerClusterName313022691")
+            .setPeerSvmName("peerSvmName1014209619")
+            .addAllPeerIpAddresses(new ArrayList<String>())
+            .setPeerVolumeName("peerVolumeName1542206407")
+            .build();
+
+    Volume actualResponse = client.establishVolumePeeringAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void establishVolumePeeringExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EstablishVolumePeeringRequest request =
+          EstablishVolumePeeringRequest.newBuilder()
+              .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+              .setPeerClusterName("peerClusterName313022691")
+              .setPeerSvmName("peerSvmName1014209619")
+              .addAllPeerIpAddresses(new ArrayList<String>())
+              .setPeerVolumeName("peerVolumeName1542206407")
+              .build();
+      client.establishVolumePeeringAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }
@@ -6946,6 +7069,210 @@ public class NetAppClientHttpJsonTest {
       client.deleteHostGroupAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void executeOntapPostTest() throws Exception {
+    ExecuteOntapPostResponse expectedResponse =
+        ExecuteOntapPostResponse.newBuilder().setBody(Struct.newBuilder().build()).build();
+    mockService.addResponse(expectedResponse);
+
+    ExecuteOntapPostRequest request =
+        ExecuteOntapPostRequest.newBuilder()
+            .setBody(Struct.newBuilder().build())
+            .setOntapPath(
+                "projects/project-7340/locations/location-7340/storagePools/storagePool-7340/ontap/onta-7340")
+            .build();
+
+    ExecuteOntapPostResponse actualResponse = client.executeOntapPost(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void executeOntapPostExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExecuteOntapPostRequest request =
+          ExecuteOntapPostRequest.newBuilder()
+              .setBody(Struct.newBuilder().build())
+              .setOntapPath(
+                  "projects/project-7340/locations/location-7340/storagePools/storagePool-7340/ontap/onta-7340")
+              .build();
+      client.executeOntapPost(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void executeOntapGetTest() throws Exception {
+    ExecuteOntapGetResponse expectedResponse =
+        ExecuteOntapGetResponse.newBuilder().setBody(Struct.newBuilder().build()).build();
+    mockService.addResponse(expectedResponse);
+
+    ExecuteOntapGetRequest request =
+        ExecuteOntapGetRequest.newBuilder()
+            .setOntapPath(
+                "projects/project-7340/locations/location-7340/storagePools/storagePool-7340/ontap/onta-7340")
+            .build();
+
+    ExecuteOntapGetResponse actualResponse = client.executeOntapGet(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void executeOntapGetExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExecuteOntapGetRequest request =
+          ExecuteOntapGetRequest.newBuilder()
+              .setOntapPath(
+                  "projects/project-7340/locations/location-7340/storagePools/storagePool-7340/ontap/onta-7340")
+              .build();
+      client.executeOntapGet(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void executeOntapDeleteTest() throws Exception {
+    ExecuteOntapDeleteResponse expectedResponse =
+        ExecuteOntapDeleteResponse.newBuilder().setBody(Struct.newBuilder().build()).build();
+    mockService.addResponse(expectedResponse);
+
+    ExecuteOntapDeleteRequest request =
+        ExecuteOntapDeleteRequest.newBuilder()
+            .setOntapPath(
+                "projects/project-7340/locations/location-7340/storagePools/storagePool-7340/ontap/onta-7340")
+            .build();
+
+    ExecuteOntapDeleteResponse actualResponse = client.executeOntapDelete(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void executeOntapDeleteExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExecuteOntapDeleteRequest request =
+          ExecuteOntapDeleteRequest.newBuilder()
+              .setOntapPath(
+                  "projects/project-7340/locations/location-7340/storagePools/storagePool-7340/ontap/onta-7340")
+              .build();
+      client.executeOntapDelete(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void executeOntapPatchTest() throws Exception {
+    ExecuteOntapPatchResponse expectedResponse =
+        ExecuteOntapPatchResponse.newBuilder().setBody(Struct.newBuilder().build()).build();
+    mockService.addResponse(expectedResponse);
+
+    ExecuteOntapPatchRequest request =
+        ExecuteOntapPatchRequest.newBuilder()
+            .setBody(Struct.newBuilder().build())
+            .setOntapPath(
+                "projects/project-7340/locations/location-7340/storagePools/storagePool-7340/ontap/onta-7340")
+            .build();
+
+    ExecuteOntapPatchResponse actualResponse = client.executeOntapPatch(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void executeOntapPatchExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExecuteOntapPatchRequest request =
+          ExecuteOntapPatchRequest.newBuilder()
+              .setBody(Struct.newBuilder().build())
+              .setOntapPath(
+                  "projects/project-7340/locations/location-7340/storagePools/storagePool-7340/ontap/onta-7340")
+              .build();
+      client.executeOntapPatch(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

@@ -375,6 +375,7 @@ public class HttpJsonWebhooksStub extends WebhooksStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetWebhookRequest, Webhook> getWebhookTransportSettings =
         HttpJsonCallSettings.<GetWebhookRequest, Webhook>newBuilder()
@@ -386,6 +387,7 @@ public class HttpJsonWebhooksStub extends WebhooksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateWebhookRequest, Webhook> createWebhookTransportSettings =
         HttpJsonCallSettings.<CreateWebhookRequest, Webhook>newBuilder()
@@ -397,6 +399,7 @@ public class HttpJsonWebhooksStub extends WebhooksStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateWebhookRequest, Webhook> updateWebhookTransportSettings =
         HttpJsonCallSettings.<UpdateWebhookRequest, Webhook>newBuilder()
@@ -419,6 +422,7 @@ public class HttpJsonWebhooksStub extends WebhooksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
