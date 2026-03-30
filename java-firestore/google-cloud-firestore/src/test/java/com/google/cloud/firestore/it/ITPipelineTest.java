@@ -3186,6 +3186,92 @@ public class ITPipelineTest extends ITBaseTest {
   }
 
   @Test
+  public void testIfNull() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(collection.getPath())
+            .limit(1)
+            .replaceWith(Expression.map(map("title", "foo", "name", null)))
+            .select(
+                Expression.ifNull("title", "default title").as("staticMethod"),
+                field("title").ifNull("default title").as("instanceMethod"),
+                field("name").ifNull(field("title")).as("nameOrTitle"),
+                field("name").ifNull("default name").as("fieldIsNull"),
+                field("absent").ifNull("default name").as("fieldIsAbsent"))
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results))
+        .containsExactly(
+            map(
+                "staticMethod", "foo",
+                "instanceMethod", "foo",
+                "nameOrTitle", "foo",
+                "fieldIsNull", "default name",
+                "fieldIsAbsent", "default name"));
+  }
+
+  @Test
+  public void testCoalesce() throws Exception {
+    assumeFalse(
+        "Coalesce is not supported against the emulator.",
+        isRunningAgainstFirestoreEmulator(firestore));
+
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(collection.getPath())
+            .limit(1)
+            .replaceWith(
+                Expression.map(
+                    map(
+                        "numberValue",
+                        1L,
+                        "stringValue",
+                        "hello",
+                        "booleanValue",
+                        false,
+                        "nullValue",
+                        null,
+                        "nullValue2",
+                        null)))
+            .select(
+                Expression.coalesce(field("numberValue"), field("stringValue")).as("staticMethod"),
+                field("numberValue").coalesce(field("stringValue")).as("instanceMethod"),
+                Expression.coalesce(field("nullValue"), field("stringValue")).as("firstIsNull"),
+                Expression.coalesce(field("nullValue"), field("nullValue2"), field("booleanValue"))
+                    .as("lastIsNotNull"),
+                Expression.coalesce(field("nullValue"), field("nullValue2")).as("allFieldsNull"),
+                Expression.coalesce(field("nullValue"), field("nullValue2"), constant("default"))
+                    .as("allFieldsNullWithDefault"),
+                Expression.coalesce(field("absentField"), field("numberValue"), constant("default"))
+                    .as("withAbsentField"))
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(data(results))
+        .containsExactly(
+            map(
+                "staticMethod",
+                1L,
+                "instanceMethod",
+                1L,
+                "firstIsNull",
+                "hello",
+                "lastIsNotNull",
+                false,
+                "allFieldsNull",
+                null,
+                "allFieldsNullWithDefault",
+                "default",
+                "withAbsentField",
+                1L));
+  }
+
+  @Test
   public void testJoin() throws Exception {
     // Test join with a constant delimiter
     List<PipelineResult> results =
