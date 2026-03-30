@@ -43,6 +43,11 @@ import javax.annotation.Nullable;
 
 final class ObservabilityUtils {
 
+  /** Function to extract the status of the error as a string (defaults to gRPC canonical codes). */
+  static String extractStatus(@Nullable Throwable error) {
+    return (String) extractStatus(error, ApiTracerContext.Transport.GRPC);
+  }
+
   static Object extractStatus(@Nullable Throwable error, ApiTracerContext.Transport transport) {
     if (transport == ApiTracerContext.Transport.HTTP) {
       return extractHttpStatus(error);

@@ -34,7 +34,6 @@ import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.logging.LoggerProvider;
 import com.google.api.gax.logging.LoggingUtils;
-import com.google.api.gax.tracing.ApiTracerContext.Transport;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.rpc.ErrorInfo;
 import java.util.HashMap;
@@ -81,7 +80,7 @@ class LoggingTracer extends BaseApiTracer {
 
     logContext.put(
         ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE,
-        ObservabilityUtils.extractStatus(error, Transport.GRPC));
+        ObservabilityUtils.extractStatus(error));
 
     ErrorInfo errorInfo = ObservabilityUtils.extractErrorInfo(error);
     if (errorInfo != null) {

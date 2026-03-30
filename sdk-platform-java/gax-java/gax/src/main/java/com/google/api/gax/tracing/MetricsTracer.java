@@ -120,9 +120,7 @@ public class MetricsTracer implements ApiTracer {
     if (operationFinished.getAndSet(true)) {
       throw new IllegalStateException(OPERATION_FINISHED_STATUS_MESSAGE);
     }
-    attributes.put(
-        STATUS_ATTRIBUTE,
-        (String) ObservabilityUtils.extractStatus(error, ApiTracerContext.Transport.GRPC));
+    attributes.put(STATUS_ATTRIBUTE, (String) ObservabilityUtils.extractStatus(error));
     metricsRecorder.recordOperationLatency(
         operationTimer.elapsed(TimeUnit.MILLISECONDS), attributes);
     metricsRecorder.recordOperationCount(1, attributes);
@@ -174,9 +172,7 @@ public class MetricsTracer implements ApiTracer {
    */
   @Override
   public void attemptFailedDuration(Throwable error, java.time.Duration delay) {
-    attributes.put(
-        STATUS_ATTRIBUTE,
-        (String) ObservabilityUtils.extractStatus(error, ApiTracerContext.Transport.GRPC));
+    attributes.put(STATUS_ATTRIBUTE, (String) ObservabilityUtils.extractStatus(error));
     metricsRecorder.recordAttemptLatency(attemptTimer.elapsed(TimeUnit.MILLISECONDS), attributes);
     metricsRecorder.recordAttemptCount(1, attributes);
   }
@@ -200,9 +196,7 @@ public class MetricsTracer implements ApiTracer {
    */
   @Override
   public void attemptFailedRetriesExhausted(Throwable error) {
-    attributes.put(
-        STATUS_ATTRIBUTE,
-        (String) ObservabilityUtils.extractStatus(error, ApiTracerContext.Transport.GRPC));
+    attributes.put(STATUS_ATTRIBUTE, (String) ObservabilityUtils.extractStatus(error));
     metricsRecorder.recordAttemptLatency(attemptTimer.elapsed(TimeUnit.MILLISECONDS), attributes);
     metricsRecorder.recordAttemptCount(1, attributes);
   }
@@ -216,9 +210,7 @@ public class MetricsTracer implements ApiTracer {
    */
   @Override
   public void attemptPermanentFailure(Throwable error) {
-    attributes.put(
-        STATUS_ATTRIBUTE,
-        (String) ObservabilityUtils.extractStatus(error, ApiTracerContext.Transport.GRPC));
+    attributes.put(STATUS_ATTRIBUTE, (String) ObservabilityUtils.extractStatus(error));
     metricsRecorder.recordAttemptLatency(attemptTimer.elapsed(TimeUnit.MILLISECONDS), attributes);
     metricsRecorder.recordAttemptCount(1, attributes);
   }
