@@ -97,6 +97,9 @@ public class ObservabilityAttributes {
   /** The destination resource id of the request (e.g. projects/p/locations/l/topics/t). */
   public static final String DESTINATION_RESOURCE_ID_ATTRIBUTE = "gcp.resource.destination.id";
 
+  /** The full URL of the HTTP request, with sensitive query parameters redacted. */
+  public static final String HTTP_URL_FULL_ATTRIBUTE = "url.full";
+
   /** The type of error that occurred (e.g., from google.rpc.ErrorInfo.reason). */
   public static final String ERROR_TYPE_ATTRIBUTE = "error.type";
 

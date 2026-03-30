@@ -34,7 +34,6 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 
 import com.google.api.client.http.javanet.NetHttpTransport;
-import io.grpc.ManagedChannelBuilder;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.StatusCode;
@@ -47,10 +46,11 @@ import com.google.protobuf.Message;
 import com.google.rpc.Status;
 import com.google.showcase.v1beta1.EchoClient;
 import com.google.showcase.v1beta1.EchoRequest;
+import com.google.showcase.v1beta1.EchoResponse;
 import com.google.showcase.v1beta1.EchoSettings;
-import com.google.showcase.v1beta1.it.util.TestClientInitializer;
 import com.google.showcase.v1beta1.stub.EchoStub;
 import com.google.showcase.v1beta1.stub.EchoStubSettings;
+import io.grpc.ManagedChannelBuilder;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.SpanKind;
@@ -70,6 +70,7 @@ class ITOtelTracing {
   private static final long SHOWCASE_SERVER_PORT = 7469;
   private static final String SHOWCASE_REPO = "googleapis/sdk-platform-java";
   private static final String SHOWCASE_ARTIFACT = "com.google.cloud:gapic-showcase";
+  private static final String SHOWCASE_USER_URL = "http://localhost:7469/v1beta1/echo:echo";
 
   private InMemorySpanExporter spanExporter;
   private OpenTelemetrySdk openTelemetrySdk;
@@ -109,7 +110,8 @@ class ITOtelTracing {
             .setEndpoint("localhost:7469")
             .build();
 
-    EchoStubSettings.Builder stubSettingsBuilder = (EchoStubSettings.Builder) grpcEchoSettings.getStubSettings().toBuilder();
+    EchoStubSettings.Builder stubSettingsBuilder =
+        (EchoStubSettings.Builder) grpcEchoSettings.getStubSettings().toBuilder();
     stubSettingsBuilder.setTracerFactory(tracingFactory);
 
     EchoStubSettings stubSettings =
@@ -192,7 +194,8 @@ class ITOtelTracing {
                     .build())
             .build();
 
-    EchoStubSettings.Builder stubSettingsBuilder = (EchoStubSettings.Builder) httpJsonEchoSettings.getStubSettings().toBuilder();
+    EchoStubSettings.Builder stubSettingsBuilder =
+        (EchoStubSettings.Builder) httpJsonEchoSettings.getStubSettings().toBuilder();
     stubSettingsBuilder.setTracerFactory(tracingFactory);
 
     EchoStubSettings stubSettings =
@@ -257,6 +260,19 @@ class ITOtelTracing {
                   .getAttributes()
                   .get(AttributeKey.stringKey(ObservabilityAttributes.URL_DOMAIN_ATTRIBUTE)))
           .isEqualTo("showcase.googleapis.com");
+      assertThat(
+              attemptSpan
+                  .getAttributes()
+                  .get(AttributeKey.stringKey(ObservabilityAttributes.HTTP_URL_FULL_ATTRIBUTE)))
+          .isEqualTo(SHOWCASE_USER_URL);
+      EchoResponse fetchedEcho = EchoResponse.newBuilder().setContent("tracing-test").build();
+      long expectedMagnitude = computeExpectedHttpJsonResponseSize(fetchedEcho);
+      Long observedMagnitude =
+          attemptSpan
+              .getAttributes()
+              .get(AttributeKey.longKey(ObservabilityAttributes.HTTP_RESPONSE_BODY_SIZE));
+      assertThat(observedMagnitude).isNotNull();
+      assertThat(observedMagnitude).isAtLeast((long) (expectedMagnitude * (1 - 0.15)));
       assertThat(attemptSpan.getInstrumentationScopeInfo().getName()).isEqualTo(SHOWCASE_ARTIFACT);
     }
   }
