@@ -39,10 +39,20 @@ import javax.annotation.Nullable;
 
 class ObservabilityUtils {
 
-  /** Function to extract the status of the error as a string */
+  /** Function to extract the status of the error as a string (defaults to gRPC canonical codes). */
   static String extractStatus(@Nullable Throwable error) {
-    final String statusString;
+    return (String) extractStatus(error, ApiTracerContext.Transport.GRPC);
+  }
 
+  static Object extractStatus(@Nullable Throwable error, ApiTracerContext.Transport transport) {
+    if (transport == ApiTracerContext.Transport.HTTP) {
+      return extractHttpStatus(error);
+    }
+    return extractGrpcStatus(error);
+  }
+
+  private static String extractGrpcStatus(@Nullable Throwable error) {
+    final String statusString;
     if (error == null) {
       return StatusCode.Code.OK.toString();
     } else if (error instanceof CancellationException) {
@@ -52,8 +62,38 @@ class ObservabilityUtils {
     } else {
       statusString = StatusCode.Code.UNKNOWN.toString();
     }
-
     return statusString;
+  }
+
+  private static Long extractHttpStatus(@Nullable Throwable error) {
+    if (error == null) {
+      return 200L;
+    } else if (error instanceof ApiException) {
+      Object transportCode = ((ApiException) error).getStatusCode().getTransportCode();
+      if (transportCode instanceof Integer) {
+        return ((Integer) transportCode).longValue();
+      } else {
+        return (long) ((ApiException) error).getStatusCode().getCode().getHttpStatusCode();
+      }
+    } 
+    StatusCode.Code code = StatusCode.Code.UNKNOWN;
+    if (error instanceof CancellationException) {
+      code = StatusCode.Code.CANCELLED;
+    }
+    return (long) code.getHttpStatusCode();
+  }
+
+  static void populateStatusAttributes(
+      Map<String, Object> attributes,
+      @Nullable Throwable error,
+      ApiTracerContext.Transport transport) {
+    if (transport == ApiTracerContext.Transport.GRPC) {
+      attributes.put(
+          ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE, extractStatus(error, transport));
+    } else if (transport == ApiTracerContext.Transport.HTTP) {
+      attributes.put(
+          ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE, extractStatus(error, transport));
+    }
   }
 
   static Attributes toOtelAttributes(Map<String, Object> attributes) {
@@ -69,6 +109,8 @@ class ObservabilityUtils {
             attributesBuilder.put(k, (Long) v);
           } else if (v instanceof Integer) {
             attributesBuilder.put(k, (long) (Integer) v);
+          } else if (v instanceof Long) {
+            attributesBuilder.put(k, (Long) v);
           }
         });
     return attributesBuilder.build();
