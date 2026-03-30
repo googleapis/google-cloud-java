@@ -55,11 +55,9 @@ jobs:
         head_repo_name: ${{ github.event.pull_request.head.repo.full_name  }}
         base_repo: ${{ github.repository }}
   library-generation-unit-tests:
-    needs: filter
-    if: ${{ needs.filter.outputs.library == 'true' }}
+    needs: [filter, should-run-library-generation-tests]
+    if: needs.filter.outputs.library == 'true' && needs.should-run-library-generation-tests.outputs.should_run == 'true'
     runs-on: ubuntu-22.04
-    needs: should-run-library-generation-tests
-    if: needs.should-run-library-generation-tests.outputs.should_run == 'true'
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
@@ -85,11 +83,9 @@ jobs:
         set -x
         python -m unittest discover -s hermetic_build -p "*unit_tests.py"
   library-generation-lint-shell:
-    needs: filter
-    if: ${{ needs.filter.outputs.library == 'true' }}
+    needs: [filter, should-run-library-generation-tests]
+    if: needs.filter.outputs.library == 'true' && needs.should-run-library-generation-tests.outputs.should_run == 'true'
     runs-on: ubuntu-22.04
-    needs: should-run-library-generation-tests
-    if: needs.should-run-library-generation-tests.outputs.should_run == 'true'
     steps:
     - uses: actions/checkout@v4
     - name: Run ShellCheck
@@ -101,11 +97,9 @@ jobs:
         ignore_paths: 
           .kokoro
   library-generation-lint-python:
-    needs: filter
-    if: ${{ needs.filter.outputs.library == 'true' }}
+    needs: [filter, should-run-library-generation-tests]
+    if: needs.filter.outputs.library == 'true' && needs.should-run-library-generation-tests.outputs.should_run == 'true'
     runs-on: ubuntu-22.04
-    needs: should-run-library-generation-tests
-    if: needs.should-run-library-generation-tests.outputs.should_run == 'true'
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5

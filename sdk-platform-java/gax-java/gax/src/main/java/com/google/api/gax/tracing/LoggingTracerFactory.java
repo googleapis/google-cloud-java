@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -28,51 +28,42 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.google.api.gax.logging;
+package com.google.api.gax.tracing;
 
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
-import org.slf4j.ILoggerFactory;
-import org.slf4j.IMarkerFactory;
-import org.slf4j.Logger;
-import org.slf4j.spi.MDCAdapter;
-import org.slf4j.spi.SLF4JServiceProvider;
+import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 
-/**
- * This provider is made discoverable to SFL4J's LoggerFactory in
- * resources/META-INF/services/org.slf4j.spi.SLF4JServiceProvider
- */
-public class TestServiceProvider implements SLF4JServiceProvider {
+/** A {@link ApiTracerFactory} that creates instances of {@link LoggingTracer}. */
+@BetaApi
+@InternalApi
+public class LoggingTracerFactory implements ApiTracerFactory {
+  private final ApiTracerContext apiTracerContext;
 
-  private final ConcurrentMap<String, Logger> loggers = new ConcurrentHashMap<>();
-  private final ILoggerFactory loggerFactory =
-      new ILoggerFactory() {
-        @Override
-        public Logger getLogger(String name) {
-          return loggers.computeIfAbsent(name, TestLogger::new);
-        }
-      };
+  public LoggingTracerFactory() {
+    this(ApiTracerContext.empty());
+  }
 
-  @Override
-  public ILoggerFactory getLoggerFactory() {
-    return loggerFactory;
+  private LoggingTracerFactory(ApiTracerContext apiTracerContext) {
+    this.apiTracerContext = apiTracerContext;
   }
 
   @Override
-  public IMarkerFactory getMarkerFactory() {
-    return null;
+  public ApiTracer newTracer(ApiTracer parent, SpanName spanName, OperationType operationType) {
+    return new LoggingTracer(apiTracerContext);
   }
 
   @Override
-  public MDCAdapter getMDCAdapter() {
-    return new TestMDCAdapter();
+  public ApiTracer newTracer(ApiTracer parent, ApiTracerContext context) {
+    return new LoggingTracer(apiTracerContext.merge(context));
   }
 
   @Override
-  public String getRequestedApiVersion() {
-    return "";
+  public ApiTracerContext getApiTracerContext() {
+    return apiTracerContext;
   }
 
   @Override
-  public void initialize() {}
+  public ApiTracerFactory withContext(ApiTracerContext context) {
+    return new LoggingTracerFactory(apiTracerContext.merge(context));
+  }
 }
