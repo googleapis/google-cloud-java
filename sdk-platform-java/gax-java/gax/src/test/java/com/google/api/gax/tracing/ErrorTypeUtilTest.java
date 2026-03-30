@@ -54,7 +54,8 @@ class ErrorTypeUtilTest {
 
   @Test
   void testExtractErrorType_null() {
-    assertThat(ErrorTypeUtil.extractErrorType(null)).isNull();
+    assertThat(ErrorTypeUtil.extractErrorType(null))
+        .isEqualTo(ErrorTypeUtil.ErrorType.INTERNAL.toString());
   }
 
   @Test

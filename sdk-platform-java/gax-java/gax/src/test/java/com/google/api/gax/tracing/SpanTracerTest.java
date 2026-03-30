@@ -439,8 +439,10 @@ class SpanTracerTest {
     // For an anonymous inner class Throwable, getSimpleName() is empty string,
     // which triggers the
     // fallback
-    verify(span, never())
-        .setAttribute(eq(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE), anyString());
+    verify(span)
+        .setAttribute(
+            ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE,
+            ErrorTypeUtil.ErrorType.INTERNAL.toString());
     verify(span).end();
   }
 
