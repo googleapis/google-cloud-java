@@ -56,6 +56,9 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
     description_ = "";
     triggerEvent_ = 0;
     tools_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    toolsetTools_ = java.util.Collections.emptyList();
+    cesToolSpecs_ = java.util.Collections.emptyList();
+    cesAppSpecs_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -885,6 +888,264 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
         : suggestionDedupingConfig_;
   }
 
+  public static final int TOOLSET_TOOLS_FIELD_NUMBER = 27;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.dialogflow.v2.ToolsetTool> toolsetTools_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES toolset specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.ToolsetTool toolset_tools = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.dialogflow.v2.ToolsetTool> getToolsetToolsList() {
+    return toolsetTools_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES toolset specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.ToolsetTool toolset_tools = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.dialogflow.v2.ToolsetToolOrBuilder>
+      getToolsetToolsOrBuilderList() {
+    return toolsetTools_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES toolset specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.ToolsetTool toolset_tools = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getToolsetToolsCount() {
+    return toolsetTools_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES toolset specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.ToolsetTool toolset_tools = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.ToolsetTool getToolsetTools(int index) {
+    return toolsetTools_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES toolset specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.ToolsetTool toolset_tools = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.ToolsetToolOrBuilder getToolsetToolsOrBuilder(int index) {
+    return toolsetTools_.get(index);
+  }
+
+  public static final int CES_TOOL_SPECS_FIELD_NUMBER = 28;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.dialogflow.v2.CesToolSpec> cesToolSpecs_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES tool specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.CesToolSpec ces_tool_specs = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.dialogflow.v2.CesToolSpec> getCesToolSpecsList() {
+    return cesToolSpecs_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES tool specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.CesToolSpec ces_tool_specs = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.dialogflow.v2.CesToolSpecOrBuilder>
+      getCesToolSpecsOrBuilderList() {
+    return cesToolSpecs_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES tool specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.CesToolSpec ces_tool_specs = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getCesToolSpecsCount() {
+    return cesToolSpecs_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES tool specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.CesToolSpec ces_tool_specs = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.CesToolSpec getCesToolSpecs(int index) {
+    return cesToolSpecs_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES tool specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.CesToolSpec ces_tool_specs = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.CesToolSpecOrBuilder getCesToolSpecsOrBuilder(int index) {
+    return cesToolSpecs_.get(index);
+  }
+
+  public static final int CES_APP_SPECS_FIELD_NUMBER = 29;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.dialogflow.v2.CesAppSpec> cesAppSpecs_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES app specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.dialogflow.v2.CesAppSpec> getCesAppSpecsList() {
+    return cesAppSpecs_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES app specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.dialogflow.v2.CesAppSpecOrBuilder>
+      getCesAppSpecsOrBuilderList() {
+    return cesAppSpecs_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES app specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getCesAppSpecsCount() {
+    return cesAppSpecs_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES app specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.CesAppSpec getCesAppSpecs(int index) {
+    return cesAppSpecs_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES app specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.CesAppSpecOrBuilder getCesAppSpecsOrBuilder(int index) {
+    return cesAppSpecs_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -935,6 +1196,15 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(23, getSuggestionDedupingConfig());
+    }
+    for (int i = 0; i < toolsetTools_.size(); i++) {
+      output.writeMessage(27, toolsetTools_.get(i));
+    }
+    for (int i = 0; i < cesToolSpecs_.size(); i++) {
+      output.writeMessage(28, cesToolSpecs_.get(i));
+    }
+    for (int i = 0; i < cesAppSpecs_.size(); i++) {
+      output.writeMessage(29, cesAppSpecs_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -995,6 +1265,15 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               23, getSuggestionDedupingConfig());
     }
+    for (int i = 0; i < toolsetTools_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(27, toolsetTools_.get(i));
+    }
+    for (int i = 0; i < cesToolSpecs_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, cesToolSpecs_.get(i));
+    }
+    for (int i = 0; i < cesAppSpecs_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(29, cesAppSpecs_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1030,6 +1309,9 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
     if (hasSuggestionDedupingConfig()) {
       if (!getSuggestionDedupingConfig().equals(other.getSuggestionDedupingConfig())) return false;
     }
+    if (!getToolsetToolsList().equals(other.getToolsetToolsList())) return false;
+    if (!getCesToolSpecsList().equals(other.getCesToolSpecsList())) return false;
+    if (!getCesAppSpecsList().equals(other.getCesAppSpecsList())) return false;
     if (!getContextCase().equals(other.getContextCase())) return false;
     switch (contextCase_) {
       case 11:
@@ -1088,6 +1370,18 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
     if (hasSuggestionDedupingConfig()) {
       hash = (37 * hash) + SUGGESTION_DEDUPING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getSuggestionDedupingConfig().hashCode();
+    }
+    if (getToolsetToolsCount() > 0) {
+      hash = (37 * hash) + TOOLSET_TOOLS_FIELD_NUMBER;
+      hash = (53 * hash) + getToolsetToolsList().hashCode();
+    }
+    if (getCesToolSpecsCount() > 0) {
+      hash = (37 * hash) + CES_TOOL_SPECS_FIELD_NUMBER;
+      hash = (53 * hash) + getCesToolSpecsList().hashCode();
+    }
+    if (getCesAppSpecsCount() > 0) {
+      hash = (37 * hash) + CES_APP_SPECS_FIELD_NUMBER;
+      hash = (53 * hash) + getCesAppSpecsList().hashCode();
     }
     switch (contextCase_) {
       case 11:
@@ -1258,6 +1552,9 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
         internalGetCreateTimeFieldBuilder();
         internalGetUpdateTimeFieldBuilder();
         internalGetSuggestionDedupingConfigFieldBuilder();
+        internalGetToolsetToolsFieldBuilder();
+        internalGetCesToolSpecsFieldBuilder();
+        internalGetCesAppSpecsFieldBuilder();
       }
     }
 
@@ -1298,6 +1595,27 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
         suggestionDedupingConfigBuilder_.dispose();
         suggestionDedupingConfigBuilder_ = null;
       }
+      if (toolsetToolsBuilder_ == null) {
+        toolsetTools_ = java.util.Collections.emptyList();
+      } else {
+        toolsetTools_ = null;
+        toolsetToolsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00001000);
+      if (cesToolSpecsBuilder_ == null) {
+        cesToolSpecs_ = java.util.Collections.emptyList();
+      } else {
+        cesToolSpecs_ = null;
+        cesToolSpecsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00002000);
+      if (cesAppSpecsBuilder_ == null) {
+        cesAppSpecs_ = java.util.Collections.emptyList();
+      } else {
+        cesAppSpecs_ = null;
+        cesAppSpecsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00004000);
       contextCase_ = 0;
       context_ = null;
       foundationModelCase_ = 0;
@@ -1329,12 +1647,43 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.dialogflow.v2.Generator buildPartial() {
       com.google.cloud.dialogflow.v2.Generator result =
           new com.google.cloud.dialogflow.v2.Generator(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dialogflow.v2.Generator result) {
+      if (toolsetToolsBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)) {
+          toolsetTools_ = java.util.Collections.unmodifiableList(toolsetTools_);
+          bitField0_ = (bitField0_ & ~0x00001000);
+        }
+        result.toolsetTools_ = toolsetTools_;
+      } else {
+        result.toolsetTools_ = toolsetToolsBuilder_.build();
+      }
+      if (cesToolSpecsBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)) {
+          cesToolSpecs_ = java.util.Collections.unmodifiableList(cesToolSpecs_);
+          bitField0_ = (bitField0_ & ~0x00002000);
+        }
+        result.cesToolSpecs_ = cesToolSpecs_;
+      } else {
+        result.cesToolSpecs_ = cesToolSpecsBuilder_.build();
+      }
+      if (cesAppSpecsBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)) {
+          cesAppSpecs_ = java.util.Collections.unmodifiableList(cesAppSpecs_);
+          bitField0_ = (bitField0_ & ~0x00004000);
+        }
+        result.cesAppSpecs_ = cesAppSpecs_;
+      } else {
+        result.cesAppSpecs_ = cesAppSpecsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.dialogflow.v2.Generator result) {
@@ -1440,6 +1789,87 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasSuggestionDedupingConfig()) {
         mergeSuggestionDedupingConfig(other.getSuggestionDedupingConfig());
+      }
+      if (toolsetToolsBuilder_ == null) {
+        if (!other.toolsetTools_.isEmpty()) {
+          if (toolsetTools_.isEmpty()) {
+            toolsetTools_ = other.toolsetTools_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+          } else {
+            ensureToolsetToolsIsMutable();
+            toolsetTools_.addAll(other.toolsetTools_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.toolsetTools_.isEmpty()) {
+          if (toolsetToolsBuilder_.isEmpty()) {
+            toolsetToolsBuilder_.dispose();
+            toolsetToolsBuilder_ = null;
+            toolsetTools_ = other.toolsetTools_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+            toolsetToolsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetToolsetToolsFieldBuilder()
+                    : null;
+          } else {
+            toolsetToolsBuilder_.addAllMessages(other.toolsetTools_);
+          }
+        }
+      }
+      if (cesToolSpecsBuilder_ == null) {
+        if (!other.cesToolSpecs_.isEmpty()) {
+          if (cesToolSpecs_.isEmpty()) {
+            cesToolSpecs_ = other.cesToolSpecs_;
+            bitField0_ = (bitField0_ & ~0x00002000);
+          } else {
+            ensureCesToolSpecsIsMutable();
+            cesToolSpecs_.addAll(other.cesToolSpecs_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.cesToolSpecs_.isEmpty()) {
+          if (cesToolSpecsBuilder_.isEmpty()) {
+            cesToolSpecsBuilder_.dispose();
+            cesToolSpecsBuilder_ = null;
+            cesToolSpecs_ = other.cesToolSpecs_;
+            bitField0_ = (bitField0_ & ~0x00002000);
+            cesToolSpecsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetCesToolSpecsFieldBuilder()
+                    : null;
+          } else {
+            cesToolSpecsBuilder_.addAllMessages(other.cesToolSpecs_);
+          }
+        }
+      }
+      if (cesAppSpecsBuilder_ == null) {
+        if (!other.cesAppSpecs_.isEmpty()) {
+          if (cesAppSpecs_.isEmpty()) {
+            cesAppSpecs_ = other.cesAppSpecs_;
+            bitField0_ = (bitField0_ & ~0x00004000);
+          } else {
+            ensureCesAppSpecsIsMutable();
+            cesAppSpecs_.addAll(other.cesAppSpecs_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.cesAppSpecs_.isEmpty()) {
+          if (cesAppSpecsBuilder_.isEmpty()) {
+            cesAppSpecsBuilder_.dispose();
+            cesAppSpecsBuilder_ = null;
+            cesAppSpecs_ = other.cesAppSpecs_;
+            bitField0_ = (bitField0_ & ~0x00004000);
+            cesAppSpecsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetCesAppSpecsFieldBuilder()
+                    : null;
+          } else {
+            cesAppSpecsBuilder_.addAllMessages(other.cesAppSpecs_);
+          }
+        }
       }
       switch (other.getContextCase()) {
         case FREE_FORM_CONTEXT:
@@ -1583,6 +2013,45 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000800;
                 break;
               } // case 186
+            case 218:
+              {
+                com.google.cloud.dialogflow.v2.ToolsetTool m =
+                    input.readMessage(
+                        com.google.cloud.dialogflow.v2.ToolsetTool.parser(), extensionRegistry);
+                if (toolsetToolsBuilder_ == null) {
+                  ensureToolsetToolsIsMutable();
+                  toolsetTools_.add(m);
+                } else {
+                  toolsetToolsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 218
+            case 226:
+              {
+                com.google.cloud.dialogflow.v2.CesToolSpec m =
+                    input.readMessage(
+                        com.google.cloud.dialogflow.v2.CesToolSpec.parser(), extensionRegistry);
+                if (cesToolSpecsBuilder_ == null) {
+                  ensureCesToolSpecsIsMutable();
+                  cesToolSpecs_.add(m);
+                } else {
+                  cesToolSpecsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 226
+            case 234:
+              {
+                com.google.cloud.dialogflow.v2.CesAppSpec m =
+                    input.readMessage(
+                        com.google.cloud.dialogflow.v2.CesAppSpec.parser(), extensionRegistry);
+                if (cesAppSpecsBuilder_ == null) {
+                  ensureCesAppSpecsIsMutable();
+                  cesAppSpecs_.add(m);
+                } else {
+                  cesAppSpecsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 234
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3880,6 +4349,1218 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
         suggestionDedupingConfig_ = null;
       }
       return suggestionDedupingConfigBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.dialogflow.v2.ToolsetTool> toolsetTools_ =
+        java.util.Collections.emptyList();
+
+    private void ensureToolsetToolsIsMutable() {
+      if (!((bitField0_ & 0x00001000) != 0)) {
+        toolsetTools_ =
+            new java.util.ArrayList<com.google.cloud.dialogflow.v2.ToolsetTool>(toolsetTools_);
+        bitField0_ |= 0x00001000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.dialogflow.v2.ToolsetTool,
+            com.google.cloud.dialogflow.v2.ToolsetTool.Builder,
+            com.google.cloud.dialogflow.v2.ToolsetToolOrBuilder>
+        toolsetToolsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES toolset specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ToolsetTool toolset_tools = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.v2.ToolsetTool> getToolsetToolsList() {
+      if (toolsetToolsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(toolsetTools_);
+      } else {
+        return toolsetToolsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES toolset specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ToolsetTool toolset_tools = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getToolsetToolsCount() {
+      if (toolsetToolsBuilder_ == null) {
+        return toolsetTools_.size();
+      } else {
+        return toolsetToolsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES toolset specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ToolsetTool toolset_tools = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.ToolsetTool getToolsetTools(int index) {
+      if (toolsetToolsBuilder_ == null) {
+        return toolsetTools_.get(index);
+      } else {
+        return toolsetToolsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES toolset specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ToolsetTool toolset_tools = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setToolsetTools(int index, com.google.cloud.dialogflow.v2.ToolsetTool value) {
+      if (toolsetToolsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureToolsetToolsIsMutable();
+        toolsetTools_.set(index, value);
+        onChanged();
+      } else {
+        toolsetToolsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES toolset specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ToolsetTool toolset_tools = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setToolsetTools(
+        int index, com.google.cloud.dialogflow.v2.ToolsetTool.Builder builderForValue) {
+      if (toolsetToolsBuilder_ == null) {
+        ensureToolsetToolsIsMutable();
+        toolsetTools_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        toolsetToolsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES toolset specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ToolsetTool toolset_tools = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addToolsetTools(com.google.cloud.dialogflow.v2.ToolsetTool value) {
+      if (toolsetToolsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureToolsetToolsIsMutable();
+        toolsetTools_.add(value);
+        onChanged();
+      } else {
+        toolsetToolsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES toolset specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ToolsetTool toolset_tools = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addToolsetTools(int index, com.google.cloud.dialogflow.v2.ToolsetTool value) {
+      if (toolsetToolsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureToolsetToolsIsMutable();
+        toolsetTools_.add(index, value);
+        onChanged();
+      } else {
+        toolsetToolsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES toolset specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ToolsetTool toolset_tools = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addToolsetTools(
+        com.google.cloud.dialogflow.v2.ToolsetTool.Builder builderForValue) {
+      if (toolsetToolsBuilder_ == null) {
+        ensureToolsetToolsIsMutable();
+        toolsetTools_.add(builderForValue.build());
+        onChanged();
+      } else {
+        toolsetToolsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES toolset specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ToolsetTool toolset_tools = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addToolsetTools(
+        int index, com.google.cloud.dialogflow.v2.ToolsetTool.Builder builderForValue) {
+      if (toolsetToolsBuilder_ == null) {
+        ensureToolsetToolsIsMutable();
+        toolsetTools_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        toolsetToolsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES toolset specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ToolsetTool toolset_tools = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllToolsetTools(
+        java.lang.Iterable<? extends com.google.cloud.dialogflow.v2.ToolsetTool> values) {
+      if (toolsetToolsBuilder_ == null) {
+        ensureToolsetToolsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, toolsetTools_);
+        onChanged();
+      } else {
+        toolsetToolsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES toolset specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ToolsetTool toolset_tools = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearToolsetTools() {
+      if (toolsetToolsBuilder_ == null) {
+        toolsetTools_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00001000);
+        onChanged();
+      } else {
+        toolsetToolsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES toolset specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ToolsetTool toolset_tools = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeToolsetTools(int index) {
+      if (toolsetToolsBuilder_ == null) {
+        ensureToolsetToolsIsMutable();
+        toolsetTools_.remove(index);
+        onChanged();
+      } else {
+        toolsetToolsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES toolset specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ToolsetTool toolset_tools = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.ToolsetTool.Builder getToolsetToolsBuilder(int index) {
+      return internalGetToolsetToolsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES toolset specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ToolsetTool toolset_tools = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.ToolsetToolOrBuilder getToolsetToolsOrBuilder(int index) {
+      if (toolsetToolsBuilder_ == null) {
+        return toolsetTools_.get(index);
+      } else {
+        return toolsetToolsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES toolset specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ToolsetTool toolset_tools = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.dialogflow.v2.ToolsetToolOrBuilder>
+        getToolsetToolsOrBuilderList() {
+      if (toolsetToolsBuilder_ != null) {
+        return toolsetToolsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(toolsetTools_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES toolset specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ToolsetTool toolset_tools = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.ToolsetTool.Builder addToolsetToolsBuilder() {
+      return internalGetToolsetToolsFieldBuilder()
+          .addBuilder(com.google.cloud.dialogflow.v2.ToolsetTool.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES toolset specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ToolsetTool toolset_tools = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.ToolsetTool.Builder addToolsetToolsBuilder(int index) {
+      return internalGetToolsetToolsFieldBuilder()
+          .addBuilder(index, com.google.cloud.dialogflow.v2.ToolsetTool.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES toolset specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ToolsetTool toolset_tools = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.v2.ToolsetTool.Builder>
+        getToolsetToolsBuilderList() {
+      return internalGetToolsetToolsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.dialogflow.v2.ToolsetTool,
+            com.google.cloud.dialogflow.v2.ToolsetTool.Builder,
+            com.google.cloud.dialogflow.v2.ToolsetToolOrBuilder>
+        internalGetToolsetToolsFieldBuilder() {
+      if (toolsetToolsBuilder_ == null) {
+        toolsetToolsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.dialogflow.v2.ToolsetTool,
+                com.google.cloud.dialogflow.v2.ToolsetTool.Builder,
+                com.google.cloud.dialogflow.v2.ToolsetToolOrBuilder>(
+                toolsetTools_, ((bitField0_ & 0x00001000) != 0), getParentForChildren(), isClean());
+        toolsetTools_ = null;
+      }
+      return toolsetToolsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.dialogflow.v2.CesToolSpec> cesToolSpecs_ =
+        java.util.Collections.emptyList();
+
+    private void ensureCesToolSpecsIsMutable() {
+      if (!((bitField0_ & 0x00002000) != 0)) {
+        cesToolSpecs_ =
+            new java.util.ArrayList<com.google.cloud.dialogflow.v2.CesToolSpec>(cesToolSpecs_);
+        bitField0_ |= 0x00002000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.dialogflow.v2.CesToolSpec,
+            com.google.cloud.dialogflow.v2.CesToolSpec.Builder,
+            com.google.cloud.dialogflow.v2.CesToolSpecOrBuilder>
+        cesToolSpecsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES tool specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesToolSpec ces_tool_specs = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.v2.CesToolSpec> getCesToolSpecsList() {
+      if (cesToolSpecsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(cesToolSpecs_);
+      } else {
+        return cesToolSpecsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES tool specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesToolSpec ces_tool_specs = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getCesToolSpecsCount() {
+      if (cesToolSpecsBuilder_ == null) {
+        return cesToolSpecs_.size();
+      } else {
+        return cesToolSpecsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES tool specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesToolSpec ces_tool_specs = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.CesToolSpec getCesToolSpecs(int index) {
+      if (cesToolSpecsBuilder_ == null) {
+        return cesToolSpecs_.get(index);
+      } else {
+        return cesToolSpecsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES tool specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesToolSpec ces_tool_specs = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCesToolSpecs(int index, com.google.cloud.dialogflow.v2.CesToolSpec value) {
+      if (cesToolSpecsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCesToolSpecsIsMutable();
+        cesToolSpecs_.set(index, value);
+        onChanged();
+      } else {
+        cesToolSpecsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES tool specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesToolSpec ces_tool_specs = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCesToolSpecs(
+        int index, com.google.cloud.dialogflow.v2.CesToolSpec.Builder builderForValue) {
+      if (cesToolSpecsBuilder_ == null) {
+        ensureCesToolSpecsIsMutable();
+        cesToolSpecs_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        cesToolSpecsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES tool specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesToolSpec ces_tool_specs = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCesToolSpecs(com.google.cloud.dialogflow.v2.CesToolSpec value) {
+      if (cesToolSpecsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCesToolSpecsIsMutable();
+        cesToolSpecs_.add(value);
+        onChanged();
+      } else {
+        cesToolSpecsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES tool specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesToolSpec ces_tool_specs = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCesToolSpecs(int index, com.google.cloud.dialogflow.v2.CesToolSpec value) {
+      if (cesToolSpecsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCesToolSpecsIsMutable();
+        cesToolSpecs_.add(index, value);
+        onChanged();
+      } else {
+        cesToolSpecsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES tool specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesToolSpec ces_tool_specs = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCesToolSpecs(
+        com.google.cloud.dialogflow.v2.CesToolSpec.Builder builderForValue) {
+      if (cesToolSpecsBuilder_ == null) {
+        ensureCesToolSpecsIsMutable();
+        cesToolSpecs_.add(builderForValue.build());
+        onChanged();
+      } else {
+        cesToolSpecsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES tool specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesToolSpec ces_tool_specs = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCesToolSpecs(
+        int index, com.google.cloud.dialogflow.v2.CesToolSpec.Builder builderForValue) {
+      if (cesToolSpecsBuilder_ == null) {
+        ensureCesToolSpecsIsMutable();
+        cesToolSpecs_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        cesToolSpecsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES tool specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesToolSpec ces_tool_specs = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllCesToolSpecs(
+        java.lang.Iterable<? extends com.google.cloud.dialogflow.v2.CesToolSpec> values) {
+      if (cesToolSpecsBuilder_ == null) {
+        ensureCesToolSpecsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, cesToolSpecs_);
+        onChanged();
+      } else {
+        cesToolSpecsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES tool specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesToolSpec ces_tool_specs = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCesToolSpecs() {
+      if (cesToolSpecsBuilder_ == null) {
+        cesToolSpecs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00002000);
+        onChanged();
+      } else {
+        cesToolSpecsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES tool specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesToolSpec ces_tool_specs = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeCesToolSpecs(int index) {
+      if (cesToolSpecsBuilder_ == null) {
+        ensureCesToolSpecsIsMutable();
+        cesToolSpecs_.remove(index);
+        onChanged();
+      } else {
+        cesToolSpecsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES tool specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesToolSpec ces_tool_specs = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.CesToolSpec.Builder getCesToolSpecsBuilder(int index) {
+      return internalGetCesToolSpecsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES tool specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesToolSpec ces_tool_specs = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.CesToolSpecOrBuilder getCesToolSpecsOrBuilder(int index) {
+      if (cesToolSpecsBuilder_ == null) {
+        return cesToolSpecs_.get(index);
+      } else {
+        return cesToolSpecsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES tool specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesToolSpec ces_tool_specs = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.dialogflow.v2.CesToolSpecOrBuilder>
+        getCesToolSpecsOrBuilderList() {
+      if (cesToolSpecsBuilder_ != null) {
+        return cesToolSpecsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(cesToolSpecs_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES tool specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesToolSpec ces_tool_specs = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.CesToolSpec.Builder addCesToolSpecsBuilder() {
+      return internalGetCesToolSpecsFieldBuilder()
+          .addBuilder(com.google.cloud.dialogflow.v2.CesToolSpec.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES tool specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesToolSpec ces_tool_specs = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.CesToolSpec.Builder addCesToolSpecsBuilder(int index) {
+      return internalGetCesToolSpecsFieldBuilder()
+          .addBuilder(index, com.google.cloud.dialogflow.v2.CesToolSpec.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES tool specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesToolSpec ces_tool_specs = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.v2.CesToolSpec.Builder>
+        getCesToolSpecsBuilderList() {
+      return internalGetCesToolSpecsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.dialogflow.v2.CesToolSpec,
+            com.google.cloud.dialogflow.v2.CesToolSpec.Builder,
+            com.google.cloud.dialogflow.v2.CesToolSpecOrBuilder>
+        internalGetCesToolSpecsFieldBuilder() {
+      if (cesToolSpecsBuilder_ == null) {
+        cesToolSpecsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.dialogflow.v2.CesToolSpec,
+                com.google.cloud.dialogflow.v2.CesToolSpec.Builder,
+                com.google.cloud.dialogflow.v2.CesToolSpecOrBuilder>(
+                cesToolSpecs_, ((bitField0_ & 0x00002000) != 0), getParentForChildren(), isClean());
+        cesToolSpecs_ = null;
+      }
+      return cesToolSpecsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.dialogflow.v2.CesAppSpec> cesAppSpecs_ =
+        java.util.Collections.emptyList();
+
+    private void ensureCesAppSpecsIsMutable() {
+      if (!((bitField0_ & 0x00004000) != 0)) {
+        cesAppSpecs_ =
+            new java.util.ArrayList<com.google.cloud.dialogflow.v2.CesAppSpec>(cesAppSpecs_);
+        bitField0_ |= 0x00004000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.dialogflow.v2.CesAppSpec,
+            com.google.cloud.dialogflow.v2.CesAppSpec.Builder,
+            com.google.cloud.dialogflow.v2.CesAppSpecOrBuilder>
+        cesAppSpecsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES app specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.v2.CesAppSpec> getCesAppSpecsList() {
+      if (cesAppSpecsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(cesAppSpecs_);
+      } else {
+        return cesAppSpecsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES app specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getCesAppSpecsCount() {
+      if (cesAppSpecsBuilder_ == null) {
+        return cesAppSpecs_.size();
+      } else {
+        return cesAppSpecsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES app specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.CesAppSpec getCesAppSpecs(int index) {
+      if (cesAppSpecsBuilder_ == null) {
+        return cesAppSpecs_.get(index);
+      } else {
+        return cesAppSpecsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES app specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCesAppSpecs(int index, com.google.cloud.dialogflow.v2.CesAppSpec value) {
+      if (cesAppSpecsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCesAppSpecsIsMutable();
+        cesAppSpecs_.set(index, value);
+        onChanged();
+      } else {
+        cesAppSpecsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES app specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCesAppSpecs(
+        int index, com.google.cloud.dialogflow.v2.CesAppSpec.Builder builderForValue) {
+      if (cesAppSpecsBuilder_ == null) {
+        ensureCesAppSpecsIsMutable();
+        cesAppSpecs_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        cesAppSpecsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES app specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCesAppSpecs(com.google.cloud.dialogflow.v2.CesAppSpec value) {
+      if (cesAppSpecsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCesAppSpecsIsMutable();
+        cesAppSpecs_.add(value);
+        onChanged();
+      } else {
+        cesAppSpecsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES app specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCesAppSpecs(int index, com.google.cloud.dialogflow.v2.CesAppSpec value) {
+      if (cesAppSpecsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCesAppSpecsIsMutable();
+        cesAppSpecs_.add(index, value);
+        onChanged();
+      } else {
+        cesAppSpecsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES app specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCesAppSpecs(
+        com.google.cloud.dialogflow.v2.CesAppSpec.Builder builderForValue) {
+      if (cesAppSpecsBuilder_ == null) {
+        ensureCesAppSpecsIsMutable();
+        cesAppSpecs_.add(builderForValue.build());
+        onChanged();
+      } else {
+        cesAppSpecsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES app specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCesAppSpecs(
+        int index, com.google.cloud.dialogflow.v2.CesAppSpec.Builder builderForValue) {
+      if (cesAppSpecsBuilder_ == null) {
+        ensureCesAppSpecsIsMutable();
+        cesAppSpecs_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        cesAppSpecsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES app specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllCesAppSpecs(
+        java.lang.Iterable<? extends com.google.cloud.dialogflow.v2.CesAppSpec> values) {
+      if (cesAppSpecsBuilder_ == null) {
+        ensureCesAppSpecsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, cesAppSpecs_);
+        onChanged();
+      } else {
+        cesAppSpecsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES app specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCesAppSpecs() {
+      if (cesAppSpecsBuilder_ == null) {
+        cesAppSpecs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00004000);
+        onChanged();
+      } else {
+        cesAppSpecsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES app specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeCesAppSpecs(int index) {
+      if (cesAppSpecsBuilder_ == null) {
+        ensureCesAppSpecsIsMutable();
+        cesAppSpecs_.remove(index);
+        onChanged();
+      } else {
+        cesAppSpecsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES app specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.CesAppSpec.Builder getCesAppSpecsBuilder(int index) {
+      return internalGetCesAppSpecsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES app specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.CesAppSpecOrBuilder getCesAppSpecsOrBuilder(int index) {
+      if (cesAppSpecsBuilder_ == null) {
+        return cesAppSpecs_.get(index);
+      } else {
+        return cesAppSpecsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES app specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.dialogflow.v2.CesAppSpecOrBuilder>
+        getCesAppSpecsOrBuilderList() {
+      if (cesAppSpecsBuilder_ != null) {
+        return cesAppSpecsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(cesAppSpecs_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES app specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.CesAppSpec.Builder addCesAppSpecsBuilder() {
+      return internalGetCesAppSpecsFieldBuilder()
+          .addBuilder(com.google.cloud.dialogflow.v2.CesAppSpec.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES app specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.CesAppSpec.Builder addCesAppSpecsBuilder(int index) {
+      return internalGetCesAppSpecsFieldBuilder()
+          .addBuilder(index, com.google.cloud.dialogflow.v2.CesAppSpec.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of CES app specs that the generator can choose from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.v2.CesAppSpec.Builder>
+        getCesAppSpecsBuilderList() {
+      return internalGetCesAppSpecsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.dialogflow.v2.CesAppSpec,
+            com.google.cloud.dialogflow.v2.CesAppSpec.Builder,
+            com.google.cloud.dialogflow.v2.CesAppSpecOrBuilder>
+        internalGetCesAppSpecsFieldBuilder() {
+      if (cesAppSpecsBuilder_ == null) {
+        cesAppSpecsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.dialogflow.v2.CesAppSpec,
+                com.google.cloud.dialogflow.v2.CesAppSpec.Builder,
+                com.google.cloud.dialogflow.v2.CesAppSpecOrBuilder>(
+                cesAppSpecs_, ((bitField0_ & 0x00004000) != 0), getParentForChildren(), isClean());
+        cesAppSpecs_ = null;
+      }
+      return cesAppSpecsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.Generator)

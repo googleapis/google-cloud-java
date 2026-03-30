@@ -301,6 +301,7 @@ public class HttpJsonToolServiceStub extends ToolServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getTool())
             .build();
     HttpJsonCallSettings<RetrieveToolSchemaRequest, RetrieveToolSchemaResponse>
         retrieveToolSchemaTransportSettings =
@@ -313,6 +314,7 @@ public class HttpJsonToolServiceStub extends ToolServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getTool())
                 .build();
     HttpJsonCallSettings<RetrieveToolsRequest, RetrieveToolsResponse>
         retrieveToolsTransportSettings =
@@ -325,6 +327,7 @@ public class HttpJsonToolServiceStub extends ToolServiceStub {
                       builder.add("toolset", String.valueOf(request.getToolset()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getToolset())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

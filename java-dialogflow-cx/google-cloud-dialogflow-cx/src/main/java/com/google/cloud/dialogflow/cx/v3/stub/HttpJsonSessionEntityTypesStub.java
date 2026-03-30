@@ -404,6 +404,7 @@ public class HttpJsonSessionEntityTypesStub extends SessionEntityTypesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetSessionEntityTypeRequest, SessionEntityType>
         getSessionEntityTypeTransportSettings =
@@ -416,6 +417,7 @@ public class HttpJsonSessionEntityTypesStub extends SessionEntityTypesStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateSessionEntityTypeRequest, SessionEntityType>
         createSessionEntityTypeTransportSettings =
@@ -428,6 +430,7 @@ public class HttpJsonSessionEntityTypesStub extends SessionEntityTypesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateSessionEntityTypeRequest, SessionEntityType>
         updateSessionEntityTypeTransportSettings =
@@ -454,6 +457,7 @@ public class HttpJsonSessionEntityTypesStub extends SessionEntityTypesStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

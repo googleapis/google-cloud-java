@@ -69,9 +69,8 @@ jobs:
 
       # Set up local showcase server to run the showcase ITs
       - name: Parse showcase version
-        working-directory: sdk-plaform-java/java-showcase/gapic-showcase
+        working-directory: sdk-platform-java/java-showcase/gapic-showcase
         run: echo "SHOWCASE_VERSION=$(mvn help:evaluate -Dexpression=gapic-showcase.version -q -DforceStdout)" >> "$GITHUB_ENV"
-        working-directory: sdk-platform-java
       - name: Install showcase server
         run: |
           sudo mkdir -p /usr/src/showcase

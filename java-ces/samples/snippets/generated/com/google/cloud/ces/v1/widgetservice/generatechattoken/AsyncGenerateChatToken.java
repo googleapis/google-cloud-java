@@ -43,6 +43,7 @@ public class AsyncGenerateChatToken {
               .setDeployment(
                   DeploymentName.of("[PROJECT]", "[LOCATION]", "[APP]", "[DEPLOYMENT]").toString())
               .setRecaptchaToken("recaptchaToken1978277202")
+              .setLiveHandoffEnabled(true)
               .build();
       ApiFuture<GenerateChatTokenResponse> future =
           widgetServiceClient.generateChatTokenCallable().futureCall(request);

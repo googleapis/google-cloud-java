@@ -150,4 +150,48 @@ public interface KnowledgeAssistAnswerOrBuilder
    * @return The bytes for answerRecord.
    */
   com.google.protobuf.ByteString getAnswerRecordBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Debug information related to Knowledge Assist feature.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo knowledge_assist_debug_info = 7;
+   * </code>
+   *
+   * @return Whether the knowledgeAssistDebugInfo field is set.
+   */
+  boolean hasKnowledgeAssistDebugInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Debug information related to Knowledge Assist feature.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo knowledge_assist_debug_info = 7;
+   * </code>
+   *
+   * @return The knowledgeAssistDebugInfo.
+   */
+  com.google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo getKnowledgeAssistDebugInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Debug information related to Knowledge Assist feature.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo knowledge_assist_debug_info = 7;
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfoOrBuilder
+      getKnowledgeAssistDebugInfoOrBuilder();
 }

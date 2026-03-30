@@ -254,6 +254,9 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TOOL(1),
+    CES_TOOL(11),
+    CES_TOOLSET(12),
+    CES_APP(8),
     SOURCE_NOT_SET(0);
     private final int value;
 
@@ -275,6 +278,12 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
       switch (value) {
         case 1:
           return TOOL;
+        case 11:
+          return CES_TOOL;
+        case 12:
+          return CES_TOOLSET;
+        case 8:
+          return CES_APP;
         case 0:
           return SOURCE_NOT_SET;
         default:
@@ -368,6 +377,261 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       if (sourceCase_ == 1) {
+        source_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CES_TOOL_FIELD_NUMBER = 11;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CES tool name for this call.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;/tools/&lt;ToolID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string ces_tool = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the cesTool field is set.
+   */
+  public boolean hasCesTool() {
+    return sourceCase_ == 11;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CES tool name for this call.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;/tools/&lt;ToolID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string ces_tool = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The cesTool.
+   */
+  public java.lang.String getCesTool() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 11) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (sourceCase_ == 11) {
+        source_ = s;
+      }
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CES tool name for this call.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;/tools/&lt;ToolID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string ces_tool = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for cesTool.
+   */
+  public com.google.protobuf.ByteString getCesToolBytes() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 11) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (sourceCase_ == 11) {
+        source_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CES_TOOLSET_FIELD_NUMBER = 12;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CES toolset name for this call.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;/toolsets/ToolsetID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string ces_toolset = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the cesToolset field is set.
+   */
+  public boolean hasCesToolset() {
+    return sourceCase_ == 12;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CES toolset name for this call.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;/toolsets/ToolsetID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string ces_toolset = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The cesToolset.
+   */
+  public java.lang.String getCesToolset() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 12) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (sourceCase_ == 12) {
+        source_ = s;
+      }
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CES toolset name for this call.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;/toolsets/ToolsetID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string ces_toolset = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for cesToolset.
+   */
+  public com.google.protobuf.ByteString getCesToolsetBytes() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 12) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (sourceCase_ == 12) {
+        source_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CES_APP_FIELD_NUMBER = 8;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CES app name for this call.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string ces_app = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the cesApp field is set.
+   */
+  public boolean hasCesApp() {
+    return sourceCase_ == 8;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CES app name for this call.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string ces_app = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The cesApp.
+   */
+  public java.lang.String getCesApp() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 8) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (sourceCase_ == 8) {
+        source_ = s;
+      }
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CES app name for this call.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string ces_app = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for cesApp.
+   */
+  public com.google.protobuf.ByteString getCesAppBytes() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 8) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (sourceCase_ == 8) {
         source_ = b;
       }
       return b;
@@ -769,11 +1033,20 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
     if (state_ != com.google.cloud.dialogflow.v2.ToolCall.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(7, state_);
     }
+    if (sourceCase_ == 8) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 8, source_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(toolDisplayName_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 9, toolDisplayName_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(toolDisplayDetails_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 10, toolDisplayDetails_);
+    }
+    if (sourceCase_ == 11) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 11, source_);
+    }
+    if (sourceCase_ == 12) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 12, source_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -802,11 +1075,20 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
     if (state_ != com.google.cloud.dialogflow.v2.ToolCall.State.STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, state_);
     }
+    if (sourceCase_ == 8) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(8, source_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(toolDisplayName_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(9, toolDisplayName_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(toolDisplayDetails_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(10, toolDisplayDetails_);
+    }
+    if (sourceCase_ == 11) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(11, source_);
+    }
+    if (sourceCase_ == 12) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(12, source_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -840,6 +1122,15 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
     switch (sourceCase_) {
       case 1:
         if (!getTool().equals(other.getTool())) return false;
+        break;
+      case 11:
+        if (!getCesTool().equals(other.getCesTool())) return false;
+        break;
+      case 12:
+        if (!getCesToolset().equals(other.getCesToolset())) return false;
+        break;
+      case 8:
+        if (!getCesApp().equals(other.getCesApp())) return false;
         break;
       case 0:
       default:
@@ -877,6 +1168,18 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
       case 1:
         hash = (37 * hash) + TOOL_FIELD_NUMBER;
         hash = (53 * hash) + getTool().hashCode();
+        break;
+      case 11:
+        hash = (37 * hash) + CES_TOOL_FIELD_NUMBER;
+        hash = (53 * hash) + getCesTool().hashCode();
+        break;
+      case 12:
+        hash = (37 * hash) + CES_TOOLSET_FIELD_NUMBER;
+        hash = (53 * hash) + getCesToolset().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + CES_APP_FIELD_NUMBER;
+        hash = (53 * hash) + getCesApp().hashCode();
         break;
       case 0:
       default:
@@ -1085,29 +1388,29 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.cloud.dialogflow.v2.ToolCall result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.toolDisplayName_ = toolDisplayName_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.toolDisplayDetails_ = toolDisplayDetails_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.action_ = action_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.inputParameters_ =
             inputParametersBuilder_ == null ? inputParameters_ : inputParametersBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.answerRecord_ = answerRecord_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.state_ = state_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1132,17 +1435,17 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.dialogflow.v2.ToolCall.getDefaultInstance()) return this;
       if (!other.getToolDisplayName().isEmpty()) {
         toolDisplayName_ = other.toolDisplayName_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getToolDisplayDetails().isEmpty()) {
         toolDisplayDetails_ = other.toolDisplayDetails_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getAction().isEmpty()) {
         action_ = other.action_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasInputParameters()) {
@@ -1153,7 +1456,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getAnswerRecord().isEmpty()) {
         answerRecord_ = other.answerRecord_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -1163,6 +1466,27 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
         case TOOL:
           {
             sourceCase_ = 1;
+            source_ = other.source_;
+            onChanged();
+            break;
+          }
+        case CES_TOOL:
+          {
+            sourceCase_ = 11;
+            source_ = other.source_;
+            onChanged();
+            break;
+          }
+        case CES_TOOLSET:
+          {
+            sourceCase_ = 12;
+            source_ = other.source_;
+            onChanged();
+            break;
+          }
+        case CES_APP:
+          {
+            sourceCase_ = 8;
             source_ = other.source_;
             onChanged();
             break;
@@ -1208,47 +1532,68 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
             case 18:
               {
                 action_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     internalGetInputParametersFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 34
             case 50:
               {
                 answerRecord_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 50
             case 56:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 56
+            case 66:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                sourceCase_ = 8;
+                source_ = s;
+                break;
+              } // case 66
             case 74:
               {
                 toolDisplayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 74
             case 82:
               {
                 toolDisplayDetails_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 82
+            case 90:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                sourceCase_ = 11;
+                source_ = s;
+                break;
+              } // case 90
+            case 98:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                sourceCase_ = 12;
+                source_ = s;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1445,6 +1790,495 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CES tool name for this call.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;/tools/&lt;ToolID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string ces_tool = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the cesTool field is set.
+     */
+    @java.lang.Override
+    public boolean hasCesTool() {
+      return sourceCase_ == 11;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CES tool name for this call.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;/tools/&lt;ToolID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string ces_tool = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The cesTool.
+     */
+    @java.lang.Override
+    public java.lang.String getCesTool() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 11) {
+        ref = source_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (sourceCase_ == 11) {
+          source_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CES tool name for this call.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;/tools/&lt;ToolID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string ces_tool = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for cesTool.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getCesToolBytes() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 11) {
+        ref = source_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (sourceCase_ == 11) {
+          source_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CES tool name for this call.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;/tools/&lt;ToolID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string ces_tool = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The cesTool to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCesTool(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceCase_ = 11;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CES tool name for this call.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;/tools/&lt;ToolID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string ces_tool = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCesTool() {
+      if (sourceCase_ == 11) {
+        sourceCase_ = 0;
+        source_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CES tool name for this call.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;/tools/&lt;ToolID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string ces_tool = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for cesTool to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCesToolBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sourceCase_ = 11;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CES toolset name for this call.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;/toolsets/ToolsetID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string ces_toolset = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the cesToolset field is set.
+     */
+    @java.lang.Override
+    public boolean hasCesToolset() {
+      return sourceCase_ == 12;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CES toolset name for this call.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;/toolsets/ToolsetID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string ces_toolset = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The cesToolset.
+     */
+    @java.lang.Override
+    public java.lang.String getCesToolset() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 12) {
+        ref = source_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (sourceCase_ == 12) {
+          source_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CES toolset name for this call.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;/toolsets/ToolsetID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string ces_toolset = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for cesToolset.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getCesToolsetBytes() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 12) {
+        ref = source_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (sourceCase_ == 12) {
+          source_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CES toolset name for this call.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;/toolsets/ToolsetID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string ces_toolset = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The cesToolset to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCesToolset(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceCase_ = 12;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CES toolset name for this call.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;/toolsets/ToolsetID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string ces_toolset = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCesToolset() {
+      if (sourceCase_ == 12) {
+        sourceCase_ = 0;
+        source_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CES toolset name for this call.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;/toolsets/ToolsetID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string ces_toolset = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for cesToolset to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCesToolsetBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sourceCase_ = 12;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CES app name for this call.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string ces_app = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the cesApp field is set.
+     */
+    @java.lang.Override
+    public boolean hasCesApp() {
+      return sourceCase_ == 8;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CES app name for this call.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string ces_app = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The cesApp.
+     */
+    @java.lang.Override
+    public java.lang.String getCesApp() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 8) {
+        ref = source_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (sourceCase_ == 8) {
+          source_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CES app name for this call.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string ces_app = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for cesApp.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getCesAppBytes() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 8) {
+        ref = source_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (sourceCase_ == 8) {
+          source_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CES app name for this call.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string ces_app = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The cesApp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCesApp(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceCase_ = 8;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CES app name for this call.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string ces_app = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCesApp() {
+      if (sourceCase_ == 8) {
+        sourceCase_ = 0;
+        source_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CES app name for this call.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string ces_app = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for cesApp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCesAppBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sourceCase_ = 8;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object toolDisplayName_ = "";
 
     /**
@@ -1510,7 +2344,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       toolDisplayName_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1528,7 +2362,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearToolDisplayName() {
       toolDisplayName_ = getDefaultInstance().getToolDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1551,7 +2385,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       toolDisplayName_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1621,7 +2455,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       toolDisplayDetails_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1639,7 +2473,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearToolDisplayDetails() {
       toolDisplayDetails_ = getDefaultInstance().getToolDisplayDetails();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1662,7 +2496,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       toolDisplayDetails_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1732,7 +2566,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       action_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1750,7 +2584,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearAction() {
       action_ = getDefaultInstance().getAction();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1773,7 +2607,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       action_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1798,7 +2632,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
      * @return Whether the inputParameters field is set.
      */
     public boolean hasInputParameters() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -1842,7 +2676,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
       } else {
         inputParametersBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1863,7 +2697,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
       } else {
         inputParametersBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1880,7 +2714,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeInputParameters(com.google.protobuf.Struct value) {
       if (inputParametersBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && inputParameters_ != null
             && inputParameters_ != com.google.protobuf.Struct.getDefaultInstance()) {
           getInputParametersBuilder().mergeFrom(value);
@@ -1891,7 +2725,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
         inputParametersBuilder_.mergeFrom(value);
       }
       if (inputParameters_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -1908,7 +2742,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearInputParameters() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000080);
       inputParameters_ = null;
       if (inputParametersBuilder_ != null) {
         inputParametersBuilder_.dispose();
@@ -1929,7 +2763,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Struct.Builder getInputParametersBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000080;
       onChanged();
       return internalGetInputParametersFieldBuilder().getBuilder();
     }
@@ -2002,7 +2836,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -2048,7 +2882,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2070,7 +2904,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2088,7 +2922,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -2099,7 +2933,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -2117,7 +2951,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000100);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -2139,7 +2973,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000100;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -2258,7 +3092,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       answerRecord_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2276,7 +3110,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearAnswerRecord() {
       answerRecord_ = getDefaultInstance().getAnswerRecord();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2299,7 +3133,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       answerRecord_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2340,7 +3174,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2383,7 +3217,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000400;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2403,7 +3237,7 @@ public final class ToolCall extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000400);
       state_ = 0;
       onChanged();
       return this;

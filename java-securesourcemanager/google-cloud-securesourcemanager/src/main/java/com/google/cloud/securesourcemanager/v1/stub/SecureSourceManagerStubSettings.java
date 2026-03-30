@@ -1738,6 +1738,7 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-securesourcemanager")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

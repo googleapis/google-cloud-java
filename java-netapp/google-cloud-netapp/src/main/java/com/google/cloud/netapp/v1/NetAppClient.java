@@ -314,6 +314,21 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> EstablishVolumePeering</td>
+ *      <td><p> Establish volume peering. This is used to establish cluster and svm peerings between the GCNV and OnPrem clusters.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> establishVolumePeeringAsync(EstablishVolumePeeringRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> establishVolumePeeringOperationCallable()
+ *           <li><p> establishVolumePeeringCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListSnapshots</td>
  *      <td><p> Returns descriptions of all snapshots for a volume.</td>
  *      <td>
@@ -1315,8 +1330,67 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ExecuteOntapPost</td>
+ *      <td><p> `ExecuteOntapPost` dispatches the ONTAP `POST` request to the `StoragePool` cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> executeOntapPost(ExecuteOntapPostRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> executeOntapPostCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ExecuteOntapGet</td>
+ *      <td><p> `ExecuteOntapGet` dispatches the ONTAP `GET` request to the `StoragePool` cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> executeOntapGet(ExecuteOntapGetRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> executeOntapGetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ExecuteOntapDelete</td>
+ *      <td><p> `ExecuteOntapDelete` dispatches the ONTAP `DELETE` request to the `StoragePool` cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> executeOntapDelete(ExecuteOntapDeleteRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> executeOntapDeleteCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ExecuteOntapPatch</td>
+ *      <td><p> `ExecuteOntapPatch` dispatches the ONTAP `PATCH` request to the `StoragePool` cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> executeOntapPatch(ExecuteOntapPatchRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> executeOntapPatchCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name] field:
+ * <p> &#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -3154,6 +3228,108 @@ public class NetAppClient implements BackgroundResource {
    */
   public final UnaryCallable<RevertVolumeRequest, Operation> revertVolumeCallable() {
     return stub.revertVolumeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Establish volume peering. This is used to establish cluster and svm peerings between the GCNV
+   * and OnPrem clusters.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   EstablishVolumePeeringRequest request =
+   *       EstablishVolumePeeringRequest.newBuilder()
+   *           .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setPeerClusterName("peerClusterName313022691")
+   *           .setPeerSvmName("peerSvmName1014209619")
+   *           .addAllPeerIpAddresses(new ArrayList<String>())
+   *           .setPeerVolumeName("peerVolumeName1542206407")
+   *           .build();
+   *   Volume response = netAppClient.establishVolumePeeringAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Volume, OperationMetadata> establishVolumePeeringAsync(
+      EstablishVolumePeeringRequest request) {
+    return establishVolumePeeringOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Establish volume peering. This is used to establish cluster and svm peerings between the GCNV
+   * and OnPrem clusters.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   EstablishVolumePeeringRequest request =
+   *       EstablishVolumePeeringRequest.newBuilder()
+   *           .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setPeerClusterName("peerClusterName313022691")
+   *           .setPeerSvmName("peerSvmName1014209619")
+   *           .addAllPeerIpAddresses(new ArrayList<String>())
+   *           .setPeerVolumeName("peerVolumeName1542206407")
+   *           .build();
+   *   OperationFuture<Volume, OperationMetadata> future =
+   *       netAppClient.establishVolumePeeringOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Volume response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<EstablishVolumePeeringRequest, Volume, OperationMetadata>
+      establishVolumePeeringOperationCallable() {
+    return stub.establishVolumePeeringOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Establish volume peering. This is used to establish cluster and svm peerings between the GCNV
+   * and OnPrem clusters.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   EstablishVolumePeeringRequest request =
+   *       EstablishVolumePeeringRequest.newBuilder()
+   *           .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setPeerClusterName("peerClusterName313022691")
+   *           .setPeerSvmName("peerSvmName1014209619")
+   *           .addAllPeerIpAddresses(new ArrayList<String>())
+   *           .setPeerVolumeName("peerVolumeName1542206407")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       netAppClient.establishVolumePeeringCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<EstablishVolumePeeringRequest, Operation>
+      establishVolumePeeringCallable() {
+    return stub.establishVolumePeeringCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -10373,7 +10549,244 @@ public class NetAppClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * `ExecuteOntapPost` dispatches the ONTAP `POST` request to the `StoragePool` cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ExecuteOntapPostRequest request =
+   *       ExecuteOntapPostRequest.newBuilder()
+   *           .setBody(Struct.newBuilder().build())
+   *           .setOntapPath("ontapPath-1869187159")
+   *           .build();
+   *   ExecuteOntapPostResponse response = netAppClient.executeOntapPost(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExecuteOntapPostResponse executeOntapPost(ExecuteOntapPostRequest request) {
+    return executeOntapPostCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * `ExecuteOntapPost` dispatches the ONTAP `POST` request to the `StoragePool` cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ExecuteOntapPostRequest request =
+   *       ExecuteOntapPostRequest.newBuilder()
+   *           .setBody(Struct.newBuilder().build())
+   *           .setOntapPath("ontapPath-1869187159")
+   *           .build();
+   *   ApiFuture<ExecuteOntapPostResponse> future =
+   *       netAppClient.executeOntapPostCallable().futureCall(request);
+   *   // Do something.
+   *   ExecuteOntapPostResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExecuteOntapPostRequest, ExecuteOntapPostResponse>
+      executeOntapPostCallable() {
+    return stub.executeOntapPostCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * `ExecuteOntapGet` dispatches the ONTAP `GET` request to the `StoragePool` cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ExecuteOntapGetRequest request =
+   *       ExecuteOntapGetRequest.newBuilder().setOntapPath("ontapPath-1869187159").build();
+   *   ExecuteOntapGetResponse response = netAppClient.executeOntapGet(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExecuteOntapGetResponse executeOntapGet(ExecuteOntapGetRequest request) {
+    return executeOntapGetCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * `ExecuteOntapGet` dispatches the ONTAP `GET` request to the `StoragePool` cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ExecuteOntapGetRequest request =
+   *       ExecuteOntapGetRequest.newBuilder().setOntapPath("ontapPath-1869187159").build();
+   *   ApiFuture<ExecuteOntapGetResponse> future =
+   *       netAppClient.executeOntapGetCallable().futureCall(request);
+   *   // Do something.
+   *   ExecuteOntapGetResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExecuteOntapGetRequest, ExecuteOntapGetResponse>
+      executeOntapGetCallable() {
+    return stub.executeOntapGetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * `ExecuteOntapDelete` dispatches the ONTAP `DELETE` request to the `StoragePool` cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ExecuteOntapDeleteRequest request =
+   *       ExecuteOntapDeleteRequest.newBuilder().setOntapPath("ontapPath-1869187159").build();
+   *   ExecuteOntapDeleteResponse response = netAppClient.executeOntapDelete(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExecuteOntapDeleteResponse executeOntapDelete(ExecuteOntapDeleteRequest request) {
+    return executeOntapDeleteCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * `ExecuteOntapDelete` dispatches the ONTAP `DELETE` request to the `StoragePool` cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ExecuteOntapDeleteRequest request =
+   *       ExecuteOntapDeleteRequest.newBuilder().setOntapPath("ontapPath-1869187159").build();
+   *   ApiFuture<ExecuteOntapDeleteResponse> future =
+   *       netAppClient.executeOntapDeleteCallable().futureCall(request);
+   *   // Do something.
+   *   ExecuteOntapDeleteResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>
+      executeOntapDeleteCallable() {
+    return stub.executeOntapDeleteCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * `ExecuteOntapPatch` dispatches the ONTAP `PATCH` request to the `StoragePool` cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ExecuteOntapPatchRequest request =
+   *       ExecuteOntapPatchRequest.newBuilder()
+   *           .setBody(Struct.newBuilder().build())
+   *           .setOntapPath("ontapPath-1869187159")
+   *           .build();
+   *   ExecuteOntapPatchResponse response = netAppClient.executeOntapPatch(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExecuteOntapPatchResponse executeOntapPatch(ExecuteOntapPatchRequest request) {
+    return executeOntapPatchCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * `ExecuteOntapPatch` dispatches the ONTAP `PATCH` request to the `StoragePool` cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ExecuteOntapPatchRequest request =
+   *       ExecuteOntapPatchRequest.newBuilder()
+   *           .setBody(Struct.newBuilder().build())
+   *           .setOntapPath("ontapPath-1869187159")
+   *           .build();
+   *   ApiFuture<ExecuteOntapPatchResponse> future =
+   *       netAppClient.executeOntapPatchCallable().futureCall(request);
+   *   // Do something.
+   *   ExecuteOntapPatchResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
+      executeOntapPatchCallable() {
+    return stub.executeOntapPatchCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name] field:
+   *
+   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -10408,6 +10821,19 @@ public class NetAppClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name] field:
+   *
+   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -10440,6 +10866,19 @@ public class NetAppClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name] field:
+   *
+   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
