@@ -73,11 +73,8 @@ public interface ApiTracerFactory {
     return newTracer(parent, spanName, tracerContext.operationType());
   }
 
-  /**
-   * @return the {@link ApiTracerContext} for this factory
-   */
-  default ApiTracerContext getApiTracerContext() {
-    return ApiTracerContext.empty();
+  default boolean needsContext() {
+    return false;
   }
 
   /**

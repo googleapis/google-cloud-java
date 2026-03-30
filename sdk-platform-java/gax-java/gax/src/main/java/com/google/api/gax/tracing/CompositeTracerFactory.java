@@ -27,49 +27,61 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-
 package com.google.api.gax.tracing;
 
-import com.google.api.core.BetaApi;
-import com.google.api.core.InternalApi;
-import com.google.common.annotations.VisibleForTesting;
+import com.google.common.collect.ImmutableList;
+import java.util.ArrayList;
+import java.util.List;
 
-/** A {@link ApiTracerFactory} that creates instances of {@link LoggingTracer}. */
-@BetaApi
-@InternalApi
-public class LoggingTracerFactory implements ApiTracerFactory {
-  private final ApiTracerContext apiTracerContext;
+/**
+ * A composite implementation of {@link ApiTracerFactory} that bundles multiple tracing factories
+ * and produces a {@link CompositeTracer} out of them.
+ *
+ */
+public class CompositeTracerFactory extends BaseApiTracerFactory {
+  private final List<ApiTracerFactory> apiTracerFactories;
 
-  public LoggingTracerFactory() {
-    this(ApiTracerContext.empty());
-  }
-
-  private LoggingTracerFactory(ApiTracerContext apiTracerContext) {
-    this.apiTracerContext = apiTracerContext;
+  public CompositeTracerFactory(List<ApiTracerFactory> apiTracerFactories) {
+    this.apiTracerFactories = ImmutableList.copyOf(apiTracerFactories);
   }
 
   @Override
   public ApiTracer newTracer(ApiTracer parent, SpanName spanName, OperationType operationType) {
-    return new LoggingTracer(apiTracerContext);
+    List<ApiTracer> children = new ArrayList<>(apiTracerFactories.size());
+
+    for (ApiTracerFactory factory : apiTracerFactories) {
+      children.add(factory.newTracer(parent, spanName, operationType));
+    }
+    return new CompositeTracer(children);
   }
 
   @Override
-  public ApiTracer newTracer(ApiTracer parent, ApiTracerContext context) {
-    return new LoggingTracer(apiTracerContext.merge(context));
-  }
+  public ApiTracer newTracer(ApiTracer parent, ApiTracerContext tracerContext) {
+    List<ApiTracer> children = new ArrayList<>(apiTracerFactories.size());
 
-  @VisibleForTesting
-  ApiTracerContext getApiTracerContext() {
-    return apiTracerContext;
+    for (ApiTracerFactory factory : apiTracerFactories) {
+      children.add(factory.newTracer(parent, tracerContext));
+    }
+    return new CompositeTracer(children);
   }
 
   @Override
   public boolean needsContext() {
-    return apiTracerContext == null || apiTracerContext.equals(ApiTracerContext.empty());
+    for (ApiTracerFactory factory : apiTracerFactories) {
+      if (factory.needsContext()) {
+        return true;
+      }
+    }
+    return false;
   }
 
   @Override
   public ApiTracerFactory withContext(ApiTracerContext context) {
-    return new LoggingTracerFactory(apiTracerContext.merge(context));
+    List<ApiTracerFactory> contextualizedChildren = new ArrayList<>(apiTracerFactories.size());
+
+    for (ApiTracerFactory factory : apiTracerFactories) {
+      contextualizedChildren.add(factory.withContext(context));
+    }
+    return new CompositeTracerFactory(contextualizedChildren);
   }
 }

@@ -271,14 +271,15 @@ public abstract class ClientContext {
     if (watchdogProvider != null && watchdogProvider.shouldAutoClose()) {
       backgroundResources.add(watchdog);
     }
-    ApiTracerContext apiTracerContext =
-        ApiTracerContext.newBuilder()
-            .setServerAddress(endpointContext.resolvedServerAddress())
-            .setServerPort(endpointContext.resolvedServerPort())
-            .setLibraryMetadata(settings.getLibraryMetadata())
-            .build();
+
     ApiTracerFactory apiTracerFactory = settings.getTracerFactory();
-    if (apiTracerFactory instanceof SpanTracerFactory) {
+    if (apiTracerFactory.needsContext()) {
+      ApiTracerContext apiTracerContext =
+              ApiTracerContext.newBuilder()
+                      .setServerAddress(endpointContext.resolvedServerAddress())
+                      .setServerPort(endpointContext.resolvedServerPort())
+                      .setLibraryMetadata(settings.getLibraryMetadata())
+                      .build();
       apiTracerFactory = apiTracerFactory.withContext(apiTracerContext);
     }
 

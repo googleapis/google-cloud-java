@@ -1298,6 +1298,7 @@ class ClientContextTest {
         FixedCredentialsProvider.create(Mockito.mock(Credentials.class)));
 
     ApiTracerFactory apiTracerFactory = Mockito.mock(SpanTracerFactory.class);
+    Mockito.doReturn(true).when(apiTracerFactory).needsContext();
     Mockito.doReturn(apiTracerFactory).when(apiTracerFactory).withContext(Mockito.any());
 
     FakeStubSettings settings = Mockito.spy(builder.build());
