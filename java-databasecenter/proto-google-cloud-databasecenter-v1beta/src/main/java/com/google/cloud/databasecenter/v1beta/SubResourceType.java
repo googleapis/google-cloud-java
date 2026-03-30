@@ -85,6 +85,36 @@ public enum SubResourceType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * A resource acting as a read pool.
+   * </pre>
+   *
+   * <code>SUB_RESOURCE_TYPE_READ_POOL = 6;</code>
+   */
+  SUB_RESOURCE_TYPE_READ_POOL(6),
+  /**
+   *
+   *
+   * <pre>
+   * Represents a reservation resource.
+   * </pre>
+   *
+   * <code>SUB_RESOURCE_TYPE_RESERVATION = 7;</code>
+   */
+  SUB_RESOURCE_TYPE_RESERVATION(7),
+  /**
+   *
+   *
+   * <pre>
+   * Represents a dataset resource.
+   * </pre>
+   *
+   * <code>SUB_RESOURCE_TYPE_DATASET = 8;</code>
+   */
+  SUB_RESOURCE_TYPE_DATASET(8),
+  /**
+   *
+   *
+   * <pre>
    * For the rest of the categories.
    * </pre>
    *
@@ -163,6 +193,39 @@ public enum SubResourceType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * A resource acting as a read pool.
+   * </pre>
+   *
+   * <code>SUB_RESOURCE_TYPE_READ_POOL = 6;</code>
+   */
+  public static final int SUB_RESOURCE_TYPE_READ_POOL_VALUE = 6;
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents a reservation resource.
+   * </pre>
+   *
+   * <code>SUB_RESOURCE_TYPE_RESERVATION = 7;</code>
+   */
+  public static final int SUB_RESOURCE_TYPE_RESERVATION_VALUE = 7;
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents a dataset resource.
+   * </pre>
+   *
+   * <code>SUB_RESOURCE_TYPE_DATASET = 8;</code>
+   */
+  public static final int SUB_RESOURCE_TYPE_DATASET_VALUE = 8;
+
+  /**
+   *
+   *
+   * <pre>
    * For the rest of the categories.
    * </pre>
    *
@@ -204,6 +267,12 @@ public enum SubResourceType implements com.google.protobuf.ProtocolMessageEnum {
         return SUB_RESOURCE_TYPE_READ_REPLICA;
       case 5:
         return SUB_RESOURCE_TYPE_EXTERNAL_PRIMARY;
+      case 6:
+        return SUB_RESOURCE_TYPE_READ_POOL;
+      case 7:
+        return SUB_RESOURCE_TYPE_RESERVATION;
+      case 8:
+        return SUB_RESOURCE_TYPE_DATASET;
       case 4:
         return SUB_RESOURCE_TYPE_OTHER;
       default:

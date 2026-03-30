@@ -169,6 +169,7 @@ public class GrpcUserListDirectLicenseServiceStub extends UserListDirectLicenseS
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetUserListDirectLicenseRequest, UserListDirectLicense>
         getUserListDirectLicenseTransportSettings =
@@ -180,6 +181,7 @@ public class GrpcUserListDirectLicenseServiceStub extends UserListDirectLicenseS
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateUserListDirectLicenseRequest, UserListDirectLicense>
         updateUserListDirectLicenseTransportSettings =
@@ -205,6 +207,7 @@ public class GrpcUserListDirectLicenseServiceStub extends UserListDirectLicenseS
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createUserListDirectLicenseCallable =

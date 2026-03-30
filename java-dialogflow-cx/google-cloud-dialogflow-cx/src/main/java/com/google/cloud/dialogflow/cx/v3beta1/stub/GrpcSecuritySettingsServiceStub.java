@@ -208,6 +208,7 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetSecuritySettingsRequest, SecuritySettings>
         getSecuritySettingsTransportSettings =
@@ -219,6 +220,7 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateSecuritySettingsRequest, SecuritySettings>
         updateSecuritySettingsTransportSettings =
@@ -243,6 +245,7 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteSecuritySettingsRequest, Empty> deleteSecuritySettingsTransportSettings =
         GrpcCallSettings.<DeleteSecuritySettingsRequest, Empty>newBuilder()
@@ -253,6 +256,7 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

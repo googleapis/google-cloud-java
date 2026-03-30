@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -96,6 +97,12 @@ public class SessionServiceSettings extends ClientSettings<SessionServiceSetting
   /** Returns the object with the settings used for calls to runSession. */
   public UnaryCallSettings<RunSessionRequest, RunSessionResponse> runSessionSettings() {
     return ((SessionServiceStubSettings) getStubSettings()).runSessionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to streamRunSession. */
+  public ServerStreamingCallSettings<RunSessionRequest, RunSessionResponse>
+      streamRunSessionSettings() {
+    return ((SessionServiceStubSettings) getStubSettings()).streamRunSessionSettings();
   }
 
   /** Returns the object with the settings used for calls to bidiRunSession. */
@@ -230,6 +237,12 @@ public class SessionServiceSettings extends ClientSettings<SessionServiceSetting
     /** Returns the builder for the settings used for calls to runSession. */
     public UnaryCallSettings.Builder<RunSessionRequest, RunSessionResponse> runSessionSettings() {
       return getStubSettingsBuilder().runSessionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to streamRunSession. */
+    public ServerStreamingCallSettings.Builder<RunSessionRequest, RunSessionResponse>
+        streamRunSessionSettings() {
+      return getStubSettingsBuilder().streamRunSessionSettings();
     }
 
     /** Returns the builder for the settings used for calls to bidiRunSession. */

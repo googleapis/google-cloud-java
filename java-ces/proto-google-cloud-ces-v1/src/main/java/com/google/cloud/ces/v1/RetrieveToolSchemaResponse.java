@@ -257,11 +257,10 @@ public final class RetrieveToolSchemaResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The schema of the tool input parameters.
+   * The schema of the tool input parameters.
    * </pre>
    *
-   * <code>.google.cloud.ces.v1.Schema input_schema = 3 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.ces.v1.Schema input_schema = 3;</code>
    *
    * @return Whether the inputSchema field is set.
    */
@@ -274,11 +273,10 @@ public final class RetrieveToolSchemaResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The schema of the tool input parameters.
+   * The schema of the tool input parameters.
    * </pre>
    *
-   * <code>.google.cloud.ces.v1.Schema input_schema = 3 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.ces.v1.Schema input_schema = 3;</code>
    *
    * @return The inputSchema.
    */
@@ -293,11 +291,10 @@ public final class RetrieveToolSchemaResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The schema of the tool input parameters.
+   * The schema of the tool input parameters.
    * </pre>
    *
-   * <code>.google.cloud.ces.v1.Schema input_schema = 3 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.ces.v1.Schema input_schema = 3;</code>
    */
   @java.lang.Override
   public com.google.cloud.ces.v1.SchemaOrBuilder getInputSchemaOrBuilder() {
@@ -313,11 +310,10 @@ public final class RetrieveToolSchemaResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The schema of the tool output parameters.
+   * The schema of the tool output parameters.
    * </pre>
    *
-   * <code>.google.cloud.ces.v1.Schema output_schema = 4 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.ces.v1.Schema output_schema = 4;</code>
    *
    * @return Whether the outputSchema field is set.
    */
@@ -330,11 +326,10 @@ public final class RetrieveToolSchemaResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The schema of the tool output parameters.
+   * The schema of the tool output parameters.
    * </pre>
    *
-   * <code>.google.cloud.ces.v1.Schema output_schema = 4 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.ces.v1.Schema output_schema = 4;</code>
    *
    * @return The outputSchema.
    */
@@ -349,11 +344,10 @@ public final class RetrieveToolSchemaResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The schema of the tool output parameters.
+   * The schema of the tool output parameters.
    * </pre>
    *
-   * <code>.google.cloud.ces.v1.Schema output_schema = 4 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.ces.v1.Schema output_schema = 4;</code>
    */
   @java.lang.Override
   public com.google.cloud.ces.v1.SchemaOrBuilder getOutputSchemaOrBuilder() {
@@ -1199,11 +1193,10 @@ public final class RetrieveToolSchemaResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The schema of the tool input parameters.
+     * The schema of the tool input parameters.
      * </pre>
      *
-     * <code>.google.cloud.ces.v1.Schema input_schema = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.ces.v1.Schema input_schema = 3;</code>
      *
      * @return Whether the inputSchema field is set.
      */
@@ -1215,11 +1208,10 @@ public final class RetrieveToolSchemaResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The schema of the tool input parameters.
+     * The schema of the tool input parameters.
      * </pre>
      *
-     * <code>.google.cloud.ces.v1.Schema input_schema = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.ces.v1.Schema input_schema = 3;</code>
      *
      * @return The inputSchema.
      */
@@ -1237,11 +1229,10 @@ public final class RetrieveToolSchemaResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The schema of the tool input parameters.
+     * The schema of the tool input parameters.
      * </pre>
      *
-     * <code>.google.cloud.ces.v1.Schema input_schema = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.ces.v1.Schema input_schema = 3;</code>
      */
     public Builder setInputSchema(com.google.cloud.ces.v1.Schema value) {
       if (inputSchemaBuilder_ == null) {
@@ -1261,11 +1252,10 @@ public final class RetrieveToolSchemaResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The schema of the tool input parameters.
+     * The schema of the tool input parameters.
      * </pre>
      *
-     * <code>.google.cloud.ces.v1.Schema input_schema = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.ces.v1.Schema input_schema = 3;</code>
      */
     public Builder setInputSchema(com.google.cloud.ces.v1.Schema.Builder builderForValue) {
       if (inputSchemaBuilder_ == null) {
@@ -1282,11 +1272,10 @@ public final class RetrieveToolSchemaResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The schema of the tool input parameters.
+     * The schema of the tool input parameters.
      * </pre>
      *
-     * <code>.google.cloud.ces.v1.Schema input_schema = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.ces.v1.Schema input_schema = 3;</code>
      */
     public Builder mergeInputSchema(com.google.cloud.ces.v1.Schema value) {
       if (inputSchemaBuilder_ == null) {
@@ -1311,11 +1300,10 @@ public final class RetrieveToolSchemaResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The schema of the tool input parameters.
+     * The schema of the tool input parameters.
      * </pre>
      *
-     * <code>.google.cloud.ces.v1.Schema input_schema = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.ces.v1.Schema input_schema = 3;</code>
      */
     public Builder clearInputSchema() {
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -1332,11 +1320,10 @@ public final class RetrieveToolSchemaResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The schema of the tool input parameters.
+     * The schema of the tool input parameters.
      * </pre>
      *
-     * <code>.google.cloud.ces.v1.Schema input_schema = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.ces.v1.Schema input_schema = 3;</code>
      */
     public com.google.cloud.ces.v1.Schema.Builder getInputSchemaBuilder() {
       bitField0_ |= 0x00000004;
@@ -1348,11 +1335,10 @@ public final class RetrieveToolSchemaResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The schema of the tool input parameters.
+     * The schema of the tool input parameters.
      * </pre>
      *
-     * <code>.google.cloud.ces.v1.Schema input_schema = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.ces.v1.Schema input_schema = 3;</code>
      */
     public com.google.cloud.ces.v1.SchemaOrBuilder getInputSchemaOrBuilder() {
       if (inputSchemaBuilder_ != null) {
@@ -1368,11 +1354,10 @@ public final class RetrieveToolSchemaResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The schema of the tool input parameters.
+     * The schema of the tool input parameters.
      * </pre>
      *
-     * <code>.google.cloud.ces.v1.Schema input_schema = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.ces.v1.Schema input_schema = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.ces.v1.Schema,
@@ -1402,12 +1387,10 @@ public final class RetrieveToolSchemaResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The schema of the tool output parameters.
+     * The schema of the tool output parameters.
      * </pre>
      *
-     * <code>
-     * .google.cloud.ces.v1.Schema output_schema = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.ces.v1.Schema output_schema = 4;</code>
      *
      * @return Whether the outputSchema field is set.
      */
@@ -1419,12 +1402,10 @@ public final class RetrieveToolSchemaResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The schema of the tool output parameters.
+     * The schema of the tool output parameters.
      * </pre>
      *
-     * <code>
-     * .google.cloud.ces.v1.Schema output_schema = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.ces.v1.Schema output_schema = 4;</code>
      *
      * @return The outputSchema.
      */
@@ -1442,12 +1423,10 @@ public final class RetrieveToolSchemaResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The schema of the tool output parameters.
+     * The schema of the tool output parameters.
      * </pre>
      *
-     * <code>
-     * .google.cloud.ces.v1.Schema output_schema = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.ces.v1.Schema output_schema = 4;</code>
      */
     public Builder setOutputSchema(com.google.cloud.ces.v1.Schema value) {
       if (outputSchemaBuilder_ == null) {
@@ -1467,12 +1446,10 @@ public final class RetrieveToolSchemaResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The schema of the tool output parameters.
+     * The schema of the tool output parameters.
      * </pre>
      *
-     * <code>
-     * .google.cloud.ces.v1.Schema output_schema = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.ces.v1.Schema output_schema = 4;</code>
      */
     public Builder setOutputSchema(com.google.cloud.ces.v1.Schema.Builder builderForValue) {
       if (outputSchemaBuilder_ == null) {
@@ -1489,12 +1466,10 @@ public final class RetrieveToolSchemaResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The schema of the tool output parameters.
+     * The schema of the tool output parameters.
      * </pre>
      *
-     * <code>
-     * .google.cloud.ces.v1.Schema output_schema = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.ces.v1.Schema output_schema = 4;</code>
      */
     public Builder mergeOutputSchema(com.google.cloud.ces.v1.Schema value) {
       if (outputSchemaBuilder_ == null) {
@@ -1519,12 +1494,10 @@ public final class RetrieveToolSchemaResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The schema of the tool output parameters.
+     * The schema of the tool output parameters.
      * </pre>
      *
-     * <code>
-     * .google.cloud.ces.v1.Schema output_schema = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.ces.v1.Schema output_schema = 4;</code>
      */
     public Builder clearOutputSchema() {
       bitField0_ = (bitField0_ & ~0x00000008);
@@ -1541,12 +1514,10 @@ public final class RetrieveToolSchemaResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The schema of the tool output parameters.
+     * The schema of the tool output parameters.
      * </pre>
      *
-     * <code>
-     * .google.cloud.ces.v1.Schema output_schema = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.ces.v1.Schema output_schema = 4;</code>
      */
     public com.google.cloud.ces.v1.Schema.Builder getOutputSchemaBuilder() {
       bitField0_ |= 0x00000008;
@@ -1558,12 +1529,10 @@ public final class RetrieveToolSchemaResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The schema of the tool output parameters.
+     * The schema of the tool output parameters.
      * </pre>
      *
-     * <code>
-     * .google.cloud.ces.v1.Schema output_schema = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.ces.v1.Schema output_schema = 4;</code>
      */
     public com.google.cloud.ces.v1.SchemaOrBuilder getOutputSchemaOrBuilder() {
       if (outputSchemaBuilder_ != null) {
@@ -1579,12 +1548,10 @@ public final class RetrieveToolSchemaResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The schema of the tool output parameters.
+     * The schema of the tool output parameters.
      * </pre>
      *
-     * <code>
-     * .google.cloud.ces.v1.Schema output_schema = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.ces.v1.Schema output_schema = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.ces.v1.Schema,

@@ -73,6 +73,8 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
     switch (number) {
       case 17:
         return internalGetIngestedContextReferences();
+      case 18:
+        return internalGetInitialGeneratorContexts();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -8096,6 +8098,893 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface GeneratorContextOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of the generator.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.GeneratorType generator_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for generatorType.
+     */
+    int getGeneratorTypeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of the generator.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.GeneratorType generator_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The generatorType.
+     */
+    com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.GeneratorType
+        getGeneratorType();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents the context of a generator.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext}
+   */
+  public static final class GeneratorContext extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext)
+      GeneratorContextOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "GeneratorContext");
+    }
+
+    // Use GeneratorContext.newBuilder() to construct.
+    private GeneratorContext(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private GeneratorContext() {
+      generatorType_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2beta1.ConversationProto
+          .internal_static_google_cloud_dialogflow_v2beta1_Conversation_GeneratorContext_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.v2beta1.ConversationProto
+          .internal_static_google_cloud_dialogflow_v2beta1_Conversation_GeneratorContext_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.class,
+              com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The available generator types.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.GeneratorType}
+     */
+    public enum GeneratorType implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified generator type.
+       * </pre>
+       *
+       * <code>GENERATOR_TYPE_UNSPECIFIED = 0;</code>
+       */
+      GENERATOR_TYPE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Free form generator type.
+       * </pre>
+       *
+       * <code>FREE_FORM = 1;</code>
+       */
+      FREE_FORM(1),
+      /**
+       *
+       *
+       * <pre>
+       * Agent coaching generator type.
+       * </pre>
+       *
+       * <code>AGENT_COACHING = 2;</code>
+       */
+      AGENT_COACHING(2),
+      /**
+       *
+       *
+       * <pre>
+       * Summarization generator type.
+       * </pre>
+       *
+       * <code>SUMMARIZATION = 3;</code>
+       */
+      SUMMARIZATION(3),
+      /**
+       *
+       *
+       * <pre>
+       * Translation generator type.
+       * </pre>
+       *
+       * <code>TRANSLATION = 4;</code>
+       */
+      TRANSLATION(4),
+      /**
+       *
+       *
+       * <pre>
+       * Agent feedback generator type.
+       * </pre>
+       *
+       * <code>AGENT_FEEDBACK = 5;</code>
+       */
+      AGENT_FEEDBACK(5),
+      /**
+       *
+       *
+       * <pre>
+       * Customer message generation generator type.
+       * </pre>
+       *
+       * <code>CUSTOMER_MESSAGE_GENERATION = 6;</code>
+       */
+      CUSTOMER_MESSAGE_GENERATION(6),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "GeneratorType");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified generator type.
+       * </pre>
+       *
+       * <code>GENERATOR_TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int GENERATOR_TYPE_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Free form generator type.
+       * </pre>
+       *
+       * <code>FREE_FORM = 1;</code>
+       */
+      public static final int FREE_FORM_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Agent coaching generator type.
+       * </pre>
+       *
+       * <code>AGENT_COACHING = 2;</code>
+       */
+      public static final int AGENT_COACHING_VALUE = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * Summarization generator type.
+       * </pre>
+       *
+       * <code>SUMMARIZATION = 3;</code>
+       */
+      public static final int SUMMARIZATION_VALUE = 3;
+
+      /**
+       *
+       *
+       * <pre>
+       * Translation generator type.
+       * </pre>
+       *
+       * <code>TRANSLATION = 4;</code>
+       */
+      public static final int TRANSLATION_VALUE = 4;
+
+      /**
+       *
+       *
+       * <pre>
+       * Agent feedback generator type.
+       * </pre>
+       *
+       * <code>AGENT_FEEDBACK = 5;</code>
+       */
+      public static final int AGENT_FEEDBACK_VALUE = 5;
+
+      /**
+       *
+       *
+       * <pre>
+       * Customer message generation generator type.
+       * </pre>
+       *
+       * <code>CUSTOMER_MESSAGE_GENERATION = 6;</code>
+       */
+      public static final int CUSTOMER_MESSAGE_GENERATION_VALUE = 6;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static GeneratorType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static GeneratorType forNumber(int value) {
+        switch (value) {
+          case 0:
+            return GENERATOR_TYPE_UNSPECIFIED;
+          case 1:
+            return FREE_FORM;
+          case 2:
+            return AGENT_COACHING;
+          case 3:
+            return SUMMARIZATION;
+          case 4:
+            return TRANSLATION;
+          case 5:
+            return AGENT_FEEDBACK;
+          case 6:
+            return CUSTOMER_MESSAGE_GENERATION;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<GeneratorType> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<GeneratorType>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<GeneratorType>() {
+                public GeneratorType findValueByNumber(int number) {
+                  return GeneratorType.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final GeneratorType[] VALUES = values();
+
+      public static GeneratorType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private GeneratorType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.GeneratorType)
+    }
+
+    public static final int GENERATOR_TYPE_FIELD_NUMBER = 1;
+    private int generatorType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of the generator.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.GeneratorType generator_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for generatorType.
+     */
+    @java.lang.Override
+    public int getGeneratorTypeValue() {
+      return generatorType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of the generator.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.GeneratorType generator_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The generatorType.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.GeneratorType
+        getGeneratorType() {
+      com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.GeneratorType result =
+          com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.GeneratorType.forNumber(
+              generatorType_);
+      return result == null
+          ? com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.GeneratorType
+              .UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (generatorType_
+          != com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.GeneratorType
+              .GENERATOR_TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, generatorType_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (generatorType_
+          != com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.GeneratorType
+              .GENERATOR_TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, generatorType_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext other =
+          (com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext) obj;
+
+      if (generatorType_ != other.generatorType_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + GENERATOR_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + generatorType_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents the context of a generator.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext)
+        com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContextOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2beta1.ConversationProto
+            .internal_static_google_cloud_dialogflow_v2beta1_Conversation_GeneratorContext_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2beta1.ConversationProto
+            .internal_static_google_cloud_dialogflow_v2beta1_Conversation_GeneratorContext_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.class,
+                com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        generatorType_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.v2beta1.ConversationProto
+            .internal_static_google_cloud_dialogflow_v2beta1_Conversation_GeneratorContext_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext build() {
+        com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext buildPartial() {
+        com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext result =
+            new com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.generatorType_ = generatorType_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext other) {
+        if (other
+            == com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext
+                .getDefaultInstance()) return this;
+        if (other.generatorType_ != 0) {
+          setGeneratorTypeValue(other.getGeneratorTypeValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  generatorType_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int generatorType_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The type of the generator.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.GeneratorType generator_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for generatorType.
+       */
+      @java.lang.Override
+      public int getGeneratorTypeValue() {
+        return generatorType_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The type of the generator.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.GeneratorType generator_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for generatorType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGeneratorTypeValue(int value) {
+        generatorType_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The type of the generator.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.GeneratorType generator_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The generatorType.
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.GeneratorType
+          getGeneratorType() {
+        com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.GeneratorType result =
+            com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.GeneratorType
+                .forNumber(generatorType_);
+        return result == null
+            ? com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.GeneratorType
+                .UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The type of the generator.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.GeneratorType generator_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The generatorType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGeneratorType(
+          com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.GeneratorType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        generatorType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The type of the generator.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.GeneratorType generator_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearGeneratorType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        generatorType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext)
+    private static final com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext();
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GeneratorContext> PARSER =
+        new com.google.protobuf.AbstractParser<GeneratorContext>() {
+          @java.lang.Override
+          public GeneratorContext parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<GeneratorContext> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GeneratorContext> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -8569,6 +9458,72 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
         : telephonyConnectionInfo_;
   }
 
+  public static final int INITIAL_CONVERSATION_PROFILE_FIELD_NUMBER = 15;
+  private com.google.cloud.dialogflow.v2beta1.ConversationProfile initialConversationProfile_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The initial conversation profile to be used to
+   * configure this conversation, which is a copy of the conversation profile
+   * config read at conversation creation time.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.ConversationProfile initial_conversation_profile = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the initialConversationProfile field is set.
+   */
+  @java.lang.Override
+  public boolean hasInitialConversationProfile() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The initial conversation profile to be used to
+   * configure this conversation, which is a copy of the conversation profile
+   * config read at conversation creation time.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.ConversationProfile initial_conversation_profile = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The initialConversationProfile.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.ConversationProfile getInitialConversationProfile() {
+    return initialConversationProfile_ == null
+        ? com.google.cloud.dialogflow.v2beta1.ConversationProfile.getDefaultInstance()
+        : initialConversationProfile_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The initial conversation profile to be used to
+   * configure this conversation, which is a copy of the conversation profile
+   * config read at conversation creation time.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.ConversationProfile initial_conversation_profile = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.ConversationProfileOrBuilder
+      getInitialConversationProfileOrBuilder() {
+    return initialConversationProfile_ == null
+        ? com.google.cloud.dialogflow.v2beta1.ConversationProfile.getDefaultInstance()
+        : initialConversationProfile_;
+  }
+
   public static final int INGESTED_CONTEXT_REFERENCES_FIELD_NUMBER = 17;
 
   private static final class IngestedContextReferencesDefaultEntryHolder {
@@ -8705,6 +9660,146 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
     return map.get(key);
   }
 
+  public static final int INITIAL_GENERATOR_CONTEXTS_FIELD_NUMBER = 18;
+
+  private static final class InitialGeneratorContextsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String,
+                    com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext>
+                    newDefaultInstance(
+                        com.google.cloud.dialogflow.v2beta1.ConversationProto
+                            .internal_static_google_cloud_dialogflow_v2beta1_Conversation_InitialGeneratorContextsEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext
+                            .getDefaultInstance());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext>
+      initialGeneratorContexts_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext>
+      internalGetInitialGeneratorContexts() {
+    if (initialGeneratorContexts_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          InitialGeneratorContextsDefaultEntryHolder.defaultEntry);
+    }
+    return initialGeneratorContexts_;
+  }
+
+  public int getInitialGeneratorContextsCount() {
+    return internalGetInitialGeneratorContexts().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A map with generator name as key and generator context as
+   * value.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext&gt; initial_generator_contexts = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsInitialGeneratorContexts(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetInitialGeneratorContexts().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getInitialGeneratorContextsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<
+          java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext>
+      getInitialGeneratorContexts() {
+    return getInitialGeneratorContextsMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A map with generator name as key and generator context as
+   * value.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext&gt; initial_generator_contexts = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<
+          java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext>
+      getInitialGeneratorContextsMap() {
+    return internalGetInitialGeneratorContexts().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A map with generator name as key and generator context as
+   * value.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext&gt; initial_generator_contexts = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext
+      getInitialGeneratorContextsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<
+            java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext>
+        map = internalGetInitialGeneratorContexts().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A map with generator name as key and generator context as
+   * value.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext&gt; initial_generator_contexts = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext
+      getInitialGeneratorContextsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<
+            java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext>
+        map = internalGetInitialGeneratorContexts().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -8749,11 +9844,19 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(10, getTelephonyConnectionInfo());
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(15, getInitialConversationProfile());
+    }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output,
         internalGetIngestedContextReferences(),
         IngestedContextReferencesDefaultEntryHolder.defaultEntry,
         17);
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output,
+        internalGetInitialGeneratorContexts(),
+        InitialGeneratorContextsDefaultEntryHolder.defaultEntry,
+        18);
     getUnknownFields().writeTo(output);
   }
 
@@ -8795,6 +9898,11 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               10, getTelephonyConnectionInfo());
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              15, getInitialConversationProfile());
+    }
     for (java.util.Map.Entry<
             java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference>
         entry : internalGetIngestedContextReferences().getMap().entrySet()) {
@@ -8808,6 +9916,20 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
                   .build();
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(17, ingestedContextReferences__);
+    }
+    for (java.util.Map.Entry<
+            java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext>
+        entry : internalGetInitialGeneratorContexts().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext>
+          initialGeneratorContexts__ =
+              InitialGeneratorContextsDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(18, initialGeneratorContexts__);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -8845,8 +9967,15 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
     if (hasTelephonyConnectionInfo()) {
       if (!getTelephonyConnectionInfo().equals(other.getTelephonyConnectionInfo())) return false;
     }
+    if (hasInitialConversationProfile() != other.hasInitialConversationProfile()) return false;
+    if (hasInitialConversationProfile()) {
+      if (!getInitialConversationProfile().equals(other.getInitialConversationProfile()))
+        return false;
+    }
     if (!internalGetIngestedContextReferences()
         .equals(other.internalGetIngestedContextReferences())) return false;
+    if (!internalGetInitialGeneratorContexts().equals(other.internalGetInitialGeneratorContexts()))
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -8882,9 +10011,17 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + TELEPHONY_CONNECTION_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getTelephonyConnectionInfo().hashCode();
     }
+    if (hasInitialConversationProfile()) {
+      hash = (37 * hash) + INITIAL_CONVERSATION_PROFILE_FIELD_NUMBER;
+      hash = (53 * hash) + getInitialConversationProfile().hashCode();
+    }
     if (!internalGetIngestedContextReferences().getMap().isEmpty()) {
       hash = (37 * hash) + INGESTED_CONTEXT_REFERENCES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetIngestedContextReferences().hashCode();
+    }
+    if (!internalGetInitialGeneratorContexts().getMap().isEmpty()) {
+      hash = (37 * hash) + INITIAL_GENERATOR_CONTEXTS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetInitialGeneratorContexts().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -9014,6 +10151,8 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
       switch (number) {
         case 17:
           return internalGetIngestedContextReferences();
+        case 18:
+          return internalGetInitialGeneratorContexts();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -9025,6 +10164,8 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
       switch (number) {
         case 17:
           return internalGetMutableIngestedContextReferences();
+        case 18:
+          return internalGetMutableInitialGeneratorContexts();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -9056,6 +10197,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
         internalGetStartTimeFieldBuilder();
         internalGetEndTimeFieldBuilder();
         internalGetTelephonyConnectionInfoFieldBuilder();
+        internalGetInitialConversationProfileFieldBuilder();
       }
     }
 
@@ -9087,7 +10229,13 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
         telephonyConnectionInfoBuilder_.dispose();
         telephonyConnectionInfoBuilder_ = null;
       }
+      initialConversationProfile_ = null;
+      if (initialConversationProfileBuilder_ != null) {
+        initialConversationProfileBuilder_.dispose();
+        initialConversationProfileBuilder_ = null;
+      }
       internalGetMutableIngestedContextReferences().clear();
+      internalGetMutableInitialGeneratorContexts().clear();
       return this;
     }
 
@@ -9158,9 +10306,21 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.initialConversationProfile_ =
+            initialConversationProfileBuilder_ == null
+                ? initialConversationProfile_
+                : initialConversationProfileBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.ingestedContextReferences_ =
             internalGetIngestedContextReferences()
                 .build(IngestedContextReferencesDefaultEntryHolder.defaultEntry);
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.initialGeneratorContexts_ =
+            internalGetInitialGeneratorContexts()
+                .build(InitialGeneratorContextsDefaultEntryHolder.defaultEntry);
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -9206,9 +10366,15 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
       if (other.hasTelephonyConnectionInfo()) {
         mergeTelephonyConnectionInfo(other.getTelephonyConnectionInfo());
       }
+      if (other.hasInitialConversationProfile()) {
+        mergeInitialConversationProfile(other.getInitialConversationProfile());
+      }
       internalGetMutableIngestedContextReferences()
           .mergeFrom(other.internalGetIngestedContextReferences());
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
+      internalGetMutableInitialGeneratorContexts()
+          .mergeFrom(other.internalGetInitialGeneratorContexts());
+      bitField0_ |= 0x00000400;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -9287,6 +10453,14 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000080;
                 break;
               } // case 82
+            case 122:
+              {
+                input.readMessage(
+                    internalGetInitialConversationProfileFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 122
             case 138:
               {
                 com.google.protobuf.MapEntry<
@@ -9302,9 +10476,26 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
                     .put(
                         ingestedContextReferences__.getKey(),
                         ingestedContextReferences__.getValue());
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 138
+            case 146:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String,
+                        com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext>
+                    initialGeneratorContexts__ =
+                        input.readMessage(
+                            InitialGeneratorContextsDefaultEntryHolder.defaultEntry
+                                .getParserForType(),
+                            extensionRegistry);
+                internalGetMutableInitialGeneratorContexts()
+                    .ensureBuilderMap()
+                    .put(
+                        initialGeneratorContexts__.getKey(), initialGeneratorContexts__.getValue());
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 146
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10735,6 +11926,242 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
       return telephonyConnectionInfoBuilder_;
     }
 
+    private com.google.cloud.dialogflow.v2beta1.ConversationProfile initialConversationProfile_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dialogflow.v2beta1.ConversationProfile,
+            com.google.cloud.dialogflow.v2beta1.ConversationProfile.Builder,
+            com.google.cloud.dialogflow.v2beta1.ConversationProfileOrBuilder>
+        initialConversationProfileBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The initial conversation profile to be used to
+     * configure this conversation, which is a copy of the conversation profile
+     * config read at conversation creation time.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.ConversationProfile initial_conversation_profile = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the initialConversationProfile field is set.
+     */
+    public boolean hasInitialConversationProfile() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The initial conversation profile to be used to
+     * configure this conversation, which is a copy of the conversation profile
+     * config read at conversation creation time.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.ConversationProfile initial_conversation_profile = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The initialConversationProfile.
+     */
+    public com.google.cloud.dialogflow.v2beta1.ConversationProfile getInitialConversationProfile() {
+      if (initialConversationProfileBuilder_ == null) {
+        return initialConversationProfile_ == null
+            ? com.google.cloud.dialogflow.v2beta1.ConversationProfile.getDefaultInstance()
+            : initialConversationProfile_;
+      } else {
+        return initialConversationProfileBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The initial conversation profile to be used to
+     * configure this conversation, which is a copy of the conversation profile
+     * config read at conversation creation time.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.ConversationProfile initial_conversation_profile = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setInitialConversationProfile(
+        com.google.cloud.dialogflow.v2beta1.ConversationProfile value) {
+      if (initialConversationProfileBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        initialConversationProfile_ = value;
+      } else {
+        initialConversationProfileBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The initial conversation profile to be used to
+     * configure this conversation, which is a copy of the conversation profile
+     * config read at conversation creation time.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.ConversationProfile initial_conversation_profile = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setInitialConversationProfile(
+        com.google.cloud.dialogflow.v2beta1.ConversationProfile.Builder builderForValue) {
+      if (initialConversationProfileBuilder_ == null) {
+        initialConversationProfile_ = builderForValue.build();
+      } else {
+        initialConversationProfileBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The initial conversation profile to be used to
+     * configure this conversation, which is a copy of the conversation profile
+     * config read at conversation creation time.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.ConversationProfile initial_conversation_profile = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeInitialConversationProfile(
+        com.google.cloud.dialogflow.v2beta1.ConversationProfile value) {
+      if (initialConversationProfileBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && initialConversationProfile_ != null
+            && initialConversationProfile_
+                != com.google.cloud.dialogflow.v2beta1.ConversationProfile.getDefaultInstance()) {
+          getInitialConversationProfileBuilder().mergeFrom(value);
+        } else {
+          initialConversationProfile_ = value;
+        }
+      } else {
+        initialConversationProfileBuilder_.mergeFrom(value);
+      }
+      if (initialConversationProfile_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The initial conversation profile to be used to
+     * configure this conversation, which is a copy of the conversation profile
+     * config read at conversation creation time.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.ConversationProfile initial_conversation_profile = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearInitialConversationProfile() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      initialConversationProfile_ = null;
+      if (initialConversationProfileBuilder_ != null) {
+        initialConversationProfileBuilder_.dispose();
+        initialConversationProfileBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The initial conversation profile to be used to
+     * configure this conversation, which is a copy of the conversation profile
+     * config read at conversation creation time.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.ConversationProfile initial_conversation_profile = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.ConversationProfile.Builder
+        getInitialConversationProfileBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return internalGetInitialConversationProfileFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The initial conversation profile to be used to
+     * configure this conversation, which is a copy of the conversation profile
+     * config read at conversation creation time.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.ConversationProfile initial_conversation_profile = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.ConversationProfileOrBuilder
+        getInitialConversationProfileOrBuilder() {
+      if (initialConversationProfileBuilder_ != null) {
+        return initialConversationProfileBuilder_.getMessageOrBuilder();
+      } else {
+        return initialConversationProfile_ == null
+            ? com.google.cloud.dialogflow.v2beta1.ConversationProfile.getDefaultInstance()
+            : initialConversationProfile_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The initial conversation profile to be used to
+     * configure this conversation, which is a copy of the conversation profile
+     * config read at conversation creation time.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.ConversationProfile initial_conversation_profile = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dialogflow.v2beta1.ConversationProfile,
+            com.google.cloud.dialogflow.v2beta1.ConversationProfile.Builder,
+            com.google.cloud.dialogflow.v2beta1.ConversationProfileOrBuilder>
+        internalGetInitialConversationProfileFieldBuilder() {
+      if (initialConversationProfileBuilder_ == null) {
+        initialConversationProfileBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dialogflow.v2beta1.ConversationProfile,
+                com.google.cloud.dialogflow.v2beta1.ConversationProfile.Builder,
+                com.google.cloud.dialogflow.v2beta1.ConversationProfileOrBuilder>(
+                getInitialConversationProfile(), getParentForChildren(), isClean());
+        initialConversationProfile_ = null;
+      }
+      return initialConversationProfileBuilder_;
+    }
+
     private static final class IngestedContextReferencesConverter
         implements com.google.protobuf.MapFieldBuilder.Converter<
             java.lang.String,
@@ -10791,7 +12218,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
         ingestedContextReferences_ =
             new com.google.protobuf.MapFieldBuilder<>(ingestedContextReferencesConverter);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return ingestedContextReferences_;
     }
@@ -10903,7 +12330,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearIngestedContextReferences() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       internalGetMutableIngestedContextReferences().clear();
       return this;
     }
@@ -10932,7 +12359,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
     public java.util.Map<
             java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference>
         getMutableIngestedContextReferences() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return internalGetMutableIngestedContextReferences().ensureMessageMap();
     }
 
@@ -10957,7 +12384,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableIngestedContextReferences().ensureBuilderMap().put(key, value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
 
@@ -10984,7 +12411,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
         }
       }
       internalGetMutableIngestedContextReferences().ensureBuilderMap().putAll(values);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
 
@@ -11017,6 +12444,298 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
         builderMap.put(key, entry);
       }
       return (com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference.Builder) entry;
+    }
+
+    private static final class InitialGeneratorContextsConverter
+        implements com.google.protobuf.MapFieldBuilder.Converter<
+            java.lang.String,
+            com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContextOrBuilder,
+            com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext> {
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext build(
+          com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContextOrBuilder val) {
+        if (val instanceof com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext) {
+          return (com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext) val;
+        }
+        return ((com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.Builder) val)
+            .build();
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext>
+          defaultEntry() {
+        return InitialGeneratorContextsDefaultEntryHolder.defaultEntry;
+      }
+    }
+    ;
+
+    private static final InitialGeneratorContextsConverter initialGeneratorContextsConverter =
+        new InitialGeneratorContextsConverter();
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContextOrBuilder,
+            com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext,
+            com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.Builder>
+        initialGeneratorContexts_;
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContextOrBuilder,
+            com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext,
+            com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.Builder>
+        internalGetInitialGeneratorContexts() {
+      if (initialGeneratorContexts_ == null) {
+        return new com.google.protobuf.MapFieldBuilder<>(initialGeneratorContextsConverter);
+      }
+      return initialGeneratorContexts_;
+    }
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContextOrBuilder,
+            com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext,
+            com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.Builder>
+        internalGetMutableInitialGeneratorContexts() {
+      if (initialGeneratorContexts_ == null) {
+        initialGeneratorContexts_ =
+            new com.google.protobuf.MapFieldBuilder<>(initialGeneratorContextsConverter);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return initialGeneratorContexts_;
+    }
+
+    public int getInitialGeneratorContextsCount() {
+      return internalGetInitialGeneratorContexts().ensureBuilderMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A map with generator name as key and generator context as
+     * value.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext&gt; initial_generator_contexts = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsInitialGeneratorContexts(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetInitialGeneratorContexts().ensureBuilderMap().containsKey(key);
+    }
+
+    /** Use {@link #getInitialGeneratorContextsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext>
+        getInitialGeneratorContexts() {
+      return getInitialGeneratorContextsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A map with generator name as key and generator context as
+     * value.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext&gt; initial_generator_contexts = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<
+            java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext>
+        getInitialGeneratorContextsMap() {
+      return internalGetInitialGeneratorContexts().getImmutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A map with generator name as key and generator context as
+     * value.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext&gt; initial_generator_contexts = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext
+        getInitialGeneratorContextsOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<
+              java.lang.String,
+              com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContextOrBuilder>
+          map = internalGetMutableInitialGeneratorContexts().ensureBuilderMap();
+      return map.containsKey(key)
+          ? initialGeneratorContextsConverter.build(map.get(key))
+          : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A map with generator name as key and generator context as
+     * value.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext&gt; initial_generator_contexts = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext
+        getInitialGeneratorContextsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<
+              java.lang.String,
+              com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContextOrBuilder>
+          map = internalGetMutableInitialGeneratorContexts().ensureBuilderMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return initialGeneratorContextsConverter.build(map.get(key));
+    }
+
+    public Builder clearInitialGeneratorContexts() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      internalGetMutableInitialGeneratorContexts().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A map with generator name as key and generator context as
+     * value.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext&gt; initial_generator_contexts = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeInitialGeneratorContexts(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableInitialGeneratorContexts().ensureBuilderMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext>
+        getMutableInitialGeneratorContexts() {
+      bitField0_ |= 0x00000400;
+      return internalGetMutableInitialGeneratorContexts().ensureMessageMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A map with generator name as key and generator context as
+     * value.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext&gt; initial_generator_contexts = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder putInitialGeneratorContexts(
+        java.lang.String key,
+        com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableInitialGeneratorContexts().ensureBuilderMap().put(key, value);
+      bitField0_ |= 0x00000400;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A map with generator name as key and generator context as
+     * value.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext&gt; initial_generator_contexts = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder putAllInitialGeneratorContexts(
+        java.util.Map<
+                java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext>
+            values) {
+      for (java.util.Map.Entry<
+              java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext>
+          e : values.entrySet()) {
+        if (e.getKey() == null || e.getValue() == null) {
+          throw new NullPointerException();
+        }
+      }
+      internalGetMutableInitialGeneratorContexts().ensureBuilderMap().putAll(values);
+      bitField0_ |= 0x00000400;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A map with generator name as key and generator context as
+     * value.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext&gt; initial_generator_contexts = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.Builder
+        putInitialGeneratorContextsBuilderIfAbsent(java.lang.String key) {
+      java.util.Map<
+              java.lang.String,
+              com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContextOrBuilder>
+          builderMap = internalGetMutableInitialGeneratorContexts().ensureBuilderMap();
+      com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContextOrBuilder entry =
+          builderMap.get(key);
+      if (entry == null) {
+        entry = com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.newBuilder();
+        builderMap.put(key, entry);
+      }
+      if (entry instanceof com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext) {
+        entry =
+            ((com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext) entry).toBuilder();
+        builderMap.put(key, entry);
+      }
+      return (com.google.cloud.dialogflow.v2beta1.Conversation.GeneratorContext.Builder) entry;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.Conversation)

@@ -198,6 +198,7 @@ public class IntentsClientHttpJsonTest {
             .setIsFallback(true)
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setDtmfPattern("dtmfPattern-1819689689")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -249,6 +250,7 @@ public class IntentsClientHttpJsonTest {
             .setIsFallback(true)
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setDtmfPattern("dtmfPattern-1819689689")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -302,6 +304,7 @@ public class IntentsClientHttpJsonTest {
             .setIsFallback(true)
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setDtmfPattern("dtmfPattern-1819689689")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -355,6 +358,7 @@ public class IntentsClientHttpJsonTest {
             .setIsFallback(true)
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setDtmfPattern("dtmfPattern-1819689689")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -408,6 +412,7 @@ public class IntentsClientHttpJsonTest {
             .setIsFallback(true)
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setDtmfPattern("dtmfPattern-1819689689")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -421,6 +426,7 @@ public class IntentsClientHttpJsonTest {
             .setIsFallback(true)
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setDtmfPattern("dtmfPattern-1819689689")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -460,6 +466,7 @@ public class IntentsClientHttpJsonTest {
               .setIsFallback(true)
               .putAllLabels(new HashMap<String, String>())
               .setDescription("description-1724546052")
+              .setDtmfPattern("dtmfPattern-1819689689")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateIntent(intent, updateMask);

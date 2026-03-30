@@ -89,7 +89,7 @@ public final class ServerTlsPolicyProto extends com.google.protobuf.GeneratedFil
           + "7google/cloud/networksecurity/v1/server_tls_policy.proto\022\037google.cloud.networks"
           + "ecurity.v1\032\037google/api/field_behavior.pr"
           + "oto\032\031google/api/resource.proto\032)google/cloud/networksecurity/v1/tls.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\272\005\n"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\207\010\n"
           + "\017ServerTlsPolicy\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\002\022\023\n"
           + "\013description\030\002 \001(\t\0224\n"
@@ -101,25 +101,34 @@ public final class ServerTlsPolicyProto extends com.google.protobuf.GeneratedFil
           + "\022server_certificate\030\007 \001(\01324.goo"
           + "gle.cloud.networksecurity.v1.CertificateProvider\022P\n"
           + "\013mtls_policy\030\010 \001(\0132;.google.c"
-          + "loud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy\032Y\n\n"
-          + "MTLSPolicy\022K\n"
+          + "loud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy\032\245\003\n\n"
+          + "MTLSPolicy\022p\n"
+          + "\026client_validation_mode\030\002 \001(\0162P.google.cloud.network"
+          + "security.v1.ServerTlsPolicy.MTLSPolicy.ClientValidationMode\022K\n"
           + "\024client_validation_ca\030\001"
-          + " \003(\0132-.google.cloud.networksecurity.v1.ValidationCA\032-\n"
+          + " \003(\0132-.google.cloud.networksecurity.v1.ValidationCA\022Z\n"
+          + "\036client_validation_trust_config\030\004 \001(\tB2\372A/\n"
+          + "-certificatemanager.googleapis.com/TrustConfig\"|\n"
+          + "\024ClientValidationMode\022&\n"
+          + "\"CLIENT_VALIDATION_MODE_UNSPECIFIED\020\000\022(\n"
+          + "$ALLOW_INVALID_OR_MISSING_CLIENT_CERT\020\001\022\022\n"
+          + "\016REJECT_INVALID\020\002\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\202\001\352A\177\n"
-          + ".networksecurity.googleapis.com/ServerTlsPoli"
-          + "cy\022Mprojects/{project}/locations/{locati"
-          + "on}/serverTlsPolicies/{server_tls_policy}\"\200\001\n"
+          + ".networksecurity.googleapis.com/ServerTlsPolicy\022Mprojects/{project}/loca"
+          + "tions/{location}/serverTlsPolicies/{server_tls_policy}\"\245\001\n"
           + "\034ListServerTlsPoliciesRequest\0229\n"
           + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
           + "!locations.googleapis.com/Location\022\021\n"
           + "\tpage_size\030\002 \001(\005\022\022\n\n"
-          + "page_token\030\003 \001(\t\"\207\001\n"
+          + "page_token\030\003 \001(\t\022#\n"
+          + "\026return_partial_success\030\004 \001(\010B\003\340A\001\"\234\001\n"
           + "\035ListServerTlsPoliciesResponse\022M\n"
-          + "\023server_tls_policies\030\001 \003(\01320.go"
-          + "ogle.cloud.networksecurity.v1.ServerTlsPolicy\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"a\n"
+          + "\023server_tls_policies\030\001"
+          + " \003(\01320.google.cloud.networksecurity.v1.ServerTlsPolicy\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\023\n"
+          + "\013unreachable\030\003 \003(\t\"a\n"
           + "\031GetServerTlsPolicyRequest\022D\n"
           + "\004name\030\001 \001(\tB6\340A\002\372A0\n"
           + ".networksecurity.googleapis.com/ServerTlsPolicy\"\333\001\n"
@@ -131,16 +140,16 @@ public final class ServerTlsPolicyProto extends com.google.protobuf.GeneratedFil
           + " \001(\01320.google.cloud.networksecurity.v1.ServerTlsPolicyB\003\340A\002\"\246\001\n"
           + "\034UpdateServerTlsPolicyRequest\0224\n"
           + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022P\n"
-          + "\021server_tls_policy\030\002 \001(\01320.google.cloud"
-          + ".networksecurity.v1.ServerTlsPolicyB\003\340A\002\"d\n"
+          + "\021server_tls_policy\030\002"
+          + " \001(\01320.google.cloud.networksecurity.v1.ServerTlsPolicyB\003\340A\002\"d\n"
           + "\034DeleteServerTlsPolicyRequest\022D\n"
           + "\004name\030\001 \001(\tB6\340A\002\372A0\n"
           + ".networksecurity.googleapis.com/ServerTlsPolicyB\365\001\n"
-          + "#com.google.cloud.networksecurity.v1B\024ServerTlsPolicyP"
-          + "rotoP\001ZMcloud.google.com/go/networksecurity/apiv1/networksecuritypb;networksecur"
-          + "itypb\252\002\037Google.Cloud.NetworkSecurity.V1\312"
-          + "\002\037Google\\Cloud\\NetworkSecurity\\V1\352\002\"Goog"
-          + "le::Cloud::NetworkSecurity::V1b\006proto3"
+          + "#com.google.cloud.networksecurity.v1B\024ServerTlsPolicyProtoP\001ZMc"
+          + "loud.google.com/go/networksecurity/apiv1"
+          + "/networksecuritypb;networksecuritypb\252\002\037G"
+          + "oogle.Cloud.NetworkSecurity.V1\312\002\037Google\\"
+          + "Cloud\\NetworkSecurity\\V1\352\002\"Google::Cloud::NetworkSecurity::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -173,7 +182,7 @@ public final class ServerTlsPolicyProto extends com.google.protobuf.GeneratedFil
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_networksecurity_v1_ServerTlsPolicy_MTLSPolicy_descriptor,
             new java.lang.String[] {
-              "ClientValidationCa",
+              "ClientValidationMode", "ClientValidationCa", "ClientValidationTrustConfig",
             });
     internal_static_google_cloud_networksecurity_v1_ServerTlsPolicy_LabelsEntry_descriptor =
         internal_static_google_cloud_networksecurity_v1_ServerTlsPolicy_descriptor.getNestedType(1);
@@ -189,7 +198,7 @@ public final class ServerTlsPolicyProto extends com.google.protobuf.GeneratedFil
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_networksecurity_v1_ListServerTlsPoliciesRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken",
+              "Parent", "PageSize", "PageToken", "ReturnPartialSuccess",
             });
     internal_static_google_cloud_networksecurity_v1_ListServerTlsPoliciesResponse_descriptor =
         getDescriptor().getMessageType(2);
@@ -197,7 +206,7 @@ public final class ServerTlsPolicyProto extends com.google.protobuf.GeneratedFil
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_networksecurity_v1_ListServerTlsPoliciesResponse_descriptor,
             new java.lang.String[] {
-              "ServerTlsPolicies", "NextPageToken",
+              "ServerTlsPolicies", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_networksecurity_v1_GetServerTlsPolicyRequest_descriptor =
         getDescriptor().getMessageType(3);

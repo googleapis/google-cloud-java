@@ -77,6 +77,15 @@ import com.google.cloud.netapp.v1.DeleteStoragePoolRequest;
 import com.google.cloud.netapp.v1.DeleteVolumeRequest;
 import com.google.cloud.netapp.v1.EncryptVolumesRequest;
 import com.google.cloud.netapp.v1.EstablishPeeringRequest;
+import com.google.cloud.netapp.v1.EstablishVolumePeeringRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapDeleteRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapDeleteResponse;
+import com.google.cloud.netapp.v1.ExecuteOntapGetRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapGetResponse;
+import com.google.cloud.netapp.v1.ExecuteOntapPatchRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapPatchResponse;
+import com.google.cloud.netapp.v1.ExecuteOntapPostRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapPostResponse;
 import com.google.cloud.netapp.v1.GetActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.GetBackupPolicyRequest;
 import com.google.cloud.netapp.v1.GetBackupRequest;
@@ -680,6 +689,46 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       .build())
               .setOperationSnapshotFactory(
                   (RevertVolumeRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<EstablishVolumePeeringRequest, Operation>
+      establishVolumePeeringMethodDescriptor =
+          ApiMethodDescriptor.<EstablishVolumePeeringRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/EstablishVolumePeering")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<EstablishVolumePeeringRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/volumes/*}:establishPeering",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<EstablishVolumePeeringRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<EstablishVolumePeeringRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (EstablishVolumePeeringRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
@@ -2738,6 +2787,148 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<ExecuteOntapPostRequest, ExecuteOntapPostResponse>
+      executeOntapPostMethodDescriptor =
+          ApiMethodDescriptor.<ExecuteOntapPostRequest, ExecuteOntapPostResponse>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ExecuteOntapPost")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ExecuteOntapPostRequest>newBuilder()
+                      .setPath(
+                          "/v1/{ontapPath=projects/*/locations/*/storagePools/*/ontap/**}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ExecuteOntapPostRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "ontapPath", request.getOntapPath());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ExecuteOntapPostRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearOntapPath().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ExecuteOntapPostResponse>newBuilder()
+                      .setDefaultInstance(ExecuteOntapPostResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ExecuteOntapGetRequest, ExecuteOntapGetResponse>
+      executeOntapGetMethodDescriptor =
+          ApiMethodDescriptor.<ExecuteOntapGetRequest, ExecuteOntapGetResponse>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ExecuteOntapGet")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ExecuteOntapGetRequest>newBuilder()
+                      .setPath(
+                          "/v1/{ontapPath=projects/*/locations/*/storagePools/*/ontap/**}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ExecuteOntapGetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "ontapPath", request.getOntapPath());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ExecuteOntapGetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ExecuteOntapGetResponse>newBuilder()
+                      .setDefaultInstance(ExecuteOntapGetResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>
+      executeOntapDeleteMethodDescriptor =
+          ApiMethodDescriptor.<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ExecuteOntapDelete")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ExecuteOntapDeleteRequest>newBuilder()
+                      .setPath(
+                          "/v1/{ontapPath=projects/*/locations/*/storagePools/*/ontap/**}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ExecuteOntapDeleteRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "ontapPath", request.getOntapPath());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ExecuteOntapDeleteRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ExecuteOntapDeleteResponse>newBuilder()
+                      .setDefaultInstance(ExecuteOntapDeleteResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
+      executeOntapPatchMethodDescriptor =
+          ApiMethodDescriptor.<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ExecuteOntapPatch")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ExecuteOntapPatchRequest>newBuilder()
+                      .setPath(
+                          "/v1/{ontapPath=projects/*/locations/*/storagePools/*/ontap/**}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ExecuteOntapPatchRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "ontapPath", request.getOntapPath());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ExecuteOntapPatchRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearOntapPath().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ExecuteOntapPatchResponse>newBuilder()
+                      .setDefaultInstance(ExecuteOntapPatchResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -2844,6 +3035,10 @@ public class HttpJsonNetAppStub extends NetAppStub {
   private final UnaryCallable<RevertVolumeRequest, Operation> revertVolumeCallable;
   private final OperationCallable<RevertVolumeRequest, Volume, OperationMetadata>
       revertVolumeOperationCallable;
+  private final UnaryCallable<EstablishVolumePeeringRequest, Operation>
+      establishVolumePeeringCallable;
+  private final OperationCallable<EstablishVolumePeeringRequest, Volume, OperationMetadata>
+      establishVolumePeeringOperationCallable;
   private final UnaryCallable<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsCallable;
   private final UnaryCallable<ListSnapshotsRequest, ListSnapshotsPagedResponse>
       listSnapshotsPagedCallable;
@@ -2995,6 +3190,14 @@ public class HttpJsonNetAppStub extends NetAppStub {
   private final UnaryCallable<DeleteHostGroupRequest, Operation> deleteHostGroupCallable;
   private final OperationCallable<DeleteHostGroupRequest, Empty, OperationMetadata>
       deleteHostGroupOperationCallable;
+  private final UnaryCallable<ExecuteOntapPostRequest, ExecuteOntapPostResponse>
+      executeOntapPostCallable;
+  private final UnaryCallable<ExecuteOntapGetRequest, ExecuteOntapGetResponse>
+      executeOntapGetCallable;
+  private final UnaryCallable<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>
+      executeOntapDeleteCallable;
+  private final UnaryCallable<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
+      executeOntapPatchCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -3078,6 +3281,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateStoragePoolRequest, Operation> createStoragePoolTransportSettings =
         HttpJsonCallSettings.<CreateStoragePoolRequest, Operation>newBuilder()
@@ -3089,6 +3293,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetStoragePoolRequest, StoragePool> getStoragePoolTransportSettings =
         HttpJsonCallSettings.<GetStoragePoolRequest, StoragePool>newBuilder()
@@ -3100,6 +3305,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateStoragePoolRequest, Operation> updateStoragePoolTransportSettings =
         HttpJsonCallSettings.<UpdateStoragePoolRequest, Operation>newBuilder()
@@ -3123,6 +3329,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ValidateDirectoryServiceRequest, Operation>
         validateDirectoryServiceTransportSettings =
@@ -3135,6 +3342,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<SwitchActiveReplicaZoneRequest, Operation>
         switchActiveReplicaZoneTransportSettings =
@@ -3147,6 +3355,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListVolumesRequest, ListVolumesResponse> listVolumesTransportSettings =
         HttpJsonCallSettings.<ListVolumesRequest, ListVolumesResponse>newBuilder()
@@ -3158,6 +3367,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetVolumeRequest, Volume> getVolumeTransportSettings =
         HttpJsonCallSettings.<GetVolumeRequest, Volume>newBuilder()
@@ -3169,6 +3379,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateVolumeRequest, Operation> createVolumeTransportSettings =
         HttpJsonCallSettings.<CreateVolumeRequest, Operation>newBuilder()
@@ -3180,6 +3391,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateVolumeRequest, Operation> updateVolumeTransportSettings =
         HttpJsonCallSettings.<UpdateVolumeRequest, Operation>newBuilder()
@@ -3202,6 +3414,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RevertVolumeRequest, Operation> revertVolumeTransportSettings =
         HttpJsonCallSettings.<RevertVolumeRequest, Operation>newBuilder()
@@ -3213,7 +3426,21 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<EstablishVolumePeeringRequest, Operation>
+        establishVolumePeeringTransportSettings =
+            HttpJsonCallSettings.<EstablishVolumePeeringRequest, Operation>newBuilder()
+                .setMethodDescriptor(establishVolumePeeringMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     HttpJsonCallSettings<ListSnapshotsRequest, ListSnapshotsResponse>
         listSnapshotsTransportSettings =
             HttpJsonCallSettings.<ListSnapshotsRequest, ListSnapshotsResponse>newBuilder()
@@ -3225,6 +3452,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetSnapshotRequest, Snapshot> getSnapshotTransportSettings =
         HttpJsonCallSettings.<GetSnapshotRequest, Snapshot>newBuilder()
@@ -3236,6 +3464,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateSnapshotRequest, Operation> createSnapshotTransportSettings =
         HttpJsonCallSettings.<CreateSnapshotRequest, Operation>newBuilder()
@@ -3247,6 +3476,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteSnapshotRequest, Operation> deleteSnapshotTransportSettings =
         HttpJsonCallSettings.<DeleteSnapshotRequest, Operation>newBuilder()
@@ -3258,6 +3488,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateSnapshotRequest, Operation> updateSnapshotTransportSettings =
         HttpJsonCallSettings.<UpdateSnapshotRequest, Operation>newBuilder()
@@ -3282,6 +3513,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetActiveDirectoryRequest, ActiveDirectory>
         getActiveDirectoryTransportSettings =
@@ -3294,6 +3526,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateActiveDirectoryRequest, Operation>
         createActiveDirectoryTransportSettings =
@@ -3306,6 +3539,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateActiveDirectoryRequest, Operation>
         updateActiveDirectoryTransportSettings =
@@ -3332,6 +3566,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListKmsConfigsRequest, ListKmsConfigsResponse>
         listKmsConfigsTransportSettings =
@@ -3344,6 +3579,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateKmsConfigRequest, Operation> createKmsConfigTransportSettings =
         HttpJsonCallSettings.<CreateKmsConfigRequest, Operation>newBuilder()
@@ -3355,6 +3591,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetKmsConfigRequest, KmsConfig> getKmsConfigTransportSettings =
         HttpJsonCallSettings.<GetKmsConfigRequest, KmsConfig>newBuilder()
@@ -3366,6 +3603,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateKmsConfigRequest, Operation> updateKmsConfigTransportSettings =
         HttpJsonCallSettings.<UpdateKmsConfigRequest, Operation>newBuilder()
@@ -3388,6 +3626,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<VerifyKmsConfigRequest, VerifyKmsConfigResponse>
         verifyKmsConfigTransportSettings =
@@ -3400,6 +3639,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DeleteKmsConfigRequest, Operation> deleteKmsConfigTransportSettings =
         HttpJsonCallSettings.<DeleteKmsConfigRequest, Operation>newBuilder()
@@ -3411,6 +3651,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListReplicationsRequest, ListReplicationsResponse>
         listReplicationsTransportSettings =
@@ -3423,6 +3664,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetReplicationRequest, Replication> getReplicationTransportSettings =
         HttpJsonCallSettings.<GetReplicationRequest, Replication>newBuilder()
@@ -3434,6 +3676,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateReplicationRequest, Operation> createReplicationTransportSettings =
         HttpJsonCallSettings.<CreateReplicationRequest, Operation>newBuilder()
@@ -3445,6 +3688,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteReplicationRequest, Operation> deleteReplicationTransportSettings =
         HttpJsonCallSettings.<DeleteReplicationRequest, Operation>newBuilder()
@@ -3456,6 +3700,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateReplicationRequest, Operation> updateReplicationTransportSettings =
         HttpJsonCallSettings.<UpdateReplicationRequest, Operation>newBuilder()
@@ -3479,6 +3724,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ResumeReplicationRequest, Operation> resumeReplicationTransportSettings =
         HttpJsonCallSettings.<ResumeReplicationRequest, Operation>newBuilder()
@@ -3490,6 +3736,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ReverseReplicationDirectionRequest, Operation>
         reverseReplicationDirectionTransportSettings =
@@ -3502,6 +3749,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<EstablishPeeringRequest, Operation> establishPeeringTransportSettings =
         HttpJsonCallSettings.<EstablishPeeringRequest, Operation>newBuilder()
@@ -3513,6 +3761,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<SyncReplicationRequest, Operation> syncReplicationTransportSettings =
         HttpJsonCallSettings.<SyncReplicationRequest, Operation>newBuilder()
@@ -3524,6 +3773,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateBackupVaultRequest, Operation> createBackupVaultTransportSettings =
         HttpJsonCallSettings.<CreateBackupVaultRequest, Operation>newBuilder()
@@ -3535,6 +3785,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetBackupVaultRequest, BackupVault> getBackupVaultTransportSettings =
         HttpJsonCallSettings.<GetBackupVaultRequest, BackupVault>newBuilder()
@@ -3546,6 +3797,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListBackupVaultsRequest, ListBackupVaultsResponse>
         listBackupVaultsTransportSettings =
@@ -3558,6 +3810,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateBackupVaultRequest, Operation> updateBackupVaultTransportSettings =
         HttpJsonCallSettings.<UpdateBackupVaultRequest, Operation>newBuilder()
@@ -3581,6 +3834,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateBackupRequest, Operation> createBackupTransportSettings =
         HttpJsonCallSettings.<CreateBackupRequest, Operation>newBuilder()
@@ -3592,6 +3846,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
         HttpJsonCallSettings.<GetBackupRequest, Backup>newBuilder()
@@ -3603,6 +3858,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
         HttpJsonCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
@@ -3614,6 +3870,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteBackupRequest, Operation> deleteBackupTransportSettings =
         HttpJsonCallSettings.<DeleteBackupRequest, Operation>newBuilder()
@@ -3625,6 +3882,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateBackupRequest, Operation> updateBackupTransportSettings =
         HttpJsonCallSettings.<UpdateBackupRequest, Operation>newBuilder()
@@ -3647,6 +3905,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetBackupPolicyRequest, BackupPolicy> getBackupPolicyTransportSettings =
         HttpJsonCallSettings.<GetBackupPolicyRequest, BackupPolicy>newBuilder()
@@ -3658,6 +3917,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListBackupPoliciesRequest, ListBackupPoliciesResponse>
         listBackupPoliciesTransportSettings =
@@ -3670,6 +3930,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateBackupPolicyRequest, Operation> updateBackupPolicyTransportSettings =
         HttpJsonCallSettings.<UpdateBackupPolicyRequest, Operation>newBuilder()
@@ -3693,6 +3954,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListQuotaRulesRequest, ListQuotaRulesResponse>
         listQuotaRulesTransportSettings =
@@ -3705,6 +3967,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetQuotaRuleRequest, QuotaRule> getQuotaRuleTransportSettings =
         HttpJsonCallSettings.<GetQuotaRuleRequest, QuotaRule>newBuilder()
@@ -3716,6 +3979,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateQuotaRuleRequest, Operation> createQuotaRuleTransportSettings =
         HttpJsonCallSettings.<CreateQuotaRuleRequest, Operation>newBuilder()
@@ -3727,6 +3991,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateQuotaRuleRequest, Operation> updateQuotaRuleTransportSettings =
         HttpJsonCallSettings.<UpdateQuotaRuleRequest, Operation>newBuilder()
@@ -3749,6 +4014,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RestoreBackupFilesRequest, Operation> restoreBackupFilesTransportSettings =
         HttpJsonCallSettings.<RestoreBackupFilesRequest, Operation>newBuilder()
@@ -3760,6 +4026,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListHostGroupsRequest, ListHostGroupsResponse>
         listHostGroupsTransportSettings =
@@ -3772,6 +4039,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetHostGroupRequest, HostGroup> getHostGroupTransportSettings =
         HttpJsonCallSettings.<GetHostGroupRequest, HostGroup>newBuilder()
@@ -3783,6 +4051,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateHostGroupRequest, Operation> createHostGroupTransportSettings =
         HttpJsonCallSettings.<CreateHostGroupRequest, Operation>newBuilder()
@@ -3794,6 +4063,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateHostGroupRequest, Operation> updateHostGroupTransportSettings =
         HttpJsonCallSettings.<UpdateHostGroupRequest, Operation>newBuilder()
@@ -3816,7 +4086,56 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<ExecuteOntapPostRequest, ExecuteOntapPostResponse>
+        executeOntapPostTransportSettings =
+            HttpJsonCallSettings.<ExecuteOntapPostRequest, ExecuteOntapPostResponse>newBuilder()
+                .setMethodDescriptor(executeOntapPostMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("ontap_path", String.valueOf(request.getOntapPath()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ExecuteOntapGetRequest, ExecuteOntapGetResponse>
+        executeOntapGetTransportSettings =
+            HttpJsonCallSettings.<ExecuteOntapGetRequest, ExecuteOntapGetResponse>newBuilder()
+                .setMethodDescriptor(executeOntapGetMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("ontap_path", String.valueOf(request.getOntapPath()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>
+        executeOntapDeleteTransportSettings =
+            HttpJsonCallSettings.<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>newBuilder()
+                .setMethodDescriptor(executeOntapDeleteMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("ontap_path", String.valueOf(request.getOntapPath()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
+        executeOntapPatchTransportSettings =
+            HttpJsonCallSettings.<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>newBuilder()
+                .setMethodDescriptor(executeOntapPatchMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("ontap_path", String.valueOf(request.getOntapPath()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -3948,6 +4267,17 @@ public class HttpJsonNetAppStub extends NetAppStub {
         callableFactory.createOperationCallable(
             revertVolumeTransportSettings,
             settings.revertVolumeOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.establishVolumePeeringCallable =
+        callableFactory.createUnaryCallable(
+            establishVolumePeeringTransportSettings,
+            settings.establishVolumePeeringSettings(),
+            clientContext);
+    this.establishVolumePeeringOperationCallable =
+        callableFactory.createOperationCallable(
+            establishVolumePeeringTransportSettings,
+            settings.establishVolumePeeringOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
     this.listSnapshotsCallable =
@@ -4380,6 +4710,22 @@ public class HttpJsonNetAppStub extends NetAppStub {
             settings.deleteHostGroupOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.executeOntapPostCallable =
+        callableFactory.createUnaryCallable(
+            executeOntapPostTransportSettings, settings.executeOntapPostSettings(), clientContext);
+    this.executeOntapGetCallable =
+        callableFactory.createUnaryCallable(
+            executeOntapGetTransportSettings, settings.executeOntapGetSettings(), clientContext);
+    this.executeOntapDeleteCallable =
+        callableFactory.createUnaryCallable(
+            executeOntapDeleteTransportSettings,
+            settings.executeOntapDeleteSettings(),
+            clientContext);
+    this.executeOntapPatchCallable =
+        callableFactory.createUnaryCallable(
+            executeOntapPatchTransportSettings,
+            settings.executeOntapPatchSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -4410,6 +4756,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
     methodDescriptors.add(updateVolumeMethodDescriptor);
     methodDescriptors.add(deleteVolumeMethodDescriptor);
     methodDescriptors.add(revertVolumeMethodDescriptor);
+    methodDescriptors.add(establishVolumePeeringMethodDescriptor);
     methodDescriptors.add(listSnapshotsMethodDescriptor);
     methodDescriptors.add(getSnapshotMethodDescriptor);
     methodDescriptors.add(createSnapshotMethodDescriptor);
@@ -4463,6 +4810,10 @@ public class HttpJsonNetAppStub extends NetAppStub {
     methodDescriptors.add(createHostGroupMethodDescriptor);
     methodDescriptors.add(updateHostGroupMethodDescriptor);
     methodDescriptors.add(deleteHostGroupMethodDescriptor);
+    methodDescriptors.add(executeOntapPostMethodDescriptor);
+    methodDescriptors.add(executeOntapGetMethodDescriptor);
+    methodDescriptors.add(executeOntapDeleteMethodDescriptor);
+    methodDescriptors.add(executeOntapPatchMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -4603,6 +4954,17 @@ public class HttpJsonNetAppStub extends NetAppStub {
   public OperationCallable<RevertVolumeRequest, Volume, OperationMetadata>
       revertVolumeOperationCallable() {
     return revertVolumeOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<EstablishVolumePeeringRequest, Operation> establishVolumePeeringCallable() {
+    return establishVolumePeeringCallable;
+  }
+
+  @Override
+  public OperationCallable<EstablishVolumePeeringRequest, Volume, OperationMetadata>
+      establishVolumePeeringOperationCallable() {
+    return establishVolumePeeringOperationCallable;
   }
 
   @Override
@@ -5130,6 +5492,29 @@ public class HttpJsonNetAppStub extends NetAppStub {
   public OperationCallable<DeleteHostGroupRequest, Empty, OperationMetadata>
       deleteHostGroupOperationCallable() {
     return deleteHostGroupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExecuteOntapPostRequest, ExecuteOntapPostResponse>
+      executeOntapPostCallable() {
+    return executeOntapPostCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExecuteOntapGetRequest, ExecuteOntapGetResponse> executeOntapGetCallable() {
+    return executeOntapGetCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>
+      executeOntapDeleteCallable() {
+    return executeOntapDeleteCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
+      executeOntapPatchCallable() {
+    return executeOntapPatchCallable;
   }
 
   @Override

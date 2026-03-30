@@ -40,6 +40,7 @@ public class SyncListServerTlsPolicies {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setReturnPartialSuccess(true)
               .build();
       for (ServerTlsPolicy element :
           networkSecurityClient.listServerTlsPolicies(request).iterateAll()) {

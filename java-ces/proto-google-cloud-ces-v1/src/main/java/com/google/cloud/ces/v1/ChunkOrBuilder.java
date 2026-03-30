@@ -108,6 +108,43 @@ public interface ChunkOrBuilder
    *
    *
    * <pre>
+   * Optional. Blob data.
+   * </pre>
+   *
+   * <code>.google.cloud.ces.v1.Blob blob = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the blob field is set.
+   */
+  boolean hasBlob();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Blob data.
+   * </pre>
+   *
+   * <code>.google.cloud.ces.v1.Blob blob = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The blob.
+   */
+  com.google.cloud.ces.v1.Blob getBlob();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Blob data.
+   * </pre>
+   *
+   * <code>.google.cloud.ces.v1.Blob blob = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  com.google.cloud.ces.v1.BlobOrBuilder getBlobOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Custom payload data.
    * </pre>
    *

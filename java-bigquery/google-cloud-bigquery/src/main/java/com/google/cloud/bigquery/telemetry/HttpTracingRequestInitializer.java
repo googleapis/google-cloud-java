@@ -39,7 +39,6 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
   public static final AttributeKey<String> HTTP_REQUEST_METHOD =
       AttributeKey.stringKey("http.request.method");
   public static final AttributeKey<String> URL_FULL = AttributeKey.stringKey("url.full");
-  public static final AttributeKey<String> URL_DOMAIN = AttributeKey.stringKey("url.domain");
   public static final AttributeKey<Long> HTTP_RESPONSE_STATUS_CODE =
       AttributeKey.longKey("http.response.status_code");
   public static final AttributeKey<Long> HTTP_REQUEST_RESEND_COUNT =

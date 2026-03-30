@@ -109,11 +109,10 @@ public interface RetrieveToolSchemaResponseOrBuilder
    *
    *
    * <pre>
-   * Required. The schema of the tool input parameters.
+   * The schema of the tool input parameters.
    * </pre>
    *
-   * <code>.google.cloud.ces.v1.Schema input_schema = 3 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.ces.v1.Schema input_schema = 3;</code>
    *
    * @return Whether the inputSchema field is set.
    */
@@ -123,11 +122,10 @@ public interface RetrieveToolSchemaResponseOrBuilder
    *
    *
    * <pre>
-   * Required. The schema of the tool input parameters.
+   * The schema of the tool input parameters.
    * </pre>
    *
-   * <code>.google.cloud.ces.v1.Schema input_schema = 3 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.ces.v1.Schema input_schema = 3;</code>
    *
    * @return The inputSchema.
    */
@@ -137,11 +135,10 @@ public interface RetrieveToolSchemaResponseOrBuilder
    *
    *
    * <pre>
-   * Required. The schema of the tool input parameters.
+   * The schema of the tool input parameters.
    * </pre>
    *
-   * <code>.google.cloud.ces.v1.Schema input_schema = 3 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.ces.v1.Schema input_schema = 3;</code>
    */
   com.google.cloud.ces.v1.SchemaOrBuilder getInputSchemaOrBuilder();
 
@@ -149,11 +146,10 @@ public interface RetrieveToolSchemaResponseOrBuilder
    *
    *
    * <pre>
-   * Required. The schema of the tool output parameters.
+   * The schema of the tool output parameters.
    * </pre>
    *
-   * <code>.google.cloud.ces.v1.Schema output_schema = 4 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.ces.v1.Schema output_schema = 4;</code>
    *
    * @return Whether the outputSchema field is set.
    */
@@ -163,11 +159,10 @@ public interface RetrieveToolSchemaResponseOrBuilder
    *
    *
    * <pre>
-   * Required. The schema of the tool output parameters.
+   * The schema of the tool output parameters.
    * </pre>
    *
-   * <code>.google.cloud.ces.v1.Schema output_schema = 4 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.ces.v1.Schema output_schema = 4;</code>
    *
    * @return The outputSchema.
    */
@@ -177,11 +172,10 @@ public interface RetrieveToolSchemaResponseOrBuilder
    *
    *
    * <pre>
-   * Required. The schema of the tool output parameters.
+   * The schema of the tool output parameters.
    * </pre>
    *
-   * <code>.google.cloud.ces.v1.Schema output_schema = 4 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.ces.v1.Schema output_schema = 4;</code>
    */
   com.google.cloud.ces.v1.SchemaOrBuilder getOutputSchemaOrBuilder();
 

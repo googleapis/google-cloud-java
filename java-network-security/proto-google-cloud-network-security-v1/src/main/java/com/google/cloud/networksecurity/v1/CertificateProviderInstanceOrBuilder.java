@@ -30,9 +30,9 @@ public interface CertificateProviderInstanceOrBuilder
    *
    *
    * <pre>
-   * Required. Plugin instance name, used to locate and load CertificateProvider instance
-   * configuration. Set to "google_cloud_private_spiffe" to use Certificate
-   * Authority Service certificate provider instance.
+   * Required. Plugin instance name, used to locate and load CertificateProvider
+   * instance configuration. Set to "google_cloud_private_spiffe" to use
+   * Certificate Authority Service certificate provider instance.
    * </pre>
    *
    * <code>string plugin_instance = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -45,9 +45,9 @@ public interface CertificateProviderInstanceOrBuilder
    *
    *
    * <pre>
-   * Required. Plugin instance name, used to locate and load CertificateProvider instance
-   * configuration. Set to "google_cloud_private_spiffe" to use Certificate
-   * Authority Service certificate provider instance.
+   * Required. Plugin instance name, used to locate and load CertificateProvider
+   * instance configuration. Set to "google_cloud_private_spiffe" to use
+   * Certificate Authority Service certificate provider instance.
    * </pre>
    *
    * <code>string plugin_instance = 1 [(.google.api.field_behavior) = REQUIRED];</code>

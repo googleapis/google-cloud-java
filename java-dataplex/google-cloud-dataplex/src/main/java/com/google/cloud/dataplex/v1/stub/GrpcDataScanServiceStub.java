@@ -307,6 +307,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateDataScanRequest, Operation> updateDataScanTransportSettings =
         GrpcCallSettings.<UpdateDataScanRequest, Operation>newBuilder()
@@ -327,6 +328,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetDataScanRequest, DataScan> getDataScanTransportSettings =
         GrpcCallSettings.<GetDataScanRequest, DataScan>newBuilder()
@@ -337,6 +339,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDataScansRequest, ListDataScansResponse> listDataScansTransportSettings =
         GrpcCallSettings.<ListDataScansRequest, ListDataScansResponse>newBuilder()
@@ -347,6 +350,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<RunDataScanRequest, RunDataScanResponse> runDataScanTransportSettings =
         GrpcCallSettings.<RunDataScanRequest, RunDataScanResponse>newBuilder()
@@ -357,6 +361,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetDataScanJobRequest, DataScanJob> getDataScanJobTransportSettings =
         GrpcCallSettings.<GetDataScanJobRequest, DataScanJob>newBuilder()
@@ -367,6 +372,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDataScanJobsRequest, ListDataScanJobsResponse>
         listDataScanJobsTransportSettings =
@@ -378,6 +384,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
         generateDataQualityRulesTransportSettings =
@@ -420,6 +427,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -430,6 +438,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -441,6 +450,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createDataScanCallable =

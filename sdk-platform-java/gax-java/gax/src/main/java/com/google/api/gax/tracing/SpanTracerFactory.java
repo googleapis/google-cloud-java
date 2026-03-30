@@ -30,8 +30,10 @@
 
 package com.google.api.gax.tracing;
 
+import com.google.api.client.util.Strings;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.common.annotations.VisibleForTesting;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.trace.Tracer;
@@ -48,12 +50,12 @@ import io.opentelemetry.api.trace.Tracer;
 @InternalApi
 public class SpanTracerFactory implements ApiTracerFactory {
   private final Tracer tracer;
-
+  private final OpenTelemetry openTelemetry;
   private final ApiTracerContext apiTracerContext;
 
   /** Creates a SpanTracerFactory */
   public SpanTracerFactory(OpenTelemetry openTelemetry) {
-    this(openTelemetry.getTracer("gax-java"), ApiTracerContext.empty());
+    this(openTelemetry, null, ApiTracerContext.empty());
   }
 
   /**
@@ -62,13 +64,18 @@ public class SpanTracerFactory implements ApiTracerFactory {
    * internally.
    */
   @VisibleForTesting
-  SpanTracerFactory(Tracer tracer, ApiTracerContext apiTracerContext) {
+  SpanTracerFactory(OpenTelemetry openTelemetry, Tracer tracer, ApiTracerContext apiTracerContext) {
+    this.openTelemetry = openTelemetry;
     this.tracer = tracer;
     this.apiTracerContext = apiTracerContext;
   }
 
   @Override
   public ApiTracer newTracer(ApiTracer parent, SpanName spanName, OperationType operationType) {
+    if (tracer == null) {
+      // Return a no-op tracer if withContext hasn't been called to initialize the tracer properly
+      return new BaseApiTracer();
+    }
     // TODO(diegomarquezp): this is a placeholder for span names and will be adjusted as the
     // feature is developed.
     String attemptSpanName = spanName.getClientName() + "/" + spanName.getMethodName() + "/attempt";
@@ -78,6 +85,10 @@ public class SpanTracerFactory implements ApiTracerFactory {
 
   @Override
   public ApiTracer newTracer(ApiTracer parent, ApiTracerContext apiTracerContext) {
+    if (tracer == null) {
+      // Return a no-op tracer if withContext hasn't been called to initialize the tracer properly
+      return new BaseApiTracer();
+    }
     ApiTracerContext mergedContext = this.apiTracerContext.merge(apiTracerContext);
     return new SpanTracer(tracer, mergedContext);
   }
@@ -87,8 +98,21 @@ public class SpanTracerFactory implements ApiTracerFactory {
     return apiTracerContext;
   }
 
+  /**
+   * Returns a new SpanTracerFactory with the provided context. The Tracer is re-initialized using
+   * the artifact name and version from the library metadata.
+   */
   @Override
   public ApiTracerFactory withContext(ApiTracerContext context) {
-    return new SpanTracerFactory(tracer, apiTracerContext.merge(context));
+    if (context == null) {
+      return new BaseApiTracerFactory();
+    }
+    LibraryMetadata metadata = context.libraryMetadata();
+    if (metadata == null || metadata.isEmpty() || Strings.isNullOrEmpty(metadata.artifactName())) {
+      return new BaseApiTracerFactory();
+    }
+    Tracer newTracer = openTelemetry.getTracer(metadata.artifactName(), metadata.version());
+    ApiTracerContext mergedContext = this.apiTracerContext.merge(context);
+    return new SpanTracerFactory(openTelemetry, newTracer, mergedContext);
   }
 }

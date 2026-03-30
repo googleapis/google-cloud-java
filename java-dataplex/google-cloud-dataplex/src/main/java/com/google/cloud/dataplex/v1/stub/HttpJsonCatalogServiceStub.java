@@ -1995,6 +1995,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateEntryTypeRequest, Operation> updateEntryTypeTransportSettings =
         HttpJsonCallSettings.<UpdateEntryTypeRequest, Operation>newBuilder()
@@ -2017,6 +2018,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListEntryTypesRequest, ListEntryTypesResponse>
         listEntryTypesTransportSettings =
@@ -2029,6 +2031,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetEntryTypeRequest, EntryType> getEntryTypeTransportSettings =
         HttpJsonCallSettings.<GetEntryTypeRequest, EntryType>newBuilder()
@@ -2040,6 +2043,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateAspectTypeRequest, Operation> createAspectTypeTransportSettings =
         HttpJsonCallSettings.<CreateAspectTypeRequest, Operation>newBuilder()
@@ -2051,6 +2055,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateAspectTypeRequest, Operation> updateAspectTypeTransportSettings =
         HttpJsonCallSettings.<UpdateAspectTypeRequest, Operation>newBuilder()
@@ -2074,6 +2079,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListAspectTypesRequest, ListAspectTypesResponse>
         listAspectTypesTransportSettings =
@@ -2086,6 +2092,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetAspectTypeRequest, AspectType> getAspectTypeTransportSettings =
         HttpJsonCallSettings.<GetAspectTypeRequest, AspectType>newBuilder()
@@ -2097,6 +2104,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateEntryGroupRequest, Operation> createEntryGroupTransportSettings =
         HttpJsonCallSettings.<CreateEntryGroupRequest, Operation>newBuilder()
@@ -2108,6 +2116,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateEntryGroupRequest, Operation> updateEntryGroupTransportSettings =
         HttpJsonCallSettings.<UpdateEntryGroupRequest, Operation>newBuilder()
@@ -2131,6 +2140,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListEntryGroupsRequest, ListEntryGroupsResponse>
         listEntryGroupsTransportSettings =
@@ -2143,6 +2153,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetEntryGroupRequest, EntryGroup> getEntryGroupTransportSettings =
         HttpJsonCallSettings.<GetEntryGroupRequest, EntryGroup>newBuilder()
@@ -2154,6 +2165,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateEntryRequest, Entry> createEntryTransportSettings =
         HttpJsonCallSettings.<CreateEntryRequest, Entry>newBuilder()
@@ -2165,6 +2177,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateEntryRequest, Entry> updateEntryTransportSettings =
         HttpJsonCallSettings.<UpdateEntryRequest, Entry>newBuilder()
@@ -2187,6 +2200,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListEntriesRequest, ListEntriesResponse> listEntriesTransportSettings =
         HttpJsonCallSettings.<ListEntriesRequest, ListEntriesResponse>newBuilder()
@@ -2198,6 +2212,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetEntryRequest, Entry> getEntryTransportSettings =
         HttpJsonCallSettings.<GetEntryRequest, Entry>newBuilder()
@@ -2209,6 +2224,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<LookupEntryRequest, Entry> lookupEntryTransportSettings =
         HttpJsonCallSettings.<LookupEntryRequest, Entry>newBuilder()
@@ -2220,6 +2236,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEntry())
             .build();
     HttpJsonCallSettings<SearchEntriesRequest, SearchEntriesResponse>
         searchEntriesTransportSettings =
@@ -2232,6 +2249,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateMetadataJobRequest, Operation> createMetadataJobTransportSettings =
         HttpJsonCallSettings.<CreateMetadataJobRequest, Operation>newBuilder()
@@ -2243,6 +2261,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetMetadataJobRequest, MetadataJob> getMetadataJobTransportSettings =
         HttpJsonCallSettings.<GetMetadataJobRequest, MetadataJob>newBuilder()
@@ -2254,6 +2273,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListMetadataJobsRequest, ListMetadataJobsResponse>
         listMetadataJobsTransportSettings =
@@ -2266,6 +2286,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CancelMetadataJobRequest, Empty> cancelMetadataJobTransportSettings =
         HttpJsonCallSettings.<CancelMetadataJobRequest, Empty>newBuilder()
@@ -2277,6 +2298,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateEntryLinkRequest, EntryLink> createEntryLinkTransportSettings =
         HttpJsonCallSettings.<CreateEntryLinkRequest, EntryLink>newBuilder()
@@ -2288,6 +2310,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateEntryLinkRequest, EntryLink> updateEntryLinkTransportSettings =
         HttpJsonCallSettings.<UpdateEntryLinkRequest, EntryLink>newBuilder()
@@ -2310,6 +2333,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<LookupEntryLinksRequest, LookupEntryLinksResponse>
         lookupEntryLinksTransportSettings =
@@ -2322,6 +2346,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getEntry())
                 .build();
     HttpJsonCallSettings<LookupContextRequest, LookupContextResponse>
         lookupContextTransportSettings =
@@ -2345,6 +2370,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateMetadataFeedRequest, Operation> createMetadataFeedTransportSettings =
         HttpJsonCallSettings.<CreateMetadataFeedRequest, Operation>newBuilder()
@@ -2356,6 +2382,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetMetadataFeedRequest, MetadataFeed> getMetadataFeedTransportSettings =
         HttpJsonCallSettings.<GetMetadataFeedRequest, MetadataFeed>newBuilder()
@@ -2367,6 +2394,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListMetadataFeedsRequest, ListMetadataFeedsResponse>
         listMetadataFeedsTransportSettings =
@@ -2379,6 +2407,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteMetadataFeedRequest, Operation> deleteMetadataFeedTransportSettings =
         HttpJsonCallSettings.<DeleteMetadataFeedRequest, Operation>newBuilder()
@@ -2390,6 +2419,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateMetadataFeedRequest, Operation> updateMetadataFeedTransportSettings =
         HttpJsonCallSettings.<UpdateMetadataFeedRequest, Operation>newBuilder()
@@ -2436,6 +2466,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -2447,6 +2478,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -2459,6 +2491,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createEntryTypeCallable =

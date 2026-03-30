@@ -743,6 +743,7 @@ public class ParticipantsClientTest {
             .setCxParameters(Struct.newBuilder().build())
             .setEnableExtendedStreaming(true)
             .setEnablePartialAutomatedAgentReply(true)
+            .setOutputMultipleUtterances(true)
             .setEnableDebuggingInfo(true)
             .build();
 
@@ -778,6 +779,7 @@ public class ParticipantsClientTest {
             .setCxParameters(Struct.newBuilder().build())
             .setEnableExtendedStreaming(true)
             .setEnablePartialAutomatedAgentReply(true)
+            .setOutputMultipleUtterances(true)
             .setEnableDebuggingInfo(true)
             .build();
 

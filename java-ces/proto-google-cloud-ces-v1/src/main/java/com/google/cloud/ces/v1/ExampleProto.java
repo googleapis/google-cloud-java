@@ -104,18 +104,19 @@ public final class ExampleProto extends com.google.protobuf.GeneratedFile {
           + "\007Message\022\021\n"
           + "\004role\030\001 \001(\tB\003\340A\001\022/\n"
           + "\006chunks\030\002 \003(\0132\032.google.cloud.ces.v1.ChunkB\003\340A\001\0223\n\n"
-          + "event_time\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\001\"\313\003\n"
+          + "event_time\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\001\"\373\003\n"
           + "\005Chunk\022\023\n"
           + "\004text\030\001 \001(\tB\003\340A\001H\000\022\031\n\n"
-          + "transcript\030\t \001(\tB\003\340A\001H\000\022/\n"
+          + "transcript\030\t \001(\tB\003\340A\001H\000\022.\n"
+          + "\004blob\030\007 \001(\0132\031.google.cloud.ces.v1.BlobB\003\340A\001H\000\022/\n"
           + "\007payload\030\013 \001(\0132\027.google.protobuf.StructB\003\340A\001H\000\0220\n"
           + "\005image\030\005 \001(\0132\032.google.cloud.ces.v1.ImageB\003\340A\001H\000\0227\n"
           + "\ttool_call\030\002"
           + " \001(\0132\035.google.cloud.ces.v1.ToolCallB\003\340A\001H\000\022?\n\r"
           + "tool_response\030\003"
           + " \001(\0132!.google.cloud.ces.v1.ToolResponseB\003\340A\001H\000\022A\n"
-          + "\016agent_transfer\030\004"
-          + " \001(\0132\".google.cloud.ces.v1.AgentTransferB\003\340A\001H\000\0224\n"
+          + "\016agent_transfer\030\004 \001"
+          + "(\0132\".google.cloud.ces.v1.AgentTransferB\003\340A\001H\000\0224\n"
           + "\021updated_variables\030\010 \001(\0132\027.google.protobuf.StructH\000\0224\n"
           + "\021default_variables\030\n"
           + " \001(\0132\027.google.protobuf.StructH\000B\006\n"
@@ -148,8 +149,8 @@ public final class ExampleProto extends com.google.protobuf.GeneratedFile {
           + "\014target_agent\030\001 \001(\tB \340A\002\372A\032\n"
           + "\030ces.googleapis.com/Agent\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\003BT\n"
-          + "\027com.google.cloud.ces.v1B\014ExampleProtoP\001Z)cloud.g"
-          + "oogle.com/go/ces/apiv1/cespb;cespbb\006proto3"
+          + "\027com.google.cloud.ces.v1B\014ExampleProtoP\001Z"
+          + ")cloud.google.com/go/ces/apiv1/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -190,6 +191,7 @@ public final class ExampleProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Text",
               "Transcript",
+              "Blob",
               "Payload",
               "Image",
               "ToolCall",

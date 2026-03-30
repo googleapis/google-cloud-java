@@ -26,11 +26,16 @@ import static com.google.cloud.dataform.v1.DataformClient.ListWorkflowInvocation
 import static com.google.cloud.dataform.v1.DataformClient.ListWorkspacesPagedResponse;
 import static com.google.cloud.dataform.v1.DataformClient.QueryCompilationResultActionsPagedResponse;
 import static com.google.cloud.dataform.v1.DataformClient.QueryDirectoryContentsPagedResponse;
+import static com.google.cloud.dataform.v1.DataformClient.QueryFolderContentsPagedResponse;
 import static com.google.cloud.dataform.v1.DataformClient.QueryRepositoryDirectoryContentsPagedResponse;
+import static com.google.cloud.dataform.v1.DataformClient.QueryTeamFolderContentsPagedResponse;
+import static com.google.cloud.dataform.v1.DataformClient.QueryUserRootContentsPagedResponse;
 import static com.google.cloud.dataform.v1.DataformClient.QueryWorkflowInvocationActionsPagedResponse;
 import static com.google.cloud.dataform.v1.DataformClient.SearchFilesPagedResponse;
+import static com.google.cloud.dataform.v1.DataformClient.SearchTeamFoldersPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataform.v1.CancelWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1.CancelWorkflowInvocationResponse;
@@ -43,13 +48,20 @@ import com.google.cloud.dataform.v1.ComputeRepositoryAccessTokenStatusRequest;
 import com.google.cloud.dataform.v1.ComputeRepositoryAccessTokenStatusResponse;
 import com.google.cloud.dataform.v1.Config;
 import com.google.cloud.dataform.v1.CreateCompilationResultRequest;
+import com.google.cloud.dataform.v1.CreateFolderRequest;
 import com.google.cloud.dataform.v1.CreateReleaseConfigRequest;
 import com.google.cloud.dataform.v1.CreateRepositoryRequest;
+import com.google.cloud.dataform.v1.CreateTeamFolderRequest;
 import com.google.cloud.dataform.v1.CreateWorkflowConfigRequest;
 import com.google.cloud.dataform.v1.CreateWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1.CreateWorkspaceRequest;
+import com.google.cloud.dataform.v1.DeleteFolderRequest;
+import com.google.cloud.dataform.v1.DeleteFolderTreeMetadata;
+import com.google.cloud.dataform.v1.DeleteFolderTreeRequest;
 import com.google.cloud.dataform.v1.DeleteReleaseConfigRequest;
 import com.google.cloud.dataform.v1.DeleteRepositoryRequest;
+import com.google.cloud.dataform.v1.DeleteTeamFolderRequest;
+import com.google.cloud.dataform.v1.DeleteTeamFolderTreeRequest;
 import com.google.cloud.dataform.v1.DeleteWorkflowConfigRequest;
 import com.google.cloud.dataform.v1.DeleteWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1.DeleteWorkspaceRequest;
@@ -63,10 +75,13 @@ import com.google.cloud.dataform.v1.FetchRemoteBranchesRequest;
 import com.google.cloud.dataform.v1.FetchRemoteBranchesResponse;
 import com.google.cloud.dataform.v1.FetchRepositoryHistoryRequest;
 import com.google.cloud.dataform.v1.FetchRepositoryHistoryResponse;
+import com.google.cloud.dataform.v1.Folder;
 import com.google.cloud.dataform.v1.GetCompilationResultRequest;
 import com.google.cloud.dataform.v1.GetConfigRequest;
+import com.google.cloud.dataform.v1.GetFolderRequest;
 import com.google.cloud.dataform.v1.GetReleaseConfigRequest;
 import com.google.cloud.dataform.v1.GetRepositoryRequest;
+import com.google.cloud.dataform.v1.GetTeamFolderRequest;
 import com.google.cloud.dataform.v1.GetWorkflowConfigRequest;
 import com.google.cloud.dataform.v1.GetWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1.GetWorkspaceRequest;
@@ -90,6 +105,10 @@ import com.google.cloud.dataform.v1.MoveDirectoryRequest;
 import com.google.cloud.dataform.v1.MoveDirectoryResponse;
 import com.google.cloud.dataform.v1.MoveFileRequest;
 import com.google.cloud.dataform.v1.MoveFileResponse;
+import com.google.cloud.dataform.v1.MoveFolderMetadata;
+import com.google.cloud.dataform.v1.MoveFolderRequest;
+import com.google.cloud.dataform.v1.MoveRepositoryMetadata;
+import com.google.cloud.dataform.v1.MoveRepositoryRequest;
 import com.google.cloud.dataform.v1.PullGitCommitsRequest;
 import com.google.cloud.dataform.v1.PullGitCommitsResponse;
 import com.google.cloud.dataform.v1.PushGitCommitsRequest;
@@ -98,8 +117,14 @@ import com.google.cloud.dataform.v1.QueryCompilationResultActionsRequest;
 import com.google.cloud.dataform.v1.QueryCompilationResultActionsResponse;
 import com.google.cloud.dataform.v1.QueryDirectoryContentsRequest;
 import com.google.cloud.dataform.v1.QueryDirectoryContentsResponse;
+import com.google.cloud.dataform.v1.QueryFolderContentsRequest;
+import com.google.cloud.dataform.v1.QueryFolderContentsResponse;
 import com.google.cloud.dataform.v1.QueryRepositoryDirectoryContentsRequest;
 import com.google.cloud.dataform.v1.QueryRepositoryDirectoryContentsResponse;
+import com.google.cloud.dataform.v1.QueryTeamFolderContentsRequest;
+import com.google.cloud.dataform.v1.QueryTeamFolderContentsResponse;
+import com.google.cloud.dataform.v1.QueryUserRootContentsRequest;
+import com.google.cloud.dataform.v1.QueryUserRootContentsResponse;
 import com.google.cloud.dataform.v1.QueryWorkflowInvocationActionsRequest;
 import com.google.cloud.dataform.v1.QueryWorkflowInvocationActionsResponse;
 import com.google.cloud.dataform.v1.ReadFileRequest;
@@ -116,9 +141,14 @@ import com.google.cloud.dataform.v1.ResetWorkspaceChangesRequest;
 import com.google.cloud.dataform.v1.ResetWorkspaceChangesResponse;
 import com.google.cloud.dataform.v1.SearchFilesRequest;
 import com.google.cloud.dataform.v1.SearchFilesResponse;
+import com.google.cloud.dataform.v1.SearchTeamFoldersRequest;
+import com.google.cloud.dataform.v1.SearchTeamFoldersResponse;
+import com.google.cloud.dataform.v1.TeamFolder;
 import com.google.cloud.dataform.v1.UpdateConfigRequest;
+import com.google.cloud.dataform.v1.UpdateFolderRequest;
 import com.google.cloud.dataform.v1.UpdateReleaseConfigRequest;
 import com.google.cloud.dataform.v1.UpdateRepositoryRequest;
+import com.google.cloud.dataform.v1.UpdateTeamFolderRequest;
 import com.google.cloud.dataform.v1.UpdateWorkflowConfigRequest;
 import com.google.cloud.dataform.v1.WorkflowConfig;
 import com.google.cloud.dataform.v1.WorkflowInvocation;
@@ -134,6 +164,8 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
+import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -145,6 +177,116 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public abstract class DataformStub implements BackgroundResource {
+
+  public OperationsStub getOperationsStub() {
+    return null;
+  }
+
+  public com.google.api.gax.httpjson.longrunning.stub.OperationsStub getHttpJsonOperationsStub() {
+    return null;
+  }
+
+  public UnaryCallable<GetTeamFolderRequest, TeamFolder> getTeamFolderCallable() {
+    throw new UnsupportedOperationException("Not implemented: getTeamFolderCallable()");
+  }
+
+  public UnaryCallable<CreateTeamFolderRequest, TeamFolder> createTeamFolderCallable() {
+    throw new UnsupportedOperationException("Not implemented: createTeamFolderCallable()");
+  }
+
+  public UnaryCallable<UpdateTeamFolderRequest, TeamFolder> updateTeamFolderCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateTeamFolderCallable()");
+  }
+
+  public UnaryCallable<DeleteTeamFolderRequest, Empty> deleteTeamFolderCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteTeamFolderCallable()");
+  }
+
+  public OperationCallable<DeleteTeamFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+      deleteTeamFolderTreeOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteTeamFolderTreeOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteTeamFolderTreeRequest, Operation> deleteTeamFolderTreeCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteTeamFolderTreeCallable()");
+  }
+
+  public UnaryCallable<QueryTeamFolderContentsRequest, QueryTeamFolderContentsPagedResponse>
+      queryTeamFolderContentsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: queryTeamFolderContentsPagedCallable()");
+  }
+
+  public UnaryCallable<QueryTeamFolderContentsRequest, QueryTeamFolderContentsResponse>
+      queryTeamFolderContentsCallable() {
+    throw new UnsupportedOperationException("Not implemented: queryTeamFolderContentsCallable()");
+  }
+
+  public UnaryCallable<SearchTeamFoldersRequest, SearchTeamFoldersPagedResponse>
+      searchTeamFoldersPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: searchTeamFoldersPagedCallable()");
+  }
+
+  public UnaryCallable<SearchTeamFoldersRequest, SearchTeamFoldersResponse>
+      searchTeamFoldersCallable() {
+    throw new UnsupportedOperationException("Not implemented: searchTeamFoldersCallable()");
+  }
+
+  public UnaryCallable<GetFolderRequest, Folder> getFolderCallable() {
+    throw new UnsupportedOperationException("Not implemented: getFolderCallable()");
+  }
+
+  public UnaryCallable<CreateFolderRequest, Folder> createFolderCallable() {
+    throw new UnsupportedOperationException("Not implemented: createFolderCallable()");
+  }
+
+  public UnaryCallable<UpdateFolderRequest, Folder> updateFolderCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateFolderCallable()");
+  }
+
+  public UnaryCallable<DeleteFolderRequest, Empty> deleteFolderCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteFolderCallable()");
+  }
+
+  public OperationCallable<DeleteFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+      deleteFolderTreeOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteFolderTreeOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteFolderTreeRequest, Operation> deleteFolderTreeCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteFolderTreeCallable()");
+  }
+
+  public UnaryCallable<QueryFolderContentsRequest, QueryFolderContentsPagedResponse>
+      queryFolderContentsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: queryFolderContentsPagedCallable()");
+  }
+
+  public UnaryCallable<QueryFolderContentsRequest, QueryFolderContentsResponse>
+      queryFolderContentsCallable() {
+    throw new UnsupportedOperationException("Not implemented: queryFolderContentsCallable()");
+  }
+
+  public UnaryCallable<QueryUserRootContentsRequest, QueryUserRootContentsPagedResponse>
+      queryUserRootContentsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: queryUserRootContentsPagedCallable()");
+  }
+
+  public UnaryCallable<QueryUserRootContentsRequest, QueryUserRootContentsResponse>
+      queryUserRootContentsCallable() {
+    throw new UnsupportedOperationException("Not implemented: queryUserRootContentsCallable()");
+  }
+
+  public OperationCallable<MoveFolderRequest, Empty, MoveFolderMetadata>
+      moveFolderOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: moveFolderOperationCallable()");
+  }
+
+  public UnaryCallable<MoveFolderRequest, Operation> moveFolderCallable() {
+    throw new UnsupportedOperationException("Not implemented: moveFolderCallable()");
+  }
 
   public UnaryCallable<ListRepositoriesRequest, ListRepositoriesPagedResponse>
       listRepositoriesPagedCallable() {
@@ -170,6 +312,15 @@ public abstract class DataformStub implements BackgroundResource {
 
   public UnaryCallable<DeleteRepositoryRequest, Empty> deleteRepositoryCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteRepositoryCallable()");
+  }
+
+  public OperationCallable<MoveRepositoryRequest, Empty, MoveRepositoryMetadata>
+      moveRepositoryOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: moveRepositoryOperationCallable()");
+  }
+
+  public UnaryCallable<MoveRepositoryRequest, Operation> moveRepositoryCallable() {
+    throw new UnsupportedOperationException("Not implemented: moveRepositoryCallable()");
   }
 
   public UnaryCallable<CommitRepositoryChangesRequest, CommitRepositoryChangesResponse>
@@ -462,6 +613,19 @@ public abstract class DataformStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateConfigCallable()");
   }
 
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
+  }
+
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
@@ -473,19 +637,6 @@ public abstract class DataformStub implements BackgroundResource {
 
   public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
     throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
-  }
-
-  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
-    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
-  }
-
-  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
-    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
-  }
-
-  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable() {
-    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

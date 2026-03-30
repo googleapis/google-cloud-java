@@ -26,7 +26,13 @@ package com.google.cloud.networksecurity.v1;
  * <pre>
  * ServerTlsPolicy is a resource that specifies how a server should authenticate
  * incoming requests. This resource itself does not affect configuration unless
- * it is attached to a target https proxy or endpoint config selector resource.
+ * it is attached to a target HTTPS proxy or endpoint config selector resource.
+ *
+ * ServerTlsPolicy in the form accepted by Application Load Balancers can
+ * be attached only to TargetHttpsProxy with an `EXTERNAL`, `EXTERNAL_MANAGED`
+ * or `INTERNAL_MANAGED` load balancing scheme. Traffic Director compatible
+ * ServerTlsPolicies can be attached to EndpointPolicy and TargetHttpsProxy with
+ * Traffic Director `INTERNAL_SELF_MANAGED` load balancing scheme.
  * </pre>
  *
  * Protobuf type {@code google.cloud.networksecurity.v1.ServerTlsPolicy}
@@ -94,6 +100,49 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * When the client presents an invalid certificate or no certificate to the
+     * load balancer, the `client_validation_mode` specifies how the client
+     * connection is handled.
+     *
+     * Required if the policy is to be used with the Application Load
+     * Balancers. For Traffic Director it must be empty.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.ClientValidationMode client_validation_mode = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for clientValidationMode.
+     */
+    int getClientValidationModeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * When the client presents an invalid certificate or no certificate to the
+     * load balancer, the `client_validation_mode` specifies how the client
+     * connection is handled.
+     *
+     * Required if the policy is to be used with the Application Load
+     * Balancers. For Traffic Director it must be empty.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.ClientValidationMode client_validation_mode = 2;
+     * </code>
+     *
+     * @return The clientValidationMode.
+     */
+    com.google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.ClientValidationMode
+        getClientValidationMode();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required if the policy is to be used with Traffic Director. For
+     * Application Load Balancers it must be empty.
      *
      * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
@@ -107,6 +156,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Required if the policy is to be used with Traffic Director. For
+     * Application Load Balancers it must be empty.
      *
      * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
@@ -120,6 +171,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Required if the policy is to be used with Traffic Director. For
+     * Application Load Balancers it must be empty.
      *
      * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
@@ -133,6 +186,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Required if the policy is to be used with Traffic Director. For
+     * Application Load Balancers it must be empty.
      *
      * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
@@ -147,6 +202,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Required if the policy is to be used with Traffic Director. For
+     * Application Load Balancers it must be empty.
      *
      * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
@@ -156,6 +213,48 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      */
     com.google.cloud.networksecurity.v1.ValidationCAOrBuilder getClientValidationCaOrBuilder(
         int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Reference to the TrustConfig from certificatemanager.googleapis.com
+     * namespace.
+     *
+     * If specified, the chain validation will be performed against certificates
+     * configured in the given TrustConfig.
+     *
+     * Allowed only if the policy is to be used with Application Load
+     * Balancers.
+     * </pre>
+     *
+     * <code>string client_validation_trust_config = 4 [(.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The clientValidationTrustConfig.
+     */
+    java.lang.String getClientValidationTrustConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Reference to the TrustConfig from certificatemanager.googleapis.com
+     * namespace.
+     *
+     * If specified, the chain validation will be performed against certificates
+     * configured in the given TrustConfig.
+     *
+     * Allowed only if the policy is to be used with Application Load
+     * Balancers.
+     * </pre>
+     *
+     * <code>string client_validation_trust_config = 4 [(.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for clientValidationTrustConfig.
+     */
+    com.google.protobuf.ByteString getClientValidationTrustConfigBytes();
   }
 
   /**
@@ -189,7 +288,9 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
     }
 
     private MTLSPolicy() {
+      clientValidationMode_ = 0;
       clientValidationCa_ = java.util.Collections.emptyList();
+      clientValidationTrustConfig_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -207,6 +308,257 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
               com.google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.Builder.class);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Mutual TLS certificate validation mode.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.ClientValidationMode}
+     */
+    public enum ClientValidationMode implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Not allowed.
+       * </pre>
+       *
+       * <code>CLIENT_VALIDATION_MODE_UNSPECIFIED = 0;</code>
+       */
+      CLIENT_VALIDATION_MODE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Allow connection even if certificate chain validation
+       * of the client certificate failed or no client certificate was
+       * presented. The proof of possession of the private key is always checked
+       * if client certificate was presented. This mode requires the backend to
+       * implement processing of data extracted from a client certificate to
+       * authenticate the peer, or to reject connections if the client
+       * certificate fingerprint is missing.
+       * </pre>
+       *
+       * <code>ALLOW_INVALID_OR_MISSING_CLIENT_CERT = 1;</code>
+       */
+      ALLOW_INVALID_OR_MISSING_CLIENT_CERT(1),
+      /**
+       *
+       *
+       * <pre>
+       * Require a client certificate and allow connection to the backend only
+       * if validation of the client certificate passed.
+       *
+       * If set, requires a reference to non-empty TrustConfig specified in
+       * `client_validation_trust_config`.
+       * </pre>
+       *
+       * <code>REJECT_INVALID = 2;</code>
+       */
+      REJECT_INVALID(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "ClientValidationMode");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Not allowed.
+       * </pre>
+       *
+       * <code>CLIENT_VALIDATION_MODE_UNSPECIFIED = 0;</code>
+       */
+      public static final int CLIENT_VALIDATION_MODE_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Allow connection even if certificate chain validation
+       * of the client certificate failed or no client certificate was
+       * presented. The proof of possession of the private key is always checked
+       * if client certificate was presented. This mode requires the backend to
+       * implement processing of data extracted from a client certificate to
+       * authenticate the peer, or to reject connections if the client
+       * certificate fingerprint is missing.
+       * </pre>
+       *
+       * <code>ALLOW_INVALID_OR_MISSING_CLIENT_CERT = 1;</code>
+       */
+      public static final int ALLOW_INVALID_OR_MISSING_CLIENT_CERT_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Require a client certificate and allow connection to the backend only
+       * if validation of the client certificate passed.
+       *
+       * If set, requires a reference to non-empty TrustConfig specified in
+       * `client_validation_trust_config`.
+       * </pre>
+       *
+       * <code>REJECT_INVALID = 2;</code>
+       */
+      public static final int REJECT_INVALID_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ClientValidationMode valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static ClientValidationMode forNumber(int value) {
+        switch (value) {
+          case 0:
+            return CLIENT_VALIDATION_MODE_UNSPECIFIED;
+          case 1:
+            return ALLOW_INVALID_OR_MISSING_CLIENT_CERT;
+          case 2:
+            return REJECT_INVALID;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<ClientValidationMode>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<ClientValidationMode>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<ClientValidationMode>() {
+                public ClientValidationMode findValueByNumber(int number) {
+                  return ClientValidationMode.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final ClientValidationMode[] VALUES = values();
+
+      public static ClientValidationMode valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private ClientValidationMode(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.ClientValidationMode)
+    }
+
+    public static final int CLIENT_VALIDATION_MODE_FIELD_NUMBER = 2;
+    private int clientValidationMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * When the client presents an invalid certificate or no certificate to the
+     * load balancer, the `client_validation_mode` specifies how the client
+     * connection is handled.
+     *
+     * Required if the policy is to be used with the Application Load
+     * Balancers. For Traffic Director it must be empty.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.ClientValidationMode client_validation_mode = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for clientValidationMode.
+     */
+    @java.lang.Override
+    public int getClientValidationModeValue() {
+      return clientValidationMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * When the client presents an invalid certificate or no certificate to the
+     * load balancer, the `client_validation_mode` specifies how the client
+     * connection is handled.
+     *
+     * Required if the policy is to be used with the Application Load
+     * Balancers. For Traffic Director it must be empty.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.ClientValidationMode client_validation_mode = 2;
+     * </code>
+     *
+     * @return The clientValidationMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.ClientValidationMode
+        getClientValidationMode() {
+      com.google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.ClientValidationMode result =
+          com.google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.ClientValidationMode
+              .forNumber(clientValidationMode_);
+      return result == null
+          ? com.google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.ClientValidationMode
+              .UNRECOGNIZED
+          : result;
+    }
+
     public static final int CLIENT_VALIDATION_CA_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -216,6 +568,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Required if the policy is to be used with Traffic Director. For
+     * Application Load Balancers it must be empty.
      *
      * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
@@ -233,6 +587,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Required if the policy is to be used with Traffic Director. For
+     * Application Load Balancers it must be empty.
      *
      * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
@@ -250,6 +606,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Required if the policy is to be used with Traffic Director. For
+     * Application Load Balancers it must be empty.
      *
      * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
@@ -266,6 +624,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Required if the policy is to be used with Traffic Director. For
+     * Application Load Balancers it must be empty.
      *
      * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
@@ -282,6 +642,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Required if the policy is to be used with Traffic Director. For
+     * Application Load Balancers it must be empty.
      *
      * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
@@ -293,6 +655,75 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.networksecurity.v1.ValidationCAOrBuilder getClientValidationCaOrBuilder(
         int index) {
       return clientValidationCa_.get(index);
+    }
+
+    public static final int CLIENT_VALIDATION_TRUST_CONFIG_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object clientValidationTrustConfig_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Reference to the TrustConfig from certificatemanager.googleapis.com
+     * namespace.
+     *
+     * If specified, the chain validation will be performed against certificates
+     * configured in the given TrustConfig.
+     *
+     * Allowed only if the policy is to be used with Application Load
+     * Balancers.
+     * </pre>
+     *
+     * <code>string client_validation_trust_config = 4 [(.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The clientValidationTrustConfig.
+     */
+    @java.lang.Override
+    public java.lang.String getClientValidationTrustConfig() {
+      java.lang.Object ref = clientValidationTrustConfig_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clientValidationTrustConfig_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reference to the TrustConfig from certificatemanager.googleapis.com
+     * namespace.
+     *
+     * If specified, the chain validation will be performed against certificates
+     * configured in the given TrustConfig.
+     *
+     * Allowed only if the policy is to be used with Application Load
+     * Balancers.
+     * </pre>
+     *
+     * <code>string client_validation_trust_config = 4 [(.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for clientValidationTrustConfig.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getClientValidationTrustConfigBytes() {
+      java.lang.Object ref = clientValidationTrustConfig_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        clientValidationTrustConfig_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -312,6 +743,15 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
       for (int i = 0; i < clientValidationCa_.size(); i++) {
         output.writeMessage(1, clientValidationCa_.get(i));
       }
+      if (clientValidationMode_
+          != com.google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.ClientValidationMode
+              .CLIENT_VALIDATION_MODE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(2, clientValidationMode_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(clientValidationTrustConfig_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, clientValidationTrustConfig_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -324,6 +764,16 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
       for (int i = 0; i < clientValidationCa_.size(); i++) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(1, clientValidationCa_.get(i));
+      }
+      if (clientValidationMode_
+          != com.google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.ClientValidationMode
+              .CLIENT_VALIDATION_MODE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, clientValidationMode_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(clientValidationTrustConfig_)) {
+        size +=
+            com.google.protobuf.GeneratedMessage.computeStringSize(4, clientValidationTrustConfig_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -341,7 +791,10 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
       com.google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy other =
           (com.google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy) obj;
 
+      if (clientValidationMode_ != other.clientValidationMode_) return false;
       if (!getClientValidationCaList().equals(other.getClientValidationCaList())) return false;
+      if (!getClientValidationTrustConfig().equals(other.getClientValidationTrustConfig()))
+        return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -353,10 +806,14 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CLIENT_VALIDATION_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + clientValidationMode_;
       if (getClientValidationCaCount() > 0) {
         hash = (37 * hash) + CLIENT_VALIDATION_CA_FIELD_NUMBER;
         hash = (53 * hash) + getClientValidationCaList().hashCode();
       }
+      hash = (37 * hash) + CLIENT_VALIDATION_TRUST_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getClientValidationTrustConfig().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -498,13 +955,15 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
+        clientValidationMode_ = 0;
         if (clientValidationCaBuilder_ == null) {
           clientValidationCa_ = java.util.Collections.emptyList();
         } else {
           clientValidationCa_ = null;
           clientValidationCaBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
+        clientValidationTrustConfig_ = "";
         return this;
       }
 
@@ -544,9 +1003,9 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
       private void buildPartialRepeatedFields(
           com.google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy result) {
         if (clientValidationCaBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             clientValidationCa_ = java.util.Collections.unmodifiableList(clientValidationCa_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.clientValidationCa_ = clientValidationCa_;
         } else {
@@ -557,6 +1016,12 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
       private void buildPartial0(
           com.google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.clientValidationMode_ = clientValidationMode_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.clientValidationTrustConfig_ = clientValidationTrustConfig_;
+        }
       }
 
       @java.lang.Override
@@ -574,11 +1039,14 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
         if (other
             == com.google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.getDefaultInstance())
           return this;
+        if (other.clientValidationMode_ != 0) {
+          setClientValidationModeValue(other.getClientValidationModeValue());
+        }
         if (clientValidationCaBuilder_ == null) {
           if (!other.clientValidationCa_.isEmpty()) {
             if (clientValidationCa_.isEmpty()) {
               clientValidationCa_ = other.clientValidationCa_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureClientValidationCaIsMutable();
               clientValidationCa_.addAll(other.clientValidationCa_);
@@ -591,7 +1059,7 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
               clientValidationCaBuilder_.dispose();
               clientValidationCaBuilder_ = null;
               clientValidationCa_ = other.clientValidationCa_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               clientValidationCaBuilder_ =
                   com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                       ? internalGetClientValidationCaFieldBuilder()
@@ -600,6 +1068,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
               clientValidationCaBuilder_.addAllMessages(other.clientValidationCa_);
             }
           }
+        }
+        if (!other.getClientValidationTrustConfig().isEmpty()) {
+          clientValidationTrustConfig_ = other.clientValidationTrustConfig_;
+          bitField0_ |= 0x00000004;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -641,6 +1114,18 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
                   }
                   break;
                 } // case 10
+              case 16:
+                {
+                  clientValidationMode_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 16
+              case 34:
+                {
+                  clientValidationTrustConfig_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -660,15 +1145,152 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
 
       private int bitField0_;
 
+      private int clientValidationMode_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * When the client presents an invalid certificate or no certificate to the
+       * load balancer, the `client_validation_mode` specifies how the client
+       * connection is handled.
+       *
+       * Required if the policy is to be used with the Application Load
+       * Balancers. For Traffic Director it must be empty.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.ClientValidationMode client_validation_mode = 2;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for clientValidationMode.
+       */
+      @java.lang.Override
+      public int getClientValidationModeValue() {
+        return clientValidationMode_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * When the client presents an invalid certificate or no certificate to the
+       * load balancer, the `client_validation_mode` specifies how the client
+       * connection is handled.
+       *
+       * Required if the policy is to be used with the Application Load
+       * Balancers. For Traffic Director it must be empty.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.ClientValidationMode client_validation_mode = 2;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for clientValidationMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClientValidationModeValue(int value) {
+        clientValidationMode_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * When the client presents an invalid certificate or no certificate to the
+       * load balancer, the `client_validation_mode` specifies how the client
+       * connection is handled.
+       *
+       * Required if the policy is to be used with the Application Load
+       * Balancers. For Traffic Director it must be empty.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.ClientValidationMode client_validation_mode = 2;
+       * </code>
+       *
+       * @return The clientValidationMode.
+       */
+      @java.lang.Override
+      public com.google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.ClientValidationMode
+          getClientValidationMode() {
+        com.google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.ClientValidationMode result =
+            com.google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.ClientValidationMode
+                .forNumber(clientValidationMode_);
+        return result == null
+            ? com.google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.ClientValidationMode
+                .UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * When the client presents an invalid certificate or no certificate to the
+       * load balancer, the `client_validation_mode` specifies how the client
+       * connection is handled.
+       *
+       * Required if the policy is to be used with the Application Load
+       * Balancers. For Traffic Director it must be empty.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.ClientValidationMode client_validation_mode = 2;
+       * </code>
+       *
+       * @param value The clientValidationMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClientValidationMode(
+          com.google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.ClientValidationMode
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        clientValidationMode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * When the client presents an invalid certificate or no certificate to the
+       * load balancer, the `client_validation_mode` specifies how the client
+       * connection is handled.
+       *
+       * Required if the policy is to be used with the Application Load
+       * Balancers. For Traffic Director it must be empty.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.ClientValidationMode client_validation_mode = 2;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearClientValidationMode() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        clientValidationMode_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.util.List<com.google.cloud.networksecurity.v1.ValidationCA> clientValidationCa_ =
           java.util.Collections.emptyList();
 
       private void ensureClientValidationCaIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           clientValidationCa_ =
               new java.util.ArrayList<com.google.cloud.networksecurity.v1.ValidationCA>(
                   clientValidationCa_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
 
@@ -682,6 +1304,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
+       * Required if the policy is to be used with Traffic Director. For
+       * Application Load Balancers it must be empty.
        *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
@@ -703,6 +1327,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
+       * Required if the policy is to be used with Traffic Director. For
+       * Application Load Balancers it must be empty.
        *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
@@ -723,6 +1349,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
+       * Required if the policy is to be used with Traffic Director. For
+       * Application Load Balancers it must be empty.
        *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
@@ -743,6 +1371,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
+       * Required if the policy is to be used with Traffic Director. For
+       * Application Load Balancers it must be empty.
        *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
@@ -770,6 +1400,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
+       * Required if the policy is to be used with Traffic Director. For
+       * Application Load Balancers it must be empty.
        *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
@@ -794,6 +1426,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
+       * Required if the policy is to be used with Traffic Director. For
+       * Application Load Balancers it must be empty.
        *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
@@ -820,6 +1454,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
+       * Required if the policy is to be used with Traffic Director. For
+       * Application Load Balancers it must be empty.
        *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
@@ -847,6 +1483,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
+       * Required if the policy is to be used with Traffic Director. For
+       * Application Load Balancers it must be empty.
        *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
@@ -871,6 +1509,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
+       * Required if the policy is to be used with Traffic Director. For
+       * Application Load Balancers it must be empty.
        *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
@@ -895,6 +1535,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
+       * Required if the policy is to be used with Traffic Director. For
+       * Application Load Balancers it must be empty.
        *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
@@ -919,6 +1561,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
+       * Required if the policy is to be used with Traffic Director. For
+       * Application Load Balancers it must be empty.
        *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
@@ -930,7 +1574,7 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
       public Builder clearClientValidationCa() {
         if (clientValidationCaBuilder_ == null) {
           clientValidationCa_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           clientValidationCaBuilder_.clear();
@@ -942,6 +1586,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
+       * Required if the policy is to be used with Traffic Director. For
+       * Application Load Balancers it must be empty.
        *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
@@ -965,6 +1611,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
+       * Required if the policy is to be used with Traffic Director. For
+       * Application Load Balancers it must be empty.
        *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
@@ -982,6 +1630,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
+       * Required if the policy is to be used with Traffic Director. For
+       * Application Load Balancers it must be empty.
        *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
@@ -1003,6 +1653,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
+       * Required if the policy is to be used with Traffic Director. For
+       * Application Load Balancers it must be empty.
        *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
@@ -1024,6 +1676,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
+       * Required if the policy is to be used with Traffic Director. For
+       * Application Load Balancers it must be empty.
        *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
@@ -1042,6 +1696,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
+       * Required if the policy is to be used with Traffic Director. For
+       * Application Load Balancers it must be empty.
        *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
@@ -1061,6 +1717,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
+       * Required if the policy is to be used with Traffic Director. For
+       * Application Load Balancers it must be empty.
        *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
@@ -1086,12 +1744,163 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
                   com.google.cloud.networksecurity.v1.ValidationCA.Builder,
                   com.google.cloud.networksecurity.v1.ValidationCAOrBuilder>(
                   clientValidationCa_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           clientValidationCa_ = null;
         }
         return clientValidationCaBuilder_;
+      }
+
+      private java.lang.Object clientValidationTrustConfig_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Reference to the TrustConfig from certificatemanager.googleapis.com
+       * namespace.
+       *
+       * If specified, the chain validation will be performed against certificates
+       * configured in the given TrustConfig.
+       *
+       * Allowed only if the policy is to be used with Application Load
+       * Balancers.
+       * </pre>
+       *
+       * <code>string client_validation_trust_config = 4 [(.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The clientValidationTrustConfig.
+       */
+      public java.lang.String getClientValidationTrustConfig() {
+        java.lang.Object ref = clientValidationTrustConfig_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          clientValidationTrustConfig_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Reference to the TrustConfig from certificatemanager.googleapis.com
+       * namespace.
+       *
+       * If specified, the chain validation will be performed against certificates
+       * configured in the given TrustConfig.
+       *
+       * Allowed only if the policy is to be used with Application Load
+       * Balancers.
+       * </pre>
+       *
+       * <code>string client_validation_trust_config = 4 [(.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for clientValidationTrustConfig.
+       */
+      public com.google.protobuf.ByteString getClientValidationTrustConfigBytes() {
+        java.lang.Object ref = clientValidationTrustConfig_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          clientValidationTrustConfig_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Reference to the TrustConfig from certificatemanager.googleapis.com
+       * namespace.
+       *
+       * If specified, the chain validation will be performed against certificates
+       * configured in the given TrustConfig.
+       *
+       * Allowed only if the policy is to be used with Application Load
+       * Balancers.
+       * </pre>
+       *
+       * <code>string client_validation_trust_config = 4 [(.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The clientValidationTrustConfig to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClientValidationTrustConfig(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        clientValidationTrustConfig_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Reference to the TrustConfig from certificatemanager.googleapis.com
+       * namespace.
+       *
+       * If specified, the chain validation will be performed against certificates
+       * configured in the given TrustConfig.
+       *
+       * Allowed only if the policy is to be used with Application Load
+       * Balancers.
+       * </pre>
+       *
+       * <code>string client_validation_trust_config = 4 [(.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearClientValidationTrustConfig() {
+        clientValidationTrustConfig_ = getDefaultInstance().getClientValidationTrustConfig();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Reference to the TrustConfig from certificatemanager.googleapis.com
+       * namespace.
+       *
+       * If specified, the chain validation will be performed against certificates
+       * configured in the given TrustConfig.
+       *
+       * Allowed only if the policy is to be used with Application Load
+       * Balancers.
+       * </pre>
+       *
+       * <code>string client_validation_trust_config = 4 [(.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for clientValidationTrustConfig to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClientValidationTrustConfigBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        clientValidationTrustConfig_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy)
@@ -1476,6 +2285,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
+   * This field applies only for Traffic Director policies. It is must be set to
+   * false for Application Load Balancer policies.
    *
    * Determines if server allows plaintext connections. If set to true, server
    * allows plain text connections. By default, it is set to false. This setting
@@ -1504,6 +2315,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
+   * Optional if policy is to be used with Traffic Director. For Application
+   * Load Balancers must be empty.
    *
    * Defines a mechanism to provision server identity (public and private keys).
    * Cannot be combined with `allow_open` as a permissive mode that allows both
@@ -1523,6 +2336,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
+   * Optional if policy is to be used with Traffic Director. For Application
+   * Load Balancers must be empty.
    *
    * Defines a mechanism to provision server identity (public and private keys).
    * Cannot be combined with `allow_open` as a permissive mode that allows both
@@ -1544,6 +2359,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
+   * Optional if policy is to be used with Traffic Director. For Application
+   * Load Balancers must be empty.
    *
    * Defines a mechanism to provision server identity (public and private keys).
    * Cannot be combined with `allow_open` as a permissive mode that allows both
@@ -1567,6 +2384,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
+   * This field is required if the policy is used with Application Load
+   * Balancers. This field can be empty for Traffic Director.
    *
    * Defines a mechanism to provision peer validation certificates for peer to
    * peer authentication (Mutual TLS - mTLS). If not specified, client
@@ -1588,6 +2407,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
+   * This field is required if the policy is used with Application Load
+   * Balancers. This field can be empty for Traffic Director.
    *
    * Defines a mechanism to provision peer validation certificates for peer to
    * peer authentication (Mutual TLS - mTLS). If not specified, client
@@ -1611,6 +2432,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
+   * This field is required if the policy is used with Application Load
+   * Balancers. This field can be empty for Traffic Director.
    *
    * Defines a mechanism to provision peer validation certificates for peer to
    * peer authentication (Mutual TLS - mTLS). If not specified, client
@@ -1886,7 +2709,13 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
    * <pre>
    * ServerTlsPolicy is a resource that specifies how a server should authenticate
    * incoming requests. This resource itself does not affect configuration unless
-   * it is attached to a target https proxy or endpoint config selector resource.
+   * it is attached to a target HTTPS proxy or endpoint config selector resource.
+   *
+   * ServerTlsPolicy in the form accepted by Application Load Balancers can
+   * be attached only to TargetHttpsProxy with an `EXTERNAL`, `EXTERNAL_MANAGED`
+   * or `INTERNAL_MANAGED` load balancing scheme. Traffic Director compatible
+   * ServerTlsPolicies can be attached to EndpointPolicy and TargetHttpsProxy with
+   * Traffic Director `INTERNAL_SELF_MANAGED` load balancing scheme.
    * </pre>
    *
    * Protobuf type {@code google.cloud.networksecurity.v1.ServerTlsPolicy}
@@ -3023,6 +3852,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * This field applies only for Traffic Director policies. It is must be set to
+     * false for Application Load Balancer policies.
      *
      * Determines if server allows plaintext connections. If set to true, server
      * allows plain text connections. By default, it is set to false. This setting
@@ -3048,6 +3879,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * This field applies only for Traffic Director policies. It is must be set to
+     * false for Application Load Balancer policies.
      *
      * Determines if server allows plaintext connections. If set to true, server
      * allows plain text connections. By default, it is set to false. This setting
@@ -3077,6 +3910,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * This field applies only for Traffic Director policies. It is must be set to
+     * false for Application Load Balancer policies.
      *
      * Determines if server allows plaintext connections. If set to true, server
      * allows plain text connections. By default, it is set to false. This setting
@@ -3111,6 +3946,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Optional if policy is to be used with Traffic Director. For Application
+     * Load Balancers must be empty.
      *
      * Defines a mechanism to provision server identity (public and private keys).
      * Cannot be combined with `allow_open` as a permissive mode that allows both
@@ -3129,6 +3966,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Optional if policy is to be used with Traffic Director. For Application
+     * Load Balancers must be empty.
      *
      * Defines a mechanism to provision server identity (public and private keys).
      * Cannot be combined with `allow_open` as a permissive mode that allows both
@@ -3153,6 +3992,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Optional if policy is to be used with Traffic Director. For Application
+     * Load Balancers must be empty.
      *
      * Defines a mechanism to provision server identity (public and private keys).
      * Cannot be combined with `allow_open` as a permissive mode that allows both
@@ -3180,6 +4021,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Optional if policy is to be used with Traffic Director. For Application
+     * Load Balancers must be empty.
      *
      * Defines a mechanism to provision server identity (public and private keys).
      * Cannot be combined with `allow_open` as a permissive mode that allows both
@@ -3204,6 +4047,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Optional if policy is to be used with Traffic Director. For Application
+     * Load Balancers must be empty.
      *
      * Defines a mechanism to provision server identity (public and private keys).
      * Cannot be combined with `allow_open` as a permissive mode that allows both
@@ -3237,6 +4082,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Optional if policy is to be used with Traffic Director. For Application
+     * Load Balancers must be empty.
      *
      * Defines a mechanism to provision server identity (public and private keys).
      * Cannot be combined with `allow_open` as a permissive mode that allows both
@@ -3260,6 +4107,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Optional if policy is to be used with Traffic Director. For Application
+     * Load Balancers must be empty.
      *
      * Defines a mechanism to provision server identity (public and private keys).
      * Cannot be combined with `allow_open` as a permissive mode that allows both
@@ -3279,6 +4128,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Optional if policy is to be used with Traffic Director. For Application
+     * Load Balancers must be empty.
      *
      * Defines a mechanism to provision server identity (public and private keys).
      * Cannot be combined with `allow_open` as a permissive mode that allows both
@@ -3302,6 +4153,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Optional if policy is to be used with Traffic Director. For Application
+     * Load Balancers must be empty.
      *
      * Defines a mechanism to provision server identity (public and private keys).
      * Cannot be combined with `allow_open` as a permissive mode that allows both
@@ -3338,6 +4191,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * This field is required if the policy is used with Application Load
+     * Balancers. This field can be empty for Traffic Director.
      *
      * Defines a mechanism to provision peer validation certificates for peer to
      * peer authentication (Mutual TLS - mTLS). If not specified, client
@@ -3358,6 +4213,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * This field is required if the policy is used with Application Load
+     * Balancers. This field can be empty for Traffic Director.
      *
      * Defines a mechanism to provision peer validation certificates for peer to
      * peer authentication (Mutual TLS - mTLS). If not specified, client
@@ -3384,6 +4241,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * This field is required if the policy is used with Application Load
+     * Balancers. This field can be empty for Traffic Director.
      *
      * Defines a mechanism to provision peer validation certificates for peer to
      * peer authentication (Mutual TLS - mTLS). If not specified, client
@@ -3413,6 +4272,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * This field is required if the policy is used with Application Load
+     * Balancers. This field can be empty for Traffic Director.
      *
      * Defines a mechanism to provision peer validation certificates for peer to
      * peer authentication (Mutual TLS - mTLS). If not specified, client
@@ -3439,6 +4300,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * This field is required if the policy is used with Application Load
+     * Balancers. This field can be empty for Traffic Director.
      *
      * Defines a mechanism to provision peer validation certificates for peer to
      * peer authentication (Mutual TLS - mTLS). If not specified, client
@@ -3475,6 +4338,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * This field is required if the policy is used with Application Load
+     * Balancers. This field can be empty for Traffic Director.
      *
      * Defines a mechanism to provision peer validation certificates for peer to
      * peer authentication (Mutual TLS - mTLS). If not specified, client
@@ -3500,6 +4365,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * This field is required if the policy is used with Application Load
+     * Balancers. This field can be empty for Traffic Director.
      *
      * Defines a mechanism to provision peer validation certificates for peer to
      * peer authentication (Mutual TLS - mTLS). If not specified, client
@@ -3521,6 +4388,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * This field is required if the policy is used with Application Load
+     * Balancers. This field can be empty for Traffic Director.
      *
      * Defines a mechanism to provision peer validation certificates for peer to
      * peer authentication (Mutual TLS - mTLS). If not specified, client
@@ -3546,6 +4415,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * This field is required if the policy is used with Application Load
+     * Balancers. This field can be empty for Traffic Director.
      *
      * Defines a mechanism to provision peer validation certificates for peer to
      * peer authentication (Mutual TLS - mTLS). If not specified, client

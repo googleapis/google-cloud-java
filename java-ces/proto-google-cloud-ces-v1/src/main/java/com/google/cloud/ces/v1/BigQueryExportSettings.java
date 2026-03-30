@@ -99,7 +99,7 @@ public final class BigQueryExportSettings extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. The project ID of the BigQuery dataset to export the data to.
+   * Optional. The **project ID** of the BigQuery dataset to export the data to.
    *
    * Note: If the BigQuery dataset is in a different project from the app,
    * you should grant `roles/bigquery.admin` role to the CES service agent
@@ -127,7 +127,7 @@ public final class BigQueryExportSettings extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. The project ID of the BigQuery dataset to export the data to.
+   * Optional. The **project ID** of the BigQuery dataset to export the data to.
    *
    * Note: If the BigQuery dataset is in a different project from the app,
    * you should grant `roles/bigquery.admin` role to the CES service agent
@@ -160,7 +160,7 @@ public final class BigQueryExportSettings extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. The BigQuery dataset to export the data to.
+   * Optional. The BigQuery **dataset ID** to export the data to.
    * </pre>
    *
    * <code>string dataset = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -184,7 +184,7 @@ public final class BigQueryExportSettings extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. The BigQuery dataset to export the data to.
+   * Optional. The BigQuery **dataset ID** to export the data to.
    * </pre>
    *
    * <code>string dataset = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -621,7 +621,7 @@ public final class BigQueryExportSettings extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The project ID of the BigQuery dataset to export the data to.
+     * Optional. The **project ID** of the BigQuery dataset to export the data to.
      *
      * Note: If the BigQuery dataset is in a different project from the app,
      * you should grant `roles/bigquery.admin` role to the CES service agent
@@ -648,7 +648,7 @@ public final class BigQueryExportSettings extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The project ID of the BigQuery dataset to export the data to.
+     * Optional. The **project ID** of the BigQuery dataset to export the data to.
      *
      * Note: If the BigQuery dataset is in a different project from the app,
      * you should grant `roles/bigquery.admin` role to the CES service agent
@@ -675,7 +675,7 @@ public final class BigQueryExportSettings extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The project ID of the BigQuery dataset to export the data to.
+     * Optional. The **project ID** of the BigQuery dataset to export the data to.
      *
      * Note: If the BigQuery dataset is in a different project from the app,
      * you should grant `roles/bigquery.admin` role to the CES service agent
@@ -701,7 +701,7 @@ public final class BigQueryExportSettings extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The project ID of the BigQuery dataset to export the data to.
+     * Optional. The **project ID** of the BigQuery dataset to export the data to.
      *
      * Note: If the BigQuery dataset is in a different project from the app,
      * you should grant `roles/bigquery.admin` role to the CES service agent
@@ -723,7 +723,7 @@ public final class BigQueryExportSettings extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The project ID of the BigQuery dataset to export the data to.
+     * Optional. The **project ID** of the BigQuery dataset to export the data to.
      *
      * Note: If the BigQuery dataset is in a different project from the app,
      * you should grant `roles/bigquery.admin` role to the CES service agent
@@ -752,7 +752,7 @@ public final class BigQueryExportSettings extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The BigQuery dataset to export the data to.
+     * Optional. The BigQuery **dataset ID** to export the data to.
      * </pre>
      *
      * <code>string dataset = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -775,7 +775,7 @@ public final class BigQueryExportSettings extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The BigQuery dataset to export the data to.
+     * Optional. The BigQuery **dataset ID** to export the data to.
      * </pre>
      *
      * <code>string dataset = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -798,7 +798,7 @@ public final class BigQueryExportSettings extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The BigQuery dataset to export the data to.
+     * Optional. The BigQuery **dataset ID** to export the data to.
      * </pre>
      *
      * <code>string dataset = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -820,7 +820,7 @@ public final class BigQueryExportSettings extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The BigQuery dataset to export the data to.
+     * Optional. The BigQuery **dataset ID** to export the data to.
      * </pre>
      *
      * <code>string dataset = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -838,7 +838,7 @@ public final class BigQueryExportSettings extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The BigQuery dataset to export the data to.
+     * Optional. The BigQuery **dataset ID** to export the data to.
      * </pre>
      *
      * <code>string dataset = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

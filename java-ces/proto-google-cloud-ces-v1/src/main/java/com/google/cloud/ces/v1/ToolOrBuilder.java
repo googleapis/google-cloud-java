@@ -417,6 +417,46 @@ public interface ToolOrBuilder
    *
    *
    * <pre>
+   * Optional. The agent tool.
+   * </pre>
+   *
+   * <code>.google.cloud.ces.v1.AgentTool agent_tool = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the agentTool field is set.
+   */
+  boolean hasAgentTool();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The agent tool.
+   * </pre>
+   *
+   * <code>.google.cloud.ces.v1.AgentTool agent_tool = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The agentTool.
+   */
+  com.google.cloud.ces.v1.AgentTool getAgentTool();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The agent tool.
+   * </pre>
+   *
+   * <code>.google.cloud.ces.v1.AgentTool agent_tool = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1.AgentToolOrBuilder getAgentToolOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The widget tool.
    * </pre>
    *
@@ -460,14 +500,15 @@ public interface ToolOrBuilder
    *
    *
    * <pre>
-   * Identifier. The unique identifier of the tool.
-   * Format:
-   * - `projects/{project}/locations/{location}/apps/{app}/tools/{tool}` for
-   * ## standalone tools.
+   * Identifier. The resource name of the tool. Format:
    *
-   * `projects/{project}/locations/{location}/apps/{app}/toolsets/{toolset}/tools/{tool}`
-   * for tools retrieved from a toolset. These tools are dynamic and
-   * output-only, they cannot be referenced directly where a tool is expected.
+   * * `projects/{project}/locations/{location}/apps/{app}/tools/{tool}`
+   * for standalone tools.
+   * * `projects/{project}/locations/{location}/apps/{app}/toolsets/{toolset}/tools/{tool}`
+   * for tools retrieved from a toolset.
+   *
+   * These tools are dynamic and output-only; they cannot be referenced directly
+   * where a tool is expected.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -480,14 +521,15 @@ public interface ToolOrBuilder
    *
    *
    * <pre>
-   * Identifier. The unique identifier of the tool.
-   * Format:
-   * - `projects/{project}/locations/{location}/apps/{app}/tools/{tool}` for
-   * ## standalone tools.
+   * Identifier. The resource name of the tool. Format:
    *
-   * `projects/{project}/locations/{location}/apps/{app}/toolsets/{toolset}/tools/{tool}`
-   * for tools retrieved from a toolset. These tools are dynamic and
-   * output-only, they cannot be referenced directly where a tool is expected.
+   * * `projects/{project}/locations/{location}/apps/{app}/tools/{tool}`
+   * for standalone tools.
+   * * `projects/{project}/locations/{location}/apps/{app}/toolsets/{toolset}/tools/{tool}`
+   * for tools retrieved from a toolset.
+   *
+   * These tools are dynamic and output-only; they cannot be referenced directly
+   * where a tool is expected.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
