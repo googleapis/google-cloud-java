@@ -174,15 +174,19 @@ public class PipelineUtils {
   static AliasedAggregate toPipelineAggregatorTarget(AggregateField f) {
     String operator = f.getOperator();
     String fieldPath = f.getFieldPath();
+    String alias = f.getAlias();
+    if (alias.contains(".")) {
+      alias = "`" + alias + "`";
+    }
 
     switch (operator) {
       case "sum":
-        return Field.ofServerPath(fieldPath).sum().as(f.getAlias());
+        return Field.ofServerPath(fieldPath).sum().as(alias);
 
       case "count":
-        return countAll().as(f.getAlias());
+        return countAll().as(alias);
       case "average":
-        return Field.ofServerPath(fieldPath).average().as(f.getAlias());
+        return Field.ofServerPath(fieldPath).average().as(alias);
       default:
         // Handle the 'else' case appropriately in your Java code
         throw new IllegalArgumentException("Unsupported operator: " + operator);

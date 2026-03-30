@@ -72,6 +72,7 @@ import static com.google.cloud.firestore.pipeline.expressions.Expression.nor;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.notEqual;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.nullValue;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.or;
+import static com.google.cloud.firestore.pipeline.expressions.Expression.parent;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.pow;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.rand;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.regexMatch;
@@ -109,6 +110,7 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.Blob;
 import com.google.cloud.firestore.CollectionReference;
+import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.FirestoreOptions;
 import com.google.cloud.firestore.GeoPoint;
@@ -2295,7 +2297,7 @@ public class ITPipelineTest extends ITBaseTest {
             .select(
                 field("rating").equal(nullValue()).as("ratingIsNull"),
                 field("rating").equal(Double.NaN).as("ratingIsNaN"),
-                // arrayGet("title", 0) evaluates to UNSET so it is not an error
+                // arrayGet("title", 0) evaluates to ERROR
                 arrayGet("title", 0).isError().as("isError"),
                 arrayGet("title", 0).ifError(constant("was error")).as("ifError"),
                 field("foo").isAbsent().as("isAbsent"),
@@ -2316,7 +2318,9 @@ public class ITPipelineTest extends ITBaseTest {
                     "ratingIsNaN",
                     false,
                     "isError",
-                    false,
+                    true,
+                    "ifError",
+                    "was error",
                     "isAbsent",
                     true,
                     "titleIsNotNull",
@@ -3535,8 +3539,8 @@ public class ITPipelineTest extends ITBaseTest {
     assertThat(data(results))
         .isEqualTo(
             Lists.newArrayList(
-                map("title", "The Hitchhiker's Guide to the Galaxy", "awards.hugo", true),
-                map("title", "Dune", "awards.hugo", true)));
+                map("title", "The Hitchhiker's Guide to the Galaxy", "awards", map("hugo", true)),
+                map("title", "Dune", "awards", map("hugo", true))));
   }
 
   @Test
@@ -3559,8 +3563,12 @@ public class ITPipelineTest extends ITBaseTest {
               assertThat(data(results))
                   .isEqualTo(
                       Lists.newArrayList(
-                          map("title", "The Hitchhiker's Guide to the Galaxy", "awards.hugo", true),
-                          map("title", "Dune", "awards.hugo", true)));
+                          map(
+                              "title",
+                              "The Hitchhiker's Guide to the Galaxy",
+                              "awards",
+                              map("hugo", true)),
+                          map("title", "Dune", "awards", map("hugo", true))));
 
               transaction.update(collection.document("book1"), map("foo", "bar"));
 
@@ -4291,5 +4299,30 @@ public class ITPipelineTest extends ITBaseTest {
                   .select(field("title_dup").as("final_dup"), field("author_dup").as("final_dup"));
             });
     assertThat(exception).hasMessageThat().contains("Duplicate alias or field name");
+  }
+
+  @Test
+  public void testSupportsParent() throws Exception {
+    DocumentReference docRef =
+        collection.document("book4").collection("reviews").document("review1");
+
+    Pipeline pipeline =
+        firestore
+            .pipeline()
+            .collection(collection.getPath())
+            .limit(1)
+            .select(
+                parent(docRef).as("parentRefStatic"),
+                constant(docRef).parent().as("parentRefInstance"))
+            .select(
+                field("parentRefStatic").documentId().as("parentIdStatic"),
+                field("parentRefInstance").documentId().as("parentIdInstance"));
+
+    List<PipelineResult> results = pipeline.execute().get().getResults();
+    assertThat(results).hasSize(1);
+    Map<String, Object> data = results.get(0).getData();
+
+    assertThat(data.get("parentIdStatic")).isEqualTo("book4");
+    assertThat(data.get("parentIdInstance")).isEqualTo("book4");
   }
 }

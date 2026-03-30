@@ -4364,6 +4364,39 @@ public abstract class Expression {
     return collectionId(field(pathFieldName));
   }
 
+  /**
+   * Creates an expression that returns the parent document of a document reference.
+   *
+   * @param documentPath An expression that evaluates to a document path.
+   * @return A new {@link Expression} representing the parent operation.
+   */
+  @BetaApi
+  public static Expression parent(Expression documentPath) {
+    return new FunctionExpression("parent", ImmutableList.of(documentPath));
+  }
+
+  /**
+   * Creates an expression that returns the parent document of a document reference.
+   *
+   * @param documentPath The string representation of the document path.
+   * @return A new {@link Expression} representing the parent operation.
+   */
+  @BetaApi
+  public static Expression parent(String documentPath) {
+    return parent(constant(documentPath));
+  }
+
+  /**
+   * Creates an expression that returns the parent document of a document reference.
+   *
+   * @param docRef The {@link DocumentReference}.
+   * @return A new {@link Expression} representing the parent operation.
+   */
+  @BetaApi
+  public static Expression parent(DocumentReference docRef) {
+    return parent(constant(docRef));
+  }
+
   // Type Checking Functions
   /**
    * Creates an expression that checks if a field exists.
@@ -7014,6 +7047,16 @@ public abstract class Expression {
   @BetaApi
   public final Expression collectionId() {
     return collectionId(this);
+  }
+
+  /**
+   * Creates an expression that returns the parent document of a document reference.
+   *
+   * @return A new {@link Expression} representing the parent operation.
+   */
+  @BetaApi
+  public final Expression parent() {
+    return parent(this);
   }
 
   /**
