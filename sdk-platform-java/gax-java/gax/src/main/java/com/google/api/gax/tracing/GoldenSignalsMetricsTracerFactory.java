@@ -29,8 +29,10 @@
  */
 package com.google.api.gax.tracing;
 
+import com.google.api.client.util.Strings;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
+import com.google.api.gax.rpc.LibraryMetadata;
 import io.opentelemetry.api.OpenTelemetry;
 
 /**
@@ -74,7 +76,14 @@ public class GoldenSignalsMetricsTracerFactory implements ApiTracerFactory {
 
   @Override
   public ApiTracerFactory withContext(ApiTracerContext context) {
+    if (context == null) {
+      return new BaseApiTracerFactory();
+    }
     this.clientLevelTracerContext = context;
+    LibraryMetadata metadata = context.libraryMetadata();
+    if (metadata == null || metadata.isEmpty() || Strings.isNullOrEmpty(metadata.artifactName())) {
+      return new BaseApiTracerFactory();
+    }
     this.metricsRecorder =
         new GoldenSignalsMetricsRecorder(
             openTelemetry, clientLevelTracerContext.libraryMetadata().artifactName());
