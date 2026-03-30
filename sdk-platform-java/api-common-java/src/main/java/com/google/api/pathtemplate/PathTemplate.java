@@ -336,6 +336,7 @@ public class PathTemplate {
   // If a template is /compute/v1/projects/{project}/locations/{location}, known resources are
   // "projects" and "locations", the canonical resource name is
   // projects/{project}/locations/{location}. See unit tests for all cases.
+  // Canonical resource names may be incorrect if the http template contains singleton resources.
   public String getCanonicalResourceName(Set<String> knownResources) {
     if (knownResources == null) {
       return "";
@@ -372,7 +373,8 @@ public class PathTemplate {
           if (innerSeg.kind() == SegmentKind.BINDING) {
             bindingStartIndex = j;
             break;
-          } else if (innerSeg.kind() == SegmentKind.LITERAL) {
+          } else if (innerSeg.kind() == SegmentKind.LITERAL
+              || innerSeg.kind() == SegmentKind.PATH_WILDCARD) {
             literalCountInBinding++;
           }
         }

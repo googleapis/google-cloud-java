@@ -33,6 +33,7 @@ package com.google.api.pathtemplate;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.truth.Truth;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Stream;
@@ -1051,6 +1052,12 @@ class PathTemplateTest {
     PathTemplate template =
         PathTemplate.create("v1/projects/{project}/locations/{location}/widgets/{widget}");
     Truth.assertThat(template.getCanonicalResourceName(null)).isEmpty();
+  }
+
+  @Test
+  void testGetCanonicalResourceName_pathWildCard() {
+    PathTemplate template = PathTemplate.create("/v1/{resource=**}:setIamPolicy");
+    Truth.assertThat(template.getCanonicalResourceName(new HashSet<>())).isEqualTo("{resource=**}");
   }
 
   private static void assertPositionalMatch(Map<String, String> match, String... expected) {
