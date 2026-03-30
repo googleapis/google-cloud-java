@@ -119,12 +119,12 @@ public class ErrorTypeUtil {
   // Requirement source: go/clo:product-requirements-v1
   public static String extractErrorType(@Nullable Throwable error) {
     if (error == null) {
-      // No information about the error; we default to INTERNAL.
-      return ErrorType.INTERNAL.toString();
+      // No information about the error; This attribute should not be recorded.
+      return null;
     }
 
     // 1. Unwrap standard wrapper exceptions if present
-    Throwable realError = getRealCause(error);
+    Throwable realError = unwrapError(error);
 
     // 2. Attempt to extract specific error type from the main exception
     String specificError = extractSpecificErrorType(realError);
@@ -143,7 +143,7 @@ public class ErrorTypeUtil {
   }
 
   /** Unwraps standard execution wrappers to find the real cause. */
-  private static Throwable getRealCause(Throwable t) {
+  private static Throwable unwrapError(Throwable t) {
     if (t.getCause() == null) {
       return t;
     }
