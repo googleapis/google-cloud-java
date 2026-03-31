@@ -190,7 +190,7 @@ public class PathTemplate {
     /** A constant for the END_BINDING segment. */
     private static final Segment END_BINDING = create(SegmentKind.END_BINDING, "");
 
-    /** Creates a segment of given kind and value. */
+    /** Creates a segment of given kind and value. test */
     private static Segment create(SegmentKind kind, String value) {
       return new AutoValue_PathTemplate_Segment(kind, value, "");
     }
