@@ -1661,7 +1661,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private Tracer getSafeTracer() {
-    if (connection != null) {
+    if (connection != null && connection.getTracer() != null) {
       return connection.getTracer();
     }
     return BigQueryJdbcOpenTelemetry.getOpenTelemetry(false, null)
