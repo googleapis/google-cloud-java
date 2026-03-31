@@ -255,6 +255,7 @@ public class HttpJsonSpacesServiceStub extends SpacesServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateSpaceRequest, Space> updateSpaceTransportSettings =
         HttpJsonCallSettings.<UpdateSpaceRequest, Space>newBuilder()
@@ -277,6 +278,7 @@ public class HttpJsonSpacesServiceStub extends SpacesServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createSpaceCallable =

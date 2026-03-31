@@ -1689,6 +1689,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListCryptoKeysRequest, ListCryptoKeysResponse>
         listCryptoKeysTransportSettings =
@@ -1701,6 +1702,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse>
         listCryptoKeyVersionsTransportSettings =
@@ -1714,6 +1716,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListImportJobsRequest, ListImportJobsResponse>
         listImportJobsTransportSettings =
@@ -1726,6 +1729,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListRetiredResourcesRequest, ListRetiredResourcesResponse>
         listRetiredResourcesTransportSettings =
@@ -1739,6 +1743,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetKeyRingRequest, KeyRing> getKeyRingTransportSettings =
         HttpJsonCallSettings.<GetKeyRingRequest, KeyRing>newBuilder()
@@ -1750,6 +1755,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetCryptoKeyRequest, CryptoKey> getCryptoKeyTransportSettings =
         HttpJsonCallSettings.<GetCryptoKeyRequest, CryptoKey>newBuilder()
@@ -1761,6 +1767,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetCryptoKeyVersionRequest, CryptoKeyVersion>
         getCryptoKeyVersionTransportSettings =
@@ -1773,6 +1780,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetPublicKeyRequest, PublicKey> getPublicKeyTransportSettings =
         HttpJsonCallSettings.<GetPublicKeyRequest, PublicKey>newBuilder()
@@ -1784,6 +1792,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetImportJobRequest, ImportJob> getImportJobTransportSettings =
         HttpJsonCallSettings.<GetImportJobRequest, ImportJob>newBuilder()
@@ -1795,6 +1804,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetRetiredResourceRequest, RetiredResource>
         getRetiredResourceTransportSettings =
@@ -1807,6 +1817,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateKeyRingRequest, KeyRing> createKeyRingTransportSettings =
         HttpJsonCallSettings.<CreateKeyRingRequest, KeyRing>newBuilder()
@@ -1818,6 +1829,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateCryptoKeyRequest, CryptoKey> createCryptoKeyTransportSettings =
         HttpJsonCallSettings.<CreateCryptoKeyRequest, CryptoKey>newBuilder()
@@ -1829,6 +1841,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateCryptoKeyVersionRequest, CryptoKeyVersion>
         createCryptoKeyVersionTransportSettings =
@@ -1841,6 +1854,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteCryptoKeyRequest, Operation> deleteCryptoKeyTransportSettings =
         HttpJsonCallSettings.<DeleteCryptoKeyRequest, Operation>newBuilder()
@@ -1852,6 +1866,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteCryptoKeyVersionRequest, Operation>
         deleteCryptoKeyVersionTransportSettings =
@@ -1864,6 +1879,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
         importCryptoKeyVersionTransportSettings =
@@ -1876,6 +1892,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateImportJobRequest, ImportJob> createImportJobTransportSettings =
         HttpJsonCallSettings.<CreateImportJobRequest, ImportJob>newBuilder()
@@ -1887,6 +1904,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateCryptoKeyRequest, CryptoKey> updateCryptoKeyTransportSettings =
         HttpJsonCallSettings.<UpdateCryptoKeyRequest, CryptoKey>newBuilder()
@@ -1924,6 +1942,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
         destroyCryptoKeyVersionTransportSettings =
@@ -1936,6 +1955,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
         restoreCryptoKeyVersionTransportSettings =
@@ -1948,6 +1968,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<EncryptRequest, EncryptResponse> encryptTransportSettings =
         HttpJsonCallSettings.<EncryptRequest, EncryptResponse>newBuilder()
@@ -1959,6 +1980,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DecryptRequest, DecryptResponse> decryptTransportSettings =
         HttpJsonCallSettings.<DecryptRequest, DecryptResponse>newBuilder()
@@ -1970,6 +1992,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RawEncryptRequest, RawEncryptResponse> rawEncryptTransportSettings =
         HttpJsonCallSettings.<RawEncryptRequest, RawEncryptResponse>newBuilder()
@@ -2004,6 +2027,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
         asymmetricDecryptTransportSettings =
@@ -2016,6 +2040,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<MacSignRequest, MacSignResponse> macSignTransportSettings =
         HttpJsonCallSettings.<MacSignRequest, MacSignResponse>newBuilder()
@@ -2027,6 +2052,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<MacVerifyRequest, MacVerifyResponse> macVerifyTransportSettings =
         HttpJsonCallSettings.<MacVerifyRequest, MacVerifyResponse>newBuilder()
@@ -2038,6 +2064,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DecapsulateRequest, DecapsulateResponse> decapsulateTransportSettings =
         HttpJsonCallSettings.<DecapsulateRequest, DecapsulateResponse>newBuilder()
@@ -2049,6 +2076,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GenerateRandomBytesRequest, GenerateRandomBytesResponse>
         generateRandomBytesTransportSettings =
@@ -2096,6 +2124,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -2107,6 +2136,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -2119,6 +2149,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listKeyRingsCallable =

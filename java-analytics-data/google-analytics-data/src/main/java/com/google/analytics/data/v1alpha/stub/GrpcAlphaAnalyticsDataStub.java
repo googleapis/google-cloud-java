@@ -350,6 +350,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<QueryAudienceListRequest, QueryAudienceListResponse>
         queryAudienceListTransportSettings =
@@ -373,6 +374,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetAudienceListRequest, AudienceList> getAudienceListTransportSettings =
         GrpcCallSettings.<GetAudienceListRequest, AudienceList>newBuilder()
@@ -383,6 +385,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAudienceListsRequest, ListAudienceListsResponse>
         listAudienceListsTransportSettings =
@@ -394,6 +397,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateRecurringAudienceListRequest, RecurringAudienceList>
         createRecurringAudienceListTransportSettings =
@@ -405,6 +409,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetRecurringAudienceListRequest, RecurringAudienceList>
         getRecurringAudienceListTransportSettings =
@@ -416,6 +421,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListRecurringAudienceListsRequest, ListRecurringAudienceListsResponse>
         listRecurringAudienceListsTransportSettings =
@@ -428,6 +434,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetPropertyQuotasSnapshotRequest, PropertyQuotasSnapshot>
         getPropertyQuotasSnapshotTransportSettings =
@@ -439,6 +446,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateReportTaskRequest, Operation> createReportTaskTransportSettings =
         GrpcCallSettings.<CreateReportTaskRequest, Operation>newBuilder()
@@ -449,6 +457,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<QueryReportTaskRequest, QueryReportTaskResponse>
         queryReportTaskTransportSettings =
@@ -470,6 +479,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListReportTasksRequest, ListReportTasksResponse>
         listReportTasksTransportSettings =
@@ -481,6 +491,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.runFunnelReportCallable =

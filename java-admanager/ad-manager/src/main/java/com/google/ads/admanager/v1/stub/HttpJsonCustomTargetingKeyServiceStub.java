@@ -470,6 +470,7 @@ public class HttpJsonCustomTargetingKeyServiceStub extends CustomTargetingKeySer
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListCustomTargetingKeysRequest, ListCustomTargetingKeysResponse>
         listCustomTargetingKeysTransportSettings =
@@ -483,6 +484,7 @@ public class HttpJsonCustomTargetingKeyServiceStub extends CustomTargetingKeySer
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateCustomTargetingKeyRequest, CustomTargetingKey>
         createCustomTargetingKeyTransportSettings =
@@ -495,6 +497,7 @@ public class HttpJsonCustomTargetingKeyServiceStub extends CustomTargetingKeySer
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             BatchCreateCustomTargetingKeysRequest, BatchCreateCustomTargetingKeysResponse>
@@ -510,6 +513,7 @@ public class HttpJsonCustomTargetingKeyServiceStub extends CustomTargetingKeySer
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateCustomTargetingKeyRequest, CustomTargetingKey>
         updateCustomTargetingKeyTransportSettings =
@@ -539,6 +543,7 @@ public class HttpJsonCustomTargetingKeyServiceStub extends CustomTargetingKeySer
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             BatchActivateCustomTargetingKeysRequest, BatchActivateCustomTargetingKeysResponse>
@@ -554,6 +559,7 @@ public class HttpJsonCustomTargetingKeyServiceStub extends CustomTargetingKeySer
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             BatchDeactivateCustomTargetingKeysRequest, BatchDeactivateCustomTargetingKeysResponse>
@@ -570,6 +576,7 @@ public class HttpJsonCustomTargetingKeyServiceStub extends CustomTargetingKeySer
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getCustomTargetingKeyCallable =

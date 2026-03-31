@@ -234,6 +234,7 @@ public class QuotaControllerStubSettings extends StubSettings<QuotaControllerStu
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-service-control")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

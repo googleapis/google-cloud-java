@@ -140,6 +140,7 @@ public class HttpJsonSystemPolicyV1Stub extends SystemPolicyV1Stub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.getSystemPolicyCallable =

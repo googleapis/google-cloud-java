@@ -856,6 +856,7 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetConnectionRequest, Connection> getConnectionTransportSettings =
         HttpJsonCallSettings.<GetConnectionRequest, Connection>newBuilder()
@@ -867,6 +868,7 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListConnectionsRequest, ListConnectionsResponse>
         listConnectionsTransportSettings =
@@ -879,6 +881,7 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateConnectionRequest, Operation> updateConnectionTransportSettings =
         HttpJsonCallSettings.<UpdateConnectionRequest, Operation>newBuilder()
@@ -901,6 +904,7 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateRepositoryRequest, Operation> createRepositoryTransportSettings =
         HttpJsonCallSettings.<CreateRepositoryRequest, Operation>newBuilder()
@@ -912,6 +916,7 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<BatchCreateRepositoriesRequest, Operation>
         batchCreateRepositoriesTransportSettings =
@@ -924,6 +929,7 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetRepositoryRequest, Repository> getRepositoryTransportSettings =
         HttpJsonCallSettings.<GetRepositoryRequest, Repository>newBuilder()
@@ -935,6 +941,7 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListRepositoriesRequest, ListRepositoriesResponse>
         listRepositoriesTransportSettings =
@@ -947,6 +954,7 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteRepositoryRequest, Operation> deleteRepositoryTransportSettings =
         HttpJsonCallSettings.<DeleteRepositoryRequest, Operation>newBuilder()
@@ -958,6 +966,7 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<FetchReadWriteTokenRequest, FetchReadWriteTokenResponse>
         fetchReadWriteTokenTransportSettings =
@@ -971,6 +980,7 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
                       builder.add("repository", String.valueOf(request.getRepository()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getRepository())
                 .build();
     HttpJsonCallSettings<FetchReadTokenRequest, FetchReadTokenResponse>
         fetchReadTokenTransportSettings =
@@ -983,6 +993,7 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
                       builder.add("repository", String.valueOf(request.getRepository()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getRepository())
                 .build();
     HttpJsonCallSettings<FetchLinkableRepositoriesRequest, FetchLinkableRepositoriesResponse>
         fetchLinkableRepositoriesTransportSettings =
@@ -996,6 +1007,7 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
                       builder.add("connection", String.valueOf(request.getConnection()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getConnection())
                 .build();
     HttpJsonCallSettings<FetchGitRefsRequest, FetchGitRefsResponse> fetchGitRefsTransportSettings =
         HttpJsonCallSettings.<FetchGitRefsRequest, FetchGitRefsResponse>newBuilder()
@@ -1007,6 +1019,7 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
                   builder.add("repository", String.valueOf(request.getRepository()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getRepository())
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -1018,6 +1031,7 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1029,6 +1043,7 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1041,6 +1056,7 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createConnectionCallable =

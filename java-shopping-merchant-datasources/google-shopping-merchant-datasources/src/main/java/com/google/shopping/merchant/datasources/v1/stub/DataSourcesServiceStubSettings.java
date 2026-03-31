@@ -340,6 +340,7 @@ public class DataSourcesServiceStubSettings extends StubSettings<DataSourcesServ
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.shopping:google-shopping-merchant-datasources")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

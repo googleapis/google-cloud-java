@@ -1321,6 +1321,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListReservationsRequest, ListReservationsResponse>
         listReservationsTransportSettings =
@@ -1333,6 +1334,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetReservationRequest, Reservation> getReservationTransportSettings =
         HttpJsonCallSettings.<GetReservationRequest, Reservation>newBuilder()
@@ -1344,6 +1346,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteReservationRequest, Empty> deleteReservationTransportSettings =
         HttpJsonCallSettings.<DeleteReservationRequest, Empty>newBuilder()
@@ -1355,6 +1358,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateReservationRequest, Reservation> updateReservationTransportSettings =
         HttpJsonCallSettings.<UpdateReservationRequest, Reservation>newBuilder()
@@ -1379,6 +1383,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateCapacityCommitmentRequest, CapacityCommitment>
         createCapacityCommitmentTransportSettings =
@@ -1391,6 +1396,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse>
         listCapacityCommitmentsTransportSettings =
@@ -1404,6 +1410,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetCapacityCommitmentRequest, CapacityCommitment>
         getCapacityCommitmentTransportSettings =
@@ -1416,6 +1423,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DeleteCapacityCommitmentRequest, Empty>
         deleteCapacityCommitmentTransportSettings =
@@ -1428,6 +1436,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateCapacityCommitmentRequest, CapacityCommitment>
         updateCapacityCommitmentTransportSettings =
@@ -1455,6 +1464,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<MergeCapacityCommitmentsRequest, CapacityCommitment>
         mergeCapacityCommitmentsTransportSettings =
@@ -1467,6 +1477,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateAssignmentRequest, Assignment> createAssignmentTransportSettings =
         HttpJsonCallSettings.<CreateAssignmentRequest, Assignment>newBuilder()
@@ -1478,6 +1489,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListAssignmentsRequest, ListAssignmentsResponse>
         listAssignmentsTransportSettings =
@@ -1490,6 +1502,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteAssignmentRequest, Empty> deleteAssignmentTransportSettings =
         HttpJsonCallSettings.<DeleteAssignmentRequest, Empty>newBuilder()
@@ -1501,6 +1514,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<SearchAssignmentsRequest, SearchAssignmentsResponse>
         searchAssignmentsTransportSettings =
@@ -1513,6 +1527,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<SearchAllAssignmentsRequest, SearchAllAssignmentsResponse>
         searchAllAssignmentsTransportSettings =
@@ -1526,6 +1541,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<MoveAssignmentRequest, Assignment> moveAssignmentTransportSettings =
         HttpJsonCallSettings.<MoveAssignmentRequest, Assignment>newBuilder()
@@ -1537,6 +1553,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateAssignmentRequest, Assignment> updateAssignmentTransportSettings =
         HttpJsonCallSettings.<UpdateAssignmentRequest, Assignment>newBuilder()
@@ -1559,6 +1576,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateBiReservationRequest, BiReservation>
         updateBiReservationTransportSettings =
@@ -1584,6 +1602,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -1595,6 +1614,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1607,6 +1627,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     HttpJsonCallSettings<CreateReservationGroupRequest, ReservationGroup>
         createReservationGroupTransportSettings =
@@ -1619,6 +1640,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetReservationGroupRequest, ReservationGroup>
         getReservationGroupTransportSettings =
@@ -1631,6 +1653,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DeleteReservationGroupRequest, Empty>
         deleteReservationGroupTransportSettings =
@@ -1643,6 +1666,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListReservationGroupsRequest, ListReservationGroupsResponse>
         listReservationGroupsTransportSettings =
@@ -1656,6 +1680,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createReservationCallable =

@@ -723,6 +723,7 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetInsightRequest, Insight> getInsightTransportSettings =
         HttpJsonCallSettings.<GetInsightRequest, Insight>newBuilder()
@@ -734,6 +735,7 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<MarkInsightAcceptedRequest, Insight> markInsightAcceptedTransportSettings =
         HttpJsonCallSettings.<MarkInsightAcceptedRequest, Insight>newBuilder()
@@ -745,6 +747,7 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListRecommendationsRequest, ListRecommendationsResponse>
         listRecommendationsTransportSettings =
@@ -758,6 +761,7 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetRecommendationRequest, Recommendation>
         getRecommendationTransportSettings =
@@ -770,6 +774,7 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<MarkRecommendationClaimedRequest, Recommendation>
         markRecommendationClaimedTransportSettings =
@@ -782,6 +787,7 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<MarkRecommendationSucceededRequest, Recommendation>
         markRecommendationSucceededTransportSettings =
@@ -794,6 +800,7 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<MarkRecommendationFailedRequest, Recommendation>
         markRecommendationFailedTransportSettings =
@@ -806,6 +813,7 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetRecommenderConfigRequest, RecommenderConfig>
         getRecommenderConfigTransportSettings =
@@ -818,6 +826,7 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateRecommenderConfigRequest, RecommenderConfig>
         updateRecommenderConfigTransportSettings =
@@ -844,6 +853,7 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateInsightTypeConfigRequest, InsightTypeConfig>
         updateInsightTypeConfigTransportSettings =

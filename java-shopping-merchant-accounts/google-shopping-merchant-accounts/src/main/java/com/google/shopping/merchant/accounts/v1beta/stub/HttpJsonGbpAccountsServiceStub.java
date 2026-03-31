@@ -191,6 +191,7 @@ public class HttpJsonGbpAccountsServiceStub extends GbpAccountsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<LinkGbpAccountRequest, LinkGbpAccountResponse>
         linkGbpAccountTransportSettings =
@@ -203,6 +204,7 @@ public class HttpJsonGbpAccountsServiceStub extends GbpAccountsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.listGbpAccountsCallable =

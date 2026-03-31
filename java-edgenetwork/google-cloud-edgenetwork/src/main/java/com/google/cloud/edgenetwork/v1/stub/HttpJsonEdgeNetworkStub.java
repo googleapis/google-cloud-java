@@ -1325,6 +1325,7 @@ public class HttpJsonEdgeNetworkStub extends EdgeNetworkStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListZonesRequest, ListZonesResponse> listZonesTransportSettings =
         HttpJsonCallSettings.<ListZonesRequest, ListZonesResponse>newBuilder()
@@ -1336,6 +1337,7 @@ public class HttpJsonEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetZoneRequest, Zone> getZoneTransportSettings =
         HttpJsonCallSettings.<GetZoneRequest, Zone>newBuilder()
@@ -1347,6 +1349,7 @@ public class HttpJsonEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListNetworksRequest, ListNetworksResponse> listNetworksTransportSettings =
         HttpJsonCallSettings.<ListNetworksRequest, ListNetworksResponse>newBuilder()
@@ -1358,6 +1361,7 @@ public class HttpJsonEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetNetworkRequest, Network> getNetworkTransportSettings =
         HttpJsonCallSettings.<GetNetworkRequest, Network>newBuilder()
@@ -1369,6 +1373,7 @@ public class HttpJsonEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DiagnoseNetworkRequest, DiagnoseNetworkResponse>
         diagnoseNetworkTransportSettings =
@@ -1381,6 +1386,7 @@ public class HttpJsonEdgeNetworkStub extends EdgeNetworkStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateNetworkRequest, Operation> createNetworkTransportSettings =
         HttpJsonCallSettings.<CreateNetworkRequest, Operation>newBuilder()
@@ -1392,6 +1398,7 @@ public class HttpJsonEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteNetworkRequest, Operation> deleteNetworkTransportSettings =
         HttpJsonCallSettings.<DeleteNetworkRequest, Operation>newBuilder()
@@ -1403,6 +1410,7 @@ public class HttpJsonEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListSubnetsRequest, ListSubnetsResponse> listSubnetsTransportSettings =
         HttpJsonCallSettings.<ListSubnetsRequest, ListSubnetsResponse>newBuilder()
@@ -1414,6 +1422,7 @@ public class HttpJsonEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetSubnetRequest, Subnet> getSubnetTransportSettings =
         HttpJsonCallSettings.<GetSubnetRequest, Subnet>newBuilder()
@@ -1425,6 +1434,7 @@ public class HttpJsonEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateSubnetRequest, Operation> createSubnetTransportSettings =
         HttpJsonCallSettings.<CreateSubnetRequest, Operation>newBuilder()
@@ -1436,6 +1446,7 @@ public class HttpJsonEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateSubnetRequest, Operation> updateSubnetTransportSettings =
         HttpJsonCallSettings.<UpdateSubnetRequest, Operation>newBuilder()
@@ -1458,6 +1469,7 @@ public class HttpJsonEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListInterconnectsRequest, ListInterconnectsResponse>
         listInterconnectsTransportSettings =
@@ -1470,6 +1482,7 @@ public class HttpJsonEdgeNetworkStub extends EdgeNetworkStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetInterconnectRequest, Interconnect> getInterconnectTransportSettings =
         HttpJsonCallSettings.<GetInterconnectRequest, Interconnect>newBuilder()
@@ -1481,6 +1494,7 @@ public class HttpJsonEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DiagnoseInterconnectRequest, DiagnoseInterconnectResponse>
         diagnoseInterconnectTransportSettings =
@@ -1494,6 +1508,7 @@ public class HttpJsonEdgeNetworkStub extends EdgeNetworkStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListInterconnectAttachmentsRequest, ListInterconnectAttachmentsResponse>
         listInterconnectAttachmentsTransportSettings =
@@ -1508,6 +1523,7 @@ public class HttpJsonEdgeNetworkStub extends EdgeNetworkStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetInterconnectAttachmentRequest, InterconnectAttachment>
         getInterconnectAttachmentTransportSettings =
@@ -1521,6 +1537,7 @@ public class HttpJsonEdgeNetworkStub extends EdgeNetworkStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateInterconnectAttachmentRequest, Operation>
         createInterconnectAttachmentTransportSettings =
@@ -1533,6 +1550,7 @@ public class HttpJsonEdgeNetworkStub extends EdgeNetworkStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteInterconnectAttachmentRequest, Operation>
         deleteInterconnectAttachmentTransportSettings =
@@ -1545,6 +1563,7 @@ public class HttpJsonEdgeNetworkStub extends EdgeNetworkStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListRoutersRequest, ListRoutersResponse> listRoutersTransportSettings =
         HttpJsonCallSettings.<ListRoutersRequest, ListRoutersResponse>newBuilder()
@@ -1556,6 +1575,7 @@ public class HttpJsonEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetRouterRequest, Router> getRouterTransportSettings =
         HttpJsonCallSettings.<GetRouterRequest, Router>newBuilder()
@@ -1567,6 +1587,7 @@ public class HttpJsonEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DiagnoseRouterRequest, DiagnoseRouterResponse>
         diagnoseRouterTransportSettings =
@@ -1579,6 +1600,7 @@ public class HttpJsonEdgeNetworkStub extends EdgeNetworkStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateRouterRequest, Operation> createRouterTransportSettings =
         HttpJsonCallSettings.<CreateRouterRequest, Operation>newBuilder()
@@ -1590,6 +1612,7 @@ public class HttpJsonEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateRouterRequest, Operation> updateRouterTransportSettings =
         HttpJsonCallSettings.<UpdateRouterRequest, Operation>newBuilder()
@@ -1612,6 +1635,7 @@ public class HttpJsonEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

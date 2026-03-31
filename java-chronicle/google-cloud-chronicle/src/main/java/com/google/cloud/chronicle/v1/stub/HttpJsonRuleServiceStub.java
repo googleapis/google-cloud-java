@@ -626,6 +626,7 @@ public class HttpJsonRuleServiceStub extends RuleServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetRuleRequest, Rule> getRuleTransportSettings =
         HttpJsonCallSettings.<GetRuleRequest, Rule>newBuilder()
@@ -637,6 +638,7 @@ public class HttpJsonRuleServiceStub extends RuleServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListRulesRequest, ListRulesResponse> listRulesTransportSettings =
         HttpJsonCallSettings.<ListRulesRequest, ListRulesResponse>newBuilder()
@@ -648,6 +650,7 @@ public class HttpJsonRuleServiceStub extends RuleServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateRuleRequest, Rule> updateRuleTransportSettings =
         HttpJsonCallSettings.<UpdateRuleRequest, Rule>newBuilder()
@@ -670,6 +673,7 @@ public class HttpJsonRuleServiceStub extends RuleServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListRuleRevisionsRequest, ListRuleRevisionsResponse>
         listRuleRevisionsTransportSettings =
@@ -682,6 +686,7 @@ public class HttpJsonRuleServiceStub extends RuleServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateRetrohuntRequest, Operation> createRetrohuntTransportSettings =
         HttpJsonCallSettings.<CreateRetrohuntRequest, Operation>newBuilder()
@@ -693,6 +698,7 @@ public class HttpJsonRuleServiceStub extends RuleServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetRetrohuntRequest, Retrohunt> getRetrohuntTransportSettings =
         HttpJsonCallSettings.<GetRetrohuntRequest, Retrohunt>newBuilder()
@@ -704,6 +710,7 @@ public class HttpJsonRuleServiceStub extends RuleServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListRetrohuntsRequest, ListRetrohuntsResponse>
         listRetrohuntsTransportSettings =
@@ -716,6 +723,7 @@ public class HttpJsonRuleServiceStub extends RuleServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetRuleDeploymentRequest, RuleDeployment>
         getRuleDeploymentTransportSettings =
@@ -728,6 +736,7 @@ public class HttpJsonRuleServiceStub extends RuleServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListRuleDeploymentsRequest, ListRuleDeploymentsResponse>
         listRuleDeploymentsTransportSettings =
@@ -741,6 +750,7 @@ public class HttpJsonRuleServiceStub extends RuleServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateRuleDeploymentRequest, RuleDeployment>
         updateRuleDeploymentTransportSettings =

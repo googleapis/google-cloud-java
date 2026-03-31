@@ -330,6 +330,7 @@ public class CompanyServiceStubSettings extends StubSettings<CompanyServiceStubS
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-talent")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

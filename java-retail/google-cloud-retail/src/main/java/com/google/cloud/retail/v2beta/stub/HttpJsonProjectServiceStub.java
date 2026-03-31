@@ -180,6 +180,7 @@ public class HttpJsonProjectServiceStub extends ProjectServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateAlertConfigRequest, AlertConfig> updateAlertConfigTransportSettings =
         HttpJsonCallSettings.<UpdateAlertConfigRequest, AlertConfig>newBuilder()

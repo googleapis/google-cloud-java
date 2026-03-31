@@ -335,10 +335,10 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * A description of the process that generated the request.
+   * Optional. A description of the process that generated the request.
    * </pre>
    *
-   * <code>.google.protobuf.Struct user_agent = 5;</code>
+   * <code>.google.protobuf.Struct user_agent = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the userAgent field is set.
    */
@@ -348,10 +348,10 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * A description of the process that generated the request.
+   * Optional. A description of the process that generated the request.
    * </pre>
    *
-   * <code>.google.protobuf.Struct user_agent = 5;</code>
+   * <code>.google.protobuf.Struct user_agent = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The userAgent.
    */
@@ -361,10 +361,10 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * A description of the process that generated the request.
+   * Optional. A description of the process that generated the request.
    * </pre>
    *
-   * <code>.google.protobuf.Struct user_agent = 5;</code>
+   * <code>.google.protobuf.Struct user_agent = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.StructOrBuilder getUserAgentOrBuilder();
 
@@ -785,4 +785,17 @@ public interface EnvironmentOrBuilder
    * @return The streamingMode.
    */
   com.google.dataflow.v1beta3.StreamingMode getStreamingMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. True when any worker pool that uses public IPs is present.
+   * </pre>
+   *
+   * <code>bool use_public_ips = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The usePublicIps.
+   */
+  boolean getUsePublicIps();
 }

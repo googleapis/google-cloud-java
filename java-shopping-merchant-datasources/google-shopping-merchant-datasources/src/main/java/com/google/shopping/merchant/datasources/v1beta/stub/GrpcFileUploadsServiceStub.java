@@ -109,6 +109,7 @@ public class GrpcFileUploadsServiceStub extends FileUploadsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getFileUploadCallable =

@@ -145,6 +145,7 @@ public class HttpJsonCompletionStub extends CompletionStub {
                       builder.add("tenant", String.valueOf(request.getTenant()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getTenant())
                 .build();
 
     this.completeQueryCallable =

@@ -257,6 +257,7 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListTablesRequest, ListTablesResponse> listTablesTransportSettings =
         GrpcCallSettings.<ListTablesRequest, ListTablesResponse>newBuilder()
@@ -271,6 +272,7 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListWorkspacesRequest, ListWorkspacesResponse>
         listWorkspacesTransportSettings =
@@ -286,6 +288,7 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRowsRequest, ListRowsResponse> listRowsTransportSettings =
         GrpcCallSettings.<ListRowsRequest, ListRowsResponse>newBuilder()
@@ -348,6 +351,7 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<BatchDeleteRowsRequest, Empty> batchDeleteRowsTransportSettings =
         GrpcCallSettings.<BatchDeleteRowsRequest, Empty>newBuilder()
@@ -358,6 +362,7 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.getTableCallable =

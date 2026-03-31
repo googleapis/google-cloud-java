@@ -492,6 +492,7 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-document-ai")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

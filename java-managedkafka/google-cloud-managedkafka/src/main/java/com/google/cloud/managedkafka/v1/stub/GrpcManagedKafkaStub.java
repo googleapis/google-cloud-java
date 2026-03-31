@@ -408,6 +408,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
         GrpcCallSettings.<GetClusterRequest, Cluster>newBuilder()
@@ -418,6 +419,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
         GrpcCallSettings.<CreateClusterRequest, Operation>newBuilder()
@@ -428,6 +430,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateClusterRequest, Operation> updateClusterTransportSettings =
         GrpcCallSettings.<UpdateClusterRequest, Operation>newBuilder()
@@ -448,6 +451,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListTopicsRequest, ListTopicsResponse> listTopicsTransportSettings =
         GrpcCallSettings.<ListTopicsRequest, ListTopicsResponse>newBuilder()
@@ -458,6 +462,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetTopicRequest, Topic> getTopicTransportSettings =
         GrpcCallSettings.<GetTopicRequest, Topic>newBuilder()
@@ -468,6 +473,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateTopicRequest, Topic> createTopicTransportSettings =
         GrpcCallSettings.<CreateTopicRequest, Topic>newBuilder()
@@ -478,6 +484,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateTopicRequest, Topic> updateTopicTransportSettings =
         GrpcCallSettings.<UpdateTopicRequest, Topic>newBuilder()
@@ -498,6 +505,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListConsumerGroupsRequest, ListConsumerGroupsResponse>
         listConsumerGroupsTransportSettings =
@@ -509,6 +517,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetConsumerGroupRequest, ConsumerGroup> getConsumerGroupTransportSettings =
         GrpcCallSettings.<GetConsumerGroupRequest, ConsumerGroup>newBuilder()
@@ -519,6 +528,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateConsumerGroupRequest, ConsumerGroup>
         updateConsumerGroupTransportSettings =
@@ -542,6 +552,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAclsRequest, ListAclsResponse> listAclsTransportSettings =
         GrpcCallSettings.<ListAclsRequest, ListAclsResponse>newBuilder()
@@ -552,6 +563,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetAclRequest, Acl> getAclTransportSettings =
         GrpcCallSettings.<GetAclRequest, Acl>newBuilder()
@@ -562,6 +574,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateAclRequest, Acl> createAclTransportSettings =
         GrpcCallSettings.<CreateAclRequest, Acl>newBuilder()
@@ -572,6 +585,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateAclRequest, Acl> updateAclTransportSettings =
         GrpcCallSettings.<UpdateAclRequest, Acl>newBuilder()
@@ -592,6 +606,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<AddAclEntryRequest, AddAclEntryResponse> addAclEntryTransportSettings =
         GrpcCallSettings.<AddAclEntryRequest, AddAclEntryResponse>newBuilder()
@@ -602,6 +617,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("acl", String.valueOf(request.getAcl()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getAcl())
             .build();
     GrpcCallSettings<RemoveAclEntryRequest, RemoveAclEntryResponse>
         removeAclEntryTransportSettings =
@@ -613,6 +629,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
                       builder.add("acl", String.valueOf(request.getAcl()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAcl())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

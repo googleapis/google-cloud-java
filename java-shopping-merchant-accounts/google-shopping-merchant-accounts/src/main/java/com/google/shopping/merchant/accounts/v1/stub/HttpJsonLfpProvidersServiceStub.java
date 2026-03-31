@@ -190,6 +190,7 @@ public class HttpJsonLfpProvidersServiceStub extends LfpProvidersServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<LinkLfpProviderRequest, LinkLfpProviderResponse>
         linkLfpProviderTransportSettings =
@@ -202,6 +203,7 @@ public class HttpJsonLfpProvidersServiceStub extends LfpProvidersServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.findLfpProvidersCallable =

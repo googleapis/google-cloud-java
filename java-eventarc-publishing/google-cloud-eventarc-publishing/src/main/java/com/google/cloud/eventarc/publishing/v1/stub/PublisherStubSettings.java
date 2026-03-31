@@ -252,6 +252,7 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-eventarc-publishing")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

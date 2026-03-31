@@ -1662,6 +1662,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetApiRequest, Api> getApiTransportSettings =
         HttpJsonCallSettings.<GetApiRequest, Api>newBuilder()
@@ -1673,6 +1674,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListApisRequest, ListApisResponse> listApisTransportSettings =
         HttpJsonCallSettings.<ListApisRequest, ListApisResponse>newBuilder()
@@ -1684,6 +1686,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateApiRequest, Api> updateApiTransportSettings =
         HttpJsonCallSettings.<UpdateApiRequest, Api>newBuilder()
@@ -1706,6 +1709,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateVersionRequest, Version> createVersionTransportSettings =
         HttpJsonCallSettings.<CreateVersionRequest, Version>newBuilder()
@@ -1717,6 +1721,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetVersionRequest, Version> getVersionTransportSettings =
         HttpJsonCallSettings.<GetVersionRequest, Version>newBuilder()
@@ -1728,6 +1733,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListVersionsRequest, ListVersionsResponse> listVersionsTransportSettings =
         HttpJsonCallSettings.<ListVersionsRequest, ListVersionsResponse>newBuilder()
@@ -1739,6 +1745,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateVersionRequest, Version> updateVersionTransportSettings =
         HttpJsonCallSettings.<UpdateVersionRequest, Version>newBuilder()
@@ -1761,6 +1768,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateSpecRequest, Spec> createSpecTransportSettings =
         HttpJsonCallSettings.<CreateSpecRequest, Spec>newBuilder()
@@ -1772,6 +1780,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetSpecRequest, Spec> getSpecTransportSettings =
         HttpJsonCallSettings.<GetSpecRequest, Spec>newBuilder()
@@ -1783,6 +1792,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetSpecContentsRequest, SpecContents> getSpecContentsTransportSettings =
         HttpJsonCallSettings.<GetSpecContentsRequest, SpecContents>newBuilder()
@@ -1794,6 +1804,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListSpecsRequest, ListSpecsResponse> listSpecsTransportSettings =
         HttpJsonCallSettings.<ListSpecsRequest, ListSpecsResponse>newBuilder()
@@ -1805,6 +1816,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateSpecRequest, Spec> updateSpecTransportSettings =
         HttpJsonCallSettings.<UpdateSpecRequest, Spec>newBuilder()
@@ -1827,6 +1839,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateApiOperationRequest, ApiOperation>
         createApiOperationTransportSettings =
@@ -1839,6 +1852,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetApiOperationRequest, ApiOperation> getApiOperationTransportSettings =
         HttpJsonCallSettings.<GetApiOperationRequest, ApiOperation>newBuilder()
@@ -1850,6 +1864,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListApiOperationsRequest, ListApiOperationsResponse>
         listApiOperationsTransportSettings =
@@ -1862,6 +1877,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateApiOperationRequest, ApiOperation>
         updateApiOperationTransportSettings =
@@ -1887,6 +1903,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetDefinitionRequest, Definition> getDefinitionTransportSettings =
         HttpJsonCallSettings.<GetDefinitionRequest, Definition>newBuilder()
@@ -1898,6 +1915,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateDeploymentRequest, Deployment> createDeploymentTransportSettings =
         HttpJsonCallSettings.<CreateDeploymentRequest, Deployment>newBuilder()
@@ -1909,6 +1927,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetDeploymentRequest, Deployment> getDeploymentTransportSettings =
         HttpJsonCallSettings.<GetDeploymentRequest, Deployment>newBuilder()
@@ -1920,6 +1939,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListDeploymentsRequest, ListDeploymentsResponse>
         listDeploymentsTransportSettings =
@@ -1932,6 +1952,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateDeploymentRequest, Deployment> updateDeploymentTransportSettings =
         HttpJsonCallSettings.<UpdateDeploymentRequest, Deployment>newBuilder()
@@ -1954,6 +1975,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateAttributeRequest, Attribute> createAttributeTransportSettings =
         HttpJsonCallSettings.<CreateAttributeRequest, Attribute>newBuilder()
@@ -1965,6 +1987,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetAttributeRequest, Attribute> getAttributeTransportSettings =
         HttpJsonCallSettings.<GetAttributeRequest, Attribute>newBuilder()
@@ -1976,6 +1999,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateAttributeRequest, Attribute> updateAttributeTransportSettings =
         HttpJsonCallSettings.<UpdateAttributeRequest, Attribute>newBuilder()
@@ -1998,6 +2022,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListAttributesRequest, ListAttributesResponse>
         listAttributesTransportSettings =
@@ -2010,6 +2035,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<SearchResourcesRequest, SearchResourcesResponse>
         searchResourcesTransportSettings =
@@ -2022,6 +2048,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                       builder.add("location", String.valueOf(request.getLocation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getLocation())
                 .build();
     HttpJsonCallSettings<CreateExternalApiRequest, ExternalApi> createExternalApiTransportSettings =
         HttpJsonCallSettings.<CreateExternalApiRequest, ExternalApi>newBuilder()
@@ -2033,6 +2060,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetExternalApiRequest, ExternalApi> getExternalApiTransportSettings =
         HttpJsonCallSettings.<GetExternalApiRequest, ExternalApi>newBuilder()
@@ -2044,6 +2072,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateExternalApiRequest, ExternalApi> updateExternalApiTransportSettings =
         HttpJsonCallSettings.<UpdateExternalApiRequest, ExternalApi>newBuilder()
@@ -2067,6 +2096,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListExternalApisRequest, ListExternalApisResponse>
         listExternalApisTransportSettings =
@@ -2079,6 +2109,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

@@ -363,6 +363,7 @@ public class GrpcSecurityPostureStub extends SecurityPostureStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListPostureRevisionsRequest, ListPostureRevisionsResponse>
         listPostureRevisionsTransportSettings =
@@ -374,6 +375,7 @@ public class GrpcSecurityPostureStub extends SecurityPostureStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetPostureRequest, Posture> getPostureTransportSettings =
         GrpcCallSettings.<GetPostureRequest, Posture>newBuilder()
@@ -384,6 +386,7 @@ public class GrpcSecurityPostureStub extends SecurityPostureStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreatePostureRequest, Operation> createPostureTransportSettings =
         GrpcCallSettings.<CreatePostureRequest, Operation>newBuilder()
@@ -394,6 +397,7 @@ public class GrpcSecurityPostureStub extends SecurityPostureStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdatePostureRequest, Operation> updatePostureTransportSettings =
         GrpcCallSettings.<UpdatePostureRequest, Operation>newBuilder()
@@ -414,6 +418,7 @@ public class GrpcSecurityPostureStub extends SecurityPostureStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ExtractPostureRequest, Operation> extractPostureTransportSettings =
         GrpcCallSettings.<ExtractPostureRequest, Operation>newBuilder()
@@ -424,6 +429,7 @@ public class GrpcSecurityPostureStub extends SecurityPostureStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListPostureDeploymentsRequest, ListPostureDeploymentsResponse>
         listPostureDeploymentsTransportSettings =
@@ -436,6 +442,7 @@ public class GrpcSecurityPostureStub extends SecurityPostureStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetPostureDeploymentRequest, PostureDeployment>
         getPostureDeploymentTransportSettings =
@@ -447,6 +454,7 @@ public class GrpcSecurityPostureStub extends SecurityPostureStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreatePostureDeploymentRequest, Operation>
         createPostureDeploymentTransportSettings =
@@ -458,6 +466,7 @@ public class GrpcSecurityPostureStub extends SecurityPostureStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdatePostureDeploymentRequest, Operation>
         updatePostureDeploymentTransportSettings =
@@ -482,6 +491,7 @@ public class GrpcSecurityPostureStub extends SecurityPostureStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListPostureTemplatesRequest, ListPostureTemplatesResponse>
         listPostureTemplatesTransportSettings =
@@ -493,6 +503,7 @@ public class GrpcSecurityPostureStub extends SecurityPostureStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetPostureTemplateRequest, PostureTemplate>
         getPostureTemplateTransportSettings =
@@ -504,6 +515,7 @@ public class GrpcSecurityPostureStub extends SecurityPostureStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

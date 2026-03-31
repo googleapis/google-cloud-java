@@ -191,6 +191,7 @@ public class HttpJsonCreativeTemplateServiceStub extends CreativeTemplateService
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListCreativeTemplatesRequest, ListCreativeTemplatesResponse>
         listCreativeTemplatesTransportSettings =
@@ -204,6 +205,7 @@ public class HttpJsonCreativeTemplateServiceStub extends CreativeTemplateService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getCreativeTemplateCallable =

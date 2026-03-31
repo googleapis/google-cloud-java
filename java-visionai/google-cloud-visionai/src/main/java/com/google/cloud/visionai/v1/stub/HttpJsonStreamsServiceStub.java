@@ -1251,6 +1251,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
         HttpJsonCallSettings.<GetClusterRequest, Cluster>newBuilder()
@@ -1262,6 +1263,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
         HttpJsonCallSettings.<CreateClusterRequest, Operation>newBuilder()
@@ -1273,6 +1275,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateClusterRequest, Operation> updateClusterTransportSettings =
         HttpJsonCallSettings.<UpdateClusterRequest, Operation>newBuilder()
@@ -1295,6 +1298,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListStreamsRequest, ListStreamsResponse> listStreamsTransportSettings =
         HttpJsonCallSettings.<ListStreamsRequest, ListStreamsResponse>newBuilder()
@@ -1306,6 +1310,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetStreamRequest, Stream> getStreamTransportSettings =
         HttpJsonCallSettings.<GetStreamRequest, Stream>newBuilder()
@@ -1317,6 +1322,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateStreamRequest, Operation> createStreamTransportSettings =
         HttpJsonCallSettings.<CreateStreamRequest, Operation>newBuilder()
@@ -1328,6 +1334,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateStreamRequest, Operation> updateStreamTransportSettings =
         HttpJsonCallSettings.<UpdateStreamRequest, Operation>newBuilder()
@@ -1350,6 +1357,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetStreamThumbnailRequest, Operation> getStreamThumbnailTransportSettings =
         HttpJsonCallSettings.<GetStreamThumbnailRequest, Operation>newBuilder()
@@ -1385,6 +1393,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetEventRequest, Event> getEventTransportSettings =
         HttpJsonCallSettings.<GetEventRequest, Event>newBuilder()
@@ -1396,6 +1405,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateEventRequest, Operation> createEventTransportSettings =
         HttpJsonCallSettings.<CreateEventRequest, Operation>newBuilder()
@@ -1407,6 +1417,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateEventRequest, Operation> updateEventTransportSettings =
         HttpJsonCallSettings.<UpdateEventRequest, Operation>newBuilder()
@@ -1429,6 +1440,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListSeriesRequest, ListSeriesResponse> listSeriesTransportSettings =
         HttpJsonCallSettings.<ListSeriesRequest, ListSeriesResponse>newBuilder()
@@ -1440,6 +1452,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetSeriesRequest, Series> getSeriesTransportSettings =
         HttpJsonCallSettings.<GetSeriesRequest, Series>newBuilder()
@@ -1451,6 +1464,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateSeriesRequest, Operation> createSeriesTransportSettings =
         HttpJsonCallSettings.<CreateSeriesRequest, Operation>newBuilder()
@@ -1462,6 +1476,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateSeriesRequest, Operation> updateSeriesTransportSettings =
         HttpJsonCallSettings.<UpdateSeriesRequest, Operation>newBuilder()
@@ -1484,6 +1499,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<MaterializeChannelRequest, Operation> materializeChannelTransportSettings =
         HttpJsonCallSettings.<MaterializeChannelRequest, Operation>newBuilder()
@@ -1495,6 +1511,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

@@ -176,6 +176,7 @@ public class GrpcVpcAccessServiceStub extends VpcAccessServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetConnectorRequest, Connector> getConnectorTransportSettings =
         GrpcCallSettings.<GetConnectorRequest, Connector>newBuilder()
@@ -186,6 +187,7 @@ public class GrpcVpcAccessServiceStub extends VpcAccessServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListConnectorsRequest, ListConnectorsResponse>
         listConnectorsTransportSettings =
@@ -197,6 +199,7 @@ public class GrpcVpcAccessServiceStub extends VpcAccessServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteConnectorRequest, Operation> deleteConnectorTransportSettings =
         GrpcCallSettings.<DeleteConnectorRequest, Operation>newBuilder()
@@ -207,6 +210,7 @@ public class GrpcVpcAccessServiceStub extends VpcAccessServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

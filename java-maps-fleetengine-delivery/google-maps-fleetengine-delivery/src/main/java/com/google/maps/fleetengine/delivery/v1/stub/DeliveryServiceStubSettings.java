@@ -469,6 +469,7 @@ public class DeliveryServiceStubSettings extends StubSettings<DeliveryServiceStu
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.maps:google-maps-fleetengine-delivery")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

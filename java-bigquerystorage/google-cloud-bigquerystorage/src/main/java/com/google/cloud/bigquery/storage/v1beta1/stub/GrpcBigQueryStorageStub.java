@@ -186,6 +186,7 @@ public class GrpcBigQueryStorageStub extends BigQueryStorageStub {
                           String.valueOf(request.getTableReference().getProjectId()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<Storage.ReadRowsRequest, Storage.ReadRowsResponse> readRowsTransportSettings =
         GrpcCallSettings.<Storage.ReadRowsRequest, Storage.ReadRowsResponse>newBuilder()

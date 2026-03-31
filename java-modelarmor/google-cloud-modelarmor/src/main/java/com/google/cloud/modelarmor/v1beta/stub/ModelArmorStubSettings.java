@@ -440,6 +440,7 @@ public class ModelArmorStubSettings extends StubSettings<ModelArmorStubSettings>
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-modelarmor")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

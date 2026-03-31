@@ -107,6 +107,7 @@ public class TemplatesServiceClientHttpJsonTest {
             .setRuntimeUpdatableParams(RuntimeUpdatableParams.newBuilder().build())
             .setSatisfiesPzi(true)
             .setServiceResources(ServiceResources.newBuilder().build())
+            .setPausable(true)
             .build();
     mockService.addResponse(expectedResponse);
 

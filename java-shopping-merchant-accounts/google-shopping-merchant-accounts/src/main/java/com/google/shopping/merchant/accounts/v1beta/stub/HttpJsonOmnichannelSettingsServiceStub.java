@@ -326,6 +326,7 @@ public class HttpJsonOmnichannelSettingsServiceStub extends OmnichannelSettingsS
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListOmnichannelSettingsRequest, ListOmnichannelSettingsResponse>
         listOmnichannelSettingsTransportSettings =
@@ -339,6 +340,7 @@ public class HttpJsonOmnichannelSettingsServiceStub extends OmnichannelSettingsS
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateOmnichannelSettingRequest, OmnichannelSetting>
         createOmnichannelSettingTransportSettings =
@@ -351,6 +353,7 @@ public class HttpJsonOmnichannelSettingsServiceStub extends OmnichannelSettingsS
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateOmnichannelSettingRequest, OmnichannelSetting>
         updateOmnichannelSettingTransportSettings =
@@ -379,6 +382,7 @@ public class HttpJsonOmnichannelSettingsServiceStub extends OmnichannelSettingsS
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.getOmnichannelSettingCallable =

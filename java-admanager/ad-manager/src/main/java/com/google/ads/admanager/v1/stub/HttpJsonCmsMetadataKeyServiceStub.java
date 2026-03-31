@@ -186,6 +186,7 @@ public class HttpJsonCmsMetadataKeyServiceStub extends CmsMetadataKeyServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListCmsMetadataKeysRequest, ListCmsMetadataKeysResponse>
         listCmsMetadataKeysTransportSettings =
@@ -199,6 +200,7 @@ public class HttpJsonCmsMetadataKeyServiceStub extends CmsMetadataKeyServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getCmsMetadataKeyCallable =

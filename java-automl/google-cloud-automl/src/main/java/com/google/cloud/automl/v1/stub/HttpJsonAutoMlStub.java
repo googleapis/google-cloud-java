@@ -892,6 +892,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetDatasetRequest, Dataset> getDatasetTransportSettings =
         HttpJsonCallSettings.<GetDatasetRequest, Dataset>newBuilder()
@@ -903,6 +904,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListDatasetsRequest, ListDatasetsResponse> listDatasetsTransportSettings =
         HttpJsonCallSettings.<ListDatasetsRequest, ListDatasetsResponse>newBuilder()
@@ -914,6 +916,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateDatasetRequest, Dataset> updateDatasetTransportSettings =
         HttpJsonCallSettings.<UpdateDatasetRequest, Dataset>newBuilder()
@@ -936,6 +939,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ImportDataRequest, Operation> importDataTransportSettings =
         HttpJsonCallSettings.<ImportDataRequest, Operation>newBuilder()
@@ -947,6 +951,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ExportDataRequest, Operation> exportDataTransportSettings =
         HttpJsonCallSettings.<ExportDataRequest, Operation>newBuilder()
@@ -958,6 +963,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetAnnotationSpecRequest, AnnotationSpec>
         getAnnotationSpecTransportSettings =
@@ -970,6 +976,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateModelRequest, Operation> createModelTransportSettings =
         HttpJsonCallSettings.<CreateModelRequest, Operation>newBuilder()
@@ -981,6 +988,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetModelRequest, Model> getModelTransportSettings =
         HttpJsonCallSettings.<GetModelRequest, Model>newBuilder()
@@ -992,6 +1000,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListModelsRequest, ListModelsResponse> listModelsTransportSettings =
         HttpJsonCallSettings.<ListModelsRequest, ListModelsResponse>newBuilder()
@@ -1003,6 +1012,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteModelRequest, Operation> deleteModelTransportSettings =
         HttpJsonCallSettings.<DeleteModelRequest, Operation>newBuilder()
@@ -1014,6 +1024,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateModelRequest, Model> updateModelTransportSettings =
         HttpJsonCallSettings.<UpdateModelRequest, Model>newBuilder()
@@ -1036,6 +1047,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UndeployModelRequest, Operation> undeployModelTransportSettings =
         HttpJsonCallSettings.<UndeployModelRequest, Operation>newBuilder()
@@ -1047,6 +1059,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ExportModelRequest, Operation> exportModelTransportSettings =
         HttpJsonCallSettings.<ExportModelRequest, Operation>newBuilder()
@@ -1058,6 +1071,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetModelEvaluationRequest, ModelEvaluation>
         getModelEvaluationTransportSettings =
@@ -1070,6 +1084,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListModelEvaluationsRequest, ListModelEvaluationsResponse>
         listModelEvaluationsTransportSettings =
@@ -1083,6 +1098,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createDatasetCallable =

@@ -540,6 +540,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetApplicationRequest, Application> getApplicationTransportSettings =
         GrpcCallSettings.<GetApplicationRequest, Application>newBuilder()
@@ -550,6 +551,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateApplicationRequest, Operation> createApplicationTransportSettings =
         GrpcCallSettings.<CreateApplicationRequest, Operation>newBuilder()
@@ -560,6 +562,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateApplicationRequest, Operation> updateApplicationTransportSettings =
         GrpcCallSettings.<UpdateApplicationRequest, Operation>newBuilder()
@@ -581,6 +584,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeployApplicationRequest, Operation> deployApplicationTransportSettings =
         GrpcCallSettings.<DeployApplicationRequest, Operation>newBuilder()
@@ -591,6 +595,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UndeployApplicationRequest, Operation> undeployApplicationTransportSettings =
         GrpcCallSettings.<UndeployApplicationRequest, Operation>newBuilder()
@@ -601,6 +606,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<AddApplicationStreamInputRequest, Operation>
         addApplicationStreamInputTransportSettings =
@@ -612,6 +618,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<RemoveApplicationStreamInputRequest, Operation>
         removeApplicationStreamInputTransportSettings =
@@ -623,6 +630,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateApplicationStreamInputRequest, Operation>
         updateApplicationStreamInputTransportSettings =
@@ -634,6 +642,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListInstancesRequest, ListInstancesResponse> listInstancesTransportSettings =
         GrpcCallSettings.<ListInstancesRequest, ListInstancesResponse>newBuilder()
@@ -644,6 +653,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         GrpcCallSettings.<GetInstanceRequest, Instance>newBuilder()
@@ -654,6 +664,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateApplicationInstancesRequest, Operation>
         createApplicationInstancesTransportSettings =
@@ -665,6 +676,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteApplicationInstancesRequest, Operation>
         deleteApplicationInstancesTransportSettings =
@@ -676,6 +688,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateApplicationInstancesRequest, Operation>
         updateApplicationInstancesTransportSettings =
@@ -687,6 +700,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListDraftsRequest, ListDraftsResponse> listDraftsTransportSettings =
         GrpcCallSettings.<ListDraftsRequest, ListDraftsResponse>newBuilder()
@@ -697,6 +711,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetDraftRequest, Draft> getDraftTransportSettings =
         GrpcCallSettings.<GetDraftRequest, Draft>newBuilder()
@@ -707,6 +722,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateDraftRequest, Operation> createDraftTransportSettings =
         GrpcCallSettings.<CreateDraftRequest, Operation>newBuilder()
@@ -717,6 +733,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateDraftRequest, Operation> updateDraftTransportSettings =
         GrpcCallSettings.<UpdateDraftRequest, Operation>newBuilder()
@@ -737,6 +754,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListProcessorsRequest, ListProcessorsResponse>
         listProcessorsTransportSettings =
@@ -748,6 +766,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListPrebuiltProcessorsRequest, ListPrebuiltProcessorsResponse>
         listPrebuiltProcessorsTransportSettings =
@@ -760,6 +779,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetProcessorRequest, Processor> getProcessorTransportSettings =
         GrpcCallSettings.<GetProcessorRequest, Processor>newBuilder()
@@ -770,6 +790,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateProcessorRequest, Operation> createProcessorTransportSettings =
         GrpcCallSettings.<CreateProcessorRequest, Operation>newBuilder()
@@ -780,6 +801,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateProcessorRequest, Operation> updateProcessorTransportSettings =
         GrpcCallSettings.<UpdateProcessorRequest, Operation>newBuilder()
@@ -800,6 +822,7 @@ public class GrpcAppPlatformStub extends AppPlatformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

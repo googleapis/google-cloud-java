@@ -525,6 +525,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListZonesRequest, ListZonesResponse> listZonesTransportSettings =
         GrpcCallSettings.<ListZonesRequest, ListZonesResponse>newBuilder()
@@ -535,6 +536,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetZoneRequest, Zone> getZoneTransportSettings =
         GrpcCallSettings.<GetZoneRequest, Zone>newBuilder()
@@ -545,6 +547,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListNetworksRequest, ListNetworksResponse> listNetworksTransportSettings =
         GrpcCallSettings.<ListNetworksRequest, ListNetworksResponse>newBuilder()
@@ -555,6 +558,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetNetworkRequest, Network> getNetworkTransportSettings =
         GrpcCallSettings.<GetNetworkRequest, Network>newBuilder()
@@ -565,6 +569,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DiagnoseNetworkRequest, DiagnoseNetworkResponse>
         diagnoseNetworkTransportSettings =
@@ -576,6 +581,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateNetworkRequest, Operation> createNetworkTransportSettings =
         GrpcCallSettings.<CreateNetworkRequest, Operation>newBuilder()
@@ -586,6 +592,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteNetworkRequest, Operation> deleteNetworkTransportSettings =
         GrpcCallSettings.<DeleteNetworkRequest, Operation>newBuilder()
@@ -596,6 +603,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListSubnetsRequest, ListSubnetsResponse> listSubnetsTransportSettings =
         GrpcCallSettings.<ListSubnetsRequest, ListSubnetsResponse>newBuilder()
@@ -606,6 +614,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetSubnetRequest, Subnet> getSubnetTransportSettings =
         GrpcCallSettings.<GetSubnetRequest, Subnet>newBuilder()
@@ -616,6 +625,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateSubnetRequest, Operation> createSubnetTransportSettings =
         GrpcCallSettings.<CreateSubnetRequest, Operation>newBuilder()
@@ -626,6 +636,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateSubnetRequest, Operation> updateSubnetTransportSettings =
         GrpcCallSettings.<UpdateSubnetRequest, Operation>newBuilder()
@@ -646,6 +657,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListInterconnectsRequest, ListInterconnectsResponse>
         listInterconnectsTransportSettings =
@@ -657,6 +669,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetInterconnectRequest, Interconnect> getInterconnectTransportSettings =
         GrpcCallSettings.<GetInterconnectRequest, Interconnect>newBuilder()
@@ -667,6 +680,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DiagnoseInterconnectRequest, DiagnoseInterconnectResponse>
         diagnoseInterconnectTransportSettings =
@@ -678,6 +692,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListInterconnectAttachmentsRequest, ListInterconnectAttachmentsResponse>
         listInterconnectAttachmentsTransportSettings =
@@ -691,6 +706,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetInterconnectAttachmentRequest, InterconnectAttachment>
         getInterconnectAttachmentTransportSettings =
@@ -702,6 +718,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateInterconnectAttachmentRequest, Operation>
         createInterconnectAttachmentTransportSettings =
@@ -713,6 +730,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteInterconnectAttachmentRequest, Operation>
         deleteInterconnectAttachmentTransportSettings =
@@ -724,6 +742,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListRoutersRequest, ListRoutersResponse> listRoutersTransportSettings =
         GrpcCallSettings.<ListRoutersRequest, ListRoutersResponse>newBuilder()
@@ -734,6 +753,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetRouterRequest, Router> getRouterTransportSettings =
         GrpcCallSettings.<GetRouterRequest, Router>newBuilder()
@@ -744,6 +764,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DiagnoseRouterRequest, DiagnoseRouterResponse>
         diagnoseRouterTransportSettings =
@@ -755,6 +776,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateRouterRequest, Operation> createRouterTransportSettings =
         GrpcCallSettings.<CreateRouterRequest, Operation>newBuilder()
@@ -765,6 +787,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateRouterRequest, Operation> updateRouterTransportSettings =
         GrpcCallSettings.<UpdateRouterRequest, Operation>newBuilder()
@@ -785,6 +808,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

@@ -456,6 +456,7 @@ public class PolicyTagManagerStubSettings extends StubSettings<PolicyTagManagerS
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-datacatalog")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

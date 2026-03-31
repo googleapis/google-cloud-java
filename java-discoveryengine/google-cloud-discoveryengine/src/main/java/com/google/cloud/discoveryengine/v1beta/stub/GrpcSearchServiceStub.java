@@ -119,6 +119,7 @@ public class GrpcSearchServiceStub extends SearchServiceStub {
                   builder.add("serving_config", String.valueOf(request.getServingConfig()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getServingConfig())
             .build();
     GrpcCallSettings<SearchRequest, SearchResponse> searchLiteTransportSettings =
         GrpcCallSettings.<SearchRequest, SearchResponse>newBuilder()
@@ -129,6 +130,7 @@ public class GrpcSearchServiceStub extends SearchServiceStub {
                   builder.add("serving_config", String.valueOf(request.getServingConfig()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getServingConfig())
             .build();
 
     this.searchCallable =

@@ -2666,6 +2666,7 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-vmwareengine")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

@@ -477,6 +477,7 @@ public class HttpJsonConnectionServiceStub extends ConnectionServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ConnectionProto.GetConnectionRequest, ConnectionProto.Connection>
         getConnectionTransportSettings =
@@ -490,6 +491,7 @@ public class HttpJsonConnectionServiceStub extends ConnectionServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             ConnectionProto.ListConnectionsRequest, ConnectionProto.ListConnectionsResponse>
@@ -505,6 +507,7 @@ public class HttpJsonConnectionServiceStub extends ConnectionServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ConnectionProto.UpdateConnectionRequest, ConnectionProto.Connection>
         updateConnectionTransportSettings =
@@ -518,6 +521,7 @@ public class HttpJsonConnectionServiceStub extends ConnectionServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ConnectionProto.UpdateConnectionCredentialRequest, Empty>
         updateConnectionCredentialTransportSettings =
@@ -543,6 +547,7 @@ public class HttpJsonConnectionServiceStub extends ConnectionServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -554,6 +559,7 @@ public class HttpJsonConnectionServiceStub extends ConnectionServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -565,6 +571,7 @@ public class HttpJsonConnectionServiceStub extends ConnectionServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -577,6 +584,7 @@ public class HttpJsonConnectionServiceStub extends ConnectionServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createConnectionCallable =

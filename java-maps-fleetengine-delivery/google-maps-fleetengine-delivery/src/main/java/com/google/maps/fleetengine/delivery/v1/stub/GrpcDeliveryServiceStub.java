@@ -306,6 +306,7 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
                           request.getName(), "provider_id", GET_DELIVERY_VEHICLE_0_PATH_TEMPLATE);
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteDeliveryVehicleRequest, Empty> deleteDeliveryVehicleTransportSettings =
         GrpcCallSettings.<DeleteDeliveryVehicleRequest, Empty>newBuilder()
@@ -317,6 +318,7 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
                       request.getName(), "provider_id", DELETE_DELIVERY_VEHICLE_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateDeliveryVehicleRequest, DeliveryVehicle>
         updateDeliveryVehicleTransportSettings =
@@ -345,6 +347,7 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
                           request.getParent(), "provider_id", BATCH_CREATE_TASKS_0_PATH_TEMPLATE);
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateTaskRequest, Task> createTaskTransportSettings =
         GrpcCallSettings.<CreateTaskRequest, Task>newBuilder()
@@ -365,6 +368,7 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
                   builder.add(request.getName(), "provider_id", GET_TASK_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteTaskRequest, Empty> deleteTaskTransportSettings =
         GrpcCallSettings.<DeleteTaskRequest, Empty>newBuilder()
@@ -375,6 +379,7 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
                   builder.add(request.getName(), "provider_id", DELETE_TASK_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateTaskRequest, Task> updateTaskTransportSettings =
         GrpcCallSettings.<UpdateTaskRequest, Task>newBuilder()
@@ -398,6 +403,7 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
                   builder.add(request.getParent(), "provider_id", LIST_TASKS_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetTaskTrackingInfoRequest, TaskTrackingInfo>
         getTaskTrackingInfoTransportSettings =
@@ -410,6 +416,7 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
                           request.getName(), "provider_id", GET_TASK_TRACKING_INFO_0_PATH_TEMPLATE);
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListDeliveryVehiclesRequest, ListDeliveryVehiclesResponse>
         listDeliveryVehiclesTransportSettings =
@@ -424,6 +431,7 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
                           LIST_DELIVERY_VEHICLES_0_PATH_TEMPLATE);
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createDeliveryVehicleCallable =

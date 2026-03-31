@@ -190,6 +190,7 @@ public class HttpJsonBrowserLanguageServiceStub extends BrowserLanguageServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListBrowserLanguagesRequest, ListBrowserLanguagesResponse>
         listBrowserLanguagesTransportSettings =
@@ -203,6 +204,7 @@ public class HttpJsonBrowserLanguageServiceStub extends BrowserLanguageServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getBrowserLanguageCallable =
