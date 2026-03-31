@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <!-- Allow rename from Notification to NotificationConfig-->
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/storage/v2/*</className>
+    <method>* *Notification*(*)</method>
+  </difference>
+
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/storage/v2/*</className>
+    <method>* *Hmac*(*)</method>
+  </difference>
+
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/storage/v2/*</className>
+    <method>* *ServiceAccount*(*)</method>
+  </difference>
+
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/storage/v2/*</className>
+    <method>* restoreObject(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/storage/v2/*</className>
+    <method>* bidiWriteObject(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/storage/v2/*</className>
+    <method>* moveObject(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/storage/v2/*</className>
+    <method>* bidiReadObject(*)</method>
+  </difference>
+
+</differences>
