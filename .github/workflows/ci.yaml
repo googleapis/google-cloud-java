@@ -43,7 +43,6 @@ jobs:
   units:
     runs-on: ubuntu-latest
     needs: bulk-filter
-    if: ${{ needs.bulk-filter.outputs.src == 'true' }}
     strategy:
       fail-fast: false
       matrix:
@@ -64,6 +63,7 @@ jobs:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
     - run: .kokoro/build.sh
+      if: ${{ needs.bulk-filter.outputs.src == 'true' }}
       env:
         JOB_TYPE: test
         JOB_NAME: units-${{matrix.java}}
@@ -95,6 +95,7 @@ jobs:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
     - run: .kokoro/build.sh
+      if: ${{ needs.bulk-filter.outputs.src == 'true' }}
       shell: bash      
       env:
         JOB_TYPE: test
