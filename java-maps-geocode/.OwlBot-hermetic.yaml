@@ -1,0 +1,36 @@
+# Copyright 2024 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+
+deep-remove-regex:
+- "/java-maps-geocode/grpc-google-.*/src"
+- "/java-maps-geocode/proto-google-.*/src"
+- "/java-maps-geocode/google-.*/src"
+- "/java-maps-geocode/samples/snippets/generated"
+
+deep-preserve-regex:
+- "/java-maps-geocode/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-maps-geocode/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
+
+deep-copy-regex:
+- source: "/google/maps/geocode/(v.*)/.*-java/proto-google-.*/src"
+  dest: "/owl-bot-staging/java-maps-geocode/$1/proto-google-maps-geocode-$1/src"
+- source: "/google/maps/geocode/(v.*)/.*-java/grpc-google-.*/src"
+  dest: "/owl-bot-staging/java-maps-geocode/$1/grpc-google-maps-geocode-$1/src"
+- source: "/google/maps/geocode/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-maps-geocode/$1/google-maps-geocode/src"
+- source: "/google/maps/geocode/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-maps-geocode/$1/samples/snippets/generated"
+
+api-name: geocode
