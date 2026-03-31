@@ -24,7 +24,7 @@
     <site.installationModule>${project.artifactId}</site.installationModule>
 
     <threeten-extra.version>1.8.0</threeten-extra.version>
-    <animal-sniffer.version>1.24</animal-sniffer.version>
+    <animal-sniffer.version>1.26</animal-sniffer.version>
     <opencensus.version>0.31.1</opencensus.version>
     <findbugs.version>3.0.2</findbugs.version>
     <jackson.version>2.18.2</jackson.version>
