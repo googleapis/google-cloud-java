@@ -47,11 +47,9 @@ import com.google.rpc.Status;
 import com.google.showcase.v1beta1.EchoClient;
 import com.google.showcase.v1beta1.EchoRequest;
 import com.google.showcase.v1beta1.EchoSettings;
-import com.google.showcase.v1beta1.it.util.TestClientInitializer;
 import com.google.showcase.v1beta1.stub.EchoStub;
 import com.google.showcase.v1beta1.stub.EchoStubSettings;
 import io.grpc.ManagedChannelBuilder;
-import java.io.IOException;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.SpanKind;
@@ -60,6 +58,7 @@ import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.sdk.trace.data.SpanData;
 import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import org.junit.jupiter.api.AfterEach;
@@ -69,6 +68,10 @@ import org.junit.jupiter.api.Test;
 class ITOtelTracing {
   private static final String SHOWCASE_SERVER_ADDRESS = "localhost";
   private static final long SHOWCASE_SERVER_PORT = 7469;
+  private static final String SHOWCASE_GRPC_ENDPOINT =
+      String.format("%s:%s", SHOWCASE_SERVER_ADDRESS, SHOWCASE_SERVER_PORT);
+  private static final String SHOWCASE_HTTPJSON_ENDPOINT =
+      String.format("http://%s:%s", SHOWCASE_SERVER_ADDRESS, SHOWCASE_SERVER_PORT);
   private static final String SHOWCASE_REPO = "googleapis/sdk-platform-java";
   private static final String SHOWCASE_ARTIFACT = "com.google.cloud:gapic-showcase";
 
@@ -107,13 +110,10 @@ class ITOtelTracing {
                 EchoSettings.defaultGrpcTransportProviderBuilder()
                     .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
                     .build())
-            .setEndpoint("localhost:7469")
+            .setEndpoint(SHOWCASE_GRPC_ENDPOINT)
             .build();
 
-    EchoStubSettings.Builder builder = (EchoStubSettings.Builder) grpcEchoSettings.getStubSettings().toBuilder();
-    builder.setTracerFactory(tracingFactory);
-    ExtendedEchoStubSettings echoStubSettings = new ExtendedEchoStubSettings(builder);
-    EchoStub stub = echoStubSettings.createStub();
+    EchoStub stub = createStubWithServiceName(grpcEchoSettings, tracingFactory);
 
     try (EchoClient client = EchoClient.create(stub)) {
 
@@ -161,7 +161,8 @@ class ITOtelTracing {
       assertThat(
               attemptSpan
                   .getAttributes()
-                  .get(AttributeKey.stringKey(ObservabilityAttributes.GCP_CLIENT_SERVICE_ATTRIBUTE)))
+                  .get(
+                      AttributeKey.stringKey(ObservabilityAttributes.GCP_CLIENT_SERVICE_ATTRIBUTE)))
           .isEqualTo("showcase");
       assertThat(
               attemptSpan
@@ -185,13 +186,10 @@ class ITOtelTracing {
                     .setHttpTransport(
                         new NetHttpTransport.Builder().doNotValidateCertificate().build())
                     .build())
-            .setEndpoint("http://localhost:7469")
+            .setEndpoint(SHOWCASE_HTTPJSON_ENDPOINT)
             .build();
 
-    EchoStubSettings.Builder builder = (EchoStubSettings.Builder) httpJsonEchoSettings.getStubSettings().toBuilder();
-    builder.setTracerFactory(tracingFactory);
-    ExtendedEchoStubSettings echoStubSettings = new ExtendedEchoStubSettings(builder);
-    EchoStub stub = echoStubSettings.createStub();
+    EchoStub stub = createStubWithServiceName(httpJsonEchoSettings, tracingFactory);
 
     try (EchoClient client = EchoClient.create(stub)) {
 
@@ -235,7 +233,8 @@ class ITOtelTracing {
       assertThat(
               attemptSpan
                   .getAttributes()
-                  .get(AttributeKey.stringKey(ObservabilityAttributes.GCP_CLIENT_SERVICE_ATTRIBUTE)))
+                  .get(
+                      AttributeKey.stringKey(ObservabilityAttributes.GCP_CLIENT_SERVICE_ATTRIBUTE)))
           .isEqualTo("showcase");
       assertThat(
               attemptSpan
@@ -283,7 +282,7 @@ class ITOtelTracing {
         grpcEchoSettings.toBuilder()
             .setCredentialsProvider(NoCredentialsProvider.create())
             .setTransportChannelProvider(EchoSettings.defaultGrpcTransportProviderBuilder().build())
-            .setEndpoint("localhost:7469")
+            .setEndpoint(SHOWCASE_GRPC_ENDPOINT)
             .build();
 
     SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
@@ -358,7 +357,7 @@ class ITOtelTracing {
                 EchoSettings.defaultHttpJsonTransportProviderBuilder()
                     .setHttpTransport(
                         new NetHttpTransport.Builder().doNotValidateCertificate().build())
-                    .setEndpoint("http://localhost:7469")
+                    .setEndpoint(SHOWCASE_HTTPJSON_ENDPOINT)
                     .build())
             .build();
 
@@ -407,9 +406,15 @@ class ITOtelTracing {
     assertThat(resendCounts).containsExactlyElementsIn(expectedCounts).inOrder();
   }
 
-  /**
-   * Custom wrapper to set a service name for showcase clients, which lack one by default.
-   */
+  private EchoStub createStubWithServiceName(
+      EchoSettings settings, SpanTracerFactory tracingFactory) throws IOException {
+    EchoStubSettings.Builder builder =
+        (EchoStubSettings.Builder) settings.getStubSettings().toBuilder();
+    builder.setTracerFactory(tracingFactory);
+    return new ExtendedEchoStubSettings(builder).createStub();
+  }
+
+  /** Custom wrapper to set a service name for showcase clients, which lack one by default. */
   private static class ExtendedEchoStubSettings extends EchoStubSettings {
     protected ExtendedEchoStubSettings(EchoStubSettings.Builder builder) throws IOException {
       super(builder);
