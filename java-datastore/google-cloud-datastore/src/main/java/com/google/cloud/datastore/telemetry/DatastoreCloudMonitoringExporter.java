@@ -63,6 +63,10 @@ import javax.annotation.Nullable;
  * <p>This implementation is a standalone exporter that does not depend on the {@code
  * com.google.cloud.opentelemetry:exporter-metrics} library, to avoid external version management
  * and ensure tight integration with Datastore requirements.
+ *
+ * <p>The implementation in this file is inspired from the original work done in the Spanner
+ * client library (SpannerCloudMonitoringExporter) to export metrics. The logic has been
+ * adapted for Datastore's use case.
  */
 class DatastoreCloudMonitoringExporter implements MetricExporter {
 
@@ -106,8 +110,10 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
     settingsBuilder.setCredentialsProvider(credentialsProvider);
 
     Duration timeout = Duration.ofMinutes(1);
-    // TODO: createTimeSeries needs special handling if the request failed. Leaving
-    // it as not retried for now.
+
+    // Use `createTimeSeries` instead of `createServiceTimeSeries` as the Firestore namespace
+    // is not deployed yet. This results in permission issues as we cannot write Service metrics.
+    // This call is done on a best-effort basis and may result in some metrics being dropped.
     settingsBuilder.createTimeSeriesSettings().setSimpleTimeoutNoRetriesDuration(timeout);
 
     return new DatastoreCloudMonitoringExporter(
@@ -136,11 +142,6 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
     return exportDatastoreClientMetrics(collection);
   }
 
-  @VisibleForTesting
-  MetricServiceClient getMetricServiceClient() {
-    return client;
-  }
-
   /**
    * Filters and exports Datastore-specific metrics.
    *
@@ -151,7 +152,10 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
    * @return a {@link CompletableResultCode} indicating success or failure.
    */
   private CompletableResultCode exportDatastoreClientMetrics(Collection<MetricData> collection) {
-    // Filter Datastore metrics. Only include metrics that belong to Datastore or GAX scopes.
+    // A single OpenTelemetry MeterProvider can be shared across multiple libraries and services
+    // in the same JVM. We filter by instrumentation scope (GAX and Datastore) to ensure that
+    // this exporter only processes metrics it is designed to handle, avoiding "pollution" from
+    // unrelated application or library metrics.
     List<MetricData> datastoreMetricData =
         collection.stream()
             .filter(
@@ -166,7 +170,11 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
                             .equals(TelemetryConstants.DATASTORE_METER_NAME))
             .collect(Collectors.toList());
 
-    // Log warnings for metrics that will be skipped due to project ID mismatch.
+    // Users may share a single OpenTelemetry instance across multiple Datastore clients pointing
+    // to different projects. Because the MetricReader collects all metrics from the shared
+    // provider, we must verify that each metric point matches this exporter's target project.
+    // This prevents cross-project pollution and avoids PermissionDenied errors when uploading
+    // metrics belonging to a different project.
     if (datastoreMetricData.stream()
         .map(MetricData::getResource)
         .anyMatch(this::shouldSkipPointDataDueToProjectId)) {
@@ -188,7 +196,7 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
       // Convert OTel MetricData to Cloud Monitoring TimeSeries.
       datastoreTimeSeries =
           DatastoreCloudMonitoringExporterUtils.convertToDatastoreTimeSeries(
-              datastoreMetricData, this.datastoreProjectId);
+              datastoreMetricData);
     } catch (Throwable e) {
       logger.log(
           Level.WARNING,

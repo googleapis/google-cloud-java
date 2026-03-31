@@ -61,6 +61,10 @@ import java.util.logging.Logger;
  *
  * <p>This class contains the logic to map OpenTelemetry {@link MetricData} and {@link PointData} to
  * Cloud Monitoring {@link TimeSeries}, including resource label mapping and attribute conversion.
+ *
+ * <p>The implementation in this file is inspired from the original work done in the Spanner
+ * client library (SpannerCloudMonitoringExporterUtils) to export metrics. The logic has been
+ * adapted for Datastore's use case.
  */
 class DatastoreCloudMonitoringExporterUtils {
 
@@ -83,20 +87,13 @@ class DatastoreCloudMonitoringExporterUtils {
    * Converts a list of {@link MetricData} to Cloud Monitoring {@link TimeSeries}.
    *
    * @param collection the collection of metrics to convert.
-   * @param projectId the GCP project ID.
    * @return a list of converted {@link TimeSeries}.
    */
-  static List<TimeSeries> convertToDatastoreTimeSeries(
-      List<MetricData> collection, String projectId) {
+  static List<TimeSeries> convertToDatastoreTimeSeries(List<MetricData> collection) {
     List<TimeSeries> allTimeSeries = new ArrayList<>();
 
+    // Metrics should already been filtered for Gax and Datastore related ones
     for (MetricData metricData : collection) {
-      // Only include metrics from Datastore or GAX scopes.
-      if (!(metricData.getInstrumentationScopeInfo().getName().equals(GAX_METER_NAME)
-          || metricData.getInstrumentationScopeInfo().getName().equals(DATASTORE_METER_NAME))) {
-        continue;
-      }
-
       // Map OTel resource attributes to the specific monitored resource labels.
       MonitoredResource.Builder monitoredResourceBuilder =
           MonitoredResource.newBuilder().setType(DATASTORE_RESOURCE_TYPE);
@@ -111,6 +108,8 @@ class DatastoreCloudMonitoringExporterUtils {
             TelemetryConstants.RESOURCE_LABEL_PROJECT_ID, resourceProjectId);
       }
 
+      // TODO: Add a check for now as the Firestore namespace has not been deployed yet.
+      // Write to the `global` monitored resource
       if (!"global".equals(DATASTORE_RESOURCE_TYPE)) {
         if (resourceDatabaseId != null) {
           monitoredResourceBuilder.putLabels(
