@@ -59,6 +59,7 @@ import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.sdk.trace.data.SpanData;
 import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import org.junit.jupiter.api.AfterEach;
@@ -100,29 +101,9 @@ class ITOtelTracing {
   void testTracing_successfulEcho_grpc() throws Exception {
     SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
 
-    EchoSettings grpcEchoSettings =
-        EchoSettings.newBuilder()
-            .setCredentialsProvider(NoCredentialsProvider.create())
-            .setTransportChannelProvider(
-                EchoSettings.defaultGrpcTransportProviderBuilder()
-                    .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
-                    .build())
-            .setEndpoint("localhost:7469")
-            .build();
-
-    EchoStubSettings.Builder stubSettingsBuilder =
-        (EchoStubSettings.Builder) grpcEchoSettings.getStubSettings().toBuilder();
-    stubSettingsBuilder.setTracerFactory(tracingFactory);
-
-    EchoStubSettings stubSettings =
-        new EchoStubSettings(stubSettingsBuilder) {
-          @Override
-          public String getServiceName() {
-            return "showcase";
-          }
-        };
-
-    try (EchoClient client = EchoClient.create(stubSettings.createStub())) {
+    EchoSettings grpcEchoSettings = createEchoSettings(false);
+    EchoStub stub = createStubWithServiceName(grpcEchoSettings, tracingFactory);
+    try (EchoClient client = EchoClient.create(stub)) {
 
       client.echo(EchoRequest.newBuilder().setContent("tracing-test").build());
 
@@ -183,30 +164,9 @@ class ITOtelTracing {
   void testTracing_successfulEcho_httpjson() throws Exception {
     SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
 
-    EchoSettings httpJsonEchoSettings =
-        EchoSettings.newHttpJsonBuilder()
-            .setCredentialsProvider(NoCredentialsProvider.create())
-            .setTransportChannelProvider(
-                EchoSettings.defaultHttpJsonTransportProviderBuilder()
-                    .setHttpTransport(
-                        new NetHttpTransport.Builder().doNotValidateCertificate().build())
-                    .setEndpoint("http://localhost:7469")
-                    .build())
-            .build();
-
-    EchoStubSettings.Builder stubSettingsBuilder =
-        (EchoStubSettings.Builder) httpJsonEchoSettings.getStubSettings().toBuilder();
-    stubSettingsBuilder.setTracerFactory(tracingFactory);
-
-    EchoStubSettings stubSettings =
-        new EchoStubSettings(stubSettingsBuilder) {
-          @Override
-          public String getServiceName() {
-            return "showcase";
-          }
-        };
-
-    try (EchoClient client = EchoClient.create(stubSettings.createStub())) {
+    EchoSettings httpJsonEchoSettings = createEchoSettings(true);
+    EchoStub stub = createStubWithServiceName(httpJsonEchoSettings, tracingFactory);
+    try (EchoClient client = EchoClient.create(stub)) {
 
       client.echo(EchoRequest.newBuilder().setContent("tracing-test").build());
 
@@ -431,5 +391,48 @@ class ITOtelTracing {
             .boxed()
             .collect(java.util.stream.Collectors.toList());
     assertThat(resendCounts).containsExactlyElementsIn(expectedCounts).inOrder();
+  }
+
+  private EchoSettings createEchoSettings(boolean isHttpJson) throws Exception {
+    if (isHttpJson) {
+      return EchoSettings.newHttpJsonBuilder()
+          .setCredentialsProvider(NoCredentialsProvider.create())
+          .setTransportChannelProvider(
+              EchoSettings.defaultHttpJsonTransportProviderBuilder()
+                  .setHttpTransport(
+                      new NetHttpTransport.Builder().doNotValidateCertificate().build())
+                  .setEndpoint("http://localhost:7469")
+                  .build())
+          .build();
+    } else {
+      return EchoSettings.newBuilder()
+          .setCredentialsProvider(NoCredentialsProvider.create())
+          .setTransportChannelProvider(
+              EchoSettings.defaultGrpcTransportProviderBuilder()
+                  .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+                  .build())
+          .setEndpoint("localhost:7469")
+          .build();
+    }
+  }
+
+  private EchoStub createStubWithServiceName(
+      EchoSettings settings, SpanTracerFactory tracingFactory) throws IOException {
+    EchoStubSettings.Builder builder =
+        (EchoStubSettings.Builder) settings.getStubSettings().toBuilder();
+    builder.setTracerFactory(tracingFactory);
+    return new ExtendedEchoStubSettings(builder).createStub();
+  }
+
+  /** Custom wrapper to set a service name for showcase clients, which lack one by default. */
+  private static class ExtendedEchoStubSettings extends EchoStubSettings {
+    protected ExtendedEchoStubSettings(EchoStubSettings.Builder builder) throws IOException {
+      super(builder);
+    }
+
+    @Override
+    public String getServiceName() {
+      return "showcase";
+    }
   }
 }
