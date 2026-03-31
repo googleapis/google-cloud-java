@@ -6,24 +6,8 @@ on:
 defaults:
   run:
     shell: bash
-env:
-  BUILD_SUBDIR: sdk-platform-java
 jobs:
-  filter:
-    runs-on: ubuntu-latest
-    outputs:
-      library: ${{ steps.filter.outputs.library }}
-    steps:
-    - uses: actions/checkout@v4
-    - uses: dorny/paths-filter@v3
-      id: filter
-      with:
-        filters: |
-          library:
-            - 'sdk-platform-java/**'
   nightly:
-    needs: filter
-    if: ${{ needs.filter.outputs.library == 'true' }}
     strategy:
       fail-fast: false
       matrix:
@@ -39,8 +23,15 @@ jobs:
           distribution: temurin
           cache: maven
       - run: mvn -version
+      - name: Install all modules first
+        shell: bash
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: install
       - name: Install
         run: mvn install --errors --batch-mode --no-transfer-progress -Dcheckstyle.skip -Dfmt.skip
+        working-directory: sdk-platform-java
       - name: Create issue if previous step fails
         if: ${{ failure() }}
         env:
@@ -66,9 +57,12 @@ jobs:
           distribution: temurin
           cache: maven
       - run: mvn -version
-      - name: Install with Java 11
-        run: mvn install --errors --batch-mode --no-transfer-progress -Dcheckstyle.skip -DskipTests -Dfmt.skip
-
+      - name: Install all modules first
+        shell: bash
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: install
       - uses: actions/setup-java@v5
         with:
           java-version: 8
