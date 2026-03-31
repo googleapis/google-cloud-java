@@ -271,12 +271,7 @@ public abstract class ClientContext {
     if (watchdogProvider != null && watchdogProvider.shouldAutoClose()) {
       backgroundResources.add(watchdog);
     }
-    String serviceName = endpointContext.serviceName();
-    String universeDomain = endpointContext.resolvedUniverseDomain();
-    String urlDomain = null;
-    if (!Strings.isNullOrEmpty(serviceName) && !Strings.isNullOrEmpty(universeDomain)) {
-      urlDomain = serviceName + "." + universeDomain;
-    }
+    String urlDomain = endpointContext.getUrlDomain();
 
     ApiTracerContext apiTracerContext =
         ApiTracerContext.newBuilder()
