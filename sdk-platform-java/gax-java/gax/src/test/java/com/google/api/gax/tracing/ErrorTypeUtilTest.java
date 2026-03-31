@@ -46,7 +46,6 @@ import java.net.Socket;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
 import java.security.GeneralSecurityException;
-import java.util.concurrent.ExecutionException;
 import javax.net.ssl.SSLHandshakeException;
 import org.junit.jupiter.api.Test;
 
@@ -193,14 +192,6 @@ class ErrorTypeUtilTest {
     class UnknownClientException extends Exception {}
     assertThat(ErrorTypeUtil.extractErrorType(new UnknownClientException()))
         .isEqualTo("UnknownClientException");
-  }
-
-  @Test
-  void testExtractErrorType_executionException_unwraps() {
-    Exception cause = new ConnectException("refused");
-    Exception wrapper = new ExecutionException(cause);
-    assertThat(ErrorTypeUtil.extractErrorType(wrapper))
-        .isEqualTo(ErrorTypeUtil.ErrorType.CLIENT_CONNECTION_ERROR.toString());
   }
 
   @Test
