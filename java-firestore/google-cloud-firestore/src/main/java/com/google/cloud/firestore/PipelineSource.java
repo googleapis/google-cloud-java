@@ -25,6 +25,7 @@ import com.google.cloud.firestore.pipeline.stages.CollectionOptions;
 import com.google.cloud.firestore.pipeline.stages.Database;
 import com.google.cloud.firestore.pipeline.stages.Documents;
 import com.google.cloud.firestore.pipeline.stages.Literals;
+import com.google.cloud.firestore.pipeline.stages.Subcollection;
 import com.google.common.base.Preconditions;
 import java.util.Arrays;
 import javax.annotation.Nonnull;
@@ -208,5 +209,31 @@ public final class PipelineSource {
   @BetaApi
   public Pipeline createFrom(AggregateQuery query) {
     return query.pipeline();
+  }
+
+  /**
+   * Initializes a pipeline scoped to a subcollection.
+   *
+   * <p>This method allows you to start a new pipeline that operates on a subcollection of the
+   * current document. It is intended to be used as a subquery.
+   *
+   * <p><b>Note:</b> A pipeline created with `subcollection` cannot be executed directly using
+   * {@link Pipeline#execute()}. It must be used within a parent pipeline.
+   *
+   * <p>Example:
+   *
+   * <pre>{@code
+   * firestore.pipeline().collection("books")
+   *     .addFields(
+   *         PipelineSource.subcollection("reviews")
+   *             .aggregate(AggregateFunction.average("rating").as("avg_rating"))
+   *             .toScalarExpression().as("average_rating"));
+   * }</pre>
+   *
+   * @param path The path of the subcollection.
+   * @return A new {@code Pipeline} instance scoped to the subcollection.
+   */
+  public static Pipeline subcollection(String path) {
+    return new Pipeline(null, new Subcollection(path));
   }
 }

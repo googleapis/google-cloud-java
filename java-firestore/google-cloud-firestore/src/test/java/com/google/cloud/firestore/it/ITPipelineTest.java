@@ -154,7 +154,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class ITPipelineTest extends ITBaseTest {
   private CollectionReference collection;
-  private Map<String, Map<String, Object>> bookDocs;
+  static Map<String, Map<String, Object>> bookDocs;
 
   public CollectionReference testCollectionWithDocs(Map<String, Map<String, Object>> docs)
       throws ExecutionException, InterruptedException, TimeoutException {
@@ -178,6 +178,10 @@ public class ITPipelineTest extends ITBaseTest {
       return;
     }
 
+    collection = testCollectionWithDocs(bookDocs);
+  }
+
+  static {
     bookDocs =
         ImmutableMap.<String, Map<String, Object>>builder()
             .put(
@@ -329,7 +333,6 @@ public class ITPipelineTest extends ITBaseTest {
                     .put("timestamp", new Date())
                     .build())
             .build();
-    collection = testCollectionWithDocs(bookDocs);
   }
 
   @Test

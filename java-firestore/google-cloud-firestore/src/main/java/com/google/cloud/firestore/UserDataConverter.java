@@ -247,6 +247,10 @@ class UserDataConverter {
       case REFERENCE_VALUE:
         String pathName = v.getReferenceValue();
         return new DocumentReference(rpcContext, ResourcePath.create(pathName));
+      case FIELD_REFERENCE_VALUE:
+        return v.getFieldReferenceValue();
+      case VARIABLE_REFERENCE_VALUE:
+        return v.getVariableReferenceValue();
       case GEO_POINT_VALUE:
         return new GeoPoint(
             v.getGeoPointValue().getLatitude(), v.getGeoPointValue().getLongitude());

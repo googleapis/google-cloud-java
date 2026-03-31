@@ -29,7 +29,7 @@ public class FunctionExpression extends Expression {
   private final String name;
   private final List<Expression> params;
 
-  FunctionExpression(String name, List<? extends Expression> params) {
+  public FunctionExpression(String name, List<? extends Expression> params) {
     this.name = name;
     this.params = Collections.unmodifiableList(params);
   }
