@@ -54,6 +54,7 @@ import com.google.cloud.redis.cluster.v1.GetBackupCollectionRequest;
 import com.google.cloud.redis.cluster.v1.GetBackupRequest;
 import com.google.cloud.redis.cluster.v1.GetClusterCertificateAuthorityRequest;
 import com.google.cloud.redis.cluster.v1.GetClusterRequest;
+import com.google.cloud.redis.cluster.v1.GetSharedRegionalCertificateAuthorityRequest;
 import com.google.cloud.redis.cluster.v1.ListBackupCollectionsRequest;
 import com.google.cloud.redis.cluster.v1.ListBackupCollectionsResponse;
 import com.google.cloud.redis.cluster.v1.ListBackupsRequest;
@@ -61,6 +62,7 @@ import com.google.cloud.redis.cluster.v1.ListBackupsResponse;
 import com.google.cloud.redis.cluster.v1.ListClustersRequest;
 import com.google.cloud.redis.cluster.v1.ListClustersResponse;
 import com.google.cloud.redis.cluster.v1.RescheduleClusterMaintenanceRequest;
+import com.google.cloud.redis.cluster.v1.SharedRegionalCertificateAuthority;
 import com.google.cloud.redis.cluster.v1.UpdateClusterRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -316,6 +318,45 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<CertificateAuthority>newBuilder()
                       .setDefaultInstance(CertificateAuthority.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+      getSharedRegionalCertificateAuthorityMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1.CloudRedisCluster/GetSharedRegionalCertificateAuthority")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<GetSharedRegionalCertificateAuthorityRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/sharedRegionalCertificateAuthority}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSharedRegionalCertificateAuthorityRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSharedRegionalCertificateAuthorityRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SharedRegionalCertificateAuthority>newBuilder()
+                      .setDefaultInstance(SharedRegionalCertificateAuthority.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -704,6 +745,9 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
       createClusterOperationCallable;
   private final UnaryCallable<GetClusterCertificateAuthorityRequest, CertificateAuthority>
       getClusterCertificateAuthorityCallable;
+  private final UnaryCallable<
+          GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+      getSharedRegionalCertificateAuthorityCallable;
   private final UnaryCallable<RescheduleClusterMaintenanceRequest, Operation>
       rescheduleClusterMaintenanceCallable;
   private final OperationCallable<RescheduleClusterMaintenanceRequest, Cluster, Any>
@@ -864,6 +908,22 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
             HttpJsonCallSettings
                 .<GetClusterCertificateAuthorityRequest, CertificateAuthority>newBuilder()
                 .setMethodDescriptor(getClusterCertificateAuthorityMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<
+            GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+        getSharedRegionalCertificateAuthorityTransportSettings =
+            HttpJsonCallSettings
+                .<GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+                    newBuilder()
+                .setMethodDescriptor(getSharedRegionalCertificateAuthorityMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .setParamsExtractor(
                     request -> {
@@ -1038,6 +1098,11 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
             getClusterCertificateAuthorityTransportSettings,
             settings.getClusterCertificateAuthoritySettings(),
             clientContext);
+    this.getSharedRegionalCertificateAuthorityCallable =
+        callableFactory.createUnaryCallable(
+            getSharedRegionalCertificateAuthorityTransportSettings,
+            settings.getSharedRegionalCertificateAuthoritySettings(),
+            clientContext);
     this.rescheduleClusterMaintenanceCallable =
         callableFactory.createUnaryCallable(
             rescheduleClusterMaintenanceTransportSettings,
@@ -1123,6 +1188,7 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
     methodDescriptors.add(deleteClusterMethodDescriptor);
     methodDescriptors.add(createClusterMethodDescriptor);
     methodDescriptors.add(getClusterCertificateAuthorityMethodDescriptor);
+    methodDescriptors.add(getSharedRegionalCertificateAuthorityMethodDescriptor);
     methodDescriptors.add(rescheduleClusterMaintenanceMethodDescriptor);
     methodDescriptors.add(listBackupCollectionsMethodDescriptor);
     methodDescriptors.add(getBackupCollectionMethodDescriptor);
@@ -1189,6 +1255,13 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
   public UnaryCallable<GetClusterCertificateAuthorityRequest, CertificateAuthority>
       getClusterCertificateAuthorityCallable() {
     return getClusterCertificateAuthorityCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+      getSharedRegionalCertificateAuthorityCallable() {
+    return getSharedRegionalCertificateAuthorityCallable;
   }
 
   @Override

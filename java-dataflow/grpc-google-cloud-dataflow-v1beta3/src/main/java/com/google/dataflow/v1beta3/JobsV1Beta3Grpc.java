@@ -21,8 +21,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Provides a method to create and modify Google Cloud Dataflow jobs.
- * A Job is a multi-stage computation graph run by the Cloud Dataflow service.
+ * Provides a method to create and modify Dataflow jobs.
+ * A Job is a multi-stage computation graph run by the Dataflow service.
  * </pre>
  */
 @io.grpc.stub.annotations.GrpcGenerated
@@ -385,8 +385,8 @@ public final class JobsV1Beta3Grpc {
    *
    *
    * <pre>
-   * Provides a method to create and modify Google Cloud Dataflow jobs.
-   * A Job is a multi-stage computation graph run by the Cloud Dataflow service.
+   * Provides a method to create and modify Dataflow jobs.
+   * A Job is a multi-stage computation graph run by the Dataflow service.
    * </pre>
    */
   public interface AsyncService {
@@ -395,7 +395,7 @@ public final class JobsV1Beta3Grpc {
      *
      *
      * <pre>
-     * Creates a Cloud Dataflow job.
+     * Creates a Dataflow job.
      * To create a job, we recommend using `projects.locations.jobs.create` with a
      * [regional endpoint]
      * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
@@ -521,8 +521,8 @@ public final class JobsV1Beta3Grpc {
    * Base class for the server implementation of the service JobsV1Beta3.
    *
    * <pre>
-   * Provides a method to create and modify Google Cloud Dataflow jobs.
-   * A Job is a multi-stage computation graph run by the Cloud Dataflow service.
+   * Provides a method to create and modify Dataflow jobs.
+   * A Job is a multi-stage computation graph run by the Dataflow service.
    * </pre>
    */
   public abstract static class JobsV1Beta3ImplBase
@@ -538,8 +538,8 @@ public final class JobsV1Beta3Grpc {
    * A stub to allow clients to do asynchronous rpc calls to service JobsV1Beta3.
    *
    * <pre>
-   * Provides a method to create and modify Google Cloud Dataflow jobs.
-   * A Job is a multi-stage computation graph run by the Cloud Dataflow service.
+   * Provides a method to create and modify Dataflow jobs.
+   * A Job is a multi-stage computation graph run by the Dataflow service.
    * </pre>
    */
   public static final class JobsV1Beta3Stub
@@ -557,7 +557,7 @@ public final class JobsV1Beta3Grpc {
      *
      *
      * <pre>
-     * Creates a Cloud Dataflow job.
+     * Creates a Dataflow job.
      * To create a job, we recommend using `projects.locations.jobs.create` with a
      * [regional endpoint]
      * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
@@ -693,8 +693,8 @@ public final class JobsV1Beta3Grpc {
    * A stub to allow clients to do synchronous rpc calls to service JobsV1Beta3.
    *
    * <pre>
-   * Provides a method to create and modify Google Cloud Dataflow jobs.
-   * A Job is a multi-stage computation graph run by the Cloud Dataflow service.
+   * Provides a method to create and modify Dataflow jobs.
+   * A Job is a multi-stage computation graph run by the Dataflow service.
    * </pre>
    */
   public static final class JobsV1Beta3BlockingV2Stub
@@ -713,7 +713,7 @@ public final class JobsV1Beta3Grpc {
      *
      *
      * <pre>
-     * Creates a Cloud Dataflow job.
+     * Creates a Dataflow job.
      * To create a job, we recommend using `projects.locations.jobs.create` with a
      * [regional endpoint]
      * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
@@ -833,8 +833,8 @@ public final class JobsV1Beta3Grpc {
    * A stub to allow clients to do limited synchronous rpc calls to service JobsV1Beta3.
    *
    * <pre>
-   * Provides a method to create and modify Google Cloud Dataflow jobs.
-   * A Job is a multi-stage computation graph run by the Cloud Dataflow service.
+   * Provides a method to create and modify Dataflow jobs.
+   * A Job is a multi-stage computation graph run by the Dataflow service.
    * </pre>
    */
   public static final class JobsV1Beta3BlockingStub
@@ -853,7 +853,7 @@ public final class JobsV1Beta3Grpc {
      *
      *
      * <pre>
-     * Creates a Cloud Dataflow job.
+     * Creates a Dataflow job.
      * To create a job, we recommend using `projects.locations.jobs.create` with a
      * [regional endpoint]
      * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
@@ -973,8 +973,8 @@ public final class JobsV1Beta3Grpc {
    * A stub to allow clients to do ListenableFuture-style rpc calls to service JobsV1Beta3.
    *
    * <pre>
-   * Provides a method to create and modify Google Cloud Dataflow jobs.
-   * A Job is a multi-stage computation graph run by the Cloud Dataflow service.
+   * Provides a method to create and modify Dataflow jobs.
+   * A Job is a multi-stage computation graph run by the Dataflow service.
    * </pre>
    */
   public static final class JobsV1Beta3FutureStub
@@ -993,7 +993,7 @@ public final class JobsV1Beta3Grpc {
      *
      *
      * <pre>
-     * Creates a Cloud Dataflow job.
+     * Creates a Dataflow job.
      * To create a job, we recommend using `projects.locations.jobs.create` with a
      * [regional endpoint]
      * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
