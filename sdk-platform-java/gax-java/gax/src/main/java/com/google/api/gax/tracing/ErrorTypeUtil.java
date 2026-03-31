@@ -142,15 +142,25 @@ public class ErrorTypeUtil {
     return ErrorType.INTERNAL.toString();
   }
 
-  /** Unwraps standard execution wrappers to find the real cause. */
+  /**
+   * Unwraps standard execution wrappers to find the real cause of the failure.
+   *
+   * <p>This method specifically unwraps:
+   * <ul>
+   *   <li>{@link com.google.common.util.concurrent.UncheckedExecutionException}: This is an
+   *       unchecked exception often thrown by {@code ApiExceptions.callAndTranslateApiException}
+   *       or {@code ServerStreamIterator} when a checked exception or error occurs.
+   * </ul>
+   *
+   * @param t the Throwable to unwrap.
+   * @return the cause of the exception if it is an instance of {@link UncheckedExecutionException}
+   *     and has a cause; otherwise, the throwable itself.
+   */
   private static Throwable getRealCause(Throwable t) {
-    if (t.getCause() == null) {
+    if (t.getCause() == null || !(t instanceof UncheckedExecutionException)) {
       return t;
     }
-    if (t instanceof ExecutionException || t instanceof UncheckedExecutionException) {
-      return t.getCause();
-    }
-    return t;
+    return t.getCause();
   }
 
   /**
