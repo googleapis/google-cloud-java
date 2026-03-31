@@ -43,7 +43,6 @@ import java.net.UnknownHostException;
 import java.nio.channels.UnresolvedAddressException;
 import java.security.GeneralSecurityException;
 import java.util.Set;
-import java.util.concurrent.ExecutionException;
 import javax.annotation.Nullable;
 import javax.net.ssl.SSLHandshakeException;
 
@@ -146,10 +145,11 @@ public class ErrorTypeUtil {
    * Unwraps standard execution wrappers to find the real cause of the failure.
    *
    * <p>This method specifically unwraps:
+   *
    * <ul>
    *   <li>{@link com.google.common.util.concurrent.UncheckedExecutionException}: This is an
-   *       unchecked exception often thrown by {@code ApiExceptions.callAndTranslateApiException}
-   *       or {@code ServerStreamIterator} when a checked exception or error occurs.
+   *       unchecked exception often thrown by {@code ApiExceptions.callAndTranslateApiException} or
+   *       {@code ServerStreamIterator} when a checked exception or error occurs.
    * </ul>
    *
    * @param t the Throwable to unwrap.
