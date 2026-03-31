@@ -23,6 +23,7 @@ import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.datastore.spi.DatastoreRpcFactory;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
+import com.google.cloud.datastore.telemetry.DatastoreMetricsRecorder;
 import com.google.cloud.datastore.telemetry.TelemetryConstants;
 import com.google.datastore.v1.BeginTransactionRequest;
 import com.google.datastore.v1.BeginTransactionResponse;
@@ -55,7 +56,7 @@ import org.junit.runners.Parameterized.Parameters;
 /**
  * Tests for transaction metrics recording in {@link DatastoreImpl}. These tests verify that
  * transaction latency and per-attempt metrics are correctly recorded via the {@link
- * com.google.cloud.datastore.telemetry.MetricsRecorder}.
+ * DatastoreMetricsRecorder}.
  */
 @RunWith(Parameterized.class)
 public class DatastoreImplMetricsTest {

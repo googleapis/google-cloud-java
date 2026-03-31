@@ -140,6 +140,28 @@
       <groupId>io.opentelemetry.instrumentation</groupId>
       <artifactId>opentelemetry-grpc-1.6</artifactId>
     </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk-common</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk-metrics</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-monitoring</artifactId>
+      <version>3.90.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring:current} -->
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-monitoring-v3</artifactId>
+      <version>3.90.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring:current} -->
+    </dependency>
 
     <dependency>
       <groupId>${project.groupId}</groupId>
@@ -195,27 +217,12 @@
     </dependency>
     <dependency>
       <groupId>io.opentelemetry</groupId>
-      <artifactId>opentelemetry-sdk</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.opentelemetry</groupId>
-      <artifactId>opentelemetry-sdk-common</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-sdk-testing</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-sdk-trace</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.opentelemetry</groupId>
-      <artifactId>opentelemetry-sdk-metrics</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>

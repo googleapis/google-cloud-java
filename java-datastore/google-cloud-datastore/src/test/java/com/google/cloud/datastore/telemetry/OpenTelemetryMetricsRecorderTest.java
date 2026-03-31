@@ -38,7 +38,7 @@ import org.junit.runners.JUnit4;
 public class OpenTelemetryMetricsRecorderTest {
 
   private InMemoryMetricReader metricReader;
-  private OpenTelemetryMetricsRecorder recorder;
+  private OpenTelemetryDatastoreMetricsRecorder recorder;
 
   @Before
   public void setUp() {
@@ -47,7 +47,8 @@ public class OpenTelemetryMetricsRecorderTest {
         SdkMeterProvider.builder().registerMetricReader(metricReader).build();
     OpenTelemetry openTelemetry =
         OpenTelemetrySdk.builder().setMeterProvider(meterProvider).build();
-    recorder = new OpenTelemetryMetricsRecorder(openTelemetry);
+    recorder =
+        new OpenTelemetryDatastoreMetricsRecorder(openTelemetry, TelemetryConstants.METRIC_PREFIX);
   }
 
   @Test
@@ -179,7 +180,7 @@ public class OpenTelemetryMetricsRecorderTest {
             .orElse(null);
 
     assertThat(metric).isNotNull();
-    assertThat(metric.getDescription()).isEqualTo("Latency of a single RPC attempt");
+    assertThat(metric.getDescription()).isEqualTo("Time an individual attempt took");
     assertThat(metric.getUnit()).isEqualTo("ms");
 
     HistogramPointData point =
@@ -210,7 +211,7 @@ public class OpenTelemetryMetricsRecorderTest {
             .orElse(null);
 
     assertThat(metric).isNotNull();
-    assertThat(metric.getDescription()).isEqualTo("Number of RPC attempts");
+    assertThat(metric.getDescription()).isEqualTo("Number of Attempts");
 
     LongPointData point = metric.getLongSumData().getPoints().stream().findFirst().orElse(null);
     assertThat(point).isNotNull();
@@ -234,7 +235,8 @@ public class OpenTelemetryMetricsRecorderTest {
 
     assertThat(metric).isNotNull();
     assertThat(metric.getDescription())
-        .isEqualTo("Total latency of an operation including retries");
+        .isEqualTo(
+            "Total time until final operation success or failure, including retries and backoff.");
     assertThat(metric.getUnit()).isEqualTo("ms");
 
     HistogramPointData point =
@@ -261,7 +263,7 @@ public class OpenTelemetryMetricsRecorderTest {
             .orElse(null);
 
     assertThat(metric).isNotNull();
-    assertThat(metric.getDescription()).isEqualTo("Number of operations");
+    assertThat(metric.getDescription()).isEqualTo("Number of Operations");
 
     LongPointData point = metric.getLongSumData().getPoints().stream().findFirst().orElse(null);
     assertThat(point).isNotNull();

@@ -48,12 +48,11 @@ import com.google.cloud.ServiceOptions;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.datastore.execution.AggregationQueryExecutor;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
-import com.google.cloud.datastore.telemetry.MetricsRecorder;
+import com.google.cloud.datastore.telemetry.DatastoreMetricsRecorder;
 import com.google.cloud.datastore.telemetry.TelemetryConstants;
 import com.google.cloud.datastore.telemetry.TelemetryUtils;
 import com.google.cloud.datastore.telemetry.TraceUtil;
 import com.google.cloud.datastore.telemetry.TraceUtil.Scope;
-import com.google.cloud.http.HttpTransportOptions;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Stopwatch;
@@ -101,16 +100,14 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   private final com.google.cloud.datastore.telemetry.TraceUtil otelTraceUtil =
       getOptions().getTraceUtil();
-  private final MetricsRecorder metricsRecorder = getOptions().getMetricsRecorder();
-  private final boolean isHttpTransport;
-
+  private final DatastoreMetricsRecorder datastoreMetricsRecorder =
+      getOptions().getMetricsRecorder();
   private final ReadOptionProtoPreparer readOptionProtoPreparer;
   private final AggregationQueryExecutor aggregationQueryExecutor;
 
   DatastoreImpl(DatastoreOptions options) {
     super(options);
     this.datastoreRpc = options.getDatastoreRpcV1();
-    this.isHttpTransport = options.getTransportOptions() instanceof HttpTransportOptions;
     retrySettings =
         MoreObjects.firstNonNull(options.getRetrySettings(), ServiceOptions.getNoRetrySettings());
 
@@ -122,7 +119,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
                 .setTraceUtil(otelTraceUtil)
                 .setRetrySettings(retrySettings)
                 .setDatastoreOptions(options)
-                .setMetricsRecorder(metricsRecorder)
+                .setMetricsRecorder(datastoreMetricsRecorder)
                 .build(),
             options);
   }
@@ -185,7 +182,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   static class ReadWriteTransactionCallable<T> implements Callable<T> {
     private final Datastore datastore;
     private final TransactionCallable<T> callable;
-    private final MetricsRecorder metricsRecorder;
+    private final DatastoreMetricsRecorder datastoreMetricsRecorder;
     private volatile TransactionOptions options;
     private volatile Transaction transaction;
 
@@ -193,11 +190,11 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
         Datastore datastore,
         TransactionCallable<T> callable,
         TransactionOptions options,
-        MetricsRecorder metricsRecorder) {
+        DatastoreMetricsRecorder datastoreMetricsRecorder) {
       this.datastore = datastore;
       this.callable = callable;
       this.options = options;
-      this.metricsRecorder = metricsRecorder;
+      this.datastoreMetricsRecorder = datastoreMetricsRecorder;
       this.transaction = null;
     }
 
@@ -222,7 +219,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
         // or from `transaction.commit()`. If there is an exception thrown from either call site,
         // then the transaction is still active. Check if it is still active (e.g. not commited)
         // and roll back the transaction.
-        if (transaction.isActive()) {
+        if (transaction != null && transaction.isActive()) {
           transaction.rollback();
         }
         throw DatastoreException.propagateUserException(ex);
@@ -231,10 +228,11 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
         // If the transaction is active, then commit the rollback. If it was already successfully
         // rolled back, the transaction is inactive (prevents rolling back an already rolled back
         // transaction).
-        if (transaction.isActive()) {
+        if (transaction != null && transaction.isActive()) {
           transaction.rollback();
         }
-        if (options != null
+        if (transaction != null
+            && options != null
             && options.getModeCase().equals(TransactionOptions.ModeCase.READ_WRITE)) {
           setPrevTransactionId(transaction.getTransactionId());
         }
@@ -257,7 +255,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       attributes.put(
           TelemetryConstants.ATTRIBUTES_KEY_TRANSPORT,
           TelemetryConstants.getTransportName(transportOptions));
-      metricsRecorder.recordTransactionAttemptCount(1, attributes);
+      datastoreMetricsRecorder.recordTransactionAttemptCount(1, attributes);
     }
   }
 
@@ -272,7 +270,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     TraceUtil.Span span = otelTraceUtil.startSpan(SPAN_NAME_TRANSACTION_RUN);
 
     ReadWriteTransactionCallable<T> baseCallable =
-        new ReadWriteTransactionCallable<>(this, callable, transactionOptions, metricsRecorder);
+        new ReadWriteTransactionCallable<>(
+            this, callable, transactionOptions, datastoreMetricsRecorder);
 
     Callable<T> transactionCallable = baseCallable;
     if (getOptions().getOpenTelemetryOptions().isTracingEnabled()) {
@@ -302,7 +301,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       attributes.put(
           TelemetryConstants.ATTRIBUTES_KEY_TRANSPORT,
           TelemetryConstants.getTransportName(getOptions().getTransportOptions()));
-      metricsRecorder.recordTransactionLatency(latencyMs, attributes);
+      datastoreMetricsRecorder.recordTransactionLatency(latencyMs, attributes);
       span.end();
     }
   }
@@ -805,15 +804,13 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       ResultRetryAlgorithm<?> exceptionHandler) {
     com.google.cloud.datastore.telemetry.TraceUtil.Span span = otelTraceUtil.startSpan(spanName);
 
-    // Gax already records operation and attempt metrics. Since Datastore HttpJson does not
-    // integrate with Gax, manually instrument these metrics when using HttpJson for parity
-    Stopwatch operationStopwatch = isHttpTransport ? Stopwatch.createStarted() : null;
+    Stopwatch operationStopwatch = Stopwatch.createStarted();
     String operationStatus = StatusCode.Code.OK.toString();
 
     DatastoreOptions options = getOptions();
     Callable<T> attemptCallable =
         TelemetryUtils.attemptMetricsCallable(
-            callable, metricsRecorder, options, isHttpTransport, methodName);
+            callable, datastoreMetricsRecorder, options, methodName);
     try (TraceUtil.Scope ignored = span.makeCurrent()) {
       return RetryHelper.runWithRetries(
           attemptCallable, retrySettings, exceptionHandler, options.getClock());
@@ -823,12 +820,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       throw DatastoreException.translateAndThrow(e);
     } finally {
       TelemetryUtils.recordOperationMetrics(
-          metricsRecorder,
-          options,
-          isHttpTransport,
-          operationStopwatch,
-          methodName,
-          operationStatus);
+          datastoreMetricsRecorder, options, operationStopwatch, methodName, operationStatus);
       span.end();
     }
   }
