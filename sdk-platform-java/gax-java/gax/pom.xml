@@ -115,6 +115,7 @@
                 <include>com/google/api/gax/rpc/testing/**</include>
                 <include>com/google/api/gax/rpc/mtls/**</include>
                 <include>com/google/api/gax/util/**</include>
+                <include>com/google/api/gax/logging/**</include>
                 <include>**/native-image.properties</include>
               </includes>
             </configuration>
