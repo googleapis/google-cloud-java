@@ -223,13 +223,6 @@ public class SpanTracer implements ApiTracer {
     endAttempt();
   }
 
-  private String extractErrorMessage(Throwable error) {
-    if (Strings.isNullOrEmpty(error.getMessage())) {
-      return null;
-    }
-    return error.getMessage();
-  }
-
   private void endAttempt() {
     if (attemptSpan != null) {
       attemptSpan.end();
