@@ -464,6 +464,7 @@ function install_modules() {
       -Danimal.sniffer.skip=true \
       -DskipTests=true \
       -Djacoco.skip=true \
+      --also-make \
       -T 1C
   fi
 }
