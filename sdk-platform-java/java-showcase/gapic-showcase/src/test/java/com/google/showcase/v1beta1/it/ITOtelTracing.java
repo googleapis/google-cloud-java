@@ -453,11 +453,7 @@ class ITOtelTracing {
         TestClientInitializer.createGrpcEchoClientOpentelemetry(
             tracingFactory, transportChannelProvider)) {
 
-      EchoRequest echoRequest =
-          EchoRequest.newBuilder()
-              .setError(
-                  Status.newBuilder().setCode(com.google.rpc.Code.UNAVAILABLE.ordinal()).build())
-              .build();
+      EchoRequest echoRequest = EchoRequest.newBuilder().build();
 
       assertThrows(UnavailableException.class, () -> client.echo(echoRequest));
       verifyErrorTypeAttribute("UNAVAILABLE");
@@ -552,11 +548,7 @@ class ITOtelTracing {
                 .build();
 
     try (EchoClient client = EchoClient.create(echoStubSettings.createStub())) {
-      EchoRequest echoRequest =
-          EchoRequest.newBuilder()
-              .setError(
-                  Status.newBuilder().setCode(com.google.rpc.Code.UNAVAILABLE.ordinal()).build())
-              .build();
+      EchoRequest echoRequest = EchoRequest.newBuilder().build();
 
       assertThrows(UnavailableException.class, () -> client.echo(echoRequest));
       verifyErrorTypeAttribute("503");
