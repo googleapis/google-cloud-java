@@ -2524,6 +2524,28 @@ libraries:
   - proto_path: google/cloud/speech/v1
   - proto_path: google/cloud/speech/v1p1beta1
   - proto_path: google/cloud/speech/v2
+- api_shortname: storage
+  name_pretty: Cloud Storage
+  product_documentation: https://cloud.google.com/storage
+  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-storage/latest/history
+  api_description: 'is a durable and highly available object storage service. Google
+    Cloud Storage is almost infinitely scalable and guarantees consistency: when a
+    write succeeds, the latest copy of the object will be returned to any GET, globally.'
+  issue_tracker: https://issuetracker.google.com/savedsearches/559782
+  release_level: stable
+  language: java
+  distribution_name: com.google.cloud:google-cloud-storage
+  codeowner_team: '@googleapis/gcs-team'
+  api_id: storage.googleapis.com
+  requires_billing: true
+  library_type: GAPIC_COMBO
+  extra_versioned_modules: gapic-google-cloud-storage-v2
+  excluded_poms: google-cloud-storage-bom,google-cloud-storage
+  recommended_package: com.google.cloud.storage
+  transport: rest
+  GAPICs:
+  - proto_path: google/storage/v2
+  - proto_path: google/storage/control/v2
 - api_shortname: storagetransfer
   name_pretty: Storage Transfer Service
   product_documentation: https://cloud.google.com/storage-transfer-service
