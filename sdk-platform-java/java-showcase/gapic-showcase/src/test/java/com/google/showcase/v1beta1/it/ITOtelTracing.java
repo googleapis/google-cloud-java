@@ -103,15 +103,7 @@ class ITOtelTracing {
   void testTracing_successfulEcho_grpc() throws Exception {
     SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
 
-    EchoSettings grpcEchoSettings =
-        EchoSettings.newBuilder()
-            .setCredentialsProvider(NoCredentialsProvider.create())
-            .setTransportChannelProvider(
-                EchoSettings.defaultGrpcTransportProviderBuilder()
-                    .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
-                    .build())
-            .setEndpoint(SHOWCASE_GRPC_ENDPOINT)
-            .build();
+    EchoSettings grpcEchoSettings = createEchoSettings(false);
 
     EchoStub stub = createStubWithServiceName(grpcEchoSettings, tracingFactory);
 
@@ -178,16 +170,7 @@ class ITOtelTracing {
   void testTracing_successfulEcho_httpjson() throws Exception {
     SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
 
-    EchoSettings httpJsonEchoSettings =
-        EchoSettings.newHttpJsonBuilder()
-            .setCredentialsProvider(NoCredentialsProvider.create())
-            .setTransportChannelProvider(
-                EchoSettings.defaultHttpJsonTransportProviderBuilder()
-                    .setHttpTransport(
-                        new NetHttpTransport.Builder().doNotValidateCertificate().build())
-                    .build())
-            .setEndpoint(SHOWCASE_HTTPJSON_ENDPOINT)
-            .build();
+    EchoSettings httpJsonEchoSettings = createEchoSettings(true);
 
     EchoStub stub = createStubWithServiceName(httpJsonEchoSettings, tracingFactory);
 
@@ -404,6 +387,29 @@ class ITOtelTracing {
             .boxed()
             .collect(java.util.stream.Collectors.toList());
     assertThat(resendCounts).containsExactlyElementsIn(expectedCounts).inOrder();
+  }
+
+  private EchoSettings createEchoSettings(boolean isHttpJson) throws Exception {
+    if (isHttpJson) {
+      return EchoSettings.newHttpJsonBuilder()
+          .setCredentialsProvider(NoCredentialsProvider.create())
+          .setTransportChannelProvider(
+              EchoSettings.defaultHttpJsonTransportProviderBuilder()
+                  .setHttpTransport(
+                      new NetHttpTransport.Builder().doNotValidateCertificate().build())
+                  .build())
+          .setEndpoint(SHOWCASE_HTTPJSON_ENDPOINT)
+          .build();
+    } else {
+      return EchoSettings.newBuilder()
+          .setCredentialsProvider(NoCredentialsProvider.create())
+          .setTransportChannelProvider(
+              EchoSettings.defaultGrpcTransportProviderBuilder()
+                  .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+                  .build())
+          .setEndpoint(SHOWCASE_GRPC_ENDPOINT)
+          .build();
+    }
   }
 
   private EchoStub createStubWithServiceName(
