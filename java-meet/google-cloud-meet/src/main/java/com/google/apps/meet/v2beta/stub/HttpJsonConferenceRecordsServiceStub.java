@@ -604,6 +604,7 @@ public class HttpJsonConferenceRecordsServiceStub extends ConferenceRecordsServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListConferenceRecordsRequest, ListConferenceRecordsResponse>
         listConferenceRecordsTransportSettings =
@@ -622,6 +623,7 @@ public class HttpJsonConferenceRecordsServiceStub extends ConferenceRecordsServi
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListParticipantsRequest, ListParticipantsResponse>
         listParticipantsTransportSettings =
@@ -634,6 +636,7 @@ public class HttpJsonConferenceRecordsServiceStub extends ConferenceRecordsServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetParticipantSessionRequest, ParticipantSession>
         getParticipantSessionTransportSettings =
@@ -646,6 +649,7 @@ public class HttpJsonConferenceRecordsServiceStub extends ConferenceRecordsServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListParticipantSessionsRequest, ListParticipantSessionsResponse>
         listParticipantSessionsTransportSettings =
@@ -659,6 +663,7 @@ public class HttpJsonConferenceRecordsServiceStub extends ConferenceRecordsServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetRecordingRequest, Recording> getRecordingTransportSettings =
         HttpJsonCallSettings.<GetRecordingRequest, Recording>newBuilder()
@@ -670,6 +675,7 @@ public class HttpJsonConferenceRecordsServiceStub extends ConferenceRecordsServi
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListRecordingsRequest, ListRecordingsResponse>
         listRecordingsTransportSettings =
@@ -682,6 +688,7 @@ public class HttpJsonConferenceRecordsServiceStub extends ConferenceRecordsServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetTranscriptRequest, Transcript> getTranscriptTransportSettings =
         HttpJsonCallSettings.<GetTranscriptRequest, Transcript>newBuilder()
@@ -693,6 +700,7 @@ public class HttpJsonConferenceRecordsServiceStub extends ConferenceRecordsServi
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListTranscriptsRequest, ListTranscriptsResponse>
         listTranscriptsTransportSettings =
@@ -705,6 +713,7 @@ public class HttpJsonConferenceRecordsServiceStub extends ConferenceRecordsServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetTranscriptEntryRequest, TranscriptEntry>
         getTranscriptEntryTransportSettings =
@@ -717,6 +726,7 @@ public class HttpJsonConferenceRecordsServiceStub extends ConferenceRecordsServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListTranscriptEntriesRequest, ListTranscriptEntriesResponse>
         listTranscriptEntriesTransportSettings =
@@ -730,6 +740,7 @@ public class HttpJsonConferenceRecordsServiceStub extends ConferenceRecordsServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getConferenceRecordCallable =

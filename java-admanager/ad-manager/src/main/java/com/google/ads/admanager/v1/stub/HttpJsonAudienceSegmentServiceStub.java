@@ -190,6 +190,7 @@ public class HttpJsonAudienceSegmentServiceStub extends AudienceSegmentServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListAudienceSegmentsRequest, ListAudienceSegmentsResponse>
         listAudienceSegmentsTransportSettings =
@@ -203,6 +204,7 @@ public class HttpJsonAudienceSegmentServiceStub extends AudienceSegmentServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getAudienceSegmentCallable =

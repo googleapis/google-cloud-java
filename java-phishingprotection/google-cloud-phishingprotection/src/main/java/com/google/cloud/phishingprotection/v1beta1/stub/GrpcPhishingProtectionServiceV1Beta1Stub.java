@@ -114,6 +114,7 @@ public class GrpcPhishingProtectionServiceV1Beta1Stub extends PhishingProtection
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.reportPhishingCallable =

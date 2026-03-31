@@ -901,6 +901,7 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-artifact-registry")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(com.google.devtools.artifactregistry.v1beta2.stub.Version.VERSION)
         .build();
   }
 

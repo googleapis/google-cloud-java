@@ -179,6 +179,7 @@ public class HttpJsonNetworkServiceStub extends NetworkServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListNetworksRequest, ListNetworksResponse> listNetworksTransportSettings =
         HttpJsonCallSettings.<ListNetworksRequest, ListNetworksResponse>newBuilder()

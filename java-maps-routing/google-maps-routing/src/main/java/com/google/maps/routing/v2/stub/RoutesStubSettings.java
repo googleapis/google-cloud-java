@@ -239,6 +239,7 @@ public class RoutesStubSettings extends StubSettings<RoutesStubSettings> {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.maps:google-maps-routing")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

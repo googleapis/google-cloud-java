@@ -296,6 +296,7 @@ public class GrpcAuditManagerStub extends AuditManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetAuditReportRequest, AuditReport> getAuditReportTransportSettings =
         GrpcCallSettings.<GetAuditReportRequest, AuditReport>newBuilder()
@@ -306,6 +307,7 @@ public class GrpcAuditManagerStub extends AuditManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetResourceEnrollmentStatusRequest, ResourceEnrollmentStatus>
         getResourceEnrollmentStatusTransportSettings =
@@ -318,6 +320,7 @@ public class GrpcAuditManagerStub extends AuditManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListResourceEnrollmentStatusesRequest, ListResourceEnrollmentStatusesResponse>
         listResourceEnrollmentStatusesTransportSettings =
@@ -331,6 +334,7 @@ public class GrpcAuditManagerStub extends AuditManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListControlsRequest, ListControlsResponse> listControlsTransportSettings =
         GrpcCallSettings.<ListControlsRequest, ListControlsResponse>newBuilder()
@@ -341,6 +345,7 @@ public class GrpcAuditManagerStub extends AuditManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

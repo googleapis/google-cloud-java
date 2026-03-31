@@ -2354,6 +2354,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListAccountsRequest, ListAccountsResponse> listAccountsTransportSettings =
         HttpJsonCallSettings.<ListAccountsRequest, ListAccountsResponse>newBuilder()
@@ -2370,6 +2371,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateAccountRequest, Account> updateAccountTransportSettings =
         HttpJsonCallSettings.<UpdateAccountRequest, Account>newBuilder()
@@ -2406,6 +2408,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListPropertiesRequest, ListPropertiesResponse>
         listPropertiesTransportSettings =
@@ -2428,6 +2431,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdatePropertyRequest, Property> updatePropertyTransportSettings =
         HttpJsonCallSettings.<UpdatePropertyRequest, Property>newBuilder()
@@ -2451,6 +2455,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteFirebaseLinkRequest, Empty> deleteFirebaseLinkTransportSettings =
         HttpJsonCallSettings.<DeleteFirebaseLinkRequest, Empty>newBuilder()
@@ -2462,6 +2467,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListFirebaseLinksRequest, ListFirebaseLinksResponse>
         listFirebaseLinksTransportSettings =
@@ -2474,6 +2480,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateGoogleAdsLinkRequest, GoogleAdsLink>
         createGoogleAdsLinkTransportSettings =
@@ -2486,6 +2493,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateGoogleAdsLinkRequest, GoogleAdsLink>
         updateGoogleAdsLinkTransportSettings =
@@ -2511,6 +2519,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse>
         listGoogleAdsLinksTransportSettings =
@@ -2523,6 +2532,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDataSharingSettingsRequest, DataSharingSettings>
         getDataSharingSettingsTransportSettings =
@@ -2535,6 +2545,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
         getMeasurementProtocolSecretTransportSettings =
@@ -2548,6 +2559,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             ListMeasurementProtocolSecretsRequest, ListMeasurementProtocolSecretsResponse>
@@ -2563,6 +2575,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
         createMeasurementProtocolSecretTransportSettings =
@@ -2576,6 +2589,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteMeasurementProtocolSecretRequest, Empty>
         deleteMeasurementProtocolSecretTransportSettings =
@@ -2588,6 +2602,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
         updateMeasurementProtocolSecretTransportSettings =
@@ -2618,6 +2633,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       builder.add("property", String.valueOf(request.getProperty()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProperty())
                 .build();
     HttpJsonCallSettings<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
         searchChangeHistoryEventsTransportSettings =
@@ -2631,6 +2647,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       builder.add("account", String.valueOf(request.getAccount()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAccount())
                 .build();
     HttpJsonCallSettings<CreateConversionEventRequest, ConversionEvent>
         createConversionEventTransportSettings =
@@ -2643,6 +2660,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateConversionEventRequest, ConversionEvent>
         updateConversionEventTransportSettings =
@@ -2669,6 +2687,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DeleteConversionEventRequest, Empty>
         deleteConversionEventTransportSettings =
@@ -2681,6 +2700,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListConversionEventsRequest, ListConversionEventsResponse>
         listConversionEventsTransportSettings =
@@ -2694,6 +2714,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateKeyEventRequest, KeyEvent> createKeyEventTransportSettings =
         HttpJsonCallSettings.<CreateKeyEventRequest, KeyEvent>newBuilder()
@@ -2705,6 +2726,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateKeyEventRequest, KeyEvent> updateKeyEventTransportSettings =
         HttpJsonCallSettings.<UpdateKeyEventRequest, KeyEvent>newBuilder()
@@ -2727,6 +2749,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteKeyEventRequest, Empty> deleteKeyEventTransportSettings =
         HttpJsonCallSettings.<DeleteKeyEventRequest, Empty>newBuilder()
@@ -2738,6 +2761,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListKeyEventsRequest, ListKeyEventsResponse>
         listKeyEventsTransportSettings =
@@ -2750,6 +2774,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateCustomDimensionRequest, CustomDimension>
         createCustomDimensionTransportSettings =
@@ -2762,6 +2787,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateCustomDimensionRequest, CustomDimension>
         updateCustomDimensionTransportSettings =
@@ -2789,6 +2815,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ArchiveCustomDimensionRequest, Empty>
         archiveCustomDimensionTransportSettings =
@@ -2801,6 +2828,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetCustomDimensionRequest, CustomDimension>
         getCustomDimensionTransportSettings =
@@ -2813,6 +2841,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateCustomMetricRequest, CustomMetric>
         createCustomMetricTransportSettings =
@@ -2825,6 +2854,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateCustomMetricRequest, CustomMetric>
         updateCustomMetricTransportSettings =
@@ -2851,6 +2881,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ArchiveCustomMetricRequest, Empty> archiveCustomMetricTransportSettings =
         HttpJsonCallSettings.<ArchiveCustomMetricRequest, Empty>newBuilder()
@@ -2862,6 +2893,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetCustomMetricRequest, CustomMetric> getCustomMetricTransportSettings =
         HttpJsonCallSettings.<GetCustomMetricRequest, CustomMetric>newBuilder()
@@ -2873,6 +2905,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetDataRetentionSettingsRequest, DataRetentionSettings>
         getDataRetentionSettingsTransportSettings =
@@ -2886,6 +2919,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateDataRetentionSettingsRequest, DataRetentionSettings>
         updateDataRetentionSettingsTransportSettings =
@@ -2912,6 +2946,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteDataStreamRequest, Empty> deleteDataStreamTransportSettings =
         HttpJsonCallSettings.<DeleteDataStreamRequest, Empty>newBuilder()
@@ -2923,6 +2958,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateDataStreamRequest, DataStream> updateDataStreamTransportSettings =
         HttpJsonCallSettings.<UpdateDataStreamRequest, DataStream>newBuilder()
@@ -2947,6 +2983,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDataStreamRequest, DataStream> getDataStreamTransportSettings =
         HttpJsonCallSettings.<GetDataStreamRequest, DataStream>newBuilder()
@@ -2958,6 +2995,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RunAccessReportRequest, RunAccessReportResponse>
         runAccessReportTransportSettings =

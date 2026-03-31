@@ -402,6 +402,7 @@ public class MetricsV1Beta3StubSettings extends StubSettings<MetricsV1Beta3StubS
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-dataflow")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

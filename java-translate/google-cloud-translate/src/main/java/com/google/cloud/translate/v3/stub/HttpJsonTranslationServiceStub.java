@@ -1768,6 +1768,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<RomanizeTextRequest, RomanizeTextResponse> romanizeTextTransportSettings =
         HttpJsonCallSettings.<RomanizeTextRequest, RomanizeTextResponse>newBuilder()
@@ -1779,6 +1780,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DetectLanguageRequest, DetectLanguageResponse>
         detectLanguageTransportSettings =
@@ -1791,6 +1793,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetSupportedLanguagesRequest, SupportedLanguages>
         getSupportedLanguagesTransportSettings =
@@ -1803,6 +1806,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<TranslateDocumentRequest, TranslateDocumentResponse>
         translateDocumentTransportSettings =
@@ -1826,6 +1830,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<BatchTranslateDocumentRequest, Operation>
         batchTranslateDocumentTransportSettings =
@@ -1838,6 +1843,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateGlossaryRequest, Operation> createGlossaryTransportSettings =
         HttpJsonCallSettings.<CreateGlossaryRequest, Operation>newBuilder()
@@ -1849,6 +1855,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateGlossaryRequest, Operation> updateGlossaryTransportSettings =
         HttpJsonCallSettings.<UpdateGlossaryRequest, Operation>newBuilder()
@@ -1872,6 +1879,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetGlossaryRequest, Glossary> getGlossaryTransportSettings =
         HttpJsonCallSettings.<GetGlossaryRequest, Glossary>newBuilder()
@@ -1883,6 +1891,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteGlossaryRequest, Operation> deleteGlossaryTransportSettings =
         HttpJsonCallSettings.<DeleteGlossaryRequest, Operation>newBuilder()
@@ -1894,6 +1903,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetGlossaryEntryRequest, GlossaryEntry> getGlossaryEntryTransportSettings =
         HttpJsonCallSettings.<GetGlossaryEntryRequest, GlossaryEntry>newBuilder()
@@ -1905,6 +1915,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListGlossaryEntriesRequest, ListGlossaryEntriesResponse>
         listGlossaryEntriesTransportSettings =
@@ -1918,6 +1929,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateGlossaryEntryRequest, GlossaryEntry>
         createGlossaryEntryTransportSettings =
@@ -1930,6 +1942,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateGlossaryEntryRequest, GlossaryEntry>
         updateGlossaryEntryTransportSettings =
@@ -1955,6 +1968,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateDatasetRequest, Operation> createDatasetTransportSettings =
         HttpJsonCallSettings.<CreateDatasetRequest, Operation>newBuilder()
@@ -1966,6 +1980,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetDatasetRequest, Dataset> getDatasetTransportSettings =
         HttpJsonCallSettings.<GetDatasetRequest, Dataset>newBuilder()
@@ -1977,6 +1992,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListDatasetsRequest, ListDatasetsResponse> listDatasetsTransportSettings =
         HttpJsonCallSettings.<ListDatasetsRequest, ListDatasetsResponse>newBuilder()
@@ -1988,6 +2004,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteDatasetRequest, Operation> deleteDatasetTransportSettings =
         HttpJsonCallSettings.<DeleteDatasetRequest, Operation>newBuilder()
@@ -1999,6 +2016,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateAdaptiveMtDatasetRequest, AdaptiveMtDataset>
         createAdaptiveMtDatasetTransportSettings =
@@ -2011,6 +2029,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteAdaptiveMtDatasetRequest, Empty>
         deleteAdaptiveMtDatasetTransportSettings =
@@ -2023,6 +2042,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetAdaptiveMtDatasetRequest, AdaptiveMtDataset>
         getAdaptiveMtDatasetTransportSettings =
@@ -2035,6 +2055,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsResponse>
         listAdaptiveMtDatasetsTransportSettings =
@@ -2048,6 +2069,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<AdaptiveMtTranslateRequest, AdaptiveMtTranslateResponse>
         adaptiveMtTranslateTransportSettings =
@@ -2061,6 +2083,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetAdaptiveMtFileRequest, AdaptiveMtFile>
         getAdaptiveMtFileTransportSettings =
@@ -2073,6 +2096,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DeleteAdaptiveMtFileRequest, Empty> deleteAdaptiveMtFileTransportSettings =
         HttpJsonCallSettings.<DeleteAdaptiveMtFileRequest, Empty>newBuilder()
@@ -2084,6 +2108,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ImportAdaptiveMtFileRequest, ImportAdaptiveMtFileResponse>
         importAdaptiveMtFileTransportSettings =
@@ -2097,6 +2122,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse>
         listAdaptiveMtFilesTransportSettings =
@@ -2110,6 +2136,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesResponse>
         listAdaptiveMtSentencesTransportSettings =
@@ -2123,6 +2150,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ImportDataRequest, Operation> importDataTransportSettings =
         HttpJsonCallSettings.<ImportDataRequest, Operation>newBuilder()
@@ -2156,6 +2184,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateModelRequest, Operation> createModelTransportSettings =
         HttpJsonCallSettings.<CreateModelRequest, Operation>newBuilder()
@@ -2167,6 +2196,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListModelsRequest, ListModelsResponse> listModelsTransportSettings =
         HttpJsonCallSettings.<ListModelsRequest, ListModelsResponse>newBuilder()
@@ -2178,6 +2208,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetModelRequest, Model> getModelTransportSettings =
         HttpJsonCallSettings.<GetModelRequest, Model>newBuilder()
@@ -2189,6 +2220,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteModelRequest, Operation> deleteModelTransportSettings =
         HttpJsonCallSettings.<DeleteModelRequest, Operation>newBuilder()
@@ -2200,6 +2232,7 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.translateTextCallable =

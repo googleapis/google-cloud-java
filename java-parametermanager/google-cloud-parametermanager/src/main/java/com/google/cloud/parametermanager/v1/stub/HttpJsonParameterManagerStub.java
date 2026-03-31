@@ -642,6 +642,7 @@ public class HttpJsonParameterManagerStub extends ParameterManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetParameterRequest, Parameter> getParameterTransportSettings =
         HttpJsonCallSettings.<GetParameterRequest, Parameter>newBuilder()
@@ -653,6 +654,7 @@ public class HttpJsonParameterManagerStub extends ParameterManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateParameterRequest, Parameter> createParameterTransportSettings =
         HttpJsonCallSettings.<CreateParameterRequest, Parameter>newBuilder()
@@ -664,6 +666,7 @@ public class HttpJsonParameterManagerStub extends ParameterManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateParameterRequest, Parameter> updateParameterTransportSettings =
         HttpJsonCallSettings.<UpdateParameterRequest, Parameter>newBuilder()
@@ -686,6 +689,7 @@ public class HttpJsonParameterManagerStub extends ParameterManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListParameterVersionsRequest, ListParameterVersionsResponse>
         listParameterVersionsTransportSettings =
@@ -699,6 +703,7 @@ public class HttpJsonParameterManagerStub extends ParameterManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetParameterVersionRequest, ParameterVersion>
         getParameterVersionTransportSettings =
@@ -711,6 +716,7 @@ public class HttpJsonParameterManagerStub extends ParameterManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<RenderParameterVersionRequest, RenderParameterVersionResponse>
         renderParameterVersionTransportSettings =
@@ -724,6 +730,7 @@ public class HttpJsonParameterManagerStub extends ParameterManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateParameterVersionRequest, ParameterVersion>
         createParameterVersionTransportSettings =
@@ -736,6 +743,7 @@ public class HttpJsonParameterManagerStub extends ParameterManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateParameterVersionRequest, ParameterVersion>
         updateParameterVersionTransportSettings =
@@ -762,6 +770,7 @@ public class HttpJsonParameterManagerStub extends ParameterManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

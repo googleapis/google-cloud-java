@@ -470,6 +470,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<AnnotateAssessmentRequest, AnnotateAssessmentResponse>
         annotateAssessmentTransportSettings =
@@ -481,6 +482,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateKeyRequest, Key> createKeyTransportSettings =
         GrpcCallSettings.<CreateKeyRequest, Key>newBuilder()
@@ -491,6 +493,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListKeysRequest, ListKeysResponse> listKeysTransportSettings =
         GrpcCallSettings.<ListKeysRequest, ListKeysResponse>newBuilder()
@@ -501,6 +504,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<RetrieveLegacySecretKeyRequest, RetrieveLegacySecretKeyResponse>
         retrieveLegacySecretKeyTransportSettings =
@@ -513,6 +517,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                       builder.add("key", String.valueOf(request.getKey()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getKey())
                 .build();
     GrpcCallSettings<GetKeyRequest, Key> getKeyTransportSettings =
         GrpcCallSettings.<GetKeyRequest, Key>newBuilder()
@@ -523,6 +528,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateKeyRequest, Key> updateKeyTransportSettings =
         GrpcCallSettings.<UpdateKeyRequest, Key>newBuilder()
@@ -543,6 +549,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<MigrateKeyRequest, Key> migrateKeyTransportSettings =
         GrpcCallSettings.<MigrateKeyRequest, Key>newBuilder()
@@ -553,6 +560,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<AddIpOverrideRequest, AddIpOverrideResponse> addIpOverrideTransportSettings =
         GrpcCallSettings.<AddIpOverrideRequest, AddIpOverrideResponse>newBuilder()
@@ -563,6 +571,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RemoveIpOverrideRequest, RemoveIpOverrideResponse>
         removeIpOverrideTransportSettings =
@@ -574,6 +583,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListIpOverridesRequest, ListIpOverridesResponse>
         listIpOverridesTransportSettings =
@@ -585,6 +595,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetMetricsRequest, Metrics> getMetricsTransportSettings =
         GrpcCallSettings.<GetMetricsRequest, Metrics>newBuilder()
@@ -595,6 +606,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateFirewallPolicyRequest, FirewallPolicy>
         createFirewallPolicyTransportSettings =
@@ -606,6 +618,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListFirewallPoliciesRequest, ListFirewallPoliciesResponse>
         listFirewallPoliciesTransportSettings =
@@ -617,6 +630,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetFirewallPolicyRequest, FirewallPolicy> getFirewallPolicyTransportSettings =
         GrpcCallSettings.<GetFirewallPolicyRequest, FirewallPolicy>newBuilder()
@@ -627,6 +641,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateFirewallPolicyRequest, FirewallPolicy>
         updateFirewallPolicyTransportSettings =
@@ -650,6 +665,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ReorderFirewallPoliciesRequest, ReorderFirewallPoliciesResponse>
         reorderFirewallPoliciesTransportSettings =
@@ -662,6 +678,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListRelatedAccountGroupsRequest, ListRelatedAccountGroupsResponse>
         listRelatedAccountGroupsTransportSettings =
@@ -674,6 +691,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             ListRelatedAccountGroupMembershipsRequest, ListRelatedAccountGroupMembershipsResponse>
@@ -689,6 +707,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             SearchRelatedAccountGroupMembershipsRequest,
@@ -705,6 +724,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProject())
                 .build();
 
     this.createAssessmentCallable =

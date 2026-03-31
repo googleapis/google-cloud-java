@@ -306,6 +306,7 @@ public class HttpJsonPlacesStub extends PlacesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetPlaceRequest, Place> getPlaceTransportSettings =
         HttpJsonCallSettings.<GetPlaceRequest, Place>newBuilder()
@@ -317,6 +318,7 @@ public class HttpJsonPlacesStub extends PlacesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<AutocompletePlacesRequest, AutocompletePlacesResponse>
         autocompletePlacesTransportSettings =

@@ -272,6 +272,7 @@ public class HttpJsonCloudChannelReportsServiceStub extends CloudChannelReportsS
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<FetchReportResultsRequest, FetchReportResultsResponse>
         fetchReportResultsTransportSettings =
@@ -284,6 +285,7 @@ public class HttpJsonCloudChannelReportsServiceStub extends CloudChannelReportsS
                       builder.add("report_job", String.valueOf(request.getReportJob()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getReportJob())
                 .build();
     HttpJsonCallSettings<ListReportsRequest, ListReportsResponse> listReportsTransportSettings =
         HttpJsonCallSettings.<ListReportsRequest, ListReportsResponse>newBuilder()

@@ -265,6 +265,7 @@ public class GrpcConfigStub extends ConfigStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetFrameworkRequest, Framework> getFrameworkTransportSettings =
         GrpcCallSettings.<GetFrameworkRequest, Framework>newBuilder()
@@ -275,6 +276,7 @@ public class GrpcConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateFrameworkRequest, Framework> createFrameworkTransportSettings =
         GrpcCallSettings.<CreateFrameworkRequest, Framework>newBuilder()
@@ -285,6 +287,7 @@ public class GrpcConfigStub extends ConfigStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateFrameworkRequest, Framework> updateFrameworkTransportSettings =
         GrpcCallSettings.<UpdateFrameworkRequest, Framework>newBuilder()
@@ -305,6 +308,7 @@ public class GrpcConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListCloudControlsRequest, ListCloudControlsResponse>
         listCloudControlsTransportSettings =
@@ -316,6 +320,7 @@ public class GrpcConfigStub extends ConfigStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetCloudControlRequest, CloudControl> getCloudControlTransportSettings =
         GrpcCallSettings.<GetCloudControlRequest, CloudControl>newBuilder()
@@ -326,6 +331,7 @@ public class GrpcConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateCloudControlRequest, CloudControl> createCloudControlTransportSettings =
         GrpcCallSettings.<CreateCloudControlRequest, CloudControl>newBuilder()
@@ -336,6 +342,7 @@ public class GrpcConfigStub extends ConfigStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateCloudControlRequest, CloudControl> updateCloudControlTransportSettings =
         GrpcCallSettings.<UpdateCloudControlRequest, CloudControl>newBuilder()
@@ -357,6 +364,7 @@ public class GrpcConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

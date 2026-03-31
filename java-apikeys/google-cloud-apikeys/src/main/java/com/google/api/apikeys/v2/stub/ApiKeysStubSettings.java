@@ -409,6 +409,7 @@ public class ApiKeysStubSettings extends StubSettings<ApiKeysStubSettings> {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-apikeys")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

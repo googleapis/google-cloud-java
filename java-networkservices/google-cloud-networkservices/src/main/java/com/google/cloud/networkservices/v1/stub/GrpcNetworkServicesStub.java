@@ -1083,6 +1083,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetEndpointPolicyRequest, EndpointPolicy> getEndpointPolicyTransportSettings =
         GrpcCallSettings.<GetEndpointPolicyRequest, EndpointPolicy>newBuilder()
@@ -1093,6 +1094,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateEndpointPolicyRequest, Operation> createEndpointPolicyTransportSettings =
         GrpcCallSettings.<CreateEndpointPolicyRequest, Operation>newBuilder()
@@ -1103,6 +1105,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateEndpointPolicyRequest, Operation> updateEndpointPolicyTransportSettings =
         GrpcCallSettings.<UpdateEndpointPolicyRequest, Operation>newBuilder()
@@ -1125,6 +1128,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse>
         listWasmPluginVersionsTransportSettings =
@@ -1137,6 +1141,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetWasmPluginVersionRequest, WasmPluginVersion>
         getWasmPluginVersionTransportSettings =
@@ -1148,6 +1153,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateWasmPluginVersionRequest, Operation>
         createWasmPluginVersionTransportSettings =
@@ -1159,6 +1165,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteWasmPluginVersionRequest, Operation>
         deleteWasmPluginVersionTransportSettings =
@@ -1170,6 +1177,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListWasmPluginsRequest, ListWasmPluginsResponse>
         listWasmPluginsTransportSettings =
@@ -1181,6 +1189,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetWasmPluginRequest, WasmPlugin> getWasmPluginTransportSettings =
         GrpcCallSettings.<GetWasmPluginRequest, WasmPlugin>newBuilder()
@@ -1191,6 +1200,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateWasmPluginRequest, Operation> createWasmPluginTransportSettings =
         GrpcCallSettings.<CreateWasmPluginRequest, Operation>newBuilder()
@@ -1201,6 +1211,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateWasmPluginRequest, Operation> updateWasmPluginTransportSettings =
         GrpcCallSettings.<UpdateWasmPluginRequest, Operation>newBuilder()
@@ -1222,6 +1233,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListGatewaysRequest, ListGatewaysResponse> listGatewaysTransportSettings =
         GrpcCallSettings.<ListGatewaysRequest, ListGatewaysResponse>newBuilder()
@@ -1232,6 +1244,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetGatewayRequest, Gateway> getGatewayTransportSettings =
         GrpcCallSettings.<GetGatewayRequest, Gateway>newBuilder()
@@ -1242,6 +1255,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateGatewayRequest, Operation> createGatewayTransportSettings =
         GrpcCallSettings.<CreateGatewayRequest, Operation>newBuilder()
@@ -1252,6 +1266,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateGatewayRequest, Operation> updateGatewayTransportSettings =
         GrpcCallSettings.<UpdateGatewayRequest, Operation>newBuilder()
@@ -1272,6 +1287,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListGrpcRoutesRequest, ListGrpcRoutesResponse>
         listGrpcRoutesTransportSettings =
@@ -1283,6 +1299,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetGrpcRouteRequest, GrpcRoute> getGrpcRouteTransportSettings =
         GrpcCallSettings.<GetGrpcRouteRequest, GrpcRoute>newBuilder()
@@ -1293,6 +1310,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateGrpcRouteRequest, Operation> createGrpcRouteTransportSettings =
         GrpcCallSettings.<CreateGrpcRouteRequest, Operation>newBuilder()
@@ -1303,6 +1321,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateGrpcRouteRequest, Operation> updateGrpcRouteTransportSettings =
         GrpcCallSettings.<UpdateGrpcRouteRequest, Operation>newBuilder()
@@ -1323,6 +1342,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListHttpRoutesRequest, ListHttpRoutesResponse>
         listHttpRoutesTransportSettings =
@@ -1334,6 +1354,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetHttpRouteRequest, HttpRoute> getHttpRouteTransportSettings =
         GrpcCallSettings.<GetHttpRouteRequest, HttpRoute>newBuilder()
@@ -1344,6 +1365,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateHttpRouteRequest, Operation> createHttpRouteTransportSettings =
         GrpcCallSettings.<CreateHttpRouteRequest, Operation>newBuilder()
@@ -1354,6 +1376,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateHttpRouteRequest, Operation> updateHttpRouteTransportSettings =
         GrpcCallSettings.<UpdateHttpRouteRequest, Operation>newBuilder()
@@ -1374,6 +1397,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListTcpRoutesRequest, ListTcpRoutesResponse> listTcpRoutesTransportSettings =
         GrpcCallSettings.<ListTcpRoutesRequest, ListTcpRoutesResponse>newBuilder()
@@ -1384,6 +1408,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetTcpRouteRequest, TcpRoute> getTcpRouteTransportSettings =
         GrpcCallSettings.<GetTcpRouteRequest, TcpRoute>newBuilder()
@@ -1394,6 +1419,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateTcpRouteRequest, Operation> createTcpRouteTransportSettings =
         GrpcCallSettings.<CreateTcpRouteRequest, Operation>newBuilder()
@@ -1404,6 +1430,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateTcpRouteRequest, Operation> updateTcpRouteTransportSettings =
         GrpcCallSettings.<UpdateTcpRouteRequest, Operation>newBuilder()
@@ -1424,6 +1451,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListTlsRoutesRequest, ListTlsRoutesResponse> listTlsRoutesTransportSettings =
         GrpcCallSettings.<ListTlsRoutesRequest, ListTlsRoutesResponse>newBuilder()
@@ -1434,6 +1462,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetTlsRouteRequest, TlsRoute> getTlsRouteTransportSettings =
         GrpcCallSettings.<GetTlsRouteRequest, TlsRoute>newBuilder()
@@ -1444,6 +1473,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateTlsRouteRequest, Operation> createTlsRouteTransportSettings =
         GrpcCallSettings.<CreateTlsRouteRequest, Operation>newBuilder()
@@ -1454,6 +1484,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateTlsRouteRequest, Operation> updateTlsRouteTransportSettings =
         GrpcCallSettings.<UpdateTlsRouteRequest, Operation>newBuilder()
@@ -1474,6 +1505,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListServiceBindingsRequest, ListServiceBindingsResponse>
         listServiceBindingsTransportSettings =
@@ -1485,6 +1517,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetServiceBindingRequest, ServiceBinding> getServiceBindingTransportSettings =
         GrpcCallSettings.<GetServiceBindingRequest, ServiceBinding>newBuilder()
@@ -1495,6 +1528,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateServiceBindingRequest, Operation> createServiceBindingTransportSettings =
         GrpcCallSettings.<CreateServiceBindingRequest, Operation>newBuilder()
@@ -1505,6 +1539,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateServiceBindingRequest, Operation> updateServiceBindingTransportSettings =
         GrpcCallSettings.<UpdateServiceBindingRequest, Operation>newBuilder()
@@ -1527,6 +1562,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListMeshesRequest, ListMeshesResponse> listMeshesTransportSettings =
         GrpcCallSettings.<ListMeshesRequest, ListMeshesResponse>newBuilder()
@@ -1537,6 +1573,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetMeshRequest, Mesh> getMeshTransportSettings =
         GrpcCallSettings.<GetMeshRequest, Mesh>newBuilder()
@@ -1547,6 +1584,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateMeshRequest, Operation> createMeshTransportSettings =
         GrpcCallSettings.<CreateMeshRequest, Operation>newBuilder()
@@ -1557,6 +1595,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateMeshRequest, Operation> updateMeshTransportSettings =
         GrpcCallSettings.<UpdateMeshRequest, Operation>newBuilder()
@@ -1577,6 +1616,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse>
         listServiceLbPoliciesTransportSettings =
@@ -1589,6 +1629,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetServiceLbPolicyRequest, ServiceLbPolicy>
         getServiceLbPolicyTransportSettings =
@@ -1600,6 +1641,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateServiceLbPolicyRequest, Operation>
         createServiceLbPolicyTransportSettings =
@@ -1611,6 +1653,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateServiceLbPolicyRequest, Operation>
         updateServiceLbPolicyTransportSettings =
@@ -1635,6 +1678,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetGatewayRouteViewRequest, GatewayRouteView>
         getGatewayRouteViewTransportSettings =
@@ -1646,6 +1690,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetMeshRouteViewRequest, MeshRouteView> getMeshRouteViewTransportSettings =
         GrpcCallSettings.<GetMeshRouteViewRequest, MeshRouteView>newBuilder()
@@ -1656,6 +1701,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse>
         listGatewayRouteViewsTransportSettings =
@@ -1668,6 +1714,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse>
         listMeshRouteViewsTransportSettings =
@@ -1679,6 +1726,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1709,6 +1757,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1719,6 +1768,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1730,6 +1780,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listEndpointPoliciesCallable =

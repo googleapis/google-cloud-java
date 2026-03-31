@@ -374,6 +374,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListProductSetsRequest, ListProductSetsResponse>
         listProductSetsTransportSettings =
@@ -385,6 +386,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetProductSetRequest, ProductSet> getProductSetTransportSettings =
         GrpcCallSettings.<GetProductSetRequest, ProductSet>newBuilder()
@@ -395,6 +397,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateProductSetRequest, ProductSet> updateProductSetTransportSettings =
         GrpcCallSettings.<UpdateProductSetRequest, ProductSet>newBuilder()
@@ -416,6 +419,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateProductRequest, Product> createProductTransportSettings =
         GrpcCallSettings.<CreateProductRequest, Product>newBuilder()
@@ -426,6 +430,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListProductsRequest, ListProductsResponse> listProductsTransportSettings =
         GrpcCallSettings.<ListProductsRequest, ListProductsResponse>newBuilder()
@@ -436,6 +441,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetProductRequest, Product> getProductTransportSettings =
         GrpcCallSettings.<GetProductRequest, Product>newBuilder()
@@ -446,6 +452,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateProductRequest, Product> updateProductTransportSettings =
         GrpcCallSettings.<UpdateProductRequest, Product>newBuilder()
@@ -466,6 +473,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateReferenceImageRequest, ReferenceImage>
         createReferenceImageTransportSettings =
@@ -477,6 +485,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteReferenceImageRequest, Empty> deleteReferenceImageTransportSettings =
         GrpcCallSettings.<DeleteReferenceImageRequest, Empty>newBuilder()
@@ -487,6 +496,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListReferenceImagesRequest, ListReferenceImagesResponse>
         listReferenceImagesTransportSettings =
@@ -498,6 +508,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetReferenceImageRequest, ReferenceImage> getReferenceImageTransportSettings =
         GrpcCallSettings.<GetReferenceImageRequest, ReferenceImage>newBuilder()
@@ -508,6 +519,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<AddProductToProductSetRequest, Empty> addProductToProductSetTransportSettings =
         GrpcCallSettings.<AddProductToProductSetRequest, Empty>newBuilder()
@@ -518,6 +530,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RemoveProductFromProductSetRequest, Empty>
         removeProductFromProductSetTransportSettings =
@@ -529,6 +542,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListProductsInProductSetRequest, ListProductsInProductSetResponse>
         listProductsInProductSetTransportSettings =
@@ -541,6 +555,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ImportProductSetsRequest, Operation> importProductSetsTransportSettings =
         GrpcCallSettings.<ImportProductSetsRequest, Operation>newBuilder()
@@ -551,6 +566,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<PurgeProductsRequest, Operation> purgeProductsTransportSettings =
         GrpcCallSettings.<PurgeProductsRequest, Operation>newBuilder()
@@ -561,6 +577,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.createProductSetCallable =

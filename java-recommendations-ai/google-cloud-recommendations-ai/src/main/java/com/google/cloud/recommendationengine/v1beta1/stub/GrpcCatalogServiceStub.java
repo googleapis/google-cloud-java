@@ -194,6 +194,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetCatalogItemRequest, CatalogItem> getCatalogItemTransportSettings =
         GrpcCallSettings.<GetCatalogItemRequest, CatalogItem>newBuilder()
@@ -204,6 +205,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListCatalogItemsRequest, ListCatalogItemsResponse>
         listCatalogItemsTransportSettings =
@@ -215,6 +217,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateCatalogItemRequest, CatalogItem> updateCatalogItemTransportSettings =
         GrpcCallSettings.<UpdateCatalogItemRequest, CatalogItem>newBuilder()
@@ -225,6 +228,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteCatalogItemRequest, Empty> deleteCatalogItemTransportSettings =
         GrpcCallSettings.<DeleteCatalogItemRequest, Empty>newBuilder()
@@ -235,6 +239,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ImportCatalogItemsRequest, Operation> importCatalogItemsTransportSettings =
         GrpcCallSettings.<ImportCatalogItemsRequest, Operation>newBuilder()
@@ -245,6 +250,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.createCatalogItemCallable =

@@ -1995,6 +1995,7 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-networkservices")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

@@ -1186,6 +1186,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetCloudExadataInfrastructureRequest, CloudExadataInfrastructure>
         getCloudExadataInfrastructureTransportSettings =
@@ -1198,6 +1199,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateCloudExadataInfrastructureRequest, Operation>
         createCloudExadataInfrastructureTransportSettings =
@@ -1209,6 +1211,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteCloudExadataInfrastructureRequest, Operation>
         deleteCloudExadataInfrastructureTransportSettings =
@@ -1220,6 +1223,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListCloudVmClustersRequest, ListCloudVmClustersResponse>
         listCloudVmClustersTransportSettings =
@@ -1231,6 +1235,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetCloudVmClusterRequest, CloudVmCluster> getCloudVmClusterTransportSettings =
         GrpcCallSettings.<GetCloudVmClusterRequest, CloudVmCluster>newBuilder()
@@ -1241,6 +1246,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateCloudVmClusterRequest, Operation> createCloudVmClusterTransportSettings =
         GrpcCallSettings.<CreateCloudVmClusterRequest, Operation>newBuilder()
@@ -1251,6 +1257,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteCloudVmClusterRequest, Operation> deleteCloudVmClusterTransportSettings =
         GrpcCallSettings.<DeleteCloudVmClusterRequest, Operation>newBuilder()
@@ -1261,6 +1268,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListEntitlementsRequest, ListEntitlementsResponse>
         listEntitlementsTransportSettings =
@@ -1272,6 +1280,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListDbServersRequest, ListDbServersResponse> listDbServersTransportSettings =
         GrpcCallSettings.<ListDbServersRequest, ListDbServersResponse>newBuilder()
@@ -1282,6 +1291,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListDbNodesRequest, ListDbNodesResponse> listDbNodesTransportSettings =
         GrpcCallSettings.<ListDbNodesRequest, ListDbNodesResponse>newBuilder()
@@ -1292,6 +1302,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListGiVersionsRequest, ListGiVersionsResponse>
         listGiVersionsTransportSettings =
@@ -1303,6 +1314,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListMinorVersionsRequest, ListMinorVersionsResponse>
         listMinorVersionsTransportSettings =
@@ -1314,6 +1326,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListDbSystemShapesRequest, ListDbSystemShapesResponse>
         listDbSystemShapesTransportSettings =
@@ -1325,6 +1338,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListAutonomousDatabasesRequest, ListAutonomousDatabasesResponse>
         listAutonomousDatabasesTransportSettings =
@@ -1337,6 +1351,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetAutonomousDatabaseRequest, AutonomousDatabase>
         getAutonomousDatabaseTransportSettings =
@@ -1348,6 +1363,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateAutonomousDatabaseRequest, Operation>
         createAutonomousDatabaseTransportSettings =
@@ -1359,6 +1375,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateAutonomousDatabaseRequest, Operation>
         updateAutonomousDatabaseTransportSettings =
@@ -1383,6 +1400,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<RestoreAutonomousDatabaseRequest, Operation>
         restoreAutonomousDatabaseTransportSettings =
@@ -1394,6 +1412,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             GenerateAutonomousDatabaseWalletRequest, GenerateAutonomousDatabaseWalletResponse>
@@ -1408,6 +1427,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListAutonomousDbVersionsRequest, ListAutonomousDbVersionsResponse>
         listAutonomousDbVersionsTransportSettings =
@@ -1420,6 +1440,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             ListAutonomousDatabaseCharacterSetsRequest, ListAutonomousDatabaseCharacterSetsResponse>
@@ -1435,6 +1456,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListAutonomousDatabaseBackupsRequest, ListAutonomousDatabaseBackupsResponse>
         listAutonomousDatabaseBackupsTransportSettings =
@@ -1448,6 +1470,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<StopAutonomousDatabaseRequest, Operation>
         stopAutonomousDatabaseTransportSettings =
@@ -1459,6 +1482,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<StartAutonomousDatabaseRequest, Operation>
         startAutonomousDatabaseTransportSettings =
@@ -1470,6 +1494,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<RestartAutonomousDatabaseRequest, Operation>
         restartAutonomousDatabaseTransportSettings =
@@ -1481,6 +1506,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<SwitchoverAutonomousDatabaseRequest, Operation>
         switchoverAutonomousDatabaseTransportSettings =
@@ -1492,6 +1518,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<FailoverAutonomousDatabaseRequest, Operation>
         failoverAutonomousDatabaseTransportSettings =
@@ -1503,6 +1530,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListOdbNetworksRequest, ListOdbNetworksResponse>
         listOdbNetworksTransportSettings =
@@ -1514,6 +1542,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetOdbNetworkRequest, OdbNetwork> getOdbNetworkTransportSettings =
         GrpcCallSettings.<GetOdbNetworkRequest, OdbNetwork>newBuilder()
@@ -1524,6 +1553,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateOdbNetworkRequest, Operation> createOdbNetworkTransportSettings =
         GrpcCallSettings.<CreateOdbNetworkRequest, Operation>newBuilder()
@@ -1534,6 +1564,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteOdbNetworkRequest, Operation> deleteOdbNetworkTransportSettings =
         GrpcCallSettings.<DeleteOdbNetworkRequest, Operation>newBuilder()
@@ -1544,6 +1575,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListOdbSubnetsRequest, ListOdbSubnetsResponse>
         listOdbSubnetsTransportSettings =
@@ -1555,6 +1587,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetOdbSubnetRequest, OdbSubnet> getOdbSubnetTransportSettings =
         GrpcCallSettings.<GetOdbSubnetRequest, OdbSubnet>newBuilder()
@@ -1565,6 +1598,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateOdbSubnetRequest, Operation> createOdbSubnetTransportSettings =
         GrpcCallSettings.<CreateOdbSubnetRequest, Operation>newBuilder()
@@ -1575,6 +1609,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteOdbSubnetRequest, Operation> deleteOdbSubnetTransportSettings =
         GrpcCallSettings.<DeleteOdbSubnetRequest, Operation>newBuilder()
@@ -1585,6 +1620,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListExadbVmClustersRequest, ListExadbVmClustersResponse>
         listExadbVmClustersTransportSettings =
@@ -1596,6 +1632,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetExadbVmClusterRequest, ExadbVmCluster> getExadbVmClusterTransportSettings =
         GrpcCallSettings.<GetExadbVmClusterRequest, ExadbVmCluster>newBuilder()
@@ -1606,6 +1643,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateExadbVmClusterRequest, Operation> createExadbVmClusterTransportSettings =
         GrpcCallSettings.<CreateExadbVmClusterRequest, Operation>newBuilder()
@@ -1616,6 +1654,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteExadbVmClusterRequest, Operation> deleteExadbVmClusterTransportSettings =
         GrpcCallSettings.<DeleteExadbVmClusterRequest, Operation>newBuilder()
@@ -1626,6 +1665,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateExadbVmClusterRequest, Operation> updateExadbVmClusterTransportSettings =
         GrpcCallSettings.<UpdateExadbVmClusterRequest, Operation>newBuilder()
@@ -1649,6 +1689,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListExascaleDbStorageVaultsRequest, ListExascaleDbStorageVaultsResponse>
         listExascaleDbStorageVaultsTransportSettings =
@@ -1662,6 +1703,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetExascaleDbStorageVaultRequest, ExascaleDbStorageVault>
         getExascaleDbStorageVaultTransportSettings =
@@ -1673,6 +1715,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateExascaleDbStorageVaultRequest, Operation>
         createExascaleDbStorageVaultTransportSettings =
@@ -1684,6 +1727,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteExascaleDbStorageVaultRequest, Operation>
         deleteExascaleDbStorageVaultTransportSettings =
@@ -1695,6 +1739,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             ListDbSystemInitialStorageSizesRequest, ListDbSystemInitialStorageSizesResponse>
@@ -1709,6 +1754,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListDatabasesRequest, ListDatabasesResponse> listDatabasesTransportSettings =
         GrpcCallSettings.<ListDatabasesRequest, ListDatabasesResponse>newBuilder()
@@ -1719,6 +1765,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetDatabaseRequest, Database> getDatabaseTransportSettings =
         GrpcCallSettings.<GetDatabaseRequest, Database>newBuilder()
@@ -1729,6 +1776,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListPluggableDatabasesRequest, ListPluggableDatabasesResponse>
         listPluggableDatabasesTransportSettings =
@@ -1741,6 +1789,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetPluggableDatabaseRequest, PluggableDatabase>
         getPluggableDatabaseTransportSettings =
@@ -1752,6 +1801,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListDbSystemsRequest, ListDbSystemsResponse> listDbSystemsTransportSettings =
         GrpcCallSettings.<ListDbSystemsRequest, ListDbSystemsResponse>newBuilder()
@@ -1762,6 +1812,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetDbSystemRequest, DbSystem> getDbSystemTransportSettings =
         GrpcCallSettings.<GetDbSystemRequest, DbSystem>newBuilder()
@@ -1772,6 +1823,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateDbSystemRequest, Operation> createDbSystemTransportSettings =
         GrpcCallSettings.<CreateDbSystemRequest, Operation>newBuilder()
@@ -1782,6 +1834,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteDbSystemRequest, Operation> deleteDbSystemTransportSettings =
         GrpcCallSettings.<DeleteDbSystemRequest, Operation>newBuilder()
@@ -1792,6 +1845,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDbVersionsRequest, ListDbVersionsResponse>
         listDbVersionsTransportSettings =
@@ -1803,6 +1857,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListDatabaseCharacterSetsRequest, ListDatabaseCharacterSetsResponse>
         listDatabaseCharacterSetsTransportSettings =
@@ -1815,6 +1870,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

@@ -439,6 +439,7 @@ public class HttpJsonMonitoringStub extends MonitoringStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListFindingSummariesRequest, ListFindingSummariesResponse>
         listFindingSummariesTransportSettings =
@@ -452,6 +453,7 @@ public class HttpJsonMonitoringStub extends MonitoringStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<FetchFrameworkComplianceReportRequest, FrameworkComplianceReport>
         fetchFrameworkComplianceReportTransportSettings =
@@ -465,6 +467,7 @@ public class HttpJsonMonitoringStub extends MonitoringStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             ListControlComplianceSummariesRequest, ListControlComplianceSummariesResponse>
@@ -480,6 +483,7 @@ public class HttpJsonMonitoringStub extends MonitoringStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             AggregateFrameworkComplianceReportRequest, AggregateFrameworkComplianceReportResponse>
@@ -496,6 +500,7 @@ public class HttpJsonMonitoringStub extends MonitoringStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

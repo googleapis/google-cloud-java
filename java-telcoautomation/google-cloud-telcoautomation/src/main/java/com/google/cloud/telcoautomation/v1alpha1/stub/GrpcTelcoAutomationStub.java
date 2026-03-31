@@ -741,6 +741,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetOrchestrationClusterRequest, OrchestrationCluster>
         getOrchestrationClusterTransportSettings =
@@ -752,6 +753,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateOrchestrationClusterRequest, Operation>
         createOrchestrationClusterTransportSettings =
@@ -763,6 +765,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteOrchestrationClusterRequest, Operation>
         deleteOrchestrationClusterTransportSettings =
@@ -774,6 +777,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListEdgeSlmsRequest, ListEdgeSlmsResponse> listEdgeSlmsTransportSettings =
         GrpcCallSettings.<ListEdgeSlmsRequest, ListEdgeSlmsResponse>newBuilder()
@@ -784,6 +788,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetEdgeSlmRequest, EdgeSlm> getEdgeSlmTransportSettings =
         GrpcCallSettings.<GetEdgeSlmRequest, EdgeSlm>newBuilder()
@@ -794,6 +799,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateEdgeSlmRequest, Operation> createEdgeSlmTransportSettings =
         GrpcCallSettings.<CreateEdgeSlmRequest, Operation>newBuilder()
@@ -804,6 +810,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteEdgeSlmRequest, Operation> deleteEdgeSlmTransportSettings =
         GrpcCallSettings.<DeleteEdgeSlmRequest, Operation>newBuilder()
@@ -814,6 +821,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateBlueprintRequest, Blueprint> createBlueprintTransportSettings =
         GrpcCallSettings.<CreateBlueprintRequest, Blueprint>newBuilder()
@@ -824,6 +832,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateBlueprintRequest, Blueprint> updateBlueprintTransportSettings =
         GrpcCallSettings.<UpdateBlueprintRequest, Blueprint>newBuilder()
@@ -844,6 +853,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteBlueprintRequest, Empty> deleteBlueprintTransportSettings =
         GrpcCallSettings.<DeleteBlueprintRequest, Empty>newBuilder()
@@ -854,6 +864,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListBlueprintsRequest, ListBlueprintsResponse>
         listBlueprintsTransportSettings =
@@ -865,6 +876,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ApproveBlueprintRequest, Blueprint> approveBlueprintTransportSettings =
         GrpcCallSettings.<ApproveBlueprintRequest, Blueprint>newBuilder()
@@ -875,6 +887,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ProposeBlueprintRequest, Blueprint> proposeBlueprintTransportSettings =
         GrpcCallSettings.<ProposeBlueprintRequest, Blueprint>newBuilder()
@@ -885,6 +898,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RejectBlueprintRequest, Blueprint> rejectBlueprintTransportSettings =
         GrpcCallSettings.<RejectBlueprintRequest, Blueprint>newBuilder()
@@ -895,6 +909,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListBlueprintRevisionsRequest, ListBlueprintRevisionsResponse>
         listBlueprintRevisionsTransportSettings =
@@ -907,6 +922,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<SearchBlueprintRevisionsRequest, SearchBlueprintRevisionsResponse>
         searchBlueprintRevisionsTransportSettings =
@@ -919,6 +935,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<SearchDeploymentRevisionsRequest, SearchDeploymentRevisionsResponse>
         searchDeploymentRevisionsTransportSettings =
@@ -931,6 +948,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DiscardBlueprintChangesRequest, DiscardBlueprintChangesResponse>
         discardBlueprintChangesTransportSettings =
@@ -943,6 +961,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListPublicBlueprintsRequest, ListPublicBlueprintsResponse>
         listPublicBlueprintsTransportSettings =
@@ -954,6 +973,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetPublicBlueprintRequest, PublicBlueprint>
         getPublicBlueprintTransportSettings =
@@ -965,6 +985,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateDeploymentRequest, Deployment> createDeploymentTransportSettings =
         GrpcCallSettings.<CreateDeploymentRequest, Deployment>newBuilder()
@@ -975,6 +996,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateDeploymentRequest, Deployment> updateDeploymentTransportSettings =
         GrpcCallSettings.<UpdateDeploymentRequest, Deployment>newBuilder()
@@ -995,6 +1017,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RemoveDeploymentRequest, Empty> removeDeploymentTransportSettings =
         GrpcCallSettings.<RemoveDeploymentRequest, Empty>newBuilder()
@@ -1005,6 +1028,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDeploymentsRequest, ListDeploymentsResponse>
         listDeploymentsTransportSettings =
@@ -1016,6 +1040,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListDeploymentRevisionsRequest, ListDeploymentRevisionsResponse>
         listDeploymentRevisionsTransportSettings =
@@ -1028,6 +1053,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DiscardDeploymentChangesRequest, DiscardDeploymentChangesResponse>
         discardDeploymentChangesTransportSettings =
@@ -1040,6 +1066,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ApplyDeploymentRequest, Deployment> applyDeploymentTransportSettings =
         GrpcCallSettings.<ApplyDeploymentRequest, Deployment>newBuilder()
@@ -1050,6 +1077,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ComputeDeploymentStatusRequest, ComputeDeploymentStatusResponse>
         computeDeploymentStatusTransportSettings =
@@ -1062,6 +1090,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<RollbackDeploymentRequest, Deployment> rollbackDeploymentTransportSettings =
         GrpcCallSettings.<RollbackDeploymentRequest, Deployment>newBuilder()
@@ -1072,6 +1101,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetHydratedDeploymentRequest, HydratedDeployment>
         getHydratedDeploymentTransportSettings =
@@ -1083,6 +1113,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListHydratedDeploymentsRequest, ListHydratedDeploymentsResponse>
         listHydratedDeploymentsTransportSettings =
@@ -1095,6 +1126,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateHydratedDeploymentRequest, HydratedDeployment>
         updateHydratedDeploymentTransportSettings =
@@ -1119,6 +1151,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

@@ -150,6 +150,7 @@ public class GrpcLfpStoreServiceStub extends LfpStoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<InsertLfpStoreRequest, LfpStore> insertLfpStoreTransportSettings =
         GrpcCallSettings.<InsertLfpStoreRequest, LfpStore>newBuilder()
@@ -160,6 +161,7 @@ public class GrpcLfpStoreServiceStub extends LfpStoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteLfpStoreRequest, Empty> deleteLfpStoreTransportSettings =
         GrpcCallSettings.<DeleteLfpStoreRequest, Empty>newBuilder()
@@ -170,6 +172,7 @@ public class GrpcLfpStoreServiceStub extends LfpStoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLfpStoresRequest, ListLfpStoresResponse> listLfpStoresTransportSettings =
         GrpcCallSettings.<ListLfpStoresRequest, ListLfpStoresResponse>newBuilder()
@@ -180,6 +183,7 @@ public class GrpcLfpStoreServiceStub extends LfpStoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.getLfpStoreCallable =

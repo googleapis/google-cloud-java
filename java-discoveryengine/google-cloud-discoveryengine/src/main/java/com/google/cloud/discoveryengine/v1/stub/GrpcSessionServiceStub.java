@@ -160,6 +160,7 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteSessionRequest, Empty> deleteSessionTransportSettings =
         GrpcCallSettings.<DeleteSessionRequest, Empty>newBuilder()
@@ -170,6 +171,7 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateSessionRequest, Session> updateSessionTransportSettings =
         GrpcCallSettings.<UpdateSessionRequest, Session>newBuilder()
@@ -190,6 +192,7 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListSessionsRequest, ListSessionsResponse> listSessionsTransportSettings =
         GrpcCallSettings.<ListSessionsRequest, ListSessionsResponse>newBuilder()
@@ -200,6 +203,7 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.createSessionCallable =

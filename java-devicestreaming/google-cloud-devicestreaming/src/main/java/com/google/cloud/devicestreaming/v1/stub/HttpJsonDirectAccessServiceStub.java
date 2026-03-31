@@ -317,6 +317,7 @@ public class HttpJsonDirectAccessServiceStub extends DirectAccessServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListDeviceSessionsRequest, ListDeviceSessionsResponse>
         listDeviceSessionsTransportSettings =
@@ -329,6 +330,7 @@ public class HttpJsonDirectAccessServiceStub extends DirectAccessServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDeviceSessionRequest, DeviceSession> getDeviceSessionTransportSettings =
         HttpJsonCallSettings.<GetDeviceSessionRequest, DeviceSession>newBuilder()
@@ -340,6 +342,7 @@ public class HttpJsonDirectAccessServiceStub extends DirectAccessServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CancelDeviceSessionRequest, Empty> cancelDeviceSessionTransportSettings =
         HttpJsonCallSettings.<CancelDeviceSessionRequest, Empty>newBuilder()
@@ -351,6 +354,7 @@ public class HttpJsonDirectAccessServiceStub extends DirectAccessServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateDeviceSessionRequest, DeviceSession>
         updateDeviceSessionTransportSettings =

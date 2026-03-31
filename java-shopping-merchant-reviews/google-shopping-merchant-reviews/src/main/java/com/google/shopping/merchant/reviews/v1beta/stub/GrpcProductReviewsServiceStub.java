@@ -160,6 +160,7 @@ public class GrpcProductReviewsServiceStub extends ProductReviewsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListProductReviewsRequest, ListProductReviewsResponse>
         listProductReviewsTransportSettings =
@@ -171,6 +172,7 @@ public class GrpcProductReviewsServiceStub extends ProductReviewsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<InsertProductReviewRequest, ProductReview>
         insertProductReviewTransportSettings =
@@ -192,6 +194,7 @@ public class GrpcProductReviewsServiceStub extends ProductReviewsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getProductReviewCallable =

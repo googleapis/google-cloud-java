@@ -180,6 +180,7 @@ public class GrpcBigQueryWriteStub extends BigQueryWriteStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<AppendRowsRequest, AppendRowsResponse> appendRowsTransportSettings =
         GrpcCallSettings.<AppendRowsRequest, AppendRowsResponse>newBuilder()
@@ -190,6 +191,7 @@ public class GrpcBigQueryWriteStub extends BigQueryWriteStub {
                   builder.add("write_stream", String.valueOf(request.getWriteStream()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getWriteStream())
             .build();
     GrpcCallSettings<GetWriteStreamRequest, WriteStream> getWriteStreamTransportSettings =
         GrpcCallSettings.<GetWriteStreamRequest, WriteStream>newBuilder()
@@ -200,6 +202,7 @@ public class GrpcBigQueryWriteStub extends BigQueryWriteStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<FinalizeWriteStreamRequest, FinalizeWriteStreamResponse>
         finalizeWriteStreamTransportSettings =
@@ -211,6 +214,7 @@ public class GrpcBigQueryWriteStub extends BigQueryWriteStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<BatchCommitWriteStreamsRequest, BatchCommitWriteStreamsResponse>
         batchCommitWriteStreamsTransportSettings =
@@ -223,6 +227,7 @@ public class GrpcBigQueryWriteStub extends BigQueryWriteStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<FlushRowsRequest, FlushRowsResponse> flushRowsTransportSettings =
         GrpcCallSettings.<FlushRowsRequest, FlushRowsResponse>newBuilder()
@@ -233,6 +238,7 @@ public class GrpcBigQueryWriteStub extends BigQueryWriteStub {
                   builder.add("write_stream", String.valueOf(request.getWriteStream()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getWriteStream())
             .build();
 
     this.createWriteStreamCallable =

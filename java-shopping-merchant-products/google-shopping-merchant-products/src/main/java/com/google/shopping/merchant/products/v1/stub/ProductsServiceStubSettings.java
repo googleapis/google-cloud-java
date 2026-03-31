@@ -302,6 +302,7 @@ public class ProductsServiceStubSettings extends StubSettings<ProductsServiceStu
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.shopping:google-shopping-merchant-products")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

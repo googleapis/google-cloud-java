@@ -365,6 +365,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetConnectionRequest, Connection> getConnectionTransportSettings =
         GrpcCallSettings.<GetConnectionRequest, Connection>newBuilder()
@@ -375,6 +376,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListConnectionsRequest, ListConnectionsResponse>
         listConnectionsTransportSettings =
@@ -386,6 +388,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateConnectionRequest, Operation> updateConnectionTransportSettings =
         GrpcCallSettings.<UpdateConnectionRequest, Operation>newBuilder()
@@ -406,6 +409,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateRepositoryRequest, Operation> createRepositoryTransportSettings =
         GrpcCallSettings.<CreateRepositoryRequest, Operation>newBuilder()
@@ -416,6 +420,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<BatchCreateRepositoriesRequest, Operation>
         batchCreateRepositoriesTransportSettings =
@@ -427,6 +432,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetRepositoryRequest, Repository> getRepositoryTransportSettings =
         GrpcCallSettings.<GetRepositoryRequest, Repository>newBuilder()
@@ -437,6 +443,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRepositoriesRequest, ListRepositoriesResponse>
         listRepositoriesTransportSettings =
@@ -448,6 +455,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteRepositoryRequest, Operation> deleteRepositoryTransportSettings =
         GrpcCallSettings.<DeleteRepositoryRequest, Operation>newBuilder()
@@ -458,6 +466,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<FetchReadWriteTokenRequest, FetchReadWriteTokenResponse>
         fetchReadWriteTokenTransportSettings =
@@ -469,6 +478,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                       builder.add("repository", String.valueOf(request.getRepository()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getRepository())
                 .build();
     GrpcCallSettings<FetchReadTokenRequest, FetchReadTokenResponse>
         fetchReadTokenTransportSettings =
@@ -480,6 +490,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                       builder.add("repository", String.valueOf(request.getRepository()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getRepository())
                 .build();
     GrpcCallSettings<FetchLinkableRepositoriesRequest, FetchLinkableRepositoriesResponse>
         fetchLinkableRepositoriesTransportSettings =
@@ -492,6 +503,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                       builder.add("connection", String.valueOf(request.getConnection()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getConnection())
                 .build();
     GrpcCallSettings<FetchGitRefsRequest, FetchGitRefsResponse> fetchGitRefsTransportSettings =
         GrpcCallSettings.<FetchGitRefsRequest, FetchGitRefsResponse>newBuilder()
@@ -502,6 +514,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   builder.add("repository", String.valueOf(request.getRepository()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getRepository())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -512,6 +525,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -522,6 +536,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -533,6 +548,7 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createConnectionCallable =

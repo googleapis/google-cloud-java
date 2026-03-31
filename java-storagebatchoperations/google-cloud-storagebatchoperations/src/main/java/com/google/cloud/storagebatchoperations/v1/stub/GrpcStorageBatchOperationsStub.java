@@ -231,6 +231,7 @@ public class GrpcStorageBatchOperationsStub extends StorageBatchOperationsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetJobRequest, Job> getJobTransportSettings =
         GrpcCallSettings.<GetJobRequest, Job>newBuilder()
@@ -241,6 +242,7 @@ public class GrpcStorageBatchOperationsStub extends StorageBatchOperationsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateJobRequest, Operation> createJobTransportSettings =
         GrpcCallSettings.<CreateJobRequest, Operation>newBuilder()
@@ -251,6 +253,7 @@ public class GrpcStorageBatchOperationsStub extends StorageBatchOperationsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteJobRequest, Empty> deleteJobTransportSettings =
         GrpcCallSettings.<DeleteJobRequest, Empty>newBuilder()
@@ -261,6 +264,7 @@ public class GrpcStorageBatchOperationsStub extends StorageBatchOperationsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CancelJobRequest, CancelJobResponse> cancelJobTransportSettings =
         GrpcCallSettings.<CancelJobRequest, CancelJobResponse>newBuilder()
@@ -271,6 +275,7 @@ public class GrpcStorageBatchOperationsStub extends StorageBatchOperationsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListBucketOperationsRequest, ListBucketOperationsResponse>
         listBucketOperationsTransportSettings =
@@ -282,6 +287,7 @@ public class GrpcStorageBatchOperationsStub extends StorageBatchOperationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetBucketOperationRequest, BucketOperation>
         getBucketOperationTransportSettings =
@@ -293,6 +299,7 @@ public class GrpcStorageBatchOperationsStub extends StorageBatchOperationsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

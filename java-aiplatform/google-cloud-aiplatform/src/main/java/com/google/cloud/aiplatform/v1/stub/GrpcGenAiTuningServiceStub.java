@@ -239,6 +239,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetTuningJobRequest, TuningJob> getTuningJobTransportSettings =
         GrpcCallSettings.<GetTuningJobRequest, TuningJob>newBuilder()
@@ -249,6 +250,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListTuningJobsRequest, ListTuningJobsResponse>
         listTuningJobsTransportSettings =
@@ -260,6 +262,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CancelTuningJobRequest, Empty> cancelTuningJobTransportSettings =
         GrpcCallSettings.<CancelTuningJobRequest, Empty>newBuilder()
@@ -270,6 +273,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RebaseTunedModelRequest, Operation> rebaseTunedModelTransportSettings =
         GrpcCallSettings.<RebaseTunedModelRequest, Operation>newBuilder()
@@ -280,6 +284,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -310,6 +315,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -320,6 +326,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -331,6 +338,7 @@ public class GrpcGenAiTuningServiceStub extends GenAiTuningServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createTuningJobCallable =

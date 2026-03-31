@@ -531,6 +531,7 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-logging")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

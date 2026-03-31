@@ -191,6 +191,7 @@ public class GrpcConfidentialComputingStub extends ConfidentialComputingStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<VerifyAttestationRequest, VerifyAttestationResponse>
         verifyAttestationTransportSettings =
@@ -202,6 +203,7 @@ public class GrpcConfidentialComputingStub extends ConfidentialComputingStub {
                       builder.add("challenge", String.valueOf(request.getChallenge()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getChallenge())
                 .build();
     GrpcCallSettings<VerifyConfidentialSpaceRequest, VerifyConfidentialSpaceResponse>
         verifyConfidentialSpaceTransportSettings =
@@ -214,6 +216,7 @@ public class GrpcConfidentialComputingStub extends ConfidentialComputingStub {
                       builder.add("challenge", String.valueOf(request.getChallenge()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getChallenge())
                 .build();
     GrpcCallSettings<VerifyConfidentialGkeRequest, VerifyConfidentialGkeResponse>
         verifyConfidentialGkeTransportSettings =
@@ -226,6 +229,7 @@ public class GrpcConfidentialComputingStub extends ConfidentialComputingStub {
                       builder.add("challenge", String.valueOf(request.getChallenge()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getChallenge())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

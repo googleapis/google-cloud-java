@@ -407,6 +407,7 @@ public class AdUnitServiceStubSettings extends StubSettings<AdUnitServiceStubSet
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.api-ads:ad-manager")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

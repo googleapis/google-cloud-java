@@ -264,6 +264,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         GrpcCallSettings.<GetInstanceRequest, Instance>newBuilder()
@@ -274,6 +275,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateInstanceRequest, Operation> createInstanceTransportSettings =
         GrpcCallSettings.<CreateInstanceRequest, Operation>newBuilder()
@@ -284,6 +286,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateInstanceRequest, Operation> updateInstanceTransportSettings =
         GrpcCallSettings.<UpdateInstanceRequest, Operation>newBuilder()
@@ -304,6 +307,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteInstanceRequest, Operation> deleteInstanceTransportSettings =
         GrpcCallSettings.<DeleteInstanceRequest, Operation>newBuilder()
@@ -314,6 +318,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ApplyParametersRequest, Operation> applyParametersTransportSettings =
         GrpcCallSettings.<ApplyParametersRequest, Operation>newBuilder()
@@ -324,6 +329,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ApplySoftwareUpdateRequest, Operation> applySoftwareUpdateTransportSettings =
         GrpcCallSettings.<ApplySoftwareUpdateRequest, Operation>newBuilder()
@@ -334,6 +340,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
                   builder.add("instance", String.valueOf(request.getInstance()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getInstance())
             .build();
     GrpcCallSettings<RescheduleMaintenanceRequest, Operation>
         rescheduleMaintenanceTransportSettings =
@@ -345,6 +352,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
                       builder.add("instance", String.valueOf(request.getInstance()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getInstance())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

@@ -461,6 +461,7 @@ public class GrpcTpuStub extends TpuStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetNodeRequest, Node> getNodeTransportSettings =
         GrpcCallSettings.<GetNodeRequest, Node>newBuilder()
@@ -471,6 +472,7 @@ public class GrpcTpuStub extends TpuStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateNodeRequest, Operation> createNodeTransportSettings =
         GrpcCallSettings.<CreateNodeRequest, Operation>newBuilder()
@@ -481,6 +483,7 @@ public class GrpcTpuStub extends TpuStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteNodeRequest, Operation> deleteNodeTransportSettings =
         GrpcCallSettings.<DeleteNodeRequest, Operation>newBuilder()
@@ -491,6 +494,7 @@ public class GrpcTpuStub extends TpuStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<StopNodeRequest, Operation> stopNodeTransportSettings =
         GrpcCallSettings.<StopNodeRequest, Operation>newBuilder()
@@ -501,6 +505,7 @@ public class GrpcTpuStub extends TpuStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<StartNodeRequest, Operation> startNodeTransportSettings =
         GrpcCallSettings.<StartNodeRequest, Operation>newBuilder()
@@ -511,6 +516,7 @@ public class GrpcTpuStub extends TpuStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateNodeRequest, Operation> updateNodeTransportSettings =
         GrpcCallSettings.<UpdateNodeRequest, Operation>newBuilder()
@@ -531,6 +537,7 @@ public class GrpcTpuStub extends TpuStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListQueuedResourcesRequest, ListQueuedResourcesResponse>
         listQueuedResourcesTransportSettings =
@@ -542,6 +549,7 @@ public class GrpcTpuStub extends TpuStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetQueuedResourceRequest, QueuedResource> getQueuedResourceTransportSettings =
         GrpcCallSettings.<GetQueuedResourceRequest, QueuedResource>newBuilder()
@@ -552,6 +560,7 @@ public class GrpcTpuStub extends TpuStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateQueuedResourceRequest, Operation> createQueuedResourceTransportSettings =
         GrpcCallSettings.<CreateQueuedResourceRequest, Operation>newBuilder()
@@ -562,6 +571,7 @@ public class GrpcTpuStub extends TpuStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteQueuedResourceRequest, Operation> deleteQueuedResourceTransportSettings =
         GrpcCallSettings.<DeleteQueuedResourceRequest, Operation>newBuilder()
@@ -572,6 +582,7 @@ public class GrpcTpuStub extends TpuStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ResetQueuedResourceRequest, Operation> resetQueuedResourceTransportSettings =
         GrpcCallSettings.<ResetQueuedResourceRequest, Operation>newBuilder()
@@ -582,6 +593,7 @@ public class GrpcTpuStub extends TpuStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<PerformMaintenanceQueuedResourceRequest, Operation>
         performMaintenanceQueuedResourceTransportSettings =
@@ -593,6 +605,7 @@ public class GrpcTpuStub extends TpuStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GenerateServiceIdentityRequest, GenerateServiceIdentityResponse>
         generateServiceIdentityTransportSettings =
@@ -605,6 +618,7 @@ public class GrpcTpuStub extends TpuStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListAcceleratorTypesRequest, ListAcceleratorTypesResponse>
         listAcceleratorTypesTransportSettings =
@@ -616,6 +630,7 @@ public class GrpcTpuStub extends TpuStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetAcceleratorTypeRequest, AcceleratorType>
         getAcceleratorTypeTransportSettings =
@@ -627,6 +642,7 @@ public class GrpcTpuStub extends TpuStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListRuntimeVersionsRequest, ListRuntimeVersionsResponse>
         listRuntimeVersionsTransportSettings =
@@ -638,6 +654,7 @@ public class GrpcTpuStub extends TpuStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetRuntimeVersionRequest, RuntimeVersion> getRuntimeVersionTransportSettings =
         GrpcCallSettings.<GetRuntimeVersionRequest, RuntimeVersion>newBuilder()
@@ -648,6 +665,7 @@ public class GrpcTpuStub extends TpuStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetGuestAttributesRequest, GetGuestAttributesResponse>
         getGuestAttributesTransportSettings =
@@ -659,6 +677,7 @@ public class GrpcTpuStub extends TpuStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListReservationsRequest, ListReservationsResponse>
         listReservationsTransportSettings =
@@ -670,6 +689,7 @@ public class GrpcTpuStub extends TpuStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<SimulateMaintenanceEventRequest, Operation>
         simulateMaintenanceEventTransportSettings =
@@ -681,6 +701,7 @@ public class GrpcTpuStub extends TpuStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

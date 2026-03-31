@@ -259,6 +259,7 @@ public class HttpJsonTagHoldsStub extends TagHoldsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteTagHoldRequest, Operation> deleteTagHoldTransportSettings =
         HttpJsonCallSettings.<DeleteTagHoldRequest, Operation>newBuilder()
@@ -270,6 +271,7 @@ public class HttpJsonTagHoldsStub extends TagHoldsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListTagHoldsRequest, ListTagHoldsResponse> listTagHoldsTransportSettings =
         HttpJsonCallSettings.<ListTagHoldsRequest, ListTagHoldsResponse>newBuilder()
@@ -281,6 +283,7 @@ public class HttpJsonTagHoldsStub extends TagHoldsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.createTagHoldCallable =

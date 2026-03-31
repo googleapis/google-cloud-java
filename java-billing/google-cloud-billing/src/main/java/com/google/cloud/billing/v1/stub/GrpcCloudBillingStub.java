@@ -254,6 +254,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListBillingAccountsRequest, ListBillingAccountsResponse>
         listBillingAccountsTransportSettings =
@@ -276,6 +277,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateBillingAccountRequest, BillingAccount>
         createBillingAccountTransportSettings =
@@ -299,6 +301,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetProjectBillingInfoRequest, ProjectBillingInfo>
         getProjectBillingInfoTransportSettings =
@@ -310,6 +313,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateProjectBillingInfoRequest, ProjectBillingInfo>
         updateProjectBillingInfoTransportSettings =
@@ -331,6 +335,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -341,6 +346,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -352,6 +358,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     GrpcCallSettings<MoveBillingAccountRequest, BillingAccount>
         moveBillingAccountTransportSettings =
@@ -365,6 +372,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.getBillingAccountCallable =

@@ -252,6 +252,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   builder.add("dataset", String.valueOf(request.getDataset()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getDataset())
             .build();
     GrpcCallSettings<GetDocumentRequest, GetDocumentResponse> getDocumentTransportSettings =
         GrpcCallSettings.<GetDocumentRequest, GetDocumentResponse>newBuilder()
@@ -262,6 +263,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   builder.add("dataset", String.valueOf(request.getDataset()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getDataset())
             .build();
     GrpcCallSettings<ListDocumentsRequest, ListDocumentsResponse> listDocumentsTransportSettings =
         GrpcCallSettings.<ListDocumentsRequest, ListDocumentsResponse>newBuilder()
@@ -272,6 +274,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   builder.add("dataset", String.valueOf(request.getDataset()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getDataset())
             .build();
     GrpcCallSettings<BatchDeleteDocumentsRequest, Operation> batchDeleteDocumentsTransportSettings =
         GrpcCallSettings.<BatchDeleteDocumentsRequest, Operation>newBuilder()
@@ -292,6 +295,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateDatasetSchemaRequest, DatasetSchema>
         updateDatasetSchemaTransportSettings =

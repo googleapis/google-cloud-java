@@ -411,6 +411,7 @@ public class HttpJsonProjectServiceStub extends ProjectServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ProvisionProjectRequest, Operation> provisionProjectTransportSettings =
         HttpJsonCallSettings.<ProvisionProjectRequest, Operation>newBuilder()
@@ -422,6 +423,7 @@ public class HttpJsonProjectServiceStub extends ProjectServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ReportConsentChangeRequest, Project> reportConsentChangeTransportSettings =
         HttpJsonCallSettings.<ReportConsentChangeRequest, Project>newBuilder()
@@ -433,6 +435,7 @@ public class HttpJsonProjectServiceStub extends ProjectServiceStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getProject())
             .build();
 
     this.getProjectCallable =

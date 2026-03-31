@@ -776,6 +776,7 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateOSPolicyAssignmentRequest, Operation>
         updateOSPolicyAssignmentTransportSettings =
@@ -802,6 +803,7 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListOSPolicyAssignmentsRequest, ListOSPolicyAssignmentsResponse>
         listOSPolicyAssignmentsTransportSettings =
@@ -815,6 +817,7 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             ListOSPolicyAssignmentRevisionsRequest, ListOSPolicyAssignmentRevisionsResponse>
@@ -830,6 +833,7 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DeleteOSPolicyAssignmentRequest, Operation>
         deleteOSPolicyAssignmentTransportSettings =
@@ -842,6 +846,7 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetInstanceOSPoliciesComplianceRequest, InstanceOSPoliciesCompliance>
         getInstanceOSPoliciesComplianceTransportSettings =
@@ -855,6 +860,7 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             ListInstanceOSPoliciesCompliancesRequest, ListInstanceOSPoliciesCompliancesResponse>
@@ -871,6 +877,7 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetOSPolicyAssignmentReportRequest, OSPolicyAssignmentReport>
         getOSPolicyAssignmentReportTransportSettings =
@@ -884,6 +891,7 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             ListOSPolicyAssignmentReportsRequest, ListOSPolicyAssignmentReportsResponse>
@@ -899,6 +907,7 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetInventoryRequest, Inventory> getInventoryTransportSettings =
         HttpJsonCallSettings.<GetInventoryRequest, Inventory>newBuilder()
@@ -910,6 +919,7 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListInventoriesRequest, ListInventoriesResponse>
         listInventoriesTransportSettings =
@@ -922,6 +932,7 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetVulnerabilityReportRequest, VulnerabilityReport>
         getVulnerabilityReportTransportSettings =
@@ -934,6 +945,7 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListVulnerabilityReportsRequest, ListVulnerabilityReportsResponse>
         listVulnerabilityReportsTransportSettings =
@@ -947,6 +959,7 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createOSPolicyAssignmentCallable =

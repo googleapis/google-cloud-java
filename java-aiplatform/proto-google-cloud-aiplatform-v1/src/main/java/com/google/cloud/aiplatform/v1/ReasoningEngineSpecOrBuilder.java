@@ -71,6 +71,44 @@ public interface ReasoningEngineSpecOrBuilder
    *
    *
    * <pre>
+   * Deploy from a container image with a defined entrypoint and commands.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ReasoningEngineSpec.ContainerSpec container_spec = 15;</code>
+   *
+   * @return Whether the containerSpec field is set.
+   */
+  boolean hasContainerSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Deploy from a container image with a defined entrypoint and commands.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ReasoningEngineSpec.ContainerSpec container_spec = 15;</code>
+   *
+   * @return The containerSpec.
+   */
+  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.ContainerSpec getContainerSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Deploy from a container image with a defined entrypoint and commands.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ReasoningEngineSpec.ContainerSpec container_spec = 15;</code>
+   */
+  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.ContainerSpecOrBuilder
+      getContainerSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The service account that the Reasoning Engine artifact runs as.
    * It should have "roles/storage.objectViewer" for reading the user project's
    * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If

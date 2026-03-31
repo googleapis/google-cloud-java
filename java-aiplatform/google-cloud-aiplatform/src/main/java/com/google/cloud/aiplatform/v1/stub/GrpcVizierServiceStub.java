@@ -365,6 +365,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetStudyRequest, Study> getStudyTransportSettings =
         GrpcCallSettings.<GetStudyRequest, Study>newBuilder()
@@ -375,6 +376,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListStudiesRequest, ListStudiesResponse> listStudiesTransportSettings =
         GrpcCallSettings.<ListStudiesRequest, ListStudiesResponse>newBuilder()
@@ -385,6 +387,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteStudyRequest, Empty> deleteStudyTransportSettings =
         GrpcCallSettings.<DeleteStudyRequest, Empty>newBuilder()
@@ -395,6 +398,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<LookupStudyRequest, Study> lookupStudyTransportSettings =
         GrpcCallSettings.<LookupStudyRequest, Study>newBuilder()
@@ -405,6 +409,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<SuggestTrialsRequest, Operation> suggestTrialsTransportSettings =
         GrpcCallSettings.<SuggestTrialsRequest, Operation>newBuilder()
@@ -415,6 +420,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateTrialRequest, Trial> createTrialTransportSettings =
         GrpcCallSettings.<CreateTrialRequest, Trial>newBuilder()
@@ -425,6 +431,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetTrialRequest, Trial> getTrialTransportSettings =
         GrpcCallSettings.<GetTrialRequest, Trial>newBuilder()
@@ -435,6 +442,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListTrialsRequest, ListTrialsResponse> listTrialsTransportSettings =
         GrpcCallSettings.<ListTrialsRequest, ListTrialsResponse>newBuilder()
@@ -445,6 +453,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<AddTrialMeasurementRequest, Trial> addTrialMeasurementTransportSettings =
         GrpcCallSettings.<AddTrialMeasurementRequest, Trial>newBuilder()
@@ -455,6 +464,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("trial_name", String.valueOf(request.getTrialName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getTrialName())
             .build();
     GrpcCallSettings<CompleteTrialRequest, Trial> completeTrialTransportSettings =
         GrpcCallSettings.<CompleteTrialRequest, Trial>newBuilder()
@@ -465,6 +475,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteTrialRequest, Empty> deleteTrialTransportSettings =
         GrpcCallSettings.<DeleteTrialRequest, Empty>newBuilder()
@@ -475,6 +486,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CheckTrialEarlyStoppingStateRequest, Operation>
         checkTrialEarlyStoppingStateTransportSettings =
@@ -486,6 +498,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                       builder.add("trial_name", String.valueOf(request.getTrialName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getTrialName())
                 .build();
     GrpcCallSettings<StopTrialRequest, Trial> stopTrialTransportSettings =
         GrpcCallSettings.<StopTrialRequest, Trial>newBuilder()
@@ -496,6 +509,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListOptimalTrialsRequest, ListOptimalTrialsResponse>
         listOptimalTrialsTransportSettings =
@@ -507,6 +521,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -537,6 +552,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -547,6 +563,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -558,6 +575,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createStudyCallable =

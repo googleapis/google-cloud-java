@@ -446,6 +446,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetServiceRequest, Service> getServiceTransportSettings =
         GrpcCallSettings.<GetServiceRequest, Service>newBuilder()
@@ -456,6 +457,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateServiceRequest, Operation> createServiceTransportSettings =
         GrpcCallSettings.<CreateServiceRequest, Operation>newBuilder()
@@ -466,6 +468,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateServiceRequest, Operation> updateServiceTransportSettings =
         GrpcCallSettings.<UpdateServiceRequest, Operation>newBuilder()
@@ -486,6 +489,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListMetadataImportsRequest, ListMetadataImportsResponse>
         listMetadataImportsTransportSettings =
@@ -497,6 +501,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetMetadataImportRequest, MetadataImport> getMetadataImportTransportSettings =
         GrpcCallSettings.<GetMetadataImportRequest, MetadataImport>newBuilder()
@@ -507,6 +512,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateMetadataImportRequest, Operation> createMetadataImportTransportSettings =
         GrpcCallSettings.<CreateMetadataImportRequest, Operation>newBuilder()
@@ -517,6 +523,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateMetadataImportRequest, Operation> updateMetadataImportTransportSettings =
         GrpcCallSettings.<UpdateMetadataImportRequest, Operation>newBuilder()
@@ -539,6 +546,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("service", String.valueOf(request.getService()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getService())
             .build();
     GrpcCallSettings<RestoreServiceRequest, Operation> restoreServiceTransportSettings =
         GrpcCallSettings.<RestoreServiceRequest, Operation>newBuilder()
@@ -549,6 +557,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("service", String.valueOf(request.getService()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getService())
             .build();
     GrpcCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
         GrpcCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
@@ -559,6 +568,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
         GrpcCallSettings.<GetBackupRequest, Backup>newBuilder()
@@ -569,6 +579,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateBackupRequest, Operation> createBackupTransportSettings =
         GrpcCallSettings.<CreateBackupRequest, Operation>newBuilder()
@@ -579,6 +590,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteBackupRequest, Operation> deleteBackupTransportSettings =
         GrpcCallSettings.<DeleteBackupRequest, Operation>newBuilder()
@@ -589,6 +601,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<QueryMetadataRequest, Operation> queryMetadataTransportSettings =
         GrpcCallSettings.<QueryMetadataRequest, Operation>newBuilder()
@@ -599,6 +612,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("service", String.valueOf(request.getService()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getService())
             .build();
     GrpcCallSettings<MoveTableToDatabaseRequest, Operation> moveTableToDatabaseTransportSettings =
         GrpcCallSettings.<MoveTableToDatabaseRequest, Operation>newBuilder()
@@ -609,6 +623,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("service", String.valueOf(request.getService()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getService())
             .build();
     GrpcCallSettings<AlterMetadataResourceLocationRequest, Operation>
         alterMetadataResourceLocationTransportSettings =
@@ -620,6 +635,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                       builder.add("service", String.valueOf(request.getService()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getService())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -650,6 +666,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -660,6 +677,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -671,6 +689,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listServicesCallable =

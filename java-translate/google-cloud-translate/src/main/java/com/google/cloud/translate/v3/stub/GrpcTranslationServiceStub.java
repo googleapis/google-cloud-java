@@ -704,6 +704,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<RomanizeTextRequest, RomanizeTextResponse> romanizeTextTransportSettings =
         GrpcCallSettings.<RomanizeTextRequest, RomanizeTextResponse>newBuilder()
@@ -714,6 +715,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DetectLanguageRequest, DetectLanguageResponse>
         detectLanguageTransportSettings =
@@ -725,6 +727,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetSupportedLanguagesRequest, SupportedLanguages>
         getSupportedLanguagesTransportSettings =
@@ -736,6 +739,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<TranslateDocumentRequest, TranslateDocumentResponse>
         translateDocumentTransportSettings =
@@ -757,6 +761,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<BatchTranslateDocumentRequest, Operation>
         batchTranslateDocumentTransportSettings =
@@ -768,6 +773,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateGlossaryRequest, Operation> createGlossaryTransportSettings =
         GrpcCallSettings.<CreateGlossaryRequest, Operation>newBuilder()
@@ -778,6 +784,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateGlossaryRequest, Operation> updateGlossaryTransportSettings =
         GrpcCallSettings.<UpdateGlossaryRequest, Operation>newBuilder()
@@ -799,6 +806,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetGlossaryRequest, Glossary> getGlossaryTransportSettings =
         GrpcCallSettings.<GetGlossaryRequest, Glossary>newBuilder()
@@ -809,6 +817,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteGlossaryRequest, Operation> deleteGlossaryTransportSettings =
         GrpcCallSettings.<DeleteGlossaryRequest, Operation>newBuilder()
@@ -819,6 +828,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetGlossaryEntryRequest, GlossaryEntry> getGlossaryEntryTransportSettings =
         GrpcCallSettings.<GetGlossaryEntryRequest, GlossaryEntry>newBuilder()
@@ -829,6 +839,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListGlossaryEntriesRequest, ListGlossaryEntriesResponse>
         listGlossaryEntriesTransportSettings =
@@ -840,6 +851,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateGlossaryEntryRequest, GlossaryEntry>
         createGlossaryEntryTransportSettings =
@@ -851,6 +863,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateGlossaryEntryRequest, GlossaryEntry>
         updateGlossaryEntryTransportSettings =
@@ -874,6 +887,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateDatasetRequest, Operation> createDatasetTransportSettings =
         GrpcCallSettings.<CreateDatasetRequest, Operation>newBuilder()
@@ -884,6 +898,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetDatasetRequest, Dataset> getDatasetTransportSettings =
         GrpcCallSettings.<GetDatasetRequest, Dataset>newBuilder()
@@ -894,6 +909,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDatasetsRequest, ListDatasetsResponse> listDatasetsTransportSettings =
         GrpcCallSettings.<ListDatasetsRequest, ListDatasetsResponse>newBuilder()
@@ -904,6 +920,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteDatasetRequest, Operation> deleteDatasetTransportSettings =
         GrpcCallSettings.<DeleteDatasetRequest, Operation>newBuilder()
@@ -914,6 +931,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateAdaptiveMtDatasetRequest, AdaptiveMtDataset>
         createAdaptiveMtDatasetTransportSettings =
@@ -925,6 +943,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteAdaptiveMtDatasetRequest, Empty>
         deleteAdaptiveMtDatasetTransportSettings =
@@ -936,6 +955,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetAdaptiveMtDatasetRequest, AdaptiveMtDataset>
         getAdaptiveMtDatasetTransportSettings =
@@ -947,6 +967,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsResponse>
         listAdaptiveMtDatasetsTransportSettings =
@@ -959,6 +980,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<AdaptiveMtTranslateRequest, AdaptiveMtTranslateResponse>
         adaptiveMtTranslateTransportSettings =
@@ -970,6 +992,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetAdaptiveMtFileRequest, AdaptiveMtFile> getAdaptiveMtFileTransportSettings =
         GrpcCallSettings.<GetAdaptiveMtFileRequest, AdaptiveMtFile>newBuilder()
@@ -980,6 +1003,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteAdaptiveMtFileRequest, Empty> deleteAdaptiveMtFileTransportSettings =
         GrpcCallSettings.<DeleteAdaptiveMtFileRequest, Empty>newBuilder()
@@ -990,6 +1014,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ImportAdaptiveMtFileRequest, ImportAdaptiveMtFileResponse>
         importAdaptiveMtFileTransportSettings =
@@ -1001,6 +1026,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse>
         listAdaptiveMtFilesTransportSettings =
@@ -1012,6 +1038,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesResponse>
         listAdaptiveMtSentencesTransportSettings =
@@ -1024,6 +1051,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ImportDataRequest, Operation> importDataTransportSettings =
         GrpcCallSettings.<ImportDataRequest, Operation>newBuilder()
@@ -1054,6 +1082,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateModelRequest, Operation> createModelTransportSettings =
         GrpcCallSettings.<CreateModelRequest, Operation>newBuilder()
@@ -1064,6 +1093,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListModelsRequest, ListModelsResponse> listModelsTransportSettings =
         GrpcCallSettings.<ListModelsRequest, ListModelsResponse>newBuilder()
@@ -1074,6 +1104,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetModelRequest, Model> getModelTransportSettings =
         GrpcCallSettings.<GetModelRequest, Model>newBuilder()
@@ -1084,6 +1115,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteModelRequest, Operation> deleteModelTransportSettings =
         GrpcCallSettings.<DeleteModelRequest, Operation>newBuilder()
@@ -1094,6 +1126,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.translateTextCallable =

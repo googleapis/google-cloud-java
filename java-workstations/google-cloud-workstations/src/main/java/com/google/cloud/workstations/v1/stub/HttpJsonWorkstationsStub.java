@@ -1192,6 +1192,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListWorkstationClustersRequest, ListWorkstationClustersResponse>
         listWorkstationClustersTransportSettings =
@@ -1205,6 +1206,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateWorkstationClusterRequest, Operation>
         createWorkstationClusterTransportSettings =
@@ -1217,6 +1219,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateWorkstationClusterRequest, Operation>
         updateWorkstationClusterTransportSettings =
@@ -1243,6 +1246,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetWorkstationConfigRequest, WorkstationConfig>
         getWorkstationConfigTransportSettings =
@@ -1255,6 +1259,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListWorkstationConfigsRequest, ListWorkstationConfigsResponse>
         listWorkstationConfigsTransportSettings =
@@ -1268,6 +1273,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListUsableWorkstationConfigsRequest, ListUsableWorkstationConfigsResponse>
         listUsableWorkstationConfigsTransportSettings =
@@ -1282,6 +1288,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateWorkstationConfigRequest, Operation>
         createWorkstationConfigTransportSettings =
@@ -1294,6 +1301,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateWorkstationConfigRequest, Operation>
         updateWorkstationConfigTransportSettings =
@@ -1320,6 +1328,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetWorkstationRequest, Workstation> getWorkstationTransportSettings =
         HttpJsonCallSettings.<GetWorkstationRequest, Workstation>newBuilder()
@@ -1331,6 +1340,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListWorkstationsRequest, ListWorkstationsResponse>
         listWorkstationsTransportSettings =
@@ -1343,6 +1353,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListUsableWorkstationsRequest, ListUsableWorkstationsResponse>
         listUsableWorkstationsTransportSettings =
@@ -1356,6 +1367,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateWorkstationRequest, Operation> createWorkstationTransportSettings =
         HttpJsonCallSettings.<CreateWorkstationRequest, Operation>newBuilder()
@@ -1367,6 +1379,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateWorkstationRequest, Operation> updateWorkstationTransportSettings =
         HttpJsonCallSettings.<UpdateWorkstationRequest, Operation>newBuilder()
@@ -1390,6 +1403,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<StartWorkstationRequest, Operation> startWorkstationTransportSettings =
         HttpJsonCallSettings.<StartWorkstationRequest, Operation>newBuilder()
@@ -1401,6 +1415,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<StopWorkstationRequest, Operation> stopWorkstationTransportSettings =
         HttpJsonCallSettings.<StopWorkstationRequest, Operation>newBuilder()
@@ -1412,6 +1427,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
         generateAccessTokenTransportSettings =
@@ -1425,6 +1441,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                       builder.add("workstation", String.valueOf(request.getWorkstation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getWorkstation())
                 .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -1436,6 +1453,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1447,6 +1465,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1459,6 +1478,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.getWorkstationClusterCallable =

@@ -89,7 +89,7 @@ public interface ListJobsRequestOrBuilder
    * <code>.google.dataflow.v1beta3.JobView view = 2 [deprecated = true];</code>
    *
    * @deprecated google.dataflow.v1beta3.ListJobsRequest.view is deprecated. See
-   *     google/dataflow/v1beta3/jobs.proto;l=976
+   *     google/dataflow/v1beta3/jobs.proto;l=995
    * @return The enum numeric value on the wire for view.
    */
   @java.lang.Deprecated
@@ -106,7 +106,7 @@ public interface ListJobsRequestOrBuilder
    * <code>.google.dataflow.v1beta3.JobView view = 2 [deprecated = true];</code>
    *
    * @deprecated google.dataflow.v1beta3.ListJobsRequest.view is deprecated. See
-   *     google/dataflow/v1beta3/jobs.proto;l=976
+   *     google/dataflow/v1beta3/jobs.proto;l=995
    * @return The view.
    */
   @java.lang.Deprecated

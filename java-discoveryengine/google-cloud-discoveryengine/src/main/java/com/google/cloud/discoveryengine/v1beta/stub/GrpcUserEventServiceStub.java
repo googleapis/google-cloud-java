@@ -164,6 +164,7 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CollectUserEventRequest, HttpBody> collectUserEventTransportSettings =
         GrpcCallSettings.<CollectUserEventRequest, HttpBody>newBuilder()
@@ -174,6 +175,7 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<PurgeUserEventsRequest, Operation> purgeUserEventsTransportSettings =
         GrpcCallSettings.<PurgeUserEventsRequest, Operation>newBuilder()
@@ -184,6 +186,7 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ImportUserEventsRequest, Operation> importUserEventsTransportSettings =
         GrpcCallSettings.<ImportUserEventsRequest, Operation>newBuilder()
@@ -194,6 +197,7 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.writeUserEventCallable =

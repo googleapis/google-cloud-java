@@ -251,10 +251,12 @@ public class GrpcFoldersStub extends FoldersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListFoldersRequest, ListFoldersResponse> listFoldersTransportSettings =
         GrpcCallSettings.<ListFoldersRequest, ListFoldersResponse>newBuilder()
             .setMethodDescriptor(listFoldersMethodDescriptor)
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<SearchFoldersRequest, SearchFoldersResponse> searchFoldersTransportSettings =
         GrpcCallSettings.<SearchFoldersRequest, SearchFoldersResponse>newBuilder()
@@ -283,6 +285,7 @@ public class GrpcFoldersStub extends FoldersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteFolderRequest, Operation> deleteFolderTransportSettings =
         GrpcCallSettings.<DeleteFolderRequest, Operation>newBuilder()
@@ -293,6 +296,7 @@ public class GrpcFoldersStub extends FoldersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UndeleteFolderRequest, Operation> undeleteFolderTransportSettings =
         GrpcCallSettings.<UndeleteFolderRequest, Operation>newBuilder()
@@ -303,6 +307,7 @@ public class GrpcFoldersStub extends FoldersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -313,6 +318,7 @@ public class GrpcFoldersStub extends FoldersStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -323,6 +329,7 @@ public class GrpcFoldersStub extends FoldersStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -334,6 +341,7 @@ public class GrpcFoldersStub extends FoldersStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.getFolderCallable =

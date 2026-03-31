@@ -695,6 +695,7 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetVpcFlowLogsConfigRequest, VpcFlowLogsConfig>
         getVpcFlowLogsConfigTransportSettings =
@@ -707,6 +708,7 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateVpcFlowLogsConfigRequest, Operation>
         createVpcFlowLogsConfigTransportSettings =
@@ -719,6 +721,7 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateVpcFlowLogsConfigRequest, Operation>
         updateVpcFlowLogsConfigTransportSettings =
@@ -745,6 +748,7 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsResponse>
         queryOrgVpcFlowLogsConfigsTransportSettings =
@@ -758,6 +762,7 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ShowEffectiveFlowLogsConfigsRequest, ShowEffectiveFlowLogsConfigsResponse>
         showEffectiveFlowLogsConfigsTransportSettings =
@@ -772,6 +777,7 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -806,6 +812,7 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -817,6 +824,7 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -829,6 +837,7 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listVpcFlowLogsConfigsCallable =

@@ -2990,6 +2990,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetSourceRequest, Source> getSourceTransportSettings =
         HttpJsonCallSettings.<GetSourceRequest, Source>newBuilder()
@@ -3001,6 +3002,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateSourceRequest, Operation> createSourceTransportSettings =
         HttpJsonCallSettings.<CreateSourceRequest, Operation>newBuilder()
@@ -3012,6 +3014,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateSourceRequest, Operation> updateSourceTransportSettings =
         HttpJsonCallSettings.<UpdateSourceRequest, Operation>newBuilder()
@@ -3034,6 +3037,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<FetchInventoryRequest, FetchInventoryResponse>
         fetchInventoryTransportSettings =
@@ -3046,6 +3050,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("source", String.valueOf(request.getSource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getSource())
                 .build();
     HttpJsonCallSettings<FetchStorageInventoryRequest, FetchStorageInventoryResponse>
         fetchStorageInventoryTransportSettings =
@@ -3059,6 +3064,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("source", String.valueOf(request.getSource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getSource())
                 .build();
     HttpJsonCallSettings<ListUtilizationReportsRequest, ListUtilizationReportsResponse>
         listUtilizationReportsTransportSettings =
@@ -3072,6 +3078,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetUtilizationReportRequest, UtilizationReport>
         getUtilizationReportTransportSettings =
@@ -3084,6 +3091,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateUtilizationReportRequest, Operation>
         createUtilizationReportTransportSettings =
@@ -3096,6 +3104,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteUtilizationReportRequest, Operation>
         deleteUtilizationReportTransportSettings =
@@ -3108,6 +3117,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListDatacenterConnectorsRequest, ListDatacenterConnectorsResponse>
         listDatacenterConnectorsTransportSettings =
@@ -3121,6 +3131,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDatacenterConnectorRequest, DatacenterConnector>
         getDatacenterConnectorTransportSettings =
@@ -3133,6 +3144,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateDatacenterConnectorRequest, Operation>
         createDatacenterConnectorTransportSettings =
@@ -3145,6 +3157,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteDatacenterConnectorRequest, Operation>
         deleteDatacenterConnectorTransportSettings =
@@ -3157,6 +3170,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpgradeApplianceRequest, Operation> upgradeApplianceTransportSettings =
         HttpJsonCallSettings.<UpgradeApplianceRequest, Operation>newBuilder()
@@ -3169,6 +3183,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       "datacenter_connector", String.valueOf(request.getDatacenterConnector()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getDatacenterConnector())
             .build();
     HttpJsonCallSettings<CreateMigratingVmRequest, Operation> createMigratingVmTransportSettings =
         HttpJsonCallSettings.<CreateMigratingVmRequest, Operation>newBuilder()
@@ -3180,6 +3195,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListMigratingVmsRequest, ListMigratingVmsResponse>
         listMigratingVmsTransportSettings =
@@ -3192,6 +3208,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetMigratingVmRequest, MigratingVm> getMigratingVmTransportSettings =
         HttpJsonCallSettings.<GetMigratingVmRequest, MigratingVm>newBuilder()
@@ -3203,6 +3220,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateMigratingVmRequest, Operation> updateMigratingVmTransportSettings =
         HttpJsonCallSettings.<UpdateMigratingVmRequest, Operation>newBuilder()
@@ -3226,6 +3244,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<StartMigrationRequest, Operation> startMigrationTransportSettings =
         HttpJsonCallSettings.<StartMigrationRequest, Operation>newBuilder()
@@ -3237,6 +3256,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                   builder.add("migrating_vm", String.valueOf(request.getMigratingVm()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getMigratingVm())
             .build();
     HttpJsonCallSettings<ResumeMigrationRequest, Operation> resumeMigrationTransportSettings =
         HttpJsonCallSettings.<ResumeMigrationRequest, Operation>newBuilder()
@@ -3248,6 +3268,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                   builder.add("migrating_vm", String.valueOf(request.getMigratingVm()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getMigratingVm())
             .build();
     HttpJsonCallSettings<PauseMigrationRequest, Operation> pauseMigrationTransportSettings =
         HttpJsonCallSettings.<PauseMigrationRequest, Operation>newBuilder()
@@ -3259,6 +3280,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                   builder.add("migrating_vm", String.valueOf(request.getMigratingVm()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getMigratingVm())
             .build();
     HttpJsonCallSettings<FinalizeMigrationRequest, Operation> finalizeMigrationTransportSettings =
         HttpJsonCallSettings.<FinalizeMigrationRequest, Operation>newBuilder()
@@ -3270,6 +3292,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                   builder.add("migrating_vm", String.valueOf(request.getMigratingVm()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getMigratingVm())
             .build();
     HttpJsonCallSettings<ExtendMigrationRequest, Operation> extendMigrationTransportSettings =
         HttpJsonCallSettings.<ExtendMigrationRequest, Operation>newBuilder()
@@ -3281,6 +3304,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                   builder.add("migrating_vm", String.valueOf(request.getMigratingVm()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getMigratingVm())
             .build();
     HttpJsonCallSettings<CreateCloneJobRequest, Operation> createCloneJobTransportSettings =
         HttpJsonCallSettings.<CreateCloneJobRequest, Operation>newBuilder()
@@ -3292,6 +3316,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CancelCloneJobRequest, Operation> cancelCloneJobTransportSettings =
         HttpJsonCallSettings.<CancelCloneJobRequest, Operation>newBuilder()
@@ -3303,6 +3328,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListCloneJobsRequest, ListCloneJobsResponse>
         listCloneJobsTransportSettings =
@@ -3315,6 +3341,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetCloneJobRequest, CloneJob> getCloneJobTransportSettings =
         HttpJsonCallSettings.<GetCloneJobRequest, CloneJob>newBuilder()
@@ -3326,6 +3353,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateCutoverJobRequest, Operation> createCutoverJobTransportSettings =
         HttpJsonCallSettings.<CreateCutoverJobRequest, Operation>newBuilder()
@@ -3337,6 +3365,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CancelCutoverJobRequest, Operation> cancelCutoverJobTransportSettings =
         HttpJsonCallSettings.<CancelCutoverJobRequest, Operation>newBuilder()
@@ -3348,6 +3377,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListCutoverJobsRequest, ListCutoverJobsResponse>
         listCutoverJobsTransportSettings =
@@ -3360,6 +3390,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetCutoverJobRequest, CutoverJob> getCutoverJobTransportSettings =
         HttpJsonCallSettings.<GetCutoverJobRequest, CutoverJob>newBuilder()
@@ -3371,6 +3402,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListGroupsRequest, ListGroupsResponse> listGroupsTransportSettings =
         HttpJsonCallSettings.<ListGroupsRequest, ListGroupsResponse>newBuilder()
@@ -3382,6 +3414,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetGroupRequest, Group> getGroupTransportSettings =
         HttpJsonCallSettings.<GetGroupRequest, Group>newBuilder()
@@ -3393,6 +3426,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateGroupRequest, Operation> createGroupTransportSettings =
         HttpJsonCallSettings.<CreateGroupRequest, Operation>newBuilder()
@@ -3404,6 +3438,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateGroupRequest, Operation> updateGroupTransportSettings =
         HttpJsonCallSettings.<UpdateGroupRequest, Operation>newBuilder()
@@ -3426,6 +3461,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<AddGroupMigrationRequest, Operation> addGroupMigrationTransportSettings =
         HttpJsonCallSettings.<AddGroupMigrationRequest, Operation>newBuilder()
@@ -3437,6 +3473,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                   builder.add("group", String.valueOf(request.getGroup()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getGroup())
             .build();
     HttpJsonCallSettings<RemoveGroupMigrationRequest, Operation>
         removeGroupMigrationTransportSettings =
@@ -3449,6 +3486,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("group", String.valueOf(request.getGroup()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getGroup())
                 .build();
     HttpJsonCallSettings<ListTargetProjectsRequest, ListTargetProjectsResponse>
         listTargetProjectsTransportSettings =
@@ -3461,6 +3499,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetTargetProjectRequest, TargetProject> getTargetProjectTransportSettings =
         HttpJsonCallSettings.<GetTargetProjectRequest, TargetProject>newBuilder()
@@ -3472,6 +3511,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateTargetProjectRequest, Operation>
         createTargetProjectTransportSettings =
@@ -3484,6 +3524,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateTargetProjectRequest, Operation>
         updateTargetProjectTransportSettings =
@@ -3510,6 +3551,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListReplicationCyclesRequest, ListReplicationCyclesResponse>
         listReplicationCyclesTransportSettings =
@@ -3523,6 +3565,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetReplicationCycleRequest, ReplicationCycle>
         getReplicationCycleTransportSettings =
@@ -3535,6 +3578,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListImageImportsRequest, ListImageImportsResponse>
         listImageImportsTransportSettings =
@@ -3547,6 +3591,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetImageImportRequest, ImageImport> getImageImportTransportSettings =
         HttpJsonCallSettings.<GetImageImportRequest, ImageImport>newBuilder()
@@ -3558,6 +3603,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateImageImportRequest, Operation> createImageImportTransportSettings =
         HttpJsonCallSettings.<CreateImageImportRequest, Operation>newBuilder()
@@ -3569,6 +3615,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteImageImportRequest, Operation> deleteImageImportTransportSettings =
         HttpJsonCallSettings.<DeleteImageImportRequest, Operation>newBuilder()
@@ -3580,6 +3627,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListImageImportJobsRequest, ListImageImportJobsResponse>
         listImageImportJobsTransportSettings =
@@ -3593,6 +3641,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetImageImportJobRequest, ImageImportJob>
         getImageImportJobTransportSettings =
@@ -3605,6 +3654,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CancelImageImportJobRequest, Operation>
         cancelImageImportJobTransportSettings =
@@ -3617,6 +3667,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateDiskMigrationJobRequest, Operation>
         createDiskMigrationJobTransportSettings =
@@ -3629,6 +3680,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse>
         listDiskMigrationJobsTransportSettings =
@@ -3642,6 +3694,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDiskMigrationJobRequest, DiskMigrationJob>
         getDiskMigrationJobTransportSettings =
@@ -3654,6 +3707,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateDiskMigrationJobRequest, Operation>
         updateDiskMigrationJobTransportSettings =
@@ -3680,6 +3734,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<RunDiskMigrationJobRequest, Operation>
         runDiskMigrationJobTransportSettings =
@@ -3692,6 +3747,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CancelDiskMigrationJobRequest, Operation>
         cancelDiskMigrationJobTransportSettings =
@@ -3704,6 +3760,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

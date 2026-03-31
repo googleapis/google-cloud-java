@@ -284,6 +284,7 @@ public class HttpJsonAdReviewCenterAdServiceStub extends AdReviewCenterAdService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<BatchAllowAdReviewCenterAdsRequest, Operation>
         batchAllowAdReviewCenterAdsTransportSettings =
@@ -296,6 +297,7 @@ public class HttpJsonAdReviewCenterAdServiceStub extends AdReviewCenterAdService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<BatchBlockAdReviewCenterAdsRequest, Operation>
         batchBlockAdReviewCenterAdsTransportSettings =
@@ -308,6 +310,7 @@ public class HttpJsonAdReviewCenterAdServiceStub extends AdReviewCenterAdService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.searchAdReviewCenterAdsCallable =

@@ -458,6 +458,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
         GrpcCallSettings.<GetClusterRequest, Cluster>newBuilder()
@@ -468,6 +469,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
         GrpcCallSettings.<CreateClusterRequest, Operation>newBuilder()
@@ -478,6 +480,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateClusterRequest, Operation> updateClusterTransportSettings =
         GrpcCallSettings.<UpdateClusterRequest, Operation>newBuilder()
@@ -498,6 +501,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListStreamsRequest, ListStreamsResponse> listStreamsTransportSettings =
         GrpcCallSettings.<ListStreamsRequest, ListStreamsResponse>newBuilder()
@@ -508,6 +512,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetStreamRequest, Stream> getStreamTransportSettings =
         GrpcCallSettings.<GetStreamRequest, Stream>newBuilder()
@@ -518,6 +523,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateStreamRequest, Operation> createStreamTransportSettings =
         GrpcCallSettings.<CreateStreamRequest, Operation>newBuilder()
@@ -528,6 +534,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateStreamRequest, Operation> updateStreamTransportSettings =
         GrpcCallSettings.<UpdateStreamRequest, Operation>newBuilder()
@@ -548,6 +555,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetStreamThumbnailRequest, Operation> getStreamThumbnailTransportSettings =
         GrpcCallSettings.<GetStreamThumbnailRequest, Operation>newBuilder()
@@ -580,6 +588,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetEventRequest, Event> getEventTransportSettings =
         GrpcCallSettings.<GetEventRequest, Event>newBuilder()
@@ -590,6 +599,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateEventRequest, Operation> createEventTransportSettings =
         GrpcCallSettings.<CreateEventRequest, Operation>newBuilder()
@@ -600,6 +610,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateEventRequest, Operation> updateEventTransportSettings =
         GrpcCallSettings.<UpdateEventRequest, Operation>newBuilder()
@@ -620,6 +631,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListSeriesRequest, ListSeriesResponse> listSeriesTransportSettings =
         GrpcCallSettings.<ListSeriesRequest, ListSeriesResponse>newBuilder()
@@ -630,6 +642,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetSeriesRequest, Series> getSeriesTransportSettings =
         GrpcCallSettings.<GetSeriesRequest, Series>newBuilder()
@@ -640,6 +653,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateSeriesRequest, Operation> createSeriesTransportSettings =
         GrpcCallSettings.<CreateSeriesRequest, Operation>newBuilder()
@@ -650,6 +664,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateSeriesRequest, Operation> updateSeriesTransportSettings =
         GrpcCallSettings.<UpdateSeriesRequest, Operation>newBuilder()
@@ -670,6 +685,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<MaterializeChannelRequest, Operation> materializeChannelTransportSettings =
         GrpcCallSettings.<MaterializeChannelRequest, Operation>newBuilder()
@@ -680,6 +696,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

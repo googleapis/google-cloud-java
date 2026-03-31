@@ -424,6 +424,7 @@ public class HttpJsonSiteServiceStub extends SiteServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListSitesRequest, ListSitesResponse> listSitesTransportSettings =
         HttpJsonCallSettings.<ListSitesRequest, ListSitesResponse>newBuilder()
@@ -435,6 +436,7 @@ public class HttpJsonSiteServiceStub extends SiteServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateSiteRequest, Site> createSiteTransportSettings =
         HttpJsonCallSettings.<CreateSiteRequest, Site>newBuilder()
@@ -446,6 +448,7 @@ public class HttpJsonSiteServiceStub extends SiteServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<BatchCreateSitesRequest, BatchCreateSitesResponse>
         batchCreateSitesTransportSettings =
@@ -458,6 +461,7 @@ public class HttpJsonSiteServiceStub extends SiteServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateSiteRequest, Site> updateSiteTransportSettings =
         HttpJsonCallSettings.<UpdateSiteRequest, Site>newBuilder()
@@ -481,6 +485,7 @@ public class HttpJsonSiteServiceStub extends SiteServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<BatchDeactivateSitesRequest, BatchDeactivateSitesResponse>
         batchDeactivateSitesTransportSettings =
@@ -494,6 +499,7 @@ public class HttpJsonSiteServiceStub extends SiteServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<BatchSubmitSitesForApprovalRequest, BatchSubmitSitesForApprovalResponse>
         batchSubmitSitesForApprovalTransportSettings =
@@ -508,6 +514,7 @@ public class HttpJsonSiteServiceStub extends SiteServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getSiteCallable =

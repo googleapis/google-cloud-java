@@ -232,6 +232,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<BatchCreateJobsRequest, Operation> batchCreateJobsTransportSettings =
         GrpcCallSettings.<BatchCreateJobsRequest, Operation>newBuilder()
@@ -242,6 +243,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetJobRequest, Job> getJobTransportSettings =
         GrpcCallSettings.<GetJobRequest, Job>newBuilder()
@@ -252,6 +254,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateJobRequest, Job> updateJobTransportSettings =
         GrpcCallSettings.<UpdateJobRequest, Job>newBuilder()
@@ -272,6 +275,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteJobRequest, Empty> deleteJobTransportSettings =
         GrpcCallSettings.<DeleteJobRequest, Empty>newBuilder()
@@ -282,6 +286,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<BatchDeleteJobsRequest, Empty> batchDeleteJobsTransportSettings =
         GrpcCallSettings.<BatchDeleteJobsRequest, Empty>newBuilder()
@@ -292,6 +297,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListJobsRequest, ListJobsResponse> listJobsTransportSettings =
         GrpcCallSettings.<ListJobsRequest, ListJobsResponse>newBuilder()
@@ -302,6 +308,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<SearchJobsRequest, SearchJobsResponse> searchJobsTransportSettings =
         GrpcCallSettings.<SearchJobsRequest, SearchJobsResponse>newBuilder()
@@ -312,6 +319,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<SearchJobsRequest, SearchJobsResponse> searchJobsForAlertTransportSettings =
         GrpcCallSettings.<SearchJobsRequest, SearchJobsResponse>newBuilder()
@@ -322,6 +330,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.createJobCallable =

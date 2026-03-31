@@ -303,6 +303,7 @@ public class HttpJsonRegionsServiceStub extends RegionsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateRegionRequest, Region> createRegionTransportSettings =
         HttpJsonCallSettings.<CreateRegionRequest, Region>newBuilder()
@@ -314,6 +315,7 @@ public class HttpJsonRegionsServiceStub extends RegionsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateRegionRequest, Region> updateRegionTransportSettings =
         HttpJsonCallSettings.<UpdateRegionRequest, Region>newBuilder()
@@ -336,6 +338,7 @@ public class HttpJsonRegionsServiceStub extends RegionsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListRegionsRequest, ListRegionsResponse> listRegionsTransportSettings =
         HttpJsonCallSettings.<ListRegionsRequest, ListRegionsResponse>newBuilder()
@@ -347,6 +350,7 @@ public class HttpJsonRegionsServiceStub extends RegionsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.getRegionCallable =
