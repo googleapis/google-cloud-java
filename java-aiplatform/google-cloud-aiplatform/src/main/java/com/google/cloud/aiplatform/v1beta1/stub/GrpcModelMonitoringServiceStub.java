@@ -372,6 +372,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateModelMonitorRequest, Operation> updateModelMonitorTransportSettings =
         GrpcCallSettings.<UpdateModelMonitorRequest, Operation>newBuilder()
@@ -393,6 +394,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListModelMonitorsRequest, ListModelMonitorsResponse>
         listModelMonitorsTransportSettings =
@@ -404,6 +406,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteModelMonitorRequest, Operation> deleteModelMonitorTransportSettings =
         GrpcCallSettings.<DeleteModelMonitorRequest, Operation>newBuilder()
@@ -414,6 +417,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateModelMonitoringJobRequest, ModelMonitoringJob>
         createModelMonitoringJobTransportSettings =
@@ -425,6 +429,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetModelMonitoringJobRequest, ModelMonitoringJob>
         getModelMonitoringJobTransportSettings =
@@ -436,6 +441,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListModelMonitoringJobsRequest, ListModelMonitoringJobsResponse>
         listModelMonitoringJobsTransportSettings =
@@ -448,6 +454,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteModelMonitoringJobRequest, Operation>
         deleteModelMonitoringJobTransportSettings =
@@ -459,6 +466,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<SearchModelMonitoringStatsRequest, SearchModelMonitoringStatsResponse>
         searchModelMonitoringStatsTransportSettings =
@@ -471,6 +479,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
                       builder.add("model_monitor", String.valueOf(request.getModelMonitor()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getModelMonitor())
                 .build();
     GrpcCallSettings<SearchModelMonitoringAlertsRequest, SearchModelMonitoringAlertsResponse>
         searchModelMonitoringAlertsTransportSettings =
@@ -484,6 +493,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
                       builder.add("model_monitor", String.valueOf(request.getModelMonitor()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getModelMonitor())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -514,6 +524,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -524,6 +535,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -535,6 +547,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createModelMonitorCallable =

@@ -635,6 +635,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetDatasetRequest, Dataset> getDatasetTransportSettings =
         GrpcCallSettings.<GetDatasetRequest, Dataset>newBuilder()
@@ -645,6 +646,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDatasetsRequest, ListDatasetsResponse> listDatasetsTransportSettings =
         GrpcCallSettings.<ListDatasetsRequest, ListDatasetsResponse>newBuilder()
@@ -655,6 +657,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteDatasetRequest, Empty> deleteDatasetTransportSettings =
         GrpcCallSettings.<DeleteDatasetRequest, Empty>newBuilder()
@@ -665,6 +668,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ImportDataRequest, Operation> importDataTransportSettings =
         GrpcCallSettings.<ImportDataRequest, Operation>newBuilder()
@@ -675,6 +679,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ExportDataRequest, Operation> exportDataTransportSettings =
         GrpcCallSettings.<ExportDataRequest, Operation>newBuilder()
@@ -685,6 +690,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetDataItemRequest, DataItem> getDataItemTransportSettings =
         GrpcCallSettings.<GetDataItemRequest, DataItem>newBuilder()
@@ -695,6 +701,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDataItemsRequest, ListDataItemsResponse> listDataItemsTransportSettings =
         GrpcCallSettings.<ListDataItemsRequest, ListDataItemsResponse>newBuilder()
@@ -705,6 +712,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetAnnotatedDatasetRequest, AnnotatedDataset>
         getAnnotatedDatasetTransportSettings =
@@ -716,6 +724,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsResponse>
         listAnnotatedDatasetsTransportSettings =
@@ -728,6 +737,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteAnnotatedDatasetRequest, Empty> deleteAnnotatedDatasetTransportSettings =
         GrpcCallSettings.<DeleteAnnotatedDatasetRequest, Empty>newBuilder()
@@ -738,6 +748,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<LabelImageRequest, Operation> labelImageTransportSettings =
         GrpcCallSettings.<LabelImageRequest, Operation>newBuilder()
@@ -748,6 +759,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<LabelVideoRequest, Operation> labelVideoTransportSettings =
         GrpcCallSettings.<LabelVideoRequest, Operation>newBuilder()
@@ -758,6 +770,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<LabelTextRequest, Operation> labelTextTransportSettings =
         GrpcCallSettings.<LabelTextRequest, Operation>newBuilder()
@@ -768,6 +781,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetExampleRequest, Example> getExampleTransportSettings =
         GrpcCallSettings.<GetExampleRequest, Example>newBuilder()
@@ -778,6 +792,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListExamplesRequest, ListExamplesResponse> listExamplesTransportSettings =
         GrpcCallSettings.<ListExamplesRequest, ListExamplesResponse>newBuilder()
@@ -788,6 +803,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateAnnotationSpecSetRequest, AnnotationSpecSet>
         createAnnotationSpecSetTransportSettings =
@@ -799,6 +815,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetAnnotationSpecSetRequest, AnnotationSpecSet>
         getAnnotationSpecSetTransportSettings =
@@ -810,6 +827,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListAnnotationSpecSetsRequest, ListAnnotationSpecSetsResponse>
         listAnnotationSpecSetsTransportSettings =
@@ -822,6 +840,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteAnnotationSpecSetRequest, Empty>
         deleteAnnotationSpecSetTransportSettings =
@@ -833,6 +852,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateInstructionRequest, Operation> createInstructionTransportSettings =
         GrpcCallSettings.<CreateInstructionRequest, Operation>newBuilder()
@@ -843,6 +863,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetInstructionRequest, Instruction> getInstructionTransportSettings =
         GrpcCallSettings.<GetInstructionRequest, Instruction>newBuilder()
@@ -853,6 +874,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListInstructionsRequest, ListInstructionsResponse>
         listInstructionsTransportSettings =
@@ -864,6 +886,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteInstructionRequest, Empty> deleteInstructionTransportSettings =
         GrpcCallSettings.<DeleteInstructionRequest, Empty>newBuilder()
@@ -874,6 +897,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetEvaluationRequest, Evaluation> getEvaluationTransportSettings =
         GrpcCallSettings.<GetEvaluationRequest, Evaluation>newBuilder()
@@ -884,6 +908,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SearchEvaluationsRequest, SearchEvaluationsResponse>
         searchEvaluationsTransportSettings =
@@ -895,6 +920,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<SearchExampleComparisonsRequest, SearchExampleComparisonsResponse>
         searchExampleComparisonsTransportSettings =
@@ -907,6 +933,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateEvaluationJobRequest, EvaluationJob>
         createEvaluationJobTransportSettings =
@@ -918,6 +945,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateEvaluationJobRequest, EvaluationJob>
         updateEvaluationJobTransportSettings =
@@ -941,6 +969,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<PauseEvaluationJobRequest, Empty> pauseEvaluationJobTransportSettings =
         GrpcCallSettings.<PauseEvaluationJobRequest, Empty>newBuilder()
@@ -951,6 +980,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ResumeEvaluationJobRequest, Empty> resumeEvaluationJobTransportSettings =
         GrpcCallSettings.<ResumeEvaluationJobRequest, Empty>newBuilder()
@@ -961,6 +991,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobTransportSettings =
         GrpcCallSettings.<DeleteEvaluationJobRequest, Empty>newBuilder()
@@ -971,6 +1002,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListEvaluationJobsRequest, ListEvaluationJobsResponse>
         listEvaluationJobsTransportSettings =
@@ -982,6 +1014,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createDatasetCallable =

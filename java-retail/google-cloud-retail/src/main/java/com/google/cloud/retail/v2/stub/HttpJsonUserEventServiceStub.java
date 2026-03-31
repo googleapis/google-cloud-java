@@ -400,6 +400,7 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ImportUserEventsRequest, Operation> importUserEventsTransportSettings =
         HttpJsonCallSettings.<ImportUserEventsRequest, Operation>newBuilder()
@@ -411,6 +412,7 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<RejoinUserEventsRequest, Operation> rejoinUserEventsTransportSettings =
         HttpJsonCallSettings.<RejoinUserEventsRequest, Operation>newBuilder()

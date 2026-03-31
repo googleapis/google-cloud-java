@@ -495,6 +495,7 @@ public class HttpJsonAdaptationStub extends AdaptationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetPhraseSetRequest, PhraseSet> getPhraseSetTransportSettings =
         HttpJsonCallSettings.<GetPhraseSetRequest, PhraseSet>newBuilder()
@@ -506,6 +507,7 @@ public class HttpJsonAdaptationStub extends AdaptationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListPhraseSetRequest, ListPhraseSetResponse>
         listPhraseSetTransportSettings =
@@ -518,6 +520,7 @@ public class HttpJsonAdaptationStub extends AdaptationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdatePhraseSetRequest, PhraseSet> updatePhraseSetTransportSettings =
         HttpJsonCallSettings.<UpdatePhraseSetRequest, PhraseSet>newBuilder()
@@ -540,6 +543,7 @@ public class HttpJsonAdaptationStub extends AdaptationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateCustomClassRequest, CustomClass> createCustomClassTransportSettings =
         HttpJsonCallSettings.<CreateCustomClassRequest, CustomClass>newBuilder()
@@ -551,6 +555,7 @@ public class HttpJsonAdaptationStub extends AdaptationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetCustomClassRequest, CustomClass> getCustomClassTransportSettings =
         HttpJsonCallSettings.<GetCustomClassRequest, CustomClass>newBuilder()
@@ -562,6 +567,7 @@ public class HttpJsonAdaptationStub extends AdaptationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListCustomClassesRequest, ListCustomClassesResponse>
         listCustomClassesTransportSettings =
@@ -574,6 +580,7 @@ public class HttpJsonAdaptationStub extends AdaptationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateCustomClassRequest, CustomClass> updateCustomClassTransportSettings =
         HttpJsonCallSettings.<UpdateCustomClassRequest, CustomClass>newBuilder()
@@ -597,6 +604,7 @@ public class HttpJsonAdaptationStub extends AdaptationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createPhraseSetCallable =

@@ -306,6 +306,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateConversationRequest, Conversation> createConversationTransportSettings =
         GrpcCallSettings.<CreateConversationRequest, Conversation>newBuilder()
@@ -316,6 +317,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteConversationRequest, Empty> deleteConversationTransportSettings =
         GrpcCallSettings.<DeleteConversationRequest, Empty>newBuilder()
@@ -326,6 +328,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateConversationRequest, Conversation> updateConversationTransportSettings =
         GrpcCallSettings.<UpdateConversationRequest, Conversation>newBuilder()
@@ -347,6 +350,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListConversationsRequest, ListConversationsResponse>
         listConversationsTransportSettings =
@@ -358,6 +362,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<AnswerQueryRequest, AnswerQueryResponse> answerQueryTransportSettings =
         GrpcCallSettings.<AnswerQueryRequest, AnswerQueryResponse>newBuilder()
@@ -368,6 +373,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                   builder.add("serving_config", String.valueOf(request.getServingConfig()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getServingConfig())
             .build();
     GrpcCallSettings<AnswerQueryRequest, AnswerQueryResponse> streamAnswerQueryTransportSettings =
         GrpcCallSettings.<AnswerQueryRequest, AnswerQueryResponse>newBuilder()
@@ -378,6 +384,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                   builder.add("serving_config", String.valueOf(request.getServingConfig()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getServingConfig())
             .build();
     GrpcCallSettings<GetAnswerRequest, Answer> getAnswerTransportSettings =
         GrpcCallSettings.<GetAnswerRequest, Answer>newBuilder()
@@ -388,6 +395,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateSessionRequest, Session> createSessionTransportSettings =
         GrpcCallSettings.<CreateSessionRequest, Session>newBuilder()
@@ -398,6 +406,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteSessionRequest, Empty> deleteSessionTransportSettings =
         GrpcCallSettings.<DeleteSessionRequest, Empty>newBuilder()
@@ -408,6 +417,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateSessionRequest, Session> updateSessionTransportSettings =
         GrpcCallSettings.<UpdateSessionRequest, Session>newBuilder()
@@ -428,6 +438,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListSessionsRequest, ListSessionsResponse> listSessionsTransportSettings =
         GrpcCallSettings.<ListSessionsRequest, ListSessionsResponse>newBuilder()
@@ -438,6 +449,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.converseConversationCallable =

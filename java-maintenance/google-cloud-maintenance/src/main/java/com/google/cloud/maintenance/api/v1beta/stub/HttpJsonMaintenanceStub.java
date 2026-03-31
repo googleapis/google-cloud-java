@@ -318,6 +318,7 @@ public class HttpJsonMaintenanceStub extends MaintenanceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListResourceMaintenancesRequest, ListResourceMaintenancesResponse>
         listResourceMaintenancesTransportSettings =
@@ -331,6 +332,7 @@ public class HttpJsonMaintenanceStub extends MaintenanceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetResourceMaintenanceRequest, ResourceMaintenance>
         getResourceMaintenanceTransportSettings =
@@ -343,6 +345,7 @@ public class HttpJsonMaintenanceStub extends MaintenanceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

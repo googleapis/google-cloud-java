@@ -184,6 +184,7 @@ public class HttpJsonMobileDeviceServiceStub extends MobileDeviceServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListMobileDevicesRequest, ListMobileDevicesResponse>
         listMobileDevicesTransportSettings =
@@ -196,6 +197,7 @@ public class HttpJsonMobileDeviceServiceStub extends MobileDeviceServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getMobileDeviceCallable =

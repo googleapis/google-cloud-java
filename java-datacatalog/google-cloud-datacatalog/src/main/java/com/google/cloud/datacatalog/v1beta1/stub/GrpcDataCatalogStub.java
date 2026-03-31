@@ -481,6 +481,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateEntryGroupRequest, EntryGroup> updateEntryGroupTransportSettings =
         GrpcCallSettings.<UpdateEntryGroupRequest, EntryGroup>newBuilder()
@@ -502,6 +503,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteEntryGroupRequest, Empty> deleteEntryGroupTransportSettings =
         GrpcCallSettings.<DeleteEntryGroupRequest, Empty>newBuilder()
@@ -512,6 +514,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListEntryGroupsRequest, ListEntryGroupsResponse>
         listEntryGroupsTransportSettings =
@@ -523,6 +526,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateEntryRequest, Entry> createEntryTransportSettings =
         GrpcCallSettings.<CreateEntryRequest, Entry>newBuilder()
@@ -533,6 +537,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateEntryRequest, Entry> updateEntryTransportSettings =
         GrpcCallSettings.<UpdateEntryRequest, Entry>newBuilder()
@@ -553,6 +558,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetEntryRequest, Entry> getEntryTransportSettings =
         GrpcCallSettings.<GetEntryRequest, Entry>newBuilder()
@@ -563,6 +569,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<LookupEntryRequest, Entry> lookupEntryTransportSettings =
         GrpcCallSettings.<LookupEntryRequest, Entry>newBuilder()
@@ -577,6 +584,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateTagTemplateRequest, TagTemplate> createTagTemplateTransportSettings =
         GrpcCallSettings.<CreateTagTemplateRequest, TagTemplate>newBuilder()
@@ -587,6 +595,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetTagTemplateRequest, TagTemplate> getTagTemplateTransportSettings =
         GrpcCallSettings.<GetTagTemplateRequest, TagTemplate>newBuilder()
@@ -597,6 +606,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateTagTemplateRequest, TagTemplate> updateTagTemplateTransportSettings =
         GrpcCallSettings.<UpdateTagTemplateRequest, TagTemplate>newBuilder()
@@ -618,6 +628,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateTagTemplateFieldRequest, TagTemplateField>
         createTagTemplateFieldTransportSettings =
@@ -629,6 +640,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateTagTemplateFieldRequest, TagTemplateField>
         updateTagTemplateFieldTransportSettings =
@@ -640,6 +652,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<RenameTagTemplateFieldRequest, TagTemplateField>
         renameTagTemplateFieldTransportSettings =
@@ -651,6 +664,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>
         renameTagTemplateFieldEnumValueTransportSettings =
@@ -662,6 +676,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteTagTemplateFieldRequest, Empty> deleteTagTemplateFieldTransportSettings =
         GrpcCallSettings.<DeleteTagTemplateFieldRequest, Empty>newBuilder()
@@ -672,6 +687,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateTagRequest, Tag> createTagTransportSettings =
         GrpcCallSettings.<CreateTagRequest, Tag>newBuilder()
@@ -682,6 +698,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateTagRequest, Tag> updateTagTransportSettings =
         GrpcCallSettings.<UpdateTagRequest, Tag>newBuilder()
@@ -702,6 +719,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListTagsRequest, ListTagsResponse> listTagsTransportSettings =
         GrpcCallSettings.<ListTagsRequest, ListTagsResponse>newBuilder()
@@ -712,6 +730,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -722,6 +741,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -732,6 +752,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -743,6 +764,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.searchCatalogCallable =

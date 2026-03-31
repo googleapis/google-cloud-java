@@ -206,6 +206,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListJobsRequest, ListJobsResponse> listJobsTransportSettings =
         GrpcCallSettings.<ListJobsRequest, ListJobsResponse>newBuilder()
@@ -216,6 +217,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetJobRequest, Job> getJobTransportSettings =
         GrpcCallSettings.<GetJobRequest, Job>newBuilder()
@@ -226,6 +228,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteJobRequest, Empty> deleteJobTransportSettings =
         GrpcCallSettings.<DeleteJobRequest, Empty>newBuilder()
@@ -236,6 +239,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateJobTemplateRequest, JobTemplate> createJobTemplateTransportSettings =
         GrpcCallSettings.<CreateJobTemplateRequest, JobTemplate>newBuilder()
@@ -246,6 +250,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListJobTemplatesRequest, ListJobTemplatesResponse>
         listJobTemplatesTransportSettings =
@@ -257,6 +262,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetJobTemplateRequest, JobTemplate> getJobTemplateTransportSettings =
         GrpcCallSettings.<GetJobTemplateRequest, JobTemplate>newBuilder()
@@ -267,6 +273,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteJobTemplateRequest, Empty> deleteJobTemplateTransportSettings =
         GrpcCallSettings.<DeleteJobTemplateRequest, Empty>newBuilder()
@@ -277,6 +284,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createJobCallable =

@@ -152,6 +152,7 @@ public class GrpcRegionalInventoryServiceStub extends RegionalInventoryServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<InsertRegionalInventoryRequest, RegionalInventory>
         insertRegionalInventoryTransportSettings =
@@ -163,6 +164,7 @@ public class GrpcRegionalInventoryServiceStub extends RegionalInventoryServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteRegionalInventoryRequest, Empty>
         deleteRegionalInventoryTransportSettings =
@@ -174,6 +176,7 @@ public class GrpcRegionalInventoryServiceStub extends RegionalInventoryServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.listRegionalInventoriesCallable =

@@ -1,4 +1,4 @@
-package com.google.extractor.testing.stub;
+package com.google.cloud.bigquery.testing.stub;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -12,12 +12,20 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.extractor.testing.Bar;
-import com.google.extractor.testing.Foo;
-import com.google.extractor.testing.GetBarRequest;
-import com.google.extractor.testing.GetFooRequest;
-import com.google.extractor.testing.ListFoosRequest;
-import com.google.extractor.testing.ListFoosResponse;
+import com.google.api.pathtemplate.PathTemplate;
+import com.google.cloud.bigquery.testing.Bar;
+import com.google.cloud.bigquery.testing.Foo;
+import com.google.cloud.bigquery.testing.GetBarRequest;
+import com.google.cloud.bigquery.testing.GetFooRequest;
+import com.google.cloud.bigquery.testing.GetHeuristicRequest;
+import com.google.cloud.bigquery.testing.GetHeuristicWithNamedBindingRequest;
+import com.google.cloud.bigquery.testing.GetHeuristicWithNestedFieldsRequest;
+import com.google.cloud.bigquery.testing.GetHeuristicWithResourceReferenceRequest;
+import com.google.cloud.bigquery.testing.Heuristic;
+import com.google.cloud.bigquery.testing.ListFoosRequest;
+import com.google.cloud.bigquery.testing.ListFoosResponse;
+import com.google.cloud.bigquery.testing.ListHeuristicsRequest;
+import com.google.cloud.bigquery.testing.ListHeuristicsResponse;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -39,7 +47,7 @@ public class HttpJsonResourceNameExtractorTestingStub extends ResourceNameExtrac
 
   private static final ApiMethodDescriptor<GetFooRequest, Foo> getFooMethodDescriptor =
       ApiMethodDescriptor.<GetFooRequest, Foo>newBuilder()
-          .setFullMethodName("google.extractor.testing.ResourceNameExtractorTesting/GetFoo")
+          .setFullMethodName("google.cloud.bigquery.testing.ResourceNameExtractorTesting/GetFoo")
           .setHttpMethod("GET")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
@@ -71,7 +79,7 @@ public class HttpJsonResourceNameExtractorTestingStub extends ResourceNameExtrac
 
   private static final ApiMethodDescriptor<GetBarRequest, Bar> getBarMethodDescriptor =
       ApiMethodDescriptor.<GetBarRequest, Bar>newBuilder()
-          .setFullMethodName("google.extractor.testing.ResourceNameExtractorTesting/GetBar")
+          .setFullMethodName("google.cloud.bigquery.testing.ResourceNameExtractorTesting/GetBar")
           .setHttpMethod("GET")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
@@ -101,10 +109,47 @@ public class HttpJsonResourceNameExtractorTestingStub extends ResourceNameExtrac
                   .build())
           .build();
 
+  private static final ApiMethodDescriptor<GetHeuristicRequest, Heuristic>
+      getHeuristicMethodDescriptor =
+          ApiMethodDescriptor.<GetHeuristicRequest, Heuristic>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.bigquery.testing.ResourceNameExtractorTesting/GetHeuristic")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetHeuristicRequest>newBuilder()
+                      .setPath(
+                          "/v1/projects/{project}/locations/{location}/heuristics/{heuristic}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetHeuristicRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "heuristic", request.getHeuristic());
+                            serializer.putPathParam(fields, "location", request.getLocation());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetHeuristicRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Heuristic>newBuilder()
+                      .setDefaultInstance(Heuristic.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListFoosRequest, ListFoosResponse>
       listFoosMethodDescriptor =
           ApiMethodDescriptor.<ListFoosRequest, ListFoosResponse>newBuilder()
-              .setFullMethodName("google.extractor.testing.ResourceNameExtractorTesting/ListFoos")
+              .setFullMethodName(
+                  "google.cloud.bigquery.testing.ResourceNameExtractorTesting/ListFoos")
               .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
@@ -134,12 +179,219 @@ public class HttpJsonResourceNameExtractorTestingStub extends ResourceNameExtrac
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetHeuristicWithNamedBindingRequest, Heuristic>
+      getMethodDescriptor =
+          ApiMethodDescriptor.<GetHeuristicWithNamedBindingRequest, Heuristic>newBuilder()
+              .setFullMethodName("google.cloud.bigquery.testing.ResourceNameExtractorTesting/Get")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetHeuristicWithNamedBindingRequest>newBuilder()
+                      .setPath(
+                          "/v1/projects/{project}/locations/{location}/{parentName=reservations/*/reservationBlocks/*/reservationSubBlocks/*}/heuristics/{heuristic}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetHeuristicWithNamedBindingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "heuristic", request.getHeuristic());
+                            serializer.putPathParam(fields, "location", request.getLocation());
+                            serializer.putPathParam(fields, "parentName", request.getParentName());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetHeuristicWithNamedBindingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Heuristic>newBuilder()
+                      .setDefaultInstance(Heuristic.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListHeuristicsRequest, ListHeuristicsResponse>
+      listMethodDescriptor =
+          ApiMethodDescriptor.<ListHeuristicsRequest, ListHeuristicsResponse>newBuilder()
+              .setFullMethodName("google.cloud.bigquery.testing.ResourceNameExtractorTesting/List")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListHeuristicsRequest>newBuilder()
+                      .setPath(
+                          "/v1/projects/{project}/locations/{location}/heuristics",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListHeuristicsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "location", request.getLocation());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListHeuristicsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListHeuristicsResponse>newBuilder()
+                      .setDefaultInstance(ListHeuristicsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetHeuristicWithResourceReferenceRequest, Heuristic>
+      getHeuristicWithResourceReferenceMethodDescriptor =
+          ApiMethodDescriptor.<GetHeuristicWithResourceReferenceRequest, Heuristic>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.bigquery.testing.ResourceNameExtractorTesting/GetHeuristicWithResourceReference")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<GetHeuristicWithResourceReferenceRequest>newBuilder()
+                      .setPath(
+                          "/v1/projects/{project}/locations/{location}/heuristics/{heuristic}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetHeuristicWithResourceReferenceRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "heuristic", request.getHeuristic());
+                            serializer.putPathParam(fields, "location", request.getLocation());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetHeuristicWithResourceReferenceRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "foo", request.getFoo());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Heuristic>newBuilder()
+                      .setDefaultInstance(Heuristic.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetHeuristicWithNestedFieldsRequest, Heuristic>
+      getHeuristicWithNestedFieldsMethodDescriptor =
+          ApiMethodDescriptor.<GetHeuristicWithNestedFieldsRequest, Heuristic>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.bigquery.testing.ResourceNameExtractorTesting/GetHeuristicWithNestedFields")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetHeuristicWithNestedFieldsRequest>newBuilder()
+                      .setPath(
+                          "/v1/projects/{project}/locations/{location}/heuristics/{heuristic.name}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetHeuristicWithNestedFieldsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "heuristic.name", request.getHeuristic().getName());
+                            serializer.putPathParam(fields, "location", request.getLocation());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetHeuristicWithNestedFieldsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "heuristic", request.getHeuristic());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Heuristic>newBuilder()
+                      .setDefaultInstance(Heuristic.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetHeuristicWithNamedBindingRequest, Heuristic>
+      getHeuristicWithNamedBindingMethodDescriptor =
+          ApiMethodDescriptor.<GetHeuristicWithNamedBindingRequest, Heuristic>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.bigquery.testing.ResourceNameExtractorTesting/GetHeuristicWithNamedBinding")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetHeuristicWithNamedBindingRequest>newBuilder()
+                      .setPath(
+                          "/v1/projects/{project}/locations/{location}/{parentName=reservations/*/reservationBlocks/*/reservationSubBlocks/*}/heuristics/{heuristic}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetHeuristicWithNamedBindingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "heuristic", request.getHeuristic());
+                            serializer.putPathParam(fields, "location", request.getLocation());
+                            serializer.putPathParam(fields, "parentName", request.getParentName());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetHeuristicWithNamedBindingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Heuristic>newBuilder()
+                      .setDefaultInstance(Heuristic.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetFooRequest, Foo> getFooCallable;
   private final UnaryCallable<GetBarRequest, Bar> getBarCallable;
+  private final UnaryCallable<GetHeuristicRequest, Heuristic> getHeuristicCallable;
   private final UnaryCallable<ListFoosRequest, ListFoosResponse> listFoosCallable;
+  private final UnaryCallable<GetHeuristicWithNamedBindingRequest, Heuristic> getCallable;
+  private final UnaryCallable<ListHeuristicsRequest, ListHeuristicsResponse> listCallable;
+  private final UnaryCallable<GetHeuristicWithResourceReferenceRequest, Heuristic>
+      getHeuristicWithResourceReferenceCallable;
+  private final UnaryCallable<GetHeuristicWithNestedFieldsRequest, Heuristic>
+      getHeuristicWithNestedFieldsCallable;
+  private final UnaryCallable<GetHeuristicWithNamedBindingRequest, Heuristic>
+      getHeuristicWithNamedBindingCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
+
+  private static final PathTemplate GET_BAR_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("{bar=projects/*/locations/*/bars/*}");
+  private static final PathTemplate GET_HEURISTIC_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/locations/{location}/heuristics/{heuristic}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/locations/{location}/{parent_name=reservations/*/reservationBlocks/*/reservationSubBlocks/*}/heuristics/{heuristic}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/locations/{location}");
+  private static final PathTemplate GET_HEURISTIC_WITH_NESTED_FIELDS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/locations/{location}/heuristics/{heuristic.name}");
+  private static final PathTemplate GET_HEURISTIC_WITH_NAMED_BINDING_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/locations/{location}/{parent_name=reservations/*/reservationBlocks/*/reservationSubBlocks/*}/heuristics/{heuristic}");
 
   public static final HttpJsonResourceNameExtractorTestingStub create(
       ResourceNameExtractorTestingStubSettings settings) throws IOException {
@@ -205,6 +457,33 @@ public class HttpJsonResourceNameExtractorTestingStub extends ResourceNameExtrac
                   builder.add("bar", String.valueOf(request.getBar()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("bar", String.valueOf(request.getBar()));
+                  return GET_BAR_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
+            .build();
+    HttpJsonCallSettings<GetHeuristicRequest, Heuristic> getHeuristicTransportSettings =
+        HttpJsonCallSettings.<GetHeuristicRequest, Heuristic>newBuilder()
+            .setMethodDescriptor(getHeuristicMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("heuristic", String.valueOf(request.getHeuristic()));
+                  builder.add("location", String.valueOf(request.getLocation()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("heuristic", String.valueOf(request.getHeuristic()));
+                  resourceNameSegments.put("location", String.valueOf(request.getLocation()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return GET_HEURISTIC_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListFoosRequest, ListFoosResponse> listFoosTransportSettings =
         HttpJsonCallSettings.<ListFoosRequest, ListFoosResponse>newBuilder()
@@ -218,6 +497,114 @@ public class HttpJsonResourceNameExtractorTestingStub extends ResourceNameExtrac
                 })
             .setResourceNameExtractor(request -> request.getParent())
             .build();
+    HttpJsonCallSettings<GetHeuristicWithNamedBindingRequest, Heuristic> getTransportSettings =
+        HttpJsonCallSettings.<GetHeuristicWithNamedBindingRequest, Heuristic>newBuilder()
+            .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("heuristic", String.valueOf(request.getHeuristic()));
+                  builder.add("location", String.valueOf(request.getLocation()));
+                  builder.add("parent_name", String.valueOf(request.getParentName()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("heuristic", String.valueOf(request.getHeuristic()));
+                  resourceNameSegments.put("location", String.valueOf(request.getLocation()));
+                  resourceNameSegments.put("parent_name", String.valueOf(request.getParentName()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
+            .build();
+    HttpJsonCallSettings<ListHeuristicsRequest, ListHeuristicsResponse> listTransportSettings =
+        HttpJsonCallSettings.<ListHeuristicsRequest, ListHeuristicsResponse>newBuilder()
+            .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("location", String.valueOf(request.getLocation()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("location", String.valueOf(request.getLocation()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
+            .build();
+    HttpJsonCallSettings<GetHeuristicWithResourceReferenceRequest, Heuristic>
+        getHeuristicWithResourceReferenceTransportSettings =
+            HttpJsonCallSettings.<GetHeuristicWithResourceReferenceRequest, Heuristic>newBuilder()
+                .setMethodDescriptor(getHeuristicWithResourceReferenceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("heuristic", String.valueOf(request.getHeuristic()));
+                      builder.add("location", String.valueOf(request.getLocation()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getFoo())
+                .build();
+    HttpJsonCallSettings<GetHeuristicWithNestedFieldsRequest, Heuristic>
+        getHeuristicWithNestedFieldsTransportSettings =
+            HttpJsonCallSettings.<GetHeuristicWithNestedFieldsRequest, Heuristic>newBuilder()
+                .setMethodDescriptor(getHeuristicWithNestedFieldsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "heuristic.name", String.valueOf(request.getHeuristic().getName()));
+                      builder.add("location", String.valueOf(request.getLocation()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "heuristic.name", String.valueOf(request.getHeuristic().getName()));
+                      resourceNameSegments.put("location", String.valueOf(request.getLocation()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return GET_HEURISTIC_WITH_NESTED_FIELDS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
+                .build();
+    HttpJsonCallSettings<GetHeuristicWithNamedBindingRequest, Heuristic>
+        getHeuristicWithNamedBindingTransportSettings =
+            HttpJsonCallSettings.<GetHeuristicWithNamedBindingRequest, Heuristic>newBuilder()
+                .setMethodDescriptor(getHeuristicWithNamedBindingMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("heuristic", String.valueOf(request.getHeuristic()));
+                      builder.add("location", String.valueOf(request.getLocation()));
+                      builder.add("parent_name", String.valueOf(request.getParentName()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("heuristic", String.valueOf(request.getHeuristic()));
+                      resourceNameSegments.put("location", String.valueOf(request.getLocation()));
+                      resourceNameSegments.put(
+                          "parent_name", String.valueOf(request.getParentName()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return GET_HEURISTIC_WITH_NAMED_BINDING_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
+                .build();
 
     this.getFooCallable =
         callableFactory.createUnaryCallable(
@@ -225,9 +612,33 @@ public class HttpJsonResourceNameExtractorTestingStub extends ResourceNameExtrac
     this.getBarCallable =
         callableFactory.createUnaryCallable(
             getBarTransportSettings, settings.getBarSettings(), clientContext);
+    this.getHeuristicCallable =
+        callableFactory.createUnaryCallable(
+            getHeuristicTransportSettings, settings.getHeuristicSettings(), clientContext);
     this.listFoosCallable =
         callableFactory.createUnaryCallable(
             listFoosTransportSettings, settings.listFoosSettings(), clientContext);
+    this.getCallable =
+        callableFactory.createUnaryCallable(
+            getTransportSettings, settings.getSettings(), clientContext);
+    this.listCallable =
+        callableFactory.createUnaryCallable(
+            listTransportSettings, settings.listSettings(), clientContext);
+    this.getHeuristicWithResourceReferenceCallable =
+        callableFactory.createUnaryCallable(
+            getHeuristicWithResourceReferenceTransportSettings,
+            settings.getHeuristicWithResourceReferenceSettings(),
+            clientContext);
+    this.getHeuristicWithNestedFieldsCallable =
+        callableFactory.createUnaryCallable(
+            getHeuristicWithNestedFieldsTransportSettings,
+            settings.getHeuristicWithNestedFieldsSettings(),
+            clientContext);
+    this.getHeuristicWithNamedBindingCallable =
+        callableFactory.createUnaryCallable(
+            getHeuristicWithNamedBindingTransportSettings,
+            settings.getHeuristicWithNamedBindingSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -238,7 +649,13 @@ public class HttpJsonResourceNameExtractorTestingStub extends ResourceNameExtrac
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(getFooMethodDescriptor);
     methodDescriptors.add(getBarMethodDescriptor);
+    methodDescriptors.add(getHeuristicMethodDescriptor);
     methodDescriptors.add(listFoosMethodDescriptor);
+    methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(getHeuristicWithResourceReferenceMethodDescriptor);
+    methodDescriptors.add(getHeuristicWithNestedFieldsMethodDescriptor);
+    methodDescriptors.add(getHeuristicWithNamedBindingMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -253,8 +670,41 @@ public class HttpJsonResourceNameExtractorTestingStub extends ResourceNameExtrac
   }
 
   @Override
+  public UnaryCallable<GetHeuristicRequest, Heuristic> getHeuristicCallable() {
+    return getHeuristicCallable;
+  }
+
+  @Override
   public UnaryCallable<ListFoosRequest, ListFoosResponse> listFoosCallable() {
     return listFoosCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetHeuristicWithNamedBindingRequest, Heuristic> getCallable() {
+    return getCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListHeuristicsRequest, ListHeuristicsResponse> listCallable() {
+    return listCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetHeuristicWithResourceReferenceRequest, Heuristic>
+      getHeuristicWithResourceReferenceCallable() {
+    return getHeuristicWithResourceReferenceCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetHeuristicWithNestedFieldsRequest, Heuristic>
+      getHeuristicWithNestedFieldsCallable() {
+    return getHeuristicWithNestedFieldsCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetHeuristicWithNamedBindingRequest, Heuristic>
+      getHeuristicWithNamedBindingCallable() {
+    return getHeuristicWithNamedBindingCallable;
   }
 
   @Override

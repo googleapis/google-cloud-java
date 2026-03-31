@@ -155,6 +155,7 @@ public class GrpcCheckoutSettingsServiceStub extends CheckoutSettingsServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateCheckoutSettingsRequest, CheckoutSettings>
         createCheckoutSettingsTransportSettings =
@@ -166,6 +167,7 @@ public class GrpcCheckoutSettingsServiceStub extends CheckoutSettingsServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateCheckoutSettingsRequest, CheckoutSettings>
         updateCheckoutSettingsTransportSettings =
@@ -189,6 +191,7 @@ public class GrpcCheckoutSettingsServiceStub extends CheckoutSettingsServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getCheckoutSettingsCallable =

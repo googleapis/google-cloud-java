@@ -221,6 +221,7 @@ public class HttpJsonProfilerServiceStub extends ProfilerServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateOfflineProfileRequest, Profile>
         createOfflineProfileTransportSettings =
@@ -233,6 +234,7 @@ public class HttpJsonProfilerServiceStub extends ProfilerServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateProfileRequest, Profile> updateProfileTransportSettings =
         HttpJsonCallSettings.<UpdateProfileRequest, Profile>newBuilder()

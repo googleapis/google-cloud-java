@@ -222,6 +222,7 @@ public class GrpcWorkerPoolsStub extends WorkerPoolsStub {
                   builder.add(request.getParent(), "location", CREATE_WORKER_POOL_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetWorkerPoolRequest, WorkerPool> getWorkerPoolTransportSettings =
         GrpcCallSettings.<GetWorkerPoolRequest, WorkerPool>newBuilder()
@@ -232,6 +233,7 @@ public class GrpcWorkerPoolsStub extends WorkerPoolsStub {
                   builder.add(request.getName(), "location", GET_WORKER_POOL_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListWorkerPoolsRequest, ListWorkerPoolsResponse>
         listWorkerPoolsTransportSettings =
@@ -244,6 +246,7 @@ public class GrpcWorkerPoolsStub extends WorkerPoolsStub {
                           request.getParent(), "location", LIST_WORKER_POOLS_0_PATH_TEMPLATE);
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateWorkerPoolRequest, Operation> updateWorkerPoolTransportSettings =
         GrpcCallSettings.<UpdateWorkerPoolRequest, Operation>newBuilder()
@@ -269,6 +272,7 @@ public class GrpcWorkerPoolsStub extends WorkerPoolsStub {
                   builder.add(request.getName(), "location", DELETE_WORKER_POOL_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -279,6 +283,7 @@ public class GrpcWorkerPoolsStub extends WorkerPoolsStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -289,6 +294,7 @@ public class GrpcWorkerPoolsStub extends WorkerPoolsStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -300,6 +306,7 @@ public class GrpcWorkerPoolsStub extends WorkerPoolsStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createWorkerPoolCallable =

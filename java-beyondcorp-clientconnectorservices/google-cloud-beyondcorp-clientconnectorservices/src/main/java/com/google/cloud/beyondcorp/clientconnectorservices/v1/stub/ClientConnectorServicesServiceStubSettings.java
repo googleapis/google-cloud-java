@@ -517,6 +517,7 @@ public class ClientConnectorServicesServiceStubSettings
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-beyondcorp-clientconnectorservices")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

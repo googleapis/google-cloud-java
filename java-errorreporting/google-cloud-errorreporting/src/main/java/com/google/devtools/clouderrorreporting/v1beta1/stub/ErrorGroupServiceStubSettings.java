@@ -241,6 +241,7 @@ public class ErrorGroupServiceStubSettings extends StubSettings<ErrorGroupServic
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-errorreporting")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

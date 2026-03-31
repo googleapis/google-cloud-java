@@ -182,6 +182,7 @@ public class GrpcOnlineReturnPolicyServiceStub extends OnlineReturnPolicyService
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListOnlineReturnPoliciesRequest, ListOnlineReturnPoliciesResponse>
         listOnlineReturnPoliciesTransportSettings =
@@ -194,6 +195,7 @@ public class GrpcOnlineReturnPolicyServiceStub extends OnlineReturnPolicyService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateOnlineReturnPolicyRequest, OnlineReturnPolicy>
         createOnlineReturnPolicyTransportSettings =
@@ -205,6 +207,7 @@ public class GrpcOnlineReturnPolicyServiceStub extends OnlineReturnPolicyService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateOnlineReturnPolicyRequest, OnlineReturnPolicy>
         updateOnlineReturnPolicyTransportSettings =
@@ -229,6 +232,7 @@ public class GrpcOnlineReturnPolicyServiceStub extends OnlineReturnPolicyService
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.getOnlineReturnPolicyCallable =

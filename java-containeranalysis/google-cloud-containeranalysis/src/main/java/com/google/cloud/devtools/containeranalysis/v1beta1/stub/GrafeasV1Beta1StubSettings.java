@@ -546,6 +546,7 @@ public class GrafeasV1Beta1StubSettings extends StubSettings<GrafeasV1Beta1StubS
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-containeranalysis")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

@@ -1185,6 +1185,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListRecognizersRequest, ListRecognizersResponse>
         listRecognizersTransportSettings =
@@ -1197,6 +1198,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetRecognizerRequest, Recognizer> getRecognizerTransportSettings =
         HttpJsonCallSettings.<GetRecognizerRequest, Recognizer>newBuilder()
@@ -1208,6 +1210,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateRecognizerRequest, Operation> updateRecognizerTransportSettings =
         HttpJsonCallSettings.<UpdateRecognizerRequest, Operation>newBuilder()
@@ -1230,6 +1233,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UndeleteRecognizerRequest, Operation> undeleteRecognizerTransportSettings =
         HttpJsonCallSettings.<UndeleteRecognizerRequest, Operation>newBuilder()
@@ -1241,6 +1245,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RecognizeRequest, RecognizeResponse> recognizeTransportSettings =
         HttpJsonCallSettings.<RecognizeRequest, RecognizeResponse>newBuilder()
@@ -1252,6 +1257,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
                   builder.add("recognizer", String.valueOf(request.getRecognizer()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getRecognizer())
             .build();
     HttpJsonCallSettings<BatchRecognizeRequest, Operation> batchRecognizeTransportSettings =
         HttpJsonCallSettings.<BatchRecognizeRequest, Operation>newBuilder()
@@ -1263,6 +1269,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
                   builder.add("recognizer", String.valueOf(request.getRecognizer()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getRecognizer())
             .build();
     HttpJsonCallSettings<GetConfigRequest, Config> getConfigTransportSettings =
         HttpJsonCallSettings.<GetConfigRequest, Config>newBuilder()
@@ -1274,6 +1281,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateConfigRequest, Config> updateConfigTransportSettings =
         HttpJsonCallSettings.<UpdateConfigRequest, Config>newBuilder()
@@ -1296,6 +1304,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListCustomClassesRequest, ListCustomClassesResponse>
         listCustomClassesTransportSettings =
@@ -1308,6 +1317,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetCustomClassRequest, CustomClass> getCustomClassTransportSettings =
         HttpJsonCallSettings.<GetCustomClassRequest, CustomClass>newBuilder()
@@ -1319,6 +1329,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateCustomClassRequest, Operation> updateCustomClassTransportSettings =
         HttpJsonCallSettings.<UpdateCustomClassRequest, Operation>newBuilder()
@@ -1342,6 +1353,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UndeleteCustomClassRequest, Operation>
         undeleteCustomClassTransportSettings =
@@ -1354,6 +1366,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreatePhraseSetRequest, Operation> createPhraseSetTransportSettings =
         HttpJsonCallSettings.<CreatePhraseSetRequest, Operation>newBuilder()
@@ -1365,6 +1378,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListPhraseSetsRequest, ListPhraseSetsResponse>
         listPhraseSetsTransportSettings =
@@ -1377,6 +1391,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetPhraseSetRequest, PhraseSet> getPhraseSetTransportSettings =
         HttpJsonCallSettings.<GetPhraseSetRequest, PhraseSet>newBuilder()
@@ -1388,6 +1403,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdatePhraseSetRequest, Operation> updatePhraseSetTransportSettings =
         HttpJsonCallSettings.<UpdatePhraseSetRequest, Operation>newBuilder()
@@ -1410,6 +1426,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UndeletePhraseSetRequest, Operation> undeletePhraseSetTransportSettings =
         HttpJsonCallSettings.<UndeletePhraseSetRequest, Operation>newBuilder()
@@ -1421,6 +1438,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

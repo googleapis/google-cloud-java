@@ -196,6 +196,7 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeletePosixAccountRequest, Empty> deletePosixAccountTransportSettings =
         GrpcCallSettings.<DeletePosixAccountRequest, Empty>newBuilder()
@@ -206,6 +207,7 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteSshPublicKeyRequest, Empty> deleteSshPublicKeyTransportSettings =
         GrpcCallSettings.<DeleteSshPublicKeyRequest, Empty>newBuilder()
@@ -216,6 +218,7 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetLoginProfileRequest, LoginProfile> getLoginProfileTransportSettings =
         GrpcCallSettings.<GetLoginProfileRequest, LoginProfile>newBuilder()
@@ -226,6 +229,7 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetSshPublicKeyRequest, OsLoginProto.SshPublicKey>
         getSshPublicKeyTransportSettings =
@@ -237,6 +241,7 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ImportSshPublicKeyRequest, ImportSshPublicKeyResponse>
         importSshPublicKeyTransportSettings =
@@ -248,6 +253,7 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateSshPublicKeyRequest, OsLoginProto.SshPublicKey>
         updateSshPublicKeyTransportSettings =
@@ -259,6 +265,7 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.createSshPublicKeyCallable =

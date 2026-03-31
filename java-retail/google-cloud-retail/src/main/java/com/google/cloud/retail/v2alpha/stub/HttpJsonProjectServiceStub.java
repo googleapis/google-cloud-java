@@ -476,6 +476,7 @@ public class HttpJsonProjectServiceStub extends ProjectServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<AcceptTermsRequest, Project> acceptTermsTransportSettings =
         HttpJsonCallSettings.<AcceptTermsRequest, Project>newBuilder()
@@ -487,6 +488,7 @@ public class HttpJsonProjectServiceStub extends ProjectServiceStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getProject())
             .build();
     HttpJsonCallSettings<EnrollSolutionRequest, Operation> enrollSolutionTransportSettings =
         HttpJsonCallSettings.<EnrollSolutionRequest, Operation>newBuilder()
@@ -498,6 +500,7 @@ public class HttpJsonProjectServiceStub extends ProjectServiceStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getProject())
             .build();
     HttpJsonCallSettings<ListEnrolledSolutionsRequest, ListEnrolledSolutionsResponse>
         listEnrolledSolutionsTransportSettings =
@@ -511,6 +514,7 @@ public class HttpJsonProjectServiceStub extends ProjectServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetLoggingConfigRequest, LoggingConfig> getLoggingConfigTransportSettings =
         HttpJsonCallSettings.<GetLoggingConfigRequest, LoggingConfig>newBuilder()
@@ -522,6 +526,7 @@ public class HttpJsonProjectServiceStub extends ProjectServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateLoggingConfigRequest, LoggingConfig>
         updateLoggingConfigTransportSettings =
@@ -547,6 +552,7 @@ public class HttpJsonProjectServiceStub extends ProjectServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateAlertConfigRequest, AlertConfig> updateAlertConfigTransportSettings =
         HttpJsonCallSettings.<UpdateAlertConfigRequest, AlertConfig>newBuilder()

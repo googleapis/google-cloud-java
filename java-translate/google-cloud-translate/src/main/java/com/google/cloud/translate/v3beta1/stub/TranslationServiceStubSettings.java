@@ -480,6 +480,7 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-translate")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

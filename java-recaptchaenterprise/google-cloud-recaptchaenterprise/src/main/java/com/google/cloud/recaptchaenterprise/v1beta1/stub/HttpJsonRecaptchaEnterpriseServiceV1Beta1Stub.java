@@ -190,6 +190,7 @@ public class HttpJsonRecaptchaEnterpriseServiceV1Beta1Stub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<AnnotateAssessmentRequest, AnnotateAssessmentResponse>
         annotateAssessmentTransportSettings =
@@ -202,6 +203,7 @@ public class HttpJsonRecaptchaEnterpriseServiceV1Beta1Stub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.createAssessmentCallable =

@@ -268,6 +268,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateAttachedClusterRequest, Operation>
         updateAttachedClusterTransportSettings =
@@ -292,6 +293,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetAttachedClusterRequest, AttachedCluster>
         getAttachedClusterTransportSettings =
@@ -303,6 +305,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListAttachedClustersRequest, ListAttachedClustersResponse>
         listAttachedClustersTransportSettings =
@@ -314,6 +317,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteAttachedClusterRequest, Operation>
         deleteAttachedClusterTransportSettings =
@@ -325,6 +329,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetAttachedServerConfigRequest, AttachedServerConfig>
         getAttachedServerConfigTransportSettings =
@@ -336,6 +341,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             GenerateAttachedClusterInstallManifestRequest,
@@ -352,6 +358,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             GenerateAttachedClusterAgentTokenRequest, GenerateAttachedClusterAgentTokenResponse>
@@ -367,6 +374,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
                       builder.add("attached_cluster", String.valueOf(request.getAttachedCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAttachedCluster())
                 .build();
 
     this.createAttachedClusterCallable =

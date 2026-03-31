@@ -2070,6 +2070,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         HttpJsonCallSettings.<GetInstanceRequest, Instance>newBuilder()
@@ -2081,6 +2082,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateInstanceRequest, Operation> updateInstanceTransportSettings =
         HttpJsonCallSettings.<UpdateInstanceRequest, Operation>newBuilder()
@@ -2103,6 +2105,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ResetInstanceRequest, Operation> resetInstanceTransportSettings =
         HttpJsonCallSettings.<ResetInstanceRequest, Operation>newBuilder()
@@ -2114,6 +2117,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<StartInstanceRequest, Operation> startInstanceTransportSettings =
         HttpJsonCallSettings.<StartInstanceRequest, Operation>newBuilder()
@@ -2125,6 +2129,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<StopInstanceRequest, Operation> stopInstanceTransportSettings =
         HttpJsonCallSettings.<StopInstanceRequest, Operation>newBuilder()
@@ -2136,6 +2141,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<EnableInteractiveSerialConsoleRequest, Operation>
         enableInteractiveSerialConsoleTransportSettings =
@@ -2148,6 +2154,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DisableInteractiveSerialConsoleRequest, Operation>
         disableInteractiveSerialConsoleTransportSettings =
@@ -2160,6 +2167,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DetachLunRequest, Operation> detachLunTransportSettings =
         HttpJsonCallSettings.<DetachLunRequest, Operation>newBuilder()
@@ -2171,6 +2179,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("instance", String.valueOf(request.getInstance()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getInstance())
             .build();
     HttpJsonCallSettings<ListSSHKeysRequest, ListSSHKeysResponse> listSSHKeysTransportSettings =
         HttpJsonCallSettings.<ListSSHKeysRequest, ListSSHKeysResponse>newBuilder()
@@ -2182,6 +2191,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateSSHKeyRequest, SSHKey> createSSHKeyTransportSettings =
         HttpJsonCallSettings.<CreateSSHKeyRequest, SSHKey>newBuilder()
@@ -2193,6 +2203,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteSSHKeyRequest, Empty> deleteSSHKeyTransportSettings =
         HttpJsonCallSettings.<DeleteSSHKeyRequest, Empty>newBuilder()
@@ -2204,6 +2215,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListVolumesRequest, ListVolumesResponse> listVolumesTransportSettings =
         HttpJsonCallSettings.<ListVolumesRequest, ListVolumesResponse>newBuilder()
@@ -2215,6 +2227,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetVolumeRequest, Volume> getVolumeTransportSettings =
         HttpJsonCallSettings.<GetVolumeRequest, Volume>newBuilder()
@@ -2226,6 +2239,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateVolumeRequest, Operation> updateVolumeTransportSettings =
         HttpJsonCallSettings.<UpdateVolumeRequest, Operation>newBuilder()
@@ -2248,6 +2262,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<EvictVolumeRequest, Operation> evictVolumeTransportSettings =
         HttpJsonCallSettings.<EvictVolumeRequest, Operation>newBuilder()
@@ -2259,6 +2274,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ResizeVolumeRequest, Operation> resizeVolumeTransportSettings =
         HttpJsonCallSettings.<ResizeVolumeRequest, Operation>newBuilder()
@@ -2270,6 +2286,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("volume", String.valueOf(request.getVolume()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getVolume())
             .build();
     HttpJsonCallSettings<ListNetworksRequest, ListNetworksResponse> listNetworksTransportSettings =
         HttpJsonCallSettings.<ListNetworksRequest, ListNetworksResponse>newBuilder()
@@ -2281,6 +2298,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListNetworkUsageRequest, ListNetworkUsageResponse>
         listNetworkUsageTransportSettings =
@@ -2293,6 +2311,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                       builder.add("location", String.valueOf(request.getLocation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getLocation())
                 .build();
     HttpJsonCallSettings<GetNetworkRequest, Network> getNetworkTransportSettings =
         HttpJsonCallSettings.<GetNetworkRequest, Network>newBuilder()
@@ -2304,6 +2323,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateNetworkRequest, Operation> updateNetworkTransportSettings =
         HttpJsonCallSettings.<UpdateNetworkRequest, Operation>newBuilder()
@@ -2327,6 +2347,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<RestoreVolumeSnapshotRequest, Operation>
         restoreVolumeSnapshotTransportSettings =
@@ -2339,6 +2360,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                       builder.add("volume_snapshot", String.valueOf(request.getVolumeSnapshot()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getVolumeSnapshot())
                 .build();
     HttpJsonCallSettings<DeleteVolumeSnapshotRequest, Empty> deleteVolumeSnapshotTransportSettings =
         HttpJsonCallSettings.<DeleteVolumeSnapshotRequest, Empty>newBuilder()
@@ -2350,6 +2372,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetVolumeSnapshotRequest, VolumeSnapshot>
         getVolumeSnapshotTransportSettings =
@@ -2362,6 +2385,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse>
         listVolumeSnapshotsTransportSettings =
@@ -2375,6 +2399,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetLunRequest, Lun> getLunTransportSettings =
         HttpJsonCallSettings.<GetLunRequest, Lun>newBuilder()
@@ -2386,6 +2411,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLunsRequest, ListLunsResponse> listLunsTransportSettings =
         HttpJsonCallSettings.<ListLunsRequest, ListLunsResponse>newBuilder()
@@ -2397,6 +2423,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<EvictLunRequest, Operation> evictLunTransportSettings =
         HttpJsonCallSettings.<EvictLunRequest, Operation>newBuilder()
@@ -2408,6 +2435,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetNfsShareRequest, NfsShare> getNfsShareTransportSettings =
         HttpJsonCallSettings.<GetNfsShareRequest, NfsShare>newBuilder()
@@ -2419,6 +2447,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListNfsSharesRequest, ListNfsSharesResponse>
         listNfsSharesTransportSettings =
@@ -2431,6 +2460,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateNfsShareRequest, Operation> updateNfsShareTransportSettings =
         HttpJsonCallSettings.<UpdateNfsShareRequest, Operation>newBuilder()
@@ -2453,6 +2483,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<RenameNfsShareRequest, NfsShare> renameNfsShareTransportSettings =
         HttpJsonCallSettings.<RenameNfsShareRequest, NfsShare>newBuilder()
@@ -2464,6 +2495,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteNfsShareRequest, Operation> deleteNfsShareTransportSettings =
         HttpJsonCallSettings.<DeleteNfsShareRequest, Operation>newBuilder()
@@ -2475,6 +2507,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListProvisioningQuotasRequest, ListProvisioningQuotasResponse>
         listProvisioningQuotasTransportSettings =
@@ -2488,6 +2521,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<SubmitProvisioningConfigRequest, SubmitProvisioningConfigResponse>
         submitProvisioningConfigTransportSettings =
@@ -2501,6 +2535,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetProvisioningConfigRequest, ProvisioningConfig>
         getProvisioningConfigTransportSettings =
@@ -2513,6 +2548,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateProvisioningConfigRequest, ProvisioningConfig>
         createProvisioningConfigTransportSettings =
@@ -2525,6 +2561,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateProvisioningConfigRequest, ProvisioningConfig>
         updateProvisioningConfigTransportSettings =
@@ -2550,6 +2587,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListOSImagesRequest, ListOSImagesResponse> listOSImagesTransportSettings =
         HttpJsonCallSettings.<ListOSImagesRequest, ListOSImagesResponse>newBuilder()
@@ -2561,6 +2599,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

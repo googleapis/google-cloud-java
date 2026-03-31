@@ -487,6 +487,7 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CollectUserEventRequest, HttpBody> collectUserEventTransportSettings =
         HttpJsonCallSettings.<CollectUserEventRequest, HttpBody>newBuilder()
@@ -498,6 +499,7 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<PurgeUserEventsRequest, Operation> purgeUserEventsTransportSettings =
         HttpJsonCallSettings.<PurgeUserEventsRequest, Operation>newBuilder()
@@ -509,6 +511,7 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ImportUserEventsRequest, Operation> importUserEventsTransportSettings =
         HttpJsonCallSettings.<ImportUserEventsRequest, Operation>newBuilder()
@@ -520,6 +523,7 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.writeUserEventCallable =

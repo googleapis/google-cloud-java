@@ -991,6 +991,7 @@ public class AccessContextManagerStubSettings
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-identity-accesscontextmanager")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

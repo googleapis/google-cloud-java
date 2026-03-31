@@ -346,6 +346,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListEntitlementsRequest, ListEntitlementsResponse>
         listEntitlementsTransportSettings =
@@ -357,6 +358,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<SearchEntitlementsRequest, SearchEntitlementsResponse>
         searchEntitlementsTransportSettings =
@@ -368,6 +370,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetEntitlementRequest, Entitlement> getEntitlementTransportSettings =
         GrpcCallSettings.<GetEntitlementRequest, Entitlement>newBuilder()
@@ -378,6 +381,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateEntitlementRequest, Operation> createEntitlementTransportSettings =
         GrpcCallSettings.<CreateEntitlementRequest, Operation>newBuilder()
@@ -388,6 +392,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteEntitlementRequest, Operation> deleteEntitlementTransportSettings =
         GrpcCallSettings.<DeleteEntitlementRequest, Operation>newBuilder()
@@ -398,6 +403,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateEntitlementRequest, Operation> updateEntitlementTransportSettings =
         GrpcCallSettings.<UpdateEntitlementRequest, Operation>newBuilder()
@@ -419,6 +425,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<SearchGrantsRequest, SearchGrantsResponse> searchGrantsTransportSettings =
         GrpcCallSettings.<SearchGrantsRequest, SearchGrantsResponse>newBuilder()
@@ -429,6 +436,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetGrantRequest, Grant> getGrantTransportSettings =
         GrpcCallSettings.<GetGrantRequest, Grant>newBuilder()
@@ -439,6 +447,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateGrantRequest, Grant> createGrantTransportSettings =
         GrpcCallSettings.<CreateGrantRequest, Grant>newBuilder()
@@ -449,6 +458,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ApproveGrantRequest, Grant> approveGrantTransportSettings =
         GrpcCallSettings.<ApproveGrantRequest, Grant>newBuilder()
@@ -459,6 +469,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DenyGrantRequest, Grant> denyGrantTransportSettings =
         GrpcCallSettings.<DenyGrantRequest, Grant>newBuilder()
@@ -469,6 +480,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RevokeGrantRequest, Operation> revokeGrantTransportSettings =
         GrpcCallSettings.<RevokeGrantRequest, Operation>newBuilder()
@@ -479,6 +491,7 @@ public class GrpcPrivilegedAccessManagerStub extends PrivilegedAccessManagerStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

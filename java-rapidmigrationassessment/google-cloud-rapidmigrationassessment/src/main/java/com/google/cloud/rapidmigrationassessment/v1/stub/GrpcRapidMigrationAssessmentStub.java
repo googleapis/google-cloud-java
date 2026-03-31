@@ -287,6 +287,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateAnnotationRequest, Operation> createAnnotationTransportSettings =
         GrpcCallSettings.<CreateAnnotationRequest, Operation>newBuilder()
@@ -297,6 +298,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetAnnotationRequest, Annotation> getAnnotationTransportSettings =
         GrpcCallSettings.<GetAnnotationRequest, Annotation>newBuilder()
@@ -307,6 +309,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListCollectorsRequest, ListCollectorsResponse>
         listCollectorsTransportSettings =
@@ -318,6 +321,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetCollectorRequest, Collector> getCollectorTransportSettings =
         GrpcCallSettings.<GetCollectorRequest, Collector>newBuilder()
@@ -328,6 +332,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateCollectorRequest, Operation> updateCollectorTransportSettings =
         GrpcCallSettings.<UpdateCollectorRequest, Operation>newBuilder()
@@ -348,6 +353,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ResumeCollectorRequest, Operation> resumeCollectorTransportSettings =
         GrpcCallSettings.<ResumeCollectorRequest, Operation>newBuilder()
@@ -358,6 +364,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RegisterCollectorRequest, Operation> registerCollectorTransportSettings =
         GrpcCallSettings.<RegisterCollectorRequest, Operation>newBuilder()
@@ -368,6 +375,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<PauseCollectorRequest, Operation> pauseCollectorTransportSettings =
         GrpcCallSettings.<PauseCollectorRequest, Operation>newBuilder()
@@ -378,6 +386,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

@@ -702,6 +702,7 @@ public class HttpJsonGkeHubMembershipServiceStub extends GkeHubMembershipService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetMembershipRequest, Membership> getMembershipTransportSettings =
         HttpJsonCallSettings.<GetMembershipRequest, Membership>newBuilder()
@@ -713,6 +714,7 @@ public class HttpJsonGkeHubMembershipServiceStub extends GkeHubMembershipService
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateMembershipRequest, Operation> createMembershipTransportSettings =
         HttpJsonCallSettings.<CreateMembershipRequest, Operation>newBuilder()
@@ -724,6 +726,7 @@ public class HttpJsonGkeHubMembershipServiceStub extends GkeHubMembershipService
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteMembershipRequest, Operation> deleteMembershipTransportSettings =
         HttpJsonCallSettings.<DeleteMembershipRequest, Operation>newBuilder()
@@ -735,6 +738,7 @@ public class HttpJsonGkeHubMembershipServiceStub extends GkeHubMembershipService
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateMembershipRequest, Operation> updateMembershipTransportSettings =
         HttpJsonCallSettings.<UpdateMembershipRequest, Operation>newBuilder()
@@ -746,6 +750,7 @@ public class HttpJsonGkeHubMembershipServiceStub extends GkeHubMembershipService
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GenerateConnectManifestRequest, GenerateConnectManifestResponse>
         generateConnectManifestTransportSettings =
@@ -759,6 +764,7 @@ public class HttpJsonGkeHubMembershipServiceStub extends GkeHubMembershipService
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ValidateExclusivityRequest, ValidateExclusivityResponse>
         validateExclusivityTransportSettings =
@@ -772,6 +778,7 @@ public class HttpJsonGkeHubMembershipServiceStub extends GkeHubMembershipService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GenerateExclusivityManifestRequest, GenerateExclusivityManifestResponse>
         generateExclusivityManifestTransportSettings =
@@ -786,6 +793,7 @@ public class HttpJsonGkeHubMembershipServiceStub extends GkeHubMembershipService
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -820,6 +828,7 @@ public class HttpJsonGkeHubMembershipServiceStub extends GkeHubMembershipService
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -831,6 +840,7 @@ public class HttpJsonGkeHubMembershipServiceStub extends GkeHubMembershipService
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -843,6 +853,7 @@ public class HttpJsonGkeHubMembershipServiceStub extends GkeHubMembershipService
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listMembershipsCallable =

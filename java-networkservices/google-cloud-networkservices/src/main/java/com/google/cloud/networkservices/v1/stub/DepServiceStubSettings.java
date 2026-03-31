@@ -975,6 +975,7 @@ public class DepServiceStubSettings extends StubSettings<DepServiceStubSettings>
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-networkservices")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

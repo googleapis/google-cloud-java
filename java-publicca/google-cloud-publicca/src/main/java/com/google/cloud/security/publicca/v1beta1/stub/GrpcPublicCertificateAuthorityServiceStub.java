@@ -115,6 +115,7 @@ public class GrpcPublicCertificateAuthorityServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createExternalAccountKeyCallable =

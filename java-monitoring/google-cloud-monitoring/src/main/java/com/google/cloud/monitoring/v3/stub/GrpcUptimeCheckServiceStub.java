@@ -193,6 +193,7 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetUptimeCheckConfigRequest, UptimeCheckConfig>
         getUptimeCheckConfigTransportSettings =
@@ -204,6 +205,7 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateUptimeCheckConfigRequest, UptimeCheckConfig>
         createUptimeCheckConfigTransportSettings =
@@ -215,6 +217,7 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateUptimeCheckConfigRequest, UptimeCheckConfig>
         updateUptimeCheckConfigTransportSettings =
@@ -239,6 +242,7 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse>
         listUptimeCheckIpsTransportSettings =

@@ -234,6 +234,7 @@ public class GrpcDataObjectServiceStub extends DataObjectServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<BatchCreateDataObjectsRequest, BatchCreateDataObjectsResponse>
         batchCreateDataObjectsTransportSettings =
@@ -246,6 +247,7 @@ public class GrpcDataObjectServiceStub extends DataObjectServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetDataObjectRequest, DataObject> getDataObjectTransportSettings =
         GrpcCallSettings.<GetDataObjectRequest, DataObject>newBuilder()
@@ -256,6 +258,7 @@ public class GrpcDataObjectServiceStub extends DataObjectServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateDataObjectRequest, DataObject> updateDataObjectTransportSettings =
         GrpcCallSettings.<UpdateDataObjectRequest, DataObject>newBuilder()
@@ -279,6 +282,7 @@ public class GrpcDataObjectServiceStub extends DataObjectServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteDataObjectRequest, Empty> deleteDataObjectTransportSettings =
         GrpcCallSettings.<DeleteDataObjectRequest, Empty>newBuilder()
@@ -289,6 +293,7 @@ public class GrpcDataObjectServiceStub extends DataObjectServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<BatchDeleteDataObjectsRequest, Empty> batchDeleteDataObjectsTransportSettings =
         GrpcCallSettings.<BatchDeleteDataObjectsRequest, Empty>newBuilder()
@@ -299,6 +304,7 @@ public class GrpcDataObjectServiceStub extends DataObjectServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

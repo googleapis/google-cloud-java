@@ -337,6 +337,52 @@ public interface MetricUpdateOrBuilder
    *
    *
    * <pre>
+   * Worker-computed aggregate value for the "Trie" aggregation kind.  The only
+   * possible value type is a BoundedTrieNode.
+   * Introduced this field to avoid breaking older SDKs when Dataflow service
+   * starts to populate the `bounded_trie` field.
+   * </pre>
+   *
+   * <code>.google.protobuf.Value bounded_trie = 14;</code>
+   *
+   * @return Whether the boundedTrie field is set.
+   */
+  boolean hasBoundedTrie();
+
+  /**
+   *
+   *
+   * <pre>
+   * Worker-computed aggregate value for the "Trie" aggregation kind.  The only
+   * possible value type is a BoundedTrieNode.
+   * Introduced this field to avoid breaking older SDKs when Dataflow service
+   * starts to populate the `bounded_trie` field.
+   * </pre>
+   *
+   * <code>.google.protobuf.Value bounded_trie = 14;</code>
+   *
+   * @return The boundedTrie.
+   */
+  com.google.protobuf.Value getBoundedTrie();
+
+  /**
+   *
+   *
+   * <pre>
+   * Worker-computed aggregate value for the "Trie" aggregation kind.  The only
+   * possible value type is a BoundedTrieNode.
+   * Introduced this field to avoid breaking older SDKs when Dataflow service
+   * starts to populate the `bounded_trie` field.
+   * </pre>
+   *
+   * <code>.google.protobuf.Value bounded_trie = 14;</code>
+   */
+  com.google.protobuf.ValueOrBuilder getBoundedTrieOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * A struct value describing properties of a distribution of numeric values.
    * </pre>
    *

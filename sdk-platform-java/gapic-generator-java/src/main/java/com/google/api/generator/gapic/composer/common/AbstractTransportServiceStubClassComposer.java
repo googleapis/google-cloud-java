@@ -85,20 +85,26 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
 public abstract class AbstractTransportServiceStubClassComposer implements ClassComposer {
+  private static final List<String> AIP_STANDARDS_METHODS =
+      ImmutableList.of(
+          "Get", "List", "Create", "Delete", "Update", "Patch", "Insert", "AggregatedList");
   private static final Statement EMPTY_LINE_STATEMENT = EmptyLineStatement.create();
 
   private static final String METHOD_DESCRIPTOR_NAME_PATTERN = "%sMethodDescriptor";
@@ -108,6 +114,9 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
   private static final String CALLABLE_FACTORY_MEMBER_NAME = "callableFactory";
   protected static final String CALLABLE_CLASS_MEMBER_PATTERN = "%sCallable";
   private static final String OPERATION_CALLABLE_CLASS_MEMBER_PATTERN = "%sOperationCallable";
+
+  private static final ImmutableList<String> HEURISTIC_ENABLED_PACKAGES =
+      ImmutableList.of("google.cloud.compute", "google.cloud.sql", "google.cloud.bigquery");
 
   protected static final TypeStore FIXED_TYPESTORE = createStaticTypes();
 
@@ -145,6 +154,15 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
             UnaryCallable.class,
             UnsupportedOperationException.class);
     return new TypeStore(concreteClazzes);
+  }
+
+  private static boolean isHeuristicEnabled(String protoPackage) {
+    for (String prefix : HEURISTIC_ENABLED_PACKAGES) {
+      if (protoPackage.startsWith(prefix)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   @Override
@@ -277,11 +295,13 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
   }
 
   protected Expr createTransportSettingsInitExpr(
+      Service service,
       Method method,
       VariableExpr transportSettingsVarExpr,
       VariableExpr methodDescriptorVarExpr,
       List<Statement> classStatements,
-      ImmutableMap<String, Message> messageTypes) {
+      ImmutableMap<String, Message> messageTypes,
+      Set<String> knownResources) {
     MethodInvocationExpr callSettingsBuilderExpr =
         MethodInvocationExpr.builder()
             .setStaticReferenceType(getTransportContext().transportCallSettingsType())
@@ -331,7 +351,9 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
               .build();
     }
 
-    LambdaExpr extractor = createResourceNameExtractorClassInstance(method, messageTypes);
+    LambdaExpr extractor =
+        createResourceNameExtractorClassInstance(
+            service, method, messageTypes, knownResources, classStatements);
     if (extractor != null) {
       callSettingsBuilderExpr =
           MethodInvocationExpr.builder()
@@ -774,18 +796,21 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
                                             .build()))
                                 .build())));
 
+    Set<String> knownResources = getKnownResources(service);
     secondCtorExprs.addAll(
         service.methods().stream()
             .filter(x -> x.isSupportedByTransport(getTransportContext().transport()))
             .map(
                 m ->
                     createTransportSettingsInitExpr(
+                        service,
                         m,
                         javaStyleMethodNameToTransportSettingsVarExprs.get(
                             JavaStyle.toLowerCamelCase(m.name())),
                         protoMethodNameToDescriptorVarExprs.get(m.name()),
                         classStatements,
-                        context.messages()))
+                        context.messages(),
+                        knownResources))
             .collect(Collectors.toList()));
     secondCtorStatements.addAll(
         secondCtorExprs.stream().map(ExprStatement::withExpr).collect(Collectors.toList()));
@@ -1510,29 +1535,143 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
    * resource reference (see {@link Field#hasResourceReference()})
    */
   @Nullable
-  protected static LambdaExpr createResourceNameExtractorClassInstance(
-      Method method, ImmutableMap<String, Message> messageTypes) {
+  protected LambdaExpr createResourceNameExtractorClassInstance(
+      Service service,
+      Method method,
+      ImmutableMap<String, Message> messageTypes,
+      Set<String> knownResources,
+      List<Statement> classStatements) {
     Field resourceNameField = getDestinationResourceIdField(method, messageTypes);
 
-    if (resourceNameField == null) {
+    if (resourceNameField != null) {
+      // Expected expression: request -> request.getField()
+      VariableExpr requestVarExpr = createRequestVarExpr(method);
+      List<Statement> bodyStatements = new ArrayList<>();
+      Expr returnExpr =
+          MethodInvocationExpr.builder()
+              .setExprReferenceExpr(requestVarExpr)
+              .setMethodName(
+                  String.format("get%s", JavaStyle.toUpperCamelCase(resourceNameField.name())))
+              .setReturnType(TypeNode.STRING)
+              .build();
+
+      return LambdaExpr.builder()
+          .setArguments(requestVarExpr.toBuilder().setIsDecl(true).build())
+          .setBody(bodyStatements)
+          .setReturnExpr(returnExpr)
+          .build();
+    }
+
+    if (!isHeuristicEnabled(service.protoPakkage())) {
       return null;
     }
 
-    // Expected expression: request -> request.getField()
+    if (!method.hasHttpBindings()) {
+      return null;
+    }
+
+    String canonicalPath =
+        extractCanonicalResourceName(method.httpBindings().pattern(), knownResources);
+    if (!canonicalPath.contains("{")) {
+      return null;
+    }
+
+    // Expected expression: private static final PathTemplate GET_HEURISTIC_RESOURCE_NAME_TEMPLATE =
+    //      PathTemplate.create("projects/{project}/locations/{location}/heuristics/{heuristic}");
+    TypeNode pathTemplateType =
+        TypeNode.withReference(ConcreteReference.withClazz(PathTemplate.class));
+    String templateName =
+        String.format("%s_RESOURCE_NAME_TEMPLATE", JavaStyle.toUpperSnakeCase(method.name()));
+    Variable pathTemplateVar =
+        Variable.builder().setType(pathTemplateType).setName(templateName).build();
+    Statement pathTemplateClassStatement =
+        createPathTemplateClassStatement(canonicalPath, pathTemplateType, pathTemplateVar);
+
+    classStatements.add(pathTemplateClassStatement);
+
     VariableExpr requestVarExpr = createRequestVarExpr(method);
     List<Statement> bodyStatements = new ArrayList<>();
-    Expr returnExpr =
+
+    TypeNode mapType =
+        TypeNode.withReference(
+            ConcreteReference.builder()
+                .setClazz(Map.class)
+                .setGenerics(TypeNode.STRING.reference(), TypeNode.STRING.reference())
+                .build());
+    TypeNode hashMapType =
+        TypeNode.withReference(
+            ConcreteReference.builder()
+                .setClazz(java.util.HashMap.class)
+                .setGenerics(TypeNode.STRING.reference(), TypeNode.STRING.reference())
+                .build());
+
+    // Expected expression: Map<String, String> resourceNameSegments = new HashMap<String,
+    // String>();
+    VariableExpr resourceNameSegmentsVarExpr =
+        VariableExpr.builder()
+            .setVariable(
+                Variable.builder().setName("resourceNameSegments").setType(mapType).build())
+            .setIsDecl(true)
+            .build();
+
+    bodyStatements.add(
+        ExprStatement.withExpr(
+            AssignmentExpr.builder()
+                .setVariableExpr(resourceNameSegmentsVarExpr)
+                .setValueExpr(
+                    NewObjectExpr.builder().setType(hashMapType).setIsGeneric(true).build())
+                .build()));
+
+    VariableExpr resourceNameSegmentsExpr =
+        VariableExpr.builder()
+            .setVariable(
+                Variable.builder().setName("resourceNameSegments").setType(mapType).build())
+            .build();
+
+    Set<HttpBindings.HttpBinding> httpBindings = method.httpBindings().pathParameters();
+
+    // For each httpBinding,
+    // generates resourceNameSegments.put("field",String.valueOf(request.getField()));
+    for (HttpBindings.HttpBinding httpBinding : httpBindings) {
+      if (!Pattern.compile("\\{" + httpBinding.name() + "(?:=.*?)?\\}")
+          .matcher(canonicalPath)
+          .find()) {
+        continue;
+      }
+      MethodInvocationExpr getFieldExpr =
+          createRequestFieldGetterExpr(
+              requestVarExpr,
+              httpBinding.name(),
+              httpBinding.field() != null && httpBinding.field().isEnum());
+
+      MethodInvocationExpr putExpr =
+          MethodInvocationExpr.builder()
+              .setExprReferenceExpr(resourceNameSegmentsExpr)
+              .setMethodName("put")
+              .setArguments(
+                  ValueExpr.withValue(StringObjectValue.withValue(httpBinding.name())),
+                  MethodInvocationExpr.builder()
+                      .setStaticReferenceType(TypeNode.STRING)
+                      .setMethodName("valueOf")
+                      .setArguments(getFieldExpr)
+                      .setReturnType(TypeNode.STRING)
+                      .build())
+              .build();
+      bodyStatements.add(ExprStatement.withExpr(putExpr));
+    }
+
+    MethodInvocationExpr instantiateExpr =
         MethodInvocationExpr.builder()
-            .setExprReferenceExpr(requestVarExpr)
-            .setMethodName(
-                String.format("get%s", JavaStyle.toUpperCamelCase(resourceNameField.name())))
+            .setExprReferenceExpr(VariableExpr.builder().setVariable(pathTemplateVar).build())
+            .setMethodName("instantiate")
+            .setArguments(resourceNameSegmentsExpr)
             .setReturnType(TypeNode.STRING)
             .build();
 
     return LambdaExpr.builder()
         .setArguments(requestVarExpr.toBuilder().setIsDecl(true).build())
         .setBody(bodyStatements)
-        .setReturnExpr(returnExpr)
+        .setReturnExpr(instantiateExpr)
         .build();
   }
 
@@ -1698,7 +1837,8 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
           Variable.builder().setType(pathTemplateType).setName(pathTemplateName).build();
       Expr routingHeaderPatternExpr = VariableExpr.withVariable(pathTemplateVar);
       Statement pathTemplateClassVar =
-          createPathTemplateClassStatement(routingHeaderParam, pathTemplateType, pathTemplateVar);
+          createPathTemplateClassStatement(
+              routingHeaderParam.pattern(), pathTemplateType, pathTemplateVar);
       classStatements.add(pathTemplateClassVar);
       MethodInvocationExpr addParamMethodExpr =
           MethodInvocationExpr.builder()
@@ -1728,9 +1868,7 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
   }
 
   private Statement createPathTemplateClassStatement(
-      RoutingHeaderRule.RoutingHeaderParam routingHeaderParam,
-      TypeNode pathTemplateType,
-      Variable pathTemplateVar) {
+      String pattern, TypeNode pathTemplateType, Variable pathTemplateVar) {
     VariableExpr pathTemplateVarExpr =
         VariableExpr.builder()
             .setVariable(pathTemplateVar)
@@ -1739,8 +1877,7 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
             .setIsFinal(true)
             .setScope(ScopeNode.PRIVATE)
             .build();
-    ValueExpr valueExpr =
-        ValueExpr.withValue(StringObjectValue.withValue(routingHeaderParam.pattern()));
+    ValueExpr valueExpr = ValueExpr.withValue(StringObjectValue.withValue(pattern));
     Expr pathTemplateExpr =
         AssignmentExpr.builder()
             .setVariableExpr(pathTemplateVarExpr)
@@ -1824,5 +1961,53 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
   private static VariableExpr createRequestVarExpr(Method method) {
     return VariableExpr.withVariable(
         Variable.builder().setType(method.inputType()).setName("request").build());
+  }
+
+  private static Set<String> getKnownResources(Service service) {
+
+    Set<String> knownResources = new HashSet<>();
+    for (Method method : service.methods()) {
+      if (!method.hasHttpBindings()) {
+        continue;
+      }
+      if (isAipStandardMethod(AIP_STANDARDS_METHODS, method.name())) {
+        for (String pattern : method.httpBindings().additionalPatterns()) {
+          knownResources.addAll(extractLiteralSegments(pattern));
+        }
+        knownResources.addAll(extractLiteralSegments(method.httpBindings().pattern()));
+      }
+    }
+    return knownResources;
+  }
+
+  private static boolean isAipStandardMethod(List<String> standards, String methodName) {
+    return standards.stream().anyMatch(standard -> standard.equalsIgnoreCase(methodName));
+  }
+
+  private static Set<String> extractLiteralSegments(String pattern) {
+    if (pattern == null || pattern.isEmpty()) {
+      return new HashSet<>();
+    }
+    try {
+      PathTemplate template = PathTemplate.create(pattern);
+      return template.getResourceLiterals();
+    } catch (Exception e) {
+      return new HashSet<>();
+    }
+  }
+
+  private static String extractCanonicalResourceName(String pattern, Set<String> knownResources) {
+    if (pattern == null
+        || pattern.isEmpty()
+        || knownResources == null
+        || knownResources.isEmpty()) {
+      return "";
+    }
+    try {
+      PathTemplate template = PathTemplate.create(pattern);
+      return template.getCanonicalResourceName(knownResources);
+    } catch (Exception e) {
+      return "";
+    }
   }
 }

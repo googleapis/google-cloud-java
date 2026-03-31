@@ -297,6 +297,7 @@ public class DatastoreStubSettings extends StubSettings<DatastoreStubSettings> {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-datastore")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

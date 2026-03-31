@@ -173,6 +173,7 @@ public class GrpcAccountServicesServiceStub extends AccountServicesServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAccountServicesRequest, ListAccountServicesResponse>
         listAccountServicesTransportSettings =
@@ -184,6 +185,7 @@ public class GrpcAccountServicesServiceStub extends AccountServicesServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ProposeAccountServiceRequest, AccountService>
         proposeAccountServiceTransportSettings =
@@ -195,6 +197,7 @@ public class GrpcAccountServicesServiceStub extends AccountServicesServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ApproveAccountServiceRequest, AccountService>
         approveAccountServiceTransportSettings =
@@ -206,6 +209,7 @@ public class GrpcAccountServicesServiceStub extends AccountServicesServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<RejectAccountServiceRequest, Empty> rejectAccountServiceTransportSettings =
         GrpcCallSettings.<RejectAccountServiceRequest, Empty>newBuilder()
@@ -216,6 +220,7 @@ public class GrpcAccountServicesServiceStub extends AccountServicesServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getAccountServiceCallable =

@@ -138,6 +138,7 @@ public class GrpcAccountsServiceStub extends AccountsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetAccountRequest, Account> getAccountTransportSettings =
         GrpcCallSettings.<GetAccountRequest, Account>newBuilder()
@@ -148,6 +149,7 @@ public class GrpcAccountsServiceStub extends AccountsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateAccountLabelsRequest, Account> updateLabelsTransportSettings =
         GrpcCallSettings.<UpdateAccountLabelsRequest, Account>newBuilder()
@@ -158,6 +160,7 @@ public class GrpcAccountsServiceStub extends AccountsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.listChildAccountsCallable =

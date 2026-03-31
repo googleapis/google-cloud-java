@@ -613,6 +613,7 @@ public class RuleServiceStubSettings extends StubSettings<RuleServiceStubSetting
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-chronicle")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

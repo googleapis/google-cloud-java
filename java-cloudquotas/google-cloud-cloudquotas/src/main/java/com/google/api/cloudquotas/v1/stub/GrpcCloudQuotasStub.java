@@ -185,6 +185,7 @@ public class GrpcCloudQuotasStub extends CloudQuotasStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetQuotaInfoRequest, QuotaInfo> getQuotaInfoTransportSettings =
         GrpcCallSettings.<GetQuotaInfoRequest, QuotaInfo>newBuilder()
@@ -195,6 +196,7 @@ public class GrpcCloudQuotasStub extends CloudQuotasStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListQuotaPreferencesRequest, ListQuotaPreferencesResponse>
         listQuotaPreferencesTransportSettings =
@@ -206,6 +208,7 @@ public class GrpcCloudQuotasStub extends CloudQuotasStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetQuotaPreferenceRequest, QuotaPreference>
         getQuotaPreferenceTransportSettings =
@@ -217,6 +220,7 @@ public class GrpcCloudQuotasStub extends CloudQuotasStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateQuotaPreferenceRequest, QuotaPreference>
         createQuotaPreferenceTransportSettings =
@@ -228,6 +232,7 @@ public class GrpcCloudQuotasStub extends CloudQuotasStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateQuotaPreferenceRequest, QuotaPreference>
         updateQuotaPreferenceTransportSettings =
