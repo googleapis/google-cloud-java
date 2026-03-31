@@ -40,6 +40,22 @@ import java.util.concurrent.CancellationException;
 import javax.annotation.Nullable;
 
 public class Util {
+  public enum IpProtocol {
+    IPV4("ipv4"),
+    IPV6("ipv6"),
+    UNKNOWN("unknown");
+
+    private final String value;
+
+    IpProtocol(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+  }
+
   static final String TRANSPORT_TYPE_PREFIX = "TRANSPORT_TYPE_";
 
   public static String formatTransportZone(@Nullable PeerInfo peerInfo) {

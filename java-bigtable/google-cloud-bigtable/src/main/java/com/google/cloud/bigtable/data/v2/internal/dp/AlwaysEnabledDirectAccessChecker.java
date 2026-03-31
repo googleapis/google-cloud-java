@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,30 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.bigtable.data.v2.stub;
 
-import com.google.api.core.ApiFuture;
-import com.google.api.core.ApiFutures;
+package com.google.cloud.bigtable.data.v2.internal.dp;
+
 import com.google.api.core.InternalApi;
-import com.google.bigtable.v2.PingAndWarmResponse;
-import com.google.cloud.bigtable.gaxx.grpc.ChannelPrimer;
 import io.grpc.Channel;
+import io.grpc.ManagedChannel;
+import javax.annotation.Nullable;
 
 @InternalApi
-public class NoOpChannelPrimer implements ChannelPrimer {
-  static NoOpChannelPrimer create() {
-    return new NoOpChannelPrimer();
-  }
+public class AlwaysEnabledDirectAccessChecker implements DirectAccessChecker {
+  public static final AlwaysEnabledDirectAccessChecker INSTANCE =
+      new AlwaysEnabledDirectAccessChecker();
 
-  private NoOpChannelPrimer() {}
-
-  @Override
-  public void primeChannel(Channel channel) {
-    // No op
-  }
+  private AlwaysEnabledDirectAccessChecker() {}
 
   @Override
-  public ApiFuture<PingAndWarmResponse> sendPrimeRequestsAsync(Channel channel) {
-    return ApiFutures.immediateFuture(PingAndWarmResponse.getDefaultInstance());
+  public boolean check(Channel channel) {
+    if (channel instanceof ManagedChannel) {
+      ((ManagedChannel) channel).shutdownNow();
+    }
+    return true;
+  }
+
+  @Override
+  public void investigateFailure(@Nullable Throwable originalError) {
+    // No-op:
   }
 }

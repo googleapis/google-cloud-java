@@ -37,6 +37,7 @@ import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.TableId;
+import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import com.google.cloud.bigtable.data.v2.stub.metrics.NoopMetricsProvider;
 import com.google.common.base.Preconditions;
 import com.google.common.io.BaseEncoding;
@@ -267,7 +268,8 @@ public class BigtableDataClientFactoryTest {
         .stubSettings()
         .setCredentialsProvider(credentialsProvider)
         .setStreamWatchdogProvider(watchdogProvider)
-        .setBackgroundExecutorProvider(executorProvider);
+        .setBackgroundExecutorProvider(executorProvider)
+        .setDirectPathConfig(EnhancedBigtableStubSettings.DirectPathConfig.FORCED_ON);
     InstantiatingGrpcChannelProvider channelProvider =
         (InstantiatingGrpcChannelProvider) builder.stubSettings().getTransportChannelProvider();
     InstantiatingGrpcChannelProvider.Builder channelProviderBuilder = channelProvider.toBuilder();
@@ -285,7 +287,6 @@ public class BigtableDataClientFactoryTest {
     Mockito.verify(credentialsProvider, Mockito.times(2)).getCredentials();
     Mockito.verify(executorProvider, Mockito.times(1)).getExecutor();
     Mockito.verify(watchdogProvider, Mockito.times(1)).getWatchdog();
-
     assertThat(warmedChannels).hasSize(poolSize);
     assertThat(warmedChannels.values()).doesNotContain(false);
 

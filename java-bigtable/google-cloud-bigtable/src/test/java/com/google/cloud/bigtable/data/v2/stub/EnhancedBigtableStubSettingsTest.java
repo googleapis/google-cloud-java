@@ -905,6 +905,7 @@ public class EnhancedBigtableStubSettingsTest {
     "metricsEndpoint",
     "areInternalMetricsEnabled",
     "jwtAudience",
+    "directPathConfig",
   };
 
   @Test

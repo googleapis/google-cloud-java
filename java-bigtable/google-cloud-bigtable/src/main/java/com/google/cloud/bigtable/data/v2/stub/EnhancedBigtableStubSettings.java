@@ -60,6 +60,7 @@ import java.util.Base64;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import org.threeten.bp.Duration;
@@ -97,9 +98,13 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private static final int MAX_MESSAGE_SIZE = 256 * 1024 * 1024;
   private static final String SERVER_DEFAULT_APP_PROFILE_ID = "";
 
-  // TODO(meeral-k): add documentation
-  private static final boolean DIRECT_PATH_ENABLED =
-      Boolean.parseBoolean(System.getenv("CBT_ENABLE_DIRECTPATH"));
+  // TODO change this to true when enabling directpath by default
+  // For now, Only runs Direct Access Checker if user explicitly sets CBT_ENABLE_DIRECTPATH=true
+  private static final DirectPathConfig DIRECT_PATH_CONFIG =
+      Optional.ofNullable(System.getenv("CBT_ENABLE_DIRECTPATH"))
+          .map(Boolean::parseBoolean)
+          .map(b -> b ? DirectPathConfig.FORCED_ON : DirectPathConfig.FORCED_OFF)
+          .orElse(DirectPathConfig.DEFAULT);
 
   // If true, disable the bound-token-by-default feature for DirectPath.
   private static final boolean DIRECT_PATH_BOUND_TOKEN_DISABLED =
@@ -139,9 +144,19 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private final boolean areInternalMetricsEnabled;
   private final String jwtAudience;
 
+  @InternalApi
+  public enum DirectPathConfig {
+    DEFAULT,
+    FORCED_ON,
+    FORCED_OFF,
+  }
+
+  private final DirectPathConfig directPathConfig;
+
   private EnhancedBigtableStubSettings(Builder builder) {
     super(builder);
 
+    directPathConfig = builder.directPathConfig;
     projectId = builder.projectId;
     instanceId = builder.instanceId;
     appProfileId = builder.appProfileId;
@@ -163,6 +178,11 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   /** Returns the project id of the target instance. */
   public String getProjectId() {
     return projectId;
+  }
+
+  @InternalApi
+  public DirectPathConfig getDirectPathConfig() {
+    return DIRECT_PATH_CONFIG;
   }
 
   /** Returns the target instance id. */
@@ -246,21 +266,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
     InstantiatingGrpcChannelProvider.Builder grpcTransportProviderBuilder =
         BigtableStubSettings.defaultGrpcTransportProviderBuilder();
-    if (DIRECT_PATH_ENABLED) {
-      // Attempts direct access to CBT service over gRPC to improve throughput,
-      // whether the attempt is allowed is totally controlled by service owner.
-      grpcTransportProviderBuilder
-          .setAttemptDirectPathXds()
-          .setAttemptDirectPath(true)
-          // Allow using non-default service account in DirectPath.
-          .setAllowNonDefaultServiceAccount(true);
-      if (!DIRECT_PATH_BOUND_TOKEN_DISABLED) {
-        // Try to fetch a hard-bound access token for direct access if the runtime
-        // environment supports it.
-        grpcTransportProviderBuilder.setAllowHardBoundTokenTypes(
-            Collections.singletonList(InstantiatingGrpcChannelProvider.HardBoundTokenTypes.ALTS));
-      }
-    }
     return grpcTransportProviderBuilder
         .setChannelPoolSettings(
             ChannelPoolSettings.builder()
@@ -275,6 +280,23 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
         .setKeepAliveTime(Duration.ofSeconds(30)) // sends ping in this interval
         .setKeepAliveTimeout(
             Duration.ofSeconds(10)); // wait this long before considering the connection dead
+  }
+
+  /** Applies Direct Access traits to an existing builder. */
+  @InternalApi
+  public static InstantiatingGrpcChannelProvider.Builder applyDirectAccessTraitsInternal(
+      InstantiatingGrpcChannelProvider.Builder builder) {
+    builder
+        .setAttemptDirectPathXds()
+        .setAttemptDirectPath(true)
+        .setAllowNonDefaultServiceAccount(true);
+
+    if (!DIRECT_PATH_BOUND_TOKEN_DISABLED) {
+      builder.setAllowHardBoundTokenTypes(
+          Collections.singletonList(InstantiatingGrpcChannelProvider.HardBoundTokenTypes.ALTS));
+    }
+
+    return builder;
   }
 
   @SuppressWarnings("WeakerAccess")
@@ -569,7 +591,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
   /** Builder for BigtableDataSettings. */
   public static class Builder extends StubSettings.Builder<EnhancedBigtableStubSettings, Builder> {
-
+    private DirectPathConfig directPathConfig;
     private String projectId;
     private String instanceId;
     private String appProfileId;
@@ -593,6 +615,9 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
      * in the underlying GAPIC client for batching).
      */
     private Builder() {
+      // TODO(enable this by default)
+      // Only runs Direct Access Checker if it is DIRECTPATH_ENABLED_BY_DEFAULT
+      this.directPathConfig = DIRECT_PATH_CONFIG;
       this.appProfileId = SERVER_DEFAULT_APP_PROFILE_ID;
       this.isRefreshingChannel = true;
       setCredentialsProvider(defaultCredentialsProviderBuilder().build());
@@ -610,12 +635,15 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
       perOpSettings = new ClientOperationSettings.Builder();
 
+      // TODO: flip the bit setDirectAccessRequested and setTrafficDirectorEnabled  once we make
+      // client compatible by default.
+      boolean isDirectPathRequested = directPathConfig == DirectPathConfig.FORCED_ON;
       featureFlags =
           FeatureFlags.newBuilder()
               .setReverseScans(true)
               .setLastScannedRowResponses(true)
-              .setDirectAccessRequested(DIRECT_PATH_ENABLED)
-              .setTrafficDirectorEnabled(DIRECT_PATH_ENABLED)
+              .setDirectAccessRequested(isDirectPathRequested)
+              .setTrafficDirectorEnabled(isDirectPathRequested)
               .setPeerInfo(true);
     }
 
@@ -629,6 +657,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       metricsEndpoint = settings.getMetricsEndpoint();
       areInternalMetricsEnabled = settings.areInternalMetricsEnabled;
       jwtAudience = settings.jwtAudience;
+      this.directPathConfig = settings.getDirectPathConfig();
 
       this.perOpSettings = new ClientOperationSettings.Builder(settings.perOpSettings);
 
@@ -711,6 +740,12 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     @Deprecated
     public Builder setRefreshingChannel(boolean isRefreshingChannel) {
       this.isRefreshingChannel = isRefreshingChannel;
+      return this;
+    }
+
+    @InternalApi("For internal use only.")
+    public Builder setDirectPathConfig(DirectPathConfig directPathConfig) {
+      this.directPathConfig = directPathConfig;
       return this;
     }
 
@@ -995,6 +1030,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
         .add("metricsEndpoint", metricsEndpoint)
         .add("areInternalMetricsEnabled", areInternalMetricsEnabled)
         .add("jwtAudience", jwtAudience)
+        .add("directPathConfig", getDirectPathConfig().toString())
         .add("parent", super.toString())
         .toString();
   }

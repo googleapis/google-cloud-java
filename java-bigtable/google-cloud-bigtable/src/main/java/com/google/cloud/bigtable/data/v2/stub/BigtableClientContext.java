@@ -32,6 +32,9 @@ import com.google.cloud.bigtable.data.v2.internal.csm.MetricRegistry;
 import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.MetricsImpl;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
+import com.google.cloud.bigtable.data.v2.internal.dp.AlwaysEnabledDirectAccessChecker;
+import com.google.cloud.bigtable.data.v2.internal.dp.DirectAccessChecker;
+import com.google.cloud.bigtable.data.v2.internal.dp.NoopDirectAccessChecker;
 import com.google.cloud.bigtable.data.v2.stub.metrics.CustomOpenTelemetryMetricsProvider;
 import com.google.cloud.bigtable.gaxx.grpc.BigtableTransportChannelProvider;
 import com.google.cloud.bigtable.gaxx.grpc.ChannelPrimer;
@@ -161,12 +164,24 @@ public class BigtableClientContext {
                 builder.getHeaderProvider().getHeaders());
       }
 
+      DirectAccessChecker directAccessChecker = null;
+      switch (settings.getDirectPathConfig()) {
+        case FORCED_ON:
+          directAccessChecker = AlwaysEnabledDirectAccessChecker.INSTANCE;
+          break;
+        case FORCED_OFF:
+        case DEFAULT:
+          directAccessChecker = NoopDirectAccessChecker.INSTANCE;
+          break;
+      }
+
       BigtableTransportChannelProvider btTransportProvider =
           BigtableTransportChannelProvider.create(
               transportProvider.build(),
               channelPrimer,
               metrics.getChannelPoolMetricsTracer(),
-              backgroundExecutor);
+              backgroundExecutor,
+              directAccessChecker);
 
       builder.setTransportChannelProvider(btTransportProvider);
     }

@@ -26,9 +26,9 @@ import com.google.cloud.bigtable.data.v2.internal.api.InstanceName;
 import com.google.cloud.bigtable.gaxx.grpc.ChannelPrimer;
 import io.grpc.CallCredentials;
 import io.grpc.CallOptions;
+import io.grpc.Channel;
 import io.grpc.ClientCall;
 import io.grpc.Deadline;
-import io.grpc.ManagedChannel;
 import io.grpc.Metadata;
 import io.grpc.Status;
 import io.grpc.auth.MoreCallCredentials;
@@ -88,21 +88,21 @@ public class BigtableChannelPrimer implements ChannelPrimer {
   }
 
   @Override
-  public void primeChannel(ManagedChannel managedChannel) {
+  public void primeChannel(Channel channel) {
     try {
-      primeChannelUnsafe(managedChannel);
+      primeChannelUnsafe(channel);
     } catch (IOException | RuntimeException e) {
       LOG.log(Level.WARNING, "Unexpected error while trying to prime a channel", e);
     }
   }
 
-  private void primeChannelUnsafe(ManagedChannel managedChannel) throws IOException {
-    sendPrimeRequestsBlocking(managedChannel);
+  private void primeChannelUnsafe(Channel channel) throws IOException {
+    sendPrimeRequestsBlocking(channel);
   }
 
-  private void sendPrimeRequestsBlocking(ManagedChannel managedChannel) {
+  private void sendPrimeRequestsBlocking(Channel channel) {
     try {
-      sendPrimeRequestsAsync(managedChannel).get(1, TimeUnit.MINUTES);
+      sendPrimeRequestsAsync(channel).get(1, TimeUnit.MINUTES);
     } catch (Throwable e) {
       // TODO: Not sure if we should swallow the error here. We are pre-emptively swapping
       // channels if the new
@@ -112,7 +112,7 @@ public class BigtableChannelPrimer implements ChannelPrimer {
   }
 
   @Override
-  public ApiFuture<PingAndWarmResponse> sendPrimeRequestsAsync(ManagedChannel managedChannel) {
+  public ApiFuture<PingAndWarmResponse> sendPrimeRequestsAsync(Channel managedChannel) {
     ClientCall<PingAndWarmRequest, PingAndWarmResponse> clientCall =
         managedChannel.newCall(
             BigtableGrpc.getPingAndWarmMethod(),

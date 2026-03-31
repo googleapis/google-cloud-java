@@ -19,7 +19,6 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-import com.google.api.gax.grpc.ChannelFactory;
 import com.google.common.collect.Iterables;
 import io.grpc.CallOptions;
 import io.grpc.ClientCall;
@@ -32,6 +31,7 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.function.Supplier;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -48,7 +48,7 @@ import org.mockito.junit.MockitoRule;
 public class BigtableChannelPoolTest {
   @Rule public final MockitoRule mockito = MockitoJUnit.rule();
 
-  @Mock private ChannelFactory mockChannelFactory;
+  @Mock private Supplier<ManagedChannel> mockChannelFactory;
   @Mock private ChannelPrimer mockChannelPrimer;
   @Mock private ManagedChannel mockChannel;
   @Mock private ClientCall<String, String> mockClientCall;
@@ -75,7 +75,7 @@ public class BigtableChannelPoolTest {
 
   @Before
   public void setUp() throws IOException {
-    when(mockChannelFactory.createSingleChannel()).thenReturn(mockChannel);
+    when(mockChannelFactory.get()).thenReturn(mockChannel);
     when(mockChannel.newCall(
             ArgumentMatchers.<MethodDescriptor<String, String>>any(), any(CallOptions.class)))
         .thenReturn(mockClientCall);

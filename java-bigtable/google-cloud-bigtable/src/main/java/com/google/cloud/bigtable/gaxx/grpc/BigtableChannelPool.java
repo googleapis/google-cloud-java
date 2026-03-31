@@ -16,7 +16,6 @@
 package com.google.cloud.bigtable.gaxx.grpc;
 
 import com.google.api.core.InternalApi;
-import com.google.api.gax.grpc.ChannelFactory;
 import com.google.bigtable.v2.PeerInfo;
 import com.google.cloud.bigtable.data.v2.stub.MetadataExtractorInterceptor;
 import com.google.cloud.bigtable.gaxx.grpc.ChannelPoolHealthChecker.ProbeResult;
@@ -67,7 +66,7 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
   private static final java.time.Duration REFRESH_PERIOD = java.time.Duration.ofMinutes(50);
 
   private final BigtableChannelPoolSettings settings;
-  private final ChannelFactory channelFactory;
+  private final Supplier<ManagedChannel> channelSupplier;
 
   private final ChannelPrimer channelPrimer;
   private final Object entryWriteLock = new Object();
@@ -81,11 +80,11 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
 
   public static BigtableChannelPool create(
       BigtableChannelPoolSettings settings,
-      ChannelFactory channelFactory,
+      Supplier<ManagedChannel> channelSupplier,
       ChannelPrimer channelPrimer,
       ScheduledExecutorService backgroundExecutor)
       throws IOException {
-    return new BigtableChannelPool(settings, channelFactory, channelPrimer, backgroundExecutor);
+    return new BigtableChannelPool(settings, channelSupplier, channelPrimer, backgroundExecutor);
   }
 
   /**
@@ -98,12 +97,12 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
   @VisibleForTesting
   BigtableChannelPool(
       BigtableChannelPoolSettings settings,
-      ChannelFactory channelFactory,
+      Supplier<ManagedChannel> channelSupplier,
       ChannelPrimer channelPrimer,
       ScheduledExecutorService executor)
       throws IOException {
     this.settings = settings;
-    this.channelFactory = channelFactory;
+    this.channelSupplier = channelSupplier;
     this.channelPrimer = channelPrimer;
     Clock systemClock = Clock.systemUTC();
     ChannelPoolHealthChecker channelPoolHealthChecker =
@@ -113,7 +112,7 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
     ImmutableList.Builder<Entry> initialListBuilder = ImmutableList.builder();
 
     for (int i = 0; i < settings.getInitialChannelCount(); i++) {
-      ManagedChannel newChannel = channelFactory.createSingleChannel();
+      ManagedChannel newChannel = channelSupplier.get();
       channelPrimer.primeChannel(newChannel);
       initialListBuilder.add(new Entry(newChannel));
     }
@@ -419,10 +418,10 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
 
     for (int i = 0; i < desiredSize - localEntries.size(); i++) {
       try {
-        ManagedChannel newChannel = channelFactory.createSingleChannel();
+        ManagedChannel newChannel = channelSupplier.get();
         this.channelPrimer.primeChannel(newChannel);
         newEntries.add(new Entry(newChannel));
-      } catch (IOException e) {
+      } catch (Exception e) {
         LOG.log(Level.WARNING, "Failed to add channel", e);
       }
     }
@@ -459,10 +458,10 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
 
       for (int i = 0; i < newEntries.size(); i++) {
         try {
-          ManagedChannel newChannel = channelFactory.createSingleChannel();
+          ManagedChannel newChannel = channelSupplier.get();
           this.channelPrimer.primeChannel(newChannel);
           newEntries.set(i, new Entry(newChannel));
-        } catch (IOException e) {
+        } catch (Exception e) {
           LOG.log(Level.WARNING, "Failed to refresh channel, leaving old channel", e);
         }
       }

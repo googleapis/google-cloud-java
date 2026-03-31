@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.data.v2.internal.csm.metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.Constants.MetricLabels;
 import com.google.cloud.bigtable.data.v2.internal.csm.schema.ClientSchema;
+import com.google.cloud.bigtable.data.v2.internal.dp.DirectAccessInvestigator;
 import io.opentelemetry.api.metrics.LongGauge;
 import io.opentelemetry.api.metrics.Meter;
 
@@ -60,12 +61,13 @@ public class ClientDpCompatGuage extends MetricWrapper<ClientSchema> {
     }
 
     // TODO: replace reason with an enum
-    public void recordFailure(ClientInfo clientInfo, String reason) {
+    public void recordFailure(
+        ClientInfo clientInfo, DirectAccessInvestigator.FailureReason reason) {
       instrument.set(
           1,
           getSchema()
               .createResourceAttrs(clientInfo)
-              .put(MetricLabels.DP_REASON_KEY, reason)
+              .put(MetricLabels.DP_REASON_KEY, reason.getValue())
               .put(MetricLabels.DP_IP_PREFERENCE_KEY, "")
               .build());
     }

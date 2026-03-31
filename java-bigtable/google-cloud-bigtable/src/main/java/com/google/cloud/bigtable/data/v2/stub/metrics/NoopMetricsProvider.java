@@ -15,6 +15,9 @@
  */
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
+import com.google.cloud.bigtable.data.v2.internal.csm.attributes.Util;
+import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DirectPathCompatibleTracer;
+import com.google.cloud.bigtable.data.v2.internal.dp.DirectAccessInvestigator;
 import com.google.common.base.MoreObjects;
 
 /**
@@ -32,5 +35,24 @@ public final class NoopMetricsProvider implements MetricsProvider {
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this).toString();
+  }
+
+  /** A no-op implementation of {@link DirectPathCompatibleTracer}. */
+  public static final class NoopDirectPathCompatibleTracer implements DirectPathCompatibleTracer {
+
+    public static final NoopDirectPathCompatibleTracer INSTANCE =
+        new NoopDirectPathCompatibleTracer();
+
+    private NoopDirectPathCompatibleTracer() {}
+
+    @Override
+    public void recordSuccess(Util.IpProtocol ipProtocol) {
+      // No-op
+    }
+
+    @Override
+    public void recordFailure(DirectAccessInvestigator.FailureReason reason) {
+      // No-op
+    }
   }
 }
