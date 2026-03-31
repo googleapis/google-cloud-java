@@ -68,6 +68,7 @@ import static com.google.cloud.firestore.pipeline.expressions.Expression.logical
 import static com.google.cloud.firestore.pipeline.expressions.Expression.ltrim;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.mapMerge;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.mapRemove;
+import static com.google.cloud.firestore.pipeline.expressions.Expression.multiply;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.nor;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.notEqual;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.nullValue;
@@ -111,6 +112,7 @@ import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.Blob;
 import com.google.cloud.firestore.CollectionReference;
 import com.google.cloud.firestore.DocumentReference;
+import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.FirestoreOptions;
 import com.google.cloud.firestore.GeoPoint;
@@ -4410,5 +4412,198 @@ public class ITPipelineTest extends ITBaseTest {
 
     assertThat(data.get("parentIdStatic")).isEqualTo("book4");
     assertThat(data.get("parentIdInstance")).isEqualTo("book4");
+  }
+
+  @Test
+  public void testDeleteStage() throws Exception {
+    CollectionReference dmlCol = testCollectionWithDocs(bookDocs);
+    if ("NIGHTLY".equals(getTargetBackend())) {
+      List<PipelineResult> results =
+          firestore
+              .pipeline()
+              .collection(dmlCol.getPath())
+              .where(equal(field("__name__").documentId(), "book1"))
+              .delete()
+              .execute()
+              .get()
+              .getResults();
+
+      assertThat(results).hasSize(1);
+      assertThat(results.get(0).getData().get("documents_modified")).isEqualTo(1L);
+      assertThat(dmlCol.document("book1").get().get().exists()).isFalse();
+    } else {
+      assertThrows(
+          ExecutionException.class,
+          () -> {
+            firestore
+                .pipeline()
+                .collection(dmlCol.getPath())
+                .where(equal(field("__name__").documentId(), "book1"))
+                .delete()
+                .execute()
+                .get()
+                .getResults();
+          });
+    }
+  }
+
+  @Test
+  public void testDeleteMultipleDocuments() throws Exception {
+    CollectionReference dmlCol = testCollectionWithDocs(bookDocs);
+    if ("NIGHTLY".equals(getTargetBackend())) {
+      List<PipelineResult> results =
+          firestore
+              .pipeline()
+              .collection(dmlCol.getPath())
+              .where(equal(field("genre"), "Science Fiction"))
+              .delete()
+              .execute()
+              .get()
+              .getResults();
+
+      assertThat(results).hasSize(1);
+      assertThat(results.get(0).getData().get("documents_modified")).isEqualTo(2L);
+      assertThat(dmlCol.document("book1").get().get().exists()).isFalse();
+      assertThat(dmlCol.document("book10").get().get().exists()).isFalse();
+    } else {
+      assertThrows(
+          ExecutionException.class,
+          () -> {
+            firestore
+                .pipeline()
+                .collection(dmlCol.getPath())
+                .where(equal(field("genre"), "Science Fiction"))
+                .delete()
+                .execute()
+                .get();
+          });
+    }
+  }
+
+  @Test
+  public void testUpdateMultipleDocuments() throws Exception {
+    CollectionReference dmlCol = testCollectionWithDocs(bookDocs);
+    if ("NIGHTLY".equals(getTargetBackend())) {
+      List<PipelineResult> results =
+          firestore
+              .pipeline()
+              .collection(dmlCol.getPath())
+              .where(equal(field("genre"), "Science Fiction"))
+              .removeFields("awards")
+              .update(constant("Updated").as("status"))
+              .execute()
+              .get()
+              .getResults();
+
+      assertThat(results).hasSize(1);
+      assertThat(results.get(0).getData().get("documents_modified")).isEqualTo(2L);
+      assertThat(dmlCol.document("book1").get().get().get("status")).isEqualTo("Updated");
+      assertThat(dmlCol.document("book1").get().get().get("awards")).isNull();
+
+      assertThat(dmlCol.document("book10").get().get().get("status")).isEqualTo("Updated");
+      assertThat(dmlCol.document("book10").get().get().get("awards")).isNull();
+    } else {
+      assertThrows(
+          ExecutionException.class,
+          () -> {
+            firestore
+                .pipeline()
+                .collection(dmlCol.getPath())
+                .where(equal(field("genre"), "Science Fiction"))
+                .removeFields("awards")
+                .update(constant("Updated").as("status"))
+                .execute()
+                .get();
+          });
+    }
+  }
+
+  @Test
+  public void testUpdateWithExpressions() throws Exception {
+    CollectionReference dmlCol = testCollectionWithDocs(bookDocs);
+    if ("NIGHTLY".equals(getTargetBackend())) {
+      List<PipelineResult> results =
+          firestore
+              .pipeline()
+              .collection(dmlCol.getPath())
+              .where(equal(field("__name__").documentId(), "book1"))
+              .update(
+                  com.google.cloud.firestore.pipeline.expressions.Expression.add(
+                          field("rating"), constant(1.0))
+                      .as("rating"))
+              .execute()
+              .get()
+              .getResults();
+
+      assertThat(results).hasSize(1);
+      DocumentSnapshot doc = dmlCol.document("book1").get().get();
+      assertThat(doc.get("rating")).isEqualTo(5.2);
+    } else {
+      assertThrows(
+          ExecutionException.class,
+          () -> {
+            firestore
+                .pipeline()
+                .collection(dmlCol.getPath())
+                .where(equal(field("__name__").documentId(), "book1"))
+                .update(
+                    com.google.cloud.firestore.pipeline.expressions.Expression.add(
+                            field("rating"), constant(1.0))
+                        .as("rating"))
+                .execute()
+                .get();
+          });
+    }
+  }
+
+  @Test
+  public void testUpdateNonExistingDocumentModifiesZeroDocuments() throws Exception {
+    CollectionReference dmlCol = firestore.collection(LocalFirestoreHelper.autoId());
+
+    java.util.Map<String, Object> book = new java.util.HashMap<>();
+    book.put("title", "Non Existing");
+    book.put("__name__", dmlCol.document("nonExisting"));
+
+    if ("NIGHTLY".equals(getTargetBackend())) {
+      List<PipelineResult> results =
+          firestore.pipeline().literals(book).update().execute().get().getResults();
+
+      assertThat(results).hasSize(1);
+      assertThat(results.get(0).getData().get("documents_modified")).isEqualTo(0L);
+    } else {
+      assertThrows(
+          ExecutionException.class,
+          () -> {
+            firestore.pipeline().literals(book).update().execute().get();
+          });
+    }
+  }
+
+  @Test
+  public void testLiteralsStage() throws Exception {
+    java.util.Map<String, Object> data1 = new java.util.HashMap<>();
+    data1.put("foo", "bar");
+    java.util.Map<String, Object> data2 = new java.util.HashMap<>();
+    data2.put("baz", "qux");
+
+    List<PipelineResult> results =
+        firestore.pipeline().literals(data1, data2).execute().get().getResults();
+
+    assertThat(results).hasSize(2);
+    assertThat(results.get(0).getData()).isEqualTo(data1);
+    assertThat(results.get(1).getData()).isEqualTo(data2);
+  }
+
+  @Test
+  public void testLiteralsWithExpressions() throws Exception {
+    java.util.Map<String, Object> data = new java.util.HashMap<>();
+    data.put("base", 10);
+    data.put("doubled", multiply(constant(10), constant(2)));
+
+    List<PipelineResult> results = firestore.pipeline().literals(data).execute().get().getResults();
+
+    assertThat(results).hasSize(1);
+    assertThat(results.get(0).getData().get("base")).isEqualTo(10L);
+    assertThat(results.get(0).getData().get("doubled")).isEqualTo(20L);
   }
 }

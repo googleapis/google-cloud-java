@@ -41,6 +41,7 @@ import com.google.cloud.firestore.pipeline.expressions.Selectable;
 import com.google.cloud.firestore.pipeline.stages.AddFields;
 import com.google.cloud.firestore.pipeline.stages.Aggregate;
 import com.google.cloud.firestore.pipeline.stages.AggregateOptions;
+import com.google.cloud.firestore.pipeline.stages.Delete;
 import com.google.cloud.firestore.pipeline.stages.Distinct;
 import com.google.cloud.firestore.pipeline.stages.FindNearest;
 import com.google.cloud.firestore.pipeline.stages.FindNearestOptions;
@@ -58,6 +59,7 @@ import com.google.cloud.firestore.pipeline.stages.StageUtils;
 import com.google.cloud.firestore.pipeline.stages.Union;
 import com.google.cloud.firestore.pipeline.stages.Unnest;
 import com.google.cloud.firestore.pipeline.stages.UnnestOptions;
+import com.google.cloud.firestore.pipeline.stages.Update;
 import com.google.cloud.firestore.pipeline.stages.Where;
 import com.google.cloud.firestore.telemetry.MetricsUtil.MetricsContext;
 import com.google.cloud.firestore.telemetry.TelemetryConstants;
@@ -996,7 +998,119 @@ public final class Pipeline {
   }
 
   /**
-   * Adds a generic stage to the pipeline.
+   * Performs a delete operation on documents from previous stages.
+   *
+   * <p>Example:
+   *
+   * <pre>{@code
+   * // Delete all documents in the "logs" collection where "status" is "archived"
+   * firestore.pipeline()
+   *     .collection("logs")
+   *     .where(field("status").equal("archived"))
+   *     .delete()
+   *     .execute()
+   *     .get();
+   * }</pre>
+   *
+   * @return A new {@code Pipeline} object with this stage appended to the stage list.
+   */
+  @BetaApi
+  public Pipeline delete() {
+    return append(new Delete());
+  }
+
+  /**
+   * Performs an update operation using documents from previous stages.
+   *
+   * <p>This method updates the documents in place based on the data flowing through the pipeline.
+   * To specify transformations, use {@link #update(Selectable...)}.
+   *
+   * <p>Example 1: Update a collection's schema by adding a new field and removing an old one.
+   *
+   * <pre>{@code
+   * firestore.pipeline()
+   *     .collection("books")
+   *     .addFields(constant("Fiction").as("genre"))
+   *     .removeFields("old_genre")
+   *     .update()
+   *     .execute()
+   *     .get();
+   * }</pre>
+   *
+   * <p>Example 2: Update documents in place with data from literals.
+   *
+   * <pre>{@code
+   * Map<String, Object> updateData = new HashMap<>();
+   * updateData.put("__name__", firestore.collection("books").document("book1"));
+   * updateData.put("status", "Updated");
+   *
+   * firestore.pipeline()
+   *     .literals(updateData)
+   *     .update()
+   *     .execute()
+   *     .get();
+   * }</pre>
+   *
+   * @return A new {@code Pipeline} object with this stage appended to the stage list.
+   */
+  @BetaApi
+  public Pipeline update() {
+    return append(new Update());
+  }
+
+  /**
+   * Performs an update operation using documents from previous stages with specified
+   * transformations.
+   *
+   * <p>Example:
+   *
+   * <pre>{@code
+   * // Update the "status" field to "Discounted" for all books where price > 50
+   * firestore.pipeline()
+   *     .collection("books")
+   *     .where(field("price").greaterThan(50))
+   *     .update(constant("Discounted").as("status"))
+   *     .execute()
+   *     .get();
+   * }</pre>
+   *
+   * @param transformedFields The transformations to apply.
+   * @return A new {@code Pipeline} object with this stage appended to the stage list.
+   */
+  @BetaApi
+  public Pipeline update(Selectable... transformedFields) {
+    return append(new Update().withTransformedFields(transformedFields));
+  }
+
+  /**
+   * Performs an update operation using an {@link Update} stage.
+   *
+   * <p>This method allows you to use a pre-configured {@link Update} stage.
+   *
+   * <p>Example:
+   *
+   * <pre>{@code
+   * Update updateStage = new Update().withTransformedFields(constant("Updated").as("status"));
+   *
+   * firestore.pipeline()
+   *     .collection("books")
+   *     .where(field("title").equal("The Hitchhiker's Guide to the Galaxy"))
+   *     .update(updateStage)
+   *     .execute()
+   *     .get();
+   * }</pre>
+   *
+   * @param update The {@code Update} stage to append.
+   * @return A new {@code Pipeline} object with this stage appended to the stage list.
+   */
+  @BetaApi
+  public Pipeline update(Update update) {
+    return append(update);
+  }
+
+  /**
+   * Performs an insert operation using documents from previous stages. Adds a generic stage to the
+   * pipeline.
    *
    * <p>This method provides a flexible way to extend the pipeline's functionality by adding custom
    * stages. Each generic stage is defined by a unique `name` and a set of `params` that control its
