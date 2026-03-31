@@ -1,5 +1,63 @@
 # Changelog
 
+## [1.83.0](https://github.com/googleapis/google-cloud-java/compare/v1.82.0...v1.83.0) (2026-03-31)
+
+
+### Features
+
+* [backupdr] Adding new workload specific fields for AlloyDB ([6344cb0](https://github.com/googleapis/google-cloud-java/commit/6344cb0ad1ddb788e32834610ff1407f5feabba6))
+* [ces] update public libraries for CES v1 ([6344cb0](https://github.com/googleapis/google-cloud-java/commit/6344cb0ad1ddb788e32834610ff1407f5feabba6))
+* [ces] update public libraries for CES v1beta ([015d9a1](https://github.com/googleapis/google-cloud-java/commit/015d9a13a2332fcb4d8fa7618506af4914f9c333))
+* [databasecenter] A new value `SUB_RESOURCE_TYPE_READ_POOL` is added to enum `SubResourceType` ([6344cb0](https://github.com/googleapis/google-cloud-java/commit/6344cb0ad1ddb788e32834610ff1407f5feabba6))
+* [dataform] add folders and teamFolders related changes to v1 ([6344cb0](https://github.com/googleapis/google-cloud-java/commit/6344cb0ad1ddb788e32834610ff1407f5feabba6))
+* [datamanager] add INVALID_MERCHANT_ID to the ErrorReason enum for when the merchant_id field is not valid ([6344cb0](https://github.com/googleapis/google-cloud-java/commit/6344cb0ad1ddb788e32834610ff1407f5feabba6))
+* [dialogflow-cx] updated v3 dialogflow client libraries with `dtmf_pattern` and `trace_blocks` ([6344cb0](https://github.com/googleapis/google-cloud-java/commit/6344cb0ad1ddb788e32834610ff1407f5feabba6))
+* [dialogflow-cx] updated v3beta1 dialogflow client libraries with `dtmf_pattern` and `trace_blocks` ([015d9a1](https://github.com/googleapis/google-cloud-java/commit/015d9a13a2332fcb4d8fa7618506af4914f9c333))
+* [dialogflow] updated v2 dialogflow client libraries ([6344cb0](https://github.com/googleapis/google-cloud-java/commit/6344cb0ad1ddb788e32834610ff1407f5feabba6))
+* [dialogflow] updated v2beta1 dialogflow client libraries ([6344cb0](https://github.com/googleapis/google-cloud-java/commit/6344cb0ad1ddb788e32834610ff1407f5feabba6))
+* [discoveryengine] Update DataStoreSpec and add BoostSpec to SearchService ([015d9a1](https://github.com/googleapis/google-cloud-java/commit/015d9a13a2332fcb4d8fa7618506af4914f9c333))
+* [netapp] Add ONTAP passthrough APIs ([6344cb0](https://github.com/googleapis/google-cloud-java/commit/6344cb0ad1ddb788e32834610ff1407f5feabba6))
+* [network-security] Publish proto definitions for AuthzPolicy, TlsInspectionPolicy, GatewaySecurityPolicy, GatewaySecurityPolicyRule, and UrlList ([6344cb0](https://github.com/googleapis/google-cloud-java/commit/6344cb0ad1ddb788e32834610ff1407f5feabba6))
+* [securesourcemanager] Add CustomHostConfig to configure custom hostnames for private instances ([6344cb0](https://github.com/googleapis/google-cloud-java/commit/6344cb0ad1ddb788e32834610ff1407f5feabba6))
+* Add getProjectId getter for ComputeEngineCredentials ([#1833](https://github.com/googleapis/google-cloud-java/issues/1833)) ([0a7895a](https://github.com/googleapis/google-cloud-java/commit/0a7895a68c75a4f00ee17594bda98e2bfb5ff445))
+* **bigguery:** add url.domain to span tracing ([#12208](https://github.com/googleapis/google-cloud-java/issues/12208)) ([6f79c2d](https://github.com/googleapis/google-cloud-java/commit/6f79c2d88033642e2dbaa12221dd221825924e46))
+* **bigquery observability:** add version attribute to span tracing ([#12132](https://github.com/googleapis/google-cloud-java/issues/12132)) ([95c3eb8](https://github.com/googleapis/google-cloud-java/commit/95c3eb8f06007c10ee01c3c999a66d1b86baecdc))
+* **bigquery:** add gcp.resource.destination.id for span tracing ([#12134](https://github.com/googleapis/google-cloud-java/issues/12134)) ([5f31ded](https://github.com/googleapis/google-cloud-java/commit/5f31ded65c2ffdbf52ed202ff2a058b5473cfbc6))
+* **bigquery:** add opentelemetry W3C Trace Context to headers ([#12203](https://github.com/googleapis/google-cloud-java/issues/12203)) ([965761a](https://github.com/googleapis/google-cloud-java/commit/965761a386329dfeb3ea7a139c8f3a369d502de3))
+* **bigquery:** add url.full attribute to span tracing ([#12176](https://github.com/googleapis/google-cloud-java/issues/12176)) ([7fdf9ff](https://github.com/googleapis/google-cloud-java/commit/7fdf9ff4f3efccadad98d322d29cab8481d2f657))
+* **bigquery:** add url.template to span tracing ([#12181](https://github.com/googleapis/google-cloud-java/issues/12181)) ([30f8afb](https://github.com/googleapis/google-cloud-java/commit/30f8afb6018bfab8637796fab2782030cadf934f))
+* **bigquery:** added error attributes to span tracing ([#12115](https://github.com/googleapis/google-cloud-java/issues/12115)) ([863d23b](https://github.com/googleapis/google-cloud-java/commit/863d23bec3acf780a3555931ded611ba91fd76eb))
+* Extract resource name from unary requests for tracing ([#4159](https://github.com/googleapis/google-cloud-java/issues/4159)) ([23b16b7](https://github.com/googleapis/google-cloud-java/commit/23b16b71c38737ed35c08d10aeba911a8dec5cfb))
+* **gax:** Actionable Errors Logging API Tracer ([#12202](https://github.com/googleapis/google-cloud-java/issues/12202)) ([8d23279](https://github.com/googleapis/google-cloud-java/commit/8d23279e276e1f5bd77ef9f644cf5bd97b318404))
+* **gax:** add utility for logging actionable errors ([#4144](https://github.com/googleapis/google-cloud-java/issues/4144)) ([54fb8a5](https://github.com/googleapis/google-cloud-java/commit/54fb8a53027d7a5abd5992530ee18046f3b626fc))
+* Switch Eef metrics to using built in open telemetry ([#4385](https://github.com/googleapis/google-cloud-java/issues/4385)) ([759bb22](https://github.com/googleapis/google-cloud-java/commit/759bb22da811ac9cdb6f8720a3e22e0b17c8f4e9))
+
+
+### Bug Fixes
+
+* **ci:** consolidate duplicate yaml keys in github actions workflows ([#12306](https://github.com/googleapis/google-cloud-java/issues/12306)) ([f644a19](https://github.com/googleapis/google-cloud-java/commit/f644a19ebaca9a4c4fb29a113ea8475a0decda5e))
+* fix getLong on NUMERIC ([#2420](https://github.com/googleapis/google-cloud-java/issues/2420)) ([75ec5c2](https://github.com/googleapis/google-cloud-java/commit/75ec5c266d8c9cdb9174dcc3ee7a6f6b8769ddda))
+* Handle null server address ([#12184](https://github.com/googleapis/google-cloud-java/issues/12184)) ([435dd8c](https://github.com/googleapis/google-cloud-java/commit/435dd8cb6b7ccfb1f1228f8613854f3ffca55c63))
+* **o11y:** create noop tracer when artifact ID is not set ([#12307](https://github.com/googleapis/google-cloud-java/issues/12307)) ([630d83d](https://github.com/googleapis/google-cloud-java/commit/630d83dda27779f8b6d46567b08d40097ddf5371))
+* **oauth2:** mask sensitive tokens in HTTP logs ([#1900](https://github.com/googleapis/google-cloud-java/issues/1900)) ([3e4ccb7](https://github.com/googleapis/google-cloud-java/commit/3e4ccb714b19e5feaf15d343cf0179af3668258d))
+* use dynamic tracer name instead of hardcoded gax-java ([#12190](https://github.com/googleapis/google-cloud-java/issues/12190)) ([dea24db](https://github.com/googleapis/google-cloud-java/commit/dea24db0b953c1cc06c8966f642559d2f0e874cf))
+
+
+### Dependencies
+
+* update dependencies.txt for grpc-gcp to 1.9.2 ([#4164](https://github.com/googleapis/google-cloud-java/issues/4164)) ([f336fdc](https://github.com/googleapis/google-cloud-java/commit/f336fdcd5d513b0727d1d23ad6c682a0e165727a))
+
+
+### Reverts
+
+* ci: only run default list of graalvm tests if too many modules are touched ([#12292](https://github.com/googleapis/google-cloud-java/issues/12292)) ([92bcdf4](https://github.com/googleapis/google-cloud-java/commit/92bcdf49dd5f396654d0d59d63d98c90c75bd196))
+
+
+### Documentation
+
+* [dataplex] Change Dataplex library from `ALPHA` to `GA` ([6344cb0](https://github.com/googleapis/google-cloud-java/commit/6344cb0ad1ddb788e32834610ff1407f5feabba6))
+* [run] An existing repeated string field custom_audiences is marked deprecated for WorkerPools API ([015d9a1](https://github.com/googleapis/google-cloud-java/commit/015d9a13a2332fcb4d8fa7618506af4914f9c333))
+
 ## [1.82.0](https://github.com/googleapis/google-cloud-java/compare/v1.81.0...v1.82.0) (2026-03-20)
 
 
