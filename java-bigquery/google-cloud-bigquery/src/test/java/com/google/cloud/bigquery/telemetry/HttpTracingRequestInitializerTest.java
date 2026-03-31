@@ -44,10 +44,11 @@ import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.testing.http.MockHttpTransport;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
-import com.google.cloud.bigquery.BigQueryRetryTracker;
+import com.google.cloud.bigquery.BigQueryRetryHelper;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.context.Context;
 import io.opentelemetry.context.Scope;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
@@ -56,6 +57,7 @@ import io.opentelemetry.sdk.trace.data.SpanData;
 import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -319,13 +321,15 @@ public class HttpTracingRequestInitializerTest {
   @Test
   public void testRetryCountFromContext() throws IOException {
     HttpTransport transport = createTransport();
+    AtomicInteger counter = new AtomicInteger(2);
+    Context context =
+        io.opentelemetry.context.Context.current()
+            .with(BigQueryRetryHelper.RETRY_ATTEMPT_KEY, counter);
 
-    try (BigQueryRetryTracker tracker = new BigQueryRetryTracker()) {
-      BigQueryRetryTracker.get().set(2);
+    try (io.opentelemetry.context.Scope scope = context.makeCurrent()) {
       HttpRequest request = buildGetRequest(transport, initializer, BASE_URL);
       HttpResponse response = request.execute();
       response.disconnect();
-      assertEquals(3, BigQueryRetryTracker.get().get());
     }
 
     spanScope.close();
@@ -336,6 +340,7 @@ public class HttpTracingRequestInitializerTest {
     SpanData span = spans.get(0);
     assertEquals(
         2L, span.getAttributes().get(HttpTracingRequestInitializer.HTTP_REQUEST_RESEND_COUNT));
+    assertEquals(3, counter.get());
   }
 
   @Test
