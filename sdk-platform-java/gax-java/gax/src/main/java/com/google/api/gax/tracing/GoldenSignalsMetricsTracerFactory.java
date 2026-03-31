@@ -76,7 +76,8 @@ public class GoldenSignalsMetricsTracerFactory implements ApiTracerFactory {
 
   @Override
   public boolean needsContext() {
-    return clientLevelTracerContext == null || clientLevelTracerContext.equals(ApiTracerContext.empty());
+    return clientLevelTracerContext == null
+        || clientLevelTracerContext.equals(ApiTracerContext.empty());
   }
 
   @Override

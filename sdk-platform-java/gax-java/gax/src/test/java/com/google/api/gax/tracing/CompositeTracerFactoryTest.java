@@ -63,10 +63,10 @@ class CompositeTracerFactoryTest {
     when(childFactory2.newTracer(parent, spanName, operationType)).thenReturn(tracer2);
 
     ApiTracer compositeTracer = compositeFactory.newTracer(parent, spanName, operationType);
-    
+
     // Verify that the composite delegates operation succeeded to its internal children
     compositeTracer.operationSucceeded();
-    
+
     verify(childFactory1).newTracer(parent, spanName, operationType);
     verify(childFactory2).newTracer(parent, spanName, operationType);
     verify(tracer1).operationSucceeded();
@@ -85,10 +85,10 @@ class CompositeTracerFactoryTest {
     when(childFactory2.newTracer(parent, context)).thenReturn(tracer2);
 
     ApiTracer compositeTracer = compositeFactory.newTracer(parent, context);
-    
+
     // Verify that the composite delegates correctly
     compositeTracer.operationSucceeded();
-    
+
     verify(childFactory1).newTracer(parent, context);
     verify(childFactory2).newTracer(parent, context);
     verify(tracer1).operationSucceeded();
@@ -106,8 +106,9 @@ class CompositeTracerFactoryTest {
     when(childFactory2.withContext(context)).thenReturn(contextualizedFactory2);
 
     ApiTracerFactory newCompositeFactory = compositeFactory.withContext(context);
-    
-    // Create tracer from the new compositeFactory and verify it delegates to the contextualized children
+
+    // Create tracer from the new compositeFactory and verify it delegates to the contextualized
+    // children
     ApiTracer parent = mock(ApiTracer.class);
     ApiTracerContext tracerContext = ApiTracerContext.empty();
 

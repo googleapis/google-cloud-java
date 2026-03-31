@@ -77,7 +77,8 @@ public interface ApiTracerFactory {
    * Indicates whether this factory requires an {@link ApiTracerContext} to be injected via {@link
    * #withContext(ApiTracerContext)} before creating tracers.
    *
-   * @return {@code true} if an {@link ApiTracerContext} should be injected, {@code false} otherwise.
+   * @return {@code true} if an {@link ApiTracerContext} should be injected, {@code false}
+   *     otherwise.
    */
   default boolean needsContext() {
     return false;

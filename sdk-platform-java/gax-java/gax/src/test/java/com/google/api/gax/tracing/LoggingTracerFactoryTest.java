@@ -81,7 +81,7 @@ class LoggingTracerFactoryTest {
   @Test
   void testNeedsContext_returnsFalseWhenContextIsNotEmpty() {
     LoggingTracerFactory factoryWithoutContext = new LoggingTracerFactory();
-    
+
     ApiTracerContext context =
         ApiTracerContext.empty().toBuilder().setServerAddress("address").build();
     LoggingTracerFactory factoryWithContext =

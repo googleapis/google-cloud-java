@@ -36,7 +36,6 @@ import java.util.List;
 /**
  * A composite implementation of {@link ApiTracerFactory} that bundles multiple tracing factories
  * and produces a {@link CompositeTracer} out of them.
- *
  */
 public class CompositeTracerFactory extends BaseApiTracerFactory {
   private final List<ApiTracerFactory> apiTracerFactories;

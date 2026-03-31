@@ -399,8 +399,7 @@ class SpanTracerFactoryTest {
             .setLibraryMetadata(validMetadata)
             .setServerAddress("test-address")
             .build();
-    SpanTracerFactory factoryWithContext =
-        new SpanTracerFactory(openTelemetry, tracer, context);
+    SpanTracerFactory factoryWithContext = new SpanTracerFactory(openTelemetry, tracer, context);
 
     assertThat(factoryWithContext.needsContext()).isFalse();
   }
