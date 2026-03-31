@@ -69,6 +69,7 @@ jobs:
       - name: Test with Java 8
         # Direct goal invocation ("surefire:test") prevents recompiling tests
         run: mvn surefire:test --errors --batch-mode --no-transfer-progress -Dfmt.skip
+        working-directory: sdk-platform-java
       - name: Create issue if previous step fails
         if: ${{ failure() }}
         env:
