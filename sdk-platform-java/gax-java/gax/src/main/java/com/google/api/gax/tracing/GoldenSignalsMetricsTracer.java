@@ -29,11 +29,9 @@
  */
 package com.google.api.gax.tracing;
 
-import static com.google.api.gax.tracing.ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE;
 import static com.google.api.gax.tracing.ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE;
 
 import com.google.api.gax.rpc.StatusCode;
-import com.google.api.gax.tracing.ApiTracerContext.Transport;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Stopwatch;
 import com.google.common.base.Ticker;
@@ -93,13 +91,7 @@ class GoldenSignalsMetricsTracer implements ApiTracer {
 
   @Override
   public void operationFailed(Throwable error) {
-    if (transport == Transport.HTTP) {
-      attributes.put(
-          HTTP_RESPONSE_STATUS_ATTRIBUTE, ObservabilityUtils.extractStatus(error, transport));
-    } else {
-      attributes.put(
-          RPC_RESPONSE_STATUS_ATTRIBUTE, ObservabilityUtils.extractStatus(error, transport));
-    }
+    ObservabilityUtils.populateStatusAttributes(attributes, error, transport);
     metricsRecorder.recordOperationLatency(
         clientRequestTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000_000.0, attributes);
   }

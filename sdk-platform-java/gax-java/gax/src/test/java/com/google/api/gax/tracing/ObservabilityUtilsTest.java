@@ -47,27 +47,23 @@ class ObservabilityUtilsTest {
     ApiException error =
         new ApiException(
             "fake_error", null, new FakeStatusCode(StatusCode.Code.INVALID_ARGUMENT), false);
-    String errorCode =
-        (String) ObservabilityUtils.extractStatus(error, ApiTracerContext.Transport.GRPC);
-    assertThat(errorCode).isEqualTo(StatusCode.Code.INVALID_ARGUMENT.toString());
+    StatusCode.Code errorCode = ObservabilityUtils.extractStatus(error);
+    assertThat(errorCode).isEqualTo(StatusCode.Code.INVALID_ARGUMENT);
   }
 
   @Test
   void testExtractStatus_errorConversion_noError() {
     // test "OK", which corresponds to a "null" error.
-    String successCode =
-        (String) ObservabilityUtils.extractStatus(null, ApiTracerContext.Transport.GRPC);
-    assertThat(successCode).isEqualTo(StatusCode.Code.OK.toString());
+    StatusCode.Code successCode = ObservabilityUtils.extractStatus(null);
+    assertThat(successCode).isEqualTo(StatusCode.Code.OK);
   }
 
   @Test
   void testExtractStatus_errorConversion_unknownException() {
     // test "UNKNOWN"
     Throwable unknownException = new RuntimeException();
-    String errorCode2 =
-        (String)
-            ObservabilityUtils.extractStatus(unknownException, ApiTracerContext.Transport.GRPC);
-    assertThat(errorCode2).isEqualTo(StatusCode.Code.UNKNOWN.toString());
+    StatusCode.Code errorCode2 = ObservabilityUtils.extractStatus(unknownException);
+    assertThat(errorCode2).isEqualTo(StatusCode.Code.UNKNOWN);
   }
 
   @Test
