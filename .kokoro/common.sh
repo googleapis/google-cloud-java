@@ -29,6 +29,10 @@ excluded_modules=(
   'sdk-platform-java/java-showcase'
   'sdk-platform-java/java-showcase-3.21.0'
   'sdk-platform-java/java-showcase-3.25.8'
+  'java-spanner'
+  'java-spanner-jdbc'
+  'google-auth-library-java'
+  'java-storage'
 )
 
 function retry_with_backoff {
@@ -257,7 +261,7 @@ function generate_modified_modules_list() {
     modified_module_list=(${maven_modules[*]})
     echo "Testing the entire monorepo"
   else
-    modules=$(echo "${modified_files}" | grep -E 'java-.*' || true)
+    modules=$(echo "${modified_files}" | grep -E '(google-auth|java)-.*' || true)
     printf "Files in java modules:\n%s\n" "${modules}"
     if [[ -n $modules ]]; then
       modules=$(echo "${modules}" | cut -d '/' -f1 | sort -u)

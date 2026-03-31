@@ -78,3 +78,5 @@ monorepo
 *.tfstate.backup
 *.tfstate.*.backup
 *.tfstate.lock.info
+
+.jqwik-database

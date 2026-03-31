@@ -484,6 +484,7 @@ public class HttpJsonConversationDatasetsStub extends ConversationDatasetsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListConversationDatasetsRequest, ListConversationDatasetsResponse>
         listConversationDatasetsTransportSettings =
@@ -497,6 +498,7 @@ public class HttpJsonConversationDatasetsStub extends ConversationDatasetsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteConversationDatasetRequest, Operation>
         deleteConversationDatasetTransportSettings =
@@ -509,6 +511,7 @@ public class HttpJsonConversationDatasetsStub extends ConversationDatasetsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ImportConversationDataRequest, Operation>
         importConversationDataTransportSettings =
@@ -521,6 +524,7 @@ public class HttpJsonConversationDatasetsStub extends ConversationDatasetsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

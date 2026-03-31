@@ -41,12 +41,13 @@ import com.google.api.gax.rpc.UnavailableException;
 import com.google.api.gax.tracing.ObservabilityAttributes;
 import com.google.api.gax.tracing.SpanTracer;
 import com.google.api.gax.tracing.SpanTracerFactory;
+import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.protobuf.Message;
 import com.google.rpc.Status;
 import com.google.showcase.v1beta1.EchoClient;
 import com.google.showcase.v1beta1.EchoRequest;
+import com.google.showcase.v1beta1.EchoResponse;
 import com.google.showcase.v1beta1.EchoSettings;
-import com.google.showcase.v1beta1.GetUserRequest;
-import com.google.showcase.v1beta1.IdentityClient;
 import com.google.showcase.v1beta1.it.util.TestClientInitializer;
 import com.google.showcase.v1beta1.stub.EchoStub;
 import com.google.showcase.v1beta1.stub.EchoStubSettings;
@@ -58,6 +59,7 @@ import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.sdk.trace.data.SpanData;
 import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -68,6 +70,7 @@ class ITOtelTracing {
   private static final long SHOWCASE_SERVER_PORT = 7469;
   private static final String SHOWCASE_REPO = "googleapis/sdk-platform-java";
   private static final String SHOWCASE_ARTIFACT = "com.google.cloud:gapic-showcase";
+  private static final String SHOWCASE_USER_URL = "http://localhost:7469/v1beta1/echo:echo";
 
   private InMemorySpanExporter spanExporter;
   private OpenTelemetrySdk openTelemetrySdk;
@@ -94,24 +97,20 @@ class ITOtelTracing {
   }
 
   @Test
-  void testTracing_successfulIdentityGetUser_grpc() throws Exception {
+  void testTracing_successfulEcho_grpc() throws Exception {
     SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
 
-    try (IdentityClient client =
-        TestClientInitializer.createGrpcIdentityClientOpentelemetry(tracingFactory)) {
+    try (EchoClient client =
+        TestClientInitializer.createGrpcEchoClientOpentelemetry(tracingFactory)) {
 
-      try {
-        client.getUser(GetUserRequest.newBuilder().setName("users/test-user").build());
-      } catch (Exception e) {
-        // Ignored, the showcase server may not have this user, but trace is still generated.
-      }
+      client.echo(EchoRequest.newBuilder().setContent("tracing-test").build());
 
       List<SpanData> spans = spanExporter.getFinishedSpanItems();
       assertThat(spans).isNotEmpty();
 
       SpanData attemptSpan =
           spans.stream()
-              .filter(span -> span.getName().equals("google.showcase.v1beta1.Identity/GetUser"))
+              .filter(span -> span.getName().equals("google.showcase.v1beta1.Echo/Echo"))
               .findFirst()
               .orElseThrow(() -> new AssertionError("Incorrect span name"));
       assertThat(attemptSpan.getKind()).isEqualTo(SpanKind.CLIENT);
@@ -149,46 +148,30 @@ class ITOtelTracing {
               attemptSpan
                   .getAttributes()
                   .get(AttributeKey.stringKey(ObservabilityAttributes.GRPC_RPC_METHOD_ATTRIBUTE)))
-          .isEqualTo("google.showcase.v1beta1.Identity/GetUser");
-      // {x-version-update-start:gapic-showcase:current}
-      assertThat(
-              attemptSpan
-                  .getAttributes()
-                  .get(AttributeKey.stringKey(ObservabilityAttributes.VERSION_ATTRIBUTE)))
-          .isEqualTo("0.0.0-SNAPSHOT");
+          .isEqualTo("google.showcase.v1beta1.Echo/Echo");
+      assertThat(attemptSpan.getInstrumentationScopeInfo().getName()).isEqualTo(SHOWCASE_ARTIFACT);
       // {x-version-update-end}
-      assertThat(
-              attemptSpan
-                  .getAttributes()
-                  .get(
-                      AttributeKey.stringKey(
-                          ObservabilityAttributes.DESTINATION_RESOURCE_ID_ATTRIBUTE)))
-          .isEqualTo("users/test-user");
     }
   }
 
   @Test
-  void testTracing_successfulIdentityGetUser_httpjson() throws Exception {
+  void testTracing_successfulEcho_httpjson() throws Exception {
     SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
 
-    try (IdentityClient client =
-        TestClientInitializer.createHttpJsonIdentityClientOpentelemetry(tracingFactory)) {
+    try (EchoClient client =
+        TestClientInitializer.createHttpJsonEchoClientOpentelemetry(tracingFactory)) {
 
-      try {
-        client.getUser(GetUserRequest.newBuilder().setName("users/test-user").build());
-      } catch (Exception e) {
-        // Ignored, the showcase server may not have this user, but trace is still generated.
-      }
+      client.echo(EchoRequest.newBuilder().setContent("tracing-test").build());
 
       List<SpanData> spans = spanExporter.getFinishedSpanItems();
       assertThat(spans).isNotEmpty();
 
       SpanData attemptSpan =
           spans.stream()
-              .filter(span -> span.getName().equals("GET v1beta1/{name=users/*}"))
+              .filter(span -> span.getName().equals("POST v1beta1/echo:echo"))
               .findFirst()
               .orElseThrow(
-                  () -> new AssertionError("Attempt span 'GET v1beta1/{name=users/*}' not found"));
+                  () -> new AssertionError("Attempt span 'POST v1beta1/echo:echo' not found"));
       assertThat(attemptSpan.getKind()).isEqualTo(SpanKind.CLIENT);
       assertThat(
               attemptSpan
@@ -219,29 +202,45 @@ class ITOtelTracing {
               attemptSpan
                   .getAttributes()
                   .get(AttributeKey.stringKey(ObservabilityAttributes.HTTP_METHOD_ATTRIBUTE)))
-          .isEqualTo("GET");
+          .isEqualTo("POST");
       assertThat(
               attemptSpan
                   .getAttributes()
                   .get(AttributeKey.stringKey(ObservabilityAttributes.HTTP_URL_TEMPLATE_ATTRIBUTE)))
-          .isEqualTo("v1beta1/{name=users/*}");
+          .isEqualTo("v1beta1/echo:echo");
       assertThat(
               attemptSpan
                   .getAttributes()
-                  .get(
-                      AttributeKey.stringKey(
-                          ObservabilityAttributes.DESTINATION_RESOURCE_ID_ATTRIBUTE)))
-          .isEqualTo("users/test-user");
+                  .get(AttributeKey.stringKey(ObservabilityAttributes.HTTP_URL_FULL_ATTRIBUTE)))
+          .isEqualTo(SHOWCASE_USER_URL);
+      EchoResponse fetchedEcho = EchoResponse.newBuilder().setContent("tracing-test").build();
+      long expectedMagnitude = computeExpectedHttpJsonResponseSize(fetchedEcho);
+      Long observedMagnitude =
+          attemptSpan
+              .getAttributes()
+              .get(AttributeKey.longKey(ObservabilityAttributes.HTTP_RESPONSE_BODY_SIZE));
+      assertThat(observedMagnitude).isNotNull();
+      assertThat(observedMagnitude).isAtLeast((long) (expectedMagnitude * (1 - 0.15)));
+      assertThat(attemptSpan.getInstrumentationScopeInfo().getName()).isEqualTo(SHOWCASE_ARTIFACT);
     }
+  }
+
+  private long computeExpectedHttpJsonResponseSize(Message message)
+      throws InvalidProtocolBufferException {
+    String jsonPayload = com.google.protobuf.util.JsonFormat.printer().print(message);
+    return jsonPayload.getBytes(StandardCharsets.UTF_8).length;
   }
 
   @Test
   void testTracing_retry_grpc() throws Exception {
     final int attempts = 5;
     final StatusCode.Code statusCode = StatusCode.Code.UNAVAILABLE;
-    // A custom EchoClient is used in this test because retries have jitter, and we cannot
-    // predict the number of attempts that are scheduled for an RPC invocation otherwise.
-    // The custom retrySettings limit to a set number of attempts before the call gives up.
+    // A custom EchoClient is used in this test because retries have jitter, and we
+    // cannot
+    // predict the number of attempts that are scheduled for an RPC invocation
+    // otherwise.
+    // The custom retrySettings limit to a set number of attempts before the call
+    // gives up.
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
             .setTotalTimeout(org.threeten.bp.Duration.ofMillis(5000L))
@@ -280,7 +279,8 @@ class ITOtelTracing {
     assertThat(spans).hasSize(attempts); // Expect exactly one span for the successful retry
 
     // This single span represents the successful retry, which has resend_count=1
-    // The first attempt has no resend_count. The subsequent retries will have a resend_count,
+    // The first attempt has no resend_count. The subsequent retries will have a
+    // resend_count,
     // starting from 1.
     List<Long> resendCounts =
         spans.stream()
@@ -307,9 +307,12 @@ class ITOtelTracing {
   void testTracing_retry_httpjson() throws Exception {
     final int attempts = 5;
     final StatusCode.Code statusCode = StatusCode.Code.UNAVAILABLE;
-    // A custom EchoClient is used in this test because retries have jitter, and we cannot
-    // predict the number of attempts that are scheduled for an RPC invocation otherwise.
-    // The custom retrySettings limit to a set number of attempts before the call gives up.
+    // A custom EchoClient is used in this test because retries have jitter, and we
+    // cannot
+    // predict the number of attempts that are scheduled for an RPC invocation
+    // otherwise.
+    // The custom retrySettings limit to a set number of attempts before the call
+    // gives up.
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
             .setTotalTimeout(org.threeten.bp.Duration.ofMillis(5000L))
@@ -354,7 +357,8 @@ class ITOtelTracing {
     assertThat(spans).hasSize(attempts); // Expect exactly one span for the successful retry
 
     // This single span represents the successful retry, which has resend_count=1
-    // The first attempt has no resend_count. The subsequent retries will have a resend_count,
+    // The first attempt has no resend_count. The subsequent retries will have a
+    // resend_count,
     // starting from 1.
     List<Long> resendCounts =
         spans.stream()

@@ -179,6 +179,10 @@ public interface ApiTracer {
   default void responseReceived() {}
   ;
 
+  /** Adds an annotation that a streaming response has been received with its headers. */
+  default void responseHeadersReceived(java.util.Map<String, Object> headers) {}
+  ;
+
   /** Adds an annotation that a streaming request has been sent. */
   default void requestSent() {}
   ;
@@ -190,6 +194,14 @@ public interface ApiTracer {
    * @param requestSize the size of the batch in bytes.
    */
   default void batchRequestSent(long elementCount, long requestSize) {}
+  ;
+
+  /**
+   * Annotates the attempt with the full resolved HTTP URL. Only relevant for HTTP transport.
+   *
+   * @param requestUrl the full URL of the request
+   */
+  default void requestUrlResolved(String requestUrl) {}
   ;
 
   /**

@@ -1933,6 +1933,51 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return The bytes of the pscAllowedProjects at the given index.
      */
     com.google.protobuf.ByteString getPscAllowedProjectsBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Custom host config for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig custom_host_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the customHostConfig field is set.
+     */
+    boolean hasCustomHostConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Custom host config for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig custom_host_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The customHostConfig.
+     */
+    com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+        getCustomHostConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Custom host config for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig custom_host_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfigOrBuilder
+        getCustomHostConfigOrBuilder();
   }
 
   /**
@@ -1987,6 +2032,1335 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
               com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.Builder.class);
     }
 
+    public interface CustomHostConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The custom UI hostname for the instance, e.g.,
+       * "git.source.internal.mycompany.com"
+       * </pre>
+       *
+       * <code>string html = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The html.
+       */
+      java.lang.String getHtml();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The custom UI hostname for the instance, e.g.,
+       * "git.source.internal.mycompany.com"
+       * </pre>
+       *
+       * <code>string html = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for html.
+       */
+      com.google.protobuf.ByteString getHtmlBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The custom API hostname for the instance, e.g.,
+       * "api.source.internal.mycompany.com"
+       * </pre>
+       *
+       * <code>string api = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The api.
+       */
+      java.lang.String getApi();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The custom API hostname for the instance, e.g.,
+       * "api.source.internal.mycompany.com"
+       * </pre>
+       *
+       * <code>string api = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for api.
+       */
+      com.google.protobuf.ByteString getApiBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The custom git ssh hostname for the instance, e.g.,
+       * "ssh.source.internal.mycompany.com"
+       * </pre>
+       *
+       * <code>string git_ssh = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The gitSsh.
+       */
+      java.lang.String getGitSsh();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The custom git ssh hostname for the instance, e.g.,
+       * "ssh.source.internal.mycompany.com"
+       * </pre>
+       *
+       * <code>string git_ssh = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for gitSsh.
+       */
+      com.google.protobuf.ByteString getGitSshBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The custom git http hostname for the instance, e.g.,
+       * "git.source.internal.mycompany.com"
+       * </pre>
+       *
+       * <code>string git_http = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The gitHttp.
+       */
+      java.lang.String getGitHttp();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The custom git http hostname for the instance, e.g.,
+       * "git.source.internal.mycompany.com"
+       * </pre>
+       *
+       * <code>string git_http = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for gitHttp.
+       */
+      com.google.protobuf.ByteString getGitHttpBytes();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Custom host config for the instance.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig}
+     */
+    public static final class CustomHostConfig extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig)
+        CustomHostConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "CustomHostConfig");
+      }
+
+      // Use CustomHostConfig.newBuilder() to construct.
+      private CustomHostConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private CustomHostConfig() {
+        html_ = "";
+        api_ = "";
+        gitSsh_ = "";
+        gitHttp_ = "";
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.securesourcemanager.v1.SecureSourceManagerProto
+            .internal_static_google_cloud_securesourcemanager_v1_Instance_PrivateConfig_CustomHostConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.securesourcemanager.v1.SecureSourceManagerProto
+            .internal_static_google_cloud_securesourcemanager_v1_Instance_PrivateConfig_CustomHostConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+                    .class,
+                com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+                    .Builder.class);
+      }
+
+      public static final int HTML_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object html_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The custom UI hostname for the instance, e.g.,
+       * "git.source.internal.mycompany.com"
+       * </pre>
+       *
+       * <code>string html = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The html.
+       */
+      @java.lang.Override
+      public java.lang.String getHtml() {
+        java.lang.Object ref = html_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          html_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The custom UI hostname for the instance, e.g.,
+       * "git.source.internal.mycompany.com"
+       * </pre>
+       *
+       * <code>string html = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for html.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getHtmlBytes() {
+        java.lang.Object ref = html_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          html_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int API_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object api_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The custom API hostname for the instance, e.g.,
+       * "api.source.internal.mycompany.com"
+       * </pre>
+       *
+       * <code>string api = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The api.
+       */
+      @java.lang.Override
+      public java.lang.String getApi() {
+        java.lang.Object ref = api_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          api_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The custom API hostname for the instance, e.g.,
+       * "api.source.internal.mycompany.com"
+       * </pre>
+       *
+       * <code>string api = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for api.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getApiBytes() {
+        java.lang.Object ref = api_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          api_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int GIT_SSH_FIELD_NUMBER = 3;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object gitSsh_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The custom git ssh hostname for the instance, e.g.,
+       * "ssh.source.internal.mycompany.com"
+       * </pre>
+       *
+       * <code>string git_ssh = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The gitSsh.
+       */
+      @java.lang.Override
+      public java.lang.String getGitSsh() {
+        java.lang.Object ref = gitSsh_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          gitSsh_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The custom git ssh hostname for the instance, e.g.,
+       * "ssh.source.internal.mycompany.com"
+       * </pre>
+       *
+       * <code>string git_ssh = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for gitSsh.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getGitSshBytes() {
+        java.lang.Object ref = gitSsh_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          gitSsh_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int GIT_HTTP_FIELD_NUMBER = 4;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object gitHttp_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The custom git http hostname for the instance, e.g.,
+       * "git.source.internal.mycompany.com"
+       * </pre>
+       *
+       * <code>string git_http = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The gitHttp.
+       */
+      @java.lang.Override
+      public java.lang.String getGitHttp() {
+        java.lang.Object ref = gitHttp_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          gitHttp_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The custom git http hostname for the instance, e.g.,
+       * "git.source.internal.mycompany.com"
+       * </pre>
+       *
+       * <code>string git_http = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for gitHttp.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getGitHttpBytes() {
+        java.lang.Object ref = gitHttp_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          gitHttp_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(html_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, html_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(api_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 2, api_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(gitSsh_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 3, gitSsh_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(gitHttp_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 4, gitHttp_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(html_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, html_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(api_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(2, api_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(gitSsh_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(3, gitSsh_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(gitHttp_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(4, gitHttp_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig other =
+            (com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig) obj;
+
+        if (!getHtml().equals(other.getHtml())) return false;
+        if (!getApi().equals(other.getApi())) return false;
+        if (!getGitSsh().equals(other.getGitSsh())) return false;
+        if (!getGitHttp().equals(other.getGitHttp())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + HTML_FIELD_NUMBER;
+        hash = (53 * hash) + getHtml().hashCode();
+        hash = (37 * hash) + API_FIELD_NUMBER;
+        hash = (53 * hash) + getApi().hashCode();
+        hash = (37 * hash) + GIT_SSH_FIELD_NUMBER;
+        hash = (53 * hash) + getGitSsh().hashCode();
+        hash = (37 * hash) + GIT_HTTP_FIELD_NUMBER;
+        hash = (53 * hash) + getGitHttp().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Custom host config for the instance.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig)
+          com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.securesourcemanager.v1.SecureSourceManagerProto
+              .internal_static_google_cloud_securesourcemanager_v1_Instance_PrivateConfig_CustomHostConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.securesourcemanager.v1.SecureSourceManagerProto
+              .internal_static_google_cloud_securesourcemanager_v1_Instance_PrivateConfig_CustomHostConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+                      .class,
+                  com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          html_ = "";
+          api_ = "";
+          gitSsh_ = "";
+          gitHttp_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.securesourcemanager.v1.SecureSourceManagerProto
+              .internal_static_google_cloud_securesourcemanager_v1_Instance_PrivateConfig_CustomHostConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+            getDefaultInstanceForType() {
+          return com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+            build() {
+          com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+            buildPartial() {
+          com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig result =
+              new com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.html_ = html_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.api_ = api_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.gitSsh_ = gitSsh_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.gitHttp_ = gitHttp_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig) {
+            return mergeFrom(
+                (com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig other) {
+          if (other
+              == com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+                  .getDefaultInstance()) return this;
+          if (!other.getHtml().isEmpty()) {
+            html_ = other.html_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (!other.getApi().isEmpty()) {
+            api_ = other.api_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          if (!other.getGitSsh().isEmpty()) {
+            gitSsh_ = other.gitSsh_;
+            bitField0_ |= 0x00000004;
+            onChanged();
+          }
+          if (!other.getGitHttp().isEmpty()) {
+            gitHttp_ = other.gitHttp_;
+            bitField0_ |= 0x00000008;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    html_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    api_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    gitSsh_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 26
+                case 34:
+                  {
+                    gitHttp_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000008;
+                    break;
+                  } // case 34
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object html_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The custom UI hostname for the instance, e.g.,
+         * "git.source.internal.mycompany.com"
+         * </pre>
+         *
+         * <code>string html = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The html.
+         */
+        public java.lang.String getHtml() {
+          java.lang.Object ref = html_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            html_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The custom UI hostname for the instance, e.g.,
+         * "git.source.internal.mycompany.com"
+         * </pre>
+         *
+         * <code>string html = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for html.
+         */
+        public com.google.protobuf.ByteString getHtmlBytes() {
+          java.lang.Object ref = html_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            html_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The custom UI hostname for the instance, e.g.,
+         * "git.source.internal.mycompany.com"
+         * </pre>
+         *
+         * <code>string html = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The html to set.
+         * @return This builder for chaining.
+         */
+        public Builder setHtml(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          html_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The custom UI hostname for the instance, e.g.,
+         * "git.source.internal.mycompany.com"
+         * </pre>
+         *
+         * <code>string html = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearHtml() {
+          html_ = getDefaultInstance().getHtml();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The custom UI hostname for the instance, e.g.,
+         * "git.source.internal.mycompany.com"
+         * </pre>
+         *
+         * <code>string html = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for html to set.
+         * @return This builder for chaining.
+         */
+        public Builder setHtmlBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          html_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object api_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The custom API hostname for the instance, e.g.,
+         * "api.source.internal.mycompany.com"
+         * </pre>
+         *
+         * <code>string api = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The api.
+         */
+        public java.lang.String getApi() {
+          java.lang.Object ref = api_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            api_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The custom API hostname for the instance, e.g.,
+         * "api.source.internal.mycompany.com"
+         * </pre>
+         *
+         * <code>string api = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for api.
+         */
+        public com.google.protobuf.ByteString getApiBytes() {
+          java.lang.Object ref = api_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            api_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The custom API hostname for the instance, e.g.,
+         * "api.source.internal.mycompany.com"
+         * </pre>
+         *
+         * <code>string api = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The api to set.
+         * @return This builder for chaining.
+         */
+        public Builder setApi(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          api_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The custom API hostname for the instance, e.g.,
+         * "api.source.internal.mycompany.com"
+         * </pre>
+         *
+         * <code>string api = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearApi() {
+          api_ = getDefaultInstance().getApi();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The custom API hostname for the instance, e.g.,
+         * "api.source.internal.mycompany.com"
+         * </pre>
+         *
+         * <code>string api = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for api to set.
+         * @return This builder for chaining.
+         */
+        public Builder setApiBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          api_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object gitSsh_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The custom git ssh hostname for the instance, e.g.,
+         * "ssh.source.internal.mycompany.com"
+         * </pre>
+         *
+         * <code>string git_ssh = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The gitSsh.
+         */
+        public java.lang.String getGitSsh() {
+          java.lang.Object ref = gitSsh_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            gitSsh_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The custom git ssh hostname for the instance, e.g.,
+         * "ssh.source.internal.mycompany.com"
+         * </pre>
+         *
+         * <code>string git_ssh = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for gitSsh.
+         */
+        public com.google.protobuf.ByteString getGitSshBytes() {
+          java.lang.Object ref = gitSsh_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            gitSsh_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The custom git ssh hostname for the instance, e.g.,
+         * "ssh.source.internal.mycompany.com"
+         * </pre>
+         *
+         * <code>string git_ssh = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The gitSsh to set.
+         * @return This builder for chaining.
+         */
+        public Builder setGitSsh(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          gitSsh_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The custom git ssh hostname for the instance, e.g.,
+         * "ssh.source.internal.mycompany.com"
+         * </pre>
+         *
+         * <code>string git_ssh = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearGitSsh() {
+          gitSsh_ = getDefaultInstance().getGitSsh();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The custom git ssh hostname for the instance, e.g.,
+         * "ssh.source.internal.mycompany.com"
+         * </pre>
+         *
+         * <code>string git_ssh = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for gitSsh to set.
+         * @return This builder for chaining.
+         */
+        public Builder setGitSshBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          gitSsh_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object gitHttp_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The custom git http hostname for the instance, e.g.,
+         * "git.source.internal.mycompany.com"
+         * </pre>
+         *
+         * <code>string git_http = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The gitHttp.
+         */
+        public java.lang.String getGitHttp() {
+          java.lang.Object ref = gitHttp_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            gitHttp_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The custom git http hostname for the instance, e.g.,
+         * "git.source.internal.mycompany.com"
+         * </pre>
+         *
+         * <code>string git_http = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for gitHttp.
+         */
+        public com.google.protobuf.ByteString getGitHttpBytes() {
+          java.lang.Object ref = gitHttp_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            gitHttp_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The custom git http hostname for the instance, e.g.,
+         * "git.source.internal.mycompany.com"
+         * </pre>
+         *
+         * <code>string git_http = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The gitHttp to set.
+         * @return This builder for chaining.
+         */
+        public Builder setGitHttp(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          gitHttp_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The custom git http hostname for the instance, e.g.,
+         * "git.source.internal.mycompany.com"
+         * </pre>
+         *
+         * <code>string git_http = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearGitHttp() {
+          gitHttp_ = getDefaultInstance().getGitHttp();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The custom git http hostname for the instance, e.g.,
+         * "git.source.internal.mycompany.com"
+         * </pre>
+         *
+         * <code>string git_http = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for gitHttp to set.
+         * @return This builder for chaining.
+         */
+        public Builder setGitHttpBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          gitHttp_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig)
+      private static final com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig
+              .CustomHostConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig();
+      }
+
+      public static com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<CustomHostConfig> PARSER =
+          new com.google.protobuf.AbstractParser<CustomHostConfig>() {
+            @java.lang.Override
+            public CustomHostConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<CustomHostConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<CustomHostConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
     public static final int IS_PRIVATE_FIELD_NUMBER = 1;
     private boolean isPrivate_ = false;
 
@@ -2265,6 +3639,70 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       return pscAllowedProjects_.getByteString(index);
     }
 
+    public static final int CUSTOM_HOST_CONFIG_FIELD_NUMBER = 7;
+    private com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+        customHostConfig_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Custom host config for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig custom_host_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the customHostConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomHostConfig() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Custom host config for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig custom_host_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The customHostConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+        getCustomHostConfig() {
+      return customHostConfig_ == null
+          ? com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+              .getDefaultInstance()
+          : customHostConfig_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Custom host config for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig custom_host_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfigOrBuilder
+        getCustomHostConfigOrBuilder() {
+      return customHostConfig_ == null
+          ? com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+              .getDefaultInstance()
+          : customHostConfig_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2293,6 +3731,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       }
       for (int i = 0; i < pscAllowedProjects_.size(); i++) {
         com.google.protobuf.GeneratedMessage.writeString(output, 6, pscAllowedProjects_.getRaw(i));
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(7, getCustomHostConfig());
       }
       getUnknownFields().writeTo(output);
     }
@@ -2323,6 +3764,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         size += dataSize;
         size += 1 * getPscAllowedProjectsList().size();
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getCustomHostConfig());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2344,6 +3788,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       if (!getHttpServiceAttachment().equals(other.getHttpServiceAttachment())) return false;
       if (!getSshServiceAttachment().equals(other.getSshServiceAttachment())) return false;
       if (!getPscAllowedProjectsList().equals(other.getPscAllowedProjectsList())) return false;
+      if (hasCustomHostConfig() != other.hasCustomHostConfig()) return false;
+      if (hasCustomHostConfig()) {
+        if (!getCustomHostConfig().equals(other.getCustomHostConfig())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2366,6 +3814,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       if (getPscAllowedProjectsCount() > 0) {
         hash = (37 * hash) + PSC_ALLOWED_PROJECTS_FIELD_NUMBER;
         hash = (53 * hash) + getPscAllowedProjectsList().hashCode();
+      }
+      if (hasCustomHostConfig()) {
+        hash = (37 * hash) + CUSTOM_HOST_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getCustomHostConfig().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -2498,10 +3950,19 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       }
 
       // Construct using com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetCustomHostConfigFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -2513,6 +3974,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         httpServiceAttachment_ = "";
         sshServiceAttachment_ = "";
         pscAllowedProjects_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        customHostConfig_ = null;
+        if (customHostConfigBuilder_ != null) {
+          customHostConfigBuilder_.dispose();
+          customHostConfigBuilder_ = null;
+        }
         return this;
       }
 
@@ -2567,6 +4033,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
           pscAllowedProjects_.makeImmutable();
           result.pscAllowedProjects_ = pscAllowedProjects_;
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.customHostConfig_ =
+              customHostConfigBuilder_ == null
+                  ? customHostConfig_
+                  : customHostConfigBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -2611,6 +4086,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
             pscAllowedProjects_.addAll(other.pscAllowedProjects_);
           }
           onChanged();
+        }
+        if (other.hasCustomHostConfig()) {
+          mergeCustomHostConfig(other.getCustomHostConfig());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -2669,6 +4147,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
                   pscAllowedProjects_.add(s);
                   break;
                 } // case 50
+              case 58:
+                {
+                  input.readMessage(
+                      internalGetCustomHostConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 58
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3338,6 +4823,237 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         return this;
       }
 
+      private com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+          customHostConfig_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig,
+              com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+                  .Builder,
+              com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig
+                  .CustomHostConfigOrBuilder>
+          customHostConfigBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Custom host config for the instance.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig custom_host_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the customHostConfig field is set.
+       */
+      public boolean hasCustomHostConfig() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Custom host config for the instance.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig custom_host_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The customHostConfig.
+       */
+      public com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+          getCustomHostConfig() {
+        if (customHostConfigBuilder_ == null) {
+          return customHostConfig_ == null
+              ? com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+                  .getDefaultInstance()
+              : customHostConfig_;
+        } else {
+          return customHostConfigBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Custom host config for the instance.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig custom_host_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setCustomHostConfig(
+          com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig value) {
+        if (customHostConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          customHostConfig_ = value;
+        } else {
+          customHostConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Custom host config for the instance.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig custom_host_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setCustomHostConfig(
+          com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig.Builder
+              builderForValue) {
+        if (customHostConfigBuilder_ == null) {
+          customHostConfig_ = builderForValue.build();
+        } else {
+          customHostConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Custom host config for the instance.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig custom_host_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeCustomHostConfig(
+          com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig value) {
+        if (customHostConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0)
+              && customHostConfig_ != null
+              && customHostConfig_
+                  != com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+                      .getDefaultInstance()) {
+            getCustomHostConfigBuilder().mergeFrom(value);
+          } else {
+            customHostConfig_ = value;
+          }
+        } else {
+          customHostConfigBuilder_.mergeFrom(value);
+        }
+        if (customHostConfig_ != null) {
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Custom host config for the instance.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig custom_host_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearCustomHostConfig() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        customHostConfig_ = null;
+        if (customHostConfigBuilder_ != null) {
+          customHostConfigBuilder_.dispose();
+          customHostConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Custom host config for the instance.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig custom_host_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig.Builder
+          getCustomHostConfigBuilder() {
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return internalGetCustomHostConfigFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Custom host config for the instance.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig custom_host_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig
+              .CustomHostConfigOrBuilder
+          getCustomHostConfigOrBuilder() {
+        if (customHostConfigBuilder_ != null) {
+          return customHostConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return customHostConfig_ == null
+              ? com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+                  .getDefaultInstance()
+              : customHostConfig_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Custom host config for the instance.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig custom_host_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig,
+              com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+                  .Builder,
+              com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig
+                  .CustomHostConfigOrBuilder>
+          internalGetCustomHostConfigFieldBuilder() {
+        if (customHostConfigBuilder_ == null) {
+          customHostConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig,
+                  com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.CustomHostConfig
+                      .Builder,
+                  com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig
+                      .CustomHostConfigOrBuilder>(
+                  getCustomHostConfig(), getParentForChildren(), isClean());
+          customHostConfig_ = null;
+        }
+        return customHostConfigBuilder_;
+      }
+
       // @@protoc_insertion_point(builder_scope:google.cloud.securesourcemanager.v1.Instance.PrivateConfig)
     }
 
@@ -3956,7 +5672,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. A unique identifier for an instance. The name should be of the
+   * Identifier. A unique identifier for an instance. The name should be of the
    * format:
    * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`
    *
@@ -3970,7 +5686,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    * project_number and location_id combination.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -3991,7 +5707,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. A unique identifier for an instance. The name should be of the
+   * Identifier. A unique identifier for an instance. The name should be of the
    * format:
    * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`
    *
@@ -4005,7 +5721,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    * project_number and location_id combination.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -4158,6 +5874,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Labels as key value pairs.
+   * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * For more information, see [Requirements for
+   * labels](https://cloud.google.com/resource-manager/docs/best-practices-labels#label_encoding).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4182,6 +5902,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Labels as key value pairs.
+   * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * For more information, see [Requirements for
+   * labels](https://cloud.google.com/resource-manager/docs/best-practices-labels#label_encoding).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4196,6 +5920,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Labels as key value pairs.
+   * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * For more information, see [Requirements for
+   * labels](https://cloud.google.com/resource-manager/docs/best-practices-labels#label_encoding).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4217,6 +5945,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Labels as key value pairs.
+   * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * For more information, see [Requirements for
+   * labels](https://cloud.google.com/resource-manager/docs/best-practices-labels#label_encoding).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5204,7 +6936,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A unique identifier for an instance. The name should be of the
+     * Identifier. A unique identifier for an instance. The name should be of the
      * format:
      * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`
      *
@@ -5218,7 +6950,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * project_number and location_id combination.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -5238,7 +6970,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A unique identifier for an instance. The name should be of the
+     * Identifier. A unique identifier for an instance. The name should be of the
      * format:
      * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`
      *
@@ -5252,7 +6984,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * project_number and location_id combination.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -5272,7 +7004,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A unique identifier for an instance. The name should be of the
+     * Identifier. A unique identifier for an instance. The name should be of the
      * format:
      * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`
      *
@@ -5286,7 +7018,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * project_number and location_id combination.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -5305,7 +7037,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A unique identifier for an instance. The name should be of the
+     * Identifier. A unique identifier for an instance. The name should be of the
      * format:
      * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`
      *
@@ -5319,7 +7051,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * project_number and location_id combination.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -5334,7 +7066,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A unique identifier for an instance. The name should be of the
+     * Identifier. A unique identifier for an instance. The name should be of the
      * format:
      * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`
      *
@@ -5348,7 +7080,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * project_number and location_id combination.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -5819,6 +7551,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Labels as key value pairs.
+     * Keys and values can contain only lowercase letters, numeric characters,
+     * underscores, and dashes.
+     * For more information, see [Requirements for
+     * labels](https://cloud.google.com/resource-manager/docs/best-practices-labels#label_encoding).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5843,6 +7579,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Labels as key value pairs.
+     * Keys and values can contain only lowercase letters, numeric characters,
+     * underscores, and dashes.
+     * For more information, see [Requirements for
+     * labels](https://cloud.google.com/resource-manager/docs/best-practices-labels#label_encoding).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5857,6 +7597,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Labels as key value pairs.
+     * Keys and values can contain only lowercase letters, numeric characters,
+     * underscores, and dashes.
+     * For more information, see [Requirements for
+     * labels](https://cloud.google.com/resource-manager/docs/best-practices-labels#label_encoding).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5878,6 +7622,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Labels as key value pairs.
+     * Keys and values can contain only lowercase letters, numeric characters,
+     * underscores, and dashes.
+     * For more information, see [Requirements for
+     * labels](https://cloud.google.com/resource-manager/docs/best-practices-labels#label_encoding).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5905,6 +7653,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Labels as key value pairs.
+     * Keys and values can contain only lowercase letters, numeric characters,
+     * underscores, and dashes.
+     * For more information, see [Requirements for
+     * labels](https://cloud.google.com/resource-manager/docs/best-practices-labels#label_encoding).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5929,6 +7681,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Labels as key value pairs.
+     * Keys and values can contain only lowercase letters, numeric characters,
+     * underscores, and dashes.
+     * For more information, see [Requirements for
+     * labels](https://cloud.google.com/resource-manager/docs/best-practices-labels#label_encoding).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5950,6 +7706,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Labels as key value pairs.
+     * Keys and values can contain only lowercase letters, numeric characters,
+     * underscores, and dashes.
+     * For more information, see [Requirements for
+     * labels](https://cloud.google.com/resource-manager/docs/best-practices-labels#label_encoding).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

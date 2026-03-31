@@ -97,6 +97,9 @@ public class GeneratorsClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllTools(new ArrayList<String>())
             .setSuggestionDedupingConfig(SuggestionDedupingConfig.newBuilder().build())
+            .addAllToolsetTools(new ArrayList<ToolsetTool>())
+            .addAllCesToolSpecs(new ArrayList<CesToolSpec>())
+            .addAllCesAppSpecs(new ArrayList<CesAppSpec>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -152,6 +155,9 @@ public class GeneratorsClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllTools(new ArrayList<String>())
             .setSuggestionDedupingConfig(SuggestionDedupingConfig.newBuilder().build())
+            .addAllToolsetTools(new ArrayList<ToolsetTool>())
+            .addAllCesToolSpecs(new ArrayList<CesToolSpec>())
+            .addAllCesAppSpecs(new ArrayList<CesAppSpec>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -207,6 +213,9 @@ public class GeneratorsClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllTools(new ArrayList<String>())
             .setSuggestionDedupingConfig(SuggestionDedupingConfig.newBuilder().build())
+            .addAllToolsetTools(new ArrayList<ToolsetTool>())
+            .addAllCesToolSpecs(new ArrayList<CesToolSpec>())
+            .addAllCesAppSpecs(new ArrayList<CesAppSpec>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -258,6 +267,9 @@ public class GeneratorsClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllTools(new ArrayList<String>())
             .setSuggestionDedupingConfig(SuggestionDedupingConfig.newBuilder().build())
+            .addAllToolsetTools(new ArrayList<ToolsetTool>())
+            .addAllCesToolSpecs(new ArrayList<CesToolSpec>())
+            .addAllCesAppSpecs(new ArrayList<CesAppSpec>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -489,6 +501,9 @@ public class GeneratorsClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllTools(new ArrayList<String>())
             .setSuggestionDedupingConfig(SuggestionDedupingConfig.newBuilder().build())
+            .addAllToolsetTools(new ArrayList<ToolsetTool>())
+            .addAllCesToolSpecs(new ArrayList<CesToolSpec>())
+            .addAllCesAppSpecs(new ArrayList<CesAppSpec>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -502,6 +517,9 @@ public class GeneratorsClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllTools(new ArrayList<String>())
             .setSuggestionDedupingConfig(SuggestionDedupingConfig.newBuilder().build())
+            .addAllToolsetTools(new ArrayList<ToolsetTool>())
+            .addAllCesToolSpecs(new ArrayList<CesToolSpec>())
+            .addAllCesAppSpecs(new ArrayList<CesAppSpec>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -541,6 +559,9 @@ public class GeneratorsClientHttpJsonTest {
               .setUpdateTime(Timestamp.newBuilder().build())
               .addAllTools(new ArrayList<String>())
               .setSuggestionDedupingConfig(SuggestionDedupingConfig.newBuilder().build())
+              .addAllToolsetTools(new ArrayList<ToolsetTool>())
+              .addAllCesToolSpecs(new ArrayList<CesToolSpec>())
+              .addAllCesAppSpecs(new ArrayList<CesAppSpec>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateGenerator(generator, updateMask);

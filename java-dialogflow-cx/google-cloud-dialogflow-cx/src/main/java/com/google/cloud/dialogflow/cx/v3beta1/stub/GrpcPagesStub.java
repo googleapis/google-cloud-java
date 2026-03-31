@@ -181,6 +181,7 @@ public class GrpcPagesStub extends PagesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetPageRequest, Page> getPageTransportSettings =
         GrpcCallSettings.<GetPageRequest, Page>newBuilder()
@@ -191,6 +192,7 @@ public class GrpcPagesStub extends PagesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreatePageRequest, Page> createPageTransportSettings =
         GrpcCallSettings.<CreatePageRequest, Page>newBuilder()
@@ -201,6 +203,7 @@ public class GrpcPagesStub extends PagesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdatePageRequest, Page> updatePageTransportSettings =
         GrpcCallSettings.<UpdatePageRequest, Page>newBuilder()
@@ -221,6 +224,7 @@ public class GrpcPagesStub extends PagesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

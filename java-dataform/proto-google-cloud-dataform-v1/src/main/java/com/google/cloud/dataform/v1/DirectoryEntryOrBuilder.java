@@ -104,5 +104,42 @@ public interface DirectoryEntryOrBuilder
    */
   com.google.protobuf.ByteString getDirectoryBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Entry with metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.dataform.v1.FilesystemEntryMetadata metadata = 3;</code>
+   *
+   * @return Whether the metadata field is set.
+   */
+  boolean hasMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Entry with metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.dataform.v1.FilesystemEntryMetadata metadata = 3;</code>
+   *
+   * @return The metadata.
+   */
+  com.google.cloud.dataform.v1.FilesystemEntryMetadata getMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Entry with metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.dataform.v1.FilesystemEntryMetadata metadata = 3;</code>
+   */
+  com.google.cloud.dataform.v1.FilesystemEntryMetadataOrBuilder getMetadataOrBuilder();
+
   com.google.cloud.dataform.v1.DirectoryEntry.EntryCase getEntryCase();
 }

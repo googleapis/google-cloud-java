@@ -1063,6 +1063,16 @@ public enum SignalType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SIGNAL_TYPE_EXTENDED_SUPPORT = 102;</code>
    */
   SIGNAL_TYPE_EXTENDED_SUPPORT(102),
+  /**
+   *
+   *
+   * <pre>
+   * Represents a database version nearing end of life.
+   * </pre>
+   *
+   * <code>SIGNAL_TYPE_VERSION_NEARING_END_OF_LIFE = 104;</code>
+   */
+  SIGNAL_TYPE_VERSION_NEARING_END_OF_LIFE(104),
   UNRECOGNIZED(-1),
   ;
 
@@ -2206,6 +2216,17 @@ public enum SignalType implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int SIGNAL_TYPE_EXTENDED_SUPPORT_VALUE = 102;
 
+  /**
+   *
+   *
+   * <pre>
+   * Represents a database version nearing end of life.
+   * </pre>
+   *
+   * <code>SIGNAL_TYPE_VERSION_NEARING_END_OF_LIFE = 104;</code>
+   */
+  public static final int SIGNAL_TYPE_VERSION_NEARING_END_OF_LIFE_VALUE = 104;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -2428,6 +2449,8 @@ public enum SignalType implements com.google.protobuf.ProtocolMessageEnum {
         return SIGNAL_TYPE_RECOMMENDED_MAINTENANCE_POLICIES;
       case 102:
         return SIGNAL_TYPE_EXTENDED_SUPPORT;
+      case 104:
+        return SIGNAL_TYPE_VERSION_NEARING_END_OF_LIFE;
       default:
         return null;
     }

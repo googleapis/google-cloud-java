@@ -997,6 +997,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         GrpcCallSettings.<GetInstanceRequest, Instance>newBuilder()
@@ -1007,6 +1008,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateInstanceRequest, Operation> createInstanceTransportSettings =
         GrpcCallSettings.<CreateInstanceRequest, Operation>newBuilder()
@@ -1017,6 +1019,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteInstanceRequest, Operation> deleteInstanceTransportSettings =
         GrpcCallSettings.<DeleteInstanceRequest, Operation>newBuilder()
@@ -1027,6 +1030,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRepositoriesRequest, ListRepositoriesResponse>
         listRepositoriesTransportSettings =
@@ -1038,6 +1042,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetRepositoryRequest, Repository> getRepositoryTransportSettings =
         GrpcCallSettings.<GetRepositoryRequest, Repository>newBuilder()
@@ -1048,6 +1053,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateRepositoryRequest, Operation> createRepositoryTransportSettings =
         GrpcCallSettings.<CreateRepositoryRequest, Operation>newBuilder()
@@ -1058,6 +1064,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateRepositoryRequest, Operation> updateRepositoryTransportSettings =
         GrpcCallSettings.<UpdateRepositoryRequest, Operation>newBuilder()
@@ -1078,6 +1085,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListHooksRequest, ListHooksResponse> listHooksTransportSettings =
         GrpcCallSettings.<ListHooksRequest, ListHooksResponse>newBuilder()
@@ -1088,6 +1096,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetHookRequest, Hook> getHookTransportSettings =
         GrpcCallSettings.<GetHookRequest, Hook>newBuilder()
@@ -1098,6 +1107,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateHookRequest, Operation> createHookTransportSettings =
         GrpcCallSettings.<CreateHookRequest, Operation>newBuilder()
@@ -1108,6 +1118,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateHookRequest, Operation> updateHookTransportSettings =
         GrpcCallSettings.<UpdateHookRequest, Operation>newBuilder()
@@ -1128,6 +1139,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyRepoTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1138,6 +1150,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyRepoTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -1148,6 +1161,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsRepoTransportSettings =
@@ -1159,6 +1173,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     GrpcCallSettings<CreateBranchRuleRequest, Operation> createBranchRuleTransportSettings =
         GrpcCallSettings.<CreateBranchRuleRequest, Operation>newBuilder()
@@ -1169,6 +1184,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListBranchRulesRequest, ListBranchRulesResponse>
         listBranchRulesTransportSettings =
@@ -1180,6 +1196,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetBranchRuleRequest, BranchRule> getBranchRuleTransportSettings =
         GrpcCallSettings.<GetBranchRuleRequest, BranchRule>newBuilder()
@@ -1190,6 +1207,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateBranchRuleRequest, Operation> updateBranchRuleTransportSettings =
         GrpcCallSettings.<UpdateBranchRuleRequest, Operation>newBuilder()
@@ -1211,6 +1229,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreatePullRequestRequest, Operation> createPullRequestTransportSettings =
         GrpcCallSettings.<CreatePullRequestRequest, Operation>newBuilder()
@@ -1221,6 +1240,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetPullRequestRequest, PullRequest> getPullRequestTransportSettings =
         GrpcCallSettings.<GetPullRequestRequest, PullRequest>newBuilder()
@@ -1231,6 +1251,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListPullRequestsRequest, ListPullRequestsResponse>
         listPullRequestsTransportSettings =
@@ -1242,6 +1263,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdatePullRequestRequest, Operation> updatePullRequestTransportSettings =
         GrpcCallSettings.<UpdatePullRequestRequest, Operation>newBuilder()
@@ -1263,6 +1285,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<OpenPullRequestRequest, Operation> openPullRequestTransportSettings =
         GrpcCallSettings.<OpenPullRequestRequest, Operation>newBuilder()
@@ -1273,6 +1296,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ClosePullRequestRequest, Operation> closePullRequestTransportSettings =
         GrpcCallSettings.<ClosePullRequestRequest, Operation>newBuilder()
@@ -1283,6 +1307,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListPullRequestFileDiffsRequest, ListPullRequestFileDiffsResponse>
         listPullRequestFileDiffsTransportSettings =
@@ -1295,6 +1320,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<FetchTreeRequest, FetchTreeResponse> fetchTreeTransportSettings =
         GrpcCallSettings.<FetchTreeRequest, FetchTreeResponse>newBuilder()
@@ -1305,6 +1331,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("repository", String.valueOf(request.getRepository()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getRepository())
             .build();
     GrpcCallSettings<FetchBlobRequest, FetchBlobResponse> fetchBlobTransportSettings =
         GrpcCallSettings.<FetchBlobRequest, FetchBlobResponse>newBuilder()
@@ -1315,6 +1342,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("repository", String.valueOf(request.getRepository()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getRepository())
             .build();
     GrpcCallSettings<CreateIssueRequest, Operation> createIssueTransportSettings =
         GrpcCallSettings.<CreateIssueRequest, Operation>newBuilder()
@@ -1325,6 +1353,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetIssueRequest, Issue> getIssueTransportSettings =
         GrpcCallSettings.<GetIssueRequest, Issue>newBuilder()
@@ -1335,6 +1364,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListIssuesRequest, ListIssuesResponse> listIssuesTransportSettings =
         GrpcCallSettings.<ListIssuesRequest, ListIssuesResponse>newBuilder()
@@ -1345,6 +1375,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateIssueRequest, Operation> updateIssueTransportSettings =
         GrpcCallSettings.<UpdateIssueRequest, Operation>newBuilder()
@@ -1365,6 +1396,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<OpenIssueRequest, Operation> openIssueTransportSettings =
         GrpcCallSettings.<OpenIssueRequest, Operation>newBuilder()
@@ -1375,6 +1407,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CloseIssueRequest, Operation> closeIssueTransportSettings =
         GrpcCallSettings.<CloseIssueRequest, Operation>newBuilder()
@@ -1385,6 +1418,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetPullRequestCommentRequest, PullRequestComment>
         getPullRequestCommentTransportSettings =
@@ -1396,6 +1430,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListPullRequestCommentsRequest, ListPullRequestCommentsResponse>
         listPullRequestCommentsTransportSettings =
@@ -1408,6 +1443,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreatePullRequestCommentRequest, Operation>
         createPullRequestCommentTransportSettings =
@@ -1419,6 +1455,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdatePullRequestCommentRequest, Operation>
         updatePullRequestCommentTransportSettings =
@@ -1443,6 +1480,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<BatchCreatePullRequestCommentsRequest, Operation>
         batchCreatePullRequestCommentsTransportSettings =
@@ -1454,6 +1492,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ResolvePullRequestCommentsRequest, Operation>
         resolvePullRequestCommentsTransportSettings =
@@ -1465,6 +1504,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UnresolvePullRequestCommentsRequest, Operation>
         unresolvePullRequestCommentsTransportSettings =
@@ -1476,6 +1516,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateIssueCommentRequest, Operation> createIssueCommentTransportSettings =
         GrpcCallSettings.<CreateIssueCommentRequest, Operation>newBuilder()
@@ -1486,6 +1527,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetIssueCommentRequest, IssueComment> getIssueCommentTransportSettings =
         GrpcCallSettings.<GetIssueCommentRequest, IssueComment>newBuilder()
@@ -1496,6 +1538,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListIssueCommentsRequest, ListIssueCommentsResponse>
         listIssueCommentsTransportSettings =
@@ -1507,6 +1550,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateIssueCommentRequest, Operation> updateIssueCommentTransportSettings =
         GrpcCallSettings.<UpdateIssueCommentRequest, Operation>newBuilder()
@@ -1528,6 +1572,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1558,6 +1603,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1568,6 +1614,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1579,6 +1626,7 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listInstancesCallable =

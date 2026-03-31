@@ -755,6 +755,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Volume full name of this backup belongs to.
+   * Either source_volume or ontap_source should be provided.
    * Format:
    * `projects/{projects_id}/locations/{location}/volumes/{volume_id}`
    * </pre>
@@ -781,6 +782,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Volume full name of this backup belongs to.
+   * Either source_volume or ontap_source should be provided.
    * Format:
    * `projects/{projects_id}/locations/{location}/volumes/{volume_id}`
    * </pre>
@@ -2501,6 +2503,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Volume full name of this backup belongs to.
+     * Either source_volume or ontap_source should be provided.
      * Format:
      * `projects/{projects_id}/locations/{location}/volumes/{volume_id}`
      * </pre>
@@ -2526,6 +2529,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Volume full name of this backup belongs to.
+     * Either source_volume or ontap_source should be provided.
      * Format:
      * `projects/{projects_id}/locations/{location}/volumes/{volume_id}`
      * </pre>
@@ -2551,6 +2555,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Volume full name of this backup belongs to.
+     * Either source_volume or ontap_source should be provided.
      * Format:
      * `projects/{projects_id}/locations/{location}/volumes/{volume_id}`
      * </pre>
@@ -2575,6 +2580,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Volume full name of this backup belongs to.
+     * Either source_volume or ontap_source should be provided.
      * Format:
      * `projects/{projects_id}/locations/{location}/volumes/{volume_id}`
      * </pre>
@@ -2595,6 +2601,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Volume full name of this backup belongs to.
+     * Either source_volume or ontap_source should be provided.
      * Format:
      * `projects/{projects_id}/locations/{location}/volumes/{volume_id}`
      * </pre>

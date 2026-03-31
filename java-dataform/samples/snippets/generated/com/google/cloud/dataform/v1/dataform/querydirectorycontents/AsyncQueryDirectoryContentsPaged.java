@@ -18,6 +18,7 @@ package com.google.cloud.dataform.v1.samples;
 
 // [START dataform_v1_generated_Dataform_QueryDirectoryContents_Paged_async]
 import com.google.cloud.dataform.v1.DataformClient;
+import com.google.cloud.dataform.v1.DirectoryContentsView;
 import com.google.cloud.dataform.v1.DirectoryEntry;
 import com.google.cloud.dataform.v1.QueryDirectoryContentsRequest;
 import com.google.cloud.dataform.v1.QueryDirectoryContentsResponse;
@@ -45,6 +46,7 @@ public class AsyncQueryDirectoryContentsPaged {
               .setPath("path3433509")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setView(DirectoryContentsView.forNumber(0))
               .build();
       while (true) {
         QueryDirectoryContentsResponse response =

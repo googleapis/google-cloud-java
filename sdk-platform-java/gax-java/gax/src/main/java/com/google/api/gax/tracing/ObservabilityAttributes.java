@@ -85,6 +85,9 @@ public class ObservabilityAttributes {
   /** The url template of the request (e.g. /v1/{name}:access). */
   public static final String URL_TEMPLATE_ATTRIBUTE = "url.template";
 
+  /** Size of the response body in bytes. */
+  public static final String HTTP_RESPONSE_BODY_SIZE = "http.response.body.size";
+
   /** The resend count of the request. Only used in HTTP transport. */
   public static final String HTTP_RESEND_COUNT_ATTRIBUTE = "http.request.resend_count";
 
@@ -93,4 +96,16 @@ public class ObservabilityAttributes {
 
   /** The destination resource id of the request (e.g. projects/p/locations/l/topics/t). */
   public static final String DESTINATION_RESOURCE_ID_ATTRIBUTE = "gcp.resource.destination.id";
+
+  /** The full URL of the HTTP request, with sensitive query parameters redacted. */
+  public static final String HTTP_URL_FULL_ATTRIBUTE = "url.full";
+
+  /** The type of error that occurred (e.g., from google.rpc.ErrorInfo.reason). */
+  public static final String ERROR_TYPE_ATTRIBUTE = "error.type";
+
+  /** The domain of the error (e.g., from google.rpc.ErrorInfo.domain). */
+  public static final String ERROR_DOMAIN_ATTRIBUTE = "gcp.errors.domain";
+
+  /** The prefix for error metadata (e.g., from google.rpc.ErrorInfo.metadata). */
+  public static final String ERROR_METADATA_ATTRIBUTE_PREFIX = "gcp.errors.metadata.";
 }

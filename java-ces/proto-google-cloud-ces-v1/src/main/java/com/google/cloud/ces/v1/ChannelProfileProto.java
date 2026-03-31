@@ -61,7 +61,7 @@ public final class ChannelProfileProto extends com.google.protobuf.GeneratedFile
           + "Deployment\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
           + "\014display_name\030\010 \001(\tB\003\340A\002\022:\n"
-          + "\013app_version\030\002 \001(\tB%\340A\002\372A\037\n"
+          + "\013app_version\030\002 \001(\tB%\340A\001\372A\037\n"
           + "\035ces.googleapis.com/AppVersion\022A\n"
           + "\017channel_profile\030\003"
           + " \001(\0132#.google.cloud.ces.v1.ChannelProfileB\003\340A\002\0224\n"

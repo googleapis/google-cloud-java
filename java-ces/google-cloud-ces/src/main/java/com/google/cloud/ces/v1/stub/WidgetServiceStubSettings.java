@@ -315,6 +315,7 @@ public class WidgetServiceStubSettings extends StubSettings<WidgetServiceStubSet
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-ces")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

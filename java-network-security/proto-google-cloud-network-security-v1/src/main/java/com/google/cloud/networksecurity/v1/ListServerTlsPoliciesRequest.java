@@ -208,6 +208,29 @@ public final class ListServerTlsPoliciesRequest extends com.google.protobuf.Gene
     }
   }
 
+  public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 4;
+  private boolean returnPartialSuccess_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Setting this field to `true` will opt the request into returning
+   * the resources that are reachable, and into including the names of those
+   * that were unreachable in the [ListServerTlsPoliciesResponse.unreachable]
+   * field. This can only be `true` when reading across collections e.g. when
+   * `parent` is set to `"projects/example/locations/-"`.
+   * </pre>
+   *
+   * <code>bool return_partial_success = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The returnPartialSuccess.
+   */
+  @java.lang.Override
+  public boolean getReturnPartialSuccess() {
+    return returnPartialSuccess_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -231,6 +254,9 @@ public final class ListServerTlsPoliciesRequest extends com.google.protobuf.Gene
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, pageToken_);
     }
+    if (returnPartialSuccess_ != false) {
+      output.writeBool(4, returnPartialSuccess_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -248,6 +274,9 @@ public final class ListServerTlsPoliciesRequest extends com.google.protobuf.Gene
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, pageToken_);
+    }
+    if (returnPartialSuccess_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, returnPartialSuccess_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -268,6 +297,7 @@ public final class ListServerTlsPoliciesRequest extends com.google.protobuf.Gene
     if (!getParent().equals(other.getParent())) return false;
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
+    if (getReturnPartialSuccess() != other.getReturnPartialSuccess()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -285,6 +315,8 @@ public final class ListServerTlsPoliciesRequest extends com.google.protobuf.Gene
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
+    hash = (37 * hash) + RETURN_PARTIAL_SUCCESS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnPartialSuccess());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -429,6 +461,7 @@ public final class ListServerTlsPoliciesRequest extends com.google.protobuf.Gene
       parent_ = "";
       pageSize_ = 0;
       pageToken_ = "";
+      returnPartialSuccess_ = false;
       return this;
     }
 
@@ -476,6 +509,9 @@ public final class ListServerTlsPoliciesRequest extends com.google.protobuf.Gene
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.pageToken_ = pageToken_;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.returnPartialSuccess_ = returnPartialSuccess_;
+      }
     }
 
     @java.lang.Override
@@ -505,6 +541,9 @@ public final class ListServerTlsPoliciesRequest extends com.google.protobuf.Gene
         pageToken_ = other.pageToken_;
         bitField0_ |= 0x00000004;
         onChanged();
+      }
+      if (other.getReturnPartialSuccess() != false) {
+        setReturnPartialSuccess(other.getReturnPartialSuccess());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -550,6 +589,12 @@ public final class ListServerTlsPoliciesRequest extends com.google.protobuf.Gene
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 32:
+              {
+                returnPartialSuccess_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -873,6 +918,74 @@ public final class ListServerTlsPoliciesRequest extends com.google.protobuf.Gene
       checkByteStringIsUtf8(value);
       pageToken_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private boolean returnPartialSuccess_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Setting this field to `true` will opt the request into returning
+     * the resources that are reachable, and into including the names of those
+     * that were unreachable in the [ListServerTlsPoliciesResponse.unreachable]
+     * field. This can only be `true` when reading across collections e.g. when
+     * `parent` is set to `"projects/example/locations/-"`.
+     * </pre>
+     *
+     * <code>bool return_partial_success = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The returnPartialSuccess.
+     */
+    @java.lang.Override
+    public boolean getReturnPartialSuccess() {
+      return returnPartialSuccess_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Setting this field to `true` will opt the request into returning
+     * the resources that are reachable, and into including the names of those
+     * that were unreachable in the [ListServerTlsPoliciesResponse.unreachable]
+     * field. This can only be `true` when reading across collections e.g. when
+     * `parent` is set to `"projects/example/locations/-"`.
+     * </pre>
+     *
+     * <code>bool return_partial_success = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The returnPartialSuccess to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReturnPartialSuccess(boolean value) {
+
+      returnPartialSuccess_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Setting this field to `true` will opt the request into returning
+     * the resources that are reachable, and into including the names of those
+     * that were unreachable in the [ListServerTlsPoliciesResponse.unreachable]
+     * field. This can only be `true` when reading across collections e.g. when
+     * `parent` is set to `"projects/example/locations/-"`.
+     * </pre>
+     *
+     * <code>bool return_partial_success = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReturnPartialSuccess() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      returnPartialSuccess_ = false;
       onChanged();
       return this;
     }

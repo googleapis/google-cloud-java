@@ -204,11 +204,13 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Full name of the backup resource.
-   * Format:
+   * Format for standard backup:
    * projects/{project}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}
+   * Format for BackupDR backup:
+   * projects/{project}/locations/{location}/backupVaults/{backup_vault}/dataSources/{data_source}/backups/{backup}
    * </pre>
    *
-   * <code>string source_backup = 2;</code>
+   * <code>string source_backup = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return Whether the sourceBackup field is set.
    */
@@ -221,11 +223,13 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Full name of the backup resource.
-   * Format:
+   * Format for standard backup:
    * projects/{project}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}
+   * Format for BackupDR backup:
+   * projects/{project}/locations/{location}/backupVaults/{backup_vault}/dataSources/{data_source}/backups/{backup}
    * </pre>
    *
-   * <code>string source_backup = 2;</code>
+   * <code>string source_backup = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The sourceBackup.
    */
@@ -251,11 +255,13 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Full name of the backup resource.
-   * Format:
+   * Format for standard backup:
    * projects/{project}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}
+   * Format for BackupDR backup:
+   * projects/{project}/locations/{location}/backupVaults/{backup_vault}/dataSources/{data_source}/backups/{backup}
    * </pre>
    *
-   * <code>string source_backup = 2;</code>
+   * <code>string source_backup = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for sourceBackup.
    */
@@ -808,11 +814,13 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Full name of the backup resource.
-     * Format:
+     * Format for standard backup:
      * projects/{project}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}
+     * Format for BackupDR backup:
+     * projects/{project}/locations/{location}/backupVaults/{backup_vault}/dataSources/{data_source}/backups/{backup}
      * </pre>
      *
-     * <code>string source_backup = 2;</code>
+     * <code>string source_backup = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return Whether the sourceBackup field is set.
      */
@@ -826,11 +834,13 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Full name of the backup resource.
-     * Format:
+     * Format for standard backup:
      * projects/{project}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}
+     * Format for BackupDR backup:
+     * projects/{project}/locations/{location}/backupVaults/{backup_vault}/dataSources/{data_source}/backups/{backup}
      * </pre>
      *
-     * <code>string source_backup = 2;</code>
+     * <code>string source_backup = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The sourceBackup.
      */
@@ -857,11 +867,13 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Full name of the backup resource.
-     * Format:
+     * Format for standard backup:
      * projects/{project}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}
+     * Format for BackupDR backup:
+     * projects/{project}/locations/{location}/backupVaults/{backup_vault}/dataSources/{data_source}/backups/{backup}
      * </pre>
      *
-     * <code>string source_backup = 2;</code>
+     * <code>string source_backup = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for sourceBackup.
      */
@@ -888,11 +900,13 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Full name of the backup resource.
-     * Format:
+     * Format for standard backup:
      * projects/{project}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}
+     * Format for BackupDR backup:
+     * projects/{project}/locations/{location}/backupVaults/{backup_vault}/dataSources/{data_source}/backups/{backup}
      * </pre>
      *
-     * <code>string source_backup = 2;</code>
+     * <code>string source_backup = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The sourceBackup to set.
      * @return This builder for chaining.
@@ -912,11 +926,13 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Full name of the backup resource.
-     * Format:
+     * Format for standard backup:
      * projects/{project}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}
+     * Format for BackupDR backup:
+     * projects/{project}/locations/{location}/backupVaults/{backup_vault}/dataSources/{data_source}/backups/{backup}
      * </pre>
      *
-     * <code>string source_backup = 2;</code>
+     * <code>string source_backup = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -934,11 +950,13 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Full name of the backup resource.
-     * Format:
+     * Format for standard backup:
      * projects/{project}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}
+     * Format for BackupDR backup:
+     * projects/{project}/locations/{location}/backupVaults/{backup_vault}/dataSources/{data_source}/backups/{backup}
      * </pre>
      *
-     * <code>string source_backup = 2;</code>
+     * <code>string source_backup = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for sourceBackup to set.
      * @return This builder for chaining.

@@ -32,6 +32,8 @@ package com.google.api.gax.tracing;
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -88,6 +90,66 @@ class SpanTracerTest {
   }
 
   @Test
+  void testResponseHeadersReceived_setsContentLengthAttribute() {
+    spanTracer.attemptStarted(new Object(), 1);
+
+    java.util.Map<String, Object> headers = new java.util.HashMap<>();
+    headers.put("Content-Length", 12345L);
+    spanTracer.responseHeadersReceived(headers);
+
+    verify(span).setAttribute(ObservabilityAttributes.HTTP_RESPONSE_BODY_SIZE, 12345L);
+  }
+
+  @Test
+  void testResponseHeadersReceived_variousContentLengthStringFormats() {
+    spanTracer.attemptStarted(new Object(), 1);
+
+    java.util.Map<String, Object> headers = new java.util.HashMap<>();
+    headers.put("content-length", "6789");
+    spanTracer.responseHeadersReceived(headers);
+
+    verify(span).setAttribute(ObservabilityAttributes.HTTP_RESPONSE_BODY_SIZE, 6789L);
+  }
+
+  @Test
+  void testResponseHeadersReceived_missingContentLength() {
+    spanTracer.attemptStarted(new Object(), 1);
+
+    java.util.Map<String, Object> headers = new java.util.HashMap<>();
+    headers.put("Other-Header", "123");
+    spanTracer.responseHeadersReceived(headers);
+
+    verify(span, org.mockito.Mockito.never())
+        .setAttribute(
+            org.mockito.ArgumentMatchers.eq(ObservabilityAttributes.HTTP_RESPONSE_BODY_SIZE),
+            org.mockito.ArgumentMatchers.anyLong());
+  }
+
+  @Test
+  void testResponseHeadersReceived_badFormat() {
+    spanTracer.attemptStarted(new Object(), 1);
+
+    java.util.Map<String, Object> headers = new java.util.HashMap<>();
+    headers.put("Content-Length", "12X3");
+    spanTracer.responseHeadersReceived(headers);
+
+    verify(span, org.mockito.Mockito.never())
+        .setAttribute(
+            org.mockito.ArgumentMatchers.eq(ObservabilityAttributes.HTTP_RESPONSE_BODY_SIZE),
+            org.mockito.ArgumentMatchers.anyLong());
+  }
+
+  @Test
+  void testResponseHeadersReceived_listContentLength() {
+    spanTracer.attemptStarted(new Object(), 1);
+
+    java.util.Map<String, Object> headers = new java.util.HashMap<>();
+    headers.put("Content-Length", java.util.Arrays.asList(98765L));
+    spanTracer.responseHeadersReceived(headers);
+
+    verify(span).setAttribute(ObservabilityAttributes.HTTP_RESPONSE_BODY_SIZE, 98765L);
+  }
+
   void testAttemptStarted_noRetryAttributes_grpc() {
     ApiTracerContext grpcContext =
         ApiTracerContext.newBuilder()
@@ -185,5 +247,29 @@ class SpanTracerTest {
             io.opentelemetry.api.common.AttributeKey.longKey(
                 ObservabilityAttributes.HTTP_RESEND_COUNT_ATTRIBUTE),
             5L);
+  }
+
+  @Test
+  void testRequestUrlResolved_setsAttribute() {
+    spanTracer.attemptStarted(new Object(), 1);
+
+    String rawUrl = "https://example.com?api_key=secret";
+    spanTracer.requestUrlResolved(rawUrl);
+
+    verify(span)
+        .setAttribute(
+            ObservabilityAttributes.HTTP_URL_FULL_ATTRIBUTE,
+            "https://example.com?api_key=REDACTED");
+  }
+
+  @Test
+  void testRequestUrlResolved_badUrl_notSet() {
+    spanTracer.attemptStarted(new Object(), 1);
+
+    String rawUrl = "htps:::://the-example";
+    spanTracer.requestUrlResolved(rawUrl);
+
+    verify(span, never())
+        .setAttribute(eq(ObservabilityAttributes.HTTP_URL_FULL_ATTRIBUTE), anyString());
   }
 }

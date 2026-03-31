@@ -1407,4 +1407,50 @@ public interface VolumeOrBuilder
    * </code>
    */
   com.google.cloud.netapp.v1.BlockDeviceOrBuilder getBlockDevicesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If this volume is a clone, this field contains details about
+   * the clone.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.Volume.CloneDetails clone_details = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the cloneDetails field is set.
+   */
+  boolean hasCloneDetails();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If this volume is a clone, this field contains details about
+   * the clone.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.Volume.CloneDetails clone_details = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The cloneDetails.
+   */
+  com.google.cloud.netapp.v1.Volume.CloneDetails getCloneDetails();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If this volume is a clone, this field contains details about
+   * the clone.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.Volume.CloneDetails clone_details = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.netapp.v1.Volume.CloneDetailsOrBuilder getCloneDetailsOrBuilder();
 }

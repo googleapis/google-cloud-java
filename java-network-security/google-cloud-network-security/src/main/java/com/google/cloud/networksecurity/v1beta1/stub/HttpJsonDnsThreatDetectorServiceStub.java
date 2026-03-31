@@ -525,6 +525,7 @@ public class HttpJsonDnsThreatDetectorServiceStub extends DnsThreatDetectorServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDnsThreatDetectorRequest, DnsThreatDetector>
         getDnsThreatDetectorTransportSettings =
@@ -537,6 +538,7 @@ public class HttpJsonDnsThreatDetectorServiceStub extends DnsThreatDetectorServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateDnsThreatDetectorRequest, DnsThreatDetector>
         createDnsThreatDetectorTransportSettings =
@@ -549,6 +551,7 @@ public class HttpJsonDnsThreatDetectorServiceStub extends DnsThreatDetectorServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateDnsThreatDetectorRequest, DnsThreatDetector>
         updateDnsThreatDetectorTransportSettings =
@@ -575,6 +578,7 @@ public class HttpJsonDnsThreatDetectorServiceStub extends DnsThreatDetectorServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -609,6 +613,7 @@ public class HttpJsonDnsThreatDetectorServiceStub extends DnsThreatDetectorServi
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -620,6 +625,7 @@ public class HttpJsonDnsThreatDetectorServiceStub extends DnsThreatDetectorServi
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -632,6 +638,7 @@ public class HttpJsonDnsThreatDetectorServiceStub extends DnsThreatDetectorServi
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listDnsThreatDetectorsCallable =

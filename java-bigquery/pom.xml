@@ -162,5 +162,12 @@
         <module>benchmark</module>
       </modules>
     </profile>
+    <!-- skip tests if bulkTests profile is enabled (when testing the rest of the monorepo) -->
+    <profile>
+      <id>bulkTests</id>
+      <properties>
+        <skipTests>true</skipTests>
+      </properties>
+    </profile>
   </profiles>
 </project>

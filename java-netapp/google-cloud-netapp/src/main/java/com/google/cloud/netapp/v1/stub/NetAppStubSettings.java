@@ -92,6 +92,15 @@ import com.google.cloud.netapp.v1.DeleteStoragePoolRequest;
 import com.google.cloud.netapp.v1.DeleteVolumeRequest;
 import com.google.cloud.netapp.v1.EncryptVolumesRequest;
 import com.google.cloud.netapp.v1.EstablishPeeringRequest;
+import com.google.cloud.netapp.v1.EstablishVolumePeeringRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapDeleteRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapDeleteResponse;
+import com.google.cloud.netapp.v1.ExecuteOntapGetRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapGetResponse;
+import com.google.cloud.netapp.v1.ExecuteOntapPatchRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapPatchResponse;
+import com.google.cloud.netapp.v1.ExecuteOntapPostRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapPostResponse;
 import com.google.cloud.netapp.v1.GetActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.GetBackupPolicyRequest;
 import com.google.cloud.netapp.v1.GetBackupRequest;
@@ -284,6 +293,10 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
   private final UnaryCallSettings<RevertVolumeRequest, Operation> revertVolumeSettings;
   private final OperationCallSettings<RevertVolumeRequest, Volume, OperationMetadata>
       revertVolumeOperationSettings;
+  private final UnaryCallSettings<EstablishVolumePeeringRequest, Operation>
+      establishVolumePeeringSettings;
+  private final OperationCallSettings<EstablishVolumePeeringRequest, Volume, OperationMetadata>
+      establishVolumePeeringOperationSettings;
   private final PagedCallSettings<
           ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
       listSnapshotsSettings;
@@ -434,6 +447,14 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
   private final UnaryCallSettings<DeleteHostGroupRequest, Operation> deleteHostGroupSettings;
   private final OperationCallSettings<DeleteHostGroupRequest, Empty, OperationMetadata>
       deleteHostGroupOperationSettings;
+  private final UnaryCallSettings<ExecuteOntapPostRequest, ExecuteOntapPostResponse>
+      executeOntapPostSettings;
+  private final UnaryCallSettings<ExecuteOntapGetRequest, ExecuteOntapGetResponse>
+      executeOntapGetSettings;
+  private final UnaryCallSettings<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>
+      executeOntapDeleteSettings;
+  private final UnaryCallSettings<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
+      executeOntapPatchSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -1216,6 +1237,18 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     return revertVolumeOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to establishVolumePeering. */
+  public UnaryCallSettings<EstablishVolumePeeringRequest, Operation>
+      establishVolumePeeringSettings() {
+    return establishVolumePeeringSettings;
+  }
+
+  /** Returns the object with the settings used for calls to establishVolumePeering. */
+  public OperationCallSettings<EstablishVolumePeeringRequest, Volume, OperationMetadata>
+      establishVolumePeeringOperationSettings() {
+    return establishVolumePeeringOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listSnapshots. */
   public PagedCallSettings<ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
       listSnapshotsSettings() {
@@ -1710,6 +1743,30 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     return deleteHostGroupOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to executeOntapPost. */
+  public UnaryCallSettings<ExecuteOntapPostRequest, ExecuteOntapPostResponse>
+      executeOntapPostSettings() {
+    return executeOntapPostSettings;
+  }
+
+  /** Returns the object with the settings used for calls to executeOntapGet. */
+  public UnaryCallSettings<ExecuteOntapGetRequest, ExecuteOntapGetResponse>
+      executeOntapGetSettings() {
+    return executeOntapGetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to executeOntapDelete. */
+  public UnaryCallSettings<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>
+      executeOntapDeleteSettings() {
+    return executeOntapDeleteSettings;
+  }
+
+  /** Returns the object with the settings used for calls to executeOntapPatch. */
+  public UnaryCallSettings<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
+      executeOntapPatchSettings() {
+    return executeOntapPatchSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1857,6 +1914,9 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     deleteVolumeOperationSettings = settingsBuilder.deleteVolumeOperationSettings().build();
     revertVolumeSettings = settingsBuilder.revertVolumeSettings().build();
     revertVolumeOperationSettings = settingsBuilder.revertVolumeOperationSettings().build();
+    establishVolumePeeringSettings = settingsBuilder.establishVolumePeeringSettings().build();
+    establishVolumePeeringOperationSettings =
+        settingsBuilder.establishVolumePeeringOperationSettings().build();
     listSnapshotsSettings = settingsBuilder.listSnapshotsSettings().build();
     getSnapshotSettings = settingsBuilder.getSnapshotSettings().build();
     createSnapshotSettings = settingsBuilder.createSnapshotSettings().build();
@@ -1960,6 +2020,10 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     updateHostGroupOperationSettings = settingsBuilder.updateHostGroupOperationSettings().build();
     deleteHostGroupSettings = settingsBuilder.deleteHostGroupSettings().build();
     deleteHostGroupOperationSettings = settingsBuilder.deleteHostGroupOperationSettings().build();
+    executeOntapPostSettings = settingsBuilder.executeOntapPostSettings().build();
+    executeOntapGetSettings = settingsBuilder.executeOntapGetSettings().build();
+    executeOntapDeleteSettings = settingsBuilder.executeOntapDeleteSettings().build();
+    executeOntapPatchSettings = settingsBuilder.executeOntapPatchSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -1969,6 +2033,7 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-netapp")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 
@@ -2020,6 +2085,11 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     private final UnaryCallSettings.Builder<RevertVolumeRequest, Operation> revertVolumeSettings;
     private final OperationCallSettings.Builder<RevertVolumeRequest, Volume, OperationMetadata>
         revertVolumeOperationSettings;
+    private final UnaryCallSettings.Builder<EstablishVolumePeeringRequest, Operation>
+        establishVolumePeeringSettings;
+    private final OperationCallSettings.Builder<
+            EstablishVolumePeeringRequest, Volume, OperationMetadata>
+        establishVolumePeeringOperationSettings;
     private final PagedCallSettings.Builder<
             ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
         listSnapshotsSettings;
@@ -2218,6 +2288,14 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
         deleteHostGroupSettings;
     private final OperationCallSettings.Builder<DeleteHostGroupRequest, Empty, OperationMetadata>
         deleteHostGroupOperationSettings;
+    private final UnaryCallSettings.Builder<ExecuteOntapPostRequest, ExecuteOntapPostResponse>
+        executeOntapPostSettings;
+    private final UnaryCallSettings.Builder<ExecuteOntapGetRequest, ExecuteOntapGetResponse>
+        executeOntapGetSettings;
+    private final UnaryCallSettings.Builder<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>
+        executeOntapDeleteSettings;
+    private final UnaryCallSettings.Builder<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
+        executeOntapPatchSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -2295,6 +2373,8 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       deleteVolumeOperationSettings = OperationCallSettings.newBuilder();
       revertVolumeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       revertVolumeOperationSettings = OperationCallSettings.newBuilder();
+      establishVolumePeeringSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      establishVolumePeeringOperationSettings = OperationCallSettings.newBuilder();
       listSnapshotsSettings = PagedCallSettings.newBuilder(LIST_SNAPSHOTS_PAGE_STR_FACT);
       getSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -2383,6 +2463,10 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       updateHostGroupOperationSettings = OperationCallSettings.newBuilder();
       deleteHostGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteHostGroupOperationSettings = OperationCallSettings.newBuilder();
+      executeOntapPostSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      executeOntapGetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      executeOntapDeleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      executeOntapPatchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -2401,6 +2485,7 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               updateVolumeSettings,
               deleteVolumeSettings,
               revertVolumeSettings,
+              establishVolumePeeringSettings,
               listSnapshotsSettings,
               getSnapshotSettings,
               createSnapshotSettings,
@@ -2454,6 +2539,10 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               createHostGroupSettings,
               updateHostGroupSettings,
               deleteHostGroupSettings,
+              executeOntapPostSettings,
+              executeOntapGetSettings,
+              executeOntapDeleteSettings,
+              executeOntapPatchSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -2486,6 +2575,9 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       deleteVolumeOperationSettings = settings.deleteVolumeOperationSettings.toBuilder();
       revertVolumeSettings = settings.revertVolumeSettings.toBuilder();
       revertVolumeOperationSettings = settings.revertVolumeOperationSettings.toBuilder();
+      establishVolumePeeringSettings = settings.establishVolumePeeringSettings.toBuilder();
+      establishVolumePeeringOperationSettings =
+          settings.establishVolumePeeringOperationSettings.toBuilder();
       listSnapshotsSettings = settings.listSnapshotsSettings.toBuilder();
       getSnapshotSettings = settings.getSnapshotSettings.toBuilder();
       createSnapshotSettings = settings.createSnapshotSettings.toBuilder();
@@ -2582,6 +2674,10 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       updateHostGroupOperationSettings = settings.updateHostGroupOperationSettings.toBuilder();
       deleteHostGroupSettings = settings.deleteHostGroupSettings.toBuilder();
       deleteHostGroupOperationSettings = settings.deleteHostGroupOperationSettings.toBuilder();
+      executeOntapPostSettings = settings.executeOntapPostSettings.toBuilder();
+      executeOntapGetSettings = settings.executeOntapGetSettings.toBuilder();
+      executeOntapDeleteSettings = settings.executeOntapDeleteSettings.toBuilder();
+      executeOntapPatchSettings = settings.executeOntapPatchSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -2600,6 +2696,7 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               updateVolumeSettings,
               deleteVolumeSettings,
               revertVolumeSettings,
+              establishVolumePeeringSettings,
               listSnapshotsSettings,
               getSnapshotSettings,
               createSnapshotSettings,
@@ -2653,6 +2750,10 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               createHostGroupSettings,
               updateHostGroupSettings,
               deleteHostGroupSettings,
+              executeOntapPostSettings,
+              executeOntapGetSettings,
+              executeOntapDeleteSettings,
+              executeOntapPatchSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -2746,6 +2847,11 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .revertVolumeSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .establishVolumePeeringSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .listSnapshotsSettings()
@@ -3013,6 +3119,26 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .executeOntapPostSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .executeOntapGetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .executeOntapDeleteSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .executeOntapPatchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -3221,6 +3347,30 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
                   .<RevertVolumeRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Volume.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .establishVolumePeeringOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<EstablishVolumePeeringRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Volume.class))
@@ -4203,6 +4353,18 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       return revertVolumeOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to establishVolumePeering. */
+    public UnaryCallSettings.Builder<EstablishVolumePeeringRequest, Operation>
+        establishVolumePeeringSettings() {
+      return establishVolumePeeringSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to establishVolumePeering. */
+    public OperationCallSettings.Builder<EstablishVolumePeeringRequest, Volume, OperationMetadata>
+        establishVolumePeeringOperationSettings() {
+      return establishVolumePeeringOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listSnapshots. */
     public PagedCallSettings.Builder<
             ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
@@ -4713,6 +4875,30 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     public OperationCallSettings.Builder<DeleteHostGroupRequest, Empty, OperationMetadata>
         deleteHostGroupOperationSettings() {
       return deleteHostGroupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to executeOntapPost. */
+    public UnaryCallSettings.Builder<ExecuteOntapPostRequest, ExecuteOntapPostResponse>
+        executeOntapPostSettings() {
+      return executeOntapPostSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to executeOntapGet. */
+    public UnaryCallSettings.Builder<ExecuteOntapGetRequest, ExecuteOntapGetResponse>
+        executeOntapGetSettings() {
+      return executeOntapGetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to executeOntapDelete. */
+    public UnaryCallSettings.Builder<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>
+        executeOntapDeleteSettings() {
+      return executeOntapDeleteSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to executeOntapPatch. */
+    public UnaryCallSettings.Builder<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
+        executeOntapPatchSettings() {
+      return executeOntapPatchSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

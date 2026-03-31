@@ -260,7 +260,9 @@ public interface HookOrBuilder
    * Output only. Unique identifier of the hook.
    * </pre>
    *
-   * <code>string uid = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The uid.
    */
@@ -273,7 +275,9 @@ public interface HookOrBuilder
    * Output only. Unique identifier of the hook.
    * </pre>
    *
-   * <code>string uid = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for uid.
    */

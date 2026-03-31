@@ -221,6 +221,7 @@ public class GrpcVersionsStub extends VersionsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetVersionRequest, Version> getVersionTransportSettings =
         GrpcCallSettings.<GetVersionRequest, Version>newBuilder()
@@ -231,6 +232,7 @@ public class GrpcVersionsStub extends VersionsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateVersionRequest, Operation> createVersionTransportSettings =
         GrpcCallSettings.<CreateVersionRequest, Operation>newBuilder()
@@ -241,6 +243,7 @@ public class GrpcVersionsStub extends VersionsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateVersionRequest, Version> updateVersionTransportSettings =
         GrpcCallSettings.<UpdateVersionRequest, Version>newBuilder()
@@ -261,6 +264,7 @@ public class GrpcVersionsStub extends VersionsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<LoadVersionRequest, Operation> loadVersionTransportSettings =
         GrpcCallSettings.<LoadVersionRequest, Operation>newBuilder()
@@ -271,6 +275,7 @@ public class GrpcVersionsStub extends VersionsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CompareVersionsRequest, CompareVersionsResponse>
         compareVersionsTransportSettings =
@@ -282,6 +287,7 @@ public class GrpcVersionsStub extends VersionsStub {
                       builder.add("base_version", String.valueOf(request.getBaseVersion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getBaseVersion())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

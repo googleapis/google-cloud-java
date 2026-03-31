@@ -109,13 +109,13 @@ public interface ExecuteToolResponseOrBuilder
    *
    *
    * <pre>
-   * Required. The tool execution result in JSON object format.
+   * The tool execution result in JSON object format.
    * Use "output" key to specify tool response and "error" key to specify
    * error details (if any). If "output" and "error" keys are not specified,
    * then whole "response" is treated as tool execution result.
    * </pre>
    *
-   * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.protobuf.Struct response = 2;</code>
    *
    * @return Whether the response field is set.
    */
@@ -125,13 +125,13 @@ public interface ExecuteToolResponseOrBuilder
    *
    *
    * <pre>
-   * Required. The tool execution result in JSON object format.
+   * The tool execution result in JSON object format.
    * Use "output" key to specify tool response and "error" key to specify
    * error details (if any). If "output" and "error" keys are not specified,
    * then whole "response" is treated as tool execution result.
    * </pre>
    *
-   * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.protobuf.Struct response = 2;</code>
    *
    * @return The response.
    */
@@ -141,15 +141,52 @@ public interface ExecuteToolResponseOrBuilder
    *
    *
    * <pre>
-   * Required. The tool execution result in JSON object format.
+   * The tool execution result in JSON object format.
    * Use "output" key to specify tool response and "error" key to specify
    * error details (if any). If "output" and "error" keys are not specified,
    * then whole "response" is treated as tool execution result.
    * </pre>
    *
-   * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.protobuf.Struct response = 2;</code>
    */
   com.google.protobuf.StructOrBuilder getResponseOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The variable values at the end of the tool execution.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct variables = 4;</code>
+   *
+   * @return Whether the variables field is set.
+   */
+  boolean hasVariables();
+
+  /**
+   *
+   *
+   * <pre>
+   * The variable values at the end of the tool execution.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct variables = 4;</code>
+   *
+   * @return The variables.
+   */
+  com.google.protobuf.Struct getVariables();
+
+  /**
+   *
+   *
+   * <pre>
+   * The variable values at the end of the tool execution.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct variables = 4;</code>
+   */
+  com.google.protobuf.StructOrBuilder getVariablesOrBuilder();
 
   com.google.cloud.ces.v1.ExecuteToolResponse.ToolIdentifierCase getToolIdentifierCase();
 }

@@ -195,6 +195,7 @@ public class GrpcGeneratorsStub extends GeneratorsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetGeneratorRequest, Generator> getGeneratorTransportSettings =
         GrpcCallSettings.<GetGeneratorRequest, Generator>newBuilder()
@@ -205,6 +206,7 @@ public class GrpcGeneratorsStub extends GeneratorsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateGeneratorRequest, Generator> createGeneratorTransportSettings =
         GrpcCallSettings.<CreateGeneratorRequest, Generator>newBuilder()
@@ -215,6 +217,7 @@ public class GrpcGeneratorsStub extends GeneratorsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateGeneratorRequest, Generator> updateGeneratorTransportSettings =
         GrpcCallSettings.<UpdateGeneratorRequest, Generator>newBuilder()
@@ -235,6 +238,7 @@ public class GrpcGeneratorsStub extends GeneratorsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
