@@ -49,10 +49,10 @@ jobs:
       - name: Install modules to local maven
         run: |
           mvn install -T 1C -DskipTests -ntp -B
-          cd java-showcase
+          cd sdk-platform-java/java-showcase
           mvn install -T 1C -DskipTests -ntp -B
       - name: Parse showcase version
-        working-directory: java-showcase/gapic-showcase
+        working-directory: sdk-platform-java/java-showcase/gapic-showcase
         run: echo "SHOWCASE_VERSION=$(mvn help:evaluate -Dexpression=gapic-showcase.version -q -DforceStdout)" >> "$GITHUB_ENV"
       - name: Install showcase server
         run: |
@@ -79,6 +79,7 @@ jobs:
               -Dsonar.projectKey=googleapis_gapic-generator-java \
               -Dsonar.organization=googleapis \
               -Dsonar.host.url=https://sonarcloud.io
+        working-directory: sdk-platform-java
       - name: Build and analyze Showcase Integration Tests Coverage
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
@@ -93,3 +94,4 @@ jobs:
               -Dsonar.organization=googleapis \
               -Dsonar.host.url=https://sonarcloud.io \
               -Dsonar.projectName=java_showcase_integration_tests
+        working-directory: sdk-platform-java
