@@ -38,7 +38,7 @@ jobs:
             - '**/*.java'
             - '**/pom.xml'
           ci:
-            - '.github/workflows/**'
+            - '.github/workflows/ci.yaml'
             - '.kokoro/**'
   units:
     runs-on: ubuntu-latest
@@ -63,12 +63,13 @@ jobs:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
     - run: .kokoro/build.sh
-      if: ${{ needs.bulk-filter.outputs.src == 'true' }}
+      if: ${{ needs.bulk-filter.outputs.src == 'true' || needs.bulk-filter.outputs.ci == 'true' }}
       env:
         JOB_TYPE: test
         JOB_NAME: units-${{matrix.java}}
   units-8-runtime:
     runs-on: ubuntu-latest
+    needs: bulk-filter
     name: "units (8)"
     steps:
     - name: Get current week within the year
@@ -95,7 +96,7 @@ jobs:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
     - run: .kokoro/build.sh
-      if: ${{ needs.bulk-filter.outputs.src == 'true' }}
+      if: ${{ needs.bulk-filter.outputs.src == 'true' || needs.bulk-filter.outputs.ci == 'true' }}
       shell: bash      
       env:
         JOB_TYPE: test
