@@ -26,7 +26,6 @@
     <module>java-shared-dependencies</module>
     <module>sdk-platform-java-config</module>
   </modules>
-
   <!-- Do not deploy the aggregator POM -->
   <build>
     <plugins>
