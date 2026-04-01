@@ -798,7 +798,7 @@ libraries:
   release_level: stable
   GAPICs:
   - proto_path: google/cloud/datacatalog/lineage/v1
-  - proto_path: google/cloud/datacatalog/lineage/configmanagement/v1/
+  - proto_path: google/cloud/datacatalog/lineage/configmanagement/v1
 - api_shortname: datamanager
   name_pretty: Data Manager API
   product_documentation: https://developers.google.com/data-manager
