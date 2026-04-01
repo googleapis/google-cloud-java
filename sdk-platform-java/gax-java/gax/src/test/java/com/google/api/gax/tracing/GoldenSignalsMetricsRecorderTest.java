@@ -34,6 +34,7 @@ import static com.google.api.gax.tracing.GoldenSignalsMetricsRecorder.CLIENT_REQ
 import static com.google.api.gax.tracing.GoldenSignalsMetricsRecorder.CLIENT_REQUEST_DURATION_METRIC_NAME;
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.common.collect.ImmutableMap;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.common.AttributeKey;
@@ -65,7 +66,7 @@ class GoldenSignalsMetricsRecorderTest {
     recorder =
         GoldenSignalsMetricsRecorder.create(
             openTelemetry,
-            com.google.api.gax.rpc.LibraryMetadata.newBuilder()
+            LibraryMetadata.newBuilder()
                 .setArtifactName(ARTIFACT_NAME)
                 .setVersion("1.2.3")
                 .build());
@@ -130,8 +131,8 @@ class GoldenSignalsMetricsRecorderTest {
 
   @Test
   void create_shouldReturnNull_whenArtifactNameIsNull() {
-    com.google.api.gax.rpc.LibraryMetadata metadata =
-        com.google.api.gax.rpc.LibraryMetadata.newBuilder().setVersion("1.0.0").build();
+    LibraryMetadata metadata =
+        LibraryMetadata.newBuilder().setVersion("1.0.0").build();
     GoldenSignalsMetricsRecorder actual =
         GoldenSignalsMetricsRecorder.create(OpenTelemetry.noop(), metadata);
     assertThat(actual).isNull();
@@ -139,8 +140,8 @@ class GoldenSignalsMetricsRecorderTest {
 
   @Test
   void create_shouldReturnNull_whenArtifactNameIsEmpty() {
-    com.google.api.gax.rpc.LibraryMetadata metadata =
-        com.google.api.gax.rpc.LibraryMetadata.newBuilder().setArtifactName("").build();
+    LibraryMetadata metadata =
+        LibraryMetadata.newBuilder().setArtifactName("").build();
     GoldenSignalsMetricsRecorder actual =
         GoldenSignalsMetricsRecorder.create(OpenTelemetry.noop(), metadata);
     assertThat(actual).isNull();

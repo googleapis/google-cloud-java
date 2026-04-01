@@ -70,7 +70,7 @@ class GoldenSignalsMetricsTracerTest {
         new GoldenSignalsMetricsTracer(
             GoldenSignalsMetricsRecorder.create(
                 openTelemetry,
-                com.google.api.gax.rpc.LibraryMetadata.newBuilder()
+                LibraryMetadata.newBuilder()
                     .setArtifactName(ARTIFACT_NAME)
                     .setVersion("1.2.3")
                     .build()),
