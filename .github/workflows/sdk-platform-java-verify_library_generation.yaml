@@ -43,7 +43,7 @@ jobs:
           git checkout -b "${head_ref}" fork/${head_ref}
           changed_directories="$(git diff --name-only "fork/${head_ref}" "origin/${base_ref}")"
         fi
-        if [[ ${changed_directories} =~ "hermetic_build/" ]] || [[ ${changed_directories} =~ ".cloudbuild/library_generation/" ]]; then
+        if [[ ${changed_directories} =~ "sdk-platform-java/hermetic_build/" ]] || [[ ${changed_directories} =~ "sdk-platform-java/.cloudbuild/library_generation/" ]]; then
           echo "should_run=true" >> $GITHUB_OUTPUT
         else
           echo "should_run=false" >> $GITHUB_OUTPUT
@@ -58,6 +58,9 @@ jobs:
     needs: [filter, should-run-library-generation-tests]
     if: needs.filter.outputs.library == 'true' && needs.should-run-library-generation-tests.outputs.should_run == 'true'
     runs-on: ubuntu-22.04
+    defaults:
+      run:
+        working-directory: sdk-platform-java
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
@@ -86,12 +89,15 @@ jobs:
     needs: [filter, should-run-library-generation-tests]
     if: needs.filter.outputs.library == 'true' && needs.should-run-library-generation-tests.outputs.should_run == 'true'
     runs-on: ubuntu-22.04
+    defaults:
+      run:
+        working-directory: sdk-platform-java
     steps:
     - uses: actions/checkout@v4
     - name: Run ShellCheck
       uses: ludeeus/action-shellcheck@2.0.0
       with:
-        scandir: 'hermetic_build'
+        scandir: 'sdk-platform-java/hermetic_build'
         format: tty
         severity: error
         ignore_paths: 
@@ -100,6 +106,9 @@ jobs:
     needs: [filter, should-run-library-generation-tests]
     if: needs.filter.outputs.library == 'true' && needs.should-run-library-generation-tests.outputs.should_run == 'true'
     runs-on: ubuntu-22.04
+    defaults:
+      run:
+        working-directory: sdk-platform-java
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
