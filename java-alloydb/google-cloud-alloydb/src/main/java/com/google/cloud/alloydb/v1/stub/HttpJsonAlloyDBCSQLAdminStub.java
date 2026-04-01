@@ -263,6 +263,7 @@ public class HttpJsonAlloyDBCSQLAdminStub extends AlloyDBCSQLAdminStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

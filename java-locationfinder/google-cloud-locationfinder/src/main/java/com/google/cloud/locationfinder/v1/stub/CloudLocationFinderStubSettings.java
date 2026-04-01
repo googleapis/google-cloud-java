@@ -392,6 +392,7 @@ public class CloudLocationFinderStubSettings extends StubSettings<CloudLocationF
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-locationfinder")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

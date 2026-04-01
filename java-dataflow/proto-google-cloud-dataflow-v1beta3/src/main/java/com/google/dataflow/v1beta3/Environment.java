@@ -524,10 +524,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A description of the process that generated the request.
+   * Optional. A description of the process that generated the request.
    * </pre>
    *
-   * <code>.google.protobuf.Struct user_agent = 5;</code>
+   * <code>.google.protobuf.Struct user_agent = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the userAgent field is set.
    */
@@ -540,10 +540,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A description of the process that generated the request.
+   * Optional. A description of the process that generated the request.
    * </pre>
    *
-   * <code>.google.protobuf.Struct user_agent = 5;</code>
+   * <code>.google.protobuf.Struct user_agent = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The userAgent.
    */
@@ -556,10 +556,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A description of the process that generated the request.
+   * Optional. A description of the process that generated the request.
    * </pre>
    *
-   * <code>.google.protobuf.Struct user_agent = 5;</code>
+   * <code>.google.protobuf.Struct user_agent = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getUserAgentOrBuilder() {
@@ -1194,6 +1194,25 @@ public final class Environment extends com.google.protobuf.GeneratedMessage
     return result == null ? com.google.dataflow.v1beta3.StreamingMode.UNRECOGNIZED : result;
   }
 
+  public static final int USE_PUBLIC_IPS_FIELD_NUMBER = 20;
+  private boolean usePublicIps_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. True when any worker pool that uses public IPs is present.
+   * </pre>
+   *
+   * <code>bool use_public_ips = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The usePublicIps.
+   */
+  @java.lang.Override
+  public boolean getUsePublicIps() {
+    return usePublicIps_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1267,6 +1286,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessage
     if (streamingMode_
         != com.google.dataflow.v1beta3.StreamingMode.STREAMING_MODE_UNSPECIFIED.getNumber()) {
       output.writeEnum(19, streamingMode_);
+    }
+    if (usePublicIps_ != false) {
+      output.writeBool(20, usePublicIps_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1350,6 +1372,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessage
         != com.google.dataflow.v1beta3.StreamingMode.STREAMING_MODE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(19, streamingMode_);
     }
+    if (usePublicIps_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(20, usePublicIps_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1400,6 +1425,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessage
     if (getUseStreamingEngineResourceBasedBilling()
         != other.getUseStreamingEngineResourceBasedBilling()) return false;
     if (streamingMode_ != other.streamingMode_) return false;
+    if (getUsePublicIps() != other.getUsePublicIps()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1467,6 +1493,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessage
             + com.google.protobuf.Internal.hashBoolean(getUseStreamingEngineResourceBasedBilling());
     hash = (37 * hash) + STREAMING_MODE_FIELD_NUMBER;
     hash = (53 * hash) + streamingMode_;
+    hash = (37 * hash) + USE_PUBLIC_IPS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUsePublicIps());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1666,6 +1694,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessage
       }
       useStreamingEngineResourceBasedBilling_ = false;
       streamingMode_ = 0;
+      usePublicIps_ = false;
       return this;
     }
 
@@ -1783,6 +1812,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
         result.streamingMode_ = streamingMode_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.usePublicIps_ = usePublicIps_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1908,6 +1940,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessage
       }
       if (other.streamingMode_ != 0) {
         setStreamingModeValue(other.getStreamingModeValue());
+      }
+      if (other.getUsePublicIps() != false) {
+        setUsePublicIps(other.getUsePublicIps());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2062,6 +2097,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00040000;
                 break;
               } // case 152
+            case 160:
+              {
+                usePublicIps_ = input.readBool();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 160
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3316,10 +3357,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A description of the process that generated the request.
+     * Optional. A description of the process that generated the request.
      * </pre>
      *
-     * <code>.google.protobuf.Struct user_agent = 5;</code>
+     * <code>.google.protobuf.Struct user_agent = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the userAgent field is set.
      */
@@ -3331,10 +3373,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A description of the process that generated the request.
+     * Optional. A description of the process that generated the request.
      * </pre>
      *
-     * <code>.google.protobuf.Struct user_agent = 5;</code>
+     * <code>.google.protobuf.Struct user_agent = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The userAgent.
      */
@@ -3350,10 +3393,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A description of the process that generated the request.
+     * Optional. A description of the process that generated the request.
      * </pre>
      *
-     * <code>.google.protobuf.Struct user_agent = 5;</code>
+     * <code>.google.protobuf.Struct user_agent = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUserAgent(com.google.protobuf.Struct value) {
       if (userAgentBuilder_ == null) {
@@ -3373,10 +3417,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A description of the process that generated the request.
+     * Optional. A description of the process that generated the request.
      * </pre>
      *
-     * <code>.google.protobuf.Struct user_agent = 5;</code>
+     * <code>.google.protobuf.Struct user_agent = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUserAgent(com.google.protobuf.Struct.Builder builderForValue) {
       if (userAgentBuilder_ == null) {
@@ -3393,10 +3438,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A description of the process that generated the request.
+     * Optional. A description of the process that generated the request.
      * </pre>
      *
-     * <code>.google.protobuf.Struct user_agent = 5;</code>
+     * <code>.google.protobuf.Struct user_agent = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeUserAgent(com.google.protobuf.Struct value) {
       if (userAgentBuilder_ == null) {
@@ -3421,10 +3467,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A description of the process that generated the request.
+     * Optional. A description of the process that generated the request.
      * </pre>
      *
-     * <code>.google.protobuf.Struct user_agent = 5;</code>
+     * <code>.google.protobuf.Struct user_agent = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearUserAgent() {
       bitField0_ = (bitField0_ & ~0x00000040);
@@ -3441,10 +3488,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A description of the process that generated the request.
+     * Optional. A description of the process that generated the request.
      * </pre>
      *
-     * <code>.google.protobuf.Struct user_agent = 5;</code>
+     * <code>.google.protobuf.Struct user_agent = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.Struct.Builder getUserAgentBuilder() {
       bitField0_ |= 0x00000040;
@@ -3456,10 +3504,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A description of the process that generated the request.
+     * Optional. A description of the process that generated the request.
      * </pre>
      *
-     * <code>.google.protobuf.Struct user_agent = 5;</code>
+     * <code>.google.protobuf.Struct user_agent = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.StructOrBuilder getUserAgentOrBuilder() {
       if (userAgentBuilder_ != null) {
@@ -3473,10 +3522,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A description of the process that generated the request.
+     * Optional. A description of the process that generated the request.
      * </pre>
      *
-     * <code>.google.protobuf.Struct user_agent = 5;</code>
+     * <code>.google.protobuf.Struct user_agent = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Struct,
@@ -5251,6 +5301,62 @@ public final class Environment extends com.google.protobuf.GeneratedMessage
     public Builder clearStreamingMode() {
       bitField0_ = (bitField0_ & ~0x00040000);
       streamingMode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean usePublicIps_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. True when any worker pool that uses public IPs is present.
+     * </pre>
+     *
+     * <code>bool use_public_ips = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The usePublicIps.
+     */
+    @java.lang.Override
+    public boolean getUsePublicIps() {
+      return usePublicIps_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. True when any worker pool that uses public IPs is present.
+     * </pre>
+     *
+     * <code>bool use_public_ips = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The usePublicIps to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUsePublicIps(boolean value) {
+
+      usePublicIps_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. True when any worker pool that uses public IPs is present.
+     * </pre>
+     *
+     * <code>bool use_public_ips = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUsePublicIps() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      usePublicIps_ = false;
       onChanged();
       return this;
     }

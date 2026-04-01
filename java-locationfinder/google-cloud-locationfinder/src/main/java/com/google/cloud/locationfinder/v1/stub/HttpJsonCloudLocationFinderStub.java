@@ -236,6 +236,7 @@ public class HttpJsonCloudLocationFinderStub extends CloudLocationFinderStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetCloudLocationRequest, CloudLocation> getCloudLocationTransportSettings =
         HttpJsonCallSettings.<GetCloudLocationRequest, CloudLocation>newBuilder()
@@ -247,6 +248,7 @@ public class HttpJsonCloudLocationFinderStub extends CloudLocationFinderStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<SearchCloudLocationsRequest, SearchCloudLocationsResponse>
         searchCloudLocationsTransportSettings =
@@ -260,6 +262,7 @@ public class HttpJsonCloudLocationFinderStub extends CloudLocationFinderStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.listCloudLocationsCallable =

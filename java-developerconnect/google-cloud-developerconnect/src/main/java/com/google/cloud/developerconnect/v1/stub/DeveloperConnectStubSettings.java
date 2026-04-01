@@ -1086,6 +1086,7 @@ public class DeveloperConnectStubSettings extends StubSettings<DeveloperConnectS
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-developerconnect")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

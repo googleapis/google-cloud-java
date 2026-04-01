@@ -459,6 +459,7 @@ public class HttpJsonMarketingplatformAdminServiceStub extends Marketingplatform
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListOrganizationsRequest, ListOrganizationsResponse>
         listOrganizationsTransportSettings =
@@ -480,6 +481,7 @@ public class HttpJsonMarketingplatformAdminServiceStub extends Marketingplatform
                       builder.add("organization", String.valueOf(request.getOrganization()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getOrganization())
                 .build();
     HttpJsonCallSettings<ListAnalyticsAccountLinksRequest, ListAnalyticsAccountLinksResponse>
         listAnalyticsAccountLinksTransportSettings =
@@ -493,6 +495,7 @@ public class HttpJsonMarketingplatformAdminServiceStub extends Marketingplatform
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateAnalyticsAccountLinkRequest, AnalyticsAccountLink>
         createAnalyticsAccountLinkTransportSettings =
@@ -506,6 +509,7 @@ public class HttpJsonMarketingplatformAdminServiceStub extends Marketingplatform
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteAnalyticsAccountLinkRequest, Empty>
         deleteAnalyticsAccountLinkTransportSettings =
@@ -518,6 +522,7 @@ public class HttpJsonMarketingplatformAdminServiceStub extends Marketingplatform
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<SetPropertyServiceLevelRequest, SetPropertyServiceLevelResponse>
         setPropertyServiceLevelTransportSettings =
@@ -533,6 +538,7 @@ public class HttpJsonMarketingplatformAdminServiceStub extends Marketingplatform
                           String.valueOf(request.getAnalyticsAccountLink()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAnalyticsProperty())
                 .build();
     HttpJsonCallSettings<ReportPropertyUsageRequest, ReportPropertyUsageResponse>
         reportPropertyUsageTransportSettings =

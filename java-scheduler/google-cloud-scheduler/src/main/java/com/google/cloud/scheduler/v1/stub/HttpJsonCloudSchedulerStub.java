@@ -478,6 +478,7 @@ public class HttpJsonCloudSchedulerStub extends CloudSchedulerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetJobRequest, Job> getJobTransportSettings =
         HttpJsonCallSettings.<GetJobRequest, Job>newBuilder()
@@ -489,6 +490,7 @@ public class HttpJsonCloudSchedulerStub extends CloudSchedulerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateJobRequest, Job> createJobTransportSettings =
         HttpJsonCallSettings.<CreateJobRequest, Job>newBuilder()
@@ -500,6 +502,7 @@ public class HttpJsonCloudSchedulerStub extends CloudSchedulerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateJobRequest, Job> updateJobTransportSettings =
         HttpJsonCallSettings.<UpdateJobRequest, Job>newBuilder()
@@ -522,6 +525,7 @@ public class HttpJsonCloudSchedulerStub extends CloudSchedulerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<PauseJobRequest, Job> pauseJobTransportSettings =
         HttpJsonCallSettings.<PauseJobRequest, Job>newBuilder()
@@ -533,6 +537,7 @@ public class HttpJsonCloudSchedulerStub extends CloudSchedulerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ResumeJobRequest, Job> resumeJobTransportSettings =
         HttpJsonCallSettings.<ResumeJobRequest, Job>newBuilder()
@@ -544,6 +549,7 @@ public class HttpJsonCloudSchedulerStub extends CloudSchedulerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RunJobRequest, Job> runJobTransportSettings =
         HttpJsonCallSettings.<RunJobRequest, Job>newBuilder()
@@ -555,6 +561,7 @@ public class HttpJsonCloudSchedulerStub extends CloudSchedulerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

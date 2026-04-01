@@ -631,6 +631,7 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-bigquery-data-exchange")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

@@ -124,6 +124,7 @@ public class GrpcCommentServiceStub extends CommentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateCommentRequest, Comment> createCommentTransportSettings =
         GrpcCallSettings.<CreateCommentRequest, Comment>newBuilder()
@@ -134,6 +135,7 @@ public class GrpcCommentServiceStub extends CommentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.listCommentsCallable =

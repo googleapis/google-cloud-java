@@ -262,6 +262,7 @@ public class HttpJsonProgramsServiceStub extends ProgramsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListProgramsRequest, ListProgramsResponse> listProgramsTransportSettings =
         HttpJsonCallSettings.<ListProgramsRequest, ListProgramsResponse>newBuilder()
@@ -273,6 +274,7 @@ public class HttpJsonProgramsServiceStub extends ProgramsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<EnableProgramRequest, Program> enableProgramTransportSettings =
         HttpJsonCallSettings.<EnableProgramRequest, Program>newBuilder()
@@ -284,6 +286,7 @@ public class HttpJsonProgramsServiceStub extends ProgramsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DisableProgramRequest, Program> disableProgramTransportSettings =
         HttpJsonCallSettings.<DisableProgramRequest, Program>newBuilder()
@@ -295,6 +298,7 @@ public class HttpJsonProgramsServiceStub extends ProgramsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getProgramCallable =

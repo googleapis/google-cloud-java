@@ -318,6 +318,7 @@ public class HttpJsonIcebergCatalogServiceStub extends IcebergCatalogServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListIcebergCatalogsRequest, ListIcebergCatalogsResponse>
         listIcebergCatalogsTransportSettings =
@@ -331,6 +332,7 @@ public class HttpJsonIcebergCatalogServiceStub extends IcebergCatalogServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateIcebergCatalogRequest, IcebergCatalog>
         updateIcebergCatalogTransportSettings =
@@ -357,6 +359,7 @@ public class HttpJsonIcebergCatalogServiceStub extends IcebergCatalogServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<FailoverIcebergCatalogRequest, FailoverIcebergCatalogResponse>
         failoverIcebergCatalogTransportSettings =

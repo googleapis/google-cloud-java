@@ -20,7 +20,8 @@
         "sdk-platform-java/.cloudbuild/library_generation/library_generation_airlock.Dockerfile",
         "sdk-platform-java/hermetic_build/library_generation/owlbot/templates/java_library/.kokoro/presubmit/graalvm-native-a.cfg",
         "sdk-platform-java/hermetic_build/library_generation/owlbot/templates/java_library/.kokoro/presubmit/graalvm-native-b.cfg",
-        "sdk-platform-java/hermetic_build/library_generation/owlbot/templates/java_library/.kokoro/presubmit/graalvm-native-c.cfg"
+        "sdk-platform-java/hermetic_build/library_generation/owlbot/templates/java_library/.kokoro/presubmit/graalvm-native-c.cfg",
+        "java-bigquery/google-cloud-bigquery/src/main/java/com/google/cloud/bigquery/telemetry/Version.java"
       ]
     }
   }

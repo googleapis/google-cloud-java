@@ -485,6 +485,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListWorkstationClustersRequest, ListWorkstationClustersResponse>
         listWorkstationClustersTransportSettings =
@@ -497,6 +498,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateWorkstationClusterRequest, Operation>
         createWorkstationClusterTransportSettings =
@@ -508,6 +510,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateWorkstationClusterRequest, Operation>
         updateWorkstationClusterTransportSettings =
@@ -532,6 +535,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetWorkstationConfigRequest, WorkstationConfig>
         getWorkstationConfigTransportSettings =
@@ -543,6 +547,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListWorkstationConfigsRequest, ListWorkstationConfigsResponse>
         listWorkstationConfigsTransportSettings =
@@ -555,6 +560,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListUsableWorkstationConfigsRequest, ListUsableWorkstationConfigsResponse>
         listUsableWorkstationConfigsTransportSettings =
@@ -568,6 +574,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateWorkstationConfigRequest, Operation>
         createWorkstationConfigTransportSettings =
@@ -579,6 +586,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateWorkstationConfigRequest, Operation>
         updateWorkstationConfigTransportSettings =
@@ -603,6 +611,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetWorkstationRequest, Workstation> getWorkstationTransportSettings =
         GrpcCallSettings.<GetWorkstationRequest, Workstation>newBuilder()
@@ -613,6 +622,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListWorkstationsRequest, ListWorkstationsResponse>
         listWorkstationsTransportSettings =
@@ -624,6 +634,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListUsableWorkstationsRequest, ListUsableWorkstationsResponse>
         listUsableWorkstationsTransportSettings =
@@ -636,6 +647,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateWorkstationRequest, Operation> createWorkstationTransportSettings =
         GrpcCallSettings.<CreateWorkstationRequest, Operation>newBuilder()
@@ -646,6 +658,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateWorkstationRequest, Operation> updateWorkstationTransportSettings =
         GrpcCallSettings.<UpdateWorkstationRequest, Operation>newBuilder()
@@ -667,6 +680,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<StartWorkstationRequest, Operation> startWorkstationTransportSettings =
         GrpcCallSettings.<StartWorkstationRequest, Operation>newBuilder()
@@ -677,6 +691,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<StopWorkstationRequest, Operation> stopWorkstationTransportSettings =
         GrpcCallSettings.<StopWorkstationRequest, Operation>newBuilder()
@@ -687,6 +702,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
         generateAccessTokenTransportSettings =
@@ -698,6 +714,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                       builder.add("workstation", String.valueOf(request.getWorkstation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getWorkstation())
                 .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -708,6 +725,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -718,6 +736,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -729,6 +748,7 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.getWorkstationClusterCallable =

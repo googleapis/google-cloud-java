@@ -716,6 +716,7 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetCollectionRequest, Collection> getCollectionTransportSettings =
         HttpJsonCallSettings.<GetCollectionRequest, Collection>newBuilder()
@@ -727,6 +728,7 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateCollectionRequest, Operation> createCollectionTransportSettings =
         HttpJsonCallSettings.<CreateCollectionRequest, Operation>newBuilder()
@@ -738,6 +740,7 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateCollectionRequest, Operation> updateCollectionTransportSettings =
         HttpJsonCallSettings.<UpdateCollectionRequest, Operation>newBuilder()
@@ -760,6 +763,7 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListIndexesRequest, ListIndexesResponse> listIndexesTransportSettings =
         HttpJsonCallSettings.<ListIndexesRequest, ListIndexesResponse>newBuilder()
@@ -771,6 +775,7 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetIndexRequest, Index> getIndexTransportSettings =
         HttpJsonCallSettings.<GetIndexRequest, Index>newBuilder()
@@ -782,6 +787,7 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateIndexRequest, Operation> createIndexTransportSettings =
         HttpJsonCallSettings.<CreateIndexRequest, Operation>newBuilder()
@@ -793,6 +799,7 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteIndexRequest, Operation> deleteIndexTransportSettings =
         HttpJsonCallSettings.<DeleteIndexRequest, Operation>newBuilder()
@@ -804,6 +811,7 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ImportDataObjectsRequest, Operation> importDataObjectsTransportSettings =
         HttpJsonCallSettings.<ImportDataObjectsRequest, Operation>newBuilder()
@@ -815,6 +823,7 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ExportDataObjectsRequest, Operation> exportDataObjectsTransportSettings =
         HttpJsonCallSettings.<ExportDataObjectsRequest, Operation>newBuilder()
@@ -826,6 +835,7 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

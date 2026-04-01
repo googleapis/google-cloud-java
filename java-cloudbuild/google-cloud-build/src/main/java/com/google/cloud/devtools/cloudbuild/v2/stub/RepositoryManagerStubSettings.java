@@ -674,6 +674,7 @@ public class RepositoryManagerStubSettings extends StubSettings<RepositoryManage
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-build")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

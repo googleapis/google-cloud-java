@@ -41,6 +41,7 @@ import com.google.cloud.memorystore.v1.GetBackupCollectionRequest;
 import com.google.cloud.memorystore.v1.GetBackupRequest;
 import com.google.cloud.memorystore.v1.GetCertificateAuthorityRequest;
 import com.google.cloud.memorystore.v1.GetInstanceRequest;
+import com.google.cloud.memorystore.v1.GetSharedRegionalCertificateAuthorityRequest;
 import com.google.cloud.memorystore.v1.Instance;
 import com.google.cloud.memorystore.v1.ListBackupCollectionsRequest;
 import com.google.cloud.memorystore.v1.ListBackupCollectionsResponse;
@@ -50,6 +51,7 @@ import com.google.cloud.memorystore.v1.ListInstancesRequest;
 import com.google.cloud.memorystore.v1.ListInstancesResponse;
 import com.google.cloud.memorystore.v1.OperationMetadata;
 import com.google.cloud.memorystore.v1.RescheduleMaintenanceRequest;
+import com.google.cloud.memorystore.v1.SharedRegionalCertificateAuthority;
 import com.google.cloud.memorystore.v1.UpdateInstanceRequest;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -111,6 +113,13 @@ public abstract class MemorystoreStub implements BackgroundResource {
   public UnaryCallable<GetCertificateAuthorityRequest, CertificateAuthority>
       getCertificateAuthorityCallable() {
     throw new UnsupportedOperationException("Not implemented: getCertificateAuthorityCallable()");
+  }
+
+  public UnaryCallable<
+          GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+      getSharedRegionalCertificateAuthorityCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getSharedRegionalCertificateAuthorityCallable()");
   }
 
   public OperationCallable<RescheduleMaintenanceRequest, Instance, OperationMetadata>

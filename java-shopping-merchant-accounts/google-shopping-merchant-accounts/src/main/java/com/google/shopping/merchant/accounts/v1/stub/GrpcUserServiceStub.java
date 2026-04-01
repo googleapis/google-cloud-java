@@ -163,6 +163,7 @@ public class GrpcUserServiceStub extends UserServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateUserRequest, User> createUserTransportSettings =
         GrpcCallSettings.<CreateUserRequest, User>newBuilder()
@@ -173,6 +174,7 @@ public class GrpcUserServiceStub extends UserServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteUserRequest, Empty> deleteUserTransportSettings =
         GrpcCallSettings.<DeleteUserRequest, Empty>newBuilder()
@@ -183,6 +185,7 @@ public class GrpcUserServiceStub extends UserServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateUserRequest, User> updateUserTransportSettings =
         GrpcCallSettings.<UpdateUserRequest, User>newBuilder()
@@ -203,6 +206,7 @@ public class GrpcUserServiceStub extends UserServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<VerifySelfRequest, User> verifySelfTransportSettings =
         GrpcCallSettings.<VerifySelfRequest, User>newBuilder()
@@ -213,6 +217,7 @@ public class GrpcUserServiceStub extends UserServiceStub {
                   builder.add("account", String.valueOf(request.getAccount()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getAccount())
             .build();
 
     this.getUserCallable =

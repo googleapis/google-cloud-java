@@ -251,6 +251,7 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
                       builder.add("catalog", String.valueOf(request.getCatalog()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCatalog())
                 .build();
     HttpJsonCallSettings<ImportCompletionDataRequest, Operation>
         importCompletionDataTransportSettings =
@@ -263,6 +264,7 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.completeQueryCallable =

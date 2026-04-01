@@ -431,6 +431,7 @@ public class PrivateCatalogStubSettings extends StubSettings<PrivateCatalogStubS
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-private-catalog")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(com.google.cloud.privatecatalog.v1beta1.stub.Version.VERSION)
         .build();
   }
 

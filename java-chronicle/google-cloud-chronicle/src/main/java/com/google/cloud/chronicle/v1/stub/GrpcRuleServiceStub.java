@@ -267,6 +267,7 @@ public class GrpcRuleServiceStub extends RuleServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetRuleRequest, Rule> getRuleTransportSettings =
         GrpcCallSettings.<GetRuleRequest, Rule>newBuilder()
@@ -277,6 +278,7 @@ public class GrpcRuleServiceStub extends RuleServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRulesRequest, ListRulesResponse> listRulesTransportSettings =
         GrpcCallSettings.<ListRulesRequest, ListRulesResponse>newBuilder()
@@ -287,6 +289,7 @@ public class GrpcRuleServiceStub extends RuleServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateRuleRequest, Rule> updateRuleTransportSettings =
         GrpcCallSettings.<UpdateRuleRequest, Rule>newBuilder()
@@ -307,6 +310,7 @@ public class GrpcRuleServiceStub extends RuleServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRuleRevisionsRequest, ListRuleRevisionsResponse>
         listRuleRevisionsTransportSettings =
@@ -318,6 +322,7 @@ public class GrpcRuleServiceStub extends RuleServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateRetrohuntRequest, Operation> createRetrohuntTransportSettings =
         GrpcCallSettings.<CreateRetrohuntRequest, Operation>newBuilder()
@@ -328,6 +333,7 @@ public class GrpcRuleServiceStub extends RuleServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetRetrohuntRequest, Retrohunt> getRetrohuntTransportSettings =
         GrpcCallSettings.<GetRetrohuntRequest, Retrohunt>newBuilder()
@@ -338,6 +344,7 @@ public class GrpcRuleServiceStub extends RuleServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRetrohuntsRequest, ListRetrohuntsResponse>
         listRetrohuntsTransportSettings =
@@ -349,6 +356,7 @@ public class GrpcRuleServiceStub extends RuleServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetRuleDeploymentRequest, RuleDeployment> getRuleDeploymentTransportSettings =
         GrpcCallSettings.<GetRuleDeploymentRequest, RuleDeployment>newBuilder()
@@ -359,6 +367,7 @@ public class GrpcRuleServiceStub extends RuleServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRuleDeploymentsRequest, ListRuleDeploymentsResponse>
         listRuleDeploymentsTransportSettings =
@@ -370,6 +379,7 @@ public class GrpcRuleServiceStub extends RuleServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateRuleDeploymentRequest, RuleDeployment>
         updateRuleDeploymentTransportSettings =

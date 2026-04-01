@@ -186,6 +186,7 @@ public class HttpJsonAccountLimitsServiceStub extends AccountLimitsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListAccountLimitsRequest, ListAccountLimitsResponse>
         listAccountLimitsTransportSettings =
@@ -198,6 +199,7 @@ public class HttpJsonAccountLimitsServiceStub extends AccountLimitsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getAccountLimitCallable =

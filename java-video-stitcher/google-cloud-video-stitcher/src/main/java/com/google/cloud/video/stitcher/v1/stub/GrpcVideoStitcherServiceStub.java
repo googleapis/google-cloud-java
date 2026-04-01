@@ -562,6 +562,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListCdnKeysRequest, ListCdnKeysResponse> listCdnKeysTransportSettings =
         GrpcCallSettings.<ListCdnKeysRequest, ListCdnKeysResponse>newBuilder()
@@ -572,6 +573,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetCdnKeyRequest, CdnKey> getCdnKeyTransportSettings =
         GrpcCallSettings.<GetCdnKeyRequest, CdnKey>newBuilder()
@@ -582,6 +584,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteCdnKeyRequest, Operation> deleteCdnKeyTransportSettings =
         GrpcCallSettings.<DeleteCdnKeyRequest, Operation>newBuilder()
@@ -592,6 +595,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateCdnKeyRequest, Operation> updateCdnKeyTransportSettings =
         GrpcCallSettings.<UpdateCdnKeyRequest, Operation>newBuilder()
@@ -612,6 +616,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetVodSessionRequest, VodSession> getVodSessionTransportSettings =
         GrpcCallSettings.<GetVodSessionRequest, VodSession>newBuilder()
@@ -622,6 +627,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListVodStitchDetailsRequest, ListVodStitchDetailsResponse>
         listVodStitchDetailsTransportSettings =
@@ -633,6 +639,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetVodStitchDetailRequest, VodStitchDetail>
         getVodStitchDetailTransportSettings =
@@ -644,6 +651,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListVodAdTagDetailsRequest, ListVodAdTagDetailsResponse>
         listVodAdTagDetailsTransportSettings =
@@ -655,6 +663,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetVodAdTagDetailRequest, VodAdTagDetail> getVodAdTagDetailTransportSettings =
         GrpcCallSettings.<GetVodAdTagDetailRequest, VodAdTagDetail>newBuilder()
@@ -665,6 +674,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLiveAdTagDetailsRequest, ListLiveAdTagDetailsResponse>
         listLiveAdTagDetailsTransportSettings =
@@ -676,6 +686,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetLiveAdTagDetailRequest, LiveAdTagDetail>
         getLiveAdTagDetailTransportSettings =
@@ -687,6 +698,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateSlateRequest, Operation> createSlateTransportSettings =
         GrpcCallSettings.<CreateSlateRequest, Operation>newBuilder()
@@ -697,6 +709,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListSlatesRequest, ListSlatesResponse> listSlatesTransportSettings =
         GrpcCallSettings.<ListSlatesRequest, ListSlatesResponse>newBuilder()
@@ -707,6 +720,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetSlateRequest, Slate> getSlateTransportSettings =
         GrpcCallSettings.<GetSlateRequest, Slate>newBuilder()
@@ -717,6 +731,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateSlateRequest, Operation> updateSlateTransportSettings =
         GrpcCallSettings.<UpdateSlateRequest, Operation>newBuilder()
@@ -737,6 +752,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateLiveSessionRequest, LiveSession> createLiveSessionTransportSettings =
         GrpcCallSettings.<CreateLiveSessionRequest, LiveSession>newBuilder()
@@ -747,6 +763,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetLiveSessionRequest, LiveSession> getLiveSessionTransportSettings =
         GrpcCallSettings.<GetLiveSessionRequest, LiveSession>newBuilder()
@@ -757,6 +774,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateLiveConfigRequest, Operation> createLiveConfigTransportSettings =
         GrpcCallSettings.<CreateLiveConfigRequest, Operation>newBuilder()
@@ -767,6 +785,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListLiveConfigsRequest, ListLiveConfigsResponse>
         listLiveConfigsTransportSettings =
@@ -778,6 +797,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetLiveConfigRequest, LiveConfig> getLiveConfigTransportSettings =
         GrpcCallSettings.<GetLiveConfigRequest, LiveConfig>newBuilder()
@@ -788,6 +808,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteLiveConfigRequest, Operation> deleteLiveConfigTransportSettings =
         GrpcCallSettings.<DeleteLiveConfigRequest, Operation>newBuilder()
@@ -798,6 +819,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateLiveConfigRequest, Operation> updateLiveConfigTransportSettings =
         GrpcCallSettings.<UpdateLiveConfigRequest, Operation>newBuilder()
@@ -819,6 +841,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListVodConfigsRequest, ListVodConfigsResponse>
         listVodConfigsTransportSettings =
@@ -830,6 +853,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetVodConfigRequest, VodConfig> getVodConfigTransportSettings =
         GrpcCallSettings.<GetVodConfigRequest, VodConfig>newBuilder()
@@ -840,6 +864,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteVodConfigRequest, Operation> deleteVodConfigTransportSettings =
         GrpcCallSettings.<DeleteVodConfigRequest, Operation>newBuilder()
@@ -850,6 +875,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateVodConfigRequest, Operation> updateVodConfigTransportSettings =
         GrpcCallSettings.<UpdateVodConfigRequest, Operation>newBuilder()

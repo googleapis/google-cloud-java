@@ -1142,6 +1142,7 @@ public class AppHubStubSettings extends StubSettings<AppHubStubSettings> {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-apphub")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

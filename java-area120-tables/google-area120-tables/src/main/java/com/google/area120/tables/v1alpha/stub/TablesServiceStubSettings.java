@@ -510,6 +510,7 @@ public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSet
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.area120:google-area120-tables")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

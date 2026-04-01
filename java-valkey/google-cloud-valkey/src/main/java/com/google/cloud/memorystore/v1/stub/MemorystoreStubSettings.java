@@ -64,6 +64,7 @@ import com.google.cloud.memorystore.v1.GetBackupCollectionRequest;
 import com.google.cloud.memorystore.v1.GetBackupRequest;
 import com.google.cloud.memorystore.v1.GetCertificateAuthorityRequest;
 import com.google.cloud.memorystore.v1.GetInstanceRequest;
+import com.google.cloud.memorystore.v1.GetSharedRegionalCertificateAuthorityRequest;
 import com.google.cloud.memorystore.v1.Instance;
 import com.google.cloud.memorystore.v1.ListBackupCollectionsRequest;
 import com.google.cloud.memorystore.v1.ListBackupCollectionsResponse;
@@ -73,6 +74,7 @@ import com.google.cloud.memorystore.v1.ListInstancesRequest;
 import com.google.cloud.memorystore.v1.ListInstancesResponse;
 import com.google.cloud.memorystore.v1.OperationMetadata;
 import com.google.cloud.memorystore.v1.RescheduleMaintenanceRequest;
+import com.google.cloud.memorystore.v1.SharedRegionalCertificateAuthority;
 import com.google.cloud.memorystore.v1.UpdateInstanceRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -183,6 +185,9 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
       deleteInstanceOperationSettings;
   private final UnaryCallSettings<GetCertificateAuthorityRequest, CertificateAuthority>
       getCertificateAuthoritySettings;
+  private final UnaryCallSettings<
+          GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+      getSharedRegionalCertificateAuthoritySettings;
   private final UnaryCallSettings<RescheduleMaintenanceRequest, Operation>
       rescheduleMaintenanceSettings;
   private final OperationCallSettings<RescheduleMaintenanceRequest, Instance, OperationMetadata>
@@ -477,6 +482,15 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
     return getCertificateAuthoritySettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to getSharedRegionalCertificateAuthority.
+   */
+  public UnaryCallSettings<
+          GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+      getSharedRegionalCertificateAuthoritySettings() {
+    return getSharedRegionalCertificateAuthoritySettings;
+  }
+
   /** Returns the object with the settings used for calls to rescheduleMaintenance. */
   public UnaryCallSettings<RescheduleMaintenanceRequest, Operation>
       rescheduleMaintenanceSettings() {
@@ -650,6 +664,8 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
     deleteInstanceSettings = settingsBuilder.deleteInstanceSettings().build();
     deleteInstanceOperationSettings = settingsBuilder.deleteInstanceOperationSettings().build();
     getCertificateAuthoritySettings = settingsBuilder.getCertificateAuthoritySettings().build();
+    getSharedRegionalCertificateAuthoritySettings =
+        settingsBuilder.getSharedRegionalCertificateAuthoritySettings().build();
     rescheduleMaintenanceSettings = settingsBuilder.rescheduleMaintenanceSettings().build();
     rescheduleMaintenanceOperationSettings =
         settingsBuilder.rescheduleMaintenanceOperationSettings().build();
@@ -672,6 +688,7 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-valkey")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 
@@ -696,6 +713,9 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
         deleteInstanceOperationSettings;
     private final UnaryCallSettings.Builder<GetCertificateAuthorityRequest, CertificateAuthority>
         getCertificateAuthoritySettings;
+    private final UnaryCallSettings.Builder<
+            GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+        getSharedRegionalCertificateAuthoritySettings;
     private final UnaryCallSettings.Builder<RescheduleMaintenanceRequest, Operation>
         rescheduleMaintenanceSettings;
     private final OperationCallSettings.Builder<
@@ -786,6 +806,8 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
       deleteInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteInstanceOperationSettings = OperationCallSettings.newBuilder();
       getCertificateAuthoritySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getSharedRegionalCertificateAuthoritySettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
       rescheduleMaintenanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       rescheduleMaintenanceOperationSettings = OperationCallSettings.newBuilder();
       listBackupCollectionsSettings =
@@ -810,6 +832,7 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
               updateInstanceSettings,
               deleteInstanceSettings,
               getCertificateAuthoritySettings,
+              getSharedRegionalCertificateAuthoritySettings,
               rescheduleMaintenanceSettings,
               listBackupCollectionsSettings,
               getBackupCollectionSettings,
@@ -835,6 +858,8 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
       deleteInstanceSettings = settings.deleteInstanceSettings.toBuilder();
       deleteInstanceOperationSettings = settings.deleteInstanceOperationSettings.toBuilder();
       getCertificateAuthoritySettings = settings.getCertificateAuthoritySettings.toBuilder();
+      getSharedRegionalCertificateAuthoritySettings =
+          settings.getSharedRegionalCertificateAuthoritySettings.toBuilder();
       rescheduleMaintenanceSettings = settings.rescheduleMaintenanceSettings.toBuilder();
       rescheduleMaintenanceOperationSettings =
           settings.rescheduleMaintenanceOperationSettings.toBuilder();
@@ -859,6 +884,7 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
               updateInstanceSettings,
               deleteInstanceSettings,
               getCertificateAuthoritySettings,
+              getSharedRegionalCertificateAuthoritySettings,
               rescheduleMaintenanceSettings,
               listBackupCollectionsSettings,
               getBackupCollectionSettings,
@@ -913,6 +939,11 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
           .getCertificateAuthoritySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getSharedRegionalCertificateAuthoritySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .rescheduleMaintenanceSettings()
@@ -1199,6 +1230,15 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
     public UnaryCallSettings.Builder<GetCertificateAuthorityRequest, CertificateAuthority>
         getCertificateAuthoritySettings() {
       return getCertificateAuthoritySettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to getSharedRegionalCertificateAuthority.
+     */
+    public UnaryCallSettings.Builder<
+            GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+        getSharedRegionalCertificateAuthoritySettings() {
+      return getSharedRegionalCertificateAuthoritySettings;
     }
 
     /** Returns the builder for the settings used for calls to rescheduleMaintenance. */

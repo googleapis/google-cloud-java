@@ -193,6 +193,7 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeployRequest, Operation> deployTransportSettings =
         GrpcCallSettings.<DeployRequest, Operation>newBuilder()
@@ -203,6 +204,7 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
                   builder.add("destination", String.valueOf(request.getDestination()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getPublisherModelName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -233,6 +235,7 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -243,6 +246,7 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -254,6 +258,7 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.getPublisherModelCallable =

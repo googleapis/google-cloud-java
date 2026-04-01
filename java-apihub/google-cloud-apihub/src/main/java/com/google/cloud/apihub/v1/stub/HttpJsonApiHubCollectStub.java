@@ -262,6 +262,7 @@ public class HttpJsonApiHubCollectStub extends ApiHubCollectStub {
                   builder.add("location", String.valueOf(request.getLocation()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getLocation())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

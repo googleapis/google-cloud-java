@@ -302,6 +302,7 @@ public class ImageVersionsStubSettings extends StubSettings<ImageVersionsStubSet
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-orchestration-airflow")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

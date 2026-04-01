@@ -886,6 +886,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListProductSetsRequest, ListProductSetsResponse>
         listProductSetsTransportSettings =
@@ -898,6 +899,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetProductSetRequest, ProductSet> getProductSetTransportSettings =
         HttpJsonCallSettings.<GetProductSetRequest, ProductSet>newBuilder()
@@ -909,6 +911,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateProductSetRequest, ProductSet> updateProductSetTransportSettings =
         HttpJsonCallSettings.<UpdateProductSetRequest, ProductSet>newBuilder()
@@ -932,6 +935,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateProductRequest, Product> createProductTransportSettings =
         HttpJsonCallSettings.<CreateProductRequest, Product>newBuilder()
@@ -943,6 +947,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListProductsRequest, ListProductsResponse> listProductsTransportSettings =
         HttpJsonCallSettings.<ListProductsRequest, ListProductsResponse>newBuilder()
@@ -954,6 +959,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetProductRequest, Product> getProductTransportSettings =
         HttpJsonCallSettings.<GetProductRequest, Product>newBuilder()
@@ -965,6 +971,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateProductRequest, Product> updateProductTransportSettings =
         HttpJsonCallSettings.<UpdateProductRequest, Product>newBuilder()
@@ -987,6 +994,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateReferenceImageRequest, ReferenceImage>
         createReferenceImageTransportSettings =
@@ -999,6 +1007,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteReferenceImageRequest, Empty> deleteReferenceImageTransportSettings =
         HttpJsonCallSettings.<DeleteReferenceImageRequest, Empty>newBuilder()
@@ -1010,6 +1019,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListReferenceImagesRequest, ListReferenceImagesResponse>
         listReferenceImagesTransportSettings =
@@ -1023,6 +1033,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetReferenceImageRequest, ReferenceImage>
         getReferenceImageTransportSettings =
@@ -1035,6 +1046,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<AddProductToProductSetRequest, Empty>
         addProductToProductSetTransportSettings =
@@ -1047,6 +1059,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<RemoveProductFromProductSetRequest, Empty>
         removeProductFromProductSetTransportSettings =
@@ -1059,6 +1072,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListProductsInProductSetRequest, ListProductsInProductSetResponse>
         listProductsInProductSetTransportSettings =
@@ -1072,6 +1086,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ImportProductSetsRequest, Operation> importProductSetsTransportSettings =
         HttpJsonCallSettings.<ImportProductSetsRequest, Operation>newBuilder()
@@ -1083,6 +1098,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<PurgeProductsRequest, Operation> purgeProductsTransportSettings =
         HttpJsonCallSettings.<PurgeProductsRequest, Operation>newBuilder()
@@ -1094,6 +1110,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.createProductSetCallable =

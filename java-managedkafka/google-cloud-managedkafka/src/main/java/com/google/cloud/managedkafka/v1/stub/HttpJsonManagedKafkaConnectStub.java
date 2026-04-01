@@ -808,6 +808,7 @@ public class HttpJsonManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetConnectClusterRequest, ConnectCluster>
         getConnectClusterTransportSettings =
@@ -820,6 +821,7 @@ public class HttpJsonManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateConnectClusterRequest, Operation>
         createConnectClusterTransportSettings =
@@ -832,6 +834,7 @@ public class HttpJsonManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateConnectClusterRequest, Operation>
         updateConnectClusterTransportSettings =
@@ -858,6 +861,7 @@ public class HttpJsonManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListConnectorsRequest, ListConnectorsResponse>
         listConnectorsTransportSettings =
@@ -870,6 +874,7 @@ public class HttpJsonManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetConnectorRequest, Connector> getConnectorTransportSettings =
         HttpJsonCallSettings.<GetConnectorRequest, Connector>newBuilder()
@@ -881,6 +886,7 @@ public class HttpJsonManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateConnectorRequest, Connector> createConnectorTransportSettings =
         HttpJsonCallSettings.<CreateConnectorRequest, Connector>newBuilder()
@@ -892,6 +898,7 @@ public class HttpJsonManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateConnectorRequest, Connector> updateConnectorTransportSettings =
         HttpJsonCallSettings.<UpdateConnectorRequest, Connector>newBuilder()
@@ -914,6 +921,7 @@ public class HttpJsonManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<PauseConnectorRequest, PauseConnectorResponse>
         pauseConnectorTransportSettings =
@@ -926,6 +934,7 @@ public class HttpJsonManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ResumeConnectorRequest, ResumeConnectorResponse>
         resumeConnectorTransportSettings =
@@ -938,6 +947,7 @@ public class HttpJsonManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<RestartConnectorRequest, RestartConnectorResponse>
         restartConnectorTransportSettings =
@@ -950,6 +960,7 @@ public class HttpJsonManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<StopConnectorRequest, StopConnectorResponse>
         stopConnectorTransportSettings =
@@ -962,6 +973,7 @@ public class HttpJsonManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

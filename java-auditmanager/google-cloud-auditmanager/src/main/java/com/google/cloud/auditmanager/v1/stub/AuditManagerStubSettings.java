@@ -629,6 +629,7 @@ public class AuditManagerStubSettings extends StubSettings<AuditManagerStubSetti
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-auditmanager")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

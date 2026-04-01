@@ -517,6 +517,7 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-resourcemanager")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

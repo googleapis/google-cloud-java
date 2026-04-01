@@ -1041,6 +1041,7 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateTargetSiteRequest, Operation> createTargetSiteTransportSettings =
         HttpJsonCallSettings.<CreateTargetSiteRequest, Operation>newBuilder()
@@ -1052,6 +1053,7 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<BatchCreateTargetSitesRequest, Operation>
         batchCreateTargetSitesTransportSettings =
@@ -1064,6 +1066,7 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetTargetSiteRequest, TargetSite> getTargetSiteTransportSettings =
         HttpJsonCallSettings.<GetTargetSiteRequest, TargetSite>newBuilder()
@@ -1075,6 +1078,7 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateTargetSiteRequest, Operation> updateTargetSiteTransportSettings =
         HttpJsonCallSettings.<UpdateTargetSiteRequest, Operation>newBuilder()
@@ -1098,6 +1102,7 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListTargetSitesRequest, ListTargetSitesResponse>
         listTargetSitesTransportSettings =
@@ -1110,6 +1115,7 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateSitemapRequest, Operation> createSitemapTransportSettings =
         HttpJsonCallSettings.<CreateSitemapRequest, Operation>newBuilder()
@@ -1121,6 +1127,7 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteSitemapRequest, Operation> deleteSitemapTransportSettings =
         HttpJsonCallSettings.<DeleteSitemapRequest, Operation>newBuilder()
@@ -1132,6 +1139,7 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<FetchSitemapsRequest, FetchSitemapsResponse>
         fetchSitemapsTransportSettings =
@@ -1144,6 +1152,7 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<EnableAdvancedSiteSearchRequest, Operation>
         enableAdvancedSiteSearchTransportSettings =
@@ -1157,6 +1166,7 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
                           "site_search_engine", String.valueOf(request.getSiteSearchEngine()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getSiteSearchEngine())
                 .build();
     HttpJsonCallSettings<DisableAdvancedSiteSearchRequest, Operation>
         disableAdvancedSiteSearchTransportSettings =
@@ -1170,6 +1180,7 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
                           "site_search_engine", String.valueOf(request.getSiteSearchEngine()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getSiteSearchEngine())
                 .build();
     HttpJsonCallSettings<RecrawlUrisRequest, Operation> recrawlUrisTransportSettings =
         HttpJsonCallSettings.<RecrawlUrisRequest, Operation>newBuilder()
@@ -1181,6 +1192,7 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
                   builder.add("site_search_engine", String.valueOf(request.getSiteSearchEngine()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getSiteSearchEngine())
             .build();
     HttpJsonCallSettings<BatchVerifyTargetSitesRequest, Operation>
         batchVerifyTargetSitesTransportSettings =
@@ -1193,6 +1205,7 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             FetchDomainVerificationStatusRequest, FetchDomainVerificationStatusResponse>
@@ -1209,6 +1222,7 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
                           "site_search_engine", String.valueOf(request.getSiteSearchEngine()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getSiteSearchEngine())
                 .build();
 
     this.getSiteSearchEngineCallable =

@@ -169,6 +169,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListEvaluationsRequest, ListEvaluationsResponse>
         listEvaluationsTransportSettings =
@@ -180,6 +181,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateEvaluationRequest, Operation> createEvaluationTransportSettings =
         GrpcCallSettings.<CreateEvaluationRequest, Operation>newBuilder()
@@ -190,6 +192,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListEvaluationResultsRequest, ListEvaluationResultsResponse>
         listEvaluationResultsTransportSettings =
@@ -202,6 +205,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("evaluation", String.valueOf(request.getEvaluation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getEvaluation())
                 .build();
 
     this.getEvaluationCallable =

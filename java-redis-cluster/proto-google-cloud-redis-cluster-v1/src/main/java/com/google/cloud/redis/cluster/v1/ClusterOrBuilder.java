@@ -1361,5 +1361,131 @@ public interface ClusterOrBuilder
    */
   com.google.cloud.redis.cluster.v1.EncryptionInfoOrBuilder getEncryptionInfoOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Server CA mode for the cluster.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.redis.cluster.v1.ServerCaMode server_ca_mode = 53 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the serverCaMode field is set.
+   */
+  boolean hasServerCaMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Server CA mode for the cluster.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.redis.cluster.v1.ServerCaMode server_ca_mode = 53 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for serverCaMode.
+   */
+  int getServerCaModeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Server CA mode for the cluster.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.redis.cluster.v1.ServerCaMode server_ca_mode = 53 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The serverCaMode.
+   */
+  com.google.cloud.redis.cluster.v1.ServerCaMode getServerCaMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer-managed CA pool for the cluster. Only applicable for
+   * BYOCA i.e. if server_ca_mode is SERVER_CA_MODE_CUSTOMER_MANAGED_CAS_CA.
+   * Format: "projects/{project}/locations/{region}/caPools/{ca_pool}".
+   * </pre>
+   *
+   * <code>
+   * optional string server_ca_pool = 54 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the serverCaPool field is set.
+   */
+  boolean hasServerCaPool();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer-managed CA pool for the cluster. Only applicable for
+   * BYOCA i.e. if server_ca_mode is SERVER_CA_MODE_CUSTOMER_MANAGED_CAS_CA.
+   * Format: "projects/{project}/locations/{region}/caPools/{ca_pool}".
+   * </pre>
+   *
+   * <code>
+   * optional string server_ca_pool = 54 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The serverCaPool.
+   */
+  java.lang.String getServerCaPool();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer-managed CA pool for the cluster. Only applicable for
+   * BYOCA i.e. if server_ca_mode is SERVER_CA_MODE_CUSTOMER_MANAGED_CAS_CA.
+   * Format: "projects/{project}/locations/{region}/caPools/{ca_pool}".
+   * </pre>
+   *
+   * <code>
+   * optional string server_ca_pool = 54 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for serverCaPool.
+   */
+  com.google.protobuf.ByteString getServerCaPoolBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Rotate the server certificates.
+   * </pre>
+   *
+   * <code>
+   * optional bool rotate_server_certificate = 55 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the rotateServerCertificate field is set.
+   */
+  boolean hasRotateServerCertificate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Rotate the server certificates.
+   * </pre>
+   *
+   * <code>
+   * optional bool rotate_server_certificate = 55 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The rotateServerCertificate.
+   */
+  boolean getRotateServerCertificate();
+
   com.google.cloud.redis.cluster.v1.Cluster.ImportSourcesCase getImportSourcesCase();
 }

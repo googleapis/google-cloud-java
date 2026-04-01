@@ -149,6 +149,7 @@ public class GrpcCloudLocationFinderStub extends CloudLocationFinderStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetCloudLocationRequest, CloudLocation> getCloudLocationTransportSettings =
         GrpcCallSettings.<GetCloudLocationRequest, CloudLocation>newBuilder()
@@ -159,6 +160,7 @@ public class GrpcCloudLocationFinderStub extends CloudLocationFinderStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SearchCloudLocationsRequest, SearchCloudLocationsResponse>
         searchCloudLocationsTransportSettings =
@@ -170,6 +172,7 @@ public class GrpcCloudLocationFinderStub extends CloudLocationFinderStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.listCloudLocationsCallable =

@@ -411,6 +411,7 @@ public class HttpJsonSubscriptionsServiceStub extends SubscriptionsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetSubscriptionRequest, Subscription> getSubscriptionTransportSettings =
         HttpJsonCallSettings.<GetSubscriptionRequest, Subscription>newBuilder()
@@ -422,6 +423,7 @@ public class HttpJsonSubscriptionsServiceStub extends SubscriptionsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListSubscriptionsRequest, ListSubscriptionsResponse>
         listSubscriptionsTransportSettings =
@@ -452,6 +454,7 @@ public class HttpJsonSubscriptionsServiceStub extends SubscriptionsServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.createSubscriptionCallable =

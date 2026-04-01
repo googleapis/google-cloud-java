@@ -383,6 +383,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateOSPolicyAssignmentRequest, Operation>
         updateOSPolicyAssignmentTransportSettings =
@@ -407,6 +408,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListOSPolicyAssignmentsRequest, ListOSPolicyAssignmentsResponse>
         listOSPolicyAssignmentsTransportSettings =
@@ -419,6 +421,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             ListOSPolicyAssignmentRevisionsRequest, ListOSPolicyAssignmentRevisionsResponse>
@@ -433,6 +436,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteOSPolicyAssignmentRequest, Operation>
         deleteOSPolicyAssignmentTransportSettings =
@@ -444,6 +448,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetInstanceOSPoliciesComplianceRequest, InstanceOSPoliciesCompliance>
         getInstanceOSPoliciesComplianceTransportSettings =
@@ -456,6 +461,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             ListInstanceOSPoliciesCompliancesRequest, ListInstanceOSPoliciesCompliancesResponse>
@@ -471,6 +477,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetOSPolicyAssignmentReportRequest, OSPolicyAssignmentReport>
         getOSPolicyAssignmentReportTransportSettings =
@@ -483,6 +490,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListOSPolicyAssignmentReportsRequest, ListOSPolicyAssignmentReportsResponse>
         listOSPolicyAssignmentReportsTransportSettings =
@@ -496,6 +504,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetInventoryRequest, Inventory> getInventoryTransportSettings =
         GrpcCallSettings.<GetInventoryRequest, Inventory>newBuilder()
@@ -506,6 +515,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListInventoriesRequest, ListInventoriesResponse>
         listInventoriesTransportSettings =
@@ -517,6 +527,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetVulnerabilityReportRequest, VulnerabilityReport>
         getVulnerabilityReportTransportSettings =
@@ -528,6 +539,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListVulnerabilityReportsRequest, ListVulnerabilityReportsResponse>
         listVulnerabilityReportsTransportSettings =
@@ -540,6 +552,7 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createOSPolicyAssignmentCallable =

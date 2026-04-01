@@ -184,6 +184,7 @@ public class HttpJsonMobileCarrierServiceStub extends MobileCarrierServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListMobileCarriersRequest, ListMobileCarriersResponse>
         listMobileCarriersTransportSettings =
@@ -196,6 +197,7 @@ public class HttpJsonMobileCarrierServiceStub extends MobileCarrierServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getMobileCarrierCallable =

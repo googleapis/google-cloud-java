@@ -3915,6 +3915,7 @@ public class AnalyticsAdminServiceStubSettings
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.analytics:google-analytics-admin")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

@@ -523,6 +523,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetRepositoryRequest, Repository> getRepositoryTransportSettings =
         GrpcCallSettings.<GetRepositoryRequest, Repository>newBuilder()
@@ -533,6 +534,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateRepositoryRequest, Operation> createRepositoryTransportSettings =
         GrpcCallSettings.<CreateRepositoryRequest, Operation>newBuilder()
@@ -543,6 +545,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateRepositoryRequest, Repository> updateRepositoryTransportSettings =
         GrpcCallSettings.<UpdateRepositoryRequest, Repository>newBuilder()
@@ -563,6 +566,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListPackagesRequest, ListPackagesResponse> listPackagesTransportSettings =
         GrpcCallSettings.<ListPackagesRequest, ListPackagesResponse>newBuilder()
@@ -703,6 +707,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -713,6 +718,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -724,6 +730,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     GrpcCallSettings<GetProjectSettingsRequest, ProjectSettings>
         getProjectSettingsTransportSettings =
@@ -735,6 +742,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateProjectSettingsRequest, ProjectSettings>
         updateProjectSettingsTransportSettings =

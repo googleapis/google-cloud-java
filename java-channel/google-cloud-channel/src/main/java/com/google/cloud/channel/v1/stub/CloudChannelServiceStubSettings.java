@@ -1950,6 +1950,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-channel")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

@@ -691,6 +691,7 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-vision")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

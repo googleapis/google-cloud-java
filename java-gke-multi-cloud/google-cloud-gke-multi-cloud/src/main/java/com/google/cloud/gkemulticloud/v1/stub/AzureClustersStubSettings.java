@@ -809,6 +809,7 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-gke-multi-cloud")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

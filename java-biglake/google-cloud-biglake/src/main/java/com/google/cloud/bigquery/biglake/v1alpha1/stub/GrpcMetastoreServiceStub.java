@@ -349,6 +349,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteCatalogRequest, Catalog> deleteCatalogTransportSettings =
         GrpcCallSettings.<DeleteCatalogRequest, Catalog>newBuilder()
@@ -359,6 +360,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetCatalogRequest, Catalog> getCatalogTransportSettings =
         GrpcCallSettings.<GetCatalogRequest, Catalog>newBuilder()
@@ -369,6 +371,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListCatalogsRequest, ListCatalogsResponse> listCatalogsTransportSettings =
         GrpcCallSettings.<ListCatalogsRequest, ListCatalogsResponse>newBuilder()
@@ -379,6 +382,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateDatabaseRequest, Database> createDatabaseTransportSettings =
         GrpcCallSettings.<CreateDatabaseRequest, Database>newBuilder()
@@ -389,6 +393,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteDatabaseRequest, Database> deleteDatabaseTransportSettings =
         GrpcCallSettings.<DeleteDatabaseRequest, Database>newBuilder()
@@ -399,6 +404,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateDatabaseRequest, Database> updateDatabaseTransportSettings =
         GrpcCallSettings.<UpdateDatabaseRequest, Database>newBuilder()
@@ -419,6 +425,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDatabasesRequest, ListDatabasesResponse> listDatabasesTransportSettings =
         GrpcCallSettings.<ListDatabasesRequest, ListDatabasesResponse>newBuilder()
@@ -429,6 +436,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateTableRequest, Table> createTableTransportSettings =
         GrpcCallSettings.<CreateTableRequest, Table>newBuilder()
@@ -439,6 +447,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteTableRequest, Table> deleteTableTransportSettings =
         GrpcCallSettings.<DeleteTableRequest, Table>newBuilder()
@@ -449,6 +458,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateTableRequest, Table> updateTableTransportSettings =
         GrpcCallSettings.<UpdateTableRequest, Table>newBuilder()
@@ -469,6 +479,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetTableRequest, Table> getTableTransportSettings =
         GrpcCallSettings.<GetTableRequest, Table>newBuilder()
@@ -479,6 +490,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListTablesRequest, ListTablesResponse> listTablesTransportSettings =
         GrpcCallSettings.<ListTablesRequest, ListTablesResponse>newBuilder()
@@ -489,6 +501,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateLockRequest, Lock> createLockTransportSettings =
         GrpcCallSettings.<CreateLockRequest, Lock>newBuilder()
@@ -499,6 +512,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteLockRequest, Empty> deleteLockTransportSettings =
         GrpcCallSettings.<DeleteLockRequest, Empty>newBuilder()
@@ -509,6 +523,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CheckLockRequest, Lock> checkLockTransportSettings =
         GrpcCallSettings.<CheckLockRequest, Lock>newBuilder()
@@ -519,6 +534,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocksRequest, ListLocksResponse> listLocksTransportSettings =
         GrpcCallSettings.<ListLocksRequest, ListLocksResponse>newBuilder()
@@ -529,6 +545,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.createCatalogCallable =

@@ -359,6 +359,7 @@ public class StreamingServiceStubSettings extends StubSettings<StreamingServiceS
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-visionai")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

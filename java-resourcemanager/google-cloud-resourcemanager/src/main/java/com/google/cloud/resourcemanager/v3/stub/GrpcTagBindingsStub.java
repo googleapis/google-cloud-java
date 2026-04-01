@@ -160,6 +160,7 @@ public class GrpcTagBindingsStub extends TagBindingsStub {
         listTagBindingsTransportSettings =
             GrpcCallSettings.<ListTagBindingsRequest, ListTagBindingsResponse>newBuilder()
                 .setMethodDescriptor(listTagBindingsMethodDescriptor)
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateTagBindingRequest, Operation> createTagBindingTransportSettings =
         GrpcCallSettings.<CreateTagBindingRequest, Operation>newBuilder()
@@ -174,6 +175,7 @@ public class GrpcTagBindingsStub extends TagBindingsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListEffectiveTagsRequest, ListEffectiveTagsResponse>
         listEffectiveTagsTransportSettings =

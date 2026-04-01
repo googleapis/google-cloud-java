@@ -154,6 +154,7 @@ public class GrpcExecutionsStub extends ExecutionsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListExecutionsRequest, ListExecutionsResponse>
         listExecutionsTransportSettings =
@@ -165,6 +166,7 @@ public class GrpcExecutionsStub extends ExecutionsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteExecutionRequest, Operation> deleteExecutionTransportSettings =
         GrpcCallSettings.<DeleteExecutionRequest, Operation>newBuilder()
@@ -175,6 +177,7 @@ public class GrpcExecutionsStub extends ExecutionsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CancelExecutionRequest, Operation> cancelExecutionTransportSettings =
         GrpcCallSettings.<CancelExecutionRequest, Operation>newBuilder()
@@ -185,6 +188,7 @@ public class GrpcExecutionsStub extends ExecutionsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getExecutionCallable =
