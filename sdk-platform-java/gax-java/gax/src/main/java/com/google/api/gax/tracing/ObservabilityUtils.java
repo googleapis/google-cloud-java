@@ -43,7 +43,18 @@ import javax.annotation.Nullable;
 
 final class ObservabilityUtils {
 
-  private ObservabilityUtils() {}
+  /** Function to extract the status of the error as a canonical code. */
+  static StatusCode.Code extractStatus(@Nullable Throwable error) {
+    if (error == null) {
+      return StatusCode.Code.OK;
+    } else if (error instanceof CancellationException) {
+      return StatusCode.Code.CANCELLED;
+    } else if (error instanceof ApiException) {
+      return ((ApiException) error).getStatusCode().getCode();
+    } else {
+      return StatusCode.Code.UNKNOWN;
+    }
+  }
 
   /** Constant for redacted values. */
   private static final String REDACTED_VALUE = "REDACTED";
@@ -150,26 +161,17 @@ final class ObservabilityUtils {
     return Joiner.on('&').join(redactedParams);
   }
 
-  /**
-   * Function to extract the status of the error as a string.
-   *
-   * @param error the thrown throwable error
-   * @return the extracted status string
-   */
-  static String extractStatus(@Nullable final Throwable error) {
-    final String statusString;
-
-    if (error == null) {
-      return StatusCode.Code.OK.toString();
-    } else if (error instanceof CancellationException) {
-      statusString = StatusCode.Code.CANCELLED.toString();
-    } else if (error instanceof ApiException) {
-      statusString = ((ApiException) error).getStatusCode().getCode().toString();
+  static void populateStatusAttributes(
+      Map<String, Object> attributes,
+      @Nullable Throwable error,
+      ApiTracerContext.Transport transport) {
+    StatusCode.Code code = extractStatus(error);
+    if (transport == ApiTracerContext.Transport.HTTP) {
+      attributes.put(
+          ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE, (long) code.getHttpStatusCode());
     } else {
-      statusString = StatusCode.Code.UNKNOWN.toString();
+      attributes.put(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE, code.toString());
     }
-
-    return statusString;
   }
 
   /** Function to extract the ErrorInfo payload from the error, if available */

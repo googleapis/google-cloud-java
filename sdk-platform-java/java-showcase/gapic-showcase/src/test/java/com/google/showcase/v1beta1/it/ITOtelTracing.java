@@ -48,6 +48,7 @@ import com.google.showcase.v1beta1.EchoClient;
 import com.google.showcase.v1beta1.EchoRequest;
 import com.google.showcase.v1beta1.EchoResponse;
 import com.google.showcase.v1beta1.EchoSettings;
+import com.google.showcase.v1beta1.it.util.TestClientInitializer;
 import com.google.showcase.v1beta1.stub.EchoStub;
 import com.google.showcase.v1beta1.stub.EchoStubSettings;
 import io.grpc.ManagedChannelBuilder;
@@ -409,6 +410,86 @@ class ITOtelTracing {
             .boxed()
             .collect(java.util.stream.Collectors.toList());
     assertThat(resendCounts).containsExactlyElementsIn(expectedCounts).inOrder();
+  }
+
+  @Test
+  void testTracing_statusCodes_grpc() throws Exception {
+    SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
+    EchoRequest errorRequest =
+        EchoRequest.newBuilder()
+            .setError(
+                Status.newBuilder().setCode(StatusCode.Code.INVALID_ARGUMENT.ordinal()).build())
+            .build();
+    EchoRequest successRequest = EchoRequest.newBuilder().setContent("tracing-test").build();
+
+    try (EchoClient grpcClient =
+        TestClientInitializer.createGrpcEchoClientOpentelemetry(tracingFactory)) {
+
+      grpcClient.echo(successRequest);
+      assertThrows(
+          com.google.api.gax.rpc.InvalidArgumentException.class,
+          () -> grpcClient.echo(errorRequest));
+
+      List<SpanData> spans = spanExporter.getFinishedSpanItems();
+      assertThat(spans).hasSize(2);
+
+      SpanData grpcSuccessSpan = spans.get(0);
+      assertThat(
+              grpcSuccessSpan
+                  .getAttributes()
+                  .get(
+                      AttributeKey.stringKey(
+                          ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
+          .isEqualTo("OK");
+
+      SpanData grpcErrorSpan = spans.get(1);
+      assertThat(
+              grpcErrorSpan
+                  .getAttributes()
+                  .get(
+                      AttributeKey.stringKey(
+                          ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
+          .isEqualTo("INVALID_ARGUMENT");
+    }
+  }
+
+  @Test
+  void testTracing_statusCodes_httpjson() throws Exception {
+    SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
+    EchoRequest errorRequest =
+        EchoRequest.newBuilder()
+            .setError(
+                Status.newBuilder().setCode(StatusCode.Code.INVALID_ARGUMENT.ordinal()).build())
+            .build();
+    EchoRequest successRequest = EchoRequest.newBuilder().setContent("tracing-test").build();
+
+    try (EchoClient httpClient =
+        TestClientInitializer.createHttpJsonEchoClientOpentelemetry(tracingFactory)) {
+
+      httpClient.echo(successRequest);
+      assertThrows(
+          com.google.api.gax.rpc.InvalidArgumentException.class,
+          () -> httpClient.echo(errorRequest));
+
+      List<SpanData> spans = spanExporter.getFinishedSpanItems();
+      assertThat(spans).hasSize(2);
+
+      SpanData httpSuccessSpan = spans.get(0);
+      assertThat(
+              httpSuccessSpan
+                  .getAttributes()
+                  .get(
+                      AttributeKey.longKey(ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE)))
+          .isEqualTo(200L);
+
+      SpanData httpErrorSpan = spans.get(1);
+      assertThat(
+              httpErrorSpan
+                  .getAttributes()
+                  .get(
+                      AttributeKey.longKey(ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE)))
+          .isEqualTo((long) StatusCode.Code.INVALID_ARGUMENT.getHttpStatusCode());
+    }
   }
 
   private EchoSettings createEchoSettings(boolean isHttpJson) throws Exception {

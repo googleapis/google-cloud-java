@@ -228,6 +228,7 @@
     <module>java-spanneradapter</module>
     <module>java-speech</module>
     <module>java-storage</module>
+    <module>java-storage-nio</module>
     <module>java-storage-transfer</module>
     <module>java-storagebatchoperations</module>
     <module>java-storageinsights</module>

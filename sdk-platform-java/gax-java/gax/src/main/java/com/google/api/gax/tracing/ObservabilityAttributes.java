@@ -88,6 +88,9 @@ public class ObservabilityAttributes {
   /** Size of the response body in bytes. */
   public static final String HTTP_RESPONSE_BODY_SIZE = "http.response.body.size";
 
+  /** The HTTP status code of the request (e.g., 200, 404). */
+  public static final String HTTP_RESPONSE_STATUS_ATTRIBUTE = "http.response.status_code";
+
   /** The resend count of the request. Only used in HTTP transport. */
   public static final String HTTP_RESEND_COUNT_ATTRIBUTE = "http.request.resend_count";
 

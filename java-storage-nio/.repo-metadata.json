@@ -1,0 +1,15 @@
+{
+  "api_shortname": "storage_nio",
+  "name_pretty": "NIO Filesystem Provider for Google Cloud Storage",
+  "api_description": "provides a Google Cloud Storage extension for Java's NIO Filesystem.",
+  "product_documentation": "https://cloud.google.com/storage/docs",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-nio/latest/history",
+  "release_level": "preview",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "google-cloud-java",
+  "distribution_name": "com.google.cloud:google-cloud-nio",
+  "api_id": "storage.googleapis.com",
+  "library_type": "OTHER",
+  "codeowner_team": "@googleapis/gcs-team"
+}

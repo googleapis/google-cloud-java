@@ -38,6 +38,7 @@ import io.opentelemetry.api.trace.SpanKind;
 import io.opentelemetry.api.trace.Tracer;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.CancellationException;
 
 /** An implementation of {@link ApiTracer} that uses OpenTelemetry to record traces. */
 @BetaApi
@@ -133,7 +134,7 @@ public class SpanTracer implements ApiTracer {
 
   @Override
   public void attemptSucceeded() {
-    endAttempt();
+    endAttempt(null);
   }
 
   @Override
@@ -180,26 +181,34 @@ public class SpanTracer implements ApiTracer {
 
   @Override
   public void attemptCancelled() {
-    endAttempt();
+    endAttempt(new CancellationException());
   }
 
   @Override
   public void attemptFailedDuration(Throwable error, java.time.Duration delay) {
-    endAttempt();
+    endAttempt(error);
   }
 
   @Override
   public void attemptFailedRetriesExhausted(Throwable error) {
-    endAttempt();
+    endAttempt(error);
   }
 
   @Override
   public void attemptPermanentFailure(Throwable error) {
-    endAttempt();
+    endAttempt(error);
   }
 
-  private void endAttempt() {
+  private void endAttempt(Throwable error) {
     if (attemptSpan != null) {
+      Map<String, Object> endAttributes = new HashMap<>();
+      ObservabilityUtils.populateStatusAttributes(
+          endAttributes, error, this.apiTracerContext.transport());
+
+      if (!endAttributes.isEmpty()) {
+        attemptSpan.setAllAttributes(ObservabilityUtils.toOtelAttributes(endAttributes));
+      }
+
       attemptSpan.end();
       attemptSpan = null;
     }
