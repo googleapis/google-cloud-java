@@ -959,6 +959,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-nio-bom</artifactId>
+        <version>0.128.15-SNAPSHOT</version><!-- {x-version-update:google-cloud-nio:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-notebooks-bom</artifactId>
         <version>1.87.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-notebooks:current} -->
         <type>pom</type>

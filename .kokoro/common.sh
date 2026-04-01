@@ -33,6 +33,7 @@ excluded_modules=(
   'java-spanner-jdbc'
   'google-auth-library-java'
   'java-storage'
+  'java-storage-nio'
 )
 
 function retry_with_backoff {
@@ -422,6 +423,16 @@ function install_modules() {
       'sdk-platform-java/java-shared-dependencies/first-party-dependencies'
       'sdk-platform-java/java-shared-dependencies/third-party-dependencies'
       'sdk-platform-java/gapic-generator-java-bom'
+      'sdk-platform-java/java-iam/grpc-google-iam-v1'
+      'sdk-platform-java/java-iam/grpc-google-iam-v2'
+      'sdk-platform-java/java-iam/grpc-google-iam-v2beta'
+      'sdk-platform-java/java-iam/grpc-google-iam-v3'
+      'sdk-platform-java/java-iam/grpc-google-iam-v3beta'
+      'sdk-platform-java/java-iam/proto-google-iam-v1'
+      'sdk-platform-java/java-iam/proto-google-iam-v2'
+      'sdk-platform-java/java-iam/proto-google-iam-v2beta'
+      'sdk-platform-java/java-iam/proto-google-iam-v3'
+      'sdk-platform-java/java-iam/proto-google-iam-v3beta'
       'sdk-platform-java/java-core/google-cloud-core-bom'
       'sdk-platform-java/java-core/google-cloud-core'
       'sdk-platform-java/java-core/google-cloud-core-grpc'
