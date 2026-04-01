@@ -61,7 +61,7 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
   private final com.google.cloud.datastore.telemetry.TraceUtil otelTraceUtil;
   private final RetrySettings retrySettings;
   private final DatastoreOptions datastoreOptions;
-  private final DatastoreMetricsRecorder datastoreMetricsRecorder;
+  private final DatastoreMetricsRecorder metricsRecorder;
 
   @ObsoleteApi("Prefer to create RetryAndTraceDatastoreRpcDecorator via the Builder")
   public RetryAndTraceDatastoreRpcDecorator(
@@ -73,7 +73,7 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
     this.retrySettings = retrySettings;
     this.datastoreOptions = datastoreOptions;
     this.otelTraceUtil = otelTraceUtil;
-    this.datastoreMetricsRecorder = new NoOpDatastoreMetricsRecorder();
+    this.metricsRecorder = new NoOpDatastoreMetricsRecorder();
   }
 
   private RetryAndTraceDatastoreRpcDecorator(Builder builder) {
@@ -81,7 +81,7 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
     this.otelTraceUtil = builder.otelTraceUtil;
     this.retrySettings = builder.retrySettings;
     this.datastoreOptions = builder.datastoreOptions;
-    this.datastoreMetricsRecorder = builder.datastoreMetricsRecorder;
+    this.metricsRecorder = builder.datastoreMetricsRecorder;
   }
 
   public static Builder newBuilder() {
@@ -207,7 +207,7 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
     try (TraceUtil.Scope ignored = span.makeCurrent()) {
       Callable<O> callable =
           TelemetryUtils.attemptMetricsCallable(
-              block, datastoreMetricsRecorder, datastoreOptions, methodName);
+              block, metricsRecorder, datastoreOptions, methodName);
       O result =
           RetryHelper.runWithRetries(
               callable, this.retrySettings, EXCEPTION_HANDLER, this.datastoreOptions.getClock());
@@ -219,7 +219,7 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
       throw DatastoreException.translateAndThrow(e);
     } finally {
       TelemetryUtils.recordOperationMetrics(
-          datastoreMetricsRecorder, datastoreOptions, stopwatch, methodName, operationStatus);
+          metricsRecorder, datastoreOptions, stopwatch, methodName, operationStatus);
       span.end();
     }
   }

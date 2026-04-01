@@ -64,7 +64,8 @@ public interface DatastoreMetricsRecorder extends MetricsRecorder {
       if (customOtel == null) {
         customOtel = GlobalOpenTelemetry.get();
       }
-      return new OpenTelemetryDatastoreMetricsRecorder(customOtel, TelemetryConstants.METRIC_PREFIX);
+      return new OpenTelemetryDatastoreMetricsRecorder(
+          customOtel, TelemetryConstants.METRIC_PREFIX);
     }
 
     return new NoOpDatastoreMetricsRecorder();

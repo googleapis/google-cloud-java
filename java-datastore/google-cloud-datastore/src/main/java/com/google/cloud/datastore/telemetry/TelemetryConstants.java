@@ -71,11 +71,7 @@ public class TelemetryConstants {
    *
    * <p>Cloud Monitoring is strict about label schemas: exporting a label that was not present when
    * the metric descriptor was first created will cause the entire {@code createTimeSeries} call to
-   * fail. Registering OTel Views that filter to this set (see {@link DatastoreBuiltInMetricsView})
-   * prevents unexpected labels from leaking into the export and causing silent data loss.
-   *
-   * <p>Using {@code AttributeKey<?>} (wildcard) rather than the raw {@code AttributeKey} type
-   * preserves generic type safety while still allowing keys of any value type in the set.
+   * fail.
    */
   public static final Set<AttributeKey<?>> COMMON_ATTRIBUTES =
       ImmutableSet.of(
