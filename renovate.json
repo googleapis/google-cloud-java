@@ -25,6 +25,21 @@
         "/^com.google.cloud:google-cloud-storage/",
         "/^com.google.apis:google-api-services-storage/"
       ]
+    },
+    {
+      "matchManagers": [
+        "regex"
+      ],
+      "semanticCommitType": "chore",
+      "matchFileNames": [
+        "dependencies.txt"
+      ],
+      "matchDatasources": [
+        "maven"
+      ],
+      "groupName": "Upper Bound Dependencies File",
+      "description": "Group all dependencies from the Upper Bound Dependencies File",
+      "enabled": true
     }
   ],
   "includePaths": [
@@ -96,21 +111,6 @@
       ],
       "depNameTemplate": "com.google.cloud:sdk-platform-java-config",
       "datasourceTemplate": "maven"
-    },
-    {
-      "matchManagers": [
-        "regex"
-      ],
-      "semanticCommitType": "chore",
-      "matchFileNames": [
-        "dependencies.txt"
-      ],
-      "matchDatasources": [
-        "maven"
-      ],
-      "groupName": "Upper Bound Dependencies File",
-      "description": "Group all dependencies from the Upper Bound Dependencies File",
-      "enabled": true
     }
   ]
 }
