@@ -65,29 +65,25 @@ public final class TelemetryUtils {
    * Records operation-level metrics. This method should be called after the entire operation across
    * all retry attempts has completed.
    *
-   * <p>Metrics are recorded for all transport types (gRPC and HTTP). Previously this method only
-   * recorded metrics for HTTP transport because gRPC metrics were collected separately through
-   * GAX's {@code MetricsTracerFactory}. That mechanism was removed in favour of recording at this
-   * single, transport-agnostic layer so that the built-in Cloud Monitoring exporter captures every
-   * operation regardless of transport.
+   * <p>Metrics are recorded for both transport types (gRPC and HTTP).
    *
-   * @param datastoreMetricsRecorder The metrics recorder.
+   * @param metricsRecorder The metrics recorder.
    * @param datastoreOptions The DatastoreOptions object.
    * @param operationStopwatch The stopwatch tracking the duration of the entire operation.
    * @param methodName The name of the API method.
    * @param status The final status of the operation after all retries.
    */
   public static void recordOperationMetrics(
-      DatastoreMetricsRecorder datastoreMetricsRecorder,
+      DatastoreMetricsRecorder metricsRecorder,
       DatastoreOptions datastoreOptions,
       Stopwatch operationStopwatch,
       String methodName,
       String status) {
     if (methodName != null) {
       Map<String, String> attributes = buildMetricAttributes(datastoreOptions, methodName, status);
-      datastoreMetricsRecorder.recordOperationLatency(
+      metricsRecorder.recordOperationLatency(
           operationStopwatch.elapsed(TimeUnit.MILLISECONDS), attributes);
-      datastoreMetricsRecorder.recordOperationCount(1, attributes);
+      metricsRecorder.recordOperationCount(1, attributes);
     }
   }
 
@@ -95,14 +91,10 @@ public final class TelemetryUtils {
    * Wraps a callable with logic to record attempt-level metrics. Attempt metrics are recorded for
    * each individual execution of the callable, regardless of whether it succeeds or fails.
    *
-   * <p>Metrics are recorded for all transport types (gRPC and HTTP). Previously this wrapper only
-   * recorded metrics for HTTP transport because gRPC metrics were collected separately through
-   * GAX's {@code MetricsTracerFactory}. That mechanism was removed in favour of recording at this
-   * single, transport-agnostic layer so that the built-in Cloud Monitoring exporter captures every
-   * attempt regardless of transport.
+   * <p>Metrics are recorded for both transport types (gRPC and HTTP).
    *
    * @param callable The original callable to execute.
-   * @param datastoreMetricsRecorder The metrics recorder.
+   * @param metricsRecorder The metrics recorder.
    * @param datastoreOptions The DatastoreOptions object.
    * @param methodName The name of the API method.
    * @param <T> The return type of the callable.
@@ -110,7 +102,7 @@ public final class TelemetryUtils {
    */
   public static <T> Callable<T> attemptMetricsCallable(
       Callable<T> callable,
-      DatastoreMetricsRecorder datastoreMetricsRecorder,
+      DatastoreMetricsRecorder metricsRecorder,
       DatastoreOptions datastoreOptions,
       String methodName) {
     return () -> {
@@ -126,9 +118,8 @@ public final class TelemetryUtils {
       } finally {
         Map<String, String> attributes =
             buildMetricAttributes(datastoreOptions, methodName, status);
-        datastoreMetricsRecorder.recordAttemptLatency(
-            stopwatch.elapsed(TimeUnit.MILLISECONDS), attributes);
-        datastoreMetricsRecorder.recordAttemptCount(1, attributes);
+        metricsRecorder.recordAttemptLatency(stopwatch.elapsed(TimeUnit.MILLISECONDS), attributes);
+        metricsRecorder.recordAttemptCount(1, attributes);
       }
     };
   }

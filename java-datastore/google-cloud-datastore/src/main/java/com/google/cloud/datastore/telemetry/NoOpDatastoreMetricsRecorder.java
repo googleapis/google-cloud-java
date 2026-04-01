@@ -22,8 +22,8 @@ import java.util.Map;
 /**
  * A no-op implementation of {@link DatastoreMetricsRecorder}.
  *
- * <p>Used to stub out metrics instrumentation when metrics are disabled or when no valid
- * recorder could be initialized.
+ * <p>Used to stub out metrics instrumentation when metrics are disabled or when no valid recorder
+ * could be initialized.
  *
  * <p>WARNING: This class is intended for internal use only. It was made public to be used across
  * packages as a default. It should not be used by external customers and its API may change without

@@ -100,8 +100,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   private final com.google.cloud.datastore.telemetry.TraceUtil otelTraceUtil =
       getOptions().getTraceUtil();
-  private final DatastoreMetricsRecorder datastoreMetricsRecorder =
-      getOptions().getMetricsRecorder();
+  private final DatastoreMetricsRecorder metricsRecorder = getOptions().getMetricsRecorder();
   private final ReadOptionProtoPreparer readOptionProtoPreparer;
   private final AggregationQueryExecutor aggregationQueryExecutor;
 
@@ -119,7 +118,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
                 .setTraceUtil(otelTraceUtil)
                 .setRetrySettings(retrySettings)
                 .setDatastoreOptions(options)
-                .setMetricsRecorder(datastoreMetricsRecorder)
+                .setMetricsRecorder(metricsRecorder)
                 .build(),
             options);
   }
@@ -182,7 +181,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   static class ReadWriteTransactionCallable<T> implements Callable<T> {
     private final Datastore datastore;
     private final TransactionCallable<T> callable;
-    private final DatastoreMetricsRecorder datastoreMetricsRecorder;
+    private final DatastoreMetricsRecorder metricsRecorder;
     private volatile TransactionOptions options;
     private volatile Transaction transaction;
 
@@ -190,11 +189,11 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
         Datastore datastore,
         TransactionCallable<T> callable,
         TransactionOptions options,
-        DatastoreMetricsRecorder datastoreMetricsRecorder) {
+        DatastoreMetricsRecorder metricsRecorder) {
       this.datastore = datastore;
       this.callable = callable;
       this.options = options;
-      this.datastoreMetricsRecorder = datastoreMetricsRecorder;
+      this.metricsRecorder = metricsRecorder;
       this.transaction = null;
     }
 
@@ -255,7 +254,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       attributes.put(
           TelemetryConstants.ATTRIBUTES_KEY_TRANSPORT,
           TelemetryConstants.getTransportName(transportOptions));
-      datastoreMetricsRecorder.recordTransactionAttemptCount(1, attributes);
+      metricsRecorder.recordTransactionAttemptCount(1, attributes);
     }
   }
 
@@ -270,8 +269,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     TraceUtil.Span span = otelTraceUtil.startSpan(SPAN_NAME_TRANSACTION_RUN);
 
     ReadWriteTransactionCallable<T> baseCallable =
-        new ReadWriteTransactionCallable<>(
-            this, callable, transactionOptions, datastoreMetricsRecorder);
+        new ReadWriteTransactionCallable<>(this, callable, transactionOptions, metricsRecorder);
 
     Callable<T> transactionCallable = baseCallable;
     if (getOptions().getOpenTelemetryOptions().isTracingEnabled()) {
@@ -301,7 +299,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       attributes.put(
           TelemetryConstants.ATTRIBUTES_KEY_TRANSPORT,
           TelemetryConstants.getTransportName(getOptions().getTransportOptions()));
-      datastoreMetricsRecorder.recordTransactionLatency(latencyMs, attributes);
+      metricsRecorder.recordTransactionLatency(latencyMs, attributes);
       span.end();
     }
   }
@@ -809,8 +807,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
     DatastoreOptions options = getOptions();
     Callable<T> attemptCallable =
-        TelemetryUtils.attemptMetricsCallable(
-            callable, datastoreMetricsRecorder, options, methodName);
+        TelemetryUtils.attemptMetricsCallable(callable, metricsRecorder, options, methodName);
     try (TraceUtil.Scope ignored = span.makeCurrent()) {
       return RetryHelper.runWithRetries(
           attemptCallable, retrySettings, exceptionHandler, options.getClock());
@@ -820,7 +817,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       throw DatastoreException.translateAndThrow(e);
     } finally {
       TelemetryUtils.recordOperationMetrics(
-          datastoreMetricsRecorder, options, operationStopwatch, methodName, operationStatus);
+          metricsRecorder, options, operationStopwatch, methodName, operationStatus);
       span.end();
     }
   }
