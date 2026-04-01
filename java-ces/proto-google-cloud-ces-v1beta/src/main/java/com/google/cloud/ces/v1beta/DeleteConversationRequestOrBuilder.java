@@ -69,7 +69,7 @@ public interface DeleteConversationRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.DeleteConversationRequest.source is deprecated. See
-   *     google/cloud/ces/v1beta/agent_service.proto;l=1181
+   *     google/cloud/ces/v1beta/agent_service.proto;l=1189
    * @return The enum numeric value on the wire for source.
    */
   @java.lang.Deprecated
@@ -88,7 +88,7 @@ public interface DeleteConversationRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.DeleteConversationRequest.source is deprecated. See
-   *     google/cloud/ces/v1beta/agent_service.proto;l=1181
+   *     google/cloud/ces/v1beta/agent_service.proto;l=1189
    * @return The source.
    */
   @java.lang.Deprecated

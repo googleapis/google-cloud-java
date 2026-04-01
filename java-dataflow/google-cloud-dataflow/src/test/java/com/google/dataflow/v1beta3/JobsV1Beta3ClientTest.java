@@ -116,6 +116,7 @@ public class JobsV1Beta3ClientTest {
             .setRuntimeUpdatableParams(RuntimeUpdatableParams.newBuilder().build())
             .setSatisfiesPzi(true)
             .setServiceResources(ServiceResources.newBuilder().build())
+            .setPausable(true)
             .build();
     mockJobsV1Beta3.addResponse(expectedResponse);
 
@@ -199,6 +200,7 @@ public class JobsV1Beta3ClientTest {
             .setRuntimeUpdatableParams(RuntimeUpdatableParams.newBuilder().build())
             .setSatisfiesPzi(true)
             .setServiceResources(ServiceResources.newBuilder().build())
+            .setPausable(true)
             .build();
     mockJobsV1Beta3.addResponse(expectedResponse);
 
@@ -279,6 +281,7 @@ public class JobsV1Beta3ClientTest {
             .setRuntimeUpdatableParams(RuntimeUpdatableParams.newBuilder().build())
             .setSatisfiesPzi(true)
             .setServiceResources(ServiceResources.newBuilder().build())
+            .setPausable(true)
             .build();
     mockJobsV1Beta3.addResponse(expectedResponse);
 

@@ -62,9 +62,8 @@ public interface ListPullRequestCommentsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Requested page size. If unspecified, at most 100 pull request
-   * comments will be returned. The maximum value is 100; values above 100 will
-   * be coerced to 100.
+   * Optional. Requested page size. If unspecified, a default size of 30 will be
+   * used. The maximum value is 100; values above 100 will be coerced to 100.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

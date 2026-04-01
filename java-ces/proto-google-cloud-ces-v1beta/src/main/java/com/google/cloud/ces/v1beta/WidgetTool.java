@@ -475,6 +475,2086 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(enum_scope:google.cloud.ces.v1beta.WidgetTool.WidgetType)
   }
 
+  public interface DataMappingOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.ces.v1beta.WidgetTool.DataMapping)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the tool that provides the data for the
+     * widget (e.g., a search tool or a custom function). Format:
+     * `projects/{project}/locations/{location}/agents/{agent}/tools/{tool}`
+     * </pre>
+     *
+     * <code>string source_tool_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The sourceToolName.
+     */
+    java.lang.String getSourceToolName();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the tool that provides the data for the
+     * widget (e.g., a search tool or a custom function). Format:
+     * `projects/{project}/locations/{location}/agents/{agent}/tools/{tool}`
+     * </pre>
+     *
+     * <code>string source_tool_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for sourceToolName.
+     */
+    com.google.protobuf.ByteString getSourceToolNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A map of widget input parameter fields to the corresponding
+     * output fields of the source tool.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; field_mappings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    int getFieldMappingsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A map of widget input parameter fields to the corresponding
+     * output fields of the source tool.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; field_mappings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    boolean containsFieldMappings(java.lang.String key);
+
+    /** Use {@link #getFieldMappingsMap()} instead. */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String> getFieldMappings();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A map of widget input parameter fields to the corresponding
+     * output fields of the source tool.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; field_mappings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.Map<java.lang.String, java.lang.String> getFieldMappingsMap();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A map of widget input parameter fields to the corresponding
+     * output fields of the source tool.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; field_mappings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    /* nullable */
+    java.lang.String getFieldMappingsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A map of widget input parameter fields to the corresponding
+     * output fields of the source tool.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; field_mappings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.lang.String getFieldMappingsOrThrow(java.lang.String key);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for a Python function used to transform the
+     * source tool's output into the widget's input format.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.PythonFunction python_function = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the pythonFunction field is set.
+     */
+    boolean hasPythonFunction();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for a Python function used to transform the
+     * source tool's output into the widget's input format.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.PythonFunction python_function = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The pythonFunction.
+     */
+    com.google.cloud.ces.v1beta.PythonFunction getPythonFunction();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for a Python function used to transform the
+     * source tool's output into the widget's input format.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.PythonFunction python_function = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.ces.v1beta.PythonFunctionOrBuilder getPythonFunctionOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mode of the data mapping.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.WidgetTool.DataMapping.Mode mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for mode.
+     */
+    int getModeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mode of the data mapping.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.WidgetTool.DataMapping.Mode mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The mode.
+     */
+    com.google.cloud.ces.v1beta.WidgetTool.DataMapping.Mode getMode();
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use `python_function` instead.
+     * </pre>
+     *
+     * <code>string python_script = 3 [deprecated = true];</code>
+     *
+     * @deprecated google.cloud.ces.v1beta.WidgetTool.DataMapping.python_script is deprecated. See
+     *     google/cloud/ces/v1beta/widget_tool.proto;l=66
+     * @return The pythonScript.
+     */
+    @java.lang.Deprecated
+    java.lang.String getPythonScript();
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use `python_function` instead.
+     * </pre>
+     *
+     * <code>string python_script = 3 [deprecated = true];</code>
+     *
+     * @deprecated google.cloud.ces.v1beta.WidgetTool.DataMapping.python_script is deprecated. See
+     *     google/cloud/ces/v1beta/widget_tool.proto;l=66
+     * @return The bytes for pythonScript.
+     */
+    @java.lang.Deprecated
+    com.google.protobuf.ByteString getPythonScriptBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for mapping data from a source tool to the widget's input
+   * parameters.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.ces.v1beta.WidgetTool.DataMapping}
+   */
+  public static final class DataMapping extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.ces.v1beta.WidgetTool.DataMapping)
+      DataMappingOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "DataMapping");
+    }
+
+    // Use DataMapping.newBuilder() to construct.
+    private DataMapping(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DataMapping() {
+      sourceToolName_ = "";
+      mode_ = 0;
+      pythonScript_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.ces.v1beta.WidgetToolProto
+          .internal_static_google_cloud_ces_v1beta_WidgetTool_DataMapping_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 2:
+          return internalGetFieldMappings();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.ces.v1beta.WidgetToolProto
+          .internal_static_google_cloud_ces_v1beta_WidgetTool_DataMapping_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.ces.v1beta.WidgetTool.DataMapping.class,
+              com.google.cloud.ces.v1beta.WidgetTool.DataMapping.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The strategy used to map data from the source tool to the widget.
+     * </pre>
+     *
+     * Protobuf enum {@code google.cloud.ces.v1beta.WidgetTool.DataMapping.Mode}
+     */
+    public enum Mode implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified mode.
+       * </pre>
+       *
+       * <code>MODE_UNSPECIFIED = 0;</code>
+       */
+      MODE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Use the `field_mappings` map for data transformation.
+       * </pre>
+       *
+       * <code>FIELD_MAPPING = 1;</code>
+       */
+      FIELD_MAPPING(1),
+      /**
+       *
+       *
+       * <pre>
+       * Use the `python_script` for data transformation.
+       * </pre>
+       *
+       * <code>PYTHON_SCRIPT = 2;</code>
+       */
+      PYTHON_SCRIPT(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "Mode");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified mode.
+       * </pre>
+       *
+       * <code>MODE_UNSPECIFIED = 0;</code>
+       */
+      public static final int MODE_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Use the `field_mappings` map for data transformation.
+       * </pre>
+       *
+       * <code>FIELD_MAPPING = 1;</code>
+       */
+      public static final int FIELD_MAPPING_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Use the `python_script` for data transformation.
+       * </pre>
+       *
+       * <code>PYTHON_SCRIPT = 2;</code>
+       */
+      public static final int PYTHON_SCRIPT_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Mode valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Mode forNumber(int value) {
+        switch (value) {
+          case 0:
+            return MODE_UNSPECIFIED;
+          case 1:
+            return FIELD_MAPPING;
+          case 2:
+            return PYTHON_SCRIPT;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Mode> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Mode> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Mode>() {
+            public Mode findValueByNumber(int number) {
+              return Mode.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.ces.v1beta.WidgetTool.DataMapping.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final Mode[] VALUES = values();
+
+      public static Mode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Mode(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.ces.v1beta.WidgetTool.DataMapping.Mode)
+    }
+
+    private int bitField0_;
+    public static final int SOURCE_TOOL_NAME_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sourceToolName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the tool that provides the data for the
+     * widget (e.g., a search tool or a custom function). Format:
+     * `projects/{project}/locations/{location}/agents/{agent}/tools/{tool}`
+     * </pre>
+     *
+     * <code>string source_tool_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The sourceToolName.
+     */
+    @java.lang.Override
+    public java.lang.String getSourceToolName() {
+      java.lang.Object ref = sourceToolName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceToolName_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the tool that provides the data for the
+     * widget (e.g., a search tool or a custom function). Format:
+     * `projects/{project}/locations/{location}/agents/{agent}/tools/{tool}`
+     * </pre>
+     *
+     * <code>string source_tool_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for sourceToolName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSourceToolNameBytes() {
+      java.lang.Object ref = sourceToolName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sourceToolName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FIELD_MAPPINGS_FIELD_NUMBER = 2;
+
+    private static final class FieldMappingsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+          com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+              com.google.cloud.ces.v1beta.WidgetToolProto
+                  .internal_static_google_cloud_ces_v1beta_WidgetTool_DataMapping_FieldMappingsEntry_descriptor,
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "",
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "");
+    }
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> fieldMappings_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetFieldMappings() {
+      if (fieldMappings_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            FieldMappingsDefaultEntryHolder.defaultEntry);
+      }
+      return fieldMappings_;
+    }
+
+    public int getFieldMappingsCount() {
+      return internalGetFieldMappings().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A map of widget input parameter fields to the corresponding
+     * output fields of the source tool.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; field_mappings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsFieldMappings(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetFieldMappings().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getFieldMappingsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getFieldMappings() {
+      return getFieldMappingsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A map of widget input parameter fields to the corresponding
+     * output fields of the source tool.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; field_mappings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getFieldMappingsMap() {
+      return internalGetFieldMappings().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A map of widget input parameter fields to the corresponding
+     * output fields of the source tool.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; field_mappings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getFieldMappingsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetFieldMappings().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A map of widget input parameter fields to the corresponding
+     * output fields of the source tool.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; field_mappings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getFieldMappingsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetFieldMappings().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int PYTHON_FUNCTION_FIELD_NUMBER = 5;
+    private com.google.cloud.ces.v1beta.PythonFunction pythonFunction_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for a Python function used to transform the
+     * source tool's output into the widget's input format.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.PythonFunction python_function = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the pythonFunction field is set.
+     */
+    @java.lang.Override
+    public boolean hasPythonFunction() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for a Python function used to transform the
+     * source tool's output into the widget's input format.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.PythonFunction python_function = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The pythonFunction.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.PythonFunction getPythonFunction() {
+      return pythonFunction_ == null
+          ? com.google.cloud.ces.v1beta.PythonFunction.getDefaultInstance()
+          : pythonFunction_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for a Python function used to transform the
+     * source tool's output into the widget's input format.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.PythonFunction python_function = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.PythonFunctionOrBuilder getPythonFunctionOrBuilder() {
+      return pythonFunction_ == null
+          ? com.google.cloud.ces.v1beta.PythonFunction.getDefaultInstance()
+          : pythonFunction_;
+    }
+
+    public static final int MODE_FIELD_NUMBER = 4;
+    private int mode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mode of the data mapping.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.WidgetTool.DataMapping.Mode mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for mode.
+     */
+    @java.lang.Override
+    public int getModeValue() {
+      return mode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mode of the data mapping.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.WidgetTool.DataMapping.Mode mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The mode.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.WidgetTool.DataMapping.Mode getMode() {
+      com.google.cloud.ces.v1beta.WidgetTool.DataMapping.Mode result =
+          com.google.cloud.ces.v1beta.WidgetTool.DataMapping.Mode.forNumber(mode_);
+      return result == null
+          ? com.google.cloud.ces.v1beta.WidgetTool.DataMapping.Mode.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int PYTHON_SCRIPT_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object pythonScript_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use `python_function` instead.
+     * </pre>
+     *
+     * <code>string python_script = 3 [deprecated = true];</code>
+     *
+     * @deprecated google.cloud.ces.v1beta.WidgetTool.DataMapping.python_script is deprecated. See
+     *     google/cloud/ces/v1beta/widget_tool.proto;l=66
+     * @return The pythonScript.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.lang.String getPythonScript() {
+      java.lang.Object ref = pythonScript_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pythonScript_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use `python_function` instead.
+     * </pre>
+     *
+     * <code>string python_script = 3 [deprecated = true];</code>
+     *
+     * @deprecated google.cloud.ces.v1beta.WidgetTool.DataMapping.python_script is deprecated. See
+     *     google/cloud/ces/v1beta/widget_tool.proto;l=66
+     * @return The bytes for pythonScript.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public com.google.protobuf.ByteString getPythonScriptBytes() {
+      java.lang.Object ref = pythonScript_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pythonScript_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sourceToolName_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, sourceToolName_);
+      }
+      com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+          output, internalGetFieldMappings(), FieldMappingsDefaultEntryHolder.defaultEntry, 2);
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pythonScript_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, pythonScript_);
+      }
+      if (mode_
+          != com.google.cloud.ces.v1beta.WidgetTool.DataMapping.Mode.MODE_UNSPECIFIED.getNumber()) {
+        output.writeEnum(4, mode_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(5, getPythonFunction());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sourceToolName_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, sourceToolName_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+          internalGetFieldMappings().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String> fieldMappings__ =
+            FieldMappingsDefaultEntryHolder.defaultEntry
+                .newBuilderForType()
+                .setKey(entry.getKey())
+                .setValue(entry.getValue())
+                .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, fieldMappings__);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pythonScript_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, pythonScript_);
+      }
+      if (mode_
+          != com.google.cloud.ces.v1beta.WidgetTool.DataMapping.Mode.MODE_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, mode_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getPythonFunction());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.ces.v1beta.WidgetTool.DataMapping)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.ces.v1beta.WidgetTool.DataMapping other =
+          (com.google.cloud.ces.v1beta.WidgetTool.DataMapping) obj;
+
+      if (!getSourceToolName().equals(other.getSourceToolName())) return false;
+      if (!internalGetFieldMappings().equals(other.internalGetFieldMappings())) return false;
+      if (hasPythonFunction() != other.hasPythonFunction()) return false;
+      if (hasPythonFunction()) {
+        if (!getPythonFunction().equals(other.getPythonFunction())) return false;
+      }
+      if (mode_ != other.mode_) return false;
+      if (!getPythonScript().equals(other.getPythonScript())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SOURCE_TOOL_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceToolName().hashCode();
+      if (!internalGetFieldMappings().getMap().isEmpty()) {
+        hash = (37 * hash) + FIELD_MAPPINGS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetFieldMappings().hashCode();
+      }
+      if (hasPythonFunction()) {
+        hash = (37 * hash) + PYTHON_FUNCTION_FIELD_NUMBER;
+        hash = (53 * hash) + getPythonFunction().hashCode();
+      }
+      hash = (37 * hash) + MODE_FIELD_NUMBER;
+      hash = (53 * hash) + mode_;
+      hash = (37 * hash) + PYTHON_SCRIPT_FIELD_NUMBER;
+      hash = (53 * hash) + getPythonScript().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.ces.v1beta.WidgetTool.DataMapping parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1beta.WidgetTool.DataMapping parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.WidgetTool.DataMapping parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1beta.WidgetTool.DataMapping parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.WidgetTool.DataMapping parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1beta.WidgetTool.DataMapping parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.WidgetTool.DataMapping parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1beta.WidgetTool.DataMapping parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.WidgetTool.DataMapping parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1beta.WidgetTool.DataMapping parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.WidgetTool.DataMapping parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1beta.WidgetTool.DataMapping parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.ces.v1beta.WidgetTool.DataMapping prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for mapping data from a source tool to the widget's input
+     * parameters.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.ces.v1beta.WidgetTool.DataMapping}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.ces.v1beta.WidgetTool.DataMapping)
+        com.google.cloud.ces.v1beta.WidgetTool.DataMappingOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.ces.v1beta.WidgetToolProto
+            .internal_static_google_cloud_ces_v1beta_WidgetTool_DataMapping_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 2:
+            return internalGetFieldMappings();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 2:
+            return internalGetMutableFieldMappings();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.ces.v1beta.WidgetToolProto
+            .internal_static_google_cloud_ces_v1beta_WidgetTool_DataMapping_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.ces.v1beta.WidgetTool.DataMapping.class,
+                com.google.cloud.ces.v1beta.WidgetTool.DataMapping.Builder.class);
+      }
+
+      // Construct using com.google.cloud.ces.v1beta.WidgetTool.DataMapping.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetPythonFunctionFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        sourceToolName_ = "";
+        internalGetMutableFieldMappings().clear();
+        pythonFunction_ = null;
+        if (pythonFunctionBuilder_ != null) {
+          pythonFunctionBuilder_.dispose();
+          pythonFunctionBuilder_ = null;
+        }
+        mode_ = 0;
+        pythonScript_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.ces.v1beta.WidgetToolProto
+            .internal_static_google_cloud_ces_v1beta_WidgetTool_DataMapping_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.WidgetTool.DataMapping getDefaultInstanceForType() {
+        return com.google.cloud.ces.v1beta.WidgetTool.DataMapping.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.WidgetTool.DataMapping build() {
+        com.google.cloud.ces.v1beta.WidgetTool.DataMapping result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.WidgetTool.DataMapping buildPartial() {
+        com.google.cloud.ces.v1beta.WidgetTool.DataMapping result =
+            new com.google.cloud.ces.v1beta.WidgetTool.DataMapping(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.ces.v1beta.WidgetTool.DataMapping result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.sourceToolName_ = sourceToolName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.fieldMappings_ = internalGetFieldMappings();
+          result.fieldMappings_.makeImmutable();
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.pythonFunction_ =
+              pythonFunctionBuilder_ == null ? pythonFunction_ : pythonFunctionBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.mode_ = mode_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.pythonScript_ = pythonScript_;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.ces.v1beta.WidgetTool.DataMapping) {
+          return mergeFrom((com.google.cloud.ces.v1beta.WidgetTool.DataMapping) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.ces.v1beta.WidgetTool.DataMapping other) {
+        if (other == com.google.cloud.ces.v1beta.WidgetTool.DataMapping.getDefaultInstance())
+          return this;
+        if (!other.getSourceToolName().isEmpty()) {
+          sourceToolName_ = other.sourceToolName_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        internalGetMutableFieldMappings().mergeFrom(other.internalGetFieldMappings());
+        bitField0_ |= 0x00000002;
+        if (other.hasPythonFunction()) {
+          mergePythonFunction(other.getPythonFunction());
+        }
+        if (other.mode_ != 0) {
+          setModeValue(other.getModeValue());
+        }
+        if (!other.getPythonScript().isEmpty()) {
+          pythonScript_ = other.pythonScript_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  sourceToolName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  com.google.protobuf.MapEntry<java.lang.String, java.lang.String> fieldMappings__ =
+                      input.readMessage(
+                          FieldMappingsDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+                  internalGetMutableFieldMappings()
+                      .getMutableMap()
+                      .put(fieldMappings__.getKey(), fieldMappings__.getValue());
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  pythonScript_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 26
+              case 32:
+                {
+                  mode_ = input.readEnum();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
+              case 42:
+                {
+                  input.readMessage(
+                      internalGetPythonFunctionFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 42
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object sourceToolName_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The resource name of the tool that provides the data for the
+       * widget (e.g., a search tool or a custom function). Format:
+       * `projects/{project}/locations/{location}/agents/{agent}/tools/{tool}`
+       * </pre>
+       *
+       * <code>string source_tool_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The sourceToolName.
+       */
+      public java.lang.String getSourceToolName() {
+        java.lang.Object ref = sourceToolName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sourceToolName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The resource name of the tool that provides the data for the
+       * widget (e.g., a search tool or a custom function). Format:
+       * `projects/{project}/locations/{location}/agents/{agent}/tools/{tool}`
+       * </pre>
+       *
+       * <code>string source_tool_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for sourceToolName.
+       */
+      public com.google.protobuf.ByteString getSourceToolNameBytes() {
+        java.lang.Object ref = sourceToolName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          sourceToolName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The resource name of the tool that provides the data for the
+       * widget (e.g., a search tool or a custom function). Format:
+       * `projects/{project}/locations/{location}/agents/{agent}/tools/{tool}`
+       * </pre>
+       *
+       * <code>string source_tool_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The sourceToolName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourceToolName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceToolName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The resource name of the tool that provides the data for the
+       * widget (e.g., a search tool or a custom function). Format:
+       * `projects/{project}/locations/{location}/agents/{agent}/tools/{tool}`
+       * </pre>
+       *
+       * <code>string source_tool_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSourceToolName() {
+        sourceToolName_ = getDefaultInstance().getSourceToolName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The resource name of the tool that provides the data for the
+       * widget (e.g., a search tool or a custom function). Format:
+       * `projects/{project}/locations/{location}/agents/{agent}/tools/{tool}`
+       * </pre>
+       *
+       * <code>string source_tool_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for sourceToolName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourceToolNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        sourceToolName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String> fieldMappings_;
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetFieldMappings() {
+        if (fieldMappings_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              FieldMappingsDefaultEntryHolder.defaultEntry);
+        }
+        return fieldMappings_;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetMutableFieldMappings() {
+        if (fieldMappings_ == null) {
+          fieldMappings_ =
+              com.google.protobuf.MapField.newMapField(
+                  FieldMappingsDefaultEntryHolder.defaultEntry);
+        }
+        if (!fieldMappings_.isMutable()) {
+          fieldMappings_ = fieldMappings_.copy();
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return fieldMappings_;
+      }
+
+      public int getFieldMappingsCount() {
+        return internalGetFieldMappings().getMap().size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A map of widget input parameter fields to the corresponding
+       * output fields of the source tool.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; field_mappings = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public boolean containsFieldMappings(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        return internalGetFieldMappings().getMap().containsKey(key);
+      }
+
+      /** Use {@link #getFieldMappingsMap()} instead. */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getFieldMappings() {
+        return getFieldMappingsMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A map of widget input parameter fields to the corresponding
+       * output fields of the source tool.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; field_mappings = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, java.lang.String> getFieldMappingsMap() {
+        return internalGetFieldMappings().getMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A map of widget input parameter fields to the corresponding
+       * output fields of the source tool.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; field_mappings = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public /* nullable */ java.lang.String getFieldMappingsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          java.lang.String defaultValue) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetFieldMappings().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A map of widget input parameter fields to the corresponding
+       * output fields of the source tool.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; field_mappings = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.lang.String getFieldMappingsOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetFieldMappings().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearFieldMappings() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        internalGetMutableFieldMappings().getMutableMap().clear();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A map of widget input parameter fields to the corresponding
+       * output fields of the source tool.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; field_mappings = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder removeFieldMappings(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        internalGetMutableFieldMappings().getMutableMap().remove(key);
+        return this;
+      }
+
+      /** Use alternate mutation accessors instead. */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getMutableFieldMappings() {
+        bitField0_ |= 0x00000002;
+        return internalGetMutableFieldMappings().getMutableMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A map of widget input parameter fields to the corresponding
+       * output fields of the source tool.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; field_mappings = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder putFieldMappings(java.lang.String key, java.lang.String value) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        if (value == null) {
+          throw new NullPointerException("map value");
+        }
+        internalGetMutableFieldMappings().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A map of widget input parameter fields to the corresponding
+       * output fields of the source tool.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; field_mappings = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder putAllFieldMappings(java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableFieldMappings().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+
+      private com.google.cloud.ces.v1beta.PythonFunction pythonFunction_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.ces.v1beta.PythonFunction,
+              com.google.cloud.ces.v1beta.PythonFunction.Builder,
+              com.google.cloud.ces.v1beta.PythonFunctionOrBuilder>
+          pythonFunctionBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for a Python function used to transform the
+       * source tool's output into the widget's input format.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.PythonFunction python_function = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the pythonFunction field is set.
+       */
+      public boolean hasPythonFunction() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for a Python function used to transform the
+       * source tool's output into the widget's input format.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.PythonFunction python_function = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The pythonFunction.
+       */
+      public com.google.cloud.ces.v1beta.PythonFunction getPythonFunction() {
+        if (pythonFunctionBuilder_ == null) {
+          return pythonFunction_ == null
+              ? com.google.cloud.ces.v1beta.PythonFunction.getDefaultInstance()
+              : pythonFunction_;
+        } else {
+          return pythonFunctionBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for a Python function used to transform the
+       * source tool's output into the widget's input format.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.PythonFunction python_function = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setPythonFunction(com.google.cloud.ces.v1beta.PythonFunction value) {
+        if (pythonFunctionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          pythonFunction_ = value;
+        } else {
+          pythonFunctionBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for a Python function used to transform the
+       * source tool's output into the widget's input format.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.PythonFunction python_function = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setPythonFunction(
+          com.google.cloud.ces.v1beta.PythonFunction.Builder builderForValue) {
+        if (pythonFunctionBuilder_ == null) {
+          pythonFunction_ = builderForValue.build();
+        } else {
+          pythonFunctionBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for a Python function used to transform the
+       * source tool's output into the widget's input format.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.PythonFunction python_function = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergePythonFunction(com.google.cloud.ces.v1beta.PythonFunction value) {
+        if (pythonFunctionBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && pythonFunction_ != null
+              && pythonFunction_
+                  != com.google.cloud.ces.v1beta.PythonFunction.getDefaultInstance()) {
+            getPythonFunctionBuilder().mergeFrom(value);
+          } else {
+            pythonFunction_ = value;
+          }
+        } else {
+          pythonFunctionBuilder_.mergeFrom(value);
+        }
+        if (pythonFunction_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for a Python function used to transform the
+       * source tool's output into the widget's input format.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.PythonFunction python_function = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearPythonFunction() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        pythonFunction_ = null;
+        if (pythonFunctionBuilder_ != null) {
+          pythonFunctionBuilder_.dispose();
+          pythonFunctionBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for a Python function used to transform the
+       * source tool's output into the widget's input format.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.PythonFunction python_function = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.ces.v1beta.PythonFunction.Builder getPythonFunctionBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return internalGetPythonFunctionFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for a Python function used to transform the
+       * source tool's output into the widget's input format.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.PythonFunction python_function = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.ces.v1beta.PythonFunctionOrBuilder getPythonFunctionOrBuilder() {
+        if (pythonFunctionBuilder_ != null) {
+          return pythonFunctionBuilder_.getMessageOrBuilder();
+        } else {
+          return pythonFunction_ == null
+              ? com.google.cloud.ces.v1beta.PythonFunction.getDefaultInstance()
+              : pythonFunction_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for a Python function used to transform the
+       * source tool's output into the widget's input format.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.PythonFunction python_function = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.ces.v1beta.PythonFunction,
+              com.google.cloud.ces.v1beta.PythonFunction.Builder,
+              com.google.cloud.ces.v1beta.PythonFunctionOrBuilder>
+          internalGetPythonFunctionFieldBuilder() {
+        if (pythonFunctionBuilder_ == null) {
+          pythonFunctionBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.ces.v1beta.PythonFunction,
+                  com.google.cloud.ces.v1beta.PythonFunction.Builder,
+                  com.google.cloud.ces.v1beta.PythonFunctionOrBuilder>(
+                  getPythonFunction(), getParentForChildren(), isClean());
+          pythonFunction_ = null;
+        }
+        return pythonFunctionBuilder_;
+      }
+
+      private int mode_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The mode of the data mapping.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.WidgetTool.DataMapping.Mode mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for mode.
+       */
+      @java.lang.Override
+      public int getModeValue() {
+        return mode_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The mode of the data mapping.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.WidgetTool.DataMapping.Mode mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for mode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModeValue(int value) {
+        mode_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The mode of the data mapping.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.WidgetTool.DataMapping.Mode mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The mode.
+       */
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.WidgetTool.DataMapping.Mode getMode() {
+        com.google.cloud.ces.v1beta.WidgetTool.DataMapping.Mode result =
+            com.google.cloud.ces.v1beta.WidgetTool.DataMapping.Mode.forNumber(mode_);
+        return result == null
+            ? com.google.cloud.ces.v1beta.WidgetTool.DataMapping.Mode.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The mode of the data mapping.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.WidgetTool.DataMapping.Mode mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The mode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMode(com.google.cloud.ces.v1beta.WidgetTool.DataMapping.Mode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
+        mode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The mode of the data mapping.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.WidgetTool.DataMapping.Mode mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMode() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        mode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object pythonScript_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: Use `python_function` instead.
+       * </pre>
+       *
+       * <code>string python_script = 3 [deprecated = true];</code>
+       *
+       * @deprecated google.cloud.ces.v1beta.WidgetTool.DataMapping.python_script is deprecated. See
+       *     google/cloud/ces/v1beta/widget_tool.proto;l=66
+       * @return The pythonScript.
+       */
+      @java.lang.Deprecated
+      public java.lang.String getPythonScript() {
+        java.lang.Object ref = pythonScript_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          pythonScript_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: Use `python_function` instead.
+       * </pre>
+       *
+       * <code>string python_script = 3 [deprecated = true];</code>
+       *
+       * @deprecated google.cloud.ces.v1beta.WidgetTool.DataMapping.python_script is deprecated. See
+       *     google/cloud/ces/v1beta/widget_tool.proto;l=66
+       * @return The bytes for pythonScript.
+       */
+      @java.lang.Deprecated
+      public com.google.protobuf.ByteString getPythonScriptBytes() {
+        java.lang.Object ref = pythonScript_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          pythonScript_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: Use `python_function` instead.
+       * </pre>
+       *
+       * <code>string python_script = 3 [deprecated = true];</code>
+       *
+       * @deprecated google.cloud.ces.v1beta.WidgetTool.DataMapping.python_script is deprecated. See
+       *     google/cloud/ces/v1beta/widget_tool.proto;l=66
+       * @param value The pythonScript to set.
+       * @return This builder for chaining.
+       */
+      @java.lang.Deprecated
+      public Builder setPythonScript(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pythonScript_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: Use `python_function` instead.
+       * </pre>
+       *
+       * <code>string python_script = 3 [deprecated = true];</code>
+       *
+       * @deprecated google.cloud.ces.v1beta.WidgetTool.DataMapping.python_script is deprecated. See
+       *     google/cloud/ces/v1beta/widget_tool.proto;l=66
+       * @return This builder for chaining.
+       */
+      @java.lang.Deprecated
+      public Builder clearPythonScript() {
+        pythonScript_ = getDefaultInstance().getPythonScript();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: Use `python_function` instead.
+       * </pre>
+       *
+       * <code>string python_script = 3 [deprecated = true];</code>
+       *
+       * @deprecated google.cloud.ces.v1beta.WidgetTool.DataMapping.python_script is deprecated. See
+       *     google/cloud/ces/v1beta/widget_tool.proto;l=66
+       * @param value The bytes for pythonScript to set.
+       * @return This builder for chaining.
+       */
+      @java.lang.Deprecated
+      public Builder setPythonScriptBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        pythonScript_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.WidgetTool.DataMapping)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.ces.v1beta.WidgetTool.DataMapping)
+    private static final com.google.cloud.ces.v1beta.WidgetTool.DataMapping DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.ces.v1beta.WidgetTool.DataMapping();
+    }
+
+    public static com.google.cloud.ces.v1beta.WidgetTool.DataMapping getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DataMapping> PARSER =
+        new com.google.protobuf.AbstractParser<DataMapping>() {
+          @java.lang.Override
+          public DataMapping parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DataMapping> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DataMapping> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.WidgetTool.DataMapping getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
   private int inputCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -728,6 +2808,117 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
     return result == null ? com.google.cloud.ces.v1beta.WidgetTool.WidgetType.UNRECOGNIZED : result;
   }
 
+  public static final int UI_CONFIG_FIELD_NUMBER = 5;
+  private com.google.protobuf.Struct uiConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for rendering the widget.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct ui_config = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the uiConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasUiConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for rendering the widget.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct ui_config = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The uiConfig.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getUiConfig() {
+    return uiConfig_ == null ? com.google.protobuf.Struct.getDefaultInstance() : uiConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for rendering the widget.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct ui_config = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getUiConfigOrBuilder() {
+    return uiConfig_ == null ? com.google.protobuf.Struct.getDefaultInstance() : uiConfig_;
+  }
+
+  public static final int DATA_MAPPING_FIELD_NUMBER = 6;
+  private com.google.cloud.ces.v1beta.WidgetTool.DataMapping dataMapping_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mapping that defines how data from a source tool is mapped to
+   * the widget's input parameters.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.WidgetTool.DataMapping data_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dataMapping field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataMapping() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mapping that defines how data from a source tool is mapped to
+   * the widget's input parameters.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.WidgetTool.DataMapping data_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dataMapping.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.WidgetTool.DataMapping getDataMapping() {
+    return dataMapping_ == null
+        ? com.google.cloud.ces.v1beta.WidgetTool.DataMapping.getDefaultInstance()
+        : dataMapping_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mapping that defines how data from a source tool is mapped to
+   * the widget's input parameters.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.WidgetTool.DataMapping data_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.WidgetTool.DataMappingOrBuilder getDataMappingOrBuilder() {
+    return dataMapping_ == null
+        ? com.google.cloud.ces.v1beta.WidgetTool.DataMapping.getDefaultInstance()
+        : dataMapping_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -755,6 +2946,12 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
     if (inputCase_ == 4) {
       output.writeMessage(4, (com.google.cloud.ces.v1beta.Schema) input_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(5, getUiConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(6, getDataMapping());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -779,6 +2976,12 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, (com.google.cloud.ces.v1beta.Schema) input_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getUiConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getDataMapping());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -797,6 +3000,14 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
     if (!getName().equals(other.getName())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
     if (widgetType_ != other.widgetType_) return false;
+    if (hasUiConfig() != other.hasUiConfig()) return false;
+    if (hasUiConfig()) {
+      if (!getUiConfig().equals(other.getUiConfig())) return false;
+    }
+    if (hasDataMapping() != other.hasDataMapping()) return false;
+    if (hasDataMapping()) {
+      if (!getDataMapping().equals(other.getDataMapping())) return false;
+    }
     if (!getInputCase().equals(other.getInputCase())) return false;
     switch (inputCase_) {
       case 4:
@@ -822,6 +3033,14 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + WIDGET_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + widgetType_;
+    if (hasUiConfig()) {
+      hash = (37 * hash) + UI_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getUiConfig().hashCode();
+    }
+    if (hasDataMapping()) {
+      hash = (37 * hash) + DATA_MAPPING_FIELD_NUMBER;
+      hash = (53 * hash) + getDataMapping().hashCode();
+    }
     switch (inputCase_) {
       case 4:
         hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
@@ -963,10 +3182,20 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.ces.v1beta.WidgetTool.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetUiConfigFieldBuilder();
+        internalGetDataMappingFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -979,6 +3208,16 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
       name_ = "";
       description_ = "";
       widgetType_ = 0;
+      uiConfig_ = null;
+      if (uiConfigBuilder_ != null) {
+        uiConfigBuilder_.dispose();
+        uiConfigBuilder_ = null;
+      }
+      dataMapping_ = null;
+      if (dataMappingBuilder_ != null) {
+        dataMappingBuilder_.dispose();
+        dataMappingBuilder_ = null;
+      }
       inputCase_ = 0;
       input_ = null;
       return this;
@@ -1027,6 +3266,17 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.widgetType_ = widgetType_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.uiConfig_ = uiConfigBuilder_ == null ? uiConfig_ : uiConfigBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.dataMapping_ =
+            dataMappingBuilder_ == null ? dataMapping_ : dataMappingBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(com.google.cloud.ces.v1beta.WidgetTool result) {
@@ -1061,6 +3311,12 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
       }
       if (other.widgetType_ != 0) {
         setWidgetTypeValue(other.getWidgetTypeValue());
+      }
+      if (other.hasUiConfig()) {
+        mergeUiConfig(other.getUiConfig());
+      }
+      if (other.hasDataMapping()) {
+        mergeDataMapping(other.getDataMapping());
       }
       switch (other.getInputCase()) {
         case PARAMETERS:
@@ -1124,6 +3380,20 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
                 inputCase_ = 4;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    internalGetUiConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    internalGetDataMappingFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1721,6 +3991,419 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
       widgetType_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Struct uiConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        uiConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for rendering the widget.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct ui_config = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the uiConfig field is set.
+     */
+    public boolean hasUiConfig() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for rendering the widget.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct ui_config = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The uiConfig.
+     */
+    public com.google.protobuf.Struct getUiConfig() {
+      if (uiConfigBuilder_ == null) {
+        return uiConfig_ == null ? com.google.protobuf.Struct.getDefaultInstance() : uiConfig_;
+      } else {
+        return uiConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for rendering the widget.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct ui_config = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setUiConfig(com.google.protobuf.Struct value) {
+      if (uiConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        uiConfig_ = value;
+      } else {
+        uiConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for rendering the widget.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct ui_config = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setUiConfig(com.google.protobuf.Struct.Builder builderForValue) {
+      if (uiConfigBuilder_ == null) {
+        uiConfig_ = builderForValue.build();
+      } else {
+        uiConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for rendering the widget.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct ui_config = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergeUiConfig(com.google.protobuf.Struct value) {
+      if (uiConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && uiConfig_ != null
+            && uiConfig_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getUiConfigBuilder().mergeFrom(value);
+        } else {
+          uiConfig_ = value;
+        }
+      } else {
+        uiConfigBuilder_.mergeFrom(value);
+      }
+      if (uiConfig_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for rendering the widget.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct ui_config = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearUiConfig() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      uiConfig_ = null;
+      if (uiConfigBuilder_ != null) {
+        uiConfigBuilder_.dispose();
+        uiConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for rendering the widget.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct ui_config = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.protobuf.Struct.Builder getUiConfigBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return internalGetUiConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for rendering the widget.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct ui_config = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.protobuf.StructOrBuilder getUiConfigOrBuilder() {
+      if (uiConfigBuilder_ != null) {
+        return uiConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return uiConfig_ == null ? com.google.protobuf.Struct.getDefaultInstance() : uiConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for rendering the widget.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct ui_config = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        internalGetUiConfigFieldBuilder() {
+      if (uiConfigBuilder_ == null) {
+        uiConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(
+                getUiConfig(), getParentForChildren(), isClean());
+        uiConfig_ = null;
+      }
+      return uiConfigBuilder_;
+    }
+
+    private com.google.cloud.ces.v1beta.WidgetTool.DataMapping dataMapping_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.WidgetTool.DataMapping,
+            com.google.cloud.ces.v1beta.WidgetTool.DataMapping.Builder,
+            com.google.cloud.ces.v1beta.WidgetTool.DataMappingOrBuilder>
+        dataMappingBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mapping that defines how data from a source tool is mapped to
+     * the widget's input parameters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.WidgetTool.DataMapping data_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the dataMapping field is set.
+     */
+    public boolean hasDataMapping() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mapping that defines how data from a source tool is mapped to
+     * the widget's input parameters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.WidgetTool.DataMapping data_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The dataMapping.
+     */
+    public com.google.cloud.ces.v1beta.WidgetTool.DataMapping getDataMapping() {
+      if (dataMappingBuilder_ == null) {
+        return dataMapping_ == null
+            ? com.google.cloud.ces.v1beta.WidgetTool.DataMapping.getDefaultInstance()
+            : dataMapping_;
+      } else {
+        return dataMappingBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mapping that defines how data from a source tool is mapped to
+     * the widget's input parameters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.WidgetTool.DataMapping data_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDataMapping(com.google.cloud.ces.v1beta.WidgetTool.DataMapping value) {
+      if (dataMappingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataMapping_ = value;
+      } else {
+        dataMappingBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mapping that defines how data from a source tool is mapped to
+     * the widget's input parameters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.WidgetTool.DataMapping data_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDataMapping(
+        com.google.cloud.ces.v1beta.WidgetTool.DataMapping.Builder builderForValue) {
+      if (dataMappingBuilder_ == null) {
+        dataMapping_ = builderForValue.build();
+      } else {
+        dataMappingBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mapping that defines how data from a source tool is mapped to
+     * the widget's input parameters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.WidgetTool.DataMapping data_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDataMapping(com.google.cloud.ces.v1beta.WidgetTool.DataMapping value) {
+      if (dataMappingBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && dataMapping_ != null
+            && dataMapping_
+                != com.google.cloud.ces.v1beta.WidgetTool.DataMapping.getDefaultInstance()) {
+          getDataMappingBuilder().mergeFrom(value);
+        } else {
+          dataMapping_ = value;
+        }
+      } else {
+        dataMappingBuilder_.mergeFrom(value);
+      }
+      if (dataMapping_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mapping that defines how data from a source tool is mapped to
+     * the widget's input parameters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.WidgetTool.DataMapping data_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDataMapping() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      dataMapping_ = null;
+      if (dataMappingBuilder_ != null) {
+        dataMappingBuilder_.dispose();
+        dataMappingBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mapping that defines how data from a source tool is mapped to
+     * the widget's input parameters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.WidgetTool.DataMapping data_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.WidgetTool.DataMapping.Builder getDataMappingBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return internalGetDataMappingFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mapping that defines how data from a source tool is mapped to
+     * the widget's input parameters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.WidgetTool.DataMapping data_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.WidgetTool.DataMappingOrBuilder getDataMappingOrBuilder() {
+      if (dataMappingBuilder_ != null) {
+        return dataMappingBuilder_.getMessageOrBuilder();
+      } else {
+        return dataMapping_ == null
+            ? com.google.cloud.ces.v1beta.WidgetTool.DataMapping.getDefaultInstance()
+            : dataMapping_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mapping that defines how data from a source tool is mapped to
+     * the widget's input parameters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.WidgetTool.DataMapping data_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.WidgetTool.DataMapping,
+            com.google.cloud.ces.v1beta.WidgetTool.DataMapping.Builder,
+            com.google.cloud.ces.v1beta.WidgetTool.DataMappingOrBuilder>
+        internalGetDataMappingFieldBuilder() {
+      if (dataMappingBuilder_ == null) {
+        dataMappingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1beta.WidgetTool.DataMapping,
+                com.google.cloud.ces.v1beta.WidgetTool.DataMapping.Builder,
+                com.google.cloud.ces.v1beta.WidgetTool.DataMappingOrBuilder>(
+                getDataMapping(), getParentForChildren(), isClean());
+        dataMapping_ = null;
+      }
+      return dataMappingBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.WidgetTool)

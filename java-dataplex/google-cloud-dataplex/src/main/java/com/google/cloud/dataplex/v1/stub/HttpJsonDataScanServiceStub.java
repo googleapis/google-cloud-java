@@ -800,6 +800,7 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateDataScanRequest, Operation> updateDataScanTransportSettings =
         HttpJsonCallSettings.<UpdateDataScanRequest, Operation>newBuilder()
@@ -822,6 +823,7 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetDataScanRequest, DataScan> getDataScanTransportSettings =
         HttpJsonCallSettings.<GetDataScanRequest, DataScan>newBuilder()
@@ -833,6 +835,7 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListDataScansRequest, ListDataScansResponse>
         listDataScansTransportSettings =
@@ -845,6 +848,7 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<RunDataScanRequest, RunDataScanResponse> runDataScanTransportSettings =
         HttpJsonCallSettings.<RunDataScanRequest, RunDataScanResponse>newBuilder()
@@ -856,6 +860,7 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetDataScanJobRequest, DataScanJob> getDataScanJobTransportSettings =
         HttpJsonCallSettings.<GetDataScanJobRequest, DataScanJob>newBuilder()
@@ -867,6 +872,7 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListDataScanJobsRequest, ListDataScanJobsResponse>
         listDataScanJobsTransportSettings =
@@ -879,6 +885,7 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
         generateDataQualityRulesTransportSettings =
@@ -926,6 +933,7 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -937,6 +945,7 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -949,6 +958,7 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createDataScanCallable =

@@ -898,6 +898,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDeviceRegistryRequest, DeviceRegistry>
         getDeviceRegistryTransportSettings =
@@ -910,6 +911,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateDeviceRegistryRequest, DeviceRegistry>
         updateDeviceRegistryTransportSettings =
@@ -935,6 +937,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListDeviceRegistriesRequest, ListDeviceRegistriesResponse>
         listDeviceRegistriesTransportSettings =
@@ -948,6 +951,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateDeviceRequest, Device> createDeviceTransportSettings =
         HttpJsonCallSettings.<CreateDeviceRequest, Device>newBuilder()
@@ -959,6 +963,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetDeviceRequest, Device> getDeviceTransportSettings =
         HttpJsonCallSettings.<GetDeviceRequest, Device>newBuilder()
@@ -970,6 +975,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateDeviceRequest, Device> updateDeviceTransportSettings =
         HttpJsonCallSettings.<UpdateDeviceRequest, Device>newBuilder()
@@ -992,6 +998,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListDevicesRequest, ListDevicesResponse> listDevicesTransportSettings =
         HttpJsonCallSettings.<ListDevicesRequest, ListDevicesResponse>newBuilder()
@@ -1003,6 +1010,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ModifyCloudToDeviceConfigRequest, DeviceConfig>
         modifyCloudToDeviceConfigTransportSettings =
@@ -1015,6 +1023,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListDeviceConfigVersionsRequest, ListDeviceConfigVersionsResponse>
         listDeviceConfigVersionsTransportSettings =
@@ -1028,6 +1037,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListDeviceStatesRequest, ListDeviceStatesResponse>
         listDeviceStatesTransportSettings =
@@ -1040,6 +1050,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -1051,6 +1062,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1062,6 +1074,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1074,6 +1087,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     HttpJsonCallSettings<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
         sendCommandToDeviceTransportSettings =
@@ -1087,6 +1101,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>
         bindDeviceToGatewayTransportSettings =
@@ -1100,6 +1115,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UnbindDeviceFromGatewayRequest, UnbindDeviceFromGatewayResponse>
         unbindDeviceFromGatewayTransportSettings =
@@ -1113,6 +1129,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createDeviceRegistryCallable =

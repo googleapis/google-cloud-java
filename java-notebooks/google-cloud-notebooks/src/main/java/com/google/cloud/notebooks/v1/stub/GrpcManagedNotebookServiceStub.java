@@ -362,6 +362,7 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetRuntimeRequest, Runtime> getRuntimeTransportSettings =
         GrpcCallSettings.<GetRuntimeRequest, Runtime>newBuilder()
@@ -372,6 +373,7 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateRuntimeRequest, Operation> createRuntimeTransportSettings =
         GrpcCallSettings.<CreateRuntimeRequest, Operation>newBuilder()
@@ -382,6 +384,7 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateRuntimeRequest, Operation> updateRuntimeTransportSettings =
         GrpcCallSettings.<UpdateRuntimeRequest, Operation>newBuilder()
@@ -402,6 +405,7 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<StartRuntimeRequest, Operation> startRuntimeTransportSettings =
         GrpcCallSettings.<StartRuntimeRequest, Operation>newBuilder()
@@ -462,6 +466,7 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RefreshRuntimeTokenInternalRequest, RefreshRuntimeTokenInternalResponse>
         refreshRuntimeTokenInternalTransportSettings =
@@ -475,6 +480,7 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DiagnoseRuntimeRequest, Operation> diagnoseRuntimeTransportSettings =
         GrpcCallSettings.<DiagnoseRuntimeRequest, Operation>newBuilder()
@@ -485,6 +491,7 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -515,6 +522,7 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -525,6 +533,7 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -536,6 +545,7 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listRuntimesCallable =

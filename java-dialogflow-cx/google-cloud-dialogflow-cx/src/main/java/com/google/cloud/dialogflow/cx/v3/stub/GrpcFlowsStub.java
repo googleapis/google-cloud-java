@@ -251,6 +251,7 @@ public class GrpcFlowsStub extends FlowsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteFlowRequest, Empty> deleteFlowTransportSettings =
         GrpcCallSettings.<DeleteFlowRequest, Empty>newBuilder()
@@ -261,6 +262,7 @@ public class GrpcFlowsStub extends FlowsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListFlowsRequest, ListFlowsResponse> listFlowsTransportSettings =
         GrpcCallSettings.<ListFlowsRequest, ListFlowsResponse>newBuilder()
@@ -271,6 +273,7 @@ public class GrpcFlowsStub extends FlowsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetFlowRequest, Flow> getFlowTransportSettings =
         GrpcCallSettings.<GetFlowRequest, Flow>newBuilder()
@@ -281,6 +284,7 @@ public class GrpcFlowsStub extends FlowsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateFlowRequest, Flow> updateFlowTransportSettings =
         GrpcCallSettings.<UpdateFlowRequest, Flow>newBuilder()
@@ -301,6 +305,7 @@ public class GrpcFlowsStub extends FlowsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ValidateFlowRequest, FlowValidationResult> validateFlowTransportSettings =
         GrpcCallSettings.<ValidateFlowRequest, FlowValidationResult>newBuilder()
@@ -311,6 +316,7 @@ public class GrpcFlowsStub extends FlowsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetFlowValidationResultRequest, FlowValidationResult>
         getFlowValidationResultTransportSettings =
@@ -322,6 +328,7 @@ public class GrpcFlowsStub extends FlowsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ImportFlowRequest, Operation> importFlowTransportSettings =
         GrpcCallSettings.<ImportFlowRequest, Operation>newBuilder()
@@ -332,6 +339,7 @@ public class GrpcFlowsStub extends FlowsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ExportFlowRequest, Operation> exportFlowTransportSettings =
         GrpcCallSettings.<ExportFlowRequest, Operation>newBuilder()
@@ -342,6 +350,7 @@ public class GrpcFlowsStub extends FlowsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

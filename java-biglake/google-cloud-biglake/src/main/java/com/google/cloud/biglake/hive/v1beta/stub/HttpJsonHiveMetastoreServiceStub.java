@@ -885,6 +885,7 @@ public class HttpJsonHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetHiveCatalogRequest, HiveCatalog> getHiveCatalogTransportSettings =
         HttpJsonCallSettings.<GetHiveCatalogRequest, HiveCatalog>newBuilder()
@@ -896,6 +897,7 @@ public class HttpJsonHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListHiveCatalogsRequest, ListHiveCatalogsResponse>
         listHiveCatalogsTransportSettings =
@@ -908,6 +910,7 @@ public class HttpJsonHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateHiveCatalogRequest, HiveCatalog> updateHiveCatalogTransportSettings =
         HttpJsonCallSettings.<UpdateHiveCatalogRequest, HiveCatalog>newBuilder()
@@ -931,6 +934,7 @@ public class HttpJsonHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateHiveDatabaseRequest, HiveDatabase>
         createHiveDatabaseTransportSettings =
@@ -943,6 +947,7 @@ public class HttpJsonHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetHiveDatabaseRequest, HiveDatabase> getHiveDatabaseTransportSettings =
         HttpJsonCallSettings.<GetHiveDatabaseRequest, HiveDatabase>newBuilder()
@@ -954,6 +959,7 @@ public class HttpJsonHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListHiveDatabasesRequest, ListHiveDatabasesResponse>
         listHiveDatabasesTransportSettings =
@@ -966,6 +972,7 @@ public class HttpJsonHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateHiveDatabaseRequest, HiveDatabase>
         updateHiveDatabaseTransportSettings =
@@ -991,6 +998,7 @@ public class HttpJsonHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateHiveTableRequest, HiveTable> createHiveTableTransportSettings =
         HttpJsonCallSettings.<CreateHiveTableRequest, HiveTable>newBuilder()
@@ -1002,6 +1010,7 @@ public class HttpJsonHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetHiveTableRequest, HiveTable> getHiveTableTransportSettings =
         HttpJsonCallSettings.<GetHiveTableRequest, HiveTable>newBuilder()
@@ -1013,6 +1022,7 @@ public class HttpJsonHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListHiveTablesRequest, ListHiveTablesResponse>
         listHiveTablesTransportSettings =
@@ -1025,6 +1035,7 @@ public class HttpJsonHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateHiveTableRequest, HiveTable> updateHiveTableTransportSettings =
         HttpJsonCallSettings.<UpdateHiveTableRequest, HiveTable>newBuilder()
@@ -1047,6 +1058,7 @@ public class HttpJsonHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<BatchCreatePartitionsRequest, BatchCreatePartitionsResponse>
         batchCreatePartitionsTransportSettings =
@@ -1060,6 +1072,7 @@ public class HttpJsonHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<BatchDeletePartitionsRequest, Empty>
         batchDeletePartitionsTransportSettings =
@@ -1072,6 +1085,7 @@ public class HttpJsonHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<BatchUpdatePartitionsRequest, BatchUpdatePartitionsResponse>
         batchUpdatePartitionsTransportSettings =
@@ -1085,6 +1099,7 @@ public class HttpJsonHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListPartitionsRequest, ListPartitionsResponse>
         listPartitionsTransportSettings =
@@ -1097,6 +1112,7 @@ public class HttpJsonHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createHiveCatalogCallable =

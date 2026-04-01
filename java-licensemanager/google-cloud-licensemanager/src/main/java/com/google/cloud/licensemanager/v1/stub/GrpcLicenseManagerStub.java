@@ -342,6 +342,7 @@ public class GrpcLicenseManagerStub extends LicenseManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetConfigurationRequest, Configuration> getConfigurationTransportSettings =
         GrpcCallSettings.<GetConfigurationRequest, Configuration>newBuilder()
@@ -352,6 +353,7 @@ public class GrpcLicenseManagerStub extends LicenseManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateConfigurationRequest, Operation> createConfigurationTransportSettings =
         GrpcCallSettings.<CreateConfigurationRequest, Operation>newBuilder()
@@ -362,6 +364,7 @@ public class GrpcLicenseManagerStub extends LicenseManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateConfigurationRequest, Operation> updateConfigurationTransportSettings =
         GrpcCallSettings.<UpdateConfigurationRequest, Operation>newBuilder()
@@ -383,6 +386,7 @@ public class GrpcLicenseManagerStub extends LicenseManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListInstancesRequest, ListInstancesResponse> listInstancesTransportSettings =
         GrpcCallSettings.<ListInstancesRequest, ListInstancesResponse>newBuilder()
@@ -393,6 +397,7 @@ public class GrpcLicenseManagerStub extends LicenseManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         GrpcCallSettings.<GetInstanceRequest, Instance>newBuilder()
@@ -403,6 +408,7 @@ public class GrpcLicenseManagerStub extends LicenseManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeactivateConfigurationRequest, Operation>
         deactivateConfigurationTransportSettings =
@@ -414,6 +420,7 @@ public class GrpcLicenseManagerStub extends LicenseManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ReactivateConfigurationRequest, Operation>
         reactivateConfigurationTransportSettings =
@@ -425,6 +432,7 @@ public class GrpcLicenseManagerStub extends LicenseManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<QueryConfigurationLicenseUsageRequest, QueryConfigurationLicenseUsageResponse>
         queryConfigurationLicenseUsageTransportSettings =
@@ -438,6 +446,7 @@ public class GrpcLicenseManagerStub extends LicenseManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<AggregateUsageRequest, AggregateUsageResponse>
         aggregateUsageTransportSettings =
@@ -449,6 +458,7 @@ public class GrpcLicenseManagerStub extends LicenseManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListProductsRequest, ListProductsResponse> listProductsTransportSettings =
         GrpcCallSettings.<ListProductsRequest, ListProductsResponse>newBuilder()
@@ -459,6 +469,7 @@ public class GrpcLicenseManagerStub extends LicenseManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetProductRequest, Product> getProductTransportSettings =
         GrpcCallSettings.<GetProductRequest, Product>newBuilder()
@@ -469,6 +480,7 @@ public class GrpcLicenseManagerStub extends LicenseManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

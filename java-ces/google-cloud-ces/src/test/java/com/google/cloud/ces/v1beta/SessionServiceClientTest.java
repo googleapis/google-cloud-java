@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -135,6 +136,54 @@ public class SessionServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void streamRunSessionTest() throws Exception {
+    RunSessionResponse expectedResponse =
+        RunSessionResponse.newBuilder().addAllOutputs(new ArrayList<SessionOutput>()).build();
+    mockSessionService.addResponse(expectedResponse);
+    RunSessionRequest request =
+        RunSessionRequest.newBuilder()
+            .setConfig(SessionConfig.newBuilder().build())
+            .addAllInputs(new ArrayList<SessionInput>())
+            .build();
+
+    MockStreamObserver<RunSessionResponse> responseObserver = new MockStreamObserver<>();
+
+    ServerStreamingCallable<RunSessionRequest, RunSessionResponse> callable =
+        client.streamRunSessionCallable();
+    callable.serverStreamingCall(request, responseObserver);
+
+    List<RunSessionResponse> actualResponses = responseObserver.future().get();
+    Assert.assertEquals(1, actualResponses.size());
+    Assert.assertEquals(expectedResponse, actualResponses.get(0));
+  }
+
+  @Test
+  public void streamRunSessionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSessionService.addException(exception);
+    RunSessionRequest request =
+        RunSessionRequest.newBuilder()
+            .setConfig(SessionConfig.newBuilder().build())
+            .addAllInputs(new ArrayList<SessionInput>())
+            .build();
+
+    MockStreamObserver<RunSessionResponse> responseObserver = new MockStreamObserver<>();
+
+    ServerStreamingCallable<RunSessionRequest, RunSessionResponse> callable =
+        client.streamRunSessionCallable();
+    callable.serverStreamingCall(request, responseObserver);
+
+    try {
+      List<RunSessionResponse> actualResponses = responseObserver.future().get();
+      Assert.fail("No exception thrown");
+    } catch (ExecutionException e) {
+      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

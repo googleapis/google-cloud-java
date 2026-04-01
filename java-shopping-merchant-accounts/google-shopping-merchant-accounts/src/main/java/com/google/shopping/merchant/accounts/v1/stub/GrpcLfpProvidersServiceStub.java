@@ -131,6 +131,7 @@ public class GrpcLfpProvidersServiceStub extends LfpProvidersServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<LinkLfpProviderRequest, LinkLfpProviderResponse>
         linkLfpProviderTransportSettings =
@@ -142,6 +143,7 @@ public class GrpcLfpProvidersServiceStub extends LfpProvidersServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.findLfpProvidersCallable =

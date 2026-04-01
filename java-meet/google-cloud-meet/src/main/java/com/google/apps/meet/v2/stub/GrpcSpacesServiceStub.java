@@ -142,6 +142,7 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateSpaceRequest, Space> updateSpaceTransportSettings =
         GrpcCallSettings.<UpdateSpaceRequest, Space>newBuilder()
@@ -162,6 +163,7 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createSpaceCallable =

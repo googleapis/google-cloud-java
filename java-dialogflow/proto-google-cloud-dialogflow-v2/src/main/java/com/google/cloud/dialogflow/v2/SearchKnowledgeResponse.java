@@ -72,6 +72,7 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
             com.google.cloud.dialogflow.v2.SearchKnowledgeResponse.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ANSWERS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
@@ -207,6 +208,63 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
     }
   }
 
+  public static final int SEARCH_KNOWLEDGE_DEBUG_INFO_FIELD_NUMBER = 4;
+  private com.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo searchKnowledgeDebugInfo_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Debug info for SearchKnowledge.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo search_knowledge_debug_info = 4;
+   * </code>
+   *
+   * @return Whether the searchKnowledgeDebugInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasSearchKnowledgeDebugInfo() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Debug info for SearchKnowledge.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo search_knowledge_debug_info = 4;
+   * </code>
+   *
+   * @return The searchKnowledgeDebugInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo getSearchKnowledgeDebugInfo() {
+    return searchKnowledgeDebugInfo_ == null
+        ? com.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo.getDefaultInstance()
+        : searchKnowledgeDebugInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Debug info for SearchKnowledge.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo search_knowledge_debug_info = 4;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfoOrBuilder
+      getSearchKnowledgeDebugInfoOrBuilder() {
+    return searchKnowledgeDebugInfo_ == null
+        ? com.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo.getDefaultInstance()
+        : searchKnowledgeDebugInfo_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -227,6 +285,9 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(rewrittenQuery_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, rewrittenQuery_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(4, getSearchKnowledgeDebugInfo());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -241,6 +302,11 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(rewrittenQuery_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, rewrittenQuery_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, getSearchKnowledgeDebugInfo());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -260,6 +326,10 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
 
     if (!getAnswersList().equals(other.getAnswersList())) return false;
     if (!getRewrittenQuery().equals(other.getRewrittenQuery())) return false;
+    if (hasSearchKnowledgeDebugInfo() != other.hasSearchKnowledgeDebugInfo()) return false;
+    if (hasSearchKnowledgeDebugInfo()) {
+      if (!getSearchKnowledgeDebugInfo().equals(other.getSearchKnowledgeDebugInfo())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -277,6 +347,10 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
     }
     hash = (37 * hash) + REWRITTEN_QUERY_FIELD_NUMBER;
     hash = (53 * hash) + getRewrittenQuery().hashCode();
+    if (hasSearchKnowledgeDebugInfo()) {
+      hash = (37 * hash) + SEARCH_KNOWLEDGE_DEBUG_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getSearchKnowledgeDebugInfo().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -409,10 +483,20 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
     }
 
     // Construct using com.google.cloud.dialogflow.v2.SearchKnowledgeResponse.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetAnswersFieldBuilder();
+        internalGetSearchKnowledgeDebugInfoFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -427,6 +511,11 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       rewrittenQuery_ = "";
+      searchKnowledgeDebugInfo_ = null;
+      if (searchKnowledgeDebugInfoBuilder_ != null) {
+        searchKnowledgeDebugInfoBuilder_.dispose();
+        searchKnowledgeDebugInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -480,6 +569,15 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.rewrittenQuery_ = rewrittenQuery_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.searchKnowledgeDebugInfo_ =
+            searchKnowledgeDebugInfoBuilder_ == null
+                ? searchKnowledgeDebugInfo_
+                : searchKnowledgeDebugInfoBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -527,6 +625,9 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasSearchKnowledgeDebugInfo()) {
+        mergeSearchKnowledgeDebugInfo(other.getSearchKnowledgeDebugInfo());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -573,6 +674,14 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
                 bitField0_ |= 0x00000002;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    internalGetSearchKnowledgeDebugInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1093,6 +1202,215 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo searchKnowledgeDebugInfo_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo,
+            com.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo.Builder,
+            com.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfoOrBuilder>
+        searchKnowledgeDebugInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Debug info for SearchKnowledge.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo search_knowledge_debug_info = 4;
+     * </code>
+     *
+     * @return Whether the searchKnowledgeDebugInfo field is set.
+     */
+    public boolean hasSearchKnowledgeDebugInfo() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Debug info for SearchKnowledge.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo search_knowledge_debug_info = 4;
+     * </code>
+     *
+     * @return The searchKnowledgeDebugInfo.
+     */
+    public com.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo getSearchKnowledgeDebugInfo() {
+      if (searchKnowledgeDebugInfoBuilder_ == null) {
+        return searchKnowledgeDebugInfo_ == null
+            ? com.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo.getDefaultInstance()
+            : searchKnowledgeDebugInfo_;
+      } else {
+        return searchKnowledgeDebugInfoBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Debug info for SearchKnowledge.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo search_knowledge_debug_info = 4;
+     * </code>
+     */
+    public Builder setSearchKnowledgeDebugInfo(
+        com.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo value) {
+      if (searchKnowledgeDebugInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        searchKnowledgeDebugInfo_ = value;
+      } else {
+        searchKnowledgeDebugInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Debug info for SearchKnowledge.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo search_knowledge_debug_info = 4;
+     * </code>
+     */
+    public Builder setSearchKnowledgeDebugInfo(
+        com.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo.Builder builderForValue) {
+      if (searchKnowledgeDebugInfoBuilder_ == null) {
+        searchKnowledgeDebugInfo_ = builderForValue.build();
+      } else {
+        searchKnowledgeDebugInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Debug info for SearchKnowledge.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo search_knowledge_debug_info = 4;
+     * </code>
+     */
+    public Builder mergeSearchKnowledgeDebugInfo(
+        com.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo value) {
+      if (searchKnowledgeDebugInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && searchKnowledgeDebugInfo_ != null
+            && searchKnowledgeDebugInfo_
+                != com.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo.getDefaultInstance()) {
+          getSearchKnowledgeDebugInfoBuilder().mergeFrom(value);
+        } else {
+          searchKnowledgeDebugInfo_ = value;
+        }
+      } else {
+        searchKnowledgeDebugInfoBuilder_.mergeFrom(value);
+      }
+      if (searchKnowledgeDebugInfo_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Debug info for SearchKnowledge.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo search_knowledge_debug_info = 4;
+     * </code>
+     */
+    public Builder clearSearchKnowledgeDebugInfo() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      searchKnowledgeDebugInfo_ = null;
+      if (searchKnowledgeDebugInfoBuilder_ != null) {
+        searchKnowledgeDebugInfoBuilder_.dispose();
+        searchKnowledgeDebugInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Debug info for SearchKnowledge.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo search_knowledge_debug_info = 4;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo.Builder
+        getSearchKnowledgeDebugInfoBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return internalGetSearchKnowledgeDebugInfoFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Debug info for SearchKnowledge.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo search_knowledge_debug_info = 4;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfoOrBuilder
+        getSearchKnowledgeDebugInfoOrBuilder() {
+      if (searchKnowledgeDebugInfoBuilder_ != null) {
+        return searchKnowledgeDebugInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return searchKnowledgeDebugInfo_ == null
+            ? com.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo.getDefaultInstance()
+            : searchKnowledgeDebugInfo_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Debug info for SearchKnowledge.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo search_knowledge_debug_info = 4;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo,
+            com.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo.Builder,
+            com.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfoOrBuilder>
+        internalGetSearchKnowledgeDebugInfoFieldBuilder() {
+      if (searchKnowledgeDebugInfoBuilder_ == null) {
+        searchKnowledgeDebugInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo,
+                com.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfo.Builder,
+                com.google.cloud.dialogflow.v2.SearchKnowledgeDebugInfoOrBuilder>(
+                getSearchKnowledgeDebugInfo(), getParentForChildren(), isClean());
+        searchKnowledgeDebugInfo_ = null;
+      }
+      return searchKnowledgeDebugInfoBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.SearchKnowledgeResponse)

@@ -392,6 +392,7 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateWorkloadRequest, Workload> updateWorkloadTransportSettings =
         HttpJsonCallSettings.<UpdateWorkloadRequest, Workload>newBuilder()
@@ -427,6 +428,7 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetWorkloadRequest, Workload> getWorkloadTransportSettings =
         HttpJsonCallSettings.<GetWorkloadRequest, Workload>newBuilder()
@@ -438,6 +440,7 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListWorkloadsRequest, ListWorkloadsResponse>
         listWorkloadsTransportSettings =
@@ -450,6 +453,7 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createWorkloadCallable =

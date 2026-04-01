@@ -1040,6 +1040,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetAuthorizationPolicyRequest, AuthorizationPolicy>
         getAuthorizationPolicyTransportSettings =
@@ -1052,6 +1053,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateAuthorizationPolicyRequest, Operation>
         createAuthorizationPolicyTransportSettings =
@@ -1064,6 +1066,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateAuthorizationPolicyRequest, Operation>
         updateAuthorizationPolicyTransportSettings =
@@ -1090,6 +1093,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListServerTlsPoliciesRequest, ListServerTlsPoliciesResponse>
         listServerTlsPoliciesTransportSettings =
@@ -1103,6 +1107,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetServerTlsPolicyRequest, ServerTlsPolicy>
         getServerTlsPolicyTransportSettings =
@@ -1115,6 +1120,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateServerTlsPolicyRequest, Operation>
         createServerTlsPolicyTransportSettings =
@@ -1127,6 +1133,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateServerTlsPolicyRequest, Operation>
         updateServerTlsPolicyTransportSettings =
@@ -1153,6 +1160,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListClientTlsPoliciesRequest, ListClientTlsPoliciesResponse>
         listClientTlsPoliciesTransportSettings =
@@ -1166,6 +1174,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetClientTlsPolicyRequest, ClientTlsPolicy>
         getClientTlsPolicyTransportSettings =
@@ -1178,6 +1187,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateClientTlsPolicyRequest, Operation>
         createClientTlsPolicyTransportSettings =
@@ -1190,6 +1200,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateClientTlsPolicyRequest, Operation>
         updateClientTlsPolicyTransportSettings =
@@ -1216,6 +1227,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -1250,6 +1262,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1261,6 +1274,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1273,6 +1287,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listAuthorizationPoliciesCallable =

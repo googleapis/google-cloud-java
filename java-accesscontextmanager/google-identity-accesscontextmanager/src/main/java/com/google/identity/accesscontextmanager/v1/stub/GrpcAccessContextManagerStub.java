@@ -554,6 +554,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
         listAccessPoliciesTransportSettings =
             GrpcCallSettings.<ListAccessPoliciesRequest, ListAccessPoliciesResponse>newBuilder()
                 .setMethodDescriptor(listAccessPoliciesMethodDescriptor)
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetAccessPolicyRequest, AccessPolicy> getAccessPolicyTransportSettings =
         GrpcCallSettings.<GetAccessPolicyRequest, AccessPolicy>newBuilder()
@@ -564,10 +565,12 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<AccessPolicy, Operation> createAccessPolicyTransportSettings =
         GrpcCallSettings.<AccessPolicy, Operation>newBuilder()
             .setMethodDescriptor(createAccessPolicyMethodDescriptor)
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateAccessPolicyRequest, Operation> updateAccessPolicyTransportSettings =
         GrpcCallSettings.<UpdateAccessPolicyRequest, Operation>newBuilder()
@@ -588,6 +591,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAccessLevelsRequest, ListAccessLevelsResponse>
         listAccessLevelsTransportSettings =
@@ -599,6 +603,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetAccessLevelRequest, AccessLevel> getAccessLevelTransportSettings =
         GrpcCallSettings.<GetAccessLevelRequest, AccessLevel>newBuilder()
@@ -609,6 +614,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateAccessLevelRequest, Operation> createAccessLevelTransportSettings =
         GrpcCallSettings.<CreateAccessLevelRequest, Operation>newBuilder()
@@ -619,6 +625,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateAccessLevelRequest, Operation> updateAccessLevelTransportSettings =
         GrpcCallSettings.<UpdateAccessLevelRequest, Operation>newBuilder()
@@ -640,6 +647,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ReplaceAccessLevelsRequest, Operation> replaceAccessLevelsTransportSettings =
         GrpcCallSettings.<ReplaceAccessLevelsRequest, Operation>newBuilder()
@@ -650,6 +658,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListServicePerimetersRequest, ListServicePerimetersResponse>
         listServicePerimetersTransportSettings =
@@ -662,6 +671,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetServicePerimeterRequest, ServicePerimeter>
         getServicePerimeterTransportSettings =
@@ -673,6 +683,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateServicePerimeterRequest, Operation>
         createServicePerimeterTransportSettings =
@@ -684,6 +695,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateServicePerimeterRequest, Operation>
         updateServicePerimeterTransportSettings =
@@ -708,6 +720,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ReplaceServicePerimetersRequest, Operation>
         replaceServicePerimetersTransportSettings =
@@ -719,6 +732,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CommitServicePerimetersRequest, Operation>
         commitServicePerimetersTransportSettings =
@@ -730,6 +744,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListGcpUserAccessBindingsRequest, ListGcpUserAccessBindingsResponse>
         listGcpUserAccessBindingsTransportSettings =
@@ -742,6 +757,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetGcpUserAccessBindingRequest, GcpUserAccessBinding>
         getGcpUserAccessBindingTransportSettings =
@@ -753,6 +769,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateGcpUserAccessBindingRequest, Operation>
         createGcpUserAccessBindingTransportSettings =
@@ -764,6 +781,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateGcpUserAccessBindingRequest, Operation>
         updateGcpUserAccessBindingTransportSettings =
@@ -788,6 +806,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -798,6 +817,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -808,6 +828,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -819,6 +840,7 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listAccessPoliciesCallable =

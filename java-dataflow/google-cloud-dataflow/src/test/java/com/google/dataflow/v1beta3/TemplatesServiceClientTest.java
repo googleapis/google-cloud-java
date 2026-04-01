@@ -111,6 +111,7 @@ public class TemplatesServiceClientTest {
             .setRuntimeUpdatableParams(RuntimeUpdatableParams.newBuilder().build())
             .setSatisfiesPzi(true)
             .setServiceResources(ServiceResources.newBuilder().build())
+            .setPausable(true)
             .build();
     mockTemplatesService.addResponse(expectedResponse);
 

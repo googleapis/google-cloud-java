@@ -375,6 +375,7 @@ public class HttpJsonReportServiceStub extends ReportServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListReportsRequest, ListReportsResponse> listReportsTransportSettings =
         HttpJsonCallSettings.<ListReportsRequest, ListReportsResponse>newBuilder()
@@ -386,6 +387,7 @@ public class HttpJsonReportServiceStub extends ReportServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateReportRequest, Report> createReportTransportSettings =
         HttpJsonCallSettings.<CreateReportRequest, Report>newBuilder()
@@ -397,6 +399,7 @@ public class HttpJsonReportServiceStub extends ReportServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateReportRequest, Report> updateReportTransportSettings =
         HttpJsonCallSettings.<UpdateReportRequest, Report>newBuilder()
@@ -419,6 +422,7 @@ public class HttpJsonReportServiceStub extends ReportServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<FetchReportResultRowsRequest, FetchReportResultRowsResponse>
         fetchReportResultRowsTransportSettings =

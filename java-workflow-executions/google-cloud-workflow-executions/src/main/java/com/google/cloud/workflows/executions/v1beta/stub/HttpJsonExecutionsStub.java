@@ -262,6 +262,7 @@ public class HttpJsonExecutionsStub extends ExecutionsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateExecutionRequest, Execution> createExecutionTransportSettings =
         HttpJsonCallSettings.<CreateExecutionRequest, Execution>newBuilder()
@@ -273,6 +274,7 @@ public class HttpJsonExecutionsStub extends ExecutionsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetExecutionRequest, Execution> getExecutionTransportSettings =
         HttpJsonCallSettings.<GetExecutionRequest, Execution>newBuilder()
@@ -284,6 +286,7 @@ public class HttpJsonExecutionsStub extends ExecutionsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CancelExecutionRequest, Execution> cancelExecutionTransportSettings =
         HttpJsonCallSettings.<CancelExecutionRequest, Execution>newBuilder()
@@ -295,6 +298,7 @@ public class HttpJsonExecutionsStub extends ExecutionsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.listExecutionsCallable =

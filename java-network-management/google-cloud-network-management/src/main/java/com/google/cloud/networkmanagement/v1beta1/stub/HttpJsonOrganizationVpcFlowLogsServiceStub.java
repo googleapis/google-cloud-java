@@ -597,6 +597,7 @@ public class HttpJsonOrganizationVpcFlowLogsServiceStub extends OrganizationVpcF
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetVpcFlowLogsConfigRequest, VpcFlowLogsConfig>
         getVpcFlowLogsConfigTransportSettings =
@@ -609,6 +610,7 @@ public class HttpJsonOrganizationVpcFlowLogsServiceStub extends OrganizationVpcF
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateVpcFlowLogsConfigRequest, Operation>
         createVpcFlowLogsConfigTransportSettings =
@@ -621,6 +623,7 @@ public class HttpJsonOrganizationVpcFlowLogsServiceStub extends OrganizationVpcF
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateVpcFlowLogsConfigRequest, Operation>
         updateVpcFlowLogsConfigTransportSettings =
@@ -647,6 +650,7 @@ public class HttpJsonOrganizationVpcFlowLogsServiceStub extends OrganizationVpcF
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -681,6 +685,7 @@ public class HttpJsonOrganizationVpcFlowLogsServiceStub extends OrganizationVpcF
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -692,6 +697,7 @@ public class HttpJsonOrganizationVpcFlowLogsServiceStub extends OrganizationVpcF
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -704,6 +710,7 @@ public class HttpJsonOrganizationVpcFlowLogsServiceStub extends OrganizationVpcF
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listVpcFlowLogsConfigsCallable =

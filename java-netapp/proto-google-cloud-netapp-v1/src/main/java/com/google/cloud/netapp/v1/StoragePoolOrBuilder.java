@@ -482,7 +482,7 @@ public interface StoragePoolOrBuilder
    * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
    *
    * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
-   *     google/cloud/netapp/v1/storage_pool.proto;l=243
+   *     google/cloud/netapp/v1/storage_pool.proto;l=256
    * @return Whether the globalAccessAllowed field is set.
    */
   @java.lang.Deprecated
@@ -499,7 +499,7 @@ public interface StoragePoolOrBuilder
    * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
    *
    * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
-   *     google/cloud/netapp/v1/storage_pool.proto;l=243
+   *     google/cloud/netapp/v1/storage_pool.proto;l=256
    * @return The globalAccessAllowed.
    */
   @java.lang.Deprecated
@@ -765,9 +765,7 @@ public interface StoragePoolOrBuilder
    * <pre>
    * Optional. Type of the storage pool. This field is used to control whether
    * the pool supports `FILE` based volumes only or `UNIFIED` (both `FILE` and
-   * `BLOCK`) volumes or `UNIFIED_LARGE_CAPACITY` (both `FILE` and `BLOCK`)
-   * volumes with large capacity. If not specified during creation, it defaults
-   * to `FILE`.
+   * `BLOCK`) volumes. If not specified during creation, it defaults to `FILE`.
    * </pre>
    *
    * <code>
@@ -784,9 +782,7 @@ public interface StoragePoolOrBuilder
    * <pre>
    * Optional. Type of the storage pool. This field is used to control whether
    * the pool supports `FILE` based volumes only or `UNIFIED` (both `FILE` and
-   * `BLOCK`) volumes or `UNIFIED_LARGE_CAPACITY` (both `FILE` and `BLOCK`)
-   * volumes with large capacity. If not specified during creation, it defaults
-   * to `FILE`.
+   * `BLOCK`) volumes. If not specified during creation, it defaults to `FILE`.
    * </pre>
    *
    * <code>
@@ -803,9 +799,7 @@ public interface StoragePoolOrBuilder
    * <pre>
    * Optional. Type of the storage pool. This field is used to control whether
    * the pool supports `FILE` based volumes only or `UNIFIED` (both `FILE` and
-   * `BLOCK`) volumes or `UNIFIED_LARGE_CAPACITY` (both `FILE` and `BLOCK`)
-   * volumes with large capacity. If not specified during creation, it defaults
-   * to `FILE`.
+   * `BLOCK`) volumes. If not specified during creation, it defaults to `FILE`.
    * </pre>
    *
    * <code>
@@ -815,4 +809,58 @@ public interface StoragePoolOrBuilder
    * @return The type.
    */
   com.google.cloud.netapp.v1.StoragePoolType getType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mode of the storage pool. This field is used to control whether
+   * the user can perform the ONTAP operations on the storage pool using the
+   * GCNV ONTAP Mode APIs. If not specified during creation, it defaults to
+   * `DEFAULT`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.netapp.v1.Mode mode = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the mode field is set.
+   */
+  boolean hasMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mode of the storage pool. This field is used to control whether
+   * the user can perform the ONTAP operations on the storage pool using the
+   * GCNV ONTAP Mode APIs. If not specified during creation, it defaults to
+   * `DEFAULT`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.netapp.v1.Mode mode = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for mode.
+   */
+  int getModeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mode of the storage pool. This field is used to control whether
+   * the user can perform the ONTAP operations on the storage pool using the
+   * GCNV ONTAP Mode APIs. If not specified during creation, it defaults to
+   * `DEFAULT`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.netapp.v1.Mode mode = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The mode.
+   */
+  com.google.cloud.netapp.v1.Mode getMode();
 }

@@ -159,6 +159,7 @@ public class GrpcAdvisoryNotificationsServiceStub extends AdvisoryNotificationsS
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetNotificationRequest, Notification> getNotificationTransportSettings =
         GrpcCallSettings.<GetNotificationRequest, Notification>newBuilder()
@@ -169,6 +170,7 @@ public class GrpcAdvisoryNotificationsServiceStub extends AdvisoryNotificationsS
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetSettingsRequest, Settings> getSettingsTransportSettings =
         GrpcCallSettings.<GetSettingsRequest, Settings>newBuilder()
@@ -179,6 +181,7 @@ public class GrpcAdvisoryNotificationsServiceStub extends AdvisoryNotificationsS
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateSettingsRequest, Settings> updateSettingsTransportSettings =
         GrpcCallSettings.<UpdateSettingsRequest, Settings>newBuilder()

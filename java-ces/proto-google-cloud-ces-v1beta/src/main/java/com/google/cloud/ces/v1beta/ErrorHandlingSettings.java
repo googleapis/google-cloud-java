@@ -84,7 +84,7 @@ public final class ErrorHandlingSettings extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Unspecified error handling strategy. Defaults to FALLBACK_RESPONSE.
+     * Unspecified error handling strategy.
      * </pre>
      *
      * <code>ERROR_HANDLING_STRATEGY_UNSPECIFIED = 0;</code>
@@ -105,12 +105,23 @@ public final class ErrorHandlingSettings extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A fallback message will be returned to the user in case of
-     * LLM errors.
+     * system errors (e.g. LLM errors).
      * </pre>
      *
      * <code>FALLBACK_RESPONSE = 2;</code>
      */
     FALLBACK_RESPONSE(2),
+    /**
+     *
+     *
+     * <pre>
+     * An [EndSession][google.cloud.ces.v1beta.EndSession] signal will be
+     * emitted in case of system errors (e.g. LLM errors).
+     * </pre>
+     *
+     * <code>END_SESSION = 3;</code>
+     */
+    END_SESSION(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -128,7 +139,7 @@ public final class ErrorHandlingSettings extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Unspecified error handling strategy. Defaults to FALLBACK_RESPONSE.
+     * Unspecified error handling strategy.
      * </pre>
      *
      * <code>ERROR_HANDLING_STRATEGY_UNSPECIFIED = 0;</code>
@@ -151,12 +162,24 @@ public final class ErrorHandlingSettings extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A fallback message will be returned to the user in case of
-     * LLM errors.
+     * system errors (e.g. LLM errors).
      * </pre>
      *
      * <code>FALLBACK_RESPONSE = 2;</code>
      */
     public static final int FALLBACK_RESPONSE_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * An [EndSession][google.cloud.ces.v1beta.EndSession] signal will be
+     * emitted in case of system errors (e.g. LLM errors).
+     * </pre>
+     *
+     * <code>END_SESSION = 3;</code>
+     */
+    public static final int END_SESSION_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -188,6 +211,8 @@ public final class ErrorHandlingSettings extends com.google.protobuf.GeneratedMe
           return NONE;
         case 2:
           return FALLBACK_RESPONSE;
+        case 3:
+          return END_SESSION;
         default:
           return null;
       }

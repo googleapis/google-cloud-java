@@ -187,6 +187,7 @@ public class GrpcVersionsStub extends VersionsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetVersionRequest, Version> getVersionTransportSettings =
         GrpcCallSettings.<GetVersionRequest, Version>newBuilder()
@@ -197,6 +198,7 @@ public class GrpcVersionsStub extends VersionsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateVersionRequest, Version> createVersionTransportSettings =
         GrpcCallSettings.<CreateVersionRequest, Version>newBuilder()
@@ -207,6 +209,7 @@ public class GrpcVersionsStub extends VersionsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateVersionRequest, Version> updateVersionTransportSettings =
         GrpcCallSettings.<UpdateVersionRequest, Version>newBuilder()
@@ -227,6 +230,7 @@ public class GrpcVersionsStub extends VersionsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

@@ -1770,6 +1770,7 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-backupdr")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

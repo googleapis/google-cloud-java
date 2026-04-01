@@ -1550,6 +1550,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateLakeRequest, Operation> updateLakeTransportSettings =
         HttpJsonCallSettings.<UpdateLakeRequest, Operation>newBuilder()
@@ -1572,6 +1573,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLakesRequest, ListLakesResponse> listLakesTransportSettings =
         HttpJsonCallSettings.<ListLakesRequest, ListLakesResponse>newBuilder()
@@ -1583,6 +1585,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetLakeRequest, Lake> getLakeTransportSettings =
         HttpJsonCallSettings.<GetLakeRequest, Lake>newBuilder()
@@ -1594,6 +1597,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLakeActionsRequest, ListActionsResponse>
         listLakeActionsTransportSettings =
@@ -1606,6 +1610,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateZoneRequest, Operation> createZoneTransportSettings =
         HttpJsonCallSettings.<CreateZoneRequest, Operation>newBuilder()
@@ -1617,6 +1622,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateZoneRequest, Operation> updateZoneTransportSettings =
         HttpJsonCallSettings.<UpdateZoneRequest, Operation>newBuilder()
@@ -1639,6 +1645,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListZonesRequest, ListZonesResponse> listZonesTransportSettings =
         HttpJsonCallSettings.<ListZonesRequest, ListZonesResponse>newBuilder()
@@ -1650,6 +1657,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetZoneRequest, Zone> getZoneTransportSettings =
         HttpJsonCallSettings.<GetZoneRequest, Zone>newBuilder()
@@ -1661,6 +1669,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListZoneActionsRequest, ListActionsResponse>
         listZoneActionsTransportSettings =
@@ -1673,6 +1682,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateAssetRequest, Operation> createAssetTransportSettings =
         HttpJsonCallSettings.<CreateAssetRequest, Operation>newBuilder()
@@ -1684,6 +1694,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateAssetRequest, Operation> updateAssetTransportSettings =
         HttpJsonCallSettings.<UpdateAssetRequest, Operation>newBuilder()
@@ -1706,6 +1717,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListAssetsRequest, ListAssetsResponse> listAssetsTransportSettings =
         HttpJsonCallSettings.<ListAssetsRequest, ListAssetsResponse>newBuilder()
@@ -1717,6 +1729,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetAssetRequest, Asset> getAssetTransportSettings =
         HttpJsonCallSettings.<GetAssetRequest, Asset>newBuilder()
@@ -1728,6 +1741,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListAssetActionsRequest, ListActionsResponse>
         listAssetActionsTransportSettings =
@@ -1740,6 +1754,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateTaskRequest, Operation> createTaskTransportSettings =
         HttpJsonCallSettings.<CreateTaskRequest, Operation>newBuilder()
@@ -1751,6 +1766,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateTaskRequest, Operation> updateTaskTransportSettings =
         HttpJsonCallSettings.<UpdateTaskRequest, Operation>newBuilder()
@@ -1773,6 +1789,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListTasksRequest, ListTasksResponse> listTasksTransportSettings =
         HttpJsonCallSettings.<ListTasksRequest, ListTasksResponse>newBuilder()
@@ -1784,6 +1801,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetTaskRequest, Task> getTaskTransportSettings =
         HttpJsonCallSettings.<GetTaskRequest, Task>newBuilder()
@@ -1795,6 +1813,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListJobsRequest, ListJobsResponse> listJobsTransportSettings =
         HttpJsonCallSettings.<ListJobsRequest, ListJobsResponse>newBuilder()
@@ -1806,6 +1825,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<RunTaskRequest, RunTaskResponse> runTaskTransportSettings =
         HttpJsonCallSettings.<RunTaskRequest, RunTaskResponse>newBuilder()
@@ -1817,6 +1837,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetJobRequest, Job> getJobTransportSettings =
         HttpJsonCallSettings.<GetJobRequest, Job>newBuilder()
@@ -1828,6 +1849,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CancelJobRequest, Empty> cancelJobTransportSettings =
         HttpJsonCallSettings.<CancelJobRequest, Empty>newBuilder()
@@ -1839,6 +1861,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -1873,6 +1896,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1884,6 +1908,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1896,6 +1921,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createLakeCallable =

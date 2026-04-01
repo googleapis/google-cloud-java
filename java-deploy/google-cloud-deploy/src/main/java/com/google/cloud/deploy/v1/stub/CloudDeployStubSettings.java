@@ -1491,6 +1491,7 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-deploy")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

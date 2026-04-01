@@ -160,6 +160,7 @@ public class GrpcMerchantReviewsServiceStub extends MerchantReviewsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListMerchantReviewsRequest, ListMerchantReviewsResponse>
         listMerchantReviewsTransportSettings =
@@ -171,6 +172,7 @@ public class GrpcMerchantReviewsServiceStub extends MerchantReviewsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<InsertMerchantReviewRequest, MerchantReview>
         insertMerchantReviewTransportSettings =
@@ -192,6 +194,7 @@ public class GrpcMerchantReviewsServiceStub extends MerchantReviewsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getMerchantReviewCallable =

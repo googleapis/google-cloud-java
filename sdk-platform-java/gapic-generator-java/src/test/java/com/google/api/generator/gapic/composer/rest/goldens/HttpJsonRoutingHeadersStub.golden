@@ -1,0 +1,435 @@
+package com.google.explicit.dynamic.routing.header.stub;
+
+import com.google.api.core.InternalApi;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.httpjson.ApiMethodDescriptor;
+import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
+import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
+import com.google.api.gax.httpjson.ProtoMessageResponseParser;
+import com.google.api.gax.httpjson.ProtoRestSerializer;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
+import com.google.explicit.dynamic.routing.header.EnumRequest;
+import com.google.explicit.dynamic.routing.header.EnumResponse;
+import com.google.explicit.dynamic.routing.header.Request;
+import com.google.explicit.dynamic.routing.header.RequestWithNestedField;
+import com.google.protobuf.Empty;
+import com.google.protobuf.TypeRegistry;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import javax.annotation.Generated;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * REST stub implementation for the ExplicitDynamicRoutingHeaderTesting service API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
+@Generated("by gapic-generator-java")
+public class HttpJsonExplicitDynamicRoutingHeaderTestingStub
+    extends ExplicitDynamicRoutingHeaderTestingStub {
+  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+
+  private static final ApiMethodDescriptor<Request, Empty>
+      backwardsCompatible1TestMethodDescriptor =
+          ApiMethodDescriptor.<Request, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.explicit.dynamic.routing.header.ExplicitDynamicRoutingHeaderTesting/BackwardsCompatible1Test")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<Request>newBuilder()
+                      .setPath(
+                          "/v1beta1/{tableName=tests/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<Request> serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "tableName", request.getTableName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<Request> serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "appProfileId", request.getAppProfileId());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<Request, Empty>
+      backwardsCompatible2TestMethodDescriptor =
+          ApiMethodDescriptor.<Request, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.explicit.dynamic.routing.header.ExplicitDynamicRoutingHeaderTesting/BackwardsCompatible2Test")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<Request>newBuilder()
+                      .setPath(
+                          "/v1beta1/{tableName=tests/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<Request> serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "tableName", request.getTableName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<Request> serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "appProfileId", request.getAppProfileId());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<Request, Empty>
+      backwardsCompatible3TestMethodDescriptor =
+          ApiMethodDescriptor.<Request, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.explicit.dynamic.routing.header.ExplicitDynamicRoutingHeaderTesting/BackwardsCompatible3Test")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<Request>newBuilder()
+                      .setPath(
+                          "/v1beta1/{tableName=tests/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<Request> serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "tableName", request.getTableName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<Request> serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "appProfileId", request.getAppProfileId());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<EnumRequest, EnumResponse>
+      implicitRoutingHeaderWithEnumTestMethodDescriptor =
+          ApiMethodDescriptor.<EnumRequest, EnumResponse>newBuilder()
+              .setFullMethodName(
+                  "google.explicit.dynamic.routing.header.ExplicitDynamicRoutingHeaderTesting/ImplicitRoutingHeaderWithEnumTest")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<EnumRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{info.enumTest}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<EnumRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "info.enumTest", request.getInfo().getEnumTestValue());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<EnumRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<EnumResponse>newBuilder()
+                      .setDefaultInstance(EnumResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private final UnaryCallable<Request, Empty> backwardsCompatible1TestCallable;
+  private final UnaryCallable<Request, Empty> backwardsCompatible2TestCallable;
+  private final UnaryCallable<Request, Empty> backwardsCompatible3TestCallable;
+  private final UnaryCallable<EnumRequest, EnumResponse> implicitRoutingHeaderWithEnumTestCallable;
+
+  private final BackgroundResource backgroundResources;
+  private final HttpJsonStubCallableFactory callableFactory;
+
+  private static final PathTemplate BACKWARDS_COMPATIBLE1_TEST_0_PATH_TEMPLATE =
+      PathTemplate.create("{routing_id=projects/*}/**");
+
+  public static final HttpJsonExplicitDynamicRoutingHeaderTestingStub create(
+      ExplicitDynamicRoutingHeaderTestingStubSettings settings) throws IOException {
+    return new HttpJsonExplicitDynamicRoutingHeaderTestingStub(
+        settings, ClientContext.create(settings));
+  }
+
+  public static final HttpJsonExplicitDynamicRoutingHeaderTestingStub create(
+      ClientContext clientContext) throws IOException {
+    return new HttpJsonExplicitDynamicRoutingHeaderTestingStub(
+        ExplicitDynamicRoutingHeaderTestingStubSettings.newBuilder().build(), clientContext);
+  }
+
+  public static final HttpJsonExplicitDynamicRoutingHeaderTestingStub create(
+      ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
+    return new HttpJsonExplicitDynamicRoutingHeaderTestingStub(
+        ExplicitDynamicRoutingHeaderTestingStubSettings.newBuilder().build(),
+        clientContext,
+        callableFactory);
+  }
+
+  /**
+   * Constructs an instance of HttpJsonExplicitDynamicRoutingHeaderTestingStub, using the given
+   * settings. This is protected so that it is easy to make a subclass, but otherwise, the static
+   * factory methods should be preferred.
+   */
+  protected HttpJsonExplicitDynamicRoutingHeaderTestingStub(
+      ExplicitDynamicRoutingHeaderTestingStubSettings settings, ClientContext clientContext)
+      throws IOException {
+    this(settings, clientContext, new HttpJsonExplicitDynamicRoutingHeaderTestingCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of HttpJsonExplicitDynamicRoutingHeaderTestingStub, using the given
+   * settings. This is protected so that it is easy to make a subclass, but otherwise, the static
+   * factory methods should be preferred.
+   */
+  protected HttpJsonExplicitDynamicRoutingHeaderTestingStub(
+      ExplicitDynamicRoutingHeaderTestingStubSettings settings,
+      ClientContext clientContext,
+      HttpJsonStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+
+    HttpJsonCallSettings<Request, Empty> backwardsCompatible1TestTransportSettings =
+        HttpJsonCallSettings.<Request, Empty>newBuilder()
+            .setMethodDescriptor(backwardsCompatible1TestMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      request.getTableName(),
+                      "routing_id",
+                      BACKWARDS_COMPATIBLE1_TEST_0_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<Request, Empty> backwardsCompatible2TestTransportSettings =
+        HttpJsonCallSettings.<Request, Empty>newBuilder()
+            .setMethodDescriptor(backwardsCompatible2TestMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<Request, Empty> backwardsCompatible3TestTransportSettings =
+        HttpJsonCallSettings.<Request, Empty>newBuilder()
+            .setMethodDescriptor(backwardsCompatible3TestMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("table_name", String.valueOf(request.getTableName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<EnumRequest, EnumResponse>
+        implicitRoutingHeaderWithEnumTestTransportSettings =
+            HttpJsonCallSettings.<EnumRequest, EnumResponse>newBuilder()
+                .setMethodDescriptor(implicitRoutingHeaderWithEnumTestMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "info.enum_test", String.valueOf(request.getInfo().getEnumTestValue()));
+                      return builder.build();
+                    })
+                .build();
+
+    this.backwardsCompatible1TestCallable =
+        callableFactory.createUnaryCallable(
+            backwardsCompatible1TestTransportSettings,
+            settings.backwardsCompatible1TestSettings(),
+            clientContext);
+    this.backwardsCompatible2TestCallable =
+        callableFactory.createUnaryCallable(
+            backwardsCompatible2TestTransportSettings,
+            settings.backwardsCompatible2TestSettings(),
+            clientContext);
+    this.backwardsCompatible3TestCallable =
+        callableFactory.createUnaryCallable(
+            backwardsCompatible3TestTransportSettings,
+            settings.backwardsCompatible3TestSettings(),
+            clientContext);
+    this.implicitRoutingHeaderWithEnumTestCallable =
+        callableFactory.createUnaryCallable(
+            implicitRoutingHeaderWithEnumTestTransportSettings,
+            settings.implicitRoutingHeaderWithEnumTestSettings(),
+            clientContext);
+
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(backwardsCompatible1TestMethodDescriptor);
+    methodDescriptors.add(backwardsCompatible2TestMethodDescriptor);
+    methodDescriptors.add(backwardsCompatible3TestMethodDescriptor);
+    methodDescriptors.add(implicitRoutingHeaderWithEnumTestMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
+  public UnaryCallable<Request, Empty> backwardsCompatible1TestCallable() {
+    return backwardsCompatible1TestCallable;
+  }
+
+  @Override
+  public UnaryCallable<Request, Empty> backwardsCompatible2TestCallable() {
+    return backwardsCompatible2TestCallable;
+  }
+
+  @Override
+  public UnaryCallable<Request, Empty> backwardsCompatible3TestCallable() {
+    return backwardsCompatible3TestCallable;
+  }
+
+  @Override
+  public UnaryCallable<EnumRequest, EnumResponse> implicitRoutingHeaderWithEnumTestCallable() {
+    return implicitRoutingHeaderWithEnumTestCallable;
+  }
+
+  @Override
+  public UnaryCallable<Request, Empty> example1TestCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: example1TestCallable(). REST transport is not implemented for this method yet.");
+  }
+
+  @Override
+  public UnaryCallable<Request, Empty> example2TestCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: example2TestCallable(). REST transport is not implemented for this method yet.");
+  }
+
+  @Override
+  public UnaryCallable<Request, Empty> example3TestCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: example3TestCallable(). REST transport is not implemented for this method yet.");
+  }
+
+  @Override
+  public UnaryCallable<Request, Empty> example3CTestCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: example3CTestCallable(). REST transport is not implemented for this method yet.");
+  }
+
+  @Override
+  public UnaryCallable<Request, Empty> example4TestCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: example4TestCallable(). REST transport is not implemented for this method yet.");
+  }
+
+  @Override
+  public UnaryCallable<Request, Empty> example5TestCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: example5TestCallable(). REST transport is not implemented for this method yet.");
+  }
+
+  @Override
+  public UnaryCallable<Request, Empty> example6TestCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: example6TestCallable(). REST transport is not implemented for this method yet.");
+  }
+
+  @Override
+  public UnaryCallable<Request, Empty> example7TestCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: example7TestCallable(). REST transport is not implemented for this method yet.");
+  }
+
+  @Override
+  public UnaryCallable<Request, Empty> example8TestCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: example8TestCallable(). REST transport is not implemented for this method yet.");
+  }
+
+  @Override
+  public UnaryCallable<Request, Empty> example9TestCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: example9TestCallable(). REST transport is not implemented for this method yet.");
+  }
+
+  @Override
+  public UnaryCallable<RequestWithNestedField, Empty> nestedFieldTestCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: nestedFieldTestCallable(). REST transport is not implemented for this method yet.");
+  }
+
+  @Override
+  public final void close() {
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
+  }
+
+  @Override
+  public void shutdown() {
+    backgroundResources.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return backgroundResources.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return backgroundResources.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    backgroundResources.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return backgroundResources.awaitTermination(duration, unit);
+  }
+}

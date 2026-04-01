@@ -1,0 +1,144 @@
+// Copyright 2024 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+import "google/api/client.proto";
+import "google/api/field_behavior.proto";
+import "google/api/field_info.proto";
+import "google/api/resource.proto";
+import "google/longrunning/operations.proto";
+import "google/protobuf/duration.proto";
+import "google/protobuf/timestamp.proto";
+import "google/rpc/status.proto";
+import "google/protobuf/empty.proto";
+
+package google.auto.populate.field;
+
+option java_package = "com.google.auto.populate.field";
+option java_multiple_files = true;
+
+// This service is meant for testing all scenarios related to
+// the field AutoPopulateFieldTesting feature, including but not limited to the example in gapic-showcase's echo.proto
+service AutoPopulateFieldTesting {
+  option (google.api.default_host) = "localhost:7469";
+
+  // This unary method simply echoes the request. request_id and second_request_id *should* be autopopulated on the request if not set.
+  rpc AutoPopulateFieldTestingEcho(AutoPopulateFieldTestingEchoRequest) returns (AutoPopulateFieldTestingEchoResponse) {
+    option (google.api.http) = {
+      post: "/v1beta1/AutoPopulateFieldTesting:echo"
+      body: "*"
+    };
+  }
+
+  // This server-side streaming method splits the given content into words and will pass each word back
+  // through the stream. This method should not have any autopopulated fields.
+  rpc AutoPopulateFieldTestingExpand(AutoPopulateFieldTestingExpandRequest) returns (stream AutoPopulateFieldTestingEchoResponse) {
+    option (google.api.http) = {
+      post: "/v1beta1/AutoPopulateFieldTesting:expand"
+      body: "*"
+    };
+  }
+
+  // This client-side streaming method will collect the words given to it. When the stream is closed
+  // by the client, this method will return the a concatenation of the strings
+  // passed to it. This method should not have any autopopulated fields.
+  rpc AutoPopulateFieldTestingCollect(stream AutoPopulateFieldTestingEchoRequest) returns (AutoPopulateFieldTestingEchoResponse) {
+    option (google.api.http) = {
+      post: "/v1beta1/AutoPopulateFieldTesting:collect"
+      body: "*"
+    };
+  }
+
+  // This bidirectional streaming method, upon receiving a request on the stream, will pass the same
+  // content back on the stream. This method should not have any autopopulated fields.
+  rpc AutoPopulateFieldTestingChat(stream AutoPopulateFieldTestingEchoRequest) returns (stream AutoPopulateFieldTestingEchoResponse);
+}
+
+// The request message used for the AutoPopulateFieldTestingEcho, AutoPopulateFieldTestingCollect and AutoPopulateFieldTestingChat methods.
+// If content or opt are set in this message then the request will succeed.
+// If status is set in this message then the status will be returned as an
+// error.
+message AutoPopulateFieldTestingEchoRequest {
+  oneof response {
+    // The content to be echoed by the server.
+    string content = 1;
+
+    // The error to be thrown by the server.
+    google.rpc.Status error = 2;
+  }
+
+  // Based on go/client-populate-request-id-design; subject to change
+  string request_id = 3 [
+    (google.api.field_info).format = UUID4
+  ];
+
+  // This field is added to test that AutoPopulateFieldTesting works for multiple fields
+  string second_request_id = 8 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.field_info).format = UUID4
+  ];
+
+  // This field is added to test that AutoPopulateFieldTesting should not populate this field since it is not of type String
+  bool third_request_id = 9 [
+    (google.api.field_info).format = UUID4
+  ];
+
+  // This field is added to test that AutoPopulateFieldTesting should not populate this field since it is not annotated with UUID4 format
+  string fourth_request_id = 10 [
+    (google.api.field_info).format = IPV4_OR_IPV6
+  ];
+
+  // This field is added to test that AutoPopulateFieldTesting should not populate this field since it is not designated in the service_yaml
+  string fifth_request_id = 11 [
+    (google.api.field_info).format = UUID4
+  ];
+
+  // This field is added to test that AutoPopulateFieldTesting should not populate this field since it marked as Required
+  string sixth_request_id = 12 [
+    (google.api.field_info).format = UUID4,
+    (google.api.field_behavior) = REQUIRED
+  ];
+}
+
+// The response message for the AutoPopulateFieldTesting service methods.
+message AutoPopulateFieldTestingEchoResponse {
+  // The content specified in the request.
+  string content = 1;
+
+  // The request ID specified or autopopulated in the request.
+  string request_id = 2;
+
+  // The second request ID specified or autopopulated in the request.
+  string second_request_id = 3;
+}
+
+// The request message for the AutoPopulateFieldTestingExpand method.
+message AutoPopulateFieldTestingExpandRequest {
+  // The content that will be split into words and returned on the stream.
+  string content = 1;
+
+  // The error that is thrown after all words are sent on the stream.
+  google.rpc.Status error = 2;
+
+  //The wait time between each server streaming messages
+  google.protobuf.Duration stream_wait_time = 3;
+
+  // This field is added to test that AutoPopulateFieldTesting should not populate this field since it is not used in a unary method, even though it is otherwise configured correctly.
+  string request_id = 4 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.field_info).format = UUID4
+  ];
+}

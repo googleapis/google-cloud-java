@@ -251,6 +251,7 @@ public class ProfilerServiceStubSettings extends StubSettings<ProfilerServiceStu
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-profiler")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

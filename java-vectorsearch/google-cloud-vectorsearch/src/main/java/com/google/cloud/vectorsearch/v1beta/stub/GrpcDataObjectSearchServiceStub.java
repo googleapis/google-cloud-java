@@ -203,6 +203,7 @@ public class GrpcDataObjectSearchServiceStub extends DataObjectSearchServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<QueryDataObjectsRequest, QueryDataObjectsResponse>
         queryDataObjectsTransportSettings =
@@ -214,6 +215,7 @@ public class GrpcDataObjectSearchServiceStub extends DataObjectSearchServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<AggregateDataObjectsRequest, AggregateDataObjectsResponse>
         aggregateDataObjectsTransportSettings =
@@ -225,6 +227,7 @@ public class GrpcDataObjectSearchServiceStub extends DataObjectSearchServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<BatchSearchDataObjectsRequest, BatchSearchDataObjectsResponse>
         batchSearchDataObjectsTransportSettings =
@@ -237,6 +240,7 @@ public class GrpcDataObjectSearchServiceStub extends DataObjectSearchServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

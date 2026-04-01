@@ -320,6 +320,7 @@ public class GrpcWorkloadManagerStub extends WorkloadManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetEvaluationRequest, Evaluation> getEvaluationTransportSettings =
         GrpcCallSettings.<GetEvaluationRequest, Evaluation>newBuilder()
@@ -330,6 +331,7 @@ public class GrpcWorkloadManagerStub extends WorkloadManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateEvaluationRequest, Operation> createEvaluationTransportSettings =
         GrpcCallSettings.<CreateEvaluationRequest, Operation>newBuilder()
@@ -340,6 +342,7 @@ public class GrpcWorkloadManagerStub extends WorkloadManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateEvaluationRequest, Operation> updateEvaluationTransportSettings =
         GrpcCallSettings.<UpdateEvaluationRequest, Operation>newBuilder()
@@ -360,6 +363,7 @@ public class GrpcWorkloadManagerStub extends WorkloadManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListExecutionsRequest, ListExecutionsResponse>
         listExecutionsTransportSettings =
@@ -371,6 +375,7 @@ public class GrpcWorkloadManagerStub extends WorkloadManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetExecutionRequest, Execution> getExecutionTransportSettings =
         GrpcCallSettings.<GetExecutionRequest, Execution>newBuilder()
@@ -381,6 +386,7 @@ public class GrpcWorkloadManagerStub extends WorkloadManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RunEvaluationRequest, Operation> runEvaluationTransportSettings =
         GrpcCallSettings.<RunEvaluationRequest, Operation>newBuilder()
@@ -391,6 +397,7 @@ public class GrpcWorkloadManagerStub extends WorkloadManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteExecutionRequest, Operation> deleteExecutionTransportSettings =
         GrpcCallSettings.<DeleteExecutionRequest, Operation>newBuilder()
@@ -401,6 +408,7 @@ public class GrpcWorkloadManagerStub extends WorkloadManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListExecutionResultsRequest, ListExecutionResultsResponse>
         listExecutionResultsTransportSettings =
@@ -422,6 +430,7 @@ public class GrpcWorkloadManagerStub extends WorkloadManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListScannedResourcesRequest, ListScannedResourcesResponse>
         listScannedResourcesTransportSettings =

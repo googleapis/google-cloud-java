@@ -702,6 +702,7 @@ public class HttpJsonDataFusionStub extends DataFusionStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListInstancesRequest, ListInstancesResponse>
         listInstancesTransportSettings =
@@ -714,6 +715,7 @@ public class HttpJsonDataFusionStub extends DataFusionStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         HttpJsonCallSettings.<GetInstanceRequest, Instance>newBuilder()
@@ -725,6 +727,7 @@ public class HttpJsonDataFusionStub extends DataFusionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateInstanceRequest, Operation> createInstanceTransportSettings =
         HttpJsonCallSettings.<CreateInstanceRequest, Operation>newBuilder()
@@ -736,6 +739,7 @@ public class HttpJsonDataFusionStub extends DataFusionStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteInstanceRequest, Operation> deleteInstanceTransportSettings =
         HttpJsonCallSettings.<DeleteInstanceRequest, Operation>newBuilder()
@@ -747,6 +751,7 @@ public class HttpJsonDataFusionStub extends DataFusionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateInstanceRequest, Operation> updateInstanceTransportSettings =
         HttpJsonCallSettings.<UpdateInstanceRequest, Operation>newBuilder()
@@ -769,6 +774,7 @@ public class HttpJsonDataFusionStub extends DataFusionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpgradeInstanceRequest, Operation> upgradeInstanceTransportSettings =
         HttpJsonCallSettings.<UpgradeInstanceRequest, Operation>newBuilder()
@@ -780,6 +786,7 @@ public class HttpJsonDataFusionStub extends DataFusionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RemoveIamPolicyRequest, RemoveIamPolicyResponse>
         removeIamPolicyTransportSettings =
@@ -804,6 +811,7 @@ public class HttpJsonDataFusionStub extends DataFusionStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<AddDnsPeeringRequest, AddDnsPeeringResponse>
         addDnsPeeringTransportSettings =
@@ -816,6 +824,7 @@ public class HttpJsonDataFusionStub extends DataFusionStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<RemoveDnsPeeringRequest, RemoveDnsPeeringResponse>
         removeDnsPeeringTransportSettings =
@@ -828,6 +837,7 @@ public class HttpJsonDataFusionStub extends DataFusionStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListDnsPeeringsRequest, ListDnsPeeringsResponse>
         listDnsPeeringsTransportSettings =
@@ -840,6 +850,7 @@ public class HttpJsonDataFusionStub extends DataFusionStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.listAvailableVersionsCallable =

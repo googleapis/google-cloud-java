@@ -534,6 +534,7 @@ public class HttpJsonSampleQueryServiceStub extends SampleQueryServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListSampleQueriesRequest, ListSampleQueriesResponse>
         listSampleQueriesTransportSettings =
@@ -546,6 +547,7 @@ public class HttpJsonSampleQueryServiceStub extends SampleQueryServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateSampleQueryRequest, SampleQuery> createSampleQueryTransportSettings =
         HttpJsonCallSettings.<CreateSampleQueryRequest, SampleQuery>newBuilder()
@@ -557,6 +559,7 @@ public class HttpJsonSampleQueryServiceStub extends SampleQueryServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateSampleQueryRequest, SampleQuery> updateSampleQueryTransportSettings =
         HttpJsonCallSettings.<UpdateSampleQueryRequest, SampleQuery>newBuilder()
@@ -580,6 +583,7 @@ public class HttpJsonSampleQueryServiceStub extends SampleQueryServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ImportSampleQueriesRequest, Operation>
         importSampleQueriesTransportSettings =
@@ -592,6 +596,7 @@ public class HttpJsonSampleQueryServiceStub extends SampleQueryServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getSampleQueryCallable =

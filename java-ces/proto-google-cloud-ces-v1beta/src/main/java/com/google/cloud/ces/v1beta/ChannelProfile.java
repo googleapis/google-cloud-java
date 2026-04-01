@@ -1371,6 +1371,16 @@ public final class ChannelProfile extends com.google.protobuf.GeneratedMessage
        * <code>CHAT_ONLY = 3;</code>
        */
       CHAT_ONLY(3),
+      /**
+       *
+       *
+       * <pre>
+       * Widget supports chat, voice, and video input.
+       * </pre>
+       *
+       * <code>CHAT_VOICE_AND_VIDEO = 4;</code>
+       */
+      CHAT_VOICE_AND_VIDEO(4),
       UNRECOGNIZED(-1),
       ;
 
@@ -1428,6 +1438,17 @@ public final class ChannelProfile extends com.google.protobuf.GeneratedMessage
        */
       public static final int CHAT_ONLY_VALUE = 3;
 
+      /**
+       *
+       *
+       * <pre>
+       * Widget supports chat, voice, and video input.
+       * </pre>
+       *
+       * <code>CHAT_VOICE_AND_VIDEO = 4;</code>
+       */
+      public static final int CHAT_VOICE_AND_VIDEO_VALUE = 4;
+
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
           throw new java.lang.IllegalArgumentException(
@@ -1460,6 +1481,8 @@ public final class ChannelProfile extends com.google.protobuf.GeneratedMessage
             return VOICE_ONLY;
           case 3:
             return CHAT_ONLY;
+          case 4:
+            return CHAT_VOICE_AND_VIDEO;
           default:
             return null;
         }

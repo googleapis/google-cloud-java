@@ -25,7 +25,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        java: [8, 11, 17, 21, 25]
+        java: [11, 17, 21, 25]
     steps:
     - name: Get current week within the year
       id: date
@@ -45,6 +45,135 @@ jobs:
       env:
         JOB_TYPE: test
         JOB_NAME: units-${{matrix.java}}
+  units-8-runtime:
+    runs-on: ubuntu-latest
+    name: "units (8)"
+    steps:
+    - name: Get current week within the year
+      id: date
+      run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
+    - uses: actions/checkout@v4
+    - uses: actions/setup-java@v4
+      with:
+        java-version: 8
+        distribution: temurin
+    - name: "Set jvm system property environment variable for surefire plugin (unit tests)"
+      # Maven surefire plugin (unit tests) allows us to specify JVM to run the tests.
+      # https://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html#jvm
+      run: echo "SUREFIRE_JVM_OPT=-Djvm=${JAVA_HOME}/bin/java" >> $GITHUB_ENV
+      shell: bash    
+    - uses: actions/setup-java@v4
+      with:
+        java-version: 11
+        distribution: temurin
+        cache: maven
+    - uses: actions/cache@v4
+      id: mvn-cache
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
+    - run: .kokoro/build.sh
+      shell: bash      
+      env:
+        JOB_TYPE: test
+        JOB_NAME: units-8-runtime-${{matrix.java}}
+  # detect which libraries have changed
+  changes:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
+    outputs:
+      packages: ${{ steps.filter.outputs.changes }}
+    steps:
+    - uses: dorny/paths-filter@v4
+      id: filter
+      with:
+        filters: |
+          java-bigquery: java-bigquery/**
+          java-bigquerystorage: java-bigquerystorage/**
+          java-datastore: java-datastore/**
+          java-logging-logback: java-logging-logback/**
+          java-logging: java-logging/**
+          java-spanner: java-spanner/**
+          java-storage: java-storage/**
+          sdk-platform-java: sdk-platform-java/**
+  split-units:
+    runs-on: ubuntu-latest
+    needs: changes
+    strategy:
+      fail-fast: false
+      matrix:
+        package: ${{ fromJSON(needs.changes.outputs.packages) }}
+        java: [11, 17, 21, 25]
+    steps:
+    - name: Get current week within the year
+      id: date
+      run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
+    - uses: actions/checkout@v4
+    - uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: ${{matrix.java}}
+    - run: .kokoro/build.sh
+      env:
+        BUILD_SUBDIR: ${{matrix.package}}
+        JOB_TYPE: test
+        JOB_NAME: units-${{matrix.package}}-${{matrix.java}}
+  split-units-8:
+    runs-on: ubuntu-latest
+    name: "split-units"
+    needs: changes
+    strategy:
+      fail-fast: false
+      matrix:
+        package: ${{ fromJSON(needs.changes.outputs.packages) }}
+        java: [8]
+    steps:
+    - name: Get current week within the year
+      id: date
+      run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
+    - uses: actions/checkout@v4
+    - uses: actions/setup-java@v4
+      with:
+        java-version: 11
+        distribution: temurin
+        cache: maven
+    - run: java -version
+    - uses: actions/cache@v4
+      id: mvn-cache
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
+    - name: Install all modules using Java 11
+      shell: bash
+      run: .kokoro/build.sh
+      env:
+        BUILD_SUBDIR: ${{matrix.package}}
+        JOB_TYPE: install
+    - uses: actions/setup-java@v4
+      with:
+        java-version: ${{matrix.java}}
+        distribution: temurin
+    - run: java -version
+    - name: Run tests in Java ${{matrix.java}} with the source compiled in Java 11
+      run: |
+        mvn test \
+          -B -ntp \
+          -Dorg.slf4j.simpleLogger.showDateTime=true \
+          -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+          -Dclirr.skip=true \
+          -Denforcer.skip=true \
+          -Dcheckstyle.skip=true \
+          -Dflatten.skip=true \
+          -Danimal.sniffer.skip=true \
+          -Dmaven.wagon.http.retryHandler.count=5 \
+          --also-make \
+          -T 1C
+      env:
+        BUILD_SUBDIR: ${{matrix.package}}
+        JOB_TYPE: test
+        JOB_NAME: units-8-runtime-${{matrix.java}}
+      working-directory: ${{matrix.package}}
   windows:
     runs-on: windows-latest
     steps:
@@ -108,7 +237,7 @@ jobs:
       run: |
         mvn install -B -ntp  -T 1C -DskipTests -Dclirr.skip -Dcheckstyle.skip -Denforcer.skip
     - name: Validate gapic-libraries-bom
-      uses: googleapis/java-cloud-bom/tests/validate-bom@v26.54.0
+      uses: googleapis/java-cloud-bom/tests/validate-bom@v26.79.0
       with:
         bom-path: gapic-libraries-bom/pom.xml
   generation-config-check:

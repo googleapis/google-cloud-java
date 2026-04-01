@@ -269,6 +269,7 @@ public class HttpJsonCheckoutSettingsServiceStub extends CheckoutSettingsService
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateCheckoutSettingsRequest, CheckoutSettings>
         createCheckoutSettingsTransportSettings =
@@ -281,6 +282,7 @@ public class HttpJsonCheckoutSettingsServiceStub extends CheckoutSettingsService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateCheckoutSettingsRequest, CheckoutSettings>
         updateCheckoutSettingsTransportSettings =
@@ -307,6 +309,7 @@ public class HttpJsonCheckoutSettingsServiceStub extends CheckoutSettingsService
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.getCheckoutSettingsCallable =

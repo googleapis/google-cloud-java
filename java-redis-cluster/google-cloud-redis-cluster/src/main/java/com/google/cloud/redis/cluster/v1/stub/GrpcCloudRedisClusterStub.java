@@ -46,6 +46,7 @@ import com.google.cloud.redis.cluster.v1.GetBackupCollectionRequest;
 import com.google.cloud.redis.cluster.v1.GetBackupRequest;
 import com.google.cloud.redis.cluster.v1.GetClusterCertificateAuthorityRequest;
 import com.google.cloud.redis.cluster.v1.GetClusterRequest;
+import com.google.cloud.redis.cluster.v1.GetSharedRegionalCertificateAuthorityRequest;
 import com.google.cloud.redis.cluster.v1.ListBackupCollectionsRequest;
 import com.google.cloud.redis.cluster.v1.ListBackupCollectionsResponse;
 import com.google.cloud.redis.cluster.v1.ListBackupsRequest;
@@ -53,6 +54,7 @@ import com.google.cloud.redis.cluster.v1.ListBackupsResponse;
 import com.google.cloud.redis.cluster.v1.ListClustersRequest;
 import com.google.cloud.redis.cluster.v1.ListClustersResponse;
 import com.google.cloud.redis.cluster.v1.RescheduleClusterMaintenanceRequest;
+import com.google.cloud.redis.cluster.v1.SharedRegionalCertificateAuthority;
 import com.google.cloud.redis.cluster.v1.UpdateClusterRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -135,6 +137,23 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                   ProtoUtils.marshaller(GetClusterCertificateAuthorityRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CertificateAuthority.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+      getSharedRegionalCertificateAuthorityMethodDescriptor =
+          MethodDescriptor
+              .<GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1.CloudRedisCluster/GetSharedRegionalCertificateAuthority")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      GetSharedRegionalCertificateAuthorityRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SharedRegionalCertificateAuthority.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -261,6 +280,9 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
       createClusterOperationCallable;
   private final UnaryCallable<GetClusterCertificateAuthorityRequest, CertificateAuthority>
       getClusterCertificateAuthorityCallable;
+  private final UnaryCallable<
+          GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+      getSharedRegionalCertificateAuthorityCallable;
   private final UnaryCallable<RescheduleClusterMaintenanceRequest, Operation>
       rescheduleClusterMaintenanceCallable;
   private final OperationCallable<RescheduleClusterMaintenanceRequest, Cluster, Any>
@@ -340,6 +362,7 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
         GrpcCallSettings.<GetClusterRequest, Cluster>newBuilder()
@@ -350,6 +373,7 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateClusterRequest, Operation> updateClusterTransportSettings =
         GrpcCallSettings.<UpdateClusterRequest, Operation>newBuilder()
@@ -370,6 +394,7 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
         GrpcCallSettings.<CreateClusterRequest, Operation>newBuilder()
@@ -380,6 +405,7 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetClusterCertificateAuthorityRequest, CertificateAuthority>
         getClusterCertificateAuthorityTransportSettings =
@@ -392,6 +418,22 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<
+            GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+        getSharedRegionalCertificateAuthorityTransportSettings =
+            GrpcCallSettings
+                .<GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+                    newBuilder()
+                .setMethodDescriptor(getSharedRegionalCertificateAuthorityMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<RescheduleClusterMaintenanceRequest, Operation>
         rescheduleClusterMaintenanceTransportSettings =
@@ -403,6 +445,7 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListBackupCollectionsRequest, ListBackupCollectionsResponse>
         listBackupCollectionsTransportSettings =
@@ -415,6 +458,7 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetBackupCollectionRequest, BackupCollection>
         getBackupCollectionTransportSettings =
@@ -426,6 +470,7 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
         GrpcCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
@@ -436,6 +481,7 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
         GrpcCallSettings.<GetBackupRequest, Backup>newBuilder()
@@ -446,6 +492,7 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteBackupRequest, Operation> deleteBackupTransportSettings =
         GrpcCallSettings.<DeleteBackupRequest, Operation>newBuilder()
@@ -456,6 +503,7 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ExportBackupRequest, Operation> exportBackupTransportSettings =
         GrpcCallSettings.<ExportBackupRequest, Operation>newBuilder()
@@ -466,6 +514,7 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<BackupClusterRequest, Operation> backupClusterTransportSettings =
         GrpcCallSettings.<BackupClusterRequest, Operation>newBuilder()
@@ -476,6 +525,7 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -538,6 +588,11 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
         callableFactory.createUnaryCallable(
             getClusterCertificateAuthorityTransportSettings,
             settings.getClusterCertificateAuthoritySettings(),
+            clientContext);
+    this.getSharedRegionalCertificateAuthorityCallable =
+        callableFactory.createUnaryCallable(
+            getSharedRegionalCertificateAuthorityTransportSettings,
+            settings.getSharedRegionalCertificateAuthoritySettings(),
             clientContext);
     this.rescheduleClusterMaintenanceCallable =
         callableFactory.createUnaryCallable(
@@ -668,6 +723,13 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
   public UnaryCallable<GetClusterCertificateAuthorityRequest, CertificateAuthority>
       getClusterCertificateAuthorityCallable() {
     return getClusterCertificateAuthorityCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+      getSharedRegionalCertificateAuthorityCallable() {
+    return getSharedRegionalCertificateAuthorityCallable;
   }
 
   @Override

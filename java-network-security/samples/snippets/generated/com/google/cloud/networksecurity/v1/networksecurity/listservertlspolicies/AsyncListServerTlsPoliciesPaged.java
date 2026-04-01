@@ -42,6 +42,7 @@ public class AsyncListServerTlsPoliciesPaged {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setReturnPartialSuccess(true)
               .build();
       while (true) {
         ListServerTlsPoliciesResponse response =

@@ -115,6 +115,7 @@ public class GrpcEstimateBillingServiceStub extends EstimateBillingServiceStub {
                   builder.add("location", String.valueOf(request.getLocation()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getLocation())
             .build();
 
     this.estimateDataSizeCallable =

@@ -218,6 +218,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateDeploymentRequest, Deployment> createDeploymentTransportSettings =
         GrpcCallSettings.<CreateDeploymentRequest, Deployment>newBuilder()
@@ -228,6 +229,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ReplaceDeploymentRequest, Deployment> replaceDeploymentTransportSettings =
         GrpcCallSettings.<ReplaceDeploymentRequest, Deployment>newBuilder()
@@ -248,6 +250,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDeploymentsRequest, ListDeploymentsResponse>
         listDeploymentsTransportSettings =
@@ -259,6 +262,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteDeploymentRequest, Empty> deleteDeploymentTransportSettings =
         GrpcCallSettings.<DeleteDeploymentRequest, Empty>newBuilder()
@@ -269,6 +273,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<InstallDeploymentRequest, Empty> installDeploymentTransportSettings =
         GrpcCallSettings.<InstallDeploymentRequest, Empty>newBuilder()
@@ -279,6 +284,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UninstallDeploymentRequest, Empty> uninstallDeploymentTransportSettings =
         GrpcCallSettings.<UninstallDeploymentRequest, Empty>newBuilder()
@@ -289,6 +295,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetInstallStatusRequest, InstallStatus> getInstallStatusTransportSettings =
         GrpcCallSettings.<GetInstallStatusRequest, InstallStatus>newBuilder()
@@ -299,6 +306,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getAuthorizationCallable =

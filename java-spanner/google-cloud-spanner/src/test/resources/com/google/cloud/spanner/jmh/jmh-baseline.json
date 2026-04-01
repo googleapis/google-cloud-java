@@ -1,0 +1,22 @@
+{
+  "benchmarkResultMap": {
+    "com.google.cloud.spanner.benchmarking.ReadBenchmark.queryBenchmark": {
+      "scorePercentiles": [
+        {
+          "percentile": "50.0",
+          "baseline": "450",
+          "difference": "20"
+        }
+      ]
+    },
+    "com.google.cloud.spanner.benchmarking.ReadBenchmark.readBenchmark": {
+      "scorePercentiles": [
+        {
+          "percentile": "50.0",
+          "baseline": "450",
+          "difference": "20"
+        }
+      ]
+    }
+  }
+}

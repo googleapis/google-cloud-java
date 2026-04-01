@@ -3305,6 +3305,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UploadConversationRequest, Operation> uploadConversationTransportSettings =
         HttpJsonCallSettings.<UploadConversationRequest, Operation>newBuilder()
@@ -3316,6 +3317,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateConversationRequest, Conversation>
         updateConversationTransportSettings =
@@ -3340,6 +3342,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListConversationsRequest, ListConversationsResponse>
         listConversationsTransportSettings =
@@ -3352,6 +3355,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteConversationRequest, Empty> deleteConversationTransportSettings =
         HttpJsonCallSettings.<DeleteConversationRequest, Empty>newBuilder()
@@ -3363,6 +3367,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateAnalysisRequest, Operation> createAnalysisTransportSettings =
         HttpJsonCallSettings.<CreateAnalysisRequest, Operation>newBuilder()
@@ -3374,6 +3379,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetAnalysisRequest, Analysis> getAnalysisTransportSettings =
         HttpJsonCallSettings.<GetAnalysisRequest, Analysis>newBuilder()
@@ -3385,6 +3391,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListAnalysesRequest, ListAnalysesResponse> listAnalysesTransportSettings =
         HttpJsonCallSettings.<ListAnalysesRequest, ListAnalysesResponse>newBuilder()
@@ -3396,6 +3403,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteAnalysisRequest, Empty> deleteAnalysisTransportSettings =
         HttpJsonCallSettings.<DeleteAnalysisRequest, Empty>newBuilder()
@@ -3407,6 +3415,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<BulkAnalyzeConversationsRequest, Operation>
         bulkAnalyzeConversationsTransportSettings =
@@ -3419,6 +3428,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<BulkDeleteConversationsRequest, Operation>
         bulkDeleteConversationsTransportSettings =
@@ -3431,6 +3441,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<IngestConversationsRequest, Operation>
         ingestConversationsTransportSettings =
@@ -3443,6 +3454,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ExportInsightsDataRequest, Operation> exportInsightsDataTransportSettings =
         HttpJsonCallSettings.<ExportInsightsDataRequest, Operation>newBuilder()
@@ -3454,6 +3466,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateIssueModelRequest, Operation> createIssueModelTransportSettings =
         HttpJsonCallSettings.<CreateIssueModelRequest, Operation>newBuilder()
@@ -3465,6 +3478,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateIssueModelRequest, IssueModel> updateIssueModelTransportSettings =
         HttpJsonCallSettings.<UpdateIssueModelRequest, IssueModel>newBuilder()
@@ -3488,6 +3502,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListIssueModelsRequest, ListIssueModelsResponse>
         listIssueModelsTransportSettings =
@@ -3500,6 +3515,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteIssueModelRequest, Operation> deleteIssueModelTransportSettings =
         HttpJsonCallSettings.<DeleteIssueModelRequest, Operation>newBuilder()
@@ -3511,6 +3527,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeployIssueModelRequest, Operation> deployIssueModelTransportSettings =
         HttpJsonCallSettings.<DeployIssueModelRequest, Operation>newBuilder()
@@ -3522,6 +3539,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UndeployIssueModelRequest, Operation> undeployIssueModelTransportSettings =
         HttpJsonCallSettings.<UndeployIssueModelRequest, Operation>newBuilder()
@@ -3533,6 +3551,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ExportIssueModelRequest, Operation> exportIssueModelTransportSettings =
         HttpJsonCallSettings.<ExportIssueModelRequest, Operation>newBuilder()
@@ -3544,6 +3563,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ImportIssueModelRequest, Operation> importIssueModelTransportSettings =
         HttpJsonCallSettings.<ImportIssueModelRequest, Operation>newBuilder()
@@ -3555,6 +3575,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetIssueRequest, Issue> getIssueTransportSettings =
         HttpJsonCallSettings.<GetIssueRequest, Issue>newBuilder()
@@ -3566,6 +3587,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListIssuesRequest, ListIssuesResponse> listIssuesTransportSettings =
         HttpJsonCallSettings.<ListIssuesRequest, ListIssuesResponse>newBuilder()
@@ -3577,6 +3599,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateIssueRequest, Issue> updateIssueTransportSettings =
         HttpJsonCallSettings.<UpdateIssueRequest, Issue>newBuilder()
@@ -3599,6 +3622,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CalculateIssueModelStatsRequest, CalculateIssueModelStatsResponse>
         calculateIssueModelStatsTransportSettings =
@@ -3612,6 +3636,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       builder.add("issue_model", String.valueOf(request.getIssueModel()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getIssueModel())
                 .build();
     HttpJsonCallSettings<CreatePhraseMatcherRequest, PhraseMatcher>
         createPhraseMatcherTransportSettings =
@@ -3624,6 +3649,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetPhraseMatcherRequest, PhraseMatcher> getPhraseMatcherTransportSettings =
         HttpJsonCallSettings.<GetPhraseMatcherRequest, PhraseMatcher>newBuilder()
@@ -3635,6 +3661,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListPhraseMatchersRequest, ListPhraseMatchersResponse>
         listPhraseMatchersTransportSettings =
@@ -3647,6 +3674,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeletePhraseMatcherRequest, Empty> deletePhraseMatcherTransportSettings =
         HttpJsonCallSettings.<DeletePhraseMatcherRequest, Empty>newBuilder()
@@ -3658,6 +3686,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdatePhraseMatcherRequest, PhraseMatcher>
         updatePhraseMatcherTransportSettings =
@@ -3684,6 +3713,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       builder.add("location", String.valueOf(request.getLocation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getLocation())
                 .build();
     HttpJsonCallSettings<GetSettingsRequest, Settings> getSettingsTransportSettings =
         HttpJsonCallSettings.<GetSettingsRequest, Settings>newBuilder()
@@ -3695,6 +3725,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateSettingsRequest, Settings> updateSettingsTransportSettings =
         HttpJsonCallSettings.<UpdateSettingsRequest, Settings>newBuilder()
@@ -3718,6 +3749,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetAnalysisRuleRequest, AnalysisRule> getAnalysisRuleTransportSettings =
         HttpJsonCallSettings.<GetAnalysisRuleRequest, AnalysisRule>newBuilder()
@@ -3729,6 +3761,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListAnalysisRulesRequest, ListAnalysisRulesResponse>
         listAnalysisRulesTransportSettings =
@@ -3741,6 +3774,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateAnalysisRuleRequest, AnalysisRule>
         updateAnalysisRuleTransportSettings =
@@ -3766,6 +3800,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetEncryptionSpecRequest, EncryptionSpec>
         getEncryptionSpecTransportSettings =
@@ -3778,6 +3813,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<InitializeEncryptionSpecRequest, Operation>
         initializeEncryptionSpecTransportSettings =
@@ -3803,6 +3839,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetViewRequest, View> getViewTransportSettings =
         HttpJsonCallSettings.<GetViewRequest, View>newBuilder()
@@ -3814,6 +3851,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListViewsRequest, ListViewsResponse> listViewsTransportSettings =
         HttpJsonCallSettings.<ListViewsRequest, ListViewsResponse>newBuilder()
@@ -3825,6 +3863,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateViewRequest, View> updateViewTransportSettings =
         HttpJsonCallSettings.<UpdateViewRequest, View>newBuilder()
@@ -3847,6 +3886,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<QueryMetricsRequest, Operation> queryMetricsTransportSettings =
         HttpJsonCallSettings.<QueryMetricsRequest, Operation>newBuilder()
@@ -3858,6 +3898,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("location", String.valueOf(request.getLocation()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getLocation())
             .build();
     HttpJsonCallSettings<CreateQaQuestionRequest, QaQuestion> createQaQuestionTransportSettings =
         HttpJsonCallSettings.<CreateQaQuestionRequest, QaQuestion>newBuilder()
@@ -3869,6 +3910,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetQaQuestionRequest, QaQuestion> getQaQuestionTransportSettings =
         HttpJsonCallSettings.<GetQaQuestionRequest, QaQuestion>newBuilder()
@@ -3880,6 +3922,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateQaQuestionRequest, QaQuestion> updateQaQuestionTransportSettings =
         HttpJsonCallSettings.<UpdateQaQuestionRequest, QaQuestion>newBuilder()
@@ -3903,6 +3946,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListQaQuestionsRequest, ListQaQuestionsResponse>
         listQaQuestionsTransportSettings =
@@ -3915,6 +3959,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateQaScorecardRequest, QaScorecard> createQaScorecardTransportSettings =
         HttpJsonCallSettings.<CreateQaScorecardRequest, QaScorecard>newBuilder()
@@ -3926,6 +3971,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetQaScorecardRequest, QaScorecard> getQaScorecardTransportSettings =
         HttpJsonCallSettings.<GetQaScorecardRequest, QaScorecard>newBuilder()
@@ -3937,6 +3983,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateQaScorecardRequest, QaScorecard> updateQaScorecardTransportSettings =
         HttpJsonCallSettings.<UpdateQaScorecardRequest, QaScorecard>newBuilder()
@@ -3960,6 +4007,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListQaScorecardsRequest, ListQaScorecardsResponse>
         listQaScorecardsTransportSettings =
@@ -3972,6 +4020,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateQaScorecardRevisionRequest, QaScorecardRevision>
         createQaScorecardRevisionTransportSettings =
@@ -3984,6 +4033,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetQaScorecardRevisionRequest, QaScorecardRevision>
         getQaScorecardRevisionTransportSettings =
@@ -3996,6 +4046,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<TuneQaScorecardRevisionRequest, Operation>
         tuneQaScorecardRevisionTransportSettings =
@@ -4008,6 +4059,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeployQaScorecardRevisionRequest, QaScorecardRevision>
         deployQaScorecardRevisionTransportSettings =
@@ -4020,6 +4072,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UndeployQaScorecardRevisionRequest, QaScorecardRevision>
         undeployQaScorecardRevisionTransportSettings =
@@ -4033,6 +4086,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DeleteQaScorecardRevisionRequest, Empty>
         deleteQaScorecardRevisionTransportSettings =
@@ -4045,6 +4099,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListQaScorecardRevisionsRequest, ListQaScorecardRevisionsResponse>
         listQaScorecardRevisionsTransportSettings =
@@ -4058,6 +4113,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateFeedbackLabelRequest, FeedbackLabel>
         createFeedbackLabelTransportSettings =
@@ -4070,6 +4126,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListFeedbackLabelsRequest, ListFeedbackLabelsResponse>
         listFeedbackLabelsTransportSettings =
@@ -4082,6 +4139,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetFeedbackLabelRequest, FeedbackLabel> getFeedbackLabelTransportSettings =
         HttpJsonCallSettings.<GetFeedbackLabelRequest, FeedbackLabel>newBuilder()
@@ -4093,6 +4151,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateFeedbackLabelRequest, FeedbackLabel>
         updateFeedbackLabelTransportSettings =
@@ -4118,6 +4177,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsResponse>
         listAllFeedbackLabelsTransportSettings =
@@ -4131,6 +4191,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<BulkUploadFeedbackLabelsRequest, Operation>
         bulkUploadFeedbackLabelsTransportSettings =
@@ -4143,6 +4204,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<BulkDownloadFeedbackLabelsRequest, Operation>
         bulkDownloadFeedbackLabelsTransportSettings =
@@ -4155,6 +4217,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createConversationCallable =

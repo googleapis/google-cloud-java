@@ -297,6 +297,7 @@ public class GrpcParameterManagerStub extends ParameterManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetParameterRequest, Parameter> getParameterTransportSettings =
         GrpcCallSettings.<GetParameterRequest, Parameter>newBuilder()
@@ -307,6 +308,7 @@ public class GrpcParameterManagerStub extends ParameterManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateParameterRequest, Parameter> createParameterTransportSettings =
         GrpcCallSettings.<CreateParameterRequest, Parameter>newBuilder()
@@ -317,6 +319,7 @@ public class GrpcParameterManagerStub extends ParameterManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateParameterRequest, Parameter> updateParameterTransportSettings =
         GrpcCallSettings.<UpdateParameterRequest, Parameter>newBuilder()
@@ -337,6 +340,7 @@ public class GrpcParameterManagerStub extends ParameterManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListParameterVersionsRequest, ListParameterVersionsResponse>
         listParameterVersionsTransportSettings =
@@ -349,6 +353,7 @@ public class GrpcParameterManagerStub extends ParameterManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetParameterVersionRequest, ParameterVersion>
         getParameterVersionTransportSettings =
@@ -360,6 +365,7 @@ public class GrpcParameterManagerStub extends ParameterManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<RenderParameterVersionRequest, RenderParameterVersionResponse>
         renderParameterVersionTransportSettings =
@@ -372,6 +378,7 @@ public class GrpcParameterManagerStub extends ParameterManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateParameterVersionRequest, ParameterVersion>
         createParameterVersionTransportSettings =
@@ -383,6 +390,7 @@ public class GrpcParameterManagerStub extends ParameterManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateParameterVersionRequest, ParameterVersion>
         updateParameterVersionTransportSettings =
@@ -406,6 +414,7 @@ public class GrpcParameterManagerStub extends ParameterManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

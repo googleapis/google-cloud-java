@@ -1,0 +1,9 @@
+# test versions.txt obtained from sdk-platform-java
+
+gapic-generator-java:2.25.0:2.25.1-SNAPSHOT
+api-common:2.16.0:2.16.1-SNAPSHOT
+gax:2.33.0:2.33.1-SNAPSHOT
+gax-grpc:2.34.0:2.33.1-SNAPSHOT
+gax-httpjson:0.118.0:0.118.1-SNAPSHOT
+proto-google-common-protos:2.24.0:2.24.1-SNAPSHOT
+grpc-google-common-protos:2.24.0:2.24.1-SNAPSHOT

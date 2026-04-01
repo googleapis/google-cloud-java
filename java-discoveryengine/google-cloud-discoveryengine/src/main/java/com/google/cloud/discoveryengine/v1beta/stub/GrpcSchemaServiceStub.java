@@ -170,6 +170,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListSchemasRequest, ListSchemasResponse> listSchemasTransportSettings =
         GrpcCallSettings.<ListSchemasRequest, ListSchemasResponse>newBuilder()
@@ -180,6 +181,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateSchemaRequest, Operation> createSchemaTransportSettings =
         GrpcCallSettings.<CreateSchemaRequest, Operation>newBuilder()
@@ -190,6 +192,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateSchemaRequest, Operation> updateSchemaTransportSettings =
         GrpcCallSettings.<UpdateSchemaRequest, Operation>newBuilder()
@@ -210,6 +213,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getSchemaCallable =

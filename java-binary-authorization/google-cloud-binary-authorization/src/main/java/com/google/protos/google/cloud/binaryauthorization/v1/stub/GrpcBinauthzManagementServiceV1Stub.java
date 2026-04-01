@@ -197,6 +197,7 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<Service.UpdatePolicyRequest, Resources.Policy> updatePolicyTransportSettings =
         GrpcCallSettings.<Service.UpdatePolicyRequest, Resources.Policy>newBuilder()
@@ -218,6 +219,7 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<Service.GetAttestorRequest, Resources.Attestor> getAttestorTransportSettings =
         GrpcCallSettings.<Service.GetAttestorRequest, Resources.Attestor>newBuilder()
@@ -228,6 +230,7 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<Service.UpdateAttestorRequest, Resources.Attestor>
         updateAttestorTransportSettings =
@@ -251,6 +254,7 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<Service.DeleteAttestorRequest, Empty> deleteAttestorTransportSettings =
         GrpcCallSettings.<Service.DeleteAttestorRequest, Empty>newBuilder()
@@ -261,6 +265,7 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getPolicyCallable =

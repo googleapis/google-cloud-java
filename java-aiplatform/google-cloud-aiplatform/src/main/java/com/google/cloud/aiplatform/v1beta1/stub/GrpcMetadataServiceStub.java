@@ -675,6 +675,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetMetadataStoreRequest, MetadataStore> getMetadataStoreTransportSettings =
         GrpcCallSettings.<GetMetadataStoreRequest, MetadataStore>newBuilder()
@@ -685,6 +686,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListMetadataStoresRequest, ListMetadataStoresResponse>
         listMetadataStoresTransportSettings =
@@ -696,6 +698,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteMetadataStoreRequest, Operation> deleteMetadataStoreTransportSettings =
         GrpcCallSettings.<DeleteMetadataStoreRequest, Operation>newBuilder()
@@ -706,6 +709,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateArtifactRequest, Artifact> createArtifactTransportSettings =
         GrpcCallSettings.<CreateArtifactRequest, Artifact>newBuilder()
@@ -716,6 +720,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetArtifactRequest, Artifact> getArtifactTransportSettings =
         GrpcCallSettings.<GetArtifactRequest, Artifact>newBuilder()
@@ -726,6 +731,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListArtifactsRequest, ListArtifactsResponse> listArtifactsTransportSettings =
         GrpcCallSettings.<ListArtifactsRequest, ListArtifactsResponse>newBuilder()
@@ -736,6 +742,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateArtifactRequest, Artifact> updateArtifactTransportSettings =
         GrpcCallSettings.<UpdateArtifactRequest, Artifact>newBuilder()
@@ -756,6 +763,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<PurgeArtifactsRequest, Operation> purgeArtifactsTransportSettings =
         GrpcCallSettings.<PurgeArtifactsRequest, Operation>newBuilder()
@@ -766,6 +774,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateContextRequest, Context> createContextTransportSettings =
         GrpcCallSettings.<CreateContextRequest, Context>newBuilder()
@@ -776,6 +785,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetContextRequest, Context> getContextTransportSettings =
         GrpcCallSettings.<GetContextRequest, Context>newBuilder()
@@ -786,6 +796,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListContextsRequest, ListContextsResponse> listContextsTransportSettings =
         GrpcCallSettings.<ListContextsRequest, ListContextsResponse>newBuilder()
@@ -796,6 +807,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateContextRequest, Context> updateContextTransportSettings =
         GrpcCallSettings.<UpdateContextRequest, Context>newBuilder()
@@ -816,6 +828,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<PurgeContextsRequest, Operation> purgeContextsTransportSettings =
         GrpcCallSettings.<PurgeContextsRequest, Operation>newBuilder()
@@ -826,6 +839,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<
             AddContextArtifactsAndExecutionsRequest, AddContextArtifactsAndExecutionsResponse>
@@ -840,6 +854,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                       builder.add("context", String.valueOf(request.getContext()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getContext())
                 .build();
     GrpcCallSettings<AddContextChildrenRequest, AddContextChildrenResponse>
         addContextChildrenTransportSettings =
@@ -851,6 +866,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                       builder.add("context", String.valueOf(request.getContext()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getContext())
                 .build();
     GrpcCallSettings<RemoveContextChildrenRequest, RemoveContextChildrenResponse>
         removeContextChildrenTransportSettings =
@@ -863,6 +879,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                       builder.add("context", String.valueOf(request.getContext()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getContext())
                 .build();
     GrpcCallSettings<QueryContextLineageSubgraphRequest, LineageSubgraph>
         queryContextLineageSubgraphTransportSettings =
@@ -874,6 +891,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                       builder.add("context", String.valueOf(request.getContext()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getContext())
                 .build();
     GrpcCallSettings<CreateExecutionRequest, Execution> createExecutionTransportSettings =
         GrpcCallSettings.<CreateExecutionRequest, Execution>newBuilder()
@@ -884,6 +902,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetExecutionRequest, Execution> getExecutionTransportSettings =
         GrpcCallSettings.<GetExecutionRequest, Execution>newBuilder()
@@ -894,6 +913,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListExecutionsRequest, ListExecutionsResponse>
         listExecutionsTransportSettings =
@@ -905,6 +925,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateExecutionRequest, Execution> updateExecutionTransportSettings =
         GrpcCallSettings.<UpdateExecutionRequest, Execution>newBuilder()
@@ -925,6 +946,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<PurgeExecutionsRequest, Operation> purgeExecutionsTransportSettings =
         GrpcCallSettings.<PurgeExecutionsRequest, Operation>newBuilder()
@@ -935,6 +957,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<AddExecutionEventsRequest, AddExecutionEventsResponse>
         addExecutionEventsTransportSettings =
@@ -946,6 +969,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                       builder.add("execution", String.valueOf(request.getExecution()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getExecution())
                 .build();
     GrpcCallSettings<QueryExecutionInputsAndOutputsRequest, LineageSubgraph>
         queryExecutionInputsAndOutputsTransportSettings =
@@ -957,6 +981,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                       builder.add("execution", String.valueOf(request.getExecution()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getExecution())
                 .build();
     GrpcCallSettings<CreateMetadataSchemaRequest, MetadataSchema>
         createMetadataSchemaTransportSettings =
@@ -968,6 +993,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetMetadataSchemaRequest, MetadataSchema> getMetadataSchemaTransportSettings =
         GrpcCallSettings.<GetMetadataSchemaRequest, MetadataSchema>newBuilder()
@@ -978,6 +1004,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListMetadataSchemasRequest, ListMetadataSchemasResponse>
         listMetadataSchemasTransportSettings =
@@ -989,6 +1016,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<QueryArtifactLineageSubgraphRequest, LineageSubgraph>
         queryArtifactLineageSubgraphTransportSettings =
@@ -1000,6 +1028,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                       builder.add("artifact", String.valueOf(request.getArtifact()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getArtifact())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1030,6 +1059,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1040,6 +1070,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1051,6 +1082,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createMetadataStoreCallable =

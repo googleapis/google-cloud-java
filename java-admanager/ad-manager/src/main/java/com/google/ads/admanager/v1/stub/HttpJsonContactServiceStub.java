@@ -344,6 +344,7 @@ public class HttpJsonContactServiceStub extends ContactServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListContactsRequest, ListContactsResponse> listContactsTransportSettings =
         HttpJsonCallSettings.<ListContactsRequest, ListContactsResponse>newBuilder()
@@ -355,6 +356,7 @@ public class HttpJsonContactServiceStub extends ContactServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateContactRequest, Contact> createContactTransportSettings =
         HttpJsonCallSettings.<CreateContactRequest, Contact>newBuilder()
@@ -366,6 +368,7 @@ public class HttpJsonContactServiceStub extends ContactServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<BatchCreateContactsRequest, BatchCreateContactsResponse>
         batchCreateContactsTransportSettings =
@@ -379,6 +382,7 @@ public class HttpJsonContactServiceStub extends ContactServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateContactRequest, Contact> updateContactTransportSettings =
         HttpJsonCallSettings.<UpdateContactRequest, Contact>newBuilder()
@@ -403,6 +407,7 @@ public class HttpJsonContactServiceStub extends ContactServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getContactCallable =

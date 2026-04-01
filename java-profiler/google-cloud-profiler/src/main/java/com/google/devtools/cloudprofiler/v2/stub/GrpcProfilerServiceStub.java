@@ -133,6 +133,7 @@ public class GrpcProfilerServiceStub extends ProfilerServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateOfflineProfileRequest, Profile> createOfflineProfileTransportSettings =
         GrpcCallSettings.<CreateOfflineProfileRequest, Profile>newBuilder()
@@ -143,6 +144,7 @@ public class GrpcProfilerServiceStub extends ProfilerServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateProfileRequest, Profile> updateProfileTransportSettings =
         GrpcCallSettings.<UpdateProfileRequest, Profile>newBuilder()

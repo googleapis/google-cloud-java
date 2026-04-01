@@ -748,6 +748,7 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetProductRequest, Product> getProductTransportSettings =
         HttpJsonCallSettings.<GetProductRequest, Product>newBuilder()
@@ -759,6 +760,7 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListProductsRequest, ListProductsResponse> listProductsTransportSettings =
         HttpJsonCallSettings.<ListProductsRequest, ListProductsResponse>newBuilder()
@@ -770,6 +772,7 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateProductRequest, Product> updateProductTransportSettings =
         HttpJsonCallSettings.<UpdateProductRequest, Product>newBuilder()
@@ -792,6 +795,7 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<PurgeProductsRequest, Operation> purgeProductsTransportSettings =
         HttpJsonCallSettings.<PurgeProductsRequest, Operation>newBuilder()
@@ -803,6 +807,7 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ImportProductsRequest, Operation> importProductsTransportSettings =
         HttpJsonCallSettings.<ImportProductsRequest, Operation>newBuilder()
@@ -814,6 +819,7 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ExportProductsRequest, Operation> exportProductsTransportSettings =
         HttpJsonCallSettings.<ExportProductsRequest, Operation>newBuilder()
@@ -825,6 +831,7 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<SetInventoryRequest, Operation> setInventoryTransportSettings =
         HttpJsonCallSettings.<SetInventoryRequest, Operation>newBuilder()
@@ -848,6 +855,7 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
                       builder.add("product", String.valueOf(request.getProduct()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProduct())
                 .build();
     HttpJsonCallSettings<RemoveFulfillmentPlacesRequest, Operation>
         removeFulfillmentPlacesTransportSettings =
@@ -860,6 +868,7 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
                       builder.add("product", String.valueOf(request.getProduct()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProduct())
                 .build();
     HttpJsonCallSettings<AddLocalInventoriesRequest, Operation>
         addLocalInventoriesTransportSettings =
@@ -872,6 +881,7 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
                       builder.add("product", String.valueOf(request.getProduct()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProduct())
                 .build();
     HttpJsonCallSettings<RemoveLocalInventoriesRequest, Operation>
         removeLocalInventoriesTransportSettings =
@@ -884,6 +894,7 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
                       builder.add("product", String.valueOf(request.getProduct()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProduct())
                 .build();
 
     this.createProductCallable =

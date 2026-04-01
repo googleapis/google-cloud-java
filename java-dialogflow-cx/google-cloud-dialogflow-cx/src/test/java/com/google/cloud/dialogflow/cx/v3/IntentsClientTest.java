@@ -194,6 +194,7 @@ public class IntentsClientTest {
             .setIsFallback(true)
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setDtmfPattern("dtmfPattern-1819689689")
             .build();
     mockIntents.addResponse(expectedResponse);
 
@@ -239,6 +240,7 @@ public class IntentsClientTest {
             .setIsFallback(true)
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setDtmfPattern("dtmfPattern-1819689689")
             .build();
     mockIntents.addResponse(expectedResponse);
 
@@ -284,6 +286,7 @@ public class IntentsClientTest {
             .setIsFallback(true)
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setDtmfPattern("dtmfPattern-1819689689")
             .build();
     mockIntents.addResponse(expectedResponse);
 
@@ -332,6 +335,7 @@ public class IntentsClientTest {
             .setIsFallback(true)
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setDtmfPattern("dtmfPattern-1819689689")
             .build();
     mockIntents.addResponse(expectedResponse);
 
@@ -380,6 +384,7 @@ public class IntentsClientTest {
             .setIsFallback(true)
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setDtmfPattern("dtmfPattern-1819689689")
             .build();
     mockIntents.addResponse(expectedResponse);
 

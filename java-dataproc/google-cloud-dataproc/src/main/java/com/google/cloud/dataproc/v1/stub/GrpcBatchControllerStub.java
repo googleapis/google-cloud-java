@@ -189,6 +189,7 @@ public class GrpcBatchControllerStub extends BatchControllerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetBatchRequest, Batch> getBatchTransportSettings =
         GrpcCallSettings.<GetBatchRequest, Batch>newBuilder()
@@ -199,6 +200,7 @@ public class GrpcBatchControllerStub extends BatchControllerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListBatchesRequest, ListBatchesResponse> listBatchesTransportSettings =
         GrpcCallSettings.<ListBatchesRequest, ListBatchesResponse>newBuilder()
@@ -209,6 +211,7 @@ public class GrpcBatchControllerStub extends BatchControllerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteBatchRequest, Empty> deleteBatchTransportSettings =
         GrpcCallSettings.<DeleteBatchRequest, Empty>newBuilder()
@@ -219,6 +222,7 @@ public class GrpcBatchControllerStub extends BatchControllerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -229,6 +233,7 @@ public class GrpcBatchControllerStub extends BatchControllerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -239,6 +244,7 @@ public class GrpcBatchControllerStub extends BatchControllerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -250,6 +256,7 @@ public class GrpcBatchControllerStub extends BatchControllerStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createBatchCallable =

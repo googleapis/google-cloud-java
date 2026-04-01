@@ -193,6 +193,7 @@ public class GrpcApiKeysStub extends ApiKeysStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListKeysRequest, ListKeysResponse> listKeysTransportSettings =
         GrpcCallSettings.<ListKeysRequest, ListKeysResponse>newBuilder()
@@ -203,6 +204,7 @@ public class GrpcApiKeysStub extends ApiKeysStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetKeyRequest, Key> getKeyTransportSettings =
         GrpcCallSettings.<GetKeyRequest, Key>newBuilder()
@@ -213,6 +215,7 @@ public class GrpcApiKeysStub extends ApiKeysStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetKeyStringRequest, GetKeyStringResponse> getKeyStringTransportSettings =
         GrpcCallSettings.<GetKeyStringRequest, GetKeyStringResponse>newBuilder()
@@ -223,6 +226,7 @@ public class GrpcApiKeysStub extends ApiKeysStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateKeyRequest, Operation> updateKeyTransportSettings =
         GrpcCallSettings.<UpdateKeyRequest, Operation>newBuilder()
@@ -243,6 +247,7 @@ public class GrpcApiKeysStub extends ApiKeysStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UndeleteKeyRequest, Operation> undeleteKeyTransportSettings =
         GrpcCallSettings.<UndeleteKeyRequest, Operation>newBuilder()
@@ -253,6 +258,7 @@ public class GrpcApiKeysStub extends ApiKeysStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<LookupKeyRequest, LookupKeyResponse> lookupKeyTransportSettings =
         GrpcCallSettings.<LookupKeyRequest, LookupKeyResponse>newBuilder()

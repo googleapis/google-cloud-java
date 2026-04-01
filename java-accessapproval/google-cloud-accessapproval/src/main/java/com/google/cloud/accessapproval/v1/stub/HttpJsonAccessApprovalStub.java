@@ -502,6 +502,7 @@ public class HttpJsonAccessApprovalStub extends AccessApprovalStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetApprovalRequestMessage, ApprovalRequest>
         getApprovalRequestTransportSettings =
@@ -514,6 +515,7 @@ public class HttpJsonAccessApprovalStub extends AccessApprovalStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ApproveApprovalRequestMessage, ApprovalRequest>
         approveApprovalRequestTransportSettings =
@@ -526,6 +528,7 @@ public class HttpJsonAccessApprovalStub extends AccessApprovalStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DismissApprovalRequestMessage, ApprovalRequest>
         dismissApprovalRequestTransportSettings =
@@ -538,6 +541,7 @@ public class HttpJsonAccessApprovalStub extends AccessApprovalStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<InvalidateApprovalRequestMessage, ApprovalRequest>
         invalidateApprovalRequestTransportSettings =
@@ -550,6 +554,7 @@ public class HttpJsonAccessApprovalStub extends AccessApprovalStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetAccessApprovalSettingsMessage, AccessApprovalSettings>
         getAccessApprovalSettingsTransportSettings =
@@ -563,6 +568,7 @@ public class HttpJsonAccessApprovalStub extends AccessApprovalStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateAccessApprovalSettingsMessage, AccessApprovalSettings>
         updateAccessApprovalSettingsTransportSettings =
@@ -588,6 +594,7 @@ public class HttpJsonAccessApprovalStub extends AccessApprovalStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetAccessApprovalServiceAccountMessage, AccessApprovalServiceAccount>
         getAccessApprovalServiceAccountTransportSettings =

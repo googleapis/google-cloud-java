@@ -181,6 +181,7 @@ public class HttpJsonOrderServiceStub extends OrderServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListOrdersRequest, ListOrdersResponse> listOrdersTransportSettings =
         HttpJsonCallSettings.<ListOrdersRequest, ListOrdersResponse>newBuilder()
@@ -192,6 +193,7 @@ public class HttpJsonOrderServiceStub extends OrderServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.getOrderCallable =

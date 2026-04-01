@@ -514,6 +514,204 @@ public interface GeneratorOrBuilder
   com.google.cloud.dialogflow.v2.SuggestionDedupingConfigOrBuilder
       getSuggestionDedupingConfigOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES toolset specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.ToolsetTool toolset_tools = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.dialogflow.v2.ToolsetTool> getToolsetToolsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES toolset specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.ToolsetTool toolset_tools = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.ToolsetTool getToolsetTools(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES toolset specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.ToolsetTool toolset_tools = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getToolsetToolsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES toolset specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.ToolsetTool toolset_tools = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.dialogflow.v2.ToolsetToolOrBuilder>
+      getToolsetToolsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES toolset specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.ToolsetTool toolset_tools = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.ToolsetToolOrBuilder getToolsetToolsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES tool specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.CesToolSpec ces_tool_specs = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.dialogflow.v2.CesToolSpec> getCesToolSpecsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES tool specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.CesToolSpec ces_tool_specs = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.CesToolSpec getCesToolSpecs(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES tool specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.CesToolSpec ces_tool_specs = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getCesToolSpecsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES tool specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.CesToolSpec ces_tool_specs = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.dialogflow.v2.CesToolSpecOrBuilder>
+      getCesToolSpecsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES tool specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.CesToolSpec ces_tool_specs = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.CesToolSpecOrBuilder getCesToolSpecsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES app specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.dialogflow.v2.CesAppSpec> getCesAppSpecsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES app specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.CesAppSpec getCesAppSpecs(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES app specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getCesAppSpecsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES app specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.dialogflow.v2.CesAppSpecOrBuilder>
+      getCesAppSpecsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of CES app specs that the generator can choose from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.CesAppSpecOrBuilder getCesAppSpecsOrBuilder(int index);
+
   com.google.cloud.dialogflow.v2.Generator.ContextCase getContextCase();
 
   com.google.cloud.dialogflow.v2.Generator.FoundationModelCase getFoundationModelCase();

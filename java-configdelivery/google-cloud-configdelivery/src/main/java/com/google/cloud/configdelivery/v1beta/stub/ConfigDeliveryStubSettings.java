@@ -987,6 +987,7 @@ public class ConfigDeliveryStubSettings extends StubSettings<ConfigDeliveryStubS
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-configdelivery")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

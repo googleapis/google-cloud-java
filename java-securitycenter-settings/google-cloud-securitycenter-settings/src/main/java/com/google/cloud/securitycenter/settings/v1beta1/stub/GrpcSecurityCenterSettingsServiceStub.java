@@ -309,6 +309,7 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetSettingsRequest, Settings> getSettingsTransportSettings =
         GrpcCallSettings.<GetSettingsRequest, Settings>newBuilder()
@@ -319,6 +320,7 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateSettingsRequest, Settings> updateSettingsTransportSettings =
         GrpcCallSettings.<UpdateSettingsRequest, Settings>newBuilder()
@@ -339,6 +341,7 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<BatchGetSettingsRequest, BatchGetSettingsResponse>
         batchGetSettingsTransportSettings =
@@ -350,6 +353,7 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CalculateEffectiveSettingsRequest, Settings>
         calculateEffectiveSettingsTransportSettings =
@@ -361,6 +365,7 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             BatchCalculateEffectiveSettingsRequest, BatchCalculateEffectiveSettingsResponse>
@@ -375,6 +380,7 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetComponentSettingsRequest, ComponentSettings>
         getComponentSettingsTransportSettings =
@@ -386,6 +392,7 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateComponentSettingsRequest, ComponentSettings>
         updateComponentSettingsTransportSettings =
@@ -409,6 +416,7 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CalculateEffectiveComponentSettingsRequest, ComponentSettings>
         calculateEffectiveComponentSettingsTransportSettings =
@@ -421,6 +429,7 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListDetectorsRequest, ListDetectorsResponse> listDetectorsTransportSettings =
         GrpcCallSettings.<ListDetectorsRequest, ListDetectorsResponse>newBuilder()
@@ -431,6 +440,7 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListComponentsRequest, ListComponentsResponse>
         listComponentsTransportSettings =
@@ -442,6 +452,7 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getServiceAccountCallable =

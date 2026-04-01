@@ -527,6 +527,7 @@ public class GrpcIAMStub extends IAMStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetServiceAccountRequest, ServiceAccount> getServiceAccountTransportSettings =
         GrpcCallSettings.<GetServiceAccountRequest, ServiceAccount>newBuilder()
@@ -537,6 +538,7 @@ public class GrpcIAMStub extends IAMStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateServiceAccountRequest, ServiceAccount>
         createServiceAccountTransportSettings =
@@ -548,6 +550,7 @@ public class GrpcIAMStub extends IAMStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ServiceAccount, ServiceAccount> updateServiceAccountTransportSettings =
         GrpcCallSettings.<ServiceAccount, ServiceAccount>newBuilder()
@@ -558,6 +561,7 @@ public class GrpcIAMStub extends IAMStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<PatchServiceAccountRequest, ServiceAccount>
         patchServiceAccountTransportSettings =
@@ -581,6 +585,7 @@ public class GrpcIAMStub extends IAMStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UndeleteServiceAccountRequest, UndeleteServiceAccountResponse>
         undeleteServiceAccountTransportSettings =
@@ -625,6 +630,7 @@ public class GrpcIAMStub extends IAMStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetServiceAccountKeyRequest, ServiceAccountKey>
         getServiceAccountKeyTransportSettings =
@@ -636,6 +642,7 @@ public class GrpcIAMStub extends IAMStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateServiceAccountKeyRequest, ServiceAccountKey>
         createServiceAccountKeyTransportSettings =
@@ -647,6 +654,7 @@ public class GrpcIAMStub extends IAMStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UploadServiceAccountKeyRequest, ServiceAccountKey>
         uploadServiceAccountKeyTransportSettings =
@@ -669,6 +677,7 @@ public class GrpcIAMStub extends IAMStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DisableServiceAccountKeyRequest, Empty>
         disableServiceAccountKeyTransportSettings =
@@ -680,6 +689,7 @@ public class GrpcIAMStub extends IAMStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<EnableServiceAccountKeyRequest, Empty>
         enableServiceAccountKeyTransportSettings =
@@ -691,6 +701,7 @@ public class GrpcIAMStub extends IAMStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<SignBlobRequest, SignBlobResponse> signBlobTransportSettings =
         GrpcCallSettings.<SignBlobRequest, SignBlobResponse>newBuilder()
@@ -701,6 +712,7 @@ public class GrpcIAMStub extends IAMStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SignJwtRequest, SignJwtResponse> signJwtTransportSettings =
         GrpcCallSettings.<SignJwtRequest, SignJwtResponse>newBuilder()
@@ -711,6 +723,7 @@ public class GrpcIAMStub extends IAMStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -721,6 +734,7 @@ public class GrpcIAMStub extends IAMStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -731,6 +745,7 @@ public class GrpcIAMStub extends IAMStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -742,6 +757,7 @@ public class GrpcIAMStub extends IAMStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     GrpcCallSettings<QueryGrantableRolesRequest, QueryGrantableRolesResponse>
         queryGrantableRolesTransportSettings =
@@ -757,6 +773,7 @@ public class GrpcIAMStub extends IAMStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetRoleRequest, Role> getRoleTransportSettings =
         GrpcCallSettings.<GetRoleRequest, Role>newBuilder()
@@ -767,6 +784,7 @@ public class GrpcIAMStub extends IAMStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateRoleRequest, Role> createRoleTransportSettings =
         GrpcCallSettings.<CreateRoleRequest, Role>newBuilder()
@@ -777,6 +795,7 @@ public class GrpcIAMStub extends IAMStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateRoleRequest, Role> updateRoleTransportSettings =
         GrpcCallSettings.<UpdateRoleRequest, Role>newBuilder()
@@ -787,6 +806,7 @@ public class GrpcIAMStub extends IAMStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteRoleRequest, Role> deleteRoleTransportSettings =
         GrpcCallSettings.<DeleteRoleRequest, Role>newBuilder()
@@ -797,6 +817,7 @@ public class GrpcIAMStub extends IAMStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UndeleteRoleRequest, Role> undeleteRoleTransportSettings =
         GrpcCallSettings.<UndeleteRoleRequest, Role>newBuilder()
@@ -807,6 +828,7 @@ public class GrpcIAMStub extends IAMStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<QueryTestablePermissionsRequest, QueryTestablePermissionsResponse>
         queryTestablePermissionsTransportSettings =

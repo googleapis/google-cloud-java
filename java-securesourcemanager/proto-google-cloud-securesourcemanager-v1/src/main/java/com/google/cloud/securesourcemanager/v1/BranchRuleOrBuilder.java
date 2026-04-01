@@ -30,12 +30,12 @@ public interface BranchRuleOrBuilder
    *
    *
    * <pre>
-   * Optional. A unique identifier for a BranchRule. The name should be of the
+   * Identifier. A unique identifier for a BranchRule. The name should be of the
    * format:
    * `projects/{project}/locations/{location}/repositories/{repository}/branchRules/{branch_rule}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -45,12 +45,12 @@ public interface BranchRuleOrBuilder
    *
    *
    * <pre>
-   * Optional. A unique identifier for a BranchRule. The name should be of the
+   * Identifier. A unique identifier for a BranchRule. The name should be of the
    * format:
    * `projects/{project}/locations/{location}/repositories/{repository}/branchRules/{branch_rule}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -63,7 +63,9 @@ public interface BranchRuleOrBuilder
    * Output only. Unique identifier of the repository.
    * </pre>
    *
-   * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The uid.
    */
@@ -76,7 +78,9 @@ public interface BranchRuleOrBuilder
    * Output only. Unique identifier of the repository.
    * </pre>
    *
-   * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for uid.
    */
@@ -355,6 +359,20 @@ public interface BranchRuleOrBuilder
    * @return The minimumApprovalsCount.
    */
   int getMinimumApprovalsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines if code owners must approve before merging to the
+   * branch.
+   * </pre>
+   *
+   * <code>bool require_code_owner_approval = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The requireCodeOwnerApproval.
+   */
+  boolean getRequireCodeOwnerApproval();
 
   /**
    *

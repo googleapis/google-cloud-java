@@ -253,6 +253,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetSpecialistPoolRequest, SpecialistPool> getSpecialistPoolTransportSettings =
         GrpcCallSettings.<GetSpecialistPoolRequest, SpecialistPool>newBuilder()
@@ -263,6 +264,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListSpecialistPoolsRequest, ListSpecialistPoolsResponse>
         listSpecialistPoolsTransportSettings =
@@ -274,6 +276,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteSpecialistPoolRequest, Operation> deleteSpecialistPoolTransportSettings =
         GrpcCallSettings.<DeleteSpecialistPoolRequest, Operation>newBuilder()
@@ -284,6 +287,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateSpecialistPoolRequest, Operation> updateSpecialistPoolTransportSettings =
         GrpcCallSettings.<UpdateSpecialistPoolRequest, Operation>newBuilder()
@@ -326,6 +330,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -336,6 +341,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -347,6 +353,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createSpecialistPoolCallable =

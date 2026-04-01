@@ -132,8 +132,11 @@ public interface LanguageSettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. The action to perform when an agent receives input in an
-   * unsupported language.
+   * Optional. Deprecated: This feature is no longer supported. Use
+   * `enable_multilingual_support` instead to improve handling of multilingual
+   * input.
+   * The action to perform when an agent receives input in an unsupported
+   * language.
    *
    * This can be a predefined action or a custom tool call.
    * Valid values are:
@@ -144,18 +147,25 @@ public interface LanguageSettingsOrBuilder
    * terminate the conversation.
    * </pre>
    *
-   * <code>string fallback_action = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string fallback_action = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.ces.v1beta.LanguageSettings.fallback_action is deprecated. See
+   *     google/cloud/ces/v1beta/app.proto;l=247
    * @return The fallbackAction.
    */
+  @java.lang.Deprecated
   java.lang.String getFallbackAction();
 
   /**
    *
    *
    * <pre>
-   * Optional. The action to perform when an agent receives input in an
-   * unsupported language.
+   * Optional. Deprecated: This feature is no longer supported. Use
+   * `enable_multilingual_support` instead to improve handling of multilingual
+   * input.
+   * The action to perform when an agent receives input in an unsupported
+   * language.
    *
    * This can be a predefined action or a custom tool call.
    * Valid values are:
@@ -166,9 +176,13 @@ public interface LanguageSettingsOrBuilder
    * terminate the conversation.
    * </pre>
    *
-   * <code>string fallback_action = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string fallback_action = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.ces.v1beta.LanguageSettings.fallback_action is deprecated. See
+   *     google/cloud/ces/v1beta/app.proto;l=247
    * @return The bytes for fallbackAction.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getFallbackActionBytes();
 }

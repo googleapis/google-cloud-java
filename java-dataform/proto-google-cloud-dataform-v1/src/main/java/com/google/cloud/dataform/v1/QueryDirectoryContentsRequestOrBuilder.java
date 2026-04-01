@@ -134,4 +134,40 @@ public interface QueryDirectoryContentsRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the metadata to return for each directory entry.
+   * If unspecified, the default is `DIRECTORY_CONTENTS_VIEW_BASIC`.
+   * Currently the `DIRECTORY_CONTENTS_VIEW_METADATA` view is not supported by
+   * CMEK-protected workspaces.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1.DirectoryContentsView view = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for view.
+   */
+  int getViewValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the metadata to return for each directory entry.
+   * If unspecified, the default is `DIRECTORY_CONTENTS_VIEW_BASIC`.
+   * Currently the `DIRECTORY_CONTENTS_VIEW_METADATA` view is not supported by
+   * CMEK-protected workspaces.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1.DirectoryContentsView view = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The view.
+   */
+  com.google.cloud.dataform.v1.DirectoryContentsView getView();
 }

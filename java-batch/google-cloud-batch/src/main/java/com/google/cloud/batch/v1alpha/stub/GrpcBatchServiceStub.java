@@ -310,6 +310,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetJobRequest, Job> getJobTransportSettings =
         GrpcCallSettings.<GetJobRequest, Job>newBuilder()
@@ -320,6 +321,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteJobRequest, Operation> deleteJobTransportSettings =
         GrpcCallSettings.<DeleteJobRequest, Operation>newBuilder()
@@ -340,6 +342,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateJobRequest, Job> updateJobTransportSettings =
         GrpcCallSettings.<UpdateJobRequest, Job>newBuilder()
@@ -370,6 +373,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListTasksRequest, ListTasksResponse> listTasksTransportSettings =
         GrpcCallSettings.<ListTasksRequest, ListTasksResponse>newBuilder()
@@ -380,6 +384,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateResourceAllowanceRequest, ResourceAllowance>
         createResourceAllowanceTransportSettings =
@@ -391,6 +396,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetResourceAllowanceRequest, ResourceAllowance>
         getResourceAllowanceTransportSettings =
@@ -402,6 +408,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteResourceAllowanceRequest, Operation>
         deleteResourceAllowanceTransportSettings =
@@ -413,6 +420,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListResourceAllowancesRequest, ListResourceAllowancesResponse>
         listResourceAllowancesTransportSettings =
@@ -425,6 +433,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateResourceAllowanceRequest, ResourceAllowance>
         updateResourceAllowanceTransportSettings =

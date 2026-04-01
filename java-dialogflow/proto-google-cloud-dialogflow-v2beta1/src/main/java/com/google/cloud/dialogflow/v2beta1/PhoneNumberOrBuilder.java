@@ -161,4 +161,91 @@ public interface PhoneNumberOrBuilder
    * @return The lifecycleState.
    */
   com.google.cloud.dialogflow.v2beta1.PhoneNumber.LifecycleState getLifecycleState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only allow calls from the specified SIP trunks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks allowed_sip_trunks = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the allowedSipTrunks field is set.
+   */
+  boolean hasAllowedSipTrunks();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only allow calls from the specified SIP trunks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks allowed_sip_trunks = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The allowedSipTrunks.
+   */
+  com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks getAllowedSipTrunks();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only allow calls from the specified SIP trunks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunks allowed_sip_trunks = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2beta1.PhoneNumber.AllowedSipTrunksOrBuilder
+      getAllowedSipTrunksOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time at which this resource will be purged.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp purge_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the purgeTime field is set.
+   */
+  boolean hasPurgeTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time at which this resource will be purged.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp purge_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The purgeTime.
+   */
+  com.google.protobuf.Timestamp getPurgeTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time at which this resource will be purged.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp purge_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getPurgeTimeOrBuilder();
+
+  com.google.cloud.dialogflow.v2beta1.PhoneNumber.InboundRestrictionCase
+      getInboundRestrictionCase();
 }

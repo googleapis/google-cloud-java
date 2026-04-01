@@ -1,0 +1,49 @@
+package com.google.selective.generate.v1beta1.stub;
+
+import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.BidiStreamingCallable;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.selective.generate.v1beta1.EchoRequest;
+import com.google.selective.generate.v1beta1.EchoResponse;
+import javax.annotation.Generated;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * Base stub class for the EchoServiceShouldGeneratePartialUsual service API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
+@BetaApi
+@Generated("by gapic-generator-java")
+public abstract class EchoServiceShouldGeneratePartialUsualStub implements BackgroundResource {
+
+  public UnaryCallable<EchoRequest, EchoResponse> echoShouldGenerateAsUsualCallable() {
+    throw new UnsupportedOperationException("Not implemented: echoShouldGenerateAsUsualCallable()");
+  }
+
+  public BidiStreamingCallable<EchoRequest, EchoResponse> chatShouldGenerateAsUsualCallable() {
+    throw new UnsupportedOperationException("Not implemented: chatShouldGenerateAsUsualCallable()");
+  }
+
+  public BidiStreamingCallable<EchoRequest, EchoResponse> chatAgainShouldGenerateAsUsualCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: chatAgainShouldGenerateAsUsualCallable()");
+  }
+
+  @InternalApi("This API is not intended for public consumption.")
+  public UnaryCallable<EchoRequest, EchoResponse> chatShouldGenerateAsInternalCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: chatShouldGenerateAsInternalCallable()");
+  }
+
+  @InternalApi("This API is not intended for public consumption.")
+  public BidiStreamingCallable<EchoRequest, EchoResponse> echoShouldGenerateAsInternalCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: echoShouldGenerateAsInternalCallable()");
+  }
+
+  @Override
+  public abstract void close();
+}

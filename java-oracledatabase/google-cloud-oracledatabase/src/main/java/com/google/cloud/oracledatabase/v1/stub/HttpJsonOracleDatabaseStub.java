@@ -2851,6 +2851,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetCloudExadataInfrastructureRequest, CloudExadataInfrastructure>
         getCloudExadataInfrastructureTransportSettings =
@@ -2864,6 +2865,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateCloudExadataInfrastructureRequest, Operation>
         createCloudExadataInfrastructureTransportSettings =
@@ -2876,6 +2878,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteCloudExadataInfrastructureRequest, Operation>
         deleteCloudExadataInfrastructureTransportSettings =
@@ -2888,6 +2891,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListCloudVmClustersRequest, ListCloudVmClustersResponse>
         listCloudVmClustersTransportSettings =
@@ -2901,6 +2905,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetCloudVmClusterRequest, CloudVmCluster>
         getCloudVmClusterTransportSettings =
@@ -2913,6 +2918,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateCloudVmClusterRequest, Operation>
         createCloudVmClusterTransportSettings =
@@ -2925,6 +2931,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteCloudVmClusterRequest, Operation>
         deleteCloudVmClusterTransportSettings =
@@ -2937,6 +2944,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListEntitlementsRequest, ListEntitlementsResponse>
         listEntitlementsTransportSettings =
@@ -2949,6 +2957,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListDbServersRequest, ListDbServersResponse>
         listDbServersTransportSettings =
@@ -2961,6 +2970,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListDbNodesRequest, ListDbNodesResponse> listDbNodesTransportSettings =
         HttpJsonCallSettings.<ListDbNodesRequest, ListDbNodesResponse>newBuilder()
@@ -2972,6 +2982,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListGiVersionsRequest, ListGiVersionsResponse>
         listGiVersionsTransportSettings =
@@ -2984,6 +2995,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListMinorVersionsRequest, ListMinorVersionsResponse>
         listMinorVersionsTransportSettings =
@@ -2996,6 +3008,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListDbSystemShapesRequest, ListDbSystemShapesResponse>
         listDbSystemShapesTransportSettings =
@@ -3008,6 +3021,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListAutonomousDatabasesRequest, ListAutonomousDatabasesResponse>
         listAutonomousDatabasesTransportSettings =
@@ -3021,6 +3035,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetAutonomousDatabaseRequest, AutonomousDatabase>
         getAutonomousDatabaseTransportSettings =
@@ -3033,6 +3048,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateAutonomousDatabaseRequest, Operation>
         createAutonomousDatabaseTransportSettings =
@@ -3045,6 +3061,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateAutonomousDatabaseRequest, Operation>
         updateAutonomousDatabaseTransportSettings =
@@ -3071,6 +3088,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<RestoreAutonomousDatabaseRequest, Operation>
         restoreAutonomousDatabaseTransportSettings =
@@ -3083,6 +3101,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             GenerateAutonomousDatabaseWalletRequest, GenerateAutonomousDatabaseWalletResponse>
@@ -3098,6 +3117,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListAutonomousDbVersionsRequest, ListAutonomousDbVersionsResponse>
         listAutonomousDbVersionsTransportSettings =
@@ -3111,6 +3131,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             ListAutonomousDatabaseCharacterSetsRequest, ListAutonomousDatabaseCharacterSetsResponse>
@@ -3127,6 +3148,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             ListAutonomousDatabaseBackupsRequest, ListAutonomousDatabaseBackupsResponse>
@@ -3142,6 +3164,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<StopAutonomousDatabaseRequest, Operation>
         stopAutonomousDatabaseTransportSettings =
@@ -3154,6 +3177,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<StartAutonomousDatabaseRequest, Operation>
         startAutonomousDatabaseTransportSettings =
@@ -3166,6 +3190,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<RestartAutonomousDatabaseRequest, Operation>
         restartAutonomousDatabaseTransportSettings =
@@ -3178,6 +3203,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<SwitchoverAutonomousDatabaseRequest, Operation>
         switchoverAutonomousDatabaseTransportSettings =
@@ -3190,6 +3216,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<FailoverAutonomousDatabaseRequest, Operation>
         failoverAutonomousDatabaseTransportSettings =
@@ -3202,6 +3229,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListOdbNetworksRequest, ListOdbNetworksResponse>
         listOdbNetworksTransportSettings =
@@ -3214,6 +3242,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetOdbNetworkRequest, OdbNetwork> getOdbNetworkTransportSettings =
         HttpJsonCallSettings.<GetOdbNetworkRequest, OdbNetwork>newBuilder()
@@ -3225,6 +3254,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateOdbNetworkRequest, Operation> createOdbNetworkTransportSettings =
         HttpJsonCallSettings.<CreateOdbNetworkRequest, Operation>newBuilder()
@@ -3236,6 +3266,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteOdbNetworkRequest, Operation> deleteOdbNetworkTransportSettings =
         HttpJsonCallSettings.<DeleteOdbNetworkRequest, Operation>newBuilder()
@@ -3247,6 +3278,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListOdbSubnetsRequest, ListOdbSubnetsResponse>
         listOdbSubnetsTransportSettings =
@@ -3259,6 +3291,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetOdbSubnetRequest, OdbSubnet> getOdbSubnetTransportSettings =
         HttpJsonCallSettings.<GetOdbSubnetRequest, OdbSubnet>newBuilder()
@@ -3270,6 +3303,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateOdbSubnetRequest, Operation> createOdbSubnetTransportSettings =
         HttpJsonCallSettings.<CreateOdbSubnetRequest, Operation>newBuilder()
@@ -3281,6 +3315,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteOdbSubnetRequest, Operation> deleteOdbSubnetTransportSettings =
         HttpJsonCallSettings.<DeleteOdbSubnetRequest, Operation>newBuilder()
@@ -3292,6 +3327,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListExadbVmClustersRequest, ListExadbVmClustersResponse>
         listExadbVmClustersTransportSettings =
@@ -3305,6 +3341,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetExadbVmClusterRequest, ExadbVmCluster>
         getExadbVmClusterTransportSettings =
@@ -3317,6 +3354,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateExadbVmClusterRequest, Operation>
         createExadbVmClusterTransportSettings =
@@ -3329,6 +3367,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteExadbVmClusterRequest, Operation>
         deleteExadbVmClusterTransportSettings =
@@ -3341,6 +3380,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateExadbVmClusterRequest, Operation>
         updateExadbVmClusterTransportSettings =
@@ -3367,6 +3407,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListExascaleDbStorageVaultsRequest, ListExascaleDbStorageVaultsResponse>
         listExascaleDbStorageVaultsTransportSettings =
@@ -3381,6 +3422,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetExascaleDbStorageVaultRequest, ExascaleDbStorageVault>
         getExascaleDbStorageVaultTransportSettings =
@@ -3394,6 +3436,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateExascaleDbStorageVaultRequest, Operation>
         createExascaleDbStorageVaultTransportSettings =
@@ -3406,6 +3449,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteExascaleDbStorageVaultRequest, Operation>
         deleteExascaleDbStorageVaultTransportSettings =
@@ -3418,6 +3462,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             ListDbSystemInitialStorageSizesRequest, ListDbSystemInitialStorageSizesResponse>
@@ -3433,6 +3478,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListDatabasesRequest, ListDatabasesResponse>
         listDatabasesTransportSettings =
@@ -3445,6 +3491,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDatabaseRequest, Database> getDatabaseTransportSettings =
         HttpJsonCallSettings.<GetDatabaseRequest, Database>newBuilder()
@@ -3456,6 +3503,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListPluggableDatabasesRequest, ListPluggableDatabasesResponse>
         listPluggableDatabasesTransportSettings =
@@ -3469,6 +3517,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetPluggableDatabaseRequest, PluggableDatabase>
         getPluggableDatabaseTransportSettings =
@@ -3481,6 +3530,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListDbSystemsRequest, ListDbSystemsResponse>
         listDbSystemsTransportSettings =
@@ -3493,6 +3543,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDbSystemRequest, DbSystem> getDbSystemTransportSettings =
         HttpJsonCallSettings.<GetDbSystemRequest, DbSystem>newBuilder()
@@ -3504,6 +3555,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateDbSystemRequest, Operation> createDbSystemTransportSettings =
         HttpJsonCallSettings.<CreateDbSystemRequest, Operation>newBuilder()
@@ -3515,6 +3567,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteDbSystemRequest, Operation> deleteDbSystemTransportSettings =
         HttpJsonCallSettings.<DeleteDbSystemRequest, Operation>newBuilder()
@@ -3526,6 +3579,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListDbVersionsRequest, ListDbVersionsResponse>
         listDbVersionsTransportSettings =
@@ -3538,6 +3592,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListDatabaseCharacterSetsRequest, ListDatabaseCharacterSetsResponse>
         listDatabaseCharacterSetsTransportSettings =
@@ -3551,6 +3606,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

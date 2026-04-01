@@ -206,6 +206,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetDocumentRequest, Document> getDocumentTransportSettings =
         GrpcCallSettings.<GetDocumentRequest, Document>newBuilder()
@@ -216,6 +217,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateDocumentRequest, UpdateDocumentResponse>
         updateDocumentTransportSettings =
@@ -227,6 +229,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteDocumentRequest, Empty> deleteDocumentTransportSettings =
         GrpcCallSettings.<DeleteDocumentRequest, Empty>newBuilder()
@@ -237,6 +240,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SearchDocumentsRequest, SearchDocumentsResponse>
         searchDocumentsTransportSettings =
@@ -248,6 +252,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<LockDocumentRequest, Document> lockDocumentTransportSettings =
         GrpcCallSettings.<LockDocumentRequest, Document>newBuilder()
@@ -258,6 +263,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<FetchAclRequest, FetchAclResponse> fetchAclTransportSettings =
         GrpcCallSettings.<FetchAclRequest, FetchAclResponse>newBuilder()

@@ -378,6 +378,7 @@ public class HttpJsonApiHubDependenciesStub extends ApiHubDependenciesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetDependencyRequest, Dependency> getDependencyTransportSettings =
         HttpJsonCallSettings.<GetDependencyRequest, Dependency>newBuilder()
@@ -389,6 +390,7 @@ public class HttpJsonApiHubDependenciesStub extends ApiHubDependenciesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateDependencyRequest, Dependency> updateDependencyTransportSettings =
         HttpJsonCallSettings.<UpdateDependencyRequest, Dependency>newBuilder()
@@ -411,6 +413,7 @@ public class HttpJsonApiHubDependenciesStub extends ApiHubDependenciesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListDependenciesRequest, ListDependenciesResponse>
         listDependenciesTransportSettings =
@@ -423,6 +426,7 @@ public class HttpJsonApiHubDependenciesStub extends ApiHubDependenciesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

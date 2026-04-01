@@ -1,0 +1,5 @@
+# this file is only used in testing `get_rest_numeric_enums_from_BUILD` in utilities.sh
+
+java_gapic_library(
+
+)

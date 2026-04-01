@@ -198,6 +198,7 @@ public class TetherStubSettings extends StubSettings<TetherStubSettings> {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-apigee-connect")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

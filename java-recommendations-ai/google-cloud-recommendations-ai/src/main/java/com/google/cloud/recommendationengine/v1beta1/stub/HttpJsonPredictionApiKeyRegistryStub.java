@@ -246,6 +246,7 @@ public class HttpJsonPredictionApiKeyRegistryStub extends PredictionApiKeyRegist
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             ListPredictionApiKeyRegistrationsRequest, ListPredictionApiKeyRegistrationsResponse>
@@ -262,6 +263,7 @@ public class HttpJsonPredictionApiKeyRegistryStub extends PredictionApiKeyRegist
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeletePredictionApiKeyRegistrationRequest, Empty>
         deletePredictionApiKeyRegistrationTransportSettings =
@@ -274,6 +276,7 @@ public class HttpJsonPredictionApiKeyRegistryStub extends PredictionApiKeyRegist
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.createPredictionApiKeyRegistrationCallable =

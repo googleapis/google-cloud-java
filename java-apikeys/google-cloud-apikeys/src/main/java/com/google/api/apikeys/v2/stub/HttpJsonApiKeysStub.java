@@ -435,6 +435,7 @@ public class HttpJsonApiKeysStub extends ApiKeysStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListKeysRequest, ListKeysResponse> listKeysTransportSettings =
         HttpJsonCallSettings.<ListKeysRequest, ListKeysResponse>newBuilder()
@@ -446,6 +447,7 @@ public class HttpJsonApiKeysStub extends ApiKeysStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetKeyRequest, Key> getKeyTransportSettings =
         HttpJsonCallSettings.<GetKeyRequest, Key>newBuilder()
@@ -457,6 +459,7 @@ public class HttpJsonApiKeysStub extends ApiKeysStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetKeyStringRequest, GetKeyStringResponse> getKeyStringTransportSettings =
         HttpJsonCallSettings.<GetKeyStringRequest, GetKeyStringResponse>newBuilder()
@@ -468,6 +471,7 @@ public class HttpJsonApiKeysStub extends ApiKeysStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateKeyRequest, Operation> updateKeyTransportSettings =
         HttpJsonCallSettings.<UpdateKeyRequest, Operation>newBuilder()
@@ -490,6 +494,7 @@ public class HttpJsonApiKeysStub extends ApiKeysStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UndeleteKeyRequest, Operation> undeleteKeyTransportSettings =
         HttpJsonCallSettings.<UndeleteKeyRequest, Operation>newBuilder()
@@ -501,6 +506,7 @@ public class HttpJsonApiKeysStub extends ApiKeysStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<LookupKeyRequest, LookupKeyResponse> lookupKeyTransportSettings =
         HttpJsonCallSettings.<LookupKeyRequest, LookupKeyResponse>newBuilder()

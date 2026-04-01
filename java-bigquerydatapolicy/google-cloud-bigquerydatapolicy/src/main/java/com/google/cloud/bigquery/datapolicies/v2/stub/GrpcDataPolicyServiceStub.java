@@ -238,6 +238,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<AddGranteesRequest, DataPolicy> addGranteesTransportSettings =
         GrpcCallSettings.<AddGranteesRequest, DataPolicy>newBuilder()
@@ -248,6 +249,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
                   builder.add("data_policy", String.valueOf(request.getDataPolicy()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getDataPolicy())
             .build();
     GrpcCallSettings<RemoveGranteesRequest, DataPolicy> removeGranteesTransportSettings =
         GrpcCallSettings.<RemoveGranteesRequest, DataPolicy>newBuilder()
@@ -258,6 +260,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
                   builder.add("data_policy", String.valueOf(request.getDataPolicy()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getDataPolicy())
             .build();
     GrpcCallSettings<UpdateDataPolicyRequest, DataPolicy> updateDataPolicyTransportSettings =
         GrpcCallSettings.<UpdateDataPolicyRequest, DataPolicy>newBuilder()
@@ -279,6 +282,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetDataPolicyRequest, DataPolicy> getDataPolicyTransportSettings =
         GrpcCallSettings.<GetDataPolicyRequest, DataPolicy>newBuilder()
@@ -289,6 +293,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDataPoliciesRequest, ListDataPoliciesResponse>
         listDataPoliciesTransportSettings =
@@ -300,6 +305,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -310,6 +316,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -320,6 +327,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -331,6 +339,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createDataPolicyCallable =

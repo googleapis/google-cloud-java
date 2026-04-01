@@ -130,6 +130,7 @@ public class GrpcCaseAttachmentServiceStub extends CaseAttachmentServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetAttachmentRequest, Attachment> getAttachmentTransportSettings =
         GrpcCallSettings.<GetAttachmentRequest, Attachment>newBuilder()
@@ -140,6 +141,7 @@ public class GrpcCaseAttachmentServiceStub extends CaseAttachmentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.listAttachmentsCallable =
