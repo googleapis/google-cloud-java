@@ -175,11 +175,10 @@ final class ObservabilityUtils {
       @Nullable Throwable error,
       ApiTracerContext.Transport transport) {
     StatusCode.Code code = extractStatus(error);
+    attributes.put(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE, code.toString());
     if (transport == ApiTracerContext.Transport.HTTP) {
       attributes.put(
           ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE, (long) code.getHttpStatusCode());
-    } else {
-      attributes.put(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE, code.toString());
     }
   }
 

@@ -77,20 +77,23 @@ class GoldenSignalsMetricsTracer implements ApiTracer {
    */
   @Override
   public void operationSucceeded() {
-    attributes.put(RPC_RESPONSE_STATUS_ATTRIBUTE, StatusCode.Code.OK.toString());
+    ObservabilityUtils.populateStatusAttributes(attributes, null, transport);
     metricsRecorder.recordOperationLatency(
         clientRequestTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000_000.0, attributes);
   }
 
   @Override
   public void operationCancelled() {
-    attributes.put(RPC_RESPONSE_STATUS_ATTRIBUTE, StatusCode.Code.CANCELLED.toString());
+    ObservabilityUtils.populateStatusAttributes(
+        attributes, new java.util.concurrent.CancellationException(), transport);
     metricsRecorder.recordOperationLatency(
         clientRequestTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000_000.0, attributes);
   }
 
   @Override
   public void operationFailed(Throwable error) {
+    attributes.put(
+        ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE, ObservabilityUtils.extractErrorType(error));
     ObservabilityUtils.populateStatusAttributes(attributes, error, transport);
     metricsRecorder.recordOperationLatency(
         clientRequestTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000_000.0, attributes);
