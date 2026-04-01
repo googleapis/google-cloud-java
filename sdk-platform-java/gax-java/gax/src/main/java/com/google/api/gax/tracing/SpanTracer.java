@@ -85,6 +85,15 @@ public class SpanTracer implements ApiTracer {
     buildAttributes();
   }
 
+  @Override
+  public Scope inScope() {
+    if (attemptSpan == null) {
+      return () -> {};
+    }
+    final io.opentelemetry.context.Scope otelScope = attemptSpan.makeCurrent();
+    return () -> otelScope.close();
+  }
+
   private static String resolveAttemptSpanName(ApiTracerContext apiTracerContext) {
     if (apiTracerContext.transport() == ApiTracerContext.Transport.GRPC) {
       // gRPC Uses the full method name as span name.

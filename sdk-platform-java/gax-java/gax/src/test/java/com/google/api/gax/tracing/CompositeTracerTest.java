@@ -29,6 +29,11 @@
  */
 package com.google.api.gax.tracing;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.inOrder;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -38,6 +43,7 @@ import java.util.Arrays;
 import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.InOrder;
 
 class CompositeTracerTest {
 
@@ -53,7 +59,7 @@ class CompositeTracerTest {
   }
 
   @Test
-  void testInScope() {
+  void testInScope_lifoOrder() {
     ApiTracer.Scope scope1 = mock(ApiTracer.Scope.class);
     ApiTracer.Scope scope2 = mock(ApiTracer.Scope.class);
 
@@ -65,8 +71,52 @@ class CompositeTracerTest {
 
     verify(child1).inScope();
     verify(child2).inScope();
+
+    InOrder inOrder = inOrder(scope2, scope1);
+    inOrder.verify(scope2).close();
+    inOrder.verify(scope1).close();
+  }
+
+  @Test
+  void testInScope_childInScopeThrows() {
+    ApiTracer.Scope scope1 = mock(ApiTracer.Scope.class);
+    RuntimeException exception = new RuntimeException("Runtime Error");
+
+    when(child1.inScope()).thenReturn(scope1);
+    when(child2.inScope()).thenThrow(exception);
+
+    RuntimeException thrown = assertThrows(RuntimeException.class, () -> compositeTracer.inScope());
+
+    assertEquals(exception, thrown);
+    verify(child1).inScope();
+    verify(child2).inScope();
     verify(scope1).close();
-    verify(scope2).close();
+  }
+
+  @Test
+  void testInScope_childScopeCloseThrows() {
+    ApiTracer.Scope scope1 = mock(ApiTracer.Scope.class);
+    ApiTracer.Scope scope2 = mock(ApiTracer.Scope.class);
+
+    RuntimeException exception2 = new RuntimeException("Scope 2 close Error");
+    RuntimeException exception1 = new RuntimeException("Scope 1 close Error");
+
+    when(child1.inScope()).thenReturn(scope1);
+    when(child2.inScope()).thenReturn(scope2);
+
+    doThrow(exception2).when(scope2).close();
+    doThrow(exception1).when(scope1).close();
+
+    ApiTracer.Scope compositeScope = compositeTracer.inScope();
+
+    RuntimeException thrown = assertThrows(RuntimeException.class, () -> compositeScope.close());
+
+    assertEquals(exception2, thrown);
+    assertTrue(Arrays.asList(thrown.getSuppressed()).contains(exception1));
+
+    InOrder inOrder = inOrder(scope2, scope1);
+    inOrder.verify(scope2).close();
+    inOrder.verify(scope1).close();
   }
 
   @Test
