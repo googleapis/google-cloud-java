@@ -51,12 +51,16 @@ class GoldenSignalsMetricsRecorder {
       Arrays.asList(
           0.0, 0.0001, 0.0005, 0.0010, 0.005, 0.010, 0.050, 0.100, 0.5, 1.0, 5.0, 10.0, 60.0, 300.0,
           900.0, 3600.0);
-  final DoubleHistogram clientRequestDurationRecorder;
+  @javax.annotation.Nullable final DoubleHistogram clientRequestDurationRecorder;
 
   GoldenSignalsMetricsRecorder(
       OpenTelemetry openTelemetry, com.google.api.gax.rpc.LibraryMetadata libraryMetadata) {
     String libraryName =
-        libraryMetadata.artifactName() != null ? libraryMetadata.artifactName() : "";
+        libraryMetadata != null && libraryMetadata.artifactName() != null ? libraryMetadata.artifactName() : "";
+    if (libraryName.isEmpty()) {
+      this.clientRequestDurationRecorder = null;
+      return;
+    }
     io.opentelemetry.api.metrics.MeterBuilder meterBuilder =
         openTelemetry.meterBuilder(libraryName);
     String libraryVersion = libraryMetadata.version();
@@ -75,7 +79,9 @@ class GoldenSignalsMetricsRecorder {
   }
 
   void recordOperationLatency(double operationLatency, Map<String, Object> attributes) {
-    clientRequestDurationRecorder.record(
-        operationLatency, ObservabilityUtils.toOtelAttributes(attributes));
+    if (clientRequestDurationRecorder != null) {
+      clientRequestDurationRecorder.record(
+          operationLatency, ObservabilityUtils.toOtelAttributes(attributes));
+    }
   }
 }
