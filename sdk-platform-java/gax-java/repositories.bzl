@@ -47,20 +47,13 @@ def com_google_api_gax_java_repositories():
     # properties file.
 
     _protobuf_version = PROPERTIES["version.com_google_protobuf"]
-    _protobuf_version_in_link = "v%s" % _protobuf_version
+    _protobuf_source_tag = _protobuf_version[2:] if _protobuf_version.startswith("4.") else _protobuf_version
+    _protobuf_version_in_link = "v%s" % _protobuf_source_tag
     _maybe(
         http_archive,
         name = "com_google_protobuf",
         urls = ["https://github.com/protocolbuffers/protobuf/archive/%s.zip" % _protobuf_version_in_link],
-        strip_prefix = "protobuf-%s" % _protobuf_version,
-        patch_cmds = [
-            "mkdir -p bazel/common",
-            "touch bazel/common/BUILD",
-            "touch bazel/BUILD",
-            "cat <<'EOF' > bazel/common/proto_info.bzl\nload(\"@rules_proto//proto:defs.bzl\", _ProtoInfo = \"ProtoInfo\")\nProtoInfo = _ProtoInfo\nEOF",
-            "cat <<'EOF' > bazel/proto_library.bzl\ndef proto_library(**kwargs):\n    native.proto_library(**kwargs)\nEOF",
-            "cat <<'EOF' > bazel/java_proto_library.bzl\ndef java_proto_library(**kwargs):\n    native.java_proto_library(**kwargs)\nEOF",
-        ],
+        strip_prefix = "protobuf-%s" % _protobuf_source_tag,
     )
 
     _grpc_version = PROPERTIES["version.io_grpc"]
