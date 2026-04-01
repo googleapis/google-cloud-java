@@ -467,6 +467,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListRecognizersRequest, ListRecognizersResponse>
         listRecognizersTransportSettings =
@@ -478,6 +479,7 @@ public class GrpcSpeechStub extends SpeechStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetRecognizerRequest, Recognizer> getRecognizerTransportSettings =
         GrpcCallSettings.<GetRecognizerRequest, Recognizer>newBuilder()
@@ -488,6 +490,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateRecognizerRequest, Operation> updateRecognizerTransportSettings =
         GrpcCallSettings.<UpdateRecognizerRequest, Operation>newBuilder()
@@ -508,6 +511,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UndeleteRecognizerRequest, Operation> undeleteRecognizerTransportSettings =
         GrpcCallSettings.<UndeleteRecognizerRequest, Operation>newBuilder()
@@ -518,6 +522,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RecognizeRequest, RecognizeResponse> recognizeTransportSettings =
         GrpcCallSettings.<RecognizeRequest, RecognizeResponse>newBuilder()
@@ -528,11 +533,13 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("recognizer", String.valueOf(request.getRecognizer()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getRecognizer())
             .build();
     GrpcCallSettings<StreamingRecognizeRequest, StreamingRecognizeResponse>
         streamingRecognizeTransportSettings =
             GrpcCallSettings.<StreamingRecognizeRequest, StreamingRecognizeResponse>newBuilder()
                 .setMethodDescriptor(streamingRecognizeMethodDescriptor)
+                .setResourceNameExtractor(request -> request.getRecognizer())
                 .build();
     GrpcCallSettings<BatchRecognizeRequest, Operation> batchRecognizeTransportSettings =
         GrpcCallSettings.<BatchRecognizeRequest, Operation>newBuilder()
@@ -543,6 +550,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("recognizer", String.valueOf(request.getRecognizer()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getRecognizer())
             .build();
     GrpcCallSettings<GetConfigRequest, Config> getConfigTransportSettings =
         GrpcCallSettings.<GetConfigRequest, Config>newBuilder()
@@ -553,6 +561,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateConfigRequest, Config> updateConfigTransportSettings =
         GrpcCallSettings.<UpdateConfigRequest, Config>newBuilder()
@@ -573,6 +582,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListCustomClassesRequest, ListCustomClassesResponse>
         listCustomClassesTransportSettings =
@@ -584,6 +594,7 @@ public class GrpcSpeechStub extends SpeechStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetCustomClassRequest, CustomClass> getCustomClassTransportSettings =
         GrpcCallSettings.<GetCustomClassRequest, CustomClass>newBuilder()
@@ -594,6 +605,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateCustomClassRequest, Operation> updateCustomClassTransportSettings =
         GrpcCallSettings.<UpdateCustomClassRequest, Operation>newBuilder()
@@ -615,6 +627,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UndeleteCustomClassRequest, Operation> undeleteCustomClassTransportSettings =
         GrpcCallSettings.<UndeleteCustomClassRequest, Operation>newBuilder()
@@ -625,6 +638,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreatePhraseSetRequest, Operation> createPhraseSetTransportSettings =
         GrpcCallSettings.<CreatePhraseSetRequest, Operation>newBuilder()
@@ -635,6 +649,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListPhraseSetsRequest, ListPhraseSetsResponse>
         listPhraseSetsTransportSettings =
@@ -646,6 +661,7 @@ public class GrpcSpeechStub extends SpeechStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetPhraseSetRequest, PhraseSet> getPhraseSetTransportSettings =
         GrpcCallSettings.<GetPhraseSetRequest, PhraseSet>newBuilder()
@@ -656,6 +672,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdatePhraseSetRequest, Operation> updatePhraseSetTransportSettings =
         GrpcCallSettings.<UpdatePhraseSetRequest, Operation>newBuilder()
@@ -676,6 +693,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UndeletePhraseSetRequest, Operation> undeletePhraseSetTransportSettings =
         GrpcCallSettings.<UndeletePhraseSetRequest, Operation>newBuilder()
@@ -686,6 +704,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

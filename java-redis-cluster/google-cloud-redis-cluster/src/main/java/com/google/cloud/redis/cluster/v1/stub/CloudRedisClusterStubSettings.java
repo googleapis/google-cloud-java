@@ -69,6 +69,7 @@ import com.google.cloud.redis.cluster.v1.GetBackupCollectionRequest;
 import com.google.cloud.redis.cluster.v1.GetBackupRequest;
 import com.google.cloud.redis.cluster.v1.GetClusterCertificateAuthorityRequest;
 import com.google.cloud.redis.cluster.v1.GetClusterRequest;
+import com.google.cloud.redis.cluster.v1.GetSharedRegionalCertificateAuthorityRequest;
 import com.google.cloud.redis.cluster.v1.ListBackupCollectionsRequest;
 import com.google.cloud.redis.cluster.v1.ListBackupCollectionsResponse;
 import com.google.cloud.redis.cluster.v1.ListBackupsRequest;
@@ -76,6 +77,7 @@ import com.google.cloud.redis.cluster.v1.ListBackupsResponse;
 import com.google.cloud.redis.cluster.v1.ListClustersRequest;
 import com.google.cloud.redis.cluster.v1.ListClustersResponse;
 import com.google.cloud.redis.cluster.v1.RescheduleClusterMaintenanceRequest;
+import com.google.cloud.redis.cluster.v1.SharedRegionalCertificateAuthority;
 import com.google.cloud.redis.cluster.v1.UpdateClusterRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -188,6 +190,9 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
       createClusterOperationSettings;
   private final UnaryCallSettings<GetClusterCertificateAuthorityRequest, CertificateAuthority>
       getClusterCertificateAuthoritySettings;
+  private final UnaryCallSettings<
+          GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+      getSharedRegionalCertificateAuthoritySettings;
   private final UnaryCallSettings<RescheduleClusterMaintenanceRequest, Operation>
       rescheduleClusterMaintenanceSettings;
   private final OperationCallSettings<RescheduleClusterMaintenanceRequest, Cluster, Any>
@@ -481,6 +486,15 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
     return getClusterCertificateAuthoritySettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to getSharedRegionalCertificateAuthority.
+   */
+  public UnaryCallSettings<
+          GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+      getSharedRegionalCertificateAuthoritySettings() {
+    return getSharedRegionalCertificateAuthoritySettings;
+  }
+
   /** Returns the object with the settings used for calls to rescheduleClusterMaintenance. */
   public UnaryCallSettings<RescheduleClusterMaintenanceRequest, Operation>
       rescheduleClusterMaintenanceSettings() {
@@ -682,6 +696,8 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
     createClusterOperationSettings = settingsBuilder.createClusterOperationSettings().build();
     getClusterCertificateAuthoritySettings =
         settingsBuilder.getClusterCertificateAuthoritySettings().build();
+    getSharedRegionalCertificateAuthoritySettings =
+        settingsBuilder.getSharedRegionalCertificateAuthoritySettings().build();
     rescheduleClusterMaintenanceSettings =
         settingsBuilder.rescheduleClusterMaintenanceSettings().build();
     rescheduleClusterMaintenanceOperationSettings =
@@ -705,6 +721,7 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-redis-cluster")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 
@@ -727,6 +744,9 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
     private final UnaryCallSettings.Builder<
             GetClusterCertificateAuthorityRequest, CertificateAuthority>
         getClusterCertificateAuthoritySettings;
+    private final UnaryCallSettings.Builder<
+            GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+        getSharedRegionalCertificateAuthoritySettings;
     private final UnaryCallSettings.Builder<RescheduleClusterMaintenanceRequest, Operation>
         rescheduleClusterMaintenanceSettings;
     private final OperationCallSettings.Builder<RescheduleClusterMaintenanceRequest, Cluster, Any>
@@ -801,6 +821,8 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
       createClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createClusterOperationSettings = OperationCallSettings.newBuilder();
       getClusterCertificateAuthoritySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getSharedRegionalCertificateAuthoritySettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
       rescheduleClusterMaintenanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       rescheduleClusterMaintenanceOperationSettings = OperationCallSettings.newBuilder();
       listBackupCollectionsSettings =
@@ -825,6 +847,7 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
               deleteClusterSettings,
               createClusterSettings,
               getClusterCertificateAuthoritySettings,
+              getSharedRegionalCertificateAuthoritySettings,
               rescheduleClusterMaintenanceSettings,
               listBackupCollectionsSettings,
               getBackupCollectionSettings,
@@ -851,6 +874,8 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
       createClusterOperationSettings = settings.createClusterOperationSettings.toBuilder();
       getClusterCertificateAuthoritySettings =
           settings.getClusterCertificateAuthoritySettings.toBuilder();
+      getSharedRegionalCertificateAuthoritySettings =
+          settings.getSharedRegionalCertificateAuthoritySettings.toBuilder();
       rescheduleClusterMaintenanceSettings =
           settings.rescheduleClusterMaintenanceSettings.toBuilder();
       rescheduleClusterMaintenanceOperationSettings =
@@ -876,6 +901,7 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
               deleteClusterSettings,
               createClusterSettings,
               getClusterCertificateAuthoritySettings,
+              getSharedRegionalCertificateAuthoritySettings,
               rescheduleClusterMaintenanceSettings,
               listBackupCollectionsSettings,
               getBackupCollectionSettings,
@@ -942,6 +968,11 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
           .getClusterCertificateAuthoritySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getSharedRegionalCertificateAuthoritySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .rescheduleClusterMaintenanceSettings()
@@ -1222,6 +1253,15 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
     public UnaryCallSettings.Builder<GetClusterCertificateAuthorityRequest, CertificateAuthority>
         getClusterCertificateAuthoritySettings() {
       return getClusterCertificateAuthoritySettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to getSharedRegionalCertificateAuthority.
+     */
+    public UnaryCallSettings.Builder<
+            GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+        getSharedRegionalCertificateAuthoritySettings() {
+      return getSharedRegionalCertificateAuthoritySettings;
     }
 
     /** Returns the builder for the settings used for calls to rescheduleClusterMaintenance. */

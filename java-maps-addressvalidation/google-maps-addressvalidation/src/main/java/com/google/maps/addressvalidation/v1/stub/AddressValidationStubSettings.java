@@ -246,6 +246,7 @@ public class AddressValidationStubSettings extends StubSettings<AddressValidatio
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.maps:google-maps-addressvalidation")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

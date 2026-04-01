@@ -384,6 +384,7 @@ public class HttpJsonProvisioningStub extends ProvisioningStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteApiHubInstanceRequest, Operation>
         deleteApiHubInstanceTransportSettings =
@@ -396,6 +397,7 @@ public class HttpJsonProvisioningStub extends ProvisioningStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetApiHubInstanceRequest, ApiHubInstance>
         getApiHubInstanceTransportSettings =
@@ -408,6 +410,7 @@ public class HttpJsonProvisioningStub extends ProvisioningStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<LookupApiHubInstanceRequest, LookupApiHubInstanceResponse>
         lookupApiHubInstanceTransportSettings =
@@ -421,6 +424,7 @@ public class HttpJsonProvisioningStub extends ProvisioningStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

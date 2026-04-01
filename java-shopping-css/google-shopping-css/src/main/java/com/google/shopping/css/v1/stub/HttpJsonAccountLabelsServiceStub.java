@@ -264,6 +264,7 @@ public class HttpJsonAccountLabelsServiceStub extends AccountLabelsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateAccountLabelRequest, AccountLabel>
         createAccountLabelTransportSettings =
@@ -276,6 +277,7 @@ public class HttpJsonAccountLabelsServiceStub extends AccountLabelsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateAccountLabelRequest, AccountLabel>
         updateAccountLabelTransportSettings =
@@ -301,6 +303,7 @@ public class HttpJsonAccountLabelsServiceStub extends AccountLabelsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.listAccountLabelsCallable =

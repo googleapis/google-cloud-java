@@ -1165,7 +1165,7 @@ public interface InstanceOrBuilder
    * </code>
    *
    * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
-   *     google/cloud/memorystore/v1/memorystore.proto;l=545
+   *     google/cloud/memorystore/v1/memorystore.proto;l=586
    * @return Whether the ondemandMaintenance field is set.
    */
   @java.lang.Deprecated
@@ -1183,7 +1183,7 @@ public interface InstanceOrBuilder
    * </code>
    *
    * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
-   *     google/cloud/memorystore/v1/memorystore.proto;l=545
+   *     google/cloud/memorystore/v1/memorystore.proto;l=586
    * @return The ondemandMaintenance.
    */
   @java.lang.Deprecated
@@ -1776,11 +1776,137 @@ public interface InstanceOrBuilder
    * </code>
    *
    * @deprecated google.cloud.memorystore.v1.Instance.allow_fewer_zones_deployment is deprecated.
-   *     See google/cloud/memorystore/v1/memorystore.proto;l=626
+   *     See google/cloud/memorystore/v1/memorystore.proto;l=667
    * @return The allowFewerZonesDeployment.
    */
   @java.lang.Deprecated
   boolean getAllowFewerZonesDeployment();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The Server CA mode for the instance.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.memorystore.v1.Instance.ServerCaMode server_ca_mode = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the serverCaMode field is set.
+   */
+  boolean hasServerCaMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The Server CA mode for the instance.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.memorystore.v1.Instance.ServerCaMode server_ca_mode = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for serverCaMode.
+   */
+  int getServerCaModeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The Server CA mode for the instance.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.memorystore.v1.Instance.ServerCaMode server_ca_mode = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The serverCaMode.
+   */
+  com.google.cloud.memorystore.v1.Instance.ServerCaMode getServerCaMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The customer-managed CA pool for the instance. Only
+   * applicable if the Server CA mode is CUSTOMER_MANAGED_CAS_CA. Format:
+   * "projects/{project}/locations/{region}/caPools/{ca_pool}".
+   * </pre>
+   *
+   * <code>
+   * optional string server_ca_pool = 57 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the serverCaPool field is set.
+   */
+  boolean hasServerCaPool();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The customer-managed CA pool for the instance. Only
+   * applicable if the Server CA mode is CUSTOMER_MANAGED_CAS_CA. Format:
+   * "projects/{project}/locations/{region}/caPools/{ca_pool}".
+   * </pre>
+   *
+   * <code>
+   * optional string server_ca_pool = 57 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The serverCaPool.
+   */
+  java.lang.String getServerCaPool();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The customer-managed CA pool for the instance. Only
+   * applicable if the Server CA mode is CUSTOMER_MANAGED_CAS_CA. Format:
+   * "projects/{project}/locations/{region}/caPools/{ca_pool}".
+   * </pre>
+   *
+   * <code>
+   * optional string server_ca_pool = 57 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for serverCaPool.
+   */
+  com.google.protobuf.ByteString getServerCaPoolBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Rotate the server certificates.
+   * </pre>
+   *
+   * <code>
+   * optional bool rotate_server_certificate = 58 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the rotateServerCertificate field is set.
+   */
+  boolean hasRotateServerCertificate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Rotate the server certificates.
+   * </pre>
+   *
+   * <code>
+   * optional bool rotate_server_certificate = 58 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The rotateServerCertificate.
+   */
+  boolean getRotateServerCertificate();
 
   com.google.cloud.memorystore.v1.Instance.ImportSourcesCase getImportSourcesCase();
 }

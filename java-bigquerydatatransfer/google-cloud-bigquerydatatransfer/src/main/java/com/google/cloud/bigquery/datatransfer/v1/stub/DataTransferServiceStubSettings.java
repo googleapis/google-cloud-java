@@ -707,6 +707,7 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-bigquerydatatransfer")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

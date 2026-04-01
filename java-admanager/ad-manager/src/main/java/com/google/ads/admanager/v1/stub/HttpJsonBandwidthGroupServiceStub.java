@@ -186,6 +186,7 @@ public class HttpJsonBandwidthGroupServiceStub extends BandwidthGroupServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListBandwidthGroupsRequest, ListBandwidthGroupsResponse>
         listBandwidthGroupsTransportSettings =
@@ -199,6 +200,7 @@ public class HttpJsonBandwidthGroupServiceStub extends BandwidthGroupServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getBandwidthGroupCallable =

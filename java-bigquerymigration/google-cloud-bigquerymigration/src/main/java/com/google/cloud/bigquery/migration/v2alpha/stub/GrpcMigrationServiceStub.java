@@ -215,6 +215,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetMigrationWorkflowRequest, MigrationWorkflow>
         getMigrationWorkflowTransportSettings =
@@ -226,6 +227,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListMigrationWorkflowsRequest, ListMigrationWorkflowsResponse>
         listMigrationWorkflowsTransportSettings =
@@ -238,6 +240,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteMigrationWorkflowRequest, Empty>
         deleteMigrationWorkflowTransportSettings =
@@ -249,6 +252,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<StartMigrationWorkflowRequest, Empty> startMigrationWorkflowTransportSettings =
         GrpcCallSettings.<StartMigrationWorkflowRequest, Empty>newBuilder()
@@ -259,6 +263,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetMigrationSubtaskRequest, MigrationSubtask>
         getMigrationSubtaskTransportSettings =
@@ -270,6 +275,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListMigrationSubtasksRequest, ListMigrationSubtasksResponse>
         listMigrationSubtasksTransportSettings =
@@ -282,6 +288,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createMigrationWorkflowCallable =

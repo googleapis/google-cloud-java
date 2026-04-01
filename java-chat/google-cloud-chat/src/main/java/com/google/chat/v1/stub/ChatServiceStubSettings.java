@@ -974,6 +974,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-chat")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

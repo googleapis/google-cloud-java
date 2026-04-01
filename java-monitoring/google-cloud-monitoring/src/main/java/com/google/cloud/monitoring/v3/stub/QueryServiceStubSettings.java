@@ -275,6 +275,7 @@ public class QueryServiceStubSettings extends StubSettings<QueryServiceStubSetti
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-monitoring")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

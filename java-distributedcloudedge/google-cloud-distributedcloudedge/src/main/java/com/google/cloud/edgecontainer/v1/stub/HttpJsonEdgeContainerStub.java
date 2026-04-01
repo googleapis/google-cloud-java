@@ -1063,6 +1063,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
         HttpJsonCallSettings.<GetClusterRequest, Cluster>newBuilder()
@@ -1074,6 +1075,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
         HttpJsonCallSettings.<CreateClusterRequest, Operation>newBuilder()
@@ -1085,6 +1087,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateClusterRequest, Operation> updateClusterTransportSettings =
         HttpJsonCallSettings.<UpdateClusterRequest, Operation>newBuilder()
@@ -1107,6 +1110,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteClusterRequest, Operation> deleteClusterTransportSettings =
         HttpJsonCallSettings.<DeleteClusterRequest, Operation>newBuilder()
@@ -1118,6 +1122,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
         generateAccessTokenTransportSettings =
@@ -1131,6 +1136,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                       builder.add("cluster", String.valueOf(request.getCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCluster())
                 .build();
     HttpJsonCallSettings<GenerateOfflineCredentialRequest, GenerateOfflineCredentialResponse>
         generateOfflineCredentialTransportSettings =
@@ -1144,6 +1150,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                       builder.add("cluster", String.valueOf(request.getCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCluster())
                 .build();
     HttpJsonCallSettings<ListNodePoolsRequest, ListNodePoolsResponse>
         listNodePoolsTransportSettings =
@@ -1156,6 +1163,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetNodePoolRequest, NodePool> getNodePoolTransportSettings =
         HttpJsonCallSettings.<GetNodePoolRequest, NodePool>newBuilder()
@@ -1167,6 +1175,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateNodePoolRequest, Operation> createNodePoolTransportSettings =
         HttpJsonCallSettings.<CreateNodePoolRequest, Operation>newBuilder()
@@ -1178,6 +1187,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateNodePoolRequest, Operation> updateNodePoolTransportSettings =
         HttpJsonCallSettings.<UpdateNodePoolRequest, Operation>newBuilder()
@@ -1200,6 +1210,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListMachinesRequest, ListMachinesResponse> listMachinesTransportSettings =
         HttpJsonCallSettings.<ListMachinesRequest, ListMachinesResponse>newBuilder()
@@ -1211,6 +1222,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetMachineRequest, Machine> getMachineTransportSettings =
         HttpJsonCallSettings.<GetMachineRequest, Machine>newBuilder()
@@ -1222,6 +1234,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListVpnConnectionsRequest, ListVpnConnectionsResponse>
         listVpnConnectionsTransportSettings =
@@ -1234,6 +1247,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetVpnConnectionRequest, VpnConnection> getVpnConnectionTransportSettings =
         HttpJsonCallSettings.<GetVpnConnectionRequest, VpnConnection>newBuilder()
@@ -1245,6 +1259,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateVpnConnectionRequest, Operation>
         createVpnConnectionTransportSettings =
@@ -1257,6 +1272,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteVpnConnectionRequest, Operation>
         deleteVpnConnectionTransportSettings =
@@ -1269,6 +1285,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetServerConfigRequest, ServerConfig> getServerConfigTransportSettings =
         HttpJsonCallSettings.<GetServerConfigRequest, ServerConfig>newBuilder()
@@ -1280,6 +1297,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

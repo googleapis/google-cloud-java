@@ -250,6 +250,7 @@ public class RecaptchaEnterpriseServiceV1Beta1StubSettings
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-recaptchaenterprise")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

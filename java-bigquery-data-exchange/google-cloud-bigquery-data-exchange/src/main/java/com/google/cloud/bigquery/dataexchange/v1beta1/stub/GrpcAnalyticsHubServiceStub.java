@@ -354,6 +354,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListOrgDataExchangesRequest, ListOrgDataExchangesResponse>
         listOrgDataExchangesTransportSettings =
@@ -375,6 +376,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateDataExchangeRequest, DataExchange> createDataExchangeTransportSettings =
         GrpcCallSettings.<CreateDataExchangeRequest, DataExchange>newBuilder()
@@ -385,6 +387,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateDataExchangeRequest, DataExchange> updateDataExchangeTransportSettings =
         GrpcCallSettings.<UpdateDataExchangeRequest, DataExchange>newBuilder()
@@ -406,6 +409,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListListingsRequest, ListListingsResponse> listListingsTransportSettings =
         GrpcCallSettings.<ListListingsRequest, ListListingsResponse>newBuilder()
@@ -416,6 +420,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetListingRequest, Listing> getListingTransportSettings =
         GrpcCallSettings.<GetListingRequest, Listing>newBuilder()
@@ -426,6 +431,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateListingRequest, Listing> createListingTransportSettings =
         GrpcCallSettings.<CreateListingRequest, Listing>newBuilder()
@@ -436,6 +442,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateListingRequest, Listing> updateListingTransportSettings =
         GrpcCallSettings.<UpdateListingRequest, Listing>newBuilder()
@@ -456,6 +463,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SubscribeListingRequest, SubscribeListingResponse>
         subscribeListingTransportSettings =
@@ -467,6 +475,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -477,6 +486,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -487,6 +497,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -498,6 +509,7 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

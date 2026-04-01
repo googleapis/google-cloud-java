@@ -234,6 +234,7 @@ public class HttpJsonRegionalInventoryServiceStub extends RegionalInventoryServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<InsertRegionalInventoryRequest, RegionalInventory>
         insertRegionalInventoryTransportSettings =
@@ -246,6 +247,7 @@ public class HttpJsonRegionalInventoryServiceStub extends RegionalInventoryServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteRegionalInventoryRequest, Empty>
         deleteRegionalInventoryTransportSettings =
@@ -258,6 +260,7 @@ public class HttpJsonRegionalInventoryServiceStub extends RegionalInventoryServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.listRegionalInventoriesCallable =

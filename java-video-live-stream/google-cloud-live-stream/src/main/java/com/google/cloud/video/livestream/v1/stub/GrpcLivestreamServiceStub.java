@@ -605,6 +605,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListChannelsRequest, ListChannelsResponse> listChannelsTransportSettings =
         GrpcCallSettings.<ListChannelsRequest, ListChannelsResponse>newBuilder()
@@ -615,6 +616,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetChannelRequest, Channel> getChannelTransportSettings =
         GrpcCallSettings.<GetChannelRequest, Channel>newBuilder()
@@ -625,6 +627,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteChannelRequest, Operation> deleteChannelTransportSettings =
         GrpcCallSettings.<DeleteChannelRequest, Operation>newBuilder()
@@ -635,6 +638,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateChannelRequest, Operation> updateChannelTransportSettings =
         GrpcCallSettings.<UpdateChannelRequest, Operation>newBuilder()
@@ -655,6 +659,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<StopChannelRequest, Operation> stopChannelTransportSettings =
         GrpcCallSettings.<StopChannelRequest, Operation>newBuilder()
@@ -665,6 +670,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<StartDistributionRequest, Operation> startDistributionTransportSettings =
         GrpcCallSettings.<StartDistributionRequest, Operation>newBuilder()
@@ -675,6 +681,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<StopDistributionRequest, Operation> stopDistributionTransportSettings =
         GrpcCallSettings.<StopDistributionRequest, Operation>newBuilder()
@@ -685,6 +692,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateInputRequest, Operation> createInputTransportSettings =
         GrpcCallSettings.<CreateInputRequest, Operation>newBuilder()
@@ -695,6 +703,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListInputsRequest, ListInputsResponse> listInputsTransportSettings =
         GrpcCallSettings.<ListInputsRequest, ListInputsResponse>newBuilder()
@@ -705,6 +714,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetInputRequest, Input> getInputTransportSettings =
         GrpcCallSettings.<GetInputRequest, Input>newBuilder()
@@ -715,6 +725,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteInputRequest, Operation> deleteInputTransportSettings =
         GrpcCallSettings.<DeleteInputRequest, Operation>newBuilder()
@@ -725,6 +736,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateInputRequest, Operation> updateInputTransportSettings =
         GrpcCallSettings.<UpdateInputRequest, Operation>newBuilder()
@@ -745,6 +757,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateEventRequest, Event> createEventTransportSettings =
         GrpcCallSettings.<CreateEventRequest, Event>newBuilder()
@@ -755,6 +768,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListEventsRequest, ListEventsResponse> listEventsTransportSettings =
         GrpcCallSettings.<ListEventsRequest, ListEventsResponse>newBuilder()
@@ -765,6 +779,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetEventRequest, Event> getEventTransportSettings =
         GrpcCallSettings.<GetEventRequest, Event>newBuilder()
@@ -775,6 +790,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteEventRequest, Empty> deleteEventTransportSettings =
         GrpcCallSettings.<DeleteEventRequest, Empty>newBuilder()
@@ -785,6 +801,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListClipsRequest, ListClipsResponse> listClipsTransportSettings =
         GrpcCallSettings.<ListClipsRequest, ListClipsResponse>newBuilder()
@@ -795,6 +812,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetClipRequest, Clip> getClipTransportSettings =
         GrpcCallSettings.<GetClipRequest, Clip>newBuilder()
@@ -805,6 +823,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateClipRequest, Operation> createClipTransportSettings =
         GrpcCallSettings.<CreateClipRequest, Operation>newBuilder()
@@ -815,6 +834,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteClipRequest, Operation> deleteClipTransportSettings =
         GrpcCallSettings.<DeleteClipRequest, Operation>newBuilder()
@@ -825,6 +845,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateDvrSessionRequest, Operation> createDvrSessionTransportSettings =
         GrpcCallSettings.<CreateDvrSessionRequest, Operation>newBuilder()
@@ -835,6 +856,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListDvrSessionsRequest, ListDvrSessionsResponse>
         listDvrSessionsTransportSettings =
@@ -846,6 +868,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetDvrSessionRequest, DvrSession> getDvrSessionTransportSettings =
         GrpcCallSettings.<GetDvrSessionRequest, DvrSession>newBuilder()
@@ -856,6 +879,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteDvrSessionRequest, Operation> deleteDvrSessionTransportSettings =
         GrpcCallSettings.<DeleteDvrSessionRequest, Operation>newBuilder()
@@ -866,6 +890,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateDvrSessionRequest, Operation> updateDvrSessionTransportSettings =
         GrpcCallSettings.<UpdateDvrSessionRequest, Operation>newBuilder()
@@ -887,6 +912,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteAssetRequest, Operation> deleteAssetTransportSettings =
         GrpcCallSettings.<DeleteAssetRequest, Operation>newBuilder()
@@ -897,6 +923,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetAssetRequest, Asset> getAssetTransportSettings =
         GrpcCallSettings.<GetAssetRequest, Asset>newBuilder()
@@ -907,6 +934,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAssetsRequest, ListAssetsResponse> listAssetsTransportSettings =
         GrpcCallSettings.<ListAssetsRequest, ListAssetsResponse>newBuilder()
@@ -917,6 +945,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetPoolRequest, Pool> getPoolTransportSettings =
         GrpcCallSettings.<GetPoolRequest, Pool>newBuilder()
@@ -927,6 +956,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdatePoolRequest, Operation> updatePoolTransportSettings =
         GrpcCallSettings.<UpdatePoolRequest, Operation>newBuilder()

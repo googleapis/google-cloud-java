@@ -2124,6 +2124,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-vmmigration")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

@@ -461,6 +461,7 @@ public class HypercomputeClusterStubSettings extends StubSettings<HypercomputeCl
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-hypercomputecluster")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

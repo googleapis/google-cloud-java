@@ -302,6 +302,7 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetCollectionRequest, Collection> getCollectionTransportSettings =
         GrpcCallSettings.<GetCollectionRequest, Collection>newBuilder()
@@ -312,6 +313,7 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateCollectionRequest, Operation> createCollectionTransportSettings =
         GrpcCallSettings.<CreateCollectionRequest, Operation>newBuilder()
@@ -322,6 +324,7 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateCollectionRequest, Operation> updateCollectionTransportSettings =
         GrpcCallSettings.<UpdateCollectionRequest, Operation>newBuilder()
@@ -342,6 +345,7 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListIndexesRequest, ListIndexesResponse> listIndexesTransportSettings =
         GrpcCallSettings.<ListIndexesRequest, ListIndexesResponse>newBuilder()
@@ -352,6 +356,7 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetIndexRequest, Index> getIndexTransportSettings =
         GrpcCallSettings.<GetIndexRequest, Index>newBuilder()
@@ -362,6 +367,7 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateIndexRequest, Operation> createIndexTransportSettings =
         GrpcCallSettings.<CreateIndexRequest, Operation>newBuilder()
@@ -372,6 +378,7 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteIndexRequest, Operation> deleteIndexTransportSettings =
         GrpcCallSettings.<DeleteIndexRequest, Operation>newBuilder()
@@ -382,6 +389,7 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ImportDataObjectsRequest, Operation> importDataObjectsTransportSettings =
         GrpcCallSettings.<ImportDataObjectsRequest, Operation>newBuilder()
@@ -392,6 +400,7 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ExportDataObjectsRequest, Operation> exportDataObjectsTransportSettings =
         GrpcCallSettings.<ExportDataObjectsRequest, Operation>newBuilder()
@@ -402,6 +411,7 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

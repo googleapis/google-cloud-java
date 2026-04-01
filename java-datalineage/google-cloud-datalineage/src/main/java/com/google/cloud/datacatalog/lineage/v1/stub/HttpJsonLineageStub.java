@@ -842,6 +842,7 @@ public class HttpJsonLineageStub extends LineageStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateProcessRequest, Process> updateProcessTransportSettings =
         HttpJsonCallSettings.<UpdateProcessRequest, Process>newBuilder()
@@ -864,6 +865,7 @@ public class HttpJsonLineageStub extends LineageStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListProcessesRequest, ListProcessesResponse>
         listProcessesTransportSettings =
@@ -876,6 +878,7 @@ public class HttpJsonLineageStub extends LineageStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteProcessRequest, Operation> deleteProcessTransportSettings =
         HttpJsonCallSettings.<DeleteProcessRequest, Operation>newBuilder()
@@ -887,6 +890,7 @@ public class HttpJsonLineageStub extends LineageStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateRunRequest, Run> createRunTransportSettings =
         HttpJsonCallSettings.<CreateRunRequest, Run>newBuilder()
@@ -898,6 +902,7 @@ public class HttpJsonLineageStub extends LineageStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateRunRequest, Run> updateRunTransportSettings =
         HttpJsonCallSettings.<UpdateRunRequest, Run>newBuilder()
@@ -920,6 +925,7 @@ public class HttpJsonLineageStub extends LineageStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListRunsRequest, ListRunsResponse> listRunsTransportSettings =
         HttpJsonCallSettings.<ListRunsRequest, ListRunsResponse>newBuilder()
@@ -931,6 +937,7 @@ public class HttpJsonLineageStub extends LineageStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteRunRequest, Operation> deleteRunTransportSettings =
         HttpJsonCallSettings.<DeleteRunRequest, Operation>newBuilder()
@@ -942,6 +949,7 @@ public class HttpJsonLineageStub extends LineageStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateLineageEventRequest, LineageEvent>
         createLineageEventTransportSettings =
@@ -954,6 +962,7 @@ public class HttpJsonLineageStub extends LineageStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetLineageEventRequest, LineageEvent> getLineageEventTransportSettings =
         HttpJsonCallSettings.<GetLineageEventRequest, LineageEvent>newBuilder()
@@ -965,6 +974,7 @@ public class HttpJsonLineageStub extends LineageStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLineageEventsRequest, ListLineageEventsResponse>
         listLineageEventsTransportSettings =
@@ -977,6 +987,7 @@ public class HttpJsonLineageStub extends LineageStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteLineageEventRequest, Empty> deleteLineageEventTransportSettings =
         HttpJsonCallSettings.<DeleteLineageEventRequest, Empty>newBuilder()
@@ -988,6 +999,7 @@ public class HttpJsonLineageStub extends LineageStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<SearchLinksRequest, SearchLinksResponse> searchLinksTransportSettings =
         HttpJsonCallSettings.<SearchLinksRequest, SearchLinksResponse>newBuilder()
@@ -999,6 +1011,7 @@ public class HttpJsonLineageStub extends LineageStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<BatchSearchLinkProcessesRequest, BatchSearchLinkProcessesResponse>
         batchSearchLinkProcessesTransportSettings =
@@ -1012,6 +1025,7 @@ public class HttpJsonLineageStub extends LineageStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.processOpenLineageRunEventCallable =

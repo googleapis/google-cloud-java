@@ -265,6 +265,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-asset")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

@@ -347,6 +347,7 @@ public class CloudShellServiceStubSettings extends StubSettings<CloudShellServic
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-shell")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

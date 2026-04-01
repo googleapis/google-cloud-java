@@ -118,4 +118,43 @@ class ObservabilityUtilsTest {
   void testToOtelAttributes_shouldReturnEmptyAttributes_nullInput() {
     assertThat(ObservabilityUtils.toOtelAttributes(null)).isEqualTo(Attributes.empty());
   }
+
+  @Test
+  void testSanitizeUrlFull_redactsUserInfo() {
+    String url = "https://user:password@example.com/some/path?foo=bar";
+    String sanitized = ObservabilityUtils.sanitizeUrlFull(url);
+    assertThat(sanitized).isEqualTo("https://REDACTED:REDACTED@example.com/some/path?foo=bar");
+  }
+
+  @Test
+  void testSanitizeUrlFull_redactsSensitiveQueryParameters_caseInsensitive() {
+    String url =
+        "https://example.com/some/path?upload_Id=secret&AWSAccessKeyId=123&foo=bar&API_KEY=my_key";
+    String sanitized = ObservabilityUtils.sanitizeUrlFull(url);
+    assertThat(sanitized)
+        .isEqualTo(
+            "https://example.com/some/path?upload_Id=REDACTED&AWSAccessKeyId=REDACTED&foo=bar&API_KEY=REDACTED");
+  }
+
+  @Test
+  void testSanitizeUrlFull_handlesKeyOnlyParameters() {
+    String url = "https://example.com/some/path?api_key&foo=bar";
+    String sanitized = ObservabilityUtils.sanitizeUrlFull(url);
+    assertThat(sanitized).isEqualTo("https://example.com/some/path?api_key&foo=bar");
+  }
+
+  @Test
+  void testSanitizeUrlFull_handlesMalformedUrl() {
+    String url = "invalid::url:";
+    String sanitized = ObservabilityUtils.sanitizeUrlFull(url);
+    // Unparsable URLs should be returned as empty string
+    assertThat(sanitized).isEmpty();
+  }
+
+  @Test
+  void testSanitizeUrlFull_noQueryOrUserInfo() {
+    String url = "https://example.com/some/path";
+    String sanitized = ObservabilityUtils.sanitizeUrlFull(url);
+    assertThat(sanitized).isEqualTo(url);
+  }
 }

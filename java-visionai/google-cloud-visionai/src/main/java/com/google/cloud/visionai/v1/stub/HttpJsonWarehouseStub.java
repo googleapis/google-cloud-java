@@ -2883,6 +2883,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateAssetRequest, Asset> updateAssetTransportSettings =
         HttpJsonCallSettings.<UpdateAssetRequest, Asset>newBuilder()
@@ -2905,6 +2906,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListAssetsRequest, ListAssetsResponse> listAssetsTransportSettings =
         HttpJsonCallSettings.<ListAssetsRequest, ListAssetsResponse>newBuilder()
@@ -2916,6 +2918,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteAssetRequest, Operation> deleteAssetTransportSettings =
         HttpJsonCallSettings.<DeleteAssetRequest, Operation>newBuilder()
@@ -2927,6 +2930,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UploadAssetRequest, Operation> uploadAssetTransportSettings =
         HttpJsonCallSettings.<UploadAssetRequest, Operation>newBuilder()
@@ -2938,6 +2942,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GenerateRetrievalUrlRequest, GenerateRetrievalUrlResponse>
         generateRetrievalUrlTransportSettings =
@@ -2951,6 +2956,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<AnalyzeAssetRequest, Operation> analyzeAssetTransportSettings =
         HttpJsonCallSettings.<AnalyzeAssetRequest, Operation>newBuilder()
@@ -2962,6 +2968,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<IndexAssetRequest, Operation> indexAssetTransportSettings =
         HttpJsonCallSettings.<IndexAssetRequest, Operation>newBuilder()
@@ -2973,6 +2980,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RemoveIndexAssetRequest, Operation> removeIndexAssetTransportSettings =
         HttpJsonCallSettings.<RemoveIndexAssetRequest, Operation>newBuilder()
@@ -2984,6 +2992,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ViewIndexedAssetsRequest, ViewIndexedAssetsResponse>
         viewIndexedAssetsTransportSettings =
@@ -2996,6 +3005,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                       builder.add("index", String.valueOf(request.getIndex()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getIndex())
                 .build();
     HttpJsonCallSettings<CreateIndexRequest, Operation> createIndexTransportSettings =
         HttpJsonCallSettings.<CreateIndexRequest, Operation>newBuilder()
@@ -3007,6 +3017,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateIndexRequest, Operation> updateIndexTransportSettings =
         HttpJsonCallSettings.<UpdateIndexRequest, Operation>newBuilder()
@@ -3029,6 +3040,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListIndexesRequest, ListIndexesResponse> listIndexesTransportSettings =
         HttpJsonCallSettings.<ListIndexesRequest, ListIndexesResponse>newBuilder()
@@ -3040,6 +3052,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteIndexRequest, Operation> deleteIndexTransportSettings =
         HttpJsonCallSettings.<DeleteIndexRequest, Operation>newBuilder()
@@ -3051,6 +3064,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateCorpusRequest, Operation> createCorpusTransportSettings =
         HttpJsonCallSettings.<CreateCorpusRequest, Operation>newBuilder()
@@ -3073,6 +3087,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateCorpusRequest, Corpus> updateCorpusTransportSettings =
         HttpJsonCallSettings.<UpdateCorpusRequest, Corpus>newBuilder()
@@ -3106,6 +3121,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<AnalyzeCorpusRequest, Operation> analyzeCorpusTransportSettings =
         HttpJsonCallSettings.<AnalyzeCorpusRequest, Operation>newBuilder()
@@ -3117,6 +3133,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateDataSchemaRequest, DataSchema> createDataSchemaTransportSettings =
         HttpJsonCallSettings.<CreateDataSchemaRequest, DataSchema>newBuilder()
@@ -3128,6 +3145,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateDataSchemaRequest, DataSchema> updateDataSchemaTransportSettings =
         HttpJsonCallSettings.<UpdateDataSchemaRequest, DataSchema>newBuilder()
@@ -3151,6 +3169,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteDataSchemaRequest, Empty> deleteDataSchemaTransportSettings =
         HttpJsonCallSettings.<DeleteDataSchemaRequest, Empty>newBuilder()
@@ -3162,6 +3181,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListDataSchemasRequest, ListDataSchemasResponse>
         listDataSchemasTransportSettings =
@@ -3174,6 +3194,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateAnnotationRequest, Annotation> createAnnotationTransportSettings =
         HttpJsonCallSettings.<CreateAnnotationRequest, Annotation>newBuilder()
@@ -3185,6 +3206,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetAnnotationRequest, Annotation> getAnnotationTransportSettings =
         HttpJsonCallSettings.<GetAnnotationRequest, Annotation>newBuilder()
@@ -3196,6 +3218,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListAnnotationsRequest, ListAnnotationsResponse>
         listAnnotationsTransportSettings =
@@ -3208,6 +3231,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateAnnotationRequest, Annotation> updateAnnotationTransportSettings =
         HttpJsonCallSettings.<UpdateAnnotationRequest, Annotation>newBuilder()
@@ -3230,6 +3254,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ClipAssetRequest, ClipAssetResponse> clipAssetTransportSettings =
         HttpJsonCallSettings.<ClipAssetRequest, ClipAssetResponse>newBuilder()
@@ -3241,6 +3266,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GenerateHlsUriRequest, GenerateHlsUriResponse>
         generateHlsUriTransportSettings =
@@ -3253,6 +3279,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ImportAssetsRequest, Operation> importAssetsTransportSettings =
         HttpJsonCallSettings.<ImportAssetsRequest, Operation>newBuilder()
@@ -3264,6 +3291,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateSearchConfigRequest, SearchConfig>
         createSearchConfigTransportSettings =
@@ -3276,6 +3304,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateSearchConfigRequest, SearchConfig>
         updateSearchConfigTransportSettings =
@@ -3301,6 +3330,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteSearchConfigRequest, Empty> deleteSearchConfigTransportSettings =
         HttpJsonCallSettings.<DeleteSearchConfigRequest, Empty>newBuilder()
@@ -3312,6 +3342,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListSearchConfigsRequest, ListSearchConfigsResponse>
         listSearchConfigsTransportSettings =
@@ -3324,6 +3355,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateSearchHypernymRequest, SearchHypernym>
         createSearchHypernymTransportSettings =
@@ -3336,6 +3368,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateSearchHypernymRequest, SearchHypernym>
         updateSearchHypernymTransportSettings =
@@ -3362,6 +3395,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DeleteSearchHypernymRequest, Empty> deleteSearchHypernymTransportSettings =
         HttpJsonCallSettings.<DeleteSearchHypernymRequest, Empty>newBuilder()
@@ -3373,6 +3407,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListSearchHypernymsRequest, ListSearchHypernymsResponse>
         listSearchHypernymsTransportSettings =
@@ -3386,6 +3421,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<SearchAssetsRequest, SearchAssetsResponse> searchAssetsTransportSettings =
         HttpJsonCallSettings.<SearchAssetsRequest, SearchAssetsResponse>newBuilder()
@@ -3397,6 +3433,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("corpus", String.valueOf(request.getCorpus()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getCorpus())
             .build();
     HttpJsonCallSettings<SearchIndexEndpointRequest, SearchIndexEndpointResponse>
         searchIndexEndpointTransportSettings =
@@ -3410,6 +3447,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                       builder.add("index_endpoint", String.valueOf(request.getIndexEndpoint()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getIndexEndpoint())
                 .build();
     HttpJsonCallSettings<CreateIndexEndpointRequest, Operation>
         createIndexEndpointTransportSettings =
@@ -3422,6 +3460,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetIndexEndpointRequest, IndexEndpoint> getIndexEndpointTransportSettings =
         HttpJsonCallSettings.<GetIndexEndpointRequest, IndexEndpoint>newBuilder()
@@ -3433,6 +3472,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListIndexEndpointsRequest, ListIndexEndpointsResponse>
         listIndexEndpointsTransportSettings =
@@ -3445,6 +3485,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateIndexEndpointRequest, Operation>
         updateIndexEndpointTransportSettings =
@@ -3471,6 +3512,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DeployIndexRequest, Operation> deployIndexTransportSettings =
         HttpJsonCallSettings.<DeployIndexRequest, Operation>newBuilder()
@@ -3482,6 +3524,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("index_endpoint", String.valueOf(request.getIndexEndpoint()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getIndexEndpoint())
             .build();
     HttpJsonCallSettings<UndeployIndexRequest, Operation> undeployIndexTransportSettings =
         HttpJsonCallSettings.<UndeployIndexRequest, Operation>newBuilder()
@@ -3493,6 +3536,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("index_endpoint", String.valueOf(request.getIndexEndpoint()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getIndexEndpoint())
             .build();
     HttpJsonCallSettings<CreateCollectionRequest, Operation> createCollectionTransportSettings =
         HttpJsonCallSettings.<CreateCollectionRequest, Operation>newBuilder()
@@ -3504,6 +3548,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteCollectionRequest, Operation> deleteCollectionTransportSettings =
         HttpJsonCallSettings.<DeleteCollectionRequest, Operation>newBuilder()
@@ -3515,6 +3560,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetCollectionRequest, Collection> getCollectionTransportSettings =
         HttpJsonCallSettings.<GetCollectionRequest, Collection>newBuilder()
@@ -3526,6 +3572,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateCollectionRequest, Collection> updateCollectionTransportSettings =
         HttpJsonCallSettings.<UpdateCollectionRequest, Collection>newBuilder()
@@ -3549,6 +3596,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<AddCollectionItemRequest, AddCollectionItemResponse>
         addCollectionItemTransportSettings =
@@ -3589,6 +3637,7 @@ public class HttpJsonWarehouseStub extends WarehouseStub {
                       builder.add("collection", String.valueOf(request.getCollection()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCollection())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

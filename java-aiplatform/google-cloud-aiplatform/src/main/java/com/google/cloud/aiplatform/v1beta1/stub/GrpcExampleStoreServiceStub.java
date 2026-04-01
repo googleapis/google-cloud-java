@@ -323,6 +323,7 @@ public class GrpcExampleStoreServiceStub extends ExampleStoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetExampleStoreRequest, ExampleStore> getExampleStoreTransportSettings =
         GrpcCallSettings.<GetExampleStoreRequest, ExampleStore>newBuilder()
@@ -333,6 +334,7 @@ public class GrpcExampleStoreServiceStub extends ExampleStoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateExampleStoreRequest, Operation> updateExampleStoreTransportSettings =
         GrpcCallSettings.<UpdateExampleStoreRequest, Operation>newBuilder()
@@ -354,6 +356,7 @@ public class GrpcExampleStoreServiceStub extends ExampleStoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListExampleStoresRequest, ListExampleStoresResponse>
         listExampleStoresTransportSettings =
@@ -365,6 +368,7 @@ public class GrpcExampleStoreServiceStub extends ExampleStoreServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpsertExamplesRequest, UpsertExamplesResponse>
         upsertExamplesTransportSettings =
@@ -376,6 +380,7 @@ public class GrpcExampleStoreServiceStub extends ExampleStoreServiceStub {
                       builder.add("example_store", String.valueOf(request.getExampleStore()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getExampleStore())
                 .build();
     GrpcCallSettings<RemoveExamplesRequest, RemoveExamplesResponse>
         removeExamplesTransportSettings =
@@ -387,6 +392,7 @@ public class GrpcExampleStoreServiceStub extends ExampleStoreServiceStub {
                       builder.add("example_store", String.valueOf(request.getExampleStore()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getExampleStore())
                 .build();
     GrpcCallSettings<SearchExamplesRequest, SearchExamplesResponse>
         searchExamplesTransportSettings =
@@ -398,6 +404,7 @@ public class GrpcExampleStoreServiceStub extends ExampleStoreServiceStub {
                       builder.add("example_store", String.valueOf(request.getExampleStore()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getExampleStore())
                 .build();
     GrpcCallSettings<FetchExamplesRequest, FetchExamplesResponse> fetchExamplesTransportSettings =
         GrpcCallSettings.<FetchExamplesRequest, FetchExamplesResponse>newBuilder()
@@ -408,6 +415,7 @@ public class GrpcExampleStoreServiceStub extends ExampleStoreServiceStub {
                   builder.add("example_store", String.valueOf(request.getExampleStore()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getExampleStore())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -438,6 +446,7 @@ public class GrpcExampleStoreServiceStub extends ExampleStoreServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -448,6 +457,7 @@ public class GrpcExampleStoreServiceStub extends ExampleStoreServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -459,6 +469,7 @@ public class GrpcExampleStoreServiceStub extends ExampleStoreServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createExampleStoreCallable =

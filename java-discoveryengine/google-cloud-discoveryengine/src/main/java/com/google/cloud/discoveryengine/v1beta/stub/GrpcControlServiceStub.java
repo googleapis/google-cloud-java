@@ -162,6 +162,7 @@ public class GrpcControlServiceStub extends ControlServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteControlRequest, Empty> deleteControlTransportSettings =
         GrpcCallSettings.<DeleteControlRequest, Empty>newBuilder()
@@ -172,6 +173,7 @@ public class GrpcControlServiceStub extends ControlServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateControlRequest, Control> updateControlTransportSettings =
         GrpcCallSettings.<UpdateControlRequest, Control>newBuilder()
@@ -192,6 +194,7 @@ public class GrpcControlServiceStub extends ControlServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListControlsRequest, ListControlsResponse> listControlsTransportSettings =
         GrpcCallSettings.<ListControlsRequest, ListControlsResponse>newBuilder()
@@ -202,6 +205,7 @@ public class GrpcControlServiceStub extends ControlServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.createControlCallable =

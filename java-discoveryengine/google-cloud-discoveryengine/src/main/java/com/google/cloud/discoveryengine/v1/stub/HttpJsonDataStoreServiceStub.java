@@ -529,6 +529,7 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getCmekConfigName())
             .build();
     HttpJsonCallSettings<GetDataStoreRequest, DataStore> getDataStoreTransportSettings =
         HttpJsonCallSettings.<GetDataStoreRequest, DataStore>newBuilder()
@@ -540,6 +541,7 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListDataStoresRequest, ListDataStoresResponse>
         listDataStoresTransportSettings =
@@ -552,6 +554,7 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteDataStoreRequest, Operation> deleteDataStoreTransportSettings =
         HttpJsonCallSettings.<DeleteDataStoreRequest, Operation>newBuilder()
@@ -563,6 +566,7 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateDataStoreRequest, DataStore> updateDataStoreTransportSettings =
         HttpJsonCallSettings.<UpdateDataStoreRequest, DataStore>newBuilder()

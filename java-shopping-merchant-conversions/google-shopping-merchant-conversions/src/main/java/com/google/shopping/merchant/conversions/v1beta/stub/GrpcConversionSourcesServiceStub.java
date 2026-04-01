@@ -193,6 +193,7 @@ public class GrpcConversionSourcesServiceStub extends ConversionSourcesServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateConversionSourceRequest, ConversionSource>
         updateConversionSourceTransportSettings =
@@ -216,6 +217,7 @@ public class GrpcConversionSourcesServiceStub extends ConversionSourcesServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UndeleteConversionSourceRequest, ConversionSource>
         undeleteConversionSourceTransportSettings =
@@ -227,6 +229,7 @@ public class GrpcConversionSourcesServiceStub extends ConversionSourcesServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetConversionSourceRequest, ConversionSource>
         getConversionSourceTransportSettings =
@@ -238,6 +241,7 @@ public class GrpcConversionSourcesServiceStub extends ConversionSourcesServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListConversionSourcesRequest, ListConversionSourcesResponse>
         listConversionSourcesTransportSettings =
@@ -250,6 +254,7 @@ public class GrpcConversionSourcesServiceStub extends ConversionSourcesServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createConversionSourceCallable =

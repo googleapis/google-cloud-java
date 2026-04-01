@@ -474,6 +474,7 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-networkconnectivity")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

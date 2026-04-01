@@ -218,6 +218,7 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
                   builder.add("data_store", String.valueOf(request.getDataStore()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getDataStore())
             .build();
     GrpcCallSettings<AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>
         advancedCompleteQueryTransportSettings =
@@ -231,6 +232,7 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
                           "completion_config", String.valueOf(request.getCompletionConfig()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCompletionConfig())
                 .build();
     GrpcCallSettings<ImportSuggestionDenyListEntriesRequest, Operation>
         importSuggestionDenyListEntriesTransportSettings =
@@ -242,6 +244,7 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<PurgeSuggestionDenyListEntriesRequest, Operation>
         purgeSuggestionDenyListEntriesTransportSettings =
@@ -253,6 +256,7 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ImportCompletionSuggestionsRequest, Operation>
         importCompletionSuggestionsTransportSettings =
@@ -264,6 +268,7 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<PurgeCompletionSuggestionsRequest, Operation>
         purgeCompletionSuggestionsTransportSettings =
@@ -275,6 +280,7 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.completeQueryCallable =

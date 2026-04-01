@@ -53,6 +53,7 @@ import com.google.cloud.memorystore.v1.GetBackupCollectionRequest;
 import com.google.cloud.memorystore.v1.GetBackupRequest;
 import com.google.cloud.memorystore.v1.GetCertificateAuthorityRequest;
 import com.google.cloud.memorystore.v1.GetInstanceRequest;
+import com.google.cloud.memorystore.v1.GetSharedRegionalCertificateAuthorityRequest;
 import com.google.cloud.memorystore.v1.Instance;
 import com.google.cloud.memorystore.v1.ListBackupCollectionsRequest;
 import com.google.cloud.memorystore.v1.ListBackupCollectionsResponse;
@@ -62,6 +63,7 @@ import com.google.cloud.memorystore.v1.ListInstancesRequest;
 import com.google.cloud.memorystore.v1.ListInstancesResponse;
 import com.google.cloud.memorystore.v1.OperationMetadata;
 import com.google.cloud.memorystore.v1.RescheduleMaintenanceRequest;
+import com.google.cloud.memorystore.v1.SharedRegionalCertificateAuthority;
 import com.google.cloud.memorystore.v1.UpdateInstanceRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -316,6 +318,45 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<CertificateAuthority>newBuilder()
                       .setDefaultInstance(CertificateAuthority.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+      getSharedRegionalCertificateAuthorityMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.memorystore.v1.Memorystore/GetSharedRegionalCertificateAuthority")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<GetSharedRegionalCertificateAuthorityRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/sharedRegionalCertificateAuthority}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSharedRegionalCertificateAuthorityRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSharedRegionalCertificateAuthorityRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SharedRegionalCertificateAuthority>newBuilder()
+                      .setDefaultInstance(SharedRegionalCertificateAuthority.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -702,6 +743,9 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
       deleteInstanceOperationCallable;
   private final UnaryCallable<GetCertificateAuthorityRequest, CertificateAuthority>
       getCertificateAuthorityCallable;
+  private final UnaryCallable<
+          GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+      getSharedRegionalCertificateAuthorityCallable;
   private final UnaryCallable<RescheduleMaintenanceRequest, Operation>
       rescheduleMaintenanceCallable;
   private final OperationCallable<RescheduleMaintenanceRequest, Instance, OperationMetadata>
@@ -810,6 +854,7 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         HttpJsonCallSettings.<GetInstanceRequest, Instance>newBuilder()
@@ -821,6 +866,7 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateInstanceRequest, Operation> createInstanceTransportSettings =
         HttpJsonCallSettings.<CreateInstanceRequest, Operation>newBuilder()
@@ -832,6 +878,7 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateInstanceRequest, Operation> updateInstanceTransportSettings =
         HttpJsonCallSettings.<UpdateInstanceRequest, Operation>newBuilder()
@@ -854,6 +901,7 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetCertificateAuthorityRequest, CertificateAuthority>
         getCertificateAuthorityTransportSettings =
@@ -866,6 +914,23 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<
+            GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+        getSharedRegionalCertificateAuthorityTransportSettings =
+            HttpJsonCallSettings
+                .<GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+                    newBuilder()
+                .setMethodDescriptor(getSharedRegionalCertificateAuthorityMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<RescheduleMaintenanceRequest, Operation>
         rescheduleMaintenanceTransportSettings =
@@ -878,6 +943,7 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListBackupCollectionsRequest, ListBackupCollectionsResponse>
         listBackupCollectionsTransportSettings =
@@ -891,6 +957,7 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetBackupCollectionRequest, BackupCollection>
         getBackupCollectionTransportSettings =
@@ -903,6 +970,7 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
         HttpJsonCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
@@ -914,6 +982,7 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
         HttpJsonCallSettings.<GetBackupRequest, Backup>newBuilder()
@@ -925,6 +994,7 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteBackupRequest, Operation> deleteBackupTransportSettings =
         HttpJsonCallSettings.<DeleteBackupRequest, Operation>newBuilder()
@@ -936,6 +1006,7 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ExportBackupRequest, Operation> exportBackupTransportSettings =
         HttpJsonCallSettings.<ExportBackupRequest, Operation>newBuilder()
@@ -947,6 +1018,7 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<BackupInstanceRequest, Operation> backupInstanceTransportSettings =
         HttpJsonCallSettings.<BackupInstanceRequest, Operation>newBuilder()
@@ -958,6 +1030,7 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -1023,6 +1096,11 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
         callableFactory.createUnaryCallable(
             getCertificateAuthorityTransportSettings,
             settings.getCertificateAuthoritySettings(),
+            clientContext);
+    this.getSharedRegionalCertificateAuthorityCallable =
+        callableFactory.createUnaryCallable(
+            getSharedRegionalCertificateAuthorityTransportSettings,
+            settings.getSharedRegionalCertificateAuthoritySettings(),
             clientContext);
     this.rescheduleMaintenanceCallable =
         callableFactory.createUnaryCallable(
@@ -1109,6 +1187,7 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
     methodDescriptors.add(updateInstanceMethodDescriptor);
     methodDescriptors.add(deleteInstanceMethodDescriptor);
     methodDescriptors.add(getCertificateAuthorityMethodDescriptor);
+    methodDescriptors.add(getSharedRegionalCertificateAuthorityMethodDescriptor);
     methodDescriptors.add(rescheduleMaintenanceMethodDescriptor);
     methodDescriptors.add(listBackupCollectionsMethodDescriptor);
     methodDescriptors.add(getBackupCollectionMethodDescriptor);
@@ -1179,6 +1258,13 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
   public UnaryCallable<GetCertificateAuthorityRequest, CertificateAuthority>
       getCertificateAuthorityCallable() {
     return getCertificateAuthorityCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+      getSharedRegionalCertificateAuthorityCallable() {
+    return getSharedRegionalCertificateAuthorityCallable;
   }
 
   @Override

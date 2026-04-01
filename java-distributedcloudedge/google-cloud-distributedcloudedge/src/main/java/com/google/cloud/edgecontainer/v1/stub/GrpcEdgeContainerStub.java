@@ -430,6 +430,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
         GrpcCallSettings.<GetClusterRequest, Cluster>newBuilder()
@@ -440,6 +441,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
         GrpcCallSettings.<CreateClusterRequest, Operation>newBuilder()
@@ -450,6 +452,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateClusterRequest, Operation> updateClusterTransportSettings =
         GrpcCallSettings.<UpdateClusterRequest, Operation>newBuilder()
@@ -470,6 +473,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteClusterRequest, Operation> deleteClusterTransportSettings =
         GrpcCallSettings.<DeleteClusterRequest, Operation>newBuilder()
@@ -480,6 +484,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
         generateAccessTokenTransportSettings =
@@ -491,6 +496,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                       builder.add("cluster", String.valueOf(request.getCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCluster())
                 .build();
     GrpcCallSettings<GenerateOfflineCredentialRequest, GenerateOfflineCredentialResponse>
         generateOfflineCredentialTransportSettings =
@@ -503,6 +509,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                       builder.add("cluster", String.valueOf(request.getCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCluster())
                 .build();
     GrpcCallSettings<ListNodePoolsRequest, ListNodePoolsResponse> listNodePoolsTransportSettings =
         GrpcCallSettings.<ListNodePoolsRequest, ListNodePoolsResponse>newBuilder()
@@ -513,6 +520,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetNodePoolRequest, NodePool> getNodePoolTransportSettings =
         GrpcCallSettings.<GetNodePoolRequest, NodePool>newBuilder()
@@ -523,6 +531,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateNodePoolRequest, Operation> createNodePoolTransportSettings =
         GrpcCallSettings.<CreateNodePoolRequest, Operation>newBuilder()
@@ -533,6 +542,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateNodePoolRequest, Operation> updateNodePoolTransportSettings =
         GrpcCallSettings.<UpdateNodePoolRequest, Operation>newBuilder()
@@ -553,6 +563,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListMachinesRequest, ListMachinesResponse> listMachinesTransportSettings =
         GrpcCallSettings.<ListMachinesRequest, ListMachinesResponse>newBuilder()
@@ -563,6 +574,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetMachineRequest, Machine> getMachineTransportSettings =
         GrpcCallSettings.<GetMachineRequest, Machine>newBuilder()
@@ -573,6 +585,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListVpnConnectionsRequest, ListVpnConnectionsResponse>
         listVpnConnectionsTransportSettings =
@@ -584,6 +597,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetVpnConnectionRequest, VpnConnection> getVpnConnectionTransportSettings =
         GrpcCallSettings.<GetVpnConnectionRequest, VpnConnection>newBuilder()
@@ -594,6 +608,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateVpnConnectionRequest, Operation> createVpnConnectionTransportSettings =
         GrpcCallSettings.<CreateVpnConnectionRequest, Operation>newBuilder()
@@ -604,6 +619,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteVpnConnectionRequest, Operation> deleteVpnConnectionTransportSettings =
         GrpcCallSettings.<DeleteVpnConnectionRequest, Operation>newBuilder()
@@ -614,6 +630,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetServerConfigRequest, ServerConfig> getServerConfigTransportSettings =
         GrpcCallSettings.<GetServerConfigRequest, ServerConfig>newBuilder()
@@ -624,6 +641,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

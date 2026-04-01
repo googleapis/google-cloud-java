@@ -196,6 +196,7 @@ public class HttpJsonOperatingSystemVersionServiceStub extends OperatingSystemVe
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListOperatingSystemVersionsRequest, ListOperatingSystemVersionsResponse>
         listOperatingSystemVersionsTransportSettings =
@@ -210,6 +211,7 @@ public class HttpJsonOperatingSystemVersionServiceStub extends OperatingSystemVe
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getOperatingSystemVersionCallable =

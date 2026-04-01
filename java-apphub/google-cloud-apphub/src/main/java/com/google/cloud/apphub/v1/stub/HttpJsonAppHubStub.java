@@ -1518,6 +1518,7 @@ public class HttpJsonAppHubStub extends AppHubStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             ListServiceProjectAttachmentsRequest, ListServiceProjectAttachmentsResponse>
@@ -1533,6 +1534,7 @@ public class HttpJsonAppHubStub extends AppHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateServiceProjectAttachmentRequest, Operation>
         createServiceProjectAttachmentTransportSettings =
@@ -1545,6 +1547,7 @@ public class HttpJsonAppHubStub extends AppHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetServiceProjectAttachmentRequest, ServiceProjectAttachment>
         getServiceProjectAttachmentTransportSettings =
@@ -1558,6 +1561,7 @@ public class HttpJsonAppHubStub extends AppHubStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DeleteServiceProjectAttachmentRequest, Operation>
         deleteServiceProjectAttachmentTransportSettings =
@@ -1570,6 +1574,7 @@ public class HttpJsonAppHubStub extends AppHubStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             DetachServiceProjectAttachmentRequest, DetachServiceProjectAttachmentResponse>
@@ -1585,6 +1590,7 @@ public class HttpJsonAppHubStub extends AppHubStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListDiscoveredServicesRequest, ListDiscoveredServicesResponse>
         listDiscoveredServicesTransportSettings =
@@ -1598,6 +1604,7 @@ public class HttpJsonAppHubStub extends AppHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDiscoveredServiceRequest, DiscoveredService>
         getDiscoveredServiceTransportSettings =
@@ -1610,6 +1617,7 @@ public class HttpJsonAppHubStub extends AppHubStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<LookupDiscoveredServiceRequest, LookupDiscoveredServiceResponse>
         lookupDiscoveredServiceTransportSettings =
@@ -1623,6 +1631,7 @@ public class HttpJsonAppHubStub extends AppHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListServicesRequest, ListServicesResponse> listServicesTransportSettings =
         HttpJsonCallSettings.<ListServicesRequest, ListServicesResponse>newBuilder()
@@ -1634,6 +1643,7 @@ public class HttpJsonAppHubStub extends AppHubStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateServiceRequest, Operation> createServiceTransportSettings =
         HttpJsonCallSettings.<CreateServiceRequest, Operation>newBuilder()
@@ -1645,6 +1655,7 @@ public class HttpJsonAppHubStub extends AppHubStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetServiceRequest, Service> getServiceTransportSettings =
         HttpJsonCallSettings.<GetServiceRequest, Service>newBuilder()
@@ -1656,6 +1667,7 @@ public class HttpJsonAppHubStub extends AppHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateServiceRequest, Operation> updateServiceTransportSettings =
         HttpJsonCallSettings.<UpdateServiceRequest, Operation>newBuilder()
@@ -1678,6 +1690,7 @@ public class HttpJsonAppHubStub extends AppHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListDiscoveredWorkloadsRequest, ListDiscoveredWorkloadsResponse>
         listDiscoveredWorkloadsTransportSettings =
@@ -1691,6 +1704,7 @@ public class HttpJsonAppHubStub extends AppHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDiscoveredWorkloadRequest, DiscoveredWorkload>
         getDiscoveredWorkloadTransportSettings =
@@ -1703,6 +1717,7 @@ public class HttpJsonAppHubStub extends AppHubStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<LookupDiscoveredWorkloadRequest, LookupDiscoveredWorkloadResponse>
         lookupDiscoveredWorkloadTransportSettings =
@@ -1716,6 +1731,7 @@ public class HttpJsonAppHubStub extends AppHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListWorkloadsRequest, ListWorkloadsResponse>
         listWorkloadsTransportSettings =
@@ -1728,6 +1744,7 @@ public class HttpJsonAppHubStub extends AppHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateWorkloadRequest, Operation> createWorkloadTransportSettings =
         HttpJsonCallSettings.<CreateWorkloadRequest, Operation>newBuilder()
@@ -1739,6 +1756,7 @@ public class HttpJsonAppHubStub extends AppHubStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetWorkloadRequest, Workload> getWorkloadTransportSettings =
         HttpJsonCallSettings.<GetWorkloadRequest, Workload>newBuilder()
@@ -1750,6 +1768,7 @@ public class HttpJsonAppHubStub extends AppHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateWorkloadRequest, Operation> updateWorkloadTransportSettings =
         HttpJsonCallSettings.<UpdateWorkloadRequest, Operation>newBuilder()
@@ -1772,6 +1791,7 @@ public class HttpJsonAppHubStub extends AppHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListApplicationsRequest, ListApplicationsResponse>
         listApplicationsTransportSettings =
@@ -1784,6 +1804,7 @@ public class HttpJsonAppHubStub extends AppHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateApplicationRequest, Operation> createApplicationTransportSettings =
         HttpJsonCallSettings.<CreateApplicationRequest, Operation>newBuilder()
@@ -1795,6 +1816,7 @@ public class HttpJsonAppHubStub extends AppHubStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetApplicationRequest, Application> getApplicationTransportSettings =
         HttpJsonCallSettings.<GetApplicationRequest, Application>newBuilder()
@@ -1806,6 +1828,7 @@ public class HttpJsonAppHubStub extends AppHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateApplicationRequest, Operation> updateApplicationTransportSettings =
         HttpJsonCallSettings.<UpdateApplicationRequest, Operation>newBuilder()
@@ -1829,6 +1852,7 @@ public class HttpJsonAppHubStub extends AppHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -1863,6 +1887,7 @@ public class HttpJsonAppHubStub extends AppHubStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1874,6 +1899,7 @@ public class HttpJsonAppHubStub extends AppHubStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1886,6 +1912,7 @@ public class HttpJsonAppHubStub extends AppHubStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.lookupServiceProjectAttachmentCallable =

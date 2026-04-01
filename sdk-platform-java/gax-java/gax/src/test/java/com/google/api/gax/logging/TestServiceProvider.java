@@ -30,12 +30,11 @@
 
 package com.google.api.gax.logging;
 
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 import org.slf4j.ILoggerFactory;
 import org.slf4j.IMarkerFactory;
+import org.slf4j.Logger;
 import org.slf4j.spi.MDCAdapter;
 import org.slf4j.spi.SLF4JServiceProvider;
 
@@ -45,12 +44,18 @@ import org.slf4j.spi.SLF4JServiceProvider;
  */
 public class TestServiceProvider implements SLF4JServiceProvider {
 
+  private final ConcurrentMap<String, Logger> loggers = new ConcurrentHashMap<>();
+  private final ILoggerFactory loggerFactory =
+      new ILoggerFactory() {
+        @Override
+        public Logger getLogger(String name) {
+          return loggers.computeIfAbsent(name, TestLogger::new);
+        }
+      };
+
   @Override
   public ILoggerFactory getLoggerFactory() {
-    // mock behavior when provider present
-    ILoggerFactory mockLoggerFactory = mock(ILoggerFactory.class);
-    when(mockLoggerFactory.getLogger(anyString())).thenReturn(new TestLogger("test-logger"));
-    return mockLoggerFactory;
+    return loggerFactory;
   }
 
   @Override

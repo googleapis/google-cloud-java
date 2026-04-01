@@ -1580,6 +1580,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-dlp")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

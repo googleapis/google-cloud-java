@@ -298,6 +298,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListFeedsRequest, ListFeedsResponse> listFeedsTransportSettings =
         HttpJsonCallSettings.<ListFeedsRequest, ListFeedsResponse>newBuilder()
@@ -331,6 +332,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createFeedCallable =

@@ -354,6 +354,7 @@ public class UsageServiceStubSettings extends StubSettings<UsageServiceStubSetti
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-capacityplanner")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

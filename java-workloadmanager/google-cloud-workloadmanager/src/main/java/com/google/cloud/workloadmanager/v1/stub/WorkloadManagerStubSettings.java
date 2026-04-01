@@ -746,6 +746,7 @@ public class WorkloadManagerStubSettings extends StubSettings<WorkloadManagerStu
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-workloadmanager")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

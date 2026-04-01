@@ -1898,6 +1898,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
         HttpJsonCallSettings.<GetClusterRequest, Cluster>newBuilder()
@@ -1909,6 +1910,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
         HttpJsonCallSettings.<CreateClusterRequest, Operation>newBuilder()
@@ -1920,6 +1922,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateClusterRequest, Operation> updateClusterTransportSettings =
         HttpJsonCallSettings.<UpdateClusterRequest, Operation>newBuilder()
@@ -1942,6 +1945,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ImportClusterRequest, Operation> importClusterTransportSettings =
         HttpJsonCallSettings.<ImportClusterRequest, Operation>newBuilder()
@@ -1953,6 +1957,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpgradeClusterRequest, Operation> upgradeClusterTransportSettings =
         HttpJsonCallSettings.<UpgradeClusterRequest, Operation>newBuilder()
@@ -1964,6 +1969,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteClusterRequest, Operation> deleteClusterTransportSettings =
         HttpJsonCallSettings.<DeleteClusterRequest, Operation>newBuilder()
@@ -1975,6 +1981,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<PromoteClusterRequest, Operation> promoteClusterTransportSettings =
         HttpJsonCallSettings.<PromoteClusterRequest, Operation>newBuilder()
@@ -1986,6 +1993,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<SwitchoverClusterRequest, Operation> switchoverClusterTransportSettings =
         HttpJsonCallSettings.<SwitchoverClusterRequest, Operation>newBuilder()
@@ -1997,6 +2005,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RestoreClusterRequest, Operation> restoreClusterTransportSettings =
         HttpJsonCallSettings.<RestoreClusterRequest, Operation>newBuilder()
@@ -2008,6 +2017,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateSecondaryClusterRequest, Operation>
         createSecondaryClusterTransportSettings =
@@ -2020,6 +2030,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListInstancesRequest, ListInstancesResponse>
         listInstancesTransportSettings =
@@ -2032,6 +2043,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         HttpJsonCallSettings.<GetInstanceRequest, Instance>newBuilder()
@@ -2043,6 +2055,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateInstanceRequest, Operation> createInstanceTransportSettings =
         HttpJsonCallSettings.<CreateInstanceRequest, Operation>newBuilder()
@@ -2054,6 +2067,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateSecondaryInstanceRequest, Operation>
         createSecondaryInstanceTransportSettings =
@@ -2066,6 +2080,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<BatchCreateInstancesRequest, Operation>
         batchCreateInstancesTransportSettings =
@@ -2078,6 +2093,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateInstanceRequest, Operation> updateInstanceTransportSettings =
         HttpJsonCallSettings.<UpdateInstanceRequest, Operation>newBuilder()
@@ -2100,6 +2116,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<FailoverInstanceRequest, Operation> failoverInstanceTransportSettings =
         HttpJsonCallSettings.<FailoverInstanceRequest, Operation>newBuilder()
@@ -2111,6 +2128,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<InjectFaultRequest, Operation> injectFaultTransportSettings =
         HttpJsonCallSettings.<InjectFaultRequest, Operation>newBuilder()
@@ -2122,6 +2140,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RestartInstanceRequest, Operation> restartInstanceTransportSettings =
         HttpJsonCallSettings.<RestartInstanceRequest, Operation>newBuilder()
@@ -2133,6 +2152,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ExecuteSqlRequest, ExecuteSqlResponse> executeSqlTransportSettings =
         HttpJsonCallSettings.<ExecuteSqlRequest, ExecuteSqlResponse>newBuilder()
@@ -2144,6 +2164,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("instance", String.valueOf(request.getInstance()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getInstance())
             .build();
     HttpJsonCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
         HttpJsonCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
@@ -2155,6 +2176,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
         HttpJsonCallSettings.<GetBackupRequest, Backup>newBuilder()
@@ -2166,6 +2188,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateBackupRequest, Operation> createBackupTransportSettings =
         HttpJsonCallSettings.<CreateBackupRequest, Operation>newBuilder()
@@ -2177,6 +2200,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateBackupRequest, Operation> updateBackupTransportSettings =
         HttpJsonCallSettings.<UpdateBackupRequest, Operation>newBuilder()
@@ -2199,6 +2223,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListSupportedDatabaseFlagsRequest, ListSupportedDatabaseFlagsResponse>
         listSupportedDatabaseFlagsTransportSettings =
@@ -2212,6 +2237,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GenerateClientCertificateRequest, GenerateClientCertificateResponse>
         generateClientCertificateTransportSettings =
@@ -2225,6 +2251,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetConnectionInfoRequest, ConnectionInfo>
         getConnectionInfoTransportSettings =
@@ -2237,6 +2264,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListUsersRequest, ListUsersResponse> listUsersTransportSettings =
         HttpJsonCallSettings.<ListUsersRequest, ListUsersResponse>newBuilder()
@@ -2248,6 +2276,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetUserRequest, User> getUserTransportSettings =
         HttpJsonCallSettings.<GetUserRequest, User>newBuilder()
@@ -2259,6 +2288,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateUserRequest, User> createUserTransportSettings =
         HttpJsonCallSettings.<CreateUserRequest, User>newBuilder()
@@ -2270,6 +2300,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateUserRequest, User> updateUserTransportSettings =
         HttpJsonCallSettings.<UpdateUserRequest, User>newBuilder()
@@ -2292,6 +2323,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListDatabasesRequest, ListDatabasesResponse>
         listDatabasesTransportSettings =
@@ -2304,6 +2336,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateDatabaseRequest, Database> createDatabaseTransportSettings =
         HttpJsonCallSettings.<CreateDatabaseRequest, Database>newBuilder()
@@ -2315,6 +2348,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

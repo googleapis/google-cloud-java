@@ -1021,3 +1021,10 @@ google-auth-library-parent:1.43.0:1.43.1-SNAPSHOT
 google-auth-library-appengine:1.43.0:1.43.1-SNAPSHOT
 google-auth-library-credentials:1.43.0:1.43.1-SNAPSHOT
 google-auth-library-oauth2-http:1.43.0:1.43.1-SNAPSHOT
+google-cloud-storage:2.64.1:2.64.2-SNAPSHOT
+gapic-google-cloud-storage-v2:2.64.1:2.64.2-SNAPSHOT
+grpc-google-cloud-storage-v2:2.64.1:2.64.2-SNAPSHOT
+proto-google-cloud-storage-v2:2.64.1:2.64.2-SNAPSHOT
+google-cloud-storage-control:2.64.1:2.64.2-SNAPSHOT
+proto-google-cloud-storage-control-v2:2.64.1:2.64.2-SNAPSHOT
+grpc-google-cloud-storage-control-v2:2.64.1:2.64.2-SNAPSHOT

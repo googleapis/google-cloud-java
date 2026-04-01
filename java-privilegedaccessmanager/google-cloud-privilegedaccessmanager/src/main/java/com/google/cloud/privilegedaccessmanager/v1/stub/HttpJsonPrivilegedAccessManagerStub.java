@@ -890,6 +890,7 @@ public class HttpJsonPrivilegedAccessManagerStub extends PrivilegedAccessManager
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListEntitlementsRequest, ListEntitlementsResponse>
         listEntitlementsTransportSettings =
@@ -902,6 +903,7 @@ public class HttpJsonPrivilegedAccessManagerStub extends PrivilegedAccessManager
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<SearchEntitlementsRequest, SearchEntitlementsResponse>
         searchEntitlementsTransportSettings =
@@ -914,6 +916,7 @@ public class HttpJsonPrivilegedAccessManagerStub extends PrivilegedAccessManager
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetEntitlementRequest, Entitlement> getEntitlementTransportSettings =
         HttpJsonCallSettings.<GetEntitlementRequest, Entitlement>newBuilder()
@@ -925,6 +928,7 @@ public class HttpJsonPrivilegedAccessManagerStub extends PrivilegedAccessManager
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateEntitlementRequest, Operation> createEntitlementTransportSettings =
         HttpJsonCallSettings.<CreateEntitlementRequest, Operation>newBuilder()
@@ -936,6 +940,7 @@ public class HttpJsonPrivilegedAccessManagerStub extends PrivilegedAccessManager
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteEntitlementRequest, Operation> deleteEntitlementTransportSettings =
         HttpJsonCallSettings.<DeleteEntitlementRequest, Operation>newBuilder()
@@ -947,6 +952,7 @@ public class HttpJsonPrivilegedAccessManagerStub extends PrivilegedAccessManager
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateEntitlementRequest, Operation> updateEntitlementTransportSettings =
         HttpJsonCallSettings.<UpdateEntitlementRequest, Operation>newBuilder()
@@ -970,6 +976,7 @@ public class HttpJsonPrivilegedAccessManagerStub extends PrivilegedAccessManager
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<SearchGrantsRequest, SearchGrantsResponse> searchGrantsTransportSettings =
         HttpJsonCallSettings.<SearchGrantsRequest, SearchGrantsResponse>newBuilder()
@@ -981,6 +988,7 @@ public class HttpJsonPrivilegedAccessManagerStub extends PrivilegedAccessManager
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetGrantRequest, Grant> getGrantTransportSettings =
         HttpJsonCallSettings.<GetGrantRequest, Grant>newBuilder()
@@ -992,6 +1000,7 @@ public class HttpJsonPrivilegedAccessManagerStub extends PrivilegedAccessManager
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateGrantRequest, Grant> createGrantTransportSettings =
         HttpJsonCallSettings.<CreateGrantRequest, Grant>newBuilder()
@@ -1003,6 +1012,7 @@ public class HttpJsonPrivilegedAccessManagerStub extends PrivilegedAccessManager
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ApproveGrantRequest, Grant> approveGrantTransportSettings =
         HttpJsonCallSettings.<ApproveGrantRequest, Grant>newBuilder()
@@ -1014,6 +1024,7 @@ public class HttpJsonPrivilegedAccessManagerStub extends PrivilegedAccessManager
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DenyGrantRequest, Grant> denyGrantTransportSettings =
         HttpJsonCallSettings.<DenyGrantRequest, Grant>newBuilder()
@@ -1025,6 +1036,7 @@ public class HttpJsonPrivilegedAccessManagerStub extends PrivilegedAccessManager
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RevokeGrantRequest, Operation> revokeGrantTransportSettings =
         HttpJsonCallSettings.<RevokeGrantRequest, Operation>newBuilder()
@@ -1036,6 +1048,7 @@ public class HttpJsonPrivilegedAccessManagerStub extends PrivilegedAccessManager
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

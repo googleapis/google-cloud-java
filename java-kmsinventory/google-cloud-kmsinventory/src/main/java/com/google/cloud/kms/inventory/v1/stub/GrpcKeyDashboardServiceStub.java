@@ -112,6 +112,7 @@ public class GrpcKeyDashboardServiceStub extends KeyDashboardServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.listCryptoKeysCallable =

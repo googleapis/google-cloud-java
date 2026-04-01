@@ -11866,6 +11866,647 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public interface ContainerSpecOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Artifact Registry Docker image URI (e.g.,
+     * us-central1-docker.pkg.dev/my-project/my-repo/my-image:tag) of the
+     * container image that is to be run on each worker replica.
+     * </pre>
+     *
+     * <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The imageUri.
+     */
+    java.lang.String getImageUri();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Artifact Registry Docker image URI (e.g.,
+     * us-central1-docker.pkg.dev/my-project/my-repo/my-image:tag) of the
+     * container image that is to be run on each worker replica.
+     * </pre>
+     *
+     * <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for imageUri.
+     */
+    com.google.protobuf.ByteString getImageUriBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specification for deploying from a container image.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec}
+   */
+  public static final class ContainerSpec extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec)
+      ContainerSpecOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "ContainerSpec");
+    }
+
+    // Use ContainerSpec.newBuilder() to construct.
+    private ContainerSpec(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ContainerSpec() {
+      imageUri_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+          .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_ContainerSpec_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+          .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_ContainerSpec_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec.class,
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec.Builder.class);
+    }
+
+    public static final int IMAGE_URI_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object imageUri_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Artifact Registry Docker image URI (e.g.,
+     * us-central1-docker.pkg.dev/my-project/my-repo/my-image:tag) of the
+     * container image that is to be run on each worker replica.
+     * </pre>
+     *
+     * <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The imageUri.
+     */
+    @java.lang.Override
+    public java.lang.String getImageUri() {
+      java.lang.Object ref = imageUri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        imageUri_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Artifact Registry Docker image URI (e.g.,
+     * us-central1-docker.pkg.dev/my-project/my-repo/my-image:tag) of the
+     * container image that is to be run on each worker replica.
+     * </pre>
+     *
+     * <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for imageUri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getImageUriBytes() {
+      java.lang.Object ref = imageUri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        imageUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(imageUri_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, imageUri_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(imageUri_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, imageUri_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec other =
+          (com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec) obj;
+
+      if (!getImageUri().equals(other.getImageUri())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + IMAGE_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getImageUri().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specification for deploying from a container image.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec)
+        com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpecOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_ContainerSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_ContainerSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec.class,
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        imageUri_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_ContainerSpec_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec build() {
+        com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec result =
+            new com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.imageUri_ = imageUri_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec
+                .getDefaultInstance()) return this;
+        if (!other.getImageUri().isEmpty()) {
+          imageUri_ = other.imageUri_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  imageUri_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object imageUri_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Artifact Registry Docker image URI (e.g.,
+       * us-central1-docker.pkg.dev/my-project/my-repo/my-image:tag) of the
+       * container image that is to be run on each worker replica.
+       * </pre>
+       *
+       * <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The imageUri.
+       */
+      public java.lang.String getImageUri() {
+        java.lang.Object ref = imageUri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          imageUri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Artifact Registry Docker image URI (e.g.,
+       * us-central1-docker.pkg.dev/my-project/my-repo/my-image:tag) of the
+       * container image that is to be run on each worker replica.
+       * </pre>
+       *
+       * <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for imageUri.
+       */
+      public com.google.protobuf.ByteString getImageUriBytes() {
+        java.lang.Object ref = imageUri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          imageUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Artifact Registry Docker image URI (e.g.,
+       * us-central1-docker.pkg.dev/my-project/my-repo/my-image:tag) of the
+       * container image that is to be run on each worker replica.
+       * </pre>
+       *
+       * <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The imageUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setImageUri(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        imageUri_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Artifact Registry Docker image URI (e.g.,
+       * us-central1-docker.pkg.dev/my-project/my-repo/my-image:tag) of the
+       * container image that is to be run on each worker replica.
+       * </pre>
+       *
+       * <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearImageUri() {
+        imageUri_ = getDefaultInstance().getImageUri();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Artifact Registry Docker image URI (e.g.,
+       * us-central1-docker.pkg.dev/my-project/my-repo/my-image:tag) of the
+       * container image that is to be run on each worker replica.
+       * </pre>
+       *
+       * <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for imageUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setImageUriBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        imageUri_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec)
+    private static final com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ContainerSpec> PARSER =
+        new com.google.protobuf.AbstractParser<ContainerSpec>() {
+          @java.lang.Override
+          public ContainerSpec parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ContainerSpec> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ContainerSpec> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int deploymentSourceCase_ = 0;
 
@@ -11877,6 +12518,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     SOURCE_CODE_SPEC(11),
+    CONTAINER_SPEC(15),
     DEPLOYMENTSOURCE_NOT_SET(0);
     private final int value;
 
@@ -11898,6 +12540,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       switch (value) {
         case 11:
           return SOURCE_CODE_SPEC;
+        case 15:
+          return CONTAINER_SPEC;
         case 0:
           return DEPLOYMENTSOURCE_NOT_SET;
         default:
@@ -11977,6 +12621,68 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           deploymentSource_;
     }
     return com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec
+        .getDefaultInstance();
+  }
+
+  public static final int CONTAINER_SPEC_FIELD_NUMBER = 15;
+
+  /**
+   *
+   *
+   * <pre>
+   * Deploy from a container image with a defined entrypoint and commands.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec container_spec = 15;
+   * </code>
+   *
+   * @return Whether the containerSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasContainerSpec() {
+    return deploymentSourceCase_ == 15;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Deploy from a container image with a defined entrypoint and commands.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec container_spec = 15;
+   * </code>
+   *
+   * @return The containerSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec getContainerSpec() {
+    if (deploymentSourceCase_ == 15) {
+      return (com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec)
+          deploymentSource_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec
+        .getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Deploy from a container image with a defined entrypoint and commands.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec container_spec = 15;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpecOrBuilder
+      getContainerSpecOrBuilder() {
+    if (deploymentSourceCase_ == 15) {
+      return (com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec)
+          deploymentSource_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec
         .getDefaultInstance();
   }
 
@@ -12382,6 +13088,12 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           (com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec)
               deploymentSource_);
     }
+    if (deploymentSourceCase_ == 15) {
+      output.writeMessage(
+          15,
+          (com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec)
+              deploymentSource_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -12411,6 +13123,13 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               11,
               (com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec)
+                  deploymentSource_);
+    }
+    if (deploymentSourceCase_ == 15) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              15,
+              (com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec)
                   deploymentSource_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -12448,6 +13167,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       case 11:
         if (!getSourceCodeSpec().equals(other.getSourceCodeSpec())) return false;
         break;
+      case 15:
+        if (!getContainerSpec().equals(other.getContainerSpec())) return false;
+        break;
       case 0:
       default:
     }
@@ -12484,6 +13206,10 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       case 11:
         hash = (37 * hash) + SOURCE_CODE_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getSourceCodeSpec().hashCode();
+        break;
+      case 15:
+        hash = (37 * hash) + CONTAINER_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getContainerSpec().hashCode();
         break;
       case 0:
       default:
@@ -12643,6 +13369,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       if (sourceCodeSpecBuilder_ != null) {
         sourceCodeSpecBuilder_.clear();
       }
+      if (containerSpecBuilder_ != null) {
+        containerSpecBuilder_.clear();
+      }
       serviceAccount_ = "";
       packageSpec_ = null;
       if (packageSpecBuilder_ != null) {
@@ -12660,7 +13389,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         classMethods_ = null;
         classMethodsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       agentFramework_ = "";
       deploymentSourceCase_ = 0;
       deploymentSource_ = null;
@@ -12703,9 +13432,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     private void buildPartialRepeatedFields(
         com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec result) {
       if (classMethodsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           classMethods_ = java.util.Collections.unmodifiableList(classMethods_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.classMethods_ = classMethods_;
       } else {
@@ -12716,21 +13445,21 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.serviceAccount_ = serviceAccount_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.packageSpec_ =
             packageSpecBuilder_ == null ? packageSpec_ : packageSpecBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.deploymentSpec_ =
             deploymentSpecBuilder_ == null ? deploymentSpec_ : deploymentSpecBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.agentFramework_ = agentFramework_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -12742,6 +13471,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       result.deploymentSource_ = this.deploymentSource_;
       if (deploymentSourceCase_ == 11 && sourceCodeSpecBuilder_ != null) {
         result.deploymentSource_ = sourceCodeSpecBuilder_.build();
+      }
+      if (deploymentSourceCase_ == 15 && containerSpecBuilder_ != null) {
+        result.deploymentSource_ = containerSpecBuilder_.build();
       }
     }
 
@@ -12760,7 +13492,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return this;
       if (other.hasServiceAccount()) {
         serviceAccount_ = other.serviceAccount_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasPackageSpec()) {
@@ -12773,7 +13505,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         if (!other.classMethods_.isEmpty()) {
           if (classMethods_.isEmpty()) {
             classMethods_ = other.classMethods_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureClassMethodsIsMutable();
             classMethods_.addAll(other.classMethods_);
@@ -12786,7 +13518,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             classMethodsBuilder_.dispose();
             classMethodsBuilder_ = null;
             classMethods_ = other.classMethods_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
             classMethodsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetClassMethodsFieldBuilder()
@@ -12798,13 +13530,18 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       if (!other.getAgentFramework().isEmpty()) {
         agentFramework_ = other.agentFramework_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       switch (other.getDeploymentSourceCase()) {
         case SOURCE_CODE_SPEC:
           {
             mergeSourceCodeSpec(other.getSourceCodeSpec());
+            break;
+          }
+        case CONTAINER_SPEC:
+          {
+            mergeContainerSpec(other.getContainerSpec());
             break;
           }
         case DEPLOYMENTSOURCE_NOT_SET:
@@ -12841,14 +13578,14 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 serviceAccount_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     internalGetPackageSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 26:
@@ -12867,13 +13604,13 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
               {
                 input.readMessage(
                     internalGetDeploymentSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
               {
                 agentFramework_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 90:
@@ -12883,6 +13620,13 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
                 deploymentSourceCase_ = 11;
                 break;
               } // case 90
+            case 122:
+              {
+                input.readMessage(
+                    internalGetContainerSpecFieldBuilder().getBuilder(), extensionRegistry);
+                deploymentSourceCase_ = 15;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -13169,6 +13913,250 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       return sourceCodeSpecBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec,
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpecOrBuilder>
+        containerSpecBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploy from a container image with a defined entrypoint and commands.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec container_spec = 15;
+     * </code>
+     *
+     * @return Whether the containerSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasContainerSpec() {
+      return deploymentSourceCase_ == 15;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploy from a container image with a defined entrypoint and commands.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec container_spec = 15;
+     * </code>
+     *
+     * @return The containerSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec
+        getContainerSpec() {
+      if (containerSpecBuilder_ == null) {
+        if (deploymentSourceCase_ == 15) {
+          return (com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec)
+              deploymentSource_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec
+            .getDefaultInstance();
+      } else {
+        if (deploymentSourceCase_ == 15) {
+          return containerSpecBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploy from a container image with a defined entrypoint and commands.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec container_spec = 15;
+     * </code>
+     */
+    public Builder setContainerSpec(
+        com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec value) {
+      if (containerSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        deploymentSource_ = value;
+        onChanged();
+      } else {
+        containerSpecBuilder_.setMessage(value);
+      }
+      deploymentSourceCase_ = 15;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploy from a container image with a defined entrypoint and commands.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec container_spec = 15;
+     * </code>
+     */
+    public Builder setContainerSpec(
+        com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec.Builder
+            builderForValue) {
+      if (containerSpecBuilder_ == null) {
+        deploymentSource_ = builderForValue.build();
+        onChanged();
+      } else {
+        containerSpecBuilder_.setMessage(builderForValue.build());
+      }
+      deploymentSourceCase_ = 15;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploy from a container image with a defined entrypoint and commands.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec container_spec = 15;
+     * </code>
+     */
+    public Builder mergeContainerSpec(
+        com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec value) {
+      if (containerSpecBuilder_ == null) {
+        if (deploymentSourceCase_ == 15
+            && deploymentSource_
+                != com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec
+                    .getDefaultInstance()) {
+          deploymentSource_ =
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec)
+                          deploymentSource_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          deploymentSource_ = value;
+        }
+        onChanged();
+      } else {
+        if (deploymentSourceCase_ == 15) {
+          containerSpecBuilder_.mergeFrom(value);
+        } else {
+          containerSpecBuilder_.setMessage(value);
+        }
+      }
+      deploymentSourceCase_ = 15;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploy from a container image with a defined entrypoint and commands.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec container_spec = 15;
+     * </code>
+     */
+    public Builder clearContainerSpec() {
+      if (containerSpecBuilder_ == null) {
+        if (deploymentSourceCase_ == 15) {
+          deploymentSourceCase_ = 0;
+          deploymentSource_ = null;
+          onChanged();
+        }
+      } else {
+        if (deploymentSourceCase_ == 15) {
+          deploymentSourceCase_ = 0;
+          deploymentSource_ = null;
+        }
+        containerSpecBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploy from a container image with a defined entrypoint and commands.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec container_spec = 15;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec.Builder
+        getContainerSpecBuilder() {
+      return internalGetContainerSpecFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploy from a container image with a defined entrypoint and commands.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec container_spec = 15;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpecOrBuilder
+        getContainerSpecOrBuilder() {
+      if ((deploymentSourceCase_ == 15) && (containerSpecBuilder_ != null)) {
+        return containerSpecBuilder_.getMessageOrBuilder();
+      } else {
+        if (deploymentSourceCase_ == 15) {
+          return (com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec)
+              deploymentSource_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploy from a container image with a defined entrypoint and commands.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec container_spec = 15;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec,
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpecOrBuilder>
+        internalGetContainerSpecFieldBuilder() {
+      if (containerSpecBuilder_ == null) {
+        if (!(deploymentSourceCase_ == 15)) {
+          deploymentSource_ =
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec
+                  .getDefaultInstance();
+        }
+        containerSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec,
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec.Builder,
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpecOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.ContainerSpec)
+                    deploymentSource_,
+                getParentForChildren(),
+                isClean());
+        deploymentSource_ = null;
+      }
+      deploymentSourceCase_ = 15;
+      onChanged();
+      return containerSpecBuilder_;
+    }
+
     private java.lang.Object serviceAccount_ = "";
 
     /**
@@ -13187,7 +14175,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * @return Whether the serviceAccount field is set.
      */
     public boolean hasServiceAccount() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -13265,7 +14253,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       serviceAccount_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -13287,7 +14275,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      */
     public Builder clearServiceAccount() {
       serviceAccount_ = getDefaultInstance().getServiceAccount();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -13314,7 +14302,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       serviceAccount_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -13345,7 +14333,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * @return Whether the packageSpec field is set.
      */
     public boolean hasPackageSpec() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -13403,7 +14391,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       } else {
         packageSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -13432,7 +14420,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       } else {
         packageSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -13456,7 +14444,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public Builder mergePackageSpec(
         com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.PackageSpec value) {
       if (packageSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && packageSpec_ != null
             && packageSpec_
                 != com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.PackageSpec
@@ -13469,7 +14457,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         packageSpecBuilder_.mergeFrom(value);
       }
       if (packageSpec_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -13492,7 +14480,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearPackageSpec() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       packageSpec_ = null;
       if (packageSpecBuilder_ != null) {
         packageSpecBuilder_.dispose();
@@ -13520,7 +14508,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.PackageSpec.Builder
         getPackageSpecBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return internalGetPackageSpecFieldBuilder().getBuilder();
     }
@@ -13607,7 +14595,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * @return Whether the deploymentSpec field is set.
      */
     public boolean hasDeploymentSpec() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -13656,7 +14644,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       } else {
         deploymentSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -13680,7 +14668,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       } else {
         deploymentSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -13699,7 +14687,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public Builder mergeDeploymentSpec(
         com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.DeploymentSpec value) {
       if (deploymentSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && deploymentSpec_ != null
             && deploymentSpec_
                 != com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.DeploymentSpec
@@ -13712,7 +14700,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         deploymentSpecBuilder_.mergeFrom(value);
       }
       if (deploymentSpec_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -13730,7 +14718,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearDeploymentSpec() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       deploymentSpec_ = null;
       if (deploymentSpecBuilder_ != null) {
         deploymentSpecBuilder_.dispose();
@@ -13753,7 +14741,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.DeploymentSpec.Builder
         getDeploymentSpecBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return internalGetDeploymentSpecFieldBuilder().getBuilder();
     }
@@ -13813,9 +14801,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureClassMethodsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         classMethods_ = new java.util.ArrayList<com.google.protobuf.Struct>(classMethods_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -14071,7 +15059,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public Builder clearClassMethods() {
       if (classMethodsBuilder_ == null) {
         classMethods_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         classMethodsBuilder_.clear();
@@ -14220,7 +15208,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
                 com.google.protobuf.Struct,
                 com.google.protobuf.Struct.Builder,
                 com.google.protobuf.StructOrBuilder>(
-                classMethods_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                classMethods_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
         classMethods_ = null;
       }
       return classMethodsBuilder_;
@@ -14297,7 +15285,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       agentFramework_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -14317,7 +15305,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      */
     public Builder clearAgentFramework() {
       agentFramework_ = getDefaultInstance().getAgentFramework();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -14342,7 +15330,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       agentFramework_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

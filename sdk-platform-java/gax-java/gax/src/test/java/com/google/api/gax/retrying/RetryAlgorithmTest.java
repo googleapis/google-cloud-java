@@ -64,7 +64,9 @@ class RetryAlgorithmTest {
   void testCreateFirstAttemptWithContext() {
     TimedRetryAlgorithmWithContext timedAlgorithm = mock(TimedRetryAlgorithmWithContext.class);
     RetryAlgorithm<Void> algorithm =
-        new RetryAlgorithm<>(mock(ResultRetryAlgorithmWithContext.class), timedAlgorithm);
+        new RetryAlgorithm<>(
+            (ResultRetryAlgorithmWithContext<Void>) mock(ResultRetryAlgorithmWithContext.class),
+            (TimedRetryAlgorithmWithContext) timedAlgorithm);
 
     RetryingContext context = mock(RetryingContext.class);
     algorithm.createFirstAttempt(context);

@@ -33,6 +33,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Answers.RETURNS_DEEP_STUBS;
 import static org.mockito.Mockito.*;
 
+import com.google.api.gax.rpc.LibraryMetadata;
 import io.opentelemetry.api.OpenTelemetry;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -48,7 +49,10 @@ class GoldenSignalsMetricsTracerFactoryTest {
 
   @Test
   void newTracerWithSpanName_shouldCreateTracer_ifMetricsRecorderIsNotNull() {
-    tracerFactory.withContext(ApiTracerContext.empty());
+    LibraryMetadata metadata =
+        LibraryMetadata.newBuilder().setArtifactName("gax-java").setVersion("1.0").build();
+    ApiTracerContext context = ApiTracerContext.newBuilder().setLibraryMetadata(metadata).build();
+    tracerFactory.withContext(context);
     ApiTracer actual =
         tracerFactory.newTracer(
             mock(ApiTracer.class), mock(SpanName.class), ApiTracerFactory.OperationType.Unary);
@@ -67,7 +71,8 @@ class GoldenSignalsMetricsTracerFactoryTest {
   void newTracerWithApiTracerContext_shouldMergeApiTracerContext() {
     ApiTracerContext clientLevelTracerContext = mock(ApiTracerContext.class, RETURNS_DEEP_STUBS);
     ApiTracerContext methodLevelTracerContext = mock(ApiTracerContext.class);
-    when(clientLevelTracerContext.libraryMetadata().artifactName()).thenReturn("does not matter");
+    when(clientLevelTracerContext.libraryMetadata().artifactName()).thenReturn("gax-java");
+    when(clientLevelTracerContext.libraryMetadata().isEmpty()).thenReturn(false);
     when(clientLevelTracerContext.merge(methodLevelTracerContext))
         .thenReturn(clientLevelTracerContext);
 
@@ -79,8 +84,49 @@ class GoldenSignalsMetricsTracerFactoryTest {
   }
 
   @Test
+  void testWithContext_nullContext_returnsBaseApiTracerFactory() {
+    GoldenSignalsMetricsTracerFactory factory =
+        new GoldenSignalsMetricsTracerFactory(OpenTelemetry.noop());
+    ApiTracerFactory factoryWithContext = factory.withContext(null);
+    assertThat(factoryWithContext).isInstanceOf(BaseApiTracerFactory.class);
+  }
+
+  @Test
+  void testWithContext_nullMetadata_returnsBaseApiTracerFactory() {
+    GoldenSignalsMetricsTracerFactory factory =
+        new GoldenSignalsMetricsTracerFactory(OpenTelemetry.noop());
+    ApiTracerFactory factoryWithContext = factory.withContext(ApiTracerContext.empty());
+    assertThat(factoryWithContext).isInstanceOf(BaseApiTracerFactory.class);
+  }
+
+  @Test
+  void testWithContext_emptyArtifactName_returnsBaseApiTracerFactory() {
+    GoldenSignalsMetricsTracerFactory factory =
+        new GoldenSignalsMetricsTracerFactory(OpenTelemetry.noop());
+    LibraryMetadata metadata =
+        LibraryMetadata.newBuilder().setArtifactName("").setVersion("1.0").build();
+    ApiTracerContext context = ApiTracerContext.newBuilder().setLibraryMetadata(metadata).build();
+
+    ApiTracerFactory factoryWithContext = factory.withContext(context);
+    assertThat(factoryWithContext).isInstanceOf(BaseApiTracerFactory.class);
+  }
+
+  @Test
+  void testWithContext_nullArtifactName_returnsBaseApiTracerFactory() {
+    GoldenSignalsMetricsTracerFactory factory =
+        new GoldenSignalsMetricsTracerFactory(OpenTelemetry.noop());
+    LibraryMetadata metadata = LibraryMetadata.newBuilder().setVersion("1.0").build();
+    ApiTracerContext context = ApiTracerContext.newBuilder().setLibraryMetadata(metadata).build();
+
+    ApiTracerFactory factoryWithContext = factory.withContext(context);
+    assertThat(factoryWithContext).isInstanceOf(BaseApiTracerFactory.class);
+  }
+
+  @Test
   void newTracerWithApiTracerContext_shouldCreateBaseTracer_ifMetricsRecorderIsNull() {
-    ApiTracer actual = tracerFactory.newTracer(mock(ApiTracer.class), mock(ApiTracerContext.class));
+    GoldenSignalsMetricsTracerFactory factory =
+        new GoldenSignalsMetricsTracerFactory(OpenTelemetry.noop());
+    ApiTracer actual = factory.newTracer(mock(ApiTracer.class), mock(ApiTracerContext.class));
 
     assertThat(actual).isInstanceOf(BaseApiTracer.class);
   }

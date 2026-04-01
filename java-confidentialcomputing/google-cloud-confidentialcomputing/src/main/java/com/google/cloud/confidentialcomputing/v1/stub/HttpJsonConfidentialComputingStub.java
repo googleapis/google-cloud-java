@@ -351,6 +351,7 @@ public class HttpJsonConfidentialComputingStub extends ConfidentialComputingStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<VerifyAttestationRequest, VerifyAttestationResponse>
         verifyAttestationTransportSettings =
@@ -363,6 +364,7 @@ public class HttpJsonConfidentialComputingStub extends ConfidentialComputingStub
                       builder.add("challenge", String.valueOf(request.getChallenge()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getChallenge())
                 .build();
     HttpJsonCallSettings<VerifyConfidentialSpaceRequest, VerifyConfidentialSpaceResponse>
         verifyConfidentialSpaceTransportSettings =
@@ -376,6 +378,7 @@ public class HttpJsonConfidentialComputingStub extends ConfidentialComputingStub
                       builder.add("challenge", String.valueOf(request.getChallenge()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getChallenge())
                 .build();
     HttpJsonCallSettings<VerifyConfidentialGkeRequest, VerifyConfidentialGkeResponse>
         verifyConfidentialGkeTransportSettings =
@@ -389,6 +392,7 @@ public class HttpJsonConfidentialComputingStub extends ConfidentialComputingStub
                       builder.add("challenge", String.valueOf(request.getChallenge()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getChallenge())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

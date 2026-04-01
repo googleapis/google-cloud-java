@@ -198,6 +198,7 @@ public class GrpcMetastorePartitionServiceStub extends MetastorePartitionService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<BatchDeleteMetastorePartitionsRequest, Empty>
         batchDeleteMetastorePartitionsTransportSettings =
@@ -209,6 +210,7 @@ public class GrpcMetastorePartitionServiceStub extends MetastorePartitionService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<BatchUpdateMetastorePartitionsRequest, BatchUpdateMetastorePartitionsResponse>
         batchUpdateMetastorePartitionsTransportSettings =
@@ -222,6 +224,7 @@ public class GrpcMetastorePartitionServiceStub extends MetastorePartitionService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListMetastorePartitionsRequest, ListMetastorePartitionsResponse>
         listMetastorePartitionsTransportSettings =
@@ -234,12 +237,14 @@ public class GrpcMetastorePartitionServiceStub extends MetastorePartitionService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<StreamMetastorePartitionsRequest, StreamMetastorePartitionsResponse>
         streamMetastorePartitionsTransportSettings =
             GrpcCallSettings
                 .<StreamMetastorePartitionsRequest, StreamMetastorePartitionsResponse>newBuilder()
                 .setMethodDescriptor(streamMetastorePartitionsMethodDescriptor)
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.batchCreateMetastorePartitionsCallable =

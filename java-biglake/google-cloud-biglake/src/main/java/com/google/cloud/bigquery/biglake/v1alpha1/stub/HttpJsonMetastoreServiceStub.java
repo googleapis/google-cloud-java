@@ -843,6 +843,7 @@ public class HttpJsonMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteCatalogRequest, Catalog> deleteCatalogTransportSettings =
         HttpJsonCallSettings.<DeleteCatalogRequest, Catalog>newBuilder()
@@ -854,6 +855,7 @@ public class HttpJsonMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetCatalogRequest, Catalog> getCatalogTransportSettings =
         HttpJsonCallSettings.<GetCatalogRequest, Catalog>newBuilder()
@@ -865,6 +867,7 @@ public class HttpJsonMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListCatalogsRequest, ListCatalogsResponse> listCatalogsTransportSettings =
         HttpJsonCallSettings.<ListCatalogsRequest, ListCatalogsResponse>newBuilder()
@@ -876,6 +879,7 @@ public class HttpJsonMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateDatabaseRequest, Database> createDatabaseTransportSettings =
         HttpJsonCallSettings.<CreateDatabaseRequest, Database>newBuilder()
@@ -887,6 +891,7 @@ public class HttpJsonMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteDatabaseRequest, Database> deleteDatabaseTransportSettings =
         HttpJsonCallSettings.<DeleteDatabaseRequest, Database>newBuilder()
@@ -898,6 +903,7 @@ public class HttpJsonMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateDatabaseRequest, Database> updateDatabaseTransportSettings =
         HttpJsonCallSettings.<UpdateDatabaseRequest, Database>newBuilder()
@@ -920,6 +926,7 @@ public class HttpJsonMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListDatabasesRequest, ListDatabasesResponse>
         listDatabasesTransportSettings =
@@ -932,6 +939,7 @@ public class HttpJsonMetastoreServiceStub extends MetastoreServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateTableRequest, Table> createTableTransportSettings =
         HttpJsonCallSettings.<CreateTableRequest, Table>newBuilder()
@@ -943,6 +951,7 @@ public class HttpJsonMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteTableRequest, Table> deleteTableTransportSettings =
         HttpJsonCallSettings.<DeleteTableRequest, Table>newBuilder()
@@ -954,6 +963,7 @@ public class HttpJsonMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateTableRequest, Table> updateTableTransportSettings =
         HttpJsonCallSettings.<UpdateTableRequest, Table>newBuilder()
@@ -976,6 +986,7 @@ public class HttpJsonMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetTableRequest, Table> getTableTransportSettings =
         HttpJsonCallSettings.<GetTableRequest, Table>newBuilder()
@@ -987,6 +998,7 @@ public class HttpJsonMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListTablesRequest, ListTablesResponse> listTablesTransportSettings =
         HttpJsonCallSettings.<ListTablesRequest, ListTablesResponse>newBuilder()
@@ -998,6 +1010,7 @@ public class HttpJsonMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateLockRequest, Lock> createLockTransportSettings =
         HttpJsonCallSettings.<CreateLockRequest, Lock>newBuilder()
@@ -1009,6 +1022,7 @@ public class HttpJsonMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteLockRequest, Empty> deleteLockTransportSettings =
         HttpJsonCallSettings.<DeleteLockRequest, Empty>newBuilder()
@@ -1020,6 +1034,7 @@ public class HttpJsonMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CheckLockRequest, Lock> checkLockTransportSettings =
         HttpJsonCallSettings.<CheckLockRequest, Lock>newBuilder()
@@ -1031,6 +1046,7 @@ public class HttpJsonMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocksRequest, ListLocksResponse> listLocksTransportSettings =
         HttpJsonCallSettings.<ListLocksRequest, ListLocksResponse>newBuilder()
@@ -1042,6 +1058,7 @@ public class HttpJsonMetastoreServiceStub extends MetastoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.createCatalogCallable =

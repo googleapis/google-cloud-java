@@ -815,6 +815,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateSecretRequest, Secret> createSecretTransportSettings =
         HttpJsonCallSettings.<CreateSecretRequest, Secret>newBuilder()
@@ -826,6 +827,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<AddSecretVersionRequest, SecretVersion> addSecretVersionTransportSettings =
         HttpJsonCallSettings.<AddSecretVersionRequest, SecretVersion>newBuilder()
@@ -837,6 +839,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetSecretRequest, Secret> getSecretTransportSettings =
         HttpJsonCallSettings.<GetSecretRequest, Secret>newBuilder()
@@ -848,6 +851,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateSecretRequest, Secret> updateSecretTransportSettings =
         HttpJsonCallSettings.<UpdateSecretRequest, Secret>newBuilder()
@@ -870,6 +874,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListSecretVersionsRequest, ListSecretVersionsResponse>
         listSecretVersionsTransportSettings =
@@ -882,6 +887,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetSecretVersionRequest, SecretVersion> getSecretVersionTransportSettings =
         HttpJsonCallSettings.<GetSecretVersionRequest, SecretVersion>newBuilder()
@@ -893,6 +899,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<AccessSecretVersionRequest, AccessSecretVersionResponse>
         accessSecretVersionTransportSettings =
@@ -906,6 +913,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DisableSecretVersionRequest, SecretVersion>
         disableSecretVersionTransportSettings =
@@ -918,6 +926,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<EnableSecretVersionRequest, SecretVersion>
         enableSecretVersionTransportSettings =
@@ -930,6 +939,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DestroySecretVersionRequest, SecretVersion>
         destroySecretVersionTransportSettings =
@@ -942,6 +952,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -953,6 +964,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -964,6 +976,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -976,6 +989,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

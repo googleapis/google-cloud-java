@@ -1,4 +1,4 @@
-package com.google.extractor.testing.stub;
+package com.google.cloud.bigquery.testing.stub;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -7,16 +7,25 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.extractor.testing.Bar;
-import com.google.extractor.testing.Foo;
-import com.google.extractor.testing.GetBarRequest;
-import com.google.extractor.testing.GetFooRequest;
-import com.google.extractor.testing.ListFoosRequest;
-import com.google.extractor.testing.ListFoosResponse;
+import com.google.api.pathtemplate.PathTemplate;
+import com.google.cloud.bigquery.testing.Bar;
+import com.google.cloud.bigquery.testing.Foo;
+import com.google.cloud.bigquery.testing.GetBarRequest;
+import com.google.cloud.bigquery.testing.GetFooRequest;
+import com.google.cloud.bigquery.testing.GetHeuristicRequest;
+import com.google.cloud.bigquery.testing.GetHeuristicWithNamedBindingRequest;
+import com.google.cloud.bigquery.testing.GetHeuristicWithNestedFieldsRequest;
+import com.google.cloud.bigquery.testing.GetHeuristicWithResourceReferenceRequest;
+import com.google.cloud.bigquery.testing.Heuristic;
+import com.google.cloud.bigquery.testing.ListFoosRequest;
+import com.google.cloud.bigquery.testing.ListFoosResponse;
+import com.google.cloud.bigquery.testing.ListHeuristicsRequest;
+import com.google.cloud.bigquery.testing.ListHeuristicsResponse;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -32,7 +41,7 @@ public class GrpcResourceNameExtractorTestingStub extends ResourceNameExtractorT
   private static final MethodDescriptor<GetFooRequest, Foo> getFooMethodDescriptor =
       MethodDescriptor.<GetFooRequest, Foo>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.extractor.testing.ResourceNameExtractorTesting/GetFoo")
+          .setFullMethodName("google.cloud.bigquery.testing.ResourceNameExtractorTesting/GetFoo")
           .setRequestMarshaller(ProtoUtils.marshaller(GetFooRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Foo.getDefaultInstance()))
           .setSampledToLocalTracing(true)
@@ -41,29 +50,125 @@ public class GrpcResourceNameExtractorTestingStub extends ResourceNameExtractorT
   private static final MethodDescriptor<GetBarRequest, Bar> getBarMethodDescriptor =
       MethodDescriptor.<GetBarRequest, Bar>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.extractor.testing.ResourceNameExtractorTesting/GetBar")
+          .setFullMethodName("google.cloud.bigquery.testing.ResourceNameExtractorTesting/GetBar")
           .setRequestMarshaller(ProtoUtils.marshaller(GetBarRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Bar.getDefaultInstance()))
           .setSampledToLocalTracing(true)
           .build();
 
+  private static final MethodDescriptor<GetHeuristicRequest, Heuristic>
+      getHeuristicMethodDescriptor =
+          MethodDescriptor.<GetHeuristicRequest, Heuristic>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.testing.ResourceNameExtractorTesting/GetHeuristic")
+              .setRequestMarshaller(ProtoUtils.marshaller(GetHeuristicRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Heuristic.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListFoosRequest, ListFoosResponse>
       listFoosMethodDescriptor =
           MethodDescriptor.<ListFoosRequest, ListFoosResponse>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.extractor.testing.ResourceNameExtractorTesting/ListFoos")
+              .setFullMethodName(
+                  "google.cloud.bigquery.testing.ResourceNameExtractorTesting/ListFoos")
               .setRequestMarshaller(ProtoUtils.marshaller(ListFoosRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListFoosResponse.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<GetHeuristicWithNamedBindingRequest, Heuristic>
+      getMethodDescriptor =
+          MethodDescriptor.<GetHeuristicWithNamedBindingRequest, Heuristic>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.bigquery.testing.ResourceNameExtractorTesting/Get")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetHeuristicWithNamedBindingRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Heuristic.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListHeuristicsRequest, ListHeuristicsResponse>
+      listMethodDescriptor =
+          MethodDescriptor.<ListHeuristicsRequest, ListHeuristicsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.bigquery.testing.ResourceNameExtractorTesting/List")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListHeuristicsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListHeuristicsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetHeuristicWithResourceReferenceRequest, Heuristic>
+      getHeuristicWithResourceReferenceMethodDescriptor =
+          MethodDescriptor.<GetHeuristicWithResourceReferenceRequest, Heuristic>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.testing.ResourceNameExtractorTesting/GetHeuristicWithResourceReference")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      GetHeuristicWithResourceReferenceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Heuristic.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetHeuristicWithNestedFieldsRequest, Heuristic>
+      getHeuristicWithNestedFieldsMethodDescriptor =
+          MethodDescriptor.<GetHeuristicWithNestedFieldsRequest, Heuristic>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.testing.ResourceNameExtractorTesting/GetHeuristicWithNestedFields")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetHeuristicWithNestedFieldsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Heuristic.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetHeuristicWithNamedBindingRequest, Heuristic>
+      getHeuristicWithNamedBindingMethodDescriptor =
+          MethodDescriptor.<GetHeuristicWithNamedBindingRequest, Heuristic>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.testing.ResourceNameExtractorTesting/GetHeuristicWithNamedBinding")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetHeuristicWithNamedBindingRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Heuristic.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<GetFooRequest, Foo> getFooCallable;
   private final UnaryCallable<GetBarRequest, Bar> getBarCallable;
+  private final UnaryCallable<GetHeuristicRequest, Heuristic> getHeuristicCallable;
   private final UnaryCallable<ListFoosRequest, ListFoosResponse> listFoosCallable;
+  private final UnaryCallable<GetHeuristicWithNamedBindingRequest, Heuristic> getCallable;
+  private final UnaryCallable<ListHeuristicsRequest, ListHeuristicsResponse> listCallable;
+  private final UnaryCallable<GetHeuristicWithResourceReferenceRequest, Heuristic>
+      getHeuristicWithResourceReferenceCallable;
+  private final UnaryCallable<GetHeuristicWithNestedFieldsRequest, Heuristic>
+      getHeuristicWithNestedFieldsCallable;
+  private final UnaryCallable<GetHeuristicWithNamedBindingRequest, Heuristic>
+      getHeuristicWithNamedBindingCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
+
+  private static final PathTemplate GET_BAR_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("{bar=projects/*/locations/*/bars/*}");
+  private static final PathTemplate GET_HEURISTIC_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/locations/{location}/heuristics/{heuristic}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/locations/{location}/{parent_name=reservations/*/reservationBlocks/*/reservationSubBlocks/*}/heuristics/{heuristic}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/locations/{location}");
+  private static final PathTemplate GET_HEURISTIC_WITH_NESTED_FIELDS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/locations/{location}/heuristics/{heuristic.name}");
+  private static final PathTemplate GET_HEURISTIC_WITH_NAMED_BINDING_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/locations/{location}/{parent_name=reservations/*/reservationBlocks/*/reservationSubBlocks/*}/heuristics/{heuristic}");
 
   public static final GrpcResourceNameExtractorTestingStub create(
       ResourceNameExtractorTestingStubSettings settings) throws IOException {
@@ -128,6 +233,32 @@ public class GrpcResourceNameExtractorTestingStub extends ResourceNameExtractorT
                   builder.add("bar", String.valueOf(request.getBar()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("bar", String.valueOf(request.getBar()));
+                  return GET_BAR_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
+            .build();
+    GrpcCallSettings<GetHeuristicRequest, Heuristic> getHeuristicTransportSettings =
+        GrpcCallSettings.<GetHeuristicRequest, Heuristic>newBuilder()
+            .setMethodDescriptor(getHeuristicMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("heuristic", String.valueOf(request.getHeuristic()));
+                  builder.add("location", String.valueOf(request.getLocation()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("heuristic", String.valueOf(request.getHeuristic()));
+                  resourceNameSegments.put("location", String.valueOf(request.getLocation()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return GET_HEURISTIC_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     GrpcCallSettings<ListFoosRequest, ListFoosResponse> listFoosTransportSettings =
         GrpcCallSettings.<ListFoosRequest, ListFoosResponse>newBuilder()
@@ -140,6 +271,109 @@ public class GrpcResourceNameExtractorTestingStub extends ResourceNameExtractorT
                 })
             .setResourceNameExtractor(request -> request.getParent())
             .build();
+    GrpcCallSettings<GetHeuristicWithNamedBindingRequest, Heuristic> getTransportSettings =
+        GrpcCallSettings.<GetHeuristicWithNamedBindingRequest, Heuristic>newBuilder()
+            .setMethodDescriptor(getMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("heuristic", String.valueOf(request.getHeuristic()));
+                  builder.add("location", String.valueOf(request.getLocation()));
+                  builder.add("parent_name", String.valueOf(request.getParentName()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("heuristic", String.valueOf(request.getHeuristic()));
+                  resourceNameSegments.put("location", String.valueOf(request.getLocation()));
+                  resourceNameSegments.put("parent_name", String.valueOf(request.getParentName()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
+            .build();
+    GrpcCallSettings<ListHeuristicsRequest, ListHeuristicsResponse> listTransportSettings =
+        GrpcCallSettings.<ListHeuristicsRequest, ListHeuristicsResponse>newBuilder()
+            .setMethodDescriptor(listMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("location", String.valueOf(request.getLocation()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("location", String.valueOf(request.getLocation()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
+            .build();
+    GrpcCallSettings<GetHeuristicWithResourceReferenceRequest, Heuristic>
+        getHeuristicWithResourceReferenceTransportSettings =
+            GrpcCallSettings.<GetHeuristicWithResourceReferenceRequest, Heuristic>newBuilder()
+                .setMethodDescriptor(getHeuristicWithResourceReferenceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("heuristic", String.valueOf(request.getHeuristic()));
+                      builder.add("location", String.valueOf(request.getLocation()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getFoo())
+                .build();
+    GrpcCallSettings<GetHeuristicWithNestedFieldsRequest, Heuristic>
+        getHeuristicWithNestedFieldsTransportSettings =
+            GrpcCallSettings.<GetHeuristicWithNestedFieldsRequest, Heuristic>newBuilder()
+                .setMethodDescriptor(getHeuristicWithNestedFieldsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "heuristic.name", String.valueOf(request.getHeuristic().getName()));
+                      builder.add("location", String.valueOf(request.getLocation()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "heuristic.name", String.valueOf(request.getHeuristic().getName()));
+                      resourceNameSegments.put("location", String.valueOf(request.getLocation()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return GET_HEURISTIC_WITH_NESTED_FIELDS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
+                .build();
+    GrpcCallSettings<GetHeuristicWithNamedBindingRequest, Heuristic>
+        getHeuristicWithNamedBindingTransportSettings =
+            GrpcCallSettings.<GetHeuristicWithNamedBindingRequest, Heuristic>newBuilder()
+                .setMethodDescriptor(getHeuristicWithNamedBindingMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("heuristic", String.valueOf(request.getHeuristic()));
+                      builder.add("location", String.valueOf(request.getLocation()));
+                      builder.add("parent_name", String.valueOf(request.getParentName()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("heuristic", String.valueOf(request.getHeuristic()));
+                      resourceNameSegments.put("location", String.valueOf(request.getLocation()));
+                      resourceNameSegments.put(
+                          "parent_name", String.valueOf(request.getParentName()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return GET_HEURISTIC_WITH_NAMED_BINDING_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
+                .build();
 
     this.getFooCallable =
         callableFactory.createUnaryCallable(
@@ -147,9 +381,33 @@ public class GrpcResourceNameExtractorTestingStub extends ResourceNameExtractorT
     this.getBarCallable =
         callableFactory.createUnaryCallable(
             getBarTransportSettings, settings.getBarSettings(), clientContext);
+    this.getHeuristicCallable =
+        callableFactory.createUnaryCallable(
+            getHeuristicTransportSettings, settings.getHeuristicSettings(), clientContext);
     this.listFoosCallable =
         callableFactory.createUnaryCallable(
             listFoosTransportSettings, settings.listFoosSettings(), clientContext);
+    this.getCallable =
+        callableFactory.createUnaryCallable(
+            getTransportSettings, settings.getSettings(), clientContext);
+    this.listCallable =
+        callableFactory.createUnaryCallable(
+            listTransportSettings, settings.listSettings(), clientContext);
+    this.getHeuristicWithResourceReferenceCallable =
+        callableFactory.createUnaryCallable(
+            getHeuristicWithResourceReferenceTransportSettings,
+            settings.getHeuristicWithResourceReferenceSettings(),
+            clientContext);
+    this.getHeuristicWithNestedFieldsCallable =
+        callableFactory.createUnaryCallable(
+            getHeuristicWithNestedFieldsTransportSettings,
+            settings.getHeuristicWithNestedFieldsSettings(),
+            clientContext);
+    this.getHeuristicWithNamedBindingCallable =
+        callableFactory.createUnaryCallable(
+            getHeuristicWithNamedBindingTransportSettings,
+            settings.getHeuristicWithNamedBindingSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -170,8 +428,41 @@ public class GrpcResourceNameExtractorTestingStub extends ResourceNameExtractorT
   }
 
   @Override
+  public UnaryCallable<GetHeuristicRequest, Heuristic> getHeuristicCallable() {
+    return getHeuristicCallable;
+  }
+
+  @Override
   public UnaryCallable<ListFoosRequest, ListFoosResponse> listFoosCallable() {
     return listFoosCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetHeuristicWithNamedBindingRequest, Heuristic> getCallable() {
+    return getCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListHeuristicsRequest, ListHeuristicsResponse> listCallable() {
+    return listCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetHeuristicWithResourceReferenceRequest, Heuristic>
+      getHeuristicWithResourceReferenceCallable() {
+    return getHeuristicWithResourceReferenceCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetHeuristicWithNestedFieldsRequest, Heuristic>
+      getHeuristicWithNestedFieldsCallable() {
+    return getHeuristicWithNestedFieldsCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetHeuristicWithNamedBindingRequest, Heuristic>
+      getHeuristicWithNamedBindingCallable() {
+    return getHeuristicWithNamedBindingCallable;
   }
 
   @Override

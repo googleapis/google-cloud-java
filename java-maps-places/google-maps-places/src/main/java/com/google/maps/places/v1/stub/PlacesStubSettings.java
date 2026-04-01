@@ -264,6 +264,7 @@ public class PlacesStubSettings extends StubSettings<PlacesStubSettings> {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.maps:google-maps-places")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

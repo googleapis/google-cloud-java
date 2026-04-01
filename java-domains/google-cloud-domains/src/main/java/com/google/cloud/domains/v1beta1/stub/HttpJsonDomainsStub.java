@@ -774,6 +774,7 @@ public class HttpJsonDomainsStub extends DomainsStub {
                       builder.add("location", String.valueOf(request.getLocation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getLocation())
                 .build();
     HttpJsonCallSettings<RetrieveRegisterParametersRequest, RetrieveRegisterParametersResponse>
         retrieveRegisterParametersTransportSettings =
@@ -787,6 +788,7 @@ public class HttpJsonDomainsStub extends DomainsStub {
                       builder.add("location", String.valueOf(request.getLocation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getLocation())
                 .build();
     HttpJsonCallSettings<RegisterDomainRequest, Operation> registerDomainTransportSettings =
         HttpJsonCallSettings.<RegisterDomainRequest, Operation>newBuilder()
@@ -798,6 +800,7 @@ public class HttpJsonDomainsStub extends DomainsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<RetrieveTransferParametersRequest, RetrieveTransferParametersResponse>
         retrieveTransferParametersTransportSettings =
@@ -811,6 +814,7 @@ public class HttpJsonDomainsStub extends DomainsStub {
                       builder.add("location", String.valueOf(request.getLocation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getLocation())
                 .build();
     HttpJsonCallSettings<TransferDomainRequest, Operation> transferDomainTransportSettings =
         HttpJsonCallSettings.<TransferDomainRequest, Operation>newBuilder()
@@ -822,6 +826,7 @@ public class HttpJsonDomainsStub extends DomainsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListRegistrationsRequest, ListRegistrationsResponse>
         listRegistrationsTransportSettings =
@@ -834,6 +839,7 @@ public class HttpJsonDomainsStub extends DomainsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetRegistrationRequest, Registration> getRegistrationTransportSettings =
         HttpJsonCallSettings.<GetRegistrationRequest, Registration>newBuilder()
@@ -845,6 +851,7 @@ public class HttpJsonDomainsStub extends DomainsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateRegistrationRequest, Operation> updateRegistrationTransportSettings =
         HttpJsonCallSettings.<UpdateRegistrationRequest, Operation>newBuilder()
@@ -869,6 +876,7 @@ public class HttpJsonDomainsStub extends DomainsStub {
                       builder.add("registration", String.valueOf(request.getRegistration()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getRegistration())
                 .build();
     HttpJsonCallSettings<ConfigureDnsSettingsRequest, Operation>
         configureDnsSettingsTransportSettings =
@@ -881,6 +889,7 @@ public class HttpJsonDomainsStub extends DomainsStub {
                       builder.add("registration", String.valueOf(request.getRegistration()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getRegistration())
                 .build();
     HttpJsonCallSettings<ConfigureContactSettingsRequest, Operation>
         configureContactSettingsTransportSettings =
@@ -893,6 +902,7 @@ public class HttpJsonDomainsStub extends DomainsStub {
                       builder.add("registration", String.valueOf(request.getRegistration()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getRegistration())
                 .build();
     HttpJsonCallSettings<ExportRegistrationRequest, Operation> exportRegistrationTransportSettings =
         HttpJsonCallSettings.<ExportRegistrationRequest, Operation>newBuilder()
@@ -904,6 +914,7 @@ public class HttpJsonDomainsStub extends DomainsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteRegistrationRequest, Operation> deleteRegistrationTransportSettings =
         HttpJsonCallSettings.<DeleteRegistrationRequest, Operation>newBuilder()
@@ -915,6 +926,7 @@ public class HttpJsonDomainsStub extends DomainsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RetrieveAuthorizationCodeRequest, AuthorizationCode>
         retrieveAuthorizationCodeTransportSettings =
@@ -927,6 +939,7 @@ public class HttpJsonDomainsStub extends DomainsStub {
                       builder.add("registration", String.valueOf(request.getRegistration()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getRegistration())
                 .build();
     HttpJsonCallSettings<ResetAuthorizationCodeRequest, AuthorizationCode>
         resetAuthorizationCodeTransportSettings =
@@ -939,6 +952,7 @@ public class HttpJsonDomainsStub extends DomainsStub {
                       builder.add("registration", String.valueOf(request.getRegistration()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getRegistration())
                 .build();
 
     this.searchDomainsCallable =

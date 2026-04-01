@@ -436,6 +436,7 @@ public class VpcAccessServiceStubSettings extends StubSettings<VpcAccessServiceS
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-vpcaccess")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

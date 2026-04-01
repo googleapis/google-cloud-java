@@ -325,6 +325,7 @@ public class HttpJsonContainerAnalysisStub extends ContainerAnalysisStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -336,6 +337,7 @@ public class HttpJsonContainerAnalysisStub extends ContainerAnalysisStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -348,6 +350,7 @@ public class HttpJsonContainerAnalysisStub extends ContainerAnalysisStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     HttpJsonCallSettings<GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
         getVulnerabilityOccurrencesSummaryTransportSettings =
@@ -362,6 +365,7 @@ public class HttpJsonContainerAnalysisStub extends ContainerAnalysisStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ExportSBOMRequest, ExportSBOMResponse> exportSBOMTransportSettings =
         HttpJsonCallSettings.<ExportSBOMRequest, ExportSBOMResponse>newBuilder()

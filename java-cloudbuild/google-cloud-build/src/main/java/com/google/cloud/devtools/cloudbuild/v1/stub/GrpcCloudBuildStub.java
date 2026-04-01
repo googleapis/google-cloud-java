@@ -414,6 +414,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getParent(), "location", CREATE_BUILD_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetBuildRequest, Build> getBuildTransportSettings =
         GrpcCallSettings.<GetBuildRequest, Build>newBuilder()
@@ -424,6 +425,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getName(), "location", GET_BUILD_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListBuildsRequest, ListBuildsResponse> listBuildsTransportSettings =
         GrpcCallSettings.<ListBuildsRequest, ListBuildsResponse>newBuilder()
@@ -434,6 +436,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getParent(), "location", LIST_BUILDS_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CancelBuildRequest, Build> cancelBuildTransportSettings =
         GrpcCallSettings.<CancelBuildRequest, Build>newBuilder()
@@ -444,6 +447,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getName(), "location", CANCEL_BUILD_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RetryBuildRequest, Operation> retryBuildTransportSettings =
         GrpcCallSettings.<RetryBuildRequest, Operation>newBuilder()
@@ -454,6 +458,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getName(), "location", RETRY_BUILD_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ApproveBuildRequest, Operation> approveBuildTransportSettings =
         GrpcCallSettings.<ApproveBuildRequest, Operation>newBuilder()
@@ -475,6 +480,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                       request.getParent(), "location", CREATE_BUILD_TRIGGER_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetBuildTriggerRequest, BuildTrigger> getBuildTriggerTransportSettings =
         GrpcCallSettings.<GetBuildTriggerRequest, BuildTrigger>newBuilder()
@@ -485,6 +491,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getName(), "location", GET_BUILD_TRIGGER_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListBuildTriggersRequest, ListBuildTriggersResponse>
         listBuildTriggersTransportSettings =
@@ -497,6 +504,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                           request.getParent(), "location", LIST_BUILD_TRIGGERS_0_PATH_TEMPLATE);
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteBuildTriggerRequest, Empty> deleteBuildTriggerTransportSettings =
         GrpcCallSettings.<DeleteBuildTriggerRequest, Empty>newBuilder()
@@ -507,6 +515,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getName(), "location", DELETE_BUILD_TRIGGER_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateBuildTriggerRequest, BuildTrigger> updateBuildTriggerTransportSettings =
         GrpcCallSettings.<UpdateBuildTriggerRequest, BuildTrigger>newBuilder()
@@ -532,6 +541,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getName(), "location", RUN_BUILD_TRIGGER_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ReceiveTriggerWebhookRequest, ReceiveTriggerWebhookResponse>
         receiveTriggerWebhookTransportSettings =
@@ -556,6 +566,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getParent(), "location", CREATE_WORKER_POOL_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetWorkerPoolRequest, WorkerPool> getWorkerPoolTransportSettings =
         GrpcCallSettings.<GetWorkerPoolRequest, WorkerPool>newBuilder()
@@ -566,6 +577,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getName(), "location", GET_WORKER_POOL_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteWorkerPoolRequest, Operation> deleteWorkerPoolTransportSettings =
         GrpcCallSettings.<DeleteWorkerPoolRequest, Operation>newBuilder()
@@ -576,6 +588,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getName(), "location", DELETE_WORKER_POOL_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateWorkerPoolRequest, Operation> updateWorkerPoolTransportSettings =
         GrpcCallSettings.<UpdateWorkerPoolRequest, Operation>newBuilder()
@@ -603,6 +616,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                           request.getParent(), "location", LIST_WORKER_POOLS_0_PATH_TEMPLATE);
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetDefaultServiceAccountRequest, DefaultServiceAccount>
         getDefaultServiceAccountTransportSettings =
@@ -617,6 +631,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                           GET_DEFAULT_SERVICE_ACCOUNT_0_PATH_TEMPLATE);
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.createBuildCallable =

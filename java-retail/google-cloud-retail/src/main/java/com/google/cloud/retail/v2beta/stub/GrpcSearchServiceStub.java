@@ -107,6 +107,7 @@ public class GrpcSearchServiceStub extends SearchServiceStub {
                   builder.add("placement", String.valueOf(request.getPlacement()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getBranch())
             .build();
 
     this.searchCallable =

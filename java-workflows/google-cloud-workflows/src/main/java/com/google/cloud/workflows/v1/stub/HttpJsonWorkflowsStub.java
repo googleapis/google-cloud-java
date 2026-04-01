@@ -473,6 +473,7 @@ public class HttpJsonWorkflowsStub extends WorkflowsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetWorkflowRequest, Workflow> getWorkflowTransportSettings =
         HttpJsonCallSettings.<GetWorkflowRequest, Workflow>newBuilder()
@@ -484,6 +485,7 @@ public class HttpJsonWorkflowsStub extends WorkflowsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateWorkflowRequest, Operation> createWorkflowTransportSettings =
         HttpJsonCallSettings.<CreateWorkflowRequest, Operation>newBuilder()
@@ -495,6 +497,7 @@ public class HttpJsonWorkflowsStub extends WorkflowsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteWorkflowRequest, Operation> deleteWorkflowTransportSettings =
         HttpJsonCallSettings.<DeleteWorkflowRequest, Operation>newBuilder()
@@ -506,6 +509,7 @@ public class HttpJsonWorkflowsStub extends WorkflowsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateWorkflowRequest, Operation> updateWorkflowTransportSettings =
         HttpJsonCallSettings.<UpdateWorkflowRequest, Operation>newBuilder()
@@ -530,6 +534,7 @@ public class HttpJsonWorkflowsStub extends WorkflowsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

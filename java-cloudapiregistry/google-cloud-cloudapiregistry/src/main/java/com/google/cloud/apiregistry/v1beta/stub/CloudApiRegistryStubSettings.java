@@ -452,6 +452,7 @@ public class CloudApiRegistryStubSettings extends StubSettings<CloudApiRegistryS
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-cloudapiregistry")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 
