@@ -54,9 +54,12 @@ class GoldenSignalsMetricsRecorder {
   final DoubleHistogram clientRequestDurationRecorder;
 
   GoldenSignalsMetricsRecorder(
-      OpenTelemetry openTelemetry, String libraryName, String libraryVersion) {
+      OpenTelemetry openTelemetry, com.google.api.gax.rpc.LibraryMetadata libraryMetadata) {
+    String libraryName =
+        libraryMetadata.artifactName() != null ? libraryMetadata.artifactName() : "";
     io.opentelemetry.api.metrics.MeterBuilder meterBuilder =
         openTelemetry.meterBuilder(libraryName);
+    String libraryVersion = libraryMetadata.version();
     if (libraryVersion != null && !libraryVersion.isEmpty()) {
       meterBuilder.setInstrumentationVersion(libraryVersion);
     }

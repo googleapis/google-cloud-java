@@ -68,7 +68,12 @@ class GoldenSignalsMetricsTracerTest {
     ticker = new FakeTicker();
     tracer =
         new GoldenSignalsMetricsTracer(
-            new GoldenSignalsMetricsRecorder(openTelemetry, ARTIFACT_NAME, "1.2.3"),
+            new GoldenSignalsMetricsRecorder(
+                openTelemetry,
+                com.google.api.gax.rpc.LibraryMetadata.newBuilder()
+                    .setArtifactName(ARTIFACT_NAME)
+                    .setVersion("1.2.3")
+                    .build()),
             ApiTracerContext.empty(),
             ticker);
   }
