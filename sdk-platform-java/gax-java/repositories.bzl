@@ -47,13 +47,12 @@ def com_google_api_gax_java_repositories():
     # properties file.
 
     _protobuf_version = PROPERTIES["version.com_google_protobuf"]
-    _protobuf_source_tag = _protobuf_version[2:] if _protobuf_version.startswith("4.") else _protobuf_version
-    _protobuf_version_in_link = "v%s" % _protobuf_source_tag
+    _protobuf_version_in_link = "v%s" % _protobuf_version
     _maybe(
         http_archive,
         name = "com_google_protobuf",
         urls = ["https://github.com/protocolbuffers/protobuf/archive/%s.zip" % _protobuf_version_in_link],
-        strip_prefix = "protobuf-%s" % _protobuf_source_tag,
+        strip_prefix = "protobuf-%s" % _protobuf_version,
     )
 
     _grpc_version = PROPERTIES["version.io_grpc"]

@@ -2,26 +2,6 @@ workspace(name = "gapic_generator_java")
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
-http_archive(
-    name = "rules_java",
-    sha256 = "47632cc506c858011853073449801d648e10483d4b50e080ec2549a4b2398960",
-    urls = [
-        "https://github.com/bazelbuild/rules_java/releases/download/8.15.2/rules_java-8.15.2.tar.gz",
-    ],
-)
-
-load("@rules_java//java:rules_java_deps.bzl", "rules_java_dependencies")
-rules_java_dependencies()
-
-http_archive(
-    name = "rules_python",
-    sha256 = "c68bdc4fbec25de5b5493b8819cfc877c4ea299c0dcb15c244c5a00208cde311",
-    strip_prefix = "rules_python-0.31.0",
-    url = "https://github.com/bazelbuild/rules_python/releases/download/0.31.0/rules_python-0.31.0.tar.gz",
-)
-
-load("@rules_python//python:repositories.bzl", "py_repositories")
-py_repositories()
 # gax-java and its transitive dependencies must be imported before
 # gapic-generator-java dependencies to match the order in googleapis repository,
 # which in its turn, prioritizes actual generated clients runtime dependencies
