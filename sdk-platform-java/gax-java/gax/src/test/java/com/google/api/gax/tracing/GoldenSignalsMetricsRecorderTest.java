@@ -120,4 +120,29 @@ class GoldenSignalsMetricsRecorderTest {
     assertThat(metricData.getHistogramData().getPoints().iterator().next().getAttributes())
         .isEqualTo(Attributes.of(AttributeKey.stringKey(ATTRIBUTE_1), VALUE_1));
   }
+
+  @Test
+  void create_shouldReturnNull_whenLibraryMetadataIsNull() {
+    GoldenSignalsMetricsRecorder actual =
+        GoldenSignalsMetricsRecorder.create(OpenTelemetry.noop(), null);
+    assertThat(actual).isNull();
+  }
+
+  @Test
+  void create_shouldReturnNull_whenArtifactNameIsNull() {
+    com.google.api.gax.rpc.LibraryMetadata metadata =
+        com.google.api.gax.rpc.LibraryMetadata.newBuilder().setVersion("1.0.0").build();
+    GoldenSignalsMetricsRecorder actual =
+        GoldenSignalsMetricsRecorder.create(OpenTelemetry.noop(), metadata);
+    assertThat(actual).isNull();
+  }
+
+  @Test
+  void create_shouldReturnNull_whenArtifactNameIsEmpty() {
+    com.google.api.gax.rpc.LibraryMetadata metadata =
+        com.google.api.gax.rpc.LibraryMetadata.newBuilder().setArtifactName("").build();
+    GoldenSignalsMetricsRecorder actual =
+        GoldenSignalsMetricsRecorder.create(OpenTelemetry.noop(), metadata);
+    assertThat(actual).isNull();
+  }
 }
