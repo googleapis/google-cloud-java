@@ -57,7 +57,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class ITCompositeTracing {
+class ITCompositeTracer {
   private static final String SHOWCASE_SERVER_ADDRESS = "localhost";
   private static final String SHOWCASE_ARTIFACT = "com.google.cloud:gapic-showcase";
 
@@ -94,11 +94,9 @@ class ITCompositeTracing {
 
   private CompositeTracerFactory createCompositeTracerFactory() {
     SpanTracerFactory spanTracerFactory = new SpanTracerFactory(openTelemetrySdk);
-    LoggingTracerFactory loggingTracerFactory = new LoggingTracerFactory();
     GoldenSignalsMetricsTracerFactory metricsTracerFactory = new GoldenSignalsMetricsTracerFactory(openTelemetrySdk);
 
-    return new CompositeTracerFactory(
-        Arrays.asList(spanTracerFactory, loggingTracerFactory, metricsTracerFactory));
+    return new CompositeTracerFactory(Arrays.asList(spanTracerFactory, metricsTracerFactory));
   }
 
   @Test
@@ -138,8 +136,6 @@ class ITCompositeTracing {
               .getAttributes()
               .get(AttributeKey.stringKey(ObservabilityAttributes.SERVER_ADDRESS_ATTRIBUTE)))
               .isEqualTo(SHOWCASE_SERVER_ADDRESS);
-
-      // TODO: Verify Logging with basic attributes
     }
   }
 }
