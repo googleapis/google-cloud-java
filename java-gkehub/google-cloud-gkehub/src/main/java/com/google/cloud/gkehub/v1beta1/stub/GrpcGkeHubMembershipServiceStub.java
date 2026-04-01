@@ -309,6 +309,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetMembershipRequest, Membership> getMembershipTransportSettings =
         GrpcCallSettings.<GetMembershipRequest, Membership>newBuilder()
@@ -319,6 +320,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateMembershipRequest, Operation> createMembershipTransportSettings =
         GrpcCallSettings.<CreateMembershipRequest, Operation>newBuilder()
@@ -329,6 +331,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteMembershipRequest, Operation> deleteMembershipTransportSettings =
         GrpcCallSettings.<DeleteMembershipRequest, Operation>newBuilder()
@@ -339,6 +342,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateMembershipRequest, Operation> updateMembershipTransportSettings =
         GrpcCallSettings.<UpdateMembershipRequest, Operation>newBuilder()
@@ -349,6 +353,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GenerateConnectManifestRequest, GenerateConnectManifestResponse>
         generateConnectManifestTransportSettings =
@@ -361,6 +366,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ValidateExclusivityRequest, ValidateExclusivityResponse>
         validateExclusivityTransportSettings =
@@ -372,6 +378,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GenerateExclusivityManifestRequest, GenerateExclusivityManifestResponse>
         generateExclusivityManifestTransportSettings =
@@ -385,6 +392,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -415,6 +423,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -425,6 +434,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -436,6 +446,7 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listMembershipsCallable =

@@ -1398,6 +1398,7 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetConnectionRequest, Connection> getConnectionTransportSettings =
         HttpJsonCallSettings.<GetConnectionRequest, Connection>newBuilder()
@@ -1409,6 +1410,7 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateConnectionRequest, Operation> createConnectionTransportSettings =
         HttpJsonCallSettings.<CreateConnectionRequest, Operation>newBuilder()
@@ -1420,6 +1422,7 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateConnectionRequest, Operation> updateConnectionTransportSettings =
         HttpJsonCallSettings.<UpdateConnectionRequest, Operation>newBuilder()
@@ -1442,6 +1445,7 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateGitRepositoryLinkRequest, Operation>
         createGitRepositoryLinkTransportSettings =
@@ -1454,6 +1458,7 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteGitRepositoryLinkRequest, Operation>
         deleteGitRepositoryLinkTransportSettings =
@@ -1466,6 +1471,7 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListGitRepositoryLinksRequest, ListGitRepositoryLinksResponse>
         listGitRepositoryLinksTransportSettings =
@@ -1479,6 +1485,7 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetGitRepositoryLinkRequest, GitRepositoryLink>
         getGitRepositoryLinkTransportSettings =
@@ -1491,6 +1498,7 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<FetchReadWriteTokenRequest, FetchReadWriteTokenResponse>
         fetchReadWriteTokenTransportSettings =
@@ -1505,6 +1513,7 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                           "git_repository_link", String.valueOf(request.getGitRepositoryLink()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getGitRepositoryLink())
                 .build();
     HttpJsonCallSettings<FetchReadTokenRequest, FetchReadTokenResponse>
         fetchReadTokenTransportSettings =
@@ -1518,6 +1527,7 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                           "git_repository_link", String.valueOf(request.getGitRepositoryLink()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getGitRepositoryLink())
                 .build();
     HttpJsonCallSettings<FetchLinkableGitRepositoriesRequest, FetchLinkableGitRepositoriesResponse>
         fetchLinkableGitRepositoriesTransportSettings =
@@ -1532,6 +1542,7 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                       builder.add("connection", String.valueOf(request.getConnection()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getConnection())
                 .build();
     HttpJsonCallSettings<FetchGitHubInstallationsRequest, FetchGitHubInstallationsResponse>
         fetchGitHubInstallationsTransportSettings =
@@ -1545,6 +1556,7 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                       builder.add("connection", String.valueOf(request.getConnection()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getConnection())
                 .build();
     HttpJsonCallSettings<FetchGitRefsRequest, FetchGitRefsResponse> fetchGitRefsTransportSettings =
         HttpJsonCallSettings.<FetchGitRefsRequest, FetchGitRefsResponse>newBuilder()
@@ -1557,6 +1569,7 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                       "git_repository_link", String.valueOf(request.getGitRepositoryLink()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getGitRepositoryLink())
             .build();
     HttpJsonCallSettings<ListAccountConnectorsRequest, ListAccountConnectorsResponse>
         listAccountConnectorsTransportSettings =
@@ -1570,6 +1583,7 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetAccountConnectorRequest, AccountConnector>
         getAccountConnectorTransportSettings =
@@ -1582,6 +1596,7 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateAccountConnectorRequest, Operation>
         createAccountConnectorTransportSettings =
@@ -1594,6 +1609,7 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateAccountConnectorRequest, Operation>
         updateAccountConnectorTransportSettings =
@@ -1620,6 +1636,7 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<FetchAccessTokenRequest, FetchAccessTokenResponse>
         fetchAccessTokenTransportSettings =
@@ -1633,6 +1650,7 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                           "account_connector", String.valueOf(request.getAccountConnector()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAccountConnector())
                 .build();
     HttpJsonCallSettings<ListUsersRequest, ListUsersResponse> listUsersTransportSettings =
         HttpJsonCallSettings.<ListUsersRequest, ListUsersResponse>newBuilder()
@@ -1644,6 +1662,7 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteUserRequest, Operation> deleteUserTransportSettings =
         HttpJsonCallSettings.<DeleteUserRequest, Operation>newBuilder()
@@ -1655,6 +1674,7 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<FetchSelfRequest, User> fetchSelfTransportSettings =
         HttpJsonCallSettings.<FetchSelfRequest, User>newBuilder()
@@ -1666,6 +1686,7 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteSelfRequest, Operation> deleteSelfTransportSettings =
         HttpJsonCallSettings.<DeleteSelfRequest, Operation>newBuilder()
@@ -1677,6 +1698,7 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<StartOAuthRequest, StartOAuthResponse> startOAuthTransportSettings =
         HttpJsonCallSettings.<StartOAuthRequest, StartOAuthResponse>newBuilder()
@@ -1688,6 +1710,7 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                   builder.add("account_connector", String.valueOf(request.getAccountConnector()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getAccountConnector())
             .build();
     HttpJsonCallSettings<FinishOAuthRequest, FinishOAuthResponse> finishOAuthTransportSettings =
         HttpJsonCallSettings.<FinishOAuthRequest, FinishOAuthResponse>newBuilder()
@@ -1699,6 +1722,7 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                   builder.add("account_connector", String.valueOf(request.getAccountConnector()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getAccountConnector())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

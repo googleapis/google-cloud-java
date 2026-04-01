@@ -471,6 +471,7 @@ public class MarketingplatformAdminServiceStubSettings
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.ads-marketingplatform:admin")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

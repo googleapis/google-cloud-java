@@ -220,6 +220,7 @@ public class GrpcGenerativeQuestionServiceStub extends GenerativeQuestionService
                       builder.add("catalog", String.valueOf(request.getCatalog()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCatalog())
                 .build();
     GrpcCallSettings<ListGenerativeQuestionConfigsRequest, ListGenerativeQuestionConfigsResponse>
         listGenerativeQuestionConfigsTransportSettings =
@@ -233,6 +234,7 @@ public class GrpcGenerativeQuestionServiceStub extends GenerativeQuestionService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateGenerativeQuestionConfigRequest, GenerativeQuestionConfig>
         updateGenerativeQuestionConfigTransportSettings =
@@ -263,6 +265,7 @@ public class GrpcGenerativeQuestionServiceStub extends GenerativeQuestionService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.updateGenerativeQuestionsFeatureConfigCallable =

@@ -392,6 +392,7 @@ public class NotificationsApiServiceStubSettings
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.shopping:google-shopping-merchant-notifications")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

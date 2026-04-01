@@ -508,6 +508,7 @@ public class HttpJsonSessionControllerStub extends SessionControllerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetSessionRequest, Session> getSessionTransportSettings =
         HttpJsonCallSettings.<GetSessionRequest, Session>newBuilder()
@@ -519,6 +520,7 @@ public class HttpJsonSessionControllerStub extends SessionControllerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListSessionsRequest, ListSessionsResponse> listSessionsTransportSettings =
         HttpJsonCallSettings.<ListSessionsRequest, ListSessionsResponse>newBuilder()
@@ -530,6 +532,7 @@ public class HttpJsonSessionControllerStub extends SessionControllerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<TerminateSessionRequest, Operation> terminateSessionTransportSettings =
         HttpJsonCallSettings.<TerminateSessionRequest, Operation>newBuilder()
@@ -541,6 +544,7 @@ public class HttpJsonSessionControllerStub extends SessionControllerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteSessionRequest, Operation> deleteSessionTransportSettings =
         HttpJsonCallSettings.<DeleteSessionRequest, Operation>newBuilder()
@@ -552,6 +556,7 @@ public class HttpJsonSessionControllerStub extends SessionControllerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -563,6 +568,7 @@ public class HttpJsonSessionControllerStub extends SessionControllerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -574,6 +580,7 @@ public class HttpJsonSessionControllerStub extends SessionControllerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -586,6 +593,7 @@ public class HttpJsonSessionControllerStub extends SessionControllerStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createSessionCallable =

@@ -243,6 +243,7 @@ public class GrpcPrincipalAccessBoundaryPoliciesStub extends PrincipalAccessBoun
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetPrincipalAccessBoundaryPolicyRequest, PrincipalAccessBoundaryPolicy>
         getPrincipalAccessBoundaryPolicyTransportSettings =
@@ -256,6 +257,7 @@ public class GrpcPrincipalAccessBoundaryPoliciesStub extends PrincipalAccessBoun
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdatePrincipalAccessBoundaryPolicyRequest, Operation>
         updatePrincipalAccessBoundaryPolicyTransportSettings =
@@ -280,6 +282,7 @@ public class GrpcPrincipalAccessBoundaryPoliciesStub extends PrincipalAccessBoun
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             ListPrincipalAccessBoundaryPoliciesRequest, ListPrincipalAccessBoundaryPoliciesResponse>
@@ -295,6 +298,7 @@ public class GrpcPrincipalAccessBoundaryPoliciesStub extends PrincipalAccessBoun
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             SearchPrincipalAccessBoundaryPolicyBindingsRequest,
@@ -311,6 +315,7 @@ public class GrpcPrincipalAccessBoundaryPoliciesStub extends PrincipalAccessBoun
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.createPrincipalAccessBoundaryPolicyCallable =

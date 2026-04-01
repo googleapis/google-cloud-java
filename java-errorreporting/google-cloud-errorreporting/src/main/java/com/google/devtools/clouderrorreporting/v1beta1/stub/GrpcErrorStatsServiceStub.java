@@ -146,6 +146,7 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
                       builder.add("project_name", String.valueOf(request.getProjectName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProjectName())
                 .build();
     GrpcCallSettings<ListEventsRequest, ListEventsResponse> listEventsTransportSettings =
         GrpcCallSettings.<ListEventsRequest, ListEventsResponse>newBuilder()
@@ -156,6 +157,7 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
                   builder.add("project_name", String.valueOf(request.getProjectName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getProjectName())
             .build();
     GrpcCallSettings<DeleteEventsRequest, DeleteEventsResponse> deleteEventsTransportSettings =
         GrpcCallSettings.<DeleteEventsRequest, DeleteEventsResponse>newBuilder()
@@ -166,6 +168,7 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
                   builder.add("project_name", String.valueOf(request.getProjectName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getProjectName())
             .build();
 
     this.listGroupStatsCallable =

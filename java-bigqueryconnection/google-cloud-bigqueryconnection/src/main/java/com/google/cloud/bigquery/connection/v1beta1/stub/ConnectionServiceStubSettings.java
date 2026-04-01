@@ -316,6 +316,7 @@ public class ConnectionServiceStubSettings extends StubSettings<ConnectionServic
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-bigqueryconnection")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

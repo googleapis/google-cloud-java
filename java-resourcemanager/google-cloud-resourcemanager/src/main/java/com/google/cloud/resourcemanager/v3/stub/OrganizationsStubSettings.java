@@ -343,6 +343,7 @@ public class OrganizationsStubSettings extends StubSettings<OrganizationsStubSet
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-resourcemanager")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

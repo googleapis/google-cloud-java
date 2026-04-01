@@ -263,6 +263,7 @@ public class HttpJsonLfpStoreServiceStub extends LfpStoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<InsertLfpStoreRequest, LfpStore> insertLfpStoreTransportSettings =
         HttpJsonCallSettings.<InsertLfpStoreRequest, LfpStore>newBuilder()
@@ -274,6 +275,7 @@ public class HttpJsonLfpStoreServiceStub extends LfpStoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteLfpStoreRequest, Empty> deleteLfpStoreTransportSettings =
         HttpJsonCallSettings.<DeleteLfpStoreRequest, Empty>newBuilder()
@@ -285,6 +287,7 @@ public class HttpJsonLfpStoreServiceStub extends LfpStoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLfpStoresRequest, ListLfpStoresResponse>
         listLfpStoresTransportSettings =
@@ -297,6 +300,7 @@ public class HttpJsonLfpStoreServiceStub extends LfpStoreServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getLfpStoreCallable =

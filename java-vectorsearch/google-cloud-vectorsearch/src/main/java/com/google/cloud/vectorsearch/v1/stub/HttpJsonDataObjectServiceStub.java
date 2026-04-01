@@ -463,6 +463,7 @@ public class HttpJsonDataObjectServiceStub extends DataObjectServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<BatchCreateDataObjectsRequest, BatchCreateDataObjectsResponse>
         batchCreateDataObjectsTransportSettings =
@@ -476,6 +477,7 @@ public class HttpJsonDataObjectServiceStub extends DataObjectServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDataObjectRequest, DataObject> getDataObjectTransportSettings =
         HttpJsonCallSettings.<GetDataObjectRequest, DataObject>newBuilder()
@@ -487,6 +489,7 @@ public class HttpJsonDataObjectServiceStub extends DataObjectServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateDataObjectRequest, DataObject> updateDataObjectTransportSettings =
         HttpJsonCallSettings.<UpdateDataObjectRequest, DataObject>newBuilder()
@@ -512,6 +515,7 @@ public class HttpJsonDataObjectServiceStub extends DataObjectServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteDataObjectRequest, Empty> deleteDataObjectTransportSettings =
         HttpJsonCallSettings.<DeleteDataObjectRequest, Empty>newBuilder()
@@ -523,6 +527,7 @@ public class HttpJsonDataObjectServiceStub extends DataObjectServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<BatchDeleteDataObjectsRequest, Empty>
         batchDeleteDataObjectsTransportSettings =
@@ -535,6 +540,7 @@ public class HttpJsonDataObjectServiceStub extends DataObjectServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

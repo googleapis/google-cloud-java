@@ -164,6 +164,7 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             ListPredictionApiKeyRegistrationsRequest, ListPredictionApiKeyRegistrationsResponse>
@@ -179,6 +180,7 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeletePredictionApiKeyRegistrationRequest, Empty>
         deletePredictionApiKeyRegistrationTransportSettings =
@@ -190,6 +192,7 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.createPredictionApiKeyRegistrationCallable =

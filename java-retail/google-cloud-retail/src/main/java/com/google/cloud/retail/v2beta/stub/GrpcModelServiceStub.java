@@ -196,6 +196,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetModelRequest, Model> getModelTransportSettings =
         GrpcCallSettings.<GetModelRequest, Model>newBuilder()
@@ -206,6 +207,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<PauseModelRequest, Model> pauseModelTransportSettings =
         GrpcCallSettings.<PauseModelRequest, Model>newBuilder()
@@ -216,6 +218,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ResumeModelRequest, Model> resumeModelTransportSettings =
         GrpcCallSettings.<ResumeModelRequest, Model>newBuilder()
@@ -236,6 +239,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListModelsRequest, ListModelsResponse> listModelsTransportSettings =
         GrpcCallSettings.<ListModelsRequest, ListModelsResponse>newBuilder()
@@ -246,6 +250,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateModelRequest, Model> updateModelTransportSettings =
         GrpcCallSettings.<UpdateModelRequest, Model>newBuilder()
@@ -266,6 +271,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createModelCallable =

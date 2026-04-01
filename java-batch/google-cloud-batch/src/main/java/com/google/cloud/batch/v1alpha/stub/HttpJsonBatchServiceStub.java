@@ -758,6 +758,7 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetJobRequest, Job> getJobTransportSettings =
         HttpJsonCallSettings.<GetJobRequest, Job>newBuilder()
@@ -769,6 +770,7 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteJobRequest, Operation> deleteJobTransportSettings =
         HttpJsonCallSettings.<DeleteJobRequest, Operation>newBuilder()
@@ -791,6 +793,7 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateJobRequest, Job> updateJobTransportSettings =
         HttpJsonCallSettings.<UpdateJobRequest, Job>newBuilder()
@@ -824,6 +827,7 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListTasksRequest, ListTasksResponse> listTasksTransportSettings =
         HttpJsonCallSettings.<ListTasksRequest, ListTasksResponse>newBuilder()
@@ -835,6 +839,7 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateResourceAllowanceRequest, ResourceAllowance>
         createResourceAllowanceTransportSettings =
@@ -847,6 +852,7 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetResourceAllowanceRequest, ResourceAllowance>
         getResourceAllowanceTransportSettings =
@@ -859,6 +865,7 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DeleteResourceAllowanceRequest, Operation>
         deleteResourceAllowanceTransportSettings =
@@ -871,6 +878,7 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListResourceAllowancesRequest, ListResourceAllowancesResponse>
         listResourceAllowancesTransportSettings =
@@ -884,6 +892,7 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateResourceAllowanceRequest, ResourceAllowance>
         updateResourceAllowanceTransportSettings =

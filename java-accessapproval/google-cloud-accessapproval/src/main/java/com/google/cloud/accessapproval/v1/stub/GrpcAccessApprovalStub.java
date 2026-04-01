@@ -243,6 +243,7 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetApprovalRequestMessage, ApprovalRequest>
         getApprovalRequestTransportSettings =
@@ -254,6 +255,7 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ApproveApprovalRequestMessage, ApprovalRequest>
         approveApprovalRequestTransportSettings =
@@ -265,6 +267,7 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DismissApprovalRequestMessage, ApprovalRequest>
         dismissApprovalRequestTransportSettings =
@@ -276,6 +279,7 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<InvalidateApprovalRequestMessage, ApprovalRequest>
         invalidateApprovalRequestTransportSettings =
@@ -287,6 +291,7 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetAccessApprovalSettingsMessage, AccessApprovalSettings>
         getAccessApprovalSettingsTransportSettings =
@@ -298,6 +303,7 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateAccessApprovalSettingsMessage, AccessApprovalSettings>
         updateAccessApprovalSettingsTransportSettings =
@@ -321,6 +327,7 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetAccessApprovalServiceAccountMessage, AccessApprovalServiceAccount>
         getAccessApprovalServiceAccountTransportSettings =

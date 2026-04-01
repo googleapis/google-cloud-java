@@ -2870,6 +2870,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetEndpointPolicyRequest, EndpointPolicy>
         getEndpointPolicyTransportSettings =
@@ -2882,6 +2883,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateEndpointPolicyRequest, Operation>
         createEndpointPolicyTransportSettings =
@@ -2894,6 +2896,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateEndpointPolicyRequest, Operation>
         updateEndpointPolicyTransportSettings =
@@ -2920,6 +2923,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse>
         listWasmPluginVersionsTransportSettings =
@@ -2933,6 +2937,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetWasmPluginVersionRequest, WasmPluginVersion>
         getWasmPluginVersionTransportSettings =
@@ -2945,6 +2950,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateWasmPluginVersionRequest, Operation>
         createWasmPluginVersionTransportSettings =
@@ -2957,6 +2963,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteWasmPluginVersionRequest, Operation>
         deleteWasmPluginVersionTransportSettings =
@@ -2969,6 +2976,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListWasmPluginsRequest, ListWasmPluginsResponse>
         listWasmPluginsTransportSettings =
@@ -2981,6 +2989,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetWasmPluginRequest, WasmPlugin> getWasmPluginTransportSettings =
         HttpJsonCallSettings.<GetWasmPluginRequest, WasmPlugin>newBuilder()
@@ -2992,6 +3001,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateWasmPluginRequest, Operation> createWasmPluginTransportSettings =
         HttpJsonCallSettings.<CreateWasmPluginRequest, Operation>newBuilder()
@@ -3003,6 +3013,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateWasmPluginRequest, Operation> updateWasmPluginTransportSettings =
         HttpJsonCallSettings.<UpdateWasmPluginRequest, Operation>newBuilder()
@@ -3026,6 +3037,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListGatewaysRequest, ListGatewaysResponse> listGatewaysTransportSettings =
         HttpJsonCallSettings.<ListGatewaysRequest, ListGatewaysResponse>newBuilder()
@@ -3037,6 +3049,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetGatewayRequest, Gateway> getGatewayTransportSettings =
         HttpJsonCallSettings.<GetGatewayRequest, Gateway>newBuilder()
@@ -3048,6 +3061,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateGatewayRequest, Operation> createGatewayTransportSettings =
         HttpJsonCallSettings.<CreateGatewayRequest, Operation>newBuilder()
@@ -3059,6 +3073,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateGatewayRequest, Operation> updateGatewayTransportSettings =
         HttpJsonCallSettings.<UpdateGatewayRequest, Operation>newBuilder()
@@ -3081,6 +3096,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListGrpcRoutesRequest, ListGrpcRoutesResponse>
         listGrpcRoutesTransportSettings =
@@ -3093,6 +3109,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetGrpcRouteRequest, GrpcRoute> getGrpcRouteTransportSettings =
         HttpJsonCallSettings.<GetGrpcRouteRequest, GrpcRoute>newBuilder()
@@ -3104,6 +3121,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateGrpcRouteRequest, Operation> createGrpcRouteTransportSettings =
         HttpJsonCallSettings.<CreateGrpcRouteRequest, Operation>newBuilder()
@@ -3115,6 +3133,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateGrpcRouteRequest, Operation> updateGrpcRouteTransportSettings =
         HttpJsonCallSettings.<UpdateGrpcRouteRequest, Operation>newBuilder()
@@ -3137,6 +3156,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListHttpRoutesRequest, ListHttpRoutesResponse>
         listHttpRoutesTransportSettings =
@@ -3149,6 +3169,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetHttpRouteRequest, HttpRoute> getHttpRouteTransportSettings =
         HttpJsonCallSettings.<GetHttpRouteRequest, HttpRoute>newBuilder()
@@ -3160,6 +3181,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateHttpRouteRequest, Operation> createHttpRouteTransportSettings =
         HttpJsonCallSettings.<CreateHttpRouteRequest, Operation>newBuilder()
@@ -3171,6 +3193,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateHttpRouteRequest, Operation> updateHttpRouteTransportSettings =
         HttpJsonCallSettings.<UpdateHttpRouteRequest, Operation>newBuilder()
@@ -3193,6 +3216,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListTcpRoutesRequest, ListTcpRoutesResponse>
         listTcpRoutesTransportSettings =
@@ -3205,6 +3229,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetTcpRouteRequest, TcpRoute> getTcpRouteTransportSettings =
         HttpJsonCallSettings.<GetTcpRouteRequest, TcpRoute>newBuilder()
@@ -3216,6 +3241,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateTcpRouteRequest, Operation> createTcpRouteTransportSettings =
         HttpJsonCallSettings.<CreateTcpRouteRequest, Operation>newBuilder()
@@ -3227,6 +3253,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateTcpRouteRequest, Operation> updateTcpRouteTransportSettings =
         HttpJsonCallSettings.<UpdateTcpRouteRequest, Operation>newBuilder()
@@ -3249,6 +3276,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListTlsRoutesRequest, ListTlsRoutesResponse>
         listTlsRoutesTransportSettings =
@@ -3261,6 +3289,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetTlsRouteRequest, TlsRoute> getTlsRouteTransportSettings =
         HttpJsonCallSettings.<GetTlsRouteRequest, TlsRoute>newBuilder()
@@ -3272,6 +3301,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateTlsRouteRequest, Operation> createTlsRouteTransportSettings =
         HttpJsonCallSettings.<CreateTlsRouteRequest, Operation>newBuilder()
@@ -3283,6 +3313,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateTlsRouteRequest, Operation> updateTlsRouteTransportSettings =
         HttpJsonCallSettings.<UpdateTlsRouteRequest, Operation>newBuilder()
@@ -3305,6 +3336,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListServiceBindingsRequest, ListServiceBindingsResponse>
         listServiceBindingsTransportSettings =
@@ -3318,6 +3350,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetServiceBindingRequest, ServiceBinding>
         getServiceBindingTransportSettings =
@@ -3330,6 +3363,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateServiceBindingRequest, Operation>
         createServiceBindingTransportSettings =
@@ -3342,6 +3376,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateServiceBindingRequest, Operation>
         updateServiceBindingTransportSettings =
@@ -3368,6 +3403,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListMeshesRequest, ListMeshesResponse> listMeshesTransportSettings =
         HttpJsonCallSettings.<ListMeshesRequest, ListMeshesResponse>newBuilder()
@@ -3379,6 +3415,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetMeshRequest, Mesh> getMeshTransportSettings =
         HttpJsonCallSettings.<GetMeshRequest, Mesh>newBuilder()
@@ -3390,6 +3427,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateMeshRequest, Operation> createMeshTransportSettings =
         HttpJsonCallSettings.<CreateMeshRequest, Operation>newBuilder()
@@ -3401,6 +3439,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateMeshRequest, Operation> updateMeshTransportSettings =
         HttpJsonCallSettings.<UpdateMeshRequest, Operation>newBuilder()
@@ -3423,6 +3462,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse>
         listServiceLbPoliciesTransportSettings =
@@ -3436,6 +3476,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetServiceLbPolicyRequest, ServiceLbPolicy>
         getServiceLbPolicyTransportSettings =
@@ -3448,6 +3489,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateServiceLbPolicyRequest, Operation>
         createServiceLbPolicyTransportSettings =
@@ -3460,6 +3502,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateServiceLbPolicyRequest, Operation>
         updateServiceLbPolicyTransportSettings =
@@ -3486,6 +3529,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetGatewayRouteViewRequest, GatewayRouteView>
         getGatewayRouteViewTransportSettings =
@@ -3498,6 +3542,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetMeshRouteViewRequest, MeshRouteView> getMeshRouteViewTransportSettings =
         HttpJsonCallSettings.<GetMeshRouteViewRequest, MeshRouteView>newBuilder()
@@ -3509,6 +3554,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse>
         listGatewayRouteViewsTransportSettings =
@@ -3522,6 +3568,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse>
         listMeshRouteViewsTransportSettings =
@@ -3534,6 +3581,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -3568,6 +3616,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -3579,6 +3628,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -3591,6 +3641,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listEndpointPoliciesCallable =

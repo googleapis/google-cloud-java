@@ -193,6 +193,7 @@ public class GrpcOrgPolicyViolationsPreviewServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetOrgPolicyViolationsPreviewRequest, OrgPolicyViolationsPreview>
         getOrgPolicyViolationsPreviewTransportSettings =
@@ -205,6 +206,7 @@ public class GrpcOrgPolicyViolationsPreviewServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateOrgPolicyViolationsPreviewRequest, Operation>
         createOrgPolicyViolationsPreviewTransportSettings =
@@ -216,6 +218,7 @@ public class GrpcOrgPolicyViolationsPreviewServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListOrgPolicyViolationsRequest, ListOrgPolicyViolationsResponse>
         listOrgPolicyViolationsTransportSettings =
@@ -228,6 +231,7 @@ public class GrpcOrgPolicyViolationsPreviewServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.listOrgPolicyViolationsPreviewsCallable =

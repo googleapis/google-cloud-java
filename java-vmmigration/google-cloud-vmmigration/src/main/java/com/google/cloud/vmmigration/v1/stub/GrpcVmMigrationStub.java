@@ -1120,6 +1120,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetSourceRequest, Source> getSourceTransportSettings =
         GrpcCallSettings.<GetSourceRequest, Source>newBuilder()
@@ -1130,6 +1131,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateSourceRequest, Operation> createSourceTransportSettings =
         GrpcCallSettings.<CreateSourceRequest, Operation>newBuilder()
@@ -1140,6 +1142,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateSourceRequest, Operation> updateSourceTransportSettings =
         GrpcCallSettings.<UpdateSourceRequest, Operation>newBuilder()
@@ -1160,6 +1163,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<FetchInventoryRequest, FetchInventoryResponse>
         fetchInventoryTransportSettings =
@@ -1171,6 +1175,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                       builder.add("source", String.valueOf(request.getSource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getSource())
                 .build();
     GrpcCallSettings<FetchStorageInventoryRequest, FetchStorageInventoryResponse>
         fetchStorageInventoryTransportSettings =
@@ -1183,6 +1188,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                       builder.add("source", String.valueOf(request.getSource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getSource())
                 .build();
     GrpcCallSettings<ListUtilizationReportsRequest, ListUtilizationReportsResponse>
         listUtilizationReportsTransportSettings =
@@ -1195,6 +1201,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetUtilizationReportRequest, UtilizationReport>
         getUtilizationReportTransportSettings =
@@ -1206,6 +1213,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateUtilizationReportRequest, Operation>
         createUtilizationReportTransportSettings =
@@ -1217,6 +1225,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteUtilizationReportRequest, Operation>
         deleteUtilizationReportTransportSettings =
@@ -1228,6 +1237,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListDatacenterConnectorsRequest, ListDatacenterConnectorsResponse>
         listDatacenterConnectorsTransportSettings =
@@ -1240,6 +1250,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetDatacenterConnectorRequest, DatacenterConnector>
         getDatacenterConnectorTransportSettings =
@@ -1251,6 +1262,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateDatacenterConnectorRequest, Operation>
         createDatacenterConnectorTransportSettings =
@@ -1262,6 +1274,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteDatacenterConnectorRequest, Operation>
         deleteDatacenterConnectorTransportSettings =
@@ -1273,6 +1286,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpgradeApplianceRequest, Operation> upgradeApplianceTransportSettings =
         GrpcCallSettings.<UpgradeApplianceRequest, Operation>newBuilder()
@@ -1284,6 +1298,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                       "datacenter_connector", String.valueOf(request.getDatacenterConnector()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getDatacenterConnector())
             .build();
     GrpcCallSettings<CreateMigratingVmRequest, Operation> createMigratingVmTransportSettings =
         GrpcCallSettings.<CreateMigratingVmRequest, Operation>newBuilder()
@@ -1294,6 +1309,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListMigratingVmsRequest, ListMigratingVmsResponse>
         listMigratingVmsTransportSettings =
@@ -1305,6 +1321,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetMigratingVmRequest, MigratingVm> getMigratingVmTransportSettings =
         GrpcCallSettings.<GetMigratingVmRequest, MigratingVm>newBuilder()
@@ -1315,6 +1332,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateMigratingVmRequest, Operation> updateMigratingVmTransportSettings =
         GrpcCallSettings.<UpdateMigratingVmRequest, Operation>newBuilder()
@@ -1336,6 +1354,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<StartMigrationRequest, Operation> startMigrationTransportSettings =
         GrpcCallSettings.<StartMigrationRequest, Operation>newBuilder()
@@ -1346,6 +1365,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("migrating_vm", String.valueOf(request.getMigratingVm()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getMigratingVm())
             .build();
     GrpcCallSettings<ResumeMigrationRequest, Operation> resumeMigrationTransportSettings =
         GrpcCallSettings.<ResumeMigrationRequest, Operation>newBuilder()
@@ -1356,6 +1376,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("migrating_vm", String.valueOf(request.getMigratingVm()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getMigratingVm())
             .build();
     GrpcCallSettings<PauseMigrationRequest, Operation> pauseMigrationTransportSettings =
         GrpcCallSettings.<PauseMigrationRequest, Operation>newBuilder()
@@ -1366,6 +1387,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("migrating_vm", String.valueOf(request.getMigratingVm()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getMigratingVm())
             .build();
     GrpcCallSettings<FinalizeMigrationRequest, Operation> finalizeMigrationTransportSettings =
         GrpcCallSettings.<FinalizeMigrationRequest, Operation>newBuilder()
@@ -1376,6 +1398,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("migrating_vm", String.valueOf(request.getMigratingVm()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getMigratingVm())
             .build();
     GrpcCallSettings<ExtendMigrationRequest, Operation> extendMigrationTransportSettings =
         GrpcCallSettings.<ExtendMigrationRequest, Operation>newBuilder()
@@ -1386,6 +1409,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("migrating_vm", String.valueOf(request.getMigratingVm()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getMigratingVm())
             .build();
     GrpcCallSettings<CreateCloneJobRequest, Operation> createCloneJobTransportSettings =
         GrpcCallSettings.<CreateCloneJobRequest, Operation>newBuilder()
@@ -1396,6 +1420,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CancelCloneJobRequest, Operation> cancelCloneJobTransportSettings =
         GrpcCallSettings.<CancelCloneJobRequest, Operation>newBuilder()
@@ -1406,6 +1431,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListCloneJobsRequest, ListCloneJobsResponse> listCloneJobsTransportSettings =
         GrpcCallSettings.<ListCloneJobsRequest, ListCloneJobsResponse>newBuilder()
@@ -1416,6 +1442,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetCloneJobRequest, CloneJob> getCloneJobTransportSettings =
         GrpcCallSettings.<GetCloneJobRequest, CloneJob>newBuilder()
@@ -1426,6 +1453,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateCutoverJobRequest, Operation> createCutoverJobTransportSettings =
         GrpcCallSettings.<CreateCutoverJobRequest, Operation>newBuilder()
@@ -1436,6 +1464,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CancelCutoverJobRequest, Operation> cancelCutoverJobTransportSettings =
         GrpcCallSettings.<CancelCutoverJobRequest, Operation>newBuilder()
@@ -1446,6 +1475,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListCutoverJobsRequest, ListCutoverJobsResponse>
         listCutoverJobsTransportSettings =
@@ -1457,6 +1487,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetCutoverJobRequest, CutoverJob> getCutoverJobTransportSettings =
         GrpcCallSettings.<GetCutoverJobRequest, CutoverJob>newBuilder()
@@ -1467,6 +1498,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListGroupsRequest, ListGroupsResponse> listGroupsTransportSettings =
         GrpcCallSettings.<ListGroupsRequest, ListGroupsResponse>newBuilder()
@@ -1477,6 +1509,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetGroupRequest, Group> getGroupTransportSettings =
         GrpcCallSettings.<GetGroupRequest, Group>newBuilder()
@@ -1487,6 +1520,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateGroupRequest, Operation> createGroupTransportSettings =
         GrpcCallSettings.<CreateGroupRequest, Operation>newBuilder()
@@ -1497,6 +1531,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateGroupRequest, Operation> updateGroupTransportSettings =
         GrpcCallSettings.<UpdateGroupRequest, Operation>newBuilder()
@@ -1517,6 +1552,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<AddGroupMigrationRequest, Operation> addGroupMigrationTransportSettings =
         GrpcCallSettings.<AddGroupMigrationRequest, Operation>newBuilder()
@@ -1527,6 +1563,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("group", String.valueOf(request.getGroup()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getGroup())
             .build();
     GrpcCallSettings<RemoveGroupMigrationRequest, Operation> removeGroupMigrationTransportSettings =
         GrpcCallSettings.<RemoveGroupMigrationRequest, Operation>newBuilder()
@@ -1537,6 +1574,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("group", String.valueOf(request.getGroup()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getGroup())
             .build();
     GrpcCallSettings<ListTargetProjectsRequest, ListTargetProjectsResponse>
         listTargetProjectsTransportSettings =
@@ -1548,6 +1586,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetTargetProjectRequest, TargetProject> getTargetProjectTransportSettings =
         GrpcCallSettings.<GetTargetProjectRequest, TargetProject>newBuilder()
@@ -1558,6 +1597,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateTargetProjectRequest, Operation> createTargetProjectTransportSettings =
         GrpcCallSettings.<CreateTargetProjectRequest, Operation>newBuilder()
@@ -1568,6 +1608,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateTargetProjectRequest, Operation> updateTargetProjectTransportSettings =
         GrpcCallSettings.<UpdateTargetProjectRequest, Operation>newBuilder()
@@ -1589,6 +1630,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListReplicationCyclesRequest, ListReplicationCyclesResponse>
         listReplicationCyclesTransportSettings =
@@ -1601,6 +1643,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetReplicationCycleRequest, ReplicationCycle>
         getReplicationCycleTransportSettings =
@@ -1612,6 +1655,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListImageImportsRequest, ListImageImportsResponse>
         listImageImportsTransportSettings =
@@ -1623,6 +1667,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetImageImportRequest, ImageImport> getImageImportTransportSettings =
         GrpcCallSettings.<GetImageImportRequest, ImageImport>newBuilder()
@@ -1633,6 +1678,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateImageImportRequest, Operation> createImageImportTransportSettings =
         GrpcCallSettings.<CreateImageImportRequest, Operation>newBuilder()
@@ -1643,6 +1689,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteImageImportRequest, Operation> deleteImageImportTransportSettings =
         GrpcCallSettings.<DeleteImageImportRequest, Operation>newBuilder()
@@ -1653,6 +1700,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListImageImportJobsRequest, ListImageImportJobsResponse>
         listImageImportJobsTransportSettings =
@@ -1664,6 +1712,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetImageImportJobRequest, ImageImportJob> getImageImportJobTransportSettings =
         GrpcCallSettings.<GetImageImportJobRequest, ImageImportJob>newBuilder()
@@ -1674,6 +1723,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CancelImageImportJobRequest, Operation> cancelImageImportJobTransportSettings =
         GrpcCallSettings.<CancelImageImportJobRequest, Operation>newBuilder()
@@ -1684,6 +1734,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateDiskMigrationJobRequest, Operation>
         createDiskMigrationJobTransportSettings =
@@ -1695,6 +1746,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse>
         listDiskMigrationJobsTransportSettings =
@@ -1707,6 +1759,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetDiskMigrationJobRequest, DiskMigrationJob>
         getDiskMigrationJobTransportSettings =
@@ -1718,6 +1771,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateDiskMigrationJobRequest, Operation>
         updateDiskMigrationJobTransportSettings =
@@ -1742,6 +1796,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<RunDiskMigrationJobRequest, Operation> runDiskMigrationJobTransportSettings =
         GrpcCallSettings.<RunDiskMigrationJobRequest, Operation>newBuilder()
@@ -1752,6 +1807,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CancelDiskMigrationJobRequest, Operation>
         cancelDiskMigrationJobTransportSettings =
@@ -1763,6 +1819,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

@@ -1031,6 +1031,7 @@ public class VideoStitcherServiceStubSettings
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-video-stitcher")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

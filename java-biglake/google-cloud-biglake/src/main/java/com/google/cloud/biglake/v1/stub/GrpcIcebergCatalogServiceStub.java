@@ -176,6 +176,7 @@ public class GrpcIcebergCatalogServiceStub extends IcebergCatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListIcebergCatalogsRequest, ListIcebergCatalogsResponse>
         listIcebergCatalogsTransportSettings =
@@ -187,6 +188,7 @@ public class GrpcIcebergCatalogServiceStub extends IcebergCatalogServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateIcebergCatalogRequest, IcebergCatalog>
         updateIcebergCatalogTransportSettings =
@@ -211,6 +213,7 @@ public class GrpcIcebergCatalogServiceStub extends IcebergCatalogServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<FailoverIcebergCatalogRequest, FailoverIcebergCatalogResponse>
         failoverIcebergCatalogTransportSettings =

@@ -354,6 +354,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetEndpointRequest, Endpoint> getEndpointTransportSettings =
         GrpcCallSettings.<GetEndpointRequest, Endpoint>newBuilder()
@@ -364,6 +365,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListEndpointsRequest, ListEndpointsResponse> listEndpointsTransportSettings =
         GrpcCallSettings.<ListEndpointsRequest, ListEndpointsResponse>newBuilder()
@@ -374,6 +376,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateEndpointRequest, Endpoint> updateEndpointTransportSettings =
         GrpcCallSettings.<UpdateEndpointRequest, Endpoint>newBuilder()
@@ -405,6 +408,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeployModelRequest, Operation> deployModelTransportSettings =
         GrpcCallSettings.<DeployModelRequest, Operation>newBuilder()
@@ -415,6 +419,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
                   builder.add("endpoint", String.valueOf(request.getEndpoint()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEndpoint())
             .build();
     GrpcCallSettings<UndeployModelRequest, Operation> undeployModelTransportSettings =
         GrpcCallSettings.<UndeployModelRequest, Operation>newBuilder()
@@ -425,6 +430,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
                   builder.add("endpoint", String.valueOf(request.getEndpoint()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEndpoint())
             .build();
     GrpcCallSettings<MutateDeployedModelRequest, Operation> mutateDeployedModelTransportSettings =
         GrpcCallSettings.<MutateDeployedModelRequest, Operation>newBuilder()
@@ -435,6 +441,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
                   builder.add("endpoint", String.valueOf(request.getEndpoint()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEndpoint())
             .build();
     GrpcCallSettings<SetPublisherModelConfigRequest, Operation>
         setPublisherModelConfigTransportSettings =
@@ -446,6 +453,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<FetchPublisherModelConfigRequest, PublisherModelConfig>
         fetchPublisherModelConfigTransportSettings =
@@ -457,6 +465,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -487,6 +496,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -497,6 +507,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -508,6 +519,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createEndpointCallable =

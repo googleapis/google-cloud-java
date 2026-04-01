@@ -1028,3 +1028,6 @@ proto-google-cloud-storage-v2:2.64.1:2.64.2-SNAPSHOT
 google-cloud-storage-control:2.64.1:2.64.2-SNAPSHOT
 proto-google-cloud-storage-control-v2:2.64.1:2.64.2-SNAPSHOT
 grpc-google-cloud-storage-control-v2:2.64.1:2.64.2-SNAPSHOT
+google-maps-geocode:0.0.0:0.0.1-SNAPSHOT
+proto-google-maps-geocode-v4:0.0.0:0.0.1-SNAPSHOT
+grpc-google-maps-geocode-v4:0.0.0:0.0.1-SNAPSHOT

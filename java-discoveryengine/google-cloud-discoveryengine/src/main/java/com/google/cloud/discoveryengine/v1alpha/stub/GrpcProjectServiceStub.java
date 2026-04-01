@@ -139,6 +139,7 @@ public class GrpcProjectServiceStub extends ProjectServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ProvisionProjectRequest, Operation> provisionProjectTransportSettings =
         GrpcCallSettings.<ProvisionProjectRequest, Operation>newBuilder()
@@ -149,6 +150,7 @@ public class GrpcProjectServiceStub extends ProjectServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ReportConsentChangeRequest, Project> reportConsentChangeTransportSettings =
         GrpcCallSettings.<ReportConsentChangeRequest, Project>newBuilder()
@@ -159,6 +161,7 @@ public class GrpcProjectServiceStub extends ProjectServiceStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getProject())
             .build();
 
     this.getProjectCallable =

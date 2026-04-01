@@ -254,6 +254,7 @@ public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSetti
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-texttospeech")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

@@ -722,6 +722,7 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<QueryAudienceListRequest, QueryAudienceListResponse>
         queryAudienceListTransportSettings =
@@ -747,6 +748,7 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetAudienceListRequest, AudienceList> getAudienceListTransportSettings =
         HttpJsonCallSettings.<GetAudienceListRequest, AudienceList>newBuilder()
@@ -758,6 +760,7 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListAudienceListsRequest, ListAudienceListsResponse>
         listAudienceListsTransportSettings =
@@ -770,6 +773,7 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateRecurringAudienceListRequest, RecurringAudienceList>
         createRecurringAudienceListTransportSettings =
@@ -783,6 +787,7 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetRecurringAudienceListRequest, RecurringAudienceList>
         getRecurringAudienceListTransportSettings =
@@ -796,6 +801,7 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListRecurringAudienceListsRequest, ListRecurringAudienceListsResponse>
         listRecurringAudienceListsTransportSettings =
@@ -809,6 +815,7 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetPropertyQuotasSnapshotRequest, PropertyQuotasSnapshot>
         getPropertyQuotasSnapshotTransportSettings =
@@ -822,6 +829,7 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateReportTaskRequest, Operation> createReportTaskTransportSettings =
         HttpJsonCallSettings.<CreateReportTaskRequest, Operation>newBuilder()
@@ -833,6 +841,7 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<QueryReportTaskRequest, QueryReportTaskResponse>
         queryReportTaskTransportSettings =
@@ -856,6 +865,7 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListReportTasksRequest, ListReportTasksResponse>
         listReportTasksTransportSettings =
@@ -868,6 +878,7 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.runFunnelReportCallable =

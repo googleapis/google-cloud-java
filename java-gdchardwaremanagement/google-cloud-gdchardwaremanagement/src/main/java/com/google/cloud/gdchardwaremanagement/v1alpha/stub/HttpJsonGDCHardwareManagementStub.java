@@ -1842,6 +1842,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetOrderRequest, Order> getOrderTransportSettings =
         HttpJsonCallSettings.<GetOrderRequest, Order>newBuilder()
@@ -1853,6 +1854,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateOrderRequest, Operation> createOrderTransportSettings =
         HttpJsonCallSettings.<CreateOrderRequest, Operation>newBuilder()
@@ -1864,6 +1866,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateOrderRequest, Operation> updateOrderTransportSettings =
         HttpJsonCallSettings.<UpdateOrderRequest, Operation>newBuilder()
@@ -1886,6 +1889,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<SubmitOrderRequest, Operation> submitOrderTransportSettings =
         HttpJsonCallSettings.<SubmitOrderRequest, Operation>newBuilder()
@@ -1897,6 +1901,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CancelOrderRequest, Operation> cancelOrderTransportSettings =
         HttpJsonCallSettings.<CancelOrderRequest, Operation>newBuilder()
@@ -1908,6 +1913,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListSitesRequest, ListSitesResponse> listSitesTransportSettings =
         HttpJsonCallSettings.<ListSitesRequest, ListSitesResponse>newBuilder()
@@ -1919,6 +1925,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetSiteRequest, Site> getSiteTransportSettings =
         HttpJsonCallSettings.<GetSiteRequest, Site>newBuilder()
@@ -1930,6 +1937,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateSiteRequest, Operation> createSiteTransportSettings =
         HttpJsonCallSettings.<CreateSiteRequest, Operation>newBuilder()
@@ -1941,6 +1949,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateSiteRequest, Operation> updateSiteTransportSettings =
         HttpJsonCallSettings.<UpdateSiteRequest, Operation>newBuilder()
@@ -1963,6 +1972,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListHardwareGroupsRequest, ListHardwareGroupsResponse>
         listHardwareGroupsTransportSettings =
@@ -1975,6 +1985,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetHardwareGroupRequest, HardwareGroup> getHardwareGroupTransportSettings =
         HttpJsonCallSettings.<GetHardwareGroupRequest, HardwareGroup>newBuilder()
@@ -1986,6 +1997,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateHardwareGroupRequest, Operation>
         createHardwareGroupTransportSettings =
@@ -1998,6 +2010,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateHardwareGroupRequest, Operation>
         updateHardwareGroupTransportSettings =
@@ -2024,6 +2037,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListHardwareRequest, ListHardwareResponse> listHardwareTransportSettings =
         HttpJsonCallSettings.<ListHardwareRequest, ListHardwareResponse>newBuilder()
@@ -2035,6 +2049,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetHardwareRequest, Hardware> getHardwareTransportSettings =
         HttpJsonCallSettings.<GetHardwareRequest, Hardware>newBuilder()
@@ -2046,6 +2061,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateHardwareRequest, Operation> createHardwareTransportSettings =
         HttpJsonCallSettings.<CreateHardwareRequest, Operation>newBuilder()
@@ -2057,6 +2073,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateHardwareRequest, Operation> updateHardwareTransportSettings =
         HttpJsonCallSettings.<UpdateHardwareRequest, Operation>newBuilder()
@@ -2079,6 +2096,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListCommentsRequest, ListCommentsResponse> listCommentsTransportSettings =
         HttpJsonCallSettings.<ListCommentsRequest, ListCommentsResponse>newBuilder()
@@ -2090,6 +2108,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetCommentRequest, Comment> getCommentTransportSettings =
         HttpJsonCallSettings.<GetCommentRequest, Comment>newBuilder()
@@ -2101,6 +2120,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateCommentRequest, Operation> createCommentTransportSettings =
         HttpJsonCallSettings.<CreateCommentRequest, Operation>newBuilder()
@@ -2112,6 +2132,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<RecordActionOnCommentRequest, Comment>
         recordActionOnCommentTransportSettings =
@@ -2124,6 +2145,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListChangeLogEntriesRequest, ListChangeLogEntriesResponse>
         listChangeLogEntriesTransportSettings =
@@ -2137,6 +2159,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetChangeLogEntryRequest, ChangeLogEntry>
         getChangeLogEntryTransportSettings =
@@ -2149,6 +2172,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListSkusRequest, ListSkusResponse> listSkusTransportSettings =
         HttpJsonCallSettings.<ListSkusRequest, ListSkusResponse>newBuilder()
@@ -2160,6 +2184,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetSkuRequest, Sku> getSkuTransportSettings =
         HttpJsonCallSettings.<GetSkuRequest, Sku>newBuilder()
@@ -2171,6 +2196,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListZonesRequest, ListZonesResponse> listZonesTransportSettings =
         HttpJsonCallSettings.<ListZonesRequest, ListZonesResponse>newBuilder()
@@ -2182,6 +2208,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetZoneRequest, Zone> getZoneTransportSettings =
         HttpJsonCallSettings.<GetZoneRequest, Zone>newBuilder()
@@ -2193,6 +2220,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateZoneRequest, Operation> createZoneTransportSettings =
         HttpJsonCallSettings.<CreateZoneRequest, Operation>newBuilder()
@@ -2204,6 +2232,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateZoneRequest, Operation> updateZoneTransportSettings =
         HttpJsonCallSettings.<UpdateZoneRequest, Operation>newBuilder()
@@ -2226,6 +2255,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<SignalZoneStateRequest, Operation> signalZoneStateTransportSettings =
         HttpJsonCallSettings.<SignalZoneStateRequest, Operation>newBuilder()
@@ -2237,6 +2267,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RequestOrderDateChangeRequest, Operation>
         requestOrderDateChangeTransportSettings =
@@ -2249,6 +2280,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

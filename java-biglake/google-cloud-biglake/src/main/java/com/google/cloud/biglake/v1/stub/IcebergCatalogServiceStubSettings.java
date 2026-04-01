@@ -347,6 +347,7 @@ public class IcebergCatalogServiceStubSettings
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-biglake")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

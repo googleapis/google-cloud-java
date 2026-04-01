@@ -207,6 +207,7 @@ public class GrpcSubscriptionsServiceStub extends SubscriptionsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetSubscriptionRequest, Subscription> getSubscriptionTransportSettings =
         GrpcCallSettings.<GetSubscriptionRequest, Subscription>newBuilder()
@@ -217,6 +218,7 @@ public class GrpcSubscriptionsServiceStub extends SubscriptionsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListSubscriptionsRequest, ListSubscriptionsResponse>
         listSubscriptionsTransportSettings =
@@ -244,6 +246,7 @@ public class GrpcSubscriptionsServiceStub extends SubscriptionsServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.createSubscriptionCallable =

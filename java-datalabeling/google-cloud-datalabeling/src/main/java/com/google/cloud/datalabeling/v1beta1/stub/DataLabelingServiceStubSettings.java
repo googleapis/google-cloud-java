@@ -1185,6 +1185,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-datalabeling")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

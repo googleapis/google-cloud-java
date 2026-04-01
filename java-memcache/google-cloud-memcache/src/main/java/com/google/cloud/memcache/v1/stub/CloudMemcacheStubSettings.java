@@ -513,6 +513,7 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-memcache")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

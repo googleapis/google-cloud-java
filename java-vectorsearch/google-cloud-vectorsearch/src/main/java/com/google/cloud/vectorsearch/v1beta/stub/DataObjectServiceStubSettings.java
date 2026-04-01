@@ -369,6 +369,7 @@ public class DataObjectServiceStubSettings extends StubSettings<DataObjectServic
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-vectorsearch")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

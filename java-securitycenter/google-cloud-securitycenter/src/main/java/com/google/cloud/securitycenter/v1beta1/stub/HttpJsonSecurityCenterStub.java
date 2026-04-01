@@ -898,6 +898,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateFindingRequest, Finding> createFindingTransportSettings =
         HttpJsonCallSettings.<CreateFindingRequest, Finding>newBuilder()
@@ -909,6 +910,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -920,6 +922,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetOrganizationSettingsRequest, OrganizationSettings>
         getOrganizationSettingsTransportSettings =
@@ -932,6 +935,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetSourceRequest, Source> getSourceTransportSettings =
         HttpJsonCallSettings.<GetSourceRequest, Source>newBuilder()
@@ -943,6 +947,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GroupAssetsRequest, GroupAssetsResponse> groupAssetsTransportSettings =
         HttpJsonCallSettings.<GroupAssetsRequest, GroupAssetsResponse>newBuilder()
@@ -954,6 +959,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GroupFindingsRequest, GroupFindingsResponse>
         groupFindingsTransportSettings =
@@ -966,6 +972,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListAssetsRequest, ListAssetsResponse> listAssetsTransportSettings =
         HttpJsonCallSettings.<ListAssetsRequest, ListAssetsResponse>newBuilder()
@@ -977,6 +984,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListFindingsRequest, ListFindingsResponse> listFindingsTransportSettings =
         HttpJsonCallSettings.<ListFindingsRequest, ListFindingsResponse>newBuilder()
@@ -988,6 +996,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListSourcesRequest, ListSourcesResponse> listSourcesTransportSettings =
         HttpJsonCallSettings.<ListSourcesRequest, ListSourcesResponse>newBuilder()
@@ -999,6 +1008,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<RunAssetDiscoveryRequest, Operation> runAssetDiscoveryTransportSettings =
         HttpJsonCallSettings.<RunAssetDiscoveryRequest, Operation>newBuilder()
@@ -1010,6 +1020,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<SetFindingStateRequest, Finding> setFindingStateTransportSettings =
         HttpJsonCallSettings.<SetFindingStateRequest, Finding>newBuilder()
@@ -1021,6 +1032,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -1032,6 +1044,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1044,6 +1057,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     HttpJsonCallSettings<UpdateFindingRequest, Finding> updateFindingTransportSettings =
         HttpJsonCallSettings.<UpdateFindingRequest, Finding>newBuilder()

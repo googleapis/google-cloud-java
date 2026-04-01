@@ -188,6 +188,7 @@ public class HttpJsonEmailPreferencesServiceStub extends EmailPreferencesService
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateEmailPreferencesRequest, EmailPreferences>
         updateEmailPreferencesTransportSettings =

@@ -407,6 +407,7 @@ public class ProvisioningStubSettings extends StubSettings<ProvisioningStubSetti
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-apigee-registry")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

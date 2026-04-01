@@ -561,6 +561,7 @@ public class SecretManagerServiceStubSettings
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-secretmanager")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

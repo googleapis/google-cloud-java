@@ -403,6 +403,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetAzureClientRequest, AzureClient> getAzureClientTransportSettings =
         GrpcCallSettings.<GetAzureClientRequest, AzureClient>newBuilder()
@@ -413,6 +414,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAzureClientsRequest, ListAzureClientsResponse>
         listAzureClientsTransportSettings =
@@ -424,6 +426,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteAzureClientRequest, Operation> deleteAzureClientTransportSettings =
         GrpcCallSettings.<DeleteAzureClientRequest, Operation>newBuilder()
@@ -434,6 +437,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateAzureClusterRequest, Operation> createAzureClusterTransportSettings =
         GrpcCallSettings.<CreateAzureClusterRequest, Operation>newBuilder()
@@ -444,6 +448,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateAzureClusterRequest, Operation> updateAzureClusterTransportSettings =
         GrpcCallSettings.<UpdateAzureClusterRequest, Operation>newBuilder()
@@ -465,6 +470,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAzureClustersRequest, ListAzureClustersResponse>
         listAzureClustersTransportSettings =
@@ -476,6 +482,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteAzureClusterRequest, Operation> deleteAzureClusterTransportSettings =
         GrpcCallSettings.<DeleteAzureClusterRequest, Operation>newBuilder()
@@ -486,6 +493,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GenerateAzureClusterAgentTokenRequest, GenerateAzureClusterAgentTokenResponse>
         generateAzureClusterAgentTokenTransportSettings =
@@ -499,6 +507,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                       builder.add("azure_cluster", String.valueOf(request.getAzureCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAzureCluster())
                 .build();
     GrpcCallSettings<GenerateAzureAccessTokenRequest, GenerateAzureAccessTokenResponse>
         generateAzureAccessTokenTransportSettings =
@@ -511,6 +520,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                       builder.add("azure_cluster", String.valueOf(request.getAzureCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAzureCluster())
                 .build();
     GrpcCallSettings<CreateAzureNodePoolRequest, Operation> createAzureNodePoolTransportSettings =
         GrpcCallSettings.<CreateAzureNodePoolRequest, Operation>newBuilder()
@@ -521,6 +531,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateAzureNodePoolRequest, Operation> updateAzureNodePoolTransportSettings =
         GrpcCallSettings.<UpdateAzureNodePoolRequest, Operation>newBuilder()
@@ -542,6 +553,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAzureNodePoolsRequest, ListAzureNodePoolsResponse>
         listAzureNodePoolsTransportSettings =
@@ -553,6 +565,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteAzureNodePoolRequest, Operation> deleteAzureNodePoolTransportSettings =
         GrpcCallSettings.<DeleteAzureNodePoolRequest, Operation>newBuilder()
@@ -563,6 +576,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>
         getAzureOpenIdConfigTransportSettings =
@@ -574,6 +588,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                       builder.add("azure_cluster", String.valueOf(request.getAzureCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAzureCluster())
                 .build();
     GrpcCallSettings<GetAzureJsonWebKeysRequest, AzureJsonWebKeys>
         getAzureJsonWebKeysTransportSettings =
@@ -585,6 +600,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                       builder.add("azure_cluster", String.valueOf(request.getAzureCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAzureCluster())
                 .build();
     GrpcCallSettings<GetAzureServerConfigRequest, AzureServerConfig>
         getAzureServerConfigTransportSettings =
@@ -596,6 +612,7 @@ public class GrpcAzureClustersStub extends AzureClustersStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.createAzureClientCallable =

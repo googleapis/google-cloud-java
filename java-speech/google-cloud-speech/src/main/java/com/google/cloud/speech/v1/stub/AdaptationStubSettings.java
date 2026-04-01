@@ -431,6 +431,7 @@ public class AdaptationStubSettings extends StubSettings<AdaptationStubSettings>
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-speech")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

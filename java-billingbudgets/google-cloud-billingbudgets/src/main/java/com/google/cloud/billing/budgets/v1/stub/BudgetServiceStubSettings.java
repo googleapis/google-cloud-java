@@ -330,6 +330,7 @@ public class BudgetServiceStubSettings extends StubSettings<BudgetServiceStubSet
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-billingbudgets")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

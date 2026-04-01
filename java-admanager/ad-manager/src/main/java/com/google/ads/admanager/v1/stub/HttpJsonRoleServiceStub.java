@@ -180,6 +180,7 @@ public class HttpJsonRoleServiceStub extends RoleServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListRolesRequest, ListRolesResponse> listRolesTransportSettings =
         HttpJsonCallSettings.<ListRolesRequest, ListRolesResponse>newBuilder()
@@ -191,6 +192,7 @@ public class HttpJsonRoleServiceStub extends RoleServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.getRoleCallable =

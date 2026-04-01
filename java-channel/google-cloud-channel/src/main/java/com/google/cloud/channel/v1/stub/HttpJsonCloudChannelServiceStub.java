@@ -2339,6 +2339,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<
             CheckCloudIdentityAccountsExistRequest, CheckCloudIdentityAccountsExistResponse>
@@ -2387,6 +2388,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ImportCustomerRequest, Customer> importCustomerTransportSettings =
         HttpJsonCallSettings.<ImportCustomerRequest, Customer>newBuilder()
@@ -2398,6 +2400,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getCustomer())
             .build();
     HttpJsonCallSettings<ProvisionCloudIdentityRequest, Operation>
         provisionCloudIdentityTransportSettings =
@@ -2410,6 +2413,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("customer", String.valueOf(request.getCustomer()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCustomer())
                 .build();
     HttpJsonCallSettings<ListEntitlementsRequest, ListEntitlementsResponse>
         listEntitlementsTransportSettings =
@@ -2422,6 +2426,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListTransferableSkusRequest, ListTransferableSkusResponse>
         listTransferableSkusTransportSettings =
@@ -2459,6 +2464,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateEntitlementRequest, Operation> createEntitlementTransportSettings =
         HttpJsonCallSettings.<CreateEntitlementRequest, Operation>newBuilder()
@@ -2470,6 +2476,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ChangeParametersRequest, Operation> changeParametersTransportSettings =
         HttpJsonCallSettings.<ChangeParametersRequest, Operation>newBuilder()
@@ -2504,6 +2511,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getOffer())
             .build();
     HttpJsonCallSettings<StartPaidServiceRequest, Operation> startPaidServiceTransportSettings =
         HttpJsonCallSettings.<StartPaidServiceRequest, Operation>newBuilder()
@@ -2635,6 +2643,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListCustomerRepricingConfigsRequest, ListCustomerRepricingConfigsResponse>
         listCustomerRepricingConfigsTransportSettings =
@@ -2649,6 +2658,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateCustomerRepricingConfigRequest, CustomerRepricingConfig>
         createCustomerRepricingConfigTransportSettings =
@@ -2662,6 +2672,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateCustomerRepricingConfigRequest, CustomerRepricingConfig>
         updateCustomerRepricingConfigTransportSettings =
@@ -2689,6 +2700,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
         getChannelPartnerRepricingConfigTransportSettings =
@@ -2703,6 +2715,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             ListChannelPartnerRepricingConfigsRequest, ListChannelPartnerRepricingConfigsResponse>
@@ -2719,6 +2732,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
         createChannelPartnerRepricingConfigTransportSettings =
@@ -2733,6 +2747,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
         updateChannelPartnerRepricingConfigTransportSettings =
@@ -2761,6 +2776,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListSkuGroupsRequest, ListSkuGroupsResponse>
         listSkuGroupsTransportSettings =
@@ -2786,6 +2802,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<LookupOfferRequest, Offer> lookupOfferTransportSettings =
         HttpJsonCallSettings.<LookupOfferRequest, Offer>newBuilder()
@@ -2797,6 +2814,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                   builder.add("entitlement", String.valueOf(request.getEntitlement()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEntitlement())
             .build();
     HttpJsonCallSettings<ListProductsRequest, ListProductsResponse> listProductsTransportSettings =
         HttpJsonCallSettings.<ListProductsRequest, ListProductsResponse>newBuilder()
@@ -2813,6 +2831,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListOffersRequest, ListOffersResponse> listOffersTransportSettings =
         HttpJsonCallSettings.<ListOffersRequest, ListOffersResponse>newBuilder()
@@ -2837,6 +2856,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("customer", String.valueOf(request.getCustomer()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCustomer())
                 .build();
     HttpJsonCallSettings<ListPurchasableOffersRequest, ListPurchasableOffersResponse>
         listPurchasableOffersTransportSettings =
@@ -2850,6 +2870,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("customer", String.valueOf(request.getCustomer()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCustomer())
                 .build();
     HttpJsonCallSettings<QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
         queryEligibleBillingAccountsTransportSettings =
@@ -2864,6 +2885,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("customer", String.valueOf(request.getCustomer()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCustomer())
                 .build();
     HttpJsonCallSettings<RegisterSubscriberRequest, RegisterSubscriberResponse>
         registerSubscriberTransportSettings =
@@ -2877,6 +2899,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("integrator", String.valueOf(request.getIntegrator()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAccount())
                 .build();
     HttpJsonCallSettings<UnregisterSubscriberRequest, UnregisterSubscriberResponse>
         unregisterSubscriberTransportSettings =
@@ -2891,6 +2914,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("integrator", String.valueOf(request.getIntegrator()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAccount())
                 .build();
     HttpJsonCallSettings<ListSubscribersRequest, ListSubscribersResponse>
         listSubscribersTransportSettings =
@@ -2904,6 +2928,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("integrator", String.valueOf(request.getIntegrator()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAccount())
                 .build();
     HttpJsonCallSettings<ListEntitlementChangesRequest, ListEntitlementChangesResponse>
         listEntitlementChangesTransportSettings =
@@ -2917,6 +2942,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.listCustomersCallable =

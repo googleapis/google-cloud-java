@@ -569,6 +569,7 @@ public class StorageTransferServiceStubSettings
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-storage-transfer")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

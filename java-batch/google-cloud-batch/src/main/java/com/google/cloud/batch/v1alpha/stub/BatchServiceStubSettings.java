@@ -667,6 +667,7 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-batch")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

@@ -674,6 +674,7 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-build")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

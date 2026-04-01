@@ -590,11 +590,13 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListProjectsRequest, ListProjectsResponse> listProjectsTransportSettings =
         HttpJsonCallSettings.<ListProjectsRequest, ListProjectsResponse>newBuilder()
             .setMethodDescriptor(listProjectsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<SearchProjectsRequest, SearchProjectsResponse>
         searchProjectsTransportSettings =
@@ -628,6 +630,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteProjectRequest, Operation> deleteProjectTransportSettings =
         HttpJsonCallSettings.<DeleteProjectRequest, Operation>newBuilder()
@@ -639,6 +642,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UndeleteProjectRequest, Operation> undeleteProjectTransportSettings =
         HttpJsonCallSettings.<UndeleteProjectRequest, Operation>newBuilder()
@@ -650,6 +654,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -661,6 +666,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -672,6 +678,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -684,6 +691,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.getProjectCallable =
