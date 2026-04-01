@@ -393,6 +393,7 @@ public class HttpJsonSessionsStub extends SessionsStub {
                   builder.add("session", String.valueOf(request.getSession()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getSession())
             .build();
     HttpJsonCallSettings<DetectIntentRequest, DetectIntentResponse>
         serverStreamingDetectIntentTransportSettings =
@@ -405,6 +406,7 @@ public class HttpJsonSessionsStub extends SessionsStub {
                       builder.add("session", String.valueOf(request.getSession()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getSession())
                 .build();
     HttpJsonCallSettings<MatchIntentRequest, MatchIntentResponse> matchIntentTransportSettings =
         HttpJsonCallSettings.<MatchIntentRequest, MatchIntentResponse>newBuilder()
@@ -416,6 +418,7 @@ public class HttpJsonSessionsStub extends SessionsStub {
                   builder.add("session", String.valueOf(request.getSession()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getSession())
             .build();
     HttpJsonCallSettings<FulfillIntentRequest, FulfillIntentResponse>
         fulfillIntentTransportSettings =
@@ -442,6 +445,7 @@ public class HttpJsonSessionsStub extends SessionsStub {
                       builder.add("session", String.valueOf(request.getSession()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getSession())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

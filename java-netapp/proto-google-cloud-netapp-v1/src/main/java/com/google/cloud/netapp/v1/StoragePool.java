@@ -68,6 +68,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
     zone_ = "";
     qosType_ = 0;
     type_ = 0;
+    mode_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1143,7 +1144,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
    * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
    *
    * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
-   *     google/cloud/netapp/v1/storage_pool.proto;l=243
+   *     google/cloud/netapp/v1/storage_pool.proto;l=256
    * @return Whether the globalAccessAllowed field is set.
    */
   @java.lang.Override
@@ -1163,7 +1164,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
    * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
    *
    * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
-   *     google/cloud/netapp/v1/storage_pool.proto;l=243
+   *     google/cloud/netapp/v1/storage_pool.proto;l=256
    * @return The globalAccessAllowed.
    */
   @java.lang.Override
@@ -1569,9 +1570,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. Type of the storage pool. This field is used to control whether
    * the pool supports `FILE` based volumes only or `UNIFIED` (both `FILE` and
-   * `BLOCK`) volumes or `UNIFIED_LARGE_CAPACITY` (both `FILE` and `BLOCK`)
-   * volumes with large capacity. If not specified during creation, it defaults
-   * to `FILE`.
+   * `BLOCK`) volumes. If not specified during creation, it defaults to `FILE`.
    * </pre>
    *
    * <code>
@@ -1591,9 +1590,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. Type of the storage pool. This field is used to control whether
    * the pool supports `FILE` based volumes only or `UNIFIED` (both `FILE` and
-   * `BLOCK`) volumes or `UNIFIED_LARGE_CAPACITY` (both `FILE` and `BLOCK`)
-   * volumes with large capacity. If not specified during creation, it defaults
-   * to `FILE`.
+   * `BLOCK`) volumes. If not specified during creation, it defaults to `FILE`.
    * </pre>
    *
    * <code>
@@ -1613,9 +1610,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. Type of the storage pool. This field is used to control whether
    * the pool supports `FILE` based volumes only or `UNIFIED` (both `FILE` and
-   * `BLOCK`) volumes or `UNIFIED_LARGE_CAPACITY` (both `FILE` and `BLOCK`)
-   * volumes with large capacity. If not specified during creation, it defaults
-   * to `FILE`.
+   * `BLOCK`) volumes. If not specified during creation, it defaults to `FILE`.
    * </pre>
    *
    * <code>
@@ -1629,6 +1624,73 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
     com.google.cloud.netapp.v1.StoragePoolType result =
         com.google.cloud.netapp.v1.StoragePoolType.forNumber(type_);
     return result == null ? com.google.cloud.netapp.v1.StoragePoolType.UNRECOGNIZED : result;
+  }
+
+  public static final int MODE_FIELD_NUMBER = 36;
+  private int mode_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mode of the storage pool. This field is used to control whether
+   * the user can perform the ONTAP operations on the storage pool using the
+   * GCNV ONTAP Mode APIs. If not specified during creation, it defaults to
+   * `DEFAULT`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.netapp.v1.Mode mode = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the mode field is set.
+   */
+  @java.lang.Override
+  public boolean hasMode() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mode of the storage pool. This field is used to control whether
+   * the user can perform the ONTAP operations on the storage pool using the
+   * GCNV ONTAP Mode APIs. If not specified during creation, it defaults to
+   * `DEFAULT`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.netapp.v1.Mode mode = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for mode.
+   */
+  @java.lang.Override
+  public int getModeValue() {
+    return mode_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mode of the storage pool. This field is used to control whether
+   * the user can perform the ONTAP operations on the storage pool using the
+   * GCNV ONTAP Mode APIs. If not specified during creation, it defaults to
+   * `DEFAULT`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.netapp.v1.Mode mode = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The mode.
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.Mode getMode() {
+    com.google.cloud.netapp.v1.Mode result = com.google.cloud.netapp.v1.Mode.forNumber(mode_);
+    return result == null ? com.google.cloud.netapp.v1.Mode.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1741,6 +1803,9 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeEnum(35, type_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeEnum(36, mode_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1857,6 +1922,9 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(35, type_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(36, mode_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1916,6 +1984,10 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
     if (hasType() != other.hasType()) return false;
     if (hasType()) {
       if (type_ != other.type_) return false;
+    }
+    if (hasMode() != other.hasMode()) return false;
+    if (hasMode()) {
+      if (mode_ != other.mode_) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -2004,6 +2076,10 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
     if (hasType()) {
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
+    }
+    if (hasMode()) {
+      hash = (37 * hash) + MODE_FIELD_NUMBER;
+      hash = (53 * hash) + mode_;
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2178,6 +2254,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      bitField1_ = 0;
       name_ = "";
       serviceLevel_ = 0;
       capacityGib_ = 0L;
@@ -2214,6 +2291,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
       coldTierSizeUsedGib_ = 0L;
       hotTierSizeUsedGib_ = 0L;
       type_ = 0;
+      mode_ = 0;
       return this;
     }
 
@@ -2243,6 +2321,9 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
           new com.google.cloud.netapp.v1.StoragePool(this);
       if (bitField0_ != 0) {
         buildPartial0(result);
+      }
+      if (bitField1_ != 0) {
+        buildPartial1(result);
       }
       onBuilt();
       return result;
@@ -2351,6 +2432,16 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x80000000) != 0)) {
         result.type_ = type_;
         to_bitField0_ |= 0x00000008;
+      }
+      result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartial1(com.google.cloud.netapp.v1.StoragePool result) {
+      int from_bitField1_ = bitField1_;
+      int to_bitField0_ = 0;
+      if (((from_bitField1_ & 0x00000001) != 0)) {
+        result.mode_ = mode_;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2479,6 +2570,9 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasType()) {
         setTypeValue(other.getTypeValue());
+      }
+      if (other.hasMode()) {
+        setModeValue(other.getModeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2705,6 +2799,12 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x80000000;
                 break;
               } // case 280
+            case 288:
+              {
+                mode_ = input.readEnum();
+                bitField1_ |= 0x00000001;
+                break;
+              } // case 288
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2723,6 +2823,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
     }
 
     private int bitField0_;
+    private int bitField1_;
 
     private java.lang.Object name_ = "";
 
@@ -4482,7 +4583,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
      * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
-     *     google/cloud/netapp/v1/storage_pool.proto;l=243
+     *     google/cloud/netapp/v1/storage_pool.proto;l=256
      * @return Whether the globalAccessAllowed field is set.
      */
     @java.lang.Override
@@ -4502,7 +4603,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
      * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
-     *     google/cloud/netapp/v1/storage_pool.proto;l=243
+     *     google/cloud/netapp/v1/storage_pool.proto;l=256
      * @return The globalAccessAllowed.
      */
     @java.lang.Override
@@ -4522,7 +4623,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
      * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
-     *     google/cloud/netapp/v1/storage_pool.proto;l=243
+     *     google/cloud/netapp/v1/storage_pool.proto;l=256
      * @param value The globalAccessAllowed to set.
      * @return This builder for chaining.
      */
@@ -4546,7 +4647,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
      * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
-     *     google/cloud/netapp/v1/storage_pool.proto;l=243
+     *     google/cloud/netapp/v1/storage_pool.proto;l=256
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -5574,9 +5675,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. Type of the storage pool. This field is used to control whether
      * the pool supports `FILE` based volumes only or `UNIFIED` (both `FILE` and
-     * `BLOCK`) volumes or `UNIFIED_LARGE_CAPACITY` (both `FILE` and `BLOCK`)
-     * volumes with large capacity. If not specified during creation, it defaults
-     * to `FILE`.
+     * `BLOCK`) volumes. If not specified during creation, it defaults to `FILE`.
      * </pre>
      *
      * <code>
@@ -5596,9 +5695,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. Type of the storage pool. This field is used to control whether
      * the pool supports `FILE` based volumes only or `UNIFIED` (both `FILE` and
-     * `BLOCK`) volumes or `UNIFIED_LARGE_CAPACITY` (both `FILE` and `BLOCK`)
-     * volumes with large capacity. If not specified during creation, it defaults
-     * to `FILE`.
+     * `BLOCK`) volumes. If not specified during creation, it defaults to `FILE`.
      * </pre>
      *
      * <code>
@@ -5618,9 +5715,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. Type of the storage pool. This field is used to control whether
      * the pool supports `FILE` based volumes only or `UNIFIED` (both `FILE` and
-     * `BLOCK`) volumes or `UNIFIED_LARGE_CAPACITY` (both `FILE` and `BLOCK`)
-     * volumes with large capacity. If not specified during creation, it defaults
-     * to `FILE`.
+     * `BLOCK`) volumes. If not specified during creation, it defaults to `FILE`.
      * </pre>
      *
      * <code>
@@ -5643,9 +5738,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. Type of the storage pool. This field is used to control whether
      * the pool supports `FILE` based volumes only or `UNIFIED` (both `FILE` and
-     * `BLOCK`) volumes or `UNIFIED_LARGE_CAPACITY` (both `FILE` and `BLOCK`)
-     * volumes with large capacity. If not specified during creation, it defaults
-     * to `FILE`.
+     * `BLOCK`) volumes. If not specified during creation, it defaults to `FILE`.
      * </pre>
      *
      * <code>
@@ -5667,9 +5760,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. Type of the storage pool. This field is used to control whether
      * the pool supports `FILE` based volumes only or `UNIFIED` (both `FILE` and
-     * `BLOCK`) volumes or `UNIFIED_LARGE_CAPACITY` (both `FILE` and `BLOCK`)
-     * volumes with large capacity. If not specified during creation, it defaults
-     * to `FILE`.
+     * `BLOCK`) volumes. If not specified during creation, it defaults to `FILE`.
      * </pre>
      *
      * <code>
@@ -5695,9 +5786,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. Type of the storage pool. This field is used to control whether
      * the pool supports `FILE` based volumes only or `UNIFIED` (both `FILE` and
-     * `BLOCK`) volumes or `UNIFIED_LARGE_CAPACITY` (both `FILE` and `BLOCK`)
-     * volumes with large capacity. If not specified during creation, it defaults
-     * to `FILE`.
+     * `BLOCK`) volumes. If not specified during creation, it defaults to `FILE`.
      * </pre>
      *
      * <code>
@@ -5709,6 +5798,146 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
     public Builder clearType() {
       bitField0_ = (bitField0_ & ~0x80000000);
       type_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int mode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mode of the storage pool. This field is used to control whether
+     * the user can perform the ONTAP operations on the storage pool using the
+     * GCNV ONTAP Mode APIs. If not specified during creation, it defaults to
+     * `DEFAULT`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.netapp.v1.Mode mode = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the mode field is set.
+     */
+    @java.lang.Override
+    public boolean hasMode() {
+      return ((bitField1_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mode of the storage pool. This field is used to control whether
+     * the user can perform the ONTAP operations on the storage pool using the
+     * GCNV ONTAP Mode APIs. If not specified during creation, it defaults to
+     * `DEFAULT`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.netapp.v1.Mode mode = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for mode.
+     */
+    @java.lang.Override
+    public int getModeValue() {
+      return mode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mode of the storage pool. This field is used to control whether
+     * the user can perform the ONTAP operations on the storage pool using the
+     * GCNV ONTAP Mode APIs. If not specified during creation, it defaults to
+     * `DEFAULT`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.netapp.v1.Mode mode = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for mode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModeValue(int value) {
+      mode_ = value;
+      bitField1_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mode of the storage pool. This field is used to control whether
+     * the user can perform the ONTAP operations on the storage pool using the
+     * GCNV ONTAP Mode APIs. If not specified during creation, it defaults to
+     * `DEFAULT`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.netapp.v1.Mode mode = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The mode.
+     */
+    @java.lang.Override
+    public com.google.cloud.netapp.v1.Mode getMode() {
+      com.google.cloud.netapp.v1.Mode result = com.google.cloud.netapp.v1.Mode.forNumber(mode_);
+      return result == null ? com.google.cloud.netapp.v1.Mode.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mode of the storage pool. This field is used to control whether
+     * the user can perform the ONTAP operations on the storage pool using the
+     * GCNV ONTAP Mode APIs. If not specified during creation, it defaults to
+     * `DEFAULT`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.netapp.v1.Mode mode = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The mode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMode(com.google.cloud.netapp.v1.Mode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField1_ |= 0x00000001;
+      mode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mode of the storage pool. This field is used to control whether
+     * the user can perform the ONTAP operations on the storage pool using the
+     * GCNV ONTAP Mode APIs. If not specified during creation, it defaults to
+     * `DEFAULT`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.netapp.v1.Mode mode = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMode() {
+      bitField1_ = (bitField1_ & ~0x00000001);
+      mode_ = 0;
       onChanged();
       return this;
     }

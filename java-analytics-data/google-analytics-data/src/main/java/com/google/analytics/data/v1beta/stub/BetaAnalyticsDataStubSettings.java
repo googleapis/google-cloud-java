@@ -452,6 +452,7 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.analytics:google-analytics-data")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

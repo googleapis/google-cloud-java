@@ -230,8 +230,11 @@ public final class LanguageSettings extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The action to perform when an agent receives input in an
-   * unsupported language.
+   * Optional. Deprecated: This feature is no longer supported. Use
+   * `enable_multilingual_support` instead to improve handling of multilingual
+   * input.
+   * The action to perform when an agent receives input in an unsupported
+   * language.
    *
    * This can be a predefined action or a custom tool call.
    * Valid values are:
@@ -242,11 +245,15 @@ public final class LanguageSettings extends com.google.protobuf.GeneratedMessage
    * conversation.
    * </pre>
    *
-   * <code>string fallback_action = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string fallback_action = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.ces.v1.LanguageSettings.fallback_action is deprecated. See
+   *     google/cloud/ces/v1/app.proto;l=235
    * @return The fallbackAction.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getFallbackAction() {
     java.lang.Object ref = fallbackAction_;
     if (ref instanceof java.lang.String) {
@@ -263,8 +270,11 @@ public final class LanguageSettings extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The action to perform when an agent receives input in an
-   * unsupported language.
+   * Optional. Deprecated: This feature is no longer supported. Use
+   * `enable_multilingual_support` instead to improve handling of multilingual
+   * input.
+   * The action to perform when an agent receives input in an unsupported
+   * language.
    *
    * This can be a predefined action or a custom tool call.
    * Valid values are:
@@ -275,11 +285,15 @@ public final class LanguageSettings extends com.google.protobuf.GeneratedMessage
    * conversation.
    * </pre>
    *
-   * <code>string fallback_action = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string fallback_action = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.ces.v1.LanguageSettings.fallback_action is deprecated. See
+   *     google/cloud/ces/v1/app.proto;l=235
    * @return The bytes for fallbackAction.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getFallbackActionBytes() {
     java.lang.Object ref = fallbackAction_;
     if (ref instanceof java.lang.String) {
@@ -1064,8 +1078,11 @@ public final class LanguageSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The action to perform when an agent receives input in an
-     * unsupported language.
+     * Optional. Deprecated: This feature is no longer supported. Use
+     * `enable_multilingual_support` instead to improve handling of multilingual
+     * input.
+     * The action to perform when an agent receives input in an unsupported
+     * language.
      *
      * This can be a predefined action or a custom tool call.
      * Valid values are:
@@ -1076,10 +1093,15 @@ public final class LanguageSettings extends com.google.protobuf.GeneratedMessage
      * conversation.
      * </pre>
      *
-     * <code>string fallback_action = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string fallback_action = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.ces.v1.LanguageSettings.fallback_action is deprecated. See
+     *     google/cloud/ces/v1/app.proto;l=235
      * @return The fallbackAction.
      */
+    @java.lang.Deprecated
     public java.lang.String getFallbackAction() {
       java.lang.Object ref = fallbackAction_;
       if (!(ref instanceof java.lang.String)) {
@@ -1096,8 +1118,11 @@ public final class LanguageSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The action to perform when an agent receives input in an
-     * unsupported language.
+     * Optional. Deprecated: This feature is no longer supported. Use
+     * `enable_multilingual_support` instead to improve handling of multilingual
+     * input.
+     * The action to perform when an agent receives input in an unsupported
+     * language.
      *
      * This can be a predefined action or a custom tool call.
      * Valid values are:
@@ -1108,10 +1133,15 @@ public final class LanguageSettings extends com.google.protobuf.GeneratedMessage
      * conversation.
      * </pre>
      *
-     * <code>string fallback_action = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string fallback_action = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.ces.v1.LanguageSettings.fallback_action is deprecated. See
+     *     google/cloud/ces/v1/app.proto;l=235
      * @return The bytes for fallbackAction.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getFallbackActionBytes() {
       java.lang.Object ref = fallbackAction_;
       if (ref instanceof String) {
@@ -1128,8 +1158,11 @@ public final class LanguageSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The action to perform when an agent receives input in an
-     * unsupported language.
+     * Optional. Deprecated: This feature is no longer supported. Use
+     * `enable_multilingual_support` instead to improve handling of multilingual
+     * input.
+     * The action to perform when an agent receives input in an unsupported
+     * language.
      *
      * This can be a predefined action or a custom tool call.
      * Valid values are:
@@ -1140,11 +1173,16 @@ public final class LanguageSettings extends com.google.protobuf.GeneratedMessage
      * conversation.
      * </pre>
      *
-     * <code>string fallback_action = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string fallback_action = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.ces.v1.LanguageSettings.fallback_action is deprecated. See
+     *     google/cloud/ces/v1/app.proto;l=235
      * @param value The fallbackAction to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setFallbackAction(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1159,8 +1197,11 @@ public final class LanguageSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The action to perform when an agent receives input in an
-     * unsupported language.
+     * Optional. Deprecated: This feature is no longer supported. Use
+     * `enable_multilingual_support` instead to improve handling of multilingual
+     * input.
+     * The action to perform when an agent receives input in an unsupported
+     * language.
      *
      * This can be a predefined action or a custom tool call.
      * Valid values are:
@@ -1171,10 +1212,15 @@ public final class LanguageSettings extends com.google.protobuf.GeneratedMessage
      * conversation.
      * </pre>
      *
-     * <code>string fallback_action = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string fallback_action = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.ces.v1.LanguageSettings.fallback_action is deprecated. See
+     *     google/cloud/ces/v1/app.proto;l=235
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearFallbackAction() {
       fallbackAction_ = getDefaultInstance().getFallbackAction();
       bitField0_ = (bitField0_ & ~0x00000008);
@@ -1186,8 +1232,11 @@ public final class LanguageSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The action to perform when an agent receives input in an
-     * unsupported language.
+     * Optional. Deprecated: This feature is no longer supported. Use
+     * `enable_multilingual_support` instead to improve handling of multilingual
+     * input.
+     * The action to perform when an agent receives input in an unsupported
+     * language.
      *
      * This can be a predefined action or a custom tool call.
      * Valid values are:
@@ -1198,11 +1247,16 @@ public final class LanguageSettings extends com.google.protobuf.GeneratedMessage
      * conversation.
      * </pre>
      *
-     * <code>string fallback_action = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string fallback_action = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.ces.v1.LanguageSettings.fallback_action is deprecated. See
+     *     google/cloud/ces/v1/app.proto;l=235
      * @param value The bytes for fallbackAction to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setFallbackActionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();

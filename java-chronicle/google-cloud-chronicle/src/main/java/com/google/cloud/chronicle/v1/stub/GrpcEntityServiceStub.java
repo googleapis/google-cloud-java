@@ -162,6 +162,7 @@ public class GrpcEntityServiceStub extends EntityServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListWatchlistsRequest, ListWatchlistsResponse>
         listWatchlistsTransportSettings =
@@ -173,6 +174,7 @@ public class GrpcEntityServiceStub extends EntityServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateWatchlistRequest, Watchlist> createWatchlistTransportSettings =
         GrpcCallSettings.<CreateWatchlistRequest, Watchlist>newBuilder()
@@ -183,6 +185,7 @@ public class GrpcEntityServiceStub extends EntityServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateWatchlistRequest, Watchlist> updateWatchlistTransportSettings =
         GrpcCallSettings.<UpdateWatchlistRequest, Watchlist>newBuilder()
@@ -203,6 +206,7 @@ public class GrpcEntityServiceStub extends EntityServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getWatchlistCallable =

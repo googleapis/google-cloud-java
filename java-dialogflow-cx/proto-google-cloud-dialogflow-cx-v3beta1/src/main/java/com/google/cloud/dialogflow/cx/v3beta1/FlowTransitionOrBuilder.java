@@ -96,7 +96,7 @@ public interface FlowTransitionOrBuilder
    * <code>.google.protobuf.Struct input_action_parameters = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.FlowTransition.input_action_parameters is
-   *     deprecated. See google/cloud/dialogflow/cx/v3beta1/trace.proto;l=408
+   *     deprecated. See google/cloud/dialogflow/cx/v3beta1/trace.proto;l=485
    * @return Whether the inputActionParameters field is set.
    */
   @java.lang.Deprecated
@@ -112,7 +112,7 @@ public interface FlowTransitionOrBuilder
    * <code>.google.protobuf.Struct input_action_parameters = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.FlowTransition.input_action_parameters is
-   *     deprecated. See google/cloud/dialogflow/cx/v3beta1/trace.proto;l=408
+   *     deprecated. See google/cloud/dialogflow/cx/v3beta1/trace.proto;l=485
    * @return The inputActionParameters.
    */
   @java.lang.Deprecated

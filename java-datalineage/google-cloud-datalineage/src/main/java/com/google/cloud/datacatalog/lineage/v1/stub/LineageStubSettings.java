@@ -733,6 +733,7 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-datalineage")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

@@ -214,6 +214,7 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateSpaceRequest, Space> updateSpaceTransportSettings =
         GrpcCallSettings.<UpdateSpaceRequest, Space>newBuilder()
@@ -236,6 +237,7 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<EndActiveConferenceRequest, Empty> endActiveConferenceTransportSettings =
         GrpcCallSettings.<EndActiveConferenceRequest, Empty>newBuilder()
@@ -246,6 +248,7 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateMemberRequest, Member> createMemberTransportSettings =
         GrpcCallSettings.<CreateMemberRequest, Member>newBuilder()
@@ -256,6 +259,7 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetMemberRequest, Member> getMemberTransportSettings =
         GrpcCallSettings.<GetMemberRequest, Member>newBuilder()
@@ -266,6 +270,7 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListMembersRequest, ListMembersResponse> listMembersTransportSettings =
         GrpcCallSettings.<ListMembersRequest, ListMembersResponse>newBuilder()
@@ -276,6 +281,7 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteMemberRequest, Empty> deleteMemberTransportSettings =
         GrpcCallSettings.<DeleteMemberRequest, Empty>newBuilder()
@@ -286,6 +292,7 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createSpaceCallable =

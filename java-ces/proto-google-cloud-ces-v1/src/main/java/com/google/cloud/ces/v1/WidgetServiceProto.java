@@ -62,24 +62,25 @@ public final class WidgetServiceProto extends com.google.protobuf.GeneratedFile 
           + "tations.proto\032\027google/api/client.proto\032\037"
           + "google/api/field_behavior.proto\032\031google/"
           + "api/resource.proto\032\037google/protobuf/time"
-          + "stamp.proto\"\245\001\n\030GenerateChatTokenRequest"
+          + "stamp.proto\"\310\001\n\030GenerateChatTokenRequest"
           + "\0220\n\004name\030\001 \001(\tB\"\340A\002\372A\034\n\032ces.googleapis.c"
           + "om/Session\0229\n\ndeployment\030\002 \001(\tB%\340A\002\372A\037\n\035"
           + "ces.googleapis.com/Deployment\022\034\n\017recaptc"
-          + "ha_token\030\003 \001(\tB\003\340A\001\"`\n\031GenerateChatToken"
-          + "Response\022\022\n\nchat_token\030\001 \001(\t\022/\n\013expire_t"
-          + "ime\030\002 \001(\0132\032.google.protobuf.Timestamp2\302\002"
-          + "\n\rWidgetService\022\304\001\n\021GenerateChatToken\022-."
-          + "google.cloud.ces.v1.GenerateChatTokenReq"
-          + "uest\032..google.cloud.ces.v1.GenerateChatT"
-          + "okenResponse\"P\202\323\344\223\002J\"E/v1/{name=projects"
-          + "/*/locations/*/apps/*/sessions/*}:genera"
-          + "teChatToken:\001*\032j\312A\022ces.googleapis.com\322AR"
-          + "https://www.googleapis.com/auth/ces,http"
-          + "s://www.googleapis.com/auth/cloud-platfo"
-          + "rmBZ\n\027com.google.cloud.ces.v1B\022WidgetSer"
-          + "viceProtoP\001Z)cloud.google.com/go/ces/api"
-          + "v1/cespb;cespbb\006proto3"
+          + "ha_token\030\003 \001(\tB\003\340A\001\022!\n\024live_handoff_enab"
+          + "led\030\004 \001(\010B\003\340A\001\"`\n\031GenerateChatTokenRespo"
+          + "nse\022\022\n\nchat_token\030\001 \001(\t\022/\n\013expire_time\030\002"
+          + " \001(\0132\032.google.protobuf.Timestamp2\302\002\n\rWid"
+          + "getService\022\304\001\n\021GenerateChatToken\022-.googl"
+          + "e.cloud.ces.v1.GenerateChatTokenRequest\032"
+          + "..google.cloud.ces.v1.GenerateChatTokenR"
+          + "esponse\"P\202\323\344\223\002J\"E/v1/{name=projects/*/lo"
+          + "cations/*/apps/*/sessions/*}:generateCha"
+          + "tToken:\001*\032j\312A\022ces.googleapis.com\322ARhttps"
+          + "://www.googleapis.com/auth/ces,https://w"
+          + "ww.googleapis.com/auth/cloud-platformBZ\n"
+          + "\027com.google.cloud.ces.v1B\022WidgetServiceP"
+          + "rotoP\001Z)cloud.google.com/go/ces/apiv1/ce"
+          + "spb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -97,7 +98,7 @@ public final class WidgetServiceProto extends com.google.protobuf.GeneratedFile 
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1_GenerateChatTokenRequest_descriptor,
             new java.lang.String[] {
-              "Name", "Deployment", "RecaptchaToken",
+              "Name", "Deployment", "RecaptchaToken", "LiveHandoffEnabled",
             });
     internal_static_google_cloud_ces_v1_GenerateChatTokenResponse_descriptor =
         getDescriptor().getMessageType(1);

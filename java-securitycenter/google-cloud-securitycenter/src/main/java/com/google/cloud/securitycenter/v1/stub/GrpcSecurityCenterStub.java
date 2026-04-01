@@ -1251,6 +1251,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<
             CreateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
@@ -1266,6 +1267,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateSourceRequest, Source> createSourceTransportSettings =
         GrpcCallSettings.<CreateSourceRequest, Source>newBuilder()
@@ -1276,6 +1278,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateFindingRequest, Finding> createFindingTransportSettings =
         GrpcCallSettings.<CreateFindingRequest, Finding>newBuilder()
@@ -1286,6 +1289,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateMuteConfigRequest, MuteConfig> createMuteConfigTransportSettings =
         GrpcCallSettings.<CreateMuteConfigRequest, MuteConfig>newBuilder()
@@ -1296,6 +1300,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateNotificationConfigRequest, NotificationConfig>
         createNotificationConfigTransportSettings =
@@ -1307,6 +1312,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteMuteConfigRequest, Empty> deleteMuteConfigTransportSettings =
         GrpcCallSettings.<DeleteMuteConfigRequest, Empty>newBuilder()
@@ -1317,6 +1323,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteNotificationConfigRequest, Empty>
         deleteNotificationConfigTransportSettings =
@@ -1328,6 +1335,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
         deleteSecurityHealthAnalyticsCustomModuleTransportSettings =
@@ -1339,6 +1347,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetSimulationRequest, Simulation> getSimulationTransportSettings =
         GrpcCallSettings.<GetSimulationRequest, Simulation>newBuilder()
@@ -1349,6 +1358,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetValuedResourceRequest, ValuedResource> getValuedResourceTransportSettings =
         GrpcCallSettings.<GetValuedResourceRequest, ValuedResource>newBuilder()
@@ -1359,6 +1369,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetBigQueryExportRequest, BigQueryExport> getBigQueryExportTransportSettings =
         GrpcCallSettings.<GetBigQueryExportRequest, BigQueryExport>newBuilder()
@@ -1369,6 +1380,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1379,6 +1391,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetMuteConfigRequest, MuteConfig> getMuteConfigTransportSettings =
         GrpcCallSettings.<GetMuteConfigRequest, MuteConfig>newBuilder()
@@ -1389,6 +1402,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetNotificationConfigRequest, NotificationConfig>
         getNotificationConfigTransportSettings =
@@ -1400,6 +1414,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetOrganizationSettingsRequest, OrganizationSettings>
         getOrganizationSettingsTransportSettings =
@@ -1411,6 +1426,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
@@ -1428,6 +1444,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             GetSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
@@ -1443,6 +1460,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetSourceRequest, Source> getSourceTransportSettings =
         GrpcCallSettings.<GetSourceRequest, Source>newBuilder()
@@ -1453,6 +1471,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GroupAssetsRequest, GroupAssetsResponse> groupAssetsTransportSettings =
         GrpcCallSettings.<GroupAssetsRequest, GroupAssetsResponse>newBuilder()
@@ -1463,6 +1482,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GroupFindingsRequest, GroupFindingsResponse> groupFindingsTransportSettings =
         GrpcCallSettings.<GroupFindingsRequest, GroupFindingsResponse>newBuilder()
@@ -1473,6 +1493,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListAssetsRequest, ListAssetsResponse> listAssetsTransportSettings =
         GrpcCallSettings.<ListAssetsRequest, ListAssetsResponse>newBuilder()
@@ -1483,6 +1504,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<
             ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
@@ -1500,6 +1522,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListFindingsRequest, ListFindingsResponse> listFindingsTransportSettings =
         GrpcCallSettings.<ListFindingsRequest, ListFindingsResponse>newBuilder()
@@ -1510,6 +1533,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListMuteConfigsRequest, ListMuteConfigsResponse>
         listMuteConfigsTransportSettings =
@@ -1521,6 +1545,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListNotificationConfigsRequest, ListNotificationConfigsResponse>
         listNotificationConfigsTransportSettings =
@@ -1533,6 +1558,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
@@ -1550,6 +1576,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             ListSecurityHealthAnalyticsCustomModulesRequest,
@@ -1566,6 +1593,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListSourcesRequest, ListSourcesResponse> listSourcesTransportSettings =
         GrpcCallSettings.<ListSourcesRequest, ListSourcesResponse>newBuilder()
@@ -1576,6 +1604,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<RunAssetDiscoveryRequest, Operation> runAssetDiscoveryTransportSettings =
         GrpcCallSettings.<RunAssetDiscoveryRequest, Operation>newBuilder()
@@ -1586,6 +1615,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<SetFindingStateRequest, Finding> setFindingStateTransportSettings =
         GrpcCallSettings.<SetFindingStateRequest, Finding>newBuilder()
@@ -1596,6 +1626,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SetMuteRequest, Finding> setMuteTransportSettings =
         GrpcCallSettings.<SetMuteRequest, Finding>newBuilder()
@@ -1606,6 +1637,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -1616,6 +1648,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1627,6 +1660,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     GrpcCallSettings<
             SimulateSecurityHealthAnalyticsCustomModuleRequest,
@@ -1755,6 +1789,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteBigQueryExportRequest, Empty> deleteBigQueryExportTransportSettings =
         GrpcCallSettings.<DeleteBigQueryExportRequest, Empty>newBuilder()
@@ -1765,6 +1800,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateBigQueryExportRequest, BigQueryExport>
         updateBigQueryExportTransportSettings =
@@ -1789,6 +1825,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             CreateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
@@ -1803,6 +1840,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteEventThreatDetectionCustomModuleRequest, Empty>
         deleteEventThreatDetectionCustomModuleTransportSettings =
@@ -1814,6 +1852,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
         getEventThreatDetectionCustomModuleTransportSettings =
@@ -1827,6 +1866,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             ListDescendantEventThreatDetectionCustomModulesRequest,
@@ -1844,6 +1884,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             ListEventThreatDetectionCustomModulesRequest,
@@ -1860,6 +1901,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             UpdateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
@@ -1892,6 +1934,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             GetEffectiveEventThreatDetectionCustomModuleRequest,
@@ -1908,6 +1951,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             ListEffectiveEventThreatDetectionCustomModulesRequest,
@@ -1924,6 +1968,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             BatchCreateResourceValueConfigsRequest, BatchCreateResourceValueConfigsResponse>
@@ -1938,6 +1983,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteResourceValueConfigRequest, Empty>
         deleteResourceValueConfigTransportSettings =
@@ -1949,6 +1995,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetResourceValueConfigRequest, ResourceValueConfig>
         getResourceValueConfigTransportSettings =
@@ -1960,6 +2007,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListResourceValueConfigsRequest, ListResourceValueConfigsResponse>
         listResourceValueConfigsTransportSettings =
@@ -1972,6 +2020,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateResourceValueConfigRequest, ResourceValueConfig>
         updateResourceValueConfigTransportSettings =
@@ -1996,6 +2045,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListAttackPathsRequest, ListAttackPathsResponse>
         listAttackPathsTransportSettings =
@@ -2007,6 +2057,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.bulkMuteFindingsCallable =

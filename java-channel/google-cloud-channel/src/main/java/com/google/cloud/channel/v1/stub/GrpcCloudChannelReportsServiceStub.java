@@ -154,6 +154,7 @@ public class GrpcCloudChannelReportsServiceStub extends CloudChannelReportsServi
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<FetchReportResultsRequest, FetchReportResultsResponse>
         fetchReportResultsTransportSettings =
@@ -165,6 +166,7 @@ public class GrpcCloudChannelReportsServiceStub extends CloudChannelReportsServi
                       builder.add("report_job", String.valueOf(request.getReportJob()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getReportJob())
                 .build();
     GrpcCallSettings<ListReportsRequest, ListReportsResponse> listReportsTransportSettings =
         GrpcCallSettings.<ListReportsRequest, ListReportsResponse>newBuilder()

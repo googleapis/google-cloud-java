@@ -345,6 +345,7 @@ public class HttpJsonCloudShellServiceStub extends CloudShellServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<StartEnvironmentRequest, Operation> startEnvironmentTransportSettings =
         HttpJsonCallSettings.<StartEnvironmentRequest, Operation>newBuilder()

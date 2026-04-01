@@ -199,6 +199,7 @@ public class GrpcUsageServiceStub extends UsageServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<QueryForecastsRequest, QueryForecastsResponse>
         queryForecastsTransportSettings =
@@ -210,6 +211,7 @@ public class GrpcUsageServiceStub extends UsageServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<QueryReservationsRequest, QueryReservationsResponse>
         queryReservationsTransportSettings =
@@ -221,6 +223,7 @@ public class GrpcUsageServiceStub extends UsageServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ExportUsageHistoriesRequest, Operation> exportUsageHistoriesTransportSettings =
         GrpcCallSettings.<ExportUsageHistoriesRequest, Operation>newBuilder()
@@ -231,6 +234,7 @@ public class GrpcUsageServiceStub extends UsageServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ExportForecastsRequest, Operation> exportForecastsTransportSettings =
         GrpcCallSettings.<ExportForecastsRequest, Operation>newBuilder()
@@ -241,6 +245,7 @@ public class GrpcUsageServiceStub extends UsageServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ExportReservationsUsageRequest, Operation>
         exportReservationsUsageTransportSettings =
@@ -252,6 +257,7 @@ public class GrpcUsageServiceStub extends UsageServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.queryUsageHistoriesCallable =

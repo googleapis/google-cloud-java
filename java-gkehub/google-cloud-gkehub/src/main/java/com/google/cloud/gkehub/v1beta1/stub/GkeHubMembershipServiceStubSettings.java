@@ -529,6 +529,7 @@ public class GkeHubMembershipServiceStubSettings
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-gkehub")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

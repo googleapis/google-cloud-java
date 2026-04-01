@@ -103,6 +103,7 @@ public class WidgetServiceClientTest {
             .setDeployment(
                 DeploymentName.of("[PROJECT]", "[LOCATION]", "[APP]", "[DEPLOYMENT]").toString())
             .setRecaptchaToken("recaptchaToken1978277202")
+            .setLiveHandoffEnabled(true)
             .build();
 
     GenerateChatTokenResponse actualResponse = client.generateChatToken(request);
@@ -115,6 +116,7 @@ public class WidgetServiceClientTest {
     Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertEquals(request.getDeployment(), actualRequest.getDeployment());
     Assert.assertEquals(request.getRecaptchaToken(), actualRequest.getRecaptchaToken());
+    Assert.assertEquals(request.getLiveHandoffEnabled(), actualRequest.getLiveHandoffEnabled());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -133,6 +135,7 @@ public class WidgetServiceClientTest {
               .setDeployment(
                   DeploymentName.of("[PROJECT]", "[LOCATION]", "[APP]", "[DEPLOYMENT]").toString())
               .setRecaptchaToken("recaptchaToken1978277202")
+              .setLiveHandoffEnabled(true)
               .build();
       client.generateChatToken(request);
       Assert.fail("No exception raised");

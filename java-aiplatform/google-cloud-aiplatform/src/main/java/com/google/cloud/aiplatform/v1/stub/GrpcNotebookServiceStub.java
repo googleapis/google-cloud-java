@@ -474,6 +474,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetNotebookRuntimeTemplateRequest, NotebookRuntimeTemplate>
         getNotebookRuntimeTemplateTransportSettings =
@@ -486,6 +487,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListNotebookRuntimeTemplatesRequest, ListNotebookRuntimeTemplatesResponse>
         listNotebookRuntimeTemplatesTransportSettings =
@@ -499,6 +501,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteNotebookRuntimeTemplateRequest, Operation>
         deleteNotebookRuntimeTemplateTransportSettings =
@@ -510,6 +513,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateNotebookRuntimeTemplateRequest, NotebookRuntimeTemplate>
         updateNotebookRuntimeTemplateTransportSettings =
@@ -535,6 +539,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetNotebookRuntimeRequest, NotebookRuntime>
         getNotebookRuntimeTransportSettings =
@@ -546,6 +551,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListNotebookRuntimesRequest, ListNotebookRuntimesResponse>
         listNotebookRuntimesTransportSettings =
@@ -557,6 +563,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteNotebookRuntimeRequest, Operation>
         deleteNotebookRuntimeTransportSettings =
@@ -568,6 +575,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpgradeNotebookRuntimeRequest, Operation>
         upgradeNotebookRuntimeTransportSettings =
@@ -579,6 +587,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<StartNotebookRuntimeRequest, Operation> startNotebookRuntimeTransportSettings =
         GrpcCallSettings.<StartNotebookRuntimeRequest, Operation>newBuilder()
@@ -589,6 +598,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<StopNotebookRuntimeRequest, Operation> stopNotebookRuntimeTransportSettings =
         GrpcCallSettings.<StopNotebookRuntimeRequest, Operation>newBuilder()
@@ -599,6 +609,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateNotebookExecutionJobRequest, Operation>
         createNotebookExecutionJobTransportSettings =
@@ -610,6 +621,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetNotebookExecutionJobRequest, NotebookExecutionJob>
         getNotebookExecutionJobTransportSettings =
@@ -621,6 +633,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListNotebookExecutionJobsRequest, ListNotebookExecutionJobsResponse>
         listNotebookExecutionJobsTransportSettings =
@@ -633,6 +646,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteNotebookExecutionJobRequest, Operation>
         deleteNotebookExecutionJobTransportSettings =
@@ -644,6 +658,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -674,6 +689,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -684,6 +700,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -695,6 +712,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createNotebookRuntimeTemplateCallable =

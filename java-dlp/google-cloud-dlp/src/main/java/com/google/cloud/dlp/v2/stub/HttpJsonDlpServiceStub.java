@@ -2435,6 +2435,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<RedactImageRequest, RedactImageResponse> redactImageTransportSettings =
         HttpJsonCallSettings.<RedactImageRequest, RedactImageResponse>newBuilder()
@@ -2446,6 +2447,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeidentifyContentRequest, DeidentifyContentResponse>
         deidentifyContentTransportSettings =
@@ -2458,6 +2460,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ReidentifyContentRequest, ReidentifyContentResponse>
         reidentifyContentTransportSettings =
@@ -2470,6 +2473,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListInfoTypesRequest, ListInfoTypesResponse>
         listInfoTypesTransportSettings =
@@ -2494,6 +2498,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateInspectTemplateRequest, InspectTemplate>
         updateInspectTemplateTransportSettings =
@@ -2506,6 +2511,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetInspectTemplateRequest, InspectTemplate>
         getInspectTemplateTransportSettings =
@@ -2518,6 +2524,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListInspectTemplatesRequest, ListInspectTemplatesResponse>
         listInspectTemplatesTransportSettings =
@@ -2531,6 +2538,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteInspectTemplateRequest, Empty>
         deleteInspectTemplateTransportSettings =
@@ -2543,6 +2551,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateDeidentifyTemplateRequest, DeidentifyTemplate>
         createDeidentifyTemplateTransportSettings =
@@ -2555,6 +2564,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateDeidentifyTemplateRequest, DeidentifyTemplate>
         updateDeidentifyTemplateTransportSettings =
@@ -2567,6 +2577,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetDeidentifyTemplateRequest, DeidentifyTemplate>
         getDeidentifyTemplateTransportSettings =
@@ -2579,6 +2590,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListDeidentifyTemplatesRequest, ListDeidentifyTemplatesResponse>
         listDeidentifyTemplatesTransportSettings =
@@ -2592,6 +2604,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteDeidentifyTemplateRequest, Empty>
         deleteDeidentifyTemplateTransportSettings =
@@ -2604,6 +2617,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateJobTriggerRequest, JobTrigger> createJobTriggerTransportSettings =
         HttpJsonCallSettings.<CreateJobTriggerRequest, JobTrigger>newBuilder()
@@ -2615,6 +2629,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateJobTriggerRequest, JobTrigger> updateJobTriggerTransportSettings =
         HttpJsonCallSettings.<UpdateJobTriggerRequest, JobTrigger>newBuilder()
@@ -2626,6 +2641,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<HybridInspectJobTriggerRequest, HybridInspectResponse>
         hybridInspectJobTriggerTransportSettings =
@@ -2638,6 +2654,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetJobTriggerRequest, JobTrigger> getJobTriggerTransportSettings =
         HttpJsonCallSettings.<GetJobTriggerRequest, JobTrigger>newBuilder()
@@ -2649,6 +2666,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListJobTriggersRequest, ListJobTriggersResponse>
         listJobTriggersTransportSettings =
@@ -2661,6 +2679,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteJobTriggerRequest, Empty> deleteJobTriggerTransportSettings =
         HttpJsonCallSettings.<DeleteJobTriggerRequest, Empty>newBuilder()
@@ -2672,6 +2691,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ActivateJobTriggerRequest, DlpJob> activateJobTriggerTransportSettings =
         HttpJsonCallSettings.<ActivateJobTriggerRequest, DlpJob>newBuilder()
@@ -2683,6 +2703,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateDiscoveryConfigRequest, DiscoveryConfig>
         createDiscoveryConfigTransportSettings =
@@ -2695,6 +2716,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateDiscoveryConfigRequest, DiscoveryConfig>
         updateDiscoveryConfigTransportSettings =
@@ -2707,6 +2729,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetDiscoveryConfigRequest, DiscoveryConfig>
         getDiscoveryConfigTransportSettings =
@@ -2719,6 +2742,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse>
         listDiscoveryConfigsTransportSettings =
@@ -2732,6 +2756,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteDiscoveryConfigRequest, Empty>
         deleteDiscoveryConfigTransportSettings =
@@ -2744,6 +2769,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateDlpJobRequest, DlpJob> createDlpJobTransportSettings =
         HttpJsonCallSettings.<CreateDlpJobRequest, DlpJob>newBuilder()
@@ -2755,6 +2781,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListDlpJobsRequest, ListDlpJobsResponse> listDlpJobsTransportSettings =
         HttpJsonCallSettings.<ListDlpJobsRequest, ListDlpJobsResponse>newBuilder()
@@ -2766,6 +2793,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetDlpJobRequest, DlpJob> getDlpJobTransportSettings =
         HttpJsonCallSettings.<GetDlpJobRequest, DlpJob>newBuilder()
@@ -2777,6 +2805,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteDlpJobRequest, Empty> deleteDlpJobTransportSettings =
         HttpJsonCallSettings.<DeleteDlpJobRequest, Empty>newBuilder()
@@ -2788,6 +2817,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CancelDlpJobRequest, Empty> cancelDlpJobTransportSettings =
         HttpJsonCallSettings.<CancelDlpJobRequest, Empty>newBuilder()
@@ -2799,6 +2829,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateStoredInfoTypeRequest, StoredInfoType>
         createStoredInfoTypeTransportSettings =
@@ -2811,6 +2842,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateStoredInfoTypeRequest, StoredInfoType>
         updateStoredInfoTypeTransportSettings =
@@ -2823,6 +2855,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetStoredInfoTypeRequest, StoredInfoType>
         getStoredInfoTypeTransportSettings =
@@ -2835,6 +2868,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse>
         listStoredInfoTypesTransportSettings =
@@ -2848,6 +2882,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteStoredInfoTypeRequest, Empty> deleteStoredInfoTypeTransportSettings =
         HttpJsonCallSettings.<DeleteStoredInfoTypeRequest, Empty>newBuilder()
@@ -2859,6 +2894,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListProjectDataProfilesRequest, ListProjectDataProfilesResponse>
         listProjectDataProfilesTransportSettings =
@@ -2872,6 +2908,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListTableDataProfilesRequest, ListTableDataProfilesResponse>
         listTableDataProfilesTransportSettings =
@@ -2885,6 +2922,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListColumnDataProfilesRequest, ListColumnDataProfilesResponse>
         listColumnDataProfilesTransportSettings =
@@ -2898,6 +2936,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetProjectDataProfileRequest, ProjectDataProfile>
         getProjectDataProfileTransportSettings =
@@ -2910,6 +2949,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>
         listFileStoreDataProfilesTransportSettings =
@@ -2923,6 +2963,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetFileStoreDataProfileRequest, FileStoreDataProfile>
         getFileStoreDataProfileTransportSettings =
@@ -2935,6 +2976,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DeleteFileStoreDataProfileRequest, Empty>
         deleteFileStoreDataProfileTransportSettings =
@@ -2947,6 +2989,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetTableDataProfileRequest, TableDataProfile>
         getTableDataProfileTransportSettings =
@@ -2959,6 +3002,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetColumnDataProfileRequest, ColumnDataProfile>
         getColumnDataProfileTransportSettings =
@@ -2971,6 +3015,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DeleteTableDataProfileRequest, Empty>
         deleteTableDataProfileTransportSettings =
@@ -2983,6 +3028,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<HybridInspectDlpJobRequest, HybridInspectResponse>
         hybridInspectDlpJobTransportSettings =
@@ -2995,6 +3041,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<FinishDlpJobRequest, Empty> finishDlpJobTransportSettings =
         HttpJsonCallSettings.<FinishDlpJobRequest, Empty>newBuilder()
@@ -3006,6 +3053,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateConnectionRequest, Connection> createConnectionTransportSettings =
         HttpJsonCallSettings.<CreateConnectionRequest, Connection>newBuilder()
@@ -3017,6 +3065,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetConnectionRequest, Connection> getConnectionTransportSettings =
         HttpJsonCallSettings.<GetConnectionRequest, Connection>newBuilder()
@@ -3028,6 +3077,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListConnectionsRequest, ListConnectionsResponse>
         listConnectionsTransportSettings =
@@ -3040,6 +3090,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<SearchConnectionsRequest, SearchConnectionsResponse>
         searchConnectionsTransportSettings =
@@ -3052,6 +3103,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteConnectionRequest, Empty> deleteConnectionTransportSettings =
         HttpJsonCallSettings.<DeleteConnectionRequest, Empty>newBuilder()
@@ -3063,6 +3115,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateConnectionRequest, Connection> updateConnectionTransportSettings =
         HttpJsonCallSettings.<UpdateConnectionRequest, Connection>newBuilder()
@@ -3074,6 +3127,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.inspectContentCallable =

@@ -1,0 +1,1472 @@
+package com.google.showcase.grpcrest.v1beta1;
+
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
+import com.google.api.core.BetaApi;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
+import com.google.api.gax.longrunning.OperationFuture;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.BidiStreamingCallable;
+import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.ServerStreamingCallable;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.resourcenames.ResourceName;
+import com.google.common.util.concurrent.MoreExecutors;
+import com.google.longrunning.Operation;
+import com.google.protobuf.Duration;
+import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
+import com.google.rpc.Status;
+import com.google.showcase.grpcrest.v1beta1.stub.EchoStub;
+import com.google.showcase.grpcrest.v1beta1.stub.EchoStubSettings;
+import java.io.IOException;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import javax.annotation.Generated;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * This client uses Echo version foo_version_for_tests.
+ *
+ * <p>This class provides the ability to make remote calls to the backing service through method
+ * calls that map to API methods. Sample code to get started:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (EchoClient echoClient = EchoClient.create()) {
+ *   EchoResponse response = echoClient.echo();
+ * }
+ * }</pre>
+ *
+ * <p>Note: close() needs to be called on the EchoClient object to clean up resources such as
+ * threads. In the example above, try-with-resources is used, which automatically calls close().
+ *
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Echo</td>
+ *      <td><p> </td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> echo(EchoRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> echo()
+ *           <li><p> echo(ResourceName parent)
+ *           <li><p> echo(Status error)
+ *           <li><p> echo(FoobarName name)
+ *           <li><p> echo(String content)
+ *           <li><p> echo(String name)
+ *           <li><p> echo(String parent)
+ *           <li><p> echo(String content, Severity severity)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> echoCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Expand</td>
+ *      <td><p> </td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> expandCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> PagedExpand</td>
+ *      <td><p> </td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> pagedExpand(PagedExpandRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> pagedExpandPagedCallable()
+ *           <li><p> pagedExpandCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SimplePagedExpand</td>
+ *      <td><p> </td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> simplePagedExpand(PagedExpandRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> simplePagedExpand()
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> simplePagedExpandPagedCallable()
+ *           <li><p> simplePagedExpandCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Wait</td>
+ *      <td><p> </td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> waitAsync(WaitRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> waitAsync(Duration ttl)
+ *           <li><p> waitAsync(Timestamp endTime)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> waitOperationCallable()
+ *           <li><p> waitCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Block</td>
+ *      <td><p> </td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> block(BlockRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> blockCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CollideName</td>
+ *      <td><p> </td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> collideName(EchoRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> collideNameCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> NestedBinding</td>
+ *      <td><p> </td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> nestedBinding(EchoRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> nestedBindingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Chat</td>
+ *      <td><p> </td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> chatCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> NoBinding</td>
+ *      <td><p> </td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> noBinding(EchoRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> noBindingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateCase</td>
+ *      <td><p> </td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateCase(UpdateCaseRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateCase(Case case_, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateCaseCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
+ *
+ * <p>See the individual methods for example code.
+ *
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
+ *
+ * <p>This class can be customized by passing in a custom instance of EchoSettings to create(). For
+ * example:
+ *
+ * <p>To customize credentials:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * EchoSettings echoSettings =
+ *     EchoSettings.newBuilder()
+ *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .build();
+ * EchoClient echoClient = EchoClient.create(echoSettings);
+ * }</pre>
+ *
+ * <p>To customize the endpoint:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * EchoSettings echoSettings = EchoSettings.newBuilder().setEndpoint(myEndpoint).build();
+ * EchoClient echoClient = EchoClient.create(echoSettings);
+ * }</pre>
+ *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * EchoSettings echoSettings = EchoSettings.newHttpJsonBuilder().build();
+ * EchoClient echoClient = EchoClient.create(echoSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
+ */
+@BetaApi
+@Generated("by gapic-generator-java")
+public class EchoClient implements BackgroundResource {
+  private final EchoSettings settings;
+  private final EchoStub stub;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
+
+  /** Constructs an instance of EchoClient with default settings. */
+  public static final EchoClient create() throws IOException {
+    return create(EchoSettings.newBuilder().build());
+  }
+
+  /**
+   * Constructs an instance of EchoClient, using the given settings. The channels are created based
+   * on the settings passed in, or defaults for any settings that are not set.
+   */
+  public static final EchoClient create(EchoSettings settings) throws IOException {
+    return new EchoClient(settings);
+  }
+
+  /**
+   * Constructs an instance of EchoClient, using the given stub for making calls. This is for
+   * advanced usage - prefer using create(EchoSettings).
+   */
+  public static final EchoClient create(EchoStub stub) {
+    return new EchoClient(stub);
+  }
+
+  /**
+   * Constructs an instance of EchoClient, using the given settings. This is protected so that it is
+   * easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   */
+  protected EchoClient(EchoSettings settings) throws IOException {
+    this.settings = settings;
+    this.stub = ((EchoStubSettings) settings.getStubSettings()).createStub();
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
+  }
+
+  protected EchoClient(EchoStub stub) {
+    this.settings = null;
+    this.stub = stub;
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
+  }
+
+  public final EchoSettings getSettings() {
+    return settings;
+  }
+
+  public EchoStub getStub() {
+    return stub;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
+    return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   EchoResponse response = echoClient.echo();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EchoResponse echo() {
+    EchoRequest request = EchoRequest.newBuilder().build();
+    return echo(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   ResourceName parent = FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]");
+   *   EchoResponse response = echoClient.echo(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EchoResponse echo(ResourceName parent) {
+    EchoRequest request =
+        EchoRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return echo(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   Status error = Status.newBuilder().build();
+   *   EchoResponse response = echoClient.echo(error);
+   * }
+   * }</pre>
+   *
+   * @param error
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EchoResponse echo(Status error) {
+    EchoRequest request = EchoRequest.newBuilder().setError(error).build();
+    return echo(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   FoobarName name = FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]");
+   *   EchoResponse response = echoClient.echo(name);
+   * }
+   * }</pre>
+   *
+   * @param name
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EchoResponse echo(FoobarName name) {
+    EchoRequest request =
+        EchoRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return echo(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   String content = "content951530617";
+   *   EchoResponse response = echoClient.echo(content);
+   * }
+   * }</pre>
+   *
+   * @param content
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EchoResponse echo(String content) {
+    EchoRequest request = EchoRequest.newBuilder().setContent(content).build();
+    return echo(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   String name = FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString();
+   *   EchoResponse response = echoClient.echo(name);
+   * }
+   * }</pre>
+   *
+   * @param name
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EchoResponse echo(String name) {
+    EchoRequest request = EchoRequest.newBuilder().setName(name).build();
+    return echo(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   String parent = FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString();
+   *   EchoResponse response = echoClient.echo(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EchoResponse echo(String parent) {
+    EchoRequest request = EchoRequest.newBuilder().setParent(parent).build();
+    return echo(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   String content = "content951530617";
+   *   Severity severity = Severity.forNumber(0);
+   *   EchoResponse response = echoClient.echo(content, severity);
+   * }
+   * }</pre>
+   *
+   * @param content
+   * @param severity
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EchoResponse echo(String content, Severity severity) {
+    EchoRequest request =
+        EchoRequest.newBuilder().setContent(content).setSeverity(severity).build();
+    return echo(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   EchoRequest request =
+   *       EchoRequest.newBuilder()
+   *           .setName(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *           .setParent(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *           .setSeverity(Severity.forNumber(0))
+   *           .setFooBar(Foobar.newBuilder().build())
+   *           .build();
+   *   EchoResponse response = echoClient.echo(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EchoResponse echo(EchoRequest request) {
+    return echoCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   EchoRequest request =
+   *       EchoRequest.newBuilder()
+   *           .setName(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *           .setParent(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *           .setSeverity(Severity.forNumber(0))
+   *           .setFooBar(Foobar.newBuilder().build())
+   *           .build();
+   *   ApiFuture<EchoResponse> future = echoClient.echoCallable().futureCall(request);
+   *   // Do something.
+   *   EchoResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<EchoRequest, EchoResponse> echoCallable() {
+    return stub.echoCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   ExpandRequest request =
+   *       ExpandRequest.newBuilder()
+   *           .setContent("content951530617")
+   *           .addAllInfo(new ArrayList<String>())
+   *           .build();
+   *   ServerStream<EchoResponse> stream = echoClient.expandCallable().call(request);
+   *   for (EchoResponse response : stream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final ServerStreamingCallable<ExpandRequest, EchoResponse> expandCallable() {
+    return stub.expandCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   PagedExpandRequest request =
+   *       PagedExpandRequest.newBuilder()
+   *           .setContent("content951530617")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (EchoResponse element : echoClient.pagedExpand(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PagedExpandPagedResponse pagedExpand(PagedExpandRequest request) {
+    return pagedExpandPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   PagedExpandRequest request =
+   *       PagedExpandRequest.newBuilder()
+   *           .setContent("content951530617")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<EchoResponse> future = echoClient.pagedExpandPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (EchoResponse element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PagedExpandRequest, PagedExpandPagedResponse>
+      pagedExpandPagedCallable() {
+    return stub.pagedExpandPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   PagedExpandRequest request =
+   *       PagedExpandRequest.newBuilder()
+   *           .setContent("content951530617")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     PagedExpandResponse response = echoClient.pagedExpandCallable().call(request);
+   *     for (EchoResponse element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PagedExpandRequest, PagedExpandResponse> pagedExpandCallable() {
+    return stub.pagedExpandCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   for (EchoResponse element : echoClient.simplePagedExpand().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SimplePagedExpandPagedResponse simplePagedExpand() {
+    PagedExpandRequest request = PagedExpandRequest.newBuilder().build();
+    return simplePagedExpand(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   PagedExpandRequest request =
+   *       PagedExpandRequest.newBuilder()
+   *           .setContent("content951530617")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (EchoResponse element : echoClient.simplePagedExpand(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SimplePagedExpandPagedResponse simplePagedExpand(PagedExpandRequest request) {
+    return simplePagedExpandPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   PagedExpandRequest request =
+   *       PagedExpandRequest.newBuilder()
+   *           .setContent("content951530617")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<EchoResponse> future =
+   *       echoClient.simplePagedExpandPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (EchoResponse element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PagedExpandRequest, SimplePagedExpandPagedResponse>
+      simplePagedExpandPagedCallable() {
+    return stub.simplePagedExpandPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   PagedExpandRequest request =
+   *       PagedExpandRequest.newBuilder()
+   *           .setContent("content951530617")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     PagedExpandResponse response = echoClient.simplePagedExpandCallable().call(request);
+   *     for (EchoResponse element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PagedExpandRequest, PagedExpandResponse> simplePagedExpandCallable() {
+    return stub.simplePagedExpandCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   Duration ttl = Duration.newBuilder().build();
+   *   WaitResponse response = echoClient.waitAsync(ttl).get();
+   * }
+   * }</pre>
+   *
+   * @param ttl
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<WaitResponse, WaitMetadata> waitAsync(Duration ttl) {
+    WaitRequest request = WaitRequest.newBuilder().setTtl(ttl).build();
+    return waitAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   Timestamp endTime = Timestamp.newBuilder().build();
+   *   WaitResponse response = echoClient.waitAsync(endTime).get();
+   * }
+   * }</pre>
+   *
+   * @param endTime
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<WaitResponse, WaitMetadata> waitAsync(Timestamp endTime) {
+    WaitRequest request = WaitRequest.newBuilder().setEndTime(endTime).build();
+    return waitAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   WaitRequest request = WaitRequest.newBuilder().build();
+   *   WaitResponse response = echoClient.waitAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<WaitResponse, WaitMetadata> waitAsync(WaitRequest request) {
+    return waitOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   WaitRequest request = WaitRequest.newBuilder().build();
+   *   OperationFuture<WaitResponse, WaitMetadata> future =
+   *       echoClient.waitOperationCallable().futureCall(request);
+   *   // Do something.
+   *   WaitResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<WaitRequest, WaitResponse, WaitMetadata> waitOperationCallable() {
+    return stub.waitOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   WaitRequest request = WaitRequest.newBuilder().build();
+   *   ApiFuture<Operation> future = echoClient.waitCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<WaitRequest, Operation> waitCallable() {
+    return stub.waitCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   BlockRequest request = BlockRequest.newBuilder().build();
+   *   BlockResponse response = echoClient.block(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BlockResponse block(BlockRequest request) {
+    return blockCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   BlockRequest request = BlockRequest.newBuilder().build();
+   *   ApiFuture<BlockResponse> future = echoClient.blockCallable().futureCall(request);
+   *   // Do something.
+   *   BlockResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BlockRequest, BlockResponse> blockCallable() {
+    return stub.blockCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   EchoRequest request =
+   *       EchoRequest.newBuilder()
+   *           .setName(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *           .setParent(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *           .setSeverity(Severity.forNumber(0))
+   *           .setFooBar(Foobar.newBuilder().build())
+   *           .build();
+   *   Object response = echoClient.collideName(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Object collideName(EchoRequest request) {
+    return collideNameCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   EchoRequest request =
+   *       EchoRequest.newBuilder()
+   *           .setName(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *           .setParent(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *           .setSeverity(Severity.forNumber(0))
+   *           .setFooBar(Foobar.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Object> future = echoClient.collideNameCallable().futureCall(request);
+   *   // Do something.
+   *   Object response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<EchoRequest, Object> collideNameCallable() {
+    return stub.collideNameCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   EchoRequest request =
+   *       EchoRequest.newBuilder()
+   *           .setName(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *           .setParent(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *           .setSeverity(Severity.forNumber(0))
+   *           .setFooBar(Foobar.newBuilder().build())
+   *           .build();
+   *   Object response = echoClient.nestedBinding(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Object nestedBinding(EchoRequest request) {
+    return nestedBindingCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   EchoRequest request =
+   *       EchoRequest.newBuilder()
+   *           .setName(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *           .setParent(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *           .setSeverity(Severity.forNumber(0))
+   *           .setFooBar(Foobar.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Object> future = echoClient.nestedBindingCallable().futureCall(request);
+   *   // Do something.
+   *   Object response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<EchoRequest, Object> nestedBindingCallable() {
+    return stub.nestedBindingCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   BidiStream<EchoRequest, EchoResponse> bidiStream = echoClient.chatCallable().call();
+   *   EchoRequest request =
+   *       EchoRequest.newBuilder()
+   *           .setName(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *           .setParent(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *           .setSeverity(Severity.forNumber(0))
+   *           .setFooBar(Foobar.newBuilder().build())
+   *           .build();
+   *   bidiStream.send(request);
+   *   for (EchoResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final BidiStreamingCallable<EchoRequest, EchoResponse> chatCallable() {
+    return stub.chatCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   EchoRequest request =
+   *       EchoRequest.newBuilder()
+   *           .setName(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *           .setParent(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *           .setSeverity(Severity.forNumber(0))
+   *           .setFooBar(Foobar.newBuilder().build())
+   *           .build();
+   *   EchoResponse response = echoClient.noBinding(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EchoResponse noBinding(EchoRequest request) {
+    return noBindingCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   EchoRequest request =
+   *       EchoRequest.newBuilder()
+   *           .setName(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *           .setParent(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *           .setSeverity(Severity.forNumber(0))
+   *           .setFooBar(Foobar.newBuilder().build())
+   *           .build();
+   *   ApiFuture<EchoResponse> future = echoClient.noBindingCallable().futureCall(request);
+   *   // Do something.
+   *   EchoResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<EchoRequest, EchoResponse> noBindingCallable() {
+    return stub.noBindingCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   Case case_ = Case.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Case response = echoClient.updateCase(case_, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param case_
+   * @param updateMask
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Case updateCase(Case case_, FieldMask updateMask) {
+    UpdateCaseRequest request =
+        UpdateCaseRequest.newBuilder().setCase(case_).setUpdateMask(updateMask).build();
+    return updateCase(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   UpdateCaseRequest request =
+   *       UpdateCaseRequest.newBuilder().setCase(Case.newBuilder().build()).build();
+   *   Case response = echoClient.updateCase(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Case updateCase(UpdateCaseRequest request) {
+    return updateCaseCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EchoClient echoClient = EchoClient.create()) {
+   *   UpdateCaseRequest request =
+   *       UpdateCaseRequest.newBuilder().setCase(Case.newBuilder().build()).build();
+   *   ApiFuture<Case> future = echoClient.updateCaseCallable().futureCall(request);
+   *   // Do something.
+   *   Case response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateCaseRequest, Case> updateCaseCallable() {
+    return stub.updateCaseCallable();
+  }
+
+  @Override
+  public final void close() {
+    stub.close();
+  }
+
+  @Override
+  public void shutdown() {
+    stub.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return stub.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return stub.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    stub.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return stub.awaitTermination(duration, unit);
+  }
+
+  public static class PagedExpandPagedResponse
+      extends AbstractPagedListResponse<
+          PagedExpandRequest,
+          PagedExpandResponse,
+          EchoResponse,
+          PagedExpandPage,
+          PagedExpandFixedSizeCollection> {
+
+    public static ApiFuture<PagedExpandPagedResponse> createAsync(
+        PageContext<PagedExpandRequest, PagedExpandResponse, EchoResponse> context,
+        ApiFuture<PagedExpandResponse> futureResponse) {
+      ApiFuture<PagedExpandPage> futurePage =
+          PagedExpandPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new PagedExpandPagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private PagedExpandPagedResponse(PagedExpandPage page) {
+      super(page, PagedExpandFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class PagedExpandPage
+      extends AbstractPage<PagedExpandRequest, PagedExpandResponse, EchoResponse, PagedExpandPage> {
+
+    private PagedExpandPage(
+        PageContext<PagedExpandRequest, PagedExpandResponse, EchoResponse> context,
+        PagedExpandResponse response) {
+      super(context, response);
+    }
+
+    private static PagedExpandPage createEmptyPage() {
+      return new PagedExpandPage(null, null);
+    }
+
+    @Override
+    protected PagedExpandPage createPage(
+        PageContext<PagedExpandRequest, PagedExpandResponse, EchoResponse> context,
+        PagedExpandResponse response) {
+      return new PagedExpandPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<PagedExpandPage> createPageAsync(
+        PageContext<PagedExpandRequest, PagedExpandResponse, EchoResponse> context,
+        ApiFuture<PagedExpandResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class PagedExpandFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          PagedExpandRequest,
+          PagedExpandResponse,
+          EchoResponse,
+          PagedExpandPage,
+          PagedExpandFixedSizeCollection> {
+
+    private PagedExpandFixedSizeCollection(List<PagedExpandPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static PagedExpandFixedSizeCollection createEmptyCollection() {
+      return new PagedExpandFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected PagedExpandFixedSizeCollection createCollection(
+        List<PagedExpandPage> pages, int collectionSize) {
+      return new PagedExpandFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class SimplePagedExpandPagedResponse
+      extends AbstractPagedListResponse<
+          PagedExpandRequest,
+          PagedExpandResponse,
+          EchoResponse,
+          SimplePagedExpandPage,
+          SimplePagedExpandFixedSizeCollection> {
+
+    public static ApiFuture<SimplePagedExpandPagedResponse> createAsync(
+        PageContext<PagedExpandRequest, PagedExpandResponse, EchoResponse> context,
+        ApiFuture<PagedExpandResponse> futureResponse) {
+      ApiFuture<SimplePagedExpandPage> futurePage =
+          SimplePagedExpandPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new SimplePagedExpandPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private SimplePagedExpandPagedResponse(SimplePagedExpandPage page) {
+      super(page, SimplePagedExpandFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class SimplePagedExpandPage
+      extends AbstractPage<
+          PagedExpandRequest, PagedExpandResponse, EchoResponse, SimplePagedExpandPage> {
+
+    private SimplePagedExpandPage(
+        PageContext<PagedExpandRequest, PagedExpandResponse, EchoResponse> context,
+        PagedExpandResponse response) {
+      super(context, response);
+    }
+
+    private static SimplePagedExpandPage createEmptyPage() {
+      return new SimplePagedExpandPage(null, null);
+    }
+
+    @Override
+    protected SimplePagedExpandPage createPage(
+        PageContext<PagedExpandRequest, PagedExpandResponse, EchoResponse> context,
+        PagedExpandResponse response) {
+      return new SimplePagedExpandPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<SimplePagedExpandPage> createPageAsync(
+        PageContext<PagedExpandRequest, PagedExpandResponse, EchoResponse> context,
+        ApiFuture<PagedExpandResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class SimplePagedExpandFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          PagedExpandRequest,
+          PagedExpandResponse,
+          EchoResponse,
+          SimplePagedExpandPage,
+          SimplePagedExpandFixedSizeCollection> {
+
+    private SimplePagedExpandFixedSizeCollection(
+        List<SimplePagedExpandPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static SimplePagedExpandFixedSizeCollection createEmptyCollection() {
+      return new SimplePagedExpandFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected SimplePagedExpandFixedSizeCollection createCollection(
+        List<SimplePagedExpandPage> pages, int collectionSize) {
+      return new SimplePagedExpandFixedSizeCollection(pages, collectionSize);
+    }
+  }
+}

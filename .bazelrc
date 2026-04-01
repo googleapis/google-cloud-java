@@ -1,0 +1,7 @@
+startup --batch
+
+build --show_timestamps
+build --protocopt=--experimental_allow_proto3_optional
+
+build --cxxopt=-std=c++14
+build --host_cxxopt=-std=c++14

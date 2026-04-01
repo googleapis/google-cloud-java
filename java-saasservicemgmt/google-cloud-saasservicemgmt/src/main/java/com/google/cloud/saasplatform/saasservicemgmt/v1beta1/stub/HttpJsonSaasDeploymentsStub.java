@@ -1439,6 +1439,7 @@ public class HttpJsonSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetSaasRequest, Saas> getSaasTransportSettings =
         HttpJsonCallSettings.<GetSaasRequest, Saas>newBuilder()
@@ -1450,6 +1451,7 @@ public class HttpJsonSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateSaasRequest, Saas> createSaasTransportSettings =
         HttpJsonCallSettings.<CreateSaasRequest, Saas>newBuilder()
@@ -1461,6 +1463,7 @@ public class HttpJsonSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateSaasRequest, Saas> updateSaasTransportSettings =
         HttpJsonCallSettings.<UpdateSaasRequest, Saas>newBuilder()
@@ -1483,6 +1486,7 @@ public class HttpJsonSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListTenantsRequest, ListTenantsResponse> listTenantsTransportSettings =
         HttpJsonCallSettings.<ListTenantsRequest, ListTenantsResponse>newBuilder()
@@ -1494,6 +1498,7 @@ public class HttpJsonSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetTenantRequest, Tenant> getTenantTransportSettings =
         HttpJsonCallSettings.<GetTenantRequest, Tenant>newBuilder()
@@ -1505,6 +1510,7 @@ public class HttpJsonSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateTenantRequest, Tenant> createTenantTransportSettings =
         HttpJsonCallSettings.<CreateTenantRequest, Tenant>newBuilder()
@@ -1516,6 +1522,7 @@ public class HttpJsonSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateTenantRequest, Tenant> updateTenantTransportSettings =
         HttpJsonCallSettings.<UpdateTenantRequest, Tenant>newBuilder()
@@ -1538,6 +1545,7 @@ public class HttpJsonSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListUnitKindsRequest, ListUnitKindsResponse>
         listUnitKindsTransportSettings =
@@ -1550,6 +1558,7 @@ public class HttpJsonSaasDeploymentsStub extends SaasDeploymentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetUnitKindRequest, UnitKind> getUnitKindTransportSettings =
         HttpJsonCallSettings.<GetUnitKindRequest, UnitKind>newBuilder()
@@ -1561,6 +1570,7 @@ public class HttpJsonSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateUnitKindRequest, UnitKind> createUnitKindTransportSettings =
         HttpJsonCallSettings.<CreateUnitKindRequest, UnitKind>newBuilder()
@@ -1572,6 +1582,7 @@ public class HttpJsonSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateUnitKindRequest, UnitKind> updateUnitKindTransportSettings =
         HttpJsonCallSettings.<UpdateUnitKindRequest, UnitKind>newBuilder()
@@ -1594,6 +1605,7 @@ public class HttpJsonSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListUnitsRequest, ListUnitsResponse> listUnitsTransportSettings =
         HttpJsonCallSettings.<ListUnitsRequest, ListUnitsResponse>newBuilder()
@@ -1605,6 +1617,7 @@ public class HttpJsonSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetUnitRequest, Unit> getUnitTransportSettings =
         HttpJsonCallSettings.<GetUnitRequest, Unit>newBuilder()
@@ -1616,6 +1629,7 @@ public class HttpJsonSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateUnitRequest, Unit> createUnitTransportSettings =
         HttpJsonCallSettings.<CreateUnitRequest, Unit>newBuilder()
@@ -1627,6 +1641,7 @@ public class HttpJsonSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateUnitRequest, Unit> updateUnitTransportSettings =
         HttpJsonCallSettings.<UpdateUnitRequest, Unit>newBuilder()
@@ -1649,6 +1664,7 @@ public class HttpJsonSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListUnitOperationsRequest, ListUnitOperationsResponse>
         listUnitOperationsTransportSettings =
@@ -1661,6 +1677,7 @@ public class HttpJsonSaasDeploymentsStub extends SaasDeploymentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetUnitOperationRequest, UnitOperation> getUnitOperationTransportSettings =
         HttpJsonCallSettings.<GetUnitOperationRequest, UnitOperation>newBuilder()
@@ -1672,6 +1689,7 @@ public class HttpJsonSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateUnitOperationRequest, UnitOperation>
         createUnitOperationTransportSettings =
@@ -1684,6 +1702,7 @@ public class HttpJsonSaasDeploymentsStub extends SaasDeploymentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateUnitOperationRequest, UnitOperation>
         updateUnitOperationTransportSettings =
@@ -1709,6 +1728,7 @@ public class HttpJsonSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListReleasesRequest, ListReleasesResponse> listReleasesTransportSettings =
         HttpJsonCallSettings.<ListReleasesRequest, ListReleasesResponse>newBuilder()
@@ -1720,6 +1740,7 @@ public class HttpJsonSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetReleaseRequest, Release> getReleaseTransportSettings =
         HttpJsonCallSettings.<GetReleaseRequest, Release>newBuilder()
@@ -1731,6 +1752,7 @@ public class HttpJsonSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateReleaseRequest, Release> createReleaseTransportSettings =
         HttpJsonCallSettings.<CreateReleaseRequest, Release>newBuilder()
@@ -1742,6 +1764,7 @@ public class HttpJsonSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateReleaseRequest, Release> updateReleaseTransportSettings =
         HttpJsonCallSettings.<UpdateReleaseRequest, Release>newBuilder()
@@ -1764,6 +1787,7 @@ public class HttpJsonSaasDeploymentsStub extends SaasDeploymentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

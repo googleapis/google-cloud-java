@@ -121,6 +121,16 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessage
      * <code>GO = 3;</code>
      */
     GO(3),
+    /**
+     *
+     *
+     * <pre>
+     * YAML.
+     * </pre>
+     *
+     * <code>YAML = 4;</code>
+     */
+    YAML(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -178,6 +188,17 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessage
      */
     public static final int GO_VALUE = 3;
 
+    /**
+     *
+     *
+     * <pre>
+     * YAML.
+     * </pre>
+     *
+     * <code>YAML = 4;</code>
+     */
+    public static final int YAML_VALUE = 4;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -210,6 +231,8 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessage
           return PYTHON;
         case 3:
           return GO;
+        case 4:
+          return YAML;
         default:
           return null;
       }

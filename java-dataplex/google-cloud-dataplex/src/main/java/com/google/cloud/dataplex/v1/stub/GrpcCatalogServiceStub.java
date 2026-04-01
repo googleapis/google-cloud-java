@@ -714,6 +714,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateEntryTypeRequest, Operation> updateEntryTypeTransportSettings =
         GrpcCallSettings.<UpdateEntryTypeRequest, Operation>newBuilder()
@@ -734,6 +735,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListEntryTypesRequest, ListEntryTypesResponse>
         listEntryTypesTransportSettings =
@@ -745,6 +747,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetEntryTypeRequest, EntryType> getEntryTypeTransportSettings =
         GrpcCallSettings.<GetEntryTypeRequest, EntryType>newBuilder()
@@ -755,6 +758,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateAspectTypeRequest, Operation> createAspectTypeTransportSettings =
         GrpcCallSettings.<CreateAspectTypeRequest, Operation>newBuilder()
@@ -765,6 +769,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateAspectTypeRequest, Operation> updateAspectTypeTransportSettings =
         GrpcCallSettings.<UpdateAspectTypeRequest, Operation>newBuilder()
@@ -786,6 +791,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAspectTypesRequest, ListAspectTypesResponse>
         listAspectTypesTransportSettings =
@@ -797,6 +803,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetAspectTypeRequest, AspectType> getAspectTypeTransportSettings =
         GrpcCallSettings.<GetAspectTypeRequest, AspectType>newBuilder()
@@ -807,6 +814,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateEntryGroupRequest, Operation> createEntryGroupTransportSettings =
         GrpcCallSettings.<CreateEntryGroupRequest, Operation>newBuilder()
@@ -817,6 +825,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateEntryGroupRequest, Operation> updateEntryGroupTransportSettings =
         GrpcCallSettings.<UpdateEntryGroupRequest, Operation>newBuilder()
@@ -838,6 +847,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListEntryGroupsRequest, ListEntryGroupsResponse>
         listEntryGroupsTransportSettings =
@@ -849,6 +859,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetEntryGroupRequest, EntryGroup> getEntryGroupTransportSettings =
         GrpcCallSettings.<GetEntryGroupRequest, EntryGroup>newBuilder()
@@ -859,6 +870,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateEntryRequest, Entry> createEntryTransportSettings =
         GrpcCallSettings.<CreateEntryRequest, Entry>newBuilder()
@@ -869,6 +881,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateEntryRequest, Entry> updateEntryTransportSettings =
         GrpcCallSettings.<UpdateEntryRequest, Entry>newBuilder()
@@ -889,6 +902,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListEntriesRequest, ListEntriesResponse> listEntriesTransportSettings =
         GrpcCallSettings.<ListEntriesRequest, ListEntriesResponse>newBuilder()
@@ -899,6 +913,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetEntryRequest, Entry> getEntryTransportSettings =
         GrpcCallSettings.<GetEntryRequest, Entry>newBuilder()
@@ -909,6 +924,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<LookupEntryRequest, Entry> lookupEntryTransportSettings =
         GrpcCallSettings.<LookupEntryRequest, Entry>newBuilder()
@@ -919,6 +935,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEntry())
             .build();
     GrpcCallSettings<SearchEntriesRequest, SearchEntriesResponse> searchEntriesTransportSettings =
         GrpcCallSettings.<SearchEntriesRequest, SearchEntriesResponse>newBuilder()
@@ -929,6 +946,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateMetadataJobRequest, Operation> createMetadataJobTransportSettings =
         GrpcCallSettings.<CreateMetadataJobRequest, Operation>newBuilder()
@@ -939,6 +957,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetMetadataJobRequest, MetadataJob> getMetadataJobTransportSettings =
         GrpcCallSettings.<GetMetadataJobRequest, MetadataJob>newBuilder()
@@ -949,6 +968,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListMetadataJobsRequest, ListMetadataJobsResponse>
         listMetadataJobsTransportSettings =
@@ -960,6 +980,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CancelMetadataJobRequest, Empty> cancelMetadataJobTransportSettings =
         GrpcCallSettings.<CancelMetadataJobRequest, Empty>newBuilder()
@@ -970,6 +991,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateEntryLinkRequest, EntryLink> createEntryLinkTransportSettings =
         GrpcCallSettings.<CreateEntryLinkRequest, EntryLink>newBuilder()
@@ -980,6 +1002,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateEntryLinkRequest, EntryLink> updateEntryLinkTransportSettings =
         GrpcCallSettings.<UpdateEntryLinkRequest, EntryLink>newBuilder()
@@ -1000,6 +1023,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<LookupEntryLinksRequest, LookupEntryLinksResponse>
         lookupEntryLinksTransportSettings =
@@ -1011,6 +1035,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getEntry())
                 .build();
     GrpcCallSettings<LookupContextRequest, LookupContextResponse> lookupContextTransportSettings =
         GrpcCallSettings.<LookupContextRequest, LookupContextResponse>newBuilder()
@@ -1031,6 +1056,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateMetadataFeedRequest, Operation> createMetadataFeedTransportSettings =
         GrpcCallSettings.<CreateMetadataFeedRequest, Operation>newBuilder()
@@ -1041,6 +1067,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetMetadataFeedRequest, MetadataFeed> getMetadataFeedTransportSettings =
         GrpcCallSettings.<GetMetadataFeedRequest, MetadataFeed>newBuilder()
@@ -1051,6 +1078,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListMetadataFeedsRequest, ListMetadataFeedsResponse>
         listMetadataFeedsTransportSettings =
@@ -1062,6 +1090,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteMetadataFeedRequest, Operation> deleteMetadataFeedTransportSettings =
         GrpcCallSettings.<DeleteMetadataFeedRequest, Operation>newBuilder()
@@ -1072,6 +1101,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateMetadataFeedRequest, Operation> updateMetadataFeedTransportSettings =
         GrpcCallSettings.<UpdateMetadataFeedRequest, Operation>newBuilder()
@@ -1113,6 +1143,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1123,6 +1154,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1134,6 +1166,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createEntryTypeCallable =

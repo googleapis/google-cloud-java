@@ -914,6 +914,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-bigqueryreservation")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

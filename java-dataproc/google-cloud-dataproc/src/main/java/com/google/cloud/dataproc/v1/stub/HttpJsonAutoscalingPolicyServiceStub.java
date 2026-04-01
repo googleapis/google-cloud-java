@@ -459,6 +459,7 @@ public class HttpJsonAutoscalingPolicyServiceStub extends AutoscalingPolicyServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>
         updateAutoscalingPolicyTransportSettings =
@@ -483,6 +484,7 @@ public class HttpJsonAutoscalingPolicyServiceStub extends AutoscalingPolicyServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesResponse>
         listAutoscalingPoliciesTransportSettings =
@@ -496,6 +498,7 @@ public class HttpJsonAutoscalingPolicyServiceStub extends AutoscalingPolicyServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteAutoscalingPolicyRequest, Empty>
         deleteAutoscalingPolicyTransportSettings =
@@ -508,6 +511,7 @@ public class HttpJsonAutoscalingPolicyServiceStub extends AutoscalingPolicyServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -519,6 +523,7 @@ public class HttpJsonAutoscalingPolicyServiceStub extends AutoscalingPolicyServi
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -530,6 +535,7 @@ public class HttpJsonAutoscalingPolicyServiceStub extends AutoscalingPolicyServi
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -542,6 +548,7 @@ public class HttpJsonAutoscalingPolicyServiceStub extends AutoscalingPolicyServi
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createAutoscalingPolicyCallable =

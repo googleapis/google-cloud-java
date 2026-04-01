@@ -170,6 +170,7 @@ public class GrpcCmekConfigServiceStub extends CmekConfigServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListCmekConfigsRequest, ListCmekConfigsResponse>
         listCmekConfigsTransportSettings =
@@ -181,6 +182,7 @@ public class GrpcCmekConfigServiceStub extends CmekConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteCmekConfigRequest, Operation> deleteCmekConfigTransportSettings =
         GrpcCallSettings.<DeleteCmekConfigRequest, Operation>newBuilder()
@@ -191,6 +193,7 @@ public class GrpcCmekConfigServiceStub extends CmekConfigServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.updateCmekConfigCallable =

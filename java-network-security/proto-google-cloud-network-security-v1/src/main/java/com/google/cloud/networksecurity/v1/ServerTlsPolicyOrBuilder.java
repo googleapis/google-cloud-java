@@ -227,6 +227,8 @@ public interface ServerTlsPolicyOrBuilder
    *
    *
    * <pre>
+   * This field applies only for Traffic Director policies. It is must be set to
+   * false for Application Load Balancer policies.
    *
    * Determines if server allows plaintext connections. If set to true, server
    * allows plain text connections. By default, it is set to false. This setting
@@ -249,6 +251,8 @@ public interface ServerTlsPolicyOrBuilder
    *
    *
    * <pre>
+   * Optional if policy is to be used with Traffic Director. For Application
+   * Load Balancers must be empty.
    *
    * Defines a mechanism to provision server identity (public and private keys).
    * Cannot be combined with `allow_open` as a permissive mode that allows both
@@ -265,6 +269,8 @@ public interface ServerTlsPolicyOrBuilder
    *
    *
    * <pre>
+   * Optional if policy is to be used with Traffic Director. For Application
+   * Load Balancers must be empty.
    *
    * Defines a mechanism to provision server identity (public and private keys).
    * Cannot be combined with `allow_open` as a permissive mode that allows both
@@ -281,6 +287,8 @@ public interface ServerTlsPolicyOrBuilder
    *
    *
    * <pre>
+   * Optional if policy is to be used with Traffic Director. For Application
+   * Load Balancers must be empty.
    *
    * Defines a mechanism to provision server identity (public and private keys).
    * Cannot be combined with `allow_open` as a permissive mode that allows both
@@ -295,6 +303,8 @@ public interface ServerTlsPolicyOrBuilder
    *
    *
    * <pre>
+   * This field is required if the policy is used with Application Load
+   * Balancers. This field can be empty for Traffic Director.
    *
    * Defines a mechanism to provision peer validation certificates for peer to
    * peer authentication (Mutual TLS - mTLS). If not specified, client
@@ -313,6 +323,8 @@ public interface ServerTlsPolicyOrBuilder
    *
    *
    * <pre>
+   * This field is required if the policy is used with Application Load
+   * Balancers. This field can be empty for Traffic Director.
    *
    * Defines a mechanism to provision peer validation certificates for peer to
    * peer authentication (Mutual TLS - mTLS). If not specified, client
@@ -331,6 +343,8 @@ public interface ServerTlsPolicyOrBuilder
    *
    *
    * <pre>
+   * This field is required if the policy is used with Application Load
+   * Balancers. This field can be empty for Traffic Director.
    *
    * Defines a mechanism to provision peer validation certificates for peer to
    * peer authentication (Mutual TLS - mTLS). If not specified, client

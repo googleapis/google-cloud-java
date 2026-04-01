@@ -235,6 +235,7 @@ public class MarketingDataInsightsServiceStubSettings
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.api-ads:data-manager")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

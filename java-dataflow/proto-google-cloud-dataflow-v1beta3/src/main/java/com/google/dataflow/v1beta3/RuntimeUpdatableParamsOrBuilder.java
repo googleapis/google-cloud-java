@@ -117,4 +117,102 @@ public interface RuntimeUpdatableParamsOrBuilder
    * @return The workerUtilizationHint.
    */
   double getWorkerUtilizationHint();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Deprecated: Use `autoscaling_tier` instead.
+   * The backlog threshold duration in seconds for autoscaling. Value must be
+   * non-negative.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Duration acceptable_backlog_duration = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @deprecated google.dataflow.v1beta3.RuntimeUpdatableParams.acceptable_backlog_duration is
+   *     deprecated. See google/dataflow/v1beta3/jobs.proto;l=352
+   * @return Whether the acceptableBacklogDuration field is set.
+   */
+  @java.lang.Deprecated
+  boolean hasAcceptableBacklogDuration();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Deprecated: Use `autoscaling_tier` instead.
+   * The backlog threshold duration in seconds for autoscaling. Value must be
+   * non-negative.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Duration acceptable_backlog_duration = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @deprecated google.dataflow.v1beta3.RuntimeUpdatableParams.acceptable_backlog_duration is
+   *     deprecated. See google/dataflow/v1beta3/jobs.proto;l=352
+   * @return The acceptableBacklogDuration.
+   */
+  @java.lang.Deprecated
+  com.google.protobuf.Duration getAcceptableBacklogDuration();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Deprecated: Use `autoscaling_tier` instead.
+   * The backlog threshold duration in seconds for autoscaling. Value must be
+   * non-negative.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Duration acceptable_backlog_duration = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Deprecated
+  com.google.protobuf.DurationOrBuilder getAcceptableBacklogDurationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The backlog threshold tier for autoscaling. Value must be one of
+   * "low-latency", "medium-latency", or "high-latency".
+   * </pre>
+   *
+   * <code>optional string autoscaling_tier = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the autoscalingTier field is set.
+   */
+  boolean hasAutoscalingTier();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The backlog threshold tier for autoscaling. Value must be one of
+   * "low-latency", "medium-latency", or "high-latency".
+   * </pre>
+   *
+   * <code>optional string autoscaling_tier = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The autoscalingTier.
+   */
+  java.lang.String getAutoscalingTier();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The backlog threshold tier for autoscaling. Value must be one of
+   * "low-latency", "medium-latency", or "high-latency".
+   * </pre>
+   *
+   * <code>optional string autoscaling_tier = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for autoscalingTier.
+   */
+  com.google.protobuf.ByteString getAutoscalingTierBytes();
 }

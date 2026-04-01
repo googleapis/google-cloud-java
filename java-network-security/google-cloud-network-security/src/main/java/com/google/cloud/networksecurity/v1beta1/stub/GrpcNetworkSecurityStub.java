@@ -437,6 +437,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetAuthorizationPolicyRequest, AuthorizationPolicy>
         getAuthorizationPolicyTransportSettings =
@@ -448,6 +449,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateAuthorizationPolicyRequest, Operation>
         createAuthorizationPolicyTransportSettings =
@@ -459,6 +461,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateAuthorizationPolicyRequest, Operation>
         updateAuthorizationPolicyTransportSettings =
@@ -483,6 +486,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListServerTlsPoliciesRequest, ListServerTlsPoliciesResponse>
         listServerTlsPoliciesTransportSettings =
@@ -495,6 +499,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetServerTlsPolicyRequest, ServerTlsPolicy>
         getServerTlsPolicyTransportSettings =
@@ -506,6 +511,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateServerTlsPolicyRequest, Operation>
         createServerTlsPolicyTransportSettings =
@@ -517,6 +523,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateServerTlsPolicyRequest, Operation>
         updateServerTlsPolicyTransportSettings =
@@ -541,6 +548,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListClientTlsPoliciesRequest, ListClientTlsPoliciesResponse>
         listClientTlsPoliciesTransportSettings =
@@ -553,6 +561,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetClientTlsPolicyRequest, ClientTlsPolicy>
         getClientTlsPolicyTransportSettings =
@@ -564,6 +573,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateClientTlsPolicyRequest, Operation>
         createClientTlsPolicyTransportSettings =
@@ -575,6 +585,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateClientTlsPolicyRequest, Operation>
         updateClientTlsPolicyTransportSettings =
@@ -599,6 +610,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -629,6 +641,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -639,6 +652,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -650,6 +664,7 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listAuthorizationPoliciesCallable =

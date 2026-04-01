@@ -42,7 +42,7 @@ public interface BargeInConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.BargeInConfig.disable_barge_in is deprecated. See
-   *     google/cloud/ces/v1beta/app.proto;l=349
+   *     google/cloud/ces/v1beta/app.proto;l=353
    * @return The disableBargeIn.
    */
   @java.lang.Deprecated

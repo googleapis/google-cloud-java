@@ -190,6 +190,7 @@ public class HttpJsonOperatingSystemServiceStub extends OperatingSystemServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListOperatingSystemsRequest, ListOperatingSystemsResponse>
         listOperatingSystemsTransportSettings =
@@ -203,6 +204,7 @@ public class HttpJsonOperatingSystemServiceStub extends OperatingSystemServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getOperatingSystemCallable =

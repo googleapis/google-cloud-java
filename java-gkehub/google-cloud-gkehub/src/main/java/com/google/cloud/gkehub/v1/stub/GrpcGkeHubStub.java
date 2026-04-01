@@ -802,6 +802,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListBoundMembershipsRequest, ListBoundMembershipsResponse>
         listBoundMembershipsTransportSettings =
@@ -813,6 +814,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                       builder.add("scope_name", String.valueOf(request.getScopeName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getScopeName())
                 .build();
     GrpcCallSettings<ListFeaturesRequest, ListFeaturesResponse> listFeaturesTransportSettings =
         GrpcCallSettings.<ListFeaturesRequest, ListFeaturesResponse>newBuilder()
@@ -823,6 +825,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetMembershipRequest, Membership> getMembershipTransportSettings =
         GrpcCallSettings.<GetMembershipRequest, Membership>newBuilder()
@@ -833,6 +836,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetFeatureRequest, Feature> getFeatureTransportSettings =
         GrpcCallSettings.<GetFeatureRequest, Feature>newBuilder()
@@ -843,6 +847,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateMembershipRequest, Operation> createMembershipTransportSettings =
         GrpcCallSettings.<CreateMembershipRequest, Operation>newBuilder()
@@ -853,6 +858,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateFeatureRequest, Operation> createFeatureTransportSettings =
         GrpcCallSettings.<CreateFeatureRequest, Operation>newBuilder()
@@ -863,6 +869,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteMembershipRequest, Operation> deleteMembershipTransportSettings =
         GrpcCallSettings.<DeleteMembershipRequest, Operation>newBuilder()
@@ -873,6 +880,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteFeatureRequest, Operation> deleteFeatureTransportSettings =
         GrpcCallSettings.<DeleteFeatureRequest, Operation>newBuilder()
@@ -883,6 +891,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateMembershipRequest, Operation> updateMembershipTransportSettings =
         GrpcCallSettings.<UpdateMembershipRequest, Operation>newBuilder()
@@ -893,6 +902,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateFeatureRequest, Operation> updateFeatureTransportSettings =
         GrpcCallSettings.<UpdateFeatureRequest, Operation>newBuilder()
@@ -903,6 +913,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GenerateConnectManifestRequest, GenerateConnectManifestResponse>
         generateConnectManifestTransportSettings =
@@ -915,6 +926,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateFleetRequest, Operation> createFleetTransportSettings =
         GrpcCallSettings.<CreateFleetRequest, Operation>newBuilder()
@@ -925,6 +937,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetFleetRequest, Fleet> getFleetTransportSettings =
         GrpcCallSettings.<GetFleetRequest, Fleet>newBuilder()
@@ -935,6 +948,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateFleetRequest, Operation> updateFleetTransportSettings =
         GrpcCallSettings.<UpdateFleetRequest, Operation>newBuilder()
@@ -955,6 +969,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListFleetsRequest, ListFleetsResponse> listFleetsTransportSettings =
         GrpcCallSettings.<ListFleetsRequest, ListFleetsResponse>newBuilder()
@@ -965,6 +980,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetScopeNamespaceRequest, Namespace> getScopeNamespaceTransportSettings =
         GrpcCallSettings.<GetScopeNamespaceRequest, Namespace>newBuilder()
@@ -975,6 +991,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateScopeNamespaceRequest, Operation> createScopeNamespaceTransportSettings =
         GrpcCallSettings.<CreateScopeNamespaceRequest, Operation>newBuilder()
@@ -985,6 +1002,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateScopeNamespaceRequest, Operation> updateScopeNamespaceTransportSettings =
         GrpcCallSettings.<UpdateScopeNamespaceRequest, Operation>newBuilder()
@@ -1007,6 +1025,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListScopeNamespacesRequest, ListScopeNamespacesResponse>
         listScopeNamespacesTransportSettings =
@@ -1018,6 +1037,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetScopeRBACRoleBindingRequest, RBACRoleBinding>
         getScopeRBACRoleBindingTransportSettings =
@@ -1029,6 +1049,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateScopeRBACRoleBindingRequest, Operation>
         createScopeRBACRoleBindingTransportSettings =
@@ -1040,6 +1061,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateScopeRBACRoleBindingRequest, Operation>
         updateScopeRBACRoleBindingTransportSettings =
@@ -1064,6 +1086,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListScopeRBACRoleBindingsRequest, ListScopeRBACRoleBindingsResponse>
         listScopeRBACRoleBindingsTransportSettings =
@@ -1076,6 +1099,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetScopeRequest, Scope> getScopeTransportSettings =
         GrpcCallSettings.<GetScopeRequest, Scope>newBuilder()
@@ -1086,6 +1110,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateScopeRequest, Operation> createScopeTransportSettings =
         GrpcCallSettings.<CreateScopeRequest, Operation>newBuilder()
@@ -1096,6 +1121,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateScopeRequest, Operation> updateScopeTransportSettings =
         GrpcCallSettings.<UpdateScopeRequest, Operation>newBuilder()
@@ -1116,6 +1142,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListScopesRequest, ListScopesResponse> listScopesTransportSettings =
         GrpcCallSettings.<ListScopesRequest, ListScopesResponse>newBuilder()
@@ -1126,6 +1153,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListPermittedScopesRequest, ListPermittedScopesResponse>
         listPermittedScopesTransportSettings =
@@ -1137,6 +1165,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetMembershipBindingRequest, MembershipBinding>
         getMembershipBindingTransportSettings =
@@ -1148,6 +1177,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateMembershipBindingRequest, Operation>
         createMembershipBindingTransportSettings =
@@ -1159,6 +1189,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateMembershipBindingRequest, Operation>
         updateMembershipBindingTransportSettings =
@@ -1183,6 +1214,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListMembershipBindingsRequest, ListMembershipBindingsResponse>
         listMembershipBindingsTransportSettings =
@@ -1195,6 +1227,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetMembershipRBACRoleBindingRequest, RBACRoleBinding>
         getMembershipRBACRoleBindingTransportSettings =
@@ -1206,6 +1239,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateMembershipRBACRoleBindingRequest, Operation>
         createMembershipRBACRoleBindingTransportSettings =
@@ -1217,6 +1251,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateMembershipRBACRoleBindingRequest, Operation>
         updateMembershipRBACRoleBindingTransportSettings =
@@ -1241,6 +1276,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListMembershipRBACRoleBindingsRequest, ListMembershipRBACRoleBindingsResponse>
         listMembershipRBACRoleBindingsTransportSettings =
@@ -1254,6 +1290,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             GenerateMembershipRBACRoleBindingYAMLRequest,
@@ -1270,6 +1307,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.listMembershipsCallable =

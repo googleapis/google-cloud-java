@@ -120,6 +120,13 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
   private int pageSize_ = 0;
 
   /**
+   *
+   *
+   * <pre>
+   * Optional. Requested page size. If unspecified, a default size of 30 will be
+   * used. The maximum value is 100; values above 100 will be coerced to 100.
+   * </pre>
+   *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
@@ -135,6 +142,12 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
   private volatile java.lang.Object pageToken_ = "";
 
   /**
+   *
+   *
+   * <pre>
+   * Optional. A token identifying a page of results the server should return.
+   * </pre>
+   *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
@@ -153,6 +166,12 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
   }
 
   /**
+   *
+   *
+   * <pre>
+   * Optional. A token identifying a page of results the server should return.
+   * </pre>
+   *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
@@ -624,6 +643,13 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
     private int pageSize_;
 
     /**
+     *
+     *
+     * <pre>
+     * Optional. Requested page size. If unspecified, a default size of 30 will be
+     * used. The maximum value is 100; values above 100 will be coerced to 100.
+     * </pre>
+     *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageSize.
@@ -634,6 +660,13 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Optional. Requested page size. If unspecified, a default size of 30 will be
+     * used. The maximum value is 100; values above 100 will be coerced to 100.
+     * </pre>
+     *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageSize to set.
@@ -648,6 +681,13 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Optional. Requested page size. If unspecified, a default size of 30 will be
+     * used. The maximum value is 100; values above 100 will be coerced to 100.
+     * </pre>
+     *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
@@ -662,6 +702,12 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
     private java.lang.Object pageToken_ = "";
 
     /**
+     *
+     *
+     * <pre>
+     * Optional. A token identifying a page of results the server should return.
+     * </pre>
+     *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageToken.
@@ -679,6 +725,12 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Optional. A token identifying a page of results the server should return.
+     * </pre>
+     *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for pageToken.
@@ -696,6 +748,12 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Optional. A token identifying a page of results the server should return.
+     * </pre>
+     *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageToken to set.
@@ -712,6 +770,12 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Optional. A token identifying a page of results the server should return.
+     * </pre>
+     *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
@@ -724,6 +788,12 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Optional. A token identifying a page of results the server should return.
+     * </pre>
+     *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for pageToken to set.

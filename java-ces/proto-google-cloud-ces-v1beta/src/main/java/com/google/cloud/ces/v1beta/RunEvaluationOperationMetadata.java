@@ -25,7 +25,7 @@ package com.google.cloud.ces.v1beta;
  *
  * <pre>
  * Operation metadata for
- * [EvaluationService.RunEvaluation][google.cloud.ces.v1beta.EvaluationService.RunEvaluation]
+ * [EvaluationService.RunEvaluation][google.cloud.ces.v1beta.EvaluationService.RunEvaluation].
  * </pre>
  *
  * Protobuf type {@code google.cloud.ces.v1beta.RunEvaluationOperationMetadata}
@@ -627,7 +627,7 @@ public final class RunEvaluationOperationMetadata extends com.google.protobuf.Ge
    *
    * <pre>
    * Operation metadata for
-   * [EvaluationService.RunEvaluation][google.cloud.ces.v1beta.EvaluationService.RunEvaluation]
+   * [EvaluationService.RunEvaluation][google.cloud.ces.v1beta.EvaluationService.RunEvaluation].
    * </pre>
    *
    * Protobuf type {@code google.cloud.ces.v1beta.RunEvaluationOperationMetadata}

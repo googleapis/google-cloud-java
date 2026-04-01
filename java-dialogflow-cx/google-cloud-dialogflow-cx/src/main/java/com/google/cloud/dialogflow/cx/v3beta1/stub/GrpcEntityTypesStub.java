@@ -234,6 +234,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateEntityTypeRequest, EntityType> createEntityTypeTransportSettings =
         GrpcCallSettings.<CreateEntityTypeRequest, EntityType>newBuilder()
@@ -244,6 +245,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateEntityTypeRequest, EntityType> updateEntityTypeTransportSettings =
         GrpcCallSettings.<UpdateEntityTypeRequest, EntityType>newBuilder()
@@ -265,6 +267,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListEntityTypesRequest, ListEntityTypesResponse>
         listEntityTypesTransportSettings =
@@ -276,6 +279,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ExportEntityTypesRequest, Operation> exportEntityTypesTransportSettings =
         GrpcCallSettings.<ExportEntityTypesRequest, Operation>newBuilder()
@@ -286,6 +290,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ImportEntityTypesRequest, Operation> importEntityTypesTransportSettings =
         GrpcCallSettings.<ImportEntityTypesRequest, Operation>newBuilder()
@@ -296,6 +301,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

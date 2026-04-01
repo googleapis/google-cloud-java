@@ -161,6 +161,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListFeedsRequest, ListFeedsResponse> listFeedsTransportSettings =
         GrpcCallSettings.<ListFeedsRequest, ListFeedsResponse>newBuilder()
@@ -191,6 +192,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createFeedCallable =

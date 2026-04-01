@@ -272,6 +272,7 @@ public class GrpcSaasRolloutsStub extends SaasRolloutsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetRolloutRequest, Rollout> getRolloutTransportSettings =
         GrpcCallSettings.<GetRolloutRequest, Rollout>newBuilder()
@@ -282,6 +283,7 @@ public class GrpcSaasRolloutsStub extends SaasRolloutsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateRolloutRequest, Rollout> createRolloutTransportSettings =
         GrpcCallSettings.<CreateRolloutRequest, Rollout>newBuilder()
@@ -292,6 +294,7 @@ public class GrpcSaasRolloutsStub extends SaasRolloutsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateRolloutRequest, Rollout> updateRolloutTransportSettings =
         GrpcCallSettings.<UpdateRolloutRequest, Rollout>newBuilder()
@@ -312,6 +315,7 @@ public class GrpcSaasRolloutsStub extends SaasRolloutsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRolloutKindsRequest, ListRolloutKindsResponse>
         listRolloutKindsTransportSettings =
@@ -323,6 +327,7 @@ public class GrpcSaasRolloutsStub extends SaasRolloutsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetRolloutKindRequest, RolloutKind> getRolloutKindTransportSettings =
         GrpcCallSettings.<GetRolloutKindRequest, RolloutKind>newBuilder()
@@ -333,6 +338,7 @@ public class GrpcSaasRolloutsStub extends SaasRolloutsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateRolloutKindRequest, RolloutKind> createRolloutKindTransportSettings =
         GrpcCallSettings.<CreateRolloutKindRequest, RolloutKind>newBuilder()
@@ -343,6 +349,7 @@ public class GrpcSaasRolloutsStub extends SaasRolloutsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateRolloutKindRequest, RolloutKind> updateRolloutKindTransportSettings =
         GrpcCallSettings.<UpdateRolloutKindRequest, RolloutKind>newBuilder()
@@ -364,6 +371,7 @@ public class GrpcSaasRolloutsStub extends SaasRolloutsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

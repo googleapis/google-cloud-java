@@ -509,6 +509,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetResourceBundleRequest, ResourceBundle> getResourceBundleTransportSettings =
         GrpcCallSettings.<GetResourceBundleRequest, ResourceBundle>newBuilder()
@@ -519,6 +520,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateResourceBundleRequest, Operation> createResourceBundleTransportSettings =
         GrpcCallSettings.<CreateResourceBundleRequest, Operation>newBuilder()
@@ -529,6 +531,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateResourceBundleRequest, Operation> updateResourceBundleTransportSettings =
         GrpcCallSettings.<UpdateResourceBundleRequest, Operation>newBuilder()
@@ -551,6 +554,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListFleetPackagesRequest, ListFleetPackagesResponse>
         listFleetPackagesTransportSettings =
@@ -562,6 +566,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetFleetPackageRequest, FleetPackage> getFleetPackageTransportSettings =
         GrpcCallSettings.<GetFleetPackageRequest, FleetPackage>newBuilder()
@@ -572,6 +577,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateFleetPackageRequest, Operation> createFleetPackageTransportSettings =
         GrpcCallSettings.<CreateFleetPackageRequest, Operation>newBuilder()
@@ -582,6 +588,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateFleetPackageRequest, Operation> updateFleetPackageTransportSettings =
         GrpcCallSettings.<UpdateFleetPackageRequest, Operation>newBuilder()
@@ -603,6 +610,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListReleasesRequest, ListReleasesResponse> listReleasesTransportSettings =
         GrpcCallSettings.<ListReleasesRequest, ListReleasesResponse>newBuilder()
@@ -613,6 +621,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetReleaseRequest, Release> getReleaseTransportSettings =
         GrpcCallSettings.<GetReleaseRequest, Release>newBuilder()
@@ -623,6 +632,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateReleaseRequest, Operation> createReleaseTransportSettings =
         GrpcCallSettings.<CreateReleaseRequest, Operation>newBuilder()
@@ -633,6 +643,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateReleaseRequest, Operation> updateReleaseTransportSettings =
         GrpcCallSettings.<UpdateReleaseRequest, Operation>newBuilder()
@@ -653,6 +664,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListVariantsRequest, ListVariantsResponse> listVariantsTransportSettings =
         GrpcCallSettings.<ListVariantsRequest, ListVariantsResponse>newBuilder()
@@ -663,6 +675,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetVariantRequest, Variant> getVariantTransportSettings =
         GrpcCallSettings.<GetVariantRequest, Variant>newBuilder()
@@ -673,6 +686,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateVariantRequest, Operation> createVariantTransportSettings =
         GrpcCallSettings.<CreateVariantRequest, Operation>newBuilder()
@@ -683,6 +697,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateVariantRequest, Operation> updateVariantTransportSettings =
         GrpcCallSettings.<UpdateVariantRequest, Operation>newBuilder()
@@ -703,6 +718,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRolloutsRequest, ListRolloutsResponse> listRolloutsTransportSettings =
         GrpcCallSettings.<ListRolloutsRequest, ListRolloutsResponse>newBuilder()
@@ -713,6 +729,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetRolloutRequest, Rollout> getRolloutTransportSettings =
         GrpcCallSettings.<GetRolloutRequest, Rollout>newBuilder()
@@ -723,6 +740,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SuspendRolloutRequest, Operation> suspendRolloutTransportSettings =
         GrpcCallSettings.<SuspendRolloutRequest, Operation>newBuilder()
@@ -733,6 +751,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ResumeRolloutRequest, Operation> resumeRolloutTransportSettings =
         GrpcCallSettings.<ResumeRolloutRequest, Operation>newBuilder()
@@ -743,6 +762,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<AbortRolloutRequest, Operation> abortRolloutTransportSettings =
         GrpcCallSettings.<AbortRolloutRequest, Operation>newBuilder()
@@ -753,6 +773,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

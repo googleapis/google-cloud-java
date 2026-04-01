@@ -302,6 +302,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "force", request.getForce());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
@@ -2628,6 +2629,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         HttpJsonCallSettings.<GetInstanceRequest, Instance>newBuilder()
@@ -2639,6 +2641,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateInstanceRequest, Operation> createInstanceTransportSettings =
         HttpJsonCallSettings.<CreateInstanceRequest, Operation>newBuilder()
@@ -2650,6 +2653,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteInstanceRequest, Operation> deleteInstanceTransportSettings =
         HttpJsonCallSettings.<DeleteInstanceRequest, Operation>newBuilder()
@@ -2661,6 +2665,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListRepositoriesRequest, ListRepositoriesResponse>
         listRepositoriesTransportSettings =
@@ -2673,6 +2678,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetRepositoryRequest, Repository> getRepositoryTransportSettings =
         HttpJsonCallSettings.<GetRepositoryRequest, Repository>newBuilder()
@@ -2684,6 +2690,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateRepositoryRequest, Operation> createRepositoryTransportSettings =
         HttpJsonCallSettings.<CreateRepositoryRequest, Operation>newBuilder()
@@ -2695,6 +2702,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateRepositoryRequest, Operation> updateRepositoryTransportSettings =
         HttpJsonCallSettings.<UpdateRepositoryRequest, Operation>newBuilder()
@@ -2717,6 +2725,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListHooksRequest, ListHooksResponse> listHooksTransportSettings =
         HttpJsonCallSettings.<ListHooksRequest, ListHooksResponse>newBuilder()
@@ -2728,6 +2737,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetHookRequest, Hook> getHookTransportSettings =
         HttpJsonCallSettings.<GetHookRequest, Hook>newBuilder()
@@ -2739,6 +2749,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateHookRequest, Operation> createHookTransportSettings =
         HttpJsonCallSettings.<CreateHookRequest, Operation>newBuilder()
@@ -2750,6 +2761,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateHookRequest, Operation> updateHookTransportSettings =
         HttpJsonCallSettings.<UpdateHookRequest, Operation>newBuilder()
@@ -2772,6 +2784,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyRepoTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -2783,6 +2796,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyRepoTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -2794,6 +2808,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsRepoTransportSettings =
@@ -2806,6 +2821,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     HttpJsonCallSettings<CreateBranchRuleRequest, Operation> createBranchRuleTransportSettings =
         HttpJsonCallSettings.<CreateBranchRuleRequest, Operation>newBuilder()
@@ -2817,6 +2833,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListBranchRulesRequest, ListBranchRulesResponse>
         listBranchRulesTransportSettings =
@@ -2829,6 +2846,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetBranchRuleRequest, BranchRule> getBranchRuleTransportSettings =
         HttpJsonCallSettings.<GetBranchRuleRequest, BranchRule>newBuilder()
@@ -2840,6 +2858,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateBranchRuleRequest, Operation> updateBranchRuleTransportSettings =
         HttpJsonCallSettings.<UpdateBranchRuleRequest, Operation>newBuilder()
@@ -2863,6 +2882,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreatePullRequestRequest, Operation> createPullRequestTransportSettings =
         HttpJsonCallSettings.<CreatePullRequestRequest, Operation>newBuilder()
@@ -2874,6 +2894,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetPullRequestRequest, PullRequest> getPullRequestTransportSettings =
         HttpJsonCallSettings.<GetPullRequestRequest, PullRequest>newBuilder()
@@ -2885,6 +2906,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListPullRequestsRequest, ListPullRequestsResponse>
         listPullRequestsTransportSettings =
@@ -2897,6 +2919,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdatePullRequestRequest, Operation> updatePullRequestTransportSettings =
         HttpJsonCallSettings.<UpdatePullRequestRequest, Operation>newBuilder()
@@ -2920,6 +2943,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<OpenPullRequestRequest, Operation> openPullRequestTransportSettings =
         HttpJsonCallSettings.<OpenPullRequestRequest, Operation>newBuilder()
@@ -2931,6 +2955,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ClosePullRequestRequest, Operation> closePullRequestTransportSettings =
         HttpJsonCallSettings.<ClosePullRequestRequest, Operation>newBuilder()
@@ -2942,6 +2967,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListPullRequestFileDiffsRequest, ListPullRequestFileDiffsResponse>
         listPullRequestFileDiffsTransportSettings =
@@ -2955,6 +2981,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<FetchTreeRequest, FetchTreeResponse> fetchTreeTransportSettings =
         HttpJsonCallSettings.<FetchTreeRequest, FetchTreeResponse>newBuilder()
@@ -2966,6 +2993,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("repository", String.valueOf(request.getRepository()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getRepository())
             .build();
     HttpJsonCallSettings<FetchBlobRequest, FetchBlobResponse> fetchBlobTransportSettings =
         HttpJsonCallSettings.<FetchBlobRequest, FetchBlobResponse>newBuilder()
@@ -2977,6 +3005,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("repository", String.valueOf(request.getRepository()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getRepository())
             .build();
     HttpJsonCallSettings<CreateIssueRequest, Operation> createIssueTransportSettings =
         HttpJsonCallSettings.<CreateIssueRequest, Operation>newBuilder()
@@ -2988,6 +3017,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetIssueRequest, Issue> getIssueTransportSettings =
         HttpJsonCallSettings.<GetIssueRequest, Issue>newBuilder()
@@ -2999,6 +3029,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListIssuesRequest, ListIssuesResponse> listIssuesTransportSettings =
         HttpJsonCallSettings.<ListIssuesRequest, ListIssuesResponse>newBuilder()
@@ -3010,6 +3041,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateIssueRequest, Operation> updateIssueTransportSettings =
         HttpJsonCallSettings.<UpdateIssueRequest, Operation>newBuilder()
@@ -3032,6 +3064,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<OpenIssueRequest, Operation> openIssueTransportSettings =
         HttpJsonCallSettings.<OpenIssueRequest, Operation>newBuilder()
@@ -3043,6 +3076,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CloseIssueRequest, Operation> closeIssueTransportSettings =
         HttpJsonCallSettings.<CloseIssueRequest, Operation>newBuilder()
@@ -3054,6 +3088,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetPullRequestCommentRequest, PullRequestComment>
         getPullRequestCommentTransportSettings =
@@ -3066,6 +3101,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListPullRequestCommentsRequest, ListPullRequestCommentsResponse>
         listPullRequestCommentsTransportSettings =
@@ -3079,6 +3115,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreatePullRequestCommentRequest, Operation>
         createPullRequestCommentTransportSettings =
@@ -3091,6 +3128,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdatePullRequestCommentRequest, Operation>
         updatePullRequestCommentTransportSettings =
@@ -3117,6 +3155,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<BatchCreatePullRequestCommentsRequest, Operation>
         batchCreatePullRequestCommentsTransportSettings =
@@ -3129,6 +3168,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ResolvePullRequestCommentsRequest, Operation>
         resolvePullRequestCommentsTransportSettings =
@@ -3141,6 +3181,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UnresolvePullRequestCommentsRequest, Operation>
         unresolvePullRequestCommentsTransportSettings =
@@ -3153,6 +3194,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateIssueCommentRequest, Operation> createIssueCommentTransportSettings =
         HttpJsonCallSettings.<CreateIssueCommentRequest, Operation>newBuilder()
@@ -3164,6 +3206,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetIssueCommentRequest, IssueComment> getIssueCommentTransportSettings =
         HttpJsonCallSettings.<GetIssueCommentRequest, IssueComment>newBuilder()
@@ -3175,6 +3218,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListIssueCommentsRequest, ListIssueCommentsResponse>
         listIssueCommentsTransportSettings =
@@ -3187,6 +3231,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateIssueCommentRequest, Operation> updateIssueCommentTransportSettings =
         HttpJsonCallSettings.<UpdateIssueCommentRequest, Operation>newBuilder()
@@ -3210,6 +3255,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -3244,6 +3290,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -3255,6 +3302,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -3267,6 +3315,7 @@ public class HttpJsonSecureSourceManagerStub extends SecureSourceManagerStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listInstancesCallable =

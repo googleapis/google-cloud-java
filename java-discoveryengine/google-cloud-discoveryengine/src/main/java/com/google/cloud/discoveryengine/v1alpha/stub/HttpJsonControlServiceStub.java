@@ -318,6 +318,7 @@ public class HttpJsonControlServiceStub extends ControlServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteControlRequest, Empty> deleteControlTransportSettings =
         HttpJsonCallSettings.<DeleteControlRequest, Empty>newBuilder()
@@ -329,6 +330,7 @@ public class HttpJsonControlServiceStub extends ControlServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateControlRequest, Control> updateControlTransportSettings =
         HttpJsonCallSettings.<UpdateControlRequest, Control>newBuilder()
@@ -351,6 +353,7 @@ public class HttpJsonControlServiceStub extends ControlServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListControlsRequest, ListControlsResponse> listControlsTransportSettings =
         HttpJsonCallSettings.<ListControlsRequest, ListControlsResponse>newBuilder()
@@ -362,6 +365,7 @@ public class HttpJsonControlServiceStub extends ControlServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.createControlCallable =

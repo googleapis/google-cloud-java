@@ -151,6 +151,7 @@ public class GrpcProgramsServiceStub extends ProgramsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListProgramsRequest, ListProgramsResponse> listProgramsTransportSettings =
         GrpcCallSettings.<ListProgramsRequest, ListProgramsResponse>newBuilder()
@@ -161,6 +162,7 @@ public class GrpcProgramsServiceStub extends ProgramsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<EnableProgramRequest, Program> enableProgramTransportSettings =
         GrpcCallSettings.<EnableProgramRequest, Program>newBuilder()
@@ -171,6 +173,7 @@ public class GrpcProgramsServiceStub extends ProgramsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DisableProgramRequest, Program> disableProgramTransportSettings =
         GrpcCallSettings.<DisableProgramRequest, Program>newBuilder()
@@ -181,6 +184,7 @@ public class GrpcProgramsServiceStub extends ProgramsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getProgramCallable =

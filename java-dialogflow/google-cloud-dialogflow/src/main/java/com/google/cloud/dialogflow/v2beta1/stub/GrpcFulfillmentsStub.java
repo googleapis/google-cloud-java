@@ -150,6 +150,7 @@ public class GrpcFulfillmentsStub extends FulfillmentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateFulfillmentRequest, Fulfillment> updateFulfillmentTransportSettings =
         GrpcCallSettings.<UpdateFulfillmentRequest, Fulfillment>newBuilder()

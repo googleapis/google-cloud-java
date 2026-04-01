@@ -161,6 +161,7 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetCompanyRequest, Company> getCompanyTransportSettings =
         GrpcCallSettings.<GetCompanyRequest, Company>newBuilder()
@@ -171,6 +172,7 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateCompanyRequest, Company> updateCompanyTransportSettings =
         GrpcCallSettings.<UpdateCompanyRequest, Company>newBuilder()
@@ -191,6 +193,7 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListCompaniesRequest, ListCompaniesResponse> listCompaniesTransportSettings =
         GrpcCallSettings.<ListCompaniesRequest, ListCompaniesResponse>newBuilder()
@@ -201,6 +204,7 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.createCompanyCallable =

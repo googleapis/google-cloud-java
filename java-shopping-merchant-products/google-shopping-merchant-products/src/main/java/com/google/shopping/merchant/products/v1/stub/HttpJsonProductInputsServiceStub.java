@@ -227,6 +227,7 @@ public class HttpJsonProductInputsServiceStub extends ProductInputsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateProductInputRequest, ProductInput>
         updateProductInputTransportSettings =
@@ -252,6 +253,7 @@ public class HttpJsonProductInputsServiceStub extends ProductInputsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.insertProductInputCallable =

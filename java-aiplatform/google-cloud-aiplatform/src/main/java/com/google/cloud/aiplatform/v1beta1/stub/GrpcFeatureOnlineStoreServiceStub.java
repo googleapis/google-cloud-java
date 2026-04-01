@@ -259,6 +259,7 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                       builder.add("feature_view", String.valueOf(request.getFeatureView()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getFeatureView())
                 .build();
     GrpcCallSettings<StreamingFetchFeatureValuesRequest, StreamingFetchFeatureValuesResponse>
         streamingFetchFeatureValuesTransportSettings =
@@ -272,6 +273,7 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                       builder.add("feature_view", String.valueOf(request.getFeatureView()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getFeatureView())
                 .build();
     GrpcCallSettings<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
         searchNearestEntitiesTransportSettings =
@@ -284,6 +286,7 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                       builder.add("feature_view", String.valueOf(request.getFeatureView()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getFeatureView())
                 .build();
     GrpcCallSettings<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
         featureViewDirectWriteTransportSettings =
@@ -296,6 +299,7 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                       builder.add("feature_view", String.valueOf(request.getFeatureView()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getFeatureView())
                 .build();
     GrpcCallSettings<GenerateFetchAccessTokenRequest, GenerateFetchAccessTokenResponse>
         generateFetchAccessTokenTransportSettings =
@@ -308,6 +312,7 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                       builder.add("feature_view", String.valueOf(request.getFeatureView()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getFeatureView())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -338,6 +343,7 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -348,6 +354,7 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -359,6 +366,7 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.fetchFeatureValuesCallable =

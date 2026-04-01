@@ -191,6 +191,7 @@ public class HttpJsonCmsMetadataValueServiceStub extends CmsMetadataValueService
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListCmsMetadataValuesRequest, ListCmsMetadataValuesResponse>
         listCmsMetadataValuesTransportSettings =
@@ -204,6 +205,7 @@ public class HttpJsonCmsMetadataValueServiceStub extends CmsMetadataValueService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getCmsMetadataValueCallable =

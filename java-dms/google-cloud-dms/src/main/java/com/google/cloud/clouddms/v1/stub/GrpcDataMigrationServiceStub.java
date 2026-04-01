@@ -801,6 +801,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetMigrationJobRequest, MigrationJob> getMigrationJobTransportSettings =
         GrpcCallSettings.<GetMigrationJobRequest, MigrationJob>newBuilder()
@@ -811,6 +812,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateMigrationJobRequest, Operation> createMigrationJobTransportSettings =
         GrpcCallSettings.<CreateMigrationJobRequest, Operation>newBuilder()
@@ -821,6 +823,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateMigrationJobRequest, Operation> updateMigrationJobTransportSettings =
         GrpcCallSettings.<UpdateMigrationJobRequest, Operation>newBuilder()
@@ -842,6 +845,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<StartMigrationJobRequest, Operation> startMigrationJobTransportSettings =
         GrpcCallSettings.<StartMigrationJobRequest, Operation>newBuilder()
@@ -852,6 +856,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<StopMigrationJobRequest, Operation> stopMigrationJobTransportSettings =
         GrpcCallSettings.<StopMigrationJobRequest, Operation>newBuilder()
@@ -862,6 +867,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ResumeMigrationJobRequest, Operation> resumeMigrationJobTransportSettings =
         GrpcCallSettings.<ResumeMigrationJobRequest, Operation>newBuilder()
@@ -872,6 +878,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<PromoteMigrationJobRequest, Operation> promoteMigrationJobTransportSettings =
         GrpcCallSettings.<PromoteMigrationJobRequest, Operation>newBuilder()
@@ -882,6 +889,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<VerifyMigrationJobRequest, Operation> verifyMigrationJobTransportSettings =
         GrpcCallSettings.<VerifyMigrationJobRequest, Operation>newBuilder()
@@ -892,6 +900,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RestartMigrationJobRequest, Operation> restartMigrationJobTransportSettings =
         GrpcCallSettings.<RestartMigrationJobRequest, Operation>newBuilder()
@@ -902,6 +911,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GenerateSshScriptRequest, SshScript> generateSshScriptTransportSettings =
         GrpcCallSettings.<GenerateSshScriptRequest, SshScript>newBuilder()
@@ -912,6 +922,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                   builder.add("migration_job", String.valueOf(request.getMigrationJob()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getMigrationJob())
             .build();
     GrpcCallSettings<GenerateTcpProxyScriptRequest, TcpProxyScript>
         generateTcpProxyScriptTransportSettings =
@@ -923,6 +934,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                       builder.add("migration_job", String.valueOf(request.getMigrationJob()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getMigrationJob())
                 .build();
     GrpcCallSettings<ListConnectionProfilesRequest, ListConnectionProfilesResponse>
         listConnectionProfilesTransportSettings =
@@ -935,6 +947,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetConnectionProfileRequest, ConnectionProfile>
         getConnectionProfileTransportSettings =
@@ -946,6 +959,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateConnectionProfileRequest, Operation>
         createConnectionProfileTransportSettings =
@@ -957,6 +971,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateConnectionProfileRequest, Operation>
         updateConnectionProfileTransportSettings =
@@ -981,6 +996,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreatePrivateConnectionRequest, Operation>
         createPrivateConnectionTransportSettings =
@@ -992,6 +1008,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetPrivateConnectionRequest, PrivateConnection>
         getPrivateConnectionTransportSettings =
@@ -1003,6 +1020,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>
         listPrivateConnectionsTransportSettings =
@@ -1015,6 +1033,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeletePrivateConnectionRequest, Operation>
         deletePrivateConnectionTransportSettings =
@@ -1026,6 +1045,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetConversionWorkspaceRequest, ConversionWorkspace>
         getConversionWorkspaceTransportSettings =
@@ -1037,6 +1057,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListConversionWorkspacesRequest, ListConversionWorkspacesResponse>
         listConversionWorkspacesTransportSettings =
@@ -1049,6 +1070,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateConversionWorkspaceRequest, Operation>
         createConversionWorkspaceTransportSettings =
@@ -1060,6 +1082,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateConversionWorkspaceRequest, Operation>
         updateConversionWorkspaceTransportSettings =
@@ -1084,6 +1107,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateMappingRuleRequest, MappingRule> createMappingRuleTransportSettings =
         GrpcCallSettings.<CreateMappingRuleRequest, MappingRule>newBuilder()
@@ -1094,6 +1118,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteMappingRuleRequest, Empty> deleteMappingRuleTransportSettings =
         GrpcCallSettings.<DeleteMappingRuleRequest, Empty>newBuilder()
@@ -1104,6 +1129,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListMappingRulesRequest, ListMappingRulesResponse>
         listMappingRulesTransportSettings =
@@ -1115,6 +1141,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetMappingRuleRequest, MappingRule> getMappingRuleTransportSettings =
         GrpcCallSettings.<GetMappingRuleRequest, MappingRule>newBuilder()
@@ -1125,6 +1152,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SeedConversionWorkspaceRequest, Operation>
         seedConversionWorkspaceTransportSettings =
@@ -1136,6 +1164,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ImportMappingRulesRequest, Operation> importMappingRulesTransportSettings =
         GrpcCallSettings.<ImportMappingRulesRequest, Operation>newBuilder()
@@ -1146,6 +1175,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ConvertConversionWorkspaceRequest, Operation>
         convertConversionWorkspaceTransportSettings =
@@ -1157,6 +1187,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CommitConversionWorkspaceRequest, Operation>
         commitConversionWorkspaceTransportSettings =
@@ -1168,6 +1199,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<RollbackConversionWorkspaceRequest, Operation>
         rollbackConversionWorkspaceTransportSettings =
@@ -1179,6 +1211,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ApplyConversionWorkspaceRequest, Operation>
         applyConversionWorkspaceTransportSettings =
@@ -1190,6 +1223,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DescribeDatabaseEntitiesRequest, DescribeDatabaseEntitiesResponse>
         describeDatabaseEntitiesTransportSettings =
@@ -1203,6 +1237,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                           "conversion_workspace", String.valueOf(request.getConversionWorkspace()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getConversionWorkspace())
                 .build();
     GrpcCallSettings<SearchBackgroundJobsRequest, SearchBackgroundJobsResponse>
         searchBackgroundJobsTransportSettings =
@@ -1215,6 +1250,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                           "conversion_workspace", String.valueOf(request.getConversionWorkspace()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getConversionWorkspace())
                 .build();
     GrpcCallSettings<
             DescribeConversionWorkspaceRevisionsRequest,
@@ -1232,6 +1268,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                           "conversion_workspace", String.valueOf(request.getConversionWorkspace()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getConversionWorkspace())
                 .build();
     GrpcCallSettings<FetchStaticIpsRequest, FetchStaticIpsResponse>
         fetchStaticIpsTransportSettings =
@@ -1243,6 +1280,7 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.listMigrationJobsCallable =

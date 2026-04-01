@@ -1801,13 +1801,16 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Not supported, and ignored by Cloud Run.
+   * Deprecated: Not supported, and ignored by Cloud Run.
    * </pre>
    *
-   * <code>repeated string custom_audiences = 37;</code>
+   * <code>repeated string custom_audiences = 37 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.run.v2.WorkerPool.custom_audiences is deprecated. See
+   *     google/cloud/run/v2/worker_pool.proto;l=459
    * @return A list containing the customAudiences.
    */
+  @java.lang.Deprecated
   public com.google.protobuf.ProtocolStringList getCustomAudiencesList() {
     return customAudiences_;
   }
@@ -1816,13 +1819,16 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Not supported, and ignored by Cloud Run.
+   * Deprecated: Not supported, and ignored by Cloud Run.
    * </pre>
    *
-   * <code>repeated string custom_audiences = 37;</code>
+   * <code>repeated string custom_audiences = 37 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.run.v2.WorkerPool.custom_audiences is deprecated. See
+   *     google/cloud/run/v2/worker_pool.proto;l=459
    * @return The count of customAudiences.
    */
+  @java.lang.Deprecated
   public int getCustomAudiencesCount() {
     return customAudiences_.size();
   }
@@ -1831,14 +1837,17 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Not supported, and ignored by Cloud Run.
+   * Deprecated: Not supported, and ignored by Cloud Run.
    * </pre>
    *
-   * <code>repeated string custom_audiences = 37;</code>
+   * <code>repeated string custom_audiences = 37 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.run.v2.WorkerPool.custom_audiences is deprecated. See
+   *     google/cloud/run/v2/worker_pool.proto;l=459
    * @param index The index of the element to return.
    * @return The customAudiences at the given index.
    */
+  @java.lang.Deprecated
   public java.lang.String getCustomAudiences(int index) {
     return customAudiences_.get(index);
   }
@@ -1847,14 +1856,17 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Not supported, and ignored by Cloud Run.
+   * Deprecated: Not supported, and ignored by Cloud Run.
    * </pre>
    *
-   * <code>repeated string custom_audiences = 37;</code>
+   * <code>repeated string custom_audiences = 37 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.run.v2.WorkerPool.custom_audiences is deprecated. See
+   *     google/cloud/run/v2/worker_pool.proto;l=459
    * @param index The index of the value to return.
    * @return The bytes of the customAudiences at the given index.
    */
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getCustomAudiencesBytes(int index) {
     return customAudiences_.getByteString(index);
   }
@@ -8299,13 +8311,16 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Not supported, and ignored by Cloud Run.
+     * Deprecated: Not supported, and ignored by Cloud Run.
      * </pre>
      *
-     * <code>repeated string custom_audiences = 37;</code>
+     * <code>repeated string custom_audiences = 37 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.run.v2.WorkerPool.custom_audiences is deprecated. See
+     *     google/cloud/run/v2/worker_pool.proto;l=459
      * @return A list containing the customAudiences.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ProtocolStringList getCustomAudiencesList() {
       customAudiences_.makeImmutable();
       return customAudiences_;
@@ -8315,13 +8330,16 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Not supported, and ignored by Cloud Run.
+     * Deprecated: Not supported, and ignored by Cloud Run.
      * </pre>
      *
-     * <code>repeated string custom_audiences = 37;</code>
+     * <code>repeated string custom_audiences = 37 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.run.v2.WorkerPool.custom_audiences is deprecated. See
+     *     google/cloud/run/v2/worker_pool.proto;l=459
      * @return The count of customAudiences.
      */
+    @java.lang.Deprecated
     public int getCustomAudiencesCount() {
       return customAudiences_.size();
     }
@@ -8330,14 +8348,17 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Not supported, and ignored by Cloud Run.
+     * Deprecated: Not supported, and ignored by Cloud Run.
      * </pre>
      *
-     * <code>repeated string custom_audiences = 37;</code>
+     * <code>repeated string custom_audiences = 37 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.run.v2.WorkerPool.custom_audiences is deprecated. See
+     *     google/cloud/run/v2/worker_pool.proto;l=459
      * @param index The index of the element to return.
      * @return The customAudiences at the given index.
      */
+    @java.lang.Deprecated
     public java.lang.String getCustomAudiences(int index) {
       return customAudiences_.get(index);
     }
@@ -8346,14 +8367,17 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Not supported, and ignored by Cloud Run.
+     * Deprecated: Not supported, and ignored by Cloud Run.
      * </pre>
      *
-     * <code>repeated string custom_audiences = 37;</code>
+     * <code>repeated string custom_audiences = 37 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.run.v2.WorkerPool.custom_audiences is deprecated. See
+     *     google/cloud/run/v2/worker_pool.proto;l=459
      * @param index The index of the value to return.
      * @return The bytes of the customAudiences at the given index.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getCustomAudiencesBytes(int index) {
       return customAudiences_.getByteString(index);
     }
@@ -8362,15 +8386,18 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Not supported, and ignored by Cloud Run.
+     * Deprecated: Not supported, and ignored by Cloud Run.
      * </pre>
      *
-     * <code>repeated string custom_audiences = 37;</code>
+     * <code>repeated string custom_audiences = 37 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.run.v2.WorkerPool.custom_audiences is deprecated. See
+     *     google/cloud/run/v2/worker_pool.proto;l=459
      * @param index The index to set the value at.
      * @param value The customAudiences to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setCustomAudiences(int index, java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -8386,14 +8413,17 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Not supported, and ignored by Cloud Run.
+     * Deprecated: Not supported, and ignored by Cloud Run.
      * </pre>
      *
-     * <code>repeated string custom_audiences = 37;</code>
+     * <code>repeated string custom_audiences = 37 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.run.v2.WorkerPool.custom_audiences is deprecated. See
+     *     google/cloud/run/v2/worker_pool.proto;l=459
      * @param value The customAudiences to add.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder addCustomAudiences(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -8409,14 +8439,17 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Not supported, and ignored by Cloud Run.
+     * Deprecated: Not supported, and ignored by Cloud Run.
      * </pre>
      *
-     * <code>repeated string custom_audiences = 37;</code>
+     * <code>repeated string custom_audiences = 37 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.run.v2.WorkerPool.custom_audiences is deprecated. See
+     *     google/cloud/run/v2/worker_pool.proto;l=459
      * @param values The customAudiences to add.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder addAllCustomAudiences(java.lang.Iterable<java.lang.String> values) {
       ensureCustomAudiencesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, customAudiences_);
@@ -8429,13 +8462,16 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Not supported, and ignored by Cloud Run.
+     * Deprecated: Not supported, and ignored by Cloud Run.
      * </pre>
      *
-     * <code>repeated string custom_audiences = 37;</code>
+     * <code>repeated string custom_audiences = 37 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.run.v2.WorkerPool.custom_audiences is deprecated. See
+     *     google/cloud/run/v2/worker_pool.proto;l=459
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearCustomAudiences() {
       customAudiences_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x04000000);
@@ -8448,14 +8484,17 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Not supported, and ignored by Cloud Run.
+     * Deprecated: Not supported, and ignored by Cloud Run.
      * </pre>
      *
-     * <code>repeated string custom_audiences = 37;</code>
+     * <code>repeated string custom_audiences = 37 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.run.v2.WorkerPool.custom_audiences is deprecated. See
+     *     google/cloud/run/v2/worker_pool.proto;l=459
      * @param value The bytes of the customAudiences to add.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder addCustomAudiencesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();

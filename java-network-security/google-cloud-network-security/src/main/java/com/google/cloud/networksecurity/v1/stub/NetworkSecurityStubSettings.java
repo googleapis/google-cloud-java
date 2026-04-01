@@ -17,9 +17,15 @@
 package com.google.cloud.networksecurity.v1.stub;
 
 import static com.google.cloud.networksecurity.v1.NetworkSecurityClient.ListAuthorizationPoliciesPagedResponse;
+import static com.google.cloud.networksecurity.v1.NetworkSecurityClient.ListAuthzPoliciesPagedResponse;
+import static com.google.cloud.networksecurity.v1.NetworkSecurityClient.ListBackendAuthenticationConfigsPagedResponse;
 import static com.google.cloud.networksecurity.v1.NetworkSecurityClient.ListClientTlsPoliciesPagedResponse;
+import static com.google.cloud.networksecurity.v1.NetworkSecurityClient.ListGatewaySecurityPoliciesPagedResponse;
+import static com.google.cloud.networksecurity.v1.NetworkSecurityClient.ListGatewaySecurityPolicyRulesPagedResponse;
 import static com.google.cloud.networksecurity.v1.NetworkSecurityClient.ListLocationsPagedResponse;
 import static com.google.cloud.networksecurity.v1.NetworkSecurityClient.ListServerTlsPoliciesPagedResponse;
+import static com.google.cloud.networksecurity.v1.NetworkSecurityClient.ListTlsInspectionPoliciesPagedResponse;
+import static com.google.cloud.networksecurity.v1.NetworkSecurityClient.ListUrlListsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -53,27 +59,69 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.networksecurity.v1.AuthorizationPolicy;
+import com.google.cloud.networksecurity.v1.AuthzPolicy;
+import com.google.cloud.networksecurity.v1.BackendAuthenticationConfig;
 import com.google.cloud.networksecurity.v1.ClientTlsPolicy;
 import com.google.cloud.networksecurity.v1.CreateAuthorizationPolicyRequest;
+import com.google.cloud.networksecurity.v1.CreateAuthzPolicyRequest;
+import com.google.cloud.networksecurity.v1.CreateBackendAuthenticationConfigRequest;
 import com.google.cloud.networksecurity.v1.CreateClientTlsPolicyRequest;
+import com.google.cloud.networksecurity.v1.CreateGatewaySecurityPolicyRequest;
+import com.google.cloud.networksecurity.v1.CreateGatewaySecurityPolicyRuleRequest;
 import com.google.cloud.networksecurity.v1.CreateServerTlsPolicyRequest;
+import com.google.cloud.networksecurity.v1.CreateTlsInspectionPolicyRequest;
+import com.google.cloud.networksecurity.v1.CreateUrlListRequest;
 import com.google.cloud.networksecurity.v1.DeleteAuthorizationPolicyRequest;
+import com.google.cloud.networksecurity.v1.DeleteAuthzPolicyRequest;
+import com.google.cloud.networksecurity.v1.DeleteBackendAuthenticationConfigRequest;
 import com.google.cloud.networksecurity.v1.DeleteClientTlsPolicyRequest;
+import com.google.cloud.networksecurity.v1.DeleteGatewaySecurityPolicyRequest;
+import com.google.cloud.networksecurity.v1.DeleteGatewaySecurityPolicyRuleRequest;
 import com.google.cloud.networksecurity.v1.DeleteServerTlsPolicyRequest;
+import com.google.cloud.networksecurity.v1.DeleteTlsInspectionPolicyRequest;
+import com.google.cloud.networksecurity.v1.DeleteUrlListRequest;
+import com.google.cloud.networksecurity.v1.GatewaySecurityPolicy;
+import com.google.cloud.networksecurity.v1.GatewaySecurityPolicyRule;
 import com.google.cloud.networksecurity.v1.GetAuthorizationPolicyRequest;
+import com.google.cloud.networksecurity.v1.GetAuthzPolicyRequest;
+import com.google.cloud.networksecurity.v1.GetBackendAuthenticationConfigRequest;
 import com.google.cloud.networksecurity.v1.GetClientTlsPolicyRequest;
+import com.google.cloud.networksecurity.v1.GetGatewaySecurityPolicyRequest;
+import com.google.cloud.networksecurity.v1.GetGatewaySecurityPolicyRuleRequest;
 import com.google.cloud.networksecurity.v1.GetServerTlsPolicyRequest;
+import com.google.cloud.networksecurity.v1.GetTlsInspectionPolicyRequest;
+import com.google.cloud.networksecurity.v1.GetUrlListRequest;
 import com.google.cloud.networksecurity.v1.ListAuthorizationPoliciesRequest;
 import com.google.cloud.networksecurity.v1.ListAuthorizationPoliciesResponse;
+import com.google.cloud.networksecurity.v1.ListAuthzPoliciesRequest;
+import com.google.cloud.networksecurity.v1.ListAuthzPoliciesResponse;
+import com.google.cloud.networksecurity.v1.ListBackendAuthenticationConfigsRequest;
+import com.google.cloud.networksecurity.v1.ListBackendAuthenticationConfigsResponse;
 import com.google.cloud.networksecurity.v1.ListClientTlsPoliciesRequest;
 import com.google.cloud.networksecurity.v1.ListClientTlsPoliciesResponse;
+import com.google.cloud.networksecurity.v1.ListGatewaySecurityPoliciesRequest;
+import com.google.cloud.networksecurity.v1.ListGatewaySecurityPoliciesResponse;
+import com.google.cloud.networksecurity.v1.ListGatewaySecurityPolicyRulesRequest;
+import com.google.cloud.networksecurity.v1.ListGatewaySecurityPolicyRulesResponse;
 import com.google.cloud.networksecurity.v1.ListServerTlsPoliciesRequest;
 import com.google.cloud.networksecurity.v1.ListServerTlsPoliciesResponse;
+import com.google.cloud.networksecurity.v1.ListTlsInspectionPoliciesRequest;
+import com.google.cloud.networksecurity.v1.ListTlsInspectionPoliciesResponse;
+import com.google.cloud.networksecurity.v1.ListUrlListsRequest;
+import com.google.cloud.networksecurity.v1.ListUrlListsResponse;
 import com.google.cloud.networksecurity.v1.OperationMetadata;
 import com.google.cloud.networksecurity.v1.ServerTlsPolicy;
+import com.google.cloud.networksecurity.v1.TlsInspectionPolicy;
 import com.google.cloud.networksecurity.v1.UpdateAuthorizationPolicyRequest;
+import com.google.cloud.networksecurity.v1.UpdateAuthzPolicyRequest;
+import com.google.cloud.networksecurity.v1.UpdateBackendAuthenticationConfigRequest;
 import com.google.cloud.networksecurity.v1.UpdateClientTlsPolicyRequest;
+import com.google.cloud.networksecurity.v1.UpdateGatewaySecurityPolicyRequest;
+import com.google.cloud.networksecurity.v1.UpdateGatewaySecurityPolicyRuleRequest;
 import com.google.cloud.networksecurity.v1.UpdateServerTlsPolicyRequest;
+import com.google.cloud.networksecurity.v1.UpdateTlsInspectionPolicyRequest;
+import com.google.cloud.networksecurity.v1.UpdateUrlListRequest;
+import com.google.cloud.networksecurity.v1.UrlList;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -196,6 +244,29 @@ public class NetworkSecurityStubSettings extends StubSettings<NetworkSecurityStu
   private final OperationCallSettings<DeleteAuthorizationPolicyRequest, Empty, OperationMetadata>
       deleteAuthorizationPolicyOperationSettings;
   private final PagedCallSettings<
+          ListBackendAuthenticationConfigsRequest,
+          ListBackendAuthenticationConfigsResponse,
+          ListBackendAuthenticationConfigsPagedResponse>
+      listBackendAuthenticationConfigsSettings;
+  private final UnaryCallSettings<
+          GetBackendAuthenticationConfigRequest, BackendAuthenticationConfig>
+      getBackendAuthenticationConfigSettings;
+  private final UnaryCallSettings<CreateBackendAuthenticationConfigRequest, Operation>
+      createBackendAuthenticationConfigSettings;
+  private final OperationCallSettings<
+          CreateBackendAuthenticationConfigRequest, BackendAuthenticationConfig, OperationMetadata>
+      createBackendAuthenticationConfigOperationSettings;
+  private final UnaryCallSettings<UpdateBackendAuthenticationConfigRequest, Operation>
+      updateBackendAuthenticationConfigSettings;
+  private final OperationCallSettings<
+          UpdateBackendAuthenticationConfigRequest, BackendAuthenticationConfig, OperationMetadata>
+      updateBackendAuthenticationConfigOperationSettings;
+  private final UnaryCallSettings<DeleteBackendAuthenticationConfigRequest, Operation>
+      deleteBackendAuthenticationConfigSettings;
+  private final OperationCallSettings<
+          DeleteBackendAuthenticationConfigRequest, Empty, OperationMetadata>
+      deleteBackendAuthenticationConfigOperationSettings;
+  private final PagedCallSettings<
           ListServerTlsPoliciesRequest,
           ListServerTlsPoliciesResponse,
           ListServerTlsPoliciesPagedResponse>
@@ -237,6 +308,96 @@ public class NetworkSecurityStubSettings extends StubSettings<NetworkSecurityStu
       deleteClientTlsPolicySettings;
   private final OperationCallSettings<DeleteClientTlsPolicyRequest, Empty, OperationMetadata>
       deleteClientTlsPolicyOperationSettings;
+  private final PagedCallSettings<
+          ListGatewaySecurityPoliciesRequest,
+          ListGatewaySecurityPoliciesResponse,
+          ListGatewaySecurityPoliciesPagedResponse>
+      listGatewaySecurityPoliciesSettings;
+  private final UnaryCallSettings<GetGatewaySecurityPolicyRequest, GatewaySecurityPolicy>
+      getGatewaySecurityPolicySettings;
+  private final UnaryCallSettings<CreateGatewaySecurityPolicyRequest, Operation>
+      createGatewaySecurityPolicySettings;
+  private final OperationCallSettings<
+          CreateGatewaySecurityPolicyRequest, GatewaySecurityPolicy, OperationMetadata>
+      createGatewaySecurityPolicyOperationSettings;
+  private final UnaryCallSettings<UpdateGatewaySecurityPolicyRequest, Operation>
+      updateGatewaySecurityPolicySettings;
+  private final OperationCallSettings<
+          UpdateGatewaySecurityPolicyRequest, GatewaySecurityPolicy, OperationMetadata>
+      updateGatewaySecurityPolicyOperationSettings;
+  private final UnaryCallSettings<DeleteGatewaySecurityPolicyRequest, Operation>
+      deleteGatewaySecurityPolicySettings;
+  private final OperationCallSettings<DeleteGatewaySecurityPolicyRequest, Empty, OperationMetadata>
+      deleteGatewaySecurityPolicyOperationSettings;
+  private final PagedCallSettings<
+          ListGatewaySecurityPolicyRulesRequest,
+          ListGatewaySecurityPolicyRulesResponse,
+          ListGatewaySecurityPolicyRulesPagedResponse>
+      listGatewaySecurityPolicyRulesSettings;
+  private final UnaryCallSettings<GetGatewaySecurityPolicyRuleRequest, GatewaySecurityPolicyRule>
+      getGatewaySecurityPolicyRuleSettings;
+  private final UnaryCallSettings<CreateGatewaySecurityPolicyRuleRequest, Operation>
+      createGatewaySecurityPolicyRuleSettings;
+  private final OperationCallSettings<
+          CreateGatewaySecurityPolicyRuleRequest, GatewaySecurityPolicyRule, OperationMetadata>
+      createGatewaySecurityPolicyRuleOperationSettings;
+  private final UnaryCallSettings<UpdateGatewaySecurityPolicyRuleRequest, Operation>
+      updateGatewaySecurityPolicyRuleSettings;
+  private final OperationCallSettings<
+          UpdateGatewaySecurityPolicyRuleRequest, GatewaySecurityPolicyRule, OperationMetadata>
+      updateGatewaySecurityPolicyRuleOperationSettings;
+  private final UnaryCallSettings<DeleteGatewaySecurityPolicyRuleRequest, Operation>
+      deleteGatewaySecurityPolicyRuleSettings;
+  private final OperationCallSettings<
+          DeleteGatewaySecurityPolicyRuleRequest, Empty, OperationMetadata>
+      deleteGatewaySecurityPolicyRuleOperationSettings;
+  private final PagedCallSettings<
+          ListUrlListsRequest, ListUrlListsResponse, ListUrlListsPagedResponse>
+      listUrlListsSettings;
+  private final UnaryCallSettings<GetUrlListRequest, UrlList> getUrlListSettings;
+  private final UnaryCallSettings<CreateUrlListRequest, Operation> createUrlListSettings;
+  private final OperationCallSettings<CreateUrlListRequest, UrlList, OperationMetadata>
+      createUrlListOperationSettings;
+  private final UnaryCallSettings<UpdateUrlListRequest, Operation> updateUrlListSettings;
+  private final OperationCallSettings<UpdateUrlListRequest, UrlList, OperationMetadata>
+      updateUrlListOperationSettings;
+  private final UnaryCallSettings<DeleteUrlListRequest, Operation> deleteUrlListSettings;
+  private final OperationCallSettings<DeleteUrlListRequest, Empty, OperationMetadata>
+      deleteUrlListOperationSettings;
+  private final PagedCallSettings<
+          ListTlsInspectionPoliciesRequest,
+          ListTlsInspectionPoliciesResponse,
+          ListTlsInspectionPoliciesPagedResponse>
+      listTlsInspectionPoliciesSettings;
+  private final UnaryCallSettings<GetTlsInspectionPolicyRequest, TlsInspectionPolicy>
+      getTlsInspectionPolicySettings;
+  private final UnaryCallSettings<CreateTlsInspectionPolicyRequest, Operation>
+      createTlsInspectionPolicySettings;
+  private final OperationCallSettings<
+          CreateTlsInspectionPolicyRequest, TlsInspectionPolicy, OperationMetadata>
+      createTlsInspectionPolicyOperationSettings;
+  private final UnaryCallSettings<UpdateTlsInspectionPolicyRequest, Operation>
+      updateTlsInspectionPolicySettings;
+  private final OperationCallSettings<
+          UpdateTlsInspectionPolicyRequest, TlsInspectionPolicy, OperationMetadata>
+      updateTlsInspectionPolicyOperationSettings;
+  private final UnaryCallSettings<DeleteTlsInspectionPolicyRequest, Operation>
+      deleteTlsInspectionPolicySettings;
+  private final OperationCallSettings<DeleteTlsInspectionPolicyRequest, Empty, OperationMetadata>
+      deleteTlsInspectionPolicyOperationSettings;
+  private final PagedCallSettings<
+          ListAuthzPoliciesRequest, ListAuthzPoliciesResponse, ListAuthzPoliciesPagedResponse>
+      listAuthzPoliciesSettings;
+  private final UnaryCallSettings<GetAuthzPolicyRequest, AuthzPolicy> getAuthzPolicySettings;
+  private final UnaryCallSettings<CreateAuthzPolicyRequest, Operation> createAuthzPolicySettings;
+  private final OperationCallSettings<CreateAuthzPolicyRequest, AuthzPolicy, OperationMetadata>
+      createAuthzPolicyOperationSettings;
+  private final UnaryCallSettings<UpdateAuthzPolicyRequest, Operation> updateAuthzPolicySettings;
+  private final OperationCallSettings<UpdateAuthzPolicyRequest, AuthzPolicy, OperationMetadata>
+      updateAuthzPolicyOperationSettings;
+  private final UnaryCallSettings<DeleteAuthzPolicyRequest, Operation> deleteAuthzPolicySettings;
+  private final OperationCallSettings<DeleteAuthzPolicyRequest, Empty, OperationMetadata>
+      deleteAuthzPolicyOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -288,6 +449,53 @@ public class NetworkSecurityStubSettings extends StubSettings<NetworkSecurityStu
             public Iterable<AuthorizationPolicy> extractResources(
                 ListAuthorizationPoliciesResponse payload) {
               return payload.getAuthorizationPoliciesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListBackendAuthenticationConfigsRequest,
+          ListBackendAuthenticationConfigsResponse,
+          BackendAuthenticationConfig>
+      LIST_BACKEND_AUTHENTICATION_CONFIGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListBackendAuthenticationConfigsRequest,
+              ListBackendAuthenticationConfigsResponse,
+              BackendAuthenticationConfig>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBackendAuthenticationConfigsRequest injectToken(
+                ListBackendAuthenticationConfigsRequest payload, String token) {
+              return ListBackendAuthenticationConfigsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListBackendAuthenticationConfigsRequest injectPageSize(
+                ListBackendAuthenticationConfigsRequest payload, int pageSize) {
+              return ListBackendAuthenticationConfigsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBackendAuthenticationConfigsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBackendAuthenticationConfigsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<BackendAuthenticationConfig> extractResources(
+                ListBackendAuthenticationConfigsResponse payload) {
+              return payload.getBackendAuthenticationConfigsList();
             }
           };
 
@@ -369,6 +577,217 @@ public class NetworkSecurityStubSettings extends StubSettings<NetworkSecurityStu
             }
           };
 
+  private static final PagedListDescriptor<
+          ListGatewaySecurityPoliciesRequest,
+          ListGatewaySecurityPoliciesResponse,
+          GatewaySecurityPolicy>
+      LIST_GATEWAY_SECURITY_POLICIES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListGatewaySecurityPoliciesRequest,
+              ListGatewaySecurityPoliciesResponse,
+              GatewaySecurityPolicy>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListGatewaySecurityPoliciesRequest injectToken(
+                ListGatewaySecurityPoliciesRequest payload, String token) {
+              return ListGatewaySecurityPoliciesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListGatewaySecurityPoliciesRequest injectPageSize(
+                ListGatewaySecurityPoliciesRequest payload, int pageSize) {
+              return ListGatewaySecurityPoliciesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListGatewaySecurityPoliciesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListGatewaySecurityPoliciesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<GatewaySecurityPolicy> extractResources(
+                ListGatewaySecurityPoliciesResponse payload) {
+              return payload.getGatewaySecurityPoliciesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListGatewaySecurityPolicyRulesRequest,
+          ListGatewaySecurityPolicyRulesResponse,
+          GatewaySecurityPolicyRule>
+      LIST_GATEWAY_SECURITY_POLICY_RULES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListGatewaySecurityPolicyRulesRequest,
+              ListGatewaySecurityPolicyRulesResponse,
+              GatewaySecurityPolicyRule>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListGatewaySecurityPolicyRulesRequest injectToken(
+                ListGatewaySecurityPolicyRulesRequest payload, String token) {
+              return ListGatewaySecurityPolicyRulesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListGatewaySecurityPolicyRulesRequest injectPageSize(
+                ListGatewaySecurityPolicyRulesRequest payload, int pageSize) {
+              return ListGatewaySecurityPolicyRulesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListGatewaySecurityPolicyRulesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListGatewaySecurityPolicyRulesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<GatewaySecurityPolicyRule> extractResources(
+                ListGatewaySecurityPolicyRulesResponse payload) {
+              return payload.getGatewaySecurityPolicyRulesList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListUrlListsRequest, ListUrlListsResponse, UrlList>
+      LIST_URL_LISTS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListUrlListsRequest, ListUrlListsResponse, UrlList>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListUrlListsRequest injectToken(ListUrlListsRequest payload, String token) {
+              return ListUrlListsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListUrlListsRequest injectPageSize(ListUrlListsRequest payload, int pageSize) {
+              return ListUrlListsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListUrlListsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListUrlListsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<UrlList> extractResources(ListUrlListsResponse payload) {
+              return payload.getUrlListsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListTlsInspectionPoliciesRequest, ListTlsInspectionPoliciesResponse, TlsInspectionPolicy>
+      LIST_TLS_INSPECTION_POLICIES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListTlsInspectionPoliciesRequest,
+              ListTlsInspectionPoliciesResponse,
+              TlsInspectionPolicy>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListTlsInspectionPoliciesRequest injectToken(
+                ListTlsInspectionPoliciesRequest payload, String token) {
+              return ListTlsInspectionPoliciesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListTlsInspectionPoliciesRequest injectPageSize(
+                ListTlsInspectionPoliciesRequest payload, int pageSize) {
+              return ListTlsInspectionPoliciesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListTlsInspectionPoliciesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListTlsInspectionPoliciesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<TlsInspectionPolicy> extractResources(
+                ListTlsInspectionPoliciesResponse payload) {
+              return payload.getTlsInspectionPoliciesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListAuthzPoliciesRequest, ListAuthzPoliciesResponse, AuthzPolicy>
+      LIST_AUTHZ_POLICIES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAuthzPoliciesRequest, ListAuthzPoliciesResponse, AuthzPolicy>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAuthzPoliciesRequest injectToken(
+                ListAuthzPoliciesRequest payload, String token) {
+              return ListAuthzPoliciesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAuthzPoliciesRequest injectPageSize(
+                ListAuthzPoliciesRequest payload, int pageSize) {
+              return ListAuthzPoliciesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAuthzPoliciesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAuthzPoliciesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AuthzPolicy> extractResources(ListAuthzPoliciesResponse payload) {
+              return payload.getAuthzPoliciesList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -432,6 +851,39 @@ public class NetworkSecurityStubSettings extends StubSettings<NetworkSecurityStu
           };
 
   private static final PagedListResponseFactory<
+          ListBackendAuthenticationConfigsRequest,
+          ListBackendAuthenticationConfigsResponse,
+          ListBackendAuthenticationConfigsPagedResponse>
+      LIST_BACKEND_AUTHENTICATION_CONFIGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBackendAuthenticationConfigsRequest,
+              ListBackendAuthenticationConfigsResponse,
+              ListBackendAuthenticationConfigsPagedResponse>() {
+            @Override
+            public ApiFuture<ListBackendAuthenticationConfigsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListBackendAuthenticationConfigsRequest,
+                        ListBackendAuthenticationConfigsResponse>
+                    callable,
+                ListBackendAuthenticationConfigsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBackendAuthenticationConfigsResponse> futureResponse) {
+              PageContext<
+                      ListBackendAuthenticationConfigsRequest,
+                      ListBackendAuthenticationConfigsResponse,
+                      BackendAuthenticationConfig>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_BACKEND_AUTHENTICATION_CONFIGS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListBackendAuthenticationConfigsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListServerTlsPoliciesRequest,
           ListServerTlsPoliciesResponse,
           ListServerTlsPoliciesPagedResponse>
@@ -476,6 +928,134 @@ public class NetworkSecurityStubSettings extends StubSettings<NetworkSecurityStu
                       PageContext.create(
                           callable, LIST_CLIENT_TLS_POLICIES_PAGE_STR_DESC, request, context);
               return ListClientTlsPoliciesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListGatewaySecurityPoliciesRequest,
+          ListGatewaySecurityPoliciesResponse,
+          ListGatewaySecurityPoliciesPagedResponse>
+      LIST_GATEWAY_SECURITY_POLICIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListGatewaySecurityPoliciesRequest,
+              ListGatewaySecurityPoliciesResponse,
+              ListGatewaySecurityPoliciesPagedResponse>() {
+            @Override
+            public ApiFuture<ListGatewaySecurityPoliciesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListGatewaySecurityPoliciesRequest, ListGatewaySecurityPoliciesResponse>
+                    callable,
+                ListGatewaySecurityPoliciesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListGatewaySecurityPoliciesResponse> futureResponse) {
+              PageContext<
+                      ListGatewaySecurityPoliciesRequest,
+                      ListGatewaySecurityPoliciesResponse,
+                      GatewaySecurityPolicy>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_GATEWAY_SECURITY_POLICIES_PAGE_STR_DESC, request, context);
+              return ListGatewaySecurityPoliciesPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListGatewaySecurityPolicyRulesRequest,
+          ListGatewaySecurityPolicyRulesResponse,
+          ListGatewaySecurityPolicyRulesPagedResponse>
+      LIST_GATEWAY_SECURITY_POLICY_RULES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListGatewaySecurityPolicyRulesRequest,
+              ListGatewaySecurityPolicyRulesResponse,
+              ListGatewaySecurityPolicyRulesPagedResponse>() {
+            @Override
+            public ApiFuture<ListGatewaySecurityPolicyRulesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListGatewaySecurityPolicyRulesRequest,
+                        ListGatewaySecurityPolicyRulesResponse>
+                    callable,
+                ListGatewaySecurityPolicyRulesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListGatewaySecurityPolicyRulesResponse> futureResponse) {
+              PageContext<
+                      ListGatewaySecurityPolicyRulesRequest,
+                      ListGatewaySecurityPolicyRulesResponse,
+                      GatewaySecurityPolicyRule>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_GATEWAY_SECURITY_POLICY_RULES_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListGatewaySecurityPolicyRulesPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListUrlListsRequest, ListUrlListsResponse, ListUrlListsPagedResponse>
+      LIST_URL_LISTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListUrlListsRequest, ListUrlListsResponse, ListUrlListsPagedResponse>() {
+            @Override
+            public ApiFuture<ListUrlListsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListUrlListsRequest, ListUrlListsResponse> callable,
+                ListUrlListsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListUrlListsResponse> futureResponse) {
+              PageContext<ListUrlListsRequest, ListUrlListsResponse, UrlList> pageContext =
+                  PageContext.create(callable, LIST_URL_LISTS_PAGE_STR_DESC, request, context);
+              return ListUrlListsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListTlsInspectionPoliciesRequest,
+          ListTlsInspectionPoliciesResponse,
+          ListTlsInspectionPoliciesPagedResponse>
+      LIST_TLS_INSPECTION_POLICIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTlsInspectionPoliciesRequest,
+              ListTlsInspectionPoliciesResponse,
+              ListTlsInspectionPoliciesPagedResponse>() {
+            @Override
+            public ApiFuture<ListTlsInspectionPoliciesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListTlsInspectionPoliciesRequest, ListTlsInspectionPoliciesResponse>
+                    callable,
+                ListTlsInspectionPoliciesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListTlsInspectionPoliciesResponse> futureResponse) {
+              PageContext<
+                      ListTlsInspectionPoliciesRequest,
+                      ListTlsInspectionPoliciesResponse,
+                      TlsInspectionPolicy>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_TLS_INSPECTION_POLICIES_PAGE_STR_DESC, request, context);
+              return ListTlsInspectionPoliciesPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAuthzPoliciesRequest, ListAuthzPoliciesResponse, ListAuthzPoliciesPagedResponse>
+      LIST_AUTHZ_POLICIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAuthzPoliciesRequest,
+              ListAuthzPoliciesResponse,
+              ListAuthzPoliciesPagedResponse>() {
+            @Override
+            public ApiFuture<ListAuthzPoliciesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAuthzPoliciesRequest, ListAuthzPoliciesResponse> callable,
+                ListAuthzPoliciesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAuthzPoliciesResponse> futureResponse) {
+              PageContext<ListAuthzPoliciesRequest, ListAuthzPoliciesResponse, AuthzPolicy>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_AUTHZ_POLICIES_PAGE_STR_DESC, request, context);
+              return ListAuthzPoliciesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -547,6 +1127,59 @@ public class NetworkSecurityStubSettings extends StubSettings<NetworkSecurityStu
   public OperationCallSettings<DeleteAuthorizationPolicyRequest, Empty, OperationMetadata>
       deleteAuthorizationPolicyOperationSettings() {
     return deleteAuthorizationPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listBackendAuthenticationConfigs. */
+  public PagedCallSettings<
+          ListBackendAuthenticationConfigsRequest,
+          ListBackendAuthenticationConfigsResponse,
+          ListBackendAuthenticationConfigsPagedResponse>
+      listBackendAuthenticationConfigsSettings() {
+    return listBackendAuthenticationConfigsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getBackendAuthenticationConfig. */
+  public UnaryCallSettings<GetBackendAuthenticationConfigRequest, BackendAuthenticationConfig>
+      getBackendAuthenticationConfigSettings() {
+    return getBackendAuthenticationConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createBackendAuthenticationConfig. */
+  public UnaryCallSettings<CreateBackendAuthenticationConfigRequest, Operation>
+      createBackendAuthenticationConfigSettings() {
+    return createBackendAuthenticationConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createBackendAuthenticationConfig. */
+  public OperationCallSettings<
+          CreateBackendAuthenticationConfigRequest, BackendAuthenticationConfig, OperationMetadata>
+      createBackendAuthenticationConfigOperationSettings() {
+    return createBackendAuthenticationConfigOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateBackendAuthenticationConfig. */
+  public UnaryCallSettings<UpdateBackendAuthenticationConfigRequest, Operation>
+      updateBackendAuthenticationConfigSettings() {
+    return updateBackendAuthenticationConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateBackendAuthenticationConfig. */
+  public OperationCallSettings<
+          UpdateBackendAuthenticationConfigRequest, BackendAuthenticationConfig, OperationMetadata>
+      updateBackendAuthenticationConfigOperationSettings() {
+    return updateBackendAuthenticationConfigOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackendAuthenticationConfig. */
+  public UnaryCallSettings<DeleteBackendAuthenticationConfigRequest, Operation>
+      deleteBackendAuthenticationConfigSettings() {
+    return deleteBackendAuthenticationConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackendAuthenticationConfig. */
+  public OperationCallSettings<DeleteBackendAuthenticationConfigRequest, Empty, OperationMetadata>
+      deleteBackendAuthenticationConfigOperationSettings() {
+    return deleteBackendAuthenticationConfigOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to listServerTlsPolicies. */
@@ -649,6 +1282,254 @@ public class NetworkSecurityStubSettings extends StubSettings<NetworkSecurityStu
   public OperationCallSettings<DeleteClientTlsPolicyRequest, Empty, OperationMetadata>
       deleteClientTlsPolicyOperationSettings() {
     return deleteClientTlsPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listGatewaySecurityPolicies. */
+  public PagedCallSettings<
+          ListGatewaySecurityPoliciesRequest,
+          ListGatewaySecurityPoliciesResponse,
+          ListGatewaySecurityPoliciesPagedResponse>
+      listGatewaySecurityPoliciesSettings() {
+    return listGatewaySecurityPoliciesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getGatewaySecurityPolicy. */
+  public UnaryCallSettings<GetGatewaySecurityPolicyRequest, GatewaySecurityPolicy>
+      getGatewaySecurityPolicySettings() {
+    return getGatewaySecurityPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to createGatewaySecurityPolicy. */
+  public UnaryCallSettings<CreateGatewaySecurityPolicyRequest, Operation>
+      createGatewaySecurityPolicySettings() {
+    return createGatewaySecurityPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to createGatewaySecurityPolicy. */
+  public OperationCallSettings<
+          CreateGatewaySecurityPolicyRequest, GatewaySecurityPolicy, OperationMetadata>
+      createGatewaySecurityPolicyOperationSettings() {
+    return createGatewaySecurityPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateGatewaySecurityPolicy. */
+  public UnaryCallSettings<UpdateGatewaySecurityPolicyRequest, Operation>
+      updateGatewaySecurityPolicySettings() {
+    return updateGatewaySecurityPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateGatewaySecurityPolicy. */
+  public OperationCallSettings<
+          UpdateGatewaySecurityPolicyRequest, GatewaySecurityPolicy, OperationMetadata>
+      updateGatewaySecurityPolicyOperationSettings() {
+    return updateGatewaySecurityPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteGatewaySecurityPolicy. */
+  public UnaryCallSettings<DeleteGatewaySecurityPolicyRequest, Operation>
+      deleteGatewaySecurityPolicySettings() {
+    return deleteGatewaySecurityPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteGatewaySecurityPolicy. */
+  public OperationCallSettings<DeleteGatewaySecurityPolicyRequest, Empty, OperationMetadata>
+      deleteGatewaySecurityPolicyOperationSettings() {
+    return deleteGatewaySecurityPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listGatewaySecurityPolicyRules. */
+  public PagedCallSettings<
+          ListGatewaySecurityPolicyRulesRequest,
+          ListGatewaySecurityPolicyRulesResponse,
+          ListGatewaySecurityPolicyRulesPagedResponse>
+      listGatewaySecurityPolicyRulesSettings() {
+    return listGatewaySecurityPolicyRulesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getGatewaySecurityPolicyRule. */
+  public UnaryCallSettings<GetGatewaySecurityPolicyRuleRequest, GatewaySecurityPolicyRule>
+      getGatewaySecurityPolicyRuleSettings() {
+    return getGatewaySecurityPolicyRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createGatewaySecurityPolicyRule. */
+  public UnaryCallSettings<CreateGatewaySecurityPolicyRuleRequest, Operation>
+      createGatewaySecurityPolicyRuleSettings() {
+    return createGatewaySecurityPolicyRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createGatewaySecurityPolicyRule. */
+  public OperationCallSettings<
+          CreateGatewaySecurityPolicyRuleRequest, GatewaySecurityPolicyRule, OperationMetadata>
+      createGatewaySecurityPolicyRuleOperationSettings() {
+    return createGatewaySecurityPolicyRuleOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateGatewaySecurityPolicyRule. */
+  public UnaryCallSettings<UpdateGatewaySecurityPolicyRuleRequest, Operation>
+      updateGatewaySecurityPolicyRuleSettings() {
+    return updateGatewaySecurityPolicyRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateGatewaySecurityPolicyRule. */
+  public OperationCallSettings<
+          UpdateGatewaySecurityPolicyRuleRequest, GatewaySecurityPolicyRule, OperationMetadata>
+      updateGatewaySecurityPolicyRuleOperationSettings() {
+    return updateGatewaySecurityPolicyRuleOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteGatewaySecurityPolicyRule. */
+  public UnaryCallSettings<DeleteGatewaySecurityPolicyRuleRequest, Operation>
+      deleteGatewaySecurityPolicyRuleSettings() {
+    return deleteGatewaySecurityPolicyRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteGatewaySecurityPolicyRule. */
+  public OperationCallSettings<DeleteGatewaySecurityPolicyRuleRequest, Empty, OperationMetadata>
+      deleteGatewaySecurityPolicyRuleOperationSettings() {
+    return deleteGatewaySecurityPolicyRuleOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listUrlLists. */
+  public PagedCallSettings<ListUrlListsRequest, ListUrlListsResponse, ListUrlListsPagedResponse>
+      listUrlListsSettings() {
+    return listUrlListsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getUrlList. */
+  public UnaryCallSettings<GetUrlListRequest, UrlList> getUrlListSettings() {
+    return getUrlListSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createUrlList. */
+  public UnaryCallSettings<CreateUrlListRequest, Operation> createUrlListSettings() {
+    return createUrlListSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createUrlList. */
+  public OperationCallSettings<CreateUrlListRequest, UrlList, OperationMetadata>
+      createUrlListOperationSettings() {
+    return createUrlListOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateUrlList. */
+  public UnaryCallSettings<UpdateUrlListRequest, Operation> updateUrlListSettings() {
+    return updateUrlListSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateUrlList. */
+  public OperationCallSettings<UpdateUrlListRequest, UrlList, OperationMetadata>
+      updateUrlListOperationSettings() {
+    return updateUrlListOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteUrlList. */
+  public UnaryCallSettings<DeleteUrlListRequest, Operation> deleteUrlListSettings() {
+    return deleteUrlListSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteUrlList. */
+  public OperationCallSettings<DeleteUrlListRequest, Empty, OperationMetadata>
+      deleteUrlListOperationSettings() {
+    return deleteUrlListOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listTlsInspectionPolicies. */
+  public PagedCallSettings<
+          ListTlsInspectionPoliciesRequest,
+          ListTlsInspectionPoliciesResponse,
+          ListTlsInspectionPoliciesPagedResponse>
+      listTlsInspectionPoliciesSettings() {
+    return listTlsInspectionPoliciesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getTlsInspectionPolicy. */
+  public UnaryCallSettings<GetTlsInspectionPolicyRequest, TlsInspectionPolicy>
+      getTlsInspectionPolicySettings() {
+    return getTlsInspectionPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to createTlsInspectionPolicy. */
+  public UnaryCallSettings<CreateTlsInspectionPolicyRequest, Operation>
+      createTlsInspectionPolicySettings() {
+    return createTlsInspectionPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to createTlsInspectionPolicy. */
+  public OperationCallSettings<
+          CreateTlsInspectionPolicyRequest, TlsInspectionPolicy, OperationMetadata>
+      createTlsInspectionPolicyOperationSettings() {
+    return createTlsInspectionPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateTlsInspectionPolicy. */
+  public UnaryCallSettings<UpdateTlsInspectionPolicyRequest, Operation>
+      updateTlsInspectionPolicySettings() {
+    return updateTlsInspectionPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateTlsInspectionPolicy. */
+  public OperationCallSettings<
+          UpdateTlsInspectionPolicyRequest, TlsInspectionPolicy, OperationMetadata>
+      updateTlsInspectionPolicyOperationSettings() {
+    return updateTlsInspectionPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteTlsInspectionPolicy. */
+  public UnaryCallSettings<DeleteTlsInspectionPolicyRequest, Operation>
+      deleteTlsInspectionPolicySettings() {
+    return deleteTlsInspectionPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteTlsInspectionPolicy. */
+  public OperationCallSettings<DeleteTlsInspectionPolicyRequest, Empty, OperationMetadata>
+      deleteTlsInspectionPolicyOperationSettings() {
+    return deleteTlsInspectionPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAuthzPolicies. */
+  public PagedCallSettings<
+          ListAuthzPoliciesRequest, ListAuthzPoliciesResponse, ListAuthzPoliciesPagedResponse>
+      listAuthzPoliciesSettings() {
+    return listAuthzPoliciesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAuthzPolicy. */
+  public UnaryCallSettings<GetAuthzPolicyRequest, AuthzPolicy> getAuthzPolicySettings() {
+    return getAuthzPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAuthzPolicy. */
+  public UnaryCallSettings<CreateAuthzPolicyRequest, Operation> createAuthzPolicySettings() {
+    return createAuthzPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAuthzPolicy. */
+  public OperationCallSettings<CreateAuthzPolicyRequest, AuthzPolicy, OperationMetadata>
+      createAuthzPolicyOperationSettings() {
+    return createAuthzPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAuthzPolicy. */
+  public UnaryCallSettings<UpdateAuthzPolicyRequest, Operation> updateAuthzPolicySettings() {
+    return updateAuthzPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAuthzPolicy. */
+  public OperationCallSettings<UpdateAuthzPolicyRequest, AuthzPolicy, OperationMetadata>
+      updateAuthzPolicyOperationSettings() {
+    return updateAuthzPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAuthzPolicy. */
+  public UnaryCallSettings<DeleteAuthzPolicyRequest, Operation> deleteAuthzPolicySettings() {
+    return deleteAuthzPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAuthzPolicy. */
+  public OperationCallSettings<DeleteAuthzPolicyRequest, Empty, OperationMetadata>
+      deleteAuthzPolicyOperationSettings() {
+    return deleteAuthzPolicyOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -770,6 +1651,22 @@ public class NetworkSecurityStubSettings extends StubSettings<NetworkSecurityStu
     deleteAuthorizationPolicySettings = settingsBuilder.deleteAuthorizationPolicySettings().build();
     deleteAuthorizationPolicyOperationSettings =
         settingsBuilder.deleteAuthorizationPolicyOperationSettings().build();
+    listBackendAuthenticationConfigsSettings =
+        settingsBuilder.listBackendAuthenticationConfigsSettings().build();
+    getBackendAuthenticationConfigSettings =
+        settingsBuilder.getBackendAuthenticationConfigSettings().build();
+    createBackendAuthenticationConfigSettings =
+        settingsBuilder.createBackendAuthenticationConfigSettings().build();
+    createBackendAuthenticationConfigOperationSettings =
+        settingsBuilder.createBackendAuthenticationConfigOperationSettings().build();
+    updateBackendAuthenticationConfigSettings =
+        settingsBuilder.updateBackendAuthenticationConfigSettings().build();
+    updateBackendAuthenticationConfigOperationSettings =
+        settingsBuilder.updateBackendAuthenticationConfigOperationSettings().build();
+    deleteBackendAuthenticationConfigSettings =
+        settingsBuilder.deleteBackendAuthenticationConfigSettings().build();
+    deleteBackendAuthenticationConfigOperationSettings =
+        settingsBuilder.deleteBackendAuthenticationConfigOperationSettings().build();
     listServerTlsPoliciesSettings = settingsBuilder.listServerTlsPoliciesSettings().build();
     getServerTlsPolicySettings = settingsBuilder.getServerTlsPolicySettings().build();
     createServerTlsPolicySettings = settingsBuilder.createServerTlsPolicySettings().build();
@@ -792,6 +1689,67 @@ public class NetworkSecurityStubSettings extends StubSettings<NetworkSecurityStu
     deleteClientTlsPolicySettings = settingsBuilder.deleteClientTlsPolicySettings().build();
     deleteClientTlsPolicyOperationSettings =
         settingsBuilder.deleteClientTlsPolicyOperationSettings().build();
+    listGatewaySecurityPoliciesSettings =
+        settingsBuilder.listGatewaySecurityPoliciesSettings().build();
+    getGatewaySecurityPolicySettings = settingsBuilder.getGatewaySecurityPolicySettings().build();
+    createGatewaySecurityPolicySettings =
+        settingsBuilder.createGatewaySecurityPolicySettings().build();
+    createGatewaySecurityPolicyOperationSettings =
+        settingsBuilder.createGatewaySecurityPolicyOperationSettings().build();
+    updateGatewaySecurityPolicySettings =
+        settingsBuilder.updateGatewaySecurityPolicySettings().build();
+    updateGatewaySecurityPolicyOperationSettings =
+        settingsBuilder.updateGatewaySecurityPolicyOperationSettings().build();
+    deleteGatewaySecurityPolicySettings =
+        settingsBuilder.deleteGatewaySecurityPolicySettings().build();
+    deleteGatewaySecurityPolicyOperationSettings =
+        settingsBuilder.deleteGatewaySecurityPolicyOperationSettings().build();
+    listGatewaySecurityPolicyRulesSettings =
+        settingsBuilder.listGatewaySecurityPolicyRulesSettings().build();
+    getGatewaySecurityPolicyRuleSettings =
+        settingsBuilder.getGatewaySecurityPolicyRuleSettings().build();
+    createGatewaySecurityPolicyRuleSettings =
+        settingsBuilder.createGatewaySecurityPolicyRuleSettings().build();
+    createGatewaySecurityPolicyRuleOperationSettings =
+        settingsBuilder.createGatewaySecurityPolicyRuleOperationSettings().build();
+    updateGatewaySecurityPolicyRuleSettings =
+        settingsBuilder.updateGatewaySecurityPolicyRuleSettings().build();
+    updateGatewaySecurityPolicyRuleOperationSettings =
+        settingsBuilder.updateGatewaySecurityPolicyRuleOperationSettings().build();
+    deleteGatewaySecurityPolicyRuleSettings =
+        settingsBuilder.deleteGatewaySecurityPolicyRuleSettings().build();
+    deleteGatewaySecurityPolicyRuleOperationSettings =
+        settingsBuilder.deleteGatewaySecurityPolicyRuleOperationSettings().build();
+    listUrlListsSettings = settingsBuilder.listUrlListsSettings().build();
+    getUrlListSettings = settingsBuilder.getUrlListSettings().build();
+    createUrlListSettings = settingsBuilder.createUrlListSettings().build();
+    createUrlListOperationSettings = settingsBuilder.createUrlListOperationSettings().build();
+    updateUrlListSettings = settingsBuilder.updateUrlListSettings().build();
+    updateUrlListOperationSettings = settingsBuilder.updateUrlListOperationSettings().build();
+    deleteUrlListSettings = settingsBuilder.deleteUrlListSettings().build();
+    deleteUrlListOperationSettings = settingsBuilder.deleteUrlListOperationSettings().build();
+    listTlsInspectionPoliciesSettings = settingsBuilder.listTlsInspectionPoliciesSettings().build();
+    getTlsInspectionPolicySettings = settingsBuilder.getTlsInspectionPolicySettings().build();
+    createTlsInspectionPolicySettings = settingsBuilder.createTlsInspectionPolicySettings().build();
+    createTlsInspectionPolicyOperationSettings =
+        settingsBuilder.createTlsInspectionPolicyOperationSettings().build();
+    updateTlsInspectionPolicySettings = settingsBuilder.updateTlsInspectionPolicySettings().build();
+    updateTlsInspectionPolicyOperationSettings =
+        settingsBuilder.updateTlsInspectionPolicyOperationSettings().build();
+    deleteTlsInspectionPolicySettings = settingsBuilder.deleteTlsInspectionPolicySettings().build();
+    deleteTlsInspectionPolicyOperationSettings =
+        settingsBuilder.deleteTlsInspectionPolicyOperationSettings().build();
+    listAuthzPoliciesSettings = settingsBuilder.listAuthzPoliciesSettings().build();
+    getAuthzPolicySettings = settingsBuilder.getAuthzPolicySettings().build();
+    createAuthzPolicySettings = settingsBuilder.createAuthzPolicySettings().build();
+    createAuthzPolicyOperationSettings =
+        settingsBuilder.createAuthzPolicyOperationSettings().build();
+    updateAuthzPolicySettings = settingsBuilder.updateAuthzPolicySettings().build();
+    updateAuthzPolicyOperationSettings =
+        settingsBuilder.updateAuthzPolicyOperationSettings().build();
+    deleteAuthzPolicySettings = settingsBuilder.deleteAuthzPolicySettings().build();
+    deleteAuthzPolicyOperationSettings =
+        settingsBuilder.deleteAuthzPolicyOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -804,6 +1762,7 @@ public class NetworkSecurityStubSettings extends StubSettings<NetworkSecurityStu
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-network-security")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 
@@ -832,6 +1791,33 @@ public class NetworkSecurityStubSettings extends StubSettings<NetworkSecurityStu
     private final OperationCallSettings.Builder<
             DeleteAuthorizationPolicyRequest, Empty, OperationMetadata>
         deleteAuthorizationPolicyOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListBackendAuthenticationConfigsRequest,
+            ListBackendAuthenticationConfigsResponse,
+            ListBackendAuthenticationConfigsPagedResponse>
+        listBackendAuthenticationConfigsSettings;
+    private final UnaryCallSettings.Builder<
+            GetBackendAuthenticationConfigRequest, BackendAuthenticationConfig>
+        getBackendAuthenticationConfigSettings;
+    private final UnaryCallSettings.Builder<CreateBackendAuthenticationConfigRequest, Operation>
+        createBackendAuthenticationConfigSettings;
+    private final OperationCallSettings.Builder<
+            CreateBackendAuthenticationConfigRequest,
+            BackendAuthenticationConfig,
+            OperationMetadata>
+        createBackendAuthenticationConfigOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateBackendAuthenticationConfigRequest, Operation>
+        updateBackendAuthenticationConfigSettings;
+    private final OperationCallSettings.Builder<
+            UpdateBackendAuthenticationConfigRequest,
+            BackendAuthenticationConfig,
+            OperationMetadata>
+        updateBackendAuthenticationConfigOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteBackendAuthenticationConfigRequest, Operation>
+        deleteBackendAuthenticationConfigSettings;
+    private final OperationCallSettings.Builder<
+            DeleteBackendAuthenticationConfigRequest, Empty, OperationMetadata>
+        deleteBackendAuthenticationConfigOperationSettings;
     private final PagedCallSettings.Builder<
             ListServerTlsPoliciesRequest,
             ListServerTlsPoliciesResponse,
@@ -876,6 +1862,105 @@ public class NetworkSecurityStubSettings extends StubSettings<NetworkSecurityStu
     private final OperationCallSettings.Builder<
             DeleteClientTlsPolicyRequest, Empty, OperationMetadata>
         deleteClientTlsPolicyOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListGatewaySecurityPoliciesRequest,
+            ListGatewaySecurityPoliciesResponse,
+            ListGatewaySecurityPoliciesPagedResponse>
+        listGatewaySecurityPoliciesSettings;
+    private final UnaryCallSettings.Builder<GetGatewaySecurityPolicyRequest, GatewaySecurityPolicy>
+        getGatewaySecurityPolicySettings;
+    private final UnaryCallSettings.Builder<CreateGatewaySecurityPolicyRequest, Operation>
+        createGatewaySecurityPolicySettings;
+    private final OperationCallSettings.Builder<
+            CreateGatewaySecurityPolicyRequest, GatewaySecurityPolicy, OperationMetadata>
+        createGatewaySecurityPolicyOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateGatewaySecurityPolicyRequest, Operation>
+        updateGatewaySecurityPolicySettings;
+    private final OperationCallSettings.Builder<
+            UpdateGatewaySecurityPolicyRequest, GatewaySecurityPolicy, OperationMetadata>
+        updateGatewaySecurityPolicyOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteGatewaySecurityPolicyRequest, Operation>
+        deleteGatewaySecurityPolicySettings;
+    private final OperationCallSettings.Builder<
+            DeleteGatewaySecurityPolicyRequest, Empty, OperationMetadata>
+        deleteGatewaySecurityPolicyOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListGatewaySecurityPolicyRulesRequest,
+            ListGatewaySecurityPolicyRulesResponse,
+            ListGatewaySecurityPolicyRulesPagedResponse>
+        listGatewaySecurityPolicyRulesSettings;
+    private final UnaryCallSettings.Builder<
+            GetGatewaySecurityPolicyRuleRequest, GatewaySecurityPolicyRule>
+        getGatewaySecurityPolicyRuleSettings;
+    private final UnaryCallSettings.Builder<CreateGatewaySecurityPolicyRuleRequest, Operation>
+        createGatewaySecurityPolicyRuleSettings;
+    private final OperationCallSettings.Builder<
+            CreateGatewaySecurityPolicyRuleRequest, GatewaySecurityPolicyRule, OperationMetadata>
+        createGatewaySecurityPolicyRuleOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateGatewaySecurityPolicyRuleRequest, Operation>
+        updateGatewaySecurityPolicyRuleSettings;
+    private final OperationCallSettings.Builder<
+            UpdateGatewaySecurityPolicyRuleRequest, GatewaySecurityPolicyRule, OperationMetadata>
+        updateGatewaySecurityPolicyRuleOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteGatewaySecurityPolicyRuleRequest, Operation>
+        deleteGatewaySecurityPolicyRuleSettings;
+    private final OperationCallSettings.Builder<
+            DeleteGatewaySecurityPolicyRuleRequest, Empty, OperationMetadata>
+        deleteGatewaySecurityPolicyRuleOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListUrlListsRequest, ListUrlListsResponse, ListUrlListsPagedResponse>
+        listUrlListsSettings;
+    private final UnaryCallSettings.Builder<GetUrlListRequest, UrlList> getUrlListSettings;
+    private final UnaryCallSettings.Builder<CreateUrlListRequest, Operation> createUrlListSettings;
+    private final OperationCallSettings.Builder<CreateUrlListRequest, UrlList, OperationMetadata>
+        createUrlListOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateUrlListRequest, Operation> updateUrlListSettings;
+    private final OperationCallSettings.Builder<UpdateUrlListRequest, UrlList, OperationMetadata>
+        updateUrlListOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteUrlListRequest, Operation> deleteUrlListSettings;
+    private final OperationCallSettings.Builder<DeleteUrlListRequest, Empty, OperationMetadata>
+        deleteUrlListOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListTlsInspectionPoliciesRequest,
+            ListTlsInspectionPoliciesResponse,
+            ListTlsInspectionPoliciesPagedResponse>
+        listTlsInspectionPoliciesSettings;
+    private final UnaryCallSettings.Builder<GetTlsInspectionPolicyRequest, TlsInspectionPolicy>
+        getTlsInspectionPolicySettings;
+    private final UnaryCallSettings.Builder<CreateTlsInspectionPolicyRequest, Operation>
+        createTlsInspectionPolicySettings;
+    private final OperationCallSettings.Builder<
+            CreateTlsInspectionPolicyRequest, TlsInspectionPolicy, OperationMetadata>
+        createTlsInspectionPolicyOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateTlsInspectionPolicyRequest, Operation>
+        updateTlsInspectionPolicySettings;
+    private final OperationCallSettings.Builder<
+            UpdateTlsInspectionPolicyRequest, TlsInspectionPolicy, OperationMetadata>
+        updateTlsInspectionPolicyOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteTlsInspectionPolicyRequest, Operation>
+        deleteTlsInspectionPolicySettings;
+    private final OperationCallSettings.Builder<
+            DeleteTlsInspectionPolicyRequest, Empty, OperationMetadata>
+        deleteTlsInspectionPolicyOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListAuthzPoliciesRequest, ListAuthzPoliciesResponse, ListAuthzPoliciesPagedResponse>
+        listAuthzPoliciesSettings;
+    private final UnaryCallSettings.Builder<GetAuthzPolicyRequest, AuthzPolicy>
+        getAuthzPolicySettings;
+    private final UnaryCallSettings.Builder<CreateAuthzPolicyRequest, Operation>
+        createAuthzPolicySettings;
+    private final OperationCallSettings.Builder<
+            CreateAuthzPolicyRequest, AuthzPolicy, OperationMetadata>
+        createAuthzPolicyOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateAuthzPolicyRequest, Operation>
+        updateAuthzPolicySettings;
+    private final OperationCallSettings.Builder<
+            UpdateAuthzPolicyRequest, AuthzPolicy, OperationMetadata>
+        updateAuthzPolicyOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteAuthzPolicyRequest, Operation>
+        deleteAuthzPolicySettings;
+    private final OperationCallSettings.Builder<DeleteAuthzPolicyRequest, Empty, OperationMetadata>
+        deleteAuthzPolicyOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -927,6 +2012,15 @@ public class NetworkSecurityStubSettings extends StubSettings<NetworkSecurityStu
       updateAuthorizationPolicyOperationSettings = OperationCallSettings.newBuilder();
       deleteAuthorizationPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteAuthorizationPolicyOperationSettings = OperationCallSettings.newBuilder();
+      listBackendAuthenticationConfigsSettings =
+          PagedCallSettings.newBuilder(LIST_BACKEND_AUTHENTICATION_CONFIGS_PAGE_STR_FACT);
+      getBackendAuthenticationConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createBackendAuthenticationConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createBackendAuthenticationConfigOperationSettings = OperationCallSettings.newBuilder();
+      updateBackendAuthenticationConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateBackendAuthenticationConfigOperationSettings = OperationCallSettings.newBuilder();
+      deleteBackendAuthenticationConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteBackendAuthenticationConfigOperationSettings = OperationCallSettings.newBuilder();
       listServerTlsPoliciesSettings =
           PagedCallSettings.newBuilder(LIST_SERVER_TLS_POLICIES_PAGE_STR_FACT);
       getServerTlsPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -945,6 +2039,49 @@ public class NetworkSecurityStubSettings extends StubSettings<NetworkSecurityStu
       updateClientTlsPolicyOperationSettings = OperationCallSettings.newBuilder();
       deleteClientTlsPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteClientTlsPolicyOperationSettings = OperationCallSettings.newBuilder();
+      listGatewaySecurityPoliciesSettings =
+          PagedCallSettings.newBuilder(LIST_GATEWAY_SECURITY_POLICIES_PAGE_STR_FACT);
+      getGatewaySecurityPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createGatewaySecurityPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createGatewaySecurityPolicyOperationSettings = OperationCallSettings.newBuilder();
+      updateGatewaySecurityPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateGatewaySecurityPolicyOperationSettings = OperationCallSettings.newBuilder();
+      deleteGatewaySecurityPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteGatewaySecurityPolicyOperationSettings = OperationCallSettings.newBuilder();
+      listGatewaySecurityPolicyRulesSettings =
+          PagedCallSettings.newBuilder(LIST_GATEWAY_SECURITY_POLICY_RULES_PAGE_STR_FACT);
+      getGatewaySecurityPolicyRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createGatewaySecurityPolicyRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createGatewaySecurityPolicyRuleOperationSettings = OperationCallSettings.newBuilder();
+      updateGatewaySecurityPolicyRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateGatewaySecurityPolicyRuleOperationSettings = OperationCallSettings.newBuilder();
+      deleteGatewaySecurityPolicyRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteGatewaySecurityPolicyRuleOperationSettings = OperationCallSettings.newBuilder();
+      listUrlListsSettings = PagedCallSettings.newBuilder(LIST_URL_LISTS_PAGE_STR_FACT);
+      getUrlListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createUrlListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createUrlListOperationSettings = OperationCallSettings.newBuilder();
+      updateUrlListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateUrlListOperationSettings = OperationCallSettings.newBuilder();
+      deleteUrlListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteUrlListOperationSettings = OperationCallSettings.newBuilder();
+      listTlsInspectionPoliciesSettings =
+          PagedCallSettings.newBuilder(LIST_TLS_INSPECTION_POLICIES_PAGE_STR_FACT);
+      getTlsInspectionPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createTlsInspectionPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createTlsInspectionPolicyOperationSettings = OperationCallSettings.newBuilder();
+      updateTlsInspectionPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateTlsInspectionPolicyOperationSettings = OperationCallSettings.newBuilder();
+      deleteTlsInspectionPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteTlsInspectionPolicyOperationSettings = OperationCallSettings.newBuilder();
+      listAuthzPoliciesSettings = PagedCallSettings.newBuilder(LIST_AUTHZ_POLICIES_PAGE_STR_FACT);
+      getAuthzPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createAuthzPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createAuthzPolicyOperationSettings = OperationCallSettings.newBuilder();
+      updateAuthzPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAuthzPolicyOperationSettings = OperationCallSettings.newBuilder();
+      deleteAuthzPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteAuthzPolicyOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -958,6 +2095,11 @@ public class NetworkSecurityStubSettings extends StubSettings<NetworkSecurityStu
               createAuthorizationPolicySettings,
               updateAuthorizationPolicySettings,
               deleteAuthorizationPolicySettings,
+              listBackendAuthenticationConfigsSettings,
+              getBackendAuthenticationConfigSettings,
+              createBackendAuthenticationConfigSettings,
+              updateBackendAuthenticationConfigSettings,
+              deleteBackendAuthenticationConfigSettings,
               listServerTlsPoliciesSettings,
               getServerTlsPolicySettings,
               createServerTlsPolicySettings,
@@ -968,6 +2110,31 @@ public class NetworkSecurityStubSettings extends StubSettings<NetworkSecurityStu
               createClientTlsPolicySettings,
               updateClientTlsPolicySettings,
               deleteClientTlsPolicySettings,
+              listGatewaySecurityPoliciesSettings,
+              getGatewaySecurityPolicySettings,
+              createGatewaySecurityPolicySettings,
+              updateGatewaySecurityPolicySettings,
+              deleteGatewaySecurityPolicySettings,
+              listGatewaySecurityPolicyRulesSettings,
+              getGatewaySecurityPolicyRuleSettings,
+              createGatewaySecurityPolicyRuleSettings,
+              updateGatewaySecurityPolicyRuleSettings,
+              deleteGatewaySecurityPolicyRuleSettings,
+              listUrlListsSettings,
+              getUrlListSettings,
+              createUrlListSettings,
+              updateUrlListSettings,
+              deleteUrlListSettings,
+              listTlsInspectionPoliciesSettings,
+              getTlsInspectionPolicySettings,
+              createTlsInspectionPolicySettings,
+              updateTlsInspectionPolicySettings,
+              deleteTlsInspectionPolicySettings,
+              listAuthzPoliciesSettings,
+              getAuthzPolicySettings,
+              createAuthzPolicySettings,
+              updateAuthzPolicySettings,
+              deleteAuthzPolicySettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -990,6 +2157,22 @@ public class NetworkSecurityStubSettings extends StubSettings<NetworkSecurityStu
       deleteAuthorizationPolicySettings = settings.deleteAuthorizationPolicySettings.toBuilder();
       deleteAuthorizationPolicyOperationSettings =
           settings.deleteAuthorizationPolicyOperationSettings.toBuilder();
+      listBackendAuthenticationConfigsSettings =
+          settings.listBackendAuthenticationConfigsSettings.toBuilder();
+      getBackendAuthenticationConfigSettings =
+          settings.getBackendAuthenticationConfigSettings.toBuilder();
+      createBackendAuthenticationConfigSettings =
+          settings.createBackendAuthenticationConfigSettings.toBuilder();
+      createBackendAuthenticationConfigOperationSettings =
+          settings.createBackendAuthenticationConfigOperationSettings.toBuilder();
+      updateBackendAuthenticationConfigSettings =
+          settings.updateBackendAuthenticationConfigSettings.toBuilder();
+      updateBackendAuthenticationConfigOperationSettings =
+          settings.updateBackendAuthenticationConfigOperationSettings.toBuilder();
+      deleteBackendAuthenticationConfigSettings =
+          settings.deleteBackendAuthenticationConfigSettings.toBuilder();
+      deleteBackendAuthenticationConfigOperationSettings =
+          settings.deleteBackendAuthenticationConfigOperationSettings.toBuilder();
       listServerTlsPoliciesSettings = settings.listServerTlsPoliciesSettings.toBuilder();
       getServerTlsPolicySettings = settings.getServerTlsPolicySettings.toBuilder();
       createServerTlsPolicySettings = settings.createServerTlsPolicySettings.toBuilder();
@@ -1012,6 +2195,64 @@ public class NetworkSecurityStubSettings extends StubSettings<NetworkSecurityStu
       deleteClientTlsPolicySettings = settings.deleteClientTlsPolicySettings.toBuilder();
       deleteClientTlsPolicyOperationSettings =
           settings.deleteClientTlsPolicyOperationSettings.toBuilder();
+      listGatewaySecurityPoliciesSettings =
+          settings.listGatewaySecurityPoliciesSettings.toBuilder();
+      getGatewaySecurityPolicySettings = settings.getGatewaySecurityPolicySettings.toBuilder();
+      createGatewaySecurityPolicySettings =
+          settings.createGatewaySecurityPolicySettings.toBuilder();
+      createGatewaySecurityPolicyOperationSettings =
+          settings.createGatewaySecurityPolicyOperationSettings.toBuilder();
+      updateGatewaySecurityPolicySettings =
+          settings.updateGatewaySecurityPolicySettings.toBuilder();
+      updateGatewaySecurityPolicyOperationSettings =
+          settings.updateGatewaySecurityPolicyOperationSettings.toBuilder();
+      deleteGatewaySecurityPolicySettings =
+          settings.deleteGatewaySecurityPolicySettings.toBuilder();
+      deleteGatewaySecurityPolicyOperationSettings =
+          settings.deleteGatewaySecurityPolicyOperationSettings.toBuilder();
+      listGatewaySecurityPolicyRulesSettings =
+          settings.listGatewaySecurityPolicyRulesSettings.toBuilder();
+      getGatewaySecurityPolicyRuleSettings =
+          settings.getGatewaySecurityPolicyRuleSettings.toBuilder();
+      createGatewaySecurityPolicyRuleSettings =
+          settings.createGatewaySecurityPolicyRuleSettings.toBuilder();
+      createGatewaySecurityPolicyRuleOperationSettings =
+          settings.createGatewaySecurityPolicyRuleOperationSettings.toBuilder();
+      updateGatewaySecurityPolicyRuleSettings =
+          settings.updateGatewaySecurityPolicyRuleSettings.toBuilder();
+      updateGatewaySecurityPolicyRuleOperationSettings =
+          settings.updateGatewaySecurityPolicyRuleOperationSettings.toBuilder();
+      deleteGatewaySecurityPolicyRuleSettings =
+          settings.deleteGatewaySecurityPolicyRuleSettings.toBuilder();
+      deleteGatewaySecurityPolicyRuleOperationSettings =
+          settings.deleteGatewaySecurityPolicyRuleOperationSettings.toBuilder();
+      listUrlListsSettings = settings.listUrlListsSettings.toBuilder();
+      getUrlListSettings = settings.getUrlListSettings.toBuilder();
+      createUrlListSettings = settings.createUrlListSettings.toBuilder();
+      createUrlListOperationSettings = settings.createUrlListOperationSettings.toBuilder();
+      updateUrlListSettings = settings.updateUrlListSettings.toBuilder();
+      updateUrlListOperationSettings = settings.updateUrlListOperationSettings.toBuilder();
+      deleteUrlListSettings = settings.deleteUrlListSettings.toBuilder();
+      deleteUrlListOperationSettings = settings.deleteUrlListOperationSettings.toBuilder();
+      listTlsInspectionPoliciesSettings = settings.listTlsInspectionPoliciesSettings.toBuilder();
+      getTlsInspectionPolicySettings = settings.getTlsInspectionPolicySettings.toBuilder();
+      createTlsInspectionPolicySettings = settings.createTlsInspectionPolicySettings.toBuilder();
+      createTlsInspectionPolicyOperationSettings =
+          settings.createTlsInspectionPolicyOperationSettings.toBuilder();
+      updateTlsInspectionPolicySettings = settings.updateTlsInspectionPolicySettings.toBuilder();
+      updateTlsInspectionPolicyOperationSettings =
+          settings.updateTlsInspectionPolicyOperationSettings.toBuilder();
+      deleteTlsInspectionPolicySettings = settings.deleteTlsInspectionPolicySettings.toBuilder();
+      deleteTlsInspectionPolicyOperationSettings =
+          settings.deleteTlsInspectionPolicyOperationSettings.toBuilder();
+      listAuthzPoliciesSettings = settings.listAuthzPoliciesSettings.toBuilder();
+      getAuthzPolicySettings = settings.getAuthzPolicySettings.toBuilder();
+      createAuthzPolicySettings = settings.createAuthzPolicySettings.toBuilder();
+      createAuthzPolicyOperationSettings = settings.createAuthzPolicyOperationSettings.toBuilder();
+      updateAuthzPolicySettings = settings.updateAuthzPolicySettings.toBuilder();
+      updateAuthzPolicyOperationSettings = settings.updateAuthzPolicyOperationSettings.toBuilder();
+      deleteAuthzPolicySettings = settings.deleteAuthzPolicySettings.toBuilder();
+      deleteAuthzPolicyOperationSettings = settings.deleteAuthzPolicyOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -1025,6 +2266,11 @@ public class NetworkSecurityStubSettings extends StubSettings<NetworkSecurityStu
               createAuthorizationPolicySettings,
               updateAuthorizationPolicySettings,
               deleteAuthorizationPolicySettings,
+              listBackendAuthenticationConfigsSettings,
+              getBackendAuthenticationConfigSettings,
+              createBackendAuthenticationConfigSettings,
+              updateBackendAuthenticationConfigSettings,
+              deleteBackendAuthenticationConfigSettings,
               listServerTlsPoliciesSettings,
               getServerTlsPolicySettings,
               createServerTlsPolicySettings,
@@ -1035,6 +2281,31 @@ public class NetworkSecurityStubSettings extends StubSettings<NetworkSecurityStu
               createClientTlsPolicySettings,
               updateClientTlsPolicySettings,
               deleteClientTlsPolicySettings,
+              listGatewaySecurityPoliciesSettings,
+              getGatewaySecurityPolicySettings,
+              createGatewaySecurityPolicySettings,
+              updateGatewaySecurityPolicySettings,
+              deleteGatewaySecurityPolicySettings,
+              listGatewaySecurityPolicyRulesSettings,
+              getGatewaySecurityPolicyRuleSettings,
+              createGatewaySecurityPolicyRuleSettings,
+              updateGatewaySecurityPolicyRuleSettings,
+              deleteGatewaySecurityPolicyRuleSettings,
+              listUrlListsSettings,
+              getUrlListSettings,
+              createUrlListSettings,
+              updateUrlListSettings,
+              deleteUrlListSettings,
+              listTlsInspectionPoliciesSettings,
+              getTlsInspectionPolicySettings,
+              createTlsInspectionPolicySettings,
+              updateTlsInspectionPolicySettings,
+              deleteTlsInspectionPolicySettings,
+              listAuthzPoliciesSettings,
+              getAuthzPolicySettings,
+              createAuthzPolicySettings,
+              updateAuthzPolicySettings,
+              deleteAuthzPolicySettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1077,6 +2348,31 @@ public class NetworkSecurityStubSettings extends StubSettings<NetworkSecurityStu
 
       builder
           .deleteAuthorizationPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listBackendAuthenticationConfigsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getBackendAuthenticationConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .createBackendAuthenticationConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateBackendAuthenticationConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteBackendAuthenticationConfigSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -1127,6 +2423,131 @@ public class NetworkSecurityStubSettings extends StubSettings<NetworkSecurityStu
 
       builder
           .deleteClientTlsPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listGatewaySecurityPoliciesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getGatewaySecurityPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .createGatewaySecurityPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateGatewaySecurityPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteGatewaySecurityPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listGatewaySecurityPolicyRulesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getGatewaySecurityPolicyRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .createGatewaySecurityPolicyRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateGatewaySecurityPolicyRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteGatewaySecurityPolicyRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listUrlListsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getUrlListSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .createUrlListSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateUrlListSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteUrlListSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listTlsInspectionPoliciesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getTlsInspectionPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .createTlsInspectionPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateTlsInspectionPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteTlsInspectionPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listAuthzPoliciesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getAuthzPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .createAuthzPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateAuthzPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteAuthzPolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -1210,6 +2631,83 @@ public class NetworkSecurityStubSettings extends StubSettings<NetworkSecurityStu
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteAuthorizationPolicyRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createBackendAuthenticationConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateBackendAuthenticationConfigRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  BackendAuthenticationConfig.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateBackendAuthenticationConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateBackendAuthenticationConfigRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  BackendAuthenticationConfig.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteBackendAuthenticationConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteBackendAuthenticationConfigRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
@@ -1374,6 +2872,377 @@ public class NetworkSecurityStubSettings extends StubSettings<NetworkSecurityStu
                       .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .createGatewaySecurityPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateGatewaySecurityPolicyRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(GatewaySecurityPolicy.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateGatewaySecurityPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateGatewaySecurityPolicyRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(GatewaySecurityPolicy.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteGatewaySecurityPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteGatewaySecurityPolicyRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createGatewaySecurityPolicyRuleOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateGatewaySecurityPolicyRuleRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  GatewaySecurityPolicyRule.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateGatewaySecurityPolicyRuleOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateGatewaySecurityPolicyRuleRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  GatewaySecurityPolicyRule.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteGatewaySecurityPolicyRuleOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteGatewaySecurityPolicyRuleRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createUrlListOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateUrlListRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(UrlList.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateUrlListOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateUrlListRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(UrlList.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteUrlListOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteUrlListRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createTlsInspectionPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateTlsInspectionPolicyRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(TlsInspectionPolicy.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateTlsInspectionPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateTlsInspectionPolicyRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(TlsInspectionPolicy.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteTlsInspectionPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteTlsInspectionPolicyRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createAuthzPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateAuthzPolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AuthzPolicy.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateAuthzPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateAuthzPolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AuthzPolicy.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteAuthzPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteAuthzPolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1443,6 +3312,65 @@ public class NetworkSecurityStubSettings extends StubSettings<NetworkSecurityStu
     public OperationCallSettings.Builder<DeleteAuthorizationPolicyRequest, Empty, OperationMetadata>
         deleteAuthorizationPolicyOperationSettings() {
       return deleteAuthorizationPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listBackendAuthenticationConfigs. */
+    public PagedCallSettings.Builder<
+            ListBackendAuthenticationConfigsRequest,
+            ListBackendAuthenticationConfigsResponse,
+            ListBackendAuthenticationConfigsPagedResponse>
+        listBackendAuthenticationConfigsSettings() {
+      return listBackendAuthenticationConfigsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getBackendAuthenticationConfig. */
+    public UnaryCallSettings.Builder<
+            GetBackendAuthenticationConfigRequest, BackendAuthenticationConfig>
+        getBackendAuthenticationConfigSettings() {
+      return getBackendAuthenticationConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createBackendAuthenticationConfig. */
+    public UnaryCallSettings.Builder<CreateBackendAuthenticationConfigRequest, Operation>
+        createBackendAuthenticationConfigSettings() {
+      return createBackendAuthenticationConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createBackendAuthenticationConfig. */
+    public OperationCallSettings.Builder<
+            CreateBackendAuthenticationConfigRequest,
+            BackendAuthenticationConfig,
+            OperationMetadata>
+        createBackendAuthenticationConfigOperationSettings() {
+      return createBackendAuthenticationConfigOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackendAuthenticationConfig. */
+    public UnaryCallSettings.Builder<UpdateBackendAuthenticationConfigRequest, Operation>
+        updateBackendAuthenticationConfigSettings() {
+      return updateBackendAuthenticationConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackendAuthenticationConfig. */
+    public OperationCallSettings.Builder<
+            UpdateBackendAuthenticationConfigRequest,
+            BackendAuthenticationConfig,
+            OperationMetadata>
+        updateBackendAuthenticationConfigOperationSettings() {
+      return updateBackendAuthenticationConfigOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackendAuthenticationConfig. */
+    public UnaryCallSettings.Builder<DeleteBackendAuthenticationConfigRequest, Operation>
+        deleteBackendAuthenticationConfigSettings() {
+      return deleteBackendAuthenticationConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackendAuthenticationConfig. */
+    public OperationCallSettings.Builder<
+            DeleteBackendAuthenticationConfigRequest, Empty, OperationMetadata>
+        deleteBackendAuthenticationConfigOperationSettings() {
+      return deleteBackendAuthenticationConfigOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listServerTlsPolicies. */
@@ -1549,6 +3477,260 @@ public class NetworkSecurityStubSettings extends StubSettings<NetworkSecurityStu
     public OperationCallSettings.Builder<DeleteClientTlsPolicyRequest, Empty, OperationMetadata>
         deleteClientTlsPolicyOperationSettings() {
       return deleteClientTlsPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listGatewaySecurityPolicies. */
+    public PagedCallSettings.Builder<
+            ListGatewaySecurityPoliciesRequest,
+            ListGatewaySecurityPoliciesResponse,
+            ListGatewaySecurityPoliciesPagedResponse>
+        listGatewaySecurityPoliciesSettings() {
+      return listGatewaySecurityPoliciesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getGatewaySecurityPolicy. */
+    public UnaryCallSettings.Builder<GetGatewaySecurityPolicyRequest, GatewaySecurityPolicy>
+        getGatewaySecurityPolicySettings() {
+      return getGatewaySecurityPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createGatewaySecurityPolicy. */
+    public UnaryCallSettings.Builder<CreateGatewaySecurityPolicyRequest, Operation>
+        createGatewaySecurityPolicySettings() {
+      return createGatewaySecurityPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createGatewaySecurityPolicy. */
+    public OperationCallSettings.Builder<
+            CreateGatewaySecurityPolicyRequest, GatewaySecurityPolicy, OperationMetadata>
+        createGatewaySecurityPolicyOperationSettings() {
+      return createGatewaySecurityPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateGatewaySecurityPolicy. */
+    public UnaryCallSettings.Builder<UpdateGatewaySecurityPolicyRequest, Operation>
+        updateGatewaySecurityPolicySettings() {
+      return updateGatewaySecurityPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateGatewaySecurityPolicy. */
+    public OperationCallSettings.Builder<
+            UpdateGatewaySecurityPolicyRequest, GatewaySecurityPolicy, OperationMetadata>
+        updateGatewaySecurityPolicyOperationSettings() {
+      return updateGatewaySecurityPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteGatewaySecurityPolicy. */
+    public UnaryCallSettings.Builder<DeleteGatewaySecurityPolicyRequest, Operation>
+        deleteGatewaySecurityPolicySettings() {
+      return deleteGatewaySecurityPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteGatewaySecurityPolicy. */
+    public OperationCallSettings.Builder<
+            DeleteGatewaySecurityPolicyRequest, Empty, OperationMetadata>
+        deleteGatewaySecurityPolicyOperationSettings() {
+      return deleteGatewaySecurityPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listGatewaySecurityPolicyRules. */
+    public PagedCallSettings.Builder<
+            ListGatewaySecurityPolicyRulesRequest,
+            ListGatewaySecurityPolicyRulesResponse,
+            ListGatewaySecurityPolicyRulesPagedResponse>
+        listGatewaySecurityPolicyRulesSettings() {
+      return listGatewaySecurityPolicyRulesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getGatewaySecurityPolicyRule. */
+    public UnaryCallSettings.Builder<GetGatewaySecurityPolicyRuleRequest, GatewaySecurityPolicyRule>
+        getGatewaySecurityPolicyRuleSettings() {
+      return getGatewaySecurityPolicyRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createGatewaySecurityPolicyRule. */
+    public UnaryCallSettings.Builder<CreateGatewaySecurityPolicyRuleRequest, Operation>
+        createGatewaySecurityPolicyRuleSettings() {
+      return createGatewaySecurityPolicyRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createGatewaySecurityPolicyRule. */
+    public OperationCallSettings.Builder<
+            CreateGatewaySecurityPolicyRuleRequest, GatewaySecurityPolicyRule, OperationMetadata>
+        createGatewaySecurityPolicyRuleOperationSettings() {
+      return createGatewaySecurityPolicyRuleOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateGatewaySecurityPolicyRule. */
+    public UnaryCallSettings.Builder<UpdateGatewaySecurityPolicyRuleRequest, Operation>
+        updateGatewaySecurityPolicyRuleSettings() {
+      return updateGatewaySecurityPolicyRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateGatewaySecurityPolicyRule. */
+    public OperationCallSettings.Builder<
+            UpdateGatewaySecurityPolicyRuleRequest, GatewaySecurityPolicyRule, OperationMetadata>
+        updateGatewaySecurityPolicyRuleOperationSettings() {
+      return updateGatewaySecurityPolicyRuleOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteGatewaySecurityPolicyRule. */
+    public UnaryCallSettings.Builder<DeleteGatewaySecurityPolicyRuleRequest, Operation>
+        deleteGatewaySecurityPolicyRuleSettings() {
+      return deleteGatewaySecurityPolicyRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteGatewaySecurityPolicyRule. */
+    public OperationCallSettings.Builder<
+            DeleteGatewaySecurityPolicyRuleRequest, Empty, OperationMetadata>
+        deleteGatewaySecurityPolicyRuleOperationSettings() {
+      return deleteGatewaySecurityPolicyRuleOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listUrlLists. */
+    public PagedCallSettings.Builder<
+            ListUrlListsRequest, ListUrlListsResponse, ListUrlListsPagedResponse>
+        listUrlListsSettings() {
+      return listUrlListsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getUrlList. */
+    public UnaryCallSettings.Builder<GetUrlListRequest, UrlList> getUrlListSettings() {
+      return getUrlListSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createUrlList. */
+    public UnaryCallSettings.Builder<CreateUrlListRequest, Operation> createUrlListSettings() {
+      return createUrlListSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createUrlList. */
+    public OperationCallSettings.Builder<CreateUrlListRequest, UrlList, OperationMetadata>
+        createUrlListOperationSettings() {
+      return createUrlListOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateUrlList. */
+    public UnaryCallSettings.Builder<UpdateUrlListRequest, Operation> updateUrlListSettings() {
+      return updateUrlListSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateUrlList. */
+    public OperationCallSettings.Builder<UpdateUrlListRequest, UrlList, OperationMetadata>
+        updateUrlListOperationSettings() {
+      return updateUrlListOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteUrlList. */
+    public UnaryCallSettings.Builder<DeleteUrlListRequest, Operation> deleteUrlListSettings() {
+      return deleteUrlListSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteUrlList. */
+    public OperationCallSettings.Builder<DeleteUrlListRequest, Empty, OperationMetadata>
+        deleteUrlListOperationSettings() {
+      return deleteUrlListOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listTlsInspectionPolicies. */
+    public PagedCallSettings.Builder<
+            ListTlsInspectionPoliciesRequest,
+            ListTlsInspectionPoliciesResponse,
+            ListTlsInspectionPoliciesPagedResponse>
+        listTlsInspectionPoliciesSettings() {
+      return listTlsInspectionPoliciesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getTlsInspectionPolicy. */
+    public UnaryCallSettings.Builder<GetTlsInspectionPolicyRequest, TlsInspectionPolicy>
+        getTlsInspectionPolicySettings() {
+      return getTlsInspectionPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createTlsInspectionPolicy. */
+    public UnaryCallSettings.Builder<CreateTlsInspectionPolicyRequest, Operation>
+        createTlsInspectionPolicySettings() {
+      return createTlsInspectionPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createTlsInspectionPolicy. */
+    public OperationCallSettings.Builder<
+            CreateTlsInspectionPolicyRequest, TlsInspectionPolicy, OperationMetadata>
+        createTlsInspectionPolicyOperationSettings() {
+      return createTlsInspectionPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateTlsInspectionPolicy. */
+    public UnaryCallSettings.Builder<UpdateTlsInspectionPolicyRequest, Operation>
+        updateTlsInspectionPolicySettings() {
+      return updateTlsInspectionPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateTlsInspectionPolicy. */
+    public OperationCallSettings.Builder<
+            UpdateTlsInspectionPolicyRequest, TlsInspectionPolicy, OperationMetadata>
+        updateTlsInspectionPolicyOperationSettings() {
+      return updateTlsInspectionPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTlsInspectionPolicy. */
+    public UnaryCallSettings.Builder<DeleteTlsInspectionPolicyRequest, Operation>
+        deleteTlsInspectionPolicySettings() {
+      return deleteTlsInspectionPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTlsInspectionPolicy. */
+    public OperationCallSettings.Builder<DeleteTlsInspectionPolicyRequest, Empty, OperationMetadata>
+        deleteTlsInspectionPolicyOperationSettings() {
+      return deleteTlsInspectionPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAuthzPolicies. */
+    public PagedCallSettings.Builder<
+            ListAuthzPoliciesRequest, ListAuthzPoliciesResponse, ListAuthzPoliciesPagedResponse>
+        listAuthzPoliciesSettings() {
+      return listAuthzPoliciesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAuthzPolicy. */
+    public UnaryCallSettings.Builder<GetAuthzPolicyRequest, AuthzPolicy> getAuthzPolicySettings() {
+      return getAuthzPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAuthzPolicy. */
+    public UnaryCallSettings.Builder<CreateAuthzPolicyRequest, Operation>
+        createAuthzPolicySettings() {
+      return createAuthzPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAuthzPolicy. */
+    public OperationCallSettings.Builder<CreateAuthzPolicyRequest, AuthzPolicy, OperationMetadata>
+        createAuthzPolicyOperationSettings() {
+      return createAuthzPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAuthzPolicy. */
+    public UnaryCallSettings.Builder<UpdateAuthzPolicyRequest, Operation>
+        updateAuthzPolicySettings() {
+      return updateAuthzPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAuthzPolicy. */
+    public OperationCallSettings.Builder<UpdateAuthzPolicyRequest, AuthzPolicy, OperationMetadata>
+        updateAuthzPolicyOperationSettings() {
+      return updateAuthzPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAuthzPolicy. */
+    public UnaryCallSettings.Builder<DeleteAuthzPolicyRequest, Operation>
+        deleteAuthzPolicySettings() {
+      return deleteAuthzPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAuthzPolicy. */
+    public OperationCallSettings.Builder<DeleteAuthzPolicyRequest, Empty, OperationMetadata>
+        deleteAuthzPolicyOperationSettings() {
+      return deleteAuthzPolicyOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

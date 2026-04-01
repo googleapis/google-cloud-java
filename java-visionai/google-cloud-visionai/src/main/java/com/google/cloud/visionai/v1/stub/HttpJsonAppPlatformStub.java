@@ -1417,6 +1417,7 @@ public class HttpJsonAppPlatformStub extends AppPlatformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetApplicationRequest, Application> getApplicationTransportSettings =
         HttpJsonCallSettings.<GetApplicationRequest, Application>newBuilder()
@@ -1428,6 +1429,7 @@ public class HttpJsonAppPlatformStub extends AppPlatformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateApplicationRequest, Operation> createApplicationTransportSettings =
         HttpJsonCallSettings.<CreateApplicationRequest, Operation>newBuilder()
@@ -1439,6 +1441,7 @@ public class HttpJsonAppPlatformStub extends AppPlatformStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateApplicationRequest, Operation> updateApplicationTransportSettings =
         HttpJsonCallSettings.<UpdateApplicationRequest, Operation>newBuilder()
@@ -1462,6 +1465,7 @@ public class HttpJsonAppPlatformStub extends AppPlatformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeployApplicationRequest, Operation> deployApplicationTransportSettings =
         HttpJsonCallSettings.<DeployApplicationRequest, Operation>newBuilder()
@@ -1473,6 +1477,7 @@ public class HttpJsonAppPlatformStub extends AppPlatformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UndeployApplicationRequest, Operation>
         undeployApplicationTransportSettings =
@@ -1485,6 +1490,7 @@ public class HttpJsonAppPlatformStub extends AppPlatformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<AddApplicationStreamInputRequest, Operation>
         addApplicationStreamInputTransportSettings =
@@ -1497,6 +1503,7 @@ public class HttpJsonAppPlatformStub extends AppPlatformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<RemoveApplicationStreamInputRequest, Operation>
         removeApplicationStreamInputTransportSettings =
@@ -1509,6 +1516,7 @@ public class HttpJsonAppPlatformStub extends AppPlatformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateApplicationStreamInputRequest, Operation>
         updateApplicationStreamInputTransportSettings =
@@ -1521,6 +1529,7 @@ public class HttpJsonAppPlatformStub extends AppPlatformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListInstancesRequest, ListInstancesResponse>
         listInstancesTransportSettings =
@@ -1533,6 +1542,7 @@ public class HttpJsonAppPlatformStub extends AppPlatformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         HttpJsonCallSettings.<GetInstanceRequest, Instance>newBuilder()
@@ -1544,6 +1554,7 @@ public class HttpJsonAppPlatformStub extends AppPlatformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateApplicationInstancesRequest, Operation>
         createApplicationInstancesTransportSettings =
@@ -1556,6 +1567,7 @@ public class HttpJsonAppPlatformStub extends AppPlatformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DeleteApplicationInstancesRequest, Operation>
         deleteApplicationInstancesTransportSettings =
@@ -1568,6 +1580,7 @@ public class HttpJsonAppPlatformStub extends AppPlatformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateApplicationInstancesRequest, Operation>
         updateApplicationInstancesTransportSettings =
@@ -1580,6 +1593,7 @@ public class HttpJsonAppPlatformStub extends AppPlatformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListDraftsRequest, ListDraftsResponse> listDraftsTransportSettings =
         HttpJsonCallSettings.<ListDraftsRequest, ListDraftsResponse>newBuilder()
@@ -1591,6 +1605,7 @@ public class HttpJsonAppPlatformStub extends AppPlatformStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetDraftRequest, Draft> getDraftTransportSettings =
         HttpJsonCallSettings.<GetDraftRequest, Draft>newBuilder()
@@ -1602,6 +1617,7 @@ public class HttpJsonAppPlatformStub extends AppPlatformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateDraftRequest, Operation> createDraftTransportSettings =
         HttpJsonCallSettings.<CreateDraftRequest, Operation>newBuilder()
@@ -1613,6 +1629,7 @@ public class HttpJsonAppPlatformStub extends AppPlatformStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateDraftRequest, Operation> updateDraftTransportSettings =
         HttpJsonCallSettings.<UpdateDraftRequest, Operation>newBuilder()
@@ -1635,6 +1652,7 @@ public class HttpJsonAppPlatformStub extends AppPlatformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListProcessorsRequest, ListProcessorsResponse>
         listProcessorsTransportSettings =
@@ -1647,6 +1665,7 @@ public class HttpJsonAppPlatformStub extends AppPlatformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListPrebuiltProcessorsRequest, ListPrebuiltProcessorsResponse>
         listPrebuiltProcessorsTransportSettings =
@@ -1660,6 +1679,7 @@ public class HttpJsonAppPlatformStub extends AppPlatformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetProcessorRequest, Processor> getProcessorTransportSettings =
         HttpJsonCallSettings.<GetProcessorRequest, Processor>newBuilder()
@@ -1671,6 +1691,7 @@ public class HttpJsonAppPlatformStub extends AppPlatformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateProcessorRequest, Operation> createProcessorTransportSettings =
         HttpJsonCallSettings.<CreateProcessorRequest, Operation>newBuilder()
@@ -1682,6 +1703,7 @@ public class HttpJsonAppPlatformStub extends AppPlatformStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateProcessorRequest, Operation> updateProcessorTransportSettings =
         HttpJsonCallSettings.<UpdateProcessorRequest, Operation>newBuilder()
@@ -1704,6 +1726,7 @@ public class HttpJsonAppPlatformStub extends AppPlatformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

@@ -1244,6 +1244,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-spanner-bom</artifactId>
+        <version>6.113.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanner:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-spanneradapter-bom</artifactId>
         <version>0.25.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanneradapter:current} -->
         <type>pom</type>
@@ -1253,6 +1260,13 @@
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-speech-bom</artifactId>
         <version>4.84.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-speech:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-storage-bom</artifactId>
+        <version>2.64.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-storage:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>

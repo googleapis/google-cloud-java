@@ -242,6 +242,7 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateWorkloadRequest, Workload> updateWorkloadTransportSettings =
         GrpcCallSettings.<UpdateWorkloadRequest, Workload>newBuilder()
@@ -274,6 +275,7 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetWorkloadRequest, Workload> getWorkloadTransportSettings =
         GrpcCallSettings.<GetWorkloadRequest, Workload>newBuilder()
@@ -284,6 +286,7 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsTransportSettings =
         GrpcCallSettings.<ListWorkloadsRequest, ListWorkloadsResponse>newBuilder()
@@ -294,15 +297,18 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListViolationsRequest, ListViolationsResponse>
         listViolationsTransportSettings =
             GrpcCallSettings.<ListViolationsRequest, ListViolationsResponse>newBuilder()
                 .setMethodDescriptor(listViolationsMethodDescriptor)
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetViolationRequest, Violation> getViolationTransportSettings =
         GrpcCallSettings.<GetViolationRequest, Violation>newBuilder()
             .setMethodDescriptor(getViolationMethodDescriptor)
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<AcknowledgeViolationRequest, AcknowledgeViolationResponse>
         acknowledgeViolationTransportSettings =

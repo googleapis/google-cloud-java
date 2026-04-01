@@ -14,6 +14,7 @@
     <module>gapic-libraries-bom</module>
     <module>google-cloud-jar-parent</module>
     <module>google-cloud-pom-parent</module>
+    <module>google-auth-library-java</module>
     <module>java-accessapproval</module>
     <module>java-accesscontextmanager</module>
     <module>java-admanager</module>
@@ -221,8 +222,11 @@
     <module>java-shopping-merchant-quota</module>
     <module>java-shopping-merchant-reports</module>
     <module>java-shopping-merchant-reviews</module>
+    <module>java-spanner</module>
+    <module>java-spanner-jdbc</module>
     <module>java-spanneradapter</module>
     <module>java-speech</module>
+    <module>java-storage</module>
     <module>java-storage-transfer</module>
     <module>java-storagebatchoperations</module>
     <module>java-storageinsights</module>
@@ -252,6 +256,7 @@
     <module>java-workloadmanager</module>
     <module>java-workspaceevents</module>
     <module>java-workstations</module>
+    <module>sdk-platform-java</module>
   </modules>
 
   <!-- Do not deploy the aggregator POM -->

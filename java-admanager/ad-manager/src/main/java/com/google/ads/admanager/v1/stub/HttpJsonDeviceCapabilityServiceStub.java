@@ -191,6 +191,7 @@ public class HttpJsonDeviceCapabilityServiceStub extends DeviceCapabilityService
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListDeviceCapabilitiesRequest, ListDeviceCapabilitiesResponse>
         listDeviceCapabilitiesTransportSettings =
@@ -204,6 +205,7 @@ public class HttpJsonDeviceCapabilityServiceStub extends DeviceCapabilityService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getDeviceCapabilityCallable =

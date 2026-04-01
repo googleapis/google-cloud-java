@@ -266,6 +266,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetIndexRequest, Index> getIndexTransportSettings =
         GrpcCallSettings.<GetIndexRequest, Index>newBuilder()
@@ -276,6 +277,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListIndexesRequest, ListIndexesResponse> listIndexesTransportSettings =
         GrpcCallSettings.<ListIndexesRequest, ListIndexesResponse>newBuilder()
@@ -286,6 +288,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateIndexRequest, Operation> updateIndexTransportSettings =
         GrpcCallSettings.<UpdateIndexRequest, Operation>newBuilder()
@@ -306,6 +309,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpsertDatapointsRequest, UpsertDatapointsResponse>
         upsertDatapointsTransportSettings =
@@ -317,6 +321,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
                       builder.add("index", String.valueOf(request.getIndex()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getIndex())
                 .build();
     GrpcCallSettings<RemoveDatapointsRequest, RemoveDatapointsResponse>
         removeDatapointsTransportSettings =
@@ -328,6 +333,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
                       builder.add("index", String.valueOf(request.getIndex()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getIndex())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -358,6 +364,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -368,6 +375,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -379,6 +387,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createIndexCallable =

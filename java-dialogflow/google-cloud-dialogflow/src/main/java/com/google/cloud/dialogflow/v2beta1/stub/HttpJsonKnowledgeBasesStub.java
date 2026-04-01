@@ -401,6 +401,7 @@ public class HttpJsonKnowledgeBasesStub extends KnowledgeBasesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetKnowledgeBaseRequest, KnowledgeBase> getKnowledgeBaseTransportSettings =
         HttpJsonCallSettings.<GetKnowledgeBaseRequest, KnowledgeBase>newBuilder()
@@ -412,6 +413,7 @@ public class HttpJsonKnowledgeBasesStub extends KnowledgeBasesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateKnowledgeBaseRequest, KnowledgeBase>
         createKnowledgeBaseTransportSettings =
@@ -424,6 +426,7 @@ public class HttpJsonKnowledgeBasesStub extends KnowledgeBasesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteKnowledgeBaseRequest, Empty> deleteKnowledgeBaseTransportSettings =
         HttpJsonCallSettings.<DeleteKnowledgeBaseRequest, Empty>newBuilder()
@@ -435,6 +438,7 @@ public class HttpJsonKnowledgeBasesStub extends KnowledgeBasesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateKnowledgeBaseRequest, KnowledgeBase>
         updateKnowledgeBaseTransportSettings =

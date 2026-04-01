@@ -180,6 +180,86 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
      *
      *
      * <pre>
+     * Same as text_sections, but in an order that is consistent with the order
+     * of the sections in the generator.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection sorted_text_sections = 6;
+     * </code>
+     */
+    java.util.List<
+            com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                .SummarySection>
+        getSortedTextSectionsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Same as text_sections, but in an order that is consistent with the order
+     * of the sections in the generator.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection sorted_text_sections = 6;
+     * </code>
+     */
+    com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection
+        getSortedTextSections(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Same as text_sections, but in an order that is consistent with the order
+     * of the sections in the generator.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection sorted_text_sections = 6;
+     * </code>
+     */
+    int getSortedTextSectionsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Same as text_sections, but in an order that is consistent with the order
+     * of the sections in the generator.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection sorted_text_sections = 6;
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                    .SummarySectionOrBuilder>
+        getSortedTextSectionsOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Same as text_sections, but in an order that is consistent with the order
+     * of the sections in the generator.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection sorted_text_sections = 6;
+     * </code>
+     */
+    com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+            .SummarySectionOrBuilder
+        getSortedTextSectionsOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
      * The name of the answer record. Format:
      * "projects/&lt;Project ID&gt;/answerRecords/&lt;Answer Record ID&gt;"
      * </pre>
@@ -265,6 +345,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
 
     private Summary() {
       text_ = "";
+      sortedTextSections_ = java.util.Collections.emptyList();
       answerRecord_ = "";
       baselineModelVersion_ = "";
     }
@@ -295,6 +376,895 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
               com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.class,
               com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.Builder
                   .class);
+    }
+
+    public interface SummarySectionOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Name of the section.
+       * </pre>
+       *
+       * <code>string section = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The section.
+       */
+      java.lang.String getSection();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Name of the section.
+       * </pre>
+       *
+       * <code>string section = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for section.
+       */
+      com.google.protobuf.ByteString getSectionBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Summary text for the section.
+       * </pre>
+       *
+       * <code>string summary = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The summary.
+       */
+      java.lang.String getSummary();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Summary text for the section.
+       * </pre>
+       *
+       * <code>string summary = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for summary.
+       */
+      com.google.protobuf.ByteString getSummaryBytes();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A component of the generated summary.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection}
+     */
+    public static final class SummarySection extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection)
+        SummarySectionOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "SummarySection");
+      }
+
+      // Use SummarySection.newBuilder() to construct.
+      private SummarySection(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private SummarySection() {
+        section_ = "";
+        summary_ = "";
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2.ConversationProto
+            .internal_static_google_cloud_dialogflow_v2_SuggestConversationSummaryResponse_Summary_SummarySection_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2.ConversationProto
+            .internal_static_google_cloud_dialogflow_v2_SuggestConversationSummaryResponse_Summary_SummarySection_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                    .SummarySection.class,
+                com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                    .SummarySection.Builder.class);
+      }
+
+      public static final int SECTION_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object section_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Name of the section.
+       * </pre>
+       *
+       * <code>string section = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The section.
+       */
+      @java.lang.Override
+      public java.lang.String getSection() {
+        java.lang.Object ref = section_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          section_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Name of the section.
+       * </pre>
+       *
+       * <code>string section = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for section.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getSectionBytes() {
+        java.lang.Object ref = section_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          section_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int SUMMARY_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object summary_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Summary text for the section.
+       * </pre>
+       *
+       * <code>string summary = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The summary.
+       */
+      @java.lang.Override
+      public java.lang.String getSummary() {
+        java.lang.Object ref = summary_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          summary_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Summary text for the section.
+       * </pre>
+       *
+       * <code>string summary = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for summary.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getSummaryBytes() {
+        java.lang.Object ref = summary_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          summary_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(section_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, section_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(summary_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 2, summary_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(section_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, section_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(summary_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(2, summary_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                .SummarySection)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection
+            other =
+                (com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                        .SummarySection)
+                    obj;
+
+        if (!getSection().equals(other.getSection())) return false;
+        if (!getSummary().equals(other.getSummary())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + SECTION_FIELD_NUMBER;
+        hash = (53 * hash) + getSection().hashCode();
+        hash = (37 * hash) + SUMMARY_FIELD_NUMBER;
+        hash = (53 * hash) + getSummary().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+              .SummarySection
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+              .SummarySection
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+              .SummarySection
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+              .SummarySection
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+              .SummarySection
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+              .SummarySection
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+              .SummarySection
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+              .SummarySection
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+              .SummarySection
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+              .SummarySection
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+              .SummarySection
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+              .SummarySection
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A component of the generated summary.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection)
+          com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+              .SummarySectionOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.v2.ConversationProto
+              .internal_static_google_cloud_dialogflow_v2_SuggestConversationSummaryResponse_Summary_SummarySection_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.v2.ConversationProto
+              .internal_static_google_cloud_dialogflow_v2_SuggestConversationSummaryResponse_Summary_SummarySection_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                      .SummarySection.class,
+                  com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                      .SummarySection.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          section_ = "";
+          summary_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dialogflow.v2.ConversationProto
+              .internal_static_google_cloud_dialogflow_v2_SuggestConversationSummaryResponse_Summary_SummarySection_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                .SummarySection
+            getDefaultInstanceForType() {
+          return com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+              .SummarySection.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                .SummarySection
+            build() {
+          com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                .SummarySection
+            buildPartial() {
+          com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection
+              result =
+                  new com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                      .SummarySection(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.section_ = section_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.summary_ = summary_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                  .SummarySection) {
+            return mergeFrom(
+                (com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                        .SummarySection)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection
+                other) {
+          if (other
+              == com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                  .SummarySection.getDefaultInstance()) return this;
+          if (!other.getSection().isEmpty()) {
+            section_ = other.section_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (!other.getSummary().isEmpty()) {
+            summary_ = other.summary_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    section_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    summary_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object section_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Name of the section.
+         * </pre>
+         *
+         * <code>string section = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The section.
+         */
+        public java.lang.String getSection() {
+          java.lang.Object ref = section_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            section_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Name of the section.
+         * </pre>
+         *
+         * <code>string section = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The bytes for section.
+         */
+        public com.google.protobuf.ByteString getSectionBytes() {
+          java.lang.Object ref = section_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            section_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Name of the section.
+         * </pre>
+         *
+         * <code>string section = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The section to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSection(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          section_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Name of the section.
+         * </pre>
+         *
+         * <code>string section = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSection() {
+          section_ = getDefaultInstance().getSection();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Name of the section.
+         * </pre>
+         *
+         * <code>string section = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The bytes for section to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSectionBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          section_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object summary_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Summary text for the section.
+         * </pre>
+         *
+         * <code>string summary = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The summary.
+         */
+        public java.lang.String getSummary() {
+          java.lang.Object ref = summary_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            summary_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Summary text for the section.
+         * </pre>
+         *
+         * <code>string summary = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The bytes for summary.
+         */
+        public com.google.protobuf.ByteString getSummaryBytes() {
+          java.lang.Object ref = summary_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            summary_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Summary text for the section.
+         * </pre>
+         *
+         * <code>string summary = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The summary to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSummary(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          summary_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Summary text for the section.
+         * </pre>
+         *
+         * <code>string summary = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSummary() {
+          summary_ = getDefaultInstance().getSummary();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Summary text for the section.
+         * </pre>
+         *
+         * <code>string summary = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The bytes for summary to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSummaryBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          summary_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection)
+      private static final com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+              .SummarySection
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                .SummarySection();
+      }
+
+      public static com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+              .SummarySection
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<SummarySection> PARSER =
+          new com.google.protobuf.AbstractParser<SummarySection>() {
+            @java.lang.Override
+            public SummarySection parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<SummarySection> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<SummarySection> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+              .SummarySection
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
     }
 
     public static final int TEXT_FIELD_NUMBER = 1;
@@ -467,6 +1437,109 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
       return map.get(key);
     }
 
+    public static final int SORTED_TEXT_SECTIONS_FIELD_NUMBER = 6;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                .SummarySection>
+        sortedTextSections_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Same as text_sections, but in an order that is consistent with the order
+     * of the sections in the generator.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection sorted_text_sections = 6;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                .SummarySection>
+        getSortedTextSectionsList() {
+      return sortedTextSections_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Same as text_sections, but in an order that is consistent with the order
+     * of the sections in the generator.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection sorted_text_sections = 6;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                    .SummarySectionOrBuilder>
+        getSortedTextSectionsOrBuilderList() {
+      return sortedTextSections_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Same as text_sections, but in an order that is consistent with the order
+     * of the sections in the generator.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection sorted_text_sections = 6;
+     * </code>
+     */
+    @java.lang.Override
+    public int getSortedTextSectionsCount() {
+      return sortedTextSections_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Same as text_sections, but in an order that is consistent with the order
+     * of the sections in the generator.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection sorted_text_sections = 6;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection
+        getSortedTextSections(int index) {
+      return sortedTextSections_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Same as text_sections, but in an order that is consistent with the order
+     * of the sections in the generator.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection sorted_text_sections = 6;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+            .SummarySectionOrBuilder
+        getSortedTextSectionsOrBuilder(int index) {
+      return sortedTextSections_.get(index);
+    }
+
     public static final int ANSWER_RECORD_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
@@ -602,6 +1675,9 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(baselineModelVersion_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 5, baselineModelVersion_);
       }
+      for (int i = 0; i < sortedTextSections_.size(); i++) {
+        output.writeMessage(6, sortedTextSections_.get(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -630,6 +1706,10 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(baselineModelVersion_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(5, baselineModelVersion_);
       }
+      for (int i = 0; i < sortedTextSections_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(6, sortedTextSections_.get(i));
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -649,6 +1729,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
 
       if (!getText().equals(other.getText())) return false;
       if (!internalGetTextSections().equals(other.internalGetTextSections())) return false;
+      if (!getSortedTextSectionsList().equals(other.getSortedTextSectionsList())) return false;
       if (!getAnswerRecord().equals(other.getAnswerRecord())) return false;
       if (!getBaselineModelVersion().equals(other.getBaselineModelVersion())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -667,6 +1748,10 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
       if (!internalGetTextSections().getMap().isEmpty()) {
         hash = (37 * hash) + TEXT_SECTIONS_FIELD_NUMBER;
         hash = (53 * hash) + internalGetTextSections().hashCode();
+      }
+      if (getSortedTextSectionsCount() > 0) {
+        hash = (37 * hash) + SORTED_TEXT_SECTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getSortedTextSectionsList().hashCode();
       }
       hash = (37 * hash) + ANSWER_RECORD_FIELD_NUMBER;
       hash = (53 * hash) + getAnswerRecord().hashCode();
@@ -845,6 +1930,13 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         bitField0_ = 0;
         text_ = "";
         internalGetMutableTextSections().clear();
+        if (sortedTextSectionsBuilder_ == null) {
+          sortedTextSections_ = java.util.Collections.emptyList();
+        } else {
+          sortedTextSections_ = null;
+          sortedTextSectionsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
         answerRecord_ = "";
         baselineModelVersion_ = "";
         return this;
@@ -878,11 +1970,25 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
           buildPartial() {
         com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary result =
             new com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary(this);
+        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary result) {
+        if (sortedTextSectionsBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            sortedTextSections_ = java.util.Collections.unmodifiableList(sortedTextSections_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.sortedTextSections_ = sortedTextSections_;
+        } else {
+          result.sortedTextSections_ = sortedTextSectionsBuilder_.build();
+        }
       }
 
       private void buildPartial0(
@@ -895,10 +2001,10 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
           result.textSections_ = internalGetTextSections();
           result.textSections_.makeImmutable();
         }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.answerRecord_ = answerRecord_;
         }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           result.baselineModelVersion_ = baselineModelVersion_;
         }
       }
@@ -927,14 +2033,41 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         }
         internalGetMutableTextSections().mergeFrom(other.internalGetTextSections());
         bitField0_ |= 0x00000002;
+        if (sortedTextSectionsBuilder_ == null) {
+          if (!other.sortedTextSections_.isEmpty()) {
+            if (sortedTextSections_.isEmpty()) {
+              sortedTextSections_ = other.sortedTextSections_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureSortedTextSectionsIsMutable();
+              sortedTextSections_.addAll(other.sortedTextSections_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.sortedTextSections_.isEmpty()) {
+            if (sortedTextSectionsBuilder_.isEmpty()) {
+              sortedTextSectionsBuilder_.dispose();
+              sortedTextSectionsBuilder_ = null;
+              sortedTextSections_ = other.sortedTextSections_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              sortedTextSectionsBuilder_ =
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                      ? internalGetSortedTextSectionsFieldBuilder()
+                      : null;
+            } else {
+              sortedTextSectionsBuilder_.addAllMessages(other.sortedTextSections_);
+            }
+          }
+        }
         if (!other.getAnswerRecord().isEmpty()) {
           answerRecord_ = other.answerRecord_;
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (!other.getBaselineModelVersion().isEmpty()) {
           baselineModelVersion_ = other.baselineModelVersion_;
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -972,7 +2105,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
               case 26:
                 {
                   answerRecord_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000004;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 26
               case 34:
@@ -990,9 +2123,26 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
               case 42:
                 {
                   baselineModelVersion_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000008;
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 42
+              case 50:
+                {
+                  com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                          .SummarySection
+                      m =
+                          input.readMessage(
+                              com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse
+                                  .Summary.SummarySection.parser(),
+                              extensionRegistry);
+                  if (sortedTextSectionsBuilder_ == null) {
+                    ensureSortedTextSectionsIsMutable();
+                    sortedTextSections_.add(m);
+                  } else {
+                    sortedTextSectionsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1312,6 +2462,487 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         return this;
       }
 
+      private java.util.List<
+              com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                  .SummarySection>
+          sortedTextSections_ = java.util.Collections.emptyList();
+
+      private void ensureSortedTextSectionsIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          sortedTextSections_ =
+              new java.util.ArrayList<
+                  com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                      .SummarySection>(sortedTextSections_);
+          bitField0_ |= 0x00000004;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                  .SummarySection,
+              com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                  .SummarySection.Builder,
+              com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                  .SummarySectionOrBuilder>
+          sortedTextSectionsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Same as text_sections, but in an order that is consistent with the order
+       * of the sections in the generator.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection sorted_text_sections = 6;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                  .SummarySection>
+          getSortedTextSectionsList() {
+        if (sortedTextSectionsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(sortedTextSections_);
+        } else {
+          return sortedTextSectionsBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Same as text_sections, but in an order that is consistent with the order
+       * of the sections in the generator.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection sorted_text_sections = 6;
+       * </code>
+       */
+      public int getSortedTextSectionsCount() {
+        if (sortedTextSectionsBuilder_ == null) {
+          return sortedTextSections_.size();
+        } else {
+          return sortedTextSectionsBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Same as text_sections, but in an order that is consistent with the order
+       * of the sections in the generator.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection sorted_text_sections = 6;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+              .SummarySection
+          getSortedTextSections(int index) {
+        if (sortedTextSectionsBuilder_ == null) {
+          return sortedTextSections_.get(index);
+        } else {
+          return sortedTextSectionsBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Same as text_sections, but in an order that is consistent with the order
+       * of the sections in the generator.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection sorted_text_sections = 6;
+       * </code>
+       */
+      public Builder setSortedTextSections(
+          int index,
+          com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection
+              value) {
+        if (sortedTextSectionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSortedTextSectionsIsMutable();
+          sortedTextSections_.set(index, value);
+          onChanged();
+        } else {
+          sortedTextSectionsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Same as text_sections, but in an order that is consistent with the order
+       * of the sections in the generator.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection sorted_text_sections = 6;
+       * </code>
+       */
+      public Builder setSortedTextSections(
+          int index,
+          com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection
+                  .Builder
+              builderForValue) {
+        if (sortedTextSectionsBuilder_ == null) {
+          ensureSortedTextSectionsIsMutable();
+          sortedTextSections_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          sortedTextSectionsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Same as text_sections, but in an order that is consistent with the order
+       * of the sections in the generator.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection sorted_text_sections = 6;
+       * </code>
+       */
+      public Builder addSortedTextSections(
+          com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection
+              value) {
+        if (sortedTextSectionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSortedTextSectionsIsMutable();
+          sortedTextSections_.add(value);
+          onChanged();
+        } else {
+          sortedTextSectionsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Same as text_sections, but in an order that is consistent with the order
+       * of the sections in the generator.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection sorted_text_sections = 6;
+       * </code>
+       */
+      public Builder addSortedTextSections(
+          int index,
+          com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection
+              value) {
+        if (sortedTextSectionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSortedTextSectionsIsMutable();
+          sortedTextSections_.add(index, value);
+          onChanged();
+        } else {
+          sortedTextSectionsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Same as text_sections, but in an order that is consistent with the order
+       * of the sections in the generator.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection sorted_text_sections = 6;
+       * </code>
+       */
+      public Builder addSortedTextSections(
+          com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection
+                  .Builder
+              builderForValue) {
+        if (sortedTextSectionsBuilder_ == null) {
+          ensureSortedTextSectionsIsMutable();
+          sortedTextSections_.add(builderForValue.build());
+          onChanged();
+        } else {
+          sortedTextSectionsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Same as text_sections, but in an order that is consistent with the order
+       * of the sections in the generator.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection sorted_text_sections = 6;
+       * </code>
+       */
+      public Builder addSortedTextSections(
+          int index,
+          com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection
+                  .Builder
+              builderForValue) {
+        if (sortedTextSectionsBuilder_ == null) {
+          ensureSortedTextSectionsIsMutable();
+          sortedTextSections_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          sortedTextSectionsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Same as text_sections, but in an order that is consistent with the order
+       * of the sections in the generator.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection sorted_text_sections = 6;
+       * </code>
+       */
+      public Builder addAllSortedTextSections(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                          .SummarySection>
+              values) {
+        if (sortedTextSectionsBuilder_ == null) {
+          ensureSortedTextSectionsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sortedTextSections_);
+          onChanged();
+        } else {
+          sortedTextSectionsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Same as text_sections, but in an order that is consistent with the order
+       * of the sections in the generator.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection sorted_text_sections = 6;
+       * </code>
+       */
+      public Builder clearSortedTextSections() {
+        if (sortedTextSectionsBuilder_ == null) {
+          sortedTextSections_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          sortedTextSectionsBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Same as text_sections, but in an order that is consistent with the order
+       * of the sections in the generator.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection sorted_text_sections = 6;
+       * </code>
+       */
+      public Builder removeSortedTextSections(int index) {
+        if (sortedTextSectionsBuilder_ == null) {
+          ensureSortedTextSectionsIsMutable();
+          sortedTextSections_.remove(index);
+          onChanged();
+        } else {
+          sortedTextSectionsBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Same as text_sections, but in an order that is consistent with the order
+       * of the sections in the generator.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection sorted_text_sections = 6;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+              .SummarySection.Builder
+          getSortedTextSectionsBuilder(int index) {
+        return internalGetSortedTextSectionsFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Same as text_sections, but in an order that is consistent with the order
+       * of the sections in the generator.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection sorted_text_sections = 6;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+              .SummarySectionOrBuilder
+          getSortedTextSectionsOrBuilder(int index) {
+        if (sortedTextSectionsBuilder_ == null) {
+          return sortedTextSections_.get(index);
+        } else {
+          return sortedTextSectionsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Same as text_sections, but in an order that is consistent with the order
+       * of the sections in the generator.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection sorted_text_sections = 6;
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                      .SummarySectionOrBuilder>
+          getSortedTextSectionsOrBuilderList() {
+        if (sortedTextSectionsBuilder_ != null) {
+          return sortedTextSectionsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(sortedTextSections_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Same as text_sections, but in an order that is consistent with the order
+       * of the sections in the generator.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection sorted_text_sections = 6;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+              .SummarySection.Builder
+          addSortedTextSectionsBuilder() {
+        return internalGetSortedTextSectionsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                    .SummarySection.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Same as text_sections, but in an order that is consistent with the order
+       * of the sections in the generator.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection sorted_text_sections = 6;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+              .SummarySection.Builder
+          addSortedTextSectionsBuilder(int index) {
+        return internalGetSortedTextSectionsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                    .SummarySection.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Same as text_sections, but in an order that is consistent with the order
+       * of the sections in the generator.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary.SummarySection sorted_text_sections = 6;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                  .SummarySection.Builder>
+          getSortedTextSectionsBuilderList() {
+        return internalGetSortedTextSectionsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                  .SummarySection,
+              com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                  .SummarySection.Builder,
+              com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                  .SummarySectionOrBuilder>
+          internalGetSortedTextSectionsFieldBuilder() {
+        if (sortedTextSectionsBuilder_ == null) {
+          sortedTextSectionsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                      .SummarySection,
+                  com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                      .SummarySection.Builder,
+                  com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse.Summary
+                      .SummarySectionOrBuilder>(
+                  sortedTextSections_,
+                  ((bitField0_ & 0x00000004) != 0),
+                  getParentForChildren(),
+                  isClean());
+          sortedTextSections_ = null;
+        }
+        return sortedTextSectionsBuilder_;
+      }
+
       private java.lang.Object answerRecord_ = "";
 
       /**
@@ -1380,7 +3011,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
           throw new NullPointerException();
         }
         answerRecord_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1399,7 +3030,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
        */
       public Builder clearAnswerRecord() {
         answerRecord_ = getDefaultInstance().getAnswerRecord();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1423,7 +3054,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         }
         checkByteStringIsUtf8(value);
         answerRecord_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1496,7 +3127,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
           throw new NullPointerException();
         }
         baselineModelVersion_ = value;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1515,7 +3146,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
        */
       public Builder clearBaselineModelVersion() {
         baselineModelVersion_ = getDefaultInstance().getBaselineModelVersion();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -1539,7 +3170,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
         }
         checkByteStringIsUtf8(value);
         baselineModelVersion_ = value;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }

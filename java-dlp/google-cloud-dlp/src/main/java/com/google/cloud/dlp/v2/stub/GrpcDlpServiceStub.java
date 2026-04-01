@@ -922,6 +922,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<RedactImageRequest, RedactImageResponse> redactImageTransportSettings =
         GrpcCallSettings.<RedactImageRequest, RedactImageResponse>newBuilder()
@@ -932,6 +933,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeidentifyContentRequest, DeidentifyContentResponse>
         deidentifyContentTransportSettings =
@@ -943,6 +945,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ReidentifyContentRequest, ReidentifyContentResponse>
         reidentifyContentTransportSettings =
@@ -954,6 +957,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListInfoTypesRequest, ListInfoTypesResponse> listInfoTypesTransportSettings =
         GrpcCallSettings.<ListInfoTypesRequest, ListInfoTypesResponse>newBuilder()
@@ -975,6 +979,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateInspectTemplateRequest, InspectTemplate>
         updateInspectTemplateTransportSettings =
@@ -986,6 +991,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetInspectTemplateRequest, InspectTemplate>
         getInspectTemplateTransportSettings =
@@ -997,6 +1003,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListInspectTemplatesRequest, ListInspectTemplatesResponse>
         listInspectTemplatesTransportSettings =
@@ -1008,6 +1015,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteInspectTemplateRequest, Empty> deleteInspectTemplateTransportSettings =
         GrpcCallSettings.<DeleteInspectTemplateRequest, Empty>newBuilder()
@@ -1018,6 +1026,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateDeidentifyTemplateRequest, DeidentifyTemplate>
         createDeidentifyTemplateTransportSettings =
@@ -1029,6 +1038,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateDeidentifyTemplateRequest, DeidentifyTemplate>
         updateDeidentifyTemplateTransportSettings =
@@ -1040,6 +1050,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetDeidentifyTemplateRequest, DeidentifyTemplate>
         getDeidentifyTemplateTransportSettings =
@@ -1051,6 +1062,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListDeidentifyTemplatesRequest, ListDeidentifyTemplatesResponse>
         listDeidentifyTemplatesTransportSettings =
@@ -1063,6 +1075,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteDeidentifyTemplateRequest, Empty>
         deleteDeidentifyTemplateTransportSettings =
@@ -1074,6 +1087,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateJobTriggerRequest, JobTrigger> createJobTriggerTransportSettings =
         GrpcCallSettings.<CreateJobTriggerRequest, JobTrigger>newBuilder()
@@ -1084,6 +1098,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateJobTriggerRequest, JobTrigger> updateJobTriggerTransportSettings =
         GrpcCallSettings.<UpdateJobTriggerRequest, JobTrigger>newBuilder()
@@ -1094,6 +1109,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<HybridInspectJobTriggerRequest, HybridInspectResponse>
         hybridInspectJobTriggerTransportSettings =
@@ -1105,6 +1121,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetJobTriggerRequest, JobTrigger> getJobTriggerTransportSettings =
         GrpcCallSettings.<GetJobTriggerRequest, JobTrigger>newBuilder()
@@ -1115,6 +1132,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListJobTriggersRequest, ListJobTriggersResponse>
         listJobTriggersTransportSettings =
@@ -1126,6 +1144,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteJobTriggerRequest, Empty> deleteJobTriggerTransportSettings =
         GrpcCallSettings.<DeleteJobTriggerRequest, Empty>newBuilder()
@@ -1136,6 +1155,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ActivateJobTriggerRequest, DlpJob> activateJobTriggerTransportSettings =
         GrpcCallSettings.<ActivateJobTriggerRequest, DlpJob>newBuilder()
@@ -1146,6 +1166,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateDiscoveryConfigRequest, DiscoveryConfig>
         createDiscoveryConfigTransportSettings =
@@ -1157,6 +1178,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateDiscoveryConfigRequest, DiscoveryConfig>
         updateDiscoveryConfigTransportSettings =
@@ -1168,6 +1190,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetDiscoveryConfigRequest, DiscoveryConfig>
         getDiscoveryConfigTransportSettings =
@@ -1179,6 +1202,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse>
         listDiscoveryConfigsTransportSettings =
@@ -1190,6 +1214,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteDiscoveryConfigRequest, Empty> deleteDiscoveryConfigTransportSettings =
         GrpcCallSettings.<DeleteDiscoveryConfigRequest, Empty>newBuilder()
@@ -1200,6 +1225,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateDlpJobRequest, DlpJob> createDlpJobTransportSettings =
         GrpcCallSettings.<CreateDlpJobRequest, DlpJob>newBuilder()
@@ -1210,6 +1236,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListDlpJobsRequest, ListDlpJobsResponse> listDlpJobsTransportSettings =
         GrpcCallSettings.<ListDlpJobsRequest, ListDlpJobsResponse>newBuilder()
@@ -1220,6 +1247,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetDlpJobRequest, DlpJob> getDlpJobTransportSettings =
         GrpcCallSettings.<GetDlpJobRequest, DlpJob>newBuilder()
@@ -1230,6 +1258,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteDlpJobRequest, Empty> deleteDlpJobTransportSettings =
         GrpcCallSettings.<DeleteDlpJobRequest, Empty>newBuilder()
@@ -1240,6 +1269,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CancelDlpJobRequest, Empty> cancelDlpJobTransportSettings =
         GrpcCallSettings.<CancelDlpJobRequest, Empty>newBuilder()
@@ -1250,6 +1280,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateStoredInfoTypeRequest, StoredInfoType>
         createStoredInfoTypeTransportSettings =
@@ -1261,6 +1292,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateStoredInfoTypeRequest, StoredInfoType>
         updateStoredInfoTypeTransportSettings =
@@ -1272,6 +1304,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetStoredInfoTypeRequest, StoredInfoType> getStoredInfoTypeTransportSettings =
         GrpcCallSettings.<GetStoredInfoTypeRequest, StoredInfoType>newBuilder()
@@ -1282,6 +1315,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse>
         listStoredInfoTypesTransportSettings =
@@ -1293,6 +1327,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteStoredInfoTypeRequest, Empty> deleteStoredInfoTypeTransportSettings =
         GrpcCallSettings.<DeleteStoredInfoTypeRequest, Empty>newBuilder()
@@ -1303,6 +1338,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListProjectDataProfilesRequest, ListProjectDataProfilesResponse>
         listProjectDataProfilesTransportSettings =
@@ -1315,6 +1351,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListTableDataProfilesRequest, ListTableDataProfilesResponse>
         listTableDataProfilesTransportSettings =
@@ -1327,6 +1364,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListColumnDataProfilesRequest, ListColumnDataProfilesResponse>
         listColumnDataProfilesTransportSettings =
@@ -1339,6 +1377,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetProjectDataProfileRequest, ProjectDataProfile>
         getProjectDataProfileTransportSettings =
@@ -1350,6 +1389,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>
         listFileStoreDataProfilesTransportSettings =
@@ -1362,6 +1402,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetFileStoreDataProfileRequest, FileStoreDataProfile>
         getFileStoreDataProfileTransportSettings =
@@ -1373,6 +1414,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteFileStoreDataProfileRequest, Empty>
         deleteFileStoreDataProfileTransportSettings =
@@ -1384,6 +1426,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetTableDataProfileRequest, TableDataProfile>
         getTableDataProfileTransportSettings =
@@ -1395,6 +1438,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetColumnDataProfileRequest, ColumnDataProfile>
         getColumnDataProfileTransportSettings =
@@ -1406,6 +1450,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteTableDataProfileRequest, Empty> deleteTableDataProfileTransportSettings =
         GrpcCallSettings.<DeleteTableDataProfileRequest, Empty>newBuilder()
@@ -1416,6 +1461,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<HybridInspectDlpJobRequest, HybridInspectResponse>
         hybridInspectDlpJobTransportSettings =
@@ -1427,6 +1473,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<FinishDlpJobRequest, Empty> finishDlpJobTransportSettings =
         GrpcCallSettings.<FinishDlpJobRequest, Empty>newBuilder()
@@ -1437,6 +1484,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateConnectionRequest, Connection> createConnectionTransportSettings =
         GrpcCallSettings.<CreateConnectionRequest, Connection>newBuilder()
@@ -1447,6 +1495,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetConnectionRequest, Connection> getConnectionTransportSettings =
         GrpcCallSettings.<GetConnectionRequest, Connection>newBuilder()
@@ -1457,6 +1506,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListConnectionsRequest, ListConnectionsResponse>
         listConnectionsTransportSettings =
@@ -1468,6 +1518,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<SearchConnectionsRequest, SearchConnectionsResponse>
         searchConnectionsTransportSettings =
@@ -1479,6 +1530,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteConnectionRequest, Empty> deleteConnectionTransportSettings =
         GrpcCallSettings.<DeleteConnectionRequest, Empty>newBuilder()
@@ -1489,6 +1541,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateConnectionRequest, Connection> updateConnectionTransportSettings =
         GrpcCallSettings.<UpdateConnectionRequest, Connection>newBuilder()
@@ -1499,6 +1552,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.inspectContentCallable =

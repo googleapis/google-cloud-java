@@ -300,6 +300,7 @@ public class GrpcConferenceRecordsServiceStub extends ConferenceRecordsServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListConferenceRecordsRequest, ListConferenceRecordsResponse>
         listConferenceRecordsTransportSettings =
@@ -316,6 +317,7 @@ public class GrpcConferenceRecordsServiceStub extends ConferenceRecordsServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListParticipantsRequest, ListParticipantsResponse>
         listParticipantsTransportSettings =
@@ -327,6 +329,7 @@ public class GrpcConferenceRecordsServiceStub extends ConferenceRecordsServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetParticipantSessionRequest, ParticipantSession>
         getParticipantSessionTransportSettings =
@@ -338,6 +341,7 @@ public class GrpcConferenceRecordsServiceStub extends ConferenceRecordsServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListParticipantSessionsRequest, ListParticipantSessionsResponse>
         listParticipantSessionsTransportSettings =
@@ -350,6 +354,7 @@ public class GrpcConferenceRecordsServiceStub extends ConferenceRecordsServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetRecordingRequest, Recording> getRecordingTransportSettings =
         GrpcCallSettings.<GetRecordingRequest, Recording>newBuilder()
@@ -360,6 +365,7 @@ public class GrpcConferenceRecordsServiceStub extends ConferenceRecordsServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRecordingsRequest, ListRecordingsResponse>
         listRecordingsTransportSettings =
@@ -371,6 +377,7 @@ public class GrpcConferenceRecordsServiceStub extends ConferenceRecordsServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetTranscriptRequest, Transcript> getTranscriptTransportSettings =
         GrpcCallSettings.<GetTranscriptRequest, Transcript>newBuilder()
@@ -381,6 +388,7 @@ public class GrpcConferenceRecordsServiceStub extends ConferenceRecordsServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListTranscriptsRequest, ListTranscriptsResponse>
         listTranscriptsTransportSettings =
@@ -392,6 +400,7 @@ public class GrpcConferenceRecordsServiceStub extends ConferenceRecordsServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetTranscriptEntryRequest, TranscriptEntry>
         getTranscriptEntryTransportSettings =
@@ -403,6 +412,7 @@ public class GrpcConferenceRecordsServiceStub extends ConferenceRecordsServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListTranscriptEntriesRequest, ListTranscriptEntriesResponse>
         listTranscriptEntriesTransportSettings =
@@ -415,6 +425,7 @@ public class GrpcConferenceRecordsServiceStub extends ConferenceRecordsServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getConferenceRecordCallable =

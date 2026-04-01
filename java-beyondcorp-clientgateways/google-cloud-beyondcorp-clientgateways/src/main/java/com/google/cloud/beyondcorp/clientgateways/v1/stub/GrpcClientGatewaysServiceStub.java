@@ -235,6 +235,7 @@ public class GrpcClientGatewaysServiceStub extends ClientGatewaysServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetClientGatewayRequest, ClientGateway> getClientGatewayTransportSettings =
         GrpcCallSettings.<GetClientGatewayRequest, ClientGateway>newBuilder()
@@ -245,6 +246,7 @@ public class GrpcClientGatewaysServiceStub extends ClientGatewaysServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateClientGatewayRequest, Operation> createClientGatewayTransportSettings =
         GrpcCallSettings.<CreateClientGatewayRequest, Operation>newBuilder()
@@ -255,6 +257,7 @@ public class GrpcClientGatewaysServiceStub extends ClientGatewaysServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteClientGatewayRequest, Operation> deleteClientGatewayTransportSettings =
         GrpcCallSettings.<DeleteClientGatewayRequest, Operation>newBuilder()
@@ -265,6 +268,7 @@ public class GrpcClientGatewaysServiceStub extends ClientGatewaysServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -295,6 +299,7 @@ public class GrpcClientGatewaysServiceStub extends ClientGatewaysServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -305,6 +310,7 @@ public class GrpcClientGatewaysServiceStub extends ClientGatewaysServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -316,6 +322,7 @@ public class GrpcClientGatewaysServiceStub extends ClientGatewaysServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listClientGatewaysCallable =

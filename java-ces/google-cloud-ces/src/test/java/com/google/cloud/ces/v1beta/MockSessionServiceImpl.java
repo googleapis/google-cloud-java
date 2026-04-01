@@ -80,6 +80,27 @@ public class MockSessionServiceImpl extends SessionServiceImplBase {
   }
 
   @Override
+  public void streamRunSession(
+      RunSessionRequest request, StreamObserver<RunSessionResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RunSessionResponse) {
+      requests.add(request);
+      responseObserver.onNext(((RunSessionResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method StreamRunSession, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RunSessionResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public StreamObserver<BidiSessionClientMessage> bidiRunSession(
       final StreamObserver<BidiSessionServerMessage> responseObserver) {
     StreamObserver<BidiSessionClientMessage> requestObserver =

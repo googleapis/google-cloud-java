@@ -60,6 +60,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessage
     webhookTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
     webhookStatuses_ = java.util.Collections.emptyList();
     webhookPayloads_ = java.util.Collections.emptyList();
+    traceBlocks_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1336,7 +1337,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessage
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=1110
+   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=1111
    * @return Whether the intent field is set.
    */
   @java.lang.Override
@@ -1360,7 +1361,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessage
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=1110
+   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=1111
    * @return The intent.
    */
   @java.lang.Override
@@ -1414,7 +1415,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessage
    * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent_detection_confidence is
-   *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=1121
+   *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=1122
    * @return The intentDetectionConfidence.
    */
   @java.lang.Override
@@ -1852,6 +1853,108 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessage
         : dataStoreConnectionSignals_;
   }
 
+  public static final int TRACE_BLOCKS_FIELD_NUMBER = 37;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.TraceBlock> traceBlocks_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains the sequence of trace blocks from the current
+   * conversation turn. Trace blocks are ordered chronologically and contain
+   * detailed traces of runtime behavior such as tool calls, LLM calls, flow and
+   * playbook invocations, agent utterances and user utterances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3beta1.TraceBlock trace_blocks = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.dialogflow.cx.v3beta1.TraceBlock> getTraceBlocksList() {
+    return traceBlocks_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains the sequence of trace blocks from the current
+   * conversation turn. Trace blocks are ordered chronologically and contain
+   * detailed traces of runtime behavior such as tool calls, LLM calls, flow and
+   * playbook invocations, agent utterances and user utterances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3beta1.TraceBlock trace_blocks = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.TraceBlockOrBuilder>
+      getTraceBlocksOrBuilderList() {
+    return traceBlocks_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains the sequence of trace blocks from the current
+   * conversation turn. Trace blocks are ordered chronologically and contain
+   * detailed traces of runtime behavior such as tool calls, LLM calls, flow and
+   * playbook invocations, agent utterances and user utterances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3beta1.TraceBlock trace_blocks = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getTraceBlocksCount() {
+    return traceBlocks_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains the sequence of trace blocks from the current
+   * conversation turn. Trace blocks are ordered chronologically and contain
+   * detailed traces of runtime behavior such as tool calls, LLM calls, flow and
+   * playbook invocations, agent utterances and user utterances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3beta1.TraceBlock trace_blocks = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.TraceBlock getTraceBlocks(int index) {
+    return traceBlocks_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains the sequence of trace blocks from the current
+   * conversation turn. Trace blocks are ordered chronologically and contain
+   * detailed traces of runtime behavior such as tool calls, LLM calls, flow and
+   * playbook invocations, agent utterances and user utterances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3beta1.TraceBlock trace_blocks = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.TraceBlockOrBuilder getTraceBlocksOrBuilder(
+      int index) {
+    return traceBlocks_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1940,6 +2043,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(35, getDataStoreConnectionSignals());
+    }
+    for (int i = 0; i < traceBlocks_.size(); i++) {
+      output.writeMessage(37, traceBlocks_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -2047,6 +2153,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               35, getDataStoreConnectionSignals());
     }
+    for (int i = 0; i < traceBlocks_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(37, traceBlocks_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2115,6 +2224,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessage
       if (!getDataStoreConnectionSignals().equals(other.getDataStoreConnectionSignals()))
         return false;
     }
+    if (!getTraceBlocksList().equals(other.getTraceBlocksList())) return false;
     if (!getQueryCase().equals(other.getQueryCase())) return false;
     switch (queryCase_) {
       case 1:
@@ -2219,6 +2329,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessage
     if (hasDataStoreConnectionSignals()) {
       hash = (37 * hash) + DATA_STORE_CONNECTION_SIGNALS_FIELD_NUMBER;
       hash = (53 * hash) + getDataStoreConnectionSignals().hashCode();
+    }
+    if (getTraceBlocksCount() > 0) {
+      hash = (37 * hash) + TRACE_BLOCKS_FIELD_NUMBER;
+      hash = (53 * hash) + getTraceBlocksList().hashCode();
     }
     switch (queryCase_) {
       case 1:
@@ -2399,6 +2513,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessage
         internalGetSentimentAnalysisResultFieldBuilder();
         internalGetAdvancedSettingsFieldBuilder();
         internalGetDataStoreConnectionSignalsFieldBuilder();
+        internalGetTraceBlocksFieldBuilder();
       }
     }
 
@@ -2493,6 +2608,13 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessage
         dataStoreConnectionSignalsBuilder_.dispose();
         dataStoreConnectionSignalsBuilder_ = null;
       }
+      if (traceBlocksBuilder_ == null) {
+        traceBlocks_ = java.util.Collections.emptyList();
+      } else {
+        traceBlocks_ = null;
+        traceBlocksBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x02000000);
       queryCase_ = 0;
       query_ = null;
       return this;
@@ -2568,6 +2690,15 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessage
         result.webhookPayloads_ = webhookPayloads_;
       } else {
         result.webhookPayloads_ = webhookPayloadsBuilder_.build();
+      }
+      if (traceBlocksBuilder_ == null) {
+        if (((bitField0_ & 0x02000000) != 0)) {
+          traceBlocks_ = java.util.Collections.unmodifiableList(traceBlocks_);
+          bitField0_ = (bitField0_ & ~0x02000000);
+        }
+        result.traceBlocks_ = traceBlocks_;
+      } else {
+        result.traceBlocks_ = traceBlocksBuilder_.build();
       }
     }
 
@@ -2849,6 +2980,33 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessage
       if (other.hasDataStoreConnectionSignals()) {
         mergeDataStoreConnectionSignals(other.getDataStoreConnectionSignals());
       }
+      if (traceBlocksBuilder_ == null) {
+        if (!other.traceBlocks_.isEmpty()) {
+          if (traceBlocks_.isEmpty()) {
+            traceBlocks_ = other.traceBlocks_;
+            bitField0_ = (bitField0_ & ~0x02000000);
+          } else {
+            ensureTraceBlocksIsMutable();
+            traceBlocks_.addAll(other.traceBlocks_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.traceBlocks_.isEmpty()) {
+          if (traceBlocksBuilder_.isEmpty()) {
+            traceBlocksBuilder_.dispose();
+            traceBlocksBuilder_ = null;
+            traceBlocks_ = other.traceBlocks_;
+            bitField0_ = (bitField0_ & ~0x02000000);
+            traceBlocksBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetTraceBlocksFieldBuilder()
+                    : null;
+          } else {
+            traceBlocksBuilder_.addAllMessages(other.traceBlocks_);
+          }
+        }
+      }
       switch (other.getQueryCase()) {
         case TEXT:
           {
@@ -3107,6 +3265,20 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x01000000;
                 break;
               } // case 282
+            case 298:
+              {
+                com.google.cloud.dialogflow.cx.v3beta1.TraceBlock m =
+                    input.readMessage(
+                        com.google.cloud.dialogflow.cx.v3beta1.TraceBlock.parser(),
+                        extensionRegistry);
+                if (traceBlocksBuilder_ == null) {
+                  ensureTraceBlocksIsMutable();
+                  traceBlocks_.add(m);
+                } else {
+                  traceBlocksBuilder_.addMessage(m);
+                }
+                break;
+              } // case 298
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7002,7 +7174,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=1110
+     *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=1111
      * @return Whether the intent field is set.
      */
     @java.lang.Deprecated
@@ -7025,7 +7197,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=1110
+     *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=1111
      * @return The intent.
      */
     @java.lang.Deprecated
@@ -7252,7 +7424,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessage
      * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent_detection_confidence is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=1121
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=1122
      * @return The intentDetectionConfidence.
      */
     @java.lang.Override
@@ -7279,7 +7451,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessage
      * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent_detection_confidence is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=1121
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=1122
      * @param value The intentDetectionConfidence to set.
      * @return This builder for chaining.
      */
@@ -7310,7 +7482,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessage
      * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent_detection_confidence is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=1121
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=1122
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -8822,6 +8994,471 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessage
         dataStoreConnectionSignals_ = null;
       }
       return dataStoreConnectionSignalsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.TraceBlock> traceBlocks_ =
+        java.util.Collections.emptyList();
+
+    private void ensureTraceBlocksIsMutable() {
+      if (!((bitField0_ & 0x02000000) != 0)) {
+        traceBlocks_ =
+            new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3beta1.TraceBlock>(
+                traceBlocks_);
+        bitField0_ |= 0x02000000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.dialogflow.cx.v3beta1.TraceBlock,
+            com.google.cloud.dialogflow.cx.v3beta1.TraceBlock.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.TraceBlockOrBuilder>
+        traceBlocksBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the sequence of trace blocks from the current
+     * conversation turn. Trace blocks are ordered chronologically and contain
+     * detailed traces of runtime behavior such as tool calls, LLM calls, flow and
+     * playbook invocations, agent utterances and user utterances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.TraceBlock trace_blocks = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.cx.v3beta1.TraceBlock> getTraceBlocksList() {
+      if (traceBlocksBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(traceBlocks_);
+      } else {
+        return traceBlocksBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the sequence of trace blocks from the current
+     * conversation turn. Trace blocks are ordered chronologically and contain
+     * detailed traces of runtime behavior such as tool calls, LLM calls, flow and
+     * playbook invocations, agent utterances and user utterances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.TraceBlock trace_blocks = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getTraceBlocksCount() {
+      if (traceBlocksBuilder_ == null) {
+        return traceBlocks_.size();
+      } else {
+        return traceBlocksBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the sequence of trace blocks from the current
+     * conversation turn. Trace blocks are ordered chronologically and contain
+     * detailed traces of runtime behavior such as tool calls, LLM calls, flow and
+     * playbook invocations, agent utterances and user utterances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.TraceBlock trace_blocks = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.TraceBlock getTraceBlocks(int index) {
+      if (traceBlocksBuilder_ == null) {
+        return traceBlocks_.get(index);
+      } else {
+        return traceBlocksBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the sequence of trace blocks from the current
+     * conversation turn. Trace blocks are ordered chronologically and contain
+     * detailed traces of runtime behavior such as tool calls, LLM calls, flow and
+     * playbook invocations, agent utterances and user utterances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.TraceBlock trace_blocks = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTraceBlocks(
+        int index, com.google.cloud.dialogflow.cx.v3beta1.TraceBlock value) {
+      if (traceBlocksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTraceBlocksIsMutable();
+        traceBlocks_.set(index, value);
+        onChanged();
+      } else {
+        traceBlocksBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the sequence of trace blocks from the current
+     * conversation turn. Trace blocks are ordered chronologically and contain
+     * detailed traces of runtime behavior such as tool calls, LLM calls, flow and
+     * playbook invocations, agent utterances and user utterances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.TraceBlock trace_blocks = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTraceBlocks(
+        int index, com.google.cloud.dialogflow.cx.v3beta1.TraceBlock.Builder builderForValue) {
+      if (traceBlocksBuilder_ == null) {
+        ensureTraceBlocksIsMutable();
+        traceBlocks_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        traceBlocksBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the sequence of trace blocks from the current
+     * conversation turn. Trace blocks are ordered chronologically and contain
+     * detailed traces of runtime behavior such as tool calls, LLM calls, flow and
+     * playbook invocations, agent utterances and user utterances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.TraceBlock trace_blocks = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addTraceBlocks(com.google.cloud.dialogflow.cx.v3beta1.TraceBlock value) {
+      if (traceBlocksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTraceBlocksIsMutable();
+        traceBlocks_.add(value);
+        onChanged();
+      } else {
+        traceBlocksBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the sequence of trace blocks from the current
+     * conversation turn. Trace blocks are ordered chronologically and contain
+     * detailed traces of runtime behavior such as tool calls, LLM calls, flow and
+     * playbook invocations, agent utterances and user utterances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.TraceBlock trace_blocks = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addTraceBlocks(
+        int index, com.google.cloud.dialogflow.cx.v3beta1.TraceBlock value) {
+      if (traceBlocksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTraceBlocksIsMutable();
+        traceBlocks_.add(index, value);
+        onChanged();
+      } else {
+        traceBlocksBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the sequence of trace blocks from the current
+     * conversation turn. Trace blocks are ordered chronologically and contain
+     * detailed traces of runtime behavior such as tool calls, LLM calls, flow and
+     * playbook invocations, agent utterances and user utterances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.TraceBlock trace_blocks = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addTraceBlocks(
+        com.google.cloud.dialogflow.cx.v3beta1.TraceBlock.Builder builderForValue) {
+      if (traceBlocksBuilder_ == null) {
+        ensureTraceBlocksIsMutable();
+        traceBlocks_.add(builderForValue.build());
+        onChanged();
+      } else {
+        traceBlocksBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the sequence of trace blocks from the current
+     * conversation turn. Trace blocks are ordered chronologically and contain
+     * detailed traces of runtime behavior such as tool calls, LLM calls, flow and
+     * playbook invocations, agent utterances and user utterances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.TraceBlock trace_blocks = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addTraceBlocks(
+        int index, com.google.cloud.dialogflow.cx.v3beta1.TraceBlock.Builder builderForValue) {
+      if (traceBlocksBuilder_ == null) {
+        ensureTraceBlocksIsMutable();
+        traceBlocks_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        traceBlocksBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the sequence of trace blocks from the current
+     * conversation turn. Trace blocks are ordered chronologically and contain
+     * detailed traces of runtime behavior such as tool calls, LLM calls, flow and
+     * playbook invocations, agent utterances and user utterances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.TraceBlock trace_blocks = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllTraceBlocks(
+        java.lang.Iterable<? extends com.google.cloud.dialogflow.cx.v3beta1.TraceBlock> values) {
+      if (traceBlocksBuilder_ == null) {
+        ensureTraceBlocksIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, traceBlocks_);
+        onChanged();
+      } else {
+        traceBlocksBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the sequence of trace blocks from the current
+     * conversation turn. Trace blocks are ordered chronologically and contain
+     * detailed traces of runtime behavior such as tool calls, LLM calls, flow and
+     * playbook invocations, agent utterances and user utterances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.TraceBlock trace_blocks = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearTraceBlocks() {
+      if (traceBlocksBuilder_ == null) {
+        traceBlocks_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x02000000);
+        onChanged();
+      } else {
+        traceBlocksBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the sequence of trace blocks from the current
+     * conversation turn. Trace blocks are ordered chronologically and contain
+     * detailed traces of runtime behavior such as tool calls, LLM calls, flow and
+     * playbook invocations, agent utterances and user utterances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.TraceBlock trace_blocks = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeTraceBlocks(int index) {
+      if (traceBlocksBuilder_ == null) {
+        ensureTraceBlocksIsMutable();
+        traceBlocks_.remove(index);
+        onChanged();
+      } else {
+        traceBlocksBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the sequence of trace blocks from the current
+     * conversation turn. Trace blocks are ordered chronologically and contain
+     * detailed traces of runtime behavior such as tool calls, LLM calls, flow and
+     * playbook invocations, agent utterances and user utterances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.TraceBlock trace_blocks = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.TraceBlock.Builder getTraceBlocksBuilder(
+        int index) {
+      return internalGetTraceBlocksFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the sequence of trace blocks from the current
+     * conversation turn. Trace blocks are ordered chronologically and contain
+     * detailed traces of runtime behavior such as tool calls, LLM calls, flow and
+     * playbook invocations, agent utterances and user utterances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.TraceBlock trace_blocks = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.TraceBlockOrBuilder getTraceBlocksOrBuilder(
+        int index) {
+      if (traceBlocksBuilder_ == null) {
+        return traceBlocks_.get(index);
+      } else {
+        return traceBlocksBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the sequence of trace blocks from the current
+     * conversation turn. Trace blocks are ordered chronologically and contain
+     * detailed traces of runtime behavior such as tool calls, LLM calls, flow and
+     * playbook invocations, agent utterances and user utterances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.TraceBlock trace_blocks = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.TraceBlockOrBuilder>
+        getTraceBlocksOrBuilderList() {
+      if (traceBlocksBuilder_ != null) {
+        return traceBlocksBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(traceBlocks_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the sequence of trace blocks from the current
+     * conversation turn. Trace blocks are ordered chronologically and contain
+     * detailed traces of runtime behavior such as tool calls, LLM calls, flow and
+     * playbook invocations, agent utterances and user utterances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.TraceBlock trace_blocks = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.TraceBlock.Builder addTraceBlocksBuilder() {
+      return internalGetTraceBlocksFieldBuilder()
+          .addBuilder(com.google.cloud.dialogflow.cx.v3beta1.TraceBlock.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the sequence of trace blocks from the current
+     * conversation turn. Trace blocks are ordered chronologically and contain
+     * detailed traces of runtime behavior such as tool calls, LLM calls, flow and
+     * playbook invocations, agent utterances and user utterances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.TraceBlock trace_blocks = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.TraceBlock.Builder addTraceBlocksBuilder(
+        int index) {
+      return internalGetTraceBlocksFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.dialogflow.cx.v3beta1.TraceBlock.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the sequence of trace blocks from the current
+     * conversation turn. Trace blocks are ordered chronologically and contain
+     * detailed traces of runtime behavior such as tool calls, LLM calls, flow and
+     * playbook invocations, agent utterances and user utterances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.TraceBlock trace_blocks = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.cx.v3beta1.TraceBlock.Builder>
+        getTraceBlocksBuilderList() {
+      return internalGetTraceBlocksFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.dialogflow.cx.v3beta1.TraceBlock,
+            com.google.cloud.dialogflow.cx.v3beta1.TraceBlock.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.TraceBlockOrBuilder>
+        internalGetTraceBlocksFieldBuilder() {
+      if (traceBlocksBuilder_ == null) {
+        traceBlocksBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.dialogflow.cx.v3beta1.TraceBlock,
+                com.google.cloud.dialogflow.cx.v3beta1.TraceBlock.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.TraceBlockOrBuilder>(
+                traceBlocks_, ((bitField0_ & 0x02000000) != 0), getParentForChildren(), isClean());
+        traceBlocks_ = null;
+      }
+      return traceBlocksBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.QueryResult)

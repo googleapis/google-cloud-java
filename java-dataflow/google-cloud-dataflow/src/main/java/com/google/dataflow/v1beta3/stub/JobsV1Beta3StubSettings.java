@@ -403,6 +403,7 @@ public class JobsV1Beta3StubSettings extends StubSettings<JobsV1Beta3StubSetting
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-dataflow")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

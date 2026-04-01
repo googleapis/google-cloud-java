@@ -115,6 +115,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                       builder.add("placement", String.valueOf(request.getPlacement()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getBranch())
                 .build();
 
     this.conversationalSearchCallable =

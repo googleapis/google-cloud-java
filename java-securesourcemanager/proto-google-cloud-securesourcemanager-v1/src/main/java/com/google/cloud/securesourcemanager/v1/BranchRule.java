@@ -705,12 +705,12 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. A unique identifier for a BranchRule. The name should be of the
+   * Identifier. A unique identifier for a BranchRule. The name should be of the
    * format:
    * `projects/{project}/locations/{location}/repositories/{repository}/branchRules/{branch_rule}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -731,12 +731,12 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. A unique identifier for a BranchRule. The name should be of the
+   * Identifier. A unique identifier for a BranchRule. The name should be of the
    * format:
    * `projects/{project}/locations/{location}/repositories/{repository}/branchRules/{branch_rule}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -765,7 +765,9 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
    * Output only. Unique identifier of the repository.
    * </pre>
    *
-   * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The uid.
    */
@@ -789,7 +791,9 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
    * Output only. Unique identifier of the repository.
    * </pre>
    *
-   * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for uid.
    */
@@ -1224,6 +1228,26 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
     return minimumApprovalsCount_;
   }
 
+  public static final int REQUIRE_CODE_OWNER_APPROVAL_FIELD_NUMBER = 16;
+  private boolean requireCodeOwnerApproval_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines if code owners must approve before merging to the
+   * branch.
+   * </pre>
+   *
+   * <code>bool require_code_owner_approval = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The requireCodeOwnerApproval.
+   */
+  @java.lang.Override
+  public boolean getRequireCodeOwnerApproval() {
+    return requireCodeOwnerApproval_;
+  }
+
   public static final int REQUIRE_COMMENTS_RESOLVED_FIELD_NUMBER = 12;
   private boolean requireCommentsResolved_ = false;
 
@@ -1432,6 +1456,9 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
     if (allowStaleReviews_ != false) {
       output.writeBool(15, allowStaleReviews_);
     }
+    if (requireCodeOwnerApproval_ != false) {
+      output.writeBool(16, requireCodeOwnerApproval_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1495,6 +1522,9 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
     if (allowStaleReviews_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(15, allowStaleReviews_);
     }
+    if (requireCodeOwnerApproval_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(16, requireCodeOwnerApproval_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1528,6 +1558,7 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
     if (getRequirePullRequest() != other.getRequirePullRequest()) return false;
     if (getMinimumReviewsCount() != other.getMinimumReviewsCount()) return false;
     if (getMinimumApprovalsCount() != other.getMinimumApprovalsCount()) return false;
+    if (getRequireCodeOwnerApproval() != other.getRequireCodeOwnerApproval()) return false;
     if (getRequireCommentsResolved() != other.getRequireCommentsResolved()) return false;
     if (getAllowStaleReviews() != other.getAllowStaleReviews()) return false;
     if (getRequireLinearHistory() != other.getRequireLinearHistory()) return false;
@@ -1571,6 +1602,8 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getMinimumReviewsCount();
     hash = (37 * hash) + MINIMUM_APPROVALS_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getMinimumApprovalsCount();
+    hash = (37 * hash) + REQUIRE_CODE_OWNER_APPROVAL_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRequireCodeOwnerApproval());
     hash = (37 * hash) + REQUIRE_COMMENTS_RESOLVED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRequireCommentsResolved());
     hash = (37 * hash) + ALLOW_STALE_REVIEWS_FIELD_NUMBER;
@@ -1774,6 +1807,7 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
       requirePullRequest_ = false;
       minimumReviewsCount_ = 0;
       minimumApprovalsCount_ = 0;
+      requireCodeOwnerApproval_ = false;
       requireCommentsResolved_ = false;
       allowStaleReviews_ = false;
       requireLinearHistory_ = false;
@@ -1783,7 +1817,7 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
         requiredStatusChecks_ = null;
         requiredStatusChecksBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       return this;
     }
 
@@ -1822,9 +1856,9 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
     private void buildPartialRepeatedFields(
         com.google.cloud.securesourcemanager.v1.BranchRule result) {
       if (requiredStatusChecksBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)) {
+        if (((bitField0_ & 0x00008000) != 0)) {
           requiredStatusChecks_ = java.util.Collections.unmodifiableList(requiredStatusChecks_);
-          bitField0_ = (bitField0_ & ~0x00004000);
+          bitField0_ = (bitField0_ & ~0x00008000);
         }
         result.requiredStatusChecks_ = requiredStatusChecks_;
       } else {
@@ -1872,12 +1906,15 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
         result.minimumApprovalsCount_ = minimumApprovalsCount_;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.requireCommentsResolved_ = requireCommentsResolved_;
+        result.requireCodeOwnerApproval_ = requireCodeOwnerApproval_;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.allowStaleReviews_ = allowStaleReviews_;
+        result.requireCommentsResolved_ = requireCommentsResolved_;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.allowStaleReviews_ = allowStaleReviews_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.requireLinearHistory_ = requireLinearHistory_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1936,6 +1973,9 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
       if (other.getMinimumApprovalsCount() != 0) {
         setMinimumApprovalsCount(other.getMinimumApprovalsCount());
       }
+      if (other.getRequireCodeOwnerApproval() != false) {
+        setRequireCodeOwnerApproval(other.getRequireCodeOwnerApproval());
+      }
       if (other.getRequireCommentsResolved() != false) {
         setRequireCommentsResolved(other.getRequireCommentsResolved());
       }
@@ -1949,7 +1989,7 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
         if (!other.requiredStatusChecks_.isEmpty()) {
           if (requiredStatusChecks_.isEmpty()) {
             requiredStatusChecks_ = other.requiredStatusChecks_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
           } else {
             ensureRequiredStatusChecksIsMutable();
             requiredStatusChecks_.addAll(other.requiredStatusChecks_);
@@ -1962,7 +2002,7 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
             requiredStatusChecksBuilder_.dispose();
             requiredStatusChecksBuilder_ = null;
             requiredStatusChecks_ = other.requiredStatusChecks_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
             requiredStatusChecksBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetRequiredStatusChecksFieldBuilder()
@@ -2075,13 +2115,13 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
             case 96:
               {
                 requireCommentsResolved_ = input.readBool();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 96
             case 104:
               {
                 requireLinearHistory_ = input.readBool();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 104
             case 114:
@@ -2101,9 +2141,15 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
             case 120:
               {
                 allowStaleReviews_ = input.readBool();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 120
+            case 128:
+              {
+                requireCodeOwnerApproval_ = input.readBool();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 128
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2129,12 +2175,12 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A unique identifier for a BranchRule. The name should be of the
+     * Identifier. A unique identifier for a BranchRule. The name should be of the
      * format:
      * `projects/{project}/locations/{location}/repositories/{repository}/branchRules/{branch_rule}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -2154,12 +2200,12 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A unique identifier for a BranchRule. The name should be of the
+     * Identifier. A unique identifier for a BranchRule. The name should be of the
      * format:
      * `projects/{project}/locations/{location}/repositories/{repository}/branchRules/{branch_rule}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -2179,12 +2225,12 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A unique identifier for a BranchRule. The name should be of the
+     * Identifier. A unique identifier for a BranchRule. The name should be of the
      * format:
      * `projects/{project}/locations/{location}/repositories/{repository}/branchRules/{branch_rule}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2203,12 +2249,12 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A unique identifier for a BranchRule. The name should be of the
+     * Identifier. A unique identifier for a BranchRule. The name should be of the
      * format:
      * `projects/{project}/locations/{location}/repositories/{repository}/branchRules/{branch_rule}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -2223,12 +2269,12 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A unique identifier for a BranchRule. The name should be of the
+     * Identifier. A unique identifier for a BranchRule. The name should be of the
      * format:
      * `projects/{project}/locations/{location}/repositories/{repository}/branchRules/{branch_rule}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -2253,7 +2299,9 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
      * Output only. Unique identifier of the repository.
      * </pre>
      *
-     * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The uid.
      */
@@ -2276,7 +2324,9 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
      * Output only. Unique identifier of the repository.
      * </pre>
      *
-     * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The bytes for uid.
      */
@@ -2299,7 +2349,9 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
      * Output only. Unique identifier of the repository.
      * </pre>
      *
-     * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The uid to set.
      * @return This builder for chaining.
@@ -2321,7 +2373,9 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
      * Output only. Unique identifier of the repository.
      * </pre>
      *
-     * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -2339,7 +2393,9 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
      * Output only. Unique identifier of the repository.
      * </pre>
      *
-     * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The bytes for uid to set.
      * @return This builder for chaining.
@@ -3452,6 +3508,65 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private boolean requireCodeOwnerApproval_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines if code owners must approve before merging to the
+     * branch.
+     * </pre>
+     *
+     * <code>bool require_code_owner_approval = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The requireCodeOwnerApproval.
+     */
+    @java.lang.Override
+    public boolean getRequireCodeOwnerApproval() {
+      return requireCodeOwnerApproval_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines if code owners must approve before merging to the
+     * branch.
+     * </pre>
+     *
+     * <code>bool require_code_owner_approval = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The requireCodeOwnerApproval to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequireCodeOwnerApproval(boolean value) {
+
+      requireCodeOwnerApproval_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines if code owners must approve before merging to the
+     * branch.
+     * </pre>
+     *
+     * <code>bool require_code_owner_approval = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRequireCodeOwnerApproval() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      requireCodeOwnerApproval_ = false;
+      onChanged();
+      return this;
+    }
+
     private boolean requireCommentsResolved_;
 
     /**
@@ -3487,7 +3602,7 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
     public Builder setRequireCommentsResolved(boolean value) {
 
       requireCommentsResolved_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3505,7 +3620,7 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRequireCommentsResolved() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       requireCommentsResolved_ = false;
       onChanged();
       return this;
@@ -3546,7 +3661,7 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
     public Builder setAllowStaleReviews(boolean value) {
 
       allowStaleReviews_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3564,7 +3679,7 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAllowStaleReviews() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       allowStaleReviews_ = false;
       onChanged();
       return this;
@@ -3605,7 +3720,7 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
     public Builder setRequireLinearHistory(boolean value) {
 
       requireLinearHistory_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3623,7 +3738,7 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRequireLinearHistory() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       requireLinearHistory_ = false;
       onChanged();
       return this;
@@ -3633,11 +3748,11 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
         requiredStatusChecks_ = java.util.Collections.emptyList();
 
     private void ensureRequiredStatusChecksIsMutable() {
-      if (!((bitField0_ & 0x00004000) != 0)) {
+      if (!((bitField0_ & 0x00008000) != 0)) {
         requiredStatusChecks_ =
             new java.util.ArrayList<com.google.cloud.securesourcemanager.v1.BranchRule.Check>(
                 requiredStatusChecks_);
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
       }
     }
 
@@ -3893,7 +4008,7 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
     public Builder clearRequiredStatusChecks() {
       if (requiredStatusChecksBuilder_ == null) {
         requiredStatusChecks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         onChanged();
       } else {
         requiredStatusChecksBuilder_.clear();
@@ -4044,7 +4159,7 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.securesourcemanager.v1.BranchRule.Check.Builder,
                 com.google.cloud.securesourcemanager.v1.BranchRule.CheckOrBuilder>(
                 requiredStatusChecks_,
-                ((bitField0_ & 0x00004000) != 0),
+                ((bitField0_ & 0x00008000) != 0),
                 getParentForChildren(),
                 isClean());
         requiredStatusChecks_ = null;

@@ -365,6 +365,7 @@ public class GSuiteAddOnsStubSettings extends StubSettings<GSuiteAddOnsStubSetti
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-gsuite-addons")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

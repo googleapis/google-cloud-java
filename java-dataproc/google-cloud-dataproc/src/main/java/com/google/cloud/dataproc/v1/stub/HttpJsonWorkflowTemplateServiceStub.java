@@ -613,6 +613,7 @@ public class HttpJsonWorkflowTemplateServiceStub extends WorkflowTemplateService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetWorkflowTemplateRequest, WorkflowTemplate>
         getWorkflowTemplateTransportSettings =
@@ -625,6 +626,7 @@ public class HttpJsonWorkflowTemplateServiceStub extends WorkflowTemplateService
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<InstantiateWorkflowTemplateRequest, Operation>
         instantiateWorkflowTemplateTransportSettings =
@@ -637,6 +639,7 @@ public class HttpJsonWorkflowTemplateServiceStub extends WorkflowTemplateService
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<InstantiateInlineWorkflowTemplateRequest, Operation>
         instantiateInlineWorkflowTemplateTransportSettings =
@@ -649,6 +652,7 @@ public class HttpJsonWorkflowTemplateServiceStub extends WorkflowTemplateService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateWorkflowTemplateRequest, WorkflowTemplate>
         updateWorkflowTemplateTransportSettings =
@@ -674,6 +678,7 @@ public class HttpJsonWorkflowTemplateServiceStub extends WorkflowTemplateService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteWorkflowTemplateRequest, Empty>
         deleteWorkflowTemplateTransportSettings =
@@ -686,6 +691,7 @@ public class HttpJsonWorkflowTemplateServiceStub extends WorkflowTemplateService
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -697,6 +703,7 @@ public class HttpJsonWorkflowTemplateServiceStub extends WorkflowTemplateService
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -708,6 +715,7 @@ public class HttpJsonWorkflowTemplateServiceStub extends WorkflowTemplateService
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -720,6 +728,7 @@ public class HttpJsonWorkflowTemplateServiceStub extends WorkflowTemplateService
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createWorkflowTemplateCallable =

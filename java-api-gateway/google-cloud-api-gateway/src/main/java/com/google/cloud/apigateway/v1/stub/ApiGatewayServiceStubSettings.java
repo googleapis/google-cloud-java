@@ -635,6 +635,7 @@ public class ApiGatewayServiceStubSettings extends StubSettings<ApiGatewayServic
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-api-gateway")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

@@ -191,7 +191,7 @@ public enum ConnectionType implements com.google.protobuf.ProtocolMessageEnum {
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.redis.cluster.v1.CloudRedisClusterProto.getDescriptor()
         .getEnumTypes()
-        .get(4);
+        .get(5);
   }
 
   private static final ConnectionType[] VALUES = values();

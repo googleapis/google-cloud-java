@@ -1,0 +1,54 @@
+This pull request is generated with proto changes between [googleapis/googleapis@a17d4ca](https://github.com/googleapis/googleapis/commit/a17d4caf184b050d50cacf2b0d579ce72c31ce74) (exclusive) and [googleapis/googleapis@4ce0ff6](https://github.com/googleapis/googleapis/commit/4ce0ff67a3d4509be641cbe47a35844ddc1268fc) (inclusive).
+
+BEGIN_COMMIT_OVERRIDE
+BEGIN_NESTED_COMMIT
+docs: [cloudcontrolspartner] update documentation URL
+
+PiperOrigin-RevId: 612723053
+
+Source Link: [googleapis/googleapis@7659dd2](https://github.com/googleapis/googleapis/commit/7659dd2244563fd902b681bdcadbe5385b8d3462)
+END_NESTED_COMMIT
+BEGIN_NESTED_COMMIT
+feat: [cloudcontrolspartner] added CloudControlsPartner API
+
+PiperOrigin-RevId: 612632640
+
+Source Link: [googleapis/googleapis@05d889e](https://github.com/googleapis/googleapis/commit/05d889e7dfe087fc2ddc9de9579f01d4e1c2f35e)
+END_NESTED_COMMIT
+BEGIN_NESTED_COMMIT
+feat: [alloydb] support for obtaining the public IP address of an Instance
+feat: [alloydb] support for getting PSC DNS name from the GetConnectionInfo API
+feat: [alloydb] add PSC cluster and instance configuration settings to enable/disable PSC and obtain the PSC endpoint name
+feat: [alloydb] add new API to list the databases in a project and location
+docs: [alloydb] clarified read pool config is for read pool type instances
+
+PiperOrigin-RevId: 610475013
+
+Source Link: [googleapis/googleapis@aa16fda](https://github.com/googleapis/googleapis/commit/aa16fdad909bc33e2d4ff04cfde56a46d0e52b13)
+END_NESTED_COMMIT
+BEGIN_NESTED_COMMIT
+feat: [alloydb] support for obtaining the public IP address of an Instance
+feat: [alloydb] support for getting PSC DNS name from the GetConnectionInfo API
+
+PiperOrigin-RevId: 610415824
+
+Source Link: [googleapis/googleapis@0733fdb](https://github.com/googleapis/googleapis/commit/0733fdb5f745192f9f3c95f8d08039286567cbcc)
+END_NESTED_COMMIT
+BEGIN_NESTED_COMMIT
+docs: [cloudcontrolspartner] Updated comment for method `ListCustomers` in service `CloudControlsPartnerCore`
+docs: [cloudcontrolspartner] Updated comment for field `location` in message `.google.cloud.cloudcontrolspartner.v1beta.Workload`
+docs: [cloudcontrolspartner] Updated a comment for field `partner_project_id` in message `.google.cloud.cloudcontrolspartner.v1beta.Partner`
+docs: [cloudcontrolspartner] Updated documentation URL
+
+PiperOrigin-RevId: 609026905
+
+Source Link: [googleapis/googleapis@9e35c62](https://github.com/googleapis/googleapis/commit/9e35c620157d7b11cb5b2e5d0249c5caaee824f3)
+END_NESTED_COMMIT
+BEGIN_NESTED_COMMIT
+feat: [cloudcontrolspartner] added CloudControlsPartner API
+
+PiperOrigin-RevId: 606720708
+
+Source Link: [googleapis/googleapis@36dedd0](https://github.com/googleapis/googleapis/commit/36dedd0d9020c19d1c8259003c2fe9656ada7471)
+END_NESTED_COMMIT
+END_COMMIT_OVERRIDE

@@ -23,6 +23,8 @@ import com.google.common.annotations.VisibleForTesting;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.api.trace.propagation.W3CTraceContextPropagator;
+import io.opentelemetry.context.Context;
 import java.io.IOException;
 
 /**
@@ -39,8 +41,6 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
   public static final AttributeKey<String> HTTP_REQUEST_METHOD =
       AttributeKey.stringKey("http.request.method");
   public static final AttributeKey<String> URL_FULL = AttributeKey.stringKey("url.full");
-  public static final AttributeKey<String> URL_TEMPLATE = AttributeKey.stringKey("url.template");
-  public static final AttributeKey<String> URL_DOMAIN = AttributeKey.stringKey("url.domain");
   public static final AttributeKey<Long> HTTP_RESPONSE_STATUS_CODE =
       AttributeKey.longKey("http.response.status_code");
   public static final AttributeKey<Long> HTTP_REQUEST_RESEND_COUNT =
@@ -51,6 +51,10 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
       AttributeKey.longKey("http.response.body.size");
 
   @VisibleForTesting static final String HTTP_RPC_SYSTEM_NAME = "http";
+
+  private static final java.util.Set<String> REDACTED_QUERY_PARAMETERS =
+      com.google.common.collect.ImmutableSet.of(
+          "AWSAccessKeyId", "Signature", "sig", "X-Goog-Signature", "upload_id");
 
   private final HttpRequestInitializer delegate;
   private final Tracer tracer;
@@ -74,9 +78,11 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
       // No active span to exists, skip instrumentation
       return;
     }
-    String host = request.getUrl().getHost();
-    int port = request.getUrl().getPort();
-    addInitialHttpAttributesToSpan(span, host, port);
+    // propagate the W3C Trace Context (traceID and spanID) from the active span in headers
+    W3CTraceContextPropagator.getInstance()
+        .inject(Context.current(), request.getHeaders(), HttpHeaders::set);
+
+    addInitialHttpAttributesToSpan(span, request);
 
     HttpResponseInterceptor originalInterceptor = request.getResponseInterceptor();
     request.setResponseInterceptor(
@@ -99,14 +105,16 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
   }
 
   /** Add initial HTTP attributes to the existing active span */
-  private void addInitialHttpAttributesToSpan(Span span, String host, Integer port) {
+  private void addInitialHttpAttributesToSpan(Span span, HttpRequest request) {
     BigQueryTelemetryTracer.addCommonAttributeToSpan(span);
     span.setAttribute(BigQueryTelemetryTracer.RPC_SYSTEM_NAME, HTTP_RPC_SYSTEM_NAME);
+    String host = request.getUrl().getHost();
     span.setAttribute(BigQueryTelemetryTracer.SERVER_ADDRESS, host);
-    if (port != null && port > 0) {
-      span.setAttribute(BigQueryTelemetryTracer.SERVER_PORT, port.longValue());
+    int port = request.getUrl().getPort();
+    if (port > 0) {
+      span.setAttribute(BigQueryTelemetryTracer.SERVER_PORT, (long) port);
     }
-    // TODO add full sanitized url, url domain, request method
+    span.setAttribute(URL_FULL, getSanitizedUrl(request));
   }
 
   private static void addCommonResponseAttributesToSpan(
@@ -135,5 +143,21 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
       span.setAttribute(HTTP_RESPONSE_BODY_SIZE, contentLength);
     }
     // TODO handle chunked responses
+  }
+
+  /** Removes credentials from URL. */
+  private static String getSanitizedUrl(HttpRequest request) {
+    GenericUrl clone = request.getUrl().clone();
+    // redact credentials sent as part of the address
+    if (clone.getUserInfo() != null) {
+      clone.setUserInfo("REDACTED:REDACTED");
+    }
+    // redact credentials passed as query params
+    for (String key : clone.keySet()) {
+      if (REDACTED_QUERY_PARAMETERS.contains(key)) {
+        clone.put(key, "REDACTED");
+      }
+    }
+    return clone.build();
   }
 }

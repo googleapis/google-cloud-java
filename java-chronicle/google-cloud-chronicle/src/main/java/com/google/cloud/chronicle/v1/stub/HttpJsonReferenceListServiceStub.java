@@ -272,6 +272,7 @@ public class HttpJsonReferenceListServiceStub extends ReferenceListServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListReferenceListsRequest, ListReferenceListsResponse>
         listReferenceListsTransportSettings =
@@ -284,6 +285,7 @@ public class HttpJsonReferenceListServiceStub extends ReferenceListServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateReferenceListRequest, ReferenceList>
         createReferenceListTransportSettings =
@@ -296,6 +298,7 @@ public class HttpJsonReferenceListServiceStub extends ReferenceListServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateReferenceListRequest, ReferenceList>
         updateReferenceListTransportSettings =

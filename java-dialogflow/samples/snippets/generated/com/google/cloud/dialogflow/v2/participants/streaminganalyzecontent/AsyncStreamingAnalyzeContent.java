@@ -54,6 +54,7 @@ public class AsyncStreamingAnalyzeContent {
               .setCxParameters(Struct.newBuilder().build())
               .setEnableExtendedStreaming(true)
               .setEnablePartialAutomatedAgentReply(true)
+              .setOutputMultipleUtterances(true)
               .setEnableDebuggingInfo(true)
               .build();
       bidiStream.send(request);

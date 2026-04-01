@@ -246,6 +246,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>
         getMonitoredResourceDescriptorTransportSettings =
@@ -258,6 +259,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse>
         listMetricDescriptorsTransportSettings =
@@ -270,6 +272,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetMetricDescriptorRequest, MetricDescriptor>
         getMetricDescriptorTransportSettings =
@@ -281,6 +284,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateMetricDescriptorRequest, MetricDescriptor>
         createMetricDescriptorTransportSettings =
@@ -292,6 +296,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteMetricDescriptorRequest, Empty> deleteMetricDescriptorTransportSettings =
         GrpcCallSettings.<DeleteMetricDescriptorRequest, Empty>newBuilder()
@@ -302,6 +307,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListTimeSeriesRequest, ListTimeSeriesResponse>
         listTimeSeriesTransportSettings =
@@ -313,6 +319,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateTimeSeriesRequest, Empty> createTimeSeriesTransportSettings =
         GrpcCallSettings.<CreateTimeSeriesRequest, Empty>newBuilder()
@@ -323,6 +330,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateTimeSeriesRequest, Empty> createServiceTimeSeriesTransportSettings =
         GrpcCallSettings.<CreateTimeSeriesRequest, Empty>newBuilder()
@@ -333,6 +341,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.listMonitoredResourceDescriptorsCallable =

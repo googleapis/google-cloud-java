@@ -279,6 +279,7 @@ public class HttpJsonPrivateAuctionDealServiceStub extends PrivateAuctionDealSer
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListPrivateAuctionDealsRequest, ListPrivateAuctionDealsResponse>
         listPrivateAuctionDealsTransportSettings =
@@ -292,6 +293,7 @@ public class HttpJsonPrivateAuctionDealServiceStub extends PrivateAuctionDealSer
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreatePrivateAuctionDealRequest, PrivateAuctionDeal>
         createPrivateAuctionDealTransportSettings =
@@ -304,6 +306,7 @@ public class HttpJsonPrivateAuctionDealServiceStub extends PrivateAuctionDealSer
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdatePrivateAuctionDealRequest, PrivateAuctionDeal>
         updatePrivateAuctionDealTransportSettings =

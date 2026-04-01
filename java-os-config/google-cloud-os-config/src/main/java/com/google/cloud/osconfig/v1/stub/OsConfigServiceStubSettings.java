@@ -596,6 +596,7 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-os-config")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

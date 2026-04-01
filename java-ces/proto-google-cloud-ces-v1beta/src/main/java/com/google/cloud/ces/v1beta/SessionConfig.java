@@ -2233,6 +2233,30 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
         : remoteDialogflowQueryParameters_;
   }
 
+  public static final int ENABLE_TEXT_STREAMING_FIELD_NUMBER = 18;
+  private boolean enableTextStreaming_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to enable streaming text outputs from the model.
+   * By default, text outputs from the model are collected before sending to the
+   * client.
+   * NOTE: This is only supported for text (non-voice) sessions via
+   * [StreamRunSession][google.cloud.ces.v1beta.SessionService.StreamRunSession]
+   * or [BidiRunSession][google.cloud.ces.v1beta.SessionService.BidiRunSession].
+   * </pre>
+   *
+   * <code>bool enable_text_streaming = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableTextStreaming.
+   */
+  @java.lang.Override
+  public boolean getEnableTextStreaming() {
+    return enableTextStreaming_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2274,6 +2298,9 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(15, getRemoteDialogflowQueryParameters());
     }
+    if (enableTextStreaming_ != false) {
+      output.writeBool(18, enableTextStreaming_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2313,6 +2340,9 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               15, getRemoteDialogflowQueryParameters());
     }
+    if (enableTextStreaming_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(18, enableTextStreaming_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2349,6 +2379,7 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
       if (!getRemoteDialogflowQueryParameters().equals(other.getRemoteDialogflowQueryParameters()))
         return false;
     }
+    if (getEnableTextStreaming() != other.getEnableTextStreaming()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2386,6 +2417,8 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + REMOTE_DIALOGFLOW_QUERY_PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getRemoteDialogflowQueryParameters().hashCode();
     }
+    hash = (37 * hash) + ENABLE_TEXT_STREAMING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableTextStreaming());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2565,6 +2598,7 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
         remoteDialogflowQueryParametersBuilder_.dispose();
         remoteDialogflowQueryParametersBuilder_ = null;
       }
+      enableTextStreaming_ = false;
       return this;
     }
 
@@ -2649,6 +2683,9 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
                 : remoteDialogflowQueryParametersBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.enableTextStreaming_ = enableTextStreaming_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -2722,6 +2759,9 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasRemoteDialogflowQueryParameters()) {
         mergeRemoteDialogflowQueryParameters(other.getRemoteDialogflowQueryParameters());
+      }
+      if (other.getEnableTextStreaming() != false) {
+        setEnableTextStreaming(other.getEnableTextStreaming());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2814,6 +2854,12 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000100;
                 break;
               } // case 122
+            case 144:
+              {
+                enableTextStreaming_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 144
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4584,6 +4630,77 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
         remoteDialogflowQueryParameters_ = null;
       }
       return remoteDialogflowQueryParametersBuilder_;
+    }
+
+    private boolean enableTextStreaming_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to enable streaming text outputs from the model.
+     * By default, text outputs from the model are collected before sending to the
+     * client.
+     * NOTE: This is only supported for text (non-voice) sessions via
+     * [StreamRunSession][google.cloud.ces.v1beta.SessionService.StreamRunSession]
+     * or [BidiRunSession][google.cloud.ces.v1beta.SessionService.BidiRunSession].
+     * </pre>
+     *
+     * <code>bool enable_text_streaming = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableTextStreaming.
+     */
+    @java.lang.Override
+    public boolean getEnableTextStreaming() {
+      return enableTextStreaming_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to enable streaming text outputs from the model.
+     * By default, text outputs from the model are collected before sending to the
+     * client.
+     * NOTE: This is only supported for text (non-voice) sessions via
+     * [StreamRunSession][google.cloud.ces.v1beta.SessionService.StreamRunSession]
+     * or [BidiRunSession][google.cloud.ces.v1beta.SessionService.BidiRunSession].
+     * </pre>
+     *
+     * <code>bool enable_text_streaming = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The enableTextStreaming to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableTextStreaming(boolean value) {
+
+      enableTextStreaming_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to enable streaming text outputs from the model.
+     * By default, text outputs from the model are collected before sending to the
+     * client.
+     * NOTE: This is only supported for text (non-voice) sessions via
+     * [StreamRunSession][google.cloud.ces.v1beta.SessionService.StreamRunSession]
+     * or [BidiRunSession][google.cloud.ces.v1beta.SessionService.BidiRunSession].
+     * </pre>
+     *
+     * <code>bool enable_text_streaming = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableTextStreaming() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      enableTextStreaming_ = false;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.SessionConfig)
