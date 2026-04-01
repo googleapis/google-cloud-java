@@ -523,11 +523,11 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Advanced voice options.
+   * Optional. Advanced voice options.
    * </pre>
    *
    * <code>
-   * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+   * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the advancedVoiceOptions field is set.
@@ -541,11 +541,11 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Advanced voice options.
+   * Optional. Advanced voice options.
    * </pre>
    *
    * <code>
-   * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+   * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The advancedVoiceOptions.
@@ -561,11 +561,11 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Advanced voice options.
+   * Optional. Advanced voice options.
    * </pre>
    *
    * <code>
-   * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+   * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -1998,11 +1998,11 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Advanced voice options.
+     * Optional. Advanced voice options.
      * </pre>
      *
      * <code>
-     * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+     * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the advancedVoiceOptions field is set.
@@ -2015,11 +2015,11 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Advanced voice options.
+     * Optional. Advanced voice options.
      * </pre>
      *
      * <code>
-     * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+     * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The advancedVoiceOptions.
@@ -2038,11 +2038,11 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Advanced voice options.
+     * Optional. Advanced voice options.
      * </pre>
      *
      * <code>
-     * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+     * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setAdvancedVoiceOptions(
@@ -2064,11 +2064,11 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Advanced voice options.
+     * Optional. Advanced voice options.
      * </pre>
      *
      * <code>
-     * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+     * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setAdvancedVoiceOptions(
@@ -2087,11 +2087,11 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Advanced voice options.
+     * Optional. Advanced voice options.
      * </pre>
      *
      * <code>
-     * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+     * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeAdvancedVoiceOptions(
@@ -2120,11 +2120,11 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Advanced voice options.
+     * Optional. Advanced voice options.
      * </pre>
      *
      * <code>
-     * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+     * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearAdvancedVoiceOptions() {
@@ -2142,11 +2142,11 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Advanced voice options.
+     * Optional. Advanced voice options.
      * </pre>
      *
      * <code>
-     * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+     * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions.Builder
@@ -2160,11 +2160,11 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Advanced voice options.
+     * Optional. Advanced voice options.
      * </pre>
      *
      * <code>
-     * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+     * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptionsOrBuilder
@@ -2182,11 +2182,11 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Advanced voice options.
+     * Optional. Advanced voice options.
      * </pre>
      *
      * <code>
-     * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+     * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<

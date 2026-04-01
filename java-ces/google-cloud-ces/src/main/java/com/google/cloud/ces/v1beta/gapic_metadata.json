@@ -67,6 +67,9 @@
             "ExportApp": {
               "methods": ["exportAppAsync", "exportAppAsync", "exportAppAsync", "exportAppOperationCallable", "exportAppCallable"]
             },
+            "GenerateAppResource": {
+              "methods": ["generateAppResourceAsync", "generateAppResourceAsync", "generateAppResourceAsync", "generateAppResourceOperationCallable", "generateAppResourceCallable"]
+            },
             "GetAgent": {
               "methods": ["getAgent", "getAgent", "getAgent", "getAgentCallable"]
             },

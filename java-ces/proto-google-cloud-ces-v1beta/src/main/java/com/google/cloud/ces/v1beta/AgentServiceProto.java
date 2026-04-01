@@ -285,6 +285,46 @@ public final class AgentServiceProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_ces_v1beta_RestoreAppVersionResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_RefineInstructions_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_RefineInstructions_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_ToolGenerationConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_ToolGenerationConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_ToolGenerationConfig_OpenApiToolsetGenerationConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_ToolGenerationConfig_OpenApiToolsetGenerationConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_ToolGenerationConfig_OpenApiToolsetGenerationConfig_OperationGenerationConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_ToolGenerationConfig_OpenApiToolsetGenerationConfig_OperationGenerationConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_AppGenerationConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_AppGenerationConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_EvaluationGenerationConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_EvaluationGenerationConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_EvaluationPersonasGenerationConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_EvaluationPersonasGenerationConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_QualityReportGenerationConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_QualityReportGenerationConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_HillClimbingFixConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_HillClimbingFixConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_ces_v1beta_GenerateAppResourceResponse_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_ces_v1beta_GenerateAppResourceResponse_fieldAccessorTable;
@@ -316,6 +356,10 @@ public final class AgentServiceProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_ces_v1beta_QualityReport_AgentIssues_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_ces_v1beta_QualityReport_AgentIssues_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_GenerateAppResourceOperationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_GenerateAppResourceOperationMetadata_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_ces_v1beta_ListChangelogsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -355,12 +399,14 @@ public final class AgentServiceProto extends com.google.protobuf.GeneratedFile {
           + "ta/app_version.proto\032\'google/cloud/ces/v"
           + "1beta/changelog.proto\032*google/cloud/ces/v1beta/conversation.proto\032(google/cloud/"
           + "ces/v1beta/deployment.proto\032(google/cloud/ces/v1beta/evaluation.proto\032%google/cl"
-          + "oud/ces/v1beta/example.proto\032\'google/clo"
-          + "ud/ces/v1beta/guardrail.proto\032/google/cl"
-          + "oud/ces/v1beta/security_settings.proto\032\""
-          + "google/cloud/ces/v1beta/tool.proto\032%google/cloud/ces/v1beta/toolset.proto\032#googl"
-          + "e/longrunning/operations.proto\032\033google/protobuf/empty.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\236\001\n"
+          + "oud/ces/v1beta/example.proto\032*google/clo"
+          + "ud/ces/v1beta/file_context.proto\032\'google"
+          + "/cloud/ces/v1beta/guardrail.proto\032/google/cloud/ces/v1beta/security_settings.pro"
+          + "to\032\"google/cloud/ces/v1beta/tool.proto\032%"
+          + "google/cloud/ces/v1beta/toolset.proto\032#g"
+          + "oogle/longrunning/operations.proto\032\033google/protobuf/empty.proto\032"
+          + " google/protobuf"
+          + "/field_mask.proto\032\037google/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\236\001\n"
           + "\017ListAppsRequest\022.\n"
           + "\006parent\030\001 \001("
           + "\tB\036\340A\002\372A\030\022\026ces.googleapis.com/App\022\026\n"
@@ -389,10 +435,9 @@ public final class AgentServiceProto extends com.google.protobuf.GeneratedFile {
           + "\004etag\030\002 \001(\tB\003\340A\001\"\251\002\n"
           + "\020ExportAppRequest\022,\n"
           + "\004name\030\001 \001(\tB\036\340A\002\372A\030\n"
-          + "\026ces.googleapis.com/App\022R\n"
-          + "\r"
-          + "export_format\030\002 \001(\01626.google.cloud.ces."
-          + "v1beta.ExportAppRequest.ExportFormatB\003\340A\002\022\024\n"
+          + "\026ces.googleapis.com/App\022R\n\r"
+          + "export_format\030\002"
+          + " \001(\01626.google.cloud.ces.v1beta.ExportAppRequest.ExportFormatB\003\340A\002\022\024\n"
           + "\007gcs_uri\030\003 \001(\tB\003\340A\001\022:\n"
           + "\013app_version\030\004 \001(\tB%\340A\001\372A\037\n"
           + "\035ces.googleapis.com/AppVersion\"A\n"
@@ -411,16 +456,16 @@ public final class AgentServiceProto extends com.google.protobuf.GeneratedFile {
           + "\tB\036\340A\002\372A\030\022\026ces.googleapis.com/App\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\001\022\023\n"
           + "\006app_id\030\003 \001(\tB\003\340A\001\022T\n"
-          + "\016import_options\030\006 "
-          + "\001(\01327.google.cloud.ces.v1beta.ImportAppRequest.ImportOptionsB\003\340A\001\022\034\n"
+          + "\016import_options\030\006 \001(\01327.googl"
+          + "e.cloud.ces.v1beta.ImportAppRequest.ImportOptionsB\003\340A\001\022\034\n"
           + "\017ignore_app_lock\030\007 \001(\010B\003\340A\001\032\366\001\n\r"
           + "ImportOptions\022}\n"
-          + "\034conflict_resolution_strategy\030\001 \001(\0162R.google"
-          + ".cloud.ces.v1beta.ImportAppRequest.Impor"
-          + "tOptions.ConflictResolutionStrategyB\003\340A\001\"f\n"
+          + "\034conflict_resolution_strategy\030\001 \001(\0162R.google.cloud.ces."
+          + "v1beta.ImportAppRequest.ImportOptions.ConflictResolutionStrategyB\003\340A\001\"f\n"
           + "\032ConflictResolutionStrategy\022,\n"
           + "(CONFLICT_RESOLUTION_STRATEGY_UNSPECIFIED\020\000\022\013\n"
-          + "\007REPLACE\020\001\022\r\n"
+          + "\007REPLACE\020\001\022\r"
+          + "\n"
           + "\tOVERWRITE\020\002B\005\n"
           + "\003app\"P\n"
           + "\021ImportAppResponse\022)\n"
@@ -475,8 +520,8 @@ public final class AgentServiceProto extends com.google.protobuf.GeneratedFile {
           + "\006parent\030\001 \001("
           + "\tB\"\340A\002\372A\034\022\032ces.googleapis.com/Example\022\027\n\n"
           + "example_id\030\002 \001(\tB\003\340A\001\0226\n"
-          + "\007example\030\003 \001(\0132 "
-          + ".google.cloud.ces.v1beta.ExampleB\003\340A\002\"\204\001\n"
+          + "\007example\030\003 \001(\0132"
+          + " .google.cloud.ces.v1beta.ExampleB\003\340A\002\"\204\001\n"
           + "\024UpdateExampleRequest\0226\n"
           + "\007example\030\001 \001(\0132 .google.cloud.ces.v1beta.ExampleB\003\340A\002\0224\n"
           + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"[\n"
@@ -516,18 +561,18 @@ public final class AgentServiceProto extends com.google.protobuf.GeneratedFile {
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022A\n"
-          + "\006source\030\005"
-          + " \001(\0162,.google.cloud.ces.v1beta.Conversation.SourceB\003\340A\001\022B\n"
-          + "\007sources\030\006 \003(\016"
-          + "2,.google.cloud.ces.v1beta.Conversation.SourceB\003\340A\001\"r\n"
+          + "\006source\030\005 \001("
+          + "\0162,.google.cloud.ces.v1beta.Conversation.SourceB\003\340A\001\022B\n"
+          + "\007sources\030\006 \003(\0162,.google.c"
+          + "loud.ces.v1beta.Conversation.SourceB\003\340A\001\"r\n"
           + "\031ListConversationsResponse\022<\n\r"
           + "conversations\030\001 \003(\0132%.google.cloud.ces.v1beta.Conversation\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"\224\001\n"
           + "\026GetConversationRequest\0225\n"
           + "\004name\030\001 \001(\tB\'\340A\002\372A!\n"
           + "\037ces.googleapis.com/Conversation\022C\n"
-          + "\006source\030\002 \001(\0162,.google.cloud"
-          + ".ces.v1beta.Conversation.SourceB\005\030\001\340A\001\"\227\001\n"
+          + "\006source\030\002"
+          + " \001(\0162,.google.cloud.ces.v1beta.Conversation.SourceB\005\030\001\340A\001\"\227\001\n"
           + "\031DeleteConversationRequest\0225\n"
           + "\004name\030\001 \001(\tB\'\340A\002\372A!\n"
           + "\037ces.googleapis.com/Conversation\022C\n"
@@ -559,8 +604,8 @@ public final class AgentServiceProto extends com.google.protobuf.GeneratedFile {
           + "\006parent\030\001 \001("
           + "\tB$\340A\002\372A\036\022\034ces.googleapis.com/Guardrail\022\031\n"
           + "\014guardrail_id\030\002 \001(\tB\003\340A\001\022:\n"
-          + "\tguardrail\030\003 \001(\0132\"."
-          + "google.cloud.ces.v1beta.GuardrailB\003\340A\002\"\212\001\n"
+          + "\tguardrail\030\003"
+          + " \001(\0132\".google.cloud.ces.v1beta.GuardrailB\003\340A\002\"\212\001\n"
           + "\026UpdateGuardrailRequest\022:\n"
           + "\tguardrail\030\001"
           + " \001(\0132\".google.cloud.ces.v1beta.GuardrailB\003\340A\002\0224\n"
@@ -586,8 +631,8 @@ public final class AgentServiceProto extends com.google.protobuf.GeneratedFile {
           + "\006parent\030\001 \001("
           + "\tB%\340A\002\372A\037\022\035ces.googleapis.com/Deployment\022\032\n\r"
           + "deployment_id\030\003 \001(\tB\003\340A\001\022<\n\n"
-          + "deployment\030\002"
-          + " \001(\0132#.google.cloud.ces.v1beta.DeploymentB\003\340A\002\"\215\001\n"
+          + "deployment\030\002 \001(\0132#."
+          + "google.cloud.ces.v1beta.DeploymentB\003\340A\002\"\215\001\n"
           + "\027UpdateDeploymentRequest\022<\n\n"
           + "deployment\030\001 \001(\0132#.google.cloud.ces.v1beta.DeploymentB\003\340A\002\0224\n"
           + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"a\n"
@@ -648,21 +693,84 @@ public final class AgentServiceProto extends com.google.protobuf.GeneratedFile {
           + "\030RestoreAppVersionRequest\0223\n"
           + "\004name\030\001 \001(\tB%\340A\002\372A\037\n"
           + "\035ces.googleapis.com/AppVersion\"\033\n"
-          + "\031RestoreAppVersionResponse\"\264\007\n"
+          + "\031RestoreAppVersionResponse\"\375\022\n"
+          + "\032GenerateAppResourceRequest\022/\n"
+          + "\005agent\030\002 \001(\0132\036.google.cloud.ces.v1beta.AgentH\000\022-\n"
+          + "\004tool\030\004 \001(\0132\035.google.cloud.ces.v1beta.ToolH\000\0223\n"
+          + "\007toolset\030\006 \001(\0132 .google.cloud.ces.v1beta.ToolsetH\000\022.\n"
+          + "\006parent\030\001 \001(\tB\036\340A\002\372A\030\n"
+          + "\026ces.googleapis.com/App\022h\n"
+          + "\023refine_instructions\030\003 \003(\0132F.goog"
+          + "le.cloud.ces.v1beta.GenerateAppResourceRequest.RefineInstructionsB\003\340A\001\022m\n"
+          + "\026tool_generation_config\030\005 \001(\0132H.google.cloud.ce"
+          + "s.v1beta.GenerateAppResourceRequest.ToolGenerationConfigB\003\340A\001\022k\n"
+          + "\025app_generation_config\030\007 \001(\0132G.google.cloud.ces.v1beta.G"
+          + "enerateAppResourceRequest.AppGenerationConfigB\003\340A\001\022y\n"
+          + "\034evaluation_generation_config\030\010 \001(\0132N.google.cloud.ces.v1beta.Gener"
+          + "ateAppResourceRequest.EvaluationGenerationConfigB\003\340A\001\022\212\001\n"
+          + "%evaluation_personas_generation_config\030\t \001(\0132V.google.cloud.ces"
+          + ".v1beta.GenerateAppResourceRequest.EvaluationPersonasGenerationConfigB\003\340A\001\022\200\001\n"
+          + " quality_report_generation_config\030\n"
+          + " \001(\0132Q.google.cloud.ces.v1beta.GenerateAppResou"
+          + "rceRequest.QualityReportGenerationConfigB\003\340A\001\022p\n"
+          + "\030hill_climbing_fix_config\030\013 \001(\0132"
+          + "I.google.cloud.ces.v1beta.GenerateAppRes"
+          + "ourceRequest.HillClimbingFixConfigB\003\340A\001\032\226\001\n"
+          + "\022RefineInstructions\022\030\n"
+          + "\013start_index\030\001 \001(\003B\003\340A\002\022\026\n"
+          + "\tend_index\030\002 \001(\003B\003\340A\002\0223\n\n"
+          + "field_mask\030\003 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022\031\n"
+          + "\014instructions\030\004 \001(\tB\003\340A\002\032\352\004\n"
+          + "\024ToolGenerationConfig\022\024\n"
+          + "\007context\030\001 \001(\tB\003\340A\001\022@\n\r"
+          + "file_contexts\030\003"
+          + " \003(\0132$.google.cloud.ces.v1beta.FileContextB\003\340A\001\022\230\001\n"
+          + "\"open_api_toolset_generation_config\030\002 \001(\0132g.google."
+          + "cloud.ces.v1beta.GenerateAppResourceRequ"
+          + "est.ToolGenerationConfig.OpenApiToolsetGenerationConfigB\003\340A\001\032\336\002\n"
+          + "\036OpenApiToolsetGenerationConfig\022\020\n"
+          + "\003uri\030\001 \001(\tB\003\340A\002\022\255\001\n"
+          + "\034operation_generation_configs\030\002 \003(\0132\201\001.goog"
+          + "le.cloud.ces.v1beta.GenerateAppResourceRequest.ToolGenerationConfig.OpenApiTools"
+          + "etGenerationConfig.OperationGenerationConfigB\003\340A\002\032z\n"
+          + "\031OperationGenerationConfig\022\023\n"
+          + "\006method\030\001 \001(\tB\003\340A\002\022\021\n"
+          + "\004path\030\002 \001(\tB\003\340A\002\022\031\n"
+          + "\014request_json\030\003 \001(\tB\003\340A\002\022\032\n\r"
+          + "response_json\030\004 \001(\tB\003\340A\002\032\365\001\n"
+          + "\023AppGenerationConfig\022\024\n"
+          + "\007context\030\001 \001(\tB\003\340A\001\022@\n\r"
+          + "file_contexts\030\002 \003"
+          + "(\0132$.google.cloud.ces.v1beta.FileContextB\003\340A\001\022H\n\n"
+          + "dataset_id\030\003 \001(\tB4\340A\001\372A.\n"
+          + ",contactcenterinsights.googleapis.com/Dataset\022!\n"
+          + "\024generate_evaluations\030\004 \001(\010B\003\340A\001\022\031\n"
+          + "\014gcs_location\030\005 \001(\tB\003\340A\001\032f\n"
+          + "\032EvaluationGenerationConfig\022H\n\n"
+          + "dataset_id\030\001 \001(\tB4\340A\001\372A.\n"
+          + ",contactcenterinsights.googleapis.com/Dataset\032$\n"
+          + "\"EvaluationPersonasGenerationConfig\032a\n"
+          + "\035QualityReportGenerationConfig\022@\n"
+          + "\016evaluation_run\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " ces.googleapis.com/EvaluationRun\032\\\n"
+          + "\025HillClimbingFixConfig\022C\n"
+          + "\016quality_report\030\001"
+          + " \001(\0132&.google.cloud.ces.v1beta.QualityReportB\003\340A\002B\n\n"
+          + "\010resource\"\264\007\n"
           + "\033GenerateAppResourceResponse\022/\n"
           + "\005agent\030\001 \001(\0132\036.google.cloud.ces.v1beta.AgentH\000\0223\n"
           + "\007toolset\030\003 \001(\0132 .google.cloud.ces.v1beta.ToolsetH\000\022<\n"
           + "\014app_snapshot\030\004 \001(\0132$.google.cloud.ces.v1beta.AppSnapshotH\000\022K\n"
-          + "\005tools\030\005 \001(\0132:"
-          + ".google.cloud.ces.v1beta.GenerateAppResourceResponse.ToolsH\000\022W\n"
-          + "\013evaluations\030\006 \001("
-          + "\0132@.google.cloud.ces.v1beta.GenerateAppResourceResponse.EvaluationsH\000\022Z\n\r"
-          + "app_resources\030\007 \001(\0132A.google.cloud.ces.v1beta.G"
-          + "enerateAppResourceResponse.AppResourcesH\000\022@\n"
+          + "\005tools\030\005 \001(\0132:.google.cloud.ces.v"
+          + "1beta.GenerateAppResourceResponse.ToolsH\000\022W\n"
+          + "\013evaluations\030\006 \001(\0132@.google.cloud.ce"
+          + "s.v1beta.GenerateAppResourceResponse.EvaluationsH\000\022Z\n\r"
+          + "app_resources\030\007 \001(\0132A.goog"
+          + "le.cloud.ces.v1beta.GenerateAppResourceResponse.AppResourcesH\000\022@\n"
           + "\016quality_report\030\010"
           + " \001(\0132&.google.cloud.ces.v1beta.QualityReportH\000\022e\n"
-          + "\024generate_result_info\030\002 \001(\0132G.google.cloud.ces.v1b"
-          + "eta.GenerateAppResourceResponse.GenerateResultInfo\032G\n"
+          + "\024generate_result_info\030\002 \001(\0132G"
+          + ".google.cloud.ces.v1beta.GenerateAppResourceResponse.GenerateResultInfo\032G\n"
           + "\013Evaluations\0228\n"
           + "\013evaluations\030\001 \003(\0132#.google.cloud.ces.v1beta.Evaluation\0325\n"
           + "\005Tools\022,\n"
@@ -674,19 +782,38 @@ public final class AgentServiceProto extends com.google.protobuf.GeneratedFile {
           + "\013explanation\030\001 \001(\tB\024\n"
           + "\022generated_resource\"\211\003\n\r"
           + "QualityReport\022G\n"
-          + "\006issues\030\001"
-          + " \003(\01322.google.cloud.ces.v1beta.QualityReport.AgentIssuesB\003\340A\001\022\034\n"
+          + "\006issues\030\001 \003(\01322.goog"
+          + "le.cloud.ces.v1beta.QualityReport.AgentIssuesB\003\340A\001\022\034\n"
           + "\017evaluation_runs\030\002 \003(\tB\003\340A\001\022I\n"
-          + "\016general_issues\030\003 "
-          + "\003(\0132,.google.cloud.ces.v1beta.QualityReport.IssueB\003\340A\001\032`\n"
+          + "\016general_issues\030\003"
+          + " \003(\0132,.google.cloud.ces.v1beta.QualityReport.IssueB\003\340A\001\032`\n"
           + "\005Issue\022\030\n"
           + "\013description\030\001 \001(\tB\003\340A\001\022\035\n"
           + "\020occurrence_count\030\002 \001(\005B\003\340A\001\022\036\n"
           + "\021proposed_solution\030\003 \001(\tB\003\340A\001\032d\n"
           + "\013AgentIssues\022\022\n"
           + "\005agent\030\001 \001(\tB\003\340A\001\022A\n"
-          + "\006issues\030\002 "
-          + "\003(\0132,.google.cloud.ces.v1beta.QualityReport.IssueB\003\340A\001\"\252\001\n"
+          + "\006issues\030\002"
+          + " \003(\0132,.google.cloud.ces.v1beta.QualityReport.IssueB\003\340A\001\"\353\004\n"
+          + "$GenerateAppResourceOperationMetadata\022j\n"
+          + "\017generation_type\030\001 \001(\0162L.google.cloud.ces"
+          + ".v1beta.GenerateAppResourceOperationMetadata.GenerationTypeB\003\340A\003\022\024\n"
+          + "\007message\030\002 \001(\tB\003\340A\003\0224\n"
+          + "\013create_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
+          + "\010end_time\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\023\n"
+          + "\006target\030\005 \001(\tB\003\340A\003\022/\n"
+          + "\016partial_errors\030\006 \003(\0132\022.google.rpc.StatusB\003\340A\003\"\221\002\n"
+          + "\016GenerationType\022\037\n"
+          + "\033GENERATION_TYPE_UNSPECIFIED\020\000\022\025\n"
+          + "\021AGENT_RESTRUCTURE\020\001\022\020\n"
+          + "\014AGENT_REFINE\020\002\022\020\n"
+          + "\014AGENT_CREATE\020\003\022\017\n"
+          + "\013TOOL_CREATE\020\004\022\023\n"
+          + "\017SCENARIO_CREATE\020\005\022$\n"
+          + " SCENARIO_CREATE_FROM_TRANSCRIPTS\020\007\022\035\n"
+          + "\031EVALUATION_PERSONA_CREATE\020\006\022\031\n"
+          + "\025QUALITY_REPORT_CREATE\020\010\022\035\n"
+          + "\031INSTRUCTION_FOLLOWING_FIX\020\t\"\252\001\n"
           + "\025ListChangelogsRequest\0224\n"
           + "\006parent\030\001 \001("
           + "\tB$\340A\002\372A\036\022\034ces.googleapis.com/Changelog\022\026\n"
@@ -704,231 +831,254 @@ public final class AgentServiceProto extends com.google.protobuf.GeneratedFile {
           + "\004name\030\001 \001(\tB+\340A\002\372A%\n"
           + "#ces.googleapis.com/SecuritySettings\"\240\001\n"
           + "\035UpdateSecuritySettingsRequest\022I\n"
-          + "\021security_settings\030\001 \001(\0132"
-          + ").google.cloud.ces.v1beta.SecuritySettingsB\003\340A\002\0224\n"
-          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\0012\313K\n"
+          + "\021security_settings\030\001 \001"
+          + "(\0132).google.cloud.ces.v1beta.SecuritySettingsB\003\340A\002\0224\n"
+          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\0012\326M\n"
           + "\014AgentService\022\236\001\n"
-          + "\010ListApps\022(.google.cloud.ces.v1beta.Li"
-          + "stAppsRequest\032).google.cloud.ces.v1beta."
-          + "ListAppsResponse\"=\332A\006parent\202\323\344\223\002.\022,/v1be"
-          + "ta/{parent=projects/*/locations/*}/apps\022\213\001\n"
-          + "\006GetApp\022&.google.cloud.ces.v1beta.Get"
-          + "AppRequest\032\034.google.cloud.ces.v1beta.App"
-          + "\";\332A\004name\202\323\344\223\002.\022,/v1beta/{name=projects/*/locations/*/apps/*}\022\314\001\n"
-          + "\tCreateApp\022).go"
-          + "ogle.cloud.ces.v1beta.CreateAppRequest\032\035.google.longrunning.Operation\"u\312A\030\n"
+          + "\010ListApps\022(.google.cloud.ces.v1beta.ListAppsRequest\032).google.cloud.ces.v1be"
+          + "ta.ListAppsResponse\"=\332A\006parent\202\323\344\223\002.\022,/v"
+          + "1beta/{parent=projects/*/locations/*}/apps\022\213\001\n"
+          + "\006GetApp\022&.google.cloud.ces.v1beta.GetAppRequest\032\034.google.cloud.ces.v1beta."
+          + "App\";\332A\004name\202\323\344\223\002.\022,/v1beta/{name=projects/*/locations/*/apps/*}\022\314\001\n"
+          + "\tCreateApp\022)"
+          + ".google.cloud.ces.v1beta.CreateAppRequest\032\035.google.longrunning.Operation\"u\312A\030\n"
           + "\003App\022\021OperationMetadata\332A\021parent,app,app_id\332A\n"
           + "parent,app\202\323\344\223\0023\",/v1beta/{parent=projects/*/locations/*}/apps:\003app\022\245\001\n"
-          + "\tUpdateApp\022).google.cloud.ces.v1beta.UpdateAppRe"
-          + "quest\032\034.google.cloud.ces.v1beta.App\"O\332A\017"
-          + "app,update_mask\202\323\344\223\002720/v1beta/{app.name=projects/*/locations/*/apps/*}:\003app\022\277\001\n"
-          + "\tDeleteApp\022).google.cloud.ces.v1beta.Del"
-          + "eteAppRequest\032\035.google.longrunning.Operation\"h\312A*\n"
-          + "\025google.protobuf.Empty\022\021Operat"
-          + "ionMetadata\332A\004name\202\323\344\223\002.*,/v1beta/{name=projects/*/locations/*/apps/*}\022\310\001\n"
-          + "\tExportApp\022).google.cloud.ces.v1beta.ExportApp"
-          + "Request\032\035.google.longrunning.Operation\"q\312A&\n"
-          + "\021ExportAppResponse\022\021OperationMetadat"
-          + "a\332A\004name\202\323\344\223\002;\"6/v1beta/{name=projects/*/locations/*/apps/*}:exportApp:\001*\022\337\001\n"
-          + "\tImportApp\022).google.cloud.ces.v1beta.Import"
-          + "AppRequest\032\035.google.longrunning.Operation\"\207\001\312A&\n"
-          + "\021ImportAppResponse\022\021OperationMet"
-          + "adata\332A\032parent,display_name,app_id\202\323\344\223\002;"
-          + "\"6/v1beta/{parent=projects/*/locations/*}/apps:importApp:\001*\022\274\001\n"
-          + "\023GetSecuritySettings\0223.google.cloud.ces.v1beta.GetSecurit"
+          + "\tUpdateApp\022).google.cloud.ces.v1beta.UpdateAp"
+          + "pRequest\032\034.google.cloud.ces.v1beta.App\"O"
+          + "\332A\017app,update_mask\202\323\344\223\002720/v1beta/{app.n"
+          + "ame=projects/*/locations/*/apps/*}:\003app\022\277\001\n"
+          + "\tDeleteApp\022).google.cloud.ces.v1beta."
+          + "DeleteAppRequest\032\035.google.longrunning.Operation\"h\312A*\n"
+          + "\025google.protobuf.Empty\022\021Ope"
+          + "rationMetadata\332A\004name\202\323\344\223\002.*,/v1beta/{name=projects/*/locations/*/apps/*}\022\310\001\n"
+          + "\tExportApp\022).google.cloud.ces.v1beta.Export"
+          + "AppRequest\032\035.google.longrunning.Operation\"q\312A&\n"
+          + "\021ExportAppResponse\022\021OperationMeta"
+          + "data\332A\004name\202\323\344\223\002;\"6/v1beta/{name=projects/*/locations/*/apps/*}:exportApp:\001*\022\337\001\n"
+          + "\tImportApp\022).google.cloud.ces.v1beta.Imp"
+          + "ortAppRequest\032\035.google.longrunning.Operation\"\207\001\312A&\n"
+          + "\021ImportAppResponse\022\021Operation"
+          + "Metadata\332A\032parent,display_name,app_id\202\323\344"
+          + "\223\002;\"6/v1beta/{parent=projects/*/locations/*}/apps:importApp:\001*\022\274\001\n"
+          + "\023GetSecuritySettings\0223.google.cloud.ces.v1beta.GetSecu"
+          + "ritySettingsRequest\032).google.cloud.ces.v"
+          + "1beta.SecuritySettings\"E\332A\004name\202\323\344\223\0028\0226/"
+          + "v1beta/{name=projects/*/locations/*/securitySettings}\022\201\002\n"
+          + "\026UpdateSecuritySettings\0226.google.cloud.ces.v1beta.UpdateSecurit"
           + "ySettingsRequest\032).google.cloud.ces.v1be"
-          + "ta.SecuritySettings\"E\332A\004name\202\323\344\223\0028\0226/v1b"
-          + "eta/{name=projects/*/locations/*/securitySettings}\022\201\002\n"
-          + "\026UpdateSecuritySettings\0226.google.cloud.ces.v1beta.UpdateSecuritySe"
-          + "ttingsRequest\032).google.cloud.ces.v1beta."
-          + "SecuritySettings\"\203\001\332A\035security_settings,"
-          + "update_mask\202\323\344\223\002]2H/v1beta/{security_set"
-          + "tings.name=projects/*/locations/*/securitySettings}:\021security_settings\022\255\001\n\n"
-          + "ListAgents\022*.google.cloud.ces.v1beta.ListAgen"
-          + "tsRequest\032+.google.cloud.ces.v1beta.List"
-          + "AgentsResponse\"F\332A\006parent\202\323\344\223\0027\0225/v1beta"
-          + "/{parent=projects/*/locations/*/apps/*}/agents\022\232\001\n"
-          + "\010GetAgent\022(.google.cloud.ces.v1beta.GetAgentRequest\032\036.google.cloud.ces"
-          + ".v1beta.Agent\"D\332A\004name\202\323\344\223\0027\0225/v1beta/{n"
-          + "ame=projects/*/locations/*/apps/*/agents/*}\022\307\001\n"
-          + "\013CreateAgent\022+.google.cloud.ces.v1beta.CreateAgentRequest\032\036.google.cloud."
-          + "ces.v1beta.Agent\"k\332A\025parent,agent,agent_"
-          + "id\332A\014parent,agent\202\323\344\223\002>\"5/v1beta/{parent"
-          + "=projects/*/locations/*/apps/*}/agents:\005agent\022\272\001\n"
-          + "\013UpdateAgent\022+.google.cloud.ces.v1beta.UpdateAgentRequest\032\036.google.clou"
-          + "d.ces.v1beta.Agent\"^\332A\021agent,update_mask"
-          + "\202\323\344\223\002D2;/v1beta/{agent.name=projects/*/locations/*/apps/*/agents/*}:\005agent\022\230\001\n"
-          + "\013DeleteAgent\022+.google.cloud.ces.v1beta.Del"
-          + "eteAgentRequest\032\026.google.protobuf.Empty\""
-          + "D\332A\004name\202\323\344\223\0027*5/v1beta/{name=projects/*/locations/*/apps/*/agents/*}\022\265\001\n"
-          + "\014ListExamples\022,.google.cloud.ces.v1beta.ListExa"
-          + "mplesRequest\032-.google.cloud.ces.v1beta.L"
-          + "istExamplesResponse\"H\332A\006parent\202\323\344\223\0029\0227/v"
-          + "1beta/{parent=projects/*/locations/*/apps/*}/examples\022\242\001\n\n"
-          + "GetExample\022*.google.cloud.ces.v1beta.GetExampleRequest\032 .googl"
-          + "e.cloud.ces.v1beta.Example\"F\332A\004name\202\323\344\223\002"
-          + "9\0227/v1beta/{name=projects/*/locations/*/apps/*/examples/*}\022\327\001\n\r"
-          + "CreateExample\022-.google.cloud.ces.v1beta.CreateExampleRequest\032"
-          + " .google.cloud.ces.v1beta.Example\"u\332"
-          + "A\031parent,example,example_id\332A\016parent,exa"
-          + "mple\202\323\344\223\002B\"7/v1beta/{parent=projects/*/locations/*/apps/*}/examples:\007example\022\310\001\n"
-          + "\r"
-          + "UpdateExample\022-.google.cloud.ces.v1beta.UpdateExampleRequest\032 .google.cloud.ces"
-          + ".v1beta.Example\"f\332A\023example,update_mask\202"
-          + "\323\344\223\002J2?/v1beta/{example.name=projects/*/"
-          + "locations/*/apps/*/examples/*}:\007example\022\236\001\n\r"
-          + "DeleteExample\022-.google.cloud.ces.v1beta.DeleteExampleRequest\032\026.google.protob"
-          + "uf.Empty\"F\332A\004name\202\323\344\223\0029*7/v1beta/{name=p"
-          + "rojects/*/locations/*/apps/*/examples/*}\022\251\001\n"
-          + "\tListTools\022).google.cloud.ces.v1beta.ListToolsRequest\032*.google.cloud.ces.v1b"
-          + "eta.ListToolsResponse\"E\332A\006parent\202\323\344\223\0026\0224"
-          + "/v1beta/{parent=projects/*/locations/*/apps/*}/tools\022\226\001\n"
-          + "\007GetTool\022\'.google.cloud.ces.v1beta.GetToolRequest\032\035.google.cloud"
-          + ".ces.v1beta.Tool\"C\332A\004name\202\323\344\223\0026\0224/v1beta"
-          + "/{name=projects/*/locations/*/apps/*/tools/*}\022\311\001\n"
-          + "\021ListConversations\0221.google.cloud.ces.v1beta.ListConversationsRequest\0322"
-          + ".google.cloud.ces.v1beta.ListConversatio"
-          + "nsResponse\"M\332A\006parent\202\323\344\223\002>\022</v1beta/{pa"
-          + "rent=projects/*/locations/*/apps/*}/conversations\022\266\001\n"
-          + "\017GetConversation\022/.google.cloud.ces.v1beta.GetConversationRequest\032%"
-          + ".google.cloud.ces.v1beta.Conversation\"K\332"
-          + "A\004name\202\323\344\223\002>\022</v1beta/{name=projects/*/locations/*/apps/*/conversations/*}\022\255\001\n"
-          + "\022DeleteConversation\0222.google.cloud.ces.v1b"
-          + "eta.DeleteConversationRequest\032\026.google.p"
-          + "rotobuf.Empty\"K\332A\004name\202\323\344\223\002>*</v1beta/{n"
-          + "ame=projects/*/locations/*/apps/*/conversations/*}\022\212\002\n"
-          + "\030BatchDeleteConversations\0228.google.cloud.ces.v1beta.BatchDeleteCon"
-          + "versationsRequest\032\035.google.longrunning.Operation\"\224\001\312A5\n"
-          + " BatchDeleteConversations"
-          + "Response\022\021OperationMetadata\332A\006parent\202\323\344\223"
-          + "\002M\"H/v1beta/{parent=projects/*/locations"
-          + "/*/apps/*}/conversations:batchDelete:\001*\022\277\001\n\n"
-          + "CreateTool\022*.google.cloud.ces.v1beta.CreateToolRequest\032\035.google.cloud.ces.v1"
-          + "beta.Tool\"f\332A\023parent,tool,tool_id\332A\013pare"
-          + "nt,tool\202\323\344\223\002<\"4/v1beta/{parent=projects/*/locations/*/apps/*}/tools:\004tool\022\263\001\n\n"
-          + "UpdateTool\022*.google.cloud.ces.v1beta.Updat"
-          + "eToolRequest\032\035.google.cloud.ces.v1beta.T"
-          + "ool\"Z\332A\020tool,update_mask\202\323\344\223\002A29/v1beta/"
-          + "{tool.name=projects/*/locations/*/apps/*/tools/*}:\004tool\022\225\001\n\n"
-          + "DeleteTool\022*.google.cloud.ces.v1beta.DeleteToolRequest\032\026.goo"
-          + "gle.protobuf.Empty\"C\332A\004name\202\323\344\223\0026*4/v1be",
-      "ta/{name=projects/*/locations/*/apps/*/t"
-          + "ools/*}\022\275\001\n\016ListGuardrails\022..google.clou"
-          + "d.ces.v1beta.ListGuardrailsRequest\032/.goo"
-          + "gle.cloud.ces.v1beta.ListGuardrailsRespo"
-          + "nse\"J\332A\006parent\202\323\344\223\002;\0229/v1beta/{parent=pr"
-          + "ojects/*/locations/*/apps/*}/guardrails\022"
-          + "\252\001\n\014GetGuardrail\022,.google.cloud.ces.v1be"
-          + "ta.GetGuardrailRequest\032\".google.cloud.ce"
-          + "s.v1beta.Guardrail\"H\332A\004name\202\323\344\223\002;\0229/v1be"
-          + "ta/{name=projects/*/locations/*/apps/*/g"
-          + "uardrails/*}\022\347\001\n\017CreateGuardrail\022/.googl"
-          + "e.cloud.ces.v1beta.CreateGuardrailReques"
-          + "t\032\".google.cloud.ces.v1beta.Guardrail\"\177\332"
-          + "A\035parent,guardrail,guardrail_id\332A\020parent"
-          + ",guardrail\202\323\344\223\002F\"9/v1beta/{parent=projec"
-          + "ts/*/locations/*/apps/*}/guardrails:\tgua"
-          + "rdrail\022\326\001\n\017UpdateGuardrail\022/.google.clou"
-          + "d.ces.v1beta.UpdateGuardrailRequest\032\".go"
-          + "ogle.cloud.ces.v1beta.Guardrail\"n\332A\025guar"
-          + "drail,update_mask\202\323\344\223\002P2C/v1beta/{guardr"
-          + "ail.name=projects/*/locations/*/apps/*/g"
-          + "uardrails/*}:\tguardrail\022\244\001\n\017DeleteGuardr"
-          + "ail\022/.google.cloud.ces.v1beta.DeleteGuar"
-          + "drailRequest\032\026.google.protobuf.Empty\"H\332A"
-          + "\004name\202\323\344\223\002;*9/v1beta/{name=projects/*/lo"
-          + "cations/*/apps/*/guardrails/*}\022\301\001\n\017ListD"
-          + "eployments\022/.google.cloud.ces.v1beta.Lis"
-          + "tDeploymentsRequest\0320.google.cloud.ces.v"
-          + "1beta.ListDeploymentsResponse\"K\332A\006parent"
-          + "\202\323\344\223\002<\022:/v1beta/{parent=projects/*/locat"
-          + "ions/*/apps/*}/deployments\022\256\001\n\rGetDeploy"
-          + "ment\022-.google.cloud.ces.v1beta.GetDeploy"
-          + "mentRequest\032#.google.cloud.ces.v1beta.De"
-          + "ployment\"I\332A\004name\202\323\344\223\002<\022:/v1beta/{name=p"
-          + "rojects/*/locations/*/apps/*/deployments"
-          + "/*}\022\360\001\n\020CreateDeployment\0220.google.cloud."
-          + "ces.v1beta.CreateDeploymentRequest\032#.goo"
-          + "gle.cloud.ces.v1beta.Deployment\"\204\001\332A\037par"
-          + "ent,deployment,deployment_id\332A\021parent,de"
-          + "ployment\202\323\344\223\002H\":/v1beta/{parent=projects"
-          + "/*/locations/*/apps/*}/deployments:\ndepl"
-          + "oyment\022\335\001\n\020UpdateDeployment\0220.google.clo"
-          + "ud.ces.v1beta.UpdateDeploymentRequest\032#."
-          + "google.cloud.ces.v1beta.Deployment\"r\332A\026d"
-          + "eployment,update_mask\202\323\344\223\002S2E/v1beta/{de"
-          + "ployment.name=projects/*/locations/*/app"
-          + "s/*/deployments/*}:\ndeployment\022\247\001\n\020Delet"
-          + "eDeployment\0220.google.cloud.ces.v1beta.De"
-          + "leteDeploymentRequest\032\026.google.protobuf."
-          + "Empty\"I\332A\004name\202\323\344\223\002<*:/v1beta/{name=proj"
-          + "ects/*/locations/*/apps/*/deployments/*}"
-          + "\022\265\001\n\014ListToolsets\022,.google.cloud.ces.v1b"
-          + "eta.ListToolsetsRequest\032-.google.cloud.c"
-          + "es.v1beta.ListToolsetsResponse\"H\332A\006paren"
-          + "t\202\323\344\223\0029\0227/v1beta/{parent=projects/*/loca"
-          + "tions/*/apps/*}/toolsets\022\242\001\n\nGetToolset\022"
-          + "*.google.cloud.ces.v1beta.GetToolsetRequ"
-          + "est\032 .google.cloud.ces.v1beta.Toolset\"F\332"
-          + "A\004name\202\323\344\223\0029\0227/v1beta/{name=projects/*/l"
-          + "ocations/*/apps/*/toolsets/*}\022\327\001\n\rCreate"
-          + "Toolset\022-.google.cloud.ces.v1beta.Create"
-          + "ToolsetRequest\032 .google.cloud.ces.v1beta"
-          + ".Toolset\"u\332A\031parent,toolset,toolset_id\332A"
-          + "\016parent,toolset\202\323\344\223\002B\"7/v1beta/{parent=p"
-          + "rojects/*/locations/*/apps/*}/toolsets:\007"
-          + "toolset\022\310\001\n\rUpdateToolset\022-.google.cloud"
-          + ".ces.v1beta.UpdateToolsetRequest\032 .googl"
-          + "e.cloud.ces.v1beta.Toolset\"f\332A\023toolset,u"
-          + "pdate_mask\202\323\344\223\002J2?/v1beta/{toolset.name="
-          + "projects/*/locations/*/apps/*/toolsets/*"
-          + "}:\007toolset\022\236\001\n\rDeleteToolset\022-.google.cl"
-          + "oud.ces.v1beta.DeleteToolsetRequest\032\026.go"
-          + "ogle.protobuf.Empty\"F\332A\004name\202\323\344\223\0029*7/v1b"
+          + "ta.SecuritySettings\"\203\001\332A\035security_settin"
+          + "gs,update_mask\202\323\344\223\002]2H/v1beta/{security_"
+          + "settings.name=projects/*/locations/*/securitySettings}:\021security_settings\022\255\001\n\n"
+          + "ListAgents\022*.google.cloud.ces.v1beta.ListA"
+          + "gentsRequest\032+.google.cloud.ces.v1beta.L"
+          + "istAgentsResponse\"F\332A\006parent\202\323\344\223\0027\0225/v1b"
+          + "eta/{parent=projects/*/locations/*/apps/*}/agents\022\232\001\n"
+          + "\010GetAgent\022(.google.cloud.ces.v1beta.GetAgentRequest\032\036.google.cloud."
+          + "ces.v1beta.Agent\"D\332A\004name\202\323\344\223\0027\0225/v1beta"
+          + "/{name=projects/*/locations/*/apps/*/age",
+      "nts/*}\022\307\001\n\013CreateAgent\022+.google.cloud.ce"
+          + "s.v1beta.CreateAgentRequest\032\036.google.clo"
+          + "ud.ces.v1beta.Agent\"k\332A\025parent,agent,age"
+          + "nt_id\332A\014parent,agent\202\323\344\223\002>\"5/v1beta/{par"
+          + "ent=projects/*/locations/*/apps/*}/agent"
+          + "s:\005agent\022\272\001\n\013UpdateAgent\022+.google.cloud."
+          + "ces.v1beta.UpdateAgentRequest\032\036.google.c"
+          + "loud.ces.v1beta.Agent\"^\332A\021agent,update_m"
+          + "ask\202\323\344\223\002D2;/v1beta/{agent.name=projects/"
+          + "*/locations/*/apps/*/agents/*}:\005agent\022\230\001"
+          + "\n\013DeleteAgent\022+.google.cloud.ces.v1beta."
+          + "DeleteAgentRequest\032\026.google.protobuf.Emp"
+          + "ty\"D\332A\004name\202\323\344\223\0027*5/v1beta/{name=project"
+          + "s/*/locations/*/apps/*/agents/*}\022\265\001\n\014Lis"
+          + "tExamples\022,.google.cloud.ces.v1beta.List"
+          + "ExamplesRequest\032-.google.cloud.ces.v1bet"
+          + "a.ListExamplesResponse\"H\332A\006parent\202\323\344\223\0029\022"
+          + "7/v1beta/{parent=projects/*/locations/*/"
+          + "apps/*}/examples\022\242\001\n\nGetExample\022*.google"
+          + ".cloud.ces.v1beta.GetExampleRequest\032 .go"
+          + "ogle.cloud.ces.v1beta.Example\"F\332A\004name\202\323"
+          + "\344\223\0029\0227/v1beta/{name=projects/*/locations"
+          + "/*/apps/*/examples/*}\022\327\001\n\rCreateExample\022"
+          + "-.google.cloud.ces.v1beta.CreateExampleR"
+          + "equest\032 .google.cloud.ces.v1beta.Example"
+          + "\"u\332A\031parent,example,example_id\332A\016parent,"
+          + "example\202\323\344\223\002B\"7/v1beta/{parent=projects/"
+          + "*/locations/*/apps/*}/examples:\007example\022"
+          + "\310\001\n\rUpdateExample\022-.google.cloud.ces.v1b"
+          + "eta.UpdateExampleRequest\032 .google.cloud."
+          + "ces.v1beta.Example\"f\332A\023example,update_ma"
+          + "sk\202\323\344\223\002J2?/v1beta/{example.name=projects"
+          + "/*/locations/*/apps/*/examples/*}:\007examp"
+          + "le\022\236\001\n\rDeleteExample\022-.google.cloud.ces."
+          + "v1beta.DeleteExampleRequest\032\026.google.pro"
+          + "tobuf.Empty\"F\332A\004name\202\323\344\223\0029*7/v1beta/{nam"
+          + "e=projects/*/locations/*/apps/*/examples"
+          + "/*}\022\251\001\n\tListTools\022).google.cloud.ces.v1b"
+          + "eta.ListToolsRequest\032*.google.cloud.ces."
+          + "v1beta.ListToolsResponse\"E\332A\006parent\202\323\344\223\002"
+          + "6\0224/v1beta/{parent=projects/*/locations/"
+          + "*/apps/*}/tools\022\226\001\n\007GetTool\022\'.google.clo"
+          + "ud.ces.v1beta.GetToolRequest\032\035.google.cl"
+          + "oud.ces.v1beta.Tool\"C\332A\004name\202\323\344\223\0026\0224/v1b"
           + "eta/{name=projects/*/locations/*/apps/*/"
-          + "toolsets/*}\022\276\001\n\017ListAppVersions\022/.google"
-          + ".cloud.ces.v1beta.ListAppVersionsRequest"
-          + "\0320.google.cloud.ces.v1beta.ListAppVersio"
-          + "nsResponse\"H\332A\006parent\202\323\344\223\0029\0227/v1beta/{pa"
-          + "rent=projects/*/locations/*/apps/*}/vers"
-          + "ions\022\253\001\n\rGetAppVersion\022-.google.cloud.ce"
-          + "s.v1beta.GetAppVersionRequest\032#.google.c"
-          + "loud.ces.v1beta.AppVersion\"F\332A\004name\202\323\344\223\002"
-          + "9\0227/v1beta/{name=projects/*/locations/*/"
-          + "apps/*/versions/*}\022\361\001\n\020CreateAppVersion\022"
-          + "0.google.cloud.ces.v1beta.CreateAppVersi"
-          + "onRequest\032#.google.cloud.ces.v1beta.AppV"
-          + "ersion\"\205\001\332A!parent,app_version,app_versi"
-          + "on_id\332A\022parent,app_version\202\323\344\223\002F\"7/v1bet"
-          + "a/{parent=projects/*/locations/*/apps/*}"
-          + "/versions:\013app_version\022\244\001\n\020DeleteAppVers"
-          + "ion\0220.google.cloud.ces.v1beta.DeleteAppV"
-          + "ersionRequest\032\026.google.protobuf.Empty\"F\332"
-          + "A\004name\202\323\344\223\0029*7/v1beta/{name=projects/*/l"
-          + "ocations/*/apps/*/versions/*}\022\352\001\n\021Restor"
-          + "eAppVersion\0221.google.cloud.ces.v1beta.Re"
-          + "storeAppVersionRequest\032\035.google.longrunn"
-          + "ing.Operation\"\202\001\312A.\n\031RestoreAppVersionRe"
-          + "sponse\022\021OperationMetadata\332A\004name\202\323\344\223\002D\"?"
-          + "/v1beta/{name=projects/*/locations/*/app"
-          + "s/*/versions/*}:restore:\001*\022\275\001\n\016ListChang"
-          + "elogs\022..google.cloud.ces.v1beta.ListChan"
-          + "gelogsRequest\032/.google.cloud.ces.v1beta."
-          + "ListChangelogsResponse\"J\332A\006parent\202\323\344\223\002;\022"
-          + "9/v1beta/{parent=projects/*/locations/*/"
-          + "apps/*}/changelogs\022\252\001\n\014GetChangelog\022,.go"
-          + "ogle.cloud.ces.v1beta.GetChangelogReques"
-          + "t\032\".google.cloud.ces.v1beta.Changelog\"H\332"
-          + "A\004name\202\323\344\223\002;\0229/v1beta/{name=projects/*/l"
-          + "ocations/*/apps/*/changelogs/*}\032j\312A\022ces."
-          + "googleapis.com\322ARhttps://www.googleapis."
-          + "com/auth/ces,https://www.googleapis.com/"
-          + "auth/cloud-platformB\316\001\n\033com.google.cloud"
-          + ".ces.v1betaB\021AgentServiceProtoP\001Z-cloud."
-          + "google.com/go/ces/apiv1beta/cespb;cespb\352"
-          + "Aj\n,contactcenterinsights.googleapis.com"
-          + "/Dataset\022:projects/{project}/locations/{"
-          + "location}/datasets/{dataset}b\006proto3"
+          + "tools/*}\022\311\001\n\021ListConversations\0221.google."
+          + "cloud.ces.v1beta.ListConversationsReques"
+          + "t\0322.google.cloud.ces.v1beta.ListConversa"
+          + "tionsResponse\"M\332A\006parent\202\323\344\223\002>\022</v1beta/"
+          + "{parent=projects/*/locations/*/apps/*}/c"
+          + "onversations\022\266\001\n\017GetConversation\022/.googl"
+          + "e.cloud.ces.v1beta.GetConversationReques"
+          + "t\032%.google.cloud.ces.v1beta.Conversation"
+          + "\"K\332A\004name\202\323\344\223\002>\022</v1beta/{name=projects/"
+          + "*/locations/*/apps/*/conversations/*}\022\255\001"
+          + "\n\022DeleteConversation\0222.google.cloud.ces."
+          + "v1beta.DeleteConversationRequest\032\026.googl"
+          + "e.protobuf.Empty\"K\332A\004name\202\323\344\223\002>*</v1beta"
+          + "/{name=projects/*/locations/*/apps/*/con"
+          + "versations/*}\022\212\002\n\030BatchDeleteConversatio"
+          + "ns\0228.google.cloud.ces.v1beta.BatchDelete"
+          + "ConversationsRequest\032\035.google.longrunnin"
+          + "g.Operation\"\224\001\312A5\n BatchDeleteConversati"
+          + "onsResponse\022\021OperationMetadata\332A\006parent\202"
+          + "\323\344\223\002M\"H/v1beta/{parent=projects/*/locati"
+          + "ons/*/apps/*}/conversations:batchDelete:"
+          + "\001*\022\277\001\n\nCreateTool\022*.google.cloud.ces.v1b"
+          + "eta.CreateToolRequest\032\035.google.cloud.ces"
+          + ".v1beta.Tool\"f\332A\023parent,tool,tool_id\332A\013p"
+          + "arent,tool\202\323\344\223\002<\"4/v1beta/{parent=projec"
+          + "ts/*/locations/*/apps/*}/tools:\004tool\022\263\001\n"
+          + "\nUpdateTool\022*.google.cloud.ces.v1beta.Up"
+          + "dateToolRequest\032\035.google.cloud.ces.v1bet"
+          + "a.Tool\"Z\332A\020tool,update_mask\202\323\344\223\002A29/v1be"
+          + "ta/{tool.name=projects/*/locations/*/app"
+          + "s/*/tools/*}:\004tool\022\225\001\n\nDeleteTool\022*.goog"
+          + "le.cloud.ces.v1beta.DeleteToolRequest\032\026."
+          + "google.protobuf.Empty\"C\332A\004name\202\323\344\223\0026*4/v"
+          + "1beta/{name=projects/*/locations/*/apps/"
+          + "*/tools/*}\022\275\001\n\016ListGuardrails\022..google.c"
+          + "loud.ces.v1beta.ListGuardrailsRequest\032/."
+          + "google.cloud.ces.v1beta.ListGuardrailsRe"
+          + "sponse\"J\332A\006parent\202\323\344\223\002;\0229/v1beta/{parent"
+          + "=projects/*/locations/*/apps/*}/guardrai"
+          + "ls\022\252\001\n\014GetGuardrail\022,.google.cloud.ces.v"
+          + "1beta.GetGuardrailRequest\032\".google.cloud"
+          + ".ces.v1beta.Guardrail\"H\332A\004name\202\323\344\223\002;\0229/v"
+          + "1beta/{name=projects/*/locations/*/apps/"
+          + "*/guardrails/*}\022\347\001\n\017CreateGuardrail\022/.go"
+          + "ogle.cloud.ces.v1beta.CreateGuardrailReq"
+          + "uest\032\".google.cloud.ces.v1beta.Guardrail"
+          + "\"\177\332A\035parent,guardrail,guardrail_id\332A\020par"
+          + "ent,guardrail\202\323\344\223\002F\"9/v1beta/{parent=pro"
+          + "jects/*/locations/*/apps/*}/guardrails:\t"
+          + "guardrail\022\326\001\n\017UpdateGuardrail\022/.google.c"
+          + "loud.ces.v1beta.UpdateGuardrailRequest\032\""
+          + ".google.cloud.ces.v1beta.Guardrail\"n\332A\025g"
+          + "uardrail,update_mask\202\323\344\223\002P2C/v1beta/{gua"
+          + "rdrail.name=projects/*/locations/*/apps/"
+          + "*/guardrails/*}:\tguardrail\022\244\001\n\017DeleteGua"
+          + "rdrail\022/.google.cloud.ces.v1beta.DeleteG"
+          + "uardrailRequest\032\026.google.protobuf.Empty\""
+          + "H\332A\004name\202\323\344\223\002;*9/v1beta/{name=projects/*"
+          + "/locations/*/apps/*/guardrails/*}\022\301\001\n\017Li"
+          + "stDeployments\022/.google.cloud.ces.v1beta."
+          + "ListDeploymentsRequest\0320.google.cloud.ce"
+          + "s.v1beta.ListDeploymentsResponse\"K\332A\006par"
+          + "ent\202\323\344\223\002<\022:/v1beta/{parent=projects/*/lo"
+          + "cations/*/apps/*}/deployments\022\256\001\n\rGetDep"
+          + "loyment\022-.google.cloud.ces.v1beta.GetDep"
+          + "loymentRequest\032#.google.cloud.ces.v1beta"
+          + ".Deployment\"I\332A\004name\202\323\344\223\002<\022:/v1beta/{nam"
+          + "e=projects/*/locations/*/apps/*/deployme"
+          + "nts/*}\022\360\001\n\020CreateDeployment\0220.google.clo"
+          + "ud.ces.v1beta.CreateDeploymentRequest\032#."
+          + "google.cloud.ces.v1beta.Deployment\"\204\001\332A\037"
+          + "parent,deployment,deployment_id\332A\021parent"
+          + ",deployment\202\323\344\223\002H\":/v1beta/{parent=proje"
+          + "cts/*/locations/*/apps/*}/deployments:\nd"
+          + "eployment\022\335\001\n\020UpdateDeployment\0220.google."
+          + "cloud.ces.v1beta.UpdateDeploymentRequest"
+          + "\032#.google.cloud.ces.v1beta.Deployment\"r\332"
+          + "A\026deployment,update_mask\202\323\344\223\002S2E/v1beta/"
+          + "{deployment.name=projects/*/locations/*/"
+          + "apps/*/deployments/*}:\ndeployment\022\247\001\n\020De"
+          + "leteDeployment\0220.google.cloud.ces.v1beta"
+          + ".DeleteDeploymentRequest\032\026.google.protob"
+          + "uf.Empty\"I\332A\004name\202\323\344\223\002<*:/v1beta/{name=p"
+          + "rojects/*/locations/*/apps/*/deployments"
+          + "/*}\022\265\001\n\014ListToolsets\022,.google.cloud.ces."
+          + "v1beta.ListToolsetsRequest\032-.google.clou"
+          + "d.ces.v1beta.ListToolsetsResponse\"H\332A\006pa"
+          + "rent\202\323\344\223\0029\0227/v1beta/{parent=projects/*/l"
+          + "ocations/*/apps/*}/toolsets\022\242\001\n\nGetTools"
+          + "et\022*.google.cloud.ces.v1beta.GetToolsetR"
+          + "equest\032 .google.cloud.ces.v1beta.Toolset"
+          + "\"F\332A\004name\202\323\344\223\0029\0227/v1beta/{name=projects/"
+          + "*/locations/*/apps/*/toolsets/*}\022\327\001\n\rCre"
+          + "ateToolset\022-.google.cloud.ces.v1beta.Cre"
+          + "ateToolsetRequest\032 .google.cloud.ces.v1b"
+          + "eta.Toolset\"u\332A\031parent,toolset,toolset_i"
+          + "d\332A\016parent,toolset\202\323\344\223\002B\"7/v1beta/{paren"
+          + "t=projects/*/locations/*/apps/*}/toolset"
+          + "s:\007toolset\022\310\001\n\rUpdateToolset\022-.google.cl"
+          + "oud.ces.v1beta.UpdateToolsetRequest\032 .go"
+          + "ogle.cloud.ces.v1beta.Toolset\"f\332A\023toolse"
+          + "t,update_mask\202\323\344\223\002J2?/v1beta/{toolset.na"
+          + "me=projects/*/locations/*/apps/*/toolset"
+          + "s/*}:\007toolset\022\236\001\n\rDeleteToolset\022-.google"
+          + ".cloud.ces.v1beta.DeleteToolsetRequest\032\026"
+          + ".google.protobuf.Empty\"F\332A\004name\202\323\344\223\0029*7/"
+          + "v1beta/{name=projects/*/locations/*/apps"
+          + "/*/toolsets/*}\022\276\001\n\017ListAppVersions\022/.goo"
+          + "gle.cloud.ces.v1beta.ListAppVersionsRequ"
+          + "est\0320.google.cloud.ces.v1beta.ListAppVer"
+          + "sionsResponse\"H\332A\006parent\202\323\344\223\0029\0227/v1beta/"
+          + "{parent=projects/*/locations/*/apps/*}/v"
+          + "ersions\022\253\001\n\rGetAppVersion\022-.google.cloud"
+          + ".ces.v1beta.GetAppVersionRequest\032#.googl"
+          + "e.cloud.ces.v1beta.AppVersion\"F\332A\004name\202\323"
+          + "\344\223\0029\0227/v1beta/{name=projects/*/locations"
+          + "/*/apps/*/versions/*}\022\361\001\n\020CreateAppVersi"
+          + "on\0220.google.cloud.ces.v1beta.CreateAppVe"
+          + "rsionRequest\032#.google.cloud.ces.v1beta.A"
+          + "ppVersion\"\205\001\332A!parent,app_version,app_ve"
+          + "rsion_id\332A\022parent,app_version\202\323\344\223\002F\"7/v1"
+          + "beta/{parent=projects/*/locations/*/apps"
+          + "/*}/versions:\013app_version\022\244\001\n\020DeleteAppV"
+          + "ersion\0220.google.cloud.ces.v1beta.DeleteA"
+          + "ppVersionRequest\032\026.google.protobuf.Empty"
+          + "\"F\332A\004name\202\323\344\223\0029*7/v1beta/{name=projects/"
+          + "*/locations/*/apps/*/versions/*}\022\352\001\n\021Res"
+          + "toreAppVersion\0221.google.cloud.ces.v1beta"
+          + ".RestoreAppVersionRequest\032\035.google.longr"
+          + "unning.Operation\"\202\001\312A.\n\031RestoreAppVersio"
+          + "nResponse\022\021OperationMetadata\332A\004name\202\323\344\223\002"
+          + "D\"?/v1beta/{name=projects/*/locations/*/"
+          + "apps/*/versions/*}:restore:\001*\022\210\002\n\023Genera"
+          + "teAppResource\0223.google.cloud.ces.v1beta."
+          + "GenerateAppResourceRequest\032\035.google.long"
+          + "running.Operation\"\234\001\312AC\n\033GenerateAppReso"
+          + "urceResponse\022$GenerateAppResourceOperati"
+          + "onMetadata\332A\006parent\202\323\344\223\002G\"B/v1beta/{pare"
+          + "nt=projects/*/locations/*/apps/*}:genera"
+          + "teAppResource:\001*\022\275\001\n\016ListChangelogs\022..go"
+          + "ogle.cloud.ces.v1beta.ListChangelogsRequ"
+          + "est\032/.google.cloud.ces.v1beta.ListChange"
+          + "logsResponse\"J\332A\006parent\202\323\344\223\002;\0229/v1beta/{"
+          + "parent=projects/*/locations/*/apps/*}/ch"
+          + "angelogs\022\252\001\n\014GetChangelog\022,.google.cloud"
+          + ".ces.v1beta.GetChangelogRequest\032\".google"
+          + ".cloud.ces.v1beta.Changelog\"H\332A\004name\202\323\344\223"
+          + "\002;\0229/v1beta/{name=projects/*/locations/*"
+          + "/apps/*/changelogs/*}\032j\312A\022ces.googleapis"
+          + ".com\322ARhttps://www.googleapis.com/auth/c"
+          + "es,https://www.googleapis.com/auth/cloud"
+          + "-platformB\316\001\n\033com.google.cloud.ces.v1bet"
+          + "aB\021AgentServiceProtoP\001Z-cloud.google.com"
+          + "/go/ces/apiv1beta/cespb;cespb\352Aj\n,contac"
+          + "tcenterinsights.googleapis.com/Dataset\022:"
+          + "projects/{project}/locations/{location}/"
+          + "datasets/{dataset}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -946,6 +1096,7 @@ public final class AgentServiceProto extends com.google.protobuf.GeneratedFile {
               com.google.cloud.ces.v1beta.ChannelProfileProto.getDescriptor(),
               com.google.cloud.ces.v1beta.EvaluationProto.getDescriptor(),
               com.google.cloud.ces.v1beta.ExampleProto.getDescriptor(),
+              com.google.cloud.ces.v1beta.FileContextProto.getDescriptor(),
               com.google.cloud.ces.v1beta.GuardrailProto.getDescriptor(),
               com.google.cloud.ces.v1beta.SecuritySettingsProto.getDescriptor(),
               com.google.cloud.ces.v1beta.ToolProto.getDescriptor(),
@@ -954,6 +1105,7 @@ public final class AgentServiceProto extends com.google.protobuf.GeneratedFile {
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.rpc.StatusProto.getDescriptor(),
             });
     internal_static_google_cloud_ces_v1beta_ListAppsRequest_descriptor =
         getDescriptor().getMessageType(0);
@@ -1448,8 +1600,106 @@ public final class AgentServiceProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_RestoreAppVersionResponse_descriptor,
             new java.lang.String[] {});
-    internal_static_google_cloud_ces_v1beta_GenerateAppResourceResponse_descriptor =
+    internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_descriptor =
         getDescriptor().getMessageType(60);
+    internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_descriptor,
+            new java.lang.String[] {
+              "Agent",
+              "Tool",
+              "Toolset",
+              "Parent",
+              "RefineInstructions",
+              "ToolGenerationConfig",
+              "AppGenerationConfig",
+              "EvaluationGenerationConfig",
+              "EvaluationPersonasGenerationConfig",
+              "QualityReportGenerationConfig",
+              "HillClimbingFixConfig",
+              "Resource",
+            });
+    internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_RefineInstructions_descriptor =
+        internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_descriptor.getNestedType(
+            0);
+    internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_RefineInstructions_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_RefineInstructions_descriptor,
+            new java.lang.String[] {
+              "StartIndex", "EndIndex", "FieldMask", "Instructions",
+            });
+    internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_ToolGenerationConfig_descriptor =
+        internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_descriptor.getNestedType(
+            1);
+    internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_ToolGenerationConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_ToolGenerationConfig_descriptor,
+            new java.lang.String[] {
+              "Context", "FileContexts", "OpenApiToolsetGenerationConfig",
+            });
+    internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_ToolGenerationConfig_OpenApiToolsetGenerationConfig_descriptor =
+        internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_ToolGenerationConfig_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_ToolGenerationConfig_OpenApiToolsetGenerationConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_ToolGenerationConfig_OpenApiToolsetGenerationConfig_descriptor,
+            new java.lang.String[] {
+              "Uri", "OperationGenerationConfigs",
+            });
+    internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_ToolGenerationConfig_OpenApiToolsetGenerationConfig_OperationGenerationConfig_descriptor =
+        internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_ToolGenerationConfig_OpenApiToolsetGenerationConfig_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_ToolGenerationConfig_OpenApiToolsetGenerationConfig_OperationGenerationConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_ToolGenerationConfig_OpenApiToolsetGenerationConfig_OperationGenerationConfig_descriptor,
+            new java.lang.String[] {
+              "Method", "Path", "RequestJson", "ResponseJson",
+            });
+    internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_AppGenerationConfig_descriptor =
+        internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_descriptor.getNestedType(
+            2);
+    internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_AppGenerationConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_AppGenerationConfig_descriptor,
+            new java.lang.String[] {
+              "Context", "FileContexts", "DatasetId", "GenerateEvaluations", "GcsLocation",
+            });
+    internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_EvaluationGenerationConfig_descriptor =
+        internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_descriptor.getNestedType(
+            3);
+    internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_EvaluationGenerationConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_EvaluationGenerationConfig_descriptor,
+            new java.lang.String[] {
+              "DatasetId",
+            });
+    internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_EvaluationPersonasGenerationConfig_descriptor =
+        internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_descriptor.getNestedType(
+            4);
+    internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_EvaluationPersonasGenerationConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_EvaluationPersonasGenerationConfig_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_QualityReportGenerationConfig_descriptor =
+        internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_descriptor.getNestedType(
+            5);
+    internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_QualityReportGenerationConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_QualityReportGenerationConfig_descriptor,
+            new java.lang.String[] {
+              "EvaluationRun",
+            });
+    internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_HillClimbingFixConfig_descriptor =
+        internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_descriptor.getNestedType(
+            6);
+    internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_HillClimbingFixConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_HillClimbingFixConfig_descriptor,
+            new java.lang.String[] {
+              "QualityReport",
+            });
+    internal_static_google_cloud_ces_v1beta_GenerateAppResourceResponse_descriptor =
+        getDescriptor().getMessageType(61);
     internal_static_google_cloud_ces_v1beta_GenerateAppResourceResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_GenerateAppResourceResponse_descriptor,
@@ -1501,7 +1751,7 @@ public final class AgentServiceProto extends com.google.protobuf.GeneratedFile {
               "Explanation",
             });
     internal_static_google_cloud_ces_v1beta_QualityReport_descriptor =
-        getDescriptor().getMessageType(61);
+        getDescriptor().getMessageType(62);
     internal_static_google_cloud_ces_v1beta_QualityReport_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_QualityReport_descriptor,
@@ -1524,8 +1774,16 @@ public final class AgentServiceProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Agent", "Issues",
             });
+    internal_static_google_cloud_ces_v1beta_GenerateAppResourceOperationMetadata_descriptor =
+        getDescriptor().getMessageType(63);
+    internal_static_google_cloud_ces_v1beta_GenerateAppResourceOperationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_GenerateAppResourceOperationMetadata_descriptor,
+            new java.lang.String[] {
+              "GenerationType", "Message", "CreateTime", "EndTime", "Target", "PartialErrors",
+            });
     internal_static_google_cloud_ces_v1beta_ListChangelogsRequest_descriptor =
-        getDescriptor().getMessageType(62);
+        getDescriptor().getMessageType(64);
     internal_static_google_cloud_ces_v1beta_ListChangelogsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_ListChangelogsRequest_descriptor,
@@ -1533,7 +1791,7 @@ public final class AgentServiceProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_ces_v1beta_ListChangelogsResponse_descriptor =
-        getDescriptor().getMessageType(63);
+        getDescriptor().getMessageType(65);
     internal_static_google_cloud_ces_v1beta_ListChangelogsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_ListChangelogsResponse_descriptor,
@@ -1541,7 +1799,7 @@ public final class AgentServiceProto extends com.google.protobuf.GeneratedFile {
               "Changelogs", "NextPageToken",
             });
     internal_static_google_cloud_ces_v1beta_GetChangelogRequest_descriptor =
-        getDescriptor().getMessageType(64);
+        getDescriptor().getMessageType(66);
     internal_static_google_cloud_ces_v1beta_GetChangelogRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_GetChangelogRequest_descriptor,
@@ -1549,7 +1807,7 @@ public final class AgentServiceProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_ces_v1beta_GetSecuritySettingsRequest_descriptor =
-        getDescriptor().getMessageType(65);
+        getDescriptor().getMessageType(67);
     internal_static_google_cloud_ces_v1beta_GetSecuritySettingsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_GetSecuritySettingsRequest_descriptor,
@@ -1557,7 +1815,7 @@ public final class AgentServiceProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_ces_v1beta_UpdateSecuritySettingsRequest_descriptor =
-        getDescriptor().getMessageType(66);
+        getDescriptor().getMessageType(68);
     internal_static_google_cloud_ces_v1beta_UpdateSecuritySettingsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_UpdateSecuritySettingsRequest_descriptor,
@@ -1577,6 +1835,7 @@ public final class AgentServiceProto extends com.google.protobuf.GeneratedFile {
     com.google.cloud.ces.v1beta.ChannelProfileProto.getDescriptor();
     com.google.cloud.ces.v1beta.EvaluationProto.getDescriptor();
     com.google.cloud.ces.v1beta.ExampleProto.getDescriptor();
+    com.google.cloud.ces.v1beta.FileContextProto.getDescriptor();
     com.google.cloud.ces.v1beta.GuardrailProto.getDescriptor();
     com.google.cloud.ces.v1beta.SecuritySettingsProto.getDescriptor();
     com.google.cloud.ces.v1beta.ToolProto.getDescriptor();
@@ -1585,6 +1844,7 @@ public final class AgentServiceProto extends com.google.protobuf.GeneratedFile {
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.rpc.StatusProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
