@@ -30,17 +30,15 @@
 package com.google.api.gax.tracing;
 
 import com.google.api.gax.rpc.LibraryMetadata;
+import com.google.common.base.Strings;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.metrics.DoubleHistogram;
 import io.opentelemetry.api.metrics.Meter;
 import io.opentelemetry.api.metrics.MeterBuilder;
-
-import com.google.common.base.Strings;
-import javax.annotation.Nullable;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import javax.annotation.Nullable;
 
 /**
  * This class takes an OpenTelemetry object, and creates instruments (meters, histograms etc.) from
@@ -70,8 +68,7 @@ class GoldenSignalsMetricsRecorder {
 
   private GoldenSignalsMetricsRecorder(
       OpenTelemetry openTelemetry, LibraryMetadata libraryMetadata) {
-    MeterBuilder meterBuilder =
-        openTelemetry.meterBuilder(libraryMetadata.artifactName());
+    MeterBuilder meterBuilder = openTelemetry.meterBuilder(libraryMetadata.artifactName());
     String libraryVersion = libraryMetadata.version();
     if (!Strings.isNullOrEmpty(libraryVersion)) {
       meterBuilder.setInstrumentationVersion(libraryVersion);

@@ -131,8 +131,7 @@ class GoldenSignalsMetricsRecorderTest {
 
   @Test
   void create_shouldReturnNull_whenArtifactNameIsNull() {
-    LibraryMetadata metadata =
-        LibraryMetadata.newBuilder().setVersion("1.0.0").build();
+    LibraryMetadata metadata = LibraryMetadata.newBuilder().setVersion("1.0.0").build();
     GoldenSignalsMetricsRecorder actual =
         GoldenSignalsMetricsRecorder.create(OpenTelemetry.noop(), metadata);
     assertThat(actual).isNull();
@@ -140,8 +139,7 @@ class GoldenSignalsMetricsRecorderTest {
 
   @Test
   void create_shouldReturnNull_whenArtifactNameIsEmpty() {
-    LibraryMetadata metadata =
-        LibraryMetadata.newBuilder().setArtifactName("").build();
+    LibraryMetadata metadata = LibraryMetadata.newBuilder().setArtifactName("").build();
     GoldenSignalsMetricsRecorder actual =
         GoldenSignalsMetricsRecorder.create(OpenTelemetry.noop(), metadata);
     assertThat(actual).isNull();

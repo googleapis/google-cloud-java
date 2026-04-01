@@ -29,10 +29,8 @@
  */
 package com.google.api.gax.tracing;
 
-import com.google.api.client.util.Strings;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
-import com.google.api.gax.rpc.LibraryMetadata;
 import io.opentelemetry.api.OpenTelemetry;
 
 /**

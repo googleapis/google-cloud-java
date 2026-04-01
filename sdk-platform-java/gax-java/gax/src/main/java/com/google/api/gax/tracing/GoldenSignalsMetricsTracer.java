@@ -29,9 +29,7 @@
  */
 package com.google.api.gax.tracing;
 
-import static com.google.api.gax.tracing.ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE;
 
-import com.google.api.gax.rpc.StatusCode;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Stopwatch;
 import com.google.common.base.Ticker;
