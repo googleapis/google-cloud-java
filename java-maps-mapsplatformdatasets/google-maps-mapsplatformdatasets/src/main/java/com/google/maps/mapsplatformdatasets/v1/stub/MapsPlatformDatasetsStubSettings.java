@@ -404,6 +404,7 @@ public class MapsPlatformDatasetsStubSettings
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.maps:google-maps-mapsplatformdatasets")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

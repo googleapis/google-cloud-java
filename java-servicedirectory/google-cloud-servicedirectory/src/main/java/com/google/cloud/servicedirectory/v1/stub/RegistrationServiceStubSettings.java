@@ -626,6 +626,7 @@ public class RegistrationServiceStubSettings extends StubSettings<RegistrationSe
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-servicedirectory")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

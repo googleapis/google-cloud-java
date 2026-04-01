@@ -69,6 +69,10 @@ import org.junit.jupiter.api.Test;
 class ITOtelTracing {
   private static final String SHOWCASE_SERVER_ADDRESS = "localhost";
   private static final long SHOWCASE_SERVER_PORT = 7469;
+  private static final String SHOWCASE_GRPC_ENDPOINT =
+      String.format("%s:%s", SHOWCASE_SERVER_ADDRESS, SHOWCASE_SERVER_PORT);
+  private static final String SHOWCASE_HTTPJSON_ENDPOINT =
+      String.format("http://%s:%s", SHOWCASE_SERVER_ADDRESS, SHOWCASE_SERVER_PORT);
   private static final String SHOWCASE_REPO = "googleapis/sdk-platform-java";
   private static final String SHOWCASE_ARTIFACT = "com.google.cloud:gapic-showcase";
   private static final String SHOWCASE_USER_URL = "http://localhost:7469/v1beta1/echo:echo";
@@ -103,6 +107,7 @@ class ITOtelTracing {
 
     EchoSettings grpcEchoSettings = createEchoSettings(false);
     EchoStub stub = createStubWithServiceName(grpcEchoSettings, tracingFactory);
+
     try (EchoClient client = EchoClient.create(stub)) {
 
       client.echo(EchoRequest.newBuilder().setContent("tracing-test").build());
@@ -149,6 +154,12 @@ class ITOtelTracing {
       assertThat(
               attemptSpan
                   .getAttributes()
+                  .get(
+                      AttributeKey.stringKey(ObservabilityAttributes.GCP_CLIENT_SERVICE_ATTRIBUTE)))
+          .isEqualTo("showcase");
+      assertThat(
+              attemptSpan
+                  .getAttributes()
                   .get(AttributeKey.stringKey(ObservabilityAttributes.GRPC_RPC_METHOD_ATTRIBUTE)))
           .isEqualTo("google.showcase.v1beta1.Echo/Echo");
       assertThat(
@@ -166,6 +177,7 @@ class ITOtelTracing {
 
     EchoSettings httpJsonEchoSettings = createEchoSettings(true);
     EchoStub stub = createStubWithServiceName(httpJsonEchoSettings, tracingFactory);
+
     try (EchoClient client = EchoClient.create(stub)) {
 
       client.echo(EchoRequest.newBuilder().setContent("tracing-test").build());
@@ -205,6 +217,12 @@ class ITOtelTracing {
                   .getAttributes()
                   .get(AttributeKey.stringKey(ObservabilityAttributes.ARTIFACT_ATTRIBUTE)))
           .isEqualTo(SHOWCASE_ARTIFACT);
+      assertThat(
+              attemptSpan
+                  .getAttributes()
+                  .get(
+                      AttributeKey.stringKey(ObservabilityAttributes.GCP_CLIENT_SERVICE_ATTRIBUTE)))
+          .isEqualTo("showcase");
       assertThat(
               attemptSpan
                   .getAttributes()
@@ -269,7 +287,7 @@ class ITOtelTracing {
         grpcEchoSettings.toBuilder()
             .setCredentialsProvider(NoCredentialsProvider.create())
             .setTransportChannelProvider(EchoSettings.defaultGrpcTransportProviderBuilder().build())
-            .setEndpoint("localhost:7469")
+            .setEndpoint(SHOWCASE_GRPC_ENDPOINT)
             .build();
 
     SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
@@ -344,7 +362,7 @@ class ITOtelTracing {
                 EchoSettings.defaultHttpJsonTransportProviderBuilder()
                     .setHttpTransport(
                         new NetHttpTransport.Builder().doNotValidateCertificate().build())
-                    .setEndpoint("http://localhost:7469")
+                    .setEndpoint(SHOWCASE_HTTPJSON_ENDPOINT)
                     .build())
             .build();
 
@@ -401,8 +419,8 @@ class ITOtelTracing {
               EchoSettings.defaultHttpJsonTransportProviderBuilder()
                   .setHttpTransport(
                       new NetHttpTransport.Builder().doNotValidateCertificate().build())
-                  .setEndpoint("http://localhost:7469")
                   .build())
+          .setEndpoint(SHOWCASE_HTTPJSON_ENDPOINT)
           .build();
     } else {
       return EchoSettings.newBuilder()
@@ -411,7 +429,7 @@ class ITOtelTracing {
               EchoSettings.defaultGrpcTransportProviderBuilder()
                   .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
                   .build())
-          .setEndpoint("localhost:7469")
+          .setEndpoint(SHOWCASE_GRPC_ENDPOINT)
           .build();
     }
   }

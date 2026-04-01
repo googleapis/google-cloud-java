@@ -150,6 +150,7 @@ public class GrpcIDSStub extends IDSStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetEndpointRequest, Endpoint> getEndpointTransportSettings =
         GrpcCallSettings.<GetEndpointRequest, Endpoint>newBuilder()
@@ -160,6 +161,7 @@ public class GrpcIDSStub extends IDSStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateEndpointRequest, Operation> createEndpointTransportSettings =
         GrpcCallSettings.<CreateEndpointRequest, Operation>newBuilder()
@@ -170,6 +172,7 @@ public class GrpcIDSStub extends IDSStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteEndpointRequest, Operation> deleteEndpointTransportSettings =
         GrpcCallSettings.<DeleteEndpointRequest, Operation>newBuilder()
@@ -180,6 +183,7 @@ public class GrpcIDSStub extends IDSStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.listEndpointsCallable =

@@ -1223,6 +1223,7 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-certificate-manager")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

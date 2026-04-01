@@ -382,6 +382,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateTargetSiteRequest, Operation> createTargetSiteTransportSettings =
         GrpcCallSettings.<CreateTargetSiteRequest, Operation>newBuilder()
@@ -392,6 +393,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<BatchCreateTargetSitesRequest, Operation>
         batchCreateTargetSitesTransportSettings =
@@ -403,6 +405,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetTargetSiteRequest, TargetSite> getTargetSiteTransportSettings =
         GrpcCallSettings.<GetTargetSiteRequest, TargetSite>newBuilder()
@@ -413,6 +416,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateTargetSiteRequest, Operation> updateTargetSiteTransportSettings =
         GrpcCallSettings.<UpdateTargetSiteRequest, Operation>newBuilder()
@@ -434,6 +438,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListTargetSitesRequest, ListTargetSitesResponse>
         listTargetSitesTransportSettings =
@@ -445,6 +450,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateSitemapRequest, Operation> createSitemapTransportSettings =
         GrpcCallSettings.<CreateSitemapRequest, Operation>newBuilder()
@@ -455,6 +461,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteSitemapRequest, Operation> deleteSitemapTransportSettings =
         GrpcCallSettings.<DeleteSitemapRequest, Operation>newBuilder()
@@ -465,6 +472,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<FetchSitemapsRequest, FetchSitemapsResponse> fetchSitemapsTransportSettings =
         GrpcCallSettings.<FetchSitemapsRequest, FetchSitemapsResponse>newBuilder()
@@ -475,6 +483,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<EnableAdvancedSiteSearchRequest, Operation>
         enableAdvancedSiteSearchTransportSettings =
@@ -487,6 +496,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                           "site_search_engine", String.valueOf(request.getSiteSearchEngine()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getSiteSearchEngine())
                 .build();
     GrpcCallSettings<DisableAdvancedSiteSearchRequest, Operation>
         disableAdvancedSiteSearchTransportSettings =
@@ -499,6 +509,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                           "site_search_engine", String.valueOf(request.getSiteSearchEngine()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getSiteSearchEngine())
                 .build();
     GrpcCallSettings<RecrawlUrisRequest, Operation> recrawlUrisTransportSettings =
         GrpcCallSettings.<RecrawlUrisRequest, Operation>newBuilder()
@@ -509,6 +520,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                   builder.add("site_search_engine", String.valueOf(request.getSiteSearchEngine()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getSiteSearchEngine())
             .build();
     GrpcCallSettings<BatchVerifyTargetSitesRequest, Operation>
         batchVerifyTargetSitesTransportSettings =
@@ -520,6 +532,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<FetchDomainVerificationStatusRequest, FetchDomainVerificationStatusResponse>
         fetchDomainVerificationStatusTransportSettings =
@@ -534,6 +547,7 @@ public class GrpcSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub
                           "site_search_engine", String.valueOf(request.getSiteSearchEngine()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getSiteSearchEngine())
                 .build();
 
     this.getSiteSearchEngineCallable =

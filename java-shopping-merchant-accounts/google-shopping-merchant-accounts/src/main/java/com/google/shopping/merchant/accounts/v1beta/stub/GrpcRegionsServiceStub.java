@@ -159,6 +159,7 @@ public class GrpcRegionsServiceStub extends RegionsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateRegionRequest, Region> createRegionTransportSettings =
         GrpcCallSettings.<CreateRegionRequest, Region>newBuilder()
@@ -169,6 +170,7 @@ public class GrpcRegionsServiceStub extends RegionsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateRegionRequest, Region> updateRegionTransportSettings =
         GrpcCallSettings.<UpdateRegionRequest, Region>newBuilder()
@@ -189,6 +191,7 @@ public class GrpcRegionsServiceStub extends RegionsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRegionsRequest, ListRegionsResponse> listRegionsTransportSettings =
         GrpcCallSettings.<ListRegionsRequest, ListRegionsResponse>newBuilder()
@@ -199,6 +202,7 @@ public class GrpcRegionsServiceStub extends RegionsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.getRegionCallable =

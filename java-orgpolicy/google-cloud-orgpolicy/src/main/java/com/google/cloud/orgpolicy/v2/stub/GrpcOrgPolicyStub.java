@@ -261,6 +261,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListPoliciesRequest, ListPoliciesResponse> listPoliciesTransportSettings =
         GrpcCallSettings.<ListPoliciesRequest, ListPoliciesResponse>newBuilder()
@@ -271,6 +272,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetPolicyRequest, Policy> getPolicyTransportSettings =
         GrpcCallSettings.<GetPolicyRequest, Policy>newBuilder()
@@ -281,6 +283,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetEffectivePolicyRequest, Policy> getEffectivePolicyTransportSettings =
         GrpcCallSettings.<GetEffectivePolicyRequest, Policy>newBuilder()
@@ -291,6 +294,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreatePolicyRequest, Policy> createPolicyTransportSettings =
         GrpcCallSettings.<CreatePolicyRequest, Policy>newBuilder()
@@ -301,6 +305,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdatePolicyRequest, Policy> updatePolicyTransportSettings =
         GrpcCallSettings.<UpdatePolicyRequest, Policy>newBuilder()
@@ -321,6 +326,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateCustomConstraintRequest, CustomConstraint>
         createCustomConstraintTransportSettings =
@@ -332,6 +338,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateCustomConstraintRequest, CustomConstraint>
         updateCustomConstraintTransportSettings =
@@ -356,6 +363,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListCustomConstraintsRequest, ListCustomConstraintsResponse>
         listCustomConstraintsTransportSettings =
@@ -368,6 +376,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteCustomConstraintRequest, Empty> deleteCustomConstraintTransportSettings =
         GrpcCallSettings.<DeleteCustomConstraintRequest, Empty>newBuilder()
@@ -378,6 +387,7 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.listConstraintsCallable =

@@ -2100,6 +2100,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListTriggersRequest, ListTriggersResponse> listTriggersTransportSettings =
         HttpJsonCallSettings.<ListTriggersRequest, ListTriggersResponse>newBuilder()
@@ -2111,6 +2112,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateTriggerRequest, Operation> createTriggerTransportSettings =
         HttpJsonCallSettings.<CreateTriggerRequest, Operation>newBuilder()
@@ -2122,6 +2124,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateTriggerRequest, Operation> updateTriggerTransportSettings =
         HttpJsonCallSettings.<UpdateTriggerRequest, Operation>newBuilder()
@@ -2144,6 +2147,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetChannelRequest, Channel> getChannelTransportSettings =
         HttpJsonCallSettings.<GetChannelRequest, Channel>newBuilder()
@@ -2155,6 +2159,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListChannelsRequest, ListChannelsResponse> listChannelsTransportSettings =
         HttpJsonCallSettings.<ListChannelsRequest, ListChannelsResponse>newBuilder()
@@ -2166,6 +2171,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateChannelRequest, Operation> createChannelTransportSettings =
         HttpJsonCallSettings.<CreateChannelRequest, Operation>newBuilder()
@@ -2177,6 +2183,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateChannelRequest, Operation> updateChannelTransportSettings =
         HttpJsonCallSettings.<UpdateChannelRequest, Operation>newBuilder()
@@ -2199,6 +2206,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetProviderRequest, Provider> getProviderTransportSettings =
         HttpJsonCallSettings.<GetProviderRequest, Provider>newBuilder()
@@ -2210,6 +2218,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListProvidersRequest, ListProvidersResponse>
         listProvidersTransportSettings =
@@ -2222,6 +2231,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetChannelConnectionRequest, ChannelConnection>
         getChannelConnectionTransportSettings =
@@ -2234,6 +2244,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListChannelConnectionsRequest, ListChannelConnectionsResponse>
         listChannelConnectionsTransportSettings =
@@ -2247,6 +2258,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateChannelConnectionRequest, Operation>
         createChannelConnectionTransportSettings =
@@ -2259,6 +2271,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteChannelConnectionRequest, Operation>
         deleteChannelConnectionTransportSettings =
@@ -2271,6 +2284,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetGoogleChannelConfigRequest, GoogleChannelConfig>
         getGoogleChannelConfigTransportSettings =
@@ -2283,6 +2297,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>
         updateGoogleChannelConfigTransportSettings =
@@ -2308,6 +2323,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListMessageBusesRequest, ListMessageBusesResponse>
         listMessageBusesTransportSettings =
@@ -2320,6 +2336,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListMessageBusEnrollmentsRequest, ListMessageBusEnrollmentsResponse>
         listMessageBusEnrollmentsTransportSettings =
@@ -2333,6 +2350,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateMessageBusRequest, Operation> createMessageBusTransportSettings =
         HttpJsonCallSettings.<CreateMessageBusRequest, Operation>newBuilder()
@@ -2344,6 +2362,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateMessageBusRequest, Operation> updateMessageBusTransportSettings =
         HttpJsonCallSettings.<UpdateMessageBusRequest, Operation>newBuilder()
@@ -2367,6 +2386,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetEnrollmentRequest, Enrollment> getEnrollmentTransportSettings =
         HttpJsonCallSettings.<GetEnrollmentRequest, Enrollment>newBuilder()
@@ -2378,6 +2398,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListEnrollmentsRequest, ListEnrollmentsResponse>
         listEnrollmentsTransportSettings =
@@ -2390,6 +2411,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateEnrollmentRequest, Operation> createEnrollmentTransportSettings =
         HttpJsonCallSettings.<CreateEnrollmentRequest, Operation>newBuilder()
@@ -2401,6 +2423,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateEnrollmentRequest, Operation> updateEnrollmentTransportSettings =
         HttpJsonCallSettings.<UpdateEnrollmentRequest, Operation>newBuilder()
@@ -2423,6 +2446,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetPipelineRequest, Pipeline> getPipelineTransportSettings =
         HttpJsonCallSettings.<GetPipelineRequest, Pipeline>newBuilder()
@@ -2434,6 +2458,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListPipelinesRequest, ListPipelinesResponse>
         listPipelinesTransportSettings =
@@ -2446,6 +2471,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreatePipelineRequest, Operation> createPipelineTransportSettings =
         HttpJsonCallSettings.<CreatePipelineRequest, Operation>newBuilder()
@@ -2457,6 +2483,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdatePipelineRequest, Operation> updatePipelineTransportSettings =
         HttpJsonCallSettings.<UpdatePipelineRequest, Operation>newBuilder()
@@ -2479,6 +2506,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetGoogleApiSourceRequest, GoogleApiSource>
         getGoogleApiSourceTransportSettings =
@@ -2491,6 +2519,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListGoogleApiSourcesRequest, ListGoogleApiSourcesResponse>
         listGoogleApiSourcesTransportSettings =
@@ -2504,6 +2533,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateGoogleApiSourceRequest, Operation>
         createGoogleApiSourceTransportSettings =
@@ -2516,6 +2546,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateGoogleApiSourceRequest, Operation>
         updateGoogleApiSourceTransportSettings =
@@ -2542,6 +2573,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -2576,6 +2608,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -2587,6 +2620,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -2599,6 +2633,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.getTriggerCallable =

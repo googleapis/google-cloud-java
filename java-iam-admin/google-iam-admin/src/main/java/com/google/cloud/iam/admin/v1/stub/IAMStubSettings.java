@@ -750,6 +750,7 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-iam-admin")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

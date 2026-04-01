@@ -313,6 +313,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetGatewayRequest, Gateway> getGatewayTransportSettings =
         GrpcCallSettings.<GetGatewayRequest, Gateway>newBuilder()
@@ -323,6 +324,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateGatewayRequest, Operation> createGatewayTransportSettings =
         GrpcCallSettings.<CreateGatewayRequest, Operation>newBuilder()
@@ -333,6 +335,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateGatewayRequest, Operation> updateGatewayTransportSettings =
         GrpcCallSettings.<UpdateGatewayRequest, Operation>newBuilder()
@@ -353,6 +356,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListApisRequest, ListApisResponse> listApisTransportSettings =
         GrpcCallSettings.<ListApisRequest, ListApisResponse>newBuilder()
@@ -363,6 +367,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetApiRequest, Api> getApiTransportSettings =
         GrpcCallSettings.<GetApiRequest, Api>newBuilder()
@@ -373,6 +378,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateApiRequest, Operation> createApiTransportSettings =
         GrpcCallSettings.<CreateApiRequest, Operation>newBuilder()
@@ -383,6 +389,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateApiRequest, Operation> updateApiTransportSettings =
         GrpcCallSettings.<UpdateApiRequest, Operation>newBuilder()
@@ -403,6 +410,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListApiConfigsRequest, ListApiConfigsResponse>
         listApiConfigsTransportSettings =
@@ -414,6 +422,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetApiConfigRequest, ApiConfig> getApiConfigTransportSettings =
         GrpcCallSettings.<GetApiConfigRequest, ApiConfig>newBuilder()
@@ -424,6 +433,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateApiConfigRequest, Operation> createApiConfigTransportSettings =
         GrpcCallSettings.<CreateApiConfigRequest, Operation>newBuilder()
@@ -434,6 +444,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateApiConfigRequest, Operation> updateApiConfigTransportSettings =
         GrpcCallSettings.<UpdateApiConfigRequest, Operation>newBuilder()
@@ -454,6 +465,7 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.listGatewaysCallable =

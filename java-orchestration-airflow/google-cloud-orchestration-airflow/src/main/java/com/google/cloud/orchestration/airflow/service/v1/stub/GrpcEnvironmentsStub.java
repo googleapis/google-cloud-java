@@ -593,6 +593,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CheckUpgradeRequest, Operation> checkUpgradeTransportSettings =
         GrpcCallSettings.<CheckUpgradeRequest, Operation>newBuilder()
@@ -614,6 +615,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>
         getUserWorkloadsSecretTransportSettings =
@@ -625,6 +627,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListUserWorkloadsSecretsRequest, ListUserWorkloadsSecretsResponse>
         listUserWorkloadsSecretsTransportSettings =
@@ -637,6 +640,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateUserWorkloadsSecretRequest, UserWorkloadsSecret>
         updateUserWorkloadsSecretTransportSettings =
@@ -661,6 +665,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
         createUserWorkloadsConfigMapTransportSettings =
@@ -673,6 +678,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
         getUserWorkloadsConfigMapTransportSettings =
@@ -684,6 +690,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListUserWorkloadsConfigMapsRequest, ListUserWorkloadsConfigMapsResponse>
         listUserWorkloadsConfigMapsTransportSettings =
@@ -697,6 +704,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
         updateUserWorkloadsConfigMapTransportSettings =
@@ -722,6 +730,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<SaveSnapshotRequest, Operation> saveSnapshotTransportSettings =
         GrpcCallSettings.<SaveSnapshotRequest, Operation>newBuilder()
@@ -764,6 +773,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                       builder.add("environment", String.valueOf(request.getEnvironment()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getEnvironment())
                 .build();
 
     this.createEnvironmentCallable =

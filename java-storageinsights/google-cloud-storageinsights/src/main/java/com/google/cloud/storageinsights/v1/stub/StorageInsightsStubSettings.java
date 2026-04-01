@@ -700,6 +700,7 @@ public class StorageInsightsStubSettings extends StubSettings<StorageInsightsStu
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-storageinsights")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

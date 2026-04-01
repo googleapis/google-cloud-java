@@ -1749,6 +1749,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetOrchestrationClusterRequest, OrchestrationCluster>
         getOrchestrationClusterTransportSettings =
@@ -1761,6 +1762,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateOrchestrationClusterRequest, Operation>
         createOrchestrationClusterTransportSettings =
@@ -1773,6 +1775,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteOrchestrationClusterRequest, Operation>
         deleteOrchestrationClusterTransportSettings =
@@ -1785,6 +1788,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListEdgeSlmsRequest, ListEdgeSlmsResponse> listEdgeSlmsTransportSettings =
         HttpJsonCallSettings.<ListEdgeSlmsRequest, ListEdgeSlmsResponse>newBuilder()
@@ -1796,6 +1800,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetEdgeSlmRequest, EdgeSlm> getEdgeSlmTransportSettings =
         HttpJsonCallSettings.<GetEdgeSlmRequest, EdgeSlm>newBuilder()
@@ -1807,6 +1812,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateEdgeSlmRequest, Operation> createEdgeSlmTransportSettings =
         HttpJsonCallSettings.<CreateEdgeSlmRequest, Operation>newBuilder()
@@ -1818,6 +1824,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteEdgeSlmRequest, Operation> deleteEdgeSlmTransportSettings =
         HttpJsonCallSettings.<DeleteEdgeSlmRequest, Operation>newBuilder()
@@ -1829,6 +1836,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateBlueprintRequest, Blueprint> createBlueprintTransportSettings =
         HttpJsonCallSettings.<CreateBlueprintRequest, Blueprint>newBuilder()
@@ -1840,6 +1848,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateBlueprintRequest, Blueprint> updateBlueprintTransportSettings =
         HttpJsonCallSettings.<UpdateBlueprintRequest, Blueprint>newBuilder()
@@ -1862,6 +1871,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteBlueprintRequest, Empty> deleteBlueprintTransportSettings =
         HttpJsonCallSettings.<DeleteBlueprintRequest, Empty>newBuilder()
@@ -1873,6 +1883,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListBlueprintsRequest, ListBlueprintsResponse>
         listBlueprintsTransportSettings =
@@ -1885,6 +1896,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ApproveBlueprintRequest, Blueprint> approveBlueprintTransportSettings =
         HttpJsonCallSettings.<ApproveBlueprintRequest, Blueprint>newBuilder()
@@ -1896,6 +1908,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ProposeBlueprintRequest, Blueprint> proposeBlueprintTransportSettings =
         HttpJsonCallSettings.<ProposeBlueprintRequest, Blueprint>newBuilder()
@@ -1907,6 +1920,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RejectBlueprintRequest, Blueprint> rejectBlueprintTransportSettings =
         HttpJsonCallSettings.<RejectBlueprintRequest, Blueprint>newBuilder()
@@ -1918,6 +1932,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListBlueprintRevisionsRequest, ListBlueprintRevisionsResponse>
         listBlueprintRevisionsTransportSettings =
@@ -1931,6 +1946,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<SearchBlueprintRevisionsRequest, SearchBlueprintRevisionsResponse>
         searchBlueprintRevisionsTransportSettings =
@@ -1944,6 +1960,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<SearchDeploymentRevisionsRequest, SearchDeploymentRevisionsResponse>
         searchDeploymentRevisionsTransportSettings =
@@ -1957,6 +1974,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DiscardBlueprintChangesRequest, DiscardBlueprintChangesResponse>
         discardBlueprintChangesTransportSettings =
@@ -1970,6 +1988,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListPublicBlueprintsRequest, ListPublicBlueprintsResponse>
         listPublicBlueprintsTransportSettings =
@@ -1983,6 +2002,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetPublicBlueprintRequest, PublicBlueprint>
         getPublicBlueprintTransportSettings =
@@ -1995,6 +2015,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateDeploymentRequest, Deployment> createDeploymentTransportSettings =
         HttpJsonCallSettings.<CreateDeploymentRequest, Deployment>newBuilder()
@@ -2006,6 +2027,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateDeploymentRequest, Deployment> updateDeploymentTransportSettings =
         HttpJsonCallSettings.<UpdateDeploymentRequest, Deployment>newBuilder()
@@ -2028,6 +2050,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RemoveDeploymentRequest, Empty> removeDeploymentTransportSettings =
         HttpJsonCallSettings.<RemoveDeploymentRequest, Empty>newBuilder()
@@ -2039,6 +2062,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListDeploymentsRequest, ListDeploymentsResponse>
         listDeploymentsTransportSettings =
@@ -2051,6 +2075,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListDeploymentRevisionsRequest, ListDeploymentRevisionsResponse>
         listDeploymentRevisionsTransportSettings =
@@ -2064,6 +2089,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DiscardDeploymentChangesRequest, DiscardDeploymentChangesResponse>
         discardDeploymentChangesTransportSettings =
@@ -2077,6 +2103,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ApplyDeploymentRequest, Deployment> applyDeploymentTransportSettings =
         HttpJsonCallSettings.<ApplyDeploymentRequest, Deployment>newBuilder()
@@ -2088,6 +2115,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ComputeDeploymentStatusRequest, ComputeDeploymentStatusResponse>
         computeDeploymentStatusTransportSettings =
@@ -2101,6 +2129,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<RollbackDeploymentRequest, Deployment>
         rollbackDeploymentTransportSettings =
@@ -2113,6 +2142,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetHydratedDeploymentRequest, HydratedDeployment>
         getHydratedDeploymentTransportSettings =
@@ -2125,6 +2155,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListHydratedDeploymentsRequest, ListHydratedDeploymentsResponse>
         listHydratedDeploymentsTransportSettings =
@@ -2138,6 +2169,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateHydratedDeploymentRequest, HydratedDeployment>
         updateHydratedDeploymentTransportSettings =
@@ -2164,6 +2196,7 @@ public class HttpJsonTelcoAutomationStub extends TelcoAutomationStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

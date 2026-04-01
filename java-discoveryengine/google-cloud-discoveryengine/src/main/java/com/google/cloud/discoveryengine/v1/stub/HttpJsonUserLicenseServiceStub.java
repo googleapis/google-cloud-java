@@ -393,6 +393,7 @@ public class HttpJsonUserLicenseServiceStub extends UserLicenseServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<BatchUpdateUserLicensesRequest, Operation>
         batchUpdateUserLicensesTransportSettings =
@@ -405,6 +406,7 @@ public class HttpJsonUserLicenseServiceStub extends UserLicenseServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.listUserLicensesCallable =

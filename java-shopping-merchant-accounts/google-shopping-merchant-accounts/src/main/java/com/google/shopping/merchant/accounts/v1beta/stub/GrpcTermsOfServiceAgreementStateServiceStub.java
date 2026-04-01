@@ -144,6 +144,7 @@ public class GrpcTermsOfServiceAgreementStateServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             RetrieveForApplicationTermsOfServiceAgreementStateRequest, TermsOfServiceAgreementState>
@@ -160,6 +161,7 @@ public class GrpcTermsOfServiceAgreementStateServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getTermsOfServiceAgreementStateCallable =

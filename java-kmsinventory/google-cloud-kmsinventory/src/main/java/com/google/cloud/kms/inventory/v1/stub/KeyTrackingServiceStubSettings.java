@@ -333,6 +333,7 @@ public class KeyTrackingServiceStubSettings extends StubSettings<KeyTrackingServ
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-kmsinventory")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

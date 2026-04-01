@@ -328,6 +328,7 @@ public class HttpJsonUserServiceStub extends UserServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateUserRequest, User> createUserTransportSettings =
         HttpJsonCallSettings.<CreateUserRequest, User>newBuilder()
@@ -339,6 +340,7 @@ public class HttpJsonUserServiceStub extends UserServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteUserRequest, Empty> deleteUserTransportSettings =
         HttpJsonCallSettings.<DeleteUserRequest, Empty>newBuilder()
@@ -350,6 +352,7 @@ public class HttpJsonUserServiceStub extends UserServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateUserRequest, User> updateUserTransportSettings =
         HttpJsonCallSettings.<UpdateUserRequest, User>newBuilder()
@@ -372,6 +375,7 @@ public class HttpJsonUserServiceStub extends UserServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<VerifySelfRequest, User> verifySelfTransportSettings =
         HttpJsonCallSettings.<VerifySelfRequest, User>newBuilder()
@@ -383,6 +387,7 @@ public class HttpJsonUserServiceStub extends UserServiceStub {
                   builder.add("account", String.valueOf(request.getAccount()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getAccount())
             .build();
 
     this.getUserCallable =

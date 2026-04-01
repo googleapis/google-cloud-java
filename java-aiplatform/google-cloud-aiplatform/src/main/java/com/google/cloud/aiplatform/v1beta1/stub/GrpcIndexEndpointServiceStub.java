@@ -308,6 +308,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetIndexEndpointRequest, IndexEndpoint> getIndexEndpointTransportSettings =
         GrpcCallSettings.<GetIndexEndpointRequest, IndexEndpoint>newBuilder()
@@ -318,6 +319,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListIndexEndpointsRequest, ListIndexEndpointsResponse>
         listIndexEndpointsTransportSettings =
@@ -329,6 +331,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateIndexEndpointRequest, IndexEndpoint>
         updateIndexEndpointTransportSettings =
@@ -352,6 +355,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeployIndexRequest, Operation> deployIndexTransportSettings =
         GrpcCallSettings.<DeployIndexRequest, Operation>newBuilder()
@@ -362,6 +366,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
                   builder.add("index_endpoint", String.valueOf(request.getIndexEndpoint()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getIndexEndpoint())
             .build();
     GrpcCallSettings<UndeployIndexRequest, Operation> undeployIndexTransportSettings =
         GrpcCallSettings.<UndeployIndexRequest, Operation>newBuilder()
@@ -372,6 +377,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
                   builder.add("index_endpoint", String.valueOf(request.getIndexEndpoint()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getIndexEndpoint())
             .build();
     GrpcCallSettings<MutateDeployedIndexRequest, Operation> mutateDeployedIndexTransportSettings =
         GrpcCallSettings.<MutateDeployedIndexRequest, Operation>newBuilder()
@@ -382,6 +388,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
                   builder.add("index_endpoint", String.valueOf(request.getIndexEndpoint()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getIndexEndpoint())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -412,6 +419,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -422,6 +430,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -433,6 +442,7 @@ public class GrpcIndexEndpointServiceStub extends IndexEndpointServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createIndexEndpointCallable =

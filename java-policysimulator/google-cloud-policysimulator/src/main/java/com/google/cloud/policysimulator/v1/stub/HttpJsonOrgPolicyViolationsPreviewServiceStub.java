@@ -388,6 +388,7 @@ public class HttpJsonOrgPolicyViolationsPreviewServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetOrgPolicyViolationsPreviewRequest, OrgPolicyViolationsPreview>
         getOrgPolicyViolationsPreviewTransportSettings =
@@ -401,6 +402,7 @@ public class HttpJsonOrgPolicyViolationsPreviewServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateOrgPolicyViolationsPreviewRequest, Operation>
         createOrgPolicyViolationsPreviewTransportSettings =
@@ -413,6 +415,7 @@ public class HttpJsonOrgPolicyViolationsPreviewServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListOrgPolicyViolationsRequest, ListOrgPolicyViolationsResponse>
         listOrgPolicyViolationsTransportSettings =
@@ -426,6 +429,7 @@ public class HttpJsonOrgPolicyViolationsPreviewServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.listOrgPolicyViolationsPreviewsCallable =

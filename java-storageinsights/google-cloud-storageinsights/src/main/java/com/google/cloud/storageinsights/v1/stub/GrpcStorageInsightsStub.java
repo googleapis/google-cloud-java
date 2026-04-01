@@ -349,6 +349,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetReportConfigRequest, ReportConfig> getReportConfigTransportSettings =
         GrpcCallSettings.<GetReportConfigRequest, ReportConfig>newBuilder()
@@ -359,6 +360,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateReportConfigRequest, ReportConfig> createReportConfigTransportSettings =
         GrpcCallSettings.<CreateReportConfigRequest, ReportConfig>newBuilder()
@@ -369,6 +371,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateReportConfigRequest, ReportConfig> updateReportConfigTransportSettings =
         GrpcCallSettings.<UpdateReportConfigRequest, ReportConfig>newBuilder()
@@ -390,6 +393,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListReportDetailsRequest, ListReportDetailsResponse>
         listReportDetailsTransportSettings =
@@ -401,6 +405,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetReportDetailRequest, ReportDetail> getReportDetailTransportSettings =
         GrpcCallSettings.<GetReportDetailRequest, ReportDetail>newBuilder()
@@ -411,6 +416,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDatasetConfigsRequest, ListDatasetConfigsResponse>
         listDatasetConfigsTransportSettings =
@@ -422,6 +428,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetDatasetConfigRequest, DatasetConfig> getDatasetConfigTransportSettings =
         GrpcCallSettings.<GetDatasetConfigRequest, DatasetConfig>newBuilder()
@@ -432,6 +439,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateDatasetConfigRequest, Operation> createDatasetConfigTransportSettings =
         GrpcCallSettings.<CreateDatasetConfigRequest, Operation>newBuilder()
@@ -442,6 +450,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateDatasetConfigRequest, Operation> updateDatasetConfigTransportSettings =
         GrpcCallSettings.<UpdateDatasetConfigRequest, Operation>newBuilder()
@@ -463,6 +472,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<LinkDatasetRequest, Operation> linkDatasetTransportSettings =
         GrpcCallSettings.<LinkDatasetRequest, Operation>newBuilder()
@@ -473,6 +483,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UnlinkDatasetRequest, Operation> unlinkDatasetTransportSettings =
         GrpcCallSettings.<UnlinkDatasetRequest, Operation>newBuilder()
@@ -483,6 +494,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

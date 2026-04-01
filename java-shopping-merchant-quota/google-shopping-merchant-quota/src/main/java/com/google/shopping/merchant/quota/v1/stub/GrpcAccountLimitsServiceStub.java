@@ -128,6 +128,7 @@ public class GrpcAccountLimitsServiceStub extends AccountLimitsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAccountLimitsRequest, ListAccountLimitsResponse>
         listAccountLimitsTransportSettings =
@@ -139,6 +140,7 @@ public class GrpcAccountLimitsServiceStub extends AccountLimitsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getAccountLimitCallable =

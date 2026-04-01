@@ -267,6 +267,7 @@ public class GrpcAppConnectorsServiceStub extends AppConnectorsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetAppConnectorRequest, AppConnector> getAppConnectorTransportSettings =
         GrpcCallSettings.<GetAppConnectorRequest, AppConnector>newBuilder()
@@ -277,6 +278,7 @@ public class GrpcAppConnectorsServiceStub extends AppConnectorsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateAppConnectorRequest, Operation> createAppConnectorTransportSettings =
         GrpcCallSettings.<CreateAppConnectorRequest, Operation>newBuilder()
@@ -287,6 +289,7 @@ public class GrpcAppConnectorsServiceStub extends AppConnectorsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateAppConnectorRequest, Operation> updateAppConnectorTransportSettings =
         GrpcCallSettings.<UpdateAppConnectorRequest, Operation>newBuilder()
@@ -308,6 +311,7 @@ public class GrpcAppConnectorsServiceStub extends AppConnectorsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ReportStatusRequest, Operation> reportStatusTransportSettings =
         GrpcCallSettings.<ReportStatusRequest, Operation>newBuilder()
@@ -318,6 +322,7 @@ public class GrpcAppConnectorsServiceStub extends AppConnectorsServiceStub {
                   builder.add("app_connector", String.valueOf(request.getAppConnector()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getAppConnector())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -348,6 +353,7 @@ public class GrpcAppConnectorsServiceStub extends AppConnectorsServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -358,6 +364,7 @@ public class GrpcAppConnectorsServiceStub extends AppConnectorsServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -369,6 +376,7 @@ public class GrpcAppConnectorsServiceStub extends AppConnectorsServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listAppConnectorsCallable =

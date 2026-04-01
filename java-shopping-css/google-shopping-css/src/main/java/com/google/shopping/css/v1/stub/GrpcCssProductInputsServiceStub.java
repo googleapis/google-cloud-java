@@ -140,6 +140,7 @@ public class GrpcCssProductInputsServiceStub extends CssProductInputsServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateCssProductInputRequest, CssProductInput>
         updateCssProductInputTransportSettings =
@@ -163,6 +164,7 @@ public class GrpcCssProductInputsServiceStub extends CssProductInputsServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.insertCssProductInputCallable =

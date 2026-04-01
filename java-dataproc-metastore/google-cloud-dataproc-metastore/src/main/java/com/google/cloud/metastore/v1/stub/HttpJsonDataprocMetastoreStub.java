@@ -1143,6 +1143,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetServiceRequest, Service> getServiceTransportSettings =
         HttpJsonCallSettings.<GetServiceRequest, Service>newBuilder()
@@ -1154,6 +1155,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateServiceRequest, Operation> createServiceTransportSettings =
         HttpJsonCallSettings.<CreateServiceRequest, Operation>newBuilder()
@@ -1165,6 +1167,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateServiceRequest, Operation> updateServiceTransportSettings =
         HttpJsonCallSettings.<UpdateServiceRequest, Operation>newBuilder()
@@ -1187,6 +1190,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListMetadataImportsRequest, ListMetadataImportsResponse>
         listMetadataImportsTransportSettings =
@@ -1200,6 +1204,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetMetadataImportRequest, MetadataImport>
         getMetadataImportTransportSettings =
@@ -1212,6 +1217,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateMetadataImportRequest, Operation>
         createMetadataImportTransportSettings =
@@ -1224,6 +1230,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateMetadataImportRequest, Operation>
         updateMetadataImportTransportSettings =
@@ -1249,6 +1256,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("service", String.valueOf(request.getService()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getService())
             .build();
     HttpJsonCallSettings<RestoreServiceRequest, Operation> restoreServiceTransportSettings =
         HttpJsonCallSettings.<RestoreServiceRequest, Operation>newBuilder()
@@ -1260,6 +1268,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("service", String.valueOf(request.getService()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getService())
             .build();
     HttpJsonCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
         HttpJsonCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
@@ -1271,6 +1280,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
         HttpJsonCallSettings.<GetBackupRequest, Backup>newBuilder()
@@ -1282,6 +1292,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateBackupRequest, Operation> createBackupTransportSettings =
         HttpJsonCallSettings.<CreateBackupRequest, Operation>newBuilder()
@@ -1293,6 +1304,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteBackupRequest, Operation> deleteBackupTransportSettings =
         HttpJsonCallSettings.<DeleteBackupRequest, Operation>newBuilder()
@@ -1304,6 +1316,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<QueryMetadataRequest, Operation> queryMetadataTransportSettings =
         HttpJsonCallSettings.<QueryMetadataRequest, Operation>newBuilder()
@@ -1315,6 +1328,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("service", String.valueOf(request.getService()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getService())
             .build();
     HttpJsonCallSettings<MoveTableToDatabaseRequest, Operation>
         moveTableToDatabaseTransportSettings =
@@ -1327,6 +1341,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                       builder.add("service", String.valueOf(request.getService()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getService())
                 .build();
     HttpJsonCallSettings<AlterMetadataResourceLocationRequest, Operation>
         alterMetadataResourceLocationTransportSettings =
@@ -1339,6 +1354,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                       builder.add("service", String.valueOf(request.getService()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getService())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -1373,6 +1389,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1384,6 +1401,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1396,6 +1414,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listServicesCallable =

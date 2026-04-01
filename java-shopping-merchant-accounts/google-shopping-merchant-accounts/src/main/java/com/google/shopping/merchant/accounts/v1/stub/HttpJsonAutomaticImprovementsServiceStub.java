@@ -194,6 +194,7 @@ public class HttpJsonAutomaticImprovementsServiceStub extends AutomaticImproveme
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateAutomaticImprovementsRequest, AutomaticImprovements>
         updateAutomaticImprovementsTransportSettings =

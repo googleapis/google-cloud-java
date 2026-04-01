@@ -382,6 +382,7 @@ public class HttpJsonSearchTuningServiceStub extends SearchTuningServiceStub {
                   builder.add("data_store", String.valueOf(request.getDataStore()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getDataStore())
             .build();
     HttpJsonCallSettings<ListCustomModelsRequest, ListCustomModelsResponse>
         listCustomModelsTransportSettings =
@@ -394,6 +395,7 @@ public class HttpJsonSearchTuningServiceStub extends SearchTuningServiceStub {
                       builder.add("data_store", String.valueOf(request.getDataStore()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getDataStore())
                 .build();
 
     this.trainCustomModelCallable =

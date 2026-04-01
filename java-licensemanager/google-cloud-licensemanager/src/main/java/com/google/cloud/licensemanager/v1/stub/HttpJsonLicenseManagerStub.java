@@ -786,6 +786,7 @@ public class HttpJsonLicenseManagerStub extends LicenseManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetConfigurationRequest, Configuration> getConfigurationTransportSettings =
         HttpJsonCallSettings.<GetConfigurationRequest, Configuration>newBuilder()
@@ -797,6 +798,7 @@ public class HttpJsonLicenseManagerStub extends LicenseManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateConfigurationRequest, Operation>
         createConfigurationTransportSettings =
@@ -809,6 +811,7 @@ public class HttpJsonLicenseManagerStub extends LicenseManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateConfigurationRequest, Operation>
         updateConfigurationTransportSettings =
@@ -835,6 +838,7 @@ public class HttpJsonLicenseManagerStub extends LicenseManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListInstancesRequest, ListInstancesResponse>
         listInstancesTransportSettings =
@@ -847,6 +851,7 @@ public class HttpJsonLicenseManagerStub extends LicenseManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         HttpJsonCallSettings.<GetInstanceRequest, Instance>newBuilder()
@@ -858,6 +863,7 @@ public class HttpJsonLicenseManagerStub extends LicenseManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeactivateConfigurationRequest, Operation>
         deactivateConfigurationTransportSettings =
@@ -870,6 +876,7 @@ public class HttpJsonLicenseManagerStub extends LicenseManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ReactivateConfigurationRequest, Operation>
         reactivateConfigurationTransportSettings =
@@ -882,6 +889,7 @@ public class HttpJsonLicenseManagerStub extends LicenseManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             QueryConfigurationLicenseUsageRequest, QueryConfigurationLicenseUsageResponse>
@@ -897,6 +905,7 @@ public class HttpJsonLicenseManagerStub extends LicenseManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<AggregateUsageRequest, AggregateUsageResponse>
         aggregateUsageTransportSettings =
@@ -909,6 +918,7 @@ public class HttpJsonLicenseManagerStub extends LicenseManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListProductsRequest, ListProductsResponse> listProductsTransportSettings =
         HttpJsonCallSettings.<ListProductsRequest, ListProductsResponse>newBuilder()
@@ -920,6 +930,7 @@ public class HttpJsonLicenseManagerStub extends LicenseManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetProductRequest, Product> getProductTransportSettings =
         HttpJsonCallSettings.<GetProductRequest, Product>newBuilder()
@@ -931,6 +942,7 @@ public class HttpJsonLicenseManagerStub extends LicenseManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

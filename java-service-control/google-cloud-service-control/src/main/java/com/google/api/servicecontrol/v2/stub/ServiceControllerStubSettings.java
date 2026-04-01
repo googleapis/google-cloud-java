@@ -244,6 +244,7 @@ public class ServiceControllerStubSettings extends StubSettings<ServiceControlle
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-service-control")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

@@ -1272,4 +1272,17 @@ public interface JobOrBuilder
    * </code>
    */
   com.google.dataflow.v1beta3.ServiceResourcesOrBuilder getServiceResourcesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates whether the job can be paused.
+   * </pre>
+   *
+   * <code>bool pausable = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The pausable.
+   */
+  boolean getPausable();
 }

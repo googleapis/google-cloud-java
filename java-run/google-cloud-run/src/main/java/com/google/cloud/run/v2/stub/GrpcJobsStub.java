@@ -218,6 +218,7 @@ public class GrpcJobsStub extends JobsStub {
                   builder.add(request.getParent(), "location", CREATE_JOB_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetJobRequest, Job> getJobTransportSettings =
         GrpcCallSettings.<GetJobRequest, Job>newBuilder()
@@ -228,6 +229,7 @@ public class GrpcJobsStub extends JobsStub {
                   builder.add(request.getName(), "location", GET_JOB_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListJobsRequest, ListJobsResponse> listJobsTransportSettings =
         GrpcCallSettings.<ListJobsRequest, ListJobsResponse>newBuilder()
@@ -238,6 +240,7 @@ public class GrpcJobsStub extends JobsStub {
                   builder.add(request.getParent(), "location", LIST_JOBS_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateJobRequest, Operation> updateJobTransportSettings =
         GrpcCallSettings.<UpdateJobRequest, Operation>newBuilder()
@@ -260,6 +263,7 @@ public class GrpcJobsStub extends JobsStub {
                   builder.add(request.getName(), "location", DELETE_JOB_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RunJobRequest, Operation> runJobTransportSettings =
         GrpcCallSettings.<RunJobRequest, Operation>newBuilder()
@@ -270,6 +274,7 @@ public class GrpcJobsStub extends JobsStub {
                   builder.add(request.getName(), "location", RUN_JOB_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -280,6 +285,7 @@ public class GrpcJobsStub extends JobsStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -290,6 +296,7 @@ public class GrpcJobsStub extends JobsStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -301,6 +308,7 @@ public class GrpcJobsStub extends JobsStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createJobCallable =

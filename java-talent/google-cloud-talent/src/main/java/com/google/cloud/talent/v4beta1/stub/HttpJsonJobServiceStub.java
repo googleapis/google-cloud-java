@@ -539,6 +539,7 @@ public class HttpJsonJobServiceStub extends JobServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<BatchCreateJobsRequest, Operation> batchCreateJobsTransportSettings =
         HttpJsonCallSettings.<BatchCreateJobsRequest, Operation>newBuilder()
@@ -550,6 +551,7 @@ public class HttpJsonJobServiceStub extends JobServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetJobRequest, Job> getJobTransportSettings =
         HttpJsonCallSettings.<GetJobRequest, Job>newBuilder()
@@ -561,6 +563,7 @@ public class HttpJsonJobServiceStub extends JobServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateJobRequest, Job> updateJobTransportSettings =
         HttpJsonCallSettings.<UpdateJobRequest, Job>newBuilder()
@@ -583,6 +586,7 @@ public class HttpJsonJobServiceStub extends JobServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteJobRequest, Empty> deleteJobTransportSettings =
         HttpJsonCallSettings.<DeleteJobRequest, Empty>newBuilder()
@@ -594,6 +598,7 @@ public class HttpJsonJobServiceStub extends JobServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<BatchDeleteJobsRequest, Empty> batchDeleteJobsTransportSettings =
         HttpJsonCallSettings.<BatchDeleteJobsRequest, Empty>newBuilder()
@@ -605,6 +610,7 @@ public class HttpJsonJobServiceStub extends JobServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListJobsRequest, ListJobsResponse> listJobsTransportSettings =
         HttpJsonCallSettings.<ListJobsRequest, ListJobsResponse>newBuilder()
@@ -616,6 +622,7 @@ public class HttpJsonJobServiceStub extends JobServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<SearchJobsRequest, SearchJobsResponse> searchJobsTransportSettings =
         HttpJsonCallSettings.<SearchJobsRequest, SearchJobsResponse>newBuilder()
@@ -627,6 +634,7 @@ public class HttpJsonJobServiceStub extends JobServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<SearchJobsRequest, SearchJobsResponse>
         searchJobsForAlertTransportSettings =
@@ -639,6 +647,7 @@ public class HttpJsonJobServiceStub extends JobServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createJobCallable =

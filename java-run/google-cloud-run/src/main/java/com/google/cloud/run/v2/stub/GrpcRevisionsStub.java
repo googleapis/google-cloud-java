@@ -145,6 +145,7 @@ public class GrpcRevisionsStub extends RevisionsStub {
                   builder.add(request.getName(), "location", GET_REVISION_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRevisionsRequest, ListRevisionsResponse> listRevisionsTransportSettings =
         GrpcCallSettings.<ListRevisionsRequest, ListRevisionsResponse>newBuilder()
@@ -155,6 +156,7 @@ public class GrpcRevisionsStub extends RevisionsStub {
                   builder.add(request.getParent(), "location", LIST_REVISIONS_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteRevisionRequest, Operation> deleteRevisionTransportSettings =
         GrpcCallSettings.<DeleteRevisionRequest, Operation>newBuilder()
@@ -165,6 +167,7 @@ public class GrpcRevisionsStub extends RevisionsStub {
                   builder.add(request.getName(), "location", DELETE_REVISION_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getRevisionCallable =

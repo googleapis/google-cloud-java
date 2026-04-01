@@ -235,6 +235,7 @@ public class GrpcIdentityMappingStoreServiceStub extends IdentityMappingStoreSer
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCmekConfigName())
                 .build();
     GrpcCallSettings<GetIdentityMappingStoreRequest, IdentityMappingStore>
         getIdentityMappingStoreTransportSettings =
@@ -246,6 +247,7 @@ public class GrpcIdentityMappingStoreServiceStub extends IdentityMappingStoreSer
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteIdentityMappingStoreRequest, Operation>
         deleteIdentityMappingStoreTransportSettings =
@@ -257,6 +259,7 @@ public class GrpcIdentityMappingStoreServiceStub extends IdentityMappingStoreSer
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ImportIdentityMappingsRequest, Operation>
         importIdentityMappingsTransportSettings =
@@ -270,6 +273,7 @@ public class GrpcIdentityMappingStoreServiceStub extends IdentityMappingStoreSer
                           String.valueOf(request.getIdentityMappingStore()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getIdentityMappingStore())
                 .build();
     GrpcCallSettings<PurgeIdentityMappingsRequest, Operation>
         purgeIdentityMappingsTransportSettings =
@@ -283,6 +287,7 @@ public class GrpcIdentityMappingStoreServiceStub extends IdentityMappingStoreSer
                           String.valueOf(request.getIdentityMappingStore()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getIdentityMappingStore())
                 .build();
     GrpcCallSettings<ListIdentityMappingsRequest, ListIdentityMappingsResponse>
         listIdentityMappingsTransportSettings =
@@ -296,6 +301,7 @@ public class GrpcIdentityMappingStoreServiceStub extends IdentityMappingStoreSer
                           String.valueOf(request.getIdentityMappingStore()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getIdentityMappingStore())
                 .build();
     GrpcCallSettings<ListIdentityMappingStoresRequest, ListIdentityMappingStoresResponse>
         listIdentityMappingStoresTransportSettings =
@@ -308,6 +314,7 @@ public class GrpcIdentityMappingStoreServiceStub extends IdentityMappingStoreSer
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createIdentityMappingStoreCallable =

@@ -223,6 +223,9 @@ public class CloudRedisClusterClientHttpJsonTest {
             .setKmsKey("kmsKey-1127483058")
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setServerCaMode(ServerCaMode.forNumber(0))
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -295,6 +298,9 @@ public class CloudRedisClusterClientHttpJsonTest {
             .setKmsKey("kmsKey-1127483058")
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setServerCaMode(ServerCaMode.forNumber(0))
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -367,6 +373,9 @@ public class CloudRedisClusterClientHttpJsonTest {
             .setKmsKey("kmsKey-1127483058")
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setServerCaMode(ServerCaMode.forNumber(0))
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -407,6 +416,9 @@ public class CloudRedisClusterClientHttpJsonTest {
             .setKmsKey("kmsKey-1127483058")
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setServerCaMode(ServerCaMode.forNumber(0))
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -467,6 +479,9 @@ public class CloudRedisClusterClientHttpJsonTest {
               .setKmsKey("kmsKey-1127483058")
               .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
               .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+              .setServerCaMode(ServerCaMode.forNumber(0))
+              .setServerCaPool("serverCaPool1433802429")
+              .setRotateServerCertificate(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateClusterAsync(cluster, updateMask).get();
@@ -598,6 +613,9 @@ public class CloudRedisClusterClientHttpJsonTest {
             .setKmsKey("kmsKey-1127483058")
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setServerCaMode(ServerCaMode.forNumber(0))
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -679,6 +697,9 @@ public class CloudRedisClusterClientHttpJsonTest {
             .setKmsKey("kmsKey-1127483058")
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setServerCaMode(ServerCaMode.forNumber(0))
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -820,6 +841,101 @@ public class CloudRedisClusterClientHttpJsonTest {
   }
 
   @Test
+  public void getSharedRegionalCertificateAuthorityTest() throws Exception {
+    SharedRegionalCertificateAuthority expectedResponse =
+        SharedRegionalCertificateAuthority.newBuilder()
+            .setName(
+                SharedRegionalCertificateAuthorityName.of("[PROJECT]", "[LOCATION]").toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SharedRegionalCertificateAuthorityName name =
+        SharedRegionalCertificateAuthorityName.of("[PROJECT]", "[LOCATION]");
+
+    SharedRegionalCertificateAuthority actualResponse =
+        client.getSharedRegionalCertificateAuthority(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSharedRegionalCertificateAuthorityExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SharedRegionalCertificateAuthorityName name =
+          SharedRegionalCertificateAuthorityName.of("[PROJECT]", "[LOCATION]");
+      client.getSharedRegionalCertificateAuthority(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSharedRegionalCertificateAuthorityTest2() throws Exception {
+    SharedRegionalCertificateAuthority expectedResponse =
+        SharedRegionalCertificateAuthority.newBuilder()
+            .setName(
+                SharedRegionalCertificateAuthorityName.of("[PROJECT]", "[LOCATION]").toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-693/locations/location-693/sharedRegionalCertificateAuthority";
+
+    SharedRegionalCertificateAuthority actualResponse =
+        client.getSharedRegionalCertificateAuthority(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSharedRegionalCertificateAuthorityExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-693/locations/location-693/sharedRegionalCertificateAuthority";
+      client.getSharedRegionalCertificateAuthority(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void rescheduleClusterMaintenanceTest() throws Exception {
     Cluster expectedResponse =
         Cluster.newBuilder()
@@ -852,6 +968,9 @@ public class CloudRedisClusterClientHttpJsonTest {
             .setKmsKey("kmsKey-1127483058")
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setServerCaMode(ServerCaMode.forNumber(0))
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -936,6 +1055,9 @@ public class CloudRedisClusterClientHttpJsonTest {
             .setKmsKey("kmsKey-1127483058")
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setServerCaMode(ServerCaMode.forNumber(0))
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1611,6 +1733,9 @@ public class CloudRedisClusterClientHttpJsonTest {
             .setKmsKey("kmsKey-1127483058")
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setServerCaMode(ServerCaMode.forNumber(0))
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1688,6 +1813,9 @@ public class CloudRedisClusterClientHttpJsonTest {
             .setKmsKey("kmsKey-1127483058")
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setServerCaMode(ServerCaMode.forNumber(0))
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

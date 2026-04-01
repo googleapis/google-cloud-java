@@ -388,6 +388,7 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-discoveryengine")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

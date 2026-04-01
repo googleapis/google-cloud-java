@@ -239,6 +239,7 @@ public class HttpJsonIssueResolutionServiceStub extends IssueResolutionServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<RenderProductIssuesRequest, RenderProductIssuesResponse>
         renderProductIssuesTransportSettings =
@@ -252,6 +253,7 @@ public class HttpJsonIssueResolutionServiceStub extends IssueResolutionServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<TriggerActionRequest, TriggerActionResponse>
         triggerActionTransportSettings =
@@ -264,6 +266,7 @@ public class HttpJsonIssueResolutionServiceStub extends IssueResolutionServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.renderAccountIssuesCallable =

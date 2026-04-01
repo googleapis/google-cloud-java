@@ -619,6 +619,7 @@ public class ManagedKafkaConnectStubSettings extends StubSettings<ManagedKafkaCo
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-managedkafka")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

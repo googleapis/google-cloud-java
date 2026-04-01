@@ -606,6 +606,7 @@ public class HttpJsonPolicyTagManagerStub extends PolicyTagManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteTaxonomyRequest, Empty> deleteTaxonomyTransportSettings =
         HttpJsonCallSettings.<DeleteTaxonomyRequest, Empty>newBuilder()
@@ -617,6 +618,7 @@ public class HttpJsonPolicyTagManagerStub extends PolicyTagManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateTaxonomyRequest, Taxonomy> updateTaxonomyTransportSettings =
         HttpJsonCallSettings.<UpdateTaxonomyRequest, Taxonomy>newBuilder()
@@ -640,6 +642,7 @@ public class HttpJsonPolicyTagManagerStub extends PolicyTagManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetTaxonomyRequest, Taxonomy> getTaxonomyTransportSettings =
         HttpJsonCallSettings.<GetTaxonomyRequest, Taxonomy>newBuilder()
@@ -651,6 +654,7 @@ public class HttpJsonPolicyTagManagerStub extends PolicyTagManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreatePolicyTagRequest, PolicyTag> createPolicyTagTransportSettings =
         HttpJsonCallSettings.<CreatePolicyTagRequest, PolicyTag>newBuilder()
@@ -662,6 +666,7 @@ public class HttpJsonPolicyTagManagerStub extends PolicyTagManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeletePolicyTagRequest, Empty> deletePolicyTagTransportSettings =
         HttpJsonCallSettings.<DeletePolicyTagRequest, Empty>newBuilder()
@@ -673,6 +678,7 @@ public class HttpJsonPolicyTagManagerStub extends PolicyTagManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdatePolicyTagRequest, PolicyTag> updatePolicyTagTransportSettings =
         HttpJsonCallSettings.<UpdatePolicyTagRequest, PolicyTag>newBuilder()
@@ -696,6 +702,7 @@ public class HttpJsonPolicyTagManagerStub extends PolicyTagManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetPolicyTagRequest, PolicyTag> getPolicyTagTransportSettings =
         HttpJsonCallSettings.<GetPolicyTagRequest, PolicyTag>newBuilder()
@@ -707,6 +714,7 @@ public class HttpJsonPolicyTagManagerStub extends PolicyTagManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -718,6 +726,7 @@ public class HttpJsonPolicyTagManagerStub extends PolicyTagManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -729,6 +738,7 @@ public class HttpJsonPolicyTagManagerStub extends PolicyTagManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -741,6 +751,7 @@ public class HttpJsonPolicyTagManagerStub extends PolicyTagManagerStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createTaxonomyCallable =

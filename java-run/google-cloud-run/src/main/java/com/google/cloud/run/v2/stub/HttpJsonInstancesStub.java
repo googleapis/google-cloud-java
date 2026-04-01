@@ -405,6 +405,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   builder.add(request.getParent(), "location", CREATE_INSTANCE_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteInstanceRequest, Operation> deleteInstanceTransportSettings =
         HttpJsonCallSettings.<DeleteInstanceRequest, Operation>newBuilder()
@@ -416,6 +417,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   builder.add(request.getName(), "location", DELETE_INSTANCE_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         HttpJsonCallSettings.<GetInstanceRequest, Instance>newBuilder()
@@ -427,6 +429,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   builder.add(request.getName(), "location", GET_INSTANCE_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListInstancesRequest, ListInstancesResponse>
         listInstancesTransportSettings =
@@ -439,6 +442,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       builder.add(request.getParent(), "location", LIST_INSTANCES_0_PATH_TEMPLATE);
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<StopInstanceRequest, Operation> stopInstanceTransportSettings =
         HttpJsonCallSettings.<StopInstanceRequest, Operation>newBuilder()
@@ -450,6 +454,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<StartInstanceRequest, Operation> startInstanceTransportSettings =
         HttpJsonCallSettings.<StartInstanceRequest, Operation>newBuilder()
@@ -461,6 +466,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createInstanceCallable =
