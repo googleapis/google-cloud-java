@@ -89,22 +89,22 @@ class CompositeTracer extends BaseApiTracer {
 
   @Override
   public void operationSucceeded() {
-    for (ApiTracer child : children) {
-      child.operationSucceeded();
+    for (int i = children.size() - 1; i >= 0; i--) {
+      children.get(i).operationSucceeded();
     }
   }
 
   @Override
   public void operationCancelled() {
-    for (ApiTracer child : children) {
-      child.operationCancelled();
+    for (int i = children.size() - 1; i >= 0; i--) {
+      children.get(i).operationCancelled();
     }
   }
 
   @Override
   public void operationFailed(Throwable error) {
-    for (ApiTracer child : children) {
-      child.operationFailed(error);
+    for (int i = children.size() - 1; i >= 0; i--) {
+      children.get(i).operationFailed(error);
     }
   }
 
@@ -132,71 +132,71 @@ class CompositeTracer extends BaseApiTracer {
 
   @Override
   public void attemptSucceeded() {
-    for (ApiTracer child : children) {
-      child.attemptSucceeded();
+    for (int i = children.size() - 1; i >= 0; i--) {
+      children.get(i).attemptSucceeded();
     }
   }
 
   @Override
   public void attemptCancelled() {
-    for (ApiTracer child : children) {
-      child.attemptCancelled();
+    for (int i = children.size() - 1; i >= 0; i--) {
+      children.get(i).attemptCancelled();
     }
   }
 
   @Override
   public void attemptFailed(Throwable error, org.threeten.bp.Duration delay) {
-    for (ApiTracer child : children) {
-      child.attemptFailed(error, delay);
+    for (int i = children.size() - 1; i >= 0; i--) {
+      children.get(i).attemptFailed(error, delay);
     }
   }
 
   @Override
   public void attemptFailedDuration(Throwable error, java.time.Duration delay) {
-    for (ApiTracer child : children) {
-      child.attemptFailedDuration(error, delay);
+    for (int i = children.size() - 1; i >= 0; i--) {
+      children.get(i).attemptFailedDuration(error, delay);
     }
   }
 
   @Override
   public void attemptFailedRetriesExhausted(Throwable error) {
-    for (ApiTracer child : children) {
-      child.attemptFailedRetriesExhausted(error);
+    for (int i = children.size() - 1; i >= 0; i--) {
+      children.get(i).attemptFailedRetriesExhausted(error);
     }
   }
 
   @Override
   public void attemptPermanentFailure(Throwable error) {
-    for (ApiTracer child : children) {
-      child.attemptPermanentFailure(error);
+    for (int i = children.size() - 1; i >= 0; i--) {
+      children.get(i).attemptPermanentFailure(error);
     }
   }
 
   @Override
   public void lroStartFailed(Throwable error) {
-    for (ApiTracer child : children) {
-      child.lroStartFailed(error);
+    for (int i = children.size() - 1; i >= 0; i--) {
+      children.get(i).lroStartFailed(error);
     }
   }
 
   @Override
   public void lroStartSucceeded() {
-    for (ApiTracer child : children) {
-      child.lroStartSucceeded();
+    for (int i = children.size() - 1; i >= 0; i--) {
+      children.get(i).lroStartSucceeded();
     }
   }
 
   @Override
   public void responseReceived() {
-    for (ApiTracer child : children) {
-      child.responseReceived();
+    for (int i = children.size() - 1; i >= 0; i--) {
+      children.get(i).responseReceived();
     }
   }
 
   @Override
   public void responseHeadersReceived(Map<String, Object> headers) {
-    for (ApiTracer child : children) {
-      child.responseHeadersReceived(headers);
+    for (int i = children.size() - 1; i >= 0; i--) {
+      children.get(i).responseHeadersReceived(headers);
     }
   }
 

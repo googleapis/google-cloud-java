@@ -122,23 +122,26 @@ class CompositeTracerTest {
   @Test
   void testOperationSucceeded() {
     compositeTracer.operationSucceeded();
-    verify(child1).operationSucceeded();
-    verify(child2).operationSucceeded();
+    InOrder inOrder = inOrder(child2, child1);
+    inOrder.verify(child2).operationSucceeded();
+    inOrder.verify(child1).operationSucceeded();
   }
 
   @Test
   void testOperationCancelled() {
     compositeTracer.operationCancelled();
-    verify(child1).operationCancelled();
-    verify(child2).operationCancelled();
+    InOrder inOrder = inOrder(child2, child1);
+    inOrder.verify(child2).operationCancelled();
+    inOrder.verify(child1).operationCancelled();
   }
 
   @Test
   void testOperationFailed() {
     Throwable error = new RuntimeException("test error");
     compositeTracer.operationFailed(error);
-    verify(child1).operationFailed(error);
-    verify(child2).operationFailed(error);
+    InOrder inOrder = inOrder(child2, child1);
+    inOrder.verify(child2).operationFailed(error);
+    inOrder.verify(child1).operationFailed(error);
   }
 
   @Test
@@ -168,15 +171,17 @@ class CompositeTracerTest {
   @Test
   void testAttemptSucceeded() {
     compositeTracer.attemptSucceeded();
-    verify(child1).attemptSucceeded();
-    verify(child2).attemptSucceeded();
+    InOrder inOrder = inOrder(child2, child1);
+    inOrder.verify(child2).attemptSucceeded();
+    inOrder.verify(child1).attemptSucceeded();
   }
 
   @Test
   void testAttemptCancelled() {
     compositeTracer.attemptCancelled();
-    verify(child1).attemptCancelled();
-    verify(child2).attemptCancelled();
+    InOrder inOrder = inOrder(child2, child1);
+    inOrder.verify(child2).attemptCancelled();
+    inOrder.verify(child1).attemptCancelled();
   }
 
   @Test
@@ -185,8 +190,9 @@ class CompositeTracerTest {
     Throwable error = new RuntimeException("test error");
     org.threeten.bp.Duration delay = org.threeten.bp.Duration.ofSeconds(1);
     compositeTracer.attemptFailed(error, delay);
-    verify(child1).attemptFailed(error, delay);
-    verify(child2).attemptFailed(error, delay);
+    InOrder inOrder = inOrder(child2, child1);
+    inOrder.verify(child2).attemptFailed(error, delay);
+    inOrder.verify(child1).attemptFailed(error, delay);
   }
 
   @Test
@@ -194,54 +200,61 @@ class CompositeTracerTest {
     Throwable error = new RuntimeException("test error");
     java.time.Duration delay = java.time.Duration.ofSeconds(1);
     compositeTracer.attemptFailedDuration(error, delay);
-    verify(child1).attemptFailedDuration(error, delay);
-    verify(child2).attemptFailedDuration(error, delay);
+    InOrder inOrder = inOrder(child2, child1);
+    inOrder.verify(child2).attemptFailedDuration(error, delay);
+    inOrder.verify(child1).attemptFailedDuration(error, delay);
   }
 
   @Test
   void testAttemptFailedRetriesExhausted() {
     Throwable error = new RuntimeException("test error");
     compositeTracer.attemptFailedRetriesExhausted(error);
-    verify(child1).attemptFailedRetriesExhausted(error);
-    verify(child2).attemptFailedRetriesExhausted(error);
+    InOrder inOrder = inOrder(child2, child1);
+    inOrder.verify(child2).attemptFailedRetriesExhausted(error);
+    inOrder.verify(child1).attemptFailedRetriesExhausted(error);
   }
 
   @Test
   void testAttemptPermanentFailure() {
     Throwable error = new RuntimeException("test error");
     compositeTracer.attemptPermanentFailure(error);
-    verify(child1).attemptPermanentFailure(error);
-    verify(child2).attemptPermanentFailure(error);
+    InOrder inOrder = inOrder(child2, child1);
+    inOrder.verify(child2).attemptPermanentFailure(error);
+    inOrder.verify(child1).attemptPermanentFailure(error);
   }
 
   @Test
   void testLroStartFailed() {
     Throwable error = new RuntimeException("test error");
     compositeTracer.lroStartFailed(error);
-    verify(child1).lroStartFailed(error);
-    verify(child2).lroStartFailed(error);
+    InOrder inOrder = inOrder(child2, child1);
+    inOrder.verify(child2).lroStartFailed(error);
+    inOrder.verify(child1).lroStartFailed(error);
   }
 
   @Test
   void testLroStartSucceeded() {
     compositeTracer.lroStartSucceeded();
-    verify(child1).lroStartSucceeded();
-    verify(child2).lroStartSucceeded();
+    InOrder inOrder = inOrder(child2, child1);
+    inOrder.verify(child2).lroStartSucceeded();
+    inOrder.verify(child1).lroStartSucceeded();
   }
 
   @Test
   void testResponseReceived() {
     compositeTracer.responseReceived();
-    verify(child1).responseReceived();
-    verify(child2).responseReceived();
+    InOrder inOrder = inOrder(child2, child1);
+    inOrder.verify(child2).responseReceived();
+    inOrder.verify(child1).responseReceived();
   }
 
   @Test
   void testResponseHeadersReceived() {
     Map<String, Object> headers = ImmutableMap.<String, Object>of("testHeader", "testValue");
     compositeTracer.responseHeadersReceived(headers);
-    verify(child1).responseHeadersReceived(headers);
-    verify(child2).responseHeadersReceived(headers);
+    InOrder inOrder = inOrder(child2, child1);
+    inOrder.verify(child2).responseHeadersReceived(headers);
+    inOrder.verify(child1).responseHeadersReceived(headers);
   }
 
   @Test
