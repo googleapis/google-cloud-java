@@ -79,10 +79,12 @@ public class GoldenSignalsMetricsTracerFactory implements ApiTracerFactory {
     if (context == null) {
       return new BaseApiTracerFactory();
     }
-    this.clientLevelTracerContext = context;
     this.metricsRecorder =
-        new GoldenSignalsMetricsRecorder(
-            openTelemetry, clientLevelTracerContext.libraryMetadata());
+        GoldenSignalsMetricsRecorder.create(openTelemetry, context.libraryMetadata());
+    if (this.metricsRecorder == null) {
+      return new BaseApiTracerFactory();
+    }
+    this.clientLevelTracerContext = context;
     return this;
   }
 }

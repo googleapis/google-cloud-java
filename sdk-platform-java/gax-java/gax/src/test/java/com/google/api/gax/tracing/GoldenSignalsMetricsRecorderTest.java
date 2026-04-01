@@ -63,7 +63,7 @@ class GoldenSignalsMetricsRecorderTest {
     OpenTelemetry openTelemetry =
         OpenTelemetrySdk.builder().setMeterProvider(meterProvider).build();
     recorder =
-        new GoldenSignalsMetricsRecorder(
+        GoldenSignalsMetricsRecorder.create(
             openTelemetry,
             com.google.api.gax.rpc.LibraryMetadata.newBuilder()
                 .setArtifactName(ARTIFACT_NAME)

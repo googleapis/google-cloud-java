@@ -51,20 +51,23 @@ class GoldenSignalsMetricsRecorder {
       Arrays.asList(
           0.0, 0.0001, 0.0005, 0.0010, 0.005, 0.010, 0.050, 0.100, 0.5, 1.0, 5.0, 10.0, 60.0, 300.0,
           900.0, 3600.0);
-  @javax.annotation.Nullable final DoubleHistogram clientRequestDurationRecorder;
+  final DoubleHistogram clientRequestDurationRecorder;
 
-  GoldenSignalsMetricsRecorder(
+  @javax.annotation.Nullable
+  static GoldenSignalsMetricsRecorder create(
       OpenTelemetry openTelemetry, com.google.api.gax.rpc.LibraryMetadata libraryMetadata) {
-    String libraryName =
-        libraryMetadata != null && libraryMetadata.artifactName() != null ? libraryMetadata.artifactName() : "";
-    if (libraryName.isEmpty()) {
-      this.clientRequestDurationRecorder = null;
-      return;
+    if (libraryMetadata == null || com.google.common.base.Strings.isNullOrEmpty(libraryMetadata.artifactName())) {
+      return null;
     }
+    return new GoldenSignalsMetricsRecorder(openTelemetry, libraryMetadata);
+  }
+
+  private GoldenSignalsMetricsRecorder(
+      OpenTelemetry openTelemetry, com.google.api.gax.rpc.LibraryMetadata libraryMetadata) {
     io.opentelemetry.api.metrics.MeterBuilder meterBuilder =
-        openTelemetry.meterBuilder(libraryName);
+        openTelemetry.meterBuilder(libraryMetadata.artifactName());
     String libraryVersion = libraryMetadata.version();
-    if (libraryVersion != null && !libraryVersion.isEmpty()) {
+    if (!com.google.common.base.Strings.isNullOrEmpty(libraryVersion)) {
       meterBuilder.setInstrumentationVersion(libraryVersion);
     }
     Meter meter = meterBuilder.build();
@@ -79,9 +82,7 @@ class GoldenSignalsMetricsRecorder {
   }
 
   void recordOperationLatency(double operationLatency, Map<String, Object> attributes) {
-    if (clientRequestDurationRecorder != null) {
-      clientRequestDurationRecorder.record(
-          operationLatency, ObservabilityUtils.toOtelAttributes(attributes));
-    }
+    clientRequestDurationRecorder.record(
+        operationLatency, ObservabilityUtils.toOtelAttributes(attributes));
   }
 }
