@@ -53,6 +53,12 @@ def com_google_api_gax_java_repositories():
         name = "com_google_protobuf",
         urls = ["https://github.com/protocolbuffers/protobuf/archive/%s.zip" % _protobuf_version_in_link],
         strip_prefix = "protobuf-%s" % _protobuf_version,
+        patch_cmds = [
+            "mkdir -p bazel/common",
+            "touch bazel/common/BUILD",
+            "echo 'load(\"@@rules_proto//proto:defs.bzl\", _ProtoInfo = \"ProtoInfo\")' > bazel/common/proto_info.bzl",
+            "echo 'ProtoInfo = _ProtoInfo' >> bazel/common/proto_info.bzl",
+        ],
     )
 
     _grpc_version = PROPERTIES["version.io_grpc"]
