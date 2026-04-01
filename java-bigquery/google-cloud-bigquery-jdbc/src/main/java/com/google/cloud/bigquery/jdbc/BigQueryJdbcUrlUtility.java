@@ -712,7 +712,7 @@ final class BigQueryJdbcUrlUtility {
           throw new BigQueryJdbcRuntimeException(
               String.format("Wrong value or unknown setting: %s", safeRef));
         } else {
-          LOG.severe("Wrong value or unknown setting: %s", safeRef);
+          LOG.warning("Wrong value or unknown setting: %s", safeRef);
           continue;
         }
       }
