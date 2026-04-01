@@ -50,7 +50,7 @@ final class ObservabilityUtils {
    */
   static String extractErrorType(@Nullable Throwable error) {
     return ErrorTypeUtil.extractErrorType(error);
-	}
+  }
 
   /** Function to extract the status of the error as a canonical code. */
   static StatusCode.Code extractStatus(@Nullable Throwable error) {

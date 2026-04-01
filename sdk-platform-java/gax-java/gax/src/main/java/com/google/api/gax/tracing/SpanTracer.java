@@ -208,6 +208,13 @@ public class SpanTracer implements ApiTracer {
     attemptSpan.setAttribute(
         ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE, ObservabilityUtils.extractErrorType(error));
 
+    Map<String, Object> statusAttributes = new HashMap<>();
+    ObservabilityUtils.populateStatusAttributes(
+        statusAttributes, error, this.apiTracerContext.transport());
+    if (!statusAttributes.isEmpty()) {
+      attemptSpan.setAllAttributes(ObservabilityUtils.toOtelAttributes(statusAttributes));
+    }
+
     if (error == null) {
       endAttempt();
       return;
@@ -221,20 +228,13 @@ public class SpanTracer implements ApiTracer {
           ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE, error.getMessage());
     }
 
-    Map<String, Object> endAttributes = new HashMap<>();
-    ObservabilityUtils.populateStatusAttributes(
-        endAttributes, error, this.apiTracerContext.transport());
-    if (!endAttributes.isEmpty()) {
-      attemptSpan.setAllAttributes(ObservabilityUtils.toOtelAttributes(endAttributes));
-    }
-
     endAttempt();
   }
 
   private void endAttempt() {
-		if (attemptSpan == null) {
-			return;
-		}
+    if (attemptSpan == null) {
+      return;
+    }
 
     attemptSpan.end();
     attemptSpan = null;
