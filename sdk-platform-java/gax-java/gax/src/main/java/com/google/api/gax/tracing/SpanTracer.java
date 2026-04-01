@@ -204,4 +204,16 @@ public class SpanTracer implements ApiTracer {
       attemptSpan = null;
     }
   }
+
+  @Override
+  public void requestUrlResolved(String url) {
+    if (attemptSpan == null) {
+      return;
+    }
+    String sanitizedUrlString = ObservabilityUtils.sanitizeUrlFull(url);
+    if (sanitizedUrlString.isEmpty()) {
+      return;
+    }
+    attemptSpan.setAttribute(ObservabilityAttributes.HTTP_URL_FULL_ATTRIBUTE, sanitizedUrlString);
+  }
 }

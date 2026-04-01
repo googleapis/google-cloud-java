@@ -187,6 +187,7 @@ public class GrpcDirectAccessServiceStub extends DirectAccessServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListDeviceSessionsRequest, ListDeviceSessionsResponse>
         listDeviceSessionsTransportSettings =
@@ -198,6 +199,7 @@ public class GrpcDirectAccessServiceStub extends DirectAccessServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetDeviceSessionRequest, DeviceSession> getDeviceSessionTransportSettings =
         GrpcCallSettings.<GetDeviceSessionRequest, DeviceSession>newBuilder()
@@ -208,6 +210,7 @@ public class GrpcDirectAccessServiceStub extends DirectAccessServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CancelDeviceSessionRequest, Empty> cancelDeviceSessionTransportSettings =
         GrpcCallSettings.<CancelDeviceSessionRequest, Empty>newBuilder()
@@ -218,6 +221,7 @@ public class GrpcDirectAccessServiceStub extends DirectAccessServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateDeviceSessionRequest, DeviceSession>
         updateDeviceSessionTransportSettings =

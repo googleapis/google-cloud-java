@@ -535,6 +535,7 @@ public class ParameterManagerStubSettings extends StubSettings<ParameterManagerS
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-parametermanager")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

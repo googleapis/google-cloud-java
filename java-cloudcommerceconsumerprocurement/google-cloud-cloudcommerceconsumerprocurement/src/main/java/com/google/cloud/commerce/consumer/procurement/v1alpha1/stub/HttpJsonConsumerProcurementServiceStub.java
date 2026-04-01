@@ -260,6 +260,7 @@ public class HttpJsonConsumerProcurementServiceStub extends ConsumerProcurementS
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetOrderRequest, Order> getOrderTransportSettings =
         HttpJsonCallSettings.<GetOrderRequest, Order>newBuilder()

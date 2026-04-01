@@ -1525,6 +1525,7 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-gke-backup")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

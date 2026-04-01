@@ -242,6 +242,7 @@ public class AdapterStubSettings extends StubSettings<AdapterStubSettings> {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-spanneradapter")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

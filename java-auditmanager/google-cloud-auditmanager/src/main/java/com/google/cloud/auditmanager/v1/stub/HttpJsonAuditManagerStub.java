@@ -628,6 +628,7 @@ public class HttpJsonAuditManagerStub extends AuditManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetAuditReportRequest, AuditReport> getAuditReportTransportSettings =
         HttpJsonCallSettings.<GetAuditReportRequest, AuditReport>newBuilder()
@@ -639,6 +640,7 @@ public class HttpJsonAuditManagerStub extends AuditManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetResourceEnrollmentStatusRequest, ResourceEnrollmentStatus>
         getResourceEnrollmentStatusTransportSettings =
@@ -652,6 +654,7 @@ public class HttpJsonAuditManagerStub extends AuditManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             ListResourceEnrollmentStatusesRequest, ListResourceEnrollmentStatusesResponse>
@@ -667,6 +670,7 @@ public class HttpJsonAuditManagerStub extends AuditManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListControlsRequest, ListControlsResponse> listControlsTransportSettings =
         HttpJsonCallSettings.<ListControlsRequest, ListControlsResponse>newBuilder()
@@ -678,6 +682,7 @@ public class HttpJsonAuditManagerStub extends AuditManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

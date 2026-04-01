@@ -142,6 +142,7 @@ public class GrpcSnoozeServiceStub extends SnoozeServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListSnoozesRequest, ListSnoozesResponse> listSnoozesTransportSettings =
         GrpcCallSettings.<ListSnoozesRequest, ListSnoozesResponse>newBuilder()
@@ -152,6 +153,7 @@ public class GrpcSnoozeServiceStub extends SnoozeServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetSnoozeRequest, Snooze> getSnoozeTransportSettings =
         GrpcCallSettings.<GetSnoozeRequest, Snooze>newBuilder()
@@ -162,6 +164,7 @@ public class GrpcSnoozeServiceStub extends SnoozeServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateSnoozeRequest, Snooze> updateSnoozeTransportSettings =
         GrpcCallSettings.<UpdateSnoozeRequest, Snooze>newBuilder()

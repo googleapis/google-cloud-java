@@ -477,6 +477,7 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-recommender")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

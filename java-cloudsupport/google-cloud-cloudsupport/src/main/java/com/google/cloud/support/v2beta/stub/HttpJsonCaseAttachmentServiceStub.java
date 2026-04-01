@@ -188,6 +188,7 @@ public class HttpJsonCaseAttachmentServiceStub extends CaseAttachmentServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetAttachmentRequest, Attachment> getAttachmentTransportSettings =
         HttpJsonCallSettings.<GetAttachmentRequest, Attachment>newBuilder()
@@ -199,6 +200,7 @@ public class HttpJsonCaseAttachmentServiceStub extends CaseAttachmentServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.listAttachmentsCallable =

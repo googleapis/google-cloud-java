@@ -297,6 +297,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-recommendations-ai")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

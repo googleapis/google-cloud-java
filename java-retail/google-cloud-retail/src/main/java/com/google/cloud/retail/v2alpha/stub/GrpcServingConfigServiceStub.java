@@ -201,6 +201,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteServingConfigRequest, Empty> deleteServingConfigTransportSettings =
         GrpcCallSettings.<DeleteServingConfigRequest, Empty>newBuilder()
@@ -211,6 +212,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateServingConfigRequest, ServingConfig>
         updateServingConfigTransportSettings =
@@ -234,6 +236,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListServingConfigsRequest, ListServingConfigsResponse>
         listServingConfigsTransportSettings =
@@ -245,6 +248,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<AddControlRequest, ServingConfig> addControlTransportSettings =
         GrpcCallSettings.<AddControlRequest, ServingConfig>newBuilder()
@@ -255,6 +259,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
                   builder.add("serving_config", String.valueOf(request.getServingConfig()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getServingConfig())
             .build();
     GrpcCallSettings<RemoveControlRequest, ServingConfig> removeControlTransportSettings =
         GrpcCallSettings.<RemoveControlRequest, ServingConfig>newBuilder()
@@ -265,6 +270,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
                   builder.add("serving_config", String.valueOf(request.getServingConfig()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getServingConfig())
             .build();
 
     this.createServingConfigCallable =

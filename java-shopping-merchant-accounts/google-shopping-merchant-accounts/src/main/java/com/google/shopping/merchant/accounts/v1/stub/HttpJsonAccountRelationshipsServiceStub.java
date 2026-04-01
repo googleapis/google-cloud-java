@@ -239,6 +239,7 @@ public class HttpJsonAccountRelationshipsServiceStub extends AccountRelationship
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateAccountRelationshipRequest, AccountRelationship>
         updateAccountRelationshipTransportSettings =
@@ -266,6 +267,7 @@ public class HttpJsonAccountRelationshipsServiceStub extends AccountRelationship
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getAccountRelationshipCallable =

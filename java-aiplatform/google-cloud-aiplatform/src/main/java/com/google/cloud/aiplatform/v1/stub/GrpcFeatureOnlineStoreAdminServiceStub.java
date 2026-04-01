@@ -407,6 +407,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetFeatureOnlineStoreRequest, FeatureOnlineStore>
         getFeatureOnlineStoreTransportSettings =
@@ -418,6 +419,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListFeatureOnlineStoresRequest, ListFeatureOnlineStoresResponse>
         listFeatureOnlineStoresTransportSettings =
@@ -430,6 +432,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateFeatureOnlineStoreRequest, Operation>
         updateFeatureOnlineStoreTransportSettings =
@@ -454,6 +457,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateFeatureViewRequest, Operation> createFeatureViewTransportSettings =
         GrpcCallSettings.<CreateFeatureViewRequest, Operation>newBuilder()
@@ -464,6 +468,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetFeatureViewRequest, FeatureView> getFeatureViewTransportSettings =
         GrpcCallSettings.<GetFeatureViewRequest, FeatureView>newBuilder()
@@ -474,6 +479,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListFeatureViewsRequest, ListFeatureViewsResponse>
         listFeatureViewsTransportSettings =
@@ -485,6 +491,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateFeatureViewRequest, Operation> updateFeatureViewTransportSettings =
         GrpcCallSettings.<UpdateFeatureViewRequest, Operation>newBuilder()
@@ -506,6 +513,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SyncFeatureViewRequest, SyncFeatureViewResponse>
         syncFeatureViewTransportSettings =
@@ -517,6 +525,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                       builder.add("feature_view", String.valueOf(request.getFeatureView()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getFeatureView())
                 .build();
     GrpcCallSettings<GetFeatureViewSyncRequest, FeatureViewSync>
         getFeatureViewSyncTransportSettings =
@@ -528,6 +537,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListFeatureViewSyncsRequest, ListFeatureViewSyncsResponse>
         listFeatureViewSyncsTransportSettings =
@@ -539,6 +549,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -569,6 +580,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -579,6 +591,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -590,6 +603,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createFeatureOnlineStoreCallable =

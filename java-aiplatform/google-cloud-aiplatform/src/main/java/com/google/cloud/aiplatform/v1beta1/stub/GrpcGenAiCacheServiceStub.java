@@ -245,6 +245,7 @@ public class GrpcGenAiCacheServiceStub extends GenAiCacheServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetCachedContentRequest, CachedContent> getCachedContentTransportSettings =
         GrpcCallSettings.<GetCachedContentRequest, CachedContent>newBuilder()
@@ -255,6 +256,7 @@ public class GrpcGenAiCacheServiceStub extends GenAiCacheServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateCachedContentRequest, CachedContent>
         updateCachedContentTransportSettings =
@@ -278,6 +280,7 @@ public class GrpcGenAiCacheServiceStub extends GenAiCacheServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListCachedContentsRequest, ListCachedContentsResponse>
         listCachedContentsTransportSettings =
@@ -289,6 +292,7 @@ public class GrpcGenAiCacheServiceStub extends GenAiCacheServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -319,6 +323,7 @@ public class GrpcGenAiCacheServiceStub extends GenAiCacheServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -329,6 +334,7 @@ public class GrpcGenAiCacheServiceStub extends GenAiCacheServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -340,6 +346,7 @@ public class GrpcGenAiCacheServiceStub extends GenAiCacheServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createCachedContentCallable =

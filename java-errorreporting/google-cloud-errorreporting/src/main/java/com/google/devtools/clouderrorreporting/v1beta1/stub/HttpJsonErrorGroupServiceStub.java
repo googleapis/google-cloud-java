@@ -182,6 +182,7 @@ public class HttpJsonErrorGroupServiceStub extends ErrorGroupServiceStub {
                   builder.add("group_name", String.valueOf(request.getGroupName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getGroupName())
             .build();
     HttpJsonCallSettings<UpdateGroupRequest, ErrorGroup> updateGroupTransportSettings =
         HttpJsonCallSettings.<UpdateGroupRequest, ErrorGroup>newBuilder()

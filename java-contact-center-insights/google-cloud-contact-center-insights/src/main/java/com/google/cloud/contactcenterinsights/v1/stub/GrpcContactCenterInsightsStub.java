@@ -1299,6 +1299,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UploadConversationRequest, Operation> uploadConversationTransportSettings =
         GrpcCallSettings.<UploadConversationRequest, Operation>newBuilder()
@@ -1309,6 +1310,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateConversationRequest, Conversation> updateConversationTransportSettings =
         GrpcCallSettings.<UpdateConversationRequest, Conversation>newBuilder()
@@ -1330,6 +1332,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListConversationsRequest, ListConversationsResponse>
         listConversationsTransportSettings =
@@ -1341,6 +1344,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteConversationRequest, Empty> deleteConversationTransportSettings =
         GrpcCallSettings.<DeleteConversationRequest, Empty>newBuilder()
@@ -1351,6 +1355,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateAnalysisRequest, Operation> createAnalysisTransportSettings =
         GrpcCallSettings.<CreateAnalysisRequest, Operation>newBuilder()
@@ -1361,6 +1366,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetAnalysisRequest, Analysis> getAnalysisTransportSettings =
         GrpcCallSettings.<GetAnalysisRequest, Analysis>newBuilder()
@@ -1371,6 +1377,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAnalysesRequest, ListAnalysesResponse> listAnalysesTransportSettings =
         GrpcCallSettings.<ListAnalysesRequest, ListAnalysesResponse>newBuilder()
@@ -1381,6 +1388,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteAnalysisRequest, Empty> deleteAnalysisTransportSettings =
         GrpcCallSettings.<DeleteAnalysisRequest, Empty>newBuilder()
@@ -1391,6 +1399,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<BulkAnalyzeConversationsRequest, Operation>
         bulkAnalyzeConversationsTransportSettings =
@@ -1402,6 +1411,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<BulkDeleteConversationsRequest, Operation>
         bulkDeleteConversationsTransportSettings =
@@ -1413,6 +1423,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<IngestConversationsRequest, Operation> ingestConversationsTransportSettings =
         GrpcCallSettings.<IngestConversationsRequest, Operation>newBuilder()
@@ -1423,6 +1434,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ExportInsightsDataRequest, Operation> exportInsightsDataTransportSettings =
         GrpcCallSettings.<ExportInsightsDataRequest, Operation>newBuilder()
@@ -1433,6 +1445,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateIssueModelRequest, Operation> createIssueModelTransportSettings =
         GrpcCallSettings.<CreateIssueModelRequest, Operation>newBuilder()
@@ -1443,6 +1456,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateIssueModelRequest, IssueModel> updateIssueModelTransportSettings =
         GrpcCallSettings.<UpdateIssueModelRequest, IssueModel>newBuilder()
@@ -1464,6 +1478,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListIssueModelsRequest, ListIssueModelsResponse>
         listIssueModelsTransportSettings =
@@ -1475,6 +1490,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteIssueModelRequest, Operation> deleteIssueModelTransportSettings =
         GrpcCallSettings.<DeleteIssueModelRequest, Operation>newBuilder()
@@ -1485,6 +1501,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeployIssueModelRequest, Operation> deployIssueModelTransportSettings =
         GrpcCallSettings.<DeployIssueModelRequest, Operation>newBuilder()
@@ -1495,6 +1512,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UndeployIssueModelRequest, Operation> undeployIssueModelTransportSettings =
         GrpcCallSettings.<UndeployIssueModelRequest, Operation>newBuilder()
@@ -1505,6 +1523,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ExportIssueModelRequest, Operation> exportIssueModelTransportSettings =
         GrpcCallSettings.<ExportIssueModelRequest, Operation>newBuilder()
@@ -1515,6 +1534,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ImportIssueModelRequest, Operation> importIssueModelTransportSettings =
         GrpcCallSettings.<ImportIssueModelRequest, Operation>newBuilder()
@@ -1525,6 +1545,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetIssueRequest, Issue> getIssueTransportSettings =
         GrpcCallSettings.<GetIssueRequest, Issue>newBuilder()
@@ -1535,6 +1556,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListIssuesRequest, ListIssuesResponse> listIssuesTransportSettings =
         GrpcCallSettings.<ListIssuesRequest, ListIssuesResponse>newBuilder()
@@ -1545,6 +1567,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateIssueRequest, Issue> updateIssueTransportSettings =
         GrpcCallSettings.<UpdateIssueRequest, Issue>newBuilder()
@@ -1565,6 +1588,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CalculateIssueModelStatsRequest, CalculateIssueModelStatsResponse>
         calculateIssueModelStatsTransportSettings =
@@ -1577,6 +1601,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                       builder.add("issue_model", String.valueOf(request.getIssueModel()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getIssueModel())
                 .build();
     GrpcCallSettings<CreatePhraseMatcherRequest, PhraseMatcher>
         createPhraseMatcherTransportSettings =
@@ -1588,6 +1613,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetPhraseMatcherRequest, PhraseMatcher> getPhraseMatcherTransportSettings =
         GrpcCallSettings.<GetPhraseMatcherRequest, PhraseMatcher>newBuilder()
@@ -1598,6 +1624,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListPhraseMatchersRequest, ListPhraseMatchersResponse>
         listPhraseMatchersTransportSettings =
@@ -1609,6 +1636,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeletePhraseMatcherRequest, Empty> deletePhraseMatcherTransportSettings =
         GrpcCallSettings.<DeletePhraseMatcherRequest, Empty>newBuilder()
@@ -1619,6 +1647,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdatePhraseMatcherRequest, PhraseMatcher>
         updatePhraseMatcherTransportSettings =
@@ -1643,6 +1672,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                       builder.add("location", String.valueOf(request.getLocation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getLocation())
                 .build();
     GrpcCallSettings<GetSettingsRequest, Settings> getSettingsTransportSettings =
         GrpcCallSettings.<GetSettingsRequest, Settings>newBuilder()
@@ -1653,6 +1683,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateSettingsRequest, Settings> updateSettingsTransportSettings =
         GrpcCallSettings.<UpdateSettingsRequest, Settings>newBuilder()
@@ -1673,6 +1704,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetAnalysisRuleRequest, AnalysisRule> getAnalysisRuleTransportSettings =
         GrpcCallSettings.<GetAnalysisRuleRequest, AnalysisRule>newBuilder()
@@ -1683,6 +1715,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAnalysisRulesRequest, ListAnalysisRulesResponse>
         listAnalysisRulesTransportSettings =
@@ -1694,6 +1727,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateAnalysisRuleRequest, AnalysisRule> updateAnalysisRuleTransportSettings =
         GrpcCallSettings.<UpdateAnalysisRuleRequest, AnalysisRule>newBuilder()
@@ -1715,6 +1749,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetEncryptionSpecRequest, EncryptionSpec> getEncryptionSpecTransportSettings =
         GrpcCallSettings.<GetEncryptionSpecRequest, EncryptionSpec>newBuilder()
@@ -1725,6 +1760,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<InitializeEncryptionSpecRequest, Operation>
         initializeEncryptionSpecTransportSettings =
@@ -1748,6 +1784,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetViewRequest, View> getViewTransportSettings =
         GrpcCallSettings.<GetViewRequest, View>newBuilder()
@@ -1758,6 +1795,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListViewsRequest, ListViewsResponse> listViewsTransportSettings =
         GrpcCallSettings.<ListViewsRequest, ListViewsResponse>newBuilder()
@@ -1768,6 +1806,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateViewRequest, View> updateViewTransportSettings =
         GrpcCallSettings.<UpdateViewRequest, View>newBuilder()
@@ -1788,6 +1827,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<QueryMetricsRequest, Operation> queryMetricsTransportSettings =
         GrpcCallSettings.<QueryMetricsRequest, Operation>newBuilder()
@@ -1798,6 +1838,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("location", String.valueOf(request.getLocation()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getLocation())
             .build();
     GrpcCallSettings<CreateQaQuestionRequest, QaQuestion> createQaQuestionTransportSettings =
         GrpcCallSettings.<CreateQaQuestionRequest, QaQuestion>newBuilder()
@@ -1808,6 +1849,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetQaQuestionRequest, QaQuestion> getQaQuestionTransportSettings =
         GrpcCallSettings.<GetQaQuestionRequest, QaQuestion>newBuilder()
@@ -1818,6 +1860,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateQaQuestionRequest, QaQuestion> updateQaQuestionTransportSettings =
         GrpcCallSettings.<UpdateQaQuestionRequest, QaQuestion>newBuilder()
@@ -1839,6 +1882,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListQaQuestionsRequest, ListQaQuestionsResponse>
         listQaQuestionsTransportSettings =
@@ -1850,6 +1894,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateQaScorecardRequest, QaScorecard> createQaScorecardTransportSettings =
         GrpcCallSettings.<CreateQaScorecardRequest, QaScorecard>newBuilder()
@@ -1860,6 +1905,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetQaScorecardRequest, QaScorecard> getQaScorecardTransportSettings =
         GrpcCallSettings.<GetQaScorecardRequest, QaScorecard>newBuilder()
@@ -1870,6 +1916,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateQaScorecardRequest, QaScorecard> updateQaScorecardTransportSettings =
         GrpcCallSettings.<UpdateQaScorecardRequest, QaScorecard>newBuilder()
@@ -1891,6 +1938,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListQaScorecardsRequest, ListQaScorecardsResponse>
         listQaScorecardsTransportSettings =
@@ -1902,6 +1950,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateQaScorecardRevisionRequest, QaScorecardRevision>
         createQaScorecardRevisionTransportSettings =
@@ -1913,6 +1962,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetQaScorecardRevisionRequest, QaScorecardRevision>
         getQaScorecardRevisionTransportSettings =
@@ -1924,6 +1974,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<TuneQaScorecardRevisionRequest, Operation>
         tuneQaScorecardRevisionTransportSettings =
@@ -1935,6 +1986,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeployQaScorecardRevisionRequest, QaScorecardRevision>
         deployQaScorecardRevisionTransportSettings =
@@ -1946,6 +1998,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UndeployQaScorecardRevisionRequest, QaScorecardRevision>
         undeployQaScorecardRevisionTransportSettings =
@@ -1957,6 +2010,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteQaScorecardRevisionRequest, Empty>
         deleteQaScorecardRevisionTransportSettings =
@@ -1968,6 +2022,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListQaScorecardRevisionsRequest, ListQaScorecardRevisionsResponse>
         listQaScorecardRevisionsTransportSettings =
@@ -1980,6 +2035,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateFeedbackLabelRequest, FeedbackLabel>
         createFeedbackLabelTransportSettings =
@@ -1991,6 +2047,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListFeedbackLabelsRequest, ListFeedbackLabelsResponse>
         listFeedbackLabelsTransportSettings =
@@ -2002,6 +2059,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetFeedbackLabelRequest, FeedbackLabel> getFeedbackLabelTransportSettings =
         GrpcCallSettings.<GetFeedbackLabelRequest, FeedbackLabel>newBuilder()
@@ -2012,6 +2070,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateFeedbackLabelRequest, FeedbackLabel>
         updateFeedbackLabelTransportSettings =
@@ -2035,6 +2094,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsResponse>
         listAllFeedbackLabelsTransportSettings =
@@ -2047,6 +2107,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<BulkUploadFeedbackLabelsRequest, Operation>
         bulkUploadFeedbackLabelsTransportSettings =
@@ -2058,6 +2119,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<BulkDownloadFeedbackLabelsRequest, Operation>
         bulkDownloadFeedbackLabelsTransportSettings =
@@ -2069,6 +2131,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createConversationCallable =

@@ -297,6 +297,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetNotificationChannelDescriptorRequest, NotificationChannelDescriptor>
         getNotificationChannelDescriptorTransportSettings =
@@ -310,6 +311,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListNotificationChannelsRequest, ListNotificationChannelsResponse>
         listNotificationChannelsTransportSettings =
@@ -322,6 +324,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetNotificationChannelRequest, NotificationChannel>
         getNotificationChannelTransportSettings =
@@ -333,6 +336,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateNotificationChannelRequest, NotificationChannel>
         createNotificationChannelTransportSettings =
@@ -344,6 +348,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateNotificationChannelRequest, NotificationChannel>
         updateNotificationChannelTransportSettings =
@@ -368,6 +373,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<SendNotificationChannelVerificationCodeRequest, Empty>
         sendNotificationChannelVerificationCodeTransportSettings =
@@ -379,6 +385,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             GetNotificationChannelVerificationCodeRequest,
@@ -395,6 +402,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<VerifyNotificationChannelRequest, NotificationChannel>
         verifyNotificationChannelTransportSettings =
@@ -406,6 +414,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.listNotificationChannelDescriptorsCallable =

@@ -388,6 +388,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDataSourcesRequest, ListDataSourcesResponse>
         listDataSourcesTransportSettings =
@@ -399,6 +400,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateTransferConfigRequest, TransferConfig>
         createTransferConfigTransportSettings =
@@ -410,6 +412,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateTransferConfigRequest, TransferConfig>
         updateTransferConfigTransportSettings =
@@ -433,6 +436,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetTransferConfigRequest, TransferConfig> getTransferConfigTransportSettings =
         GrpcCallSettings.<GetTransferConfigRequest, TransferConfig>newBuilder()
@@ -443,6 +447,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListTransferConfigsRequest, ListTransferConfigsResponse>
         listTransferConfigsTransportSettings =
@@ -454,6 +459,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ScheduleTransferRunsRequest, ScheduleTransferRunsResponse>
         scheduleTransferRunsTransportSettings =
@@ -465,6 +471,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
         startManualTransferRunsTransportSettings =
@@ -477,6 +484,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetTransferRunRequest, TransferRun> getTransferRunTransportSettings =
         GrpcCallSettings.<GetTransferRunRequest, TransferRun>newBuilder()
@@ -487,6 +495,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteTransferRunRequest, Empty> deleteTransferRunTransportSettings =
         GrpcCallSettings.<DeleteTransferRunRequest, Empty>newBuilder()
@@ -497,6 +506,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListTransferRunsRequest, ListTransferRunsResponse>
         listTransferRunsTransportSettings =
@@ -508,6 +518,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListTransferLogsRequest, ListTransferLogsResponse>
         listTransferLogsTransportSettings =
@@ -519,6 +530,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CheckValidCredsRequest, CheckValidCredsResponse>
         checkValidCredsTransportSettings =
@@ -530,6 +542,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<EnrollDataSourcesRequest, Empty> enrollDataSourcesTransportSettings =
         GrpcCallSettings.<EnrollDataSourcesRequest, Empty>newBuilder()

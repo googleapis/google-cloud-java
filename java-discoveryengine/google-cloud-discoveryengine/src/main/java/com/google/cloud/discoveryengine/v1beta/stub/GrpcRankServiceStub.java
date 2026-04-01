@@ -104,6 +104,7 @@ public class GrpcRankServiceStub extends RankServiceStub {
                   builder.add("ranking_config", String.valueOf(request.getRankingConfig()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getRankingConfig())
             .build();
 
     this.rankCallable =

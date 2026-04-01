@@ -559,6 +559,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateCatalogRequest, Catalog> updateCatalogTransportSettings =
         HttpJsonCallSettings.<UpdateCatalogRequest, Catalog>newBuilder()
@@ -581,6 +582,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   builder.add("catalog", String.valueOf(request.getCatalog()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getCatalog())
             .build();
     HttpJsonCallSettings<GetDefaultBranchRequest, GetDefaultBranchResponse>
         getDefaultBranchTransportSettings =
@@ -593,6 +595,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       builder.add("catalog", String.valueOf(request.getCatalog()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCatalog())
                 .build();
     HttpJsonCallSettings<GetCompletionConfigRequest, CompletionConfig>
         getCompletionConfigTransportSettings =
@@ -605,6 +608,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateCompletionConfigRequest, CompletionConfig>
         updateCompletionConfigTransportSettings =
@@ -631,6 +635,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateAttributesConfigRequest, AttributesConfig>
         updateAttributesConfigTransportSettings =
@@ -658,6 +663,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                           "attributes_config", String.valueOf(request.getAttributesConfig()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAttributesConfig())
                 .build();
     HttpJsonCallSettings<RemoveCatalogAttributeRequest, AttributesConfig>
         removeCatalogAttributeTransportSettings =
@@ -671,6 +677,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                           "attributes_config", String.valueOf(request.getAttributesConfig()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAttributesConfig())
                 .build();
     HttpJsonCallSettings<ReplaceCatalogAttributeRequest, AttributesConfig>
         replaceCatalogAttributeTransportSettings =
@@ -684,6 +691,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                           "attributes_config", String.valueOf(request.getAttributesConfig()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAttributesConfig())
                 .build();
 
     this.listCatalogsCallable =

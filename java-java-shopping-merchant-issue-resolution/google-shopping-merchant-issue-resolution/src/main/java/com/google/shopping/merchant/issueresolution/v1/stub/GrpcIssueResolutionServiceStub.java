@@ -143,6 +143,7 @@ public class GrpcIssueResolutionServiceStub extends IssueResolutionServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<RenderProductIssuesRequest, RenderProductIssuesResponse>
         renderProductIssuesTransportSettings =
@@ -154,6 +155,7 @@ public class GrpcIssueResolutionServiceStub extends IssueResolutionServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<TriggerActionRequest, TriggerActionResponse> triggerActionTransportSettings =
         GrpcCallSettings.<TriggerActionRequest, TriggerActionResponse>newBuilder()
@@ -164,6 +166,7 @@ public class GrpcIssueResolutionServiceStub extends IssueResolutionServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.renderAccountIssuesCallable =

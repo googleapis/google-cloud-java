@@ -1038,6 +1038,7 @@ public class HttpJsonLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ResolveOperatorInfoRequest, ResolveOperatorInfoResponse>
         resolveOperatorInfoTransportSettings =
@@ -1051,6 +1052,7 @@ public class HttpJsonLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListOperatorsRequest, ListOperatorsResponse>
         listOperatorsTransportSettings =
@@ -1063,6 +1065,7 @@ public class HttpJsonLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetOperatorRequest, Operator> getOperatorTransportSettings =
         HttpJsonCallSettings.<GetOperatorRequest, Operator>newBuilder()
@@ -1074,6 +1077,7 @@ public class HttpJsonLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateOperatorRequest, Operation> createOperatorTransportSettings =
         HttpJsonCallSettings.<CreateOperatorRequest, Operation>newBuilder()
@@ -1085,6 +1089,7 @@ public class HttpJsonLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateOperatorRequest, Operation> updateOperatorTransportSettings =
         HttpJsonCallSettings.<UpdateOperatorRequest, Operation>newBuilder()
@@ -1107,6 +1112,7 @@ public class HttpJsonLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListAnalysesRequest, ListAnalysesResponse> listAnalysesTransportSettings =
         HttpJsonCallSettings.<ListAnalysesRequest, ListAnalysesResponse>newBuilder()
@@ -1118,6 +1124,7 @@ public class HttpJsonLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetAnalysisRequest, Analysis> getAnalysisTransportSettings =
         HttpJsonCallSettings.<GetAnalysisRequest, Analysis>newBuilder()
@@ -1129,6 +1136,7 @@ public class HttpJsonLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateAnalysisRequest, Operation> createAnalysisTransportSettings =
         HttpJsonCallSettings.<CreateAnalysisRequest, Operation>newBuilder()
@@ -1140,6 +1148,7 @@ public class HttpJsonLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateAnalysisRequest, Operation> updateAnalysisTransportSettings =
         HttpJsonCallSettings.<UpdateAnalysisRequest, Operation>newBuilder()
@@ -1162,6 +1171,7 @@ public class HttpJsonLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListProcessesRequest, ListProcessesResponse>
         listProcessesTransportSettings =
@@ -1174,6 +1184,7 @@ public class HttpJsonLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetProcessRequest, Process> getProcessTransportSettings =
         HttpJsonCallSettings.<GetProcessRequest, Process>newBuilder()
@@ -1185,6 +1196,7 @@ public class HttpJsonLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateProcessRequest, Operation> createProcessTransportSettings =
         HttpJsonCallSettings.<CreateProcessRequest, Operation>newBuilder()
@@ -1196,6 +1208,7 @@ public class HttpJsonLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateProcessRequest, Operation> updateProcessTransportSettings =
         HttpJsonCallSettings.<UpdateProcessRequest, Operation>newBuilder()
@@ -1218,6 +1231,7 @@ public class HttpJsonLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<BatchRunProcessRequest, Operation> batchRunProcessTransportSettings =
         HttpJsonCallSettings.<BatchRunProcessRequest, Operation>newBuilder()
@@ -1229,6 +1243,7 @@ public class HttpJsonLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

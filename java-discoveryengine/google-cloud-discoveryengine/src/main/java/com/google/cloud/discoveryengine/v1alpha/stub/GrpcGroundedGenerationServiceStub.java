@@ -112,6 +112,7 @@ public class GrpcGroundedGenerationServiceStub extends GroundedGenerationService
                       builder.add("grounding_config", String.valueOf(request.getGroundingConfig()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getGroundingConfig())
                 .build();
 
     this.checkGroundingCallable =

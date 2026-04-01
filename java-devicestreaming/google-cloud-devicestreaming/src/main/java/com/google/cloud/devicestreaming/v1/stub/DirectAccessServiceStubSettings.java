@@ -352,6 +352,7 @@ public class DirectAccessServiceStubSettings extends StubSettings<DirectAccessSe
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-devicestreaming")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

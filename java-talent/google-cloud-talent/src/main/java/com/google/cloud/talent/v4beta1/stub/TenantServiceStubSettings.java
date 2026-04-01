@@ -330,6 +330,7 @@ public class TenantServiceStubSettings extends StubSettings<TenantServiceStubSet
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-talent")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

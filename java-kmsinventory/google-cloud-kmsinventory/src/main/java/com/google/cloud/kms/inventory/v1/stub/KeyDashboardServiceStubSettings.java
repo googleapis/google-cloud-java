@@ -297,6 +297,7 @@ public class KeyDashboardServiceStubSettings extends StubSettings<KeyDashboardSe
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-kmsinventory")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

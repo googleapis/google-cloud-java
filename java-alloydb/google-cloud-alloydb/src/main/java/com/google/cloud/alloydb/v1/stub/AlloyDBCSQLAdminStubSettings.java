@@ -354,6 +354,7 @@ public class AlloyDBCSQLAdminStubSettings extends StubSettings<AlloyDBCSQLAdminS
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-alloydb")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

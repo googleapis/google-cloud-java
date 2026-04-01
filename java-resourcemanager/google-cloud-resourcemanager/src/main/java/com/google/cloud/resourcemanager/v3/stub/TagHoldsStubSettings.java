@@ -362,6 +362,7 @@ public class TagHoldsStubSettings extends StubSettings<TagHoldsStubSettings> {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-resourcemanager")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

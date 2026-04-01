@@ -797,6 +797,7 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetQueueRequest, Queue> getQueueTransportSettings =
         HttpJsonCallSettings.<GetQueueRequest, Queue>newBuilder()
@@ -808,6 +809,7 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateQueueRequest, Queue> createQueueTransportSettings =
         HttpJsonCallSettings.<CreateQueueRequest, Queue>newBuilder()
@@ -819,6 +821,7 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateQueueRequest, Queue> updateQueueTransportSettings =
         HttpJsonCallSettings.<UpdateQueueRequest, Queue>newBuilder()
@@ -841,6 +844,7 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<PurgeQueueRequest, Queue> purgeQueueTransportSettings =
         HttpJsonCallSettings.<PurgeQueueRequest, Queue>newBuilder()
@@ -852,6 +856,7 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<PauseQueueRequest, Queue> pauseQueueTransportSettings =
         HttpJsonCallSettings.<PauseQueueRequest, Queue>newBuilder()
@@ -863,6 +868,7 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ResumeQueueRequest, Queue> resumeQueueTransportSettings =
         HttpJsonCallSettings.<ResumeQueueRequest, Queue>newBuilder()
@@ -874,6 +880,7 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -885,6 +892,7 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -896,6 +904,7 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -908,6 +917,7 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     HttpJsonCallSettings<ListTasksRequest, ListTasksResponse> listTasksTransportSettings =
         HttpJsonCallSettings.<ListTasksRequest, ListTasksResponse>newBuilder()
@@ -919,6 +929,7 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetTaskRequest, Task> getTaskTransportSettings =
         HttpJsonCallSettings.<GetTaskRequest, Task>newBuilder()
@@ -930,6 +941,7 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateTaskRequest, Task> createTaskTransportSettings =
         HttpJsonCallSettings.<CreateTaskRequest, Task>newBuilder()
@@ -941,6 +953,7 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteTaskRequest, Empty> deleteTaskTransportSettings =
         HttpJsonCallSettings.<DeleteTaskRequest, Empty>newBuilder()
@@ -952,6 +965,7 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RunTaskRequest, Task> runTaskTransportSettings =
         HttpJsonCallSettings.<RunTaskRequest, Task>newBuilder()
@@ -963,6 +977,7 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

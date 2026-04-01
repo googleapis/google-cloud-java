@@ -254,6 +254,7 @@ public class SnapshotsV1Beta3StubSettings extends StubSettings<SnapshotsV1Beta3S
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-dataflow")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

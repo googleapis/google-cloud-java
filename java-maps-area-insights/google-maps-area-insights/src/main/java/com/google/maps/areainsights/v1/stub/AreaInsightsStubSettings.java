@@ -232,6 +232,7 @@ public class AreaInsightsStubSettings extends StubSettings<AreaInsightsStubSetti
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.maps:google-maps-area-insights")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

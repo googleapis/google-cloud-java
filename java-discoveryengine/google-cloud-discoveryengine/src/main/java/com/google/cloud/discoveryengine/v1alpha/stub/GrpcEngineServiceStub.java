@@ -203,6 +203,7 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteEngineRequest, Operation> deleteEngineTransportSettings =
         GrpcCallSettings.<DeleteEngineRequest, Operation>newBuilder()
@@ -213,6 +214,7 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateEngineRequest, Engine> updateEngineTransportSettings =
         GrpcCallSettings.<UpdateEngineRequest, Engine>newBuilder()
@@ -233,6 +235,7 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListEnginesRequest, ListEnginesResponse> listEnginesTransportSettings =
         GrpcCallSettings.<ListEnginesRequest, ListEnginesResponse>newBuilder()
@@ -243,6 +246,7 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<PauseEngineRequest, Engine> pauseEngineTransportSettings =
         GrpcCallSettings.<PauseEngineRequest, Engine>newBuilder()
@@ -253,6 +257,7 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ResumeEngineRequest, Engine> resumeEngineTransportSettings =
         GrpcCallSettings.<ResumeEngineRequest, Engine>newBuilder()
@@ -263,6 +268,7 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<TuneEngineRequest, Operation> tuneEngineTransportSettings =
         GrpcCallSettings.<TuneEngineRequest, Operation>newBuilder()
@@ -273,6 +279,7 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createEngineCallable =

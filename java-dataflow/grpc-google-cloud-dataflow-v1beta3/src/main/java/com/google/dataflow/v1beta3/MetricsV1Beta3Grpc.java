@@ -21,8 +21,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * The Dataflow Metrics API lets you monitor the progress of Dataflow
- * jobs.
+ * The Dataflow Metrics API lets you monitor the progress of Dataflow jobs.
  * </pre>
  */
 @io.grpc.stub.annotations.GrpcGenerated
@@ -235,8 +234,7 @@ public final class MetricsV1Beta3Grpc {
    *
    *
    * <pre>
-   * The Dataflow Metrics API lets you monitor the progress of Dataflow
-   * jobs.
+   * The Dataflow Metrics API lets you monitor the progress of Dataflow jobs.
    * </pre>
    */
   public interface AsyncService {
@@ -298,8 +296,7 @@ public final class MetricsV1Beta3Grpc {
    * Base class for the server implementation of the service MetricsV1Beta3.
    *
    * <pre>
-   * The Dataflow Metrics API lets you monitor the progress of Dataflow
-   * jobs.
+   * The Dataflow Metrics API lets you monitor the progress of Dataflow jobs.
    * </pre>
    */
   public abstract static class MetricsV1Beta3ImplBase
@@ -315,8 +312,7 @@ public final class MetricsV1Beta3Grpc {
    * A stub to allow clients to do asynchronous rpc calls to service MetricsV1Beta3.
    *
    * <pre>
-   * The Dataflow Metrics API lets you monitor the progress of Dataflow
-   * jobs.
+   * The Dataflow Metrics API lets you monitor the progress of Dataflow jobs.
    * </pre>
    */
   public static final class MetricsV1Beta3Stub
@@ -393,8 +389,7 @@ public final class MetricsV1Beta3Grpc {
    * A stub to allow clients to do synchronous rpc calls to service MetricsV1Beta3.
    *
    * <pre>
-   * The Dataflow Metrics API lets you monitor the progress of Dataflow
-   * jobs.
+   * The Dataflow Metrics API lets you monitor the progress of Dataflow jobs.
    * </pre>
    */
   public static final class MetricsV1Beta3BlockingV2Stub
@@ -463,8 +458,7 @@ public final class MetricsV1Beta3Grpc {
    * A stub to allow clients to do limited synchronous rpc calls to service MetricsV1Beta3.
    *
    * <pre>
-   * The Dataflow Metrics API lets you monitor the progress of Dataflow
-   * jobs.
+   * The Dataflow Metrics API lets you monitor the progress of Dataflow jobs.
    * </pre>
    */
   public static final class MetricsV1Beta3BlockingStub
@@ -531,8 +525,7 @@ public final class MetricsV1Beta3Grpc {
    * A stub to allow clients to do ListenableFuture-style rpc calls to service MetricsV1Beta3.
    *
    * <pre>
-   * The Dataflow Metrics API lets you monitor the progress of Dataflow
-   * jobs.
+   * The Dataflow Metrics API lets you monitor the progress of Dataflow jobs.
    * </pre>
    */
   public static final class MetricsV1Beta3FutureStub

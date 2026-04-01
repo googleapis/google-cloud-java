@@ -528,6 +528,7 @@ public class HttpJsonDataAccessControlServiceStub extends DataAccessControlServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDataAccessLabelRequest, DataAccessLabel>
         getDataAccessLabelTransportSettings =
@@ -540,6 +541,7 @@ public class HttpJsonDataAccessControlServiceStub extends DataAccessControlServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListDataAccessLabelsRequest, ListDataAccessLabelsResponse>
         listDataAccessLabelsTransportSettings =
@@ -553,6 +555,7 @@ public class HttpJsonDataAccessControlServiceStub extends DataAccessControlServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateDataAccessLabelRequest, DataAccessLabel>
         updateDataAccessLabelTransportSettings =
@@ -579,6 +582,7 @@ public class HttpJsonDataAccessControlServiceStub extends DataAccessControlServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateDataAccessScopeRequest, DataAccessScope>
         createDataAccessScopeTransportSettings =
@@ -591,6 +595,7 @@ public class HttpJsonDataAccessControlServiceStub extends DataAccessControlServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDataAccessScopeRequest, DataAccessScope>
         getDataAccessScopeTransportSettings =
@@ -603,6 +608,7 @@ public class HttpJsonDataAccessControlServiceStub extends DataAccessControlServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListDataAccessScopesRequest, ListDataAccessScopesResponse>
         listDataAccessScopesTransportSettings =
@@ -616,6 +622,7 @@ public class HttpJsonDataAccessControlServiceStub extends DataAccessControlServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateDataAccessScopeRequest, DataAccessScope>
         updateDataAccessScopeTransportSettings =
@@ -642,6 +649,7 @@ public class HttpJsonDataAccessControlServiceStub extends DataAccessControlServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.createDataAccessLabelCallable =

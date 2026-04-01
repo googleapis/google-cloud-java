@@ -244,6 +244,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDocumentsRequest, ListDocumentsResponse> listDocumentsTransportSettings =
         GrpcCallSettings.<ListDocumentsRequest, ListDocumentsResponse>newBuilder()
@@ -254,6 +255,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateDocumentRequest, Document> createDocumentTransportSettings =
         GrpcCallSettings.<CreateDocumentRequest, Document>newBuilder()
@@ -264,6 +266,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateDocumentRequest, Document> updateDocumentTransportSettings =
         GrpcCallSettings.<UpdateDocumentRequest, Document>newBuilder()
@@ -284,6 +287,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ImportDocumentsRequest, Operation> importDocumentsTransportSettings =
         GrpcCallSettings.<ImportDocumentsRequest, Operation>newBuilder()
@@ -294,6 +298,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<PurgeDocumentsRequest, Operation> purgeDocumentsTransportSettings =
         GrpcCallSettings.<PurgeDocumentsRequest, Operation>newBuilder()
@@ -304,6 +309,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetProcessedDocumentRequest, ProcessedDocument>
         getProcessedDocumentTransportSettings =
@@ -315,6 +321,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
         batchGetDocumentsMetadataTransportSettings =
@@ -327,6 +334,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getDocumentCallable =

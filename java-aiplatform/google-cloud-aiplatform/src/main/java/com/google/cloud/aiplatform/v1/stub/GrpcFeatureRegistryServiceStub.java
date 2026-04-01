@@ -350,6 +350,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetFeatureGroupRequest, FeatureGroup> getFeatureGroupTransportSettings =
         GrpcCallSettings.<GetFeatureGroupRequest, FeatureGroup>newBuilder()
@@ -360,6 +361,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListFeatureGroupsRequest, ListFeatureGroupsResponse>
         listFeatureGroupsTransportSettings =
@@ -371,6 +373,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateFeatureGroupRequest, Operation> updateFeatureGroupTransportSettings =
         GrpcCallSettings.<UpdateFeatureGroupRequest, Operation>newBuilder()
@@ -392,6 +395,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateFeatureRequest, Operation> createFeatureTransportSettings =
         GrpcCallSettings.<CreateFeatureRequest, Operation>newBuilder()
@@ -402,6 +406,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<BatchCreateFeaturesRequest, Operation> batchCreateFeaturesTransportSettings =
         GrpcCallSettings.<BatchCreateFeaturesRequest, Operation>newBuilder()
@@ -412,6 +417,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetFeatureRequest, Feature> getFeatureTransportSettings =
         GrpcCallSettings.<GetFeatureRequest, Feature>newBuilder()
@@ -422,6 +428,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListFeaturesRequest, ListFeaturesResponse> listFeaturesTransportSettings =
         GrpcCallSettings.<ListFeaturesRequest, ListFeaturesResponse>newBuilder()
@@ -432,6 +439,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateFeatureRequest, Operation> updateFeatureTransportSettings =
         GrpcCallSettings.<UpdateFeatureRequest, Operation>newBuilder()
@@ -452,6 +460,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -482,6 +491,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -492,6 +502,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -503,6 +514,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createFeatureGroupCallable =

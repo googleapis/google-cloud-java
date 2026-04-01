@@ -341,6 +341,7 @@ public class HttpJsonCloudApiRegistryStub extends CloudApiRegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListMcpServersRequest, ListMcpServersResponse>
         listMcpServersTransportSettings =
@@ -353,6 +354,7 @@ public class HttpJsonCloudApiRegistryStub extends CloudApiRegistryStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetMcpToolRequest, McpTool> getMcpToolTransportSettings =
         HttpJsonCallSettings.<GetMcpToolRequest, McpTool>newBuilder()
@@ -364,6 +366,7 @@ public class HttpJsonCloudApiRegistryStub extends CloudApiRegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListMcpToolsRequest, ListMcpToolsResponse> listMcpToolsTransportSettings =
         HttpJsonCallSettings.<ListMcpToolsRequest, ListMcpToolsResponse>newBuilder()
@@ -375,6 +378,7 @@ public class HttpJsonCloudApiRegistryStub extends CloudApiRegistryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

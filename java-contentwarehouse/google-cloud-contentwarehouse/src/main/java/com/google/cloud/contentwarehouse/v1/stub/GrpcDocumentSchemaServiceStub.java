@@ -174,6 +174,7 @@ public class GrpcDocumentSchemaServiceStub extends DocumentSchemaServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateDocumentSchemaRequest, DocumentSchema>
         updateDocumentSchemaTransportSettings =
@@ -185,6 +186,7 @@ public class GrpcDocumentSchemaServiceStub extends DocumentSchemaServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetDocumentSchemaRequest, DocumentSchema> getDocumentSchemaTransportSettings =
         GrpcCallSettings.<GetDocumentSchemaRequest, DocumentSchema>newBuilder()
@@ -195,6 +197,7 @@ public class GrpcDocumentSchemaServiceStub extends DocumentSchemaServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteDocumentSchemaRequest, Empty> deleteDocumentSchemaTransportSettings =
         GrpcCallSettings.<DeleteDocumentSchemaRequest, Empty>newBuilder()
@@ -205,6 +208,7 @@ public class GrpcDocumentSchemaServiceStub extends DocumentSchemaServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDocumentSchemasRequest, ListDocumentSchemasResponse>
         listDocumentSchemasTransportSettings =
@@ -216,6 +220,7 @@ public class GrpcDocumentSchemaServiceStub extends DocumentSchemaServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createDocumentSchemaCallable =

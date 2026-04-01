@@ -2031,6 +2031,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListBackupPlansRequest, ListBackupPlansResponse>
         listBackupPlansTransportSettings =
@@ -2043,6 +2044,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetBackupPlanRequest, BackupPlan> getBackupPlanTransportSettings =
         HttpJsonCallSettings.<GetBackupPlanRequest, BackupPlan>newBuilder()
@@ -2054,6 +2056,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateBackupPlanRequest, Operation> updateBackupPlanTransportSettings =
         HttpJsonCallSettings.<UpdateBackupPlanRequest, Operation>newBuilder()
@@ -2077,6 +2080,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateBackupChannelRequest, Operation>
         createBackupChannelTransportSettings =
@@ -2089,6 +2093,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListBackupChannelsRequest, ListBackupChannelsResponse>
         listBackupChannelsTransportSettings =
@@ -2101,6 +2106,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetBackupChannelRequest, BackupChannel> getBackupChannelTransportSettings =
         HttpJsonCallSettings.<GetBackupChannelRequest, BackupChannel>newBuilder()
@@ -2112,6 +2118,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateBackupChannelRequest, Operation>
         updateBackupChannelTransportSettings =
@@ -2138,6 +2145,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListBackupPlanBindingsRequest, ListBackupPlanBindingsResponse>
         listBackupPlanBindingsTransportSettings =
@@ -2151,6 +2159,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetBackupPlanBindingRequest, BackupPlanBinding>
         getBackupPlanBindingTransportSettings =
@@ -2163,6 +2172,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateBackupRequest, Operation> createBackupTransportSettings =
         HttpJsonCallSettings.<CreateBackupRequest, Operation>newBuilder()
@@ -2174,6 +2184,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
         HttpJsonCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
@@ -2185,6 +2196,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
         HttpJsonCallSettings.<GetBackupRequest, Backup>newBuilder()
@@ -2196,6 +2208,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateBackupRequest, Operation> updateBackupTransportSettings =
         HttpJsonCallSettings.<UpdateBackupRequest, Operation>newBuilder()
@@ -2218,6 +2231,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListVolumeBackupsRequest, ListVolumeBackupsResponse>
         listVolumeBackupsTransportSettings =
@@ -2230,6 +2244,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetVolumeBackupRequest, VolumeBackup> getVolumeBackupTransportSettings =
         HttpJsonCallSettings.<GetVolumeBackupRequest, VolumeBackup>newBuilder()
@@ -2241,6 +2256,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateRestorePlanRequest, Operation> createRestorePlanTransportSettings =
         HttpJsonCallSettings.<CreateRestorePlanRequest, Operation>newBuilder()
@@ -2252,6 +2268,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListRestorePlansRequest, ListRestorePlansResponse>
         listRestorePlansTransportSettings =
@@ -2264,6 +2281,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetRestorePlanRequest, RestorePlan> getRestorePlanTransportSettings =
         HttpJsonCallSettings.<GetRestorePlanRequest, RestorePlan>newBuilder()
@@ -2275,6 +2293,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateRestorePlanRequest, Operation> updateRestorePlanTransportSettings =
         HttpJsonCallSettings.<UpdateRestorePlanRequest, Operation>newBuilder()
@@ -2298,6 +2317,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateRestoreChannelRequest, Operation>
         createRestoreChannelTransportSettings =
@@ -2310,6 +2330,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListRestoreChannelsRequest, ListRestoreChannelsResponse>
         listRestoreChannelsTransportSettings =
@@ -2323,6 +2344,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetRestoreChannelRequest, RestoreChannel>
         getRestoreChannelTransportSettings =
@@ -2335,6 +2357,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateRestoreChannelRequest, Operation>
         updateRestoreChannelTransportSettings =
@@ -2361,6 +2384,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListRestorePlanBindingsRequest, ListRestorePlanBindingsResponse>
         listRestorePlanBindingsTransportSettings =
@@ -2374,6 +2398,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetRestorePlanBindingRequest, RestorePlanBinding>
         getRestorePlanBindingTransportSettings =
@@ -2386,6 +2411,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateRestoreRequest, Operation> createRestoreTransportSettings =
         HttpJsonCallSettings.<CreateRestoreRequest, Operation>newBuilder()
@@ -2397,6 +2423,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListRestoresRequest, ListRestoresResponse> listRestoresTransportSettings =
         HttpJsonCallSettings.<ListRestoresRequest, ListRestoresResponse>newBuilder()
@@ -2408,6 +2435,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetRestoreRequest, Restore> getRestoreTransportSettings =
         HttpJsonCallSettings.<GetRestoreRequest, Restore>newBuilder()
@@ -2419,6 +2447,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateRestoreRequest, Operation> updateRestoreTransportSettings =
         HttpJsonCallSettings.<UpdateRestoreRequest, Operation>newBuilder()
@@ -2441,6 +2470,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListVolumeRestoresRequest, ListVolumeRestoresResponse>
         listVolumeRestoresTransportSettings =
@@ -2453,6 +2483,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetVolumeRestoreRequest, VolumeRestore> getVolumeRestoreTransportSettings =
         HttpJsonCallSettings.<GetVolumeRestoreRequest, VolumeRestore>newBuilder()
@@ -2464,6 +2495,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetBackupIndexDownloadUrlRequest, GetBackupIndexDownloadUrlResponse>
         getBackupIndexDownloadUrlTransportSettings =
@@ -2477,6 +2509,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                       builder.add("backup", String.valueOf(request.getBackup()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getBackup())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -2511,6 +2544,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -2522,6 +2556,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -2534,6 +2569,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createBackupPlanCallable =

@@ -240,6 +240,7 @@ public class GrpcPolicyBasedRoutingServiceStub extends PolicyBasedRoutingService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetPolicyBasedRouteRequest, PolicyBasedRoute>
         getPolicyBasedRouteTransportSettings =
@@ -251,6 +252,7 @@ public class GrpcPolicyBasedRoutingServiceStub extends PolicyBasedRoutingService
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreatePolicyBasedRouteRequest, Operation>
         createPolicyBasedRouteTransportSettings =
@@ -262,6 +264,7 @@ public class GrpcPolicyBasedRoutingServiceStub extends PolicyBasedRoutingService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeletePolicyBasedRouteRequest, Operation>
         deletePolicyBasedRouteTransportSettings =
@@ -273,6 +276,7 @@ public class GrpcPolicyBasedRoutingServiceStub extends PolicyBasedRoutingService
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -303,6 +307,7 @@ public class GrpcPolicyBasedRoutingServiceStub extends PolicyBasedRoutingService
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -313,6 +318,7 @@ public class GrpcPolicyBasedRoutingServiceStub extends PolicyBasedRoutingService
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -324,6 +330,7 @@ public class GrpcPolicyBasedRoutingServiceStub extends PolicyBasedRoutingService
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listPolicyBasedRoutesCallable =

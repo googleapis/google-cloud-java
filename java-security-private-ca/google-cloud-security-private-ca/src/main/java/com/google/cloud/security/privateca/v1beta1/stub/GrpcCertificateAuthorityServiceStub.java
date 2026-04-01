@@ -465,6 +465,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetCertificateRequest, Certificate> getCertificateTransportSettings =
         GrpcCallSettings.<GetCertificateRequest, Certificate>newBuilder()
@@ -475,6 +476,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListCertificatesRequest, ListCertificatesResponse>
         listCertificatesTransportSettings =
@@ -486,6 +488,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<RevokeCertificateRequest, Certificate> revokeCertificateTransportSettings =
         GrpcCallSettings.<RevokeCertificateRequest, Certificate>newBuilder()
@@ -496,6 +499,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateCertificateRequest, Certificate> updateCertificateTransportSettings =
         GrpcCallSettings.<UpdateCertificateRequest, Certificate>newBuilder()
@@ -518,6 +522,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateCertificateAuthorityRequest, Operation>
         createCertificateAuthorityTransportSettings =
@@ -529,6 +534,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DisableCertificateAuthorityRequest, Operation>
         disableCertificateAuthorityTransportSettings =
@@ -540,6 +546,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<EnableCertificateAuthorityRequest, Operation>
         enableCertificateAuthorityTransportSettings =
@@ -551,6 +558,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<FetchCertificateAuthorityCsrRequest, FetchCertificateAuthorityCsrResponse>
         fetchCertificateAuthorityCsrTransportSettings =
@@ -564,6 +572,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetCertificateAuthorityRequest, CertificateAuthority>
         getCertificateAuthorityTransportSettings =
@@ -575,6 +584,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse>
         listCertificateAuthoritiesTransportSettings =
@@ -587,6 +597,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<RestoreCertificateAuthorityRequest, Operation>
         restoreCertificateAuthorityTransportSettings =
@@ -598,6 +609,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ScheduleDeleteCertificateAuthorityRequest, Operation>
         scheduleDeleteCertificateAuthorityTransportSettings =
@@ -609,6 +621,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateCertificateAuthorityRequest, Operation>
         updateCertificateAuthorityTransportSettings =
@@ -634,6 +647,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListCertificateRevocationListsRequest, ListCertificateRevocationListsResponse>
         listCertificateRevocationListsTransportSettings =
@@ -647,6 +661,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateCertificateRevocationListRequest, Operation>
         updateCertificateRevocationListTransportSettings =
@@ -670,6 +685,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListReusableConfigsRequest, ListReusableConfigsResponse>
         listReusableConfigsTransportSettings =
@@ -681,6 +697,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createCertificateCallable =

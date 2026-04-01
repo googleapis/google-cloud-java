@@ -974,6 +974,7 @@ public class WorkstationsStubSettings extends StubSettings<WorkstationsStubSetti
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-workstations")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

@@ -510,6 +510,7 @@ public class HttpJsonStorageBatchOperationsStub extends StorageBatchOperationsSt
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetJobRequest, Job> getJobTransportSettings =
         HttpJsonCallSettings.<GetJobRequest, Job>newBuilder()
@@ -521,6 +522,7 @@ public class HttpJsonStorageBatchOperationsStub extends StorageBatchOperationsSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateJobRequest, Operation> createJobTransportSettings =
         HttpJsonCallSettings.<CreateJobRequest, Operation>newBuilder()
@@ -532,6 +534,7 @@ public class HttpJsonStorageBatchOperationsStub extends StorageBatchOperationsSt
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteJobRequest, Empty> deleteJobTransportSettings =
         HttpJsonCallSettings.<DeleteJobRequest, Empty>newBuilder()
@@ -543,6 +546,7 @@ public class HttpJsonStorageBatchOperationsStub extends StorageBatchOperationsSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CancelJobRequest, CancelJobResponse> cancelJobTransportSettings =
         HttpJsonCallSettings.<CancelJobRequest, CancelJobResponse>newBuilder()
@@ -554,6 +558,7 @@ public class HttpJsonStorageBatchOperationsStub extends StorageBatchOperationsSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListBucketOperationsRequest, ListBucketOperationsResponse>
         listBucketOperationsTransportSettings =
@@ -567,6 +572,7 @@ public class HttpJsonStorageBatchOperationsStub extends StorageBatchOperationsSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetBucketOperationRequest, BucketOperation>
         getBucketOperationTransportSettings =
@@ -579,6 +585,7 @@ public class HttpJsonStorageBatchOperationsStub extends StorageBatchOperationsSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

@@ -157,6 +157,7 @@ public class GrpcReferenceListServiceStub extends ReferenceListServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListReferenceListsRequest, ListReferenceListsResponse>
         listReferenceListsTransportSettings =
@@ -168,6 +169,7 @@ public class GrpcReferenceListServiceStub extends ReferenceListServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateReferenceListRequest, ReferenceList>
         createReferenceListTransportSettings =
@@ -179,6 +181,7 @@ public class GrpcReferenceListServiceStub extends ReferenceListServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateReferenceListRequest, ReferenceList>
         updateReferenceListTransportSettings =

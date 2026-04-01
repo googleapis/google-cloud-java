@@ -522,6 +522,7 @@ public class HttpJsonSchemaServiceStub extends SchemaServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListSchemasRequest, ListSchemasResponse> listSchemasTransportSettings =
         HttpJsonCallSettings.<ListSchemasRequest, ListSchemasResponse>newBuilder()
@@ -533,6 +534,7 @@ public class HttpJsonSchemaServiceStub extends SchemaServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateSchemaRequest, Operation> createSchemaTransportSettings =
         HttpJsonCallSettings.<CreateSchemaRequest, Operation>newBuilder()
@@ -544,6 +546,7 @@ public class HttpJsonSchemaServiceStub extends SchemaServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateSchemaRequest, Operation> updateSchemaTransportSettings =
         HttpJsonCallSettings.<UpdateSchemaRequest, Operation>newBuilder()
@@ -566,6 +569,7 @@ public class HttpJsonSchemaServiceStub extends SchemaServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getSchemaCallable =

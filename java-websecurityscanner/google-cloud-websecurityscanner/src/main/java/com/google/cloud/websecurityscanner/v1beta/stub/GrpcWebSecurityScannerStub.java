@@ -294,6 +294,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteScanConfigRequest, Empty> deleteScanConfigTransportSettings =
         GrpcCallSettings.<DeleteScanConfigRequest, Empty>newBuilder()
@@ -304,6 +305,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetScanConfigRequest, ScanConfig> getScanConfigTransportSettings =
         GrpcCallSettings.<GetScanConfigRequest, ScanConfig>newBuilder()
@@ -314,6 +316,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListScanConfigsRequest, ListScanConfigsResponse>
         listScanConfigsTransportSettings =
@@ -325,6 +328,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateScanConfigRequest, ScanConfig> updateScanConfigTransportSettings =
         GrpcCallSettings.<UpdateScanConfigRequest, ScanConfig>newBuilder()
@@ -346,6 +350,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetScanRunRequest, ScanRun> getScanRunTransportSettings =
         GrpcCallSettings.<GetScanRunRequest, ScanRun>newBuilder()
@@ -356,6 +361,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListScanRunsRequest, ListScanRunsResponse> listScanRunsTransportSettings =
         GrpcCallSettings.<ListScanRunsRequest, ListScanRunsResponse>newBuilder()
@@ -366,6 +372,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<StopScanRunRequest, ScanRun> stopScanRunTransportSettings =
         GrpcCallSettings.<StopScanRunRequest, ScanRun>newBuilder()
@@ -376,6 +383,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListCrawledUrlsRequest, ListCrawledUrlsResponse>
         listCrawledUrlsTransportSettings =
@@ -387,6 +395,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetFindingRequest, Finding> getFindingTransportSettings =
         GrpcCallSettings.<GetFindingRequest, Finding>newBuilder()
@@ -397,6 +406,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListFindingsRequest, ListFindingsResponse> listFindingsTransportSettings =
         GrpcCallSettings.<ListFindingsRequest, ListFindingsResponse>newBuilder()
@@ -407,6 +417,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListFindingTypeStatsRequest, ListFindingTypeStatsResponse>
         listFindingTypeStatsTransportSettings =
@@ -418,6 +429,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createScanConfigCallable =

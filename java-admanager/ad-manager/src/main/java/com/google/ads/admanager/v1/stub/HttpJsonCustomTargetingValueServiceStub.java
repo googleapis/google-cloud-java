@@ -198,6 +198,7 @@ public class HttpJsonCustomTargetingValueServiceStub extends CustomTargetingValu
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListCustomTargetingValuesRequest, ListCustomTargetingValuesResponse>
         listCustomTargetingValuesTransportSettings =
@@ -211,6 +212,7 @@ public class HttpJsonCustomTargetingValueServiceStub extends CustomTargetingValu
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getCustomTargetingValueCallable =

@@ -381,6 +381,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListNamespacesRequest, ListNamespacesResponse>
         listNamespacesTransportSettings =
@@ -392,6 +393,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetNamespaceRequest, Namespace> getNamespaceTransportSettings =
         GrpcCallSettings.<GetNamespaceRequest, Namespace>newBuilder()
@@ -402,6 +404,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateNamespaceRequest, Namespace> updateNamespaceTransportSettings =
         GrpcCallSettings.<UpdateNamespaceRequest, Namespace>newBuilder()
@@ -422,6 +425,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateServiceRequest, Service> createServiceTransportSettings =
         GrpcCallSettings.<CreateServiceRequest, Service>newBuilder()
@@ -432,6 +436,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListServicesRequest, ListServicesResponse> listServicesTransportSettings =
         GrpcCallSettings.<ListServicesRequest, ListServicesResponse>newBuilder()
@@ -442,6 +447,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetServiceRequest, Service> getServiceTransportSettings =
         GrpcCallSettings.<GetServiceRequest, Service>newBuilder()
@@ -452,6 +458,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateServiceRequest, Service> updateServiceTransportSettings =
         GrpcCallSettings.<UpdateServiceRequest, Service>newBuilder()
@@ -472,6 +479,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateEndpointRequest, Endpoint> createEndpointTransportSettings =
         GrpcCallSettings.<CreateEndpointRequest, Endpoint>newBuilder()
@@ -482,6 +490,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListEndpointsRequest, ListEndpointsResponse> listEndpointsTransportSettings =
         GrpcCallSettings.<ListEndpointsRequest, ListEndpointsResponse>newBuilder()
@@ -492,6 +501,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetEndpointRequest, Endpoint> getEndpointTransportSettings =
         GrpcCallSettings.<GetEndpointRequest, Endpoint>newBuilder()
@@ -502,6 +512,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateEndpointRequest, Endpoint> updateEndpointTransportSettings =
         GrpcCallSettings.<UpdateEndpointRequest, Endpoint>newBuilder()
@@ -522,6 +533,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -532,6 +544,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -542,6 +555,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -553,6 +567,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

@@ -53,7 +53,9 @@ public final class RuntimeUpdatableParams extends com.google.protobuf.GeneratedM
     super(builder);
   }
 
-  private RuntimeUpdatableParams() {}
+  private RuntimeUpdatableParams() {
+    autoscalingTier_ = "";
+  }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.dataflow.v1beta3.JobsProto
@@ -190,6 +192,150 @@ public final class RuntimeUpdatableParams extends com.google.protobuf.GeneratedM
     return workerUtilizationHint_;
   }
 
+  public static final int ACCEPTABLE_BACKLOG_DURATION_FIELD_NUMBER = 4;
+  private com.google.protobuf.Duration acceptableBacklogDuration_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Deprecated: Use `autoscaling_tier` instead.
+   * The backlog threshold duration in seconds for autoscaling. Value must be
+   * non-negative.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Duration acceptable_backlog_duration = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @deprecated google.dataflow.v1beta3.RuntimeUpdatableParams.acceptable_backlog_duration is
+   *     deprecated. See google/dataflow/v1beta3/jobs.proto;l=352
+   * @return Whether the acceptableBacklogDuration field is set.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public boolean hasAcceptableBacklogDuration() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Deprecated: Use `autoscaling_tier` instead.
+   * The backlog threshold duration in seconds for autoscaling. Value must be
+   * non-negative.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Duration acceptable_backlog_duration = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @deprecated google.dataflow.v1beta3.RuntimeUpdatableParams.acceptable_backlog_duration is
+   *     deprecated. See google/dataflow/v1beta3/jobs.proto;l=352
+   * @return The acceptableBacklogDuration.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public com.google.protobuf.Duration getAcceptableBacklogDuration() {
+    return acceptableBacklogDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : acceptableBacklogDuration_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Deprecated: Use `autoscaling_tier` instead.
+   * The backlog threshold duration in seconds for autoscaling. Value must be
+   * non-negative.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Duration acceptable_backlog_duration = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public com.google.protobuf.DurationOrBuilder getAcceptableBacklogDurationOrBuilder() {
+    return acceptableBacklogDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : acceptableBacklogDuration_;
+  }
+
+  public static final int AUTOSCALING_TIER_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object autoscalingTier_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The backlog threshold tier for autoscaling. Value must be one of
+   * "low-latency", "medium-latency", or "high-latency".
+   * </pre>
+   *
+   * <code>optional string autoscaling_tier = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the autoscalingTier field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutoscalingTier() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The backlog threshold tier for autoscaling. Value must be one of
+   * "low-latency", "medium-latency", or "high-latency".
+   * </pre>
+   *
+   * <code>optional string autoscaling_tier = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The autoscalingTier.
+   */
+  @java.lang.Override
+  public java.lang.String getAutoscalingTier() {
+    java.lang.Object ref = autoscalingTier_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      autoscalingTier_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The backlog threshold tier for autoscaling. Value must be one of
+   * "low-latency", "medium-latency", or "high-latency".
+   * </pre>
+   *
+   * <code>optional string autoscaling_tier = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for autoscalingTier.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAutoscalingTierBytes() {
+    java.lang.Object ref = autoscalingTier_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      autoscalingTier_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -213,6 +359,12 @@ public final class RuntimeUpdatableParams extends com.google.protobuf.GeneratedM
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeDouble(3, workerUtilizationHint_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(4, getAcceptableBacklogDuration());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 5, autoscalingTier_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -230,6 +382,14 @@ public final class RuntimeUpdatableParams extends com.google.protobuf.GeneratedM
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, workerUtilizationHint_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, getAcceptableBacklogDuration());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, autoscalingTier_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -260,6 +420,15 @@ public final class RuntimeUpdatableParams extends com.google.protobuf.GeneratedM
       if (java.lang.Double.doubleToLongBits(getWorkerUtilizationHint())
           != java.lang.Double.doubleToLongBits(other.getWorkerUtilizationHint())) return false;
     }
+    if (hasAcceptableBacklogDuration() != other.hasAcceptableBacklogDuration()) return false;
+    if (hasAcceptableBacklogDuration()) {
+      if (!getAcceptableBacklogDuration().equals(other.getAcceptableBacklogDuration()))
+        return false;
+    }
+    if (hasAutoscalingTier() != other.hasAutoscalingTier()) return false;
+    if (hasAutoscalingTier()) {
+      if (!getAutoscalingTier().equals(other.getAutoscalingTier())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -285,6 +454,14 @@ public final class RuntimeUpdatableParams extends com.google.protobuf.GeneratedM
           (53 * hash)
               + com.google.protobuf.Internal.hashLong(
                   java.lang.Double.doubleToLongBits(getWorkerUtilizationHint()));
+    }
+    if (hasAcceptableBacklogDuration()) {
+      hash = (37 * hash) + ACCEPTABLE_BACKLOG_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getAcceptableBacklogDuration().hashCode();
+    }
+    if (hasAutoscalingTier()) {
+      hash = (37 * hash) + AUTOSCALING_TIER_FIELD_NUMBER;
+      hash = (53 * hash) + getAutoscalingTier().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -418,10 +595,19 @@ public final class RuntimeUpdatableParams extends com.google.protobuf.GeneratedM
     }
 
     // Construct using com.google.dataflow.v1beta3.RuntimeUpdatableParams.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetAcceptableBacklogDurationFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -431,6 +617,12 @@ public final class RuntimeUpdatableParams extends com.google.protobuf.GeneratedM
       maxNumWorkers_ = 0;
       minNumWorkers_ = 0;
       workerUtilizationHint_ = 0D;
+      acceptableBacklogDuration_ = null;
+      if (acceptableBacklogDurationBuilder_ != null) {
+        acceptableBacklogDurationBuilder_.dispose();
+        acceptableBacklogDurationBuilder_ = null;
+      }
+      autoscalingTier_ = "";
       return this;
     }
 
@@ -480,6 +672,17 @@ public final class RuntimeUpdatableParams extends com.google.protobuf.GeneratedM
         result.workerUtilizationHint_ = workerUtilizationHint_;
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.acceptableBacklogDuration_ =
+            acceptableBacklogDurationBuilder_ == null
+                ? acceptableBacklogDuration_
+                : acceptableBacklogDurationBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.autoscalingTier_ = autoscalingTier_;
+        to_bitField0_ |= 0x00000010;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -504,6 +707,14 @@ public final class RuntimeUpdatableParams extends com.google.protobuf.GeneratedM
       }
       if (other.hasWorkerUtilizationHint()) {
         setWorkerUtilizationHint(other.getWorkerUtilizationHint());
+      }
+      if (other.hasAcceptableBacklogDuration()) {
+        mergeAcceptableBacklogDuration(other.getAcceptableBacklogDuration());
+      }
+      if (other.hasAutoscalingTier()) {
+        autoscalingTier_ = other.autoscalingTier_;
+        bitField0_ |= 0x00000010;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -549,6 +760,20 @@ public final class RuntimeUpdatableParams extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000004;
                 break;
               } // case 25
+            case 34:
+              {
+                input.readMessage(
+                    internalGetAcceptableBacklogDurationFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+            case 42:
+              {
+                autoscalingTier_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -808,6 +1033,381 @@ public final class RuntimeUpdatableParams extends com.google.protobuf.GeneratedM
     public Builder clearWorkerUtilizationHint() {
       bitField0_ = (bitField0_ & ~0x00000004);
       workerUtilizationHint_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Duration acceptableBacklogDuration_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        acceptableBacklogDurationBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Deprecated: Use `autoscaling_tier` instead.
+     * The backlog threshold duration in seconds for autoscaling. Value must be
+     * non-negative.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration acceptable_backlog_duration = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @deprecated google.dataflow.v1beta3.RuntimeUpdatableParams.acceptable_backlog_duration is
+     *     deprecated. See google/dataflow/v1beta3/jobs.proto;l=352
+     * @return Whether the acceptableBacklogDuration field is set.
+     */
+    @java.lang.Deprecated
+    public boolean hasAcceptableBacklogDuration() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Deprecated: Use `autoscaling_tier` instead.
+     * The backlog threshold duration in seconds for autoscaling. Value must be
+     * non-negative.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration acceptable_backlog_duration = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @deprecated google.dataflow.v1beta3.RuntimeUpdatableParams.acceptable_backlog_duration is
+     *     deprecated. See google/dataflow/v1beta3/jobs.proto;l=352
+     * @return The acceptableBacklogDuration.
+     */
+    @java.lang.Deprecated
+    public com.google.protobuf.Duration getAcceptableBacklogDuration() {
+      if (acceptableBacklogDurationBuilder_ == null) {
+        return acceptableBacklogDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : acceptableBacklogDuration_;
+      } else {
+        return acceptableBacklogDurationBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Deprecated: Use `autoscaling_tier` instead.
+     * The backlog threshold duration in seconds for autoscaling. Value must be
+     * non-negative.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration acceptable_backlog_duration = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Deprecated
+    public Builder setAcceptableBacklogDuration(com.google.protobuf.Duration value) {
+      if (acceptableBacklogDurationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        acceptableBacklogDuration_ = value;
+      } else {
+        acceptableBacklogDurationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Deprecated: Use `autoscaling_tier` instead.
+     * The backlog threshold duration in seconds for autoscaling. Value must be
+     * non-negative.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration acceptable_backlog_duration = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Deprecated
+    public Builder setAcceptableBacklogDuration(
+        com.google.protobuf.Duration.Builder builderForValue) {
+      if (acceptableBacklogDurationBuilder_ == null) {
+        acceptableBacklogDuration_ = builderForValue.build();
+      } else {
+        acceptableBacklogDurationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Deprecated: Use `autoscaling_tier` instead.
+     * The backlog threshold duration in seconds for autoscaling. Value must be
+     * non-negative.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration acceptable_backlog_duration = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Deprecated
+    public Builder mergeAcceptableBacklogDuration(com.google.protobuf.Duration value) {
+      if (acceptableBacklogDurationBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && acceptableBacklogDuration_ != null
+            && acceptableBacklogDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getAcceptableBacklogDurationBuilder().mergeFrom(value);
+        } else {
+          acceptableBacklogDuration_ = value;
+        }
+      } else {
+        acceptableBacklogDurationBuilder_.mergeFrom(value);
+      }
+      if (acceptableBacklogDuration_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Deprecated: Use `autoscaling_tier` instead.
+     * The backlog threshold duration in seconds for autoscaling. Value must be
+     * non-negative.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration acceptable_backlog_duration = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Deprecated
+    public Builder clearAcceptableBacklogDuration() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      acceptableBacklogDuration_ = null;
+      if (acceptableBacklogDurationBuilder_ != null) {
+        acceptableBacklogDurationBuilder_.dispose();
+        acceptableBacklogDurationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Deprecated: Use `autoscaling_tier` instead.
+     * The backlog threshold duration in seconds for autoscaling. Value must be
+     * non-negative.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration acceptable_backlog_duration = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Deprecated
+    public com.google.protobuf.Duration.Builder getAcceptableBacklogDurationBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return internalGetAcceptableBacklogDurationFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Deprecated: Use `autoscaling_tier` instead.
+     * The backlog threshold duration in seconds for autoscaling. Value must be
+     * non-negative.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration acceptable_backlog_duration = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Deprecated
+    public com.google.protobuf.DurationOrBuilder getAcceptableBacklogDurationOrBuilder() {
+      if (acceptableBacklogDurationBuilder_ != null) {
+        return acceptableBacklogDurationBuilder_.getMessageOrBuilder();
+      } else {
+        return acceptableBacklogDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : acceptableBacklogDuration_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Deprecated: Use `autoscaling_tier` instead.
+     * The backlog threshold duration in seconds for autoscaling. Value must be
+     * non-negative.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration acceptable_backlog_duration = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        internalGetAcceptableBacklogDurationFieldBuilder() {
+      if (acceptableBacklogDurationBuilder_ == null) {
+        acceptableBacklogDurationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getAcceptableBacklogDuration(), getParentForChildren(), isClean());
+        acceptableBacklogDuration_ = null;
+      }
+      return acceptableBacklogDurationBuilder_;
+    }
+
+    private java.lang.Object autoscalingTier_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The backlog threshold tier for autoscaling. Value must be one of
+     * "low-latency", "medium-latency", or "high-latency".
+     * </pre>
+     *
+     * <code>optional string autoscaling_tier = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the autoscalingTier field is set.
+     */
+    public boolean hasAutoscalingTier() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The backlog threshold tier for autoscaling. Value must be one of
+     * "low-latency", "medium-latency", or "high-latency".
+     * </pre>
+     *
+     * <code>optional string autoscaling_tier = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The autoscalingTier.
+     */
+    public java.lang.String getAutoscalingTier() {
+      java.lang.Object ref = autoscalingTier_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        autoscalingTier_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The backlog threshold tier for autoscaling. Value must be one of
+     * "low-latency", "medium-latency", or "high-latency".
+     * </pre>
+     *
+     * <code>optional string autoscaling_tier = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for autoscalingTier.
+     */
+    public com.google.protobuf.ByteString getAutoscalingTierBytes() {
+      java.lang.Object ref = autoscalingTier_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        autoscalingTier_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The backlog threshold tier for autoscaling. Value must be one of
+     * "low-latency", "medium-latency", or "high-latency".
+     * </pre>
+     *
+     * <code>optional string autoscaling_tier = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The autoscalingTier to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutoscalingTier(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      autoscalingTier_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The backlog threshold tier for autoscaling. Value must be one of
+     * "low-latency", "medium-latency", or "high-latency".
+     * </pre>
+     *
+     * <code>optional string autoscaling_tier = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAutoscalingTier() {
+      autoscalingTier_ = getDefaultInstance().getAutoscalingTier();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The backlog threshold tier for autoscaling. Value must be one of
+     * "low-latency", "medium-latency", or "high-latency".
+     * </pre>
+     *
+     * <code>optional string autoscaling_tier = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for autoscalingTier to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutoscalingTierBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      autoscalingTier_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

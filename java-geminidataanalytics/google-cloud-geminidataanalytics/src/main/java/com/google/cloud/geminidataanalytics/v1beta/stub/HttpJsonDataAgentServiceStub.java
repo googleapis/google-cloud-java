@@ -701,6 +701,7 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListAccessibleDataAgentsRequest, ListAccessibleDataAgentsResponse>
         listAccessibleDataAgentsTransportSettings =
@@ -714,6 +715,7 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDataAgentRequest, DataAgent> getDataAgentTransportSettings =
         HttpJsonCallSettings.<GetDataAgentRequest, DataAgent>newBuilder()
@@ -725,6 +727,7 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateDataAgentRequest, Operation> createDataAgentTransportSettings =
         HttpJsonCallSettings.<CreateDataAgentRequest, Operation>newBuilder()
@@ -736,6 +739,7 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateDataAgentRequest, DataAgent> createDataAgentSyncTransportSettings =
         HttpJsonCallSettings.<CreateDataAgentRequest, DataAgent>newBuilder()
@@ -747,6 +751,7 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateDataAgentRequest, Operation> updateDataAgentTransportSettings =
         HttpJsonCallSettings.<UpdateDataAgentRequest, Operation>newBuilder()
@@ -780,6 +785,7 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteDataAgentRequest, Empty> deleteDataAgentSyncTransportSettings =
         HttpJsonCallSettings.<DeleteDataAgentRequest, Empty>newBuilder()
@@ -791,6 +797,7 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -802,6 +809,7 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -813,6 +821,7 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

@@ -344,6 +344,7 @@ public class GrpcManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetConnectClusterRequest, ConnectCluster> getConnectClusterTransportSettings =
         GrpcCallSettings.<GetConnectClusterRequest, ConnectCluster>newBuilder()
@@ -354,6 +355,7 @@ public class GrpcManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateConnectClusterRequest, Operation> createConnectClusterTransportSettings =
         GrpcCallSettings.<CreateConnectClusterRequest, Operation>newBuilder()
@@ -364,6 +366,7 @@ public class GrpcManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateConnectClusterRequest, Operation> updateConnectClusterTransportSettings =
         GrpcCallSettings.<UpdateConnectClusterRequest, Operation>newBuilder()
@@ -386,6 +389,7 @@ public class GrpcManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListConnectorsRequest, ListConnectorsResponse>
         listConnectorsTransportSettings =
@@ -397,6 +401,7 @@ public class GrpcManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetConnectorRequest, Connector> getConnectorTransportSettings =
         GrpcCallSettings.<GetConnectorRequest, Connector>newBuilder()
@@ -407,6 +412,7 @@ public class GrpcManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateConnectorRequest, Connector> createConnectorTransportSettings =
         GrpcCallSettings.<CreateConnectorRequest, Connector>newBuilder()
@@ -417,6 +423,7 @@ public class GrpcManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateConnectorRequest, Connector> updateConnectorTransportSettings =
         GrpcCallSettings.<UpdateConnectorRequest, Connector>newBuilder()
@@ -437,6 +444,7 @@ public class GrpcManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<PauseConnectorRequest, PauseConnectorResponse>
         pauseConnectorTransportSettings =
@@ -448,6 +456,7 @@ public class GrpcManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ResumeConnectorRequest, ResumeConnectorResponse>
         resumeConnectorTransportSettings =
@@ -459,6 +468,7 @@ public class GrpcManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<RestartConnectorRequest, RestartConnectorResponse>
         restartConnectorTransportSettings =
@@ -470,6 +480,7 @@ public class GrpcManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<StopConnectorRequest, StopConnectorResponse> stopConnectorTransportSettings =
         GrpcCallSettings.<StopConnectorRequest, StopConnectorResponse>newBuilder()
@@ -480,6 +491,7 @@ public class GrpcManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

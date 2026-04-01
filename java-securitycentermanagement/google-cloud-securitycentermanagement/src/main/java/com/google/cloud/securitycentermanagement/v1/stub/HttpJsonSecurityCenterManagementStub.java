@@ -1333,6 +1333,7 @@ public class HttpJsonSecurityCenterManagementStub extends SecurityCenterManageme
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
@@ -1351,6 +1352,7 @@ public class HttpJsonSecurityCenterManagementStub extends SecurityCenterManageme
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             ListSecurityHealthAnalyticsCustomModulesRequest,
@@ -1368,6 +1370,7 @@ public class HttpJsonSecurityCenterManagementStub extends SecurityCenterManageme
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
@@ -1386,6 +1389,7 @@ public class HttpJsonSecurityCenterManagementStub extends SecurityCenterManageme
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             GetSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
@@ -1402,6 +1406,7 @@ public class HttpJsonSecurityCenterManagementStub extends SecurityCenterManageme
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             CreateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
@@ -1418,6 +1423,7 @@ public class HttpJsonSecurityCenterManagementStub extends SecurityCenterManageme
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             UpdateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
@@ -1450,6 +1456,7 @@ public class HttpJsonSecurityCenterManagementStub extends SecurityCenterManageme
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             SimulateSecurityHealthAnalyticsCustomModuleRequest,
@@ -1484,6 +1491,7 @@ public class HttpJsonSecurityCenterManagementStub extends SecurityCenterManageme
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             GetEffectiveEventThreatDetectionCustomModuleRequest,
@@ -1501,6 +1509,7 @@ public class HttpJsonSecurityCenterManagementStub extends SecurityCenterManageme
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             ListEventThreatDetectionCustomModulesRequest,
@@ -1518,6 +1527,7 @@ public class HttpJsonSecurityCenterManagementStub extends SecurityCenterManageme
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             ListDescendantEventThreatDetectionCustomModulesRequest,
@@ -1536,6 +1546,7 @@ public class HttpJsonSecurityCenterManagementStub extends SecurityCenterManageme
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             GetEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
@@ -1551,6 +1562,7 @@ public class HttpJsonSecurityCenterManagementStub extends SecurityCenterManageme
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             CreateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
@@ -1566,6 +1578,7 @@ public class HttpJsonSecurityCenterManagementStub extends SecurityCenterManageme
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             UpdateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
@@ -1595,6 +1608,7 @@ public class HttpJsonSecurityCenterManagementStub extends SecurityCenterManageme
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             ValidateEventThreatDetectionCustomModuleRequest,
@@ -1612,6 +1626,7 @@ public class HttpJsonSecurityCenterManagementStub extends SecurityCenterManageme
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetSecurityCenterServiceRequest, SecurityCenterService>
         getSecurityCenterServiceTransportSettings =
@@ -1625,6 +1640,7 @@ public class HttpJsonSecurityCenterManagementStub extends SecurityCenterManageme
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListSecurityCenterServicesRequest, ListSecurityCenterServicesResponse>
         listSecurityCenterServicesTransportSettings =
@@ -1638,6 +1654,7 @@ public class HttpJsonSecurityCenterManagementStub extends SecurityCenterManageme
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateSecurityCenterServiceRequest, SecurityCenterService>
         updateSecurityCenterServiceTransportSettings =

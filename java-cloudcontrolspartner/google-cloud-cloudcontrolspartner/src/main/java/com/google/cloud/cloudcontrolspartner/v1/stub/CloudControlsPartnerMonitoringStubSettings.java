@@ -310,6 +310,7 @@ public class CloudControlsPartnerMonitoringStubSettings
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-cloudcontrolspartner")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

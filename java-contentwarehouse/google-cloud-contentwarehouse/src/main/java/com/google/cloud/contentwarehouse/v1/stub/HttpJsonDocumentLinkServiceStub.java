@@ -273,6 +273,7 @@ public class HttpJsonDocumentLinkServiceStub extends DocumentLinkServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListLinkedSourcesRequest, ListLinkedSourcesResponse>
         listLinkedSourcesTransportSettings =
@@ -285,6 +286,7 @@ public class HttpJsonDocumentLinkServiceStub extends DocumentLinkServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateDocumentLinkRequest, DocumentLink>
         createDocumentLinkTransportSettings =
@@ -297,6 +299,7 @@ public class HttpJsonDocumentLinkServiceStub extends DocumentLinkServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteDocumentLinkRequest, Empty> deleteDocumentLinkTransportSettings =
         HttpJsonCallSettings.<DeleteDocumentLinkRequest, Empty>newBuilder()
@@ -308,6 +311,7 @@ public class HttpJsonDocumentLinkServiceStub extends DocumentLinkServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.listLinkedTargetsCallable =

@@ -423,6 +423,7 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-scheduler")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

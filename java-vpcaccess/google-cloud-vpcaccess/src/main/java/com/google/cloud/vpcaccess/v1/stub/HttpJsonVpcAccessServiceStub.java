@@ -338,6 +338,7 @@ public class HttpJsonVpcAccessServiceStub extends VpcAccessServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetConnectorRequest, Connector> getConnectorTransportSettings =
         HttpJsonCallSettings.<GetConnectorRequest, Connector>newBuilder()
@@ -349,6 +350,7 @@ public class HttpJsonVpcAccessServiceStub extends VpcAccessServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListConnectorsRequest, ListConnectorsResponse>
         listConnectorsTransportSettings =
@@ -361,6 +363,7 @@ public class HttpJsonVpcAccessServiceStub extends VpcAccessServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteConnectorRequest, Operation> deleteConnectorTransportSettings =
         HttpJsonCallSettings.<DeleteConnectorRequest, Operation>newBuilder()
@@ -372,6 +375,7 @@ public class HttpJsonVpcAccessServiceStub extends VpcAccessServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

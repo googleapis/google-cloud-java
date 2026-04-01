@@ -1462,6 +1462,7 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-eventarc")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

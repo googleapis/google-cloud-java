@@ -237,6 +237,7 @@ public class ValidationHelperV1StubSettings extends StubSettings<ValidationHelpe
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-binary-authorization")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

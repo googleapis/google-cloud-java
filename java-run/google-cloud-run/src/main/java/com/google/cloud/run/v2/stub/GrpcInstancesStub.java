@@ -191,6 +191,7 @@ public class GrpcInstancesStub extends InstancesStub {
                   builder.add(request.getParent(), "location", CREATE_INSTANCE_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteInstanceRequest, Operation> deleteInstanceTransportSettings =
         GrpcCallSettings.<DeleteInstanceRequest, Operation>newBuilder()
@@ -201,6 +202,7 @@ public class GrpcInstancesStub extends InstancesStub {
                   builder.add(request.getName(), "location", DELETE_INSTANCE_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         GrpcCallSettings.<GetInstanceRequest, Instance>newBuilder()
@@ -211,6 +213,7 @@ public class GrpcInstancesStub extends InstancesStub {
                   builder.add(request.getName(), "location", GET_INSTANCE_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListInstancesRequest, ListInstancesResponse> listInstancesTransportSettings =
         GrpcCallSettings.<ListInstancesRequest, ListInstancesResponse>newBuilder()
@@ -221,6 +224,7 @@ public class GrpcInstancesStub extends InstancesStub {
                   builder.add(request.getParent(), "location", LIST_INSTANCES_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<StopInstanceRequest, Operation> stopInstanceTransportSettings =
         GrpcCallSettings.<StopInstanceRequest, Operation>newBuilder()
@@ -231,6 +235,7 @@ public class GrpcInstancesStub extends InstancesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<StartInstanceRequest, Operation> startInstanceTransportSettings =
         GrpcCallSettings.<StartInstanceRequest, Operation>newBuilder()
@@ -241,6 +246,7 @@ public class GrpcInstancesStub extends InstancesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createInstanceCallable =

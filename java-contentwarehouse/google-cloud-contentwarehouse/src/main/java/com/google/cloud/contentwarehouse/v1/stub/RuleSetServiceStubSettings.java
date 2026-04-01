@@ -328,6 +328,7 @@ public class RuleSetServiceStubSettings extends StubSettings<RuleSetServiceStubS
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-contentwarehouse")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

@@ -198,11 +198,13 @@ public class GrpcLoggingServiceV2Stub extends LoggingServiceV2Stub {
                   builder.add("log_name", String.valueOf(request.getLogName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getLogName())
             .build();
     GrpcCallSettings<WriteLogEntriesRequest, WriteLogEntriesResponse>
         writeLogEntriesTransportSettings =
             GrpcCallSettings.<WriteLogEntriesRequest, WriteLogEntriesResponse>newBuilder()
                 .setMethodDescriptor(writeLogEntriesMethodDescriptor)
+                .setResourceNameExtractor(request -> request.getLogName())
                 .build();
     GrpcCallSettings<ListLogEntriesRequest, ListLogEntriesResponse>
         listLogEntriesTransportSettings =
@@ -226,6 +228,7 @@ public class GrpcLoggingServiceV2Stub extends LoggingServiceV2Stub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<TailLogEntriesRequest, TailLogEntriesResponse>
         tailLogEntriesTransportSettings =

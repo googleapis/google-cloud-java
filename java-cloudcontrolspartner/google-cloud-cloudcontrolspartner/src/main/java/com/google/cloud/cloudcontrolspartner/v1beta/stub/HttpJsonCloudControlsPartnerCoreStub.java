@@ -556,6 +556,7 @@ public class HttpJsonCloudControlsPartnerCoreStub extends CloudControlsPartnerCo
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListWorkloadsRequest, ListWorkloadsResponse>
         listWorkloadsTransportSettings =
@@ -568,6 +569,7 @@ public class HttpJsonCloudControlsPartnerCoreStub extends CloudControlsPartnerCo
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetCustomerRequest, Customer> getCustomerTransportSettings =
         HttpJsonCallSettings.<GetCustomerRequest, Customer>newBuilder()
@@ -579,6 +581,7 @@ public class HttpJsonCloudControlsPartnerCoreStub extends CloudControlsPartnerCo
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListCustomersRequest, ListCustomersResponse>
         listCustomersTransportSettings =
@@ -591,6 +594,7 @@ public class HttpJsonCloudControlsPartnerCoreStub extends CloudControlsPartnerCo
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetEkmConnectionsRequest, EkmConnections>
         getEkmConnectionsTransportSettings =
@@ -603,6 +607,7 @@ public class HttpJsonCloudControlsPartnerCoreStub extends CloudControlsPartnerCo
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetPartnerPermissionsRequest, PartnerPermissions>
         getPartnerPermissionsTransportSettings =
@@ -615,6 +620,7 @@ public class HttpJsonCloudControlsPartnerCoreStub extends CloudControlsPartnerCo
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListAccessApprovalRequestsRequest, ListAccessApprovalRequestsResponse>
         listAccessApprovalRequestsTransportSettings =
@@ -628,6 +634,7 @@ public class HttpJsonCloudControlsPartnerCoreStub extends CloudControlsPartnerCo
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetPartnerRequest, Partner> getPartnerTransportSettings =
         HttpJsonCallSettings.<GetPartnerRequest, Partner>newBuilder()
@@ -639,6 +646,7 @@ public class HttpJsonCloudControlsPartnerCoreStub extends CloudControlsPartnerCo
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateCustomerRequest, Customer> createCustomerTransportSettings =
         HttpJsonCallSettings.<CreateCustomerRequest, Customer>newBuilder()
@@ -650,6 +658,7 @@ public class HttpJsonCloudControlsPartnerCoreStub extends CloudControlsPartnerCo
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateCustomerRequest, Customer> updateCustomerTransportSettings =
         HttpJsonCallSettings.<UpdateCustomerRequest, Customer>newBuilder()
@@ -672,6 +681,7 @@ public class HttpJsonCloudControlsPartnerCoreStub extends CloudControlsPartnerCo
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getWorkloadCallable =

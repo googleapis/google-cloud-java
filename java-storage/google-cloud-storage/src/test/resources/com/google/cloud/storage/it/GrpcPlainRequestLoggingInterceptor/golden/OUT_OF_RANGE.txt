@@ -1,0 +1,25 @@
+<<< status = {
+  code[4]=OUT_OF_RANGE
+},
+trailers = {
+  grpc-status-details-bin[291]: google.rpc.Status{
+    details {
+      type_url: type.googleapis.com/google.storage.v2.BidiReadObjectError
+      value: {
+        read_range_errors {
+          read_id: 3
+          status {
+            code: 11
+          }
+        }
+      }
+    }
+    details {
+      type_url: type.googleapis.com/google.rpc.DebugInfo
+      value: {
+        stack_entries: "read_object_spec { bucket: \"projects/_/buckets/b\" object: \"o\" generation: 1 } read_ranges { read_offset: 39 read_id: 3 }"
+        detail: "OUT_OF_RANGE read_offset = 39"
+      }
+    }
+  }
+}
