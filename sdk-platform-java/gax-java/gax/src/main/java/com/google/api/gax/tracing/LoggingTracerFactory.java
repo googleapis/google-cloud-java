@@ -35,11 +35,12 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.logging.LoggingUtils;
 import com.google.common.annotations.VisibleForTesting;
 
-/** A {@link ApiTracerFactory} that creates instances of {@link LoggingTracer}.
- * This class is intended for internal framework use only. Manual instantiation
- * is discouraged; the lifecycle is managed automatically by the system,
- * when {@link LoggingUtils#isLoggingEnabled()} returning {@code true}.
- * */
+/**
+ * A {@link ApiTracerFactory} that creates instances of {@link LoggingTracer}. This class is
+ * intended for internal framework use only. Manual instantiation is discouraged; the lifecycle is
+ * managed automatically by the system, when {@link LoggingUtils#isLoggingEnabled()} returning
+ * {@code true}.
+ */
 @BetaApi
 @InternalApi
 public class LoggingTracerFactory implements ApiTracerFactory {
