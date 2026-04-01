@@ -187,6 +187,19 @@ class ApiTracerContextTest {
   }
 
   @Test
+  void testGetAttemptAttributes_serviceName() {
+    ApiTracerContext context =
+        ApiTracerContext.newBuilder()
+            .setLibraryMetadata(LibraryMetadata.empty())
+            .setServiceName("test-service")
+            .build();
+    Map<String, Object> attributes = context.getAttemptAttributes();
+
+    assertThat(attributes)
+        .containsEntry(ObservabilityAttributes.GCP_CLIENT_SERVICE_ATTRIBUTE, "test-service");
+  }
+
+  @Test
   void testGetMetricsAttributes_serverPort() {
     ApiTracerContext context =
         ApiTracerContext.newBuilder()

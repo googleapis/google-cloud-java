@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigquery.storage.v1;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -248,8 +249,8 @@ class JsonStreamWriterTest {
               .getRows()
               .getSerializedRows(0),
           expectedProto.toByteString());
-      assertEquals(
-          "java-jsonwriter test:empty", testBigQueryWrite.getAppendRequests().get(0).getTraceId());
+      assertThat(testBigQueryWrite.getAppendRequests().get(0).getTraceId())
+          .matches("java-jsonwriter(:.+)? test:empty");
     }
   }
 
@@ -291,8 +292,8 @@ class JsonStreamWriterTest {
               .getRows()
               .getSerializedRows(0),
           expectedProto.toByteString());
-      assertEquals(
-          "java-jsonwriter test:empty", testBigQueryWrite.getAppendRequests().get(0).getTraceId());
+      assertThat(testBigQueryWrite.getAppendRequests().get(0).getTraceId())
+          .matches("java-jsonwriter(:.+)? test:empty");
     }
   }
 
@@ -339,7 +340,8 @@ class JsonStreamWriterTest {
               .getRows()
               .getSerializedRows(0),
           expectedProto.toByteString());
-      assertEquals("java-jsonwriter", testBigQueryWrite.getAppendRequests().get(0).getTraceId());
+      assertThat(testBigQueryWrite.getAppendRequests().get(0).getTraceId())
+          .matches("java-jsonwriter(:.+)?");
     }
   }
 
@@ -561,7 +563,8 @@ class JsonStreamWriterTest {
               .getProtoRows()
               .getRows()
               .getSerializedRowsCount());
-      assertEquals("java-jsonwriter", testBigQueryWrite.getAppendRequests().get(0).getTraceId());
+      assertThat(testBigQueryWrite.getAppendRequests().get(0).getTraceId())
+          .matches("java-jsonwriter(:.+)?");
       for (int i = 0; i < 4; i++) {
         assertEquals(
             testBigQueryWrite
