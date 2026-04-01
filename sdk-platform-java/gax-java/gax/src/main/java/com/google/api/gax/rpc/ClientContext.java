@@ -40,10 +40,13 @@ import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.ExecutorAsBackgroundResource;
 import com.google.api.gax.core.ExecutorProvider;
+import com.google.api.gax.logging.LoggingUtils;
 import com.google.api.gax.rpc.internal.QuotaProjectIdHidingCredentials;
 import com.google.api.gax.tracing.ApiTracerContext;
 import com.google.api.gax.tracing.ApiTracerFactory;
 import com.google.api.gax.tracing.BaseApiTracerFactory;
+import com.google.api.gax.tracing.CompositeTracerFactory;
+import com.google.api.gax.tracing.LoggingTracerFactory;
 import com.google.auth.ApiKeyCredentials;
 import com.google.auth.CredentialTypeForMetrics;
 import com.google.auth.Credentials;
@@ -271,16 +274,7 @@ public abstract class ClientContext {
       backgroundResources.add(watchdog);
     }
 
-    ApiTracerFactory apiTracerFactory = settings.getTracerFactory();
-    if (apiTracerFactory.needsContext()) {
-      ApiTracerContext apiTracerContext =
-          ApiTracerContext.newBuilder()
-              .setServerAddress(endpointContext.resolvedServerAddress())
-              .setServerPort(endpointContext.resolvedServerPort())
-              .setLibraryMetadata(settings.getLibraryMetadata())
-              .build();
-      apiTracerFactory = apiTracerFactory.withContext(apiTracerContext);
-    }
+    ApiTracerFactory apiTracerFactory = getApiTracerFactory(settings, endpointContext);
 
     return newBuilder()
         .setBackgroundResources(backgroundResources.build())
@@ -299,6 +293,30 @@ public abstract class ClientContext {
         .setTracerFactory(apiTracerFactory)
         .setEndpointContext(endpointContext)
         .build();
+  }
+
+  @VisibleForTesting
+  static ApiTracerFactory getApiTracerFactory(
+      StubSettings settings, EndpointContext endpointContext) {
+    ApiTracerFactory apiTracerFactory = settings.getTracerFactory();
+
+    if (LoggingUtils.isLoggingEnabled()) {
+      apiTracerFactory =
+          new CompositeTracerFactory(
+              ImmutableList.of(new LoggingTracerFactory(), apiTracerFactory));
+    }
+
+    if (apiTracerFactory.needsContext()) {
+      ApiTracerContext apiTracerContext =
+          ApiTracerContext.newBuilder()
+              .setServerAddress(endpointContext.resolvedServerAddress())
+              .setServerPort(endpointContext.resolvedServerPort())
+              .setLibraryMetadata(settings.getLibraryMetadata())
+              .build();
+      apiTracerFactory = apiTracerFactory.withContext(apiTracerContext);
+    }
+
+    return apiTracerFactory;
   }
 
   /** Determines which credentials to use. API key overrides credentials provided by provider. */
