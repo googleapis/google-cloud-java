@@ -17,8 +17,12 @@
 package com.google.cloud.datastore.telemetry;
 
 import com.google.api.core.InternalApi;
+import com.google.api.gax.tracing.OpenTelemetryMetricsRecorder;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.common.collect.ImmutableSet;
+import io.opentelemetry.api.common.AttributeKey;
+import java.util.Set;
 
 /**
  * Internal telemetry constants shared between OpenTelemetry tracing and metrics.
@@ -29,12 +33,86 @@ import com.google.cloud.grpc.GrpcTransportOptions;
  */
 @InternalApi
 public class TelemetryConstants {
+  // Built-in metrics constants for Cloud Monitoring export
+  public static final String METRIC_PREFIX = "custom.googleapis.com/internal/client";
+  public static final String GAX_METER_NAME = OpenTelemetryMetricsRecorder.GAX_METER_NAME;
+  public static final String DATASTORE_METER_NAME = "java-datastore";
 
-  // TODO(lawrenceqiu): For now, use `custom.googleapis.com` until metrics can be written to
-  // datastore domain
-  public static final String SERVICE_NAME = "custom.googleapis.com";
-  static final String METER_NAME = "com.google.cloud.datastore";
+  // Monitored resource type for Cloud Monitoring
+  public static final String DATASTORE_RESOURCE_TYPE = "global";
 
+  // Resource label keys for the monitored resource
+  public static final String RESOURCE_LABEL_PROJECT_ID = "project_id";
+  public static final String RESOURCE_LABEL_DATABASE_ID = "database_id";
+  public static final String RESOURCE_LABEL_LOCATION = "location";
+  public static final Set<String> DATASTORE_RESOURCE_LABELS =
+      ImmutableSet.of(RESOURCE_LABEL_PROJECT_ID);
+
+  // Resource attribute keys (used on OTel Resource)
+  public static final AttributeKey<String> PROJECT_ID_KEY = AttributeKey.stringKey("project_id");
+  public static final AttributeKey<String> DATABASE_ID_KEY = AttributeKey.stringKey("database_id");
+  public static final AttributeKey<String> LOCATION_ID_KEY = AttributeKey.stringKey("location");
+
+  // Metric attribute keys (used on metric data points)
+  public static final AttributeKey<String> CLIENT_UID_KEY = AttributeKey.stringKey("client_uid");
+  public static final AttributeKey<String> CLIENT_NAME_KEY = AttributeKey.stringKey("client_name");
+  public static final AttributeKey<String> METHOD_KEY = AttributeKey.stringKey("method");
+  public static final AttributeKey<String> STATUS_KEY = AttributeKey.stringKey("status");
+  public static final AttributeKey<String> DATABASE_KEY = AttributeKey.stringKey("database_id");
+  public static final AttributeKey<String> LIBRARY_VERSION_KEY =
+      AttributeKey.stringKey("library_version");
+  public static final AttributeKey<String> TRANSPORT_KEY = AttributeKey.stringKey("transport");
+  public static final AttributeKey<String> SERVICE_KEY = AttributeKey.stringKey("service");
+
+  public static final String SERVICE_VALUE = "datastore.googleapis.com";
+
+  /**
+   * The allowlist of metric attributes that are permitted on every exported data point.
+   *
+   * <p>Cloud Monitoring is strict about label schemas: exporting a label that was not present when
+   * the metric descriptor was first created will cause the entire {@code createTimeSeries} call to
+   * fail. Registering OTel Views that filter to this set (see {@link DatastoreBuiltInMetricsView})
+   * prevents unexpected labels from leaking into the export and causing silent data loss.
+   *
+   * <p>Using {@code AttributeKey<?>} (wildcard) rather than the raw {@code AttributeKey} type
+   * preserves generic type safety while still allowing keys of any value type in the set.
+   */
+  public static final Set<AttributeKey<?>> COMMON_ATTRIBUTES =
+      ImmutableSet.of(
+          CLIENT_UID_KEY,
+          CLIENT_NAME_KEY,
+          METHOD_KEY,
+          STATUS_KEY,
+          DATABASE_KEY,
+          LIBRARY_VERSION_KEY,
+          TRANSPORT_KEY,
+          SERVICE_KEY);
+
+  // Metric names (short names, without prefix)
+  public static final String METRIC_NAME_SHORT_OPERATION_LATENCY = "operation_latency";
+  public static final String METRIC_NAME_SHORT_ATTEMPT_LATENCY = "attempt_latency";
+  public static final String METRIC_NAME_SHORT_OPERATION_COUNT = "operation_count";
+  public static final String METRIC_NAME_SHORT_ATTEMPT_COUNT = "attempt_count";
+  public static final String METRIC_NAME_SHORT_TRANSACTION_LATENCY = "transaction_latency";
+  public static final String METRIC_NAME_SHORT_TRANSACTION_ATTEMPT_COUNT =
+      "transaction_attempt_count";
+
+  // Metrics collected at the GAX layer vs Datastore SDK layer
+  public static final Set<String> GAX_METRICS =
+      ImmutableSet.of(
+          METRIC_NAME_SHORT_OPERATION_LATENCY,
+          METRIC_NAME_SHORT_ATTEMPT_LATENCY,
+          METRIC_NAME_SHORT_OPERATION_COUNT,
+          METRIC_NAME_SHORT_ATTEMPT_COUNT);
+
+  public static final Set<String> DATASTORE_METRICS =
+      ImmutableSet.of(
+          METRIC_NAME_SHORT_TRANSACTION_LATENCY, METRIC_NAME_SHORT_TRANSACTION_ATTEMPT_COUNT);
+
+  // Environment variable to enable/disable built-in metrics
+  public static final String ENABLE_METRICS_ENV_VAR = "DATASTORE_ENABLE_METRICS";
+
+  // Existing attribute key constants (string-based, used by MetricsHelper/TelemetryUtils)
   public static final String ATTRIBUTES_KEY_DOCUMENT_COUNT = "doc_count";
   public static final String ATTRIBUTES_KEY_TRANSACTIONAL = "transactional";
   public static final String ATTRIBUTES_KEY_TRANSACTION_ID = "transaction_id";
@@ -62,35 +140,23 @@ public class TelemetryConstants {
 
   /** Metric name for the total latency of a transaction. */
   public static final String METRIC_NAME_TRANSACTION_LATENCY =
-      SERVICE_NAME + "/client/transaction_latency";
+      METRIC_PREFIX + "/transaction_latency";
 
   /** Metric name for the number of attempts a transaction took. */
   public static final String METRIC_NAME_TRANSACTION_ATTEMPT_COUNT =
-      SERVICE_NAME + "/client/transaction_attempt_count";
+      METRIC_PREFIX + "/transaction_attempt_count";
 
-  /**
-   * Metric name for the total latency of an operation (one full RPC call including retries). Note:
-   * This does not have the /client prefix to match Gax's format.
-   */
-  public static final String METRIC_NAME_OPERATION_LATENCY = SERVICE_NAME + "/operation_latency";
+  /** Metric name for the total latency of an operation (one full RPC call including retries). */
+  public static final String METRIC_NAME_OPERATION_LATENCY = METRIC_PREFIX + "/operation_latency";
 
-  /**
-   * Metric name for the latency of a single RPC attempt. Note: This does not have the /client
-   * prefix to match Gax's format.
-   */
-  public static final String METRIC_NAME_ATTEMPT_LATENCY = SERVICE_NAME + "/attempt_latency";
+  /** Metric name for the latency of a single RPC attempt. */
+  public static final String METRIC_NAME_ATTEMPT_LATENCY = METRIC_PREFIX + "/attempt_latency";
 
-  /**
-   * Metric name for the count of operations. Note: This does not have the /client prefix to match
-   * Gax's format.
-   */
-  public static final String METRIC_NAME_OPERATION_COUNT = SERVICE_NAME + "/operation_count";
+  /** Metric name for the count of operations. */
+  public static final String METRIC_NAME_OPERATION_COUNT = METRIC_PREFIX + "/operation_count";
 
-  /**
-   * Metric name for the count of RPC attempts. Note: This does not have the /client prefix to match
-   * Gax's format.
-   */
-  public static final String METRIC_NAME_ATTEMPT_COUNT = SERVICE_NAME + "/attempt_count";
+  /** Metric name for the count of RPC attempts. */
+  public static final String METRIC_NAME_ATTEMPT_COUNT = METRIC_PREFIX + "/attempt_count";
 
   // This is intentionally different from the `SERVICE_NAME` constant as it matches Gax's logic for
   // method name.

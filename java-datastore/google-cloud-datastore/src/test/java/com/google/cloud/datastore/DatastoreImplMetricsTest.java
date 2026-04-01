@@ -23,6 +23,7 @@ import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.datastore.spi.DatastoreRpcFactory;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
+import com.google.cloud.datastore.telemetry.DatastoreMetricsRecorder;
 import com.google.cloud.datastore.telemetry.TelemetryConstants;
 import com.google.datastore.v1.BeginTransactionRequest;
 import com.google.datastore.v1.BeginTransactionResponse;
@@ -55,7 +56,7 @@ import org.junit.runners.Parameterized.Parameters;
 /**
  * Tests for transaction metrics recording in {@link DatastoreImpl}. These tests verify that
  * transaction latency and per-attempt metrics are correctly recorded via the {@link
- * com.google.cloud.datastore.telemetry.MetricsRecorder}.
+ * DatastoreMetricsRecorder}.
  */
 @RunWith(Parameterized.class)
 public class DatastoreImplMetricsTest {
@@ -533,19 +534,6 @@ public class DatastoreImplMetricsTest {
 
     Collection<MetricData> metrics = metricReader.collectAllMetrics();
 
-    // Gax already records operation and attempt metrics natively for the gRPC transport.
-    // DatastoreImpl explicitly avoids recording them here to prevent double-counting.
-    // Since this unit test bypasses the GAX networking layer by mocking DatastoreRpc,
-    // we assert that no local duplicate metrics are emitted by DatastoreImpl for gRPC,
-    // and skip the rest of the assertions.
-    if (TelemetryConstants.Transport.GRPC.equals(transport)) {
-      Optional<MetricData> operationLatency =
-          findMetric(metrics, TelemetryConstants.METRIC_NAME_OPERATION_LATENCY);
-      assertThat(operationLatency.isPresent()).isFalse();
-      EasyMock.verify(rpcMock);
-      return;
-    }
-
     // Verify operation latency
     Optional<MetricData> operationLatency =
         findMetric(metrics, TelemetryConstants.METRIC_NAME_OPERATION_LATENCY);
@@ -630,19 +618,6 @@ public class DatastoreImplMetricsTest {
                 Key.newBuilder(PROJECT_ID, "Kind", "name").setDatabaseId(DATABASE_ID).build()));
 
     Collection<MetricData> metrics = metricReader.collectAllMetrics();
-
-    // Gax already records operation and attempt metrics natively for the gRPC transport.
-    // DatastoreImpl explicitly avoids recording them here to prevent double-counting.
-    // Since this unit test bypasses the GAX networking layer by mocking DatastoreRpc,
-    // we assert that no local duplicate metrics are emitted by DatastoreImpl for gRPC,
-    // and skip the rest of the assertions.
-    if (TelemetryConstants.Transport.GRPC.equals(transport)) {
-      Optional<MetricData> operationLatency =
-          findMetric(metrics, TelemetryConstants.METRIC_NAME_OPERATION_LATENCY);
-      assertThat(operationLatency.isPresent()).isFalse();
-      EasyMock.verify(rpcMock);
-      return;
-    }
 
     // Verify operation latency with UNAVAILABLE status
     Optional<MetricData> operationLatency =
