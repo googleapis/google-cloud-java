@@ -75,4 +75,19 @@ class CompositeDatastoreMetricsRecorder implements DatastoreMetricsRecorder {
       recorder.recordOperationCount(count, attributes);
     }
   }
+
+  /**
+   * Closes all underlying recorders.
+   *
+   * <p>Each recorder's own {@link DatastoreMetricsRecorder#close()} semantics apply: recorders
+   * that own their {@link io.opentelemetry.api.OpenTelemetry} instance (built-in path) will flush
+   * and shut down; recorders backed by a user-provided instance will no-op. All recorders are
+   * closed even if one throws an exception.
+   */
+  @Override
+  public void close() {
+    for (DatastoreMetricsRecorder recorder : recorders) {
+      recorder.close();
+    }
+  }
 }

@@ -47,6 +47,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -76,13 +77,27 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
   // This is the quota limit from Cloud Monitoring. More details in
   // https://cloud.google.com/monitoring/quotas#custom_metrics_quotas.
   private static final int EXPORT_BATCH_SIZE_LIMIT = 200;
-  private static final int MAX_METADATA_SIZE = 32 * 1024;
+  // Increase max metadata size to 32MB to avoid "Header size exceeded" errors
+  // when receiving large error payloads from Cloud Monitoring.
+  private static final int MAX_METADATA_SIZE = 32 * 1024 * 1024;
   private final AtomicBoolean datastoreExportFailureLogged = new AtomicBoolean(false);
+  private final AtomicReference<CompletableResultCode> lastExportCode =
+      new AtomicReference<>(CompletableResultCode.ofSuccess());
   private final MetricServiceClient client;
   private final String datastoreProjectId;
 
   /**
    * Creates a new instance of the exporter.
+   *
+   * <p>The gRPC channel is configured with a 32MB inbound metadata limit ({@link
+   * #MAX_METADATA_SIZE}) to prevent "Header size exceeded" errors when Cloud Monitoring returns
+   * large error payloads in gRPC trailers. The default gRPC limit is too small for some error
+   * responses and can mask the real failure reason.
+   *
+   * <p>{@code createTimeSeries} is used instead of {@code createServiceTimeSeries} because the
+   * Datastore namespace in Cloud Monitoring has not yet been deployed as a service resource. Once
+   * the namespace is available, this should be migrated to {@code createServiceTimeSeries} for
+   * correct quota and resource attribution.
    *
    * @param projectId the GCP project ID where metrics will be exported.
    * @param credentials the credentials used to authenticate with Cloud Monitoring.
@@ -93,8 +108,6 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
       String projectId, @Nullable Credentials credentials) throws IOException {
     MetricServiceSettings.Builder settingsBuilder = MetricServiceSettings.newBuilder();
 
-    // Increase max metadata size to 1MB to avoid "Header size exceeded" errors
-    // when receiving large error payloads from Cloud Monitoring.
     InstantiatingGrpcChannelProvider transportChannelProvider =
         MetricServiceSettings.defaultGrpcTransportProviderBuilder()
             .setMaxInboundMetadataSize(MAX_METADATA_SIZE)
@@ -111,9 +124,6 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
 
     Duration timeout = Duration.ofMinutes(1);
 
-    // Use `createTimeSeries` instead of `createServiceTimeSeries` as the Firestore namespace
-    // is not deployed yet. This results in permission issues as we cannot write Service metrics.
-    // This call is done on a best-effort basis and may result in some metrics being dropped.
     settingsBuilder.createTimeSeriesSettings().setSimpleTimeoutNoRetriesDuration(timeout);
 
     return new DatastoreCloudMonitoringExporter(
@@ -139,7 +149,9 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
       return CompletableResultCode.ofFailure();
     }
 
-    return exportDatastoreClientMetrics(collection);
+    CompletableResultCode result = exportDatastoreClientMetrics(collection);
+    lastExportCode.set(result);
+    return result;
   }
 
   /**
@@ -196,7 +208,8 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
       // Convert OTel MetricData to Cloud Monitoring TimeSeries.
       datastoreTimeSeries =
           DatastoreCloudMonitoringExporterUtils.convertToDatastoreTimeSeries(
-              datastoreMetricData);
+              datastoreMetricData,
+              BuiltInDatastoreMetricsProvider.INSTANCE.createClientAttributes());
     } catch (Throwable e) {
       logger.log(
           Level.WARNING,
@@ -269,9 +282,19 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
     return ApiFutures.allAsList(batchResults);
   }
 
+  /**
+   * Best-effort flush of any pending exports.
+   *
+   * <p>This implementation returns the result of the most recently initiated export. Because
+   * exports are performed asynchronously via {@link ApiFuture} callbacks, this flush cannot
+   * guarantee that all concurrent in-flight network requests have completed by the time this method
+   * returns. For a stronger guarantee, callers should invoke {@code SdkMeterProvider.forceFlush()},
+   * which coordinates across the {@link io.opentelemetry.sdk.metrics.export.MetricReader} and
+   * ensures a full collection cycle completes before returning.
+   */
   @Override
   public CompletableResultCode flush() {
-    return CompletableResultCode.ofSuccess();
+    return lastExportCode.get();
   }
 
   /** Shuts down the exporter and the underlying {@link MetricServiceClient}. */

@@ -53,6 +53,7 @@ import io.opentelemetry.sdk.metrics.data.SumData;
 import io.opentelemetry.sdk.resources.Resource;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -87,9 +88,12 @@ class DatastoreCloudMonitoringExporterUtils {
    * Converts a list of {@link MetricData} to Cloud Monitoring {@link TimeSeries}.
    *
    * @param collection the collection of metrics to convert.
+   * @param clientAttributes common client labels (e.g. {@code client_name}, {@code client_uid})
+   *     to attach to every metric data point.
    * @return a list of converted {@link TimeSeries}.
    */
-  static List<TimeSeries> convertToDatastoreTimeSeries(List<MetricData> collection) {
+  static List<TimeSeries> convertToDatastoreTimeSeries(
+      List<MetricData> collection, Map<String, String> clientAttributes) {
     List<TimeSeries> allTimeSeries = new ArrayList<>();
 
     // Metrics should already been filtered for Gax and Datastore related ones
@@ -108,35 +112,35 @@ class DatastoreCloudMonitoringExporterUtils {
             TelemetryConstants.RESOURCE_LABEL_PROJECT_ID, resourceProjectId);
       }
 
-      // TODO: Add a check for now as the Firestore namespace has not been deployed yet.
-      // Write to the `global` monitored resource
-      if (!"global".equals(DATASTORE_RESOURCE_TYPE)) {
-        if (resourceDatabaseId != null) {
-          monitoredResourceBuilder.putLabels(
-              TelemetryConstants.RESOURCE_LABEL_DATABASE_ID, resourceDatabaseId);
-        }
-        if (resourceLocation != null) {
-          monitoredResourceBuilder.putLabels(
-              TelemetryConstants.RESOURCE_LABEL_LOCATION, resourceLocation);
-        }
-      }
+      // TODO: The monitored resource is currently written to `global` because the Datastore
+      // namespace in Cloud Monitoring has not been deployed yet. Once the namespace is available,
+      // database_id and location labels should be added here using RESOURCE_LABEL_DATABASE_ID
+      // and RESOURCE_LABEL_LOCATION respectively.
 
       // Convert each point in the metric data to a TimeSeries.
       metricData.getData().getPoints().stream()
           .map(
               pointData ->
                   convertPointToDatastoreTimeSeries(
-                      metricData, pointData, monitoredResourceBuilder))
+                      metricData, pointData, monitoredResourceBuilder, clientAttributes))
           .forEach(allTimeSeries::add);
     }
     return allTimeSeries;
   }
 
-  /** Converts an individual {@link PointData} to a {@link TimeSeries}. */
+  /**
+   * Converts an individual {@link PointData} to a {@link TimeSeries}.
+   *
+   * <p>{@code clientAttributes} (e.g. {@code client_name}, {@code client_uid}) are injected here
+   * rather than being looked up from a singleton so that this method is testable in isolation. The
+   * caller ({@link DatastoreCloudMonitoringExporter}) is responsible for supplying them from {@link
+   * BuiltInDatastoreMetricsProvider#createClientAttributes()}.
+   */
   private static TimeSeries convertPointToDatastoreTimeSeries(
       MetricData metricData,
       PointData pointData,
-      MonitoredResource.Builder monitoredResourceBuilder) {
+      MonitoredResource.Builder monitoredResourceBuilder,
+      Map<String, String> clientAttributes) {
     MetricKind metricKind = convertMetricKind(metricData);
     TimeSeries.Builder builder =
         TimeSeries.newBuilder()
@@ -152,9 +156,7 @@ class DatastoreCloudMonitoringExporterUtils {
     }
 
     // Attach common client attributes (client_name, client_uid) to each metric.
-    BuiltInDatastoreMetricsProvider.INSTANCE
-        .createClientAttributes()
-        .forEach(metricBuilder::putLabels);
+    clientAttributes.forEach(metricBuilder::putLabels);
 
     builder.setResource(monitoredResourceBuilder.build());
     builder.setMetric(metricBuilder.build());
@@ -193,6 +195,12 @@ class DatastoreCloudMonitoringExporterUtils {
     }
   }
 
+  /**
+   * Returns {@link com.google.api.MetricDescriptor.MetricKind#CUMULATIVE} for cumulative
+   * histograms, or {@link com.google.api.MetricDescriptor.MetricKind#UNRECOGNIZED} for delta
+   * histograms. Cloud Monitoring only accepts cumulative histograms; delta histograms from
+   * short-lived OTel SDK instances would produce incomplete data and are intentionally dropped.
+   */
   private static MetricKind convertHistogramType(HistogramData histogramData) {
     if (histogramData.getAggregationTemporality() == AggregationTemporality.CUMULATIVE) {
       return CUMULATIVE;
@@ -200,6 +208,14 @@ class DatastoreCloudMonitoringExporterUtils {
     return UNRECOGNIZED;
   }
 
+  /**
+   * Maps an OTel {@link SumData} to a Cloud Monitoring {@link MetricKind}.
+   *
+   * <p>Non-monotonic sums (values that can decrease) are mapped to {@code GAUGE} because Cloud
+   * Monitoring {@code CUMULATIVE} metrics must be strictly monotonically increasing. Monotonic
+   * cumulative sums map to {@code CUMULATIVE}; delta sums are not supported and return {@code
+   * UNRECOGNIZED}.
+   */
   private static MetricKind convertSumDataType(SumData<?> sum) {
     // Non-monotonic sums are treated as GAUGE.
     if (!sum.isMonotonic()) {

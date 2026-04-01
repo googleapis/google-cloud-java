@@ -16,6 +16,7 @@
 
 package com.google.cloud.datastore;
 
+import com.google.api.core.BetaApi;
 import io.opentelemetry.api.OpenTelemetry;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -39,9 +40,15 @@ public class DatastoreOpenTelemetryOptions {
   }
 
   /**
-   * Returns whether either tracing or metrics are enabled. Telemetry is disabled by default.
+   * Returns whether either tracing or custom metrics (via a user-provided {@link OpenTelemetry}
+   * instance) are enabled.
    *
-   * @return {@code true} if either tracing or metrics are enabled, {@code false} otherwise.
+   * <p><b>Note:</b> This method does <em>not</em> reflect the state of built-in metrics export to
+   * Google Cloud Monitoring, which is controlled separately by {@link
+   * #isExportBuiltinMetricsToGoogleCloudMonitoring()} and is {@code true} by default. To check
+   * whether any telemetry is active, also consult that flag.
+   *
+   * @return {@code true} if tracing or custom OTel metrics are enabled, {@code false} otherwise.
    */
   public boolean isEnabled() {
     return tracingEnabled || metricsEnabled;
@@ -75,6 +82,7 @@ public class DatastoreOpenTelemetryOptions {
    * @return {@code true} if built-in metrics export to Cloud Monitoring is enabled, {@code false}
    *     otherwise.
    */
+  @BetaApi
   public boolean isExportBuiltinMetricsToGoogleCloudMonitoring() {
     return exportBuiltinMetricsToGoogleCloudMonitoring;
   }
@@ -167,6 +175,7 @@ public class DatastoreOpenTelemetryOptions {
      * @param exportBuiltinMetrics Whether built-in metrics should be exported to Cloud Monitoring.
      * @return this builder instance.
      */
+    @BetaApi
     @Nonnull
     public DatastoreOpenTelemetryOptions.Builder setExportBuiltinMetricsToGoogleCloudMonitoring(
         boolean exportBuiltinMetrics) {

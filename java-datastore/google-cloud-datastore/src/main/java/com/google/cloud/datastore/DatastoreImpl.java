@@ -165,6 +165,16 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     }
   }
 
+  /**
+   * Closes the Datastore client and releases all resources.
+   *
+   * <p>This method closes the underlying RPC channel and then closes the {@link
+   * com.google.cloud.datastore.telemetry.DatastoreMetricsRecorder}. For clients using the
+   * built-in Cloud Monitoring exporter, closing the recorder flushes any buffered metrics and
+   * shuts down the private {@link io.opentelemetry.sdk.OpenTelemetrySdk} instance. For clients
+   * using a user-provided {@link io.opentelemetry.api.OpenTelemetry} instance, the recorder close
+   * is a no-op since the user owns that instance's lifecycle.
+   */
   @Override
   public void close() throws Exception {
     try {
@@ -172,6 +182,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     } catch (Exception e) {
       logger.log(Level.WARNING, "Failed to close channels", e);
     }
+    getOptions().getMetricsRecorder().close();
   }
 
   @Override

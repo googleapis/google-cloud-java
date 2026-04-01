@@ -65,6 +65,12 @@ public final class TelemetryUtils {
    * Records operation-level metrics. This method should be called after the entire operation across
    * all retry attempts has completed.
    *
+   * <p>Metrics are recorded for all transport types (gRPC and HTTP). Previously this method only
+   * recorded metrics for HTTP transport because gRPC metrics were collected separately through
+   * GAX's {@code MetricsTracerFactory}. That mechanism was removed in favour of recording at this
+   * single, transport-agnostic layer so that the built-in Cloud Monitoring exporter captures every
+   * operation regardless of transport.
+   *
    * @param datastoreMetricsRecorder The metrics recorder.
    * @param datastoreOptions The DatastoreOptions object.
    * @param operationStopwatch The stopwatch tracking the duration of the entire operation.
@@ -77,10 +83,7 @@ public final class TelemetryUtils {
       Stopwatch operationStopwatch,
       String methodName,
       String status) {
-    if (methodName != null
-        && !TelemetryConstants.Transport.GRPC
-            .getTransport()
-            .equals(TelemetryConstants.getTransportName(datastoreOptions.getTransportOptions()))) {
+    if (methodName != null) {
       Map<String, String> attributes = buildMetricAttributes(datastoreOptions, methodName, status);
       datastoreMetricsRecorder.recordOperationLatency(
           operationStopwatch.elapsed(TimeUnit.MILLISECONDS), attributes);
@@ -91,6 +94,12 @@ public final class TelemetryUtils {
   /**
    * Wraps a callable with logic to record attempt-level metrics. Attempt metrics are recorded for
    * each individual execution of the callable, regardless of whether it succeeds or fails.
+   *
+   * <p>Metrics are recorded for all transport types (gRPC and HTTP). Previously this wrapper only
+   * recorded metrics for HTTP transport because gRPC metrics were collected separately through
+   * GAX's {@code MetricsTracerFactory}. That mechanism was removed in favour of recording at this
+   * single, transport-agnostic layer so that the built-in Cloud Monitoring exporter captures every
+   * attempt regardless of transport.
    *
    * @param callable The original callable to execute.
    * @param datastoreMetricsRecorder The metrics recorder.
@@ -115,15 +124,11 @@ public final class TelemetryUtils {
         status = DatastoreException.extractStatusCode(e);
         throw e;
       } finally {
-        if (!TelemetryConstants.Transport.GRPC
-            .getTransport()
-            .equals(TelemetryConstants.getTransportName(datastoreOptions.getTransportOptions()))) {
-          Map<String, String> attributes =
-              buildMetricAttributes(datastoreOptions, methodName, status);
-          datastoreMetricsRecorder.recordAttemptLatency(
-              stopwatch.elapsed(TimeUnit.MILLISECONDS), attributes);
-          datastoreMetricsRecorder.recordAttemptCount(1, attributes);
-        }
+        Map<String, String> attributes =
+            buildMetricAttributes(datastoreOptions, methodName, status);
+        datastoreMetricsRecorder.recordAttemptLatency(
+            stopwatch.elapsed(TimeUnit.MILLISECONDS), attributes);
+        datastoreMetricsRecorder.recordAttemptCount(1, attributes);
       }
     };
   }

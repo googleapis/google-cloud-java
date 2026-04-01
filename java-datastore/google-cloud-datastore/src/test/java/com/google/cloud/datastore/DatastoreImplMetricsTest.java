@@ -534,19 +534,6 @@ public class DatastoreImplMetricsTest {
 
     Collection<MetricData> metrics = metricReader.collectAllMetrics();
 
-    // Gax already records operation and attempt metrics natively for the gRPC transport.
-    // DatastoreImpl explicitly avoids recording them here to prevent double-counting.
-    // Since this unit test bypasses the GAX networking layer by mocking DatastoreRpc,
-    // we assert that no local duplicate metrics are emitted by DatastoreImpl for gRPC,
-    // and skip the rest of the assertions.
-    if (TelemetryConstants.Transport.GRPC.equals(transport)) {
-      Optional<MetricData> operationLatency =
-          findMetric(metrics, TelemetryConstants.METRIC_NAME_OPERATION_LATENCY);
-      assertThat(operationLatency.isPresent()).isFalse();
-      EasyMock.verify(rpcMock);
-      return;
-    }
-
     // Verify operation latency
     Optional<MetricData> operationLatency =
         findMetric(metrics, TelemetryConstants.METRIC_NAME_OPERATION_LATENCY);
@@ -631,19 +618,6 @@ public class DatastoreImplMetricsTest {
                 Key.newBuilder(PROJECT_ID, "Kind", "name").setDatabaseId(DATABASE_ID).build()));
 
     Collection<MetricData> metrics = metricReader.collectAllMetrics();
-
-    // Gax already records operation and attempt metrics natively for the gRPC transport.
-    // DatastoreImpl explicitly avoids recording them here to prevent double-counting.
-    // Since this unit test bypasses the GAX networking layer by mocking DatastoreRpc,
-    // we assert that no local duplicate metrics are emitted by DatastoreImpl for gRPC,
-    // and skip the rest of the assertions.
-    if (TelemetryConstants.Transport.GRPC.equals(transport)) {
-      Optional<MetricData> operationLatency =
-          findMetric(metrics, TelemetryConstants.METRIC_NAME_OPERATION_LATENCY);
-      assertThat(operationLatency.isPresent()).isFalse();
-      EasyMock.verify(rpcMock);
-      return;
-    }
 
     // Verify operation latency with UNAVAILABLE status
     Optional<MetricData> operationLatency =

@@ -30,6 +30,7 @@ import java.lang.management.ManagementFactory;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nonnull;
@@ -53,8 +54,13 @@ public final class BuiltInDatastoreMetricsProvider {
   private static final Logger logger =
       Logger.getLogger(BuiltInDatastoreMetricsProvider.class.getName());
 
-  private static String taskId;
-  private static String location;
+  // volatile ensures that the lazy initialisation in getDefaultTaskValue() and detectClientLocation()
+  // is visible across threads. Without it, a second thread could read a stale null and trigger
+  // duplicate initialisation (safe but wasteful), or — on some architectures — read a partially
+  // written value. The fields are idempotent to initialise, so a small risk of double-write is
+  // acceptable; volatile prevents the torn-read issue.
+  private static volatile String taskId;
+  private static volatile String location;
   private static final String DEFAULT_LOCATION = "global";
 
   private final Map<String, String> cachedClientAttributes;
@@ -76,12 +82,19 @@ public final class BuiltInDatastoreMetricsProvider {
   /**
    * Creates a new {@link OpenTelemetry} instance for a single Datastore client's built-in metrics.
    *
-   * <p>Each call returns a dedicated {@link SdkMeterProvider} configured with the provided
-   * project's monitored resource attributes and a {@link DatastoreCloudMonitoringExporter}. A
-   * shutdown hook is registered to flush and close the provider when the JVM exits.
+   * <p>Each call returns a dedicated {@link OpenTelemetrySdk} wrapping an {@link SdkMeterProvider}
+   * configured with the provided project's monitored resource attributes and a {@link
+   * DatastoreCloudMonitoringExporter}. No global or shared state is modified.
    *
-   * <p>Callers are responsible for holding the returned instance for the lifetime of their
-   * Datastore client; no caching is performed here.
+   * <p><b>Lifecycle:</b> The returned instance is owned by the caller. It should be closed by
+   * calling {@link OpenTelemetrySdk#close()} (or via {@link
+   * OpenTelemetryDatastoreMetricsRecorder#close()}) when the associated Datastore client is closed.
+   * A JVM shutdown hook is also registered as a last-resort safety net for cases where the caller
+   * does not explicitly close the client. Note that each call to this method adds a new shutdown
+   * hook; callers should avoid creating an unbounded number of short-lived clients.
+   *
+   * <p>No caching is performed here; callers are responsible for holding the returned instance for
+   * the lifetime of their Datastore client.
    *
    * @param projectId the GCP project ID.
    * @param databaseId the Datastore database ID.
@@ -164,13 +177,15 @@ public final class BuiltInDatastoreMetricsProvider {
   /**
    * Generates a unique identifier for the {@code client_uid} metric field.
    *
-   * <p>Uses {@code RuntimeMXBean.getName()} which typically returns {@code pid@hostname}.
+   * <p>Combines a random UUID with {@code RuntimeMXBean.getName()} (typically {@code
+   * pid@hostname}). The UUID prefix ensures uniqueness across process restarts that reuse the same
+   * PID, preventing Cloud Monitoring from conflating time series from different process lifecycles.
    *
    * @return a unique identifier string.
    */
   private static String getDefaultTaskValue() {
     if (taskId == null) {
-      taskId = ManagementFactory.getRuntimeMXBean().getName();
+      taskId = UUID.randomUUID() + "@" + ManagementFactory.getRuntimeMXBean().getName();
     }
     return taskId;
   }

@@ -16,14 +16,17 @@
 
 package com.google.cloud.datastore.telemetry;
 
+import com.google.api.gax.tracing.OpenTelemetryMetricsRecorder;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
 import io.opentelemetry.api.metrics.DoubleHistogram;
 import io.opentelemetry.api.metrics.LongCounter;
 import io.opentelemetry.api.metrics.Meter;
-import com.google.api.gax.tracing.OpenTelemetryMetricsRecorder;
+import io.opentelemetry.sdk.OpenTelemetrySdk;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.annotation.Nonnull;
 
 /**
@@ -42,14 +45,34 @@ import javax.annotation.Nonnull;
  */
 class OpenTelemetryDatastoreMetricsRecorder extends OpenTelemetryMetricsRecorder
     implements DatastoreMetricsRecorder {
+
+  private static final Logger logger =
+      Logger.getLogger(OpenTelemetryDatastoreMetricsRecorder.class.getName());
+
   private final OpenTelemetry openTelemetry;
+  // True when this recorder created the OpenTelemetry instance (built-in path) and therefore
+  // owns its lifecycle. False when the instance was provided by the user.
+  private final boolean ownsOpenTelemetry;
 
   private final DoubleHistogram transactionLatency;
   private final LongCounter transactionAttemptCount;
 
+  /** Creates a recorder backed by a user-provided {@link OpenTelemetry} instance. */
   OpenTelemetryDatastoreMetricsRecorder(@Nonnull OpenTelemetry openTelemetry, String metricPrefix) {
+    this(openTelemetry, metricPrefix, /* ownsOpenTelemetry= */ false);
+  }
+
+  /**
+   * Creates a recorder, specifying whether this instance owns the {@link OpenTelemetry} lifecycle.
+   *
+   * @param ownsOpenTelemetry {@code true} if this recorder created the instance and should shut it
+   *     down on {@link #close()}; {@code false} if the user provided it.
+   */
+  OpenTelemetryDatastoreMetricsRecorder(
+      @Nonnull OpenTelemetry openTelemetry, String metricPrefix, boolean ownsOpenTelemetry) {
     super(openTelemetry, metricPrefix);
     this.openTelemetry = openTelemetry;
+    this.ownsOpenTelemetry = ownsOpenTelemetry;
 
     Meter meter = openTelemetry.getMeter(TelemetryConstants.DATASTORE_METER_NAME);
 
@@ -69,6 +92,22 @@ class OpenTelemetryDatastoreMetricsRecorder extends OpenTelemetryMetricsRecorder
 
   OpenTelemetry getOpenTelemetry() {
     return openTelemetry;
+  }
+
+  /**
+   * Closes this recorder. If this recorder owns the underlying {@link OpenTelemetry} instance
+   * (i.e., it was created by the built-in metrics provider), it will be shut down, flushing any
+   * pending metrics. If the instance was provided by the user, this is a no-op.
+   */
+  @Override
+  public void close() {
+    if (ownsOpenTelemetry && openTelemetry instanceof OpenTelemetrySdk) {
+      try {
+        ((OpenTelemetrySdk) openTelemetry).close();
+      } catch (Exception e) {
+        logger.log(Level.WARNING, "Failed to close built-in OpenTelemetry SDK instance.", e);
+      }
+    }
   }
 
   @Override

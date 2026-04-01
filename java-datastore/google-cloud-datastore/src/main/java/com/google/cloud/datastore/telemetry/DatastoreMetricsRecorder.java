@@ -45,6 +45,20 @@ public interface DatastoreMetricsRecorder extends MetricsRecorder {
 
   Logger logger = Logger.getLogger(DatastoreMetricsRecorder.class.getName());
 
+  /**
+   * Releases any resources held by this recorder.
+   *
+   * <p>For built-in recorders that own a private {@link io.opentelemetry.sdk.OpenTelemetrySdk}
+   * instance, this will flush and shut down the underlying {@link
+   * io.opentelemetry.sdk.metrics.SdkMeterProvider}. For recorders backed by a user-provided
+   * {@link io.opentelemetry.api.OpenTelemetry} instance, this is a no-op since the caller owns
+   * that instance's lifecycle.
+   *
+   * <p>This method should be called from {@link
+   * com.google.cloud.datastore.DatastoreImpl#close()}.
+   */
+  default void close() {}
+
   /** Records the total latency of a transaction in milliseconds. */
   void recordTransactionLatency(double latencyMs, Map<String, String> attributes);
 
@@ -93,7 +107,7 @@ public interface DatastoreMetricsRecorder extends MetricsRecorder {
         if (builtInOtel != null) {
           recorders.add(
               new OpenTelemetryDatastoreMetricsRecorder(
-                  builtInOtel, TelemetryConstants.METRIC_PREFIX));
+                  builtInOtel, TelemetryConstants.METRIC_PREFIX, /* ownsOpenTelemetry= */ true));
         }
       } catch (Exception e) {
         logger.log(
