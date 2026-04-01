@@ -89,11 +89,15 @@ jobs:
       id: filter
       with:
         filters: |
+          java-aiplatform: java-aiplatform/**
           java-bigquery: java-bigquery/**
           java-bigquerystorage: java-bigquerystorage/**
+          java-compute: java-compute/**
+          java-dns: java-dns/**
           java-datastore: java-datastore/**
           java-logging-logback: java-logging-logback/**
           java-logging: java-logging/**
+          java-notification: java-notification/**
           java-spanner: java-spanner/**
           java-storage: java-storage/**
           sdk-platform-java: sdk-platform-java/**
