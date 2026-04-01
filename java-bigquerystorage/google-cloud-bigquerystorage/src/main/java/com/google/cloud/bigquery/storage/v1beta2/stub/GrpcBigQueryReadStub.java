@@ -139,6 +139,7 @@ public class GrpcBigQueryReadStub extends BigQueryReadStub {
                       "read_session.table", String.valueOf(request.getReadSession().getTable()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ReadRowsRequest, ReadRowsResponse> readRowsTransportSettings =
         GrpcCallSettings.<ReadRowsRequest, ReadRowsResponse>newBuilder()
@@ -149,6 +150,7 @@ public class GrpcBigQueryReadStub extends BigQueryReadStub {
                   builder.add("read_stream", String.valueOf(request.getReadStream()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getReadStream())
             .build();
     GrpcCallSettings<SplitReadStreamRequest, SplitReadStreamResponse>
         splitReadStreamTransportSettings =
@@ -160,6 +162,7 @@ public class GrpcBigQueryReadStub extends BigQueryReadStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.createReadSessionCallable =

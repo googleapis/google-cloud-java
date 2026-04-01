@@ -973,6 +973,7 @@ public class HttpJsonTpuStub extends TpuStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetNodeRequest, Node> getNodeTransportSettings =
         HttpJsonCallSettings.<GetNodeRequest, Node>newBuilder()
@@ -984,6 +985,7 @@ public class HttpJsonTpuStub extends TpuStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateNodeRequest, Operation> createNodeTransportSettings =
         HttpJsonCallSettings.<CreateNodeRequest, Operation>newBuilder()
@@ -995,6 +997,7 @@ public class HttpJsonTpuStub extends TpuStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteNodeRequest, Operation> deleteNodeTransportSettings =
         HttpJsonCallSettings.<DeleteNodeRequest, Operation>newBuilder()
@@ -1006,6 +1009,7 @@ public class HttpJsonTpuStub extends TpuStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<StopNodeRequest, Operation> stopNodeTransportSettings =
         HttpJsonCallSettings.<StopNodeRequest, Operation>newBuilder()
@@ -1017,6 +1021,7 @@ public class HttpJsonTpuStub extends TpuStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<StartNodeRequest, Operation> startNodeTransportSettings =
         HttpJsonCallSettings.<StartNodeRequest, Operation>newBuilder()
@@ -1028,6 +1033,7 @@ public class HttpJsonTpuStub extends TpuStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateNodeRequest, Operation> updateNodeTransportSettings =
         HttpJsonCallSettings.<UpdateNodeRequest, Operation>newBuilder()
@@ -1052,6 +1058,7 @@ public class HttpJsonTpuStub extends TpuStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetQueuedResourceRequest, QueuedResource>
         getQueuedResourceTransportSettings =
@@ -1064,6 +1071,7 @@ public class HttpJsonTpuStub extends TpuStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateQueuedResourceRequest, Operation>
         createQueuedResourceTransportSettings =
@@ -1076,6 +1084,7 @@ public class HttpJsonTpuStub extends TpuStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteQueuedResourceRequest, Operation>
         deleteQueuedResourceTransportSettings =
@@ -1088,6 +1097,7 @@ public class HttpJsonTpuStub extends TpuStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ResetQueuedResourceRequest, Operation>
         resetQueuedResourceTransportSettings =
@@ -1100,6 +1110,7 @@ public class HttpJsonTpuStub extends TpuStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GenerateServiceIdentityRequest, GenerateServiceIdentityResponse>
         generateServiceIdentityTransportSettings =
@@ -1113,6 +1124,7 @@ public class HttpJsonTpuStub extends TpuStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListAcceleratorTypesRequest, ListAcceleratorTypesResponse>
         listAcceleratorTypesTransportSettings =
@@ -1126,6 +1138,7 @@ public class HttpJsonTpuStub extends TpuStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetAcceleratorTypeRequest, AcceleratorType>
         getAcceleratorTypeTransportSettings =
@@ -1138,6 +1151,7 @@ public class HttpJsonTpuStub extends TpuStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListRuntimeVersionsRequest, ListRuntimeVersionsResponse>
         listRuntimeVersionsTransportSettings =
@@ -1151,6 +1165,7 @@ public class HttpJsonTpuStub extends TpuStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetRuntimeVersionRequest, RuntimeVersion>
         getRuntimeVersionTransportSettings =
@@ -1163,6 +1178,7 @@ public class HttpJsonTpuStub extends TpuStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetGuestAttributesRequest, GetGuestAttributesResponse>
         getGuestAttributesTransportSettings =
@@ -1175,6 +1191,7 @@ public class HttpJsonTpuStub extends TpuStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

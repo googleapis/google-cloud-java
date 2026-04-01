@@ -248,6 +248,7 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetServiceRequest, Service> getServiceTransportSettings =
         GrpcCallSettings.<GetServiceRequest, Service>newBuilder()
@@ -258,6 +259,7 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListServicesRequest, ListServicesResponse> listServicesTransportSettings =
         GrpcCallSettings.<ListServicesRequest, ListServicesResponse>newBuilder()
@@ -268,6 +270,7 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateServiceRequest, Service> updateServiceTransportSettings =
         GrpcCallSettings.<UpdateServiceRequest, Service>newBuilder()
@@ -288,6 +291,7 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateServiceLevelObjectiveRequest, ServiceLevelObjective>
         createServiceLevelObjectiveTransportSettings =
@@ -299,6 +303,7 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetServiceLevelObjectiveRequest, ServiceLevelObjective>
         getServiceLevelObjectiveTransportSettings =
@@ -310,6 +315,7 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListServiceLevelObjectivesRequest, ListServiceLevelObjectivesResponse>
         listServiceLevelObjectivesTransportSettings =
@@ -322,6 +328,7 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateServiceLevelObjectiveRequest, ServiceLevelObjective>
         updateServiceLevelObjectiveTransportSettings =
@@ -346,6 +353,7 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.createServiceCallable =

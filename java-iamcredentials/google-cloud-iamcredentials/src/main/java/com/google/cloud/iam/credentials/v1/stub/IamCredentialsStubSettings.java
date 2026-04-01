@@ -262,6 +262,7 @@ public class IamCredentialsStubSettings extends StubSettings<IamCredentialsStubS
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-iamcredentials")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

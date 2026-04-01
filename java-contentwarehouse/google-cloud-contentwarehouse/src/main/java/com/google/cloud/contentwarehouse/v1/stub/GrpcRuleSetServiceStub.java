@@ -160,6 +160,7 @@ public class GrpcRuleSetServiceStub extends RuleSetServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetRuleSetRequest, RuleSet> getRuleSetTransportSettings =
         GrpcCallSettings.<GetRuleSetRequest, RuleSet>newBuilder()
@@ -170,6 +171,7 @@ public class GrpcRuleSetServiceStub extends RuleSetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateRuleSetRequest, RuleSet> updateRuleSetTransportSettings =
         GrpcCallSettings.<UpdateRuleSetRequest, RuleSet>newBuilder()
@@ -180,6 +182,7 @@ public class GrpcRuleSetServiceStub extends RuleSetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteRuleSetRequest, Empty> deleteRuleSetTransportSettings =
         GrpcCallSettings.<DeleteRuleSetRequest, Empty>newBuilder()
@@ -190,6 +193,7 @@ public class GrpcRuleSetServiceStub extends RuleSetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRuleSetsRequest, ListRuleSetsResponse> listRuleSetsTransportSettings =
         GrpcCallSettings.<ListRuleSetsRequest, ListRuleSetsResponse>newBuilder()
@@ -200,6 +204,7 @@ public class GrpcRuleSetServiceStub extends RuleSetServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.createRuleSetCallable =

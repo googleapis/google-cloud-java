@@ -561,6 +561,7 @@ public class HttpJsonIdentityAwareProxyAdminServiceStub extends IdentityAwarePro
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -572,6 +573,7 @@ public class HttpJsonIdentityAwareProxyAdminServiceStub extends IdentityAwarePro
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -584,6 +586,7 @@ public class HttpJsonIdentityAwareProxyAdminServiceStub extends IdentityAwarePro
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     HttpJsonCallSettings<GetIapSettingsRequest, IapSettings> getIapSettingsTransportSettings =
         HttpJsonCallSettings.<GetIapSettingsRequest, IapSettings>newBuilder()
@@ -635,6 +638,7 @@ public class HttpJsonIdentityAwareProxyAdminServiceStub extends IdentityAwarePro
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateTunnelDestGroupRequest, TunnelDestGroup>
         createTunnelDestGroupTransportSettings =
@@ -647,6 +651,7 @@ public class HttpJsonIdentityAwareProxyAdminServiceStub extends IdentityAwarePro
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetTunnelDestGroupRequest, TunnelDestGroup>
         getTunnelDestGroupTransportSettings =
@@ -659,6 +664,7 @@ public class HttpJsonIdentityAwareProxyAdminServiceStub extends IdentityAwarePro
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DeleteTunnelDestGroupRequest, Empty>
         deleteTunnelDestGroupTransportSettings =
@@ -671,6 +677,7 @@ public class HttpJsonIdentityAwareProxyAdminServiceStub extends IdentityAwarePro
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateTunnelDestGroupRequest, TunnelDestGroup>
         updateTunnelDestGroupTransportSettings =

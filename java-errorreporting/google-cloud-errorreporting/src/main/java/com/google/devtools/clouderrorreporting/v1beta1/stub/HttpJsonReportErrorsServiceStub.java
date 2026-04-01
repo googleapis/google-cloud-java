@@ -148,6 +148,7 @@ public class HttpJsonReportErrorsServiceStub extends ReportErrorsServiceStub {
                       builder.add("project_name", String.valueOf(request.getProjectName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProjectName())
                 .build();
 
     this.reportErrorEventCallable =

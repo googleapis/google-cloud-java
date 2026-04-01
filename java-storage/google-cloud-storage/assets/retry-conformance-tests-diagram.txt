@@ -1,0 +1,59 @@
+# This is a text representation of retry-conformance-tests.diagram.png generated
+# using https://www.websequencediagrams.com/
+
+participant ITRetryConformanceTest
+participant ITRetryConformanceTest.Static
+participant RetryTestCaseResolver
+participant GracefulConformanceEnforcement
+participant RetryTestFixture
+participant TestBench
+participant Docker
+participant RpcMethodMappings
+
+ITRetryConformanceTest->+ITRetryConformanceTest.Static: testCases
+    ITRetryConformanceTest.Static->RpcMethodMappings: <init>
+    ITRetryConformanceTest.Static->+RetryTestCaseResolver: getRetryTestCases
+        RetryTestCaseResolver->RetryTestCaseResolver: loadRetryTestDefinitions
+        RetryTestCaseResolver->RetryTestCaseResolver: generateTestCases
+        RetryTestCaseResolver->RetryTestCaseResolver: shuffle
+        RetryTestCaseResolver->RetryTestCaseResolver: validateGeneratedTestCases
+    RetryTestCaseResolver->-ITRetryConformanceTest.Static:
+ITRetryConformanceTest.Static->-ITRetryConformanceTest:
+
+ITRetryConformanceTest->+TestBench: apply
+    TestBench->TestBench: mktemp stdout
+    TestBench->TestBench: mktemp stderr
+    TestBench->+Docker: pull
+    Docker->-TestBench:
+    TestBench->+Docker: run
+      TestBench->+TestBench: await testbench up
+        TestBench->+Docker: GET /retry_tests
+        Docker->-TestBench:
+        deactivate TestBench
+        loop forEach test
+          ITRetryConformanceTest->+GracefulConformanceEnforcement: apply
+              ITRetryConformanceTest->+RetryTestFixture: apply
+                  RetryTestFixture->+TestBench: createRetryTest
+                    TestBench->+Docker: POST /retry_test
+                    Docker->-TestBench:
+                  TestBench->-RetryTestFixture:
+                  ITRetryConformanceTest->ITRetryConformanceTest: test
+                  RetryTestFixture->+TestBench: getRetryTest
+                    TestBench->+Docker: GET /retry_test/{id}
+                    Docker->-TestBench:
+                  TestBench->-RetryTestFixture:
+                  RetryTestFixture->RetryTestFixture: assert completion
+                  RetryTestFixture->+TestBench: deleteRetryTest
+                    TestBench->+Docker: DELETE /retry_test/{id}
+                    Docker->-TestBench:
+                  TestBench->-RetryTestFixture:
+              RetryTestFixture->-ITRetryConformanceTest:
+              opt if running in CI
+                  GracefulConformanceEnforcement->GracefulConformanceEnforcement: check allow list
+              end
+          GracefulConformanceEnforcement->-ITRetryConformanceTest:
+        end
+    Docker->-TestBench: docker stop
+    TestBench->TestBench: rmtemp stdout
+    TestBench->TestBench: rmtemp stderr
+TestBench->-ITRetryConformanceTest:

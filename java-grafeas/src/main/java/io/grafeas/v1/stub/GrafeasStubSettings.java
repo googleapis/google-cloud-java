@@ -493,6 +493,7 @@ public class GrafeasStubSettings extends StubSettings<GrafeasStubSettings> {
     return LibraryMetadata.newBuilder()
         .setArtifactName("io.grafeas:grafeas")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

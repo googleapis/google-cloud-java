@@ -264,6 +264,7 @@ public class HttpJsonIamCredentialsStub extends IamCredentialsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GenerateIdTokenRequest, GenerateIdTokenResponse>
         generateIdTokenTransportSettings =
@@ -276,6 +277,7 @@ public class HttpJsonIamCredentialsStub extends IamCredentialsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<SignBlobRequest, SignBlobResponse> signBlobTransportSettings =
         HttpJsonCallSettings.<SignBlobRequest, SignBlobResponse>newBuilder()
@@ -287,6 +289,7 @@ public class HttpJsonIamCredentialsStub extends IamCredentialsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<SignJwtRequest, SignJwtResponse> signJwtTransportSettings =
         HttpJsonCallSettings.<SignJwtRequest, SignJwtResponse>newBuilder()
@@ -298,6 +301,7 @@ public class HttpJsonIamCredentialsStub extends IamCredentialsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.generateAccessTokenCallable =

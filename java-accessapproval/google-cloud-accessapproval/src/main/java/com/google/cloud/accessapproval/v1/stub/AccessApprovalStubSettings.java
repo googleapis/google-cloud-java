@@ -400,6 +400,7 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-accessapproval")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

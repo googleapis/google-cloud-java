@@ -639,6 +639,7 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListDocumentsRequest, ListDocumentsResponse>
         listDocumentsTransportSettings =
@@ -651,6 +652,7 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateDocumentRequest, Document> createDocumentTransportSettings =
         HttpJsonCallSettings.<CreateDocumentRequest, Document>newBuilder()
@@ -662,6 +664,7 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateDocumentRequest, Document> updateDocumentTransportSettings =
         HttpJsonCallSettings.<UpdateDocumentRequest, Document>newBuilder()
@@ -684,6 +687,7 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ImportDocumentsRequest, Operation> importDocumentsTransportSettings =
         HttpJsonCallSettings.<ImportDocumentsRequest, Operation>newBuilder()
@@ -695,6 +699,7 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<PurgeDocumentsRequest, Operation> purgeDocumentsTransportSettings =
         HttpJsonCallSettings.<PurgeDocumentsRequest, Operation>newBuilder()
@@ -706,6 +711,7 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
         batchGetDocumentsMetadataTransportSettings =
@@ -719,6 +725,7 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getDocumentCallable =

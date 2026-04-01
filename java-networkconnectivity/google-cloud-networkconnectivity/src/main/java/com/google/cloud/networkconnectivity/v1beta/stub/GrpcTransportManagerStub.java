@@ -307,6 +307,7 @@ public class GrpcTransportManagerStub extends TransportManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetRemoteTransportProfileRequest, RemoteTransportProfile>
         getRemoteTransportProfileTransportSettings =
@@ -318,6 +319,7 @@ public class GrpcTransportManagerStub extends TransportManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListTransportsRequest, ListTransportsResponse>
         listTransportsTransportSettings =
@@ -329,6 +331,7 @@ public class GrpcTransportManagerStub extends TransportManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetTransportRequest, Transport> getTransportTransportSettings =
         GrpcCallSettings.<GetTransportRequest, Transport>newBuilder()
@@ -339,6 +342,7 @@ public class GrpcTransportManagerStub extends TransportManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetStatusRequest, GetStatusResponse> getStatusTransportSettings =
         GrpcCallSettings.<GetStatusRequest, GetStatusResponse>newBuilder()
@@ -349,6 +353,7 @@ public class GrpcTransportManagerStub extends TransportManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateTransportRequest, Operation> createTransportTransportSettings =
         GrpcCallSettings.<CreateTransportRequest, Operation>newBuilder()
@@ -359,6 +364,7 @@ public class GrpcTransportManagerStub extends TransportManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateTransportRequest, Operation> updateTransportTransportSettings =
         GrpcCallSettings.<UpdateTransportRequest, Operation>newBuilder()
@@ -379,6 +385,7 @@ public class GrpcTransportManagerStub extends TransportManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -409,6 +416,7 @@ public class GrpcTransportManagerStub extends TransportManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -419,6 +427,7 @@ public class GrpcTransportManagerStub extends TransportManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -430,6 +439,7 @@ public class GrpcTransportManagerStub extends TransportManagerStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listRemoteTransportProfilesCallable =

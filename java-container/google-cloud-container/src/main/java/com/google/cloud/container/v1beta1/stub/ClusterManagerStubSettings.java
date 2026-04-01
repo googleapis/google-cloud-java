@@ -618,6 +618,7 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-container")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

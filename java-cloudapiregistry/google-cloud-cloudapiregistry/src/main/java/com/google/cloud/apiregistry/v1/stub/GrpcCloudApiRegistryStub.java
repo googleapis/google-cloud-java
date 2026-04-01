@@ -183,6 +183,7 @@ public class GrpcCloudApiRegistryStub extends CloudApiRegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListMcpServersRequest, ListMcpServersResponse>
         listMcpServersTransportSettings =
@@ -194,6 +195,7 @@ public class GrpcCloudApiRegistryStub extends CloudApiRegistryStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetMcpToolRequest, McpTool> getMcpToolTransportSettings =
         GrpcCallSettings.<GetMcpToolRequest, McpTool>newBuilder()
@@ -204,6 +206,7 @@ public class GrpcCloudApiRegistryStub extends CloudApiRegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListMcpToolsRequest, ListMcpToolsResponse> listMcpToolsTransportSettings =
         GrpcCallSettings.<ListMcpToolsRequest, ListMcpToolsResponse>newBuilder()
@@ -214,6 +217,7 @@ public class GrpcCloudApiRegistryStub extends CloudApiRegistryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

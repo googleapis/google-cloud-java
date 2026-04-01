@@ -414,6 +414,7 @@ public class SessionControllerStubSettings extends StubSettings<SessionControlle
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-dataproc")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

@@ -40,6 +40,9 @@
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
             },
+            "GetSharedRegionalCertificateAuthority": {
+              "methods": ["getSharedRegionalCertificateAuthority", "getSharedRegionalCertificateAuthority", "getSharedRegionalCertificateAuthority", "getSharedRegionalCertificateAuthorityCallable"]
+            },
             "ListBackupCollections": {
               "methods": ["listBackupCollections", "listBackupCollections", "listBackupCollections", "listBackupCollectionsPagedCallable", "listBackupCollectionsCallable"]
             },

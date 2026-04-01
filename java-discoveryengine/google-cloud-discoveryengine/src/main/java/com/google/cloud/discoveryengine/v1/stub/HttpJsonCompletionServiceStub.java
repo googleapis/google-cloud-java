@@ -559,6 +559,7 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
                       builder.add("data_store", String.valueOf(request.getDataStore()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getDataStore())
                 .build();
     HttpJsonCallSettings<ImportSuggestionDenyListEntriesRequest, Operation>
         importSuggestionDenyListEntriesTransportSettings =
@@ -571,6 +572,7 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<PurgeSuggestionDenyListEntriesRequest, Operation>
         purgeSuggestionDenyListEntriesTransportSettings =
@@ -583,6 +585,7 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ImportCompletionSuggestionsRequest, Operation>
         importCompletionSuggestionsTransportSettings =
@@ -595,6 +598,7 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<PurgeCompletionSuggestionsRequest, Operation>
         purgeCompletionSuggestionsTransportSettings =
@@ -607,6 +611,7 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.completeQueryCallable =

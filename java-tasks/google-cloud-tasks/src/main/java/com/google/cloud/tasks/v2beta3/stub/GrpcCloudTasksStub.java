@@ -316,6 +316,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetQueueRequest, Queue> getQueueTransportSettings =
         GrpcCallSettings.<GetQueueRequest, Queue>newBuilder()
@@ -326,6 +327,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateQueueRequest, Queue> createQueueTransportSettings =
         GrpcCallSettings.<CreateQueueRequest, Queue>newBuilder()
@@ -336,6 +338,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateQueueRequest, Queue> updateQueueTransportSettings =
         GrpcCallSettings.<UpdateQueueRequest, Queue>newBuilder()
@@ -356,6 +359,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<PurgeQueueRequest, Queue> purgeQueueTransportSettings =
         GrpcCallSettings.<PurgeQueueRequest, Queue>newBuilder()
@@ -366,6 +370,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<PauseQueueRequest, Queue> pauseQueueTransportSettings =
         GrpcCallSettings.<PauseQueueRequest, Queue>newBuilder()
@@ -376,6 +381,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ResumeQueueRequest, Queue> resumeQueueTransportSettings =
         GrpcCallSettings.<ResumeQueueRequest, Queue>newBuilder()
@@ -386,6 +392,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -396,6 +403,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -406,6 +414,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -417,6 +426,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     GrpcCallSettings<ListTasksRequest, ListTasksResponse> listTasksTransportSettings =
         GrpcCallSettings.<ListTasksRequest, ListTasksResponse>newBuilder()
@@ -427,6 +437,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetTaskRequest, Task> getTaskTransportSettings =
         GrpcCallSettings.<GetTaskRequest, Task>newBuilder()
@@ -437,6 +448,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateTaskRequest, Task> createTaskTransportSettings =
         GrpcCallSettings.<CreateTaskRequest, Task>newBuilder()
@@ -447,6 +459,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteTaskRequest, Empty> deleteTaskTransportSettings =
         GrpcCallSettings.<DeleteTaskRequest, Empty>newBuilder()
@@ -457,6 +470,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RunTaskRequest, Task> runTaskTransportSettings =
         GrpcCallSettings.<RunTaskRequest, Task>newBuilder()
@@ -467,6 +481,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

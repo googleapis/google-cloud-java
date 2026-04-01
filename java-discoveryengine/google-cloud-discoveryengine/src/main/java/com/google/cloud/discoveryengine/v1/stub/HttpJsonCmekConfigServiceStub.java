@@ -476,6 +476,7 @@ public class HttpJsonCmekConfigServiceStub extends CmekConfigServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListCmekConfigsRequest, ListCmekConfigsResponse>
         listCmekConfigsTransportSettings =
@@ -488,6 +489,7 @@ public class HttpJsonCmekConfigServiceStub extends CmekConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteCmekConfigRequest, Operation> deleteCmekConfigTransportSettings =
         HttpJsonCallSettings.<DeleteCmekConfigRequest, Operation>newBuilder()
@@ -499,6 +501,7 @@ public class HttpJsonCmekConfigServiceStub extends CmekConfigServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.updateCmekConfigCallable =

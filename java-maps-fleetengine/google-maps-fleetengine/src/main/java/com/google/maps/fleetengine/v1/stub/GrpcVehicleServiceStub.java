@@ -219,6 +219,7 @@ public class GrpcVehicleServiceStub extends VehicleServiceStub {
                   builder.add(request.getName(), "provider_id", GET_VEHICLE_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteVehicleRequest, Empty> deleteVehicleTransportSettings =
         GrpcCallSettings.<DeleteVehicleRequest, Empty>newBuilder()
@@ -229,6 +230,7 @@ public class GrpcVehicleServiceStub extends VehicleServiceStub {
                   builder.add(request.getName(), "provider_id", DELETE_VEHICLE_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateVehicleRequest, Vehicle> updateVehicleTransportSettings =
         GrpcCallSettings.<UpdateVehicleRequest, Vehicle>newBuilder()

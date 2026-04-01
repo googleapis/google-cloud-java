@@ -489,6 +489,7 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-geminidataanalytics")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

@@ -182,6 +182,7 @@ public class HttpJsonBrowserServiceStub extends BrowserServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListBrowsersRequest, ListBrowsersResponse> listBrowsersTransportSettings =
         HttpJsonCallSettings.<ListBrowsersRequest, ListBrowsersResponse>newBuilder()
@@ -193,6 +194,7 @@ public class HttpJsonBrowserServiceStub extends BrowserServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.getBrowserCallable =

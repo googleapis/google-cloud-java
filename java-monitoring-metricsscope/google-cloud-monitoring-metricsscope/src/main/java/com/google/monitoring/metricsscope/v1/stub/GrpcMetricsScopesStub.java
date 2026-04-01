@@ -168,6 +168,7 @@ public class GrpcMetricsScopesStub extends MetricsScopesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<
             ListMetricsScopesByMonitoredProjectRequest, ListMetricsScopesByMonitoredProjectResponse>
@@ -188,6 +189,7 @@ public class GrpcMetricsScopesStub extends MetricsScopesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteMonitoredProjectRequest, Operation>
         deleteMonitoredProjectTransportSettings =
@@ -199,6 +201,7 @@ public class GrpcMetricsScopesStub extends MetricsScopesStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.getMetricsScopeCallable =

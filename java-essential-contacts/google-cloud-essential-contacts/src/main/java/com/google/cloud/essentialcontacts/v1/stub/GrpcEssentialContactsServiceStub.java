@@ -200,6 +200,7 @@ public class GrpcEssentialContactsServiceStub extends EssentialContactsServiceSt
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateContactRequest, Contact> updateContactTransportSettings =
         GrpcCallSettings.<UpdateContactRequest, Contact>newBuilder()
@@ -220,6 +221,7 @@ public class GrpcEssentialContactsServiceStub extends EssentialContactsServiceSt
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetContactRequest, Contact> getContactTransportSettings =
         GrpcCallSettings.<GetContactRequest, Contact>newBuilder()
@@ -230,6 +232,7 @@ public class GrpcEssentialContactsServiceStub extends EssentialContactsServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteContactRequest, Empty> deleteContactTransportSettings =
         GrpcCallSettings.<DeleteContactRequest, Empty>newBuilder()
@@ -240,6 +243,7 @@ public class GrpcEssentialContactsServiceStub extends EssentialContactsServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ComputeContactsRequest, ComputeContactsResponse>
         computeContactsTransportSettings =
@@ -251,6 +255,7 @@ public class GrpcEssentialContactsServiceStub extends EssentialContactsServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<SendTestMessageRequest, Empty> sendTestMessageTransportSettings =
         GrpcCallSettings.<SendTestMessageRequest, Empty>newBuilder()
@@ -261,6 +266,7 @@ public class GrpcEssentialContactsServiceStub extends EssentialContactsServiceSt
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
 
     this.createContactCallable =

@@ -233,6 +233,7 @@ public class HttpJsonPromotionsServiceStub extends PromotionsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListPromotionsRequest, ListPromotionsResponse>
         listPromotionsTransportSettings =

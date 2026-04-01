@@ -460,6 +460,7 @@ public class HttpJsonPrincipalAccessBoundaryPoliciesStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetPrincipalAccessBoundaryPolicyRequest, PrincipalAccessBoundaryPolicy>
         getPrincipalAccessBoundaryPolicyTransportSettings =
@@ -474,6 +475,7 @@ public class HttpJsonPrincipalAccessBoundaryPoliciesStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdatePrincipalAccessBoundaryPolicyRequest, Operation>
         updatePrincipalAccessBoundaryPolicyTransportSettings =
@@ -500,6 +502,7 @@ public class HttpJsonPrincipalAccessBoundaryPoliciesStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             ListPrincipalAccessBoundaryPoliciesRequest, ListPrincipalAccessBoundaryPoliciesResponse>
@@ -516,6 +519,7 @@ public class HttpJsonPrincipalAccessBoundaryPoliciesStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             SearchPrincipalAccessBoundaryPolicyBindingsRequest,
@@ -533,6 +537,7 @@ public class HttpJsonPrincipalAccessBoundaryPoliciesStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.createPrincipalAccessBoundaryPolicyCallable =

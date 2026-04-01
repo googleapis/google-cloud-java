@@ -608,4 +608,66 @@ public interface RuntimeEnvironmentOrBuilder
    * @return The streamingMode.
    */
   com.google.dataflow.v1beta3.StreamingMode getStreamingMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional pipeline option flags for the job.
+   * </pre>
+   *
+   * <code>
+   * repeated string additional_pipeline_options = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the additionalPipelineOptions.
+   */
+  java.util.List<java.lang.String> getAdditionalPipelineOptionsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional pipeline option flags for the job.
+   * </pre>
+   *
+   * <code>
+   * repeated string additional_pipeline_options = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of additionalPipelineOptions.
+   */
+  int getAdditionalPipelineOptionsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional pipeline option flags for the job.
+   * </pre>
+   *
+   * <code>
+   * repeated string additional_pipeline_options = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The additionalPipelineOptions at the given index.
+   */
+  java.lang.String getAdditionalPipelineOptions(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional pipeline option flags for the job.
+   * </pre>
+   *
+   * <code>
+   * repeated string additional_pipeline_options = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the additionalPipelineOptions at the given index.
+   */
+  com.google.protobuf.ByteString getAdditionalPipelineOptionsBytes(int index);
 }

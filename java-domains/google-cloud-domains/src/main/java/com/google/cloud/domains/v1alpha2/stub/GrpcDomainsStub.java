@@ -331,6 +331,7 @@ public class GrpcDomainsStub extends DomainsStub {
                   builder.add("location", String.valueOf(request.getLocation()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getLocation())
             .build();
     GrpcCallSettings<RetrieveRegisterParametersRequest, RetrieveRegisterParametersResponse>
         retrieveRegisterParametersTransportSettings =
@@ -343,6 +344,7 @@ public class GrpcDomainsStub extends DomainsStub {
                       builder.add("location", String.valueOf(request.getLocation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getLocation())
                 .build();
     GrpcCallSettings<RegisterDomainRequest, Operation> registerDomainTransportSettings =
         GrpcCallSettings.<RegisterDomainRequest, Operation>newBuilder()
@@ -353,6 +355,7 @@ public class GrpcDomainsStub extends DomainsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<RetrieveTransferParametersRequest, RetrieveTransferParametersResponse>
         retrieveTransferParametersTransportSettings =
@@ -365,6 +368,7 @@ public class GrpcDomainsStub extends DomainsStub {
                       builder.add("location", String.valueOf(request.getLocation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getLocation())
                 .build();
     GrpcCallSettings<TransferDomainRequest, Operation> transferDomainTransportSettings =
         GrpcCallSettings.<TransferDomainRequest, Operation>newBuilder()
@@ -375,6 +379,7 @@ public class GrpcDomainsStub extends DomainsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListRegistrationsRequest, ListRegistrationsResponse>
         listRegistrationsTransportSettings =
@@ -386,6 +391,7 @@ public class GrpcDomainsStub extends DomainsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetRegistrationRequest, Registration> getRegistrationTransportSettings =
         GrpcCallSettings.<GetRegistrationRequest, Registration>newBuilder()
@@ -396,6 +402,7 @@ public class GrpcDomainsStub extends DomainsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateRegistrationRequest, Operation> updateRegistrationTransportSettings =
         GrpcCallSettings.<UpdateRegistrationRequest, Operation>newBuilder()
@@ -418,6 +425,7 @@ public class GrpcDomainsStub extends DomainsStub {
                       builder.add("registration", String.valueOf(request.getRegistration()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getRegistration())
                 .build();
     GrpcCallSettings<ConfigureDnsSettingsRequest, Operation> configureDnsSettingsTransportSettings =
         GrpcCallSettings.<ConfigureDnsSettingsRequest, Operation>newBuilder()
@@ -428,6 +436,7 @@ public class GrpcDomainsStub extends DomainsStub {
                   builder.add("registration", String.valueOf(request.getRegistration()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getRegistration())
             .build();
     GrpcCallSettings<ConfigureContactSettingsRequest, Operation>
         configureContactSettingsTransportSettings =
@@ -439,6 +448,7 @@ public class GrpcDomainsStub extends DomainsStub {
                       builder.add("registration", String.valueOf(request.getRegistration()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getRegistration())
                 .build();
     GrpcCallSettings<ExportRegistrationRequest, Operation> exportRegistrationTransportSettings =
         GrpcCallSettings.<ExportRegistrationRequest, Operation>newBuilder()
@@ -449,6 +459,7 @@ public class GrpcDomainsStub extends DomainsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteRegistrationRequest, Operation> deleteRegistrationTransportSettings =
         GrpcCallSettings.<DeleteRegistrationRequest, Operation>newBuilder()
@@ -459,6 +470,7 @@ public class GrpcDomainsStub extends DomainsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RetrieveAuthorizationCodeRequest, AuthorizationCode>
         retrieveAuthorizationCodeTransportSettings =
@@ -470,6 +482,7 @@ public class GrpcDomainsStub extends DomainsStub {
                       builder.add("registration", String.valueOf(request.getRegistration()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getRegistration())
                 .build();
     GrpcCallSettings<ResetAuthorizationCodeRequest, AuthorizationCode>
         resetAuthorizationCodeTransportSettings =
@@ -481,6 +494,7 @@ public class GrpcDomainsStub extends DomainsStub {
                       builder.add("registration", String.valueOf(request.getRegistration()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getRegistration())
                 .build();
 
     this.searchDomainsCallable =

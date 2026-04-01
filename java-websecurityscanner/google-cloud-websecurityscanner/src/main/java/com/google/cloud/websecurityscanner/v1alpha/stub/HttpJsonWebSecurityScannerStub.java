@@ -633,6 +633,7 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteScanConfigRequest, Empty> deleteScanConfigTransportSettings =
         HttpJsonCallSettings.<DeleteScanConfigRequest, Empty>newBuilder()
@@ -644,6 +645,7 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetScanConfigRequest, ScanConfig> getScanConfigTransportSettings =
         HttpJsonCallSettings.<GetScanConfigRequest, ScanConfig>newBuilder()
@@ -655,6 +657,7 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListScanConfigsRequest, ListScanConfigsResponse>
         listScanConfigsTransportSettings =
@@ -667,6 +670,7 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateScanConfigRequest, ScanConfig> updateScanConfigTransportSettings =
         HttpJsonCallSettings.<UpdateScanConfigRequest, ScanConfig>newBuilder()
@@ -690,6 +694,7 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetScanRunRequest, ScanRun> getScanRunTransportSettings =
         HttpJsonCallSettings.<GetScanRunRequest, ScanRun>newBuilder()
@@ -701,6 +706,7 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListScanRunsRequest, ListScanRunsResponse> listScanRunsTransportSettings =
         HttpJsonCallSettings.<ListScanRunsRequest, ListScanRunsResponse>newBuilder()
@@ -712,6 +718,7 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<StopScanRunRequest, ScanRun> stopScanRunTransportSettings =
         HttpJsonCallSettings.<StopScanRunRequest, ScanRun>newBuilder()
@@ -723,6 +730,7 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListCrawledUrlsRequest, ListCrawledUrlsResponse>
         listCrawledUrlsTransportSettings =
@@ -735,6 +743,7 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetFindingRequest, Finding> getFindingTransportSettings =
         HttpJsonCallSettings.<GetFindingRequest, Finding>newBuilder()
@@ -746,6 +755,7 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListFindingsRequest, ListFindingsResponse> listFindingsTransportSettings =
         HttpJsonCallSettings.<ListFindingsRequest, ListFindingsResponse>newBuilder()
@@ -757,6 +767,7 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListFindingTypeStatsRequest, ListFindingTypeStatsResponse>
         listFindingTypeStatsTransportSettings =
@@ -770,6 +781,7 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createScanConfigCallable =

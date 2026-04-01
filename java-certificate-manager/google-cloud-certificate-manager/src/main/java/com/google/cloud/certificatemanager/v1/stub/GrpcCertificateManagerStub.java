@@ -641,6 +641,7 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetCertificateRequest, Certificate> getCertificateTransportSettings =
         GrpcCallSettings.<GetCertificateRequest, Certificate>newBuilder()
@@ -651,6 +652,7 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateCertificateRequest, Operation> createCertificateTransportSettings =
         GrpcCallSettings.<CreateCertificateRequest, Operation>newBuilder()
@@ -661,6 +663,7 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateCertificateRequest, Operation> updateCertificateTransportSettings =
         GrpcCallSettings.<UpdateCertificateRequest, Operation>newBuilder()
@@ -682,6 +685,7 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListCertificateMapsRequest, ListCertificateMapsResponse>
         listCertificateMapsTransportSettings =
@@ -693,6 +697,7 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetCertificateMapRequest, CertificateMap> getCertificateMapTransportSettings =
         GrpcCallSettings.<GetCertificateMapRequest, CertificateMap>newBuilder()
@@ -703,6 +708,7 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateCertificateMapRequest, Operation> createCertificateMapTransportSettings =
         GrpcCallSettings.<CreateCertificateMapRequest, Operation>newBuilder()
@@ -713,6 +719,7 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateCertificateMapRequest, Operation> updateCertificateMapTransportSettings =
         GrpcCallSettings.<UpdateCertificateMapRequest, Operation>newBuilder()
@@ -735,6 +742,7 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListCertificateMapEntriesRequest, ListCertificateMapEntriesResponse>
         listCertificateMapEntriesTransportSettings =
@@ -747,6 +755,7 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetCertificateMapEntryRequest, CertificateMapEntry>
         getCertificateMapEntryTransportSettings =
@@ -758,6 +767,7 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateCertificateMapEntryRequest, Operation>
         createCertificateMapEntryTransportSettings =
@@ -769,6 +779,7 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateCertificateMapEntryRequest, Operation>
         updateCertificateMapEntryTransportSettings =
@@ -793,6 +804,7 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListDnsAuthorizationsRequest, ListDnsAuthorizationsResponse>
         listDnsAuthorizationsTransportSettings =
@@ -805,6 +817,7 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetDnsAuthorizationRequest, DnsAuthorization>
         getDnsAuthorizationTransportSettings =
@@ -816,6 +829,7 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateDnsAuthorizationRequest, Operation>
         createDnsAuthorizationTransportSettings =
@@ -827,6 +841,7 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateDnsAuthorizationRequest, Operation>
         updateDnsAuthorizationTransportSettings =
@@ -851,6 +866,7 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListCertificateIssuanceConfigsRequest, ListCertificateIssuanceConfigsResponse>
         listCertificateIssuanceConfigsTransportSettings =
@@ -864,6 +880,7 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetCertificateIssuanceConfigRequest, CertificateIssuanceConfig>
         getCertificateIssuanceConfigTransportSettings =
@@ -876,6 +893,7 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateCertificateIssuanceConfigRequest, Operation>
         createCertificateIssuanceConfigTransportSettings =
@@ -887,6 +905,7 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteCertificateIssuanceConfigRequest, Operation>
         deleteCertificateIssuanceConfigTransportSettings =
@@ -898,6 +917,7 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListTrustConfigsRequest, ListTrustConfigsResponse>
         listTrustConfigsTransportSettings =
@@ -909,6 +929,7 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetTrustConfigRequest, TrustConfig> getTrustConfigTransportSettings =
         GrpcCallSettings.<GetTrustConfigRequest, TrustConfig>newBuilder()
@@ -919,6 +940,7 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateTrustConfigRequest, Operation> createTrustConfigTransportSettings =
         GrpcCallSettings.<CreateTrustConfigRequest, Operation>newBuilder()
@@ -929,6 +951,7 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateTrustConfigRequest, Operation> updateTrustConfigTransportSettings =
         GrpcCallSettings.<UpdateTrustConfigRequest, Operation>newBuilder()
@@ -950,6 +973,7 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

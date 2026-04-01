@@ -628,6 +628,7 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<PatchJobs.GetPatchJobRequest, PatchJobs.PatchJob>
         getPatchJobTransportSettings =
@@ -640,6 +641,7 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<PatchJobs.CancelPatchJobRequest, PatchJobs.PatchJob>
         cancelPatchJobTransportSettings =
@@ -652,6 +654,7 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse>
         listPatchJobsTransportSettings =
@@ -665,6 +668,7 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             PatchJobs.ListPatchJobInstanceDetailsRequest,
@@ -682,6 +686,7 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             PatchDeployments.CreatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
@@ -697,6 +702,7 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             PatchDeployments.GetPatchDeploymentRequest, PatchDeployments.PatchDeployment>
@@ -712,6 +718,7 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             PatchDeployments.ListPatchDeploymentsRequest,
@@ -729,6 +736,7 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<PatchDeployments.DeletePatchDeploymentRequest, Empty>
         deletePatchDeploymentTransportSettings =
@@ -741,6 +749,7 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             PatchDeployments.UpdatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
@@ -773,6 +782,7 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             PatchDeployments.ResumePatchDeploymentRequest, PatchDeployments.PatchDeployment>
@@ -788,6 +798,7 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.executePatchJobCallable =

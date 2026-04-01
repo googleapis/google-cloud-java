@@ -635,6 +635,7 @@ public class HttpJsonDeliveryServiceStub extends DeliveryServiceStub {
                           request.getName(), "provider_id", GET_DELIVERY_VEHICLE_0_PATH_TEMPLATE);
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DeleteDeliveryVehicleRequest, Empty>
         deleteDeliveryVehicleTransportSettings =
@@ -650,6 +651,7 @@ public class HttpJsonDeliveryServiceStub extends DeliveryServiceStub {
                           DELETE_DELIVERY_VEHICLE_0_PATH_TEMPLATE);
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateDeliveryVehicleRequest, DeliveryVehicle>
         updateDeliveryVehicleTransportSettings =
@@ -680,6 +682,7 @@ public class HttpJsonDeliveryServiceStub extends DeliveryServiceStub {
                           request.getParent(), "provider_id", BATCH_CREATE_TASKS_0_PATH_TEMPLATE);
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateTaskRequest, Task> createTaskTransportSettings =
         HttpJsonCallSettings.<CreateTaskRequest, Task>newBuilder()
@@ -702,6 +705,7 @@ public class HttpJsonDeliveryServiceStub extends DeliveryServiceStub {
                   builder.add(request.getName(), "provider_id", GET_TASK_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteTaskRequest, Empty> deleteTaskTransportSettings =
         HttpJsonCallSettings.<DeleteTaskRequest, Empty>newBuilder()
@@ -713,6 +717,7 @@ public class HttpJsonDeliveryServiceStub extends DeliveryServiceStub {
                   builder.add(request.getName(), "provider_id", DELETE_TASK_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateTaskRequest, Task> updateTaskTransportSettings =
         HttpJsonCallSettings.<UpdateTaskRequest, Task>newBuilder()
@@ -738,6 +743,7 @@ public class HttpJsonDeliveryServiceStub extends DeliveryServiceStub {
                   builder.add(request.getParent(), "provider_id", LIST_TASKS_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetTaskTrackingInfoRequest, TaskTrackingInfo>
         getTaskTrackingInfoTransportSettings =
@@ -751,6 +757,7 @@ public class HttpJsonDeliveryServiceStub extends DeliveryServiceStub {
                           request.getName(), "provider_id", GET_TASK_TRACKING_INFO_0_PATH_TEMPLATE);
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListDeliveryVehiclesRequest, ListDeliveryVehiclesResponse>
         listDeliveryVehiclesTransportSettings =
@@ -767,6 +774,7 @@ public class HttpJsonDeliveryServiceStub extends DeliveryServiceStub {
                           LIST_DELIVERY_VEHICLES_0_PATH_TEMPLATE);
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createDeliveryVehicleCallable =

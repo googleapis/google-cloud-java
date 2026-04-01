@@ -299,6 +299,7 @@ public class ConnectionServiceStubSettings extends StubSettings<ConnectionServic
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-apigee-connect")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

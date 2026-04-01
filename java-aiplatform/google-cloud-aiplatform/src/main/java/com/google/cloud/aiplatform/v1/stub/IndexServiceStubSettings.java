@@ -476,6 +476,7 @@ public class IndexServiceStubSettings extends StubSettings<IndexServiceStubSetti
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-aiplatform")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

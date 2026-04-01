@@ -171,6 +171,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetGroupRequest, Group> getGroupTransportSettings =
         GrpcCallSettings.<GetGroupRequest, Group>newBuilder()
@@ -181,6 +182,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateGroupRequest, Group> createGroupTransportSettings =
         GrpcCallSettings.<CreateGroupRequest, Group>newBuilder()
@@ -191,6 +193,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateGroupRequest, Group> updateGroupTransportSettings =
         GrpcCallSettings.<UpdateGroupRequest, Group>newBuilder()
@@ -211,6 +214,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListGroupMembersRequest, ListGroupMembersResponse>
         listGroupMembersTransportSettings =
@@ -222,6 +226,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.listGroupsCallable =

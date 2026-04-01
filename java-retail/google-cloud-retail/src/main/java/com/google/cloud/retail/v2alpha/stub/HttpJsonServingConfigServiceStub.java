@@ -394,6 +394,7 @@ public class HttpJsonServingConfigServiceStub extends ServingConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteServingConfigRequest, Empty> deleteServingConfigTransportSettings =
         HttpJsonCallSettings.<DeleteServingConfigRequest, Empty>newBuilder()
@@ -405,6 +406,7 @@ public class HttpJsonServingConfigServiceStub extends ServingConfigServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateServingConfigRequest, ServingConfig>
         updateServingConfigTransportSettings =
@@ -430,6 +432,7 @@ public class HttpJsonServingConfigServiceStub extends ServingConfigServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListServingConfigsRequest, ListServingConfigsResponse>
         listServingConfigsTransportSettings =
@@ -442,6 +445,7 @@ public class HttpJsonServingConfigServiceStub extends ServingConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<AddControlRequest, ServingConfig> addControlTransportSettings =
         HttpJsonCallSettings.<AddControlRequest, ServingConfig>newBuilder()
@@ -453,6 +457,7 @@ public class HttpJsonServingConfigServiceStub extends ServingConfigServiceStub {
                   builder.add("serving_config", String.valueOf(request.getServingConfig()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getServingConfig())
             .build();
     HttpJsonCallSettings<RemoveControlRequest, ServingConfig> removeControlTransportSettings =
         HttpJsonCallSettings.<RemoveControlRequest, ServingConfig>newBuilder()
@@ -464,6 +469,7 @@ public class HttpJsonServingConfigServiceStub extends ServingConfigServiceStub {
                   builder.add("serving_config", String.valueOf(request.getServingConfig()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getServingConfig())
             .build();
 
     this.createServingConfigCallable =

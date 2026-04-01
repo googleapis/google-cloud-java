@@ -1029,6 +1029,7 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getParent(), "location", CREATE_BUILD_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetBuildRequest, Build> getBuildTransportSettings =
         HttpJsonCallSettings.<GetBuildRequest, Build>newBuilder()
@@ -1040,6 +1041,7 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getName(), "location", GET_BUILD_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListBuildsRequest, ListBuildsResponse> listBuildsTransportSettings =
         HttpJsonCallSettings.<ListBuildsRequest, ListBuildsResponse>newBuilder()
@@ -1051,6 +1053,7 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getParent(), "location", LIST_BUILDS_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CancelBuildRequest, Build> cancelBuildTransportSettings =
         HttpJsonCallSettings.<CancelBuildRequest, Build>newBuilder()
@@ -1062,6 +1065,7 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getName(), "location", CANCEL_BUILD_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RetryBuildRequest, Operation> retryBuildTransportSettings =
         HttpJsonCallSettings.<RetryBuildRequest, Operation>newBuilder()
@@ -1073,6 +1077,7 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getName(), "location", RETRY_BUILD_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ApproveBuildRequest, Operation> approveBuildTransportSettings =
         HttpJsonCallSettings.<ApproveBuildRequest, Operation>newBuilder()
@@ -1097,6 +1102,7 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                           request.getParent(), "location", CREATE_BUILD_TRIGGER_0_PATH_TEMPLATE);
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetBuildTriggerRequest, BuildTrigger> getBuildTriggerTransportSettings =
         HttpJsonCallSettings.<GetBuildTriggerRequest, BuildTrigger>newBuilder()
@@ -1108,6 +1114,7 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getName(), "location", GET_BUILD_TRIGGER_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListBuildTriggersRequest, ListBuildTriggersResponse>
         listBuildTriggersTransportSettings =
@@ -1121,6 +1128,7 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                           request.getParent(), "location", LIST_BUILD_TRIGGERS_0_PATH_TEMPLATE);
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteBuildTriggerRequest, Empty> deleteBuildTriggerTransportSettings =
         HttpJsonCallSettings.<DeleteBuildTriggerRequest, Empty>newBuilder()
@@ -1132,6 +1140,7 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getName(), "location", DELETE_BUILD_TRIGGER_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateBuildTriggerRequest, BuildTrigger>
         updateBuildTriggerTransportSettings =
@@ -1160,6 +1169,7 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getName(), "location", RUN_BUILD_TRIGGER_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ReceiveTriggerWebhookRequest, ReceiveTriggerWebhookResponse>
         receiveTriggerWebhookTransportSettings =
@@ -1186,6 +1196,7 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getParent(), "location", CREATE_WORKER_POOL_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetWorkerPoolRequest, WorkerPool> getWorkerPoolTransportSettings =
         HttpJsonCallSettings.<GetWorkerPoolRequest, WorkerPool>newBuilder()
@@ -1197,6 +1208,7 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getName(), "location", GET_WORKER_POOL_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteWorkerPoolRequest, Operation> deleteWorkerPoolTransportSettings =
         HttpJsonCallSettings.<DeleteWorkerPoolRequest, Operation>newBuilder()
@@ -1208,6 +1220,7 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                   builder.add(request.getName(), "location", DELETE_WORKER_POOL_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateWorkerPoolRequest, Operation> updateWorkerPoolTransportSettings =
         HttpJsonCallSettings.<UpdateWorkerPoolRequest, Operation>newBuilder()
@@ -1237,6 +1250,7 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                           request.getParent(), "location", LIST_WORKER_POOLS_0_PATH_TEMPLATE);
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDefaultServiceAccountRequest, DefaultServiceAccount>
         getDefaultServiceAccountTransportSettings =
@@ -1253,6 +1267,7 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                           GET_DEFAULT_SERVICE_ACCOUNT_0_PATH_TEMPLATE);
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.createBuildCallable =

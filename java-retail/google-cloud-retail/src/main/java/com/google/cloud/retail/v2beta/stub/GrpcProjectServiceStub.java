@@ -121,6 +121,7 @@ public class GrpcProjectServiceStub extends ProjectServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateAlertConfigRequest, AlertConfig> updateAlertConfigTransportSettings =
         GrpcCallSettings.<UpdateAlertConfigRequest, AlertConfig>newBuilder()

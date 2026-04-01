@@ -534,6 +534,7 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-workflows")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

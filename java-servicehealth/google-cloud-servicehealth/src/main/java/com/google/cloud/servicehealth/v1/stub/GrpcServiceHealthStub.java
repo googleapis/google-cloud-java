@@ -223,6 +223,7 @@ public class GrpcServiceHealthStub extends ServiceHealthStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetEventRequest, Event> getEventTransportSettings =
         GrpcCallSettings.<GetEventRequest, Event>newBuilder()
@@ -233,6 +234,7 @@ public class GrpcServiceHealthStub extends ServiceHealthStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListOrganizationEventsRequest, ListOrganizationEventsResponse>
         listOrganizationEventsTransportSettings =
@@ -245,6 +247,7 @@ public class GrpcServiceHealthStub extends ServiceHealthStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetOrganizationEventRequest, OrganizationEvent>
         getOrganizationEventTransportSettings =
@@ -256,6 +259,7 @@ public class GrpcServiceHealthStub extends ServiceHealthStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListOrganizationImpactsRequest, ListOrganizationImpactsResponse>
         listOrganizationImpactsTransportSettings =
@@ -268,6 +272,7 @@ public class GrpcServiceHealthStub extends ServiceHealthStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetOrganizationImpactRequest, OrganizationImpact>
         getOrganizationImpactTransportSettings =
@@ -279,6 +284,7 @@ public class GrpcServiceHealthStub extends ServiceHealthStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

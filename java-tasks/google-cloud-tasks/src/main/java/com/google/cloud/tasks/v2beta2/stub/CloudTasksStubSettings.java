@@ -588,6 +588,7 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-tasks")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

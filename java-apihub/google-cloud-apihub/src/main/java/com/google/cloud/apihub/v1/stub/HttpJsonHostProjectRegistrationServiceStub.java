@@ -325,6 +325,7 @@ public class HttpJsonHostProjectRegistrationServiceStub extends HostProjectRegis
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetHostProjectRegistrationRequest, HostProjectRegistration>
         getHostProjectRegistrationTransportSettings =
@@ -338,6 +339,7 @@ public class HttpJsonHostProjectRegistrationServiceStub extends HostProjectRegis
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListHostProjectRegistrationsRequest, ListHostProjectRegistrationsResponse>
         listHostProjectRegistrationsTransportSettings =
@@ -352,6 +354,7 @@ public class HttpJsonHostProjectRegistrationServiceStub extends HostProjectRegis
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

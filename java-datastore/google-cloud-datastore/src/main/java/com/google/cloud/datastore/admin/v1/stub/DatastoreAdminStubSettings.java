@@ -410,6 +410,7 @@ public class DatastoreAdminStubSettings extends StubSettings<DatastoreAdminStubS
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-datastore")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

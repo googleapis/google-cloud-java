@@ -154,6 +154,7 @@ public class GrpcDeveloperRegistrationServiceStub extends DeveloperRegistrationS
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetDeveloperRegistrationRequest, DeveloperRegistration>
         getDeveloperRegistrationTransportSettings =
@@ -165,6 +166,7 @@ public class GrpcDeveloperRegistrationServiceStub extends DeveloperRegistrationS
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UnregisterGcpRequest, Empty> unregisterGcpTransportSettings =
         GrpcCallSettings.<UnregisterGcpRequest, Empty>newBuilder()
@@ -175,6 +177,7 @@ public class GrpcDeveloperRegistrationServiceStub extends DeveloperRegistrationS
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<Empty, GetAccountForGcpRegistrationResponse>
         getAccountForGcpRegistrationTransportSettings =

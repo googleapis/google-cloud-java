@@ -296,6 +296,129 @@ public class PathTemplate {
     return bindings.keySet();
   }
 
+  /** Returns the set of resource literals. A resource literal is a literal followed by a binding */
+  // For example, projects/{project} is a literal/binding pair and projects is a resource literal.
+  public Set<String> getResourceLiterals() {
+    Set<String> canonicalSegments = new java.util.LinkedHashSet<>();
+    boolean inBinding = false;
+    for (int i = 0; i < segments.size(); i++) {
+      Segment seg = segments.get(i);
+      if (seg.kind() == SegmentKind.BINDING) {
+        inBinding = true;
+      } else if (seg.kind() == SegmentKind.END_BINDING) {
+        inBinding = false;
+      } else if (seg.kind() == SegmentKind.LITERAL) {
+        String value = seg.value();
+        // Skipping version literals such as v1, v1beta1
+        if (value.matches("^v\\d+[a-zA-Z0-9]*$")) {
+          continue;
+        }
+        if (inBinding) {
+          // This is for extracting "projects" and "locations" from named binding
+          // {name=projects/*/locations/*}
+          canonicalSegments.add(value);
+        } else if (i + 1 < segments.size() && segments.get(i + 1).kind() == SegmentKind.BINDING) {
+          // This is for regular cases projects/{project}/locations/{location}
+          canonicalSegments.add(value);
+        }
+      }
+    }
+    return canonicalSegments;
+  }
+
+  /**
+   * Returns the canonical resource name string. A canonical resource name is extracted from the
+   * template by finding the version literal, then finding the last binding that is a
+   * literal/binding pair or named binding, and then extracting the segments between the version
+   * literal and the last binding (inclusive). This is a heuristic method that should only be used
+   * for allowlisted services. There are also known gaps, such as the fact that it does not work
+   * properly for singleton resources.
+   */
+  // For example, projects/{project} is a literal/binding pair. {bar=projects/*/locations/*/bars/*}
+  // is a named binding.
+  // If a template is /compute/v1/projects/{project}/locations/{location}, known resource literals
+  // are "projects" and "locations", the canonical resource name would be
+  // projects/{project}/locations/{location}. See unit tests for all cases.
+  public String getCanonicalResourceName(Set<String> knownResourceLiterals) {
+    if (knownResourceLiterals == null) {
+      return "";
+    }
+
+    int startIndex = 0;
+    for (int i = 0; i < segments.size(); i++) {
+      Segment seg = segments.get(i);
+      if (seg.kind() == SegmentKind.LITERAL) {
+        String value = seg.value();
+        if (value.matches("^v\\d+[a-zA-Z0-9]*$")) {
+          startIndex = i + 1;
+          break;
+        }
+      }
+    }
+
+    int lastValidEndBindingIndex = -1;
+    // Iterate from the end of the segments to find the last valid resource binding.
+    // Searching backwards allows us to stop immediately once the last valid pair is found.
+    for (int i = segments.size() - 1; i >= 0; i--) {
+      Segment seg = segments.get(i);
+
+      // We are looking for the end of a binding (e.g., "}" in "{project}" or "{name=projects/*}")
+      if (seg.kind() == SegmentKind.END_BINDING) {
+        int bindingStartIndex = -1;
+        int literalCountInBinding = 0;
+        boolean isValidPair = false;
+
+        // Traverse backwards to find the start of this specific binding
+        // and count the literals captured inside it.
+        for (int j = i - 1; j >= 0; j--) {
+          Segment innerSeg = segments.get(j);
+          if (innerSeg.kind() == SegmentKind.BINDING) {
+            bindingStartIndex = j;
+            break;
+          } else if (innerSeg.kind() == SegmentKind.LITERAL
+              || innerSeg.kind() == SegmentKind.PATH_WILDCARD) {
+            literalCountInBinding++;
+          }
+        }
+
+        if (bindingStartIndex != -1) {
+          // 1. If the binding contains any literals, it is considered a valid named resource
+          // binding.
+          if (literalCountInBinding > 0) {
+            isValidPair = true;
+          } else if (bindingStartIndex > 0) {
+            // 2. For simple bindings like "{project}", the binding itself has no inner literal
+            // resources.
+            // Instead, we check if the literal segment immediately preceding it (e.g., "projects/")
+            // is a known resource.
+            Segment prevSeg = segments.get(bindingStartIndex - 1);
+            if (prevSeg.kind() == SegmentKind.LITERAL
+                && knownResourceLiterals.contains(prevSeg.value())) {
+              isValidPair = true;
+            }
+          }
+
+          if (isValidPair) {
+            // We successfully found the last valid binding! Record its end index and terminate the
+            // search.
+            lastValidEndBindingIndex = i;
+            break;
+          }
+          // The current binding wasn't a valid resource pair.
+          // Skip over all inner segments of this invalid binding so we don't evaluate them again.
+          i = bindingStartIndex;
+        }
+      }
+    }
+
+    if (lastValidEndBindingIndex == -1 || lastValidEndBindingIndex < startIndex) {
+      return "";
+    }
+
+    List<Segment> canonicalSegments = segments.subList(startIndex, lastValidEndBindingIndex + 1);
+    return toSyntax(canonicalSegments, true).replace("=*}", "}");
+  }
+
   /**
    * Returns a template for the parent of this template.
    *

@@ -1413,6 +1413,7 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-telcoautomation")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 
