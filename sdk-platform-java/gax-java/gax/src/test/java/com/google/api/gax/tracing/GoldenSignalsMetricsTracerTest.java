@@ -168,4 +168,62 @@ class GoldenSignalsMetricsTracerTest {
                 AttributeKey.stringKey(RPC_RESPONSE_STATUS_ATTRIBUTE),
                 StatusCode.Code.INTERNAL.toString()));
   }
+
+  @Test
+  void operationFailed_shouldRecordCancellationException() {
+    java.util.concurrent.CancellationException error =
+        new java.util.concurrent.CancellationException("test cancellation");
+    tracer.operationFailed(error);
+
+    Collection<MetricData> metrics = metricReader.collectAllMetrics();
+    assertThat(metrics).hasSize(1);
+    MetricData metricData = metrics.iterator().next();
+
+    assertThat(metricData.getHistogramData().getPoints()).hasSize(1);
+    assertThat(metricData.getHistogramData().getPoints().iterator().next().getAttributes())
+        .isEqualTo(
+            Attributes.of(
+                AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE),
+                "CancellationException",
+                AttributeKey.stringKey(RPC_RESPONSE_STATUS_ATTRIBUTE),
+                StatusCode.Code.CANCELLED.toString()));
+  }
+
+  @Test
+  void operationFailed_shouldRecordClientTimeout() {
+    java.net.SocketTimeoutException error = new java.net.SocketTimeoutException("test timeout");
+    tracer.operationFailed(error);
+
+    Collection<MetricData> metrics = metricReader.collectAllMetrics();
+    assertThat(metrics).hasSize(1);
+    MetricData metricData = metrics.iterator().next();
+
+    assertThat(metricData.getHistogramData().getPoints()).hasSize(1);
+    assertThat(metricData.getHistogramData().getPoints().iterator().next().getAttributes())
+        .isEqualTo(
+            Attributes.of(
+                AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE),
+                "CLIENT_TIMEOUT",
+                AttributeKey.stringKey(RPC_RESPONSE_STATUS_ATTRIBUTE),
+                StatusCode.Code.UNKNOWN.toString()));
+  }
+
+  @Test
+  void operationFailed_shouldRecordClientRequestError() {
+    IllegalArgumentException error = new IllegalArgumentException("test illegal argument");
+    tracer.operationFailed(error);
+
+    Collection<MetricData> metrics = metricReader.collectAllMetrics();
+    assertThat(metrics).hasSize(1);
+    MetricData metricData = metrics.iterator().next();
+
+    assertThat(metricData.getHistogramData().getPoints()).hasSize(1);
+    assertThat(metricData.getHistogramData().getPoints().iterator().next().getAttributes())
+        .isEqualTo(
+            Attributes.of(
+                AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE),
+                "CLIENT_REQUEST_ERROR",
+                AttributeKey.stringKey(RPC_RESPONSE_STATUS_ATTRIBUTE),
+                StatusCode.Code.UNKNOWN.toString()));
+  }
 }
