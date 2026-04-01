@@ -86,7 +86,9 @@ public class GoldenSignalsMetricsTracerFactory implements ApiTracerFactory {
     this.clientLevelTracerContext = context;
     this.metricsRecorder =
         new GoldenSignalsMetricsRecorder(
-            openTelemetry, clientLevelTracerContext.libraryMetadata().artifactName());
+            openTelemetry,
+            clientLevelTracerContext.libraryMetadata().artifactName(),
+            clientLevelTracerContext.libraryMetadata().version());
     return this;
   }
 }

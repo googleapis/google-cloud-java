@@ -62,7 +62,7 @@ class GoldenSignalsMetricsRecorderTest {
         SdkMeterProvider.builder().registerMetricReader(metricReader).build();
     OpenTelemetry openTelemetry =
         OpenTelemetrySdk.builder().setMeterProvider(meterProvider).build();
-    recorder = new GoldenSignalsMetricsRecorder(openTelemetry, ARTIFACT_NAME);
+    recorder = new GoldenSignalsMetricsRecorder(openTelemetry, ARTIFACT_NAME, "1.2.3");
   }
 
   @Test

@@ -53,8 +53,14 @@ class GoldenSignalsMetricsRecorder {
           900.0, 3600.0);
   final DoubleHistogram clientRequestDurationRecorder;
 
-  GoldenSignalsMetricsRecorder(OpenTelemetry openTelemetry, String libraryName) {
-    Meter meter = openTelemetry.meterBuilder(libraryName).build();
+  GoldenSignalsMetricsRecorder(
+      OpenTelemetry openTelemetry, String libraryName, String libraryVersion) {
+    io.opentelemetry.api.metrics.MeterBuilder meterBuilder =
+        openTelemetry.meterBuilder(libraryName);
+    if (libraryVersion != null && !libraryVersion.isEmpty()) {
+      meterBuilder.setInstrumentationVersion(libraryVersion);
+    }
+    Meter meter = meterBuilder.build();
 
     this.clientRequestDurationRecorder =
         meter
