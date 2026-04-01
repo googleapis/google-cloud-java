@@ -707,15 +707,13 @@ class EndpointContextTest {
 
   @Test
   void getUrlDomain_nullServiceName() throws IOException {
-    EndpointContext endpointContext =
-        defaultEndpointContextBuilder.setServiceName(null).build();
+    EndpointContext endpointContext = defaultEndpointContextBuilder.setServiceName(null).build();
     Truth.assertThat(endpointContext.getUrlDomain()).isNull();
   }
 
   @Test
   void getUrlDomain_emptyServiceName() throws IOException {
-    EndpointContext endpointContext =
-        defaultEndpointContextBuilder.setServiceName("").build();
+    EndpointContext endpointContext = defaultEndpointContextBuilder.setServiceName("").build();
     Truth.assertThat(endpointContext.getUrlDomain()).isNull();
   }
 
