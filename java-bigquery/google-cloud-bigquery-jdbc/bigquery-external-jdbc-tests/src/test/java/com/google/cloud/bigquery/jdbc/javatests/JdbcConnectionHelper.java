@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.bigquery.jdbc.testsuite;
+package com.google.cloud.bigquery.jdbc.javatests;
 
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.BigQuery;

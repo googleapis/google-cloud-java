@@ -32,8 +32,9 @@ public class JdbcStarter {
             + ";OAuthType="
             + oauthType
             + ";Timeout=3600;";
-    Connection connection = DriverManager.getConnection(connectionUrl);
-    Statement statement = connection.createStatement();
-    statement.execute("SELECT 1;");
+    try(Connection connection = DriverManager.getConnection(connectionUrl);
+    Statement statement = connection.createStatement()) {
+      statement.execute("SELECT 1;");
+    }
   }
 }

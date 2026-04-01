@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.bigquery.jdbc.testsuite.connection;
+package com.google.cloud.bigquery.jdbc.javatests.connection;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -23,7 +23,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.bigquery.jdbc.testsuite.JdbcConnectionHelper;
+import com.google.cloud.bigquery.jdbc.javatests.JdbcConnectionHelper;
 import com.google.cloud.ServiceOptions;
 import java.sql.Array;
 import java.sql.CallableStatement;
@@ -436,15 +436,12 @@ public class ITJdbcConnectionTest {
             // But we mainly want to test that calling abort doesn't cause a direct error
             assertFalse(connection.isClosed());
             assertTrue(connection.isClosed());
-            System.out.println(connection.isClosed());
             connection.abort(java.util.concurrent.Executors.newSingleThreadExecutor());
-            System.out.println(connection.isClosed());
-            assertTrue(connection.isClosed());
+              assertTrue(connection.isClosed());
           } catch (SQLException e) {
             e.printStackTrace();
             // It's expected that calling abort might cause an exception
             // depending on the state of the connection and driver.
-            System.out.println("Abort test threw an exception, which is expected in some cases.");
           }
         });
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.bigquery.jdbc.testsuite;
+package com.google.cloud.bigquery.jdbc.javatests;
 
 import static java.sql.Types.TIME;
 import static java.sql.Types.TIMESTAMP;
@@ -49,14 +49,14 @@ public class BaseDatabaseMetadata {
   public static List<String> getInfoBySQL(Connection connection, String sqlCmd)
       throws SQLException {
     List<String> result = new ArrayList<>();
-    try {
-      Statement st = connection.createStatement();
-      ResultSet rs = st.executeQuery(sqlCmd);
-      while (rs.next()) {
-        result.add(rs.getString(1));
+    try {Statement st = connection.createStatement()) {
+        ResultSet rs = st.executeQuery(sqlCmd);
+        while (rs.next()) {
+          result.add(rs.getString(1));
+        }
+      } catch (SQLException e) {
+        throw e;
       }
-    } catch (SQLException e) {
-      throw e;
     }
     return result;
   }

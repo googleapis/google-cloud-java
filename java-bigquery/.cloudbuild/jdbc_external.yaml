@@ -17,7 +17,7 @@
 steps:
 - name: 'gcr.io/cloud-devrel-public-resources/java11'
   entrypoint: 'bash'
-  args: ['java-bigquery/.cloudbuild/scripts/jdbc-external.sh'', "${_VERSION}"] 
+  args: ['java-bigquery/.cloudbuild/scripts/jdbc-external.sh', "${_VERSION}"]
   secretEnv: ['SA_SECRET']
 availableSecrets:
   secretManager:
