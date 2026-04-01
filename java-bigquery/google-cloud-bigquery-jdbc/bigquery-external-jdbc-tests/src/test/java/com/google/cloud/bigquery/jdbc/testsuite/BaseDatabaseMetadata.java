@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.bigquery.jdbc;
+package com.google.cloud.bigquery.jdbc.testsuite;
 
 import static java.sql.Types.TIME;
 import static java.sql.Types.TIMESTAMP;

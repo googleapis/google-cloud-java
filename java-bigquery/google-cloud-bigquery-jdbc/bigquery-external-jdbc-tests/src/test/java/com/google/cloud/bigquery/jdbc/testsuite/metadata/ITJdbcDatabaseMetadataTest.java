@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.bigquery.jdbc.metadata;
+package com.google.cloud.bigquery.jdbc.testsuite.metadata;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import com.bigquery.jdbc.BaseDatabaseMetadata;
-import com.bigquery.jdbc.JdbcConnectionHelper;
+import com.google.cloud.bigquery.jdbc.testsuite.BaseDatabaseMetadata;
+import com.google.cloud.bigquery.jdbc.testsuite.JdbcConnectionHelper;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.BigQuery;
 import java.sql.Connection;

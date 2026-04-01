@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.bigquery.jdbc.authentication;
+package com.google.cloud.bigquery.jdbc.testsuite.authentication;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.bigquery.jdbc.statement;
+package com.google.cloud.bigquery.jdbc.testsuite.statement;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -24,7 +24,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
-import com.bigquery.jdbc.JdbcConnectionHelper;
+import com.google.cloud.bigquery.jdbc.testsuite.JdbcConnectionHelper;
 import com.google.cloud.ServiceOptions;
 import java.sql.Connection;
 import java.sql.DriverManager;
