@@ -118,7 +118,7 @@ public class ITJdbcAuthenticationTest {
     validateConnectionUri(connectionUri);
   }
 
-  @Disabled("Disabled until p12 file can be supplied")
+  @org.junit.Ignore("Disabled until p12 file can be supplied")
   @Test
   public void testConnectOAuthPvtKeyP12() throws Exception {
     final JsonObject authJson = getAuthJson();
