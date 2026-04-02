@@ -12,9 +12,9 @@ on:
   schedule:
     - cron: '0 1 * * *' # Nightly at 1am
 
+# This job intends to test the compatibility of the Protobuf version against repos not in the
+# monorepo. As repos are migrated to the monorepo, this job will be obsolete and turned off.
 name: sdk-platform-java Downstream Protobuf Compatibility Check Nightly
-env:
-  BUILD_SUBDIR: sdk-platform-java
 jobs:
   downstream-protobuf-test:
     # This job runs if any of the three conditions match:
@@ -53,7 +53,7 @@ jobs:
       - name: Print Protobuf-Java testing version
         run: echo "Testing with Protobuf-Java v${{ matrix.protobuf-version }}"
       - name: Perform downstream source compatibility testing
-        run: REPOS_UNDER_TEST="${{ matrix.repo }}" PROTOBUF_RUNTIME_VERSION="${{ matrix.protobuf-version }}" ./.kokoro/nightly/downstream-protobuf-source-compatibility.sh
+        run: REPOS_UNDER_TEST="${{ matrix.repo }}" PROTOBUF_RUNTIME_VERSION="${{ matrix.protobuf-version }}" ./sdk-platform-java/.kokoro/nightly/downstream-protobuf-source-compatibility.sh
       - name: Perform downstream binary compatibility testing
-        run: REPOS_UNDER_TEST="${{ matrix.repo }}" PROTOBUF_RUNTIME_VERSION="${{ matrix.protobuf-version }}" ./.kokoro/nightly/downstream-protobuf-binary-compatibility.sh
+        run: REPOS_UNDER_TEST="${{ matrix.repo }}" PROTOBUF_RUNTIME_VERSION="${{ matrix.protobuf-version }}" ./sdk-platform-java/.kokoro/nightly/downstream-protobuf-binary-compatibility.sh
 
