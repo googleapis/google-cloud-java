@@ -119,7 +119,7 @@ public class ErrorTypeUtil {
   public static String extractErrorType(@Nullable Throwable error) {
     if (error == null) {
       // No information about the error; we default to INTERNAL.
-      return ErrorType.INTERNAL.toString();
+      return null;
     }
 
     // 1. Unwrap standard wrapper exceptions if present

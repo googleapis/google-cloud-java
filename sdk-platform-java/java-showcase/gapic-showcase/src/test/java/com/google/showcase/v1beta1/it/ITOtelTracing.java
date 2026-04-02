@@ -180,6 +180,21 @@ class ITOtelTracing {
                   .getAttributes()
                   .get(AttributeKey.stringKey(ObservabilityAttributes.URL_DOMAIN_ATTRIBUTE)))
           .isEqualTo("showcase.googleapis.com");
+      assertThat(
+              attemptSpan
+                  .getAttributes()
+                  .get(AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE)))
+          .isNull();
+      assertThat(
+              attemptSpan
+                  .getAttributes()
+                  .get(AttributeKey.stringKey(ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE)))
+          .isNull();
+      assertThat(
+              attemptSpan
+                  .getAttributes()
+                  .get(AttributeKey.stringKey(ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE)))
+          .isNull();
       assertThat(attemptSpan.getInstrumentationScopeInfo().getName()).isEqualTo(SHOWCASE_ARTIFACT);
     }
   }
@@ -256,6 +271,21 @@ class ITOtelTracing {
                   .getAttributes()
                   .get(AttributeKey.stringKey(ObservabilityAttributes.HTTP_URL_FULL_ATTRIBUTE)))
           .isEqualTo(SHOWCASE_USER_URL);
+      assertThat(
+              attemptSpan
+                  .getAttributes()
+                  .get(AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE)))
+          .isNull();
+      assertThat(
+              attemptSpan
+                  .getAttributes()
+                  .get(AttributeKey.stringKey(ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE)))
+          .isNull();
+      assertThat(
+              attemptSpan
+                  .getAttributes()
+                  .get(AttributeKey.stringKey(ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE)))
+          .isNull();
       EchoResponse fetchedEcho = EchoResponse.newBuilder().setContent("tracing-test").build();
       long expectedMagnitude = computeExpectedHttpJsonResponseSize(fetchedEcho);
       Long observedMagnitude =
@@ -491,8 +521,9 @@ class ITOtelTracing {
 
       assertThrows(UnavailableException.class, () -> client.echo(echoRequest));
       verifyErrorTypeAttribute("UNAVAILABLE");
-		}
-	}
+    }
+  }
+
   @Test
   void testTracing_statusCodes_grpc() throws Exception {
     SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
@@ -626,8 +657,9 @@ class ITOtelTracing {
 
       assertThrows(UnavailableException.class, () -> client.echo(echoRequest));
       verifyErrorTypeAttribute("503");
-		}
-	}
+    }
+  }
+
   void testTracing_statusCodes_httpjson() throws Exception {
     SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
     EchoRequest errorRequest =
