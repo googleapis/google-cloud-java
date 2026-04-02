@@ -118,7 +118,7 @@ public class ErrorTypeUtil {
   // Requirement source: go/clo:product-requirements-v1
   public static String extractErrorType(@Nullable Throwable error) {
     if (error == null) {
-      // No information about the error; we default to null.
+      // No information about the error; return null so the attribute is not recorded.
       return null;
     }
 
