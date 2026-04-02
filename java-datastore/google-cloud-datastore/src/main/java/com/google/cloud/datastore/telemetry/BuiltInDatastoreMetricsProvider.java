@@ -16,7 +16,6 @@
 
 package com.google.cloud.datastore.telemetry;
 
-import com.google.api.gax.core.GaxProperties;
 import com.google.auth.Credentials;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.common.Attributes;
@@ -69,9 +68,6 @@ public final class BuiltInDatastoreMetricsProvider {
 
   private Map<String, String> buildClientAttributes() {
     Map<String, String> attrs = new HashMap<>();
-    attrs.put(
-        TelemetryConstants.CLIENT_NAME_KEY.getKey(),
-        "datastore-java/" + GaxProperties.getLibraryVersion(getClass()));
     attrs.put(TelemetryConstants.CLIENT_UID_KEY.getKey(), getDefaultTaskValue());
     attrs.put(TelemetryConstants.SERVICE_KEY.getKey(), TelemetryConstants.SERVICE_VALUE);
     return attrs;
@@ -168,7 +164,7 @@ public final class BuiltInDatastoreMetricsProvider {
    *
    * @return an unmodifiable map of client attributes.
    */
-  Map<String, String> createClientAttributes() {
+  Map<String, String> getClientAttributes() {
     return cachedClientAttributes;
   }
 

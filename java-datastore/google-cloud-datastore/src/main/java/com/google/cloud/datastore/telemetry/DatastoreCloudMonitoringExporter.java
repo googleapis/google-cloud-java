@@ -160,7 +160,7 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
       datastoreTimeSeries =
           DatastoreCloudMonitoringExporterUtils.convertToDatastoreTimeSeries(
               new ArrayList<>(collection),
-              BuiltInDatastoreMetricsProvider.INSTANCE.createClientAttributes());
+              BuiltInDatastoreMetricsProvider.INSTANCE.getClientAttributes());
     } catch (Throwable e) {
       logger.log(
           Level.WARNING,

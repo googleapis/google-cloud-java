@@ -16,7 +16,6 @@
 
 package com.google.cloud.datastore.telemetry;
 
-import static com.google.cloud.datastore.telemetry.TelemetryConstants.CLIENT_NAME_KEY;
 import static com.google.cloud.datastore.telemetry.TelemetryConstants.CLIENT_UID_KEY;
 import static com.google.cloud.datastore.telemetry.TelemetryConstants.DATABASE_ID_KEY;
 import static com.google.cloud.datastore.telemetry.TelemetryConstants.LOCATION_ID_KEY;
@@ -73,7 +72,6 @@ public class DatastoreCloudMonitoringExporterTest {
   private Resource resource;
   private InstrumentationScopeInfo scope;
   private String clientUid;
-  private String clientName;
 
   @Before
   public void setUp() {
@@ -82,14 +80,12 @@ public class DatastoreCloudMonitoringExporterTest {
     exporter = new DatastoreCloudMonitoringExporter(PROJECT_ID, fakeMetricServiceClient);
 
     Map<String, String> clientAttributes =
-        BuiltInDatastoreMetricsProvider.INSTANCE.createClientAttributes();
+        BuiltInDatastoreMetricsProvider.INSTANCE.getClientAttributes();
     this.clientUid = clientAttributes.get(CLIENT_UID_KEY.getKey());
-    this.clientName = clientAttributes.get(CLIENT_NAME_KEY.getKey());
 
     attributes =
         Attributes.builder()
             .put(DATABASE_ID_KEY, DATABASE_ID)
-            .put(CLIENT_NAME_KEY, this.clientName)
             .put(CLIENT_UID_KEY, this.clientUid)
             .build();
 
@@ -146,8 +142,6 @@ public class DatastoreCloudMonitoringExporterTest {
         .containsExactly(
             DATABASE_ID_KEY.getKey(),
             DATABASE_ID,
-            CLIENT_NAME_KEY.getKey(),
-            this.clientName,
             CLIENT_UID_KEY.getKey(),
             this.clientUid,
             SERVICE_KEY.getKey(),

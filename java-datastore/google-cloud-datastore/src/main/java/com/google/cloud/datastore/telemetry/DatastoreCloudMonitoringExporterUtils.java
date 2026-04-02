@@ -132,7 +132,7 @@ class DatastoreCloudMonitoringExporterUtils {
    * <p>{@code clientAttributes} (e.g. {@code client_name}, {@code client_uid}) are injected here
    * rather than being looked up from a singleton so that this method is testable in isolation. The
    * caller ({@link DatastoreCloudMonitoringExporter}) is responsible for supplying them from {@link
-   * BuiltInDatastoreMetricsProvider#createClientAttributes()}.
+   * BuiltInDatastoreMetricsProvider#getClientAttributes()}.
    */
   private static TimeSeries convertPointToDatastoreTimeSeries(
       MetricData metricData,
@@ -153,7 +153,7 @@ class DatastoreCloudMonitoringExporterUtils {
       metricBuilder.putLabels(key.getKey().replace(".", "_"), String.valueOf(attributes.get(key)));
     }
 
-    // Attach common client attributes (client_name, client_uid) to each metric.
+    // Attach common client attributes (service, client_uid) to each metric.
     clientAttributes.forEach(metricBuilder::putLabels);
 
     builder.setResource(monitoredResourceBuilder.build());
