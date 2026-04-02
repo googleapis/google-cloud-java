@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-This repository, `sdk-platform-java`, is a monorepo containing the foundational components for building Java client libraries for Google Cloud Platform services. It includes the GAPIC (Generated API Client) generator for Java, the GAX (Google API Extensions) runtime library, and other shared modules.
+This directory, sdk-platform-java, contains the foundational components for building Java client libraries for Google Cloud Platform services. It includes the GAPIC (Generated API Client) generator for Java, the GAX (Google API Extensions) runtime library, and other shared modules.
 
 ## 2. Project Structure
 
@@ -34,7 +34,7 @@ The repository is structured into several key modules:
 
 To build and work with this project, you will need to install:
 
-*   Java 8+
+*   Java 11+
 *   Maven
 
 ### 3.2. Building the Project
