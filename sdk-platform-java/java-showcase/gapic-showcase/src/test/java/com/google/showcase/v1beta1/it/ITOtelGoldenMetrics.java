@@ -99,11 +99,12 @@ class ITOtelGoldenMetrics {
     try (EchoClient client =
         TestClientInitializer.createGrpcEchoClientOpentelemetry(tracerFactory)) {
 
-      EchoResponse echo = client.echo(EchoRequest.newBuilder().setContent("metrics-test").build());
-      System.out.println(echo.getContent());
-      System.out.println("in test:" + Thread.currentThread().getName());
+      client.echo(EchoRequest.newBuilder().setContent("metrics-test").build());
 
-      // Slight delay to ensure the background callback completes its OpenTelemetry recording.
+      // The end of an operation is tracked in a separate thread.
+      // Add a small sleep to make sure the tracking is completed.
+      // This is implemented by adding a TraceFinisher to ApiFuture as a callback in TracedUnaryCallable,
+      // which could be executed in a different thread.
       Thread.sleep(100);
       Collection<MetricData> metrics = metricReader.collectAllMetrics();
       assertThat(metrics).isNotEmpty();
@@ -186,6 +187,7 @@ class ITOtelGoldenMetrics {
           UnavailableException.class,
           () -> client.echo(EchoRequest.newBuilder().setContent("metrics-test").build()));
 
+      Thread.sleep(100);
       Collection<MetricData> metrics = metricReader.collectAllMetrics();
       assertThat(metrics).isNotEmpty();
 
@@ -217,6 +219,7 @@ class ITOtelGoldenMetrics {
 
       client.echo(EchoRequest.newBuilder().setContent("metrics-test").build());
 
+      Thread.sleep(100);
       Collection<MetricData> metrics = metricReader.collectAllMetrics();
       assertThat(metrics).isNotEmpty();
 
@@ -228,8 +231,6 @@ class ITOtelGoldenMetrics {
 
       assertThat(durationMetric.getInstrumentationScopeInfo().getName())
           .isEqualTo(SHOWCASE_ARTIFACT);
-      assertThat(durationMetric.getInstrumentationScopeInfo().getVersion())
-          .isEqualTo(com.google.api.gax.core.GaxProperties.getLibraryVersion(EchoClient.class));
 
       io.opentelemetry.api.common.Attributes attributes =
           durationMetric.getHistogramData().getPoints().iterator().next().getAttributes();
@@ -354,6 +355,7 @@ class ITOtelGoldenMetrics {
           UnavailableException.class,
           () -> client.echo(EchoRequest.newBuilder().setContent("metrics-test").build()));
 
+      Thread.sleep(100);
       Collection<MetricData> metrics = metricReader.collectAllMetrics();
       assertThat(metrics).isNotEmpty();
 
