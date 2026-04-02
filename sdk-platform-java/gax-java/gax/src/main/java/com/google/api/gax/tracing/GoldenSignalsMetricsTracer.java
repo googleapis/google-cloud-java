@@ -29,12 +29,12 @@
  */
 package com.google.api.gax.tracing;
 
-
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Stopwatch;
 import com.google.common.base.Ticker;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.CancellationException;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -82,17 +82,18 @@ class GoldenSignalsMetricsTracer implements ApiTracer {
 
   @Override
   public void operationCancelled() {
-    ObservabilityUtils.populateStatusAttributes(
-        attributes, new java.util.concurrent.CancellationException(), transport);
-    metricsRecorder.recordOperationLatency(
-        clientRequestTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000_000.0, attributes);
+    recordError(new CancellationException());
   }
 
   @Override
   public void operationFailed(Throwable error) {
+    recordError(error);
+  }
+
+  private void recordError(Throwable error) {
+    ObservabilityUtils.populateStatusAttributes(attributes, error, transport);
     attributes.put(
         ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE, ObservabilityUtils.extractErrorType(error));
-    ObservabilityUtils.populateStatusAttributes(attributes, error, transport);
     metricsRecorder.recordOperationLatency(
         clientRequestTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000_000.0, attributes);
   }

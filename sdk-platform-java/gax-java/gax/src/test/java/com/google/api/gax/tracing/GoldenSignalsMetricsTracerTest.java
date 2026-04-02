@@ -33,6 +33,7 @@ import static com.google.api.gax.tracing.ObservabilityAttributes.RPC_RESPONSE_ST
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.common.testing.FakeTicker;
