@@ -1364,7 +1364,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-vertexai-bom</artifactId>
-        <version>1.48.0</version>
+        <version>1.48.0</version><!-- {x-version-update:google-cloud-vertexai:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
