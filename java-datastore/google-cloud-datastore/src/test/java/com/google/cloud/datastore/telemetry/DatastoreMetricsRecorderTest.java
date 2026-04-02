@@ -71,8 +71,14 @@ public class DatastoreMetricsRecorderTest {
 
   @Test
   public void defaultOptionsWithBuiltInMetricsEnabled_returnsOpenTelemetryRecorder() {
-    // By default, export of built-in metrics is enabled
-    DatastoreOptions options = baseOptions().build();
+    // Explicitly enable built-in metrics export
+    DatastoreOptions options =
+        baseOptions()
+            .setOpenTelemetryOptions(
+                DatastoreOpenTelemetryOptions.newBuilder()
+                    .setExportBuiltinMetricsToGoogleCloudMonitoring(true)
+                    .build())
+            .build();
     DatastoreMetricsRecorder recorder = DatastoreMetricsRecorder.getInstance(options);
 
     // If we're not in an emulator, it should return a OpenTelemetryDatastoreMetricsRecorder

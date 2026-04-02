@@ -158,34 +158,6 @@ public class DatastoreCloudMonitoringExporterTest {
     verify(mockMetricServiceStub, mockCallable);
   }
 
-  @Test
-  public void testFiltersNonDatastoreMetrics() {
-    expect(mockMetricServiceStub.isShutdown()).andReturn(false).anyTimes();
-    replay(mockMetricServiceStub);
-
-    long startEpoch = 10;
-    long endEpoch = 15;
-    LongPointData longPointData =
-        ImmutableLongPointData.create(startEpoch, endEpoch, attributes, 1L);
-
-    InstrumentationScopeInfo otherScope = InstrumentationScopeInfo.create("other-scope");
-    MetricData otherData =
-        ImmutableMetricData.createLongSum(
-            resource,
-            otherScope,
-            "other-metric",
-            "description",
-            "1",
-            ImmutableSumData.create(
-                true, AggregationTemporality.CUMULATIVE, ImmutableList.of(longPointData)));
-
-    exporter.export(Collections.singletonList(otherData));
-
-    // Should NOT call the mock service because all metrics were filtered out
-    // verify() will fail if it was called.
-    verify(mockMetricServiceStub);
-  }
-
   private static class FakeMetricServiceClient extends MetricServiceClient {
     protected FakeMetricServiceClient(MetricServiceStub stub) {
       super(stub);

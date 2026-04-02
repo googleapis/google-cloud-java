@@ -24,7 +24,6 @@ import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.PermissionDeniedException;
-import com.google.api.gax.tracing.OpenTelemetryMetricsRecorder;
 import com.google.auth.Credentials;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.monitoring.v3.MetricServiceClient;
@@ -41,17 +40,14 @@ import io.opentelemetry.sdk.metrics.InstrumentType;
 import io.opentelemetry.sdk.metrics.data.AggregationTemporality;
 import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.metrics.export.MetricExporter;
-import io.opentelemetry.sdk.resources.Resource;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -75,16 +71,19 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
   private static final Logger logger =
       Logger.getLogger(DatastoreCloudMonitoringExporter.class.getName());
 
+  private final MetricServiceClient client;
+
   // This is the quota limit from Cloud Monitoring. More details in
   // https://cloud.google.com/monitoring/quotas#custom_metrics_quotas.
   private static final int EXPORT_BATCH_SIZE_LIMIT = 200;
+
   // Increase max metadata size to 32MB to avoid "Header size exceeded" errors
   // when receiving large error payloads from Cloud Monitoring.
   private static final int MAX_METADATA_SIZE = 32 * 1024 * 1024;
+
+  // Flag to prevent log spam of any export failures
   private final AtomicBoolean datastoreExportFailureLogged = new AtomicBoolean(false);
-  private final AtomicReference<CompletableResultCode> lastExportCode =
-      new AtomicReference<>(CompletableResultCode.ofSuccess());
-  private final MetricServiceClient client;
+
   private final String datastoreProjectId;
 
   /**
@@ -150,57 +149,8 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
       return CompletableResultCode.ofFailure();
     }
 
-    CompletableResultCode result = exportDatastoreClientMetrics(collection);
-    lastExportCode.set(result);
-    return result;
-  }
-
-  /**
-   * Filters and exports Datastore-specific metrics.
-   *
-   * <p>This method identifies metrics belonging to the Datastore or GAX instrumentation scopes and
-   * converts them to Cloud Monitoring {@link TimeSeries} format before uploading.
-   *
-   * @param collection the full collection of metrics from the OpenTelemetry SDK.
-   * @return a {@link CompletableResultCode} indicating success or failure.
-   */
-  private CompletableResultCode exportDatastoreClientMetrics(Collection<MetricData> collection) {
-    // A single OpenTelemetry MeterProvider can be shared across multiple libraries and services
-    // in the same JVM. We filter by instrumentation scope (GAX and Datastore) to ensure that
-    // this exporter only processes metrics it is designed to handle, avoiding "pollution" from
-    // unrelated application or library metrics.
-    List<MetricData> datastoreMetricData =
-        collection.stream()
-            .filter(
-                metricData ->
-                    metricData
-                            .getInstrumentationScopeInfo()
-                            .getName()
-                            .equals(OpenTelemetryMetricsRecorder.GAX_METER_NAME)
-                        || metricData
-                            .getInstrumentationScopeInfo()
-                            .getName()
-                            .equals(TelemetryConstants.DATASTORE_METER_NAME))
-            .collect(Collectors.toList());
-
-    // Users may share a single OpenTelemetry instance across multiple Datastore clients pointing
-    // to different projects. Because the MetricReader collects all metrics from the shared
-    // provider, we must verify that each metric point matches this exporter's target project.
-    // This prevents cross-project pollution and avoids PermissionDenied errors when uploading
-    // metrics belonging to a different project.
-    if (datastoreMetricData.stream()
-        .map(MetricData::getResource)
-        .anyMatch(this::shouldSkipPointDataDueToProjectId)) {
-      logger.log(
-          Level.WARNING, "Some metric data contain a different projectId. These will be skipped.");
-      datastoreMetricData =
-          datastoreMetricData.stream()
-              .filter(metricData -> !shouldSkipPointDataDueToProjectId(metricData.getResource()))
-              .collect(Collectors.toList());
-    }
-
     // Skips exporting if there's none
-    if (datastoreMetricData.isEmpty()) {
+    if (collection.isEmpty()) {
       return CompletableResultCode.ofSuccess();
     }
 
@@ -209,7 +159,7 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
       // Convert OTel MetricData to Cloud Monitoring TimeSeries.
       datastoreTimeSeries =
           DatastoreCloudMonitoringExporterUtils.convertToDatastoreTimeSeries(
-              datastoreMetricData,
+              new ArrayList<>(collection),
               BuiltInDatastoreMetricsProvider.INSTANCE.createClientAttributes());
     } catch (Throwable e) {
       logger.log(
@@ -258,14 +208,6 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
     return datastoreExportCode;
   }
 
-  /**
-   * Checks if the metric data point should be skipped because it belongs to a different project.
-   */
-  private boolean shouldSkipPointDataDueToProjectId(Resource resource) {
-    String projectId = DatastoreCloudMonitoringExporterUtils.getProjectId(resource);
-    return !datastoreProjectId.equals(projectId);
-  }
-
   /** Batches and sends the {@link TimeSeries} to Cloud Monitoring. */
   private ApiFuture<List<Empty>> exportTimeSeriesInBatch(
       ProjectName projectName, List<TimeSeries> timeSeries) {
@@ -286,8 +228,8 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
   /**
    * Best-effort flush of any pending exports.
    *
-   * <p>This implementation returns the result of the most recently initiated export. Because
-   * exports are performed asynchronously via {@link ApiFuture} callbacks, this flush cannot
+   * <p>This implementation is a no-op and always returns {@link CompletableResultCode#ofSuccess()}.
+   * Because exports are performed asynchronously via {@link ApiFuture} callbacks, this flush cannot
    * guarantee that all concurrent in-flight network requests have completed by the time this method
    * returns. For a stronger guarantee, callers should invoke {@code SdkMeterProvider.forceFlush()},
    * which coordinates across the {@link io.opentelemetry.sdk.metrics.export.MetricReader} and
@@ -295,7 +237,7 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
    */
   @Override
   public CompletableResultCode flush() {
-    return lastExportCode.get();
+    return CompletableResultCode.ofSuccess();
   }
 
   /** Shuts down the exporter and the underlying {@link MetricServiceClient}. */
