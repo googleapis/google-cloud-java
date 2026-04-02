@@ -18,14 +18,12 @@ package com.google.cloud.bigquery.telemetry;
 
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.StatusCode;
 
 /** BigQuery Telemetry class that stores generic telemetry attributes and values */
-@BetaApi
 @InternalApi
 public final class BigQueryTelemetryTracer {
 

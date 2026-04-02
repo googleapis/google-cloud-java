@@ -15,7 +15,6 @@
  */
 package com.google.cloud.bigquery.telemetry;
 
-import com.google.api.core.BetaApi;
 import com.google.common.annotations.VisibleForTesting;
 
 /**
@@ -23,7 +22,6 @@ import com.google.common.annotations.VisibleForTesting;
  * replaced with gax version when ready work tracked in
  * https://github.com/googleapis/google-cloud-java/issues/12105
  */
-@BetaApi
 @VisibleForTesting
 public class ErrorTypeUtil {
 

@@ -16,7 +16,6 @@
 
 package com.google.cloud.bigquery;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.retrying.ResultRetryAlgorithm;
 import com.google.cloud.ServiceDefaults;
@@ -127,9 +126,10 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
     /**
      * Enables OpenTelemetry tracing functionality for this BigQuery instance
      *
+     * <p>[TODO] add warning text here
+     *
      * @param enableOpenTelemetryTracing enables OpenTelemetry tracing if true
      */
-    @BetaApi
     public Builder setEnableOpenTelemetryTracing(boolean enableOpenTelemetryTracing) {
       this.enableOpenTelemetryTracing = enableOpenTelemetryTracing;
       return this;
@@ -140,7 +140,6 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
      *
      * @param tracer OpenTelemetry tracer to be used
      */
-    @BetaApi
     public Builder setOpenTelemetryTracer(Tracer tracer) {
       this.openTelemetryTracer = tracer;
       return this;
@@ -282,7 +281,6 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
    *
    * @return true if tracing is enabled, false if not
    */
-  @BetaApi("Span names and attributes are subject to change without notice")
   public boolean isOpenTelemetryTracingEnabled() {
     return enableOpenTelemetryTracing;
   }
@@ -292,7 +290,6 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
    *
    * @return OpenTelemetry tracer object or {@code null} if not set
    */
-  @BetaApi("Span names and attributes are subject to change without notice")
   public Tracer getOpenTelemetryTracer() {
     return openTelemetryTracer;
   }
