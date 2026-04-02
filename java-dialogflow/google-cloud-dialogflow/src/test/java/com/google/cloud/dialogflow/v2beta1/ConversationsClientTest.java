@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -108,7 +108,9 @@ public class ConversationsClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
+            .setInitialConversationProfile(ConversationProfile.newBuilder().build())
             .putAllIngestedContextReferences(new HashMap<String, Conversation.ContextReference>())
+            .putAllInitialGeneratorContexts(new HashMap<String, Conversation.GeneratorContext>())
             .build();
     mockConversations.addResponse(expectedResponse);
 
@@ -160,7 +162,9 @@ public class ConversationsClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
+            .setInitialConversationProfile(ConversationProfile.newBuilder().build())
             .putAllIngestedContextReferences(new HashMap<String, Conversation.ContextReference>())
+            .putAllInitialGeneratorContexts(new HashMap<String, Conversation.GeneratorContext>())
             .build();
     mockConversations.addResponse(expectedResponse);
 
@@ -212,7 +216,9 @@ public class ConversationsClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
+            .setInitialConversationProfile(ConversationProfile.newBuilder().build())
             .putAllIngestedContextReferences(new HashMap<String, Conversation.ContextReference>())
+            .putAllInitialGeneratorContexts(new HashMap<String, Conversation.GeneratorContext>())
             .build();
     mockConversations.addResponse(expectedResponse);
 
@@ -396,7 +402,9 @@ public class ConversationsClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
+            .setInitialConversationProfile(ConversationProfile.newBuilder().build())
             .putAllIngestedContextReferences(new HashMap<String, Conversation.ContextReference>())
+            .putAllInitialGeneratorContexts(new HashMap<String, Conversation.GeneratorContext>())
             .build();
     mockConversations.addResponse(expectedResponse);
 
@@ -447,7 +455,9 @@ public class ConversationsClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
+            .setInitialConversationProfile(ConversationProfile.newBuilder().build())
             .putAllIngestedContextReferences(new HashMap<String, Conversation.ContextReference>())
+            .putAllInitialGeneratorContexts(new HashMap<String, Conversation.GeneratorContext>())
             .build();
     mockConversations.addResponse(expectedResponse);
 
@@ -496,7 +506,9 @@ public class ConversationsClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
+            .setInitialConversationProfile(ConversationProfile.newBuilder().build())
             .putAllIngestedContextReferences(new HashMap<String, Conversation.ContextReference>())
+            .putAllInitialGeneratorContexts(new HashMap<String, Conversation.GeneratorContext>())
             .build();
     mockConversations.addResponse(expectedResponse);
 
@@ -548,7 +560,9 @@ public class ConversationsClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
+            .setInitialConversationProfile(ConversationProfile.newBuilder().build())
             .putAllIngestedContextReferences(new HashMap<String, Conversation.ContextReference>())
+            .putAllInitialGeneratorContexts(new HashMap<String, Conversation.GeneratorContext>())
             .build();
     mockConversations.addResponse(expectedResponse);
 
@@ -1017,6 +1031,7 @@ public class ConversationsClientTest {
             .putAllContextReferences(new HashMap<String, Conversation.ContextReference>())
             .setConversationContext(ConversationContext.newBuilder().build())
             .addAllTriggerEvents(new ArrayList<TriggerEvent>())
+            .setSecuritySettings("securitySettings-1062971517")
             .build();
 
     GenerateStatelessSuggestionResponse actualResponse =
@@ -1034,6 +1049,7 @@ public class ConversationsClientTest {
     Assert.assertEquals(request.getContextReferencesMap(), actualRequest.getContextReferencesMap());
     Assert.assertEquals(request.getConversationContext(), actualRequest.getConversationContext());
     Assert.assertEquals(request.getTriggerEventsList(), actualRequest.getTriggerEventsList());
+    Assert.assertEquals(request.getSecuritySettings(), actualRequest.getSecuritySettings());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1052,6 +1068,7 @@ public class ConversationsClientTest {
               .putAllContextReferences(new HashMap<String, Conversation.ContextReference>())
               .setConversationContext(ConversationContext.newBuilder().build())
               .addAllTriggerEvents(new ArrayList<TriggerEvent>())
+              .setSecuritySettings("securitySettings-1062971517")
               .build();
       client.generateStatelessSuggestion(request);
       Assert.fail("No exception raised");
@@ -1066,6 +1083,7 @@ public class ConversationsClientTest {
         SearchKnowledgeResponse.newBuilder()
             .addAllAnswers(new ArrayList<SearchKnowledgeAnswer>())
             .setRewrittenQuery("rewrittenQuery-1572767836")
+            .setSearchKnowledgeDebugInfo(SearchKnowledgeDebugInfo.newBuilder().build())
             .build();
     mockConversations.addResponse(expectedResponse);
 

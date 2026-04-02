@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,10 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to support `TermsOfServiceAgreementState` API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments =
-        "Source: google/shopping/merchant/accounts/v1beta/termsofserviceagreementstate.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class TermsOfServiceAgreementStateServiceGrpc {
 
@@ -371,8 +367,9 @@ public final class TermsOfServiceAgreementStateServiceGrpc {
     public com.google.shopping.merchant.accounts.v1beta.TermsOfServiceAgreementState
         getTermsOfServiceAgreementState(
             com.google.shopping.merchant.accounts.v1beta.GetTermsOfServiceAgreementStateRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTermsOfServiceAgreementStateMethod(), getCallOptions(), request);
     }
 
@@ -387,8 +384,9 @@ public final class TermsOfServiceAgreementStateServiceGrpc {
         retrieveForApplicationTermsOfServiceAgreementState(
             com.google.shopping.merchant.accounts.v1beta
                     .RetrieveForApplicationTermsOfServiceAgreementStateRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getRetrieveForApplicationTermsOfServiceAgreementStateMethod(),
           getCallOptions(),

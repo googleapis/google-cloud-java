@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,6 +55,8 @@ import com.google.cloud.developerconnect.v1.FetchReadTokenResponse;
 import com.google.cloud.developerconnect.v1.FetchReadWriteTokenRequest;
 import com.google.cloud.developerconnect.v1.FetchReadWriteTokenResponse;
 import com.google.cloud.developerconnect.v1.FetchSelfRequest;
+import com.google.cloud.developerconnect.v1.FinishOAuthRequest;
+import com.google.cloud.developerconnect.v1.FinishOAuthResponse;
 import com.google.cloud.developerconnect.v1.GetAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.GetConnectionRequest;
 import com.google.cloud.developerconnect.v1.GetGitRepositoryLinkRequest;
@@ -68,6 +70,8 @@ import com.google.cloud.developerconnect.v1.ListGitRepositoryLinksResponse;
 import com.google.cloud.developerconnect.v1.ListUsersRequest;
 import com.google.cloud.developerconnect.v1.ListUsersResponse;
 import com.google.cloud.developerconnect.v1.OperationMetadata;
+import com.google.cloud.developerconnect.v1.StartOAuthRequest;
+import com.google.cloud.developerconnect.v1.StartOAuthResponse;
 import com.google.cloud.developerconnect.v1.UpdateAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.UpdateConnectionRequest;
 import com.google.cloud.developerconnect.v1.User;
@@ -381,6 +385,27 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
           .setSampledToLocalTracing(true)
           .build();
 
+  private static final MethodDescriptor<StartOAuthRequest, StartOAuthResponse>
+      startOAuthMethodDescriptor =
+          MethodDescriptor.<StartOAuthRequest, StartOAuthResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.developerconnect.v1.DeveloperConnect/StartOAuth")
+              .setRequestMarshaller(ProtoUtils.marshaller(StartOAuthRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(StartOAuthResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<FinishOAuthRequest, FinishOAuthResponse>
+      finishOAuthMethodDescriptor =
+          MethodDescriptor.<FinishOAuthRequest, FinishOAuthResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.developerconnect.v1.DeveloperConnect/FinishOAuth")
+              .setRequestMarshaller(ProtoUtils.marshaller(FinishOAuthRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(FinishOAuthResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -476,6 +501,8 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
   private final UnaryCallable<DeleteSelfRequest, Operation> deleteSelfCallable;
   private final OperationCallable<DeleteSelfRequest, Empty, OperationMetadata>
       deleteSelfOperationCallable;
+  private final UnaryCallable<StartOAuthRequest, StartOAuthResponse> startOAuthCallable;
+  private final UnaryCallable<FinishOAuthRequest, FinishOAuthResponse> finishOAuthCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -535,6 +562,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetConnectionRequest, Connection> getConnectionTransportSettings =
         GrpcCallSettings.<GetConnectionRequest, Connection>newBuilder()
@@ -545,6 +573,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateConnectionRequest, Operation> createConnectionTransportSettings =
         GrpcCallSettings.<CreateConnectionRequest, Operation>newBuilder()
@@ -555,6 +584,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateConnectionRequest, Operation> updateConnectionTransportSettings =
         GrpcCallSettings.<UpdateConnectionRequest, Operation>newBuilder()
@@ -575,6 +605,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateGitRepositoryLinkRequest, Operation>
         createGitRepositoryLinkTransportSettings =
@@ -586,6 +617,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteGitRepositoryLinkRequest, Operation>
         deleteGitRepositoryLinkTransportSettings =
@@ -597,6 +629,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListGitRepositoryLinksRequest, ListGitRepositoryLinksResponse>
         listGitRepositoryLinksTransportSettings =
@@ -609,6 +642,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetGitRepositoryLinkRequest, GitRepositoryLink>
         getGitRepositoryLinkTransportSettings =
@@ -620,6 +654,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<FetchReadWriteTokenRequest, FetchReadWriteTokenResponse>
         fetchReadWriteTokenTransportSettings =
@@ -632,6 +667,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                           "git_repository_link", String.valueOf(request.getGitRepositoryLink()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getGitRepositoryLink())
                 .build();
     GrpcCallSettings<FetchReadTokenRequest, FetchReadTokenResponse>
         fetchReadTokenTransportSettings =
@@ -644,6 +680,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                           "git_repository_link", String.valueOf(request.getGitRepositoryLink()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getGitRepositoryLink())
                 .build();
     GrpcCallSettings<FetchLinkableGitRepositoriesRequest, FetchLinkableGitRepositoriesResponse>
         fetchLinkableGitRepositoriesTransportSettings =
@@ -657,6 +694,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                       builder.add("connection", String.valueOf(request.getConnection()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getConnection())
                 .build();
     GrpcCallSettings<FetchGitHubInstallationsRequest, FetchGitHubInstallationsResponse>
         fetchGitHubInstallationsTransportSettings =
@@ -669,6 +707,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                       builder.add("connection", String.valueOf(request.getConnection()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getConnection())
                 .build();
     GrpcCallSettings<FetchGitRefsRequest, FetchGitRefsResponse> fetchGitRefsTransportSettings =
         GrpcCallSettings.<FetchGitRefsRequest, FetchGitRefsResponse>newBuilder()
@@ -680,6 +719,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                       "git_repository_link", String.valueOf(request.getGitRepositoryLink()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getGitRepositoryLink())
             .build();
     GrpcCallSettings<ListAccountConnectorsRequest, ListAccountConnectorsResponse>
         listAccountConnectorsTransportSettings =
@@ -692,6 +732,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetAccountConnectorRequest, AccountConnector>
         getAccountConnectorTransportSettings =
@@ -703,6 +744,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateAccountConnectorRequest, Operation>
         createAccountConnectorTransportSettings =
@@ -714,6 +756,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateAccountConnectorRequest, Operation>
         updateAccountConnectorTransportSettings =
@@ -738,6 +781,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<FetchAccessTokenRequest, FetchAccessTokenResponse>
         fetchAccessTokenTransportSettings =
@@ -750,6 +794,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                           "account_connector", String.valueOf(request.getAccountConnector()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAccountConnector())
                 .build();
     GrpcCallSettings<ListUsersRequest, ListUsersResponse> listUsersTransportSettings =
         GrpcCallSettings.<ListUsersRequest, ListUsersResponse>newBuilder()
@@ -760,6 +805,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteUserRequest, Operation> deleteUserTransportSettings =
         GrpcCallSettings.<DeleteUserRequest, Operation>newBuilder()
@@ -770,6 +816,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<FetchSelfRequest, User> fetchSelfTransportSettings =
         GrpcCallSettings.<FetchSelfRequest, User>newBuilder()
@@ -780,6 +827,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteSelfRequest, Operation> deleteSelfTransportSettings =
         GrpcCallSettings.<DeleteSelfRequest, Operation>newBuilder()
@@ -790,6 +838,29 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<StartOAuthRequest, StartOAuthResponse> startOAuthTransportSettings =
+        GrpcCallSettings.<StartOAuthRequest, StartOAuthResponse>newBuilder()
+            .setMethodDescriptor(startOAuthMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("account_connector", String.valueOf(request.getAccountConnector()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getAccountConnector())
+            .build();
+    GrpcCallSettings<FinishOAuthRequest, FinishOAuthResponse> finishOAuthTransportSettings =
+        GrpcCallSettings.<FinishOAuthRequest, FinishOAuthResponse>newBuilder()
+            .setMethodDescriptor(finishOAuthMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("account_connector", String.valueOf(request.getAccountConnector()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getAccountConnector())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -992,6 +1063,12 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
             settings.deleteSelfOperationSettings(),
             clientContext,
             operationsStub);
+    this.startOAuthCallable =
+        callableFactory.createUnaryCallable(
+            startOAuthTransportSettings, settings.startOAuthSettings(), clientContext);
+    this.finishOAuthCallable =
+        callableFactory.createUnaryCallable(
+            finishOAuthTransportSettings, settings.finishOAuthSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1232,6 +1309,16 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
   public OperationCallable<DeleteSelfRequest, Empty, OperationMetadata>
       deleteSelfOperationCallable() {
     return deleteSelfOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<StartOAuthRequest, StartOAuthResponse> startOAuthCallable() {
+    return startOAuthCallable;
+  }
+
+  @Override
+  public UnaryCallable<FinishOAuthRequest, FinishOAuthResponse> finishOAuthCallable() {
+    return finishOAuthCallable;
   }
 
   @Override

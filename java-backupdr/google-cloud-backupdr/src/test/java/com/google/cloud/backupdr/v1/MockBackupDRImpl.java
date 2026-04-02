@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -355,6 +355,29 @@ public class MockBackupDRImpl extends BackupDRImplBase {
                   "Unrecognized response type %s for method ListBackups, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListBackupsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void fetchBackupsForResourceType(
+      FetchBackupsForResourceTypeRequest request,
+      StreamObserver<FetchBackupsForResourceTypeResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FetchBackupsForResourceTypeResponse) {
+      requests.add(request);
+      responseObserver.onNext(((FetchBackupsForResourceTypeResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FetchBackupsForResourceType, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FetchBackupsForResourceTypeResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -766,6 +789,29 @@ public class MockBackupDRImpl extends BackupDRImplBase {
                       + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   DataSourceReference.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listDataSourceReferences(
+      ListDataSourceReferencesRequest request,
+      StreamObserver<ListDataSourceReferencesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListDataSourceReferencesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListDataSourceReferencesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDataSourceReferences, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListDataSourceReferencesResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

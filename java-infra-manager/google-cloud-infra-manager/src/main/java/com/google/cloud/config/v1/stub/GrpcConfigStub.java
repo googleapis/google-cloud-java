@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.config.v1.AutoMigrationConfig;
 import com.google.cloud.config.v1.CreateDeploymentRequest;
 import com.google.cloud.config.v1.CreatePreviewRequest;
 import com.google.cloud.config.v1.DeleteDeploymentRequest;
@@ -44,6 +45,7 @@ import com.google.cloud.config.v1.ExportLockInfoRequest;
 import com.google.cloud.config.v1.ExportPreviewResultRequest;
 import com.google.cloud.config.v1.ExportPreviewResultResponse;
 import com.google.cloud.config.v1.ExportRevisionStatefileRequest;
+import com.google.cloud.config.v1.GetAutoMigrationConfigRequest;
 import com.google.cloud.config.v1.GetDeploymentRequest;
 import com.google.cloud.config.v1.GetPreviewRequest;
 import com.google.cloud.config.v1.GetResourceChangeRequest;
@@ -77,6 +79,7 @@ import com.google.cloud.config.v1.Revision;
 import com.google.cloud.config.v1.Statefile;
 import com.google.cloud.config.v1.TerraformVersion;
 import com.google.cloud.config.v1.UnlockDeploymentRequest;
+import com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest;
 import com.google.cloud.config.v1.UpdateDeploymentRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -402,6 +405,29 @@ public class GrpcConfigStub extends ConfigStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<GetAutoMigrationConfigRequest, AutoMigrationConfig>
+      getAutoMigrationConfigMethodDescriptor =
+          MethodDescriptor.<GetAutoMigrationConfigRequest, AutoMigrationConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.config.v1.Config/GetAutoMigrationConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAutoMigrationConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AutoMigrationConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateAutoMigrationConfigRequest, Operation>
+      updateAutoMigrationConfigMethodDescriptor =
+          MethodDescriptor.<UpdateAutoMigrationConfigRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.config.v1.Config/UpdateAutoMigrationConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateAutoMigrationConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -516,6 +542,13 @@ public class GrpcConfigStub extends ConfigStub {
   private final UnaryCallable<ListResourceDriftsRequest, ListResourceDriftsPagedResponse>
       listResourceDriftsPagedCallable;
   private final UnaryCallable<GetResourceDriftRequest, ResourceDrift> getResourceDriftCallable;
+  private final UnaryCallable<GetAutoMigrationConfigRequest, AutoMigrationConfig>
+      getAutoMigrationConfigCallable;
+  private final UnaryCallable<UpdateAutoMigrationConfigRequest, Operation>
+      updateAutoMigrationConfigCallable;
+  private final OperationCallable<
+          UpdateAutoMigrationConfigRequest, AutoMigrationConfig, OperationMetadata>
+      updateAutoMigrationConfigOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -574,6 +607,7 @@ public class GrpcConfigStub extends ConfigStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetDeploymentRequest, Deployment> getDeploymentTransportSettings =
         GrpcCallSettings.<GetDeploymentRequest, Deployment>newBuilder()
@@ -584,6 +618,7 @@ public class GrpcConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateDeploymentRequest, Operation> createDeploymentTransportSettings =
         GrpcCallSettings.<CreateDeploymentRequest, Operation>newBuilder()
@@ -594,6 +629,7 @@ public class GrpcConfigStub extends ConfigStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateDeploymentRequest, Operation> updateDeploymentTransportSettings =
         GrpcCallSettings.<UpdateDeploymentRequest, Operation>newBuilder()
@@ -614,6 +650,7 @@ public class GrpcConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRevisionsRequest, ListRevisionsResponse> listRevisionsTransportSettings =
         GrpcCallSettings.<ListRevisionsRequest, ListRevisionsResponse>newBuilder()
@@ -624,6 +661,7 @@ public class GrpcConfigStub extends ConfigStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetRevisionRequest, Revision> getRevisionTransportSettings =
         GrpcCallSettings.<GetRevisionRequest, Revision>newBuilder()
@@ -634,6 +672,7 @@ public class GrpcConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetResourceRequest, Resource> getResourceTransportSettings =
         GrpcCallSettings.<GetResourceRequest, Resource>newBuilder()
@@ -644,6 +683,7 @@ public class GrpcConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListResourcesRequest, ListResourcesResponse> listResourcesTransportSettings =
         GrpcCallSettings.<ListResourcesRequest, ListResourcesResponse>newBuilder()
@@ -654,6 +694,7 @@ public class GrpcConfigStub extends ConfigStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ExportDeploymentStatefileRequest, Statefile>
         exportDeploymentStatefileTransportSettings =
@@ -665,6 +706,7 @@ public class GrpcConfigStub extends ConfigStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ExportRevisionStatefileRequest, Statefile>
         exportRevisionStatefileTransportSettings =
@@ -676,6 +718,7 @@ public class GrpcConfigStub extends ConfigStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ImportStatefileRequest, Statefile> importStatefileTransportSettings =
         GrpcCallSettings.<ImportStatefileRequest, Statefile>newBuilder()
@@ -686,6 +729,7 @@ public class GrpcConfigStub extends ConfigStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteStatefileRequest, Empty> deleteStatefileTransportSettings =
         GrpcCallSettings.<DeleteStatefileRequest, Empty>newBuilder()
@@ -696,6 +740,7 @@ public class GrpcConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<LockDeploymentRequest, Operation> lockDeploymentTransportSettings =
         GrpcCallSettings.<LockDeploymentRequest, Operation>newBuilder()
@@ -706,6 +751,7 @@ public class GrpcConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UnlockDeploymentRequest, Operation> unlockDeploymentTransportSettings =
         GrpcCallSettings.<UnlockDeploymentRequest, Operation>newBuilder()
@@ -716,6 +762,7 @@ public class GrpcConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ExportLockInfoRequest, LockInfo> exportLockInfoTransportSettings =
         GrpcCallSettings.<ExportLockInfoRequest, LockInfo>newBuilder()
@@ -726,6 +773,7 @@ public class GrpcConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreatePreviewRequest, Operation> createPreviewTransportSettings =
         GrpcCallSettings.<CreatePreviewRequest, Operation>newBuilder()
@@ -736,6 +784,7 @@ public class GrpcConfigStub extends ConfigStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetPreviewRequest, Preview> getPreviewTransportSettings =
         GrpcCallSettings.<GetPreviewRequest, Preview>newBuilder()
@@ -746,6 +795,7 @@ public class GrpcConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListPreviewsRequest, ListPreviewsResponse> listPreviewsTransportSettings =
         GrpcCallSettings.<ListPreviewsRequest, ListPreviewsResponse>newBuilder()
@@ -756,6 +806,7 @@ public class GrpcConfigStub extends ConfigStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeletePreviewRequest, Operation> deletePreviewTransportSettings =
         GrpcCallSettings.<DeletePreviewRequest, Operation>newBuilder()
@@ -766,6 +817,7 @@ public class GrpcConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ExportPreviewResultRequest, ExportPreviewResultResponse>
         exportPreviewResultTransportSettings =
@@ -777,6 +829,7 @@ public class GrpcConfigStub extends ConfigStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListTerraformVersionsRequest, ListTerraformVersionsResponse>
         listTerraformVersionsTransportSettings =
@@ -789,6 +842,7 @@ public class GrpcConfigStub extends ConfigStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetTerraformVersionRequest, TerraformVersion>
         getTerraformVersionTransportSettings =
@@ -800,6 +854,7 @@ public class GrpcConfigStub extends ConfigStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListResourceChangesRequest, ListResourceChangesResponse>
         listResourceChangesTransportSettings =
@@ -811,6 +866,7 @@ public class GrpcConfigStub extends ConfigStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetResourceChangeRequest, ResourceChange> getResourceChangeTransportSettings =
         GrpcCallSettings.<GetResourceChangeRequest, ResourceChange>newBuilder()
@@ -821,6 +877,7 @@ public class GrpcConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListResourceDriftsRequest, ListResourceDriftsResponse>
         listResourceDriftsTransportSettings =
@@ -832,6 +889,7 @@ public class GrpcConfigStub extends ConfigStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetResourceDriftRequest, ResourceDrift> getResourceDriftTransportSettings =
         GrpcCallSettings.<GetResourceDriftRequest, ResourceDrift>newBuilder()
@@ -842,7 +900,33 @@ public class GrpcConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<GetAutoMigrationConfigRequest, AutoMigrationConfig>
+        getAutoMigrationConfigTransportSettings =
+            GrpcCallSettings.<GetAutoMigrationConfigRequest, AutoMigrationConfig>newBuilder()
+                .setMethodDescriptor(getAutoMigrationConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<UpdateAutoMigrationConfigRequest, Operation>
+        updateAutoMigrationConfigTransportSettings =
+            GrpcCallSettings.<UpdateAutoMigrationConfigRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateAutoMigrationConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "auto_migration_config.name",
+                          String.valueOf(request.getAutoMigrationConfig().getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -872,6 +956,7 @@ public class GrpcConfigStub extends ConfigStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -882,6 +967,7 @@ public class GrpcConfigStub extends ConfigStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -893,6 +979,7 @@ public class GrpcConfigStub extends ConfigStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listDeploymentsCallable =
@@ -1061,6 +1148,22 @@ public class GrpcConfigStub extends ConfigStub {
     this.getResourceDriftCallable =
         callableFactory.createUnaryCallable(
             getResourceDriftTransportSettings, settings.getResourceDriftSettings(), clientContext);
+    this.getAutoMigrationConfigCallable =
+        callableFactory.createUnaryCallable(
+            getAutoMigrationConfigTransportSettings,
+            settings.getAutoMigrationConfigSettings(),
+            clientContext);
+    this.updateAutoMigrationConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateAutoMigrationConfigTransportSettings,
+            settings.updateAutoMigrationConfigSettings(),
+            clientContext);
+    this.updateAutoMigrationConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            updateAutoMigrationConfigTransportSettings,
+            settings.updateAutoMigrationConfigOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1312,6 +1415,24 @@ public class GrpcConfigStub extends ConfigStub {
   @Override
   public UnaryCallable<GetResourceDriftRequest, ResourceDrift> getResourceDriftCallable() {
     return getResourceDriftCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAutoMigrationConfigRequest, AutoMigrationConfig>
+      getAutoMigrationConfigCallable() {
+    return getAutoMigrationConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAutoMigrationConfigRequest, Operation>
+      updateAutoMigrationConfigCallable() {
+    return updateAutoMigrationConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateAutoMigrationConfigRequest, AutoMigrationConfig, OperationMetadata>
+      updateAutoMigrationConfigOperationCallable() {
+    return updateAutoMigrationConfigOperationCallable;
   }
 
   @Override

@@ -1,0 +1,36 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.gkerecommender.v1",
+  "libraryPackage": "com.google.cloud.gkerecommender.v1",
+  "services": {
+    "GkeInferenceQuickstart": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GkeInferenceQuickstartClient",
+          "rpcs": {
+            "FetchBenchmarkingData": {
+              "methods": ["fetchBenchmarkingData", "fetchBenchmarkingDataCallable"]
+            },
+            "FetchModelServerVersions": {
+              "methods": ["fetchModelServerVersions", "fetchModelServerVersionsPagedCallable", "fetchModelServerVersionsCallable"]
+            },
+            "FetchModelServers": {
+              "methods": ["fetchModelServers", "fetchModelServersPagedCallable", "fetchModelServersCallable"]
+            },
+            "FetchModels": {
+              "methods": ["fetchModels", "fetchModelsPagedCallable", "fetchModelsCallable"]
+            },
+            "FetchProfiles": {
+              "methods": ["fetchProfiles", "fetchProfilesPagedCallable", "fetchProfilesCallable"]
+            },
+            "GenerateOptimizedManifest": {
+              "methods": ["generateOptimizedManifest", "generateOptimizedManifestCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

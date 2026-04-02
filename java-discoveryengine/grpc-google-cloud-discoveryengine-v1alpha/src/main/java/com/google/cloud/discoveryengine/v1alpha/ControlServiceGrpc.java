@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * request.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1alpha/control_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ControlServiceGrpc {
 
@@ -587,8 +584,9 @@ public final class ControlServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.Control createControl(
-        com.google.cloud.discoveryengine.v1alpha.CreateControlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.CreateControlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateControlMethod(), getCallOptions(), request);
     }
 
@@ -602,8 +600,9 @@ public final class ControlServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteControl(
-        com.google.cloud.discoveryengine.v1alpha.DeleteControlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.DeleteControlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteControlMethod(), getCallOptions(), request);
     }
 
@@ -618,8 +617,9 @@ public final class ControlServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.Control updateControl(
-        com.google.cloud.discoveryengine.v1alpha.UpdateControlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.UpdateControlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateControlMethod(), getCallOptions(), request);
     }
 
@@ -631,8 +631,9 @@ public final class ControlServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.Control getControl(
-        com.google.cloud.discoveryengine.v1alpha.GetControlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.GetControlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetControlMethod(), getCallOptions(), request);
     }
 
@@ -645,8 +646,9 @@ public final class ControlServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.ListControlsResponse listControls(
-        com.google.cloud.discoveryengine.v1alpha.ListControlsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.ListControlsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListControlsMethod(), getCallOptions(), request);
     }
   }

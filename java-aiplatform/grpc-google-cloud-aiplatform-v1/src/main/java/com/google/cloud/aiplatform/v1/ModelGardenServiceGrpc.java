@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The interface of Model Garden Service.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1/model_garden_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ModelGardenServiceGrpc {
 
@@ -311,8 +308,9 @@ public final class ModelGardenServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.PublisherModel getPublisherModel(
-        com.google.cloud.aiplatform.v1.GetPublisherModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetPublisherModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPublisherModelMethod(), getCallOptions(), request);
     }
 
@@ -324,8 +322,8 @@ public final class ModelGardenServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deploy(
-        com.google.cloud.aiplatform.v1.DeployRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DeployRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeployMethod(), getCallOptions(), request);
     }
   }

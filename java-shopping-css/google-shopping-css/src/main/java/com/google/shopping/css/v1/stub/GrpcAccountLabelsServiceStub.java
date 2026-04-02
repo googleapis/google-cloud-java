@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -154,6 +154,7 @@ public class GrpcAccountLabelsServiceStub extends AccountLabelsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateAccountLabelRequest, AccountLabel> createAccountLabelTransportSettings =
         GrpcCallSettings.<CreateAccountLabelRequest, AccountLabel>newBuilder()
@@ -164,6 +165,7 @@ public class GrpcAccountLabelsServiceStub extends AccountLabelsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateAccountLabelRequest, AccountLabel> updateAccountLabelTransportSettings =
         GrpcCallSettings.<UpdateAccountLabelRequest, AccountLabel>newBuilder()
@@ -185,6 +187,7 @@ public class GrpcAccountLabelsServiceStub extends AccountLabelsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.listAccountLabelsCallable =

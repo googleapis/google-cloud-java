@@ -1,0 +1,53 @@
+[
+  {
+    "name":"ch.qos.logback.classic.Level",
+    "methods":[{"name":"valueOf","parameterTypes":["java.lang.String"] }]
+  },
+  {
+    "name":"ch.qos.logback.classic.filter.ThresholdFilter",
+    "queryAllPublicMethods":true,
+    "methods":[
+      {"name":"<init>","parameterTypes":[] },
+      {"name":"setLevel","parameterTypes":["java.lang.String"] }
+    ]
+  },
+  {
+    "name":"ch.qos.logback.core.UnsynchronizedAppenderBase",
+    "methods":[{"name":"addFilter","parameterTypes":["ch.qos.logback.core.filter.Filter"] }]
+  },
+  {
+    "name":"com.google.cloud.logging.logback.LogbackBatchingSettings",
+    "queryAllPublicMethods":true,
+    "methods":[
+      {"name":"<init>","parameterTypes":[] },
+      {"name":"setDelayThreshold","parameterTypes":["java.lang.Long"] },
+      {"name":"setElementCountThreshold","parameterTypes":["java.lang.Long"] },
+      {"name":"setLimitExceededBehavior","parameterTypes":["com.google.api.gax.batching.FlowController$LimitExceededBehavior"] },
+      {"name":"setMaxOutstandingElementCount","parameterTypes":["java.lang.Long"] },
+      {"name":"setMaxOutstandingRequestBytes","parameterTypes":["java.lang.Long"] },
+      {"name":"setRequestByteThreshold","parameterTypes":["java.lang.Long"] }
+    ]
+  },
+  {
+    "name":"com.google.cloud.logging.logback.LoggingAppender",
+    "queryAllPublicMethods":true,
+    "methods":[
+      {"name":"<init>","parameterTypes":[] },
+      {"name":"setAutoPopulateMetadata","parameterTypes":["boolean"] },
+      {"name":"setCredentialsFile","parameterTypes":["java.lang.String"] },
+      {"name":"setCredentials","parameterTypes":["com.google.auth.oauth2.GoogleCredentials"] },
+      {"name":"setFlushLevel","parameterTypes":["ch.qos.logback.classic.Level"] },
+      {"name":"setLog","parameterTypes":["java.lang.String"] },
+      {"name":"setLogDestinationProjectId","parameterTypes":["java.lang.String"] },
+      {"name":"setLogbackBatchingSettings","parameterTypes":["com.google.cloud.logging.logback.LogbackBatchingSettings"] },
+      {"name":"setPartialSuccess","parameterTypes":["boolean"] },
+      {"name":"setRedirectToStdout","parameterTypes":["boolean"] },
+      {"name":"setResourceType","parameterTypes":["java.lang.String"] },
+      {"name":"setWriteSynchronicity","parameterTypes":["com.google.cloud.logging.Synchronicity"] }
+    ]
+  },
+  {
+    "name":"java.lang.Long",
+    "methods":[{"name":"valueOf","parameterTypes":["java.lang.String"] }]
+  }
+]

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -154,6 +154,7 @@ public class GrpcExecutionsStub extends ExecutionsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateExecutionRequest, Execution> createExecutionTransportSettings =
         GrpcCallSettings.<CreateExecutionRequest, Execution>newBuilder()
@@ -164,6 +165,7 @@ public class GrpcExecutionsStub extends ExecutionsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetExecutionRequest, Execution> getExecutionTransportSettings =
         GrpcCallSettings.<GetExecutionRequest, Execution>newBuilder()
@@ -174,6 +176,7 @@ public class GrpcExecutionsStub extends ExecutionsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CancelExecutionRequest, Execution> cancelExecutionTransportSettings =
         GrpcCallSettings.<CancelExecutionRequest, Execution>newBuilder()
@@ -184,6 +187,7 @@ public class GrpcExecutionsStub extends ExecutionsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.listExecutionsCallable =

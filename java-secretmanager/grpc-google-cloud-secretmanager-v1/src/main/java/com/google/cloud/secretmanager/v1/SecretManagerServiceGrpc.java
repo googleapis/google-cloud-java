@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/secretmanager/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SecretManagerServiceGrpc {
 
@@ -1404,8 +1401,9 @@ public final class SecretManagerServiceGrpc {
      * </pre>
      */
     public com.google.cloud.secretmanager.v1.ListSecretsResponse listSecrets(
-        com.google.cloud.secretmanager.v1.ListSecretsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.secretmanager.v1.ListSecretsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSecretsMethod(), getCallOptions(), request);
     }
 
@@ -1418,8 +1416,9 @@ public final class SecretManagerServiceGrpc {
      * </pre>
      */
     public com.google.cloud.secretmanager.v1.Secret createSecret(
-        com.google.cloud.secretmanager.v1.CreateSecretRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.secretmanager.v1.CreateSecretRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSecretMethod(), getCallOptions(), request);
     }
 
@@ -1433,8 +1432,9 @@ public final class SecretManagerServiceGrpc {
      * </pre>
      */
     public com.google.cloud.secretmanager.v1.SecretVersion addSecretVersion(
-        com.google.cloud.secretmanager.v1.AddSecretVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.secretmanager.v1.AddSecretVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAddSecretVersionMethod(), getCallOptions(), request);
     }
 
@@ -1446,8 +1446,8 @@ public final class SecretManagerServiceGrpc {
      * </pre>
      */
     public com.google.cloud.secretmanager.v1.Secret getSecret(
-        com.google.cloud.secretmanager.v1.GetSecretRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.secretmanager.v1.GetSecretRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSecretMethod(), getCallOptions(), request);
     }
 
@@ -1460,8 +1460,9 @@ public final class SecretManagerServiceGrpc {
      * </pre>
      */
     public com.google.cloud.secretmanager.v1.Secret updateSecret(
-        com.google.cloud.secretmanager.v1.UpdateSecretRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.secretmanager.v1.UpdateSecretRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSecretMethod(), getCallOptions(), request);
     }
 
@@ -1473,8 +1474,9 @@ public final class SecretManagerServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteSecret(
-        com.google.cloud.secretmanager.v1.DeleteSecretRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.secretmanager.v1.DeleteSecretRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSecretMethod(), getCallOptions(), request);
     }
 
@@ -1487,8 +1489,9 @@ public final class SecretManagerServiceGrpc {
      * </pre>
      */
     public com.google.cloud.secretmanager.v1.ListSecretVersionsResponse listSecretVersions(
-        com.google.cloud.secretmanager.v1.ListSecretVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.secretmanager.v1.ListSecretVersionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSecretVersionsMethod(), getCallOptions(), request);
     }
 
@@ -1503,8 +1506,9 @@ public final class SecretManagerServiceGrpc {
      * </pre>
      */
     public com.google.cloud.secretmanager.v1.SecretVersion getSecretVersion(
-        com.google.cloud.secretmanager.v1.GetSecretVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.secretmanager.v1.GetSecretVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSecretVersionMethod(), getCallOptions(), request);
     }
 
@@ -1519,8 +1523,9 @@ public final class SecretManagerServiceGrpc {
      * </pre>
      */
     public com.google.cloud.secretmanager.v1.AccessSecretVersionResponse accessSecretVersion(
-        com.google.cloud.secretmanager.v1.AccessSecretVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.secretmanager.v1.AccessSecretVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAccessSecretVersionMethod(), getCallOptions(), request);
     }
 
@@ -1535,8 +1540,9 @@ public final class SecretManagerServiceGrpc {
      * </pre>
      */
     public com.google.cloud.secretmanager.v1.SecretVersion disableSecretVersion(
-        com.google.cloud.secretmanager.v1.DisableSecretVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.secretmanager.v1.DisableSecretVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDisableSecretVersionMethod(), getCallOptions(), request);
     }
 
@@ -1551,8 +1557,9 @@ public final class SecretManagerServiceGrpc {
      * </pre>
      */
     public com.google.cloud.secretmanager.v1.SecretVersion enableSecretVersion(
-        com.google.cloud.secretmanager.v1.EnableSecretVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.secretmanager.v1.EnableSecretVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getEnableSecretVersionMethod(), getCallOptions(), request);
     }
 
@@ -1568,8 +1575,9 @@ public final class SecretManagerServiceGrpc {
      * </pre>
      */
     public com.google.cloud.secretmanager.v1.SecretVersion destroySecretVersion(
-        com.google.cloud.secretmanager.v1.DestroySecretVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.secretmanager.v1.DestroySecretVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDestroySecretVersionMethod(), getCallOptions(), request);
     }
 
@@ -1585,8 +1593,9 @@ public final class SecretManagerServiceGrpc {
      * [Secret][google.cloud.secretmanager.v1.Secret].
      * </pre>
      */
-    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1598,8 +1607,9 @@ public final class SecretManagerServiceGrpc {
      * Returns empty policy if the secret exists and does not have a policy set.
      * </pre>
      */
-    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1616,8 +1626,8 @@ public final class SecretManagerServiceGrpc {
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
-        com.google.iam.v1.TestIamPermissionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
   }

@@ -1,0 +1,24 @@
+type: google.api.Service
+config_version: 3
+name: autopopulatefieldtesting.googleapis.com
+title: Autopopulate Field Testing API
+
+apis:
+- name: google.auto.populate.field.AutoPopulateFieldTesting
+
+documentation:
+  summary: |-
+    YAML file for auto_populate_field_testing.proto to test request ID autopopulation feature.
+
+publishing:
+  method_settings:
+  - selector: google.auto.populate.field.AutoPopulateFieldTesting.AutoPopulateFieldTestingEcho
+    auto_populated_fields:
+    - request_id
+    - second_request_id
+    - third_request_id
+    - fourth_request_id
+    - non_existent_field
+  - selector: google.auto.populate.field.AutoPopulateFieldTesting.AutoPopulateFieldTestingExpand
+    auto_populated_fields:
+    - request_id

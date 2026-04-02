@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -167,6 +167,7 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetAlertPolicyRequest, AlertPolicy> getAlertPolicyTransportSettings =
         GrpcCallSettings.<GetAlertPolicyRequest, AlertPolicy>newBuilder()
@@ -177,6 +178,7 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateAlertPolicyRequest, AlertPolicy> createAlertPolicyTransportSettings =
         GrpcCallSettings.<CreateAlertPolicyRequest, AlertPolicy>newBuilder()
@@ -187,6 +189,7 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteAlertPolicyRequest, Empty> deleteAlertPolicyTransportSettings =
         GrpcCallSettings.<DeleteAlertPolicyRequest, Empty>newBuilder()
@@ -197,6 +200,7 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateAlertPolicyRequest, AlertPolicy> updateAlertPolicyTransportSettings =
         GrpcCallSettings.<UpdateAlertPolicyRequest, AlertPolicy>newBuilder()

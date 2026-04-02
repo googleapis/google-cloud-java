@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.common.collect.Lists;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -266,6 +267,538 @@ public class CustomFieldServiceClientTest {
     try {
       String parent = "networks/network-5450";
       client.listCustomFields(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createCustomFieldTest() throws Exception {
+    CustomField expectedResponse =
+        CustomField.newBuilder()
+            .setName(CustomFieldName.of("[NETWORK_CODE]", "[CUSTOM_FIELD]").toString())
+            .setCustomFieldId(-66688114)
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllOptions(new ArrayList<CustomFieldOption>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    CustomField customField = CustomField.newBuilder().build();
+
+    CustomField actualResponse = client.createCustomField(parent, customField);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createCustomFieldExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      CustomField customField = CustomField.newBuilder().build();
+      client.createCustomField(parent, customField);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createCustomFieldTest2() throws Exception {
+    CustomField expectedResponse =
+        CustomField.newBuilder()
+            .setName(CustomFieldName.of("[NETWORK_CODE]", "[CUSTOM_FIELD]").toString())
+            .setCustomFieldId(-66688114)
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllOptions(new ArrayList<CustomFieldOption>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    CustomField customField = CustomField.newBuilder().build();
+
+    CustomField actualResponse = client.createCustomField(parent, customField);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createCustomFieldExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      CustomField customField = CustomField.newBuilder().build();
+      client.createCustomField(parent, customField);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCreateCustomFieldsTest() throws Exception {
+    BatchCreateCustomFieldsResponse expectedResponse =
+        BatchCreateCustomFieldsResponse.newBuilder()
+            .addAllCustomFields(new ArrayList<CustomField>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    List<CreateCustomFieldRequest> requests = new ArrayList<>();
+
+    BatchCreateCustomFieldsResponse actualResponse =
+        client.batchCreateCustomFields(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchCreateCustomFieldsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      List<CreateCustomFieldRequest> requests = new ArrayList<>();
+      client.batchCreateCustomFields(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCreateCustomFieldsTest2() throws Exception {
+    BatchCreateCustomFieldsResponse expectedResponse =
+        BatchCreateCustomFieldsResponse.newBuilder()
+            .addAllCustomFields(new ArrayList<CustomField>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    List<CreateCustomFieldRequest> requests = new ArrayList<>();
+
+    BatchCreateCustomFieldsResponse actualResponse =
+        client.batchCreateCustomFields(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchCreateCustomFieldsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      List<CreateCustomFieldRequest> requests = new ArrayList<>();
+      client.batchCreateCustomFields(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateCustomFieldTest() throws Exception {
+    CustomField expectedResponse =
+        CustomField.newBuilder()
+            .setName(CustomFieldName.of("[NETWORK_CODE]", "[CUSTOM_FIELD]").toString())
+            .setCustomFieldId(-66688114)
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllOptions(new ArrayList<CustomFieldOption>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    CustomField customField =
+        CustomField.newBuilder()
+            .setName(CustomFieldName.of("[NETWORK_CODE]", "[CUSTOM_FIELD]").toString())
+            .setCustomFieldId(-66688114)
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllOptions(new ArrayList<CustomFieldOption>())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    CustomField actualResponse = client.updateCustomField(customField, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateCustomFieldExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CustomField customField =
+          CustomField.newBuilder()
+              .setName(CustomFieldName.of("[NETWORK_CODE]", "[CUSTOM_FIELD]").toString())
+              .setCustomFieldId(-66688114)
+              .setDisplayName("displayName1714148973")
+              .setDescription("description-1724546052")
+              .addAllOptions(new ArrayList<CustomFieldOption>())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateCustomField(customField, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchUpdateCustomFieldsTest() throws Exception {
+    BatchUpdateCustomFieldsResponse expectedResponse =
+        BatchUpdateCustomFieldsResponse.newBuilder()
+            .addAllCustomFields(new ArrayList<CustomField>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    List<UpdateCustomFieldRequest> requests = new ArrayList<>();
+
+    BatchUpdateCustomFieldsResponse actualResponse =
+        client.batchUpdateCustomFields(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchUpdateCustomFieldsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      List<UpdateCustomFieldRequest> requests = new ArrayList<>();
+      client.batchUpdateCustomFields(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchUpdateCustomFieldsTest2() throws Exception {
+    BatchUpdateCustomFieldsResponse expectedResponse =
+        BatchUpdateCustomFieldsResponse.newBuilder()
+            .addAllCustomFields(new ArrayList<CustomField>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    List<UpdateCustomFieldRequest> requests = new ArrayList<>();
+
+    BatchUpdateCustomFieldsResponse actualResponse =
+        client.batchUpdateCustomFields(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchUpdateCustomFieldsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      List<UpdateCustomFieldRequest> requests = new ArrayList<>();
+      client.batchUpdateCustomFields(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchActivateCustomFieldsTest() throws Exception {
+    BatchActivateCustomFieldsResponse expectedResponse =
+        BatchActivateCustomFieldsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    List<String> names = new ArrayList<>();
+
+    BatchActivateCustomFieldsResponse actualResponse =
+        client.batchActivateCustomFields(parent, names);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchActivateCustomFieldsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      List<String> names = new ArrayList<>();
+      client.batchActivateCustomFields(parent, names);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchActivateCustomFieldsTest2() throws Exception {
+    BatchActivateCustomFieldsResponse expectedResponse =
+        BatchActivateCustomFieldsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    List<String> names = new ArrayList<>();
+
+    BatchActivateCustomFieldsResponse actualResponse =
+        client.batchActivateCustomFields(parent, names);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchActivateCustomFieldsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      List<String> names = new ArrayList<>();
+      client.batchActivateCustomFields(parent, names);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchDeactivateCustomFieldsTest() throws Exception {
+    BatchDeactivateCustomFieldsResponse expectedResponse =
+        BatchDeactivateCustomFieldsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    List<String> names = new ArrayList<>();
+
+    BatchDeactivateCustomFieldsResponse actualResponse =
+        client.batchDeactivateCustomFields(parent, names);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchDeactivateCustomFieldsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      List<String> names = new ArrayList<>();
+      client.batchDeactivateCustomFields(parent, names);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchDeactivateCustomFieldsTest2() throws Exception {
+    BatchDeactivateCustomFieldsResponse expectedResponse =
+        BatchDeactivateCustomFieldsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    List<String> names = new ArrayList<>();
+
+    BatchDeactivateCustomFieldsResponse actualResponse =
+        client.batchDeactivateCustomFields(parent, names);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchDeactivateCustomFieldsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      List<String> names = new ArrayList<>();
+      client.batchDeactivateCustomFields(parent, names);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

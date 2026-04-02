@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.protobuf.Empty;
 import com.google.shopping.merchant.accounts.v1.DeveloperRegistration;
+import com.google.shopping.merchant.accounts.v1.GetAccountForGcpRegistrationResponse;
 import com.google.shopping.merchant.accounts.v1.GetDeveloperRegistrationRequest;
 import com.google.shopping.merchant.accounts.v1.RegisterGcpRequest;
 import com.google.shopping.merchant.accounts.v1.UnregisterGcpRequest;
@@ -45,6 +46,12 @@ public abstract class DeveloperRegistrationServiceStub implements BackgroundReso
 
   public UnaryCallable<UnregisterGcpRequest, Empty> unregisterGcpCallable() {
     throw new UnsupportedOperationException("Not implemented: unregisterGcpCallable()");
+  }
+
+  public UnaryCallable<Empty, GetAccountForGcpRegistrationResponse>
+      getAccountForGcpRegistrationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getAccountForGcpRegistrationCallable()");
   }
 
   @Override

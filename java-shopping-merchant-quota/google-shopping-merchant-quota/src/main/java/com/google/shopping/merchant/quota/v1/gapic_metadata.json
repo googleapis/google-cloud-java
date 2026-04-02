@@ -5,6 +5,21 @@
   "protoPackage": "google.shopping.merchant.quota.v1",
   "libraryPackage": "com.google.shopping.merchant.quota.v1",
   "services": {
+    "AccountLimitsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AccountLimitsServiceClient",
+          "rpcs": {
+            "GetAccountLimit": {
+              "methods": ["getAccountLimit", "getAccountLimit", "getAccountLimit", "getAccountLimitCallable"]
+            },
+            "ListAccountLimits": {
+              "methods": ["listAccountLimits", "listAccountLimits", "listAccountLimits", "listAccountLimitsPagedCallable", "listAccountLimitsCallable"]
+            }
+          }
+        }
+      }
+    },
     "QuotaService": {
       "clients": {
         "grpc": {

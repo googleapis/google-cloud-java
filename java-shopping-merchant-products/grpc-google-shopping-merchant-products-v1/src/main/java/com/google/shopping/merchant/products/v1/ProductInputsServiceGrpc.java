@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to use ProductInput resource.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/products/v1/productinputs.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ProductInputsServiceGrpc {
 
@@ -250,11 +247,11 @@ public final class ProductInputsServiceGrpc {
      *
      * <pre>
      * [Uploads a product input to your Merchant Center
-     * account](/merchant/api/guides/products/overview#upload-product-input). You
+     * account](/merchant/api/guides/products/add-manage#add_a_product). You
      * must have a products [data
-     * source](/merchant/api/guides/data-sources/overview) to be able to insert a
-     * product. The unique identifier of the data source is passed as a query
-     * parameter in the request URL.
+     * source](/merchant/api/guides/data-sources/api-sources#create-primary-data-source)
+     * to be able to insert a product. The unique identifier of the data source is
+     * passed as a query parameter in the request URL.
      * If a product input with the same contentLanguage, offerId, and dataSource
      * already exists, then the product input inserted by this method replaces
      * that entry.
@@ -275,6 +272,8 @@ public final class ProductInputsServiceGrpc {
      *
      * <pre>
      * Updates the existing product input in your Merchant Center account.
+     * The name of the product input to update is taken from the `name` field
+     * within the `ProductInput` resource.
      * After inserting, updating, or deleting a product input, it may take several
      * minutes before the processed product can be retrieved.
      * </pre>
@@ -344,11 +343,11 @@ public final class ProductInputsServiceGrpc {
      *
      * <pre>
      * [Uploads a product input to your Merchant Center
-     * account](/merchant/api/guides/products/overview#upload-product-input). You
+     * account](/merchant/api/guides/products/add-manage#add_a_product). You
      * must have a products [data
-     * source](/merchant/api/guides/data-sources/overview) to be able to insert a
-     * product. The unique identifier of the data source is passed as a query
-     * parameter in the request URL.
+     * source](/merchant/api/guides/data-sources/api-sources#create-primary-data-source)
+     * to be able to insert a product. The unique identifier of the data source is
+     * passed as a query parameter in the request URL.
      * If a product input with the same contentLanguage, offerId, and dataSource
      * already exists, then the product input inserted by this method replaces
      * that entry.
@@ -371,6 +370,8 @@ public final class ProductInputsServiceGrpc {
      *
      * <pre>
      * Updates the existing product input in your Merchant Center account.
+     * The name of the product input to update is taken from the `name` field
+     * within the `ProductInput` resource.
      * After inserting, updating, or deleting a product input, it may take several
      * minutes before the processed product can be retrieved.
      * </pre>
@@ -429,11 +430,11 @@ public final class ProductInputsServiceGrpc {
      *
      * <pre>
      * [Uploads a product input to your Merchant Center
-     * account](/merchant/api/guides/products/overview#upload-product-input). You
+     * account](/merchant/api/guides/products/add-manage#add_a_product). You
      * must have a products [data
-     * source](/merchant/api/guides/data-sources/overview) to be able to insert a
-     * product. The unique identifier of the data source is passed as a query
-     * parameter in the request URL.
+     * source](/merchant/api/guides/data-sources/api-sources#create-primary-data-source)
+     * to be able to insert a product. The unique identifier of the data source is
+     * passed as a query parameter in the request URL.
      * If a product input with the same contentLanguage, offerId, and dataSource
      * already exists, then the product input inserted by this method replaces
      * that entry.
@@ -442,8 +443,9 @@ public final class ProductInputsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.products.v1.ProductInput insertProductInput(
-        com.google.shopping.merchant.products.v1.InsertProductInputRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.products.v1.InsertProductInputRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getInsertProductInputMethod(), getCallOptions(), request);
     }
 
@@ -452,13 +454,16 @@ public final class ProductInputsServiceGrpc {
      *
      * <pre>
      * Updates the existing product input in your Merchant Center account.
+     * The name of the product input to update is taken from the `name` field
+     * within the `ProductInput` resource.
      * After inserting, updating, or deleting a product input, it may take several
      * minutes before the processed product can be retrieved.
      * </pre>
      */
     public com.google.shopping.merchant.products.v1.ProductInput updateProductInput(
-        com.google.shopping.merchant.products.v1.UpdateProductInputRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.products.v1.UpdateProductInputRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateProductInputMethod(), getCallOptions(), request);
     }
 
@@ -472,8 +477,9 @@ public final class ProductInputsServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteProductInput(
-        com.google.shopping.merchant.products.v1.DeleteProductInputRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.products.v1.DeleteProductInputRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteProductInputMethod(), getCallOptions(), request);
     }
   }
@@ -503,11 +509,11 @@ public final class ProductInputsServiceGrpc {
      *
      * <pre>
      * [Uploads a product input to your Merchant Center
-     * account](/merchant/api/guides/products/overview#upload-product-input). You
+     * account](/merchant/api/guides/products/add-manage#add_a_product). You
      * must have a products [data
-     * source](/merchant/api/guides/data-sources/overview) to be able to insert a
-     * product. The unique identifier of the data source is passed as a query
-     * parameter in the request URL.
+     * source](/merchant/api/guides/data-sources/api-sources#create-primary-data-source)
+     * to be able to insert a product. The unique identifier of the data source is
+     * passed as a query parameter in the request URL.
      * If a product input with the same contentLanguage, offerId, and dataSource
      * already exists, then the product input inserted by this method replaces
      * that entry.
@@ -526,6 +532,8 @@ public final class ProductInputsServiceGrpc {
      *
      * <pre>
      * Updates the existing product input in your Merchant Center account.
+     * The name of the product input to update is taken from the `name` field
+     * within the `ProductInput` resource.
      * After inserting, updating, or deleting a product input, it may take several
      * minutes before the processed product can be retrieved.
      * </pre>
@@ -577,11 +585,11 @@ public final class ProductInputsServiceGrpc {
      *
      * <pre>
      * [Uploads a product input to your Merchant Center
-     * account](/merchant/api/guides/products/overview#upload-product-input). You
+     * account](/merchant/api/guides/products/add-manage#add_a_product). You
      * must have a products [data
-     * source](/merchant/api/guides/data-sources/overview) to be able to insert a
-     * product. The unique identifier of the data source is passed as a query
-     * parameter in the request URL.
+     * source](/merchant/api/guides/data-sources/api-sources#create-primary-data-source)
+     * to be able to insert a product. The unique identifier of the data source is
+     * passed as a query parameter in the request URL.
      * If a product input with the same contentLanguage, offerId, and dataSource
      * already exists, then the product input inserted by this method replaces
      * that entry.
@@ -602,6 +610,8 @@ public final class ProductInputsServiceGrpc {
      *
      * <pre>
      * Updates the existing product input in your Merchant Center account.
+     * The name of the product input to update is taken from the `name` field
+     * within the `ProductInput` resource.
      * After inserting, updating, or deleting a product input, it may take several
      * minutes before the processed product can be retrieved.
      * </pre>

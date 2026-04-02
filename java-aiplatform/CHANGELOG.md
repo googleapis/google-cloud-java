@@ -1,5 +1,139 @@
 # Changelog
 
+## 3.89.0 (None)
+
+* No change
+
+
+## 3.88.0 (2026-03-11)
+
+### Features
+
+* A new field `inference_generation_config` is added to message `.google.cloud.aiplatform.v1beta1.EvaluationConfig` ([6c3721b](https://github.com/googleapis/google-cloud-java/commit/6c3721bfb672676a33a2edd7caa83f462f98f76f))
+* add AskContexts and AsyncRetrieveContexts APIs to VertexRagService ([6b658dc](https://github.com/googleapis/google-cloud-java/commit/6b658dc991cb19a396efbbe3ef87b90bc005e8c5))
+* add AskContexts and AsyncRetrieveContexts APIs to VertexRagService ([6b658dc](https://github.com/googleapis/google-cloud-java/commit/6b658dc991cb19a396efbbe3ef87b90bc005e8c5))
+* Add custom session id field to create session v1beta1 ([6b658dc](https://github.com/googleapis/google-cloud-java/commit/6b658dc991cb19a396efbbe3ef87b90bc005e8c5))
+
+
+
+## 3.87.0 (2026-02-25)
+
+### Features
+
+* Add `traffic_type, tool_use_prompt_tokens_details` to message `GenerateContentResponse.UsageMetadata` ([a8b55ed](https://github.com/googleapis/google-cloud-java/commit/a8b55eddc2643cce78e32b03d96945ec1318f922))
+* Add image_spec to Reasoning Engine public protos ([01d7309](https://github.com/googleapis/google-cloud-java/commit/01d730969ad14cb9533d82e40e78b3aae045fd39))
+* Add image_spec to Reasoning Engine public protos ([01d7309](https://github.com/googleapis/google-cloud-java/commit/01d730969ad14cb9533d82e40e78b3aae045fd39))
+* Add transcription fields to Session Service ([01d7309](https://github.com/googleapis/google-cloud-java/commit/01d730969ad14cb9533d82e40e78b3aae045fd39))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.57.0 ([#11956](https://github.com/googleapis/google-cloud-java/issues/11956)) ([62b97e1](https://github.com/googleapis/google-cloud-java/commit/62b97e108eee0f8649c53cef400774f4fca4ffab))
+
+
+## 3.84.0 (2026-01-29)
+
+### Features
+
+* RAG - add mode config to RagEngineConfig with Spanner and Serverless ([d7a49aa](https://github.com/googleapis/google-cloud-java/commit/d7a49aa9502012df1209b55ec741b1d4ac639361))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.56.0 ([#11879](https://github.com/googleapis/google-cloud-java/issues/11879)) ([ac1f018](https://github.com/googleapis/google-cloud-java/commit/ac1f0182ac5b405ca164ac867c8c042322736bef))
+
+
+## 3.83.0 (2026-01-15)
+
+### Features
+
+* Add Lustre support to the Vertex Training Custom Job API ([59c954c](https://github.com/googleapis/google-cloud-java/commit/59c954c089f0379e716236aaa279207820a7dfe4))
+* Add Lustre support to the Vertex Training Custom Job API ([c70c873](https://github.com/googleapis/google-cloud-java/commit/c70c8739f2caffdc87535f2e729c1d967d550e8c))
+* add streaming function call argument API changes ([59c954c](https://github.com/googleapis/google-cloud-java/commit/59c954c089f0379e716236aaa279207820a7dfe4))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.55.1 ([#11863](https://github.com/googleapis/google-cloud-java/issues/11863)) ([50cda6e](https://github.com/googleapis/google-cloud-java/commit/50cda6ec7be56bf1900737a6aaf12fc494be20c2))
+
+
+## 3.82.0 (2025-12-16)
+
+### ⚠ BREAKING CHANGES
+
+* fix issue when using UrlContext tool
+
+### Features
+
+* A new field `min_gpu_driver_version` is added to message `.google.cloud.aiplatform.v1beta1.MachineSpec` ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* add `gpu_partition_size` in `machine_spec` v1 api ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* add `ReplicatedVoiceConfig` to `VoiceConfig` to enable Gemini TTS voice replication ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* add `ReplicatedVoiceConfig` to `VoiceConfig` to enable Gemini TTS voice replication ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* add streaming function call argument API changes ([ecb0b2a](https://github.com/googleapis/google-cloud-java/commit/ecb0b2aa4c83c8da51d0655cfa3811c5f8a4e6a4))
+* Add support for developer connect based deployment ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* Add support for developer connect based deployment ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* Expose FullFineTunedResources for full fine tuned deployments ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* Expose zone when creating a FeatureOnlineStore ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* Introduce RagManagedVertexVectorSearch as a new vector db option ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+
+### Bug Fixes
+
+* fix issue when using UrlContext tool ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* update `ReplicatedVoiceConfig.mime_type` comment ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* update `ReplicatedVoiceConfig.mime_type` comment ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.54.2 ([#11819](https://github.com/googleapis/google-cloud-java/issues/11819)) ([f32924a](https://github.com/googleapis/google-cloud-java/commit/f32924af0899a0b34646e88ffa8c527163b3bb24))
+
+
+## 3.79.0 (2025-10-21)
+
+### Features
+
+* add aspect_ratio and image_config for v1 version ([ba2ed6a](https://github.com/googleapis/google-cloud-java/commit/ba2ed6a6e9c822187d1c76ae677d4d633625fed1))
+* add aspect_ratio and image_config for v1beta1 version ([ba2ed6a](https://github.com/googleapis/google-cloud-java/commit/ba2ed6a6e9c822187d1c76ae677d4d633625fed1))
+* add FunctionResponsePart and excluded_predefined_functions in ComputerUse ([2919d20](https://github.com/googleapis/google-cloud-java/commit/2919d20865c7fcd9383b04f76d42bf7b47c9f592))
+* add FunctionResponsePart and excluded_predefined_functions in ComputerUse ([0a730d4](https://github.com/googleapis/google-cloud-java/commit/0a730d43d863bcca90524c789c1056d934597c6c))
+* Add support for Inline source based deployment ([ba2ed6a](https://github.com/googleapis/google-cloud-java/commit/ba2ed6a6e9c822187d1c76ae677d4d633625fed1))
+* Add support for Inline source based deployment ([ba2ed6a](https://github.com/googleapis/google-cloud-java/commit/ba2ed6a6e9c822187d1c76ae677d4d633625fed1))
+* Continuous Tuning ([0a730d4](https://github.com/googleapis/google-cloud-java/commit/0a730d43d863bcca90524c789c1056d934597c6c))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.53.0 ([#11776](https://github.com/googleapis/google-cloud-java/issues/11776)) ([e4a2892](https://github.com/googleapis/google-cloud-java/commit/e4a2892c8f7d51e3c3bec551f922b42f70a880d8))
+
+
+## 3.78.0 (2025-10-13)
+
+### Features
+
+* A new message `ScaleToZeroSpec` is added ([bf30bf1](https://github.com/googleapis/google-cloud-java/commit/bf30bf12bc74857074eac578080e9b7af2ceb206))
+* add additional proto fields and GenerateFetchAccessToken API ([bf30bf1](https://github.com/googleapis/google-cloud-java/commit/bf30bf12bc74857074eac578080e9b7af2ceb206))
+* Add JAILBREAK as a new Prompt block reason in PredictionService ([bf30bf1](https://github.com/googleapis/google-cloud-java/commit/bf30bf12bc74857074eac578080e9b7af2ceb206))
+* Add JAILBREAK category to SafetySettings for prediction service ([bf30bf1](https://github.com/googleapis/google-cloud-java/commit/bf30bf12bc74857074eac578080e9b7af2ceb206))
+* Add JAILBREAK category to SafetySettings for prediction service ([bf30bf1](https://github.com/googleapis/google-cloud-java/commit/bf30bf12bc74857074eac578080e9b7af2ceb206))
+
+
+
+## 3.77.0 (2025-10-07)
+
+### Features
+
+* A new value `NVIDIA_RTX_PRO_6000` is added to enum `AcceleratorType` ([ae3a4ae](https://github.com/googleapis/google-cloud-java/commit/ae3a4ae1ec83bf6029fe638962cf6bb5bf0bafac))
+* A new value `NVIDIA_RTX_PRO_6000` is added to enum `AcceleratorType` ([ae3a4ae](https://github.com/googleapis/google-cloud-java/commit/ae3a4ae1ec83bf6029fe638962cf6bb5bf0bafac))
+* add DeploymentTier enum to DeployedIndex ([ae3a4ae](https://github.com/googleapis/google-cloud-java/commit/ae3a4ae1ec83bf6029fe638962cf6bb5bf0bafac))
+* Add enable_widget option in Google Maps and additional grounding information ([ae3a4ae](https://github.com/googleapis/google-cloud-java/commit/ae3a4ae1ec83bf6029fe638962cf6bb5bf0bafac))
+* Add labels field for Predict API for Imagen use case (v1beta and v1) ([ae3a4ae](https://github.com/googleapis/google-cloud-java/commit/ae3a4ae1ec83bf6029fe638962cf6bb5bf0bafac))
+* Add labels field for Predict API for Imagen use case (v1beta) ([ae3a4ae](https://github.com/googleapis/google-cloud-java/commit/ae3a4ae1ec83bf6029fe638962cf6bb5bf0bafac))
+* Auto-generated CL for //google/cloud/aiplatform:aiplatform_v1_public_proto_gen ([ae3a4ae](https://github.com/googleapis/google-cloud-java/commit/ae3a4ae1ec83bf6029fe638962cf6bb5bf0bafac))
+
+### Bug Fixes
+
+* remove legacy internal lint directives ([ae3a4ae](https://github.com/googleapis/google-cloud-java/commit/ae3a4ae1ec83bf6029fe638962cf6bb5bf0bafac))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.52.3 ([#11755](https://github.com/googleapis/google-cloud-java/issues/11755)) ([b117bc3](https://github.com/googleapis/google-cloud-java/commit/b117bc3d8d04ccc3c1f5586b73e1718ff46b23e6))
+
+
 ## 3.76.0 (2025-09-22)
 
 ### Features

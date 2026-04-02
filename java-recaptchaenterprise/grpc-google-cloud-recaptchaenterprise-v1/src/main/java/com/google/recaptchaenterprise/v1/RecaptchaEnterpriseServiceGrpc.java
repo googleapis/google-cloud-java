@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to determine the likelihood an event is legitimate.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class RecaptchaEnterpriseServiceGrpc {
 
@@ -1332,7 +1329,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      *
      * <pre>
      * Adds an IP override to a key. The following restrictions hold:
-     * * The maximum number of IP overrides per key is 100.
+     * * The maximum number of IP overrides per key is 1000.
      * * For any conflict (such as IP already exists or IP part of an existing
      *   IP range), an error is returned.
      * </pre>
@@ -1720,7 +1717,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      *
      * <pre>
      * Adds an IP override to a key. The following restrictions hold:
-     * * The maximum number of IP overrides per key is 100.
+     * * The maximum number of IP overrides per key is 1000.
      * * For any conflict (such as IP already exists or IP part of an existing
      *   IP range), an error is returned.
      * </pre>
@@ -1975,8 +1972,9 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * </pre>
      */
     public com.google.recaptchaenterprise.v1.Assessment createAssessment(
-        com.google.recaptchaenterprise.v1.CreateAssessmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.recaptchaenterprise.v1.CreateAssessmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAssessmentMethod(), getCallOptions(), request);
     }
 
@@ -1989,8 +1987,9 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * </pre>
      */
     public com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse annotateAssessment(
-        com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAnnotateAssessmentMethod(), getCallOptions(), request);
     }
 
@@ -2002,8 +2001,8 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * </pre>
      */
     public com.google.recaptchaenterprise.v1.Key createKey(
-        com.google.recaptchaenterprise.v1.CreateKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.recaptchaenterprise.v1.CreateKeyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateKeyMethod(), getCallOptions(), request);
     }
 
@@ -2015,8 +2014,8 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * </pre>
      */
     public com.google.recaptchaenterprise.v1.ListKeysResponse listKeys(
-        com.google.recaptchaenterprise.v1.ListKeysRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.recaptchaenterprise.v1.ListKeysRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListKeysMethod(), getCallOptions(), request);
     }
 
@@ -2031,8 +2030,9 @@ public final class RecaptchaEnterpriseServiceGrpc {
      */
     public com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse
         retrieveLegacySecretKey(
-            com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRetrieveLegacySecretKeyMethod(), getCallOptions(), request);
     }
 
@@ -2044,8 +2044,8 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * </pre>
      */
     public com.google.recaptchaenterprise.v1.Key getKey(
-        com.google.recaptchaenterprise.v1.GetKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.recaptchaenterprise.v1.GetKeyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetKeyMethod(), getCallOptions(), request);
     }
 
@@ -2057,8 +2057,8 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * </pre>
      */
     public com.google.recaptchaenterprise.v1.Key updateKey(
-        com.google.recaptchaenterprise.v1.UpdateKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.recaptchaenterprise.v1.UpdateKeyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateKeyMethod(), getCallOptions(), request);
     }
 
@@ -2070,8 +2070,8 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteKey(
-        com.google.recaptchaenterprise.v1.DeleteKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.recaptchaenterprise.v1.DeleteKeyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteKeyMethod(), getCallOptions(), request);
     }
 
@@ -2088,8 +2088,9 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * </pre>
      */
     public com.google.recaptchaenterprise.v1.Key migrateKey(
-        com.google.recaptchaenterprise.v1.MigrateKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.recaptchaenterprise.v1.MigrateKeyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getMigrateKeyMethod(), getCallOptions(), request);
     }
 
@@ -2098,14 +2099,15 @@ public final class RecaptchaEnterpriseServiceGrpc {
      *
      * <pre>
      * Adds an IP override to a key. The following restrictions hold:
-     * * The maximum number of IP overrides per key is 100.
+     * * The maximum number of IP overrides per key is 1000.
      * * For any conflict (such as IP already exists or IP part of an existing
      *   IP range), an error is returned.
      * </pre>
      */
     public com.google.recaptchaenterprise.v1.AddIpOverrideResponse addIpOverride(
-        com.google.recaptchaenterprise.v1.AddIpOverrideRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.recaptchaenterprise.v1.AddIpOverrideRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAddIpOverrideMethod(), getCallOptions(), request);
     }
 
@@ -2121,8 +2123,9 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * </pre>
      */
     public com.google.recaptchaenterprise.v1.RemoveIpOverrideResponse removeIpOverride(
-        com.google.recaptchaenterprise.v1.RemoveIpOverrideRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.recaptchaenterprise.v1.RemoveIpOverrideRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRemoveIpOverrideMethod(), getCallOptions(), request);
     }
 
@@ -2134,8 +2137,9 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * </pre>
      */
     public com.google.recaptchaenterprise.v1.ListIpOverridesResponse listIpOverrides(
-        com.google.recaptchaenterprise.v1.ListIpOverridesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.recaptchaenterprise.v1.ListIpOverridesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListIpOverridesMethod(), getCallOptions(), request);
     }
 
@@ -2148,8 +2152,9 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * </pre>
      */
     public com.google.recaptchaenterprise.v1.Metrics getMetrics(
-        com.google.recaptchaenterprise.v1.GetMetricsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.recaptchaenterprise.v1.GetMetricsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMetricsMethod(), getCallOptions(), request);
     }
 
@@ -2163,8 +2168,9 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * </pre>
      */
     public com.google.recaptchaenterprise.v1.FirewallPolicy createFirewallPolicy(
-        com.google.recaptchaenterprise.v1.CreateFirewallPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.recaptchaenterprise.v1.CreateFirewallPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateFirewallPolicyMethod(), getCallOptions(), request);
     }
 
@@ -2176,8 +2182,9 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * </pre>
      */
     public com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse listFirewallPolicies(
-        com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFirewallPoliciesMethod(), getCallOptions(), request);
     }
 
@@ -2189,8 +2196,9 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * </pre>
      */
     public com.google.recaptchaenterprise.v1.FirewallPolicy getFirewallPolicy(
-        com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFirewallPolicyMethod(), getCallOptions(), request);
     }
 
@@ -2202,8 +2210,9 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * </pre>
      */
     public com.google.recaptchaenterprise.v1.FirewallPolicy updateFirewallPolicy(
-        com.google.recaptchaenterprise.v1.UpdateFirewallPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.recaptchaenterprise.v1.UpdateFirewallPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateFirewallPolicyMethod(), getCallOptions(), request);
     }
 
@@ -2215,8 +2224,9 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteFirewallPolicy(
-        com.google.recaptchaenterprise.v1.DeleteFirewallPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.recaptchaenterprise.v1.DeleteFirewallPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteFirewallPolicyMethod(), getCallOptions(), request);
     }
 
@@ -2229,8 +2239,9 @@ public final class RecaptchaEnterpriseServiceGrpc {
      */
     public com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse
         reorderFirewallPolicies(
-            com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReorderFirewallPoliciesMethod(), getCallOptions(), request);
     }
 
@@ -2243,8 +2254,9 @@ public final class RecaptchaEnterpriseServiceGrpc {
      */
     public com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse
         listRelatedAccountGroups(
-            com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRelatedAccountGroupsMethod(), getCallOptions(), request);
     }
 
@@ -2257,8 +2269,9 @@ public final class RecaptchaEnterpriseServiceGrpc {
      */
     public com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsResponse
         listRelatedAccountGroupMemberships(
-            com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRelatedAccountGroupMembershipsMethod(), getCallOptions(), request);
     }
 
@@ -2271,8 +2284,9 @@ public final class RecaptchaEnterpriseServiceGrpc {
      */
     public com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse
         searchRelatedAccountGroupMemberships(
-            com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchRelatedAccountGroupMembershipsMethod(), getCallOptions(), request);
     }
   }
@@ -2429,7 +2443,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      *
      * <pre>
      * Adds an IP override to a key. The following restrictions hold:
-     * * The maximum number of IP overrides per key is 100.
+     * * The maximum number of IP overrides per key is 1000.
      * * For any conflict (such as IP already exists or IP part of an existing
      *   IP range), an error is returned.
      * </pre>
@@ -2764,7 +2778,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      *
      * <pre>
      * Adds an IP override to a key. The following restrictions hold:
-     * * The maximum number of IP overrides per key is 100.
+     * * The maximum number of IP overrides per key is 1000.
      * * For any conflict (such as IP already exists or IP part of an existing
      *   IP range), an error is returned.
      * </pre>

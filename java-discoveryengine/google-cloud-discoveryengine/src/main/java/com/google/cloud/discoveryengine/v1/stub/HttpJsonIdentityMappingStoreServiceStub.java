@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -638,6 +638,7 @@ public class HttpJsonIdentityMappingStoreServiceStub extends IdentityMappingStor
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCmekConfigName())
                 .build();
     HttpJsonCallSettings<GetIdentityMappingStoreRequest, IdentityMappingStore>
         getIdentityMappingStoreTransportSettings =
@@ -650,6 +651,7 @@ public class HttpJsonIdentityMappingStoreServiceStub extends IdentityMappingStor
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DeleteIdentityMappingStoreRequest, Operation>
         deleteIdentityMappingStoreTransportSettings =
@@ -662,6 +664,7 @@ public class HttpJsonIdentityMappingStoreServiceStub extends IdentityMappingStor
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ImportIdentityMappingsRequest, Operation>
         importIdentityMappingsTransportSettings =
@@ -676,6 +679,7 @@ public class HttpJsonIdentityMappingStoreServiceStub extends IdentityMappingStor
                           String.valueOf(request.getIdentityMappingStore()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getIdentityMappingStore())
                 .build();
     HttpJsonCallSettings<PurgeIdentityMappingsRequest, Operation>
         purgeIdentityMappingsTransportSettings =
@@ -690,6 +694,7 @@ public class HttpJsonIdentityMappingStoreServiceStub extends IdentityMappingStor
                           String.valueOf(request.getIdentityMappingStore()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getIdentityMappingStore())
                 .build();
     HttpJsonCallSettings<ListIdentityMappingsRequest, ListIdentityMappingsResponse>
         listIdentityMappingsTransportSettings =
@@ -705,6 +710,7 @@ public class HttpJsonIdentityMappingStoreServiceStub extends IdentityMappingStor
                           String.valueOf(request.getIdentityMappingStore()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getIdentityMappingStore())
                 .build();
     HttpJsonCallSettings<ListIdentityMappingStoresRequest, ListIdentityMappingStoresResponse>
         listIdentityMappingStoresTransportSettings =
@@ -718,6 +724,7 @@ public class HttpJsonIdentityMappingStoreServiceStub extends IdentityMappingStor
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createIdentityMappingStoreCallable =

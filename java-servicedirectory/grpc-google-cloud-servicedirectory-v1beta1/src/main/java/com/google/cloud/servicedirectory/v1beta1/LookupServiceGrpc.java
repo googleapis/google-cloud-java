@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service Directory API for looking up service data at runtime.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/servicedirectory/v1beta1/lookup_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class LookupServiceGrpc {
 
@@ -249,8 +246,9 @@ public final class LookupServiceGrpc {
      * </pre>
      */
     public com.google.cloud.servicedirectory.v1beta1.ResolveServiceResponse resolveService(
-        com.google.cloud.servicedirectory.v1beta1.ResolveServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.servicedirectory.v1beta1.ResolveServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResolveServiceMethod(), getCallOptions(), request);
     }
   }

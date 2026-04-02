@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -56,6 +57,8 @@ import com.google.cloud.compute.v1.SetSslCertificatesTargetSslProxyRequest;
 import com.google.cloud.compute.v1.SetSslPolicyTargetSslProxyRequest;
 import com.google.cloud.compute.v1.TargetSslProxy;
 import com.google.cloud.compute.v1.TargetSslProxyList;
+import com.google.cloud.compute.v1.TestIamPermissionsTargetSslProxyRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -112,8 +115,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -142,6 +145,7 @@ import javax.annotation.Generated;
  * }</pre>
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class TargetSslProxiesStubSettings extends StubSettings<TargetSslProxiesStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -180,6 +184,8 @@ public class TargetSslProxiesStubSettings extends StubSettings<TargetSslProxiesS
       setSslPolicySettings;
   private final OperationCallSettings<SetSslPolicyTargetSslProxyRequest, Operation, Operation>
       setSslPolicyOperationSettings;
+  private final UnaryCallSettings<TestIamPermissionsTargetSslProxyRequest, TestPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<
           ListTargetSslProxiesRequest, TargetSslProxyList, TargetSslProxy>
@@ -330,6 +336,12 @@ public class TargetSslProxiesStubSettings extends StubSettings<TargetSslProxiesS
     return setSslPolicyOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsTargetSslProxyRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   public TargetSslProxiesStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -431,6 +443,16 @@ public class TargetSslProxiesStubSettings extends StubSettings<TargetSslProxiesS
         settingsBuilder.setSslCertificatesOperationSettings().build();
     setSslPolicySettings = settingsBuilder.setSslPolicySettings().build();
     setSslPolicyOperationSettings = settingsBuilder.setSslPolicyOperationSettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-compute")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for TargetSslProxiesStubSettings. */
@@ -471,6 +493,9 @@ public class TargetSslProxiesStubSettings extends StubSettings<TargetSslProxiesS
     private final OperationCallSettings.Builder<
             SetSslPolicyTargetSslProxyRequest, Operation, Operation>
         setSslPolicyOperationSettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsTargetSslProxyRequest, TestPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -537,6 +562,7 @@ public class TargetSslProxiesStubSettings extends StubSettings<TargetSslProxiesS
       setSslCertificatesOperationSettings = OperationCallSettings.newBuilder();
       setSslPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setSslPolicyOperationSettings = OperationCallSettings.newBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -548,7 +574,8 @@ public class TargetSslProxiesStubSettings extends StubSettings<TargetSslProxiesS
               setCertificateMapSettings,
               setProxyHeaderSettings,
               setSslCertificatesSettings,
-              setSslPolicySettings);
+              setSslPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -572,6 +599,7 @@ public class TargetSslProxiesStubSettings extends StubSettings<TargetSslProxiesS
           settings.setSslCertificatesOperationSettings.toBuilder();
       setSslPolicySettings = settings.setSslPolicySettings.toBuilder();
       setSslPolicyOperationSettings = settings.setSslPolicyOperationSettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -583,7 +611,8 @@ public class TargetSslProxiesStubSettings extends StubSettings<TargetSslProxiesS
               setCertificateMapSettings,
               setProxyHeaderSettings,
               setSslCertificatesSettings,
-              setSslPolicySettings);
+              setSslPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -641,6 +670,11 @@ public class TargetSslProxiesStubSettings extends StubSettings<TargetSslProxiesS
 
       builder
           .setSslPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -930,6 +964,13 @@ public class TargetSslProxiesStubSettings extends StubSettings<TargetSslProxiesS
     public OperationCallSettings.Builder<SetSslPolicyTargetSslProxyRequest, Operation, Operation>
         setSslPolicyOperationSettings() {
       return setSslPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsTargetSslProxyRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

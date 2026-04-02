@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,9 +47,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *  * Must be unique within the customer project.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/managedidentities/v1/managed_identities_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ManagedIdentitiesServiceGrpc {
 
@@ -1060,8 +1057,9 @@ public final class ManagedIdentitiesServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createMicrosoftAdDomain(
-        com.google.cloud.managedidentities.v1.CreateMicrosoftAdDomainRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedidentities.v1.CreateMicrosoftAdDomainRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateMicrosoftAdDomainMethod(), getCallOptions(), request);
     }
 
@@ -1073,8 +1071,9 @@ public final class ManagedIdentitiesServiceGrpc {
      * </pre>
      */
     public com.google.cloud.managedidentities.v1.ResetAdminPasswordResponse resetAdminPassword(
-        com.google.cloud.managedidentities.v1.ResetAdminPasswordRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedidentities.v1.ResetAdminPasswordRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResetAdminPasswordMethod(), getCallOptions(), request);
     }
 
@@ -1086,8 +1085,9 @@ public final class ManagedIdentitiesServiceGrpc {
      * </pre>
      */
     public com.google.cloud.managedidentities.v1.ListDomainsResponse listDomains(
-        com.google.cloud.managedidentities.v1.ListDomainsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedidentities.v1.ListDomainsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDomainsMethod(), getCallOptions(), request);
     }
 
@@ -1099,8 +1099,9 @@ public final class ManagedIdentitiesServiceGrpc {
      * </pre>
      */
     public com.google.cloud.managedidentities.v1.Domain getDomain(
-        com.google.cloud.managedidentities.v1.GetDomainRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedidentities.v1.GetDomainRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDomainMethod(), getCallOptions(), request);
     }
 
@@ -1112,8 +1113,9 @@ public final class ManagedIdentitiesServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateDomain(
-        com.google.cloud.managedidentities.v1.UpdateDomainRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedidentities.v1.UpdateDomainRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDomainMethod(), getCallOptions(), request);
     }
 
@@ -1125,8 +1127,9 @@ public final class ManagedIdentitiesServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDomain(
-        com.google.cloud.managedidentities.v1.DeleteDomainRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedidentities.v1.DeleteDomainRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDomainMethod(), getCallOptions(), request);
     }
 
@@ -1138,8 +1141,9 @@ public final class ManagedIdentitiesServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation attachTrust(
-        com.google.cloud.managedidentities.v1.AttachTrustRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedidentities.v1.AttachTrustRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAttachTrustMethod(), getCallOptions(), request);
     }
 
@@ -1151,8 +1155,9 @@ public final class ManagedIdentitiesServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation reconfigureTrust(
-        com.google.cloud.managedidentities.v1.ReconfigureTrustRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedidentities.v1.ReconfigureTrustRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReconfigureTrustMethod(), getCallOptions(), request);
     }
 
@@ -1164,8 +1169,9 @@ public final class ManagedIdentitiesServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation detachTrust(
-        com.google.cloud.managedidentities.v1.DetachTrustRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedidentities.v1.DetachTrustRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDetachTrustMethod(), getCallOptions(), request);
     }
 
@@ -1178,8 +1184,9 @@ public final class ManagedIdentitiesServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation validateTrust(
-        com.google.cloud.managedidentities.v1.ValidateTrustRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedidentities.v1.ValidateTrustRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getValidateTrustMethod(), getCallOptions(), request);
     }
   }

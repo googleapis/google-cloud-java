@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -177,7 +177,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> SetLabels</td>
- *      <td><p> Sets the labels on a machine image. To learn more about labels, read the Labeling Resources documentation.</td>
+ *      <td><p> Sets the labels on a machine image. To learn more about labels, read theLabeling Resources documentation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -991,7 +991,7 @@ public class MachineImagesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on a machine image. To learn more about labels, read the Labeling Resources
+   * Sets the labels on a machine image. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:
@@ -1032,7 +1032,7 @@ public class MachineImagesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on a machine image. To learn more about labels, read the Labeling Resources
+   * Sets the labels on a machine image. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:
@@ -1064,7 +1064,7 @@ public class MachineImagesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on a machine image. To learn more about labels, read the Labeling Resources
+   * Sets the labels on a machine image. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:
@@ -1096,7 +1096,7 @@ public class MachineImagesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on a machine image. To learn more about labels, read the Labeling Resources
+   * Sets the labels on a machine image. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:

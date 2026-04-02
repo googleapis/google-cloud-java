@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service that handles tenant management, including CRUD and enumeration.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/talent/v4beta1/tenant_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class TenantServiceGrpc {
 
@@ -534,8 +531,9 @@ public final class TenantServiceGrpc {
      * </pre>
      */
     public com.google.cloud.talent.v4beta1.Tenant createTenant(
-        com.google.cloud.talent.v4beta1.CreateTenantRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.talent.v4beta1.CreateTenantRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTenantMethod(), getCallOptions(), request);
     }
 
@@ -547,8 +545,8 @@ public final class TenantServiceGrpc {
      * </pre>
      */
     public com.google.cloud.talent.v4beta1.Tenant getTenant(
-        com.google.cloud.talent.v4beta1.GetTenantRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.talent.v4beta1.GetTenantRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTenantMethod(), getCallOptions(), request);
     }
 
@@ -560,8 +558,9 @@ public final class TenantServiceGrpc {
      * </pre>
      */
     public com.google.cloud.talent.v4beta1.Tenant updateTenant(
-        com.google.cloud.talent.v4beta1.UpdateTenantRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.talent.v4beta1.UpdateTenantRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTenantMethod(), getCallOptions(), request);
     }
 
@@ -573,8 +572,9 @@ public final class TenantServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteTenant(
-        com.google.cloud.talent.v4beta1.DeleteTenantRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.talent.v4beta1.DeleteTenantRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTenantMethod(), getCallOptions(), request);
     }
 
@@ -586,8 +586,8 @@ public final class TenantServiceGrpc {
      * </pre>
      */
     public com.google.cloud.talent.v4beta1.ListTenantsResponse listTenants(
-        com.google.cloud.talent.v4beta1.ListTenantsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.talent.v4beta1.ListTenantsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTenantsMethod(), getCallOptions(), request);
     }
   }

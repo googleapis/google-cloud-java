@@ -4,7 +4,7 @@ import os
 import shutil
 import tempfile
 import unittest
-from partial_release import bump_released_version
+from partial_release import bump_released_version, bump_snapshot_version
 
 SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
 GOLDEN = os.path.join(SCRIPT_DIR, "testdata")
@@ -42,6 +42,22 @@ class TestCase(unittest.TestCase):
             with open(golden) as g:
                 expected = g.read()
             with open("./versions-multiple.txt") as f:
+                actual = f.read()
+            self.assertEqual(expected, actual)
+
+    def test_bump_snapshot_version_success(self):
+        golden = f"{GOLDEN}/snapshot/versions-snapshot-golden.txt"
+        with copied_fixtures_dir(f"{FIXTURES}/snapshot"):
+            runner.invoke(
+                bump_snapshot_version,
+                [
+                    "--artifact-ids=google-cloud-asset",
+                    "--versions=versions-snapshot.txt",
+                ],
+            )
+            with open(golden) as g:
+                expected = g.read()
+            with open("./versions-snapshot.txt") as f:
                 actual = f.read()
             self.assertEqual(expected, actual)
 

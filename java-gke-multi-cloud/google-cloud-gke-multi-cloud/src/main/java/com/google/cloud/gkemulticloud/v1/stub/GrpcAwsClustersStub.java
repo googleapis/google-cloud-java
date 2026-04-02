@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,7 +67,10 @@ import javax.annotation.Generated;
  * gRPC stub implementation for the AwsClusters service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@Deprecated
 @Generated("by gapic-generator-java")
 public class GrpcAwsClustersStub extends AwsClustersStub {
   private static final MethodDescriptor<CreateAwsClusterRequest, Operation>
@@ -351,6 +354,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateAwsClusterRequest, Operation> updateAwsClusterTransportSettings =
         GrpcCallSettings.<UpdateAwsClusterRequest, Operation>newBuilder()
@@ -372,6 +376,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAwsClustersRequest, ListAwsClustersResponse>
         listAwsClustersTransportSettings =
@@ -383,6 +388,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteAwsClusterRequest, Operation> deleteAwsClusterTransportSettings =
         GrpcCallSettings.<DeleteAwsClusterRequest, Operation>newBuilder()
@@ -393,6 +399,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
         generateAwsClusterAgentTokenTransportSettings =
@@ -406,6 +413,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                       builder.add("aws_cluster", String.valueOf(request.getAwsCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAwsCluster())
                 .build();
     GrpcCallSettings<GenerateAwsAccessTokenRequest, GenerateAwsAccessTokenResponse>
         generateAwsAccessTokenTransportSettings =
@@ -418,6 +426,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                       builder.add("aws_cluster", String.valueOf(request.getAwsCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAwsCluster())
                 .build();
     GrpcCallSettings<CreateAwsNodePoolRequest, Operation> createAwsNodePoolTransportSettings =
         GrpcCallSettings.<CreateAwsNodePoolRequest, Operation>newBuilder()
@@ -428,6 +437,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateAwsNodePoolRequest, Operation> updateAwsNodePoolTransportSettings =
         GrpcCallSettings.<UpdateAwsNodePoolRequest, Operation>newBuilder()
@@ -450,6 +460,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetAwsNodePoolRequest, AwsNodePool> getAwsNodePoolTransportSettings =
         GrpcCallSettings.<GetAwsNodePoolRequest, AwsNodePool>newBuilder()
@@ -460,6 +471,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAwsNodePoolsRequest, ListAwsNodePoolsResponse>
         listAwsNodePoolsTransportSettings =
@@ -471,6 +483,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteAwsNodePoolRequest, Operation> deleteAwsNodePoolTransportSettings =
         GrpcCallSettings.<DeleteAwsNodePoolRequest, Operation>newBuilder()
@@ -481,6 +494,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>
         getAwsOpenIdConfigTransportSettings =
@@ -492,6 +506,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                       builder.add("aws_cluster", String.valueOf(request.getAwsCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAwsCluster())
                 .build();
     GrpcCallSettings<GetAwsJsonWebKeysRequest, AwsJsonWebKeys> getAwsJsonWebKeysTransportSettings =
         GrpcCallSettings.<GetAwsJsonWebKeysRequest, AwsJsonWebKeys>newBuilder()
@@ -502,6 +517,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                   builder.add("aws_cluster", String.valueOf(request.getAwsCluster()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getAwsCluster())
             .build();
     GrpcCallSettings<GetAwsServerConfigRequest, AwsServerConfig>
         getAwsServerConfigTransportSettings =
@@ -513,6 +529,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.createAwsClusterCallable =

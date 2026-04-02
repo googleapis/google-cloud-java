@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -57,6 +58,8 @@ import com.google.cloud.compute.v1.BackendServicesScopedList;
 import com.google.cloud.compute.v1.DeleteBackendServiceRequest;
 import com.google.cloud.compute.v1.DeleteSignedUrlKeyBackendServiceRequest;
 import com.google.cloud.compute.v1.GetBackendServiceRequest;
+import com.google.cloud.compute.v1.GetEffectiveSecurityPoliciesBackendServiceRequest;
+import com.google.cloud.compute.v1.GetEffectiveSecurityPoliciesBackendServiceResponse;
 import com.google.cloud.compute.v1.GetHealthBackendServiceRequest;
 import com.google.cloud.compute.v1.GetIamPolicyBackendServiceRequest;
 import com.google.cloud.compute.v1.InsertBackendServiceRequest;
@@ -128,8 +131,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -158,6 +161,7 @@ import javax.annotation.Generated;
  * }</pre>
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class BackendServicesStubSettings extends StubSettings<BackendServicesStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -183,6 +187,10 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
   private final OperationCallSettings<DeleteSignedUrlKeyBackendServiceRequest, Operation, Operation>
       deleteSignedUrlKeyOperationSettings;
   private final UnaryCallSettings<GetBackendServiceRequest, BackendService> getSettings;
+  private final UnaryCallSettings<
+          GetEffectiveSecurityPoliciesBackendServiceRequest,
+          GetEffectiveSecurityPoliciesBackendServiceResponse>
+      getEffectiveSecurityPoliciesSettings;
   private final UnaryCallSettings<GetHealthBackendServiceRequest, BackendServiceGroupHealth>
       getHealthSettings;
   private final UnaryCallSettings<GetIamPolicyBackendServiceRequest, Policy> getIamPolicySettings;
@@ -453,6 +461,14 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
     return getSettings;
   }
 
+  /** Returns the object with the settings used for calls to getEffectiveSecurityPolicies. */
+  public UnaryCallSettings<
+          GetEffectiveSecurityPoliciesBackendServiceRequest,
+          GetEffectiveSecurityPoliciesBackendServiceResponse>
+      getEffectiveSecurityPoliciesSettings() {
+    return getEffectiveSecurityPoliciesSettings;
+  }
+
   /** Returns the object with the settings used for calls to getHealth. */
   public UnaryCallSettings<GetHealthBackendServiceRequest, BackendServiceGroupHealth>
       getHealthSettings() {
@@ -636,6 +652,8 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
     deleteSignedUrlKeyOperationSettings =
         settingsBuilder.deleteSignedUrlKeyOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
+    getEffectiveSecurityPoliciesSettings =
+        settingsBuilder.getEffectiveSecurityPoliciesSettings().build();
     getHealthSettings = settingsBuilder.getHealthSettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
@@ -654,6 +672,15 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
     updateSettings = settingsBuilder.updateSettings().build();
     updateOperationSettings = settingsBuilder.updateOperationSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-compute")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for BackendServicesStubSettings. */
@@ -678,6 +705,10 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
             DeleteSignedUrlKeyBackendServiceRequest, Operation, Operation>
         deleteSignedUrlKeyOperationSettings;
     private final UnaryCallSettings.Builder<GetBackendServiceRequest, BackendService> getSettings;
+    private final UnaryCallSettings.Builder<
+            GetEffectiveSecurityPoliciesBackendServiceRequest,
+            GetEffectiveSecurityPoliciesBackendServiceResponse>
+        getEffectiveSecurityPoliciesSettings;
     private final UnaryCallSettings.Builder<
             GetHealthBackendServiceRequest, BackendServiceGroupHealth>
         getHealthSettings;
@@ -771,6 +802,7 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
       deleteSignedUrlKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteSignedUrlKeyOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getEffectiveSecurityPoliciesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getHealthSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -795,6 +827,7 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
               deleteSettings,
               deleteSignedUrlKeySettings,
               getSettings,
+              getEffectiveSecurityPoliciesSettings,
               getHealthSettings,
               getIamPolicySettings,
               insertSettings,
@@ -821,6 +854,8 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
       deleteSignedUrlKeyOperationSettings =
           settings.deleteSignedUrlKeyOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
+      getEffectiveSecurityPoliciesSettings =
+          settings.getEffectiveSecurityPoliciesSettings.toBuilder();
       getHealthSettings = settings.getHealthSettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
@@ -846,6 +881,7 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
               deleteSettings,
               deleteSignedUrlKeySettings,
               getSettings,
+              getEffectiveSecurityPoliciesSettings,
               getHealthSettings,
               getIamPolicySettings,
               insertSettings,
@@ -894,6 +930,11 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
 
       builder
           .getSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getEffectiveSecurityPoliciesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1214,6 +1255,14 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetBackendServiceRequest, BackendService> getSettings() {
       return getSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getEffectiveSecurityPolicies. */
+    public UnaryCallSettings.Builder<
+            GetEffectiveSecurityPoliciesBackendServiceRequest,
+            GetEffectiveSecurityPoliciesBackendServiceResponse>
+        getEffectiveSecurityPoliciesSettings() {
+      return getEffectiveSecurityPoliciesSettings;
     }
 
     /** Returns the builder for the settings used for calls to getHealth. */

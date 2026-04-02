@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,8 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.Route;
 import com.google.cloud.compute.v1.RouteList;
+import com.google.cloud.compute.v1.TestIamPermissionsRouteRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -239,6 +241,46 @@ public class HttpJsonRoutesStub extends RoutesStub {
                   .build())
           .build();
 
+  private static final ApiMethodDescriptor<TestIamPermissionsRouteRequest, TestPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor.<TestIamPermissionsRouteRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Routes/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsRouteRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/routes/{resource}/testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRouteRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRouteRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "testPermissionsRequestResource",
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<DeleteRouteRequest, Operation> deleteCallable;
   private final OperationCallable<DeleteRouteRequest, Operation, Operation> deleteOperationCallable;
   private final UnaryCallable<GetRouteRequest, Route> getCallable;
@@ -246,6 +288,8 @@ public class HttpJsonRoutesStub extends RoutesStub {
   private final OperationCallable<InsertRouteRequest, Operation, Operation> insertOperationCallable;
   private final UnaryCallable<ListRoutesRequest, RouteList> listCallable;
   private final UnaryCallable<ListRoutesRequest, ListPagedResponse> listPagedCallable;
+  private final UnaryCallable<TestIamPermissionsRouteRequest, TestPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
@@ -335,6 +379,20 @@ public class HttpJsonRoutesStub extends RoutesStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<TestIamPermissionsRouteRequest, TestPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsRouteRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .build();
 
     this.deleteCallable =
         callableFactory.createUnaryCallable(
@@ -363,6 +421,11 @@ public class HttpJsonRoutesStub extends RoutesStub {
     this.listPagedCallable =
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -375,6 +438,7 @@ public class HttpJsonRoutesStub extends RoutesStub {
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -411,6 +475,12 @@ public class HttpJsonRoutesStub extends RoutesStub {
   @Override
   public UnaryCallable<ListRoutesRequest, ListPagedResponse> listPagedCallable() {
     return listPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsRouteRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

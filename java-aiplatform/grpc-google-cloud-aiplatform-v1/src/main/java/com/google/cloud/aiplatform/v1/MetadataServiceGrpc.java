@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for reading and writing metadata entries.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1/metadata_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class MetadataServiceGrpc {
 
@@ -2683,8 +2680,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createMetadataStore(
-        com.google.cloud.aiplatform.v1.CreateMetadataStoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CreateMetadataStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateMetadataStoreMethod(), getCallOptions(), request);
     }
 
@@ -2696,8 +2694,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.MetadataStore getMetadataStore(
-        com.google.cloud.aiplatform.v1.GetMetadataStoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetMetadataStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMetadataStoreMethod(), getCallOptions(), request);
     }
 
@@ -2709,8 +2708,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListMetadataStoresResponse listMetadataStores(
-        com.google.cloud.aiplatform.v1.ListMetadataStoresRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ListMetadataStoresRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMetadataStoresMethod(), getCallOptions(), request);
     }
 
@@ -2723,8 +2723,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteMetadataStore(
-        com.google.cloud.aiplatform.v1.DeleteMetadataStoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DeleteMetadataStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteMetadataStoreMethod(), getCallOptions(), request);
     }
 
@@ -2736,8 +2737,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.Artifact createArtifact(
-        com.google.cloud.aiplatform.v1.CreateArtifactRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CreateArtifactRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateArtifactMethod(), getCallOptions(), request);
     }
 
@@ -2749,8 +2751,8 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.Artifact getArtifact(
-        com.google.cloud.aiplatform.v1.GetArtifactRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetArtifactRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetArtifactMethod(), getCallOptions(), request);
     }
 
@@ -2762,8 +2764,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListArtifactsResponse listArtifacts(
-        com.google.cloud.aiplatform.v1.ListArtifactsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ListArtifactsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListArtifactsMethod(), getCallOptions(), request);
     }
 
@@ -2775,8 +2778,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.Artifact updateArtifact(
-        com.google.cloud.aiplatform.v1.UpdateArtifactRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.UpdateArtifactRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateArtifactMethod(), getCallOptions(), request);
     }
 
@@ -2788,8 +2792,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteArtifact(
-        com.google.cloud.aiplatform.v1.DeleteArtifactRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DeleteArtifactRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteArtifactMethod(), getCallOptions(), request);
     }
 
@@ -2801,8 +2806,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation purgeArtifacts(
-        com.google.cloud.aiplatform.v1.PurgeArtifactsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.PurgeArtifactsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPurgeArtifactsMethod(), getCallOptions(), request);
     }
 
@@ -2814,8 +2820,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.Context createContext(
-        com.google.cloud.aiplatform.v1.CreateContextRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CreateContextRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateContextMethod(), getCallOptions(), request);
     }
 
@@ -2827,8 +2834,8 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.Context getContext(
-        com.google.cloud.aiplatform.v1.GetContextRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetContextRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetContextMethod(), getCallOptions(), request);
     }
 
@@ -2840,8 +2847,8 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListContextsResponse listContexts(
-        com.google.cloud.aiplatform.v1.ListContextsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ListContextsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListContextsMethod(), getCallOptions(), request);
     }
 
@@ -2853,8 +2860,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.Context updateContext(
-        com.google.cloud.aiplatform.v1.UpdateContextRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.UpdateContextRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateContextMethod(), getCallOptions(), request);
     }
 
@@ -2866,8 +2874,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteContext(
-        com.google.cloud.aiplatform.v1.DeleteContextRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DeleteContextRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteContextMethod(), getCallOptions(), request);
     }
 
@@ -2879,8 +2888,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation purgeContexts(
-        com.google.cloud.aiplatform.v1.PurgeContextsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.PurgeContextsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPurgeContextsMethod(), getCallOptions(), request);
     }
 
@@ -2895,8 +2905,9 @@ public final class MetadataServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1.AddContextArtifactsAndExecutionsResponse
         addContextArtifactsAndExecutions(
-            com.google.cloud.aiplatform.v1.AddContextArtifactsAndExecutionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.aiplatform.v1.AddContextArtifactsAndExecutionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAddContextArtifactsAndExecutionsMethod(), getCallOptions(), request);
     }
 
@@ -2912,8 +2923,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.AddContextChildrenResponse addContextChildren(
-        com.google.cloud.aiplatform.v1.AddContextChildrenRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.AddContextChildrenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAddContextChildrenMethod(), getCallOptions(), request);
     }
 
@@ -2927,8 +2939,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.RemoveContextChildrenResponse removeContextChildren(
-        com.google.cloud.aiplatform.v1.RemoveContextChildrenRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.RemoveContextChildrenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRemoveContextChildrenMethod(), getCallOptions(), request);
     }
 
@@ -2941,8 +2954,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.LineageSubgraph queryContextLineageSubgraph(
-        com.google.cloud.aiplatform.v1.QueryContextLineageSubgraphRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.QueryContextLineageSubgraphRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getQueryContextLineageSubgraphMethod(), getCallOptions(), request);
     }
 
@@ -2954,8 +2968,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.Execution createExecution(
-        com.google.cloud.aiplatform.v1.CreateExecutionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CreateExecutionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateExecutionMethod(), getCallOptions(), request);
     }
 
@@ -2967,8 +2982,8 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.Execution getExecution(
-        com.google.cloud.aiplatform.v1.GetExecutionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetExecutionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetExecutionMethod(), getCallOptions(), request);
     }
 
@@ -2980,8 +2995,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListExecutionsResponse listExecutions(
-        com.google.cloud.aiplatform.v1.ListExecutionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ListExecutionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListExecutionsMethod(), getCallOptions(), request);
     }
 
@@ -2993,8 +3009,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.Execution updateExecution(
-        com.google.cloud.aiplatform.v1.UpdateExecutionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.UpdateExecutionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateExecutionMethod(), getCallOptions(), request);
     }
 
@@ -3006,8 +3023,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteExecution(
-        com.google.cloud.aiplatform.v1.DeleteExecutionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DeleteExecutionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteExecutionMethod(), getCallOptions(), request);
     }
 
@@ -3019,8 +3037,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation purgeExecutions(
-        com.google.cloud.aiplatform.v1.PurgeExecutionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.PurgeExecutionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPurgeExecutionsMethod(), getCallOptions(), request);
     }
 
@@ -3035,8 +3054,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.AddExecutionEventsResponse addExecutionEvents(
-        com.google.cloud.aiplatform.v1.AddExecutionEventsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.AddExecutionEventsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAddExecutionEventsMethod(), getCallOptions(), request);
     }
 
@@ -3050,8 +3070,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.LineageSubgraph queryExecutionInputsAndOutputs(
-        com.google.cloud.aiplatform.v1.QueryExecutionInputsAndOutputsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.QueryExecutionInputsAndOutputsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getQueryExecutionInputsAndOutputsMethod(), getCallOptions(), request);
     }
 
@@ -3063,8 +3084,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.MetadataSchema createMetadataSchema(
-        com.google.cloud.aiplatform.v1.CreateMetadataSchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CreateMetadataSchemaRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateMetadataSchemaMethod(), getCallOptions(), request);
     }
 
@@ -3076,8 +3098,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.MetadataSchema getMetadataSchema(
-        com.google.cloud.aiplatform.v1.GetMetadataSchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetMetadataSchemaRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMetadataSchemaMethod(), getCallOptions(), request);
     }
 
@@ -3089,8 +3112,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListMetadataSchemasResponse listMetadataSchemas(
-        com.google.cloud.aiplatform.v1.ListMetadataSchemasRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ListMetadataSchemasRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMetadataSchemasMethod(), getCallOptions(), request);
     }
 
@@ -3103,8 +3127,9 @@ public final class MetadataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.LineageSubgraph queryArtifactLineageSubgraph(
-        com.google.cloud.aiplatform.v1.QueryArtifactLineageSubgraphRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.QueryArtifactLineageSubgraphRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getQueryArtifactLineageSubgraphMethod(), getCallOptions(), request);
     }
   }

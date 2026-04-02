@@ -20,11 +20,26 @@
       ]
     },
     {
-      "matchPackagePatterns": [
-        "^com.google.cloud:google-cloud-storage",
-        "^com.google.apis:google-api-services-storage"
+      "groupName": "First-party storage dependencies",
+      "matchPackageNames": [
+        "/^com.google.cloud:google-cloud-storage/",
+        "/^com.google.apis:google-api-services-storage/"
+      ]
+    },
+    {
+      "matchManagers": [
+        "custom.regex"
       ],
-      "groupName": "First-party storage dependencies"
+      "semanticCommitType": "chore",
+      "matchFileNames": [
+        "sdk-platform-java/dependencies.txt"
+      ],
+      "matchDatasources": [
+        "maven"
+      ],
+      "groupName": "Upper Bound Dependencies File",
+      "description": "Group all dependencies from the Upper Bound Dependencies File",
+      "enabled": true
     }
   ],
   "includePaths": [
@@ -35,9 +50,11 @@
     "java-samples/native-image-sample/pom.xml",
     "java-shared-dependencies/first-party-dependencies/pom.xml",
     "java-shared-dependencies/third-party-dependencies/pom.xml",
+    "sdk-platform-java/dependencies.txt",
     ".kokoro/nightly/graalvm-native*.cfg",
     ".kokoro/nightly/graalvm-sub-jobs/native*/common.cfg",
     ".kokoro/presubmit/graalvm-native*.cfg",
+    ".kokoro/presubmit/*-graalvm-native-presubmit.cfg",
     "owl-bot-postprocessor/synthtool/gcp/templates/java-library/.kokoro/presubmit/graalvm-native*.cfg",
     ".github/workflows/ci.yaml",
     ".github/workflows/generated_files_sync.yaml",
@@ -47,10 +64,11 @@
     {
       "customType": "regex",
       "fileMatch": [
-        "^.kokoro/nightly/graalvm-native.*.cfg$",
-        "^.kokoro/presubmit/graalvm-native.*.cfg$",
-        "^.kokoro/nightly/graalvm-sub-jobs/native.*/common.cfg$",
-        "^owl-bot-postprocessor/synthtool/gcp/templates/java-library/.kokoro/presubmit/graalvm-native.*.cfg$"
+        "/^.kokoro/nightly/graalvm-native.*.cfg$/",
+        "/^.kokoro/presubmit/graalvm-native.*.cfg$/",
+        "/^.kokoro/presubmit/*-graalvm-native-presubmit.cfg$/",
+        "/^.kokoro/nightly/graalvm-sub-jobs/native.*/common.cfg$/",
+        "/^owl-bot-postprocessor/synthtool/gcp/templates/java-library/.kokoro/presubmit/graalvm-native.*.cfg$/"
       ],
       "matchStrings": [
         "value: \"gcr.io/cloud-devrel-public-resources/graalvm_sdk_platform.*:(?<currentValue>.*?)\""
@@ -61,10 +79,10 @@
     {
       "customType": "regex",
       "fileMatch": [
-        "java-dns/README.md",
-        "java-notification/README.md",
-        "java-samples/native-image-sample/pom.xml",
-        "java-vertexai/README.md"
+        "/java-dns/README.md/",
+        "/java-notification/README.md/",
+        "/java-samples/native-image-sample/pom.xml/",
+        "/java-vertexai/README.md/"
       ],
       "matchStrings": [
         "<artifactId>libraries-bom</artifactId>\\s+<version>(?<currentValue>.*?)</version>"
@@ -75,8 +93,8 @@
     {
       "customType": "regex",
       "fileMatch": [
-        ".github/workflows/ci.yaml",
-        ".github/workflows/generated_files_sync.yaml"
+        "/.github/workflows/ci.yaml/",
+        "/.github/workflows/generated_files_sync.yaml/"
       ],
       "matchStrings": [
         "library_generation_image_tag\\s*:\\s*(?<currentValue>.*?)\\n"
@@ -87,12 +105,18 @@
     {
       "customType": "regex",
       "fileMatch": [
-        "^.github/workflows/unmanaged_dependency_check.yaml$"
+        "/^.github/workflows/unmanaged_dependency_check.yaml$/"
       ],
       "matchStrings": [
         "uses: googleapis/sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check@google-cloud-shared-dependencies/v(?<currentValue>.+?)\\n"
       ],
       "depNameTemplate": "com.google.cloud:sdk-platform-java-config",
+      "datasourceTemplate": "maven"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["sdk-platform-java/dependencies.txt"],
+      "matchStrings": ["(?<depName>.*),(.*)=(?<currentValue>.*)"],
       "datasourceTemplate": "maven"
     }
   ]

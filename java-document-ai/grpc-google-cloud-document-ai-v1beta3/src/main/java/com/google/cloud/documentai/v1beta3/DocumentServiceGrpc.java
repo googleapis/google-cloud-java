@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to call Cloud DocumentAI to manage document collection (dataset).
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/documentai/v1beta3/document_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DocumentServiceGrpc {
 
@@ -727,8 +724,9 @@ public final class DocumentServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateDataset(
-        com.google.cloud.documentai.v1beta3.UpdateDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.UpdateDatasetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDatasetMethod(), getCallOptions(), request);
     }
 
@@ -740,8 +738,9 @@ public final class DocumentServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importDocuments(
-        com.google.cloud.documentai.v1beta3.ImportDocumentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.ImportDocumentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportDocumentsMethod(), getCallOptions(), request);
     }
 
@@ -753,8 +752,9 @@ public final class DocumentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.documentai.v1beta3.GetDocumentResponse getDocument(
-        com.google.cloud.documentai.v1beta3.GetDocumentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.GetDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDocumentMethod(), getCallOptions(), request);
     }
 
@@ -766,8 +766,9 @@ public final class DocumentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.documentai.v1beta3.ListDocumentsResponse listDocuments(
-        com.google.cloud.documentai.v1beta3.ListDocumentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.ListDocumentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDocumentsMethod(), getCallOptions(), request);
     }
 
@@ -779,8 +780,9 @@ public final class DocumentServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchDeleteDocuments(
-        com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchDeleteDocumentsMethod(), getCallOptions(), request);
     }
 
@@ -792,8 +794,9 @@ public final class DocumentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.documentai.v1beta3.DatasetSchema getDatasetSchema(
-        com.google.cloud.documentai.v1beta3.GetDatasetSchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.GetDatasetSchemaRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDatasetSchemaMethod(), getCallOptions(), request);
     }
 
@@ -805,8 +808,9 @@ public final class DocumentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.documentai.v1beta3.DatasetSchema updateDatasetSchema(
-        com.google.cloud.documentai.v1beta3.UpdateDatasetSchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.documentai.v1beta3.UpdateDatasetSchemaRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDatasetSchemaMethod(), getCallOptions(), request);
     }
   }

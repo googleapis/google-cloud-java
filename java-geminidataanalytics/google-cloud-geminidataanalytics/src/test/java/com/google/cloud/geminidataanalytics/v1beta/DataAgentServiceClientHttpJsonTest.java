@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -519,6 +519,116 @@ public class DataAgentServiceClientHttpJsonTest {
   }
 
   @Test
+  public void createDataAgentSyncTest() throws Exception {
+    DataAgent expectedResponse =
+        DataAgent.newBuilder()
+            .setName(DataAgentName.of("[PROJECT]", "[LOCATION]", "[DATA_AGENT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setPurgeTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    DataAgent dataAgent = DataAgent.newBuilder().build();
+    String dataAgentId = "dataAgentId1752773622";
+
+    DataAgent actualResponse = client.createDataAgentSync(parent, dataAgent, dataAgentId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createDataAgentSyncExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      DataAgent dataAgent = DataAgent.newBuilder().build();
+      String dataAgentId = "dataAgentId1752773622";
+      client.createDataAgentSync(parent, dataAgent, dataAgentId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createDataAgentSyncTest2() throws Exception {
+    DataAgent expectedResponse =
+        DataAgent.newBuilder()
+            .setName(DataAgentName.of("[PROJECT]", "[LOCATION]", "[DATA_AGENT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setPurgeTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    DataAgent dataAgent = DataAgent.newBuilder().build();
+    String dataAgentId = "dataAgentId1752773622";
+
+    DataAgent actualResponse = client.createDataAgentSync(parent, dataAgent, dataAgentId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createDataAgentSyncExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      DataAgent dataAgent = DataAgent.newBuilder().build();
+      String dataAgentId = "dataAgentId1752773622";
+      client.createDataAgentSync(parent, dataAgent, dataAgentId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void updateDataAgentTest() throws Exception {
     DataAgent expectedResponse =
         DataAgent.newBuilder()
@@ -593,6 +703,79 @@ public class DataAgentServiceClientHttpJsonTest {
       client.updateDataAgentAsync(dataAgent, updateMask).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateDataAgentSyncTest() throws Exception {
+    DataAgent expectedResponse =
+        DataAgent.newBuilder()
+            .setName(DataAgentName.of("[PROJECT]", "[LOCATION]", "[DATA_AGENT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setPurgeTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DataAgent dataAgent =
+        DataAgent.newBuilder()
+            .setName(DataAgentName.of("[PROJECT]", "[LOCATION]", "[DATA_AGENT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setPurgeTime(Timestamp.newBuilder().build())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    DataAgent actualResponse = client.updateDataAgentSync(dataAgent, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateDataAgentSyncExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DataAgent dataAgent =
+          DataAgent.newBuilder()
+              .setName(DataAgentName.of("[PROJECT]", "[LOCATION]", "[DATA_AGENT]").toString())
+              .setDisplayName("displayName1714148973")
+              .setDescription("description-1724546052")
+              .putAllLabels(new HashMap<String, String>())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setDeleteTime(Timestamp.newBuilder().build())
+              .setPurgeTime(Timestamp.newBuilder().build())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDataAgentSync(dataAgent, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 
@@ -683,6 +866,86 @@ public class DataAgentServiceClientHttpJsonTest {
       client.deleteDataAgentAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteDataAgentSyncTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    DataAgentName name = DataAgentName.of("[PROJECT]", "[LOCATION]", "[DATA_AGENT]");
+
+    client.deleteDataAgentSync(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteDataAgentSyncExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DataAgentName name = DataAgentName.of("[PROJECT]", "[LOCATION]", "[DATA_AGENT]");
+      client.deleteDataAgentSync(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteDataAgentSyncTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-8616/locations/location-8616/dataAgents/dataAgent-8616";
+
+    client.deleteDataAgentSync(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteDataAgentSyncExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-8616/locations/location-8616/dataAgents/dataAgent-8616";
+      client.deleteDataAgentSync(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

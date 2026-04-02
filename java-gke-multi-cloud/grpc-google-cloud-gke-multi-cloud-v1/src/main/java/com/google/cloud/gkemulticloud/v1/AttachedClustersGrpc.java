@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * infrastructure.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/gkemulticloud/v1/attached_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AttachedClustersGrpc {
 
@@ -963,8 +960,9 @@ public final class AttachedClustersGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAttachedCluster(
-        com.google.cloud.gkemulticloud.v1.CreateAttachedClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.CreateAttachedClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAttachedClusterMethod(), getCallOptions(), request);
     }
 
@@ -977,8 +975,9 @@ public final class AttachedClustersGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateAttachedCluster(
-        com.google.cloud.gkemulticloud.v1.UpdateAttachedClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.UpdateAttachedClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAttachedClusterMethod(), getCallOptions(), request);
     }
 
@@ -997,8 +996,9 @@ public final class AttachedClustersGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importAttachedCluster(
-        com.google.cloud.gkemulticloud.v1.ImportAttachedClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.ImportAttachedClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportAttachedClusterMethod(), getCallOptions(), request);
     }
 
@@ -1011,8 +1011,9 @@ public final class AttachedClustersGrpc {
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.AttachedCluster getAttachedCluster(
-        com.google.cloud.gkemulticloud.v1.GetAttachedClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.GetAttachedClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAttachedClusterMethod(), getCallOptions(), request);
     }
 
@@ -1025,8 +1026,9 @@ public final class AttachedClustersGrpc {
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.ListAttachedClustersResponse listAttachedClusters(
-        com.google.cloud.gkemulticloud.v1.ListAttachedClustersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.ListAttachedClustersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAttachedClustersMethod(), getCallOptions(), request);
     }
 
@@ -1042,8 +1044,9 @@ public final class AttachedClustersGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteAttachedCluster(
-        com.google.cloud.gkemulticloud.v1.DeleteAttachedClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.DeleteAttachedClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAttachedClusterMethod(), getCallOptions(), request);
     }
 
@@ -1056,8 +1059,9 @@ public final class AttachedClustersGrpc {
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.AttachedServerConfig getAttachedServerConfig(
-        com.google.cloud.gkemulticloud.v1.GetAttachedServerConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.GetAttachedServerConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAttachedServerConfigMethod(), getCallOptions(), request);
     }
 
@@ -1070,9 +1074,9 @@ public final class AttachedClustersGrpc {
      */
     public com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterInstallManifestResponse
         generateAttachedClusterInstallManifest(
-            com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterInstallManifestRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterInstallManifestRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getGenerateAttachedClusterInstallManifestMethod(),
           getCallOptions(),
@@ -1088,8 +1092,9 @@ public final class AttachedClustersGrpc {
      */
     public com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenResponse
         generateAttachedClusterAgentToken(
-            com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateAttachedClusterAgentTokenMethod(), getCallOptions(), request);
     }
   }

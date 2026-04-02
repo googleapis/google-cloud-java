@@ -1,0 +1,255 @@
+package com.google.showcase.v1beta1;
+
+import com.google.api.core.ApiFunction;
+import com.google.api.core.BetaApi;
+import com.google.api.gax.core.GoogleCredentialsProvider;
+import com.google.api.gax.core.InstantiatingExecutorProvider;
+import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.StubSettings;
+import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.showcase.v1beta1.stub.ComplianceStubSettings;
+import java.io.IOException;
+import java.util.List;
+import javax.annotation.Generated;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * Settings class to configure an instance of {@link ComplianceClient}.
+ *
+ * <p>The default instance has everything set to sensible defaults:
+ *
+ * <ul>
+ *   <li>The default service address (localhost) and default port (7469) are used.
+ *   <li>Credentials are acquired automatically through Application Default Credentials.
+ *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ * </ul>
+ *
+ * <p>The builder of this class is recursive, so contained classes are themselves builders. When
+ * build() is called, the tree of builders is called to create the complete settings object.
+ *
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of repeatDataBody:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * ComplianceSettings.Builder complianceSettingsBuilder = ComplianceSettings.newBuilder();
+ * complianceSettingsBuilder
+ *     .repeatDataBodySettings()
+ *     .setRetrySettings(
+ *         complianceSettingsBuilder
+ *             .repeatDataBodySettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
+ *             .build());
+ * ComplianceSettings complianceSettings = complianceSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
+ */
+@BetaApi
+@Generated("by gapic-generator-java")
+public class ComplianceSettings extends ClientSettings<ComplianceSettings> {
+
+  /** Returns the object with the settings used for calls to repeatDataBody. */
+  public UnaryCallSettings<RepeatRequest, RepeatResponse> repeatDataBodySettings() {
+    return ((ComplianceStubSettings) getStubSettings()).repeatDataBodySettings();
+  }
+
+  /** Returns the object with the settings used for calls to repeatDataBodyInfo. */
+  public UnaryCallSettings<RepeatRequest, RepeatResponse> repeatDataBodyInfoSettings() {
+    return ((ComplianceStubSettings) getStubSettings()).repeatDataBodyInfoSettings();
+  }
+
+  /** Returns the object with the settings used for calls to repeatDataQuery. */
+  public UnaryCallSettings<RepeatRequest, RepeatResponse> repeatDataQuerySettings() {
+    return ((ComplianceStubSettings) getStubSettings()).repeatDataQuerySettings();
+  }
+
+  /** Returns the object with the settings used for calls to repeatDataSimplePath. */
+  public UnaryCallSettings<RepeatRequest, RepeatResponse> repeatDataSimplePathSettings() {
+    return ((ComplianceStubSettings) getStubSettings()).repeatDataSimplePathSettings();
+  }
+
+  /** Returns the object with the settings used for calls to repeatDataPathResource. */
+  public UnaryCallSettings<RepeatRequest, RepeatResponse> repeatDataPathResourceSettings() {
+    return ((ComplianceStubSettings) getStubSettings()).repeatDataPathResourceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to repeatDataPathTrailingResource. */
+  public UnaryCallSettings<RepeatRequest, RepeatResponse> repeatDataPathTrailingResourceSettings() {
+    return ((ComplianceStubSettings) getStubSettings()).repeatDataPathTrailingResourceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getEnum. */
+  public UnaryCallSettings<EnumRequest, EnumResponse> getEnumSettings() {
+    return ((ComplianceStubSettings) getStubSettings()).getEnumSettings();
+  }
+
+  /** Returns the object with the settings used for calls to verifyEnum. */
+  public UnaryCallSettings<EnumResponse, EnumResponse> verifyEnumSettings() {
+    return ((ComplianceStubSettings) getStubSettings()).verifyEnumSettings();
+  }
+
+  public static final ComplianceSettings create(ComplianceStubSettings stub) throws IOException {
+    return new ComplianceSettings.Builder(stub.toBuilder()).build();
+  }
+
+  /** Returns a builder for the default ExecutorProvider for this service. */
+  public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
+    return ComplianceStubSettings.defaultExecutorProviderBuilder();
+  }
+
+  /** Returns the default service endpoint. */
+  public static String getDefaultEndpoint() {
+    return ComplianceStubSettings.getDefaultEndpoint();
+  }
+
+  /** Returns the default service scopes. */
+  public static List<String> getDefaultServiceScopes() {
+    return ComplianceStubSettings.getDefaultServiceScopes();
+  }
+
+  /** Returns a builder for the default credentials for this service. */
+  public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
+    return ComplianceStubSettings.defaultCredentialsProviderBuilder();
+  }
+
+  /** Returns a builder for the default ChannelProvider for this service. */
+  public static InstantiatingHttpJsonChannelProvider.Builder
+      defaultHttpJsonTransportProviderBuilder() {
+    return ComplianceStubSettings.defaultHttpJsonTransportProviderBuilder();
+  }
+
+  public static TransportChannelProvider defaultTransportChannelProvider() {
+    return ComplianceStubSettings.defaultTransportChannelProvider();
+  }
+
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+    return ComplianceStubSettings.defaultApiClientHeaderProviderBuilder();
+  }
+
+  /** Returns a new builder for this class. */
+  public static Builder newBuilder() {
+    return Builder.createDefault();
+  }
+
+  /** Returns a new builder for this class. */
+  public static Builder newBuilder(ClientContext clientContext) {
+    return new Builder(clientContext);
+  }
+
+  /** Returns a builder containing all the values of this settings class. */
+  public Builder toBuilder() {
+    return new Builder(this);
+  }
+
+  protected ComplianceSettings(Builder settingsBuilder) throws IOException {
+    super(settingsBuilder);
+  }
+
+  /** Builder for ComplianceSettings. */
+  public static class Builder extends ClientSettings.Builder<ComplianceSettings, Builder> {
+
+    protected Builder() throws IOException {
+      this(((ClientContext) null));
+    }
+
+    protected Builder(ClientContext clientContext) {
+      super(ComplianceStubSettings.newBuilder(clientContext));
+    }
+
+    protected Builder(ComplianceSettings settings) {
+      super(settings.getStubSettings().toBuilder());
+    }
+
+    protected Builder(ComplianceStubSettings.Builder stubSettings) {
+      super(stubSettings);
+    }
+
+    private static Builder createDefault() {
+      return new Builder(ComplianceStubSettings.newBuilder());
+    }
+
+    public ComplianceStubSettings.Builder getStubSettingsBuilder() {
+      return ((ComplianceStubSettings.Builder) getStubSettings());
+    }
+
+    /**
+     * Applies the given settings updater function to all of the unary API methods in this service.
+     *
+     * <p>Note: This method does not support applying settings to streaming methods.
+     */
+    public Builder applyToAllUnaryMethods(
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) {
+      super.applyToAllUnaryMethods(
+          getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
+      return this;
+    }
+
+    /** Returns the builder for the settings used for calls to repeatDataBody. */
+    public UnaryCallSettings.Builder<RepeatRequest, RepeatResponse> repeatDataBodySettings() {
+      return getStubSettingsBuilder().repeatDataBodySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to repeatDataBodyInfo. */
+    public UnaryCallSettings.Builder<RepeatRequest, RepeatResponse> repeatDataBodyInfoSettings() {
+      return getStubSettingsBuilder().repeatDataBodyInfoSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to repeatDataQuery. */
+    public UnaryCallSettings.Builder<RepeatRequest, RepeatResponse> repeatDataQuerySettings() {
+      return getStubSettingsBuilder().repeatDataQuerySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to repeatDataSimplePath. */
+    public UnaryCallSettings.Builder<RepeatRequest, RepeatResponse> repeatDataSimplePathSettings() {
+      return getStubSettingsBuilder().repeatDataSimplePathSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to repeatDataPathResource. */
+    public UnaryCallSettings.Builder<RepeatRequest, RepeatResponse>
+        repeatDataPathResourceSettings() {
+      return getStubSettingsBuilder().repeatDataPathResourceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to repeatDataPathTrailingResource. */
+    public UnaryCallSettings.Builder<RepeatRequest, RepeatResponse>
+        repeatDataPathTrailingResourceSettings() {
+      return getStubSettingsBuilder().repeatDataPathTrailingResourceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getEnum. */
+    public UnaryCallSettings.Builder<EnumRequest, EnumResponse> getEnumSettings() {
+      return getStubSettingsBuilder().getEnumSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to verifyEnum. */
+    public UnaryCallSettings.Builder<EnumResponse, EnumResponse> verifyEnumSettings() {
+      return getStubSettingsBuilder().verifyEnumSettings();
+    }
+
+    @Override
+    public ComplianceSettings build() throws IOException {
+      return new ComplianceSettings(this);
+    }
+  }
+}

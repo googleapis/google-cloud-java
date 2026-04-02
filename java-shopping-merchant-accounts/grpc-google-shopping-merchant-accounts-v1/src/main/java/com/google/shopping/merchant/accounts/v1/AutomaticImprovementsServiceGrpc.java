@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * improve images and shipping.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/accounts/v1/automaticimprovements.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AutomaticImprovementsServiceGrpc {
 
@@ -347,8 +344,9 @@ public final class AutomaticImprovementsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.AutomaticImprovements getAutomaticImprovements(
-        com.google.shopping.merchant.accounts.v1.GetAutomaticImprovementsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.GetAutomaticImprovementsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAutomaticImprovementsMethod(), getCallOptions(), request);
     }
 
@@ -361,8 +359,9 @@ public final class AutomaticImprovementsServiceGrpc {
      */
     public com.google.shopping.merchant.accounts.v1.AutomaticImprovements
         updateAutomaticImprovements(
-            com.google.shopping.merchant.accounts.v1.UpdateAutomaticImprovementsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.shopping.merchant.accounts.v1.UpdateAutomaticImprovementsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAutomaticImprovementsMethod(), getCallOptions(), request);
     }
   }

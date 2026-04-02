@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -244,6 +244,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ConnectionProto.GetConnectionRequest, ConnectionProto.Connection>
         getConnectionTransportSettings =
@@ -256,6 +257,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             ConnectionProto.ListConnectionsRequest, ConnectionProto.ListConnectionsResponse>
@@ -270,6 +272,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ConnectionProto.UpdateConnectionRequest, ConnectionProto.Connection>
         updateConnectionTransportSettings =
@@ -282,6 +285,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ConnectionProto.UpdateConnectionCredentialRequest, Empty>
         updateConnectionCredentialTransportSettings =
@@ -304,6 +308,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -314,6 +319,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -324,6 +330,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -335,6 +342,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createConnectionCallable =

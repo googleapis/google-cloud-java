@@ -8,6 +8,16 @@ for pomFile in $(find . -mindepth 2 -name pom.xml | sort ); do
       [[ "${pomFile}" =~ .*google-cloud-pom-parent.* ]] || \
       [[ "${pomFile}" =~ .*CoverageAggregator.* ]] || \
       [[ "${pomFile}" =~ .*java-shared-dependencies*. ]] || \
+      [[ "${pomFile}" =~ .*java-bigquerystorage.* ]] || \
+      [[ "${pomFile}" =~ .*java-datastore.* ]] || \
+      [[ "${pomFile}" =~ .*java-logging-logback.* ]] || \
+      [[ "${pomFile}" =~ .*java-bigquery.* ]] || \
+      [[ "${pomFile}" =~ .*sdk-platform-java.* ]] || \
+      [[ "${pomFile}" =~ .*java-spanner.* ]] || \
+      [[ "${pomFile}" =~ .*java-spanner-jdbc.* ]] || \
+      [[ "${pomFile}" =~ .*google-auth-library-java.* ]] || \
+      [[ "${pomFile}" =~ .*java-storage.* ]] || \
+      [[ "${pomFile}" =~ .*java-storage-nio.* ]] || \
       [[ "${pomFile}" =~ .*.github*. ]]; then
     continue
   fi
@@ -17,6 +27,10 @@ for pomFile in $(find . -mindepth 2 -name pom.xml | sort ); do
   fi
   if [[ "${pomFile}" =~ .*java-samples.* ]]; then
     echo "Skipping version check for java-samples directory"
+    continue
+  fi
+  if [[ "${pomFile}" =~ .*/samples/.* ]]; then
+    echo "Skipping version check for samples directory"
     continue
   fi
 

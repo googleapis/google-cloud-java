@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -290,7 +290,7 @@ public class InstanceGroupManagerResizeRequestsClient implements BackgroundResou
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param zone The name of the zone where the managed instance group is located. The name should
+   * @param zone The name of thezone where the managed instance group is located. The name should
    *     conform to RFC1035.
    * @param instanceGroupManager The name of the managed instance group. The name should conform to
    *     RFC1035 or be a resource ID.
@@ -446,7 +446,7 @@ public class InstanceGroupManagerResizeRequestsClient implements BackgroundResou
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param zone The name of the zone where the managed instance group is located. The name should
+   * @param zone The name of thezone where the managed instance group is located. The name should
    *     conform to RFC1035.
    * @param instanceGroupManager The name of the managed instance group. The name should conform to
    *     RFC1035 or be a resource ID.
@@ -713,7 +713,7 @@ public class InstanceGroupManagerResizeRequestsClient implements BackgroundResou
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param zone The name of the zone where the managed instance group is located and where the
+   * @param zone The name of thezone where the managed instance group is located and where the
    *     resize request will be created. Name should conform to RFC1035.
    * @param instanceGroupManager The name of the managed instance group to which the resize request
    *     will be added. Name should conform to RFC1035 or be a resource ID.
@@ -868,7 +868,7 @@ public class InstanceGroupManagerResizeRequestsClient implements BackgroundResou
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param zone The name of the zone where the managed instance group is located. The name should
+   * @param zone The name of thezone where the managed instance group is located. The name should
    *     conform to RFC1035.
    * @param instanceGroupManager The name of the managed instance group. The name should conform to
    *     RFC1035.

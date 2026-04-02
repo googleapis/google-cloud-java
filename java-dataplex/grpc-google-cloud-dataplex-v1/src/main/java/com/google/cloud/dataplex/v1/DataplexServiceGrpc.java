@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * systems including Cloud Storage and BigQuery.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dataplex/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DataplexServiceGrpc {
 
@@ -1192,275 +1189,6 @@ public final class DataplexServiceGrpc {
     return getCancelJobMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.dataplex.v1.CreateEnvironmentRequest, com.google.longrunning.Operation>
-      getCreateEnvironmentMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "CreateEnvironment",
-      requestType = com.google.cloud.dataplex.v1.CreateEnvironmentRequest.class,
-      responseType = com.google.longrunning.Operation.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.dataplex.v1.CreateEnvironmentRequest, com.google.longrunning.Operation>
-      getCreateEnvironmentMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.dataplex.v1.CreateEnvironmentRequest, com.google.longrunning.Operation>
-        getCreateEnvironmentMethod;
-    if ((getCreateEnvironmentMethod = DataplexServiceGrpc.getCreateEnvironmentMethod) == null) {
-      synchronized (DataplexServiceGrpc.class) {
-        if ((getCreateEnvironmentMethod = DataplexServiceGrpc.getCreateEnvironmentMethod) == null) {
-          DataplexServiceGrpc.getCreateEnvironmentMethod =
-              getCreateEnvironmentMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.dataplex.v1.CreateEnvironmentRequest,
-                          com.google.longrunning.Operation>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateEnvironment"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.dataplex.v1.CreateEnvironmentRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.longrunning.Operation.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new DataplexServiceMethodDescriptorSupplier("CreateEnvironment"))
-                      .build();
-        }
-      }
-    }
-    return getCreateEnvironmentMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.dataplex.v1.UpdateEnvironmentRequest, com.google.longrunning.Operation>
-      getUpdateEnvironmentMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UpdateEnvironment",
-      requestType = com.google.cloud.dataplex.v1.UpdateEnvironmentRequest.class,
-      responseType = com.google.longrunning.Operation.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.dataplex.v1.UpdateEnvironmentRequest, com.google.longrunning.Operation>
-      getUpdateEnvironmentMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.dataplex.v1.UpdateEnvironmentRequest, com.google.longrunning.Operation>
-        getUpdateEnvironmentMethod;
-    if ((getUpdateEnvironmentMethod = DataplexServiceGrpc.getUpdateEnvironmentMethod) == null) {
-      synchronized (DataplexServiceGrpc.class) {
-        if ((getUpdateEnvironmentMethod = DataplexServiceGrpc.getUpdateEnvironmentMethod) == null) {
-          DataplexServiceGrpc.getUpdateEnvironmentMethod =
-              getUpdateEnvironmentMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.dataplex.v1.UpdateEnvironmentRequest,
-                          com.google.longrunning.Operation>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateEnvironment"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.dataplex.v1.UpdateEnvironmentRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.longrunning.Operation.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new DataplexServiceMethodDescriptorSupplier("UpdateEnvironment"))
-                      .build();
-        }
-      }
-    }
-    return getUpdateEnvironmentMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.dataplex.v1.DeleteEnvironmentRequest, com.google.longrunning.Operation>
-      getDeleteEnvironmentMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DeleteEnvironment",
-      requestType = com.google.cloud.dataplex.v1.DeleteEnvironmentRequest.class,
-      responseType = com.google.longrunning.Operation.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.dataplex.v1.DeleteEnvironmentRequest, com.google.longrunning.Operation>
-      getDeleteEnvironmentMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.dataplex.v1.DeleteEnvironmentRequest, com.google.longrunning.Operation>
-        getDeleteEnvironmentMethod;
-    if ((getDeleteEnvironmentMethod = DataplexServiceGrpc.getDeleteEnvironmentMethod) == null) {
-      synchronized (DataplexServiceGrpc.class) {
-        if ((getDeleteEnvironmentMethod = DataplexServiceGrpc.getDeleteEnvironmentMethod) == null) {
-          DataplexServiceGrpc.getDeleteEnvironmentMethod =
-              getDeleteEnvironmentMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.dataplex.v1.DeleteEnvironmentRequest,
-                          com.google.longrunning.Operation>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteEnvironment"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.dataplex.v1.DeleteEnvironmentRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.longrunning.Operation.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new DataplexServiceMethodDescriptorSupplier("DeleteEnvironment"))
-                      .build();
-        }
-      }
-    }
-    return getDeleteEnvironmentMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.dataplex.v1.ListEnvironmentsRequest,
-          com.google.cloud.dataplex.v1.ListEnvironmentsResponse>
-      getListEnvironmentsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListEnvironments",
-      requestType = com.google.cloud.dataplex.v1.ListEnvironmentsRequest.class,
-      responseType = com.google.cloud.dataplex.v1.ListEnvironmentsResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.dataplex.v1.ListEnvironmentsRequest,
-          com.google.cloud.dataplex.v1.ListEnvironmentsResponse>
-      getListEnvironmentsMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.dataplex.v1.ListEnvironmentsRequest,
-            com.google.cloud.dataplex.v1.ListEnvironmentsResponse>
-        getListEnvironmentsMethod;
-    if ((getListEnvironmentsMethod = DataplexServiceGrpc.getListEnvironmentsMethod) == null) {
-      synchronized (DataplexServiceGrpc.class) {
-        if ((getListEnvironmentsMethod = DataplexServiceGrpc.getListEnvironmentsMethod) == null) {
-          DataplexServiceGrpc.getListEnvironmentsMethod =
-              getListEnvironmentsMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.dataplex.v1.ListEnvironmentsRequest,
-                          com.google.cloud.dataplex.v1.ListEnvironmentsResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListEnvironments"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.dataplex.v1.ListEnvironmentsRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.dataplex.v1.ListEnvironmentsResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new DataplexServiceMethodDescriptorSupplier("ListEnvironments"))
-                      .build();
-        }
-      }
-    }
-    return getListEnvironmentsMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.dataplex.v1.GetEnvironmentRequest,
-          com.google.cloud.dataplex.v1.Environment>
-      getGetEnvironmentMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetEnvironment",
-      requestType = com.google.cloud.dataplex.v1.GetEnvironmentRequest.class,
-      responseType = com.google.cloud.dataplex.v1.Environment.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.dataplex.v1.GetEnvironmentRequest,
-          com.google.cloud.dataplex.v1.Environment>
-      getGetEnvironmentMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.dataplex.v1.GetEnvironmentRequest,
-            com.google.cloud.dataplex.v1.Environment>
-        getGetEnvironmentMethod;
-    if ((getGetEnvironmentMethod = DataplexServiceGrpc.getGetEnvironmentMethod) == null) {
-      synchronized (DataplexServiceGrpc.class) {
-        if ((getGetEnvironmentMethod = DataplexServiceGrpc.getGetEnvironmentMethod) == null) {
-          DataplexServiceGrpc.getGetEnvironmentMethod =
-              getGetEnvironmentMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.dataplex.v1.GetEnvironmentRequest,
-                          com.google.cloud.dataplex.v1.Environment>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetEnvironment"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.dataplex.v1.GetEnvironmentRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.dataplex.v1.Environment.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new DataplexServiceMethodDescriptorSupplier("GetEnvironment"))
-                      .build();
-        }
-      }
-    }
-    return getGetEnvironmentMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.dataplex.v1.ListSessionsRequest,
-          com.google.cloud.dataplex.v1.ListSessionsResponse>
-      getListSessionsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListSessions",
-      requestType = com.google.cloud.dataplex.v1.ListSessionsRequest.class,
-      responseType = com.google.cloud.dataplex.v1.ListSessionsResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.dataplex.v1.ListSessionsRequest,
-          com.google.cloud.dataplex.v1.ListSessionsResponse>
-      getListSessionsMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.dataplex.v1.ListSessionsRequest,
-            com.google.cloud.dataplex.v1.ListSessionsResponse>
-        getListSessionsMethod;
-    if ((getListSessionsMethod = DataplexServiceGrpc.getListSessionsMethod) == null) {
-      synchronized (DataplexServiceGrpc.class) {
-        if ((getListSessionsMethod = DataplexServiceGrpc.getListSessionsMethod) == null) {
-          DataplexServiceGrpc.getListSessionsMethod =
-              getListSessionsMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.dataplex.v1.ListSessionsRequest,
-                          com.google.cloud.dataplex.v1.ListSessionsResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListSessions"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.dataplex.v1.ListSessionsRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.dataplex.v1.ListSessionsResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new DataplexServiceMethodDescriptorSupplier("ListSessions"))
-                      .build();
-        }
-      }
-    }
-    return getListSessionsMethod;
-  }
-
   /** Creates a new async stub that supports all call types for the service */
   public static DataplexServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<DataplexServiceStub> factory =
@@ -1895,93 +1623,6 @@ public final class DataplexServiceGrpc {
         com.google.cloud.dataplex.v1.CancelJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCancelJobMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Create an environment resource.
-     * </pre>
-     */
-    default void createEnvironment(
-        com.google.cloud.dataplex.v1.CreateEnvironmentRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getCreateEnvironmentMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Update the environment resource.
-     * </pre>
-     */
-    default void updateEnvironment(
-        com.google.cloud.dataplex.v1.UpdateEnvironmentRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getUpdateEnvironmentMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Delete the environment resource. All the child resources must have been
-     * deleted before environment deletion can be initiated.
-     * </pre>
-     */
-    default void deleteEnvironment(
-        com.google.cloud.dataplex.v1.DeleteEnvironmentRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getDeleteEnvironmentMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists environments under the given lake.
-     * </pre>
-     */
-    default void listEnvironments(
-        com.google.cloud.dataplex.v1.ListEnvironmentsRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListEnvironmentsResponse>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getListEnvironmentsMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Get environment resource.
-     * </pre>
-     */
-    default void getEnvironment(
-        com.google.cloud.dataplex.v1.GetEnvironmentRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Environment> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getGetEnvironmentMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists session resources in an environment.
-     * </pre>
-     */
-    default void listSessions(
-        com.google.cloud.dataplex.v1.ListSessionsRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListSessionsResponse>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getListSessionsMethod(), responseObserver);
     }
   }
 
@@ -2428,105 +2069,6 @@ public final class DataplexServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCancelJobMethod(), getCallOptions()), request, responseObserver);
     }
-
-    /**
-     *
-     *
-     * <pre>
-     * Create an environment resource.
-     * </pre>
-     */
-    public void createEnvironment(
-        com.google.cloud.dataplex.v1.CreateEnvironmentRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getCreateEnvironmentMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Update the environment resource.
-     * </pre>
-     */
-    public void updateEnvironment(
-        com.google.cloud.dataplex.v1.UpdateEnvironmentRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getUpdateEnvironmentMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Delete the environment resource. All the child resources must have been
-     * deleted before environment deletion can be initiated.
-     * </pre>
-     */
-    public void deleteEnvironment(
-        com.google.cloud.dataplex.v1.DeleteEnvironmentRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDeleteEnvironmentMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists environments under the given lake.
-     * </pre>
-     */
-    public void listEnvironments(
-        com.google.cloud.dataplex.v1.ListEnvironmentsRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListEnvironmentsResponse>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListEnvironmentsMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Get environment resource.
-     * </pre>
-     */
-    public void getEnvironment(
-        com.google.cloud.dataplex.v1.GetEnvironmentRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Environment> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetEnvironmentMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists session resources in an environment.
-     * </pre>
-     */
-    public void listSessions(
-        com.google.cloud.dataplex.v1.ListSessionsRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListSessionsResponse>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListSessionsMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
   }
 
   /**
@@ -2561,8 +2103,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createLake(
-        com.google.cloud.dataplex.v1.CreateLakeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateLakeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateLakeMethod(), getCallOptions(), request);
     }
 
@@ -2574,8 +2116,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateLake(
-        com.google.cloud.dataplex.v1.UpdateLakeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.UpdateLakeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateLakeMethod(), getCallOptions(), request);
     }
 
@@ -2588,8 +2130,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteLake(
-        com.google.cloud.dataplex.v1.DeleteLakeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeleteLakeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteLakeMethod(), getCallOptions(), request);
     }
 
@@ -2601,8 +2143,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListLakesResponse listLakes(
-        com.google.cloud.dataplex.v1.ListLakesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListLakesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListLakesMethod(), getCallOptions(), request);
     }
 
@@ -2614,8 +2156,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Lake getLake(
-        com.google.cloud.dataplex.v1.GetLakeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetLakeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetLakeMethod(), getCallOptions(), request);
     }
 
@@ -2627,8 +2169,9 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListActionsResponse listLakeActions(
-        com.google.cloud.dataplex.v1.ListLakeActionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListLakeActionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListLakeActionsMethod(), getCallOptions(), request);
     }
 
@@ -2640,8 +2183,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createZone(
-        com.google.cloud.dataplex.v1.CreateZoneRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateZoneRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateZoneMethod(), getCallOptions(), request);
     }
 
@@ -2653,8 +2196,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateZone(
-        com.google.cloud.dataplex.v1.UpdateZoneRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.UpdateZoneRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateZoneMethod(), getCallOptions(), request);
     }
 
@@ -2667,8 +2210,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteZone(
-        com.google.cloud.dataplex.v1.DeleteZoneRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeleteZoneRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteZoneMethod(), getCallOptions(), request);
     }
 
@@ -2680,8 +2223,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListZonesResponse listZones(
-        com.google.cloud.dataplex.v1.ListZonesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListZonesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListZonesMethod(), getCallOptions(), request);
     }
 
@@ -2693,8 +2236,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Zone getZone(
-        com.google.cloud.dataplex.v1.GetZoneRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetZoneRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetZoneMethod(), getCallOptions(), request);
     }
 
@@ -2706,8 +2249,9 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListActionsResponse listZoneActions(
-        com.google.cloud.dataplex.v1.ListZoneActionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListZoneActionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListZoneActionsMethod(), getCallOptions(), request);
     }
 
@@ -2719,8 +2263,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAsset(
-        com.google.cloud.dataplex.v1.CreateAssetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateAssetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAssetMethod(), getCallOptions(), request);
     }
 
@@ -2732,8 +2276,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateAsset(
-        com.google.cloud.dataplex.v1.UpdateAssetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.UpdateAssetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAssetMethod(), getCallOptions(), request);
     }
 
@@ -2746,8 +2290,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteAsset(
-        com.google.cloud.dataplex.v1.DeleteAssetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeleteAssetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAssetMethod(), getCallOptions(), request);
     }
 
@@ -2759,8 +2303,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListAssetsResponse listAssets(
-        com.google.cloud.dataplex.v1.ListAssetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListAssetsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAssetsMethod(), getCallOptions(), request);
     }
 
@@ -2772,8 +2316,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Asset getAsset(
-        com.google.cloud.dataplex.v1.GetAssetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetAssetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAssetMethod(), getCallOptions(), request);
     }
 
@@ -2785,8 +2329,9 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListActionsResponse listAssetActions(
-        com.google.cloud.dataplex.v1.ListAssetActionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListAssetActionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAssetActionsMethod(), getCallOptions(), request);
     }
 
@@ -2798,8 +2343,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createTask(
-        com.google.cloud.dataplex.v1.CreateTaskRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateTaskRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTaskMethod(), getCallOptions(), request);
     }
 
@@ -2811,8 +2356,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateTask(
-        com.google.cloud.dataplex.v1.UpdateTaskRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.UpdateTaskRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTaskMethod(), getCallOptions(), request);
     }
 
@@ -2824,8 +2369,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteTask(
-        com.google.cloud.dataplex.v1.DeleteTaskRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeleteTaskRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTaskMethod(), getCallOptions(), request);
     }
 
@@ -2837,8 +2382,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListTasksResponse listTasks(
-        com.google.cloud.dataplex.v1.ListTasksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListTasksRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTasksMethod(), getCallOptions(), request);
     }
 
@@ -2850,8 +2395,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Task getTask(
-        com.google.cloud.dataplex.v1.GetTaskRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetTaskRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTaskMethod(), getCallOptions(), request);
     }
 
@@ -2863,8 +2408,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListJobsResponse listJobs(
-        com.google.cloud.dataplex.v1.ListJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListJobsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListJobsMethod(), getCallOptions(), request);
     }
 
@@ -2876,8 +2421,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.RunTaskResponse runTask(
-        com.google.cloud.dataplex.v1.RunTaskRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.RunTaskRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRunTaskMethod(), getCallOptions(), request);
     }
 
@@ -2889,8 +2434,8 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Job getJob(
-        com.google.cloud.dataplex.v1.GetJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetJobMethod(), getCallOptions(), request);
     }
 
@@ -2902,88 +2447,9 @@ public final class DataplexServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty cancelJob(
-        com.google.cloud.dataplex.v1.CancelJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CancelJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelJobMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Create an environment resource.
-     * </pre>
-     */
-    public com.google.longrunning.Operation createEnvironment(
-        com.google.cloud.dataplex.v1.CreateEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateEnvironmentMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Update the environment resource.
-     * </pre>
-     */
-    public com.google.longrunning.Operation updateEnvironment(
-        com.google.cloud.dataplex.v1.UpdateEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateEnvironmentMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Delete the environment resource. All the child resources must have been
-     * deleted before environment deletion can be initiated.
-     * </pre>
-     */
-    public com.google.longrunning.Operation deleteEnvironment(
-        com.google.cloud.dataplex.v1.DeleteEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteEnvironmentMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists environments under the given lake.
-     * </pre>
-     */
-    public com.google.cloud.dataplex.v1.ListEnvironmentsResponse listEnvironments(
-        com.google.cloud.dataplex.v1.ListEnvironmentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListEnvironmentsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Get environment resource.
-     * </pre>
-     */
-    public com.google.cloud.dataplex.v1.Environment getEnvironment(
-        com.google.cloud.dataplex.v1.GetEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetEnvironmentMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists session resources in an environment.
-     * </pre>
-     */
-    public com.google.cloud.dataplex.v1.ListSessionsResponse listSessions(
-        com.google.cloud.dataplex.v1.ListSessionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListSessionsMethod(), getCallOptions(), request);
     }
   }
 
@@ -3362,85 +2828,6 @@ public final class DataplexServiceGrpc {
         com.google.cloud.dataplex.v1.CancelJobRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCancelJobMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Create an environment resource.
-     * </pre>
-     */
-    public com.google.longrunning.Operation createEnvironment(
-        com.google.cloud.dataplex.v1.CreateEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateEnvironmentMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Update the environment resource.
-     * </pre>
-     */
-    public com.google.longrunning.Operation updateEnvironment(
-        com.google.cloud.dataplex.v1.UpdateEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateEnvironmentMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Delete the environment resource. All the child resources must have been
-     * deleted before environment deletion can be initiated.
-     * </pre>
-     */
-    public com.google.longrunning.Operation deleteEnvironment(
-        com.google.cloud.dataplex.v1.DeleteEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteEnvironmentMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists environments under the given lake.
-     * </pre>
-     */
-    public com.google.cloud.dataplex.v1.ListEnvironmentsResponse listEnvironments(
-        com.google.cloud.dataplex.v1.ListEnvironmentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListEnvironmentsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Get environment resource.
-     * </pre>
-     */
-    public com.google.cloud.dataplex.v1.Environment getEnvironment(
-        com.google.cloud.dataplex.v1.GetEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetEnvironmentMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists session resources in an environment.
-     * </pre>
-     */
-    public com.google.cloud.dataplex.v1.ListSessionsResponse listSessions(
-        com.google.cloud.dataplex.v1.ListSessionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListSessionsMethod(), getCallOptions(), request);
     }
   }
 
@@ -3829,88 +3216,6 @@ public final class DataplexServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCancelJobMethod(), getCallOptions()), request);
     }
-
-    /**
-     *
-     *
-     * <pre>
-     * Create an environment resource.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
-        createEnvironment(com.google.cloud.dataplex.v1.CreateEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getCreateEnvironmentMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Update the environment resource.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
-        updateEnvironment(com.google.cloud.dataplex.v1.UpdateEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getUpdateEnvironmentMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Delete the environment resource. All the child resources must have been
-     * deleted before environment deletion can be initiated.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
-        deleteEnvironment(com.google.cloud.dataplex.v1.DeleteEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDeleteEnvironmentMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists environments under the given lake.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.dataplex.v1.ListEnvironmentsResponse>
-        listEnvironments(com.google.cloud.dataplex.v1.ListEnvironmentsRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListEnvironmentsMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Get environment resource.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.dataplex.v1.Environment>
-        getEnvironment(com.google.cloud.dataplex.v1.GetEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetEnvironmentMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists session resources in an environment.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.dataplex.v1.ListSessionsResponse>
-        listSessions(com.google.cloud.dataplex.v1.ListSessionsRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListSessionsMethod(), getCallOptions()), request);
-    }
   }
 
   private static final int METHODID_CREATE_LAKE = 0;
@@ -3940,12 +3245,6 @@ public final class DataplexServiceGrpc {
   private static final int METHODID_RUN_TASK = 24;
   private static final int METHODID_GET_JOB = 25;
   private static final int METHODID_CANCEL_JOB = 26;
-  private static final int METHODID_CREATE_ENVIRONMENT = 27;
-  private static final int METHODID_UPDATE_ENVIRONMENT = 28;
-  private static final int METHODID_DELETE_ENVIRONMENT = 29;
-  private static final int METHODID_LIST_ENVIRONMENTS = 30;
-  private static final int METHODID_GET_ENVIRONMENT = 31;
-  private static final int METHODID_LIST_SESSIONS = 32;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4107,39 +3406,6 @@ public final class DataplexServiceGrpc {
           serviceImpl.cancelJob(
               (com.google.cloud.dataplex.v1.CancelJobRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
-          break;
-        case METHODID_CREATE_ENVIRONMENT:
-          serviceImpl.createEnvironment(
-              (com.google.cloud.dataplex.v1.CreateEnvironmentRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
-          break;
-        case METHODID_UPDATE_ENVIRONMENT:
-          serviceImpl.updateEnvironment(
-              (com.google.cloud.dataplex.v1.UpdateEnvironmentRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
-          break;
-        case METHODID_DELETE_ENVIRONMENT:
-          serviceImpl.deleteEnvironment(
-              (com.google.cloud.dataplex.v1.DeleteEnvironmentRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
-          break;
-        case METHODID_LIST_ENVIRONMENTS:
-          serviceImpl.listEnvironments(
-              (com.google.cloud.dataplex.v1.ListEnvironmentsRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListEnvironmentsResponse>)
-                  responseObserver);
-          break;
-        case METHODID_GET_ENVIRONMENT:
-          serviceImpl.getEnvironment(
-              (com.google.cloud.dataplex.v1.GetEnvironmentRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Environment>)
-                  responseObserver);
-          break;
-        case METHODID_LIST_SESSIONS:
-          serviceImpl.listSessions(
-              (com.google.cloud.dataplex.v1.ListSessionsRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListSessionsResponse>)
-                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -4325,44 +3591,6 @@ public final class DataplexServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.dataplex.v1.CancelJobRequest, com.google.protobuf.Empty>(
                     service, METHODID_CANCEL_JOB)))
-        .addMethod(
-            getCreateEnvironmentMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.cloud.dataplex.v1.CreateEnvironmentRequest,
-                    com.google.longrunning.Operation>(service, METHODID_CREATE_ENVIRONMENT)))
-        .addMethod(
-            getUpdateEnvironmentMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.cloud.dataplex.v1.UpdateEnvironmentRequest,
-                    com.google.longrunning.Operation>(service, METHODID_UPDATE_ENVIRONMENT)))
-        .addMethod(
-            getDeleteEnvironmentMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.cloud.dataplex.v1.DeleteEnvironmentRequest,
-                    com.google.longrunning.Operation>(service, METHODID_DELETE_ENVIRONMENT)))
-        .addMethod(
-            getListEnvironmentsMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.cloud.dataplex.v1.ListEnvironmentsRequest,
-                    com.google.cloud.dataplex.v1.ListEnvironmentsResponse>(
-                    service, METHODID_LIST_ENVIRONMENTS)))
-        .addMethod(
-            getGetEnvironmentMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.cloud.dataplex.v1.GetEnvironmentRequest,
-                    com.google.cloud.dataplex.v1.Environment>(service, METHODID_GET_ENVIRONMENT)))
-        .addMethod(
-            getListSessionsMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.cloud.dataplex.v1.ListSessionsRequest,
-                    com.google.cloud.dataplex.v1.ListSessionsResponse>(
-                    service, METHODID_LIST_SESSIONS)))
         .build();
   }
 
@@ -4441,12 +3669,6 @@ public final class DataplexServiceGrpc {
                       .addMethod(getRunTaskMethod())
                       .addMethod(getGetJobMethod())
                       .addMethod(getCancelJobMethod())
-                      .addMethod(getCreateEnvironmentMethod())
-                      .addMethod(getUpdateEnvironmentMethod())
-                      .addMethod(getDeleteEnvironmentMethod())
-                      .addMethod(getListEnvironmentsMethod())
-                      .addMethod(getGetEnvironmentMethod())
-                      .addMethod(getListSessionsMethod())
                       .build();
         }
       }

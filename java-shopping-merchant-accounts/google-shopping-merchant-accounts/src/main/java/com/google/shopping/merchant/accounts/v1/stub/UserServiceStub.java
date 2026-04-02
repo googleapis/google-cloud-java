@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ import com.google.shopping.merchant.accounts.v1.ListUsersRequest;
 import com.google.shopping.merchant.accounts.v1.ListUsersResponse;
 import com.google.shopping.merchant.accounts.v1.UpdateUserRequest;
 import com.google.shopping.merchant.accounts.v1.User;
+import com.google.shopping.merchant.accounts.v1.VerifySelfRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -61,6 +62,10 @@ public abstract class UserServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListUsersRequest, ListUsersResponse> listUsersCallable() {
     throw new UnsupportedOperationException("Not implemented: listUsersCallable()");
+  }
+
+  public UnaryCallable<VerifySelfRequest, User> verifySelfCallable() {
+    throw new UnsupportedOperationException("Not implemented: verifySelfCallable()");
   }
 
   @Override

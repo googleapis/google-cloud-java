@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing [Changelogs][google.cloud.dialogflow.cx.v3.Changelog].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/cx/v3/changelog.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ChangelogsGrpc {
 
@@ -311,8 +308,9 @@ public final class ChangelogsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.ListChangelogsResponse listChangelogs(
-        com.google.cloud.dialogflow.cx.v3.ListChangelogsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.ListChangelogsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListChangelogsMethod(), getCallOptions(), request);
     }
 
@@ -324,8 +322,9 @@ public final class ChangelogsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.Changelog getChangelog(
-        com.google.cloud.dialogflow.cx.v3.GetChangelogRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.GetChangelogRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetChangelogMethod(), getCallOptions(), request);
     }
   }

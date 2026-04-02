@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package com.google.cloud.networkmanagement.v1beta1.stub;
 import static com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsServiceClient.ListVpcFlowLogsConfigsPagedResponse;
 import static com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsServiceClient.QueryOrgVpcFlowLogsConfigsPagedResponse;
+import static com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsServiceClient.ShowEffectiveFlowLogsConfigsPagedResponse;
 
 import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
@@ -49,6 +50,8 @@ import com.google.cloud.networkmanagement.v1beta1.ListVpcFlowLogsConfigsResponse
 import com.google.cloud.networkmanagement.v1beta1.OperationMetadata;
 import com.google.cloud.networkmanagement.v1beta1.QueryOrgVpcFlowLogsConfigsRequest;
 import com.google.cloud.networkmanagement.v1beta1.QueryOrgVpcFlowLogsConfigsResponse;
+import com.google.cloud.networkmanagement.v1beta1.ShowEffectiveFlowLogsConfigsRequest;
+import com.google.cloud.networkmanagement.v1beta1.ShowEffectiveFlowLogsConfigsResponse;
 import com.google.cloud.networkmanagement.v1beta1.UpdateVpcFlowLogsConfigRequest;
 import com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig;
 import com.google.common.collect.ImmutableMap;
@@ -328,6 +331,48 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          ShowEffectiveFlowLogsConfigsRequest, ShowEffectiveFlowLogsConfigsResponse>
+      showEffectiveFlowLogsConfigsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ShowEffectiveFlowLogsConfigsRequest, ShowEffectiveFlowLogsConfigsResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.networkmanagement.v1beta1.VpcFlowLogsService/ShowEffectiveFlowLogsConfigs")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ShowEffectiveFlowLogsConfigsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{parent=projects/*/locations/*}/vpcFlowLogsConfigs:showEffectiveFlowLogsConfigs",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ShowEffectiveFlowLogsConfigsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ShowEffectiveFlowLogsConfigsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "resource", request.getResource());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ShowEffectiveFlowLogsConfigsResponse>newBuilder()
+                      .setDefaultInstance(ShowEffectiveFlowLogsConfigsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -531,6 +576,12 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
   private final UnaryCallable<
           QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsPagedResponse>
       queryOrgVpcFlowLogsConfigsPagedCallable;
+  private final UnaryCallable<
+          ShowEffectiveFlowLogsConfigsRequest, ShowEffectiveFlowLogsConfigsResponse>
+      showEffectiveFlowLogsConfigsCallable;
+  private final UnaryCallable<
+          ShowEffectiveFlowLogsConfigsRequest, ShowEffectiveFlowLogsConfigsPagedResponse>
+      showEffectiveFlowLogsConfigsPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -644,6 +695,7 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetVpcFlowLogsConfigRequest, VpcFlowLogsConfig>
         getVpcFlowLogsConfigTransportSettings =
@@ -656,6 +708,7 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateVpcFlowLogsConfigRequest, Operation>
         createVpcFlowLogsConfigTransportSettings =
@@ -668,6 +721,7 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateVpcFlowLogsConfigRequest, Operation>
         updateVpcFlowLogsConfigTransportSettings =
@@ -694,6 +748,7 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsResponse>
         queryOrgVpcFlowLogsConfigsTransportSettings =
@@ -707,6 +762,22 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<ShowEffectiveFlowLogsConfigsRequest, ShowEffectiveFlowLogsConfigsResponse>
+        showEffectiveFlowLogsConfigsTransportSettings =
+            HttpJsonCallSettings
+                .<ShowEffectiveFlowLogsConfigsRequest, ShowEffectiveFlowLogsConfigsResponse>
+                    newBuilder()
+                .setMethodDescriptor(showEffectiveFlowLogsConfigsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -741,6 +812,7 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -752,6 +824,7 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -764,6 +837,7 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listVpcFlowLogsConfigsCallable =
@@ -824,6 +898,16 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
             queryOrgVpcFlowLogsConfigsTransportSettings,
             settings.queryOrgVpcFlowLogsConfigsSettings(),
             clientContext);
+    this.showEffectiveFlowLogsConfigsCallable =
+        callableFactory.createUnaryCallable(
+            showEffectiveFlowLogsConfigsTransportSettings,
+            settings.showEffectiveFlowLogsConfigsSettings(),
+            clientContext);
+    this.showEffectiveFlowLogsConfigsPagedCallable =
+        callableFactory.createPagedCallable(
+            showEffectiveFlowLogsConfigsTransportSettings,
+            settings.showEffectiveFlowLogsConfigsSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -858,6 +942,7 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
     methodDescriptors.add(updateVpcFlowLogsConfigMethodDescriptor);
     methodDescriptors.add(deleteVpcFlowLogsConfigMethodDescriptor);
     methodDescriptors.add(queryOrgVpcFlowLogsConfigsMethodDescriptor);
+    methodDescriptors.add(showEffectiveFlowLogsConfigsMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
@@ -934,6 +1019,19 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
   public UnaryCallable<QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsPagedResponse>
       queryOrgVpcFlowLogsConfigsPagedCallable() {
     return queryOrgVpcFlowLogsConfigsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ShowEffectiveFlowLogsConfigsRequest, ShowEffectiveFlowLogsConfigsResponse>
+      showEffectiveFlowLogsConfigsCallable() {
+    return showEffectiveFlowLogsConfigsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ShowEffectiveFlowLogsConfigsRequest, ShowEffectiveFlowLogsConfigsPagedResponse>
+      showEffectiveFlowLogsConfigsPagedCallable() {
+    return showEffectiveFlowLogsConfigsPagedCallable;
   }
 
   @Override

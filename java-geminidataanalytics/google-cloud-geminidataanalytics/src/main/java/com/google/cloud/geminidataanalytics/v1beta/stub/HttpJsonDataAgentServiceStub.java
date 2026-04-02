@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -247,6 +247,47 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<CreateDataAgentRequest, DataAgent>
+      createDataAgentSyncMethodDescriptor =
+          ApiMethodDescriptor.<CreateDataAgentRequest, DataAgent>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.geminidataanalytics.v1beta.DataAgentService/CreateDataAgentSync")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateDataAgentRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=projects/*/locations/*}/dataAgents:createSync",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateDataAgentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateDataAgentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "dataAgentId", request.getDataAgentId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("dataAgent", request.getDataAgent(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<DataAgent>newBuilder()
+                      .setDefaultInstance(DataAgent.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<UpdateDataAgentRequest, Operation>
       updateDataAgentMethodDescriptor =
           ApiMethodDescriptor.<UpdateDataAgentRequest, Operation>newBuilder()
@@ -291,6 +332,47 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<UpdateDataAgentRequest, DataAgent>
+      updateDataAgentSyncMethodDescriptor =
+          ApiMethodDescriptor.<UpdateDataAgentRequest, DataAgent>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.geminidataanalytics.v1beta.DataAgentService/UpdateDataAgentSync")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateDataAgentRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{dataAgent.name=projects/*/locations/*/dataAgents/*}:updateSync",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateDataAgentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "dataAgent.name", request.getDataAgent().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateDataAgentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("dataAgent", request.getDataAgent(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<DataAgent>newBuilder()
+                      .setDefaultInstance(DataAgent.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<DeleteDataAgentRequest, Operation>
       deleteDataAgentMethodDescriptor =
           ApiMethodDescriptor.<DeleteDataAgentRequest, Operation>newBuilder()
@@ -328,6 +410,42 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
               .setOperationSnapshotFactory(
                   (DeleteDataAgentRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteDataAgentRequest, Empty>
+      deleteDataAgentSyncMethodDescriptor =
+          ApiMethodDescriptor.<DeleteDataAgentRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.geminidataanalytics.v1beta.DataAgentService/DeleteDataAgentSync")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteDataAgentRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/dataAgents/*}:deleteSync",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteDataAgentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteDataAgentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
               .build();
 
   private static final ApiMethodDescriptor<GetIamPolicyRequest, Policy>
@@ -486,12 +604,15 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
   private final UnaryCallable<CreateDataAgentRequest, Operation> createDataAgentCallable;
   private final OperationCallable<CreateDataAgentRequest, DataAgent, OperationMetadata>
       createDataAgentOperationCallable;
+  private final UnaryCallable<CreateDataAgentRequest, DataAgent> createDataAgentSyncCallable;
   private final UnaryCallable<UpdateDataAgentRequest, Operation> updateDataAgentCallable;
   private final OperationCallable<UpdateDataAgentRequest, DataAgent, OperationMetadata>
       updateDataAgentOperationCallable;
+  private final UnaryCallable<UpdateDataAgentRequest, DataAgent> updateDataAgentSyncCallable;
   private final UnaryCallable<DeleteDataAgentRequest, Operation> deleteDataAgentCallable;
   private final OperationCallable<DeleteDataAgentRequest, Empty, OperationMetadata>
       deleteDataAgentOperationCallable;
+  private final UnaryCallable<DeleteDataAgentRequest, Empty> deleteDataAgentSyncCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
@@ -580,6 +701,7 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListAccessibleDataAgentsRequest, ListAccessibleDataAgentsResponse>
         listAccessibleDataAgentsTransportSettings =
@@ -593,6 +715,7 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDataAgentRequest, DataAgent> getDataAgentTransportSettings =
         HttpJsonCallSettings.<GetDataAgentRequest, DataAgent>newBuilder()
@@ -604,6 +727,7 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateDataAgentRequest, Operation> createDataAgentTransportSettings =
         HttpJsonCallSettings.<CreateDataAgentRequest, Operation>newBuilder()
@@ -615,10 +739,34 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<CreateDataAgentRequest, DataAgent> createDataAgentSyncTransportSettings =
+        HttpJsonCallSettings.<CreateDataAgentRequest, DataAgent>newBuilder()
+            .setMethodDescriptor(createDataAgentSyncMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateDataAgentRequest, Operation> updateDataAgentTransportSettings =
         HttpJsonCallSettings.<UpdateDataAgentRequest, Operation>newBuilder()
             .setMethodDescriptor(updateDataAgentMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("data_agent.name", String.valueOf(request.getDataAgent().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateDataAgentRequest, DataAgent> updateDataAgentSyncTransportSettings =
+        HttpJsonCallSettings.<UpdateDataAgentRequest, DataAgent>newBuilder()
+            .setMethodDescriptor(updateDataAgentSyncMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .setParamsExtractor(
                 request -> {
@@ -637,6 +785,19 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<DeleteDataAgentRequest, Empty> deleteDataAgentSyncTransportSettings =
+        HttpJsonCallSettings.<DeleteDataAgentRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteDataAgentSyncMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -648,6 +809,7 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -659,6 +821,7 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -712,6 +875,11 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
             settings.createDataAgentOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.createDataAgentSyncCallable =
+        callableFactory.createUnaryCallable(
+            createDataAgentSyncTransportSettings,
+            settings.createDataAgentSyncSettings(),
+            clientContext);
     this.updateDataAgentCallable =
         callableFactory.createUnaryCallable(
             updateDataAgentTransportSettings, settings.updateDataAgentSettings(), clientContext);
@@ -721,6 +889,11 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
             settings.updateDataAgentOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.updateDataAgentSyncCallable =
+        callableFactory.createUnaryCallable(
+            updateDataAgentSyncTransportSettings,
+            settings.updateDataAgentSyncSettings(),
+            clientContext);
     this.deleteDataAgentCallable =
         callableFactory.createUnaryCallable(
             deleteDataAgentTransportSettings, settings.deleteDataAgentSettings(), clientContext);
@@ -730,6 +903,11 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
             settings.deleteDataAgentOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.deleteDataAgentSyncCallable =
+        callableFactory.createUnaryCallable(
+            deleteDataAgentSyncTransportSettings,
+            settings.deleteDataAgentSyncSettings(),
+            clientContext);
     this.getIamPolicyCallable =
         callableFactory.createUnaryCallable(
             getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
@@ -757,8 +935,11 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
     methodDescriptors.add(listAccessibleDataAgentsMethodDescriptor);
     methodDescriptors.add(getDataAgentMethodDescriptor);
     methodDescriptors.add(createDataAgentMethodDescriptor);
+    methodDescriptors.add(createDataAgentSyncMethodDescriptor);
     methodDescriptors.add(updateDataAgentMethodDescriptor);
+    methodDescriptors.add(updateDataAgentSyncMethodDescriptor);
     methodDescriptors.add(deleteDataAgentMethodDescriptor);
+    methodDescriptors.add(deleteDataAgentSyncMethodDescriptor);
     methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
@@ -810,6 +991,11 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
   }
 
   @Override
+  public UnaryCallable<CreateDataAgentRequest, DataAgent> createDataAgentSyncCallable() {
+    return createDataAgentSyncCallable;
+  }
+
+  @Override
   public UnaryCallable<UpdateDataAgentRequest, Operation> updateDataAgentCallable() {
     return updateDataAgentCallable;
   }
@@ -821,6 +1007,11 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
   }
 
   @Override
+  public UnaryCallable<UpdateDataAgentRequest, DataAgent> updateDataAgentSyncCallable() {
+    return updateDataAgentSyncCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteDataAgentRequest, Operation> deleteDataAgentCallable() {
     return deleteDataAgentCallable;
   }
@@ -829,6 +1020,11 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
   public OperationCallable<DeleteDataAgentRequest, Empty, OperationMetadata>
       deleteDataAgentOperationCallable() {
     return deleteDataAgentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteDataAgentRequest, Empty> deleteDataAgentSyncCallable() {
+    return deleteDataAgentSyncCallable;
   }
 
   @Override

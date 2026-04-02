@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Manages Merchant Center and CSS accounts labels.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/css/v1/accounts_labels.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AccountLabelsServiceGrpc {
 
@@ -475,8 +472,9 @@ public final class AccountLabelsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.css.v1.ListAccountLabelsResponse listAccountLabels(
-        com.google.shopping.css.v1.ListAccountLabelsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.css.v1.ListAccountLabelsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAccountLabelsMethod(), getCallOptions(), request);
     }
 
@@ -488,8 +486,9 @@ public final class AccountLabelsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.css.v1.AccountLabel createAccountLabel(
-        com.google.shopping.css.v1.CreateAccountLabelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.css.v1.CreateAccountLabelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAccountLabelMethod(), getCallOptions(), request);
     }
 
@@ -501,8 +500,9 @@ public final class AccountLabelsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.css.v1.AccountLabel updateAccountLabel(
-        com.google.shopping.css.v1.UpdateAccountLabelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.css.v1.UpdateAccountLabelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAccountLabelMethod(), getCallOptions(), request);
     }
 
@@ -514,8 +514,9 @@ public final class AccountLabelsServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteAccountLabel(
-        com.google.shopping.css.v1.DeleteAccountLabelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.css.v1.DeleteAccountLabelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAccountLabelMethod(), getCallOptions(), request);
     }
   }

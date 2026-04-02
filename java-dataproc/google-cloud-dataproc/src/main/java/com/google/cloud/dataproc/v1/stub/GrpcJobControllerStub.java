@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -299,6 +299,7 @@ public class GrpcJobControllerStub extends JobControllerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -309,6 +310,7 @@ public class GrpcJobControllerStub extends JobControllerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -320,6 +322,7 @@ public class GrpcJobControllerStub extends JobControllerStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.submitJobCallable =

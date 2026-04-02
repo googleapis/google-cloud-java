@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,6 +55,8 @@ import com.google.cloud.vertexai.api.DirectPredictRequest;
 import com.google.cloud.vertexai.api.DirectPredictResponse;
 import com.google.cloud.vertexai.api.DirectRawPredictRequest;
 import com.google.cloud.vertexai.api.DirectRawPredictResponse;
+import com.google.cloud.vertexai.api.EmbedContentRequest;
+import com.google.cloud.vertexai.api.EmbedContentResponse;
 import com.google.cloud.vertexai.api.ExplainRequest;
 import com.google.cloud.vertexai.api.ExplainResponse;
 import com.google.cloud.vertexai.api.GenerateContentRequest;
@@ -132,8 +134,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @Generated("by gapic-generator-java")
 public class PredictionServiceStubSettings extends StubSettings<PredictionServiceStubSettings> {
@@ -167,6 +169,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
       generateContentSettings;
   private final ServerStreamingCallSettings<GenerateContentRequest, GenerateContentResponse>
       streamGenerateContentSettings;
+  private final UnaryCallSettings<EmbedContentRequest, EmbedContentResponse> embedContentSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -298,6 +301,11 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
   public ServerStreamingCallSettings<GenerateContentRequest, GenerateContentResponse>
       streamGenerateContentSettings() {
     return streamGenerateContentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to embedContent. */
+  public UnaryCallSettings<EmbedContentRequest, EmbedContentResponse> embedContentSettings() {
+    return embedContentSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -451,6 +459,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     explainSettings = settingsBuilder.explainSettings().build();
     generateContentSettings = settingsBuilder.generateContentSettings().build();
     streamGenerateContentSettings = settingsBuilder.streamGenerateContentSettings().build();
+    embedContentSettings = settingsBuilder.embedContentSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -489,6 +498,8 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     private final ServerStreamingCallSettings.Builder<
             GenerateContentRequest, GenerateContentResponse>
         streamGenerateContentSettings;
+    private final UnaryCallSettings.Builder<EmbedContentRequest, EmbedContentResponse>
+        embedContentSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -537,6 +548,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
       explainSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       generateContentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       streamGenerateContentSettings = ServerStreamingCallSettings.newBuilder();
+      embedContentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -551,6 +563,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
               directRawPredictSettings,
               explainSettings,
               generateContentSettings,
+              embedContentSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -575,6 +588,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
       explainSettings = settings.explainSettings.toBuilder();
       generateContentSettings = settings.generateContentSettings.toBuilder();
       streamGenerateContentSettings = settings.streamGenerateContentSettings.toBuilder();
+      embedContentSettings = settings.embedContentSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -589,6 +603,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
               directRawPredictSettings,
               explainSettings,
               generateContentSettings,
+              embedContentSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -663,6 +678,11 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
       builder
           .streamGenerateContentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .embedContentSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -783,6 +803,12 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     public ServerStreamingCallSettings.Builder<GenerateContentRequest, GenerateContentResponse>
         streamGenerateContentSettings() {
       return streamGenerateContentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to embedContent. */
+    public UnaryCallSettings.Builder<EmbedContentRequest, EmbedContentResponse>
+        embedContentSettings() {
+      return embedContentSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

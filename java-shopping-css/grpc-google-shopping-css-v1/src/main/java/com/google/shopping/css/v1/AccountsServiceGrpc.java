@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing CSS/MC account information.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/css/v1/accounts.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AccountsServiceGrpc {
 
@@ -387,8 +384,9 @@ public final class AccountsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.css.v1.ListChildAccountsResponse listChildAccounts(
-        com.google.shopping.css.v1.ListChildAccountsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.css.v1.ListChildAccountsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListChildAccountsMethod(), getCallOptions(), request);
     }
 
@@ -400,8 +398,8 @@ public final class AccountsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.css.v1.Account getAccount(
-        com.google.shopping.css.v1.GetAccountRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.css.v1.GetAccountRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAccountMethod(), getCallOptions(), request);
     }
 
@@ -413,8 +411,9 @@ public final class AccountsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.css.v1.Account updateLabels(
-        com.google.shopping.css.v1.UpdateAccountLabelsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.css.v1.UpdateAccountLabelsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateLabelsMethod(), getCallOptions(), request);
     }
   }

@@ -14,6 +14,7 @@
     <module>gapic-libraries-bom</module>
     <module>google-cloud-jar-parent</module>
     <module>google-cloud-pom-parent</module>
+    <module>google-auth-library-java</module>
     <module>java-accessapproval</module>
     <module>java-accesscontextmanager</module>
     <module>java-admanager</module>
@@ -35,6 +36,7 @@
     <module>java-artifact-registry</module>
     <module>java-asset</module>
     <module>java-assured-workloads</module>
+    <module>java-auditmanager</module>
     <module>java-automl</module>
     <module>java-backupdr</module>
     <module>java-bare-metal-solution</module>
@@ -45,19 +47,24 @@
     <module>java-beyondcorp-clientconnectorservices</module>
     <module>java-beyondcorp-clientgateways</module>
     <module>java-biglake</module>
+    <module>java-bigquery</module>
     <module>java-bigquery-data-exchange</module>
     <module>java-bigqueryconnection</module>
     <module>java-bigquerydatapolicy</module>
     <module>java-bigquerydatatransfer</module>
     <module>java-bigquerymigration</module>
     <module>java-bigqueryreservation</module>
+    <module>java-bigquerystorage</module>
     <module>java-billing</module>
     <module>java-billingbudgets</module>
     <module>java-binary-authorization</module>
+    <module>java-capacityplanner</module>
     <module>java-certificate-manager</module>
+    <module>java-ces</module>
     <module>java-channel</module>
     <module>java-chat</module>
     <module>java-chronicle</module>
+    <module>java-cloudapiregistry</module>
     <module>java-cloudbuild</module>
     <module>java-cloudcommerceconsumerprocurement</module>
     <module>java-cloudcontrolspartner</module>
@@ -73,14 +80,17 @@
     <module>java-containeranalysis</module>
     <module>java-contentwarehouse</module>
     <module>java-data-fusion</module>
+    <module>java-databasecenter</module>
     <module>java-datacatalog</module>
     <module>java-dataflow</module>
     <module>java-dataform</module>
     <module>java-datalabeling</module>
     <module>java-datalineage</module>
+    <module>java-datamanager</module>
     <module>java-dataplex</module>
     <module>java-dataproc</module>
     <module>java-dataproc-metastore</module>
+    <module>java-datastore</module>
     <module>java-datastream</module>
     <module>java-deploy</module>
     <module>java-developerconnect</module>
@@ -109,8 +119,10 @@
     <module>java-gke-connect-gateway</module>
     <module>java-gke-multi-cloud</module>
     <module>java-gkehub</module>
+    <module>java-gkerecommender</module>
     <module>java-grafeas</module>
     <module>java-gsuite-addons</module>
+    <module>java-hypercomputecluster</module>
     <module>java-iam</module>
     <module>java-iam-admin</module>
     <module>java-iamcredentials</module>
@@ -125,6 +137,9 @@
     <module>java-language</module>
     <module>java-licensemanager</module>
     <module>java-life-sciences</module>
+    <module>java-locationfinder</module>
+    <module>java-logging</module>
+    <module>java-logging-logback</module>
     <module>java-lustre</module>
     <module>java-maintenance</module>
     <module>java-managed-identities</module>
@@ -133,6 +148,7 @@
     <module>java-maps-area-insights</module>
     <module>java-maps-fleetengine</module>
     <module>java-maps-fleetengine-delivery</module>
+    <module>java-maps-geocode</module>
     <module>java-maps-mapsplatformdatasets</module>
     <module>java-maps-places</module>
     <module>java-maps-routeoptimization</module>
@@ -207,8 +223,12 @@
     <module>java-shopping-merchant-quota</module>
     <module>java-shopping-merchant-reports</module>
     <module>java-shopping-merchant-reviews</module>
+    <module>java-spanner</module>
+    <module>java-spanner-jdbc</module>
     <module>java-spanneradapter</module>
     <module>java-speech</module>
+    <module>java-storage</module>
+    <module>java-storage-nio</module>
     <module>java-storage-transfer</module>
     <module>java-storagebatchoperations</module>
     <module>java-storageinsights</module>
@@ -220,6 +240,7 @@
     <module>java-trace</module>
     <module>java-translate</module>
     <module>java-valkey</module>
+    <module>java-vectorsearch</module>
     <module>java-vertexai</module>
     <module>java-video-intelligence</module>
     <module>java-video-live-stream</module>
@@ -234,8 +255,10 @@
     <module>java-websecurityscanner</module>
     <module>java-workflow-executions</module>
     <module>java-workflows</module>
+    <module>java-workloadmanager</module>
     <module>java-workspaceevents</module>
     <module>java-workstations</module>
+    <module>sdk-platform-java</module>
   </modules>
 
   <!-- Do not deploy the aggregator POM -->

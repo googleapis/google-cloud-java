@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * integrations on Google Chat Platform.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/chat/v1/chat_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ChatServiceGrpc {
 
@@ -1588,19 +1585,31 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Lists messages in a space that the caller is a member of, including
-     * messages from blocked members and spaces. If you list messages from a
+     * messages from blocked members and spaces. System messages, like those
+     * announcing new space members, aren't included. If you list messages from a
      * space with no messages, the response is an empty object. When using a
      * REST/HTTP interface, the response contains an empty JSON object, `{}`.
      * For an example, see
      * [List
      * messages](https://developers.google.com/workspace/chat/api/guides/v1/messages/list).
-     * Requires [user
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) in
+     * [Developer Preview](https://developers.google.com/workspace/preview)
+     *  with the authorization scope:
+     *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`. When
+     *     using this authentication scope, this method only returns public
+     *     messages in a space. It doesn't include private messages.
+     * - [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
-     * with one of the following [authorization
-     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
-     *   - `https://www.googleapis.com/auth/chat.messages.readonly`
-     *   - `https://www.googleapis.com/auth/chat.messages`
-     *   - `https://www.googleapis.com/auth/chat.import` (import mode spaces only)
+     * with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.messages.readonly`
+     *     - `https://www.googleapis.com/auth/chat.messages`
+     *     - `https://www.googleapis.com/auth/chat.import` (import mode spaces
+     *     only)
      * </pre>
      */
     default void listMessages(
@@ -1699,8 +1708,18 @@ public final class ChatServiceGrpc {
      * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
      * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * with the authorization scope:
-     *     - `https://www.googleapis.com/auth/chat.bot`
+     * with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.bot`: When using this
+     *     authorization scope, this method returns details about a message the
+     *     Chat app has access to, like direct messages and [slash
+     *     commands](https://developers.google.com/workspace/chat/slash-commands)
+     *     that invoke the Chat app.
+     *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
+     *     with [administrator
+     *     approval](https://support.google.com/a?p=chat-app-auth) (available in
+     *     [Developer Preview](https://developers.google.com/workspace/preview)).
+     *     When using this authentication scope,
+     *     this method returns details about a public message in a space.
      * - [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * with one of the following authorization scopes:
@@ -1863,7 +1882,9 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Returns a list of spaces in a Google Workspace organization based on an
-     * administrator's search.
+     * administrator's search. In the request, set `use_admin_access` to `true`.
+     * For an example, see [Search for and manage
+     * spaces](https://developers.google.com/workspace/chat/search-manage-admin).
      * Requires [user
      * authentication with administrator
      * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges)
@@ -1871,7 +1892,6 @@ public final class ChatServiceGrpc {
      * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
      *   - `https://www.googleapis.com/auth/chat.admin.spaces.readonly`
      *   - `https://www.googleapis.com/auth/chat.admin.spaces`
-     * In the request, set `use_admin_access` to `true`.
      * </pre>
      */
     default void searchSpaces(
@@ -2548,20 +2568,33 @@ public final class ChatServiceGrpc {
      * payload.
      * Note: The `permissionSettings` field is not returned in the Space
      * object of the Space event data for this request.
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
-     * with an [authorization
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize)
+     * with an
+     * [authorization
      * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes)
      * appropriate for reading the requested data:
-     *   - `https://www.googleapis.com/auth/chat.spaces.readonly`
-     *   - `https://www.googleapis.com/auth/chat.spaces`
-     *   - `https://www.googleapis.com/auth/chat.messages.readonly`
-     *   - `https://www.googleapis.com/auth/chat.messages`
-     *   - `https://www.googleapis.com/auth/chat.messages.reactions.readonly`
-     *   - `https://www.googleapis.com/auth/chat.messages.reactions`
-     *   - `https://www.googleapis.com/auth/chat.memberships.readonly`
-     *   - `https://www.googleapis.com/auth/chat.memberships`
-     * To get an event, the authenticated user must be a member of the space.
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) in
+     * [Developer Preview](https://developers.google.com/workspace/preview)
+     *  with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.app.spaces`
+     *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
+     *     - `https://www.googleapis.com/auth/chat.app.memberships`
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.spaces.readonly`
+     *     - `https://www.googleapis.com/auth/chat.spaces`
+     *     - `https://www.googleapis.com/auth/chat.messages.readonly`
+     *     - `https://www.googleapis.com/auth/chat.messages`
+     *     - `https://www.googleapis.com/auth/chat.messages.reactions.readonly`
+     *     - `https://www.googleapis.com/auth/chat.messages.reactions`
+     *     - `https://www.googleapis.com/auth/chat.memberships.readonly`
+     *     - `https://www.googleapis.com/auth/chat.memberships`
+     * To get an event, the authenticated caller must be a member of the space.
      * For an example, see [Get details about an
      * event from a Google Chat
      * space](https://developers.google.com/workspace/chat/get-space-event).
@@ -2585,20 +2618,33 @@ public final class ChatServiceGrpc {
      * resources that contain the latest membership details. If new members were
      * removed during the requested period, the event payload contains an empty
      * `Membership` resource.
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
-     * with an [authorization
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize)
+     * with an
+     * [authorization
      * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes)
      * appropriate for reading the requested data:
-     *   - `https://www.googleapis.com/auth/chat.spaces.readonly`
-     *   - `https://www.googleapis.com/auth/chat.spaces`
-     *   - `https://www.googleapis.com/auth/chat.messages.readonly`
-     *   - `https://www.googleapis.com/auth/chat.messages`
-     *   - `https://www.googleapis.com/auth/chat.messages.reactions.readonly`
-     *   - `https://www.googleapis.com/auth/chat.messages.reactions`
-     *   - `https://www.googleapis.com/auth/chat.memberships.readonly`
-     *   - `https://www.googleapis.com/auth/chat.memberships`
-     * To list events, the authenticated user must be a member of the space.
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) in
+     * [Developer Preview](https://developers.google.com/workspace/preview)
+     *  with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.app.spaces`
+     *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
+     *     - `https://www.googleapis.com/auth/chat.app.memberships`
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.spaces.readonly`
+     *     - `https://www.googleapis.com/auth/chat.spaces`
+     *     - `https://www.googleapis.com/auth/chat.messages.readonly`
+     *     - `https://www.googleapis.com/auth/chat.messages`
+     *     - `https://www.googleapis.com/auth/chat.messages.reactions.readonly`
+     *     - `https://www.googleapis.com/auth/chat.messages.reactions`
+     *     - `https://www.googleapis.com/auth/chat.memberships.readonly`
+     *     - `https://www.googleapis.com/auth/chat.memberships`
+     * To list events, the authenticated caller must be a member of the space.
      * For an example, see [List events from a Google Chat
      * space](https://developers.google.com/workspace/chat/list-space-events).
      * </pre>
@@ -2744,19 +2790,31 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Lists messages in a space that the caller is a member of, including
-     * messages from blocked members and spaces. If you list messages from a
+     * messages from blocked members and spaces. System messages, like those
+     * announcing new space members, aren't included. If you list messages from a
      * space with no messages, the response is an empty object. When using a
      * REST/HTTP interface, the response contains an empty JSON object, `{}`.
      * For an example, see
      * [List
      * messages](https://developers.google.com/workspace/chat/api/guides/v1/messages/list).
-     * Requires [user
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) in
+     * [Developer Preview](https://developers.google.com/workspace/preview)
+     *  with the authorization scope:
+     *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`. When
+     *     using this authentication scope, this method only returns public
+     *     messages in a space. It doesn't include private messages.
+     * - [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
-     * with one of the following [authorization
-     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
-     *   - `https://www.googleapis.com/auth/chat.messages.readonly`
-     *   - `https://www.googleapis.com/auth/chat.messages`
-     *   - `https://www.googleapis.com/auth/chat.import` (import mode spaces only)
+     * with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.messages.readonly`
+     *     - `https://www.googleapis.com/auth/chat.messages`
+     *     - `https://www.googleapis.com/auth/chat.import` (import mode spaces
+     *     only)
      * </pre>
      */
     public void listMessages(
@@ -2861,8 +2919,18 @@ public final class ChatServiceGrpc {
      * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
      * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * with the authorization scope:
-     *     - `https://www.googleapis.com/auth/chat.bot`
+     * with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.bot`: When using this
+     *     authorization scope, this method returns details about a message the
+     *     Chat app has access to, like direct messages and [slash
+     *     commands](https://developers.google.com/workspace/chat/slash-commands)
+     *     that invoke the Chat app.
+     *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
+     *     with [administrator
+     *     approval](https://support.google.com/a?p=chat-app-auth) (available in
+     *     [Developer Preview](https://developers.google.com/workspace/preview)).
+     *     When using this authentication scope,
+     *     this method returns details about a public message in a space.
      * - [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * with one of the following authorization scopes:
@@ -3035,7 +3103,9 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Returns a list of spaces in a Google Workspace organization based on an
-     * administrator's search.
+     * administrator's search. In the request, set `use_admin_access` to `true`.
+     * For an example, see [Search for and manage
+     * spaces](https://developers.google.com/workspace/chat/search-manage-admin).
      * Requires [user
      * authentication with administrator
      * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges)
@@ -3043,7 +3113,6 @@ public final class ChatServiceGrpc {
      * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
      *   - `https://www.googleapis.com/auth/chat.admin.spaces.readonly`
      *   - `https://www.googleapis.com/auth/chat.admin.spaces`
-     * In the request, set `use_admin_access` to `true`.
      * </pre>
      */
     public void searchSpaces(
@@ -3760,20 +3829,33 @@ public final class ChatServiceGrpc {
      * payload.
      * Note: The `permissionSettings` field is not returned in the Space
      * object of the Space event data for this request.
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
-     * with an [authorization
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize)
+     * with an
+     * [authorization
      * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes)
      * appropriate for reading the requested data:
-     *   - `https://www.googleapis.com/auth/chat.spaces.readonly`
-     *   - `https://www.googleapis.com/auth/chat.spaces`
-     *   - `https://www.googleapis.com/auth/chat.messages.readonly`
-     *   - `https://www.googleapis.com/auth/chat.messages`
-     *   - `https://www.googleapis.com/auth/chat.messages.reactions.readonly`
-     *   - `https://www.googleapis.com/auth/chat.messages.reactions`
-     *   - `https://www.googleapis.com/auth/chat.memberships.readonly`
-     *   - `https://www.googleapis.com/auth/chat.memberships`
-     * To get an event, the authenticated user must be a member of the space.
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) in
+     * [Developer Preview](https://developers.google.com/workspace/preview)
+     *  with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.app.spaces`
+     *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
+     *     - `https://www.googleapis.com/auth/chat.app.memberships`
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.spaces.readonly`
+     *     - `https://www.googleapis.com/auth/chat.spaces`
+     *     - `https://www.googleapis.com/auth/chat.messages.readonly`
+     *     - `https://www.googleapis.com/auth/chat.messages`
+     *     - `https://www.googleapis.com/auth/chat.messages.reactions.readonly`
+     *     - `https://www.googleapis.com/auth/chat.messages.reactions`
+     *     - `https://www.googleapis.com/auth/chat.memberships.readonly`
+     *     - `https://www.googleapis.com/auth/chat.memberships`
+     * To get an event, the authenticated caller must be a member of the space.
      * For an example, see [Get details about an
      * event from a Google Chat
      * space](https://developers.google.com/workspace/chat/get-space-event).
@@ -3799,20 +3881,33 @@ public final class ChatServiceGrpc {
      * resources that contain the latest membership details. If new members were
      * removed during the requested period, the event payload contains an empty
      * `Membership` resource.
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
-     * with an [authorization
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize)
+     * with an
+     * [authorization
      * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes)
      * appropriate for reading the requested data:
-     *   - `https://www.googleapis.com/auth/chat.spaces.readonly`
-     *   - `https://www.googleapis.com/auth/chat.spaces`
-     *   - `https://www.googleapis.com/auth/chat.messages.readonly`
-     *   - `https://www.googleapis.com/auth/chat.messages`
-     *   - `https://www.googleapis.com/auth/chat.messages.reactions.readonly`
-     *   - `https://www.googleapis.com/auth/chat.messages.reactions`
-     *   - `https://www.googleapis.com/auth/chat.memberships.readonly`
-     *   - `https://www.googleapis.com/auth/chat.memberships`
-     * To list events, the authenticated user must be a member of the space.
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) in
+     * [Developer Preview](https://developers.google.com/workspace/preview)
+     *  with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.app.spaces`
+     *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
+     *     - `https://www.googleapis.com/auth/chat.app.memberships`
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.spaces.readonly`
+     *     - `https://www.googleapis.com/auth/chat.spaces`
+     *     - `https://www.googleapis.com/auth/chat.messages.readonly`
+     *     - `https://www.googleapis.com/auth/chat.messages`
+     *     - `https://www.googleapis.com/auth/chat.messages.reactions.readonly`
+     *     - `https://www.googleapis.com/auth/chat.messages.reactions`
+     *     - `https://www.googleapis.com/auth/chat.memberships.readonly`
+     *     - `https://www.googleapis.com/auth/chat.memberships`
+     * To list events, the authenticated caller must be a member of the space.
      * For an example, see [List events from a Google Chat
      * space](https://developers.google.com/workspace/chat/list-space-events).
      * </pre>
@@ -3934,9 +4029,9 @@ public final class ChatServiceGrpc {
      * information that was in the request.
      * </pre>
      */
-    public com.google.chat.v1.Message createMessage(
-        com.google.chat.v1.CreateMessageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.chat.v1.Message createMessage(com.google.chat.v1.CreateMessageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateMessageMethod(), getCallOptions(), request);
     }
 
@@ -3945,24 +4040,36 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Lists messages in a space that the caller is a member of, including
-     * messages from blocked members and spaces. If you list messages from a
+     * messages from blocked members and spaces. System messages, like those
+     * announcing new space members, aren't included. If you list messages from a
      * space with no messages, the response is an empty object. When using a
      * REST/HTTP interface, the response contains an empty JSON object, `{}`.
      * For an example, see
      * [List
      * messages](https://developers.google.com/workspace/chat/api/guides/v1/messages/list).
-     * Requires [user
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) in
+     * [Developer Preview](https://developers.google.com/workspace/preview)
+     *  with the authorization scope:
+     *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`. When
+     *     using this authentication scope, this method only returns public
+     *     messages in a space. It doesn't include private messages.
+     * - [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
-     * with one of the following [authorization
-     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
-     *   - `https://www.googleapis.com/auth/chat.messages.readonly`
-     *   - `https://www.googleapis.com/auth/chat.messages`
-     *   - `https://www.googleapis.com/auth/chat.import` (import mode spaces only)
+     * with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.messages.readonly`
+     *     - `https://www.googleapis.com/auth/chat.messages`
+     *     - `https://www.googleapis.com/auth/chat.import` (import mode spaces
+     *     only)
      * </pre>
      */
     public com.google.chat.v1.ListMessagesResponse listMessages(
-        com.google.chat.v1.ListMessagesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.ListMessagesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMessagesMethod(), getCallOptions(), request);
     }
 
@@ -4004,8 +4111,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.ListMembershipsResponse listMemberships(
-        com.google.chat.v1.ListMembershipsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.ListMembershipsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMembershipsMethod(), getCallOptions(), request);
     }
 
@@ -4037,8 +4144,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.Membership getMembership(
-        com.google.chat.v1.GetMembershipRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.GetMembershipRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMembershipMethod(), getCallOptions(), request);
     }
 
@@ -4053,8 +4160,18 @@ public final class ChatServiceGrpc {
      * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
      * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * with the authorization scope:
-     *     - `https://www.googleapis.com/auth/chat.bot`
+     * with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.bot`: When using this
+     *     authorization scope, this method returns details about a message the
+     *     Chat app has access to, like direct messages and [slash
+     *     commands](https://developers.google.com/workspace/chat/slash-commands)
+     *     that invoke the Chat app.
+     *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
+     *     with [administrator
+     *     approval](https://support.google.com/a?p=chat-app-auth) (available in
+     *     [Developer Preview](https://developers.google.com/workspace/preview)).
+     *     When using this authentication scope,
+     *     this method returns details about a public message in a space.
      * - [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * with one of the following authorization scopes:
@@ -4063,8 +4180,9 @@ public final class ChatServiceGrpc {
      * Note: Might return a message from a blocked member or space.
      * </pre>
      */
-    public com.google.chat.v1.Message getMessage(com.google.chat.v1.GetMessageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.chat.v1.Message getMessage(com.google.chat.v1.GetMessageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMessageMethod(), getCallOptions(), request);
     }
 
@@ -4094,9 +4212,9 @@ public final class ChatServiceGrpc {
      * created by the calling Chat app.
      * </pre>
      */
-    public com.google.chat.v1.Message updateMessage(
-        com.google.chat.v1.UpdateMessageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.chat.v1.Message updateMessage(com.google.chat.v1.UpdateMessageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateMessageMethod(), getCallOptions(), request);
     }
 
@@ -4123,9 +4241,9 @@ public final class ChatServiceGrpc {
      * created by the calling Chat app.
      * </pre>
      */
-    public com.google.protobuf.Empty deleteMessage(
-        com.google.chat.v1.DeleteMessageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.protobuf.Empty deleteMessage(com.google.chat.v1.DeleteMessageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteMessageMethod(), getCallOptions(), request);
     }
 
@@ -4147,8 +4265,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.Attachment getAttachment(
-        com.google.chat.v1.GetAttachmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.GetAttachmentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAttachmentMethod(), getCallOptions(), request);
     }
 
@@ -4172,8 +4290,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.UploadAttachmentResponse uploadAttachment(
-        com.google.chat.v1.UploadAttachmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.UploadAttachmentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUploadAttachmentMethod(), getCallOptions(), request);
     }
 
@@ -4202,8 +4320,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.ListSpacesResponse listSpaces(
-        com.google.chat.v1.ListSpacesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.ListSpacesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSpacesMethod(), getCallOptions(), request);
     }
 
@@ -4212,7 +4330,9 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Returns a list of spaces in a Google Workspace organization based on an
-     * administrator's search.
+     * administrator's search. In the request, set `use_admin_access` to `true`.
+     * For an example, see [Search for and manage
+     * spaces](https://developers.google.com/workspace/chat/search-manage-admin).
      * Requires [user
      * authentication with administrator
      * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges)
@@ -4220,12 +4340,11 @@ public final class ChatServiceGrpc {
      * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
      *   - `https://www.googleapis.com/auth/chat.admin.spaces.readonly`
      *   - `https://www.googleapis.com/auth/chat.admin.spaces`
-     * In the request, set `use_admin_access` to `true`.
      * </pre>
      */
     public com.google.chat.v1.SearchSpacesResponse searchSpaces(
-        com.google.chat.v1.SearchSpacesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.SearchSpacesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchSpacesMethod(), getCallOptions(), request);
     }
 
@@ -4262,8 +4381,9 @@ public final class ChatServiceGrpc {
      * spaces the app created.
      * </pre>
      */
-    public com.google.chat.v1.Space getSpace(com.google.chat.v1.GetSpaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.chat.v1.Space getSpace(com.google.chat.v1.GetSpaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSpaceMethod(), getCallOptions(), request);
     }
 
@@ -4307,8 +4427,9 @@ public final class ChatServiceGrpc {
      *  the Google Workspace organization might already use this display name.
      * </pre>
      */
-    public com.google.chat.v1.Space createSpace(com.google.chat.v1.CreateSpaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.chat.v1.Space createSpace(com.google.chat.v1.CreateSpaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSpaceMethod(), getCallOptions(), request);
     }
 
@@ -4366,8 +4487,9 @@ public final class ChatServiceGrpc {
      *   - `https://www.googleapis.com/auth/chat.spaces`
      * </pre>
      */
-    public com.google.chat.v1.Space setUpSpace(com.google.chat.v1.SetUpSpaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.chat.v1.Space setUpSpace(com.google.chat.v1.SetUpSpaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetUpSpaceMethod(), getCallOptions(), request);
     }
 
@@ -4405,8 +4527,9 @@ public final class ChatServiceGrpc {
      * authentication.
      * </pre>
      */
-    public com.google.chat.v1.Space updateSpace(com.google.chat.v1.UpdateSpaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.chat.v1.Space updateSpace(com.google.chat.v1.UpdateSpaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSpaceMethod(), getCallOptions(), request);
     }
 
@@ -4440,8 +4563,9 @@ public final class ChatServiceGrpc {
      *         - `https://www.googleapis.com/auth/chat.admin.delete`
      * </pre>
      */
-    public com.google.protobuf.Empty deleteSpace(com.google.chat.v1.DeleteSpaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.protobuf.Empty deleteSpace(com.google.chat.v1.DeleteSpaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSpaceMethod(), getCallOptions(), request);
     }
 
@@ -4463,8 +4587,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.CompleteImportSpaceResponse completeImportSpace(
-        com.google.chat.v1.CompleteImportSpaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.CompleteImportSpaceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCompleteImportSpaceMethod(), getCallOptions(), request);
     }
 
@@ -4498,8 +4622,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.Space findDirectMessage(
-        com.google.chat.v1.FindDirectMessageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.FindDirectMessageRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFindDirectMessageMethod(), getCallOptions(), request);
     }
 
@@ -4547,8 +4671,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.Membership createMembership(
-        com.google.chat.v1.CreateMembershipRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.CreateMembershipRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateMembershipMethod(), getCallOptions(), request);
     }
 
@@ -4580,8 +4704,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.Membership updateMembership(
-        com.google.chat.v1.UpdateMembershipRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.UpdateMembershipRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateMembershipMethod(), getCallOptions(), request);
     }
 
@@ -4621,8 +4745,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.Membership deleteMembership(
-        com.google.chat.v1.DeleteMembershipRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.DeleteMembershipRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteMembershipMethod(), getCallOptions(), request);
     }
 
@@ -4644,8 +4768,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.Reaction createReaction(
-        com.google.chat.v1.CreateReactionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.CreateReactionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateReactionMethod(), getCallOptions(), request);
     }
 
@@ -4667,8 +4791,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.ListReactionsResponse listReactions(
-        com.google.chat.v1.ListReactionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.ListReactionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListReactionsMethod(), getCallOptions(), request);
     }
 
@@ -4689,8 +4813,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteReaction(
-        com.google.chat.v1.DeleteReactionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.DeleteReactionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteReactionMethod(), getCallOptions(), request);
     }
 
@@ -4713,8 +4837,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.CustomEmoji createCustomEmoji(
-        com.google.chat.v1.CreateCustomEmojiRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.CreateCustomEmojiRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCustomEmojiMethod(), getCallOptions(), request);
     }
 
@@ -4738,8 +4862,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.CustomEmoji getCustomEmoji(
-        com.google.chat.v1.GetCustomEmojiRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.GetCustomEmojiRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCustomEmojiMethod(), getCallOptions(), request);
     }
 
@@ -4763,8 +4887,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.ListCustomEmojisResponse listCustomEmojis(
-        com.google.chat.v1.ListCustomEmojisRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.ListCustomEmojisRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCustomEmojisMethod(), getCallOptions(), request);
     }
 
@@ -4791,8 +4915,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteCustomEmoji(
-        com.google.chat.v1.DeleteCustomEmojiRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.DeleteCustomEmojiRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCustomEmojiMethod(), getCallOptions(), request);
     }
 
@@ -4813,8 +4937,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.SpaceReadState getSpaceReadState(
-        com.google.chat.v1.GetSpaceReadStateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.GetSpaceReadStateRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSpaceReadStateMethod(), getCallOptions(), request);
     }
 
@@ -4833,8 +4957,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.SpaceReadState updateSpaceReadState(
-        com.google.chat.v1.UpdateSpaceReadStateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.UpdateSpaceReadStateRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSpaceReadStateMethod(), getCallOptions(), request);
     }
 
@@ -4855,8 +4979,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.ThreadReadState getThreadReadState(
-        com.google.chat.v1.GetThreadReadStateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.GetThreadReadStateRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetThreadReadStateMethod(), getCallOptions(), request);
     }
 
@@ -4872,28 +4996,41 @@ public final class ChatServiceGrpc {
      * payload.
      * Note: The `permissionSettings` field is not returned in the Space
      * object of the Space event data for this request.
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
-     * with an [authorization
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize)
+     * with an
+     * [authorization
      * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes)
      * appropriate for reading the requested data:
-     *   - `https://www.googleapis.com/auth/chat.spaces.readonly`
-     *   - `https://www.googleapis.com/auth/chat.spaces`
-     *   - `https://www.googleapis.com/auth/chat.messages.readonly`
-     *   - `https://www.googleapis.com/auth/chat.messages`
-     *   - `https://www.googleapis.com/auth/chat.messages.reactions.readonly`
-     *   - `https://www.googleapis.com/auth/chat.messages.reactions`
-     *   - `https://www.googleapis.com/auth/chat.memberships.readonly`
-     *   - `https://www.googleapis.com/auth/chat.memberships`
-     * To get an event, the authenticated user must be a member of the space.
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) in
+     * [Developer Preview](https://developers.google.com/workspace/preview)
+     *  with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.app.spaces`
+     *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
+     *     - `https://www.googleapis.com/auth/chat.app.memberships`
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.spaces.readonly`
+     *     - `https://www.googleapis.com/auth/chat.spaces`
+     *     - `https://www.googleapis.com/auth/chat.messages.readonly`
+     *     - `https://www.googleapis.com/auth/chat.messages`
+     *     - `https://www.googleapis.com/auth/chat.messages.reactions.readonly`
+     *     - `https://www.googleapis.com/auth/chat.messages.reactions`
+     *     - `https://www.googleapis.com/auth/chat.memberships.readonly`
+     *     - `https://www.googleapis.com/auth/chat.memberships`
+     * To get an event, the authenticated caller must be a member of the space.
      * For an example, see [Get details about an
      * event from a Google Chat
      * space](https://developers.google.com/workspace/chat/get-space-event).
      * </pre>
      */
     public com.google.chat.v1.SpaceEvent getSpaceEvent(
-        com.google.chat.v1.GetSpaceEventRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.GetSpaceEventRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSpaceEventMethod(), getCallOptions(), request);
     }
 
@@ -4908,27 +5045,40 @@ public final class ChatServiceGrpc {
      * resources that contain the latest membership details. If new members were
      * removed during the requested period, the event payload contains an empty
      * `Membership` resource.
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
-     * with an [authorization
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize)
+     * with an
+     * [authorization
      * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes)
      * appropriate for reading the requested data:
-     *   - `https://www.googleapis.com/auth/chat.spaces.readonly`
-     *   - `https://www.googleapis.com/auth/chat.spaces`
-     *   - `https://www.googleapis.com/auth/chat.messages.readonly`
-     *   - `https://www.googleapis.com/auth/chat.messages`
-     *   - `https://www.googleapis.com/auth/chat.messages.reactions.readonly`
-     *   - `https://www.googleapis.com/auth/chat.messages.reactions`
-     *   - `https://www.googleapis.com/auth/chat.memberships.readonly`
-     *   - `https://www.googleapis.com/auth/chat.memberships`
-     * To list events, the authenticated user must be a member of the space.
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) in
+     * [Developer Preview](https://developers.google.com/workspace/preview)
+     *  with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.app.spaces`
+     *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
+     *     - `https://www.googleapis.com/auth/chat.app.memberships`
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.spaces.readonly`
+     *     - `https://www.googleapis.com/auth/chat.spaces`
+     *     - `https://www.googleapis.com/auth/chat.messages.readonly`
+     *     - `https://www.googleapis.com/auth/chat.messages`
+     *     - `https://www.googleapis.com/auth/chat.messages.reactions.readonly`
+     *     - `https://www.googleapis.com/auth/chat.messages.reactions`
+     *     - `https://www.googleapis.com/auth/chat.memberships.readonly`
+     *     - `https://www.googleapis.com/auth/chat.memberships`
+     * To list events, the authenticated caller must be a member of the space.
      * For an example, see [List events from a Google Chat
      * space](https://developers.google.com/workspace/chat/list-space-events).
      * </pre>
      */
     public com.google.chat.v1.ListSpaceEventsResponse listSpaceEvents(
-        com.google.chat.v1.ListSpaceEventsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.ListSpaceEventsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSpaceEventsMethod(), getCallOptions(), request);
     }
 
@@ -4947,8 +5097,9 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.SpaceNotificationSetting getSpaceNotificationSetting(
-        com.google.chat.v1.GetSpaceNotificationSettingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.GetSpaceNotificationSettingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSpaceNotificationSettingMethod(), getCallOptions(), request);
     }
 
@@ -4967,8 +5118,9 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.SpaceNotificationSetting updateSpaceNotificationSetting(
-        com.google.chat.v1.UpdateSpaceNotificationSettingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.UpdateSpaceNotificationSettingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSpaceNotificationSettingMethod(), getCallOptions(), request);
     }
   }
@@ -5045,19 +5197,31 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Lists messages in a space that the caller is a member of, including
-     * messages from blocked members and spaces. If you list messages from a
+     * messages from blocked members and spaces. System messages, like those
+     * announcing new space members, aren't included. If you list messages from a
      * space with no messages, the response is an empty object. When using a
      * REST/HTTP interface, the response contains an empty JSON object, `{}`.
      * For an example, see
      * [List
      * messages](https://developers.google.com/workspace/chat/api/guides/v1/messages/list).
-     * Requires [user
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) in
+     * [Developer Preview](https://developers.google.com/workspace/preview)
+     *  with the authorization scope:
+     *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`. When
+     *     using this authentication scope, this method only returns public
+     *     messages in a space. It doesn't include private messages.
+     * - [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
-     * with one of the following [authorization
-     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
-     *   - `https://www.googleapis.com/auth/chat.messages.readonly`
-     *   - `https://www.googleapis.com/auth/chat.messages`
-     *   - `https://www.googleapis.com/auth/chat.import` (import mode spaces only)
+     * with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.messages.readonly`
+     *     - `https://www.googleapis.com/auth/chat.messages`
+     *     - `https://www.googleapis.com/auth/chat.import` (import mode spaces
+     *     only)
      * </pre>
      */
     public com.google.chat.v1.ListMessagesResponse listMessages(
@@ -5153,8 +5317,18 @@ public final class ChatServiceGrpc {
      * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
      * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * with the authorization scope:
-     *     - `https://www.googleapis.com/auth/chat.bot`
+     * with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.bot`: When using this
+     *     authorization scope, this method returns details about a message the
+     *     Chat app has access to, like direct messages and [slash
+     *     commands](https://developers.google.com/workspace/chat/slash-commands)
+     *     that invoke the Chat app.
+     *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
+     *     with [administrator
+     *     approval](https://support.google.com/a?p=chat-app-auth) (available in
+     *     [Developer Preview](https://developers.google.com/workspace/preview)).
+     *     When using this authentication scope,
+     *     this method returns details about a public message in a space.
      * - [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * with one of the following authorization scopes:
@@ -5312,7 +5486,9 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Returns a list of spaces in a Google Workspace organization based on an
-     * administrator's search.
+     * administrator's search. In the request, set `use_admin_access` to `true`.
+     * For an example, see [Search for and manage
+     * spaces](https://developers.google.com/workspace/chat/search-manage-admin).
      * Requires [user
      * authentication with administrator
      * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges)
@@ -5320,7 +5496,6 @@ public final class ChatServiceGrpc {
      * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
      *   - `https://www.googleapis.com/auth/chat.admin.spaces.readonly`
      *   - `https://www.googleapis.com/auth/chat.admin.spaces`
-     * In the request, set `use_admin_access` to `true`.
      * </pre>
      */
     public com.google.chat.v1.SearchSpacesResponse searchSpaces(
@@ -5972,20 +6147,33 @@ public final class ChatServiceGrpc {
      * payload.
      * Note: The `permissionSettings` field is not returned in the Space
      * object of the Space event data for this request.
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
-     * with an [authorization
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize)
+     * with an
+     * [authorization
      * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes)
      * appropriate for reading the requested data:
-     *   - `https://www.googleapis.com/auth/chat.spaces.readonly`
-     *   - `https://www.googleapis.com/auth/chat.spaces`
-     *   - `https://www.googleapis.com/auth/chat.messages.readonly`
-     *   - `https://www.googleapis.com/auth/chat.messages`
-     *   - `https://www.googleapis.com/auth/chat.messages.reactions.readonly`
-     *   - `https://www.googleapis.com/auth/chat.messages.reactions`
-     *   - `https://www.googleapis.com/auth/chat.memberships.readonly`
-     *   - `https://www.googleapis.com/auth/chat.memberships`
-     * To get an event, the authenticated user must be a member of the space.
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) in
+     * [Developer Preview](https://developers.google.com/workspace/preview)
+     *  with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.app.spaces`
+     *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
+     *     - `https://www.googleapis.com/auth/chat.app.memberships`
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.spaces.readonly`
+     *     - `https://www.googleapis.com/auth/chat.spaces`
+     *     - `https://www.googleapis.com/auth/chat.messages.readonly`
+     *     - `https://www.googleapis.com/auth/chat.messages`
+     *     - `https://www.googleapis.com/auth/chat.messages.reactions.readonly`
+     *     - `https://www.googleapis.com/auth/chat.messages.reactions`
+     *     - `https://www.googleapis.com/auth/chat.memberships.readonly`
+     *     - `https://www.googleapis.com/auth/chat.memberships`
+     * To get an event, the authenticated caller must be a member of the space.
      * For an example, see [Get details about an
      * event from a Google Chat
      * space](https://developers.google.com/workspace/chat/get-space-event).
@@ -6008,20 +6196,33 @@ public final class ChatServiceGrpc {
      * resources that contain the latest membership details. If new members were
      * removed during the requested period, the event payload contains an empty
      * `Membership` resource.
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
-     * with an [authorization
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize)
+     * with an
+     * [authorization
      * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes)
      * appropriate for reading the requested data:
-     *   - `https://www.googleapis.com/auth/chat.spaces.readonly`
-     *   - `https://www.googleapis.com/auth/chat.spaces`
-     *   - `https://www.googleapis.com/auth/chat.messages.readonly`
-     *   - `https://www.googleapis.com/auth/chat.messages`
-     *   - `https://www.googleapis.com/auth/chat.messages.reactions.readonly`
-     *   - `https://www.googleapis.com/auth/chat.messages.reactions`
-     *   - `https://www.googleapis.com/auth/chat.memberships.readonly`
-     *   - `https://www.googleapis.com/auth/chat.memberships`
-     * To list events, the authenticated user must be a member of the space.
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) in
+     * [Developer Preview](https://developers.google.com/workspace/preview)
+     *  with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.app.spaces`
+     *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
+     *     - `https://www.googleapis.com/auth/chat.app.memberships`
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.spaces.readonly`
+     *     - `https://www.googleapis.com/auth/chat.spaces`
+     *     - `https://www.googleapis.com/auth/chat.messages.readonly`
+     *     - `https://www.googleapis.com/auth/chat.messages`
+     *     - `https://www.googleapis.com/auth/chat.messages.reactions.readonly`
+     *     - `https://www.googleapis.com/auth/chat.messages.reactions`
+     *     - `https://www.googleapis.com/auth/chat.memberships.readonly`
+     *     - `https://www.googleapis.com/auth/chat.memberships`
+     * To list events, the authenticated caller must be a member of the space.
      * For an example, see [List events from a Google Chat
      * space](https://developers.google.com/workspace/chat/list-space-events).
      * </pre>
@@ -6145,19 +6346,31 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Lists messages in a space that the caller is a member of, including
-     * messages from blocked members and spaces. If you list messages from a
+     * messages from blocked members and spaces. System messages, like those
+     * announcing new space members, aren't included. If you list messages from a
      * space with no messages, the response is an empty object. When using a
      * REST/HTTP interface, the response contains an empty JSON object, `{}`.
      * For an example, see
      * [List
      * messages](https://developers.google.com/workspace/chat/api/guides/v1/messages/list).
-     * Requires [user
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) in
+     * [Developer Preview](https://developers.google.com/workspace/preview)
+     *  with the authorization scope:
+     *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`. When
+     *     using this authentication scope, this method only returns public
+     *     messages in a space. It doesn't include private messages.
+     * - [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
-     * with one of the following [authorization
-     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
-     *   - `https://www.googleapis.com/auth/chat.messages.readonly`
-     *   - `https://www.googleapis.com/auth/chat.messages`
-     *   - `https://www.googleapis.com/auth/chat.import` (import mode spaces only)
+     * with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.messages.readonly`
+     *     - `https://www.googleapis.com/auth/chat.messages`
+     *     - `https://www.googleapis.com/auth/chat.import` (import mode spaces
+     *     only)
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -6255,8 +6468,18 @@ public final class ChatServiceGrpc {
      * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
      * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-     * with the authorization scope:
-     *     - `https://www.googleapis.com/auth/chat.bot`
+     * with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.bot`: When using this
+     *     authorization scope, this method returns details about a message the
+     *     Chat app has access to, like direct messages and [slash
+     *     commands](https://developers.google.com/workspace/chat/slash-commands)
+     *     that invoke the Chat app.
+     *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
+     *     with [administrator
+     *     approval](https://support.google.com/a?p=chat-app-auth) (available in
+     *     [Developer Preview](https://developers.google.com/workspace/preview)).
+     *     When using this authentication scope,
+     *     this method returns details about a public message in a space.
      * - [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * with one of the following authorization scopes:
@@ -6416,7 +6639,9 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Returns a list of spaces in a Google Workspace organization based on an
-     * administrator's search.
+     * administrator's search. In the request, set `use_admin_access` to `true`.
+     * For an example, see [Search for and manage
+     * spaces](https://developers.google.com/workspace/chat/search-manage-admin).
      * Requires [user
      * authentication with administrator
      * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges)
@@ -6424,7 +6649,6 @@ public final class ChatServiceGrpc {
      * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
      *   - `https://www.googleapis.com/auth/chat.admin.spaces.readonly`
      *   - `https://www.googleapis.com/auth/chat.admin.spaces`
-     * In the request, set `use_admin_access` to `true`.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -7085,20 +7309,33 @@ public final class ChatServiceGrpc {
      * payload.
      * Note: The `permissionSettings` field is not returned in the Space
      * object of the Space event data for this request.
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
-     * with an [authorization
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize)
+     * with an
+     * [authorization
      * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes)
      * appropriate for reading the requested data:
-     *   - `https://www.googleapis.com/auth/chat.spaces.readonly`
-     *   - `https://www.googleapis.com/auth/chat.spaces`
-     *   - `https://www.googleapis.com/auth/chat.messages.readonly`
-     *   - `https://www.googleapis.com/auth/chat.messages`
-     *   - `https://www.googleapis.com/auth/chat.messages.reactions.readonly`
-     *   - `https://www.googleapis.com/auth/chat.messages.reactions`
-     *   - `https://www.googleapis.com/auth/chat.memberships.readonly`
-     *   - `https://www.googleapis.com/auth/chat.memberships`
-     * To get an event, the authenticated user must be a member of the space.
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) in
+     * [Developer Preview](https://developers.google.com/workspace/preview)
+     *  with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.app.spaces`
+     *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
+     *     - `https://www.googleapis.com/auth/chat.app.memberships`
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.spaces.readonly`
+     *     - `https://www.googleapis.com/auth/chat.spaces`
+     *     - `https://www.googleapis.com/auth/chat.messages.readonly`
+     *     - `https://www.googleapis.com/auth/chat.messages`
+     *     - `https://www.googleapis.com/auth/chat.messages.reactions.readonly`
+     *     - `https://www.googleapis.com/auth/chat.messages.reactions`
+     *     - `https://www.googleapis.com/auth/chat.memberships.readonly`
+     *     - `https://www.googleapis.com/auth/chat.memberships`
+     * To get an event, the authenticated caller must be a member of the space.
      * For an example, see [Get details about an
      * event from a Google Chat
      * space](https://developers.google.com/workspace/chat/get-space-event).
@@ -7121,20 +7358,33 @@ public final class ChatServiceGrpc {
      * resources that contain the latest membership details. If new members were
      * removed during the requested period, the event payload contains an empty
      * `Membership` resource.
-     * Requires [user
-     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
-     * with an [authorization
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize)
+     * with an
+     * [authorization
      * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes)
      * appropriate for reading the requested data:
-     *   - `https://www.googleapis.com/auth/chat.spaces.readonly`
-     *   - `https://www.googleapis.com/auth/chat.spaces`
-     *   - `https://www.googleapis.com/auth/chat.messages.readonly`
-     *   - `https://www.googleapis.com/auth/chat.messages`
-     *   - `https://www.googleapis.com/auth/chat.messages.reactions.readonly`
-     *   - `https://www.googleapis.com/auth/chat.messages.reactions`
-     *   - `https://www.googleapis.com/auth/chat.memberships.readonly`
-     *   - `https://www.googleapis.com/auth/chat.memberships`
-     * To list events, the authenticated user must be a member of the space.
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) in
+     * [Developer Preview](https://developers.google.com/workspace/preview)
+     *  with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.app.spaces`
+     *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
+     *     - `https://www.googleapis.com/auth/chat.app.memberships`
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.spaces.readonly`
+     *     - `https://www.googleapis.com/auth/chat.spaces`
+     *     - `https://www.googleapis.com/auth/chat.messages.readonly`
+     *     - `https://www.googleapis.com/auth/chat.messages`
+     *     - `https://www.googleapis.com/auth/chat.messages.reactions.readonly`
+     *     - `https://www.googleapis.com/auth/chat.messages.reactions`
+     *     - `https://www.googleapis.com/auth/chat.memberships.readonly`
+     *     - `https://www.googleapis.com/auth/chat.memberships`
+     * To list events, the authenticated caller must be a member of the space.
      * For an example, see [List events from a Google Chat
      * space](https://developers.google.com/workspace/chat/list-space-events).
      * </pre>

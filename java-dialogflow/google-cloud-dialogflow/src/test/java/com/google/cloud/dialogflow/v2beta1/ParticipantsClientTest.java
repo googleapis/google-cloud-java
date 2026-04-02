@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -740,6 +740,7 @@ public class ParticipantsClientTest {
             .setCxCurrentPage("cxCurrentPage1596907507")
             .setEnableExtendedStreaming(true)
             .setEnablePartialAutomatedAgentReply(true)
+            .setOutputMultipleUtterances(true)
             .setEnableDebuggingInfo(true)
             .build();
 
@@ -776,6 +777,7 @@ public class ParticipantsClientTest {
             .setCxCurrentPage("cxCurrentPage1596907507")
             .setEnableExtendedStreaming(true)
             .setEnablePartialAutomatedAgentReply(true)
+            .setOutputMultipleUtterances(true)
             .setEnableDebuggingInfo(true)
             .build();
 
@@ -791,6 +793,57 @@ public class ParticipantsClientTest {
 
     try {
       List<StreamingAnalyzeContentResponse> actualResponses = responseObserver.future().get();
+      Assert.fail("No exception thrown");
+    } catch (ExecutionException e) {
+      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void bidiStreamingAnalyzeContentTest() throws Exception {
+    BidiStreamingAnalyzeContentResponse expectedResponse =
+        BidiStreamingAnalyzeContentResponse.newBuilder().build();
+    mockParticipants.addResponse(expectedResponse);
+    BidiStreamingAnalyzeContentRequest request =
+        BidiStreamingAnalyzeContentRequest.newBuilder().build();
+
+    MockStreamObserver<BidiStreamingAnalyzeContentResponse> responseObserver =
+        new MockStreamObserver<>();
+
+    BidiStreamingCallable<BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+        callable = client.bidiStreamingAnalyzeContentCallable();
+    ApiStreamObserver<BidiStreamingAnalyzeContentRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+    requestObserver.onCompleted();
+
+    List<BidiStreamingAnalyzeContentResponse> actualResponses = responseObserver.future().get();
+    Assert.assertEquals(1, actualResponses.size());
+    Assert.assertEquals(expectedResponse, actualResponses.get(0));
+  }
+
+  @Test
+  public void bidiStreamingAnalyzeContentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockParticipants.addException(exception);
+    BidiStreamingAnalyzeContentRequest request =
+        BidiStreamingAnalyzeContentRequest.newBuilder().build();
+
+    MockStreamObserver<BidiStreamingAnalyzeContentResponse> responseObserver =
+        new MockStreamObserver<>();
+
+    BidiStreamingCallable<BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+        callable = client.bidiStreamingAnalyzeContentCallable();
+    ApiStreamObserver<BidiStreamingAnalyzeContentRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+
+    try {
+      List<BidiStreamingAnalyzeContentResponse> actualResponses = responseObserver.future().get();
       Assert.fail("No exception thrown");
     } catch (ExecutionException e) {
       Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);

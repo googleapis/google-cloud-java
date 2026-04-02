@@ -1,5 +1,59 @@
 [
   {
+    "name": "com.google.api.BatchingConfigProto",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.api.BatchingConfigProto$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.api.BatchingDescriptorProto",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.api.BatchingDescriptorProto$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.api.BatchingSettingsProto",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.api.BatchingSettingsProto$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.api.ClientLibraryDestination",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -136,6 +190,15 @@
   },
   {
     "name": "com.google.api.FieldInfo$Format",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.api.FlowControlLimitExceededBehaviorProto",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -720,6 +783,15 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.dataplex.v1.AspectType$DataClassification",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.dataplex.v1.AspectType$MetadataTemplate",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -1188,7 +1260,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.dataplex.v1.CreateContentRequest",
+    "name": "com.google.cloud.dataplex.v1.CreateDataAssetRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1197,7 +1269,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.dataplex.v1.CreateContentRequest$Builder",
+    "name": "com.google.cloud.dataplex.v1.CreateDataAssetRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1234,6 +1306,24 @@
   },
   {
     "name": "com.google.cloud.dataplex.v1.CreateDataAttributeRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.CreateDataProductRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.CreateDataProductRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1386,24 +1476,6 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.dataplex.v1.CreateEnvironmentRequest",
-    "queryAllDeclaredConstructors": true,
-    "queryAllPublicConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true,
-    "allPublicClasses": true
-  },
-  {
-    "name": "com.google.cloud.dataplex.v1.CreateEnvironmentRequest$Builder",
-    "queryAllDeclaredConstructors": true,
-    "queryAllPublicConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true,
-    "allPublicClasses": true
-  },
-  {
     "name": "com.google.cloud.dataplex.v1.CreateGlossaryCategoryRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -1468,6 +1540,24 @@
   },
   {
     "name": "com.google.cloud.dataplex.v1.CreateLakeRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.CreateMetadataFeedRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.CreateMetadataFeedRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1558,6 +1648,42 @@
   },
   {
     "name": "com.google.cloud.dataplex.v1.DataAccessSpec$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataAsset",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataAsset$AccessGroupConfig",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataAsset$AccessGroupConfig$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataAsset$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1765,6 +1891,177 @@
   },
   {
     "name": "com.google.cloud.dataplex.v1.DataDiscoverySpec$StorageConfig$JsonOptions$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataDocumentationResult",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataDocumentationResult$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataDocumentationResult$Field",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataDocumentationResult$Field$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataDocumentationResult$Query",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataDocumentationResult$Query$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataDocumentationResult$Schema",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataDocumentationResult$Schema$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataDocumentationResult$TableResult",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataDocumentationResult$TableResult$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataDocumentationSpec",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataDocumentationSpec$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataDocumentationSpec$GenerationScope",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataProduct",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataProduct$AccessGroup",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataProduct$AccessGroup$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataProduct$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataProduct$Principal",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataProduct$Principal$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2097,6 +2394,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.dataplex.v1.DataQualityResult$AnomalyDetectionGeneratedAssets",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataQualityResult$AnomalyDetectionGeneratedAssets$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.dataplex.v1.DataQualityResult$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -2161,6 +2476,24 @@
   },
   {
     "name": "com.google.cloud.dataplex.v1.DataQualityRule$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataQualityRule$DebugQuery",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataQualityRule$DebugQuery$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2350,6 +2683,42 @@
   },
   {
     "name": "com.google.cloud.dataplex.v1.DataQualityRuleResult$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataQualityRuleResult$DebugQueryResult",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataQualityRuleResult$DebugQueryResult$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataQualityRuleResult$DebugQueryResultSet",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DataQualityRuleResult$DebugQueryResultSet$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2907,7 +3276,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.dataplex.v1.DeleteContentRequest",
+    "name": "com.google.cloud.dataplex.v1.DeleteDataAssetRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2916,7 +3285,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.dataplex.v1.DeleteContentRequest$Builder",
+    "name": "com.google.cloud.dataplex.v1.DeleteDataAssetRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2953,6 +3322,24 @@
   },
   {
     "name": "com.google.cloud.dataplex.v1.DeleteDataAttributeRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DeleteDataProductRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DeleteDataProductRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -3105,24 +3492,6 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.dataplex.v1.DeleteEnvironmentRequest",
-    "queryAllDeclaredConstructors": true,
-    "queryAllPublicConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true,
-    "allPublicClasses": true
-  },
-  {
-    "name": "com.google.cloud.dataplex.v1.DeleteEnvironmentRequest$Builder",
-    "queryAllDeclaredConstructors": true,
-    "queryAllPublicConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true,
-    "allPublicClasses": true
-  },
-  {
     "name": "com.google.cloud.dataplex.v1.DeleteGlossaryCategoryRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -3187,6 +3556,24 @@
   },
   {
     "name": "com.google.cloud.dataplex.v1.DeleteLakeRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DeleteMetadataFeedRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.DeleteMetadataFeedRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -3906,7 +4293,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.dataplex.v1.GetContentRequest",
+    "name": "com.google.cloud.dataplex.v1.GetDataAssetRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -3915,16 +4302,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.dataplex.v1.GetContentRequest$Builder",
-    "queryAllDeclaredConstructors": true,
-    "queryAllPublicConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true,
-    "allPublicClasses": true
-  },
-  {
-    "name": "com.google.cloud.dataplex.v1.GetContentRequest$ContentView",
+    "name": "com.google.cloud.dataplex.v1.GetDataAssetRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -3961,6 +4339,24 @@
   },
   {
     "name": "com.google.cloud.dataplex.v1.GetDataAttributeRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.GetDataProductRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.GetDataProductRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -4158,24 +4554,6 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.dataplex.v1.GetEnvironmentRequest",
-    "queryAllDeclaredConstructors": true,
-    "queryAllPublicConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true,
-    "allPublicClasses": true
-  },
-  {
-    "name": "com.google.cloud.dataplex.v1.GetEnvironmentRequest$Builder",
-    "queryAllDeclaredConstructors": true,
-    "queryAllPublicConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true,
-    "allPublicClasses": true
-  },
-  {
     "name": "com.google.cloud.dataplex.v1.GetGlossaryCategoryRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -4258,6 +4636,24 @@
   },
   {
     "name": "com.google.cloud.dataplex.v1.GetLakeRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.GetMetadataFeedRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.GetMetadataFeedRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -4734,7 +5130,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.dataplex.v1.ListContentRequest",
+    "name": "com.google.cloud.dataplex.v1.ListDataAssetsRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -4743,7 +5139,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.dataplex.v1.ListContentRequest$Builder",
+    "name": "com.google.cloud.dataplex.v1.ListDataAssetsRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -4752,7 +5148,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.dataplex.v1.ListContentResponse",
+    "name": "com.google.cloud.dataplex.v1.ListDataAssetsResponse",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -4761,7 +5157,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.dataplex.v1.ListContentResponse$Builder",
+    "name": "com.google.cloud.dataplex.v1.ListDataAssetsResponse$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -4834,6 +5230,42 @@
   },
   {
     "name": "com.google.cloud.dataplex.v1.ListDataAttributesResponse$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.ListDataProductsRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.ListDataProductsRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.ListDataProductsResponse",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.ListDataProductsResponse$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -5139,42 +5571,6 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.dataplex.v1.ListEnvironmentsRequest",
-    "queryAllDeclaredConstructors": true,
-    "queryAllPublicConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true,
-    "allPublicClasses": true
-  },
-  {
-    "name": "com.google.cloud.dataplex.v1.ListEnvironmentsRequest$Builder",
-    "queryAllDeclaredConstructors": true,
-    "queryAllPublicConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true,
-    "allPublicClasses": true
-  },
-  {
-    "name": "com.google.cloud.dataplex.v1.ListEnvironmentsResponse",
-    "queryAllDeclaredConstructors": true,
-    "queryAllPublicConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true,
-    "allPublicClasses": true
-  },
-  {
-    "name": "com.google.cloud.dataplex.v1.ListEnvironmentsResponse$Builder",
-    "queryAllDeclaredConstructors": true,
-    "queryAllPublicConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true,
-    "allPublicClasses": true
-  },
-  {
     "name": "com.google.cloud.dataplex.v1.ListGlossariesRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -5373,6 +5769,42 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.dataplex.v1.ListMetadataFeedsRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.ListMetadataFeedsRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.ListMetadataFeedsResponse",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.ListMetadataFeedsResponse$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.dataplex.v1.ListMetadataJobsRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -5437,42 +5869,6 @@
   },
   {
     "name": "com.google.cloud.dataplex.v1.ListPartitionsResponse$Builder",
-    "queryAllDeclaredConstructors": true,
-    "queryAllPublicConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true,
-    "allPublicClasses": true
-  },
-  {
-    "name": "com.google.cloud.dataplex.v1.ListSessionsRequest",
-    "queryAllDeclaredConstructors": true,
-    "queryAllPublicConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true,
-    "allPublicClasses": true
-  },
-  {
-    "name": "com.google.cloud.dataplex.v1.ListSessionsRequest$Builder",
-    "queryAllDeclaredConstructors": true,
-    "queryAllPublicConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true,
-    "allPublicClasses": true
-  },
-  {
-    "name": "com.google.cloud.dataplex.v1.ListSessionsResponse",
-    "queryAllDeclaredConstructors": true,
-    "queryAllPublicConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true,
-    "allPublicClasses": true
-  },
-  {
-    "name": "com.google.cloud.dataplex.v1.ListSessionsResponse$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -5571,6 +5967,87 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.dataplex.v1.LookupContextRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.LookupContextRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.LookupContextResponse",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.LookupContextResponse$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.LookupEntryLinksRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.LookupEntryLinksRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.LookupEntryLinksRequest$EntryMode",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.LookupEntryLinksResponse",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.LookupEntryLinksResponse$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.dataplex.v1.LookupEntryRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -5581,6 +6058,69 @@
   },
   {
     "name": "com.google.cloud.dataplex.v1.LookupEntryRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.MetadataFeed",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.MetadataFeed$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.MetadataFeed$Filters",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.MetadataFeed$Filters$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.MetadataFeed$Filters$ChangeType",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.MetadataFeed$Scope",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.MetadataFeed$Scope$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -6525,6 +7065,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.dataplex.v1.Trigger$OneTime",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.Trigger$OneTime$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.dataplex.v1.Trigger$Schedule",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -6579,7 +7137,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.dataplex.v1.UpdateContentRequest",
+    "name": "com.google.cloud.dataplex.v1.UpdateDataAssetRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -6588,7 +7146,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.dataplex.v1.UpdateContentRequest$Builder",
+    "name": "com.google.cloud.dataplex.v1.UpdateDataAssetRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -6625,6 +7183,24 @@
   },
   {
     "name": "com.google.cloud.dataplex.v1.UpdateDataAttributeRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.UpdateDataProductRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.UpdateDataProductRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -6723,6 +7299,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.dataplex.v1.UpdateEntryLinkRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.UpdateEntryLinkRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.dataplex.v1.UpdateEntryRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -6751,24 +7345,6 @@
   },
   {
     "name": "com.google.cloud.dataplex.v1.UpdateEntryTypeRequest$Builder",
-    "queryAllDeclaredConstructors": true,
-    "queryAllPublicConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true,
-    "allPublicClasses": true
-  },
-  {
-    "name": "com.google.cloud.dataplex.v1.UpdateEnvironmentRequest",
-    "queryAllDeclaredConstructors": true,
-    "queryAllPublicConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true,
-    "allPublicClasses": true
-  },
-  {
-    "name": "com.google.cloud.dataplex.v1.UpdateEnvironmentRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -6841,6 +7417,24 @@
   },
   {
     "name": "com.google.cloud.dataplex.v1.UpdateLakeRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.UpdateMetadataFeedRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dataplex.v1.UpdateMetadataFeedRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -7686,6 +8280,15 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.protobuf.DescriptorProtos$FeatureSet$EnforceNamingStyle",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.protobuf.DescriptorProtos$FeatureSet$EnumType",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -7732,6 +8335,33 @@
   },
   {
     "name": "com.google.protobuf.DescriptorProtos$FeatureSet$Utf8Validation",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.protobuf.DescriptorProtos$FeatureSet$VisibilityFeature",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.protobuf.DescriptorProtos$FeatureSet$VisibilityFeature$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.protobuf.DescriptorProtos$FeatureSet$VisibilityFeature$DefaultSymbolVisibility",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -7849,6 +8479,24 @@
   },
   {
     "name": "com.google.protobuf.DescriptorProtos$FieldOptions$EditionDefault$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.protobuf.DescriptorProtos$FieldOptions$FeatureSupport",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.protobuf.DescriptorProtos$FieldOptions$FeatureSupport$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -8155,6 +8803,15 @@
   },
   {
     "name": "com.google.protobuf.DescriptorProtos$SourceCodeInfo$Location$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.protobuf.DescriptorProtos$SymbolVisibility",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,

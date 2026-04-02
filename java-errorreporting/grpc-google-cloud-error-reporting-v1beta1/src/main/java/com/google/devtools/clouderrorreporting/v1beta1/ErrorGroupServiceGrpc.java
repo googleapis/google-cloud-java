@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for retrieving and updating individual error groups.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/devtools/clouderrorreporting/v1beta1/error_group_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ErrorGroupServiceGrpc {
 
@@ -321,8 +318,9 @@ public final class ErrorGroupServiceGrpc {
      * </pre>
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup getGroup(
-        com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetGroupMethod(), getCallOptions(), request);
     }
 
@@ -335,8 +333,9 @@ public final class ErrorGroupServiceGrpc {
      * </pre>
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup updateGroup(
-        com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateGroupMethod(), getCallOptions(), request);
     }
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -429,6 +429,7 @@ public class HttpJsonWorkflowsStub extends WorkflowsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetWorkflowRequest, Workflow> getWorkflowTransportSettings =
         HttpJsonCallSettings.<GetWorkflowRequest, Workflow>newBuilder()
@@ -440,6 +441,7 @@ public class HttpJsonWorkflowsStub extends WorkflowsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateWorkflowRequest, Operation> createWorkflowTransportSettings =
         HttpJsonCallSettings.<CreateWorkflowRequest, Operation>newBuilder()
@@ -451,6 +453,7 @@ public class HttpJsonWorkflowsStub extends WorkflowsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteWorkflowRequest, Operation> deleteWorkflowTransportSettings =
         HttpJsonCallSettings.<DeleteWorkflowRequest, Operation>newBuilder()
@@ -462,6 +465,7 @@ public class HttpJsonWorkflowsStub extends WorkflowsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateWorkflowRequest, Operation> updateWorkflowTransportSettings =
         HttpJsonCallSettings.<UpdateWorkflowRequest, Operation>newBuilder()

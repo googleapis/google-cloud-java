@@ -1,0 +1,55 @@
+name: sdk-platform-java Create additional tags for each release
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+env:
+  BUILD_SUBDIR: sdk-platform-java
+jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'sdk-platform-java/**'
+  build:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      # Permission to create tag
+      # https://docs.github.com/en/rest/authentication/permissions-required-for-github-apps?apiVersion=2022-11-28#repository-permissions-for-contents
+      contents: write
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Set up Git
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+    - name: Fetch all tags
+      run: git fetch --tags
+    - name: Create additional tags
+      shell: bash
+      run: |
+        ARTIFACT_IDS=('google-cloud-shared-dependencies' 'api-common' 'gax')
+        for ARTIFACT_ID in "${ARTIFACT_IDS[@]}"; do
+          VERSION=$(grep "^${ARTIFACT_ID}:" versions.txt | cut -d':' -f2 | tr -d '[:space:]')
+          TAG_NAME="${ARTIFACT_ID}/v$VERSION"
+          if git show-ref --tags | grep -q "refs/tags/$TAG_NAME"; then
+            echo "Tag $TAG_NAME already exists. Skipping."
+            continue
+          fi
+          git tag $TAG_NAME
+          git push origin $TAG_NAME
+        done

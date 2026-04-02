@@ -79,6 +79,9 @@
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },
+            "ShowEffectiveFlowLogsConfigs": {
+              "methods": ["showEffectiveFlowLogsConfigs", "showEffectiveFlowLogsConfigsPagedCallable", "showEffectiveFlowLogsConfigsCallable"]
+            },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },

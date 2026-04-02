@@ -55,6 +55,9 @@
             "FetchSelf": {
               "methods": ["fetchSelf", "fetchSelf", "fetchSelf", "fetchSelfCallable"]
             },
+            "FinishOAuth": {
+              "methods": ["finishOAuth", "finishOAuth", "finishOAuth", "finishOAuthCallable"]
+            },
             "GetAccountConnector": {
               "methods": ["getAccountConnector", "getAccountConnector", "getAccountConnector", "getAccountConnectorCallable"]
             },
@@ -82,6 +85,9 @@
             "ListUsers": {
               "methods": ["listUsers", "listUsers", "listUsers", "listUsersPagedCallable", "listUsersCallable"]
             },
+            "StartOAuth": {
+              "methods": ["startOAuth", "startOAuth", "startOAuth", "startOAuthCallable"]
+            },
             "UpdateAccountConnector": {
               "methods": ["updateAccountConnectorAsync", "updateAccountConnectorAsync", "updateAccountConnectorOperationCallable", "updateAccountConnectorCallable"]
             },
@@ -103,11 +109,17 @@
             "DeleteInsightsConfig": {
               "methods": ["deleteInsightsConfigAsync", "deleteInsightsConfigAsync", "deleteInsightsConfigAsync", "deleteInsightsConfigOperationCallable", "deleteInsightsConfigCallable"]
             },
+            "GetDeploymentEvent": {
+              "methods": ["getDeploymentEvent", "getDeploymentEvent", "getDeploymentEvent", "getDeploymentEventCallable"]
+            },
             "GetInsightsConfig": {
               "methods": ["getInsightsConfig", "getInsightsConfig", "getInsightsConfig", "getInsightsConfigCallable"]
             },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListDeploymentEvents": {
+              "methods": ["listDeploymentEvents", "listDeploymentEvents", "listDeploymentEvents", "listDeploymentEventsPagedCallable", "listDeploymentEventsCallable"]
             },
             "ListInsightsConfigs": {
               "methods": ["listInsightsConfigs", "listInsightsConfigs", "listInsightsConfigs", "listInsightsConfigsPagedCallable", "listInsightsConfigsCallable"]

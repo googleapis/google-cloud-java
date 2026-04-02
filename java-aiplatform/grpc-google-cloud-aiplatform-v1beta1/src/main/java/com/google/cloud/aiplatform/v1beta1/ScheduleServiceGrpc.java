@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * periodically launch shceudled runs to make API calls.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/schedule_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ScheduleServiceGrpc {
 
@@ -731,8 +728,9 @@ public final class ScheduleServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.Schedule createSchedule(
-        com.google.cloud.aiplatform.v1beta1.CreateScheduleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.CreateScheduleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateScheduleMethod(), getCallOptions(), request);
     }
 
@@ -744,8 +742,9 @@ public final class ScheduleServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteSchedule(
-        com.google.cloud.aiplatform.v1beta1.DeleteScheduleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.DeleteScheduleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteScheduleMethod(), getCallOptions(), request);
     }
 
@@ -757,8 +756,9 @@ public final class ScheduleServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.Schedule getSchedule(
-        com.google.cloud.aiplatform.v1beta1.GetScheduleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.GetScheduleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetScheduleMethod(), getCallOptions(), request);
     }
 
@@ -770,8 +770,9 @@ public final class ScheduleServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ListSchedulesResponse listSchedules(
-        com.google.cloud.aiplatform.v1beta1.ListSchedulesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ListSchedulesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSchedulesMethod(), getCallOptions(), request);
     }
 
@@ -786,8 +787,9 @@ public final class ScheduleServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty pauseSchedule(
-        com.google.cloud.aiplatform.v1beta1.PauseScheduleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.PauseScheduleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPauseScheduleMethod(), getCallOptions(), request);
     }
 
@@ -805,8 +807,9 @@ public final class ScheduleServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty resumeSchedule(
-        com.google.cloud.aiplatform.v1beta1.ResumeScheduleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ResumeScheduleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResumeScheduleMethod(), getCallOptions(), request);
     }
 
@@ -823,8 +826,9 @@ public final class ScheduleServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.Schedule updateSchedule(
-        com.google.cloud.aiplatform.v1beta1.UpdateScheduleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.UpdateScheduleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateScheduleMethod(), getCallOptions(), request);
     }
   }

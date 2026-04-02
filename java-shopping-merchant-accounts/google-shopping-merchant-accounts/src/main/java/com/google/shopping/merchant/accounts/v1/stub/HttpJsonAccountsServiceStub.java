@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
 import com.google.shopping.merchant.accounts.v1.Account;
 import com.google.shopping.merchant.accounts.v1.CreateAndConfigureAccountRequest;
+import com.google.shopping.merchant.accounts.v1.CreateTestAccountRequest;
 import com.google.shopping.merchant.accounts.v1.DeleteAccountRequest;
 import com.google.shopping.merchant.accounts.v1.GetAccountRequest;
 import com.google.shopping.merchant.accounts.v1.ListAccountsRequest;
@@ -122,6 +123,44 @@ public class HttpJsonAccountsServiceStub extends AccountsServiceStub {
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody("*", request.toBuilder().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Account>newBuilder()
+                      .setDefaultInstance(Account.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateTestAccountRequest, Account>
+      createTestAccountMethodDescriptor =
+          ApiMethodDescriptor.<CreateTestAccountRequest, Account>newBuilder()
+              .setFullMethodName(
+                  "google.shopping.merchant.accounts.v1.AccountsService/CreateTestAccount")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateTestAccountRequest>newBuilder()
+                      .setPath(
+                          "/accounts/v1/{parent=accounts/*}:createTestAccount",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateTestAccountRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateTestAccountRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("account", request.getAccount(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Account>newBuilder()
@@ -283,6 +322,7 @@ public class HttpJsonAccountsServiceStub extends AccountsServiceStub {
   private final UnaryCallable<GetAccountRequest, Account> getAccountCallable;
   private final UnaryCallable<CreateAndConfigureAccountRequest, Account>
       createAndConfigureAccountCallable;
+  private final UnaryCallable<CreateTestAccountRequest, Account> createTestAccountCallable;
   private final UnaryCallable<DeleteAccountRequest, Empty> deleteAccountCallable;
   private final UnaryCallable<UpdateAccountRequest, Account> updateAccountCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsResponse> listAccountsCallable;
@@ -345,6 +385,7 @@ public class HttpJsonAccountsServiceStub extends AccountsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateAndConfigureAccountRequest, Account>
         createAndConfigureAccountTransportSettings =
@@ -352,6 +393,18 @@ public class HttpJsonAccountsServiceStub extends AccountsServiceStub {
                 .setMethodDescriptor(createAndConfigureAccountMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<CreateTestAccountRequest, Account> createTestAccountTransportSettings =
+        HttpJsonCallSettings.<CreateTestAccountRequest, Account>newBuilder()
+            .setMethodDescriptor(createTestAccountMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
     HttpJsonCallSettings<DeleteAccountRequest, Empty> deleteAccountTransportSettings =
         HttpJsonCallSettings.<DeleteAccountRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteAccountMethodDescriptor)
@@ -362,6 +415,7 @@ public class HttpJsonAccountsServiceStub extends AccountsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateAccountRequest, Account> updateAccountTransportSettings =
         HttpJsonCallSettings.<UpdateAccountRequest, Account>newBuilder()
@@ -390,6 +444,7 @@ public class HttpJsonAccountsServiceStub extends AccountsServiceStub {
                       builder.add("provider", String.valueOf(request.getProvider()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProvider())
                 .build();
 
     this.getAccountCallable =
@@ -399,6 +454,11 @@ public class HttpJsonAccountsServiceStub extends AccountsServiceStub {
         callableFactory.createUnaryCallable(
             createAndConfigureAccountTransportSettings,
             settings.createAndConfigureAccountSettings(),
+            clientContext);
+    this.createTestAccountCallable =
+        callableFactory.createUnaryCallable(
+            createTestAccountTransportSettings,
+            settings.createTestAccountSettings(),
             clientContext);
     this.deleteAccountCallable =
         callableFactory.createUnaryCallable(
@@ -428,6 +488,7 @@ public class HttpJsonAccountsServiceStub extends AccountsServiceStub {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(getAccountMethodDescriptor);
     methodDescriptors.add(createAndConfigureAccountMethodDescriptor);
+    methodDescriptors.add(createTestAccountMethodDescriptor);
     methodDescriptors.add(deleteAccountMethodDescriptor);
     methodDescriptors.add(updateAccountMethodDescriptor);
     methodDescriptors.add(listAccountsMethodDescriptor);
@@ -444,6 +505,11 @@ public class HttpJsonAccountsServiceStub extends AccountsServiceStub {
   public UnaryCallable<CreateAndConfigureAccountRequest, Account>
       createAndConfigureAccountCallable() {
     return createAndConfigureAccountCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateTestAccountRequest, Account> createTestAccountCallable() {
+    return createTestAccountCallable;
   }
 
   @Override

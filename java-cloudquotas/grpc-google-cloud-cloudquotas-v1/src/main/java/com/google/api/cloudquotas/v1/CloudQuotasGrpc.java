@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,9 +29,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * - List/Get pending and historical quota preference.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/api/cloudquotas/v1/cloudquotas.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CloudQuotasGrpc {
 
@@ -660,8 +657,9 @@ public final class CloudQuotasGrpc {
      * </pre>
      */
     public com.google.api.cloudquotas.v1.ListQuotaInfosResponse listQuotaInfos(
-        com.google.api.cloudquotas.v1.ListQuotaInfosRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.cloudquotas.v1.ListQuotaInfosRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListQuotaInfosMethod(), getCallOptions(), request);
     }
 
@@ -673,8 +671,8 @@ public final class CloudQuotasGrpc {
      * </pre>
      */
     public com.google.api.cloudquotas.v1.QuotaInfo getQuotaInfo(
-        com.google.api.cloudquotas.v1.GetQuotaInfoRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.cloudquotas.v1.GetQuotaInfoRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetQuotaInfoMethod(), getCallOptions(), request);
     }
 
@@ -686,8 +684,9 @@ public final class CloudQuotasGrpc {
      * </pre>
      */
     public com.google.api.cloudquotas.v1.ListQuotaPreferencesResponse listQuotaPreferences(
-        com.google.api.cloudquotas.v1.ListQuotaPreferencesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.cloudquotas.v1.ListQuotaPreferencesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListQuotaPreferencesMethod(), getCallOptions(), request);
     }
 
@@ -699,8 +698,9 @@ public final class CloudQuotasGrpc {
      * </pre>
      */
     public com.google.api.cloudquotas.v1.QuotaPreference getQuotaPreference(
-        com.google.api.cloudquotas.v1.GetQuotaPreferenceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.cloudquotas.v1.GetQuotaPreferenceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetQuotaPreferenceMethod(), getCallOptions(), request);
     }
 
@@ -712,8 +712,9 @@ public final class CloudQuotasGrpc {
      * </pre>
      */
     public com.google.api.cloudquotas.v1.QuotaPreference createQuotaPreference(
-        com.google.api.cloudquotas.v1.CreateQuotaPreferenceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.cloudquotas.v1.CreateQuotaPreferenceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateQuotaPreferenceMethod(), getCallOptions(), request);
     }
 
@@ -726,8 +727,9 @@ public final class CloudQuotasGrpc {
      * </pre>
      */
     public com.google.api.cloudquotas.v1.QuotaPreference updateQuotaPreference(
-        com.google.api.cloudquotas.v1.UpdateQuotaPreferenceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.cloudquotas.v1.UpdateQuotaPreferenceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateQuotaPreferenceMethod(), getCallOptions(), request);
     }
   }

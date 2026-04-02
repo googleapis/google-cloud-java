@@ -1,0 +1,42 @@
+# Changelog
+
+## 0.8.0 (None)
+
+* No change
+
+
+## 0.7.0 (2026-03-11)
+
+* No change
+
+
+## 0.6.0 (2026-02-25)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.57.0 ([#11956](https://github.com/googleapis/google-cloud-java/issues/11956)) ([62b97e1](https://github.com/googleapis/google-cloud-java/commit/62b97e108eee0f8649c53cef400774f4fca4ffab))
+
+
+## 0.3.0 (2026-01-29)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.56.0 ([#11879](https://github.com/googleapis/google-cloud-java/issues/11879)) ([ac1f018](https://github.com/googleapis/google-cloud-java/commit/ac1f0182ac5b405ca164ac867c8c042322736bef))
+
+
+## 0.2.0 (2026-01-15)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.55.1 ([#11863](https://github.com/googleapis/google-cloud-java/issues/11863)) ([50cda6e](https://github.com/googleapis/google-cloud-java/commit/50cda6ec7be56bf1900737a6aaf12fc494be20c2))
+
+
+## 0.1.0 (2025-12-16)
+
+### Features
+
+* new module for gkerecommender ([#11828](https://github.com/googleapis/google-cloud-java/issues/11828)) ([c65852e](https://github.com/googleapis/google-cloud-java/commit/c65852e94987e9d0cbc03451f106a4b088ffeb3b))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.54.2 ([#11819](https://github.com/googleapis/google-cloud-java/issues/11819)) ([f32924a](https://github.com/googleapis/google-cloud-java/commit/f32924af0899a0b34646e88ffa8c527163b3bb24))

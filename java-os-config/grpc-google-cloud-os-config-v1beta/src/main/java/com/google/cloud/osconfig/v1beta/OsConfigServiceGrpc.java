@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * manage package installations and patch jobs for virtual machine instances.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/osconfig/v1beta/osconfig_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class OsConfigServiceGrpc {
 
@@ -1670,8 +1667,9 @@ public final class OsConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.osconfig.v1beta.PatchJobs.PatchJob executePatchJob(
-        com.google.cloud.osconfig.v1beta.PatchJobs.ExecutePatchJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.osconfig.v1beta.PatchJobs.ExecutePatchJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExecutePatchJobMethod(), getCallOptions(), request);
     }
 
@@ -1684,8 +1682,9 @@ public final class OsConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.osconfig.v1beta.PatchJobs.PatchJob getPatchJob(
-        com.google.cloud.osconfig.v1beta.PatchJobs.GetPatchJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.osconfig.v1beta.PatchJobs.GetPatchJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPatchJobMethod(), getCallOptions(), request);
     }
 
@@ -1698,8 +1697,9 @@ public final class OsConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.osconfig.v1beta.PatchJobs.PatchJob cancelPatchJob(
-        com.google.cloud.osconfig.v1beta.PatchJobs.CancelPatchJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.osconfig.v1beta.PatchJobs.CancelPatchJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelPatchJobMethod(), getCallOptions(), request);
     }
 
@@ -1711,8 +1711,9 @@ public final class OsConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.osconfig.v1beta.PatchJobs.ListPatchJobsResponse listPatchJobs(
-        com.google.cloud.osconfig.v1beta.PatchJobs.ListPatchJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.osconfig.v1beta.PatchJobs.ListPatchJobsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPatchJobsMethod(), getCallOptions(), request);
     }
 
@@ -1725,8 +1726,9 @@ public final class OsConfigServiceGrpc {
      */
     public com.google.cloud.osconfig.v1beta.PatchJobs.ListPatchJobInstanceDetailsResponse
         listPatchJobInstanceDetails(
-            com.google.cloud.osconfig.v1beta.PatchJobs.ListPatchJobInstanceDetailsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.osconfig.v1beta.PatchJobs.ListPatchJobInstanceDetailsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPatchJobInstanceDetailsMethod(), getCallOptions(), request);
     }
 
@@ -1738,8 +1740,9 @@ public final class OsConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment createPatchDeployment(
-        com.google.cloud.osconfig.v1beta.PatchDeployments.CreatePatchDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.osconfig.v1beta.PatchDeployments.CreatePatchDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreatePatchDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -1751,8 +1754,9 @@ public final class OsConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment getPatchDeployment(
-        com.google.cloud.osconfig.v1beta.PatchDeployments.GetPatchDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.osconfig.v1beta.PatchDeployments.GetPatchDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPatchDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -1765,8 +1769,9 @@ public final class OsConfigServiceGrpc {
      */
     public com.google.cloud.osconfig.v1beta.PatchDeployments.ListPatchDeploymentsResponse
         listPatchDeployments(
-            com.google.cloud.osconfig.v1beta.PatchDeployments.ListPatchDeploymentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.osconfig.v1beta.PatchDeployments.ListPatchDeploymentsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPatchDeploymentsMethod(), getCallOptions(), request);
     }
 
@@ -1778,8 +1783,9 @@ public final class OsConfigServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deletePatchDeployment(
-        com.google.cloud.osconfig.v1beta.PatchDeployments.DeletePatchDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.osconfig.v1beta.PatchDeployments.DeletePatchDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePatchDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -1791,8 +1797,9 @@ public final class OsConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment updatePatchDeployment(
-        com.google.cloud.osconfig.v1beta.PatchDeployments.UpdatePatchDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.osconfig.v1beta.PatchDeployments.UpdatePatchDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdatePatchDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -1805,8 +1812,9 @@ public final class OsConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment pausePatchDeployment(
-        com.google.cloud.osconfig.v1beta.PatchDeployments.PausePatchDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.osconfig.v1beta.PatchDeployments.PausePatchDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPausePatchDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -1819,8 +1827,9 @@ public final class OsConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment resumePatchDeployment(
-        com.google.cloud.osconfig.v1beta.PatchDeployments.ResumePatchDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.osconfig.v1beta.PatchDeployments.ResumePatchDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResumePatchDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -1832,8 +1841,9 @@ public final class OsConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy createGuestPolicy(
-        com.google.cloud.osconfig.v1beta.GuestPolicies.CreateGuestPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.osconfig.v1beta.GuestPolicies.CreateGuestPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateGuestPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1845,8 +1855,9 @@ public final class OsConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy getGuestPolicy(
-        com.google.cloud.osconfig.v1beta.GuestPolicies.GetGuestPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.osconfig.v1beta.GuestPolicies.GetGuestPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetGuestPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1859,8 +1870,9 @@ public final class OsConfigServiceGrpc {
      */
     public com.google.cloud.osconfig.v1beta.GuestPolicies.ListGuestPoliciesResponse
         listGuestPolicies(
-            com.google.cloud.osconfig.v1beta.GuestPolicies.ListGuestPoliciesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.osconfig.v1beta.GuestPolicies.ListGuestPoliciesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGuestPoliciesMethod(), getCallOptions(), request);
     }
 
@@ -1872,8 +1884,9 @@ public final class OsConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy updateGuestPolicy(
-        com.google.cloud.osconfig.v1beta.GuestPolicies.UpdateGuestPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.osconfig.v1beta.GuestPolicies.UpdateGuestPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateGuestPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1885,8 +1898,9 @@ public final class OsConfigServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteGuestPolicy(
-        com.google.cloud.osconfig.v1beta.GuestPolicies.DeleteGuestPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.osconfig.v1beta.GuestPolicies.DeleteGuestPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteGuestPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1901,8 +1915,9 @@ public final class OsConfigServiceGrpc {
     public com.google.cloud.osconfig.v1beta.GuestPolicies.EffectiveGuestPolicy
         lookupEffectiveGuestPolicy(
             com.google.cloud.osconfig.v1beta.GuestPolicies.LookupEffectiveGuestPolicyRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getLookupEffectiveGuestPolicyMethod(), getCallOptions(), request);
     }
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to manage local inventory for products
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/inventories/v1/localinventory.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class LocalInventoryServiceGrpc {
 
@@ -445,8 +442,9 @@ public final class LocalInventoryServiceGrpc {
      */
     public com.google.shopping.merchant.inventories.v1.ListLocalInventoriesResponse
         listLocalInventories(
-            com.google.shopping.merchant.inventories.v1.ListLocalInventoriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.shopping.merchant.inventories.v1.ListLocalInventoriesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListLocalInventoriesMethod(), getCallOptions(), request);
     }
 
@@ -464,8 +462,9 @@ public final class LocalInventoryServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.inventories.v1.LocalInventory insertLocalInventory(
-        com.google.shopping.merchant.inventories.v1.InsertLocalInventoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.inventories.v1.InsertLocalInventoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getInsertLocalInventoryMethod(), getCallOptions(), request);
     }
 
@@ -481,8 +480,9 @@ public final class LocalInventoryServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteLocalInventory(
-        com.google.shopping.merchant.inventories.v1.DeleteLocalInventoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.inventories.v1.DeleteLocalInventoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteLocalInventoryMethod(), getCallOptions(), request);
     }
   }

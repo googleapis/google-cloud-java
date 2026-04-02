@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,6 +37,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -67,6 +68,11 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.time.Duration;
@@ -120,10 +126,11 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -146,6 +153,10 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
   private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<ListEntitiesRequest, ListEntitiesResponse, Entity>
       LIST_ENTITIES_PAGE_STR_DESC =
@@ -360,6 +371,22 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
     return getLocationSettings;
   }
 
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   public MetadataServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -482,6 +509,18 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
     listPartitionsSettings = settingsBuilder.listPartitionsSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-dataplex")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for MetadataServiceStubSettings. */
@@ -505,6 +544,10 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
     private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -581,6 +624,9 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
       listPartitionsSettings = PagedCallSettings.newBuilder(LIST_PARTITIONS_PAGE_STR_FACT);
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -594,7 +640,10 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
               getPartitionSettings,
               listPartitionsSettings,
               listLocationsSettings,
-              getLocationSettings);
+              getLocationSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -612,6 +661,9 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
       listPartitionsSettings = settings.listPartitionsSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -625,7 +677,10 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
               getPartitionSettings,
               listPartitionsSettings,
               listLocationsSettings,
-              getLocationSettings);
+              getLocationSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -708,6 +763,21 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
       return builder;
     }
 
@@ -785,6 +855,22 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
     /** Returns the builder for the settings used for calls to getLocation. */
     public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
       return getLocationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

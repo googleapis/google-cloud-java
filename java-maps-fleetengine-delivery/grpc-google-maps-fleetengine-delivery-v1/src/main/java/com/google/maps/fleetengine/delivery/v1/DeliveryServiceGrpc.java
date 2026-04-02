@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The Last Mile Delivery service.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/maps/fleetengine/delivery/v1/delivery_api.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DeliveryServiceGrpc {
 
@@ -1121,8 +1118,9 @@ public final class DeliveryServiceGrpc {
      * </pre>
      */
     public com.google.maps.fleetengine.delivery.v1.DeliveryVehicle createDeliveryVehicle(
-        com.google.maps.fleetengine.delivery.v1.CreateDeliveryVehicleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.fleetengine.delivery.v1.CreateDeliveryVehicleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDeliveryVehicleMethod(), getCallOptions(), request);
     }
 
@@ -1134,8 +1132,9 @@ public final class DeliveryServiceGrpc {
      * </pre>
      */
     public com.google.maps.fleetengine.delivery.v1.DeliveryVehicle getDeliveryVehicle(
-        com.google.maps.fleetengine.delivery.v1.GetDeliveryVehicleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.fleetengine.delivery.v1.GetDeliveryVehicleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDeliveryVehicleMethod(), getCallOptions(), request);
     }
 
@@ -1149,8 +1148,9 @@ public final class DeliveryServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteDeliveryVehicle(
-        com.google.maps.fleetengine.delivery.v1.DeleteDeliveryVehicleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.fleetengine.delivery.v1.DeleteDeliveryVehicleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDeliveryVehicleMethod(), getCallOptions(), request);
     }
 
@@ -1168,8 +1168,9 @@ public final class DeliveryServiceGrpc {
      * </pre>
      */
     public com.google.maps.fleetengine.delivery.v1.DeliveryVehicle updateDeliveryVehicle(
-        com.google.maps.fleetengine.delivery.v1.UpdateDeliveryVehicleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.fleetengine.delivery.v1.UpdateDeliveryVehicleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDeliveryVehicleMethod(), getCallOptions(), request);
     }
 
@@ -1181,8 +1182,9 @@ public final class DeliveryServiceGrpc {
      * </pre>
      */
     public com.google.maps.fleetengine.delivery.v1.BatchCreateTasksResponse batchCreateTasks(
-        com.google.maps.fleetengine.delivery.v1.BatchCreateTasksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.fleetengine.delivery.v1.BatchCreateTasksRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchCreateTasksMethod(), getCallOptions(), request);
     }
 
@@ -1194,8 +1196,9 @@ public final class DeliveryServiceGrpc {
      * </pre>
      */
     public com.google.maps.fleetengine.delivery.v1.Task createTask(
-        com.google.maps.fleetengine.delivery.v1.CreateTaskRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.fleetengine.delivery.v1.CreateTaskRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTaskMethod(), getCallOptions(), request);
     }
 
@@ -1207,8 +1210,9 @@ public final class DeliveryServiceGrpc {
      * </pre>
      */
     public com.google.maps.fleetengine.delivery.v1.Task getTask(
-        com.google.maps.fleetengine.delivery.v1.GetTaskRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.fleetengine.delivery.v1.GetTaskRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTaskMethod(), getCallOptions(), request);
     }
 
@@ -1222,8 +1226,9 @@ public final class DeliveryServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteTask(
-        com.google.maps.fleetengine.delivery.v1.DeleteTaskRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.fleetengine.delivery.v1.DeleteTaskRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTaskMethod(), getCallOptions(), request);
     }
 
@@ -1235,8 +1240,9 @@ public final class DeliveryServiceGrpc {
      * </pre>
      */
     public com.google.maps.fleetengine.delivery.v1.Task updateTask(
-        com.google.maps.fleetengine.delivery.v1.UpdateTaskRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.fleetengine.delivery.v1.UpdateTaskRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTaskMethod(), getCallOptions(), request);
     }
 
@@ -1248,8 +1254,9 @@ public final class DeliveryServiceGrpc {
      * </pre>
      */
     public com.google.maps.fleetengine.delivery.v1.ListTasksResponse listTasks(
-        com.google.maps.fleetengine.delivery.v1.ListTasksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.fleetengine.delivery.v1.ListTasksRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTasksMethod(), getCallOptions(), request);
     }
 
@@ -1261,8 +1268,9 @@ public final class DeliveryServiceGrpc {
      * </pre>
      */
     public com.google.maps.fleetengine.delivery.v1.TaskTrackingInfo getTaskTrackingInfo(
-        com.google.maps.fleetengine.delivery.v1.GetTaskTrackingInfoRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.fleetengine.delivery.v1.GetTaskTrackingInfoRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTaskTrackingInfoMethod(), getCallOptions(), request);
     }
 
@@ -1275,8 +1283,9 @@ public final class DeliveryServiceGrpc {
      */
     public com.google.maps.fleetengine.delivery.v1.ListDeliveryVehiclesResponse
         listDeliveryVehicles(
-            com.google.maps.fleetengine.delivery.v1.ListDeliveryVehiclesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.maps.fleetengine.delivery.v1.ListDeliveryVehiclesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDeliveryVehiclesMethod(), getCallOptions(), request);
     }
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,8 @@ import com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest;
 import com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteResponse;
 import com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest;
 import com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse;
+import com.google.cloud.aiplatform.v1beta1.GenerateFetchAccessTokenRequest;
+import com.google.cloud.aiplatform.v1beta1.GenerateFetchAccessTokenResponse;
 import com.google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRequest;
 import com.google.cloud.aiplatform.v1beta1.SearchNearestEntitiesResponse;
 import com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesRequest;
@@ -116,6 +118,21 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<
+          GenerateFetchAccessTokenRequest, GenerateFetchAccessTokenResponse>
+      generateFetchAccessTokenMethodDescriptor =
+          MethodDescriptor
+              .<GenerateFetchAccessTokenRequest, GenerateFetchAccessTokenResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService/GenerateFetchAccessToken")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GenerateFetchAccessTokenRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(GenerateFetchAccessTokenResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -176,6 +193,8 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
       searchNearestEntitiesCallable;
   private final BidiStreamingCallable<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
       featureViewDirectWriteCallable;
+  private final UnaryCallable<GenerateFetchAccessTokenRequest, GenerateFetchAccessTokenResponse>
+      generateFetchAccessTokenCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -240,6 +259,7 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                       builder.add("feature_view", String.valueOf(request.getFeatureView()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getFeatureView())
                 .build();
     GrpcCallSettings<StreamingFetchFeatureValuesRequest, StreamingFetchFeatureValuesResponse>
         streamingFetchFeatureValuesTransportSettings =
@@ -253,6 +273,7 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                       builder.add("feature_view", String.valueOf(request.getFeatureView()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getFeatureView())
                 .build();
     GrpcCallSettings<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
         searchNearestEntitiesTransportSettings =
@@ -265,6 +286,7 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                       builder.add("feature_view", String.valueOf(request.getFeatureView()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getFeatureView())
                 .build();
     GrpcCallSettings<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
         featureViewDirectWriteTransportSettings =
@@ -277,6 +299,20 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                       builder.add("feature_view", String.valueOf(request.getFeatureView()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getFeatureView())
+                .build();
+    GrpcCallSettings<GenerateFetchAccessTokenRequest, GenerateFetchAccessTokenResponse>
+        generateFetchAccessTokenTransportSettings =
+            GrpcCallSettings
+                .<GenerateFetchAccessTokenRequest, GenerateFetchAccessTokenResponse>newBuilder()
+                .setMethodDescriptor(generateFetchAccessTokenMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("feature_view", String.valueOf(request.getFeatureView()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getFeatureView())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -307,6 +343,7 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -317,6 +354,7 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -328,6 +366,7 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.fetchFeatureValuesCallable =
@@ -349,6 +388,11 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
         callableFactory.createBidiStreamingCallable(
             featureViewDirectWriteTransportSettings,
             settings.featureViewDirectWriteSettings(),
+            clientContext);
+    this.generateFetchAccessTokenCallable =
+        callableFactory.createUnaryCallable(
+            generateFetchAccessTokenTransportSettings,
+            settings.generateFetchAccessTokenSettings(),
             clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
@@ -402,6 +446,12 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
   public BidiStreamingCallable<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
       featureViewDirectWriteCallable() {
     return featureViewDirectWriteCallable;
+  }
+
+  @Override
+  public UnaryCallable<GenerateFetchAccessTokenRequest, GenerateFetchAccessTokenResponse>
+      generateFetchAccessTokenCallable() {
+    return generateFetchAccessTokenCallable;
   }
 
   @Override

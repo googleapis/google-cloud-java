@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@
 
 package com.google.ads.admanager.v1;
 
+import static com.google.ads.admanager.v1.NetworkServiceClient.ListNetworksPagedResponse;
+
 import com.google.ads.admanager.v1.stub.HttpJsonNetworkServiceStub;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -26,8 +28,10 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import javax.annotation.Generated;
 import org.junit.After;
@@ -180,14 +184,27 @@ public class NetworkServiceClientTest {
 
   @Test
   public void listNetworksTest() throws Exception {
+    Network responsesElement = Network.newBuilder().build();
     ListNetworksResponse expectedResponse =
-        ListNetworksResponse.newBuilder().addAllNetworks(new ArrayList<Network>()).build();
+        ListNetworksResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllNetworks(Arrays.asList(responsesElement))
+            .build();
     mockService.addResponse(expectedResponse);
 
-    ListNetworksRequest request = ListNetworksRequest.newBuilder().build();
+    ListNetworksRequest request =
+        ListNetworksRequest.newBuilder()
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .setSkip(3532159)
+            .build();
 
-    ListNetworksResponse actualResponse = client.listNetworks(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
+    ListNetworksPagedResponse pagedListResponse = client.listNetworks(request);
+
+    List<Network> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getNetworksList().get(0), resources.get(0));
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
@@ -212,7 +229,12 @@ public class NetworkServiceClientTest {
     mockService.addException(exception);
 
     try {
-      ListNetworksRequest request = ListNetworksRequest.newBuilder().build();
+      ListNetworksRequest request =
+          ListNetworksRequest.newBuilder()
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .setSkip(3532159)
+              .build();
       client.listNetworks(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

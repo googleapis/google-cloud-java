@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -279,6 +279,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetFunctionRequest, CloudFunction> getFunctionTransportSettings =
         GrpcCallSettings.<GetFunctionRequest, CloudFunction>newBuilder()
@@ -289,6 +290,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateFunctionRequest, Operation> createFunctionTransportSettings =
         GrpcCallSettings.<CreateFunctionRequest, Operation>newBuilder()
@@ -299,6 +301,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
                   builder.add("location", String.valueOf(request.getLocation()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getLocation())
             .build();
     GrpcCallSettings<UpdateFunctionRequest, Operation> updateFunctionTransportSettings =
         GrpcCallSettings.<UpdateFunctionRequest, Operation>newBuilder()
@@ -319,6 +322,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CallFunctionRequest, CallFunctionResponse> callFunctionTransportSettings =
         GrpcCallSettings.<CallFunctionRequest, CallFunctionResponse>newBuilder()
@@ -329,6 +333,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GenerateUploadUrlRequest, GenerateUploadUrlResponse>
         generateUploadUrlTransportSettings =
@@ -340,6 +345,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getKmsKeyName())
                 .build();
     GrpcCallSettings<GenerateDownloadUrlRequest, GenerateDownloadUrlResponse>
         generateDownloadUrlTransportSettings =
@@ -361,6 +367,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -371,6 +378,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -382,6 +390,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

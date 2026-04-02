@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,7 +91,7 @@ public class CompanyServiceClientTest {
             .setExternalId("externalId-1699764666")
             .setComment("comment950398559")
             .addAllAppliedLabels(new ArrayList<AppliedLabel>())
-            .setPrimaryContact("primaryContact-532068418")
+            .setPrimaryContact(ContactName.of("[NETWORK_CODE]", "[CONTACT]").toString())
             .addAllAppliedTeams(new ArrayList<String>())
             .setThirdPartyCompanyId(2003341038)
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -148,7 +148,7 @@ public class CompanyServiceClientTest {
             .setExternalId("externalId-1699764666")
             .setComment("comment950398559")
             .addAllAppliedLabels(new ArrayList<AppliedLabel>())
-            .setPrimaryContact("primaryContact-532068418")
+            .setPrimaryContact(ContactName.of("[NETWORK_CODE]", "[CONTACT]").toString())
             .addAllAppliedTeams(new ArrayList<String>())
             .setThirdPartyCompanyId(2003341038)
             .setUpdateTime(Timestamp.newBuilder().build())

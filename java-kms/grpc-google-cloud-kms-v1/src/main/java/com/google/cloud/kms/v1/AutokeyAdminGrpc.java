@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,18 +22,17 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  * <pre>
  * Provides interfaces for managing [Cloud KMS
- * Autokey](https://cloud.google.com/kms/help/autokey) folder-level
- * configurations. A configuration is inherited by all descendent projects. A
- * configuration at one folder overrides any other configurations in its
- * ancestry. Setting a configuration on a folder is a prerequisite for Cloud KMS
- * Autokey, so that users working in a descendant project can request
- * provisioned [CryptoKeys][google.cloud.kms.v1.CryptoKey], ready for Customer
- * Managed Encryption Key (CMEK) use, on-demand.
+ * Autokey](https://cloud.google.com/kms/help/autokey) folder-level or
+ * project-level configurations. A configuration is inherited by all descendent
+ * folders and projects. A configuration at a folder or project overrides any
+ * other configurations in its ancestry. Setting a configuration on a folder is
+ * a prerequisite for Cloud KMS Autokey, so that users working in a descendant
+ * project can request provisioned [CryptoKeys][google.cloud.kms.v1.CryptoKey],
+ * ready for Customer Managed Encryption Key (CMEK) use, on-demand when using
+ * the dedicated key project mode. This is not required when using the delegated
+ * key management mode for same-project keys.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/kms/v1/autokey_admin.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AutokeyAdminGrpc {
 
@@ -240,13 +239,15 @@ public final class AutokeyAdminGrpc {
    *
    * <pre>
    * Provides interfaces for managing [Cloud KMS
-   * Autokey](https://cloud.google.com/kms/help/autokey) folder-level
-   * configurations. A configuration is inherited by all descendent projects. A
-   * configuration at one folder overrides any other configurations in its
-   * ancestry. Setting a configuration on a folder is a prerequisite for Cloud KMS
-   * Autokey, so that users working in a descendant project can request
-   * provisioned [CryptoKeys][google.cloud.kms.v1.CryptoKey], ready for Customer
-   * Managed Encryption Key (CMEK) use, on-demand.
+   * Autokey](https://cloud.google.com/kms/help/autokey) folder-level or
+   * project-level configurations. A configuration is inherited by all descendent
+   * folders and projects. A configuration at a folder or project overrides any
+   * other configurations in its ancestry. Setting a configuration on a folder is
+   * a prerequisite for Cloud KMS Autokey, so that users working in a descendant
+   * project can request provisioned [CryptoKeys][google.cloud.kms.v1.CryptoKey],
+   * ready for Customer Managed Encryption Key (CMEK) use, on-demand when using
+   * the dedicated key project mode. This is not required when using the delegated
+   * key management mode for same-project keys.
    * </pre>
    */
   public interface AsyncService {
@@ -255,8 +256,8 @@ public final class AutokeyAdminGrpc {
      *
      *
      * <pre>
-     * Updates the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a
-     * folder. The caller must have both `cloudkms.autokeyConfigs.update`
+     * Updates the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a folder
+     * or a project. The caller must have both `cloudkms.autokeyConfigs.update`
      * permission on the parent folder and `cloudkms.cryptoKeys.setIamPolicy`
      * permission on the provided key project. A
      * [KeyHandle][google.cloud.kms.v1.KeyHandle] creation in the folder's
@@ -275,8 +276,8 @@ public final class AutokeyAdminGrpc {
      *
      *
      * <pre>
-     * Returns the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a
-     * folder.
+     * Returns the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a folder
+     * or project.
      * </pre>
      */
     default void getAutokeyConfig(
@@ -307,13 +308,15 @@ public final class AutokeyAdminGrpc {
    *
    * <pre>
    * Provides interfaces for managing [Cloud KMS
-   * Autokey](https://cloud.google.com/kms/help/autokey) folder-level
-   * configurations. A configuration is inherited by all descendent projects. A
-   * configuration at one folder overrides any other configurations in its
-   * ancestry. Setting a configuration on a folder is a prerequisite for Cloud KMS
-   * Autokey, so that users working in a descendant project can request
-   * provisioned [CryptoKeys][google.cloud.kms.v1.CryptoKey], ready for Customer
-   * Managed Encryption Key (CMEK) use, on-demand.
+   * Autokey](https://cloud.google.com/kms/help/autokey) folder-level or
+   * project-level configurations. A configuration is inherited by all descendent
+   * folders and projects. A configuration at a folder or project overrides any
+   * other configurations in its ancestry. Setting a configuration on a folder is
+   * a prerequisite for Cloud KMS Autokey, so that users working in a descendant
+   * project can request provisioned [CryptoKeys][google.cloud.kms.v1.CryptoKey],
+   * ready for Customer Managed Encryption Key (CMEK) use, on-demand when using
+   * the dedicated key project mode. This is not required when using the delegated
+   * key management mode for same-project keys.
    * </pre>
    */
   public abstract static class AutokeyAdminImplBase
@@ -330,13 +333,15 @@ public final class AutokeyAdminGrpc {
    *
    * <pre>
    * Provides interfaces for managing [Cloud KMS
-   * Autokey](https://cloud.google.com/kms/help/autokey) folder-level
-   * configurations. A configuration is inherited by all descendent projects. A
-   * configuration at one folder overrides any other configurations in its
-   * ancestry. Setting a configuration on a folder is a prerequisite for Cloud KMS
-   * Autokey, so that users working in a descendant project can request
-   * provisioned [CryptoKeys][google.cloud.kms.v1.CryptoKey], ready for Customer
-   * Managed Encryption Key (CMEK) use, on-demand.
+   * Autokey](https://cloud.google.com/kms/help/autokey) folder-level or
+   * project-level configurations. A configuration is inherited by all descendent
+   * folders and projects. A configuration at a folder or project overrides any
+   * other configurations in its ancestry. Setting a configuration on a folder is
+   * a prerequisite for Cloud KMS Autokey, so that users working in a descendant
+   * project can request provisioned [CryptoKeys][google.cloud.kms.v1.CryptoKey],
+   * ready for Customer Managed Encryption Key (CMEK) use, on-demand when using
+   * the dedicated key project mode. This is not required when using the delegated
+   * key management mode for same-project keys.
    * </pre>
    */
   public static final class AutokeyAdminStub
@@ -354,8 +359,8 @@ public final class AutokeyAdminGrpc {
      *
      *
      * <pre>
-     * Updates the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a
-     * folder. The caller must have both `cloudkms.autokeyConfigs.update`
+     * Updates the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a folder
+     * or a project. The caller must have both `cloudkms.autokeyConfigs.update`
      * permission on the parent folder and `cloudkms.cryptoKeys.setIamPolicy`
      * permission on the provided key project. A
      * [KeyHandle][google.cloud.kms.v1.KeyHandle] creation in the folder's
@@ -376,8 +381,8 @@ public final class AutokeyAdminGrpc {
      *
      *
      * <pre>
-     * Returns the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a
-     * folder.
+     * Returns the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a folder
+     * or project.
      * </pre>
      */
     public void getAutokeyConfig(
@@ -412,13 +417,15 @@ public final class AutokeyAdminGrpc {
    *
    * <pre>
    * Provides interfaces for managing [Cloud KMS
-   * Autokey](https://cloud.google.com/kms/help/autokey) folder-level
-   * configurations. A configuration is inherited by all descendent projects. A
-   * configuration at one folder overrides any other configurations in its
-   * ancestry. Setting a configuration on a folder is a prerequisite for Cloud KMS
-   * Autokey, so that users working in a descendant project can request
-   * provisioned [CryptoKeys][google.cloud.kms.v1.CryptoKey], ready for Customer
-   * Managed Encryption Key (CMEK) use, on-demand.
+   * Autokey](https://cloud.google.com/kms/help/autokey) folder-level or
+   * project-level configurations. A configuration is inherited by all descendent
+   * folders and projects. A configuration at a folder or project overrides any
+   * other configurations in its ancestry. Setting a configuration on a folder is
+   * a prerequisite for Cloud KMS Autokey, so that users working in a descendant
+   * project can request provisioned [CryptoKeys][google.cloud.kms.v1.CryptoKey],
+   * ready for Customer Managed Encryption Key (CMEK) use, on-demand when using
+   * the dedicated key project mode. This is not required when using the delegated
+   * key management mode for same-project keys.
    * </pre>
    */
   public static final class AutokeyAdminBlockingV2Stub
@@ -437,8 +444,8 @@ public final class AutokeyAdminGrpc {
      *
      *
      * <pre>
-     * Updates the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a
-     * folder. The caller must have both `cloudkms.autokeyConfigs.update`
+     * Updates the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a folder
+     * or a project. The caller must have both `cloudkms.autokeyConfigs.update`
      * permission on the parent folder and `cloudkms.cryptoKeys.setIamPolicy`
      * permission on the provided key project. A
      * [KeyHandle][google.cloud.kms.v1.KeyHandle] creation in the folder's
@@ -447,8 +454,8 @@ public final class AutokeyAdminGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.AutokeyConfig updateAutokeyConfig(
-        com.google.cloud.kms.v1.UpdateAutokeyConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.UpdateAutokeyConfigRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAutokeyConfigMethod(), getCallOptions(), request);
     }
 
@@ -456,13 +463,13 @@ public final class AutokeyAdminGrpc {
      *
      *
      * <pre>
-     * Returns the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a
-     * folder.
+     * Returns the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a folder
+     * or project.
      * </pre>
      */
     public com.google.cloud.kms.v1.AutokeyConfig getAutokeyConfig(
-        com.google.cloud.kms.v1.GetAutokeyConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.GetAutokeyConfigRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAutokeyConfigMethod(), getCallOptions(), request);
     }
 
@@ -474,8 +481,9 @@ public final class AutokeyAdminGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.ShowEffectiveAutokeyConfigResponse showEffectiveAutokeyConfig(
-        com.google.cloud.kms.v1.ShowEffectiveAutokeyConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.ShowEffectiveAutokeyConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getShowEffectiveAutokeyConfigMethod(), getCallOptions(), request);
     }
   }
@@ -485,13 +493,15 @@ public final class AutokeyAdminGrpc {
    *
    * <pre>
    * Provides interfaces for managing [Cloud KMS
-   * Autokey](https://cloud.google.com/kms/help/autokey) folder-level
-   * configurations. A configuration is inherited by all descendent projects. A
-   * configuration at one folder overrides any other configurations in its
-   * ancestry. Setting a configuration on a folder is a prerequisite for Cloud KMS
-   * Autokey, so that users working in a descendant project can request
-   * provisioned [CryptoKeys][google.cloud.kms.v1.CryptoKey], ready for Customer
-   * Managed Encryption Key (CMEK) use, on-demand.
+   * Autokey](https://cloud.google.com/kms/help/autokey) folder-level or
+   * project-level configurations. A configuration is inherited by all descendent
+   * folders and projects. A configuration at a folder or project overrides any
+   * other configurations in its ancestry. Setting a configuration on a folder is
+   * a prerequisite for Cloud KMS Autokey, so that users working in a descendant
+   * project can request provisioned [CryptoKeys][google.cloud.kms.v1.CryptoKey],
+   * ready for Customer Managed Encryption Key (CMEK) use, on-demand when using
+   * the dedicated key project mode. This is not required when using the delegated
+   * key management mode for same-project keys.
    * </pre>
    */
   public static final class AutokeyAdminBlockingStub
@@ -510,8 +520,8 @@ public final class AutokeyAdminGrpc {
      *
      *
      * <pre>
-     * Updates the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a
-     * folder. The caller must have both `cloudkms.autokeyConfigs.update`
+     * Updates the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a folder
+     * or a project. The caller must have both `cloudkms.autokeyConfigs.update`
      * permission on the parent folder and `cloudkms.cryptoKeys.setIamPolicy`
      * permission on the provided key project. A
      * [KeyHandle][google.cloud.kms.v1.KeyHandle] creation in the folder's
@@ -529,8 +539,8 @@ public final class AutokeyAdminGrpc {
      *
      *
      * <pre>
-     * Returns the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a
-     * folder.
+     * Returns the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a folder
+     * or project.
      * </pre>
      */
     public com.google.cloud.kms.v1.AutokeyConfig getAutokeyConfig(
@@ -558,13 +568,15 @@ public final class AutokeyAdminGrpc {
    *
    * <pre>
    * Provides interfaces for managing [Cloud KMS
-   * Autokey](https://cloud.google.com/kms/help/autokey) folder-level
-   * configurations. A configuration is inherited by all descendent projects. A
-   * configuration at one folder overrides any other configurations in its
-   * ancestry. Setting a configuration on a folder is a prerequisite for Cloud KMS
-   * Autokey, so that users working in a descendant project can request
-   * provisioned [CryptoKeys][google.cloud.kms.v1.CryptoKey], ready for Customer
-   * Managed Encryption Key (CMEK) use, on-demand.
+   * Autokey](https://cloud.google.com/kms/help/autokey) folder-level or
+   * project-level configurations. A configuration is inherited by all descendent
+   * folders and projects. A configuration at a folder or project overrides any
+   * other configurations in its ancestry. Setting a configuration on a folder is
+   * a prerequisite for Cloud KMS Autokey, so that users working in a descendant
+   * project can request provisioned [CryptoKeys][google.cloud.kms.v1.CryptoKey],
+   * ready for Customer Managed Encryption Key (CMEK) use, on-demand when using
+   * the dedicated key project mode. This is not required when using the delegated
+   * key management mode for same-project keys.
    * </pre>
    */
   public static final class AutokeyAdminFutureStub
@@ -583,8 +595,8 @@ public final class AutokeyAdminGrpc {
      *
      *
      * <pre>
-     * Updates the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a
-     * folder. The caller must have both `cloudkms.autokeyConfigs.update`
+     * Updates the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a folder
+     * or a project. The caller must have both `cloudkms.autokeyConfigs.update`
      * permission on the parent folder and `cloudkms.cryptoKeys.setIamPolicy`
      * permission on the provided key project. A
      * [KeyHandle][google.cloud.kms.v1.KeyHandle] creation in the folder's
@@ -602,8 +614,8 @@ public final class AutokeyAdminGrpc {
      *
      *
      * <pre>
-     * Returns the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a
-     * folder.
+     * Returns the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a folder
+     * or project.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.kms.v1.AutokeyConfig>

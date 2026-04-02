@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,8 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.AnalyzeContentRequest;
 import com.google.cloud.dialogflow.v2beta1.AnalyzeContentResponse;
+import com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest;
+import com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse;
 import com.google.cloud.dialogflow.v2beta1.CompileSuggestionRequest;
 import com.google.cloud.dialogflow.v2beta1.CompileSuggestionResponse;
 import com.google.cloud.dialogflow.v2beta1.CreateParticipantRequest;
@@ -143,6 +145,21 @@ public class GrpcParticipantsStub extends ParticipantsStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<
+          BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+      bidiStreamingAnalyzeContentMethodDescriptor =
+          MethodDescriptor
+              .<BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(
+                  "google.cloud.dialogflow.v2beta1.Participants/BidiStreamingAnalyzeContent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BidiStreamingAnalyzeContentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(BidiStreamingAnalyzeContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<SuggestArticlesRequest, SuggestArticlesResponse>
       suggestArticlesMethodDescriptor =
           MethodDescriptor.<SuggestArticlesRequest, SuggestArticlesResponse>newBuilder()
@@ -250,6 +267,9 @@ public class GrpcParticipantsStub extends ParticipantsStub {
   private final BidiStreamingCallable<
           StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
       streamingAnalyzeContentCallable;
+  private final BidiStreamingCallable<
+          BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+      bidiStreamingAnalyzeContentCallable;
   private final UnaryCallable<SuggestArticlesRequest, SuggestArticlesResponse>
       suggestArticlesCallable;
   private final UnaryCallable<SuggestFaqAnswersRequest, SuggestFaqAnswersResponse>
@@ -320,6 +340,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetParticipantRequest, Participant> getParticipantTransportSettings =
         GrpcCallSettings.<GetParticipantRequest, Participant>newBuilder()
@@ -330,6 +351,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListParticipantsRequest, ListParticipantsResponse>
         listParticipantsTransportSettings =
@@ -341,6 +363,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateParticipantRequest, Participant> updateParticipantTransportSettings =
         GrpcCallSettings.<UpdateParticipantRequest, Participant>newBuilder()
@@ -363,12 +386,21 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                       builder.add("participant", String.valueOf(request.getParticipant()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParticipant())
                 .build();
     GrpcCallSettings<StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
         streamingAnalyzeContentTransportSettings =
             GrpcCallSettings
                 .<StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>newBuilder()
                 .setMethodDescriptor(streamingAnalyzeContentMethodDescriptor)
+                .setResourceNameExtractor(request -> request.getParticipant())
+                .build();
+    GrpcCallSettings<BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+        bidiStreamingAnalyzeContentTransportSettings =
+            GrpcCallSettings
+                .<BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+                    newBuilder()
+                .setMethodDescriptor(bidiStreamingAnalyzeContentMethodDescriptor)
                 .build();
     GrpcCallSettings<SuggestArticlesRequest, SuggestArticlesResponse>
         suggestArticlesTransportSettings =
@@ -380,6 +412,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<SuggestFaqAnswersRequest, SuggestFaqAnswersResponse>
         suggestFaqAnswersTransportSettings =
@@ -391,6 +424,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
         suggestSmartRepliesTransportSettings =
@@ -402,6 +436,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
         suggestKnowledgeAssistTransportSettings =
@@ -414,6 +449,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListSuggestionsRequest, ListSuggestionsResponse>
         listSuggestionsTransportSettings =
@@ -484,6 +520,11 @@ public class GrpcParticipantsStub extends ParticipantsStub {
         callableFactory.createBidiStreamingCallable(
             streamingAnalyzeContentTransportSettings,
             settings.streamingAnalyzeContentSettings(),
+            clientContext);
+    this.bidiStreamingAnalyzeContentCallable =
+        callableFactory.createBidiStreamingCallable(
+            bidiStreamingAnalyzeContentTransportSettings,
+            settings.bidiStreamingAnalyzeContentSettings(),
             clientContext);
     this.suggestArticlesCallable =
         callableFactory.createUnaryCallable(
@@ -568,6 +609,13 @@ public class GrpcParticipantsStub extends ParticipantsStub {
   public BidiStreamingCallable<StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
       streamingAnalyzeContentCallable() {
     return streamingAnalyzeContentCallable;
+  }
+
+  @Override
+  public BidiStreamingCallable<
+          BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+      bidiStreamingAnalyzeContentCallable() {
+    return bidiStreamingAnalyzeContentCallable;
   }
 
   @Override

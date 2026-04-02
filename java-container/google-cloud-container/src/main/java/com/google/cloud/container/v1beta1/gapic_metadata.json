@@ -16,6 +16,9 @@
             "CheckAutopilotCompatibility": {
               "methods": ["checkAutopilotCompatibility", "checkAutopilotCompatibilityCallable"]
             },
+            "CompleteControlPlaneUpgrade": {
+              "methods": ["completeControlPlaneUpgrade", "completeControlPlaneUpgradeCallable"]
+            },
             "CompleteIPRotation": {
               "methods": ["completeIPRotation", "completeIPRotation", "completeIPRotationCallable"]
             },

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,6 +87,7 @@ public class BackendBucketsClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -162,6 +163,7 @@ public class BackendBucketsClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -234,6 +236,7 @@ public class BackendBucketsClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -419,6 +422,7 @@ public class BackendBucketsClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -541,6 +545,7 @@ public class BackendBucketsClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -616,6 +621,7 @@ public class BackendBucketsClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)
@@ -800,6 +806,7 @@ public class BackendBucketsClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
             .setId(3355)

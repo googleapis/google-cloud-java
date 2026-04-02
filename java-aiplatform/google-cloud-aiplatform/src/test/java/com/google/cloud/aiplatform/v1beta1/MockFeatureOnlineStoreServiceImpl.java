@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -177,5 +177,28 @@ public class MockFeatureOnlineStoreServiceImpl extends FeatureOnlineStoreService
           }
         };
     return requestObserver;
+  }
+
+  @Override
+  public void generateFetchAccessToken(
+      GenerateFetchAccessTokenRequest request,
+      StreamObserver<GenerateFetchAccessTokenResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GenerateFetchAccessTokenResponse) {
+      requests.add(request);
+      responseObserver.onNext(((GenerateFetchAccessTokenResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateFetchAccessToken, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GenerateFetchAccessTokenResponse.class.getName(),
+                  Exception.class.getName())));
+    }
   }
 }

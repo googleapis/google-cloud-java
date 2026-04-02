@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -652,6 +652,7 @@ public class AnalyticsHubServiceClientTest {
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+            .setStoredProcedureConfig(StoredProcedureConfig.newBuilder().build())
             .setDiscoveryType(DiscoveryType.forNumber(0))
             .setResourceType(SharedResourceType.forNumber(0))
             .setCommercialInfo(Listing.CommercialInfo.newBuilder().build())
@@ -707,6 +708,7 @@ public class AnalyticsHubServiceClientTest {
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+            .setStoredProcedureConfig(StoredProcedureConfig.newBuilder().build())
             .setDiscoveryType(DiscoveryType.forNumber(0))
             .setResourceType(SharedResourceType.forNumber(0))
             .setCommercialInfo(Listing.CommercialInfo.newBuilder().build())
@@ -762,6 +764,7 @@ public class AnalyticsHubServiceClientTest {
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+            .setStoredProcedureConfig(StoredProcedureConfig.newBuilder().build())
             .setDiscoveryType(DiscoveryType.forNumber(0))
             .setResourceType(SharedResourceType.forNumber(0))
             .setCommercialInfo(Listing.CommercialInfo.newBuilder().build())
@@ -820,6 +823,7 @@ public class AnalyticsHubServiceClientTest {
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+            .setStoredProcedureConfig(StoredProcedureConfig.newBuilder().build())
             .setDiscoveryType(DiscoveryType.forNumber(0))
             .setResourceType(SharedResourceType.forNumber(0))
             .setCommercialInfo(Listing.CommercialInfo.newBuilder().build())
@@ -878,6 +882,7 @@ public class AnalyticsHubServiceClientTest {
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+            .setStoredProcedureConfig(StoredProcedureConfig.newBuilder().build())
             .setDiscoveryType(DiscoveryType.forNumber(0))
             .setResourceType(SharedResourceType.forNumber(0))
             .setCommercialInfo(Listing.CommercialInfo.newBuilder().build())

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +45,8 @@ import com.google.cloud.translate.v3beta1.GetSupportedLanguagesRequest;
 import com.google.cloud.translate.v3beta1.Glossary;
 import com.google.cloud.translate.v3beta1.ListGlossariesRequest;
 import com.google.cloud.translate.v3beta1.ListGlossariesResponse;
+import com.google.cloud.translate.v3beta1.RefineTextRequest;
+import com.google.cloud.translate.v3beta1.RefineTextResponse;
 import com.google.cloud.translate.v3beta1.SupportedLanguages;
 import com.google.cloud.translate.v3beta1.TranslateDocumentRequest;
 import com.google.cloud.translate.v3beta1.TranslateDocumentResponse;
@@ -188,6 +190,16 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<RefineTextRequest, RefineTextResponse>
+      refineTextMethodDescriptor =
+          MethodDescriptor.<RefineTextRequest, RefineTextResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.translation.v3beta1.TranslationService/RefineText")
+              .setRequestMarshaller(ProtoUtils.marshaller(RefineTextRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(RefineTextResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<TranslateTextRequest, TranslateTextResponse> translateTextCallable;
   private final UnaryCallable<DetectLanguageRequest, DetectLanguageResponse> detectLanguageCallable;
   private final UnaryCallable<GetSupportedLanguagesRequest, SupportedLanguages>
@@ -216,6 +228,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
   private final OperationCallable<
           DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
       deleteGlossaryOperationCallable;
+  private final UnaryCallable<RefineTextRequest, RefineTextResponse> refineTextCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -270,6 +283,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DetectLanguageRequest, DetectLanguageResponse>
         detectLanguageTransportSettings =
@@ -281,6 +295,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetSupportedLanguagesRequest, SupportedLanguages>
         getSupportedLanguagesTransportSettings =
@@ -292,6 +307,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<TranslateDocumentRequest, TranslateDocumentResponse>
         translateDocumentTransportSettings =
@@ -303,6 +319,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<BatchTranslateTextRequest, Operation> batchTranslateTextTransportSettings =
         GrpcCallSettings.<BatchTranslateTextRequest, Operation>newBuilder()
@@ -313,6 +330,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<BatchTranslateDocumentRequest, Operation>
         batchTranslateDocumentTransportSettings =
@@ -324,6 +342,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateGlossaryRequest, Operation> createGlossaryTransportSettings =
         GrpcCallSettings.<CreateGlossaryRequest, Operation>newBuilder()
@@ -334,6 +353,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListGlossariesRequest, ListGlossariesResponse>
         listGlossariesTransportSettings =
@@ -345,6 +365,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetGlossaryRequest, Glossary> getGlossaryTransportSettings =
         GrpcCallSettings.<GetGlossaryRequest, Glossary>newBuilder()
@@ -355,6 +376,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteGlossaryRequest, Operation> deleteGlossaryTransportSettings =
         GrpcCallSettings.<DeleteGlossaryRequest, Operation>newBuilder()
@@ -365,6 +387,18 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<RefineTextRequest, RefineTextResponse> refineTextTransportSettings =
+        GrpcCallSettings.<RefineTextRequest, RefineTextResponse>newBuilder()
+            .setMethodDescriptor(refineTextMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.translateTextCallable =
@@ -432,6 +466,9 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
             settings.deleteGlossaryOperationSettings(),
             clientContext,
             operationsStub);
+    this.refineTextCallable =
+        callableFactory.createUnaryCallable(
+            refineTextTransportSettings, settings.refineTextSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -525,6 +562,11 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
   public OperationCallable<DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
       deleteGlossaryOperationCallable() {
     return deleteGlossaryOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RefineTextRequest, RefineTextResponse> refineTextCallable() {
+    return refineTextCallable;
   }
 
   @Override

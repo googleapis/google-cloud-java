@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Any;
+import com.google.protobuf.Empty;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -194,6 +195,86 @@ public class DataChatServiceClientHttpJsonTest {
       Conversation conversation = Conversation.newBuilder().build();
       String conversationId = "conversationId-1676095234";
       client.createConversation(parent, conversation, conversationId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteConversationTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    ConversationName name = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+
+    client.deleteConversation(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteConversationExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ConversationName name = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+      client.deleteConversation(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteConversationTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-3338/locations/location-3338/conversations/conversation-3338";
+
+    client.deleteConversation(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteConversationExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-3338/locations/location-3338/conversations/conversation-3338";
+      client.deleteConversation(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -491,6 +572,66 @@ public class DataChatServiceClientHttpJsonTest {
       String parent =
           "projects/project-8053/locations/location-8053/conversations/conversation-8053";
       client.listMessages(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void queryDataTest() throws Exception {
+    QueryDataResponse expectedResponse =
+        QueryDataResponse.newBuilder()
+            .setGeneratedQuery("generatedQuery-1655820167")
+            .setIntentExplanation("intentExplanation-258914851")
+            .setQueryResult(ExecutedQueryResult.newBuilder().build())
+            .setNaturalLanguageAnswer("naturalLanguageAnswer425313727")
+            .addAllDisambiguationQuestion(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    QueryDataRequest request =
+        QueryDataRequest.newBuilder()
+            .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setPrompt("prompt-979805852")
+            .setContext(QueryDataContext.newBuilder().build())
+            .setGenerationOptions(GenerationOptions.newBuilder().build())
+            .build();
+
+    QueryDataResponse actualResponse = client.queryData(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void queryDataExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QueryDataRequest request =
+          QueryDataRequest.newBuilder()
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setPrompt("prompt-979805852")
+              .setContext(QueryDataContext.newBuilder().build())
+              .setGenerationOptions(GenerationOptions.newBuilder().build())
+              .build();
+      client.queryData(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

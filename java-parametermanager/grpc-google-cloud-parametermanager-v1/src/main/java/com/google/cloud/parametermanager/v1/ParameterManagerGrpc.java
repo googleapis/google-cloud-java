@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service describing handlers for resources
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/parametermanager/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ParameterManagerGrpc {
 
@@ -1042,8 +1039,9 @@ public final class ParameterManagerGrpc {
      * </pre>
      */
     public com.google.cloud.parametermanager.v1.ListParametersResponse listParameters(
-        com.google.cloud.parametermanager.v1.ListParametersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.parametermanager.v1.ListParametersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListParametersMethod(), getCallOptions(), request);
     }
 
@@ -1055,8 +1053,9 @@ public final class ParameterManagerGrpc {
      * </pre>
      */
     public com.google.cloud.parametermanager.v1.Parameter getParameter(
-        com.google.cloud.parametermanager.v1.GetParameterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.parametermanager.v1.GetParameterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetParameterMethod(), getCallOptions(), request);
     }
 
@@ -1068,8 +1067,9 @@ public final class ParameterManagerGrpc {
      * </pre>
      */
     public com.google.cloud.parametermanager.v1.Parameter createParameter(
-        com.google.cloud.parametermanager.v1.CreateParameterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.parametermanager.v1.CreateParameterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateParameterMethod(), getCallOptions(), request);
     }
 
@@ -1081,8 +1081,9 @@ public final class ParameterManagerGrpc {
      * </pre>
      */
     public com.google.cloud.parametermanager.v1.Parameter updateParameter(
-        com.google.cloud.parametermanager.v1.UpdateParameterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.parametermanager.v1.UpdateParameterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateParameterMethod(), getCallOptions(), request);
     }
 
@@ -1094,8 +1095,9 @@ public final class ParameterManagerGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteParameter(
-        com.google.cloud.parametermanager.v1.DeleteParameterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.parametermanager.v1.DeleteParameterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteParameterMethod(), getCallOptions(), request);
     }
 
@@ -1107,8 +1109,9 @@ public final class ParameterManagerGrpc {
      * </pre>
      */
     public com.google.cloud.parametermanager.v1.ListParameterVersionsResponse listParameterVersions(
-        com.google.cloud.parametermanager.v1.ListParameterVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.parametermanager.v1.ListParameterVersionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListParameterVersionsMethod(), getCallOptions(), request);
     }
 
@@ -1120,8 +1123,9 @@ public final class ParameterManagerGrpc {
      * </pre>
      */
     public com.google.cloud.parametermanager.v1.ParameterVersion getParameterVersion(
-        com.google.cloud.parametermanager.v1.GetParameterVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.parametermanager.v1.GetParameterVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetParameterVersionMethod(), getCallOptions(), request);
     }
 
@@ -1134,8 +1138,9 @@ public final class ParameterManagerGrpc {
      */
     public com.google.cloud.parametermanager.v1.RenderParameterVersionResponse
         renderParameterVersion(
-            com.google.cloud.parametermanager.v1.RenderParameterVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.parametermanager.v1.RenderParameterVersionRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRenderParameterVersionMethod(), getCallOptions(), request);
     }
 
@@ -1147,8 +1152,9 @@ public final class ParameterManagerGrpc {
      * </pre>
      */
     public com.google.cloud.parametermanager.v1.ParameterVersion createParameterVersion(
-        com.google.cloud.parametermanager.v1.CreateParameterVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.parametermanager.v1.CreateParameterVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateParameterVersionMethod(), getCallOptions(), request);
     }
 
@@ -1160,8 +1166,9 @@ public final class ParameterManagerGrpc {
      * </pre>
      */
     public com.google.cloud.parametermanager.v1.ParameterVersion updateParameterVersion(
-        com.google.cloud.parametermanager.v1.UpdateParameterVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.parametermanager.v1.UpdateParameterVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateParameterVersionMethod(), getCallOptions(), request);
     }
 
@@ -1173,8 +1180,9 @@ public final class ParameterManagerGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteParameterVersion(
-        com.google.cloud.parametermanager.v1.DeleteParameterVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.parametermanager.v1.DeleteParameterVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteParameterVersionMethod(), getCallOptions(), request);
     }
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ import static com.google.cloud.config.v1.ConfigClient.ListTerraformVersionsPaged
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.config.v1.AutoMigrationConfig;
 import com.google.cloud.config.v1.CreateDeploymentRequest;
 import com.google.cloud.config.v1.CreatePreviewRequest;
 import com.google.cloud.config.v1.DeleteDeploymentRequest;
@@ -39,6 +40,7 @@ import com.google.cloud.config.v1.ExportLockInfoRequest;
 import com.google.cloud.config.v1.ExportPreviewResultRequest;
 import com.google.cloud.config.v1.ExportPreviewResultResponse;
 import com.google.cloud.config.v1.ExportRevisionStatefileRequest;
+import com.google.cloud.config.v1.GetAutoMigrationConfigRequest;
 import com.google.cloud.config.v1.GetDeploymentRequest;
 import com.google.cloud.config.v1.GetPreviewRequest;
 import com.google.cloud.config.v1.GetResourceChangeRequest;
@@ -72,6 +74,7 @@ import com.google.cloud.config.v1.Revision;
 import com.google.cloud.config.v1.Statefile;
 import com.google.cloud.config.v1.TerraformVersion;
 import com.google.cloud.config.v1.UnlockDeploymentRequest;
+import com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest;
 import com.google.cloud.config.v1.UpdateDeploymentRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -286,6 +289,22 @@ public abstract class ConfigStub implements BackgroundResource {
 
   public UnaryCallable<GetResourceDriftRequest, ResourceDrift> getResourceDriftCallable() {
     throw new UnsupportedOperationException("Not implemented: getResourceDriftCallable()");
+  }
+
+  public UnaryCallable<GetAutoMigrationConfigRequest, AutoMigrationConfig>
+      getAutoMigrationConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAutoMigrationConfigCallable()");
+  }
+
+  public OperationCallable<UpdateAutoMigrationConfigRequest, AutoMigrationConfig, OperationMetadata>
+      updateAutoMigrationConfigOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateAutoMigrationConfigOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateAutoMigrationConfigRequest, Operation>
+      updateAutoMigrationConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateAutoMigrationConfigCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * AccessPolicies
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/identity/accesscontextmanager/v1/access_context_manager.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AccessContextManagerGrpc {
 
@@ -2581,8 +2578,9 @@ public final class AccessContextManagerGrpc {
      */
     public com.google.identity.accesscontextmanager.v1.ListAccessPoliciesResponse
         listAccessPolicies(
-            com.google.identity.accesscontextmanager.v1.ListAccessPoliciesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.identity.accesscontextmanager.v1.ListAccessPoliciesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAccessPoliciesMethod(), getCallOptions(), request);
     }
 
@@ -2595,8 +2593,9 @@ public final class AccessContextManagerGrpc {
      * </pre>
      */
     public com.google.identity.accesscontextmanager.v1.AccessPolicy getAccessPolicy(
-        com.google.identity.accesscontextmanager.v1.GetAccessPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.identity.accesscontextmanager.v1.GetAccessPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAccessPolicyMethod(), getCallOptions(), request);
     }
 
@@ -2612,8 +2611,9 @@ public final class AccessContextManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAccessPolicy(
-        com.google.identity.accesscontextmanager.v1.AccessPolicy request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.identity.accesscontextmanager.v1.AccessPolicy request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAccessPolicyMethod(), getCallOptions(), request);
     }
 
@@ -2630,8 +2630,9 @@ public final class AccessContextManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateAccessPolicy(
-        com.google.identity.accesscontextmanager.v1.UpdateAccessPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.identity.accesscontextmanager.v1.UpdateAccessPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAccessPolicyMethod(), getCallOptions(), request);
     }
 
@@ -2647,8 +2648,9 @@ public final class AccessContextManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteAccessPolicy(
-        com.google.identity.accesscontextmanager.v1.DeleteAccessPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.identity.accesscontextmanager.v1.DeleteAccessPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAccessPolicyMethod(), getCallOptions(), request);
     }
 
@@ -2662,8 +2664,9 @@ public final class AccessContextManagerGrpc {
      * </pre>
      */
     public com.google.identity.accesscontextmanager.v1.ListAccessLevelsResponse listAccessLevels(
-        com.google.identity.accesscontextmanager.v1.ListAccessLevelsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.identity.accesscontextmanager.v1.ListAccessLevelsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAccessLevelsMethod(), getCallOptions(), request);
     }
 
@@ -2677,8 +2680,9 @@ public final class AccessContextManagerGrpc {
      * </pre>
      */
     public com.google.identity.accesscontextmanager.v1.AccessLevel getAccessLevel(
-        com.google.identity.accesscontextmanager.v1.GetAccessLevelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.identity.accesscontextmanager.v1.GetAccessLevelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAccessLevelMethod(), getCallOptions(), request);
     }
 
@@ -2696,8 +2700,9 @@ public final class AccessContextManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAccessLevel(
-        com.google.identity.accesscontextmanager.v1.CreateAccessLevelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.identity.accesscontextmanager.v1.CreateAccessLevelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAccessLevelMethod(), getCallOptions(), request);
     }
 
@@ -2716,8 +2721,9 @@ public final class AccessContextManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateAccessLevel(
-        com.google.identity.accesscontextmanager.v1.UpdateAccessLevelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.identity.accesscontextmanager.v1.UpdateAccessLevelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAccessLevelMethod(), getCallOptions(), request);
     }
 
@@ -2734,8 +2740,9 @@ public final class AccessContextManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteAccessLevel(
-        com.google.identity.accesscontextmanager.v1.DeleteAccessLevelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.identity.accesscontextmanager.v1.DeleteAccessLevelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAccessLevelMethod(), getCallOptions(), request);
     }
 
@@ -2763,8 +2770,9 @@ public final class AccessContextManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation replaceAccessLevels(
-        com.google.identity.accesscontextmanager.v1.ReplaceAccessLevelsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.identity.accesscontextmanager.v1.ReplaceAccessLevelsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReplaceAccessLevelsMethod(), getCallOptions(), request);
     }
 
@@ -2779,8 +2787,9 @@ public final class AccessContextManagerGrpc {
      */
     public com.google.identity.accesscontextmanager.v1.ListServicePerimetersResponse
         listServicePerimeters(
-            com.google.identity.accesscontextmanager.v1.ListServicePerimetersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.identity.accesscontextmanager.v1.ListServicePerimetersRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListServicePerimetersMethod(), getCallOptions(), request);
     }
 
@@ -2794,8 +2803,9 @@ public final class AccessContextManagerGrpc {
      * </pre>
      */
     public com.google.identity.accesscontextmanager.v1.ServicePerimeter getServicePerimeter(
-        com.google.identity.accesscontextmanager.v1.GetServicePerimeterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.identity.accesscontextmanager.v1.GetServicePerimeterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetServicePerimeterMethod(), getCallOptions(), request);
     }
 
@@ -2814,8 +2824,9 @@ public final class AccessContextManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createServicePerimeter(
-        com.google.identity.accesscontextmanager.v1.CreateServicePerimeterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.identity.accesscontextmanager.v1.CreateServicePerimeterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateServicePerimeterMethod(), getCallOptions(), request);
     }
 
@@ -2834,8 +2845,9 @@ public final class AccessContextManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateServicePerimeter(
-        com.google.identity.accesscontextmanager.v1.UpdateServicePerimeterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.identity.accesscontextmanager.v1.UpdateServicePerimeterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateServicePerimeterMethod(), getCallOptions(), request);
     }
 
@@ -2852,8 +2864,9 @@ public final class AccessContextManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteServicePerimeter(
-        com.google.identity.accesscontextmanager.v1.DeleteServicePerimeterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.identity.accesscontextmanager.v1.DeleteServicePerimeterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteServicePerimeterMethod(), getCallOptions(), request);
     }
 
@@ -2877,8 +2890,9 @@ public final class AccessContextManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation replaceServicePerimeters(
-        com.google.identity.accesscontextmanager.v1.ReplaceServicePerimetersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.identity.accesscontextmanager.v1.ReplaceServicePerimetersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReplaceServicePerimetersMethod(), getCallOptions(), request);
     }
 
@@ -2904,8 +2918,9 @@ public final class AccessContextManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation commitServicePerimeters(
-        com.google.identity.accesscontextmanager.v1.CommitServicePerimetersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.identity.accesscontextmanager.v1.CommitServicePerimetersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCommitServicePerimetersMethod(), getCallOptions(), request);
     }
 
@@ -2920,8 +2935,9 @@ public final class AccessContextManagerGrpc {
      */
     public com.google.identity.accesscontextmanager.v1.ListGcpUserAccessBindingsResponse
         listGcpUserAccessBindings(
-            com.google.identity.accesscontextmanager.v1.ListGcpUserAccessBindingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.identity.accesscontextmanager.v1.ListGcpUserAccessBindingsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGcpUserAccessBindingsMethod(), getCallOptions(), request);
     }
 
@@ -2935,8 +2951,9 @@ public final class AccessContextManagerGrpc {
      * </pre>
      */
     public com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding getGcpUserAccessBinding(
-        com.google.identity.accesscontextmanager.v1.GetGcpUserAccessBindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.identity.accesscontextmanager.v1.GetGcpUserAccessBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetGcpUserAccessBindingMethod(), getCallOptions(), request);
     }
 
@@ -2957,8 +2974,9 @@ public final class AccessContextManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createGcpUserAccessBinding(
-        com.google.identity.accesscontextmanager.v1.CreateGcpUserAccessBindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.identity.accesscontextmanager.v1.CreateGcpUserAccessBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateGcpUserAccessBindingMethod(), getCallOptions(), request);
     }
 
@@ -2974,8 +2992,9 @@ public final class AccessContextManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateGcpUserAccessBinding(
-        com.google.identity.accesscontextmanager.v1.UpdateGcpUserAccessBindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.identity.accesscontextmanager.v1.UpdateGcpUserAccessBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateGcpUserAccessBindingMethod(), getCallOptions(), request);
     }
 
@@ -2991,8 +3010,9 @@ public final class AccessContextManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteGcpUserAccessBinding(
-        com.google.identity.accesscontextmanager.v1.DeleteGcpUserAccessBindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.identity.accesscontextmanager.v1.DeleteGcpUserAccessBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteGcpUserAccessBindingMethod(), getCallOptions(), request);
     }
 
@@ -3008,8 +3028,9 @@ public final class AccessContextManagerGrpc {
      * policy][google.identity.accesscontextmanager.v1.AccessPolicy].
      * </pre>
      */
-    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -3021,8 +3042,9 @@ public final class AccessContextManagerGrpc {
      * [access policy][google.identity.accesscontextmanager.v1.AccessPolicy].
      * </pre>
      */
-    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -3039,8 +3061,8 @@ public final class AccessContextManagerGrpc {
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
-        com.google.iam.v1.TestIamPermissionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
   }

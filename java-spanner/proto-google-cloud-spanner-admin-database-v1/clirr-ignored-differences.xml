@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/spanner/admin/database/v1/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/spanner/admin/database/v1/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/spanner/admin/database/v1/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>
+
+  <!-- The following exemptions are related to Protobuf 4.27.4+ runtime upgrade -->
+  <!-- 5001: Removed GeneratedMessage/GeneratedMessage$Builder from superclass hierarchy -->
+  <difference>
+    <differenceType>5001</differenceType>
+    <className>com/google/spanner/admin/database/v1/*</className>
+    <to>com/google/protobuf/GeneratedMessage</to>
+  </difference>
+  <difference>
+    <differenceType>5001</differenceType>
+    <className>com/google/spanner/admin/database/v1/*$Builder</className>
+    <to>com/google/protobuf/GeneratedMessage$Builder</to>
+  </difference>
+  <difference>
+    <differenceType>5001</differenceType>
+    <className>com/google/spanner/admin/database/v1/*$*</className>
+    <to>com/google/protobuf/GeneratedMessage</to>
+  </difference>
+  <difference>
+    <differenceType>5001</differenceType>
+    <className>com/google/spanner/admin/database/v1/*$*$Builder</className>
+    <to>com/google/protobuf/GeneratedMessage$Builder</to>
+  </difference>
+  <difference>
+    <differenceType>5001</differenceType>
+    <className>com/google/spanner/admin/database/v1/*$*$*</className>
+    <to>com/google/protobuf/GeneratedMessage</to>
+  </difference>
+  <difference>
+    <differenceType>5001</differenceType>
+    <className>com/google/spanner/admin/database/v1/*$*$*$Builder</className>
+    <to>com/google/protobuf/GeneratedMessage$Builder</to>
+  </difference>
+  <difference>
+    <differenceType>5001</differenceType>
+    <className>com/google/spanner/admin/database/v1/*Proto</className>
+    <to>com/google/protobuf/GeneratedFile</to>
+  </difference>
+  <!-- 7005: Parameter type changes (BuilderParent) -->
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/spanner/admin/database/v1/**</className>
+    <method>* newBuilderForType(*)</method>
+    <to>**</to>
+  </difference>
+  <!-- 7006: Return type changes for internalGetFieldAccessorTable -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/spanner/admin/database/v1/**</className>
+    <method>* internalGetFieldAccessorTable()</method>
+    <to>**</to>
+  </difference>
+  <!-- 7014: Method made final -->
+  <difference>
+    <differenceType>7014</differenceType>
+    <className>com/google/spanner/admin/database/v1/**</className>
+    <method>* getDescriptor()</method>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/spanner/admin/database/v1/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/spanner/admin/database/v1/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/spanner/admin/database/v1/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/spanner/admin/database/v1/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/spanner/admin/database/v1/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/spanner/admin/database/v1/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/spanner/admin/database/v1/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/spanner/admin/database/v1/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/spanner/admin/database/v1/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/spanner/admin/database/v1/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+</differences>

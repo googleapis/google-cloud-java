@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,21 +26,29 @@ import static com.google.cloud.dataform.v1beta1.DataformClient.ListWorkflowInvoc
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListWorkspacesPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.QueryCompilationResultActionsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.QueryDirectoryContentsPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.QueryFolderContentsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.QueryRepositoryDirectoryContentsPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.QueryTeamFolderContentsPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.QueryUserRootContentsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.QueryWorkflowInvocationActionsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.SearchFilesPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.SearchTeamFoldersPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
+import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataform.v1beta1.CancelWorkflowInvocationRequest;
@@ -54,13 +62,17 @@ import com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusReque
 import com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusResponse;
 import com.google.cloud.dataform.v1beta1.Config;
 import com.google.cloud.dataform.v1beta1.CreateCompilationResultRequest;
+import com.google.cloud.dataform.v1beta1.CreateFolderRequest;
 import com.google.cloud.dataform.v1beta1.CreateReleaseConfigRequest;
 import com.google.cloud.dataform.v1beta1.CreateRepositoryRequest;
+import com.google.cloud.dataform.v1beta1.CreateTeamFolderRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkflowConfigRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkspaceRequest;
+import com.google.cloud.dataform.v1beta1.DeleteFolderRequest;
 import com.google.cloud.dataform.v1beta1.DeleteReleaseConfigRequest;
 import com.google.cloud.dataform.v1beta1.DeleteRepositoryRequest;
+import com.google.cloud.dataform.v1beta1.DeleteTeamFolderRequest;
 import com.google.cloud.dataform.v1beta1.DeleteWorkflowConfigRequest;
 import com.google.cloud.dataform.v1beta1.DeleteWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1beta1.DeleteWorkspaceRequest;
@@ -74,10 +86,13 @@ import com.google.cloud.dataform.v1beta1.FetchRemoteBranchesRequest;
 import com.google.cloud.dataform.v1beta1.FetchRemoteBranchesResponse;
 import com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryRequest;
 import com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryResponse;
+import com.google.cloud.dataform.v1beta1.Folder;
 import com.google.cloud.dataform.v1beta1.GetCompilationResultRequest;
 import com.google.cloud.dataform.v1beta1.GetConfigRequest;
+import com.google.cloud.dataform.v1beta1.GetFolderRequest;
 import com.google.cloud.dataform.v1beta1.GetReleaseConfigRequest;
 import com.google.cloud.dataform.v1beta1.GetRepositoryRequest;
+import com.google.cloud.dataform.v1beta1.GetTeamFolderRequest;
 import com.google.cloud.dataform.v1beta1.GetWorkflowConfigRequest;
 import com.google.cloud.dataform.v1beta1.GetWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1beta1.GetWorkspaceRequest;
@@ -101,6 +116,10 @@ import com.google.cloud.dataform.v1beta1.MoveDirectoryRequest;
 import com.google.cloud.dataform.v1beta1.MoveDirectoryResponse;
 import com.google.cloud.dataform.v1beta1.MoveFileRequest;
 import com.google.cloud.dataform.v1beta1.MoveFileResponse;
+import com.google.cloud.dataform.v1beta1.MoveFolderMetadata;
+import com.google.cloud.dataform.v1beta1.MoveFolderRequest;
+import com.google.cloud.dataform.v1beta1.MoveRepositoryMetadata;
+import com.google.cloud.dataform.v1beta1.MoveRepositoryRequest;
 import com.google.cloud.dataform.v1beta1.PullGitCommitsRequest;
 import com.google.cloud.dataform.v1beta1.PullGitCommitsResponse;
 import com.google.cloud.dataform.v1beta1.PushGitCommitsRequest;
@@ -109,8 +128,14 @@ import com.google.cloud.dataform.v1beta1.QueryCompilationResultActionsRequest;
 import com.google.cloud.dataform.v1beta1.QueryCompilationResultActionsResponse;
 import com.google.cloud.dataform.v1beta1.QueryDirectoryContentsRequest;
 import com.google.cloud.dataform.v1beta1.QueryDirectoryContentsResponse;
+import com.google.cloud.dataform.v1beta1.QueryFolderContentsRequest;
+import com.google.cloud.dataform.v1beta1.QueryFolderContentsResponse;
 import com.google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsRequest;
 import com.google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsResponse;
+import com.google.cloud.dataform.v1beta1.QueryTeamFolderContentsRequest;
+import com.google.cloud.dataform.v1beta1.QueryTeamFolderContentsResponse;
+import com.google.cloud.dataform.v1beta1.QueryUserRootContentsRequest;
+import com.google.cloud.dataform.v1beta1.QueryUserRootContentsResponse;
 import com.google.cloud.dataform.v1beta1.QueryWorkflowInvocationActionsRequest;
 import com.google.cloud.dataform.v1beta1.QueryWorkflowInvocationActionsResponse;
 import com.google.cloud.dataform.v1beta1.ReadFileRequest;
@@ -127,9 +152,14 @@ import com.google.cloud.dataform.v1beta1.ResetWorkspaceChangesRequest;
 import com.google.cloud.dataform.v1beta1.ResetWorkspaceChangesResponse;
 import com.google.cloud.dataform.v1beta1.SearchFilesRequest;
 import com.google.cloud.dataform.v1beta1.SearchFilesResponse;
+import com.google.cloud.dataform.v1beta1.SearchTeamFoldersRequest;
+import com.google.cloud.dataform.v1beta1.SearchTeamFoldersResponse;
+import com.google.cloud.dataform.v1beta1.TeamFolder;
 import com.google.cloud.dataform.v1beta1.UpdateConfigRequest;
+import com.google.cloud.dataform.v1beta1.UpdateFolderRequest;
 import com.google.cloud.dataform.v1beta1.UpdateReleaseConfigRequest;
 import com.google.cloud.dataform.v1beta1.UpdateRepositoryRequest;
+import com.google.cloud.dataform.v1beta1.UpdateTeamFolderRequest;
 import com.google.cloud.dataform.v1beta1.UpdateWorkflowConfigRequest;
 import com.google.cloud.dataform.v1beta1.WorkflowConfig;
 import com.google.cloud.dataform.v1beta1.WorkflowInvocation;
@@ -140,11 +170,13 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -164,7 +196,498 @@ import javax.annotation.Generated;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class HttpJsonDataformStub extends DataformStub {
-  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder()
+          .add(Empty.getDescriptor())
+          .add(MoveRepositoryMetadata.getDescriptor())
+          .add(MoveFolderMetadata.getDescriptor())
+          .build();
+
+  private static final ApiMethodDescriptor<GetTeamFolderRequest, TeamFolder>
+      getTeamFolderMethodDescriptor =
+          ApiMethodDescriptor.<GetTeamFolderRequest, TeamFolder>newBuilder()
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/GetTeamFolder")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetTeamFolderRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*/locations/*/teamFolders/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetTeamFolderRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetTeamFolderRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TeamFolder>newBuilder()
+                      .setDefaultInstance(TeamFolder.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateTeamFolderRequest, TeamFolder>
+      createTeamFolderMethodDescriptor =
+          ApiMethodDescriptor.<CreateTeamFolderRequest, TeamFolder>newBuilder()
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/CreateTeamFolder")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateTeamFolderRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{parent=projects/*/locations/*}/teamFolders",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateTeamFolderRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateTeamFolderRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "teamFolderId", request.getTeamFolderId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("teamFolder", request.getTeamFolder(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TeamFolder>newBuilder()
+                      .setDefaultInstance(TeamFolder.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateTeamFolderRequest, TeamFolder>
+      updateTeamFolderMethodDescriptor =
+          ApiMethodDescriptor.<UpdateTeamFolderRequest, TeamFolder>newBuilder()
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/UpdateTeamFolder")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateTeamFolderRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{teamFolder.name=projects/*/locations/*/teamFolders/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateTeamFolderRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "teamFolder.name", request.getTeamFolder().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateTeamFolderRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("teamFolder", request.getTeamFolder(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TeamFolder>newBuilder()
+                      .setDefaultInstance(TeamFolder.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteTeamFolderRequest, Empty>
+      deleteTeamFolderMethodDescriptor =
+          ApiMethodDescriptor.<DeleteTeamFolderRequest, Empty>newBuilder()
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/DeleteTeamFolder")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteTeamFolderRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*/locations/*/teamFolders/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteTeamFolderRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteTeamFolderRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          QueryTeamFolderContentsRequest, QueryTeamFolderContentsResponse>
+      queryTeamFolderContentsMethodDescriptor =
+          ApiMethodDescriptor
+              .<QueryTeamFolderContentsRequest, QueryTeamFolderContentsResponse>newBuilder()
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/QueryTeamFolderContents")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<QueryTeamFolderContentsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{teamFolder=projects/*/locations/*/teamFolders/*}:queryContents",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryTeamFolderContentsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "teamFolder", request.getTeamFolder());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryTeamFolderContentsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QueryTeamFolderContentsResponse>newBuilder()
+                      .setDefaultInstance(QueryTeamFolderContentsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<SearchTeamFoldersRequest, SearchTeamFoldersResponse>
+      searchTeamFoldersMethodDescriptor =
+          ApiMethodDescriptor.<SearchTeamFoldersRequest, SearchTeamFoldersResponse>newBuilder()
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/SearchTeamFolders")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SearchTeamFoldersRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{location=projects/*/locations/*}/teamFolders:search",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SearchTeamFoldersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "location", request.getLocation());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SearchTeamFoldersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SearchTeamFoldersResponse>newBuilder()
+                      .setDefaultInstance(SearchTeamFoldersResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetFolderRequest, Folder> getFolderMethodDescriptor =
+      ApiMethodDescriptor.<GetFolderRequest, Folder>newBuilder()
+          .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/GetFolder")
+          .setHttpMethod("GET")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<GetFolderRequest>newBuilder()
+                  .setPath(
+                      "/v1beta1/{name=projects/*/locations/*/folders/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetFolderRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetFolderRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Folder>newBuilder()
+                  .setDefaultInstance(Folder.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<CreateFolderRequest, Folder>
+      createFolderMethodDescriptor =
+          ApiMethodDescriptor.<CreateFolderRequest, Folder>newBuilder()
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/CreateFolder")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateFolderRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{parent=projects/*/locations/*}/folders",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateFolderRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateFolderRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "folderId", request.getFolderId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("folder", request.getFolder(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Folder>newBuilder()
+                      .setDefaultInstance(Folder.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateFolderRequest, Folder>
+      updateFolderMethodDescriptor =
+          ApiMethodDescriptor.<UpdateFolderRequest, Folder>newBuilder()
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/UpdateFolder")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateFolderRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{folder.name=projects/*/locations/*/folders/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateFolderRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "folder.name", request.getFolder().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateFolderRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("folder", request.getFolder(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Folder>newBuilder()
+                      .setDefaultInstance(Folder.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteFolderRequest, Empty>
+      deleteFolderMethodDescriptor =
+          ApiMethodDescriptor.<DeleteFolderRequest, Empty>newBuilder()
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/DeleteFolder")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteFolderRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*/locations/*/folders/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteFolderRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteFolderRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<QueryFolderContentsRequest, QueryFolderContentsResponse>
+      queryFolderContentsMethodDescriptor =
+          ApiMethodDescriptor.<QueryFolderContentsRequest, QueryFolderContentsResponse>newBuilder()
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/QueryFolderContents")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<QueryFolderContentsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{folder=projects/*/locations/*/folders/*}:queryFolderContents",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryFolderContentsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "folder", request.getFolder());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryFolderContentsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QueryFolderContentsResponse>newBuilder()
+                      .setDefaultInstance(QueryFolderContentsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          QueryUserRootContentsRequest, QueryUserRootContentsResponse>
+      queryUserRootContentsMethodDescriptor =
+          ApiMethodDescriptor
+              .<QueryUserRootContentsRequest, QueryUserRootContentsResponse>newBuilder()
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/QueryUserRootContents")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<QueryUserRootContentsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{location=projects/*/locations/*}:queryUserRootContents",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryUserRootContentsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "location", request.getLocation());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryUserRootContentsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QueryUserRootContentsResponse>newBuilder()
+                      .setDefaultInstance(QueryUserRootContentsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<MoveFolderRequest, Operation>
+      moveFolderMethodDescriptor =
+          ApiMethodDescriptor.<MoveFolderRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/MoveFolder")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<MoveFolderRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*/locations/*/folders/*}:move",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<MoveFolderRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<MoveFolderRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (MoveFolderRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
 
   private static final ApiMethodDescriptor<ListRepositoriesRequest, ListRepositoriesResponse>
       listRepositoriesMethodDescriptor =
@@ -349,6 +872,46 @@ public class HttpJsonDataformStub extends DataformStub {
                       .setDefaultInstance(Empty.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .build();
+
+  private static final ApiMethodDescriptor<MoveRepositoryRequest, Operation>
+      moveRepositoryMethodDescriptor =
+          ApiMethodDescriptor.<MoveRepositoryRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/MoveRepository")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<MoveRepositoryRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*/locations/*/repositories/*}:move",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<MoveRepositoryRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<MoveRepositoryRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (MoveRepositoryRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
               .build();
 
   private static final ApiMethodDescriptor<
@@ -2176,6 +2739,127 @@ public class HttpJsonDataformStub extends DataformStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetIamPolicyRequest, Policy>
+      getIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/GetIamPolicy")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetIamPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{resource=projects/*/locations/*/repositories/*}:getIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1beta1/{resource=projects/*/locations/*/repositories/*/workspaces/*}:getIamPolicy",
+                          "/v1beta1/{resource=projects/*/locations/*/folders/*}:getIamPolicy",
+                          "/v1beta1/{resource=projects/*/locations/*/teamFolders/*}:getIamPolicy")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "options", request.getOptions());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<SetIamPolicyRequest, Policy>
+      setIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/SetIamPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetIamPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{resource=projects/*/locations/*/repositories/*}:setIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1beta1/{resource=projects/*/locations/*/repositories/*/workspaces/*}:setIamPolicy",
+                          "/v1beta1/{resource=projects/*/locations/*/folders/*}:setIamPolicy",
+                          "/v1beta1/{resource=projects/*/locations/*/teamFolders/*}:setIamPolicy")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{resource=projects/*/locations/*/repositories/*}:testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1beta1/{resource=projects/*/locations/*/repositories/*/workspaces/*}:testIamPermissions",
+                          "/v1beta1/{resource=projects/*/locations/*/folders/*}:testIamPermissions",
+                          "/v1beta1/{resource=projects/*/locations/*/teamFolders/*}:testIamPermissions")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestIamPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -2244,120 +2928,33 @@ public class HttpJsonDataformStub extends DataformStub {
                       .build())
               .build();
 
-  private static final ApiMethodDescriptor<SetIamPolicyRequest, Policy>
-      setIamPolicyMethodDescriptor =
-          ApiMethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
-              .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
-              .setHttpMethod("POST")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<SetIamPolicyRequest>newBuilder()
-                      .setPath(
-                          "/v1beta1/{resource=projects/*/locations/*/repositories/*}:setIamPolicy",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<SetIamPolicyRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "resource", request.getResource());
-                            return fields;
-                          })
-                      .setAdditionalPaths(
-                          "/v1beta1/{resource=projects/*/locations/*/repositories/*/workspaces/*}:setIamPolicy")
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<SetIamPolicyRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), true))
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<Policy>newBuilder()
-                      .setDefaultInstance(Policy.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
-  private static final ApiMethodDescriptor<GetIamPolicyRequest, Policy>
-      getIamPolicyMethodDescriptor =
-          ApiMethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
-              .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
-              .setHttpMethod("GET")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<GetIamPolicyRequest>newBuilder()
-                      .setPath(
-                          "/v1beta1/{resource=projects/*/locations/*/repositories/*}:getIamPolicy",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<GetIamPolicyRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "resource", request.getResource());
-                            return fields;
-                          })
-                      .setAdditionalPaths(
-                          "/v1beta1/{resource=projects/*/locations/*/repositories/*/workspaces/*}:getIamPolicy")
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<GetIamPolicyRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(request -> null)
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<Policy>newBuilder()
-                      .setDefaultInstance(Policy.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
-  private static final ApiMethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsMethodDescriptor =
-          ApiMethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
-              .setFullMethodName("google.iam.v1.IAMPolicy/TestIamPermissions")
-              .setHttpMethod("POST")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<TestIamPermissionsRequest>newBuilder()
-                      .setPath(
-                          "/v1beta1/{resource=projects/*/locations/*/repositories/*}:testIamPermissions",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<TestIamPermissionsRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "resource", request.getResource());
-                            return fields;
-                          })
-                      .setAdditionalPaths(
-                          "/v1beta1/{resource=projects/*/locations/*/repositories/*/workspaces/*}:testIamPermissions")
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<TestIamPermissionsRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), true))
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()
-                      .setDefaultInstance(TestIamPermissionsResponse.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
+  private final UnaryCallable<GetTeamFolderRequest, TeamFolder> getTeamFolderCallable;
+  private final UnaryCallable<CreateTeamFolderRequest, TeamFolder> createTeamFolderCallable;
+  private final UnaryCallable<UpdateTeamFolderRequest, TeamFolder> updateTeamFolderCallable;
+  private final UnaryCallable<DeleteTeamFolderRequest, Empty> deleteTeamFolderCallable;
+  private final UnaryCallable<QueryTeamFolderContentsRequest, QueryTeamFolderContentsResponse>
+      queryTeamFolderContentsCallable;
+  private final UnaryCallable<QueryTeamFolderContentsRequest, QueryTeamFolderContentsPagedResponse>
+      queryTeamFolderContentsPagedCallable;
+  private final UnaryCallable<SearchTeamFoldersRequest, SearchTeamFoldersResponse>
+      searchTeamFoldersCallable;
+  private final UnaryCallable<SearchTeamFoldersRequest, SearchTeamFoldersPagedResponse>
+      searchTeamFoldersPagedCallable;
+  private final UnaryCallable<GetFolderRequest, Folder> getFolderCallable;
+  private final UnaryCallable<CreateFolderRequest, Folder> createFolderCallable;
+  private final UnaryCallable<UpdateFolderRequest, Folder> updateFolderCallable;
+  private final UnaryCallable<DeleteFolderRequest, Empty> deleteFolderCallable;
+  private final UnaryCallable<QueryFolderContentsRequest, QueryFolderContentsResponse>
+      queryFolderContentsCallable;
+  private final UnaryCallable<QueryFolderContentsRequest, QueryFolderContentsPagedResponse>
+      queryFolderContentsPagedCallable;
+  private final UnaryCallable<QueryUserRootContentsRequest, QueryUserRootContentsResponse>
+      queryUserRootContentsCallable;
+  private final UnaryCallable<QueryUserRootContentsRequest, QueryUserRootContentsPagedResponse>
+      queryUserRootContentsPagedCallable;
+  private final UnaryCallable<MoveFolderRequest, Operation> moveFolderCallable;
+  private final OperationCallable<MoveFolderRequest, Empty, MoveFolderMetadata>
+      moveFolderOperationCallable;
   private final UnaryCallable<ListRepositoriesRequest, ListRepositoriesResponse>
       listRepositoriesCallable;
   private final UnaryCallable<ListRepositoriesRequest, ListRepositoriesPagedResponse>
@@ -2366,6 +2963,9 @@ public class HttpJsonDataformStub extends DataformStub {
   private final UnaryCallable<CreateRepositoryRequest, Repository> createRepositoryCallable;
   private final UnaryCallable<UpdateRepositoryRequest, Repository> updateRepositoryCallable;
   private final UnaryCallable<DeleteRepositoryRequest, Empty> deleteRepositoryCallable;
+  private final UnaryCallable<MoveRepositoryRequest, Operation> moveRepositoryCallable;
+  private final OperationCallable<MoveRepositoryRequest, Empty, MoveRepositoryMetadata>
+      moveRepositoryOperationCallable;
   private final UnaryCallable<CommitRepositoryChangesRequest, CommitRepositoryChangesResponse>
       commitRepositoryChangesCallable;
   private final UnaryCallable<ReadRepositoryFileRequest, ReadRepositoryFileResponse>
@@ -2473,16 +3073,17 @@ public class HttpJsonDataformStub extends DataformStub {
       queryWorkflowInvocationActionsPagedCallable;
   private final UnaryCallable<GetConfigRequest, Config> getConfigCallable;
   private final UnaryCallable<UpdateConfigRequest, Config> updateConfigCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
   private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
-  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
-  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
-  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonDataformStub create(DataformStubSettings settings)
@@ -2522,7 +3123,196 @@ public class HttpJsonDataformStub extends DataformStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost("/v1beta1/{name=projects/*/locations/*/operations/*}:cancel")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.DeleteOperation",
+                    HttpRule.newBuilder()
+                        .setDelete("/v1beta1/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v1beta1/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder()
+                        .setGet("/v1beta1/{name=projects/*/locations/*}/operations")
+                        .build())
+                .build());
 
+    HttpJsonCallSettings<GetTeamFolderRequest, TeamFolder> getTeamFolderTransportSettings =
+        HttpJsonCallSettings.<GetTeamFolderRequest, TeamFolder>newBuilder()
+            .setMethodDescriptor(getTeamFolderMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<CreateTeamFolderRequest, TeamFolder> createTeamFolderTransportSettings =
+        HttpJsonCallSettings.<CreateTeamFolderRequest, TeamFolder>newBuilder()
+            .setMethodDescriptor(createTeamFolderMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<UpdateTeamFolderRequest, TeamFolder> updateTeamFolderTransportSettings =
+        HttpJsonCallSettings.<UpdateTeamFolderRequest, TeamFolder>newBuilder()
+            .setMethodDescriptor(updateTeamFolderMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "team_folder.name", String.valueOf(request.getTeamFolder().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteTeamFolderRequest, Empty> deleteTeamFolderTransportSettings =
+        HttpJsonCallSettings.<DeleteTeamFolderRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteTeamFolderMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<QueryTeamFolderContentsRequest, QueryTeamFolderContentsResponse>
+        queryTeamFolderContentsTransportSettings =
+            HttpJsonCallSettings
+                .<QueryTeamFolderContentsRequest, QueryTeamFolderContentsResponse>newBuilder()
+                .setMethodDescriptor(queryTeamFolderContentsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("team_folder", String.valueOf(request.getTeamFolder()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getTeamFolder())
+                .build();
+    HttpJsonCallSettings<SearchTeamFoldersRequest, SearchTeamFoldersResponse>
+        searchTeamFoldersTransportSettings =
+            HttpJsonCallSettings.<SearchTeamFoldersRequest, SearchTeamFoldersResponse>newBuilder()
+                .setMethodDescriptor(searchTeamFoldersMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("location", String.valueOf(request.getLocation()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getLocation())
+                .build();
+    HttpJsonCallSettings<GetFolderRequest, Folder> getFolderTransportSettings =
+        HttpJsonCallSettings.<GetFolderRequest, Folder>newBuilder()
+            .setMethodDescriptor(getFolderMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<CreateFolderRequest, Folder> createFolderTransportSettings =
+        HttpJsonCallSettings.<CreateFolderRequest, Folder>newBuilder()
+            .setMethodDescriptor(createFolderMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<UpdateFolderRequest, Folder> updateFolderTransportSettings =
+        HttpJsonCallSettings.<UpdateFolderRequest, Folder>newBuilder()
+            .setMethodDescriptor(updateFolderMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("folder.name", String.valueOf(request.getFolder().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteFolderRequest, Empty> deleteFolderTransportSettings =
+        HttpJsonCallSettings.<DeleteFolderRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteFolderMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<QueryFolderContentsRequest, QueryFolderContentsResponse>
+        queryFolderContentsTransportSettings =
+            HttpJsonCallSettings
+                .<QueryFolderContentsRequest, QueryFolderContentsResponse>newBuilder()
+                .setMethodDescriptor(queryFolderContentsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("folder", String.valueOf(request.getFolder()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getFolder())
+                .build();
+    HttpJsonCallSettings<QueryUserRootContentsRequest, QueryUserRootContentsResponse>
+        queryUserRootContentsTransportSettings =
+            HttpJsonCallSettings
+                .<QueryUserRootContentsRequest, QueryUserRootContentsResponse>newBuilder()
+                .setMethodDescriptor(queryUserRootContentsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("location", String.valueOf(request.getLocation()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getLocation())
+                .build();
+    HttpJsonCallSettings<MoveFolderRequest, Operation> moveFolderTransportSettings =
+        HttpJsonCallSettings.<MoveFolderRequest, Operation>newBuilder()
+            .setMethodDescriptor(moveFolderMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
     HttpJsonCallSettings<ListRepositoriesRequest, ListRepositoriesResponse>
         listRepositoriesTransportSettings =
             HttpJsonCallSettings.<ListRepositoriesRequest, ListRepositoriesResponse>newBuilder()
@@ -2534,6 +3324,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetRepositoryRequest, Repository> getRepositoryTransportSettings =
         HttpJsonCallSettings.<GetRepositoryRequest, Repository>newBuilder()
@@ -2545,6 +3336,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateRepositoryRequest, Repository> createRepositoryTransportSettings =
         HttpJsonCallSettings.<CreateRepositoryRequest, Repository>newBuilder()
@@ -2556,6 +3348,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateRepositoryRequest, Repository> updateRepositoryTransportSettings =
         HttpJsonCallSettings.<UpdateRepositoryRequest, Repository>newBuilder()
@@ -2578,6 +3371,19 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<MoveRepositoryRequest, Operation> moveRepositoryTransportSettings =
+        HttpJsonCallSettings.<MoveRepositoryRequest, Operation>newBuilder()
+            .setMethodDescriptor(moveRepositoryMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CommitRepositoryChangesRequest, CommitRepositoryChangesResponse>
         commitRepositoryChangesTransportSettings =
@@ -2591,6 +3397,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ReadRepositoryFileRequest, ReadRepositoryFileResponse>
         readRepositoryFileTransportSettings =
@@ -2603,6 +3410,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             QueryRepositoryDirectoryContentsRequest, QueryRepositoryDirectoryContentsResponse>
@@ -2618,6 +3426,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<FetchRepositoryHistoryRequest, FetchRepositoryHistoryResponse>
         fetchRepositoryHistoryTransportSettings =
@@ -2631,6 +3440,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             ComputeRepositoryAccessTokenStatusRequest, ComputeRepositoryAccessTokenStatusResponse>
@@ -2647,6 +3457,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<FetchRemoteBranchesRequest, FetchRemoteBranchesResponse>
         fetchRemoteBranchesTransportSettings =
@@ -2660,6 +3471,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListWorkspacesRequest, ListWorkspacesResponse>
         listWorkspacesTransportSettings =
@@ -2672,6 +3484,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetWorkspaceRequest, Workspace> getWorkspaceTransportSettings =
         HttpJsonCallSettings.<GetWorkspaceRequest, Workspace>newBuilder()
@@ -2683,6 +3496,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateWorkspaceRequest, Workspace> createWorkspaceTransportSettings =
         HttpJsonCallSettings.<CreateWorkspaceRequest, Workspace>newBuilder()
@@ -2694,6 +3508,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteWorkspaceRequest, Empty> deleteWorkspaceTransportSettings =
         HttpJsonCallSettings.<DeleteWorkspaceRequest, Empty>newBuilder()
@@ -2705,6 +3520,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<InstallNpmPackagesRequest, InstallNpmPackagesResponse>
         installNpmPackagesTransportSettings =
@@ -2717,6 +3533,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("workspace", String.valueOf(request.getWorkspace()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getWorkspace())
                 .build();
     HttpJsonCallSettings<PullGitCommitsRequest, PullGitCommitsResponse>
         pullGitCommitsTransportSettings =
@@ -2729,6 +3546,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<PushGitCommitsRequest, PushGitCommitsResponse>
         pushGitCommitsTransportSettings =
@@ -2741,6 +3559,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<FetchFileGitStatusesRequest, FetchFileGitStatusesResponse>
         fetchFileGitStatusesTransportSettings =
@@ -2754,6 +3573,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<FetchGitAheadBehindRequest, FetchGitAheadBehindResponse>
         fetchGitAheadBehindTransportSettings =
@@ -2767,6 +3587,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>
         commitWorkspaceChangesTransportSettings =
@@ -2780,6 +3601,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ResetWorkspaceChangesRequest, ResetWorkspaceChangesResponse>
         resetWorkspaceChangesTransportSettings =
@@ -2793,6 +3615,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<FetchFileDiffRequest, FetchFileDiffResponse>
         fetchFileDiffTransportSettings =
@@ -2805,6 +3628,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("workspace", String.valueOf(request.getWorkspace()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getWorkspace())
                 .build();
     HttpJsonCallSettings<QueryDirectoryContentsRequest, QueryDirectoryContentsResponse>
         queryDirectoryContentsTransportSettings =
@@ -2818,6 +3642,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("workspace", String.valueOf(request.getWorkspace()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getWorkspace())
                 .build();
     HttpJsonCallSettings<SearchFilesRequest, SearchFilesResponse> searchFilesTransportSettings =
         HttpJsonCallSettings.<SearchFilesRequest, SearchFilesResponse>newBuilder()
@@ -2829,6 +3654,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("workspace", String.valueOf(request.getWorkspace()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getWorkspace())
             .build();
     HttpJsonCallSettings<MakeDirectoryRequest, MakeDirectoryResponse>
         makeDirectoryTransportSettings =
@@ -2841,6 +3667,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("workspace", String.valueOf(request.getWorkspace()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getWorkspace())
                 .build();
     HttpJsonCallSettings<RemoveDirectoryRequest, RemoveDirectoryResponse>
         removeDirectoryTransportSettings =
@@ -2853,6 +3680,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("workspace", String.valueOf(request.getWorkspace()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getWorkspace())
                 .build();
     HttpJsonCallSettings<MoveDirectoryRequest, MoveDirectoryResponse>
         moveDirectoryTransportSettings =
@@ -2865,6 +3693,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("workspace", String.valueOf(request.getWorkspace()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getWorkspace())
                 .build();
     HttpJsonCallSettings<ReadFileRequest, ReadFileResponse> readFileTransportSettings =
         HttpJsonCallSettings.<ReadFileRequest, ReadFileResponse>newBuilder()
@@ -2876,6 +3705,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("workspace", String.valueOf(request.getWorkspace()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getWorkspace())
             .build();
     HttpJsonCallSettings<RemoveFileRequest, RemoveFileResponse> removeFileTransportSettings =
         HttpJsonCallSettings.<RemoveFileRequest, RemoveFileResponse>newBuilder()
@@ -2887,6 +3717,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("workspace", String.valueOf(request.getWorkspace()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getWorkspace())
             .build();
     HttpJsonCallSettings<MoveFileRequest, MoveFileResponse> moveFileTransportSettings =
         HttpJsonCallSettings.<MoveFileRequest, MoveFileResponse>newBuilder()
@@ -2898,6 +3729,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("workspace", String.valueOf(request.getWorkspace()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getWorkspace())
             .build();
     HttpJsonCallSettings<WriteFileRequest, WriteFileResponse> writeFileTransportSettings =
         HttpJsonCallSettings.<WriteFileRequest, WriteFileResponse>newBuilder()
@@ -2909,6 +3741,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("workspace", String.valueOf(request.getWorkspace()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getWorkspace())
             .build();
     HttpJsonCallSettings<ListReleaseConfigsRequest, ListReleaseConfigsResponse>
         listReleaseConfigsTransportSettings =
@@ -2921,6 +3754,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetReleaseConfigRequest, ReleaseConfig> getReleaseConfigTransportSettings =
         HttpJsonCallSettings.<GetReleaseConfigRequest, ReleaseConfig>newBuilder()
@@ -2932,6 +3766,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateReleaseConfigRequest, ReleaseConfig>
         createReleaseConfigTransportSettings =
@@ -2944,6 +3779,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateReleaseConfigRequest, ReleaseConfig>
         updateReleaseConfigTransportSettings =
@@ -2969,6 +3805,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListCompilationResultsRequest, ListCompilationResultsResponse>
         listCompilationResultsTransportSettings =
@@ -2982,6 +3819,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetCompilationResultRequest, CompilationResult>
         getCompilationResultTransportSettings =
@@ -2994,6 +3832,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateCompilationResultRequest, CompilationResult>
         createCompilationResultTransportSettings =
@@ -3006,6 +3845,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             QueryCompilationResultActionsRequest, QueryCompilationResultActionsResponse>
@@ -3021,6 +3861,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListWorkflowConfigsRequest, ListWorkflowConfigsResponse>
         listWorkflowConfigsTransportSettings =
@@ -3034,6 +3875,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetWorkflowConfigRequest, WorkflowConfig>
         getWorkflowConfigTransportSettings =
@@ -3046,6 +3888,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateWorkflowConfigRequest, WorkflowConfig>
         createWorkflowConfigTransportSettings =
@@ -3058,6 +3901,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateWorkflowConfigRequest, WorkflowConfig>
         updateWorkflowConfigTransportSettings =
@@ -3083,6 +3927,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListWorkflowInvocationsRequest, ListWorkflowInvocationsResponse>
         listWorkflowInvocationsTransportSettings =
@@ -3096,6 +3941,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetWorkflowInvocationRequest, WorkflowInvocation>
         getWorkflowInvocationTransportSettings =
@@ -3108,6 +3954,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateWorkflowInvocationRequest, WorkflowInvocation>
         createWorkflowInvocationTransportSettings =
@@ -3120,6 +3967,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteWorkflowInvocationRequest, Empty>
         deleteWorkflowInvocationTransportSettings =
@@ -3132,6 +3980,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CancelWorkflowInvocationRequest, CancelWorkflowInvocationResponse>
         cancelWorkflowInvocationTransportSettings =
@@ -3145,6 +3994,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             QueryWorkflowInvocationActionsRequest, QueryWorkflowInvocationActionsResponse>
@@ -3160,6 +4010,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetConfigRequest, Config> getConfigTransportSettings =
         HttpJsonCallSettings.<GetConfigRequest, Config>newBuilder()
@@ -3171,6 +4022,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateConfigRequest, Config> updateConfigTransportSettings =
         HttpJsonCallSettings.<UpdateConfigRequest, Config>newBuilder()
@@ -3183,6 +4035,43 @@ public class HttpJsonDataformStub extends DataformStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getResource())
+            .build();
+    HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
+        HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getResource())
+            .build();
+    HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getResource())
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -3206,41 +4095,80 @@ public class HttpJsonDataformStub extends DataformStub {
                   return builder.build();
                 })
             .build();
-    HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
-        HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
-            .setMethodDescriptor(setIamPolicyMethodDescriptor)
-            .setTypeRegistry(typeRegistry)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("resource", String.valueOf(request.getResource()));
-                  return builder.build();
-                })
-            .build();
-    HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
-        HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
-            .setMethodDescriptor(getIamPolicyMethodDescriptor)
-            .setTypeRegistry(typeRegistry)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("resource", String.valueOf(request.getResource()));
-                  return builder.build();
-                })
-            .build();
-    HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsTransportSettings =
-            HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
-                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("resource", String.valueOf(request.getResource()));
-                      return builder.build();
-                    })
-                .build();
 
+    this.getTeamFolderCallable =
+        callableFactory.createUnaryCallable(
+            getTeamFolderTransportSettings, settings.getTeamFolderSettings(), clientContext);
+    this.createTeamFolderCallable =
+        callableFactory.createUnaryCallable(
+            createTeamFolderTransportSettings, settings.createTeamFolderSettings(), clientContext);
+    this.updateTeamFolderCallable =
+        callableFactory.createUnaryCallable(
+            updateTeamFolderTransportSettings, settings.updateTeamFolderSettings(), clientContext);
+    this.deleteTeamFolderCallable =
+        callableFactory.createUnaryCallable(
+            deleteTeamFolderTransportSettings, settings.deleteTeamFolderSettings(), clientContext);
+    this.queryTeamFolderContentsCallable =
+        callableFactory.createUnaryCallable(
+            queryTeamFolderContentsTransportSettings,
+            settings.queryTeamFolderContentsSettings(),
+            clientContext);
+    this.queryTeamFolderContentsPagedCallable =
+        callableFactory.createPagedCallable(
+            queryTeamFolderContentsTransportSettings,
+            settings.queryTeamFolderContentsSettings(),
+            clientContext);
+    this.searchTeamFoldersCallable =
+        callableFactory.createUnaryCallable(
+            searchTeamFoldersTransportSettings,
+            settings.searchTeamFoldersSettings(),
+            clientContext);
+    this.searchTeamFoldersPagedCallable =
+        callableFactory.createPagedCallable(
+            searchTeamFoldersTransportSettings,
+            settings.searchTeamFoldersSettings(),
+            clientContext);
+    this.getFolderCallable =
+        callableFactory.createUnaryCallable(
+            getFolderTransportSettings, settings.getFolderSettings(), clientContext);
+    this.createFolderCallable =
+        callableFactory.createUnaryCallable(
+            createFolderTransportSettings, settings.createFolderSettings(), clientContext);
+    this.updateFolderCallable =
+        callableFactory.createUnaryCallable(
+            updateFolderTransportSettings, settings.updateFolderSettings(), clientContext);
+    this.deleteFolderCallable =
+        callableFactory.createUnaryCallable(
+            deleteFolderTransportSettings, settings.deleteFolderSettings(), clientContext);
+    this.queryFolderContentsCallable =
+        callableFactory.createUnaryCallable(
+            queryFolderContentsTransportSettings,
+            settings.queryFolderContentsSettings(),
+            clientContext);
+    this.queryFolderContentsPagedCallable =
+        callableFactory.createPagedCallable(
+            queryFolderContentsTransportSettings,
+            settings.queryFolderContentsSettings(),
+            clientContext);
+    this.queryUserRootContentsCallable =
+        callableFactory.createUnaryCallable(
+            queryUserRootContentsTransportSettings,
+            settings.queryUserRootContentsSettings(),
+            clientContext);
+    this.queryUserRootContentsPagedCallable =
+        callableFactory.createPagedCallable(
+            queryUserRootContentsTransportSettings,
+            settings.queryUserRootContentsSettings(),
+            clientContext);
+    this.moveFolderCallable =
+        callableFactory.createUnaryCallable(
+            moveFolderTransportSettings, settings.moveFolderSettings(), clientContext);
+    this.moveFolderOperationCallable =
+        callableFactory.createOperationCallable(
+            moveFolderTransportSettings,
+            settings.moveFolderOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listRepositoriesCallable =
         callableFactory.createUnaryCallable(
             listRepositoriesTransportSettings, settings.listRepositoriesSettings(), clientContext);
@@ -3259,6 +4187,15 @@ public class HttpJsonDataformStub extends DataformStub {
     this.deleteRepositoryCallable =
         callableFactory.createUnaryCallable(
             deleteRepositoryTransportSettings, settings.deleteRepositorySettings(), clientContext);
+    this.moveRepositoryCallable =
+        callableFactory.createUnaryCallable(
+            moveRepositoryTransportSettings, settings.moveRepositorySettings(), clientContext);
+    this.moveRepositoryOperationCallable =
+        callableFactory.createOperationCallable(
+            moveRepositoryTransportSettings,
+            settings.moveRepositoryOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.commitRepositoryChangesCallable =
         callableFactory.createUnaryCallable(
             commitRepositoryChangesTransportSettings,
@@ -3519,6 +4456,17 @@ public class HttpJsonDataformStub extends DataformStub {
     this.updateConfigCallable =
         callableFactory.createUnaryCallable(
             updateConfigTransportSettings, settings.updateConfigSettings(), clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -3528,17 +4476,6 @@ public class HttpJsonDataformStub extends DataformStub {
     this.getLocationCallable =
         callableFactory.createUnaryCallable(
             getLocationTransportSettings, settings.getLocationSettings(), clientContext);
-    this.setIamPolicyCallable =
-        callableFactory.createUnaryCallable(
-            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
-    this.getIamPolicyCallable =
-        callableFactory.createUnaryCallable(
-            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
-    this.testIamPermissionsCallable =
-        callableFactory.createUnaryCallable(
-            testIamPermissionsTransportSettings,
-            settings.testIamPermissionsSettings(),
-            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -3547,11 +4484,25 @@ public class HttpJsonDataformStub extends DataformStub {
   @InternalApi
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(getTeamFolderMethodDescriptor);
+    methodDescriptors.add(createTeamFolderMethodDescriptor);
+    methodDescriptors.add(updateTeamFolderMethodDescriptor);
+    methodDescriptors.add(deleteTeamFolderMethodDescriptor);
+    methodDescriptors.add(queryTeamFolderContentsMethodDescriptor);
+    methodDescriptors.add(searchTeamFoldersMethodDescriptor);
+    methodDescriptors.add(getFolderMethodDescriptor);
+    methodDescriptors.add(createFolderMethodDescriptor);
+    methodDescriptors.add(updateFolderMethodDescriptor);
+    methodDescriptors.add(deleteFolderMethodDescriptor);
+    methodDescriptors.add(queryFolderContentsMethodDescriptor);
+    methodDescriptors.add(queryUserRootContentsMethodDescriptor);
+    methodDescriptors.add(moveFolderMethodDescriptor);
     methodDescriptors.add(listRepositoriesMethodDescriptor);
     methodDescriptors.add(getRepositoryMethodDescriptor);
     methodDescriptors.add(createRepositoryMethodDescriptor);
     methodDescriptors.add(updateRepositoryMethodDescriptor);
     methodDescriptors.add(deleteRepositoryMethodDescriptor);
+    methodDescriptors.add(moveRepositoryMethodDescriptor);
     methodDescriptors.add(commitRepositoryChangesMethodDescriptor);
     methodDescriptors.add(readRepositoryFileMethodDescriptor);
     methodDescriptors.add(queryRepositoryDirectoryContentsMethodDescriptor);
@@ -3601,12 +4552,115 @@ public class HttpJsonDataformStub extends DataformStub {
     methodDescriptors.add(queryWorkflowInvocationActionsMethodDescriptor);
     methodDescriptors.add(getConfigMethodDescriptor);
     methodDescriptors.add(updateConfigMethodDescriptor);
+    methodDescriptors.add(getIamPolicyMethodDescriptor);
+    methodDescriptors.add(setIamPolicyMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
-    methodDescriptors.add(setIamPolicyMethodDescriptor);
-    methodDescriptors.add(getIamPolicyMethodDescriptor);
-    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
+  }
+
+  public HttpJsonOperationsStub getHttpJsonOperationsStub() {
+    return httpJsonOperationsStub;
+  }
+
+  @Override
+  public UnaryCallable<GetTeamFolderRequest, TeamFolder> getTeamFolderCallable() {
+    return getTeamFolderCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateTeamFolderRequest, TeamFolder> createTeamFolderCallable() {
+    return createTeamFolderCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateTeamFolderRequest, TeamFolder> updateTeamFolderCallable() {
+    return updateTeamFolderCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteTeamFolderRequest, Empty> deleteTeamFolderCallable() {
+    return deleteTeamFolderCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryTeamFolderContentsRequest, QueryTeamFolderContentsResponse>
+      queryTeamFolderContentsCallable() {
+    return queryTeamFolderContentsCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryTeamFolderContentsRequest, QueryTeamFolderContentsPagedResponse>
+      queryTeamFolderContentsPagedCallable() {
+    return queryTeamFolderContentsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchTeamFoldersRequest, SearchTeamFoldersResponse>
+      searchTeamFoldersCallable() {
+    return searchTeamFoldersCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchTeamFoldersRequest, SearchTeamFoldersPagedResponse>
+      searchTeamFoldersPagedCallable() {
+    return searchTeamFoldersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetFolderRequest, Folder> getFolderCallable() {
+    return getFolderCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateFolderRequest, Folder> createFolderCallable() {
+    return createFolderCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateFolderRequest, Folder> updateFolderCallable() {
+    return updateFolderCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteFolderRequest, Empty> deleteFolderCallable() {
+    return deleteFolderCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryFolderContentsRequest, QueryFolderContentsResponse>
+      queryFolderContentsCallable() {
+    return queryFolderContentsCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryFolderContentsRequest, QueryFolderContentsPagedResponse>
+      queryFolderContentsPagedCallable() {
+    return queryFolderContentsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryUserRootContentsRequest, QueryUserRootContentsResponse>
+      queryUserRootContentsCallable() {
+    return queryUserRootContentsCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryUserRootContentsRequest, QueryUserRootContentsPagedResponse>
+      queryUserRootContentsPagedCallable() {
+    return queryUserRootContentsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<MoveFolderRequest, Operation> moveFolderCallable() {
+    return moveFolderCallable;
+  }
+
+  @Override
+  public OperationCallable<MoveFolderRequest, Empty, MoveFolderMetadata>
+      moveFolderOperationCallable() {
+    return moveFolderOperationCallable;
   }
 
   @Override
@@ -3639,6 +4693,17 @@ public class HttpJsonDataformStub extends DataformStub {
   @Override
   public UnaryCallable<DeleteRepositoryRequest, Empty> deleteRepositoryCallable() {
     return deleteRepositoryCallable;
+  }
+
+  @Override
+  public UnaryCallable<MoveRepositoryRequest, Operation> moveRepositoryCallable() {
+    return moveRepositoryCallable;
+  }
+
+  @Override
+  public OperationCallable<MoveRepositoryRequest, Empty, MoveRepositoryMetadata>
+      moveRepositoryOperationCallable() {
+    return moveRepositoryOperationCallable;
   }
 
   @Override
@@ -3981,6 +5046,22 @@ public class HttpJsonDataformStub extends DataformStub {
   }
 
   @Override
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
+  }
+
+  @Override
   public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
     return listLocationsCallable;
   }
@@ -3994,22 +5075,6 @@ public class HttpJsonDataformStub extends DataformStub {
   @Override
   public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
     return getLocationCallable;
-  }
-
-  @Override
-  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
-    return setIamPolicyCallable;
-  }
-
-  @Override
-  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
-    return getIamPolicyCallable;
-  }
-
-  @Override
-  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable() {
-    return testIamPermissionsCallable;
   }
 
   @Override

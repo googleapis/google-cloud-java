@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -256,6 +256,7 @@ public class GrpcDataAccessControlServiceStub extends DataAccessControlServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetDataAccessLabelRequest, DataAccessLabel>
         getDataAccessLabelTransportSettings =
@@ -267,6 +268,7 @@ public class GrpcDataAccessControlServiceStub extends DataAccessControlServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListDataAccessLabelsRequest, ListDataAccessLabelsResponse>
         listDataAccessLabelsTransportSettings =
@@ -278,6 +280,7 @@ public class GrpcDataAccessControlServiceStub extends DataAccessControlServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateDataAccessLabelRequest, DataAccessLabel>
         updateDataAccessLabelTransportSettings =
@@ -301,6 +304,7 @@ public class GrpcDataAccessControlServiceStub extends DataAccessControlServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateDataAccessScopeRequest, DataAccessScope>
         createDataAccessScopeTransportSettings =
@@ -312,6 +316,7 @@ public class GrpcDataAccessControlServiceStub extends DataAccessControlServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetDataAccessScopeRequest, DataAccessScope>
         getDataAccessScopeTransportSettings =
@@ -323,6 +328,7 @@ public class GrpcDataAccessControlServiceStub extends DataAccessControlServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListDataAccessScopesRequest, ListDataAccessScopesResponse>
         listDataAccessScopesTransportSettings =
@@ -334,6 +340,7 @@ public class GrpcDataAccessControlServiceStub extends DataAccessControlServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateDataAccessScopeRequest, DataAccessScope>
         updateDataAccessScopeTransportSettings =
@@ -357,6 +364,7 @@ public class GrpcDataAccessControlServiceStub extends DataAccessControlServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createDataAccessLabelCallable =

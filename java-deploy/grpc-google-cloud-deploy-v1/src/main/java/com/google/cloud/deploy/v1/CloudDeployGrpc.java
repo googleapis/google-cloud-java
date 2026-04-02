@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * on Google Cloud Platform via Skaffold (https://skaffold.dev).
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/deploy/v1/cloud_deploy.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CloudDeployGrpc {
 
@@ -3549,8 +3546,9 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.cloud.deploy.v1.ListDeliveryPipelinesResponse listDeliveryPipelines(
-        com.google.cloud.deploy.v1.ListDeliveryPipelinesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.ListDeliveryPipelinesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDeliveryPipelinesMethod(), getCallOptions(), request);
     }
 
@@ -3562,8 +3560,9 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.cloud.deploy.v1.DeliveryPipeline getDeliveryPipeline(
-        com.google.cloud.deploy.v1.GetDeliveryPipelineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.GetDeliveryPipelineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDeliveryPipelineMethod(), getCallOptions(), request);
     }
 
@@ -3575,8 +3574,9 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createDeliveryPipeline(
-        com.google.cloud.deploy.v1.CreateDeliveryPipelineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.CreateDeliveryPipelineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDeliveryPipelineMethod(), getCallOptions(), request);
     }
 
@@ -3588,8 +3588,9 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateDeliveryPipeline(
-        com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDeliveryPipelineMethod(), getCallOptions(), request);
     }
 
@@ -3601,8 +3602,9 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDeliveryPipeline(
-        com.google.cloud.deploy.v1.DeleteDeliveryPipelineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.DeleteDeliveryPipelineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDeliveryPipelineMethod(), getCallOptions(), request);
     }
 
@@ -3614,8 +3616,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.cloud.deploy.v1.ListTargetsResponse listTargets(
-        com.google.cloud.deploy.v1.ListTargetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.ListTargetsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTargetsMethod(), getCallOptions(), request);
     }
 
@@ -3627,8 +3629,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.cloud.deploy.v1.RollbackTargetResponse rollbackTarget(
-        com.google.cloud.deploy.v1.RollbackTargetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.RollbackTargetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRollbackTargetMethod(), getCallOptions(), request);
     }
 
@@ -3640,8 +3642,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.cloud.deploy.v1.Target getTarget(
-        com.google.cloud.deploy.v1.GetTargetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.GetTargetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTargetMethod(), getCallOptions(), request);
     }
 
@@ -3653,8 +3655,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createTarget(
-        com.google.cloud.deploy.v1.CreateTargetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.CreateTargetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTargetMethod(), getCallOptions(), request);
     }
 
@@ -3666,8 +3668,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateTarget(
-        com.google.cloud.deploy.v1.UpdateTargetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.UpdateTargetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTargetMethod(), getCallOptions(), request);
     }
 
@@ -3679,8 +3681,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteTarget(
-        com.google.cloud.deploy.v1.DeleteTargetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.DeleteTargetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTargetMethod(), getCallOptions(), request);
     }
 
@@ -3692,8 +3694,9 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.cloud.deploy.v1.ListCustomTargetTypesResponse listCustomTargetTypes(
-        com.google.cloud.deploy.v1.ListCustomTargetTypesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.ListCustomTargetTypesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCustomTargetTypesMethod(), getCallOptions(), request);
     }
 
@@ -3705,8 +3708,9 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.cloud.deploy.v1.CustomTargetType getCustomTargetType(
-        com.google.cloud.deploy.v1.GetCustomTargetTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.GetCustomTargetTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCustomTargetTypeMethod(), getCallOptions(), request);
     }
 
@@ -3718,8 +3722,9 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createCustomTargetType(
-        com.google.cloud.deploy.v1.CreateCustomTargetTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.CreateCustomTargetTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCustomTargetTypeMethod(), getCallOptions(), request);
     }
 
@@ -3731,8 +3736,9 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateCustomTargetType(
-        com.google.cloud.deploy.v1.UpdateCustomTargetTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.UpdateCustomTargetTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCustomTargetTypeMethod(), getCallOptions(), request);
     }
 
@@ -3744,8 +3750,9 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteCustomTargetType(
-        com.google.cloud.deploy.v1.DeleteCustomTargetTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.DeleteCustomTargetTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCustomTargetTypeMethod(), getCallOptions(), request);
     }
 
@@ -3757,8 +3764,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.cloud.deploy.v1.ListReleasesResponse listReleases(
-        com.google.cloud.deploy.v1.ListReleasesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.ListReleasesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListReleasesMethod(), getCallOptions(), request);
     }
 
@@ -3770,8 +3777,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.cloud.deploy.v1.Release getRelease(
-        com.google.cloud.deploy.v1.GetReleaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.GetReleaseRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetReleaseMethod(), getCallOptions(), request);
     }
 
@@ -3783,8 +3790,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createRelease(
-        com.google.cloud.deploy.v1.CreateReleaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.CreateReleaseRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateReleaseMethod(), getCallOptions(), request);
     }
 
@@ -3796,8 +3803,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.cloud.deploy.v1.AbandonReleaseResponse abandonRelease(
-        com.google.cloud.deploy.v1.AbandonReleaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.AbandonReleaseRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAbandonReleaseMethod(), getCallOptions(), request);
     }
 
@@ -3809,8 +3816,9 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createDeployPolicy(
-        com.google.cloud.deploy.v1.CreateDeployPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.CreateDeployPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDeployPolicyMethod(), getCallOptions(), request);
     }
 
@@ -3822,8 +3830,9 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateDeployPolicy(
-        com.google.cloud.deploy.v1.UpdateDeployPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.UpdateDeployPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDeployPolicyMethod(), getCallOptions(), request);
     }
 
@@ -3835,8 +3844,9 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDeployPolicy(
-        com.google.cloud.deploy.v1.DeleteDeployPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.DeleteDeployPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDeployPolicyMethod(), getCallOptions(), request);
     }
 
@@ -3848,8 +3858,9 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.cloud.deploy.v1.ListDeployPoliciesResponse listDeployPolicies(
-        com.google.cloud.deploy.v1.ListDeployPoliciesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.ListDeployPoliciesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDeployPoliciesMethod(), getCallOptions(), request);
     }
 
@@ -3861,8 +3872,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.cloud.deploy.v1.DeployPolicy getDeployPolicy(
-        com.google.cloud.deploy.v1.GetDeployPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.GetDeployPolicyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDeployPolicyMethod(), getCallOptions(), request);
     }
 
@@ -3874,8 +3885,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.cloud.deploy.v1.ApproveRolloutResponse approveRollout(
-        com.google.cloud.deploy.v1.ApproveRolloutRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.ApproveRolloutRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getApproveRolloutMethod(), getCallOptions(), request);
     }
 
@@ -3887,8 +3898,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.cloud.deploy.v1.AdvanceRolloutResponse advanceRollout(
-        com.google.cloud.deploy.v1.AdvanceRolloutRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.AdvanceRolloutRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAdvanceRolloutMethod(), getCallOptions(), request);
     }
 
@@ -3900,8 +3911,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.cloud.deploy.v1.CancelRolloutResponse cancelRollout(
-        com.google.cloud.deploy.v1.CancelRolloutRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.CancelRolloutRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelRolloutMethod(), getCallOptions(), request);
     }
 
@@ -3913,8 +3924,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.cloud.deploy.v1.ListRolloutsResponse listRollouts(
-        com.google.cloud.deploy.v1.ListRolloutsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.ListRolloutsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRolloutsMethod(), getCallOptions(), request);
     }
 
@@ -3926,8 +3937,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.cloud.deploy.v1.Rollout getRollout(
-        com.google.cloud.deploy.v1.GetRolloutRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.GetRolloutRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRolloutMethod(), getCallOptions(), request);
     }
 
@@ -3939,8 +3950,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createRollout(
-        com.google.cloud.deploy.v1.CreateRolloutRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.CreateRolloutRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateRolloutMethod(), getCallOptions(), request);
     }
 
@@ -3952,8 +3963,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.cloud.deploy.v1.IgnoreJobResponse ignoreJob(
-        com.google.cloud.deploy.v1.IgnoreJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.IgnoreJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getIgnoreJobMethod(), getCallOptions(), request);
     }
 
@@ -3965,8 +3976,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.cloud.deploy.v1.RetryJobResponse retryJob(
-        com.google.cloud.deploy.v1.RetryJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.RetryJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRetryJobMethod(), getCallOptions(), request);
     }
 
@@ -3978,8 +3989,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.cloud.deploy.v1.ListJobRunsResponse listJobRuns(
-        com.google.cloud.deploy.v1.ListJobRunsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.ListJobRunsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListJobRunsMethod(), getCallOptions(), request);
     }
 
@@ -3991,8 +4002,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.cloud.deploy.v1.JobRun getJobRun(
-        com.google.cloud.deploy.v1.GetJobRunRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.GetJobRunRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetJobRunMethod(), getCallOptions(), request);
     }
 
@@ -4004,8 +4015,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.cloud.deploy.v1.TerminateJobRunResponse terminateJobRun(
-        com.google.cloud.deploy.v1.TerminateJobRunRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.TerminateJobRunRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTerminateJobRunMethod(), getCallOptions(), request);
     }
 
@@ -4017,8 +4028,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.cloud.deploy.v1.Config getConfig(
-        com.google.cloud.deploy.v1.GetConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.GetConfigRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConfigMethod(), getCallOptions(), request);
     }
 
@@ -4030,8 +4041,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAutomation(
-        com.google.cloud.deploy.v1.CreateAutomationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.CreateAutomationRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAutomationMethod(), getCallOptions(), request);
     }
 
@@ -4043,8 +4054,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateAutomation(
-        com.google.cloud.deploy.v1.UpdateAutomationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.UpdateAutomationRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAutomationMethod(), getCallOptions(), request);
     }
 
@@ -4056,8 +4067,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteAutomation(
-        com.google.cloud.deploy.v1.DeleteAutomationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.DeleteAutomationRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAutomationMethod(), getCallOptions(), request);
     }
 
@@ -4069,8 +4080,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.cloud.deploy.v1.Automation getAutomation(
-        com.google.cloud.deploy.v1.GetAutomationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.GetAutomationRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAutomationMethod(), getCallOptions(), request);
     }
 
@@ -4082,8 +4093,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.cloud.deploy.v1.ListAutomationsResponse listAutomations(
-        com.google.cloud.deploy.v1.ListAutomationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.ListAutomationsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAutomationsMethod(), getCallOptions(), request);
     }
 
@@ -4095,8 +4106,8 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.cloud.deploy.v1.AutomationRun getAutomationRun(
-        com.google.cloud.deploy.v1.GetAutomationRunRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.GetAutomationRunRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAutomationRunMethod(), getCallOptions(), request);
     }
 
@@ -4108,8 +4119,9 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.cloud.deploy.v1.ListAutomationRunsResponse listAutomationRuns(
-        com.google.cloud.deploy.v1.ListAutomationRunsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.ListAutomationRunsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAutomationRunsMethod(), getCallOptions(), request);
     }
 
@@ -4124,8 +4136,9 @@ public final class CloudDeployGrpc {
      * </pre>
      */
     public com.google.cloud.deploy.v1.CancelAutomationRunResponse cancelAutomationRun(
-        com.google.cloud.deploy.v1.CancelAutomationRunRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.deploy.v1.CancelAutomationRunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelAutomationRunMethod(), getCallOptions(), request);
     }
   }

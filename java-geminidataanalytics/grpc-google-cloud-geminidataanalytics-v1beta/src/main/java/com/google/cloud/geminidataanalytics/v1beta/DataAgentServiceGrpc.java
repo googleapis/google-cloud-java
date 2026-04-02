@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service describing handlers for resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/geminidataanalytics/v1beta/data_agent_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DataAgentServiceGrpc {
 
@@ -231,6 +228,56 @@ public final class DataAgentServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.geminidataanalytics.v1beta.CreateDataAgentRequest,
+          com.google.cloud.geminidataanalytics.v1beta.DataAgent>
+      getCreateDataAgentSyncMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateDataAgentSync",
+      requestType = com.google.cloud.geminidataanalytics.v1beta.CreateDataAgentRequest.class,
+      responseType = com.google.cloud.geminidataanalytics.v1beta.DataAgent.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.geminidataanalytics.v1beta.CreateDataAgentRequest,
+          com.google.cloud.geminidataanalytics.v1beta.DataAgent>
+      getCreateDataAgentSyncMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.geminidataanalytics.v1beta.CreateDataAgentRequest,
+            com.google.cloud.geminidataanalytics.v1beta.DataAgent>
+        getCreateDataAgentSyncMethod;
+    if ((getCreateDataAgentSyncMethod = DataAgentServiceGrpc.getCreateDataAgentSyncMethod)
+        == null) {
+      synchronized (DataAgentServiceGrpc.class) {
+        if ((getCreateDataAgentSyncMethod = DataAgentServiceGrpc.getCreateDataAgentSyncMethod)
+            == null) {
+          DataAgentServiceGrpc.getCreateDataAgentSyncMethod =
+              getCreateDataAgentSyncMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.geminidataanalytics.v1beta.CreateDataAgentRequest,
+                          com.google.cloud.geminidataanalytics.v1beta.DataAgent>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateDataAgentSync"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.geminidataanalytics.v1beta.CreateDataAgentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.geminidataanalytics.v1beta.DataAgent
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataAgentServiceMethodDescriptorSupplier("CreateDataAgentSync"))
+                      .build();
+        }
+      }
+    }
+    return getCreateDataAgentSyncMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.geminidataanalytics.v1beta.UpdateDataAgentRequest,
           com.google.longrunning.Operation>
       getUpdateDataAgentMethod;
@@ -277,6 +324,56 @@ public final class DataAgentServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.geminidataanalytics.v1beta.UpdateDataAgentRequest,
+          com.google.cloud.geminidataanalytics.v1beta.DataAgent>
+      getUpdateDataAgentSyncMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateDataAgentSync",
+      requestType = com.google.cloud.geminidataanalytics.v1beta.UpdateDataAgentRequest.class,
+      responseType = com.google.cloud.geminidataanalytics.v1beta.DataAgent.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.geminidataanalytics.v1beta.UpdateDataAgentRequest,
+          com.google.cloud.geminidataanalytics.v1beta.DataAgent>
+      getUpdateDataAgentSyncMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.geminidataanalytics.v1beta.UpdateDataAgentRequest,
+            com.google.cloud.geminidataanalytics.v1beta.DataAgent>
+        getUpdateDataAgentSyncMethod;
+    if ((getUpdateDataAgentSyncMethod = DataAgentServiceGrpc.getUpdateDataAgentSyncMethod)
+        == null) {
+      synchronized (DataAgentServiceGrpc.class) {
+        if ((getUpdateDataAgentSyncMethod = DataAgentServiceGrpc.getUpdateDataAgentSyncMethod)
+            == null) {
+          DataAgentServiceGrpc.getUpdateDataAgentSyncMethod =
+              getUpdateDataAgentSyncMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.geminidataanalytics.v1beta.UpdateDataAgentRequest,
+                          com.google.cloud.geminidataanalytics.v1beta.DataAgent>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateDataAgentSync"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.geminidataanalytics.v1beta.UpdateDataAgentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.geminidataanalytics.v1beta.DataAgent
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataAgentServiceMethodDescriptorSupplier("UpdateDataAgentSync"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateDataAgentSyncMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.geminidataanalytics.v1beta.DeleteDataAgentRequest,
           com.google.longrunning.Operation>
       getDeleteDataAgentMethod;
@@ -320,6 +417,55 @@ public final class DataAgentServiceGrpc {
       }
     }
     return getDeleteDataAgentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.geminidataanalytics.v1beta.DeleteDataAgentRequest,
+          com.google.protobuf.Empty>
+      getDeleteDataAgentSyncMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteDataAgentSync",
+      requestType = com.google.cloud.geminidataanalytics.v1beta.DeleteDataAgentRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.geminidataanalytics.v1beta.DeleteDataAgentRequest,
+          com.google.protobuf.Empty>
+      getDeleteDataAgentSyncMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.geminidataanalytics.v1beta.DeleteDataAgentRequest,
+            com.google.protobuf.Empty>
+        getDeleteDataAgentSyncMethod;
+    if ((getDeleteDataAgentSyncMethod = DataAgentServiceGrpc.getDeleteDataAgentSyncMethod)
+        == null) {
+      synchronized (DataAgentServiceGrpc.class) {
+        if ((getDeleteDataAgentSyncMethod = DataAgentServiceGrpc.getDeleteDataAgentSyncMethod)
+            == null) {
+          DataAgentServiceGrpc.getDeleteDataAgentSyncMethod =
+              getDeleteDataAgentSyncMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.geminidataanalytics.v1beta.DeleteDataAgentRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteDataAgentSync"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.geminidataanalytics.v1beta.DeleteDataAgentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataAgentServiceMethodDescriptorSupplier("DeleteDataAgentSync"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteDataAgentSyncMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -529,6 +675,21 @@ public final class DataAgentServiceGrpc {
      *
      *
      * <pre>
+     * Creates a new DataAgent in a given project and location synchronously.
+     * </pre>
+     */
+    default void createDataAgentSync(
+        com.google.cloud.geminidataanalytics.v1beta.CreateDataAgentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.geminidataanalytics.v1beta.DataAgent>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateDataAgentSyncMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates the parameters of a single DataAgent.
      * </pre>
      */
@@ -543,6 +704,21 @@ public final class DataAgentServiceGrpc {
      *
      *
      * <pre>
+     * Updates the parameters of a single DataAgent synchronously.
+     * </pre>
+     */
+    default void updateDataAgentSync(
+        com.google.cloud.geminidataanalytics.v1beta.UpdateDataAgentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.geminidataanalytics.v1beta.DataAgent>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateDataAgentSyncMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single DataAgent.
      * </pre>
      */
@@ -551,6 +727,20 @@ public final class DataAgentServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteDataAgentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single DataAgent synchronously.
+     * </pre>
+     */
+    default void deleteDataAgentSync(
+        com.google.cloud.geminidataanalytics.v1beta.DeleteDataAgentRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteDataAgentSyncMethod(), responseObserver);
     }
 
     /**
@@ -690,6 +880,23 @@ public final class DataAgentServiceGrpc {
      *
      *
      * <pre>
+     * Creates a new DataAgent in a given project and location synchronously.
+     * </pre>
+     */
+    public void createDataAgentSync(
+        com.google.cloud.geminidataanalytics.v1beta.CreateDataAgentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.geminidataanalytics.v1beta.DataAgent>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateDataAgentSyncMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates the parameters of a single DataAgent.
      * </pre>
      */
@@ -706,6 +913,23 @@ public final class DataAgentServiceGrpc {
      *
      *
      * <pre>
+     * Updates the parameters of a single DataAgent synchronously.
+     * </pre>
+     */
+    public void updateDataAgentSync(
+        com.google.cloud.geminidataanalytics.v1beta.UpdateDataAgentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.geminidataanalytics.v1beta.DataAgent>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateDataAgentSyncMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single DataAgent.
      * </pre>
      */
@@ -714,6 +938,22 @@ public final class DataAgentServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteDataAgentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single DataAgent synchronously.
+     * </pre>
+     */
+    public void deleteDataAgentSync(
+        com.google.cloud.geminidataanalytics.v1beta.DeleteDataAgentRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteDataAgentSyncMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -779,8 +1019,9 @@ public final class DataAgentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.geminidataanalytics.v1beta.ListDataAgentsResponse listDataAgents(
-        com.google.cloud.geminidataanalytics.v1beta.ListDataAgentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.geminidataanalytics.v1beta.ListDataAgentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDataAgentsMethod(), getCallOptions(), request);
     }
 
@@ -794,8 +1035,9 @@ public final class DataAgentServiceGrpc {
      */
     public com.google.cloud.geminidataanalytics.v1beta.ListAccessibleDataAgentsResponse
         listAccessibleDataAgents(
-            com.google.cloud.geminidataanalytics.v1beta.ListAccessibleDataAgentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.geminidataanalytics.v1beta.ListAccessibleDataAgentsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAccessibleDataAgentsMethod(), getCallOptions(), request);
     }
 
@@ -807,8 +1049,9 @@ public final class DataAgentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.geminidataanalytics.v1beta.DataAgent getDataAgent(
-        com.google.cloud.geminidataanalytics.v1beta.GetDataAgentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.geminidataanalytics.v1beta.GetDataAgentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDataAgentMethod(), getCallOptions(), request);
     }
 
@@ -820,9 +1063,24 @@ public final class DataAgentServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createDataAgent(
-        com.google.cloud.geminidataanalytics.v1beta.CreateDataAgentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.geminidataanalytics.v1beta.CreateDataAgentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDataAgentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new DataAgent in a given project and location synchronously.
+     * </pre>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.DataAgent createDataAgentSync(
+        com.google.cloud.geminidataanalytics.v1beta.CreateDataAgentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateDataAgentSyncMethod(), getCallOptions(), request);
     }
 
     /**
@@ -833,9 +1091,24 @@ public final class DataAgentServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateDataAgent(
-        com.google.cloud.geminidataanalytics.v1beta.UpdateDataAgentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.geminidataanalytics.v1beta.UpdateDataAgentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDataAgentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single DataAgent synchronously.
+     * </pre>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.DataAgent updateDataAgentSync(
+        com.google.cloud.geminidataanalytics.v1beta.UpdateDataAgentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateDataAgentSyncMethod(), getCallOptions(), request);
     }
 
     /**
@@ -846,9 +1119,24 @@ public final class DataAgentServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDataAgent(
-        com.google.cloud.geminidataanalytics.v1beta.DeleteDataAgentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.geminidataanalytics.v1beta.DeleteDataAgentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDataAgentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single DataAgent synchronously.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteDataAgentSync(
+        com.google.cloud.geminidataanalytics.v1beta.DeleteDataAgentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteDataAgentSyncMethod(), getCallOptions(), request);
     }
 
     /**
@@ -858,8 +1146,9 @@ public final class DataAgentServiceGrpc {
      * Gets the IAM policy for DataAgent
      * </pre>
      */
-    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -870,8 +1159,9 @@ public final class DataAgentServiceGrpc {
      * Sets the IAM policy for a DataAgent.
      * </pre>
      */
-    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
   }
@@ -953,6 +1243,19 @@ public final class DataAgentServiceGrpc {
      *
      *
      * <pre>
+     * Creates a new DataAgent in a given project and location synchronously.
+     * </pre>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.DataAgent createDataAgentSync(
+        com.google.cloud.geminidataanalytics.v1beta.CreateDataAgentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDataAgentSyncMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates the parameters of a single DataAgent.
      * </pre>
      */
@@ -966,6 +1269,19 @@ public final class DataAgentServiceGrpc {
      *
      *
      * <pre>
+     * Updates the parameters of a single DataAgent synchronously.
+     * </pre>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.DataAgent updateDataAgentSync(
+        com.google.cloud.geminidataanalytics.v1beta.UpdateDataAgentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDataAgentSyncMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single DataAgent.
      * </pre>
      */
@@ -973,6 +1289,19 @@ public final class DataAgentServiceGrpc {
         com.google.cloud.geminidataanalytics.v1beta.DeleteDataAgentRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteDataAgentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single DataAgent synchronously.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteDataAgentSync(
+        com.google.cloud.geminidataanalytics.v1beta.DeleteDataAgentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDataAgentSyncMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1081,6 +1410,21 @@ public final class DataAgentServiceGrpc {
      *
      *
      * <pre>
+     * Creates a new DataAgent in a given project and location synchronously.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.geminidataanalytics.v1beta.DataAgent>
+        createDataAgentSync(
+            com.google.cloud.geminidataanalytics.v1beta.CreateDataAgentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateDataAgentSyncMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates the parameters of a single DataAgent.
      * </pre>
      */
@@ -1095,6 +1439,21 @@ public final class DataAgentServiceGrpc {
      *
      *
      * <pre>
+     * Updates the parameters of a single DataAgent synchronously.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.geminidataanalytics.v1beta.DataAgent>
+        updateDataAgentSync(
+            com.google.cloud.geminidataanalytics.v1beta.UpdateDataAgentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateDataAgentSyncMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single DataAgent.
      * </pre>
      */
@@ -1103,6 +1462,20 @@ public final class DataAgentServiceGrpc {
             com.google.cloud.geminidataanalytics.v1beta.DeleteDataAgentRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteDataAgentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single DataAgent synchronously.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteDataAgentSync(
+            com.google.cloud.geminidataanalytics.v1beta.DeleteDataAgentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteDataAgentSyncMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1136,10 +1509,13 @@ public final class DataAgentServiceGrpc {
   private static final int METHODID_LIST_ACCESSIBLE_DATA_AGENTS = 1;
   private static final int METHODID_GET_DATA_AGENT = 2;
   private static final int METHODID_CREATE_DATA_AGENT = 3;
-  private static final int METHODID_UPDATE_DATA_AGENT = 4;
-  private static final int METHODID_DELETE_DATA_AGENT = 5;
-  private static final int METHODID_GET_IAM_POLICY = 6;
-  private static final int METHODID_SET_IAM_POLICY = 7;
+  private static final int METHODID_CREATE_DATA_AGENT_SYNC = 4;
+  private static final int METHODID_UPDATE_DATA_AGENT = 5;
+  private static final int METHODID_UPDATE_DATA_AGENT_SYNC = 6;
+  private static final int METHODID_DELETE_DATA_AGENT = 7;
+  private static final int METHODID_DELETE_DATA_AGENT_SYNC = 8;
+  private static final int METHODID_GET_IAM_POLICY = 9;
+  private static final int METHODID_SET_IAM_POLICY = 10;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1183,15 +1559,32 @@ public final class DataAgentServiceGrpc {
               (com.google.cloud.geminidataanalytics.v1beta.CreateDataAgentRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_CREATE_DATA_AGENT_SYNC:
+          serviceImpl.createDataAgentSync(
+              (com.google.cloud.geminidataanalytics.v1beta.CreateDataAgentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.geminidataanalytics.v1beta.DataAgent>)
+                  responseObserver);
+          break;
         case METHODID_UPDATE_DATA_AGENT:
           serviceImpl.updateDataAgent(
               (com.google.cloud.geminidataanalytics.v1beta.UpdateDataAgentRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_UPDATE_DATA_AGENT_SYNC:
+          serviceImpl.updateDataAgentSync(
+              (com.google.cloud.geminidataanalytics.v1beta.UpdateDataAgentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.geminidataanalytics.v1beta.DataAgent>)
+                  responseObserver);
+          break;
         case METHODID_DELETE_DATA_AGENT:
           serviceImpl.deleteDataAgent(
               (com.google.cloud.geminidataanalytics.v1beta.DeleteDataAgentRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_DATA_AGENT_SYNC:
+          serviceImpl.deleteDataAgentSync(
+              (com.google.cloud.geminidataanalytics.v1beta.DeleteDataAgentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_GET_IAM_POLICY:
           serviceImpl.getIamPolicy(
@@ -1249,17 +1642,37 @@ public final class DataAgentServiceGrpc {
                     com.google.cloud.geminidataanalytics.v1beta.CreateDataAgentRequest,
                     com.google.longrunning.Operation>(service, METHODID_CREATE_DATA_AGENT)))
         .addMethod(
+            getCreateDataAgentSyncMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.geminidataanalytics.v1beta.CreateDataAgentRequest,
+                    com.google.cloud.geminidataanalytics.v1beta.DataAgent>(
+                    service, METHODID_CREATE_DATA_AGENT_SYNC)))
+        .addMethod(
             getUpdateDataAgentMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
                     com.google.cloud.geminidataanalytics.v1beta.UpdateDataAgentRequest,
                     com.google.longrunning.Operation>(service, METHODID_UPDATE_DATA_AGENT)))
         .addMethod(
+            getUpdateDataAgentSyncMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.geminidataanalytics.v1beta.UpdateDataAgentRequest,
+                    com.google.cloud.geminidataanalytics.v1beta.DataAgent>(
+                    service, METHODID_UPDATE_DATA_AGENT_SYNC)))
+        .addMethod(
             getDeleteDataAgentMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
                     com.google.cloud.geminidataanalytics.v1beta.DeleteDataAgentRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_DATA_AGENT)))
+        .addMethod(
+            getDeleteDataAgentSyncMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.geminidataanalytics.v1beta.DeleteDataAgentRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_DATA_AGENT_SYNC)))
         .addMethod(
             getGetIamPolicyMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1325,8 +1738,11 @@ public final class DataAgentServiceGrpc {
                       .addMethod(getListAccessibleDataAgentsMethod())
                       .addMethod(getGetDataAgentMethod())
                       .addMethod(getCreateDataAgentMethod())
+                      .addMethod(getCreateDataAgentSyncMethod())
                       .addMethod(getUpdateDataAgentMethod())
+                      .addMethod(getUpdateDataAgentSyncMethod())
                       .addMethod(getDeleteDataAgentMethod())
+                      .addMethod(getDeleteDataAgentSyncMethod())
                       .addMethod(getGetIamPolicyMethod())
                       .addMethod(getSetIamPolicyMethod())
                       .build();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,8 @@
  */
 
 package com.google.ads.admanager.v1.stub;
+
+import static com.google.ads.admanager.v1.NetworkServiceClient.ListNetworksPagedResponse;
 
 import com.google.ads.admanager.v1.GetNetworkRequest;
 import com.google.ads.admanager.v1.ListNetworksRequest;
@@ -35,6 +37,10 @@ public abstract class NetworkServiceStub implements BackgroundResource {
 
   public UnaryCallable<GetNetworkRequest, Network> getNetworkCallable() {
     throw new UnsupportedOperationException("Not implemented: getNetworkCallable()");
+  }
+
+  public UnaryCallable<ListNetworksRequest, ListNetworksPagedResponse> listNetworksPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNetworksPagedCallable()");
   }
 
   public UnaryCallable<ListNetworksRequest, ListNetworksResponse> listNetworksCallable() {

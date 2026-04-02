@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service for creating and managing Vertex AI's Index resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1/index_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class IndexServiceGrpc {
 
@@ -687,8 +684,8 @@ public final class IndexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createIndex(
-        com.google.cloud.aiplatform.v1.CreateIndexRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CreateIndexRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateIndexMethod(), getCallOptions(), request);
     }
 
@@ -700,8 +697,8 @@ public final class IndexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.Index getIndex(
-        com.google.cloud.aiplatform.v1.GetIndexRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetIndexRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIndexMethod(), getCallOptions(), request);
     }
 
@@ -713,8 +710,8 @@ public final class IndexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListIndexesResponse listIndexes(
-        com.google.cloud.aiplatform.v1.ListIndexesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ListIndexesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListIndexesMethod(), getCallOptions(), request);
     }
 
@@ -726,8 +723,8 @@ public final class IndexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateIndex(
-        com.google.cloud.aiplatform.v1.UpdateIndexRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.UpdateIndexRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateIndexMethod(), getCallOptions(), request);
     }
 
@@ -742,8 +739,8 @@ public final class IndexServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteIndex(
-        com.google.cloud.aiplatform.v1.DeleteIndexRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DeleteIndexRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteIndexMethod(), getCallOptions(), request);
     }
 
@@ -755,8 +752,9 @@ public final class IndexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.UpsertDatapointsResponse upsertDatapoints(
-        com.google.cloud.aiplatform.v1.UpsertDatapointsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.UpsertDatapointsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpsertDatapointsMethod(), getCallOptions(), request);
     }
 
@@ -768,8 +766,9 @@ public final class IndexServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.RemoveDatapointsResponse removeDatapoints(
-        com.google.cloud.aiplatform.v1.RemoveDatapointsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.RemoveDatapointsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRemoveDatapointsMethod(), getCallOptions(), request);
     }
   }

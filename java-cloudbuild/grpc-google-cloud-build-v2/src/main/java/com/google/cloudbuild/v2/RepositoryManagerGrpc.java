@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Manages connections to source code repositories.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/devtools/cloudbuild/v2/repositories.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class RepositoryManagerGrpc {
 
@@ -1231,8 +1228,8 @@ public final class RepositoryManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createConnection(
-        com.google.cloudbuild.v2.CreateConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v2.CreateConnectionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateConnectionMethod(), getCallOptions(), request);
     }
 
@@ -1244,8 +1241,8 @@ public final class RepositoryManagerGrpc {
      * </pre>
      */
     public com.google.cloudbuild.v2.Connection getConnection(
-        com.google.cloudbuild.v2.GetConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v2.GetConnectionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConnectionMethod(), getCallOptions(), request);
     }
 
@@ -1257,8 +1254,8 @@ public final class RepositoryManagerGrpc {
      * </pre>
      */
     public com.google.cloudbuild.v2.ListConnectionsResponse listConnections(
-        com.google.cloudbuild.v2.ListConnectionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v2.ListConnectionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConnectionsMethod(), getCallOptions(), request);
     }
 
@@ -1270,8 +1267,8 @@ public final class RepositoryManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateConnection(
-        com.google.cloudbuild.v2.UpdateConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v2.UpdateConnectionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateConnectionMethod(), getCallOptions(), request);
     }
 
@@ -1283,8 +1280,8 @@ public final class RepositoryManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteConnection(
-        com.google.cloudbuild.v2.DeleteConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v2.DeleteConnectionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteConnectionMethod(), getCallOptions(), request);
     }
 
@@ -1296,8 +1293,8 @@ public final class RepositoryManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createRepository(
-        com.google.cloudbuild.v2.CreateRepositoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v2.CreateRepositoryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateRepositoryMethod(), getCallOptions(), request);
     }
 
@@ -1309,8 +1306,9 @@ public final class RepositoryManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchCreateRepositories(
-        com.google.cloudbuild.v2.BatchCreateRepositoriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v2.BatchCreateRepositoriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchCreateRepositoriesMethod(), getCallOptions(), request);
     }
 
@@ -1322,8 +1320,8 @@ public final class RepositoryManagerGrpc {
      * </pre>
      */
     public com.google.cloudbuild.v2.Repository getRepository(
-        com.google.cloudbuild.v2.GetRepositoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v2.GetRepositoryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRepositoryMethod(), getCallOptions(), request);
     }
 
@@ -1335,8 +1333,8 @@ public final class RepositoryManagerGrpc {
      * </pre>
      */
     public com.google.cloudbuild.v2.ListRepositoriesResponse listRepositories(
-        com.google.cloudbuild.v2.ListRepositoriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v2.ListRepositoriesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRepositoriesMethod(), getCallOptions(), request);
     }
 
@@ -1348,8 +1346,8 @@ public final class RepositoryManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteRepository(
-        com.google.cloudbuild.v2.DeleteRepositoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v2.DeleteRepositoryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteRepositoryMethod(), getCallOptions(), request);
     }
 
@@ -1361,8 +1359,9 @@ public final class RepositoryManagerGrpc {
      * </pre>
      */
     public com.google.cloudbuild.v2.FetchReadWriteTokenResponse fetchReadWriteToken(
-        com.google.cloudbuild.v2.FetchReadWriteTokenRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v2.FetchReadWriteTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchReadWriteTokenMethod(), getCallOptions(), request);
     }
 
@@ -1374,8 +1373,8 @@ public final class RepositoryManagerGrpc {
      * </pre>
      */
     public com.google.cloudbuild.v2.FetchReadTokenResponse fetchReadToken(
-        com.google.cloudbuild.v2.FetchReadTokenRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v2.FetchReadTokenRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchReadTokenMethod(), getCallOptions(), request);
     }
 
@@ -1388,8 +1387,9 @@ public final class RepositoryManagerGrpc {
      * </pre>
      */
     public com.google.cloudbuild.v2.FetchLinkableRepositoriesResponse fetchLinkableRepositories(
-        com.google.cloudbuild.v2.FetchLinkableRepositoriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v2.FetchLinkableRepositoriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchLinkableRepositoriesMethod(), getCallOptions(), request);
     }
 
@@ -1401,8 +1401,8 @@ public final class RepositoryManagerGrpc {
      * </pre>
      */
     public com.google.cloudbuild.v2.FetchGitRefsResponse fetchGitRefs(
-        com.google.cloudbuild.v2.FetchGitRefsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v2.FetchGitRefsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchGitRefsMethod(), getCallOptions(), request);
     }
   }

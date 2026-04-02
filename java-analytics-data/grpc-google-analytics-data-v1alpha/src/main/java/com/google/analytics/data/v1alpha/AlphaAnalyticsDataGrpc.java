@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Google Analytics reporting data service.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/analytics/data/v1alpha/analytics_data_api.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AlphaAnalyticsDataGrpc {
 
@@ -1570,8 +1567,9 @@ public final class AlphaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.analytics.data.v1alpha.RunFunnelReportResponse runFunnelReport(
-        com.google.analytics.data.v1alpha.RunFunnelReportRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.data.v1alpha.RunFunnelReportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRunFunnelReportMethod(), getCallOptions(), request);
     }
 
@@ -1602,8 +1600,9 @@ public final class AlphaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAudienceList(
-        com.google.analytics.data.v1alpha.CreateAudienceListRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.data.v1alpha.CreateAudienceListRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAudienceListMethod(), getCallOptions(), request);
     }
 
@@ -1629,8 +1628,9 @@ public final class AlphaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.analytics.data.v1alpha.QueryAudienceListResponse queryAudienceList(
-        com.google.analytics.data.v1alpha.QueryAudienceListRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.data.v1alpha.QueryAudienceListRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getQueryAudienceListMethod(), getCallOptions(), request);
     }
 
@@ -1658,8 +1658,9 @@ public final class AlphaAnalyticsDataGrpc {
      */
     public com.google.analytics.data.v1alpha.SheetExportAudienceListResponse
         sheetExportAudienceList(
-            com.google.analytics.data.v1alpha.SheetExportAudienceListRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.analytics.data.v1alpha.SheetExportAudienceListRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSheetExportAudienceListMethod(), getCallOptions(), request);
     }
 
@@ -1680,8 +1681,9 @@ public final class AlphaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.analytics.data.v1alpha.AudienceList getAudienceList(
-        com.google.analytics.data.v1alpha.GetAudienceListRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.data.v1alpha.GetAudienceListRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAudienceListMethod(), getCallOptions(), request);
     }
 
@@ -1704,8 +1706,9 @@ public final class AlphaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.analytics.data.v1alpha.ListAudienceListsResponse listAudienceLists(
-        com.google.analytics.data.v1alpha.ListAudienceListsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.data.v1alpha.ListAudienceListsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAudienceListsMethod(), getCallOptions(), request);
     }
 
@@ -1732,8 +1735,9 @@ public final class AlphaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.analytics.data.v1alpha.RecurringAudienceList createRecurringAudienceList(
-        com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateRecurringAudienceListMethod(), getCallOptions(), request);
     }
 
@@ -1754,8 +1758,9 @@ public final class AlphaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.analytics.data.v1alpha.RecurringAudienceList getRecurringAudienceList(
-        com.google.analytics.data.v1alpha.GetRecurringAudienceListRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.data.v1alpha.GetRecurringAudienceListRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRecurringAudienceListMethod(), getCallOptions(), request);
     }
 
@@ -1778,8 +1783,9 @@ public final class AlphaAnalyticsDataGrpc {
      */
     public com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse
         listRecurringAudienceLists(
-            com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRecurringAudienceListsMethod(), getCallOptions(), request);
     }
 
@@ -1792,8 +1798,9 @@ public final class AlphaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.analytics.data.v1alpha.PropertyQuotasSnapshot getPropertyQuotasSnapshot(
-        com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPropertyQuotasSnapshotMethod(), getCallOptions(), request);
     }
 
@@ -1812,8 +1819,9 @@ public final class AlphaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createReportTask(
-        com.google.analytics.data.v1alpha.CreateReportTaskRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.data.v1alpha.CreateReportTaskRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateReportTaskMethod(), getCallOptions(), request);
     }
 
@@ -1829,8 +1837,9 @@ public final class AlphaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.analytics.data.v1alpha.QueryReportTaskResponse queryReportTask(
-        com.google.analytics.data.v1alpha.QueryReportTaskRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.data.v1alpha.QueryReportTaskRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getQueryReportTaskMethod(), getCallOptions(), request);
     }
 
@@ -1844,8 +1853,9 @@ public final class AlphaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.analytics.data.v1alpha.ReportTask getReportTask(
-        com.google.analytics.data.v1alpha.GetReportTaskRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.data.v1alpha.GetReportTaskRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetReportTaskMethod(), getCallOptions(), request);
     }
 
@@ -1857,8 +1867,9 @@ public final class AlphaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.analytics.data.v1alpha.ListReportTasksResponse listReportTasks(
-        com.google.analytics.data.v1alpha.ListReportTasksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.data.v1alpha.ListReportTasksRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListReportTasksMethod(), getCallOptions(), request);
     }
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2542,6 +2542,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UpdateInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            if (request.hasDiscardLocalSsd()) {
+                              serializer.putQueryParam(
+                                  fields, "discardLocalSsd", request.getDiscardLocalSsd());
+                            }
                             if (request.hasMinimalAction()) {
                               serializer.putQueryParam(
                                   fields, "minimalAction", request.getMinimalAction());

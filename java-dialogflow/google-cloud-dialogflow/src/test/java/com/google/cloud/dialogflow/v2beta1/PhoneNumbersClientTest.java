@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
@@ -229,6 +230,7 @@ public class PhoneNumbersClientTest {
                 PhoneNumberName.ofProjectPhoneNumberName("[PROJECT]", "[PHONE_NUMBER]").toString())
             .setPhoneNumber("phoneNumber-1192969641")
             .setConversationProfile("conversationProfile1691597734")
+            .setPurgeTime(Timestamp.newBuilder().build())
             .build();
     mockPhoneNumbers.addResponse(expectedResponse);
 
@@ -273,6 +275,7 @@ public class PhoneNumbersClientTest {
                 PhoneNumberName.ofProjectPhoneNumberName("[PROJECT]", "[PHONE_NUMBER]").toString())
             .setPhoneNumber("phoneNumber-1192969641")
             .setConversationProfile("conversationProfile1691597734")
+            .setPurgeTime(Timestamp.newBuilder().build())
             .build();
     mockPhoneNumbers.addResponse(expectedResponse);
 
@@ -315,6 +318,7 @@ public class PhoneNumbersClientTest {
                 PhoneNumberName.ofProjectPhoneNumberName("[PROJECT]", "[PHONE_NUMBER]").toString())
             .setPhoneNumber("phoneNumber-1192969641")
             .setConversationProfile("conversationProfile1691597734")
+            .setPurgeTime(Timestamp.newBuilder().build())
             .build();
     mockPhoneNumbers.addResponse(expectedResponse);
 
@@ -356,6 +360,7 @@ public class PhoneNumbersClientTest {
                 PhoneNumberName.ofProjectPhoneNumberName("[PROJECT]", "[PHONE_NUMBER]").toString())
             .setPhoneNumber("phoneNumber-1192969641")
             .setConversationProfile("conversationProfile1691597734")
+            .setPurgeTime(Timestamp.newBuilder().build())
             .build();
     mockPhoneNumbers.addResponse(expectedResponse);
 
@@ -398,6 +403,7 @@ public class PhoneNumbersClientTest {
                 PhoneNumberName.ofProjectPhoneNumberName("[PROJECT]", "[PHONE_NUMBER]").toString())
             .setPhoneNumber("phoneNumber-1192969641")
             .setConversationProfile("conversationProfile1691597734")
+            .setPurgeTime(Timestamp.newBuilder().build())
             .build();
     mockPhoneNumbers.addResponse(expectedResponse);
 

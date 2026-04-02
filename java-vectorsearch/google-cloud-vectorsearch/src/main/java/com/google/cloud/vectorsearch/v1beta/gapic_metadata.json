@@ -1,0 +1,120 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.vectorsearch.v1beta",
+  "libraryPackage": "com.google.cloud.vectorsearch.v1beta",
+  "services": {
+    "DataObjectSearchService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DataObjectSearchServiceClient",
+          "rpcs": {
+            "AggregateDataObjects": {
+              "methods": ["aggregateDataObjects", "aggregateDataObjectsCallable"]
+            },
+            "BatchSearchDataObjects": {
+              "methods": ["batchSearchDataObjects", "batchSearchDataObjectsCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "QueryDataObjects": {
+              "methods": ["queryDataObjects", "queryDataObjectsPagedCallable", "queryDataObjectsCallable"]
+            },
+            "SearchDataObjects": {
+              "methods": ["searchDataObjects", "searchDataObjectsPagedCallable", "searchDataObjectsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "DataObjectService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DataObjectServiceClient",
+          "rpcs": {
+            "BatchCreateDataObjects": {
+              "methods": ["batchCreateDataObjects", "batchCreateDataObjectsCallable"]
+            },
+            "BatchDeleteDataObjects": {
+              "methods": ["batchDeleteDataObjects", "batchDeleteDataObjects", "batchDeleteDataObjects", "batchDeleteDataObjectsCallable"]
+            },
+            "BatchUpdateDataObjects": {
+              "methods": ["batchUpdateDataObjects", "batchUpdateDataObjects", "batchUpdateDataObjects", "batchUpdateDataObjectsCallable"]
+            },
+            "CreateDataObject": {
+              "methods": ["createDataObject", "createDataObject", "createDataObject", "createDataObjectCallable"]
+            },
+            "DeleteDataObject": {
+              "methods": ["deleteDataObject", "deleteDataObject", "deleteDataObject", "deleteDataObjectCallable"]
+            },
+            "GetDataObject": {
+              "methods": ["getDataObject", "getDataObject", "getDataObject", "getDataObjectCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "UpdateDataObject": {
+              "methods": ["updateDataObject", "updateDataObject", "updateDataObjectCallable"]
+            }
+          }
+        }
+      }
+    },
+    "VectorSearchService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "VectorSearchServiceClient",
+          "rpcs": {
+            "CreateCollection": {
+              "methods": ["createCollectionAsync", "createCollectionAsync", "createCollectionAsync", "createCollectionOperationCallable", "createCollectionCallable"]
+            },
+            "CreateIndex": {
+              "methods": ["createIndexAsync", "createIndexAsync", "createIndexAsync", "createIndexOperationCallable", "createIndexCallable"]
+            },
+            "DeleteCollection": {
+              "methods": ["deleteCollectionAsync", "deleteCollectionAsync", "deleteCollectionAsync", "deleteCollectionOperationCallable", "deleteCollectionCallable"]
+            },
+            "DeleteIndex": {
+              "methods": ["deleteIndexAsync", "deleteIndexAsync", "deleteIndexAsync", "deleteIndexOperationCallable", "deleteIndexCallable"]
+            },
+            "ExportDataObjects": {
+              "methods": ["exportDataObjectsAsync", "exportDataObjectsOperationCallable", "exportDataObjectsCallable"]
+            },
+            "GetCollection": {
+              "methods": ["getCollection", "getCollection", "getCollection", "getCollectionCallable"]
+            },
+            "GetIndex": {
+              "methods": ["getIndex", "getIndex", "getIndex", "getIndexCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ImportDataObjects": {
+              "methods": ["importDataObjectsAsync", "importDataObjectsOperationCallable", "importDataObjectsCallable"]
+            },
+            "ListCollections": {
+              "methods": ["listCollections", "listCollections", "listCollections", "listCollectionsPagedCallable", "listCollectionsCallable"]
+            },
+            "ListIndexes": {
+              "methods": ["listIndexes", "listIndexes", "listIndexes", "listIndexesPagedCallable", "listIndexesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "UpdateCollection": {
+              "methods": ["updateCollectionAsync", "updateCollectionAsync", "updateCollectionOperationCallable", "updateCollectionCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

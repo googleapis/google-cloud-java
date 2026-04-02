@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1123,7 +1123,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CancelImageImportJob</td>
- *      <td><p> Initiates the cancellation of a running clone job.</td>
+ *      <td><p> Initiates the cancellation of a running ImageImportJob.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -9455,7 +9455,7 @@ public class VmMigrationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Initiates the cancellation of a running clone job.
+   * Initiates the cancellation of a running ImageImportJob.
    *
    * <p>Sample code:
    *
@@ -9487,7 +9487,7 @@ public class VmMigrationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Initiates the cancellation of a running clone job.
+   * Initiates the cancellation of a running ImageImportJob.
    *
    * <p>Sample code:
    *
@@ -9517,7 +9517,7 @@ public class VmMigrationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Initiates the cancellation of a running clone job.
+   * Initiates the cancellation of a running ImageImportJob.
    *
    * <p>Sample code:
    *
@@ -9548,7 +9548,7 @@ public class VmMigrationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Initiates the cancellation of a running clone job.
+   * Initiates the cancellation of a running ImageImportJob.
    *
    * <p>Sample code:
    *
@@ -9579,7 +9579,7 @@ public class VmMigrationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Initiates the cancellation of a running clone job.
+   * Initiates the cancellation of a running ImageImportJob.
    *
    * <p>Sample code:
    *

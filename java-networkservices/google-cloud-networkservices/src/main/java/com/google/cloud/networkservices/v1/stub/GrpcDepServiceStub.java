@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.networkservices.v1.stub;
 
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListAuthzExtensionsPagedResponse;
+import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbEdgeExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbRouteExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbTrafficExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLocationsPagedResponse;
@@ -35,24 +36,31 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.networkservices.v1.AuthzExtension;
 import com.google.cloud.networkservices.v1.CreateAuthzExtensionRequest;
+import com.google.cloud.networkservices.v1.CreateLbEdgeExtensionRequest;
 import com.google.cloud.networkservices.v1.CreateLbRouteExtensionRequest;
 import com.google.cloud.networkservices.v1.CreateLbTrafficExtensionRequest;
 import com.google.cloud.networkservices.v1.DeleteAuthzExtensionRequest;
+import com.google.cloud.networkservices.v1.DeleteLbEdgeExtensionRequest;
 import com.google.cloud.networkservices.v1.DeleteLbRouteExtensionRequest;
 import com.google.cloud.networkservices.v1.DeleteLbTrafficExtensionRequest;
 import com.google.cloud.networkservices.v1.GetAuthzExtensionRequest;
+import com.google.cloud.networkservices.v1.GetLbEdgeExtensionRequest;
 import com.google.cloud.networkservices.v1.GetLbRouteExtensionRequest;
 import com.google.cloud.networkservices.v1.GetLbTrafficExtensionRequest;
+import com.google.cloud.networkservices.v1.LbEdgeExtension;
 import com.google.cloud.networkservices.v1.LbRouteExtension;
 import com.google.cloud.networkservices.v1.LbTrafficExtension;
 import com.google.cloud.networkservices.v1.ListAuthzExtensionsRequest;
 import com.google.cloud.networkservices.v1.ListAuthzExtensionsResponse;
+import com.google.cloud.networkservices.v1.ListLbEdgeExtensionsRequest;
+import com.google.cloud.networkservices.v1.ListLbEdgeExtensionsResponse;
 import com.google.cloud.networkservices.v1.ListLbRouteExtensionsRequest;
 import com.google.cloud.networkservices.v1.ListLbRouteExtensionsResponse;
 import com.google.cloud.networkservices.v1.ListLbTrafficExtensionsRequest;
 import com.google.cloud.networkservices.v1.ListLbTrafficExtensionsResponse;
 import com.google.cloud.networkservices.v1.OperationMetadata;
 import com.google.cloud.networkservices.v1.UpdateAuthzExtensionRequest;
+import com.google.cloud.networkservices.v1.UpdateLbEdgeExtensionRequest;
 import com.google.cloud.networkservices.v1.UpdateLbRouteExtensionRequest;
 import com.google.cloud.networkservices.v1.UpdateLbTrafficExtensionRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -194,6 +202,62 @@ public class GrpcDepServiceStub extends DepServiceStub {
                   "google.cloud.networkservices.v1.DepService/DeleteLbRouteExtension")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteLbRouteExtensionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse>
+      listLbEdgeExtensionsMethodDescriptor =
+          MethodDescriptor.<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/ListLbEdgeExtensions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListLbEdgeExtensionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListLbEdgeExtensionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetLbEdgeExtensionRequest, LbEdgeExtension>
+      getLbEdgeExtensionMethodDescriptor =
+          MethodDescriptor.<GetLbEdgeExtensionRequest, LbEdgeExtension>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/GetLbEdgeExtension")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetLbEdgeExtensionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(LbEdgeExtension.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateLbEdgeExtensionRequest, Operation>
+      createLbEdgeExtensionMethodDescriptor =
+          MethodDescriptor.<CreateLbEdgeExtensionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/CreateLbEdgeExtension")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateLbEdgeExtensionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateLbEdgeExtensionRequest, Operation>
+      updateLbEdgeExtensionMethodDescriptor =
+          MethodDescriptor.<UpdateLbEdgeExtensionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/UpdateLbEdgeExtension")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateLbEdgeExtensionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteLbEdgeExtensionRequest, Operation>
+      deleteLbEdgeExtensionMethodDescriptor =
+          MethodDescriptor.<DeleteLbEdgeExtensionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.DepService/DeleteLbEdgeExtension")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteLbEdgeExtensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
@@ -345,6 +409,24 @@ public class GrpcDepServiceStub extends DepServiceStub {
       deleteLbRouteExtensionCallable;
   private final OperationCallable<DeleteLbRouteExtensionRequest, Empty, OperationMetadata>
       deleteLbRouteExtensionOperationCallable;
+  private final UnaryCallable<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse>
+      listLbEdgeExtensionsCallable;
+  private final UnaryCallable<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsPagedResponse>
+      listLbEdgeExtensionsPagedCallable;
+  private final UnaryCallable<GetLbEdgeExtensionRequest, LbEdgeExtension>
+      getLbEdgeExtensionCallable;
+  private final UnaryCallable<CreateLbEdgeExtensionRequest, Operation>
+      createLbEdgeExtensionCallable;
+  private final OperationCallable<CreateLbEdgeExtensionRequest, LbEdgeExtension, OperationMetadata>
+      createLbEdgeExtensionOperationCallable;
+  private final UnaryCallable<UpdateLbEdgeExtensionRequest, Operation>
+      updateLbEdgeExtensionCallable;
+  private final OperationCallable<UpdateLbEdgeExtensionRequest, LbEdgeExtension, OperationMetadata>
+      updateLbEdgeExtensionOperationCallable;
+  private final UnaryCallable<DeleteLbEdgeExtensionRequest, Operation>
+      deleteLbEdgeExtensionCallable;
+  private final OperationCallable<DeleteLbEdgeExtensionRequest, Empty, OperationMetadata>
+      deleteLbEdgeExtensionOperationCallable;
   private final UnaryCallable<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>
       listAuthzExtensionsCallable;
   private final UnaryCallable<ListAuthzExtensionsRequest, ListAuthzExtensionsPagedResponse>
@@ -421,6 +503,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetLbTrafficExtensionRequest, LbTrafficExtension>
         getLbTrafficExtensionTransportSettings =
@@ -432,6 +515,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateLbTrafficExtensionRequest, Operation>
         createLbTrafficExtensionTransportSettings =
@@ -443,6 +527,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateLbTrafficExtensionRequest, Operation>
         updateLbTrafficExtensionTransportSettings =
@@ -467,6 +552,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLbRouteExtensionsRequest, ListLbRouteExtensionsResponse>
         listLbRouteExtensionsTransportSettings =
@@ -479,6 +565,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetLbRouteExtensionRequest, LbRouteExtension>
         getLbRouteExtensionTransportSettings =
@@ -490,6 +577,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateLbRouteExtensionRequest, Operation>
         createLbRouteExtensionTransportSettings =
@@ -501,6 +589,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateLbRouteExtensionRequest, Operation>
         updateLbRouteExtensionTransportSettings =
@@ -525,6 +614,68 @@ public class GrpcDepServiceStub extends DepServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse>
+        listLbEdgeExtensionsTransportSettings =
+            GrpcCallSettings.<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse>newBuilder()
+                .setMethodDescriptor(listLbEdgeExtensionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<GetLbEdgeExtensionRequest, LbEdgeExtension>
+        getLbEdgeExtensionTransportSettings =
+            GrpcCallSettings.<GetLbEdgeExtensionRequest, LbEdgeExtension>newBuilder()
+                .setMethodDescriptor(getLbEdgeExtensionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<CreateLbEdgeExtensionRequest, Operation>
+        createLbEdgeExtensionTransportSettings =
+            GrpcCallSettings.<CreateLbEdgeExtensionRequest, Operation>newBuilder()
+                .setMethodDescriptor(createLbEdgeExtensionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<UpdateLbEdgeExtensionRequest, Operation>
+        updateLbEdgeExtensionTransportSettings =
+            GrpcCallSettings.<UpdateLbEdgeExtensionRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateLbEdgeExtensionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "lb_edge_extension.name",
+                          String.valueOf(request.getLbEdgeExtension().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteLbEdgeExtensionRequest, Operation>
+        deleteLbEdgeExtensionTransportSettings =
+            GrpcCallSettings.<DeleteLbEdgeExtensionRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteLbEdgeExtensionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>
         listAuthzExtensionsTransportSettings =
@@ -536,6 +687,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetAuthzExtensionRequest, AuthzExtension> getAuthzExtensionTransportSettings =
         GrpcCallSettings.<GetAuthzExtensionRequest, AuthzExtension>newBuilder()
@@ -546,6 +698,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateAuthzExtensionRequest, Operation> createAuthzExtensionTransportSettings =
         GrpcCallSettings.<CreateAuthzExtensionRequest, Operation>newBuilder()
@@ -556,6 +709,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateAuthzExtensionRequest, Operation> updateAuthzExtensionTransportSettings =
         GrpcCallSettings.<UpdateAuthzExtensionRequest, Operation>newBuilder()
@@ -578,6 +732,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -608,6 +763,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -618,6 +774,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -629,6 +786,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listLbTrafficExtensionsCallable =
@@ -725,6 +883,54 @@ public class GrpcDepServiceStub extends DepServiceStub {
         callableFactory.createOperationCallable(
             deleteLbRouteExtensionTransportSettings,
             settings.deleteLbRouteExtensionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listLbEdgeExtensionsCallable =
+        callableFactory.createUnaryCallable(
+            listLbEdgeExtensionsTransportSettings,
+            settings.listLbEdgeExtensionsSettings(),
+            clientContext);
+    this.listLbEdgeExtensionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLbEdgeExtensionsTransportSettings,
+            settings.listLbEdgeExtensionsSettings(),
+            clientContext);
+    this.getLbEdgeExtensionCallable =
+        callableFactory.createUnaryCallable(
+            getLbEdgeExtensionTransportSettings,
+            settings.getLbEdgeExtensionSettings(),
+            clientContext);
+    this.createLbEdgeExtensionCallable =
+        callableFactory.createUnaryCallable(
+            createLbEdgeExtensionTransportSettings,
+            settings.createLbEdgeExtensionSettings(),
+            clientContext);
+    this.createLbEdgeExtensionOperationCallable =
+        callableFactory.createOperationCallable(
+            createLbEdgeExtensionTransportSettings,
+            settings.createLbEdgeExtensionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateLbEdgeExtensionCallable =
+        callableFactory.createUnaryCallable(
+            updateLbEdgeExtensionTransportSettings,
+            settings.updateLbEdgeExtensionSettings(),
+            clientContext);
+    this.updateLbEdgeExtensionOperationCallable =
+        callableFactory.createOperationCallable(
+            updateLbEdgeExtensionTransportSettings,
+            settings.updateLbEdgeExtensionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteLbEdgeExtensionCallable =
+        callableFactory.createUnaryCallable(
+            deleteLbEdgeExtensionTransportSettings,
+            settings.deleteLbEdgeExtensionSettings(),
+            clientContext);
+    this.deleteLbEdgeExtensionOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteLbEdgeExtensionTransportSettings,
+            settings.deleteLbEdgeExtensionOperationSettings(),
             clientContext,
             operationsStub);
     this.listAuthzExtensionsCallable =
@@ -906,6 +1112,56 @@ public class GrpcDepServiceStub extends DepServiceStub {
   public OperationCallable<DeleteLbRouteExtensionRequest, Empty, OperationMetadata>
       deleteLbRouteExtensionOperationCallable() {
     return deleteLbRouteExtensionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse>
+      listLbEdgeExtensionsCallable() {
+    return listLbEdgeExtensionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsPagedResponse>
+      listLbEdgeExtensionsPagedCallable() {
+    return listLbEdgeExtensionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLbEdgeExtensionRequest, LbEdgeExtension> getLbEdgeExtensionCallable() {
+    return getLbEdgeExtensionCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateLbEdgeExtensionRequest, Operation> createLbEdgeExtensionCallable() {
+    return createLbEdgeExtensionCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateLbEdgeExtensionRequest, LbEdgeExtension, OperationMetadata>
+      createLbEdgeExtensionOperationCallable() {
+    return createLbEdgeExtensionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateLbEdgeExtensionRequest, Operation> updateLbEdgeExtensionCallable() {
+    return updateLbEdgeExtensionCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateLbEdgeExtensionRequest, LbEdgeExtension, OperationMetadata>
+      updateLbEdgeExtensionOperationCallable() {
+    return updateLbEdgeExtensionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteLbEdgeExtensionRequest, Operation> deleteLbEdgeExtensionCallable() {
+    return deleteLbEdgeExtensionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteLbEdgeExtensionRequest, Empty, OperationMetadata>
+      deleteLbEdgeExtensionOperationCallable() {
+    return deleteLbEdgeExtensionOperationCallable;
   }
 
   @Override

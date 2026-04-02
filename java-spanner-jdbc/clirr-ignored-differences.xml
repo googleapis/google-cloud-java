@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/spanner/jdbc/CloudSpannerJdbcConnection</className>
+    <method>com.google.cloud.spanner.Dialect getDialect()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/spanner/jdbc/CloudSpannerJdbcConnection</className>
+    <method>com.google.cloud.spanner.connection.SavepointSupport getSavepointSupport()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/spanner/jdbc/CloudSpannerJdbcConnection</className>
+    <method>void setSavepointSupport(com.google.cloud.spanner.connection.SavepointSupport)</method>
+  </difference>
+
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/spanner/jdbc/CloudSpannerJdbcConnection</className>
+    <method>int getMaxPartitionedParallelism()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/spanner/jdbc/CloudSpannerJdbcConnection</className>
+    <method>int getMaxPartitions()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/spanner/jdbc/CloudSpannerJdbcConnection</className>
+    <method>boolean isAutoPartitionMode()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/spanner/jdbc/CloudSpannerJdbcConnection</className>
+    <method>boolean isDataBoostEnabled()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/spanner/jdbc/CloudSpannerJdbcConnection</className>
+    <method>void setAutoPartitionMode(boolean)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/spanner/jdbc/CloudSpannerJdbcConnection</className>
+    <method>void setDataBoostEnabled(boolean)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/spanner/jdbc/CloudSpannerJdbcConnection</className>
+    <method>void setMaxPartitionedParallelism(int)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/spanner/jdbc/CloudSpannerJdbcConnection</className>
+    <method>void setMaxPartitions(int)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/spanner/jdbc/CloudSpannerJdbcConnection</className>
+    <method>byte[] getProtoDescriptors()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/spanner/jdbc/CloudSpannerJdbcConnection</className>
+    <method>void setProtoDescriptors(byte[])</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/spanner/jdbc/CloudSpannerJdbcConnection</className>
+    <method>void setProtoDescriptors(java.io.InputStream)</method>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/spanner/connection/ConnectionHelper</className>
+  </difference>
+
+  <!-- DML auto batching -->
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/spanner/jdbc/CloudSpannerJdbcConnection</className>
+    <method>boolean isAutoBatchDml()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/spanner/jdbc/CloudSpannerJdbcConnection</className>
+    <method>void setAutoBatchDml(boolean)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/spanner/jdbc/CloudSpannerJdbcConnection</className>
+    <method>long getAutoBatchDmlUpdateCount()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/spanner/jdbc/CloudSpannerJdbcConnection</className>
+    <method>void setAutoBatchDmlUpdateCount(long)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/spanner/jdbc/CloudSpannerJdbcConnection</className>
+    <method>boolean isAutoBatchDmlUpdateCountVerification()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/spanner/jdbc/CloudSpannerJdbcConnection</className>
+    <method>void setAutoBatchDmlUpdateCountVerification(boolean)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/spanner/jdbc/CloudSpannerJdbcConnection</className>
+    <method>com.google.cloud.spanner.DatabaseClient getDatabaseClient()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/spanner/jdbc/CloudSpannerJdbcConnection</className>
+    <method>com.google.cloud.spanner.Spanner getSpanner()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/spanner/jdbc/CloudSpannerJdbcConnection</className>
+    <method>com.google.cloud.spanner.DatabaseId getDatabaseId()</method>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/spanner/connection/ConnectionPropertiesHelper</className>
+  </difference>
+</differences>

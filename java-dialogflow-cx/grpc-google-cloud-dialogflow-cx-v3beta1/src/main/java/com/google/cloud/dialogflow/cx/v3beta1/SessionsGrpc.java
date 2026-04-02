@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * method to determine user intent and respond.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/cx/v3beta1/session.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SessionsGrpc {
 
@@ -706,8 +703,9 @@ public final class SessionsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse detectIntent(
-        com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDetectIntentMethod(), getCallOptions(), request);
     }
 
@@ -761,8 +759,9 @@ public final class SessionsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse matchIntent(
-        com.google.cloud.dialogflow.cx.v3beta1.MatchIntentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.MatchIntentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getMatchIntentMethod(), getCallOptions(), request);
     }
 
@@ -780,8 +779,9 @@ public final class SessionsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentResponse fulfillIntent(
-        com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFulfillIntentMethod(), getCallOptions(), request);
     }
 
@@ -794,8 +794,9 @@ public final class SessionsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback submitAnswerFeedback(
-        com.google.cloud.dialogflow.cx.v3beta1.SubmitAnswerFeedbackRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.SubmitAnswerFeedbackRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSubmitAnswerFeedbackMethod(), getCallOptions(), request);
     }
   }

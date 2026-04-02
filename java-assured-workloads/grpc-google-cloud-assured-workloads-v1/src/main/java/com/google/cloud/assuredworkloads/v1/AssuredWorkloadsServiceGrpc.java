@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to manage AssuredWorkloads.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/assuredworkloads/v1/assuredworkloads.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AssuredWorkloadsServiceGrpc {
 
@@ -916,8 +913,9 @@ public final class AssuredWorkloadsServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createWorkload(
-        com.google.cloud.assuredworkloads.v1.CreateWorkloadRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.assuredworkloads.v1.CreateWorkloadRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateWorkloadMethod(), getCallOptions(), request);
     }
 
@@ -932,8 +930,9 @@ public final class AssuredWorkloadsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.assuredworkloads.v1.Workload updateWorkload(
-        com.google.cloud.assuredworkloads.v1.UpdateWorkloadRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.assuredworkloads.v1.UpdateWorkloadRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateWorkloadMethod(), getCallOptions(), request);
     }
 
@@ -951,8 +950,9 @@ public final class AssuredWorkloadsServiceGrpc {
      */
     public com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesResponse
         restrictAllowedResources(
-            com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRestrictAllowedResourcesMethod(), getCallOptions(), request);
     }
 
@@ -966,8 +966,9 @@ public final class AssuredWorkloadsServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteWorkload(
-        com.google.cloud.assuredworkloads.v1.DeleteWorkloadRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.assuredworkloads.v1.DeleteWorkloadRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteWorkloadMethod(), getCallOptions(), request);
     }
 
@@ -979,8 +980,9 @@ public final class AssuredWorkloadsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.assuredworkloads.v1.Workload getWorkload(
-        com.google.cloud.assuredworkloads.v1.GetWorkloadRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.assuredworkloads.v1.GetWorkloadRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetWorkloadMethod(), getCallOptions(), request);
     }
 
@@ -992,8 +994,9 @@ public final class AssuredWorkloadsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.assuredworkloads.v1.ListWorkloadsResponse listWorkloads(
-        com.google.cloud.assuredworkloads.v1.ListWorkloadsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.assuredworkloads.v1.ListWorkloadsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListWorkloadsMethod(), getCallOptions(), request);
     }
 
@@ -1009,8 +1012,9 @@ public final class AssuredWorkloadsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.assuredworkloads.v1.ListViolationsResponse listViolations(
-        com.google.cloud.assuredworkloads.v1.ListViolationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.assuredworkloads.v1.ListViolationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListViolationsMethod(), getCallOptions(), request);
     }
 
@@ -1022,8 +1026,9 @@ public final class AssuredWorkloadsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.assuredworkloads.v1.Violation getViolation(
-        com.google.cloud.assuredworkloads.v1.GetViolationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.assuredworkloads.v1.GetViolationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetViolationMethod(), getCallOptions(), request);
     }
 
@@ -1038,8 +1043,9 @@ public final class AssuredWorkloadsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.assuredworkloads.v1.AcknowledgeViolationResponse acknowledgeViolation(
-        com.google.cloud.assuredworkloads.v1.AcknowledgeViolationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.assuredworkloads.v1.AcknowledgeViolationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAcknowledgeViolationMethod(), getCallOptions(), request);
     }
   }

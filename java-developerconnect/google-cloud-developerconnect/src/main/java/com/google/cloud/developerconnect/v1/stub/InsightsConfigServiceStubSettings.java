@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.developerconnect.v1.stub;
 
+import static com.google.cloud.developerconnect.v1.InsightsConfigServiceClient.ListDeploymentEventsPagedResponse;
 import static com.google.cloud.developerconnect.v1.InsightsConfigServiceClient.ListInsightsConfigsPagedResponse;
 import static com.google.cloud.developerconnect.v1.InsightsConfigServiceClient.ListLocationsPagedResponse;
 
@@ -39,6 +40,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -51,8 +53,12 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.developerconnect.v1.CreateInsightsConfigRequest;
 import com.google.cloud.developerconnect.v1.DeleteInsightsConfigRequest;
+import com.google.cloud.developerconnect.v1.DeploymentEvent;
+import com.google.cloud.developerconnect.v1.GetDeploymentEventRequest;
 import com.google.cloud.developerconnect.v1.GetInsightsConfigRequest;
 import com.google.cloud.developerconnect.v1.InsightsConfig;
+import com.google.cloud.developerconnect.v1.ListDeploymentEventsRequest;
+import com.google.cloud.developerconnect.v1.ListDeploymentEventsResponse;
 import com.google.cloud.developerconnect.v1.ListInsightsConfigsRequest;
 import com.google.cloud.developerconnect.v1.ListInsightsConfigsResponse;
 import com.google.cloud.developerconnect.v1.OperationMetadata;
@@ -121,8 +127,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -151,6 +157,7 @@ import javax.annotation.Generated;
  * }</pre>
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class InsightsConfigServiceStubSettings
     extends StubSettings<InsightsConfigServiceStubSettings> {
   /** The default scopes of the service. */
@@ -176,6 +183,13 @@ public class InsightsConfigServiceStubSettings
       deleteInsightsConfigSettings;
   private final OperationCallSettings<DeleteInsightsConfigRequest, Empty, OperationMetadata>
       deleteInsightsConfigOperationSettings;
+  private final UnaryCallSettings<GetDeploymentEventRequest, DeploymentEvent>
+      getDeploymentEventSettings;
+  private final PagedCallSettings<
+          ListDeploymentEventsRequest,
+          ListDeploymentEventsResponse,
+          ListDeploymentEventsPagedResponse>
+      listDeploymentEventsSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -216,6 +230,45 @@ public class InsightsConfigServiceStubSettings
             @Override
             public Iterable<InsightsConfig> extractResources(ListInsightsConfigsResponse payload) {
               return payload.getInsightsConfigsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListDeploymentEventsRequest, ListDeploymentEventsResponse, DeploymentEvent>
+      LIST_DEPLOYMENT_EVENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListDeploymentEventsRequest, ListDeploymentEventsResponse, DeploymentEvent>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDeploymentEventsRequest injectToken(
+                ListDeploymentEventsRequest payload, String token) {
+              return ListDeploymentEventsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDeploymentEventsRequest injectPageSize(
+                ListDeploymentEventsRequest payload, int pageSize) {
+              return ListDeploymentEventsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDeploymentEventsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDeploymentEventsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DeploymentEvent> extractResources(
+                ListDeploymentEventsResponse payload) {
+              return payload.getDeploymentEventsList();
             }
           };
 
@@ -271,6 +324,30 @@ public class InsightsConfigServiceStubSettings
                       PageContext.create(
                           callable, LIST_INSIGHTS_CONFIGS_PAGE_STR_DESC, request, context);
               return ListInsightsConfigsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListDeploymentEventsRequest,
+          ListDeploymentEventsResponse,
+          ListDeploymentEventsPagedResponse>
+      LIST_DEPLOYMENT_EVENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDeploymentEventsRequest,
+              ListDeploymentEventsResponse,
+              ListDeploymentEventsPagedResponse>() {
+            @Override
+            public ApiFuture<ListDeploymentEventsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDeploymentEventsRequest, ListDeploymentEventsResponse> callable,
+                ListDeploymentEventsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDeploymentEventsResponse> futureResponse) {
+              PageContext<
+                      ListDeploymentEventsRequest, ListDeploymentEventsResponse, DeploymentEvent>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_DEPLOYMENT_EVENTS_PAGE_STR_DESC, request, context);
+              return ListDeploymentEventsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -334,6 +411,21 @@ public class InsightsConfigServiceStubSettings
   public OperationCallSettings<DeleteInsightsConfigRequest, Empty, OperationMetadata>
       deleteInsightsConfigOperationSettings() {
     return deleteInsightsConfigOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getDeploymentEvent. */
+  public UnaryCallSettings<GetDeploymentEventRequest, DeploymentEvent>
+      getDeploymentEventSettings() {
+    return getDeploymentEventSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDeploymentEvents. */
+  public PagedCallSettings<
+          ListDeploymentEventsRequest,
+          ListDeploymentEventsResponse,
+          ListDeploymentEventsPagedResponse>
+      listDeploymentEventsSettings() {
+    return listDeploymentEventsSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -469,8 +561,19 @@ public class InsightsConfigServiceStubSettings
     deleteInsightsConfigSettings = settingsBuilder.deleteInsightsConfigSettings().build();
     deleteInsightsConfigOperationSettings =
         settingsBuilder.deleteInsightsConfigOperationSettings().build();
+    getDeploymentEventSettings = settingsBuilder.getDeploymentEventSettings().build();
+    listDeploymentEventsSettings = settingsBuilder.listDeploymentEventsSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-developerconnect")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for InsightsConfigServiceStubSettings. */
@@ -499,6 +602,13 @@ public class InsightsConfigServiceStubSettings
     private final OperationCallSettings.Builder<
             DeleteInsightsConfigRequest, Empty, OperationMetadata>
         deleteInsightsConfigOperationSettings;
+    private final UnaryCallSettings.Builder<GetDeploymentEventRequest, DeploymentEvent>
+        getDeploymentEventSettings;
+    private final PagedCallSettings.Builder<
+            ListDeploymentEventsRequest,
+            ListDeploymentEventsResponse,
+            ListDeploymentEventsPagedResponse>
+        listDeploymentEventsSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -539,6 +649,9 @@ public class InsightsConfigServiceStubSettings
       updateInsightsConfigOperationSettings = OperationCallSettings.newBuilder();
       deleteInsightsConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteInsightsConfigOperationSettings = OperationCallSettings.newBuilder();
+      getDeploymentEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listDeploymentEventsSettings =
+          PagedCallSettings.newBuilder(LIST_DEPLOYMENT_EVENTS_PAGE_STR_FACT);
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -549,6 +662,8 @@ public class InsightsConfigServiceStubSettings
               getInsightsConfigSettings,
               updateInsightsConfigSettings,
               deleteInsightsConfigSettings,
+              getDeploymentEventSettings,
+              listDeploymentEventsSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -568,6 +683,8 @@ public class InsightsConfigServiceStubSettings
       deleteInsightsConfigSettings = settings.deleteInsightsConfigSettings.toBuilder();
       deleteInsightsConfigOperationSettings =
           settings.deleteInsightsConfigOperationSettings.toBuilder();
+      getDeploymentEventSettings = settings.getDeploymentEventSettings.toBuilder();
+      listDeploymentEventsSettings = settings.listDeploymentEventsSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -578,6 +695,8 @@ public class InsightsConfigServiceStubSettings
               getInsightsConfigSettings,
               updateInsightsConfigSettings,
               deleteInsightsConfigSettings,
+              getDeploymentEventSettings,
+              listDeploymentEventsSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -629,6 +748,16 @@ public class InsightsConfigServiceStubSettings
 
       builder
           .deleteInsightsConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getDeploymentEventSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listDeploymentEventsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -783,6 +912,21 @@ public class InsightsConfigServiceStubSettings
     public OperationCallSettings.Builder<DeleteInsightsConfigRequest, Empty, OperationMetadata>
         deleteInsightsConfigOperationSettings() {
       return deleteInsightsConfigOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getDeploymentEvent. */
+    public UnaryCallSettings.Builder<GetDeploymentEventRequest, DeploymentEvent>
+        getDeploymentEventSettings() {
+      return getDeploymentEventSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listDeploymentEvents. */
+    public PagedCallSettings.Builder<
+            ListDeploymentEventsRequest,
+            ListDeploymentEventsResponse,
+            ListDeploymentEventsPagedResponse>
+        listDeploymentEventsSettings() {
+      return listDeploymentEventsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

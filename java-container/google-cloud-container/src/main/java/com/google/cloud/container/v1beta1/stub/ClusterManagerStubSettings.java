@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -50,6 +51,7 @@ import com.google.container.v1beta1.CheckAutopilotCompatibilityRequest;
 import com.google.container.v1beta1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1beta1.Cluster;
 import com.google.container.v1beta1.ClusterUpgradeInfo;
+import com.google.container.v1beta1.CompleteControlPlaneUpgradeRequest;
 import com.google.container.v1beta1.CompleteIPRotationRequest;
 import com.google.container.v1beta1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1beta1.CreateClusterRequest;
@@ -149,11 +151,12 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @BetaApi
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -214,6 +217,8 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
       fetchClusterUpgradeInfoSettings;
   private final UnaryCallSettings<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
       fetchNodePoolUpgradeInfoSettings;
+  private final UnaryCallSettings<CompleteControlPlaneUpgradeRequest, Operation>
+      completeControlPlaneUpgradeSettings;
 
   private static final PagedListDescriptor<
           ListUsableSubnetworksRequest, ListUsableSubnetworksResponse, UsableSubnetwork>
@@ -479,6 +484,12 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     return fetchNodePoolUpgradeInfoSettings;
   }
 
+  /** Returns the object with the settings used for calls to completeControlPlaneUpgrade. */
+  public UnaryCallSettings<CompleteControlPlaneUpgradeRequest, Operation>
+      completeControlPlaneUpgradeSettings() {
+    return completeControlPlaneUpgradeSettings;
+  }
+
   public ClusterManagerStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -598,6 +609,17 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     fetchClusterUpgradeInfoSettings = settingsBuilder.fetchClusterUpgradeInfoSettings().build();
     fetchNodePoolUpgradeInfoSettings = settingsBuilder.fetchNodePoolUpgradeInfoSettings().build();
+    completeControlPlaneUpgradeSettings =
+        settingsBuilder.completeControlPlaneUpgradeSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-container")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for ClusterManagerStubSettings. */
@@ -669,6 +691,8 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
         fetchClusterUpgradeInfoSettings;
     private final UnaryCallSettings.Builder<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
         fetchNodePoolUpgradeInfoSettings;
+    private final UnaryCallSettings.Builder<CompleteControlPlaneUpgradeRequest, Operation>
+        completeControlPlaneUpgradeSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -760,6 +784,7 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
       listLocationsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       fetchClusterUpgradeInfoSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       fetchNodePoolUpgradeInfoSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      completeControlPlaneUpgradeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -799,7 +824,8 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
               checkAutopilotCompatibilitySettings,
               listLocationsSettings,
               fetchClusterUpgradeInfoSettings,
-              fetchNodePoolUpgradeInfoSettings);
+              fetchNodePoolUpgradeInfoSettings,
+              completeControlPlaneUpgradeSettings);
       initDefaults(this);
     }
 
@@ -844,6 +870,8 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       fetchClusterUpgradeInfoSettings = settings.fetchClusterUpgradeInfoSettings.toBuilder();
       fetchNodePoolUpgradeInfoSettings = settings.fetchNodePoolUpgradeInfoSettings.toBuilder();
+      completeControlPlaneUpgradeSettings =
+          settings.completeControlPlaneUpgradeSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -883,7 +911,8 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
               checkAutopilotCompatibilitySettings,
               listLocationsSettings,
               fetchClusterUpgradeInfoSettings,
-              fetchNodePoolUpgradeInfoSettings);
+              fetchNodePoolUpgradeInfoSettings,
+              completeControlPlaneUpgradeSettings);
     }
 
     private static Builder createDefault() {
@@ -1081,6 +1110,11 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
 
       builder
           .fetchNodePoolUpgradeInfoSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .completeControlPlaneUpgradeSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1313,6 +1347,12 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     public UnaryCallSettings.Builder<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
         fetchNodePoolUpgradeInfoSettings() {
       return fetchNodePoolUpgradeInfoSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to completeControlPlaneUpgrade. */
+    public UnaryCallSettings.Builder<CompleteControlPlaneUpgradeRequest, Operation>
+        completeControlPlaneUpgradeSettings() {
+      return completeControlPlaneUpgradeSettings;
     }
 
     @Override

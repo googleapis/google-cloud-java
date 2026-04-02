@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -229,6 +229,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -304,6 +305,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -379,6 +381,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -463,6 +466,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -547,6 +551,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -590,6 +595,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -653,6 +659,7 @@ public class AlloyDBAdminClientHttpJsonTest {
               .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
               .putAllTags(new HashMap<String, String>())
               .setServiceAccountEmail("serviceAccountEmail1825953988")
+              .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateClusterAsync(cluster, updateMask).get();
@@ -1127,6 +1134,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1207,6 +1215,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1287,6 +1296,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1367,6 +1377,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1447,6 +1458,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1541,6 +1553,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1625,6 +1638,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4573,6 +4587,116 @@ public class AlloyDBAdminClientHttpJsonTest {
     try {
       String parent = "projects/project-9466/locations/location-9466/clusters/cluster-9466";
       client.listDatabases(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createDatabaseTest() throws Exception {
+    Database expectedResponse =
+        Database.newBuilder()
+            .setName(
+                DatabaseName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[DATABASE]").toString())
+            .setCharset("charset739074380")
+            .setCollation("collation1880293257")
+            .setCharacterType("characterType-1789918717")
+            .setIsTemplate(true)
+            .setDatabaseTemplate("databaseTemplate788436757")
+            .setIsTemplateDatabase(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+    Database database = Database.newBuilder().build();
+    String databaseId = "databaseId1688905718";
+
+    Database actualResponse = client.createDatabase(parent, database, databaseId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createDatabaseExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      Database database = Database.newBuilder().build();
+      String databaseId = "databaseId1688905718";
+      client.createDatabase(parent, database, databaseId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createDatabaseTest2() throws Exception {
+    Database expectedResponse =
+        Database.newBuilder()
+            .setName(
+                DatabaseName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[DATABASE]").toString())
+            .setCharset("charset739074380")
+            .setCollation("collation1880293257")
+            .setCharacterType("characterType-1789918717")
+            .setIsTemplate(true)
+            .setDatabaseTemplate("databaseTemplate788436757")
+            .setIsTemplateDatabase(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-9466/locations/location-9466/clusters/cluster-9466";
+    Database database = Database.newBuilder().build();
+    String databaseId = "databaseId1688905718";
+
+    Database actualResponse = client.createDatabase(parent, database, databaseId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createDatabaseExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-9466/locations/location-9466/clusters/cluster-9466";
+      Database database = Database.newBuilder().build();
+      String databaseId = "databaseId1688905718";
+      client.createDatabase(parent, database, databaseId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,9 +29,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * CrowdCompute console.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1/specialist_pool_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SpecialistPoolServiceGrpc {
 
@@ -591,8 +588,9 @@ public final class SpecialistPoolServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createSpecialistPool(
-        com.google.cloud.aiplatform.v1.CreateSpecialistPoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CreateSpecialistPoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSpecialistPoolMethod(), getCallOptions(), request);
     }
 
@@ -604,8 +602,9 @@ public final class SpecialistPoolServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.SpecialistPool getSpecialistPool(
-        com.google.cloud.aiplatform.v1.GetSpecialistPoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetSpecialistPoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSpecialistPoolMethod(), getCallOptions(), request);
     }
 
@@ -617,8 +616,9 @@ public final class SpecialistPoolServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListSpecialistPoolsResponse listSpecialistPools(
-        com.google.cloud.aiplatform.v1.ListSpecialistPoolsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ListSpecialistPoolsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSpecialistPoolsMethod(), getCallOptions(), request);
     }
 
@@ -630,8 +630,9 @@ public final class SpecialistPoolServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteSpecialistPool(
-        com.google.cloud.aiplatform.v1.DeleteSpecialistPoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DeleteSpecialistPoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSpecialistPoolMethod(), getCallOptions(), request);
     }
 
@@ -643,8 +644,9 @@ public final class SpecialistPoolServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateSpecialistPool(
-        com.google.cloud.aiplatform.v1.UpdateSpecialistPoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.UpdateSpecialistPoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSpecialistPoolMethod(), getCallOptions(), request);
     }
   }

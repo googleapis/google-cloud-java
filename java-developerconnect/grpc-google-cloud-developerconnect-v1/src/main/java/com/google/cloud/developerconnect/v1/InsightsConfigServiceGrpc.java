@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,16 +24,13 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Creates and manages InsightsConfigs.
  * The InsightsConfig resource is the core configuration object to capture
  * events from your Software Development Lifecycle. It acts as the central hub
- * for managing how Developer connect understands your application, its runtime
+ * for managing how Developer Connect understands your application, its runtime
  * environments, and the artifacts deployed within them.
  * A user can create an InsightsConfig, list previously-requested
  * InsightsConfigs or get InsightsConfigs by their ID to determine the status of
  * the InsightsConfig.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/developerconnect/v1/insights_config.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class InsightsConfigServiceGrpc {
 
@@ -292,6 +289,106 @@ public final class InsightsConfigServiceGrpc {
     return getDeleteInsightsConfigMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.GetDeploymentEventRequest,
+          com.google.cloud.developerconnect.v1.DeploymentEvent>
+      getGetDeploymentEventMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDeploymentEvent",
+      requestType = com.google.cloud.developerconnect.v1.GetDeploymentEventRequest.class,
+      responseType = com.google.cloud.developerconnect.v1.DeploymentEvent.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.GetDeploymentEventRequest,
+          com.google.cloud.developerconnect.v1.DeploymentEvent>
+      getGetDeploymentEventMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.developerconnect.v1.GetDeploymentEventRequest,
+            com.google.cloud.developerconnect.v1.DeploymentEvent>
+        getGetDeploymentEventMethod;
+    if ((getGetDeploymentEventMethod = InsightsConfigServiceGrpc.getGetDeploymentEventMethod)
+        == null) {
+      synchronized (InsightsConfigServiceGrpc.class) {
+        if ((getGetDeploymentEventMethod = InsightsConfigServiceGrpc.getGetDeploymentEventMethod)
+            == null) {
+          InsightsConfigServiceGrpc.getGetDeploymentEventMethod =
+              getGetDeploymentEventMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.developerconnect.v1.GetDeploymentEventRequest,
+                          com.google.cloud.developerconnect.v1.DeploymentEvent>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetDeploymentEvent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1.GetDeploymentEventRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1.DeploymentEvent
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new InsightsConfigServiceMethodDescriptorSupplier("GetDeploymentEvent"))
+                      .build();
+        }
+      }
+    }
+    return getGetDeploymentEventMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.ListDeploymentEventsRequest,
+          com.google.cloud.developerconnect.v1.ListDeploymentEventsResponse>
+      getListDeploymentEventsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDeploymentEvents",
+      requestType = com.google.cloud.developerconnect.v1.ListDeploymentEventsRequest.class,
+      responseType = com.google.cloud.developerconnect.v1.ListDeploymentEventsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.ListDeploymentEventsRequest,
+          com.google.cloud.developerconnect.v1.ListDeploymentEventsResponse>
+      getListDeploymentEventsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.developerconnect.v1.ListDeploymentEventsRequest,
+            com.google.cloud.developerconnect.v1.ListDeploymentEventsResponse>
+        getListDeploymentEventsMethod;
+    if ((getListDeploymentEventsMethod = InsightsConfigServiceGrpc.getListDeploymentEventsMethod)
+        == null) {
+      synchronized (InsightsConfigServiceGrpc.class) {
+        if ((getListDeploymentEventsMethod =
+                InsightsConfigServiceGrpc.getListDeploymentEventsMethod)
+            == null) {
+          InsightsConfigServiceGrpc.getListDeploymentEventsMethod =
+              getListDeploymentEventsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.developerconnect.v1.ListDeploymentEventsRequest,
+                          com.google.cloud.developerconnect.v1.ListDeploymentEventsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListDeploymentEvents"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1.ListDeploymentEventsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1.ListDeploymentEventsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new InsightsConfigServiceMethodDescriptorSupplier("ListDeploymentEvents"))
+                      .build();
+        }
+      }
+    }
+    return getListDeploymentEventsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static InsightsConfigServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<InsightsConfigServiceStub> factory =
@@ -353,7 +450,7 @@ public final class InsightsConfigServiceGrpc {
    * Creates and manages InsightsConfigs.
    * The InsightsConfig resource is the core configuration object to capture
    * events from your Software Development Lifecycle. It acts as the central hub
-   * for managing how Developer connect understands your application, its runtime
+   * for managing how Developer Connect understands your application, its runtime
    * environments, and the artifacts deployed within them.
    * A user can create an InsightsConfig, list previously-requested
    * InsightsConfigs or get InsightsConfigs by their ID to determine the status of
@@ -425,7 +522,7 @@ public final class InsightsConfigServiceGrpc {
      *
      *
      * <pre>
-     * Delete a single Insight.
+     * Deletes a single Insight.
      * </pre>
      */
     default void deleteInsightsConfig(
@@ -433,6 +530,37 @@ public final class InsightsConfigServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteInsightsConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a single Deployment Event.
+     * </pre>
+     */
+    default void getDeploymentEvent(
+        com.google.cloud.developerconnect.v1.GetDeploymentEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.DeploymentEvent>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetDeploymentEventMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Deployment Events in a given insights config.
+     * </pre>
+     */
+    default void listDeploymentEvents(
+        com.google.cloud.developerconnect.v1.ListDeploymentEventsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.developerconnect.v1.ListDeploymentEventsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListDeploymentEventsMethod(), responseObserver);
     }
   }
 
@@ -443,7 +571,7 @@ public final class InsightsConfigServiceGrpc {
    * Creates and manages InsightsConfigs.
    * The InsightsConfig resource is the core configuration object to capture
    * events from your Software Development Lifecycle. It acts as the central hub
-   * for managing how Developer connect understands your application, its runtime
+   * for managing how Developer Connect understands your application, its runtime
    * environments, and the artifacts deployed within them.
    * A user can create an InsightsConfig, list previously-requested
    * InsightsConfigs or get InsightsConfigs by their ID to determine the status of
@@ -466,7 +594,7 @@ public final class InsightsConfigServiceGrpc {
    * Creates and manages InsightsConfigs.
    * The InsightsConfig resource is the core configuration object to capture
    * events from your Software Development Lifecycle. It acts as the central hub
-   * for managing how Developer connect understands your application, its runtime
+   * for managing how Developer Connect understands your application, its runtime
    * environments, and the artifacts deployed within them.
    * A user can create an InsightsConfig, list previously-requested
    * InsightsConfigs or get InsightsConfigs by their ID to determine the status of
@@ -556,7 +684,7 @@ public final class InsightsConfigServiceGrpc {
      *
      *
      * <pre>
-     * Delete a single Insight.
+     * Deletes a single Insight.
      * </pre>
      */
     public void deleteInsightsConfig(
@@ -564,6 +692,41 @@ public final class InsightsConfigServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteInsightsConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a single Deployment Event.
+     * </pre>
+     */
+    public void getDeploymentEvent(
+        com.google.cloud.developerconnect.v1.GetDeploymentEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.DeploymentEvent>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetDeploymentEventMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Deployment Events in a given insights config.
+     * </pre>
+     */
+    public void listDeploymentEvents(
+        com.google.cloud.developerconnect.v1.ListDeploymentEventsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.developerconnect.v1.ListDeploymentEventsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListDeploymentEventsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -576,7 +739,7 @@ public final class InsightsConfigServiceGrpc {
    * Creates and manages InsightsConfigs.
    * The InsightsConfig resource is the core configuration object to capture
    * events from your Software Development Lifecycle. It acts as the central hub
-   * for managing how Developer connect understands your application, its runtime
+   * for managing how Developer Connect understands your application, its runtime
    * environments, and the artifacts deployed within them.
    * A user can create an InsightsConfig, list previously-requested
    * InsightsConfigs or get InsightsConfigs by their ID to determine the status of
@@ -604,8 +767,9 @@ public final class InsightsConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.developerconnect.v1.ListInsightsConfigsResponse listInsightsConfigs(
-        com.google.cloud.developerconnect.v1.ListInsightsConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.ListInsightsConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListInsightsConfigsMethod(), getCallOptions(), request);
     }
 
@@ -617,8 +781,9 @@ public final class InsightsConfigServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createInsightsConfig(
-        com.google.cloud.developerconnect.v1.CreateInsightsConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.CreateInsightsConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateInsightsConfigMethod(), getCallOptions(), request);
     }
 
@@ -630,8 +795,9 @@ public final class InsightsConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.developerconnect.v1.InsightsConfig getInsightsConfig(
-        com.google.cloud.developerconnect.v1.GetInsightsConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.GetInsightsConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInsightsConfigMethod(), getCallOptions(), request);
     }
 
@@ -643,8 +809,9 @@ public final class InsightsConfigServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateInsightsConfig(
-        com.google.cloud.developerconnect.v1.UpdateInsightsConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.UpdateInsightsConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateInsightsConfigMethod(), getCallOptions(), request);
     }
 
@@ -652,13 +819,42 @@ public final class InsightsConfigServiceGrpc {
      *
      *
      * <pre>
-     * Delete a single Insight.
+     * Deletes a single Insight.
      * </pre>
      */
     public com.google.longrunning.Operation deleteInsightsConfig(
-        com.google.cloud.developerconnect.v1.DeleteInsightsConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.DeleteInsightsConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteInsightsConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a single Deployment Event.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.DeploymentEvent getDeploymentEvent(
+        com.google.cloud.developerconnect.v1.GetDeploymentEventRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetDeploymentEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Deployment Events in a given insights config.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.ListDeploymentEventsResponse listDeploymentEvents(
+        com.google.cloud.developerconnect.v1.ListDeploymentEventsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListDeploymentEventsMethod(), getCallOptions(), request);
     }
   }
 
@@ -669,7 +865,7 @@ public final class InsightsConfigServiceGrpc {
    * Creates and manages InsightsConfigs.
    * The InsightsConfig resource is the core configuration object to capture
    * events from your Software Development Lifecycle. It acts as the central hub
-   * for managing how Developer connect understands your application, its runtime
+   * for managing how Developer Connect understands your application, its runtime
    * environments, and the artifacts deployed within them.
    * A user can create an InsightsConfig, list previously-requested
    * InsightsConfigs or get InsightsConfigs by their ID to determine the status of
@@ -745,13 +941,39 @@ public final class InsightsConfigServiceGrpc {
      *
      *
      * <pre>
-     * Delete a single Insight.
+     * Deletes a single Insight.
      * </pre>
      */
     public com.google.longrunning.Operation deleteInsightsConfig(
         com.google.cloud.developerconnect.v1.DeleteInsightsConfigRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteInsightsConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a single Deployment Event.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.DeploymentEvent getDeploymentEvent(
+        com.google.cloud.developerconnect.v1.GetDeploymentEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDeploymentEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Deployment Events in a given insights config.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.ListDeploymentEventsResponse listDeploymentEvents(
+        com.google.cloud.developerconnect.v1.ListDeploymentEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDeploymentEventsMethod(), getCallOptions(), request);
     }
   }
 
@@ -763,7 +985,7 @@ public final class InsightsConfigServiceGrpc {
    * Creates and manages InsightsConfigs.
    * The InsightsConfig resource is the core configuration object to capture
    * events from your Software Development Lifecycle. It acts as the central hub
-   * for managing how Developer connect understands your application, its runtime
+   * for managing how Developer Connect understands your application, its runtime
    * environments, and the artifacts deployed within them.
    * A user can create an InsightsConfig, list previously-requested
    * InsightsConfigs or get InsightsConfigs by their ID to determine the status of
@@ -844,7 +1066,7 @@ public final class InsightsConfigServiceGrpc {
      *
      *
      * <pre>
-     * Delete a single Insight.
+     * Deletes a single Insight.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -853,6 +1075,35 @@ public final class InsightsConfigServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteInsightsConfigMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a single Deployment Event.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.developerconnect.v1.DeploymentEvent>
+        getDeploymentEvent(com.google.cloud.developerconnect.v1.GetDeploymentEventRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetDeploymentEventMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Deployment Events in a given insights config.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.developerconnect.v1.ListDeploymentEventsResponse>
+        listDeploymentEvents(
+            com.google.cloud.developerconnect.v1.ListDeploymentEventsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListDeploymentEventsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_INSIGHTS_CONFIGS = 0;
@@ -860,6 +1111,8 @@ public final class InsightsConfigServiceGrpc {
   private static final int METHODID_GET_INSIGHTS_CONFIG = 2;
   private static final int METHODID_UPDATE_INSIGHTS_CONFIG = 3;
   private static final int METHODID_DELETE_INSIGHTS_CONFIG = 4;
+  private static final int METHODID_GET_DEPLOYMENT_EVENT = 5;
+  private static final int METHODID_LIST_DEPLOYMENT_EVENTS = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -905,6 +1158,19 @@ public final class InsightsConfigServiceGrpc {
           serviceImpl.deleteInsightsConfig(
               (com.google.cloud.developerconnect.v1.DeleteInsightsConfigRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_DEPLOYMENT_EVENT:
+          serviceImpl.getDeploymentEvent(
+              (com.google.cloud.developerconnect.v1.GetDeploymentEventRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.DeploymentEvent>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_DEPLOYMENT_EVENTS:
+          serviceImpl.listDeploymentEvents(
+              (com.google.cloud.developerconnect.v1.ListDeploymentEventsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.developerconnect.v1.ListDeploymentEventsResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -956,6 +1222,20 @@ public final class InsightsConfigServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.developerconnect.v1.DeleteInsightsConfigRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_INSIGHTS_CONFIG)))
+        .addMethod(
+            getGetDeploymentEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.developerconnect.v1.GetDeploymentEventRequest,
+                    com.google.cloud.developerconnect.v1.DeploymentEvent>(
+                    service, METHODID_GET_DEPLOYMENT_EVENT)))
+        .addMethod(
+            getListDeploymentEventsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.developerconnect.v1.ListDeploymentEventsRequest,
+                    com.google.cloud.developerconnect.v1.ListDeploymentEventsResponse>(
+                    service, METHODID_LIST_DEPLOYMENT_EVENTS)))
         .build();
   }
 
@@ -1012,6 +1292,8 @@ public final class InsightsConfigServiceGrpc {
                       .addMethod(getGetInsightsConfigMethod())
                       .addMethod(getUpdateInsightsConfigMethod())
                       .addMethod(getDeleteInsightsConfigMethod())
+                      .addMethod(getGetDeploymentEventMethod())
+                      .addMethod(getListDeploymentEventsMethod())
                       .build();
         }
       }

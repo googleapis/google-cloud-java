@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,9 +32,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * (create/read/update/delete) BeyondCorp AppConnectors.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/beyondcorp/appconnectors/v1/app_connectors_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AppConnectorsServiceGrpc {
 
@@ -677,8 +674,9 @@ public final class AppConnectorsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.beyondcorp.appconnectors.v1.ListAppConnectorsResponse listAppConnectors(
-        com.google.cloud.beyondcorp.appconnectors.v1.ListAppConnectorsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.beyondcorp.appconnectors.v1.ListAppConnectorsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAppConnectorsMethod(), getCallOptions(), request);
     }
 
@@ -690,8 +688,9 @@ public final class AppConnectorsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.beyondcorp.appconnectors.v1.AppConnector getAppConnector(
-        com.google.cloud.beyondcorp.appconnectors.v1.GetAppConnectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.beyondcorp.appconnectors.v1.GetAppConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAppConnectorMethod(), getCallOptions(), request);
     }
 
@@ -703,8 +702,9 @@ public final class AppConnectorsServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAppConnector(
-        com.google.cloud.beyondcorp.appconnectors.v1.CreateAppConnectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.beyondcorp.appconnectors.v1.CreateAppConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAppConnectorMethod(), getCallOptions(), request);
     }
 
@@ -716,8 +716,9 @@ public final class AppConnectorsServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateAppConnector(
-        com.google.cloud.beyondcorp.appconnectors.v1.UpdateAppConnectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.beyondcorp.appconnectors.v1.UpdateAppConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAppConnectorMethod(), getCallOptions(), request);
     }
 
@@ -729,8 +730,9 @@ public final class AppConnectorsServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteAppConnector(
-        com.google.cloud.beyondcorp.appconnectors.v1.DeleteAppConnectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.beyondcorp.appconnectors.v1.DeleteAppConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAppConnectorMethod(), getCallOptions(), request);
     }
 
@@ -742,8 +744,9 @@ public final class AppConnectorsServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation reportStatus(
-        com.google.cloud.beyondcorp.appconnectors.v1.ReportStatusRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.beyondcorp.appconnectors.v1.ReportStatusRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReportStatusMethod(), getCallOptions(), request);
     }
   }

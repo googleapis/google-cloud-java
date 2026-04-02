@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -149,6 +149,7 @@ public class GrpcGroundedGenerationServiceStub extends GroundedGenerationService
                       builder.add("location", String.valueOf(request.getLocation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getLocation())
                 .build();
     GrpcCallSettings<GenerateGroundedContentRequest, GenerateGroundedContentResponse>
         generateGroundedContentTransportSettings =
@@ -161,6 +162,7 @@ public class GrpcGroundedGenerationServiceStub extends GroundedGenerationService
                       builder.add("location", String.valueOf(request.getLocation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getLocation())
                 .build();
     GrpcCallSettings<CheckGroundingRequest, CheckGroundingResponse>
         checkGroundingTransportSettings =
@@ -172,6 +174,7 @@ public class GrpcGroundedGenerationServiceStub extends GroundedGenerationService
                       builder.add("grounding_config", String.valueOf(request.getGroundingConfig()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getGroundingConfig())
                 .build();
 
     this.streamGenerateGroundedContentCallable =

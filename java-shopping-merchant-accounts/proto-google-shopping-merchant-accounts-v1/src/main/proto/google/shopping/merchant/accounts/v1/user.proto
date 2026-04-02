@@ -1,4 +1,4 @@
-// Copyright 2025 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -57,8 +57,7 @@ service UserService {
 
   // Deletes a Merchant Center account user. Executing this method requires
   // admin access. The user to be deleted can't be the last admin user of that
-  // account. Also a user is protected from deletion if it
-  // is managed by Business Manager"
+  // account.
   rpc DeleteUser(DeleteUserRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {
       delete: "/accounts/v1/{name=accounts/*/users/*}"
@@ -83,9 +82,19 @@ service UserService {
     };
     option (google.api.method_signature) = "parent";
   }
+
+  // Updates the user that is represented by the caller from pending to
+  // verified.
+  rpc VerifySelf(VerifySelfRequest) returns (User) {
+    option (google.api.http) = {
+      patch: "/accounts/v1/{account=accounts/*}/users/me:verifySelf"
+      body: "*"
+    };
+    option (google.api.method_signature) = "account";
+  }
 }
 
-// The `User` message represents a user associated with a Merchant Center
+// The `User` resource represents a user associated with a Merchant Center
 // account. It is used to manage user permissions and access rights within the
 // account. For more information, see [Frequently asked questions about people
 // and access levels](//support.google.com/merchants/answer/12160472).
@@ -97,7 +106,9 @@ message User {
     singular: "user"
   };
 
-  // The possible states of a user.
+  // The state represents the possible statuses of a user. It is an output-only
+  // field that is set to `PENDING` when a user is invited to an account and
+  // changes to `VERIFIED` once the user accepts the invitation.
   enum State {
     // Default value. This value is unused.
     STATE_UNSPECIFIED = 0;
@@ -227,4 +238,16 @@ message ListUsersResponse {
   // A token, which can be sent as `page_token` to retrieve the next page.
   // If this field is omitted, there are no subsequent pages.
   string next_page_token = 2;
+}
+
+// Request message for the `VerifySelf` method.
+message VerifySelfRequest {
+  // Required. The name of the account under which the caller is a user.
+  // Format: `accounts/{account}`
+  string account = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "merchantapi.googleapis.com/Account"
+    }
+  ];
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
@@ -41,6 +42,7 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
 import com.google.shopping.merchant.accounts.v1.DeveloperRegistration;
+import com.google.shopping.merchant.accounts.v1.GetAccountForGcpRegistrationResponse;
 import com.google.shopping.merchant.accounts.v1.GetDeveloperRegistrationRequest;
 import com.google.shopping.merchant.accounts.v1.RegisterGcpRequest;
 import com.google.shopping.merchant.accounts.v1.UnregisterGcpRequest;
@@ -97,10 +99,11 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @Generated("by gapic-generator-java")
+@SuppressWarnings("CanonicalDuration")
 public class DeveloperRegistrationServiceStubSettings
     extends StubSettings<DeveloperRegistrationServiceStubSettings> {
   /** The default scopes of the service. */
@@ -111,6 +114,8 @@ public class DeveloperRegistrationServiceStubSettings
   private final UnaryCallSettings<GetDeveloperRegistrationRequest, DeveloperRegistration>
       getDeveloperRegistrationSettings;
   private final UnaryCallSettings<UnregisterGcpRequest, Empty> unregisterGcpSettings;
+  private final UnaryCallSettings<Empty, GetAccountForGcpRegistrationResponse>
+      getAccountForGcpRegistrationSettings;
 
   /** Returns the object with the settings used for calls to registerGcp. */
   public UnaryCallSettings<RegisterGcpRequest, DeveloperRegistration> registerGcpSettings() {
@@ -126,6 +131,12 @@ public class DeveloperRegistrationServiceStubSettings
   /** Returns the object with the settings used for calls to unregisterGcp. */
   public UnaryCallSettings<UnregisterGcpRequest, Empty> unregisterGcpSettings() {
     return unregisterGcpSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAccountForGcpRegistration. */
+  public UnaryCallSettings<Empty, GetAccountForGcpRegistrationResponse>
+      getAccountForGcpRegistrationSettings() {
+    return getAccountForGcpRegistrationSettings;
   }
 
   public DeveloperRegistrationServiceStub createStub() throws IOException {
@@ -244,6 +255,17 @@ public class DeveloperRegistrationServiceStubSettings
     registerGcpSettings = settingsBuilder.registerGcpSettings().build();
     getDeveloperRegistrationSettings = settingsBuilder.getDeveloperRegistrationSettings().build();
     unregisterGcpSettings = settingsBuilder.unregisterGcpSettings().build();
+    getAccountForGcpRegistrationSettings =
+        settingsBuilder.getAccountForGcpRegistrationSettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.shopping:google-shopping-merchant-accounts")
+        .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
+        .build();
   }
 
   /** Builder for DeveloperRegistrationServiceStubSettings. */
@@ -255,6 +277,8 @@ public class DeveloperRegistrationServiceStubSettings
     private final UnaryCallSettings.Builder<GetDeveloperRegistrationRequest, DeveloperRegistration>
         getDeveloperRegistrationSettings;
     private final UnaryCallSettings.Builder<UnregisterGcpRequest, Empty> unregisterGcpSettings;
+    private final UnaryCallSettings.Builder<Empty, GetAccountForGcpRegistrationResponse>
+        getAccountForGcpRegistrationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -296,10 +320,14 @@ public class DeveloperRegistrationServiceStubSettings
       registerGcpSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getDeveloperRegistrationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       unregisterGcpSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getAccountForGcpRegistrationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              registerGcpSettings, getDeveloperRegistrationSettings, unregisterGcpSettings);
+              registerGcpSettings,
+              getDeveloperRegistrationSettings,
+              unregisterGcpSettings,
+              getAccountForGcpRegistrationSettings);
       initDefaults(this);
     }
 
@@ -309,10 +337,15 @@ public class DeveloperRegistrationServiceStubSettings
       registerGcpSettings = settings.registerGcpSettings.toBuilder();
       getDeveloperRegistrationSettings = settings.getDeveloperRegistrationSettings.toBuilder();
       unregisterGcpSettings = settings.unregisterGcpSettings.toBuilder();
+      getAccountForGcpRegistrationSettings =
+          settings.getAccountForGcpRegistrationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              registerGcpSettings, getDeveloperRegistrationSettings, unregisterGcpSettings);
+              registerGcpSettings,
+              getDeveloperRegistrationSettings,
+              unregisterGcpSettings,
+              getAccountForGcpRegistrationSettings);
     }
 
     private static Builder createDefault() {
@@ -355,6 +388,11 @@ public class DeveloperRegistrationServiceStubSettings
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
+      builder
+          .getAccountForGcpRegistrationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
       return builder;
     }
 
@@ -388,6 +426,12 @@ public class DeveloperRegistrationServiceStubSettings
     /** Returns the builder for the settings used for calls to unregisterGcp. */
     public UnaryCallSettings.Builder<UnregisterGcpRequest, Empty> unregisterGcpSettings() {
       return unregisterGcpSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAccountForGcpRegistration. */
+    public UnaryCallSettings.Builder<Empty, GetAccountForGcpRegistrationResponse>
+        getAccountForGcpRegistrationSettings() {
+      return getAccountForGcpRegistrationSettings;
     }
 
     @Override

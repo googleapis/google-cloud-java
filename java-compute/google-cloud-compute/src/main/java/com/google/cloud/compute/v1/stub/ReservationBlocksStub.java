@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,12 +21,17 @@ import static com.google.cloud.compute.v1.ReservationBlocksClient.ListPagedRespo
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.GetIamPolicyReservationBlockRequest;
 import com.google.cloud.compute.v1.GetReservationBlockRequest;
 import com.google.cloud.compute.v1.ListReservationBlocksRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PerformMaintenanceReservationBlockRequest;
+import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.ReservationBlocksGetResponse;
 import com.google.cloud.compute.v1.ReservationBlocksListResponse;
+import com.google.cloud.compute.v1.SetIamPolicyReservationBlockRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsReservationBlockRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -40,6 +45,10 @@ public abstract class ReservationBlocksStub implements BackgroundResource {
 
   public UnaryCallable<GetReservationBlockRequest, ReservationBlocksGetResponse> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public UnaryCallable<GetIamPolicyReservationBlockRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
   }
 
   public UnaryCallable<ListReservationBlocksRequest, ListPagedResponse> listPagedCallable() {
@@ -59,6 +68,15 @@ public abstract class ReservationBlocksStub implements BackgroundResource {
   public UnaryCallable<PerformMaintenanceReservationBlockRequest, Operation>
       performMaintenanceCallable() {
     throw new UnsupportedOperationException("Not implemented: performMaintenanceCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyReservationBlockRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsReservationBlockRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

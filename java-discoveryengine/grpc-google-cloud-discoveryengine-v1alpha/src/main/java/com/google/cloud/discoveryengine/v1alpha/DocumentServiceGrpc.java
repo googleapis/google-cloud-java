@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * customer's website.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1alpha/document_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DocumentServiceGrpc {
 
@@ -929,8 +926,9 @@ public final class DocumentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.Document getDocument(
-        com.google.cloud.discoveryengine.v1alpha.GetDocumentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.GetDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDocumentMethod(), getCallOptions(), request);
     }
 
@@ -942,8 +940,9 @@ public final class DocumentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.ListDocumentsResponse listDocuments(
-        com.google.cloud.discoveryengine.v1alpha.ListDocumentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.ListDocumentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDocumentsMethod(), getCallOptions(), request);
     }
 
@@ -955,8 +954,9 @@ public final class DocumentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.Document createDocument(
-        com.google.cloud.discoveryengine.v1alpha.CreateDocumentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.CreateDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDocumentMethod(), getCallOptions(), request);
     }
 
@@ -968,8 +968,9 @@ public final class DocumentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.Document updateDocument(
-        com.google.cloud.discoveryengine.v1alpha.UpdateDocumentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.UpdateDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDocumentMethod(), getCallOptions(), request);
     }
 
@@ -981,8 +982,9 @@ public final class DocumentServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteDocument(
-        com.google.cloud.discoveryengine.v1alpha.DeleteDocumentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.DeleteDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDocumentMethod(), getCallOptions(), request);
     }
 
@@ -999,8 +1001,9 @@ public final class DocumentServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importDocuments(
-        com.google.cloud.discoveryengine.v1alpha.ImportDocumentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.ImportDocumentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportDocumentsMethod(), getCallOptions(), request);
     }
 
@@ -1026,8 +1029,9 @@ public final class DocumentServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation purgeDocuments(
-        com.google.cloud.discoveryengine.v1alpha.PurgeDocumentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.PurgeDocumentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPurgeDocumentsMethod(), getCallOptions(), request);
     }
 
@@ -1040,8 +1044,9 @@ public final class DocumentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.ProcessedDocument getProcessedDocument(
-        com.google.cloud.discoveryengine.v1alpha.GetProcessedDocumentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.GetProcessedDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetProcessedDocumentMethod(), getCallOptions(), request);
     }
 
@@ -1056,8 +1061,9 @@ public final class DocumentServiceGrpc {
      */
     public com.google.cloud.discoveryengine.v1alpha.BatchGetDocumentsMetadataResponse
         batchGetDocumentsMetadata(
-            com.google.cloud.discoveryengine.v1alpha.BatchGetDocumentsMetadataRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.discoveryengine.v1alpha.BatchGetDocumentsMetadataRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchGetDocumentsMetadataMethod(), getCallOptions(), request);
     }
   }

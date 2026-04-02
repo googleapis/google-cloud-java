@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,9 +33,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * determine these resources violate the newly set OrgPolicy.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/policysimulator/v1/orgpolicy.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class OrgPolicyViolationsPreviewServiceGrpc {
 
@@ -595,8 +592,9 @@ public final class OrgPolicyViolationsPreviewServiceGrpc {
      */
     public com.google.cloud.policysimulator.v1.ListOrgPolicyViolationsPreviewsResponse
         listOrgPolicyViolationsPreviews(
-            com.google.cloud.policysimulator.v1.ListOrgPolicyViolationsPreviewsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.policysimulator.v1.ListOrgPolicyViolationsPreviewsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListOrgPolicyViolationsPreviewsMethod(), getCallOptions(), request);
     }
 
@@ -613,8 +611,9 @@ public final class OrgPolicyViolationsPreviewServiceGrpc {
      */
     public com.google.cloud.policysimulator.v1.OrgPolicyViolationsPreview
         getOrgPolicyViolationsPreview(
-            com.google.cloud.policysimulator.v1.GetOrgPolicyViolationsPreviewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.policysimulator.v1.GetOrgPolicyViolationsPreviewRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetOrgPolicyViolationsPreviewMethod(), getCallOptions(), request);
     }
 
@@ -631,8 +630,9 @@ public final class OrgPolicyViolationsPreviewServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createOrgPolicyViolationsPreview(
-        com.google.cloud.policysimulator.v1.CreateOrgPolicyViolationsPreviewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.policysimulator.v1.CreateOrgPolicyViolationsPreviewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateOrgPolicyViolationsPreviewMethod(), getCallOptions(), request);
     }
 
@@ -647,8 +647,9 @@ public final class OrgPolicyViolationsPreviewServiceGrpc {
      */
     public com.google.cloud.policysimulator.v1.ListOrgPolicyViolationsResponse
         listOrgPolicyViolations(
-            com.google.cloud.policysimulator.v1.ListOrgPolicyViolationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.policysimulator.v1.ListOrgPolicyViolationsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListOrgPolicyViolationsMethod(), getCallOptions(), request);
     }
   }

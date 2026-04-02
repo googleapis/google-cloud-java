@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.visionai.v1.stub;
 
 import static com.google.cloud.visionai.v1.StreamsServiceClient.ListClustersPagedResponse;
 import static com.google.cloud.visionai.v1.StreamsServiceClient.ListEventsPagedResponse;
+import static com.google.cloud.visionai.v1.StreamsServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.visionai.v1.StreamsServiceClient.ListSeriesPagedResponse;
 import static com.google.cloud.visionai.v1.StreamsServiceClient.ListStreamsPagedResponse;
 
@@ -37,6 +38,10 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.visionai.v1.Channel;
 import com.google.cloud.visionai.v1.Cluster;
 import com.google.cloud.visionai.v1.CreateClusterRequest;
@@ -1001,6 +1006,74 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
+      listLocationsMethodDescriptor =
+          ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+              .setFullMethodName("google.cloud.location.Locations/ListLocations")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListLocationsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*}/locations",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListLocationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListLocationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListLocationsResponse>newBuilder()
+                      .setDefaultInstance(ListLocationsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetLocationRequest, Location>
+      getLocationMethodDescriptor =
+          ApiMethodDescriptor.<GetLocationRequest, Location>newBuilder()
+              .setFullMethodName("google.cloud.location.Locations/GetLocation")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetLocationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetLocationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetLocationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Location>newBuilder()
+                      .setDefaultInstance(Location.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable;
   private final UnaryCallable<ListClustersRequest, ListClustersPagedResponse>
       listClustersPagedCallable;
@@ -1060,6 +1133,10 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
   private final UnaryCallable<MaterializeChannelRequest, Operation> materializeChannelCallable;
   private final OperationCallable<MaterializeChannelRequest, Channel, OperationMetadata>
       materializeChannelOperationCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable;
+  private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -1174,6 +1251,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
         HttpJsonCallSettings.<GetClusterRequest, Cluster>newBuilder()
@@ -1185,6 +1263,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
         HttpJsonCallSettings.<CreateClusterRequest, Operation>newBuilder()
@@ -1196,6 +1275,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateClusterRequest, Operation> updateClusterTransportSettings =
         HttpJsonCallSettings.<UpdateClusterRequest, Operation>newBuilder()
@@ -1218,6 +1298,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListStreamsRequest, ListStreamsResponse> listStreamsTransportSettings =
         HttpJsonCallSettings.<ListStreamsRequest, ListStreamsResponse>newBuilder()
@@ -1229,6 +1310,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetStreamRequest, Stream> getStreamTransportSettings =
         HttpJsonCallSettings.<GetStreamRequest, Stream>newBuilder()
@@ -1240,6 +1322,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateStreamRequest, Operation> createStreamTransportSettings =
         HttpJsonCallSettings.<CreateStreamRequest, Operation>newBuilder()
@@ -1251,6 +1334,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateStreamRequest, Operation> updateStreamTransportSettings =
         HttpJsonCallSettings.<UpdateStreamRequest, Operation>newBuilder()
@@ -1273,6 +1357,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetStreamThumbnailRequest, Operation> getStreamThumbnailTransportSettings =
         HttpJsonCallSettings.<GetStreamThumbnailRequest, Operation>newBuilder()
@@ -1308,6 +1393,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetEventRequest, Event> getEventTransportSettings =
         HttpJsonCallSettings.<GetEventRequest, Event>newBuilder()
@@ -1319,6 +1405,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateEventRequest, Operation> createEventTransportSettings =
         HttpJsonCallSettings.<CreateEventRequest, Operation>newBuilder()
@@ -1330,6 +1417,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateEventRequest, Operation> updateEventTransportSettings =
         HttpJsonCallSettings.<UpdateEventRequest, Operation>newBuilder()
@@ -1352,6 +1440,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListSeriesRequest, ListSeriesResponse> listSeriesTransportSettings =
         HttpJsonCallSettings.<ListSeriesRequest, ListSeriesResponse>newBuilder()
@@ -1363,6 +1452,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetSeriesRequest, Series> getSeriesTransportSettings =
         HttpJsonCallSettings.<GetSeriesRequest, Series>newBuilder()
@@ -1374,6 +1464,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateSeriesRequest, Operation> createSeriesTransportSettings =
         HttpJsonCallSettings.<CreateSeriesRequest, Operation>newBuilder()
@@ -1385,6 +1476,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateSeriesRequest, Operation> updateSeriesTransportSettings =
         HttpJsonCallSettings.<UpdateSeriesRequest, Operation>newBuilder()
@@ -1407,6 +1499,7 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<MaterializeChannelRequest, Operation> materializeChannelTransportSettings =
         HttpJsonCallSettings.<MaterializeChannelRequest, Operation>newBuilder()
@@ -1416,6 +1509,30 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
+        listLocationsTransportSettings =
+            HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+                .setMethodDescriptor(listLocationsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
+        HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
+            .setMethodDescriptor(getLocationMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
             .build();
@@ -1591,6 +1708,15 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
             settings.materializeChannelOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.listLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.listLocationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.getLocationCallable =
+        callableFactory.createUnaryCallable(
+            getLocationTransportSettings, settings.getLocationSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1622,6 +1748,8 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
     methodDescriptors.add(updateSeriesMethodDescriptor);
     methodDescriptors.add(deleteSeriesMethodDescriptor);
     methodDescriptors.add(materializeChannelMethodDescriptor);
+    methodDescriptors.add(listLocationsMethodDescriptor);
+    methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -1847,6 +1975,22 @@ public class HttpJsonStreamsServiceStub extends StreamsServiceStub {
   public OperationCallable<MaterializeChannelRequest, Channel, OperationMetadata>
       materializeChannelOperationCallable() {
     return materializeChannelOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return listLocationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return getLocationCallable;
   }
 
   @Override

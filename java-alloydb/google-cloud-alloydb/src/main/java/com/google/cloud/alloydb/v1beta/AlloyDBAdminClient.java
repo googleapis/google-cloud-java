@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -785,6 +785,25 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> listDatabasesPagedCallable()
  *           <li><p> listDatabasesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateDatabase</td>
+ *      <td><p> Creates a new Database in a given project, location, and cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createDatabase(CreateDatabaseRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createDatabase(ClusterName parent, Database database, String databaseId)
+ *           <li><p> createDatabase(String parent, Database database, String databaseId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createDatabaseCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -4447,6 +4466,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    *           .setDatabase("database1789464955")
    *           .setUser("user3599307")
    *           .setSqlStatement("sqlStatement937767745")
+   *           .setValidateOnly(true)
    *           .build();
    *   ExecuteSqlResponse response = alloyDBAdminClient.executeSql(request);
    * }
@@ -4479,6 +4499,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    *           .setDatabase("database1789464955")
    *           .setUser("user3599307")
    *           .setSqlStatement("sqlStatement937767745")
+   *           .setValidateOnly(true)
    *           .build();
    *   ApiFuture<ExecuteSqlResponse> future =
    *       alloyDBAdminClient.executeSqlCallable().futureCall(request);
@@ -6428,6 +6449,135 @@ public class AlloyDBAdminClient implements BackgroundResource {
    */
   public final UnaryCallable<ListDatabasesRequest, ListDatabasesResponse> listDatabasesCallable() {
     return stub.listDatabasesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Database in a given project, location, and cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+   *   Database database = Database.newBuilder().build();
+   *   String databaseId = "databaseId1688905718";
+   *   Database response = alloyDBAdminClient.createDatabase(parent, database, databaseId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Value for parent.
+   * @param database Required. The resource being created.
+   * @param databaseId Required. ID of the requesting object.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Database createDatabase(ClusterName parent, Database database, String databaseId) {
+    CreateDatabaseRequest request =
+        CreateDatabaseRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setDatabase(database)
+            .setDatabaseId(databaseId)
+            .build();
+    return createDatabase(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Database in a given project, location, and cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   String parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString();
+   *   Database database = Database.newBuilder().build();
+   *   String databaseId = "databaseId1688905718";
+   *   Database response = alloyDBAdminClient.createDatabase(parent, database, databaseId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Value for parent.
+   * @param database Required. The resource being created.
+   * @param databaseId Required. ID of the requesting object.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Database createDatabase(String parent, Database database, String databaseId) {
+    CreateDatabaseRequest request =
+        CreateDatabaseRequest.newBuilder()
+            .setParent(parent)
+            .setDatabase(database)
+            .setDatabaseId(databaseId)
+            .build();
+    return createDatabase(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Database in a given project, location, and cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   CreateDatabaseRequest request =
+   *       CreateDatabaseRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setDatabaseId("databaseId1688905718")
+   *           .setDatabase(Database.newBuilder().build())
+   *           .build();
+   *   Database response = alloyDBAdminClient.createDatabase(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Database createDatabase(CreateDatabaseRequest request) {
+    return createDatabaseCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Database in a given project, location, and cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   CreateDatabaseRequest request =
+   *       CreateDatabaseRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setDatabaseId("databaseId1688905718")
+   *           .setDatabase(Database.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Database> future = alloyDBAdminClient.createDatabaseCallable().futureCall(request);
+   *   // Do something.
+   *   Database response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateDatabaseRequest, Database> createDatabaseCallable() {
+    return stub.createDatabaseCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

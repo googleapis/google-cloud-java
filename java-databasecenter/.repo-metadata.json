@@ -1,0 +1,16 @@
+{
+  "api_shortname": "databasecenter",
+  "name_pretty": "Database Center API",
+  "product_documentation": "https://cloud.google.com/database-center/docs/overview",
+  "api_description": "Database Center provides an organization-wide, cross-product fleet health platform to eliminate the overhead, complexity, and risk associated with aggregating and summarizing health signals through custom dashboards. Through Database Center\u2019s fleet health dashboard and API, database platform teams that are responsible for reliability, compliance, security, cost, and administration of database fleets will now have a single pane of glass that pinpoints issues relevant to each team.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-databasecenter/latest/overview",
+  "release_level": "preview",
+  "transport": "both",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-databasecenter",
+  "distribution_name": "com.google.cloud:google-cloud-databasecenter",
+  "api_id": "databasecenter.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -292,6 +292,7 @@ public class HttpJsonUserServiceStub extends UserServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateUserRequest, User> createUserTransportSettings =
         HttpJsonCallSettings.<CreateUserRequest, User>newBuilder()
@@ -303,6 +304,7 @@ public class HttpJsonUserServiceStub extends UserServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteUserRequest, Empty> deleteUserTransportSettings =
         HttpJsonCallSettings.<DeleteUserRequest, Empty>newBuilder()
@@ -314,6 +316,7 @@ public class HttpJsonUserServiceStub extends UserServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateUserRequest, User> updateUserTransportSettings =
         HttpJsonCallSettings.<UpdateUserRequest, User>newBuilder()
@@ -336,6 +339,7 @@ public class HttpJsonUserServiceStub extends UserServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.getUserCallable =

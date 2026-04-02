@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,13 +21,10 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Provides a method to create and modify Google Cloud Dataflow jobs.
- * A Job is a multi-stage computation graph run by the Cloud Dataflow service.
+ * Provides a method to create and modify Dataflow jobs.
+ * A Job is a multi-stage computation graph run by the Dataflow service.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/dataflow/v1beta3/jobs.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class JobsV1Beta3Grpc {
 
@@ -388,8 +385,8 @@ public final class JobsV1Beta3Grpc {
    *
    *
    * <pre>
-   * Provides a method to create and modify Google Cloud Dataflow jobs.
-   * A Job is a multi-stage computation graph run by the Cloud Dataflow service.
+   * Provides a method to create and modify Dataflow jobs.
+   * A Job is a multi-stage computation graph run by the Dataflow service.
    * </pre>
    */
   public interface AsyncService {
@@ -398,7 +395,7 @@ public final class JobsV1Beta3Grpc {
      *
      *
      * <pre>
-     * Creates a Cloud Dataflow job.
+     * Creates a Dataflow job.
      * To create a job, we recommend using `projects.locations.jobs.create` with a
      * [regional endpoint]
      * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
@@ -524,8 +521,8 @@ public final class JobsV1Beta3Grpc {
    * Base class for the server implementation of the service JobsV1Beta3.
    *
    * <pre>
-   * Provides a method to create and modify Google Cloud Dataflow jobs.
-   * A Job is a multi-stage computation graph run by the Cloud Dataflow service.
+   * Provides a method to create and modify Dataflow jobs.
+   * A Job is a multi-stage computation graph run by the Dataflow service.
    * </pre>
    */
   public abstract static class JobsV1Beta3ImplBase
@@ -541,8 +538,8 @@ public final class JobsV1Beta3Grpc {
    * A stub to allow clients to do asynchronous rpc calls to service JobsV1Beta3.
    *
    * <pre>
-   * Provides a method to create and modify Google Cloud Dataflow jobs.
-   * A Job is a multi-stage computation graph run by the Cloud Dataflow service.
+   * Provides a method to create and modify Dataflow jobs.
+   * A Job is a multi-stage computation graph run by the Dataflow service.
    * </pre>
    */
   public static final class JobsV1Beta3Stub
@@ -560,7 +557,7 @@ public final class JobsV1Beta3Grpc {
      *
      *
      * <pre>
-     * Creates a Cloud Dataflow job.
+     * Creates a Dataflow job.
      * To create a job, we recommend using `projects.locations.jobs.create` with a
      * [regional endpoint]
      * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
@@ -696,8 +693,8 @@ public final class JobsV1Beta3Grpc {
    * A stub to allow clients to do synchronous rpc calls to service JobsV1Beta3.
    *
    * <pre>
-   * Provides a method to create and modify Google Cloud Dataflow jobs.
-   * A Job is a multi-stage computation graph run by the Cloud Dataflow service.
+   * Provides a method to create and modify Dataflow jobs.
+   * A Job is a multi-stage computation graph run by the Dataflow service.
    * </pre>
    */
   public static final class JobsV1Beta3BlockingV2Stub
@@ -716,7 +713,7 @@ public final class JobsV1Beta3Grpc {
      *
      *
      * <pre>
-     * Creates a Cloud Dataflow job.
+     * Creates a Dataflow job.
      * To create a job, we recommend using `projects.locations.jobs.create` with a
      * [regional endpoint]
      * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
@@ -727,8 +724,8 @@ public final class JobsV1Beta3Grpc {
      * </pre>
      */
     public com.google.dataflow.v1beta3.Job createJob(
-        com.google.dataflow.v1beta3.CreateJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.dataflow.v1beta3.CreateJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateJobMethod(), getCallOptions(), request);
     }
 
@@ -744,9 +741,9 @@ public final class JobsV1Beta3Grpc {
      * jobs that are running in `us-central1`.
      * </pre>
      */
-    public com.google.dataflow.v1beta3.Job getJob(
-        com.google.dataflow.v1beta3.GetJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.dataflow.v1beta3.Job getJob(com.google.dataflow.v1beta3.GetJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetJobMethod(), getCallOptions(), request);
     }
 
@@ -763,8 +760,8 @@ public final class JobsV1Beta3Grpc {
      * </pre>
      */
     public com.google.dataflow.v1beta3.Job updateJob(
-        com.google.dataflow.v1beta3.UpdateJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.dataflow.v1beta3.UpdateJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateJobMethod(), getCallOptions(), request);
     }
 
@@ -785,8 +782,8 @@ public final class JobsV1Beta3Grpc {
      * </pre>
      */
     public com.google.dataflow.v1beta3.ListJobsResponse listJobs(
-        com.google.dataflow.v1beta3.ListJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.dataflow.v1beta3.ListJobsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListJobsMethod(), getCallOptions(), request);
     }
 
@@ -800,8 +797,8 @@ public final class JobsV1Beta3Grpc {
      * </pre>
      */
     public com.google.dataflow.v1beta3.ListJobsResponse aggregatedListJobs(
-        com.google.dataflow.v1beta3.ListJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.dataflow.v1beta3.ListJobsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAggregatedListJobsMethod(), getCallOptions(), request);
     }
 
@@ -813,8 +810,8 @@ public final class JobsV1Beta3Grpc {
      * </pre>
      */
     public com.google.dataflow.v1beta3.CheckActiveJobsResponse checkActiveJobs(
-        com.google.dataflow.v1beta3.CheckActiveJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.dataflow.v1beta3.CheckActiveJobsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCheckActiveJobsMethod(), getCallOptions(), request);
     }
 
@@ -826,8 +823,8 @@ public final class JobsV1Beta3Grpc {
      * </pre>
      */
     public com.google.dataflow.v1beta3.Snapshot snapshotJob(
-        com.google.dataflow.v1beta3.SnapshotJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.dataflow.v1beta3.SnapshotJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSnapshotJobMethod(), getCallOptions(), request);
     }
   }
@@ -836,8 +833,8 @@ public final class JobsV1Beta3Grpc {
    * A stub to allow clients to do limited synchronous rpc calls to service JobsV1Beta3.
    *
    * <pre>
-   * Provides a method to create and modify Google Cloud Dataflow jobs.
-   * A Job is a multi-stage computation graph run by the Cloud Dataflow service.
+   * Provides a method to create and modify Dataflow jobs.
+   * A Job is a multi-stage computation graph run by the Dataflow service.
    * </pre>
    */
   public static final class JobsV1Beta3BlockingStub
@@ -856,7 +853,7 @@ public final class JobsV1Beta3Grpc {
      *
      *
      * <pre>
-     * Creates a Cloud Dataflow job.
+     * Creates a Dataflow job.
      * To create a job, we recommend using `projects.locations.jobs.create` with a
      * [regional endpoint]
      * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
@@ -976,8 +973,8 @@ public final class JobsV1Beta3Grpc {
    * A stub to allow clients to do ListenableFuture-style rpc calls to service JobsV1Beta3.
    *
    * <pre>
-   * Provides a method to create and modify Google Cloud Dataflow jobs.
-   * A Job is a multi-stage computation graph run by the Cloud Dataflow service.
+   * Provides a method to create and modify Dataflow jobs.
+   * A Job is a multi-stage computation graph run by the Dataflow service.
    * </pre>
    */
   public static final class JobsV1Beta3FutureStub
@@ -996,7 +993,7 @@ public final class JobsV1Beta3Grpc {
      *
      *
      * <pre>
-     * Creates a Cloud Dataflow job.
+     * Creates a Dataflow job.
      * To create a job, we recommend using `projects.locations.jobs.create` with a
      * [regional endpoint]
      * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using

@@ -415,6 +415,9 @@
             "FetchFeatureValues": {
               "methods": ["fetchFeatureValues", "fetchFeatureValues", "fetchFeatureValues", "fetchFeatureValuesCallable"]
             },
+            "GenerateFetchAccessToken": {
+              "methods": ["generateFetchAccessToken", "generateFetchAccessTokenCallable"]
+            },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
             },
@@ -1007,7 +1010,7 @@
           "libraryClient": "MemoryBankServiceClient",
           "rpcs": {
             "CreateMemory": {
-              "methods": ["createMemoryAsync", "createMemoryOperationCallable", "createMemoryCallable"]
+              "methods": ["createMemoryAsync", "createMemoryAsync", "createMemoryAsync", "createMemoryOperationCallable", "createMemoryCallable"]
             },
             "DeleteMemory": {
               "methods": ["deleteMemoryAsync", "deleteMemoryAsync", "deleteMemoryAsync", "deleteMemoryOperationCallable", "deleteMemoryCallable"]
@@ -1573,6 +1576,9 @@
             "DirectRawPredict": {
               "methods": ["directRawPredict", "directRawPredictCallable"]
             },
+            "EmbedContent": {
+              "methods": ["embedContent", "embedContent", "embedContent", "embedContentCallable"]
+            },
             "Explain": {
               "methods": ["explain", "explain", "explain", "explainCallable"]
             },
@@ -1748,7 +1754,7 @@
               "methods": ["appendEvent", "appendEvent", "appendEvent", "appendEventCallable"]
             },
             "CreateSession": {
-              "methods": ["createSessionAsync", "createSessionAsync", "createSessionAsync", "createSessionOperationCallable", "createSessionCallable"]
+              "methods": ["createSessionAsync", "createSessionAsync", "createSessionAsync", "createSessionAsync", "createSessionAsync", "createSessionOperationCallable", "createSessionCallable"]
             },
             "DeleteSession": {
               "methods": ["deleteSessionAsync", "deleteSessionAsync", "deleteSessionAsync", "deleteSessionOperationCallable", "deleteSessionCallable"]
@@ -1942,14 +1948,38 @@
         "grpc": {
           "libraryClient": "VertexRagDataServiceClient",
           "rpcs": {
+            "BatchCreateRagDataSchemas": {
+              "methods": ["batchCreateRagDataSchemasAsync", "batchCreateRagDataSchemasOperationCallable", "batchCreateRagDataSchemasCallable"]
+            },
+            "BatchCreateRagMetadata": {
+              "methods": ["batchCreateRagMetadataAsync", "batchCreateRagMetadataOperationCallable", "batchCreateRagMetadataCallable"]
+            },
+            "BatchDeleteRagDataSchemas": {
+              "methods": ["batchDeleteRagDataSchemasAsync", "batchDeleteRagDataSchemasOperationCallable", "batchDeleteRagDataSchemasCallable"]
+            },
+            "BatchDeleteRagMetadata": {
+              "methods": ["batchDeleteRagMetadataAsync", "batchDeleteRagMetadataOperationCallable", "batchDeleteRagMetadataCallable"]
+            },
             "CreateRagCorpus": {
               "methods": ["createRagCorpusAsync", "createRagCorpusAsync", "createRagCorpusAsync", "createRagCorpusOperationCallable", "createRagCorpusCallable"]
+            },
+            "CreateRagDataSchema": {
+              "methods": ["createRagDataSchema", "createRagDataSchema", "createRagDataSchema", "createRagDataSchemaCallable"]
+            },
+            "CreateRagMetadata": {
+              "methods": ["createRagMetadata", "createRagMetadata", "createRagMetadata", "createRagMetadataCallable"]
             },
             "DeleteRagCorpus": {
               "methods": ["deleteRagCorpusAsync", "deleteRagCorpusAsync", "deleteRagCorpusAsync", "deleteRagCorpusOperationCallable", "deleteRagCorpusCallable"]
             },
+            "DeleteRagDataSchema": {
+              "methods": ["deleteRagDataSchema", "deleteRagDataSchema", "deleteRagDataSchema", "deleteRagDataSchemaCallable"]
+            },
             "DeleteRagFile": {
               "methods": ["deleteRagFileAsync", "deleteRagFileAsync", "deleteRagFileAsync", "deleteRagFileOperationCallable", "deleteRagFileCallable"]
+            },
+            "DeleteRagMetadata": {
+              "methods": ["deleteRagMetadata", "deleteRagMetadata", "deleteRagMetadata", "deleteRagMetadataCallable"]
             },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
@@ -1960,11 +1990,17 @@
             "GetRagCorpus": {
               "methods": ["getRagCorpus", "getRagCorpus", "getRagCorpus", "getRagCorpusCallable"]
             },
+            "GetRagDataSchema": {
+              "methods": ["getRagDataSchema", "getRagDataSchema", "getRagDataSchema", "getRagDataSchemaCallable"]
+            },
             "GetRagEngineConfig": {
               "methods": ["getRagEngineConfig", "getRagEngineConfig", "getRagEngineConfig", "getRagEngineConfigCallable"]
             },
             "GetRagFile": {
               "methods": ["getRagFile", "getRagFile", "getRagFile", "getRagFileCallable"]
+            },
+            "GetRagMetadata": {
+              "methods": ["getRagMetadata", "getRagMetadata", "getRagMetadata", "getRagMetadataCallable"]
             },
             "ImportRagFiles": {
               "methods": ["importRagFilesAsync", "importRagFilesAsync", "importRagFilesAsync", "importRagFilesOperationCallable", "importRagFilesCallable"]
@@ -1975,8 +2011,14 @@
             "ListRagCorpora": {
               "methods": ["listRagCorpora", "listRagCorpora", "listRagCorpora", "listRagCorporaPagedCallable", "listRagCorporaCallable"]
             },
+            "ListRagDataSchemas": {
+              "methods": ["listRagDataSchemas", "listRagDataSchemas", "listRagDataSchemas", "listRagDataSchemasPagedCallable", "listRagDataSchemasCallable"]
+            },
             "ListRagFiles": {
               "methods": ["listRagFiles", "listRagFiles", "listRagFiles", "listRagFilesPagedCallable", "listRagFilesCallable"]
+            },
+            "ListRagMetadata": {
+              "methods": ["listRagMetadata", "listRagMetadata", "listRagMetadata", "listRagMetadataPagedCallable", "listRagMetadataCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
@@ -1990,6 +2032,9 @@
             "UpdateRagEngineConfig": {
               "methods": ["updateRagEngineConfigAsync", "updateRagEngineConfigAsync", "updateRagEngineConfigOperationCallable", "updateRagEngineConfigCallable"]
             },
+            "UpdateRagMetadata": {
+              "methods": ["updateRagMetadata", "updateRagMetadata", "updateRagMetadataCallable"]
+            },
             "UploadRagFile": {
               "methods": ["uploadRagFile", "uploadRagFile", "uploadRagFile", "uploadRagFileCallable"]
             }
@@ -2002,6 +2047,12 @@
         "grpc": {
           "libraryClient": "VertexRagServiceClient",
           "rpcs": {
+            "AskContexts": {
+              "methods": ["askContexts", "askContexts", "askContexts", "askContextsCallable"]
+            },
+            "AsyncRetrieveContexts": {
+              "methods": ["asyncRetrieveContextsAsync", "asyncRetrieveContextsAsync", "asyncRetrieveContextsAsync", "asyncRetrieveContextsOperationCallable", "asyncRetrieveContextsCallable"]
+            },
             "AugmentPrompt": {
               "methods": ["augmentPrompt", "augmentPrompt", "augmentPrompt", "augmentPromptCallable"]
             },

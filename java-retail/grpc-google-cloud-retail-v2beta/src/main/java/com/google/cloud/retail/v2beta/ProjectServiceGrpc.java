@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for settings at Project level.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/retail/v2beta/project_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ProjectServiceGrpc {
 
@@ -316,8 +313,9 @@ public final class ProjectServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2beta.AlertConfig getAlertConfig(
-        com.google.cloud.retail.v2beta.GetAlertConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.GetAlertConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAlertConfigMethod(), getCallOptions(), request);
     }
 
@@ -329,8 +327,9 @@ public final class ProjectServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2beta.AlertConfig updateAlertConfig(
-        com.google.cloud.retail.v2beta.UpdateAlertConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.UpdateAlertConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAlertConfigMethod(), getCallOptions(), request);
     }
   }

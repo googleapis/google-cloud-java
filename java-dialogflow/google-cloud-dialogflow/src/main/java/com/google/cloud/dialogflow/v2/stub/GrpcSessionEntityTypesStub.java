@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -209,6 +209,7 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetSessionEntityTypeRequest, SessionEntityType>
         getSessionEntityTypeTransportSettings =
@@ -220,6 +221,7 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateSessionEntityTypeRequest, SessionEntityType>
         createSessionEntityTypeTransportSettings =
@@ -231,6 +233,7 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateSessionEntityTypeRequest, SessionEntityType>
         updateSessionEntityTypeTransportSettings =
@@ -255,6 +258,7 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

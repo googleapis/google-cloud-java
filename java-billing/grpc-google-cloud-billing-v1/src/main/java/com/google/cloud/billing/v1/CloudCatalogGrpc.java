@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * and SKUs.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/billing/v1/cloud_catalog.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CloudCatalogGrpc {
 
@@ -319,8 +316,8 @@ public final class CloudCatalogGrpc {
      * </pre>
      */
     public com.google.cloud.billing.v1.ListServicesResponse listServices(
-        com.google.cloud.billing.v1.ListServicesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.billing.v1.ListServicesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListServicesMethod(), getCallOptions(), request);
     }
 
@@ -332,8 +329,8 @@ public final class CloudCatalogGrpc {
      * </pre>
      */
     public com.google.cloud.billing.v1.ListSkusResponse listSkus(
-        com.google.cloud.billing.v1.ListSkusRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.billing.v1.ListSkusRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSkusMethod(), getCallOptions(), request);
     }
   }

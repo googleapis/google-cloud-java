@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.visionai.v1.stub;
 
 import static com.google.cloud.visionai.v1.StreamsServiceClient.ListClustersPagedResponse;
 import static com.google.cloud.visionai.v1.StreamsServiceClient.ListEventsPagedResponse;
+import static com.google.cloud.visionai.v1.StreamsServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.visionai.v1.StreamsServiceClient.ListSeriesPagedResponse;
 import static com.google.cloud.visionai.v1.StreamsServiceClient.ListStreamsPagedResponse;
 
@@ -29,6 +30,10 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.visionai.v1.Channel;
 import com.google.cloud.visionai.v1.Cluster;
 import com.google.cloud.visionai.v1.CreateClusterRequest;
@@ -315,6 +320,27 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
+      listLocationsMethodDescriptor =
+          MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.location.Locations/ListLocations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
+      MethodDescriptor.<GetLocationRequest, Location>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.location.Locations/GetLocation")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
   private final UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable;
   private final UnaryCallable<ListClustersRequest, ListClustersPagedResponse>
       listClustersPagedCallable;
@@ -374,6 +400,10 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
   private final UnaryCallable<MaterializeChannelRequest, Operation> materializeChannelCallable;
   private final OperationCallable<MaterializeChannelRequest, Channel, OperationMetadata>
       materializeChannelOperationCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable;
+  private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -428,6 +458,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
         GrpcCallSettings.<GetClusterRequest, Cluster>newBuilder()
@@ -438,6 +469,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
         GrpcCallSettings.<CreateClusterRequest, Operation>newBuilder()
@@ -448,6 +480,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateClusterRequest, Operation> updateClusterTransportSettings =
         GrpcCallSettings.<UpdateClusterRequest, Operation>newBuilder()
@@ -468,6 +501,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListStreamsRequest, ListStreamsResponse> listStreamsTransportSettings =
         GrpcCallSettings.<ListStreamsRequest, ListStreamsResponse>newBuilder()
@@ -478,6 +512,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetStreamRequest, Stream> getStreamTransportSettings =
         GrpcCallSettings.<GetStreamRequest, Stream>newBuilder()
@@ -488,6 +523,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateStreamRequest, Operation> createStreamTransportSettings =
         GrpcCallSettings.<CreateStreamRequest, Operation>newBuilder()
@@ -498,6 +534,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateStreamRequest, Operation> updateStreamTransportSettings =
         GrpcCallSettings.<UpdateStreamRequest, Operation>newBuilder()
@@ -518,6 +555,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetStreamThumbnailRequest, Operation> getStreamThumbnailTransportSettings =
         GrpcCallSettings.<GetStreamThumbnailRequest, Operation>newBuilder()
@@ -550,6 +588,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetEventRequest, Event> getEventTransportSettings =
         GrpcCallSettings.<GetEventRequest, Event>newBuilder()
@@ -560,6 +599,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateEventRequest, Operation> createEventTransportSettings =
         GrpcCallSettings.<CreateEventRequest, Operation>newBuilder()
@@ -570,6 +610,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateEventRequest, Operation> updateEventTransportSettings =
         GrpcCallSettings.<UpdateEventRequest, Operation>newBuilder()
@@ -590,6 +631,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListSeriesRequest, ListSeriesResponse> listSeriesTransportSettings =
         GrpcCallSettings.<ListSeriesRequest, ListSeriesResponse>newBuilder()
@@ -600,6 +642,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetSeriesRequest, Series> getSeriesTransportSettings =
         GrpcCallSettings.<GetSeriesRequest, Series>newBuilder()
@@ -610,6 +653,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateSeriesRequest, Operation> createSeriesTransportSettings =
         GrpcCallSettings.<CreateSeriesRequest, Operation>newBuilder()
@@ -620,6 +664,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateSeriesRequest, Operation> updateSeriesTransportSettings =
         GrpcCallSettings.<UpdateSeriesRequest, Operation>newBuilder()
@@ -640,6 +685,7 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<MaterializeChannelRequest, Operation> materializeChannelTransportSettings =
         GrpcCallSettings.<MaterializeChannelRequest, Operation>newBuilder()
@@ -648,6 +694,27 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
+        GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+            .setMethodDescriptor(listLocationsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
+        GrpcCallSettings.<GetLocationRequest, Location>newBuilder()
+            .setMethodDescriptor(getLocationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
             .build();
@@ -823,6 +890,15 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
             settings.materializeChannelOperationSettings(),
             clientContext,
             operationsStub);
+    this.listLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.listLocationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.getLocationCallable =
+        callableFactory.createUnaryCallable(
+            getLocationTransportSettings, settings.getLocationSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1050,6 +1126,22 @@ public class GrpcStreamsServiceStub extends StreamsServiceStub {
   public OperationCallable<MaterializeChannelRequest, Channel, OperationMetadata>
       materializeChannelOperationCallable() {
     return materializeChannelOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return listLocationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return getLocationCallable;
   }
 
   @Override

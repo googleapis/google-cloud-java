@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,9 @@
  *           .setWorkerPool(
  *               BuildWorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
  *           .addAllTags(new ArrayList<String>())
+ *           .setMachineType("machineType-218117087")
+ *           .setReleaseTrack(LaunchStage.forNumber(0))
+ *           .setClient("client-1357712437")
  *           .build();
  *   SubmitBuildResponse response = buildsClient.submitBuild(request);
  * }
@@ -60,6 +63,24 @@
  * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
  *   ExecutionName name = ExecutionName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]");
  *   Execution response = executionsClient.getExecution(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= InstancesClient =======================
+ *
+ * <p>Service Description: The Cloud Run Instances API allows you to manage Cloud Run Instances.
+ *
+ * <p>Sample for InstancesClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (InstancesClient instancesClient = InstancesClient.create()) {
+ *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+ *   Instance response = instancesClient.getInstance(name);
  * }
  * }</pre>
  *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,17 +21,22 @@ import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListCryptoKeysP
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListImportJobsPagedResponse;
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListKeyRingsPagedResponse;
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListRetiredResourcesPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
+import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.kms.v1.AsymmetricDecryptRequest;
@@ -48,6 +53,10 @@ import com.google.cloud.kms.v1.DecapsulateRequest;
 import com.google.cloud.kms.v1.DecapsulateResponse;
 import com.google.cloud.kms.v1.DecryptRequest;
 import com.google.cloud.kms.v1.DecryptResponse;
+import com.google.cloud.kms.v1.DeleteCryptoKeyMetadata;
+import com.google.cloud.kms.v1.DeleteCryptoKeyRequest;
+import com.google.cloud.kms.v1.DeleteCryptoKeyVersionMetadata;
+import com.google.cloud.kms.v1.DeleteCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.EncryptRequest;
 import com.google.cloud.kms.v1.EncryptResponse;
@@ -58,6 +67,7 @@ import com.google.cloud.kms.v1.GetCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.GetImportJobRequest;
 import com.google.cloud.kms.v1.GetKeyRingRequest;
 import com.google.cloud.kms.v1.GetPublicKeyRequest;
+import com.google.cloud.kms.v1.GetRetiredResourceRequest;
 import com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.ImportJob;
 import com.google.cloud.kms.v1.KeyRing;
@@ -69,6 +79,8 @@ import com.google.cloud.kms.v1.ListImportJobsRequest;
 import com.google.cloud.kms.v1.ListImportJobsResponse;
 import com.google.cloud.kms.v1.ListKeyRingsRequest;
 import com.google.cloud.kms.v1.ListKeyRingsResponse;
+import com.google.cloud.kms.v1.ListRetiredResourcesRequest;
+import com.google.cloud.kms.v1.ListRetiredResourcesResponse;
 import com.google.cloud.kms.v1.MacSignRequest;
 import com.google.cloud.kms.v1.MacSignResponse;
 import com.google.cloud.kms.v1.MacVerifyRequest;
@@ -79,6 +91,7 @@ import com.google.cloud.kms.v1.RawDecryptResponse;
 import com.google.cloud.kms.v1.RawEncryptRequest;
 import com.google.cloud.kms.v1.RawEncryptResponse;
 import com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest;
+import com.google.cloud.kms.v1.RetiredResource;
 import com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest;
 import com.google.cloud.kms.v1.UpdateCryptoKeyRequest;
 import com.google.cloud.kms.v1.UpdateCryptoKeyVersionRequest;
@@ -86,11 +99,14 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
+import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -108,7 +124,12 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
-  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder()
+          .add(Empty.getDescriptor())
+          .add(DeleteCryptoKeyVersionMetadata.getDescriptor())
+          .add(DeleteCryptoKeyMetadata.getDescriptor())
+          .build();
 
   private static final ApiMethodDescriptor<ListKeyRingsRequest, ListKeyRingsResponse>
       listKeyRingsMethodDescriptor =
@@ -263,6 +284,44 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<ListImportJobsResponse>newBuilder()
                       .setDefaultInstance(ListImportJobsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListRetiredResourcesRequest, ListRetiredResourcesResponse>
+      listRetiredResourcesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListRetiredResourcesRequest, ListRetiredResourcesResponse>newBuilder()
+              .setFullMethodName("google.cloud.kms.v1.KeyManagementService/ListRetiredResources")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListRetiredResourcesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/retiredResources",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRetiredResourcesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRetiredResourcesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListRetiredResourcesResponse>newBuilder()
+                      .setDefaultInstance(ListRetiredResourcesResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -438,6 +497,40 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetRetiredResourceRequest, RetiredResource>
+      getRetiredResourceMethodDescriptor =
+          ApiMethodDescriptor.<GetRetiredResourceRequest, RetiredResource>newBuilder()
+              .setFullMethodName("google.cloud.kms.v1.KeyManagementService/GetRetiredResource")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetRetiredResourceRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/retiredResources/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRetiredResourceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRetiredResourceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RetiredResource>newBuilder()
+                      .setDefaultInstance(RetiredResource.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<CreateKeyRingRequest, KeyRing>
       createKeyRingMethodDescriptor =
           ApiMethodDescriptor.<CreateKeyRingRequest, KeyRing>newBuilder()
@@ -554,6 +647,80 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       .setDefaultInstance(CryptoKeyVersion.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteCryptoKeyRequest, Operation>
+      deleteCryptoKeyMethodDescriptor =
+          ApiMethodDescriptor.<DeleteCryptoKeyRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.kms.v1.KeyManagementService/DeleteCryptoKey")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteCryptoKeyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/keyRings/*/cryptoKeys/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteCryptoKeyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteCryptoKeyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteCryptoKeyRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteCryptoKeyVersionRequest, Operation>
+      deleteCryptoKeyVersionMethodDescriptor =
+          ApiMethodDescriptor.<DeleteCryptoKeyVersionRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.kms.v1.KeyManagementService/DeleteCryptoKeyVersion")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteCryptoKeyVersionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/keyRings/*/cryptoKeys/*/cryptoKeyVersions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteCryptoKeyVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteCryptoKeyVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteCryptoKeyVersionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
               .build();
 
   private static final ApiMethodDescriptor<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
@@ -1398,16 +1565,30 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
   private final UnaryCallable<ListImportJobsRequest, ListImportJobsResponse> listImportJobsCallable;
   private final UnaryCallable<ListImportJobsRequest, ListImportJobsPagedResponse>
       listImportJobsPagedCallable;
+  private final UnaryCallable<ListRetiredResourcesRequest, ListRetiredResourcesResponse>
+      listRetiredResourcesCallable;
+  private final UnaryCallable<ListRetiredResourcesRequest, ListRetiredResourcesPagedResponse>
+      listRetiredResourcesPagedCallable;
   private final UnaryCallable<GetKeyRingRequest, KeyRing> getKeyRingCallable;
   private final UnaryCallable<GetCryptoKeyRequest, CryptoKey> getCryptoKeyCallable;
   private final UnaryCallable<GetCryptoKeyVersionRequest, CryptoKeyVersion>
       getCryptoKeyVersionCallable;
   private final UnaryCallable<GetPublicKeyRequest, PublicKey> getPublicKeyCallable;
   private final UnaryCallable<GetImportJobRequest, ImportJob> getImportJobCallable;
+  private final UnaryCallable<GetRetiredResourceRequest, RetiredResource>
+      getRetiredResourceCallable;
   private final UnaryCallable<CreateKeyRingRequest, KeyRing> createKeyRingCallable;
   private final UnaryCallable<CreateCryptoKeyRequest, CryptoKey> createCryptoKeyCallable;
   private final UnaryCallable<CreateCryptoKeyVersionRequest, CryptoKeyVersion>
       createCryptoKeyVersionCallable;
+  private final UnaryCallable<DeleteCryptoKeyRequest, Operation> deleteCryptoKeyCallable;
+  private final OperationCallable<DeleteCryptoKeyRequest, Empty, DeleteCryptoKeyMetadata>
+      deleteCryptoKeyOperationCallable;
+  private final UnaryCallable<DeleteCryptoKeyVersionRequest, Operation>
+      deleteCryptoKeyVersionCallable;
+  private final OperationCallable<
+          DeleteCryptoKeyVersionRequest, Empty, DeleteCryptoKeyVersionMetadata>
+      deleteCryptoKeyVersionOperationCallable;
   private final UnaryCallable<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
       importCryptoKeyVersionCallable;
   private final UnaryCallable<CreateImportJobRequest, ImportJob> createImportJobCallable;
@@ -1442,6 +1623,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
       testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonKeyManagementServiceStub create(
@@ -1484,6 +1666,18 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v1/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .build());
 
     HttpJsonCallSettings<ListKeyRingsRequest, ListKeyRingsResponse> listKeyRingsTransportSettings =
         HttpJsonCallSettings.<ListKeyRingsRequest, ListKeyRingsResponse>newBuilder()
@@ -1495,6 +1689,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListCryptoKeysRequest, ListCryptoKeysResponse>
         listCryptoKeysTransportSettings =
@@ -1507,6 +1702,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse>
         listCryptoKeyVersionsTransportSettings =
@@ -1520,6 +1716,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListImportJobsRequest, ListImportJobsResponse>
         listImportJobsTransportSettings =
@@ -1532,6 +1729,21 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<ListRetiredResourcesRequest, ListRetiredResourcesResponse>
+        listRetiredResourcesTransportSettings =
+            HttpJsonCallSettings
+                .<ListRetiredResourcesRequest, ListRetiredResourcesResponse>newBuilder()
+                .setMethodDescriptor(listRetiredResourcesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetKeyRingRequest, KeyRing> getKeyRingTransportSettings =
         HttpJsonCallSettings.<GetKeyRingRequest, KeyRing>newBuilder()
@@ -1543,6 +1755,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetCryptoKeyRequest, CryptoKey> getCryptoKeyTransportSettings =
         HttpJsonCallSettings.<GetCryptoKeyRequest, CryptoKey>newBuilder()
@@ -1554,6 +1767,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetCryptoKeyVersionRequest, CryptoKeyVersion>
         getCryptoKeyVersionTransportSettings =
@@ -1566,6 +1780,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetPublicKeyRequest, PublicKey> getPublicKeyTransportSettings =
         HttpJsonCallSettings.<GetPublicKeyRequest, PublicKey>newBuilder()
@@ -1577,6 +1792,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetImportJobRequest, ImportJob> getImportJobTransportSettings =
         HttpJsonCallSettings.<GetImportJobRequest, ImportJob>newBuilder()
@@ -1588,7 +1804,21 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<GetRetiredResourceRequest, RetiredResource>
+        getRetiredResourceTransportSettings =
+            HttpJsonCallSettings.<GetRetiredResourceRequest, RetiredResource>newBuilder()
+                .setMethodDescriptor(getRetiredResourceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     HttpJsonCallSettings<CreateKeyRingRequest, KeyRing> createKeyRingTransportSettings =
         HttpJsonCallSettings.<CreateKeyRingRequest, KeyRing>newBuilder()
             .setMethodDescriptor(createKeyRingMethodDescriptor)
@@ -1599,6 +1829,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateCryptoKeyRequest, CryptoKey> createCryptoKeyTransportSettings =
         HttpJsonCallSettings.<CreateCryptoKeyRequest, CryptoKey>newBuilder()
@@ -1610,6 +1841,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateCryptoKeyVersionRequest, CryptoKeyVersion>
         createCryptoKeyVersionTransportSettings =
@@ -1622,6 +1854,32 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<DeleteCryptoKeyRequest, Operation> deleteCryptoKeyTransportSettings =
+        HttpJsonCallSettings.<DeleteCryptoKeyRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteCryptoKeyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<DeleteCryptoKeyVersionRequest, Operation>
+        deleteCryptoKeyVersionTransportSettings =
+            HttpJsonCallSettings.<DeleteCryptoKeyVersionRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteCryptoKeyVersionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
         importCryptoKeyVersionTransportSettings =
@@ -1634,6 +1892,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateImportJobRequest, ImportJob> createImportJobTransportSettings =
         HttpJsonCallSettings.<CreateImportJobRequest, ImportJob>newBuilder()
@@ -1645,6 +1904,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateCryptoKeyRequest, CryptoKey> updateCryptoKeyTransportSettings =
         HttpJsonCallSettings.<UpdateCryptoKeyRequest, CryptoKey>newBuilder()
@@ -1682,6 +1942,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
         destroyCryptoKeyVersionTransportSettings =
@@ -1694,6 +1955,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
         restoreCryptoKeyVersionTransportSettings =
@@ -1706,6 +1968,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<EncryptRequest, EncryptResponse> encryptTransportSettings =
         HttpJsonCallSettings.<EncryptRequest, EncryptResponse>newBuilder()
@@ -1717,6 +1980,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DecryptRequest, DecryptResponse> decryptTransportSettings =
         HttpJsonCallSettings.<DecryptRequest, DecryptResponse>newBuilder()
@@ -1728,6 +1992,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RawEncryptRequest, RawEncryptResponse> rawEncryptTransportSettings =
         HttpJsonCallSettings.<RawEncryptRequest, RawEncryptResponse>newBuilder()
@@ -1762,6 +2027,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
         asymmetricDecryptTransportSettings =
@@ -1774,6 +2040,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<MacSignRequest, MacSignResponse> macSignTransportSettings =
         HttpJsonCallSettings.<MacSignRequest, MacSignResponse>newBuilder()
@@ -1785,6 +2052,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<MacVerifyRequest, MacVerifyResponse> macVerifyTransportSettings =
         HttpJsonCallSettings.<MacVerifyRequest, MacVerifyResponse>newBuilder()
@@ -1796,6 +2064,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DecapsulateRequest, DecapsulateResponse> decapsulateTransportSettings =
         HttpJsonCallSettings.<DecapsulateRequest, DecapsulateResponse>newBuilder()
@@ -1807,6 +2076,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GenerateRandomBytesRequest, GenerateRandomBytesResponse>
         generateRandomBytesTransportSettings =
@@ -1854,6 +2124,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1865,6 +2136,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1877,6 +2149,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listKeyRingsCallable =
@@ -1907,6 +2180,16 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
     this.listImportJobsPagedCallable =
         callableFactory.createPagedCallable(
             listImportJobsTransportSettings, settings.listImportJobsSettings(), clientContext);
+    this.listRetiredResourcesCallable =
+        callableFactory.createUnaryCallable(
+            listRetiredResourcesTransportSettings,
+            settings.listRetiredResourcesSettings(),
+            clientContext);
+    this.listRetiredResourcesPagedCallable =
+        callableFactory.createPagedCallable(
+            listRetiredResourcesTransportSettings,
+            settings.listRetiredResourcesSettings(),
+            clientContext);
     this.getKeyRingCallable =
         callableFactory.createUnaryCallable(
             getKeyRingTransportSettings, settings.getKeyRingSettings(), clientContext);
@@ -1924,6 +2207,11 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
     this.getImportJobCallable =
         callableFactory.createUnaryCallable(
             getImportJobTransportSettings, settings.getImportJobSettings(), clientContext);
+    this.getRetiredResourceCallable =
+        callableFactory.createUnaryCallable(
+            getRetiredResourceTransportSettings,
+            settings.getRetiredResourceSettings(),
+            clientContext);
     this.createKeyRingCallable =
         callableFactory.createUnaryCallable(
             createKeyRingTransportSettings, settings.createKeyRingSettings(), clientContext);
@@ -1935,6 +2223,26 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
             createCryptoKeyVersionTransportSettings,
             settings.createCryptoKeyVersionSettings(),
             clientContext);
+    this.deleteCryptoKeyCallable =
+        callableFactory.createUnaryCallable(
+            deleteCryptoKeyTransportSettings, settings.deleteCryptoKeySettings(), clientContext);
+    this.deleteCryptoKeyOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteCryptoKeyTransportSettings,
+            settings.deleteCryptoKeyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteCryptoKeyVersionCallable =
+        callableFactory.createUnaryCallable(
+            deleteCryptoKeyVersionTransportSettings,
+            settings.deleteCryptoKeyVersionSettings(),
+            clientContext);
+    this.deleteCryptoKeyVersionOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteCryptoKeyVersionTransportSettings,
+            settings.deleteCryptoKeyVersionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.importCryptoKeyVersionCallable =
         callableFactory.createUnaryCallable(
             importCryptoKeyVersionTransportSettings,
@@ -2032,14 +2340,18 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
     methodDescriptors.add(listCryptoKeysMethodDescriptor);
     methodDescriptors.add(listCryptoKeyVersionsMethodDescriptor);
     methodDescriptors.add(listImportJobsMethodDescriptor);
+    methodDescriptors.add(listRetiredResourcesMethodDescriptor);
     methodDescriptors.add(getKeyRingMethodDescriptor);
     methodDescriptors.add(getCryptoKeyMethodDescriptor);
     methodDescriptors.add(getCryptoKeyVersionMethodDescriptor);
     methodDescriptors.add(getPublicKeyMethodDescriptor);
     methodDescriptors.add(getImportJobMethodDescriptor);
+    methodDescriptors.add(getRetiredResourceMethodDescriptor);
     methodDescriptors.add(createKeyRingMethodDescriptor);
     methodDescriptors.add(createCryptoKeyMethodDescriptor);
     methodDescriptors.add(createCryptoKeyVersionMethodDescriptor);
+    methodDescriptors.add(deleteCryptoKeyMethodDescriptor);
+    methodDescriptors.add(deleteCryptoKeyVersionMethodDescriptor);
     methodDescriptors.add(importCryptoKeyVersionMethodDescriptor);
     methodDescriptors.add(createImportJobMethodDescriptor);
     methodDescriptors.add(updateCryptoKeyMethodDescriptor);
@@ -2063,6 +2375,10 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
     methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
+  }
+
+  public HttpJsonOperationsStub getHttpJsonOperationsStub() {
+    return httpJsonOperationsStub;
   }
 
   @Override
@@ -2110,6 +2426,18 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
   }
 
   @Override
+  public UnaryCallable<ListRetiredResourcesRequest, ListRetiredResourcesResponse>
+      listRetiredResourcesCallable() {
+    return listRetiredResourcesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRetiredResourcesRequest, ListRetiredResourcesPagedResponse>
+      listRetiredResourcesPagedCallable() {
+    return listRetiredResourcesPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<GetKeyRingRequest, KeyRing> getKeyRingCallable() {
     return getKeyRingCallable;
   }
@@ -2135,6 +2463,11 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
   }
 
   @Override
+  public UnaryCallable<GetRetiredResourceRequest, RetiredResource> getRetiredResourceCallable() {
+    return getRetiredResourceCallable;
+  }
+
+  @Override
   public UnaryCallable<CreateKeyRingRequest, KeyRing> createKeyRingCallable() {
     return createKeyRingCallable;
   }
@@ -2148,6 +2481,28 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
   public UnaryCallable<CreateCryptoKeyVersionRequest, CryptoKeyVersion>
       createCryptoKeyVersionCallable() {
     return createCryptoKeyVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteCryptoKeyRequest, Operation> deleteCryptoKeyCallable() {
+    return deleteCryptoKeyCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteCryptoKeyRequest, Empty, DeleteCryptoKeyMetadata>
+      deleteCryptoKeyOperationCallable() {
+    return deleteCryptoKeyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteCryptoKeyVersionRequest, Operation> deleteCryptoKeyVersionCallable() {
+    return deleteCryptoKeyVersionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteCryptoKeyVersionRequest, Empty, DeleteCryptoKeyVersionMetadata>
+      deleteCryptoKeyVersionOperationCallable() {
+    return deleteCryptoKeyVersionOperationCallable;
   }
 
   @Override

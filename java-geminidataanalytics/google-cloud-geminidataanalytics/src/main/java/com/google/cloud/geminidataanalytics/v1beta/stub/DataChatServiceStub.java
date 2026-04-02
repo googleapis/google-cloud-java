@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,16 +27,20 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.geminidataanalytics.v1beta.ChatRequest;
 import com.google.cloud.geminidataanalytics.v1beta.Conversation;
 import com.google.cloud.geminidataanalytics.v1beta.CreateConversationRequest;
+import com.google.cloud.geminidataanalytics.v1beta.DeleteConversationRequest;
 import com.google.cloud.geminidataanalytics.v1beta.GetConversationRequest;
 import com.google.cloud.geminidataanalytics.v1beta.ListConversationsRequest;
 import com.google.cloud.geminidataanalytics.v1beta.ListConversationsResponse;
 import com.google.cloud.geminidataanalytics.v1beta.ListMessagesRequest;
 import com.google.cloud.geminidataanalytics.v1beta.ListMessagesResponse;
 import com.google.cloud.geminidataanalytics.v1beta.Message;
+import com.google.cloud.geminidataanalytics.v1beta.QueryDataRequest;
+import com.google.cloud.geminidataanalytics.v1beta.QueryDataResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -55,6 +59,10 @@ public abstract class DataChatServiceStub implements BackgroundResource {
 
   public UnaryCallable<CreateConversationRequest, Conversation> createConversationCallable() {
     throw new UnsupportedOperationException("Not implemented: createConversationCallable()");
+  }
+
+  public UnaryCallable<DeleteConversationRequest, Empty> deleteConversationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteConversationCallable()");
   }
 
   public UnaryCallable<GetConversationRequest, Conversation> getConversationCallable() {
@@ -77,6 +85,10 @@ public abstract class DataChatServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListMessagesRequest, ListMessagesResponse> listMessagesCallable() {
     throw new UnsupportedOperationException("Not implemented: listMessagesCallable()");
+  }
+
+  public UnaryCallable<QueryDataRequest, QueryDataResponse> queryDataCallable() {
+    throw new UnsupportedOperationException("Not implemented: queryDataCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

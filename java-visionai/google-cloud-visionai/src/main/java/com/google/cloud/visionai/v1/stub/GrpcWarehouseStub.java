@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import static com.google.cloud.visionai.v1.WarehouseClient.ListCorporaPagedRespo
 import static com.google.cloud.visionai.v1.WarehouseClient.ListDataSchemasPagedResponse;
 import static com.google.cloud.visionai.v1.WarehouseClient.ListIndexEndpointsPagedResponse;
 import static com.google.cloud.visionai.v1.WarehouseClient.ListIndexesPagedResponse;
+import static com.google.cloud.visionai.v1.WarehouseClient.ListLocationsPagedResponse;
 import static com.google.cloud.visionai.v1.WarehouseClient.ListSearchConfigsPagedResponse;
 import static com.google.cloud.visionai.v1.WarehouseClient.ListSearchHypernymsPagedResponse;
 import static com.google.cloud.visionai.v1.WarehouseClient.SearchAssetsPagedResponse;
@@ -39,6 +40,10 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.visionai.v1.AddCollectionItemRequest;
 import com.google.cloud.visionai.v1.AddCollectionItemResponse;
 import com.google.cloud.visionai.v1.AnalyzeAssetMetadata;
@@ -846,6 +851,27 @@ public class GrpcWarehouseStub extends WarehouseStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
+      listLocationsMethodDescriptor =
+          MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.location.Locations/ListLocations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
+      MethodDescriptor.<GetLocationRequest, Location>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.location.Locations/GetLocation")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
   private final UnaryCallable<CreateAssetRequest, Asset> createAssetCallable;
   private final UnaryCallable<UpdateAssetRequest, Asset> updateAssetCallable;
   private final UnaryCallable<GetAssetRequest, Asset> getAssetCallable;
@@ -989,6 +1015,10 @@ public class GrpcWarehouseStub extends WarehouseStub {
       viewCollectionItemsCallable;
   private final UnaryCallable<ViewCollectionItemsRequest, ViewCollectionItemsPagedResponse>
       viewCollectionItemsPagedCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable;
+  private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -1040,6 +1070,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateAssetRequest, Asset> updateAssetTransportSettings =
         GrpcCallSettings.<UpdateAssetRequest, Asset>newBuilder()
@@ -1060,6 +1091,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAssetsRequest, ListAssetsResponse> listAssetsTransportSettings =
         GrpcCallSettings.<ListAssetsRequest, ListAssetsResponse>newBuilder()
@@ -1070,6 +1102,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteAssetRequest, Operation> deleteAssetTransportSettings =
         GrpcCallSettings.<DeleteAssetRequest, Operation>newBuilder()
@@ -1080,6 +1113,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UploadAssetRequest, Operation> uploadAssetTransportSettings =
         GrpcCallSettings.<UploadAssetRequest, Operation>newBuilder()
@@ -1090,6 +1124,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GenerateRetrievalUrlRequest, GenerateRetrievalUrlResponse>
         generateRetrievalUrlTransportSettings =
@@ -1101,6 +1136,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<AnalyzeAssetRequest, Operation> analyzeAssetTransportSettings =
         GrpcCallSettings.<AnalyzeAssetRequest, Operation>newBuilder()
@@ -1111,6 +1147,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<IndexAssetRequest, Operation> indexAssetTransportSettings =
         GrpcCallSettings.<IndexAssetRequest, Operation>newBuilder()
@@ -1121,6 +1158,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RemoveIndexAssetRequest, Operation> removeIndexAssetTransportSettings =
         GrpcCallSettings.<RemoveIndexAssetRequest, Operation>newBuilder()
@@ -1131,6 +1169,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ViewIndexedAssetsRequest, ViewIndexedAssetsResponse>
         viewIndexedAssetsTransportSettings =
@@ -1142,6 +1181,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                       builder.add("index", String.valueOf(request.getIndex()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getIndex())
                 .build();
     GrpcCallSettings<CreateIndexRequest, Operation> createIndexTransportSettings =
         GrpcCallSettings.<CreateIndexRequest, Operation>newBuilder()
@@ -1152,6 +1192,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateIndexRequest, Operation> updateIndexTransportSettings =
         GrpcCallSettings.<UpdateIndexRequest, Operation>newBuilder()
@@ -1172,6 +1213,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListIndexesRequest, ListIndexesResponse> listIndexesTransportSettings =
         GrpcCallSettings.<ListIndexesRequest, ListIndexesResponse>newBuilder()
@@ -1182,6 +1224,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteIndexRequest, Operation> deleteIndexTransportSettings =
         GrpcCallSettings.<DeleteIndexRequest, Operation>newBuilder()
@@ -1192,6 +1235,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateCorpusRequest, Operation> createCorpusTransportSettings =
         GrpcCallSettings.<CreateCorpusRequest, Operation>newBuilder()
@@ -1212,6 +1256,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateCorpusRequest, Corpus> updateCorpusTransportSettings =
         GrpcCallSettings.<UpdateCorpusRequest, Corpus>newBuilder()
@@ -1242,6 +1287,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<AnalyzeCorpusRequest, Operation> analyzeCorpusTransportSettings =
         GrpcCallSettings.<AnalyzeCorpusRequest, Operation>newBuilder()
@@ -1252,6 +1298,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateDataSchemaRequest, DataSchema> createDataSchemaTransportSettings =
         GrpcCallSettings.<CreateDataSchemaRequest, DataSchema>newBuilder()
@@ -1262,6 +1309,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateDataSchemaRequest, DataSchema> updateDataSchemaTransportSettings =
         GrpcCallSettings.<UpdateDataSchemaRequest, DataSchema>newBuilder()
@@ -1283,6 +1331,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteDataSchemaRequest, Empty> deleteDataSchemaTransportSettings =
         GrpcCallSettings.<DeleteDataSchemaRequest, Empty>newBuilder()
@@ -1293,6 +1342,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDataSchemasRequest, ListDataSchemasResponse>
         listDataSchemasTransportSettings =
@@ -1304,6 +1354,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateAnnotationRequest, Annotation> createAnnotationTransportSettings =
         GrpcCallSettings.<CreateAnnotationRequest, Annotation>newBuilder()
@@ -1314,6 +1365,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetAnnotationRequest, Annotation> getAnnotationTransportSettings =
         GrpcCallSettings.<GetAnnotationRequest, Annotation>newBuilder()
@@ -1324,6 +1376,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAnnotationsRequest, ListAnnotationsResponse>
         listAnnotationsTransportSettings =
@@ -1335,6 +1388,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateAnnotationRequest, Annotation> updateAnnotationTransportSettings =
         GrpcCallSettings.<UpdateAnnotationRequest, Annotation>newBuilder()
@@ -1355,6 +1409,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<IngestAssetRequest, IngestAssetResponse> ingestAssetTransportSettings =
         GrpcCallSettings.<IngestAssetRequest, IngestAssetResponse>newBuilder()
@@ -1369,6 +1424,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GenerateHlsUriRequest, GenerateHlsUriResponse>
         generateHlsUriTransportSettings =
@@ -1380,6 +1436,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ImportAssetsRequest, Operation> importAssetsTransportSettings =
         GrpcCallSettings.<ImportAssetsRequest, Operation>newBuilder()
@@ -1390,6 +1447,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateSearchConfigRequest, SearchConfig> createSearchConfigTransportSettings =
         GrpcCallSettings.<CreateSearchConfigRequest, SearchConfig>newBuilder()
@@ -1400,6 +1458,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateSearchConfigRequest, SearchConfig> updateSearchConfigTransportSettings =
         GrpcCallSettings.<UpdateSearchConfigRequest, SearchConfig>newBuilder()
@@ -1421,6 +1480,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteSearchConfigRequest, Empty> deleteSearchConfigTransportSettings =
         GrpcCallSettings.<DeleteSearchConfigRequest, Empty>newBuilder()
@@ -1431,6 +1491,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListSearchConfigsRequest, ListSearchConfigsResponse>
         listSearchConfigsTransportSettings =
@@ -1442,6 +1503,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateSearchHypernymRequest, SearchHypernym>
         createSearchHypernymTransportSettings =
@@ -1453,6 +1515,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateSearchHypernymRequest, SearchHypernym>
         updateSearchHypernymTransportSettings =
@@ -1476,6 +1539,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteSearchHypernymRequest, Empty> deleteSearchHypernymTransportSettings =
         GrpcCallSettings.<DeleteSearchHypernymRequest, Empty>newBuilder()
@@ -1486,6 +1550,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListSearchHypernymsRequest, ListSearchHypernymsResponse>
         listSearchHypernymsTransportSettings =
@@ -1497,6 +1562,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<SearchAssetsRequest, SearchAssetsResponse> searchAssetsTransportSettings =
         GrpcCallSettings.<SearchAssetsRequest, SearchAssetsResponse>newBuilder()
@@ -1507,6 +1573,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("corpus", String.valueOf(request.getCorpus()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getCorpus())
             .build();
     GrpcCallSettings<SearchIndexEndpointRequest, SearchIndexEndpointResponse>
         searchIndexEndpointTransportSettings =
@@ -1518,6 +1585,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                       builder.add("index_endpoint", String.valueOf(request.getIndexEndpoint()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getIndexEndpoint())
                 .build();
     GrpcCallSettings<CreateIndexEndpointRequest, Operation> createIndexEndpointTransportSettings =
         GrpcCallSettings.<CreateIndexEndpointRequest, Operation>newBuilder()
@@ -1528,6 +1596,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetIndexEndpointRequest, IndexEndpoint> getIndexEndpointTransportSettings =
         GrpcCallSettings.<GetIndexEndpointRequest, IndexEndpoint>newBuilder()
@@ -1538,6 +1607,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListIndexEndpointsRequest, ListIndexEndpointsResponse>
         listIndexEndpointsTransportSettings =
@@ -1549,6 +1619,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateIndexEndpointRequest, Operation> updateIndexEndpointTransportSettings =
         GrpcCallSettings.<UpdateIndexEndpointRequest, Operation>newBuilder()
@@ -1570,6 +1641,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeployIndexRequest, Operation> deployIndexTransportSettings =
         GrpcCallSettings.<DeployIndexRequest, Operation>newBuilder()
@@ -1580,6 +1652,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("index_endpoint", String.valueOf(request.getIndexEndpoint()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getIndexEndpoint())
             .build();
     GrpcCallSettings<UndeployIndexRequest, Operation> undeployIndexTransportSettings =
         GrpcCallSettings.<UndeployIndexRequest, Operation>newBuilder()
@@ -1590,6 +1663,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("index_endpoint", String.valueOf(request.getIndexEndpoint()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getIndexEndpoint())
             .build();
     GrpcCallSettings<CreateCollectionRequest, Operation> createCollectionTransportSettings =
         GrpcCallSettings.<CreateCollectionRequest, Operation>newBuilder()
@@ -1600,6 +1674,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteCollectionRequest, Operation> deleteCollectionTransportSettings =
         GrpcCallSettings.<DeleteCollectionRequest, Operation>newBuilder()
@@ -1610,6 +1685,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetCollectionRequest, Collection> getCollectionTransportSettings =
         GrpcCallSettings.<GetCollectionRequest, Collection>newBuilder()
@@ -1620,6 +1696,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateCollectionRequest, Collection> updateCollectionTransportSettings =
         GrpcCallSettings.<UpdateCollectionRequest, Collection>newBuilder()
@@ -1641,6 +1718,7 @@ public class GrpcWarehouseStub extends WarehouseStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<AddCollectionItemRequest, AddCollectionItemResponse>
         addCollectionItemTransportSettings =
@@ -1676,7 +1754,28 @@ public class GrpcWarehouseStub extends WarehouseStub {
                       builder.add("collection", String.valueOf(request.getCollection()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCollection())
                 .build();
+    GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
+        GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+            .setMethodDescriptor(listLocationsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
+        GrpcCallSettings.<GetLocationRequest, Location>newBuilder()
+            .setMethodDescriptor(getLocationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
 
     this.createAssetCallable =
         callableFactory.createUnaryCallable(
@@ -2064,6 +2163,15 @@ public class GrpcWarehouseStub extends WarehouseStub {
             viewCollectionItemsTransportSettings,
             settings.viewCollectionItemsSettings(),
             clientContext);
+    this.listLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.listLocationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.getLocationCallable =
+        callableFactory.createUnaryCallable(
+            getLocationTransportSettings, settings.getLocationSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -2578,6 +2686,22 @@ public class GrpcWarehouseStub extends WarehouseStub {
   public UnaryCallable<ViewCollectionItemsRequest, ViewCollectionItemsPagedResponse>
       viewCollectionItemsPagedCallable() {
     return viewCollectionItemsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return listLocationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return getLocationCallable;
   }
 
   @Override

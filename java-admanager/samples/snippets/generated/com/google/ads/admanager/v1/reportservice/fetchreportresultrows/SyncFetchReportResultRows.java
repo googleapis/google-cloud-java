@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ package com.google.ads.admanager.v1.samples;
 
 // [START admanager_v1_generated_ReportService_FetchReportResultRows_sync]
 import com.google.ads.admanager.v1.FetchReportResultRowsRequest;
-import com.google.ads.admanager.v1.Report;
+import com.google.ads.admanager.v1.ReportDataTable;
 import com.google.ads.admanager.v1.ReportServiceClient;
 
 public class SyncFetchReportResultRows {
@@ -40,7 +40,7 @@ public class SyncFetchReportResultRows {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .build();
-      for (Report.DataTable.Row element :
+      for (ReportDataTable.Row element :
           reportServiceClient.fetchReportResultRows(request).iterateAll()) {
         // doThingsWith(element);
       }

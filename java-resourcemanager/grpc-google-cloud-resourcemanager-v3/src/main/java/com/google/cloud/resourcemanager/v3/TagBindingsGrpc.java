@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * different Google Cloud resources throughout the GCP resource hierarchy.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/resourcemanager/v3/tag_bindings.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class TagBindingsGrpc {
 
@@ -486,8 +483,9 @@ public final class TagBindingsGrpc {
      * </pre>
      */
     public com.google.cloud.resourcemanager.v3.ListTagBindingsResponse listTagBindings(
-        com.google.cloud.resourcemanager.v3.ListTagBindingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.ListTagBindingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTagBindingsMethod(), getCallOptions(), request);
     }
 
@@ -499,8 +497,9 @@ public final class TagBindingsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createTagBinding(
-        com.google.cloud.resourcemanager.v3.CreateTagBindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.CreateTagBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTagBindingMethod(), getCallOptions(), request);
     }
 
@@ -512,8 +511,9 @@ public final class TagBindingsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteTagBinding(
-        com.google.cloud.resourcemanager.v3.DeleteTagBindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.DeleteTagBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTagBindingMethod(), getCallOptions(), request);
     }
 
@@ -526,8 +526,9 @@ public final class TagBindingsGrpc {
      * </pre>
      */
     public com.google.cloud.resourcemanager.v3.ListEffectiveTagsResponse listEffectiveTags(
-        com.google.cloud.resourcemanager.v3.ListEffectiveTagsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.ListEffectiveTagsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEffectiveTagsMethod(), getCallOptions(), request);
     }
   }

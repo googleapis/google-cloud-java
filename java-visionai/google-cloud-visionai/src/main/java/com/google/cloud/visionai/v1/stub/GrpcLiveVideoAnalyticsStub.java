@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.visionai.v1.stub;
 
 import static com.google.cloud.visionai.v1.LiveVideoAnalyticsClient.ListAnalysesPagedResponse;
+import static com.google.cloud.visionai.v1.LiveVideoAnalyticsClient.ListLocationsPagedResponse;
 import static com.google.cloud.visionai.v1.LiveVideoAnalyticsClient.ListOperatorsPagedResponse;
 import static com.google.cloud.visionai.v1.LiveVideoAnalyticsClient.ListProcessesPagedResponse;
 import static com.google.cloud.visionai.v1.LiveVideoAnalyticsClient.ListPublicOperatorsPagedResponse;
@@ -29,6 +30,10 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.visionai.v1.Analysis;
 import com.google.cloud.visionai.v1.BatchRunProcessRequest;
 import com.google.cloud.visionai.v1.BatchRunProcessResponse;
@@ -270,6 +275,27 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
+      listLocationsMethodDescriptor =
+          MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.location.Locations/ListLocations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
+      MethodDescriptor.<GetLocationRequest, Location>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.location.Locations/GetLocation")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
   private final UnaryCallable<ListPublicOperatorsRequest, ListPublicOperatorsResponse>
       listPublicOperatorsCallable;
   private final UnaryCallable<ListPublicOperatorsRequest, ListPublicOperatorsPagedResponse>
@@ -319,6 +345,10 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
   private final OperationCallable<
           BatchRunProcessRequest, BatchRunProcessResponse, OperationMetadata>
       batchRunProcessOperationCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable;
+  private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -374,6 +404,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ResolveOperatorInfoRequest, ResolveOperatorInfoResponse>
         resolveOperatorInfoTransportSettings =
@@ -385,6 +416,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListOperatorsRequest, ListOperatorsResponse> listOperatorsTransportSettings =
         GrpcCallSettings.<ListOperatorsRequest, ListOperatorsResponse>newBuilder()
@@ -395,6 +427,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetOperatorRequest, Operator> getOperatorTransportSettings =
         GrpcCallSettings.<GetOperatorRequest, Operator>newBuilder()
@@ -405,6 +438,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateOperatorRequest, Operation> createOperatorTransportSettings =
         GrpcCallSettings.<CreateOperatorRequest, Operation>newBuilder()
@@ -415,6 +449,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateOperatorRequest, Operation> updateOperatorTransportSettings =
         GrpcCallSettings.<UpdateOperatorRequest, Operation>newBuilder()
@@ -435,6 +470,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAnalysesRequest, ListAnalysesResponse> listAnalysesTransportSettings =
         GrpcCallSettings.<ListAnalysesRequest, ListAnalysesResponse>newBuilder()
@@ -445,6 +481,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetAnalysisRequest, Analysis> getAnalysisTransportSettings =
         GrpcCallSettings.<GetAnalysisRequest, Analysis>newBuilder()
@@ -455,6 +492,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateAnalysisRequest, Operation> createAnalysisTransportSettings =
         GrpcCallSettings.<CreateAnalysisRequest, Operation>newBuilder()
@@ -465,6 +503,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateAnalysisRequest, Operation> updateAnalysisTransportSettings =
         GrpcCallSettings.<UpdateAnalysisRequest, Operation>newBuilder()
@@ -485,6 +524,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListProcessesRequest, ListProcessesResponse> listProcessesTransportSettings =
         GrpcCallSettings.<ListProcessesRequest, ListProcessesResponse>newBuilder()
@@ -495,6 +535,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetProcessRequest, Process> getProcessTransportSettings =
         GrpcCallSettings.<GetProcessRequest, Process>newBuilder()
@@ -505,6 +546,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateProcessRequest, Operation> createProcessTransportSettings =
         GrpcCallSettings.<CreateProcessRequest, Operation>newBuilder()
@@ -515,6 +557,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateProcessRequest, Operation> updateProcessTransportSettings =
         GrpcCallSettings.<UpdateProcessRequest, Operation>newBuilder()
@@ -535,6 +578,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<BatchRunProcessRequest, Operation> batchRunProcessTransportSettings =
         GrpcCallSettings.<BatchRunProcessRequest, Operation>newBuilder()
@@ -543,6 +587,27 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
+        GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+            .setMethodDescriptor(listLocationsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
+        GrpcCallSettings.<GetLocationRequest, Location>newBuilder()
+            .setMethodDescriptor(getLocationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
             .build();
@@ -679,6 +744,15 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
             settings.batchRunProcessOperationSettings(),
             clientContext,
             operationsStub);
+    this.listLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.listLocationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.getLocationCallable =
+        callableFactory.createUnaryCallable(
+            getLocationTransportSettings, settings.getLocationSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -861,6 +935,22 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
   public OperationCallable<BatchRunProcessRequest, BatchRunProcessResponse, OperationMetadata>
       batchRunProcessOperationCallable() {
     return batchRunProcessOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return listLocationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return getLocationCallable;
   }
 
   @Override

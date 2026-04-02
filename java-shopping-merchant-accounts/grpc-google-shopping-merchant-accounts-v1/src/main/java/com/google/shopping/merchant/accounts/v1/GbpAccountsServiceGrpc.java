@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * - [GbpAccount][google.shopping.merchant.accounts.v1.GbpAccount]
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/accounts/v1/gbpaccounts.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class GbpAccountsServiceGrpc {
 
@@ -345,8 +342,9 @@ public final class GbpAccountsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.ListGbpAccountsResponse listGbpAccounts(
-        com.google.shopping.merchant.accounts.v1.ListGbpAccountsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.ListGbpAccountsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGbpAccountsMethod(), getCallOptions(), request);
     }
 
@@ -361,8 +359,9 @@ public final class GbpAccountsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.LinkGbpAccountResponse linkGbpAccount(
-        com.google.shopping.merchant.accounts.v1.LinkGbpAccountRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.LinkGbpAccountRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getLinkGbpAccountMethod(), getCallOptions(), request);
     }
   }

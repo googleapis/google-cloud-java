@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package com.google.cloud.geminidataanalytics.v1beta;
 import com.google.api.core.BetaApi;
 import com.google.cloud.geminidataanalytics.v1beta.DataChatServiceGrpc.DataChatServiceImplBase;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -100,6 +101,27 @@ public class MockDataChatServiceImpl extends DataChatServiceImplBase {
   }
 
   @Override
+  public void deleteConversation(
+      DeleteConversationRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteConversation, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getConversation(
       GetConversationRequest request, StreamObserver<Conversation> responseObserver) {
     Object response = responses.poll();
@@ -159,6 +181,27 @@ public class MockDataChatServiceImpl extends DataChatServiceImplBase {
                   "Unrecognized response type %s for method ListMessages, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListMessagesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void queryData(
+      QueryDataRequest request, StreamObserver<QueryDataResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof QueryDataResponse) {
+      requests.add(request);
+      responseObserver.onNext(((QueryDataResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method QueryData, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  QueryDataResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

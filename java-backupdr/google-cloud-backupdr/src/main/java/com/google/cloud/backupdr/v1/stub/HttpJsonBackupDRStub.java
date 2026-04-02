@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.backupdr.v1.stub;
 
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchBackupPlanAssociationsForResourceTypePagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.FetchBackupsForResourceTypePagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchDataSourceReferencesForResourceTypePagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchUsableBackupVaultsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanAssociationsPagedResponse;
@@ -24,6 +25,7 @@ import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanRevision
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlansPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupVaultsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListDataSourceReferencesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListDataSourcesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListLocationsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListManagementServersPagedResponse;
@@ -62,6 +64,8 @@ import com.google.cloud.backupdr.v1.DeleteBackupVaultRequest;
 import com.google.cloud.backupdr.v1.DeleteManagementServerRequest;
 import com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeRequest;
 import com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeResponse;
+import com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeRequest;
+import com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeResponse;
 import com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeRequest;
 import com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeResponse;
 import com.google.cloud.backupdr.v1.FetchUsableBackupVaultsRequest;
@@ -86,6 +90,8 @@ import com.google.cloud.backupdr.v1.ListBackupVaultsRequest;
 import com.google.cloud.backupdr.v1.ListBackupVaultsResponse;
 import com.google.cloud.backupdr.v1.ListBackupsRequest;
 import com.google.cloud.backupdr.v1.ListBackupsResponse;
+import com.google.cloud.backupdr.v1.ListDataSourceReferencesRequest;
+import com.google.cloud.backupdr.v1.ListDataSourceReferencesResponse;
 import com.google.cloud.backupdr.v1.ListDataSourcesRequest;
 import com.google.cloud.backupdr.v1.ListDataSourcesResponse;
 import com.google.cloud.backupdr.v1.ListManagementServersRequest;
@@ -711,6 +717,49 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<ListBackupsResponse>newBuilder()
                       .setDefaultInstance(ListBackupsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse>
+      fetchBackupsForResourceTypeMethodDescriptor =
+          ApiMethodDescriptor
+              .<FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/FetchBackupsForResourceType")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FetchBackupsForResourceTypeRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/backupVaults/*/dataSources/*}/backups:fetchForResourceType",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchBackupsForResourceTypeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchBackupsForResourceTypeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(
+                                fields, "resourceType", request.getResourceType());
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FetchBackupsForResourceTypeResponse>newBuilder()
+                      .setDefaultInstance(FetchBackupsForResourceTypeResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -1469,6 +1518,46 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
               .build();
 
   private static final ApiMethodDescriptor<
+          ListDataSourceReferencesRequest, ListDataSourceReferencesResponse>
+      listDataSourceReferencesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListDataSourceReferencesRequest, ListDataSourceReferencesResponse>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/ListDataSourceReferences")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListDataSourceReferencesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/dataSourceReferences",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDataSourceReferencesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDataSourceReferencesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListDataSourceReferencesResponse>newBuilder()
+                      .setDefaultInstance(ListDataSourceReferencesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
           FetchDataSourceReferencesForResourceTypeRequest,
           FetchDataSourceReferencesForResourceTypeResponse>
       fetchDataSourceReferencesForResourceTypeMethodDescriptor =
@@ -1777,6 +1866,12 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
   private final UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable;
   private final UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse>
       listBackupsPagedCallable;
+  private final UnaryCallable<
+          FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse>
+      fetchBackupsForResourceTypeCallable;
+  private final UnaryCallable<
+          FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypePagedResponse>
+      fetchBackupsForResourceTypePagedCallable;
   private final UnaryCallable<GetBackupRequest, Backup> getBackupCallable;
   private final UnaryCallable<UpdateBackupRequest, Operation> updateBackupCallable;
   private final OperationCallable<UpdateBackupRequest, Backup, OperationMetadata>
@@ -1841,6 +1936,11 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
       triggerBackupOperationCallable;
   private final UnaryCallable<GetDataSourceReferenceRequest, DataSourceReference>
       getDataSourceReferenceCallable;
+  private final UnaryCallable<ListDataSourceReferencesRequest, ListDataSourceReferencesResponse>
+      listDataSourceReferencesCallable;
+  private final UnaryCallable<
+          ListDataSourceReferencesRequest, ListDataSourceReferencesPagedResponse>
+      listDataSourceReferencesPagedCallable;
   private final UnaryCallable<
           FetchDataSourceReferencesForResourceTypeRequest,
           FetchDataSourceReferencesForResourceTypeResponse>
@@ -1943,6 +2043,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetManagementServerRequest, ManagementServer>
         getManagementServerTransportSettings =
@@ -1955,6 +2056,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateManagementServerRequest, Operation>
         createManagementServerTransportSettings =
@@ -1967,6 +2069,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteManagementServerRequest, Operation>
         deleteManagementServerTransportSettings =
@@ -1979,6 +2082,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateBackupVaultRequest, Operation> createBackupVaultTransportSettings =
         HttpJsonCallSettings.<CreateBackupVaultRequest, Operation>newBuilder()
@@ -1990,6 +2094,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListBackupVaultsRequest, ListBackupVaultsResponse>
         listBackupVaultsTransportSettings =
@@ -2002,6 +2107,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<FetchUsableBackupVaultsRequest, FetchUsableBackupVaultsResponse>
         fetchUsableBackupVaultsTransportSettings =
@@ -2015,6 +2121,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetBackupVaultRequest, BackupVault> getBackupVaultTransportSettings =
         HttpJsonCallSettings.<GetBackupVaultRequest, BackupVault>newBuilder()
@@ -2026,6 +2133,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateBackupVaultRequest, Operation> updateBackupVaultTransportSettings =
         HttpJsonCallSettings.<UpdateBackupVaultRequest, Operation>newBuilder()
@@ -2049,6 +2157,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListDataSourcesRequest, ListDataSourcesResponse>
         listDataSourcesTransportSettings =
@@ -2061,6 +2170,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDataSourceRequest, DataSource> getDataSourceTransportSettings =
         HttpJsonCallSettings.<GetDataSourceRequest, DataSource>newBuilder()
@@ -2072,6 +2182,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateDataSourceRequest, Operation> updateDataSourceTransportSettings =
         HttpJsonCallSettings.<UpdateDataSourceRequest, Operation>newBuilder()
@@ -2095,7 +2206,23 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
+    HttpJsonCallSettings<FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse>
+        fetchBackupsForResourceTypeTransportSettings =
+            HttpJsonCallSettings
+                .<FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse>
+                    newBuilder()
+                .setMethodDescriptor(fetchBackupsForResourceTypeMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     HttpJsonCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
         HttpJsonCallSettings.<GetBackupRequest, Backup>newBuilder()
             .setMethodDescriptor(getBackupMethodDescriptor)
@@ -2106,6 +2233,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateBackupRequest, Operation> updateBackupTransportSettings =
         HttpJsonCallSettings.<UpdateBackupRequest, Operation>newBuilder()
@@ -2128,6 +2256,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RestoreBackupRequest, Operation> restoreBackupTransportSettings =
         HttpJsonCallSettings.<RestoreBackupRequest, Operation>newBuilder()
@@ -2139,6 +2268,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateBackupPlanRequest, Operation> createBackupPlanTransportSettings =
         HttpJsonCallSettings.<CreateBackupPlanRequest, Operation>newBuilder()
@@ -2150,6 +2280,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateBackupPlanRequest, Operation> updateBackupPlanTransportSettings =
         HttpJsonCallSettings.<UpdateBackupPlanRequest, Operation>newBuilder()
@@ -2173,6 +2304,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListBackupPlansRequest, ListBackupPlansResponse>
         listBackupPlansTransportSettings =
@@ -2185,6 +2317,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteBackupPlanRequest, Operation> deleteBackupPlanTransportSettings =
         HttpJsonCallSettings.<DeleteBackupPlanRequest, Operation>newBuilder()
@@ -2196,6 +2329,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetBackupPlanRevisionRequest, BackupPlanRevision>
         getBackupPlanRevisionTransportSettings =
@@ -2208,6 +2342,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListBackupPlanRevisionsRequest, ListBackupPlanRevisionsResponse>
         listBackupPlanRevisionsTransportSettings =
@@ -2221,6 +2356,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateBackupPlanAssociationRequest, Operation>
         createBackupPlanAssociationTransportSettings =
@@ -2233,6 +2369,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateBackupPlanAssociationRequest, Operation>
         updateBackupPlanAssociationTransportSettings =
@@ -2260,6 +2397,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListBackupPlanAssociationsRequest, ListBackupPlanAssociationsResponse>
         listBackupPlanAssociationsTransportSettings =
@@ -2273,6 +2411,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             FetchBackupPlanAssociationsForResourceTypeRequest,
@@ -2290,6 +2429,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteBackupPlanAssociationRequest, Operation>
         deleteBackupPlanAssociationTransportSettings =
@@ -2302,6 +2442,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<TriggerBackupRequest, Operation> triggerBackupTransportSettings =
         HttpJsonCallSettings.<TriggerBackupRequest, Operation>newBuilder()
@@ -2313,6 +2454,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetDataSourceReferenceRequest, DataSourceReference>
         getDataSourceReferenceTransportSettings =
@@ -2325,6 +2467,21 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ListDataSourceReferencesRequest, ListDataSourceReferencesResponse>
+        listDataSourceReferencesTransportSettings =
+            HttpJsonCallSettings
+                .<ListDataSourceReferencesRequest, ListDataSourceReferencesResponse>newBuilder()
+                .setMethodDescriptor(listDataSourceReferencesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             FetchDataSourceReferencesForResourceTypeRequest,
@@ -2342,6 +2499,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<InitializeServiceRequest, Operation> initializeServiceTransportSettings =
         HttpJsonCallSettings.<InitializeServiceRequest, Operation>newBuilder()
@@ -2387,6 +2545,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -2398,6 +2557,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -2410,6 +2570,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listManagementServersCallable =
@@ -2525,6 +2686,16 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
     this.listBackupsPagedCallable =
         callableFactory.createPagedCallable(
             listBackupsTransportSettings, settings.listBackupsSettings(), clientContext);
+    this.fetchBackupsForResourceTypeCallable =
+        callableFactory.createUnaryCallable(
+            fetchBackupsForResourceTypeTransportSettings,
+            settings.fetchBackupsForResourceTypeSettings(),
+            clientContext);
+    this.fetchBackupsForResourceTypePagedCallable =
+        callableFactory.createPagedCallable(
+            fetchBackupsForResourceTypeTransportSettings,
+            settings.fetchBackupsForResourceTypeSettings(),
+            clientContext);
     this.getBackupCallable =
         callableFactory.createUnaryCallable(
             getBackupTransportSettings, settings.getBackupSettings(), clientContext);
@@ -2678,6 +2849,16 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
             getDataSourceReferenceTransportSettings,
             settings.getDataSourceReferenceSettings(),
             clientContext);
+    this.listDataSourceReferencesCallable =
+        callableFactory.createUnaryCallable(
+            listDataSourceReferencesTransportSettings,
+            settings.listDataSourceReferencesSettings(),
+            clientContext);
+    this.listDataSourceReferencesPagedCallable =
+        callableFactory.createPagedCallable(
+            listDataSourceReferencesTransportSettings,
+            settings.listDataSourceReferencesSettings(),
+            clientContext);
     this.fetchDataSourceReferencesForResourceTypeCallable =
         callableFactory.createUnaryCallable(
             fetchDataSourceReferencesForResourceTypeTransportSettings,
@@ -2741,6 +2922,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
     methodDescriptors.add(getDataSourceMethodDescriptor);
     methodDescriptors.add(updateDataSourceMethodDescriptor);
     methodDescriptors.add(listBackupsMethodDescriptor);
+    methodDescriptors.add(fetchBackupsForResourceTypeMethodDescriptor);
     methodDescriptors.add(getBackupMethodDescriptor);
     methodDescriptors.add(updateBackupMethodDescriptor);
     methodDescriptors.add(deleteBackupMethodDescriptor);
@@ -2760,6 +2942,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
     methodDescriptors.add(deleteBackupPlanAssociationMethodDescriptor);
     methodDescriptors.add(triggerBackupMethodDescriptor);
     methodDescriptors.add(getDataSourceReferenceMethodDescriptor);
+    methodDescriptors.add(listDataSourceReferencesMethodDescriptor);
     methodDescriptors.add(fetchDataSourceReferencesForResourceTypeMethodDescriptor);
     methodDescriptors.add(initializeServiceMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
@@ -2910,6 +3093,18 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
   @Override
   public UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> listBackupsPagedCallable() {
     return listBackupsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse>
+      fetchBackupsForResourceTypeCallable() {
+    return fetchBackupsForResourceTypeCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypePagedResponse>
+      fetchBackupsForResourceTypePagedCallable() {
+    return fetchBackupsForResourceTypePagedCallable;
   }
 
   @Override
@@ -3104,6 +3299,18 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
   public UnaryCallable<GetDataSourceReferenceRequest, DataSourceReference>
       getDataSourceReferenceCallable() {
     return getDataSourceReferenceCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDataSourceReferencesRequest, ListDataSourceReferencesResponse>
+      listDataSourceReferencesCallable() {
+    return listDataSourceReferencesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDataSourceReferencesRequest, ListDataSourceReferencesPagedResponse>
+      listDataSourceReferencesPagedCallable() {
+    return listDataSourceReferencesPagedCallable;
   }
 
   @Override

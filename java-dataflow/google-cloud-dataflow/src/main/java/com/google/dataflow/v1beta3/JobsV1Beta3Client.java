@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,8 +35,8 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Provides a method to create and modify Google Cloud Dataflow jobs. A Job is
- * a multi-stage computation graph run by the Cloud Dataflow service.
+ * Service Description: Provides a method to create and modify Dataflow jobs. A Job is a multi-stage
+ * computation graph run by the Dataflow service.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -72,7 +72,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateJob</td>
- *      <td><p> Creates a Cloud Dataflow job.
+ *      <td><p> Creates a Dataflow job.
  * <p>  To create a job, we recommend using `projects.locations.jobs.create` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.create` is not recommended, as your job will always start in `us-central1`.
  * <p>  Do not enter confidential information when you supply string values using the API.</td>
  *      <td>
@@ -283,7 +283,7 @@ public class JobsV1Beta3Client implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a Cloud Dataflow job.
+   * Creates a Dataflow job.
    *
    * <p>To create a job, we recommend using `projects.locations.jobs.create` with a [regional
    * endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
@@ -321,7 +321,7 @@ public class JobsV1Beta3Client implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a Cloud Dataflow job.
+   * Creates a Dataflow job.
    *
    * <p>To create a job, we recommend using `projects.locations.jobs.create` with a [regional
    * endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using

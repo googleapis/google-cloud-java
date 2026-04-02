@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for ingesting end user actions on the customer website.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/retail/v2beta/user_event_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class UserEventServiceGrpc {
 
@@ -648,8 +645,9 @@ public final class UserEventServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2beta.UserEvent writeUserEvent(
-        com.google.cloud.retail.v2beta.WriteUserEventRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.WriteUserEventRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getWriteUserEventMethod(), getCallOptions(), request);
     }
 
@@ -665,8 +663,9 @@ public final class UserEventServiceGrpc {
      * </pre>
      */
     public com.google.api.HttpBody collectUserEvent(
-        com.google.cloud.retail.v2beta.CollectUserEventRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.CollectUserEventRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCollectUserEventMethod(), getCallOptions(), request);
     }
 
@@ -681,8 +680,9 @@ public final class UserEventServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation purgeUserEvents(
-        com.google.cloud.retail.v2beta.PurgeUserEventsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.PurgeUserEventsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPurgeUserEventsMethod(), getCallOptions(), request);
     }
 
@@ -699,8 +699,9 @@ public final class UserEventServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importUserEvents(
-        com.google.cloud.retail.v2beta.ImportUserEventsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.ImportUserEventsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportUserEventsMethod(), getCallOptions(), request);
     }
 
@@ -714,8 +715,9 @@ public final class UserEventServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportUserEvents(
-        com.google.cloud.retail.v2beta.ExportUserEventsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.ExportUserEventsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportUserEventsMethod(), getCallOptions(), request);
     }
 
@@ -734,8 +736,9 @@ public final class UserEventServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation rejoinUserEvents(
-        com.google.cloud.retail.v2beta.RejoinUserEventsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.RejoinUserEventsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRejoinUserEventsMethod(), getCallOptions(), request);
     }
   }

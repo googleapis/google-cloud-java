@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,7 +64,10 @@ import javax.annotation.Generated;
  * Base stub class for the AzureClusters service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@Deprecated
 @Generated("by gapic-generator-java")
 public abstract class AzureClustersStub implements BackgroundResource {
 
@@ -76,84 +79,101 @@ public abstract class AzureClustersStub implements BackgroundResource {
     return null;
   }
 
+  @Deprecated
   public OperationCallable<CreateAzureClientRequest, AzureClient, OperationMetadata>
       createAzureClientOperationCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: createAzureClientOperationCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<CreateAzureClientRequest, Operation> createAzureClientCallable() {
     throw new UnsupportedOperationException("Not implemented: createAzureClientCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<GetAzureClientRequest, AzureClient> getAzureClientCallable() {
     throw new UnsupportedOperationException("Not implemented: getAzureClientCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListAzureClientsRequest, ListAzureClientsPagedResponse>
       listAzureClientsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listAzureClientsPagedCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListAzureClientsRequest, ListAzureClientsResponse>
       listAzureClientsCallable() {
     throw new UnsupportedOperationException("Not implemented: listAzureClientsCallable()");
   }
 
+  @Deprecated
   public OperationCallable<DeleteAzureClientRequest, Empty, OperationMetadata>
       deleteAzureClientOperationCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: deleteAzureClientOperationCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<DeleteAzureClientRequest, Operation> deleteAzureClientCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteAzureClientCallable()");
   }
 
+  @Deprecated
   public OperationCallable<CreateAzureClusterRequest, AzureCluster, OperationMetadata>
       createAzureClusterOperationCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: createAzureClusterOperationCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<CreateAzureClusterRequest, Operation> createAzureClusterCallable() {
     throw new UnsupportedOperationException("Not implemented: createAzureClusterCallable()");
   }
 
+  @Deprecated
   public OperationCallable<UpdateAzureClusterRequest, AzureCluster, OperationMetadata>
       updateAzureClusterOperationCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: updateAzureClusterOperationCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<UpdateAzureClusterRequest, Operation> updateAzureClusterCallable() {
     throw new UnsupportedOperationException("Not implemented: updateAzureClusterCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<GetAzureClusterRequest, AzureCluster> getAzureClusterCallable() {
     throw new UnsupportedOperationException("Not implemented: getAzureClusterCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListAzureClustersRequest, ListAzureClustersPagedResponse>
       listAzureClustersPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listAzureClustersPagedCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListAzureClustersRequest, ListAzureClustersResponse>
       listAzureClustersCallable() {
     throw new UnsupportedOperationException("Not implemented: listAzureClustersCallable()");
   }
 
+  @Deprecated
   public OperationCallable<DeleteAzureClusterRequest, Empty, OperationMetadata>
       deleteAzureClusterOperationCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: deleteAzureClusterOperationCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<DeleteAzureClusterRequest, Operation> deleteAzureClusterCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteAzureClusterCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<
           GenerateAzureClusterAgentTokenRequest, GenerateAzureClusterAgentTokenResponse>
       generateAzureClusterAgentTokenCallable() {
@@ -161,64 +181,77 @@ public abstract class AzureClustersStub implements BackgroundResource {
         "Not implemented: generateAzureClusterAgentTokenCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<GenerateAzureAccessTokenRequest, GenerateAzureAccessTokenResponse>
       generateAzureAccessTokenCallable() {
     throw new UnsupportedOperationException("Not implemented: generateAzureAccessTokenCallable()");
   }
 
+  @Deprecated
   public OperationCallable<CreateAzureNodePoolRequest, AzureNodePool, OperationMetadata>
       createAzureNodePoolOperationCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: createAzureNodePoolOperationCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<CreateAzureNodePoolRequest, Operation> createAzureNodePoolCallable() {
     throw new UnsupportedOperationException("Not implemented: createAzureNodePoolCallable()");
   }
 
+  @Deprecated
   public OperationCallable<UpdateAzureNodePoolRequest, AzureNodePool, OperationMetadata>
       updateAzureNodePoolOperationCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: updateAzureNodePoolOperationCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<UpdateAzureNodePoolRequest, Operation> updateAzureNodePoolCallable() {
     throw new UnsupportedOperationException("Not implemented: updateAzureNodePoolCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<GetAzureNodePoolRequest, AzureNodePool> getAzureNodePoolCallable() {
     throw new UnsupportedOperationException("Not implemented: getAzureNodePoolCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListAzureNodePoolsRequest, ListAzureNodePoolsPagedResponse>
       listAzureNodePoolsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listAzureNodePoolsPagedCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListAzureNodePoolsRequest, ListAzureNodePoolsResponse>
       listAzureNodePoolsCallable() {
     throw new UnsupportedOperationException("Not implemented: listAzureNodePoolsCallable()");
   }
 
+  @Deprecated
   public OperationCallable<DeleteAzureNodePoolRequest, Empty, OperationMetadata>
       deleteAzureNodePoolOperationCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: deleteAzureNodePoolOperationCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<DeleteAzureNodePoolRequest, Operation> deleteAzureNodePoolCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteAzureNodePoolCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>
       getAzureOpenIdConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: getAzureOpenIdConfigCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<GetAzureJsonWebKeysRequest, AzureJsonWebKeys> getAzureJsonWebKeysCallable() {
     throw new UnsupportedOperationException("Not implemented: getAzureJsonWebKeysCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<GetAzureServerConfigRequest, AzureServerConfig>
       getAzureServerConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: getAzureServerConfigCallable()");

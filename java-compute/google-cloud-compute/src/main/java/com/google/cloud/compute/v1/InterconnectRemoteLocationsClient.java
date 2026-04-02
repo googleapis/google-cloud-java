@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,7 +67,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Get</td>
- *      <td><p> Returns the details for the specified interconnect remote location. Gets a list of available interconnect remote locations by making a list() request.</td>
+ *      <td><p> Returns the details for the specified interconnect remote location. Gets a list of available interconnect remote locations by making alist() request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -201,7 +201,7 @@ public class InterconnectRemoteLocationsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the details for the specified interconnect remote location. Gets a list of available
-   * interconnect remote locations by making a list() request.
+   * interconnect remote locations by making alist() request.
    *
    * <p>Sample code:
    *
@@ -236,7 +236,7 @@ public class InterconnectRemoteLocationsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the details for the specified interconnect remote location. Gets a list of available
-   * interconnect remote locations by making a list() request.
+   * interconnect remote locations by making alist() request.
    *
    * <p>Sample code:
    *
@@ -267,7 +267,7 @@ public class InterconnectRemoteLocationsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the details for the specified interconnect remote location. Gets a list of available
-   * interconnect remote locations by making a list() request.
+   * interconnect remote locations by making alist() request.
    *
    * <p>Sample code:
    *

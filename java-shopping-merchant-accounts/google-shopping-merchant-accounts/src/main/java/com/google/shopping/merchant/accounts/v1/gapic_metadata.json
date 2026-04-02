@@ -43,6 +43,9 @@
             "CreateAndConfigureAccount": {
               "methods": ["createAndConfigureAccount", "createAndConfigureAccountCallable"]
             },
+            "CreateTestAccount": {
+              "methods": ["createTestAccount", "createTestAccount", "createTestAccount", "createTestAccountCallable"]
+            },
             "DeleteAccount": {
               "methods": ["deleteAccount", "deleteAccount", "deleteAccount", "deleteAccountCallable"]
             },
@@ -172,6 +175,9 @@
         "grpc": {
           "libraryClient": "DeveloperRegistrationServiceClient",
           "rpcs": {
+            "GetAccountForGcpRegistration": {
+              "methods": ["getAccountForGcpRegistration", "getAccountForGcpRegistrationCallable"]
+            },
             "GetDeveloperRegistration": {
               "methods": ["getDeveloperRegistration", "getDeveloperRegistration", "getDeveloperRegistration", "getDeveloperRegistrationCallable"]
             },
@@ -417,6 +423,9 @@
             },
             "UpdateUser": {
               "methods": ["updateUser", "updateUser", "updateUserCallable"]
+            },
+            "VerifySelf": {
+              "methods": ["verifySelf", "verifySelf", "verifySelf", "verifySelfCallable"]
             }
           }
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.visionai.v1;
 
 import static com.google.cloud.visionai.v1.StreamsServiceClient.ListClustersPagedResponse;
 import static com.google.cloud.visionai.v1.StreamsServiceClient.ListEventsPagedResponse;
+import static com.google.cloud.visionai.v1.StreamsServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.visionai.v1.StreamsServiceClient.ListSeriesPagedResponse;
 import static com.google.cloud.visionai.v1.StreamsServiceClient.ListStreamsPagedResponse;
 
@@ -34,6 +35,10 @@ import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.visionai.v1.stub.StreamsServiceStubSettings;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -88,8 +93,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -323,6 +328,17 @@ public class StreamsServiceSettings extends ClientSettings<StreamsServiceSetting
   public OperationCallSettings<MaterializeChannelRequest, Channel, OperationMetadata>
       materializeChannelOperationSettings() {
     return ((StreamsServiceStubSettings) getStubSettings()).materializeChannelOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((StreamsServiceStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((StreamsServiceStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final StreamsServiceSettings create(StreamsServiceStubSettings stub)
@@ -644,6 +660,18 @@ public class StreamsServiceSettings extends ClientSettings<StreamsServiceSetting
     public OperationCallSettings.Builder<MaterializeChannelRequest, Channel, OperationMetadata>
         materializeChannelOperationSettings() {
       return getStubSettingsBuilder().materializeChannelOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

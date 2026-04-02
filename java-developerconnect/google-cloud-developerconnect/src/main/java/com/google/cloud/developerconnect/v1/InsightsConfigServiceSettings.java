@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.developerconnect.v1;
 
+import static com.google.cloud.developerconnect.v1.InsightsConfigServiceClient.ListDeploymentEventsPagedResponse;
 import static com.google.cloud.developerconnect.v1.InsightsConfigServiceClient.ListInsightsConfigsPagedResponse;
 import static com.google.cloud.developerconnect.v1.InsightsConfigServiceClient.ListLocationsPagedResponse;
 
@@ -92,8 +93,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -170,6 +171,21 @@ public class InsightsConfigServiceSettings extends ClientSettings<InsightsConfig
       deleteInsightsConfigOperationSettings() {
     return ((InsightsConfigServiceStubSettings) getStubSettings())
         .deleteInsightsConfigOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDeploymentEvent. */
+  public UnaryCallSettings<GetDeploymentEventRequest, DeploymentEvent>
+      getDeploymentEventSettings() {
+    return ((InsightsConfigServiceStubSettings) getStubSettings()).getDeploymentEventSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDeploymentEvents. */
+  public PagedCallSettings<
+          ListDeploymentEventsRequest,
+          ListDeploymentEventsResponse,
+          ListDeploymentEventsPagedResponse>
+      listDeploymentEventsSettings() {
+    return ((InsightsConfigServiceStubSettings) getStubSettings()).listDeploymentEventsSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -347,6 +363,21 @@ public class InsightsConfigServiceSettings extends ClientSettings<InsightsConfig
     public OperationCallSettings.Builder<DeleteInsightsConfigRequest, Empty, OperationMetadata>
         deleteInsightsConfigOperationSettings() {
       return getStubSettingsBuilder().deleteInsightsConfigOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDeploymentEvent. */
+    public UnaryCallSettings.Builder<GetDeploymentEventRequest, DeploymentEvent>
+        getDeploymentEventSettings() {
+      return getStubSettingsBuilder().getDeploymentEventSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listDeploymentEvents. */
+    public PagedCallSettings.Builder<
+            ListDeploymentEventsRequest,
+            ListDeploymentEventsResponse,
+            ListDeploymentEventsPagedResponse>
+        listDeploymentEventsSettings() {
+      return getStubSettingsBuilder().listDeploymentEventsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

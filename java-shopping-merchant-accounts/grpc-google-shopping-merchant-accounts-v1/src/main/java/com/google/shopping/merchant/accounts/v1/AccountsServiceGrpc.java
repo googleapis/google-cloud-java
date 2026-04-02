@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to support Accounts API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/accounts/v1/accounts.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AccountsServiceGrpc {
 
@@ -133,6 +130,53 @@ public final class AccountsServiceGrpc {
       }
     }
     return getCreateAndConfigureAccountMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.shopping.merchant.accounts.v1.CreateTestAccountRequest,
+          com.google.shopping.merchant.accounts.v1.Account>
+      getCreateTestAccountMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateTestAccount",
+      requestType = com.google.shopping.merchant.accounts.v1.CreateTestAccountRequest.class,
+      responseType = com.google.shopping.merchant.accounts.v1.Account.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.shopping.merchant.accounts.v1.CreateTestAccountRequest,
+          com.google.shopping.merchant.accounts.v1.Account>
+      getCreateTestAccountMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.shopping.merchant.accounts.v1.CreateTestAccountRequest,
+            com.google.shopping.merchant.accounts.v1.Account>
+        getCreateTestAccountMethod;
+    if ((getCreateTestAccountMethod = AccountsServiceGrpc.getCreateTestAccountMethod) == null) {
+      synchronized (AccountsServiceGrpc.class) {
+        if ((getCreateTestAccountMethod = AccountsServiceGrpc.getCreateTestAccountMethod) == null) {
+          AccountsServiceGrpc.getCreateTestAccountMethod =
+              getCreateTestAccountMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.shopping.merchant.accounts.v1.CreateTestAccountRequest,
+                          com.google.shopping.merchant.accounts.v1.Account>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateTestAccount"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.shopping.merchant.accounts.v1.CreateTestAccountRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.shopping.merchant.accounts.v1.Account
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AccountsServiceMethodDescriptorSupplier("CreateTestAccount"))
+                      .build();
+        }
+      }
+    }
+    return getCreateTestAccountMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -419,12 +463,41 @@ public final class AccountsServiceGrpc {
      *
      *
      * <pre>
+     * Creates a Merchant Center test account.
+     * Test accounts are intended for development and testing purposes, such as
+     * validating API integrations or new feature behavior.
+     * Key characteristics and limitations of test accounts:
+     * - Immutable Type: A test account cannot be converted into a regular
+     *   (live) Merchant Center account. Likewise, a regular account cannot be
+     *   converted into a test account.
+     * - Non-Serving Products: Any products, offers, or data created within a
+     *   test account will not be published or made visible to end-users on any
+     *   Google surfaces. They are strictly for testing environments.
+     * - Separate Environment: Test accounts operate in a sandbox-like manner,
+     *   isolated from live serving and real user traffic.
+     * </pre>
+     */
+    default void createTestAccount(
+        com.google.shopping.merchant.accounts.v1.CreateTestAccountRequest request,
+        io.grpc.stub.StreamObserver<com.google.shopping.merchant.accounts.v1.Account>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateTestAccountMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes the specified account regardless of its type: standalone, advanced
      * account or sub-account. Deleting an advanced account leads to the deletion
-     * of all of its sub-accounts. Executing this method requires admin access.
-     * The deletion succeeds only if the account does not provide services
-     * to any other account and has no processed offers. You can use the `force`
-     * parameter to override this.
+     * of all of its sub-accounts. This also deletes the account's [developer
+     * registration
+     * entity](/merchant/api/reference/rest/accounts_v1/accounts.developerRegistration)
+     * and any associated GCP project to the account. Executing this method
+     * requires admin access. The deletion succeeds only if the account does not
+     * provide services to any other account and has no processed offers. You can
+     * use the `force` parameter to override this.
      * </pre>
      */
     default void deleteAccount(
@@ -563,12 +636,43 @@ public final class AccountsServiceGrpc {
      *
      *
      * <pre>
+     * Creates a Merchant Center test account.
+     * Test accounts are intended for development and testing purposes, such as
+     * validating API integrations or new feature behavior.
+     * Key characteristics and limitations of test accounts:
+     * - Immutable Type: A test account cannot be converted into a regular
+     *   (live) Merchant Center account. Likewise, a regular account cannot be
+     *   converted into a test account.
+     * - Non-Serving Products: Any products, offers, or data created within a
+     *   test account will not be published or made visible to end-users on any
+     *   Google surfaces. They are strictly for testing environments.
+     * - Separate Environment: Test accounts operate in a sandbox-like manner,
+     *   isolated from live serving and real user traffic.
+     * </pre>
+     */
+    public void createTestAccount(
+        com.google.shopping.merchant.accounts.v1.CreateTestAccountRequest request,
+        io.grpc.stub.StreamObserver<com.google.shopping.merchant.accounts.v1.Account>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateTestAccountMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes the specified account regardless of its type: standalone, advanced
      * account or sub-account. Deleting an advanced account leads to the deletion
-     * of all of its sub-accounts. Executing this method requires admin access.
-     * The deletion succeeds only if the account does not provide services
-     * to any other account and has no processed offers. You can use the `force`
-     * parameter to override this.
+     * of all of its sub-accounts. This also deletes the account's [developer
+     * registration
+     * entity](/merchant/api/reference/rest/accounts_v1/accounts.developerRegistration)
+     * and any associated GCP project to the account. Executing this method
+     * requires admin access. The deletion succeeds only if the account does not
+     * provide services to any other account and has no processed offers. You can
+     * use the `force` parameter to override this.
      * </pre>
      */
     public void deleteAccount(
@@ -672,8 +776,9 @@ public final class AccountsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.Account getAccount(
-        com.google.shopping.merchant.accounts.v1.GetAccountRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.GetAccountRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAccountMethod(), getCallOptions(), request);
     }
 
@@ -686,9 +791,35 @@ public final class AccountsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.Account createAndConfigureAccount(
-        com.google.shopping.merchant.accounts.v1.CreateAndConfigureAccountRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.CreateAndConfigureAccountRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAndConfigureAccountMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Merchant Center test account.
+     * Test accounts are intended for development and testing purposes, such as
+     * validating API integrations or new feature behavior.
+     * Key characteristics and limitations of test accounts:
+     * - Immutable Type: A test account cannot be converted into a regular
+     *   (live) Merchant Center account. Likewise, a regular account cannot be
+     *   converted into a test account.
+     * - Non-Serving Products: Any products, offers, or data created within a
+     *   test account will not be published or made visible to end-users on any
+     *   Google surfaces. They are strictly for testing environments.
+     * - Separate Environment: Test accounts operate in a sandbox-like manner,
+     *   isolated from live serving and real user traffic.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1.Account createTestAccount(
+        com.google.shopping.merchant.accounts.v1.CreateTestAccountRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateTestAccountMethod(), getCallOptions(), request);
     }
 
     /**
@@ -697,15 +828,19 @@ public final class AccountsServiceGrpc {
      * <pre>
      * Deletes the specified account regardless of its type: standalone, advanced
      * account or sub-account. Deleting an advanced account leads to the deletion
-     * of all of its sub-accounts. Executing this method requires admin access.
-     * The deletion succeeds only if the account does not provide services
-     * to any other account and has no processed offers. You can use the `force`
-     * parameter to override this.
+     * of all of its sub-accounts. This also deletes the account's [developer
+     * registration
+     * entity](/merchant/api/reference/rest/accounts_v1/accounts.developerRegistration)
+     * and any associated GCP project to the account. Executing this method
+     * requires admin access. The deletion succeeds only if the account does not
+     * provide services to any other account and has no processed offers. You can
+     * use the `force` parameter to override this.
      * </pre>
      */
     public com.google.protobuf.Empty deleteAccount(
-        com.google.shopping.merchant.accounts.v1.DeleteAccountRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.DeleteAccountRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAccountMethod(), getCallOptions(), request);
     }
 
@@ -718,8 +853,9 @@ public final class AccountsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.Account updateAccount(
-        com.google.shopping.merchant.accounts.v1.UpdateAccountRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.UpdateAccountRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAccountMethod(), getCallOptions(), request);
     }
 
@@ -735,8 +871,9 @@ public final class AccountsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.ListAccountsResponse listAccounts(
-        com.google.shopping.merchant.accounts.v1.ListAccountsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.ListAccountsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAccountsMethod(), getCallOptions(), request);
     }
 
@@ -752,8 +889,9 @@ public final class AccountsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.ListSubAccountsResponse listSubAccounts(
-        com.google.shopping.merchant.accounts.v1.ListSubAccountsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.ListSubAccountsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSubAccountsMethod(), getCallOptions(), request);
     }
   }
@@ -810,12 +948,39 @@ public final class AccountsServiceGrpc {
      *
      *
      * <pre>
+     * Creates a Merchant Center test account.
+     * Test accounts are intended for development and testing purposes, such as
+     * validating API integrations or new feature behavior.
+     * Key characteristics and limitations of test accounts:
+     * - Immutable Type: A test account cannot be converted into a regular
+     *   (live) Merchant Center account. Likewise, a regular account cannot be
+     *   converted into a test account.
+     * - Non-Serving Products: Any products, offers, or data created within a
+     *   test account will not be published or made visible to end-users on any
+     *   Google surfaces. They are strictly for testing environments.
+     * - Separate Environment: Test accounts operate in a sandbox-like manner,
+     *   isolated from live serving and real user traffic.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1.Account createTestAccount(
+        com.google.shopping.merchant.accounts.v1.CreateTestAccountRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTestAccountMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes the specified account regardless of its type: standalone, advanced
      * account or sub-account. Deleting an advanced account leads to the deletion
-     * of all of its sub-accounts. Executing this method requires admin access.
-     * The deletion succeeds only if the account does not provide services
-     * to any other account and has no processed offers. You can use the `force`
-     * parameter to override this.
+     * of all of its sub-accounts. This also deletes the account's [developer
+     * registration
+     * entity](/merchant/api/reference/rest/accounts_v1/accounts.developerRegistration)
+     * and any associated GCP project to the account. Executing this method
+     * requires admin access. The deletion succeeds only if the account does not
+     * provide services to any other account and has no processed offers. You can
+     * use the `force` parameter to override this.
      * </pre>
      */
     public com.google.protobuf.Empty deleteAccount(
@@ -928,12 +1093,41 @@ public final class AccountsServiceGrpc {
      *
      *
      * <pre>
+     * Creates a Merchant Center test account.
+     * Test accounts are intended for development and testing purposes, such as
+     * validating API integrations or new feature behavior.
+     * Key characteristics and limitations of test accounts:
+     * - Immutable Type: A test account cannot be converted into a regular
+     *   (live) Merchant Center account. Likewise, a regular account cannot be
+     *   converted into a test account.
+     * - Non-Serving Products: Any products, offers, or data created within a
+     *   test account will not be published or made visible to end-users on any
+     *   Google surfaces. They are strictly for testing environments.
+     * - Separate Environment: Test accounts operate in a sandbox-like manner,
+     *   isolated from live serving and real user traffic.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.shopping.merchant.accounts.v1.Account>
+        createTestAccount(
+            com.google.shopping.merchant.accounts.v1.CreateTestAccountRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateTestAccountMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes the specified account regardless of its type: standalone, advanced
      * account or sub-account. Deleting an advanced account leads to the deletion
-     * of all of its sub-accounts. Executing this method requires admin access.
-     * The deletion succeeds only if the account does not provide services
-     * to any other account and has no processed offers. You can use the `force`
-     * parameter to override this.
+     * of all of its sub-accounts. This also deletes the account's [developer
+     * registration
+     * entity](/merchant/api/reference/rest/accounts_v1/accounts.developerRegistration)
+     * and any associated GCP project to the account. Executing this method
+     * requires admin access. The deletion succeeds only if the account does not
+     * provide services to any other account and has no processed offers. You can
+     * use the `force` parameter to override this.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -996,10 +1190,11 @@ public final class AccountsServiceGrpc {
 
   private static final int METHODID_GET_ACCOUNT = 0;
   private static final int METHODID_CREATE_AND_CONFIGURE_ACCOUNT = 1;
-  private static final int METHODID_DELETE_ACCOUNT = 2;
-  private static final int METHODID_UPDATE_ACCOUNT = 3;
-  private static final int METHODID_LIST_ACCOUNTS = 4;
-  private static final int METHODID_LIST_SUB_ACCOUNTS = 5;
+  private static final int METHODID_CREATE_TEST_ACCOUNT = 2;
+  private static final int METHODID_DELETE_ACCOUNT = 3;
+  private static final int METHODID_UPDATE_ACCOUNT = 4;
+  private static final int METHODID_LIST_ACCOUNTS = 5;
+  private static final int METHODID_LIST_SUB_ACCOUNTS = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1027,6 +1222,12 @@ public final class AccountsServiceGrpc {
         case METHODID_CREATE_AND_CONFIGURE_ACCOUNT:
           serviceImpl.createAndConfigureAccount(
               (com.google.shopping.merchant.accounts.v1.CreateAndConfigureAccountRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.shopping.merchant.accounts.v1.Account>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_TEST_ACCOUNT:
+          serviceImpl.createTestAccount(
+              (com.google.shopping.merchant.accounts.v1.CreateTestAccountRequest) request,
               (io.grpc.stub.StreamObserver<com.google.shopping.merchant.accounts.v1.Account>)
                   responseObserver);
           break;
@@ -1087,6 +1288,13 @@ public final class AccountsServiceGrpc {
                     com.google.shopping.merchant.accounts.v1.CreateAndConfigureAccountRequest,
                     com.google.shopping.merchant.accounts.v1.Account>(
                     service, METHODID_CREATE_AND_CONFIGURE_ACCOUNT)))
+        .addMethod(
+            getCreateTestAccountMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.shopping.merchant.accounts.v1.CreateTestAccountRequest,
+                    com.google.shopping.merchant.accounts.v1.Account>(
+                    service, METHODID_CREATE_TEST_ACCOUNT)))
         .addMethod(
             getDeleteAccountMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1167,6 +1375,7 @@ public final class AccountsServiceGrpc {
                       .setSchemaDescriptor(new AccountsServiceFileDescriptorSupplier())
                       .addMethod(getGetAccountMethod())
                       .addMethod(getCreateAndConfigureAccountMethod())
+                      .addMethod(getCreateTestAccountMethod())
                       .addMethod(getDeleteAccountMethod())
                       .addMethod(getUpdateAccountMethod())
                       .addMethod(getListAccountsMethod())

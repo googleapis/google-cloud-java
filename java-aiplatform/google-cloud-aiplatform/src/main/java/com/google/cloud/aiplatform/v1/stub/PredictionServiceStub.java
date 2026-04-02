@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,8 @@ import com.google.cloud.aiplatform.v1.DirectPredictRequest;
 import com.google.cloud.aiplatform.v1.DirectPredictResponse;
 import com.google.cloud.aiplatform.v1.DirectRawPredictRequest;
 import com.google.cloud.aiplatform.v1.DirectRawPredictResponse;
+import com.google.cloud.aiplatform.v1.EmbedContentRequest;
+import com.google.cloud.aiplatform.v1.EmbedContentResponse;
 import com.google.cloud.aiplatform.v1.ExplainRequest;
 import com.google.cloud.aiplatform.v1.ExplainResponse;
 import com.google.cloud.aiplatform.v1.GenerateContentRequest;
@@ -120,6 +122,10 @@ public abstract class PredictionServiceStub implements BackgroundResource {
   public ServerStreamingCallable<GenerateContentRequest, GenerateContentResponse>
       streamGenerateContentCallable() {
     throw new UnsupportedOperationException("Not implemented: streamGenerateContentCallable()");
+  }
+
+  public UnaryCallable<EmbedContentRequest, EmbedContentResponse> embedContentCallable() {
+    throw new UnsupportedOperationException("Not implemented: embedContentCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

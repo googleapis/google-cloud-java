@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for Auto-Completion.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1/completion_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CompletionServiceGrpc {
 
@@ -588,8 +585,9 @@ public final class CompletionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1.CompleteQueryResponse completeQuery(
-        com.google.cloud.discoveryengine.v1.CompleteQueryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.CompleteQueryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCompleteQueryMethod(), getCallOptions(), request);
     }
 
@@ -603,8 +601,9 @@ public final class CompletionServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importSuggestionDenyListEntries(
-        com.google.cloud.discoveryengine.v1.ImportSuggestionDenyListEntriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.ImportSuggestionDenyListEntriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportSuggestionDenyListEntriesMethod(), getCallOptions(), request);
     }
 
@@ -618,8 +617,9 @@ public final class CompletionServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation purgeSuggestionDenyListEntries(
-        com.google.cloud.discoveryengine.v1.PurgeSuggestionDenyListEntriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.PurgeSuggestionDenyListEntriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPurgeSuggestionDenyListEntriesMethod(), getCallOptions(), request);
     }
 
@@ -633,8 +633,9 @@ public final class CompletionServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importCompletionSuggestions(
-        com.google.cloud.discoveryengine.v1.ImportCompletionSuggestionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.ImportCompletionSuggestionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportCompletionSuggestionsMethod(), getCallOptions(), request);
     }
 
@@ -648,8 +649,9 @@ public final class CompletionServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation purgeCompletionSuggestions(
-        com.google.cloud.discoveryengine.v1.PurgeCompletionSuggestionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.PurgeCompletionSuggestionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPurgeCompletionSuggestionsMethod(), getCallOptions(), request);
     }
   }

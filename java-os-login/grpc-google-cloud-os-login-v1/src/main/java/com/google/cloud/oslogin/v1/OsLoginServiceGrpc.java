@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * public keys for logging into virtual machines on Google Cloud Platform.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/oslogin/v1/oslogin.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class OsLoginServiceGrpc {
 
@@ -722,8 +719,9 @@ public final class OsLoginServiceGrpc {
      * </pre>
      */
     public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey createSshPublicKey(
-        com.google.cloud.oslogin.v1.CreateSshPublicKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oslogin.v1.CreateSshPublicKeyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSshPublicKeyMethod(), getCallOptions(), request);
     }
 
@@ -735,8 +733,9 @@ public final class OsLoginServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deletePosixAccount(
-        com.google.cloud.oslogin.v1.DeletePosixAccountRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oslogin.v1.DeletePosixAccountRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePosixAccountMethod(), getCallOptions(), request);
     }
 
@@ -748,8 +747,9 @@ public final class OsLoginServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteSshPublicKey(
-        com.google.cloud.oslogin.v1.DeleteSshPublicKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oslogin.v1.DeleteSshPublicKeyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSshPublicKeyMethod(), getCallOptions(), request);
     }
 
@@ -762,8 +762,8 @@ public final class OsLoginServiceGrpc {
      * </pre>
      */
     public com.google.cloud.oslogin.v1.LoginProfile getLoginProfile(
-        com.google.cloud.oslogin.v1.GetLoginProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oslogin.v1.GetLoginProfileRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetLoginProfileMethod(), getCallOptions(), request);
     }
 
@@ -775,8 +775,8 @@ public final class OsLoginServiceGrpc {
      * </pre>
      */
     public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKey(
-        com.google.cloud.oslogin.v1.GetSshPublicKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oslogin.v1.GetSshPublicKeyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSshPublicKeyMethod(), getCallOptions(), request);
     }
 
@@ -790,8 +790,9 @@ public final class OsLoginServiceGrpc {
      * </pre>
      */
     public com.google.cloud.oslogin.v1.ImportSshPublicKeyResponse importSshPublicKey(
-        com.google.cloud.oslogin.v1.ImportSshPublicKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oslogin.v1.ImportSshPublicKeyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportSshPublicKeyMethod(), getCallOptions(), request);
     }
 
@@ -804,8 +805,9 @@ public final class OsLoginServiceGrpc {
      * </pre>
      */
     public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey updateSshPublicKey(
-        com.google.cloud.oslogin.v1.UpdateSshPublicKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oslogin.v1.UpdateSshPublicKeyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSshPublicKeyMethod(), getCallOptions(), request);
     }
   }

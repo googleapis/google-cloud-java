@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -204,6 +204,7 @@ public class GrpcCaseServiceStub extends CaseServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListCasesRequest, ListCasesResponse> listCasesTransportSettings =
         GrpcCallSettings.<ListCasesRequest, ListCasesResponse>newBuilder()
@@ -214,6 +215,7 @@ public class GrpcCaseServiceStub extends CaseServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<SearchCasesRequest, SearchCasesResponse> searchCasesTransportSettings =
         GrpcCallSettings.<SearchCasesRequest, SearchCasesResponse>newBuilder()
@@ -234,6 +236,7 @@ public class GrpcCaseServiceStub extends CaseServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateCaseRequest, Case> updateCaseTransportSettings =
         GrpcCallSettings.<UpdateCaseRequest, Case>newBuilder()
@@ -254,6 +257,7 @@ public class GrpcCaseServiceStub extends CaseServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CloseCaseRequest, Case> closeCaseTransportSettings =
         GrpcCallSettings.<CloseCaseRequest, Case>newBuilder()
@@ -264,6 +268,7 @@ public class GrpcCaseServiceStub extends CaseServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SearchCaseClassificationsRequest, SearchCaseClassificationsResponse>
         searchCaseClassificationsTransportSettings =

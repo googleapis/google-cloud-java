@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import com.google.shopping.merchant.accounts.v1.Account;
 import com.google.shopping.merchant.accounts.v1.CreateAndConfigureAccountRequest;
+import com.google.shopping.merchant.accounts.v1.CreateTestAccountRequest;
 import com.google.shopping.merchant.accounts.v1.DeleteAccountRequest;
 import com.google.shopping.merchant.accounts.v1.GetAccountRequest;
 import com.google.shopping.merchant.accounts.v1.ListAccountsRequest;
@@ -68,6 +69,18 @@ public class GrpcAccountsServiceStub extends AccountsServiceStub {
                   "google.shopping.merchant.accounts.v1.AccountsService/CreateAndConfigureAccount")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAndConfigureAccountRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Account.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateTestAccountRequest, Account>
+      createTestAccountMethodDescriptor =
+          MethodDescriptor.<CreateTestAccountRequest, Account>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.shopping.merchant.accounts.v1.AccountsService/CreateTestAccount")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateTestAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Account.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
@@ -121,6 +134,7 @@ public class GrpcAccountsServiceStub extends AccountsServiceStub {
   private final UnaryCallable<GetAccountRequest, Account> getAccountCallable;
   private final UnaryCallable<CreateAndConfigureAccountRequest, Account>
       createAndConfigureAccountCallable;
+  private final UnaryCallable<CreateTestAccountRequest, Account> createTestAccountCallable;
   private final UnaryCallable<DeleteAccountRequest, Empty> deleteAccountCallable;
   private final UnaryCallable<UpdateAccountRequest, Account> updateAccountCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsResponse> listAccountsCallable;
@@ -184,12 +198,24 @@ public class GrpcAccountsServiceStub extends AccountsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateAndConfigureAccountRequest, Account>
         createAndConfigureAccountTransportSettings =
             GrpcCallSettings.<CreateAndConfigureAccountRequest, Account>newBuilder()
                 .setMethodDescriptor(createAndConfigureAccountMethodDescriptor)
                 .build();
+    GrpcCallSettings<CreateTestAccountRequest, Account> createTestAccountTransportSettings =
+        GrpcCallSettings.<CreateTestAccountRequest, Account>newBuilder()
+            .setMethodDescriptor(createTestAccountMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
     GrpcCallSettings<DeleteAccountRequest, Empty> deleteAccountTransportSettings =
         GrpcCallSettings.<DeleteAccountRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteAccountMethodDescriptor)
@@ -199,6 +225,7 @@ public class GrpcAccountsServiceStub extends AccountsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateAccountRequest, Account> updateAccountTransportSettings =
         GrpcCallSettings.<UpdateAccountRequest, Account>newBuilder()
@@ -224,6 +251,7 @@ public class GrpcAccountsServiceStub extends AccountsServiceStub {
                       builder.add("provider", String.valueOf(request.getProvider()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProvider())
                 .build();
 
     this.getAccountCallable =
@@ -233,6 +261,11 @@ public class GrpcAccountsServiceStub extends AccountsServiceStub {
         callableFactory.createUnaryCallable(
             createAndConfigureAccountTransportSettings,
             settings.createAndConfigureAccountSettings(),
+            clientContext);
+    this.createTestAccountCallable =
+        callableFactory.createUnaryCallable(
+            createTestAccountTransportSettings,
+            settings.createTestAccountSettings(),
             clientContext);
     this.deleteAccountCallable =
         callableFactory.createUnaryCallable(
@@ -270,6 +303,11 @@ public class GrpcAccountsServiceStub extends AccountsServiceStub {
   public UnaryCallable<CreateAndConfigureAccountRequest, Account>
       createAndConfigureAccountCallable() {
     return createAndConfigureAccountCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateTestAccountRequest, Account> createTestAccountCallable() {
+    return createTestAccountCallable;
   }
 
   @Override

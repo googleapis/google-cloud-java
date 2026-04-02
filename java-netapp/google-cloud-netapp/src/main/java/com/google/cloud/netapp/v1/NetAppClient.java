@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -310,6 +310,21 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> revertVolumeOperationCallable()
  *           <li><p> revertVolumeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> EstablishVolumePeering</td>
+ *      <td><p> Establish volume peering. This is used to establish cluster and svm peerings between the GCNV and OnPrem clusters.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> establishVolumePeeringAsync(EstablishVolumePeeringRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> establishVolumePeeringOperationCallable()
+ *           <li><p> establishVolumePeeringCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1202,8 +1217,180 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> RestoreBackupFiles</td>
+ *      <td><p> Restore files from a backup to a volume.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> restoreBackupFilesAsync(RestoreBackupFilesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> restoreBackupFilesOperationCallable()
+ *           <li><p> restoreBackupFilesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListHostGroups</td>
+ *      <td><p> Returns a list of host groups in a `location`. Use `-` as location to list host groups across all locations.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listHostGroups(ListHostGroupsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listHostGroups(LocationName parent)
+ *           <li><p> listHostGroups(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listHostGroupsPagedCallable()
+ *           <li><p> listHostGroupsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetHostGroup</td>
+ *      <td><p> Returns details of the specified host group.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getHostGroup(GetHostGroupRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getHostGroup(HostGroupName name)
+ *           <li><p> getHostGroup(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getHostGroupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateHostGroup</td>
+ *      <td><p> Creates a new host group.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createHostGroupAsync(CreateHostGroupRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createHostGroupAsync(LocationName parent, HostGroup hostGroup, String hostGroupId)
+ *           <li><p> createHostGroupAsync(String parent, HostGroup hostGroup, String hostGroupId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createHostGroupOperationCallable()
+ *           <li><p> createHostGroupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateHostGroup</td>
+ *      <td><p> Updates an existing host group.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateHostGroupAsync(UpdateHostGroupRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateHostGroupAsync(HostGroup hostGroup, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateHostGroupOperationCallable()
+ *           <li><p> updateHostGroupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteHostGroup</td>
+ *      <td><p> Deletes a host group.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteHostGroupAsync(DeleteHostGroupRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteHostGroupAsync(HostGroupName name)
+ *           <li><p> deleteHostGroupAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteHostGroupOperationCallable()
+ *           <li><p> deleteHostGroupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ExecuteOntapPost</td>
+ *      <td><p> `ExecuteOntapPost` dispatches the ONTAP `POST` request to the `StoragePool` cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> executeOntapPost(ExecuteOntapPostRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> executeOntapPostCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ExecuteOntapGet</td>
+ *      <td><p> `ExecuteOntapGet` dispatches the ONTAP `GET` request to the `StoragePool` cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> executeOntapGet(ExecuteOntapGetRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> executeOntapGetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ExecuteOntapDelete</td>
+ *      <td><p> `ExecuteOntapDelete` dispatches the ONTAP `DELETE` request to the `StoragePool` cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> executeOntapDelete(ExecuteOntapDeleteRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> executeOntapDeleteCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ExecuteOntapPatch</td>
+ *      <td><p> `ExecuteOntapPatch` dispatches the ONTAP `PATCH` request to the `StoragePool` cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> executeOntapPatch(ExecuteOntapPatchRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> executeOntapPatchCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name] field:
+ * <p> &#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -3041,6 +3228,108 @@ public class NetAppClient implements BackgroundResource {
    */
   public final UnaryCallable<RevertVolumeRequest, Operation> revertVolumeCallable() {
     return stub.revertVolumeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Establish volume peering. This is used to establish cluster and svm peerings between the GCNV
+   * and OnPrem clusters.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   EstablishVolumePeeringRequest request =
+   *       EstablishVolumePeeringRequest.newBuilder()
+   *           .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setPeerClusterName("peerClusterName313022691")
+   *           .setPeerSvmName("peerSvmName1014209619")
+   *           .addAllPeerIpAddresses(new ArrayList<String>())
+   *           .setPeerVolumeName("peerVolumeName1542206407")
+   *           .build();
+   *   Volume response = netAppClient.establishVolumePeeringAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Volume, OperationMetadata> establishVolumePeeringAsync(
+      EstablishVolumePeeringRequest request) {
+    return establishVolumePeeringOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Establish volume peering. This is used to establish cluster and svm peerings between the GCNV
+   * and OnPrem clusters.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   EstablishVolumePeeringRequest request =
+   *       EstablishVolumePeeringRequest.newBuilder()
+   *           .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setPeerClusterName("peerClusterName313022691")
+   *           .setPeerSvmName("peerSvmName1014209619")
+   *           .addAllPeerIpAddresses(new ArrayList<String>())
+   *           .setPeerVolumeName("peerVolumeName1542206407")
+   *           .build();
+   *   OperationFuture<Volume, OperationMetadata> future =
+   *       netAppClient.establishVolumePeeringOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Volume response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<EstablishVolumePeeringRequest, Volume, OperationMetadata>
+      establishVolumePeeringOperationCallable() {
+    return stub.establishVolumePeeringOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Establish volume peering. This is used to establish cluster and svm peerings between the GCNV
+   * and OnPrem clusters.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   EstablishVolumePeeringRequest request =
+   *       EstablishVolumePeeringRequest.newBuilder()
+   *           .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setPeerClusterName("peerClusterName313022691")
+   *           .setPeerSvmName("peerSvmName1014209619")
+   *           .addAllPeerIpAddresses(new ArrayList<String>())
+   *           .setPeerVolumeName("peerVolumeName1542206407")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       netAppClient.establishVolumePeeringCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<EstablishVolumePeeringRequest, Operation>
+      establishVolumePeeringCallable() {
+    return stub.establishVolumePeeringCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -9449,7 +9738,1055 @@ public class NetAppClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Restore files from a backup to a volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   RestoreBackupFilesRequest request =
+   *       RestoreBackupFilesRequest.newBuilder()
+   *           .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setBackup(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]", "[BACKUP]").toString())
+   *           .addAllFileList(new ArrayList<String>())
+   *           .setRestoreDestinationPath("restoreDestinationPath-1614668571")
+   *           .build();
+   *   RestoreBackupFilesResponse response = netAppClient.restoreBackupFilesAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RestoreBackupFilesResponse, OperationMetadata>
+      restoreBackupFilesAsync(RestoreBackupFilesRequest request) {
+    return restoreBackupFilesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restore files from a backup to a volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   RestoreBackupFilesRequest request =
+   *       RestoreBackupFilesRequest.newBuilder()
+   *           .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setBackup(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]", "[BACKUP]").toString())
+   *           .addAllFileList(new ArrayList<String>())
+   *           .setRestoreDestinationPath("restoreDestinationPath-1614668571")
+   *           .build();
+   *   OperationFuture<RestoreBackupFilesResponse, OperationMetadata> future =
+   *       netAppClient.restoreBackupFilesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   RestoreBackupFilesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          RestoreBackupFilesRequest, RestoreBackupFilesResponse, OperationMetadata>
+      restoreBackupFilesOperationCallable() {
+    return stub.restoreBackupFilesOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restore files from a backup to a volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   RestoreBackupFilesRequest request =
+   *       RestoreBackupFilesRequest.newBuilder()
+   *           .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setBackup(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]", "[BACKUP]").toString())
+   *           .addAllFileList(new ArrayList<String>())
+   *           .setRestoreDestinationPath("restoreDestinationPath-1614668571")
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.restoreBackupFilesCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RestoreBackupFilesRequest, Operation> restoreBackupFilesCallable() {
+    return stub.restoreBackupFilesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of host groups in a `location`. Use `-` as location to list host groups across
+   * all locations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (HostGroup element : netAppClient.listHostGroups(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListHostGroupsRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListHostGroupsPagedResponse listHostGroups(LocationName parent) {
+    ListHostGroupsRequest request =
+        ListHostGroupsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listHostGroups(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of host groups in a `location`. Use `-` as location to list host groups across
+   * all locations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (HostGroup element : netAppClient.listHostGroups(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListHostGroupsRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListHostGroupsPagedResponse listHostGroups(String parent) {
+    ListHostGroupsRequest request = ListHostGroupsRequest.newBuilder().setParent(parent).build();
+    return listHostGroups(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of host groups in a `location`. Use `-` as location to list host groups across
+   * all locations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ListHostGroupsRequest request =
+   *       ListHostGroupsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (HostGroup element : netAppClient.listHostGroups(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListHostGroupsPagedResponse listHostGroups(ListHostGroupsRequest request) {
+    return listHostGroupsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of host groups in a `location`. Use `-` as location to list host groups across
+   * all locations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ListHostGroupsRequest request =
+   *       ListHostGroupsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<HostGroup> future = netAppClient.listHostGroupsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (HostGroup element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListHostGroupsRequest, ListHostGroupsPagedResponse>
+      listHostGroupsPagedCallable() {
+    return stub.listHostGroupsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of host groups in a `location`. Use `-` as location to list host groups across
+   * all locations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ListHostGroupsRequest request =
+   *       ListHostGroupsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListHostGroupsResponse response = netAppClient.listHostGroupsCallable().call(request);
+   *     for (HostGroup element : response.getHostGroupsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListHostGroupsRequest, ListHostGroupsResponse>
+      listHostGroupsCallable() {
+    return stub.listHostGroupsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details of the specified host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   HostGroupName name = HostGroupName.of("[PROJECT]", "[LOCATION]", "[HOST_GROUP]");
+   *   HostGroup response = netAppClient.getHostGroup(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the host group. Format:
+   *     `projects/{project_number}/locations/{location_id}/hostGroups/{host_group_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final HostGroup getHostGroup(HostGroupName name) {
+    GetHostGroupRequest request =
+        GetHostGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getHostGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details of the specified host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String name = HostGroupName.of("[PROJECT]", "[LOCATION]", "[HOST_GROUP]").toString();
+   *   HostGroup response = netAppClient.getHostGroup(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the host group. Format:
+   *     `projects/{project_number}/locations/{location_id}/hostGroups/{host_group_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final HostGroup getHostGroup(String name) {
+    GetHostGroupRequest request = GetHostGroupRequest.newBuilder().setName(name).build();
+    return getHostGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details of the specified host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   GetHostGroupRequest request =
+   *       GetHostGroupRequest.newBuilder()
+   *           .setName(HostGroupName.of("[PROJECT]", "[LOCATION]", "[HOST_GROUP]").toString())
+   *           .build();
+   *   HostGroup response = netAppClient.getHostGroup(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final HostGroup getHostGroup(GetHostGroupRequest request) {
+    return getHostGroupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details of the specified host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   GetHostGroupRequest request =
+   *       GetHostGroupRequest.newBuilder()
+   *           .setName(HostGroupName.of("[PROJECT]", "[LOCATION]", "[HOST_GROUP]").toString())
+   *           .build();
+   *   ApiFuture<HostGroup> future = netAppClient.getHostGroupCallable().futureCall(request);
+   *   // Do something.
+   *   HostGroup response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetHostGroupRequest, HostGroup> getHostGroupCallable() {
+    return stub.getHostGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   HostGroup hostGroup = HostGroup.newBuilder().build();
+   *   String hostGroupId = "hostGroupId-1975725774";
+   *   HostGroup response = netAppClient.createHostGroupAsync(parent, hostGroup, hostGroupId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for CreateHostGroupRequest
+   * @param hostGroup Required. Fields of the host group to create.
+   * @param hostGroupId Required. ID of the host group to create. Must be unique within the parent
+   *     resource. Must contain only letters, numbers, and hyphen, with the first character a letter
+   *     or underscore, the last a letter or underscore or a number, and a 63 character maximum.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<HostGroup, OperationMetadata> createHostGroupAsync(
+      LocationName parent, HostGroup hostGroup, String hostGroupId) {
+    CreateHostGroupRequest request =
+        CreateHostGroupRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setHostGroup(hostGroup)
+            .setHostGroupId(hostGroupId)
+            .build();
+    return createHostGroupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   HostGroup hostGroup = HostGroup.newBuilder().build();
+   *   String hostGroupId = "hostGroupId-1975725774";
+   *   HostGroup response = netAppClient.createHostGroupAsync(parent, hostGroup, hostGroupId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for CreateHostGroupRequest
+   * @param hostGroup Required. Fields of the host group to create.
+   * @param hostGroupId Required. ID of the host group to create. Must be unique within the parent
+   *     resource. Must contain only letters, numbers, and hyphen, with the first character a letter
+   *     or underscore, the last a letter or underscore or a number, and a 63 character maximum.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<HostGroup, OperationMetadata> createHostGroupAsync(
+      String parent, HostGroup hostGroup, String hostGroupId) {
+    CreateHostGroupRequest request =
+        CreateHostGroupRequest.newBuilder()
+            .setParent(parent)
+            .setHostGroup(hostGroup)
+            .setHostGroupId(hostGroupId)
+            .build();
+    return createHostGroupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   CreateHostGroupRequest request =
+   *       CreateHostGroupRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setHostGroup(HostGroup.newBuilder().build())
+   *           .setHostGroupId("hostGroupId-1975725774")
+   *           .build();
+   *   HostGroup response = netAppClient.createHostGroupAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<HostGroup, OperationMetadata> createHostGroupAsync(
+      CreateHostGroupRequest request) {
+    return createHostGroupOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   CreateHostGroupRequest request =
+   *       CreateHostGroupRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setHostGroup(HostGroup.newBuilder().build())
+   *           .setHostGroupId("hostGroupId-1975725774")
+   *           .build();
+   *   OperationFuture<HostGroup, OperationMetadata> future =
+   *       netAppClient.createHostGroupOperationCallable().futureCall(request);
+   *   // Do something.
+   *   HostGroup response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateHostGroupRequest, HostGroup, OperationMetadata>
+      createHostGroupOperationCallable() {
+    return stub.createHostGroupOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   CreateHostGroupRequest request =
+   *       CreateHostGroupRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setHostGroup(HostGroup.newBuilder().build())
+   *           .setHostGroupId("hostGroupId-1975725774")
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.createHostGroupCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateHostGroupRequest, Operation> createHostGroupCallable() {
+    return stub.createHostGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   HostGroup hostGroup = HostGroup.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   HostGroup response = netAppClient.updateHostGroupAsync(hostGroup, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param hostGroup Required. The host group to update. The host group's `name` field is used to
+   *     identify the host group. Format:
+   *     `projects/{project_number}/locations/{location_id}/hostGroups/{host_group_id}`.
+   * @param updateMask Optional. The list of fields to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<HostGroup, OperationMetadata> updateHostGroupAsync(
+      HostGroup hostGroup, FieldMask updateMask) {
+    UpdateHostGroupRequest request =
+        UpdateHostGroupRequest.newBuilder()
+            .setHostGroup(hostGroup)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateHostGroupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   UpdateHostGroupRequest request =
+   *       UpdateHostGroupRequest.newBuilder()
+   *           .setHostGroup(HostGroup.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   HostGroup response = netAppClient.updateHostGroupAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<HostGroup, OperationMetadata> updateHostGroupAsync(
+      UpdateHostGroupRequest request) {
+    return updateHostGroupOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   UpdateHostGroupRequest request =
+   *       UpdateHostGroupRequest.newBuilder()
+   *           .setHostGroup(HostGroup.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<HostGroup, OperationMetadata> future =
+   *       netAppClient.updateHostGroupOperationCallable().futureCall(request);
+   *   // Do something.
+   *   HostGroup response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateHostGroupRequest, HostGroup, OperationMetadata>
+      updateHostGroupOperationCallable() {
+    return stub.updateHostGroupOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   UpdateHostGroupRequest request =
+   *       UpdateHostGroupRequest.newBuilder()
+   *           .setHostGroup(HostGroup.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.updateHostGroupCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateHostGroupRequest, Operation> updateHostGroupCallable() {
+    return stub.updateHostGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   HostGroupName name = HostGroupName.of("[PROJECT]", "[LOCATION]", "[HOST_GROUP]");
+   *   netAppClient.deleteHostGroupAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the host group. Format:
+   *     `projects/{project_number}/locations/{location_id}/hostGroups/{host_group_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteHostGroupAsync(HostGroupName name) {
+    DeleteHostGroupRequest request =
+        DeleteHostGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteHostGroupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String name = HostGroupName.of("[PROJECT]", "[LOCATION]", "[HOST_GROUP]").toString();
+   *   netAppClient.deleteHostGroupAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the host group. Format:
+   *     `projects/{project_number}/locations/{location_id}/hostGroups/{host_group_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteHostGroupAsync(String name) {
+    DeleteHostGroupRequest request = DeleteHostGroupRequest.newBuilder().setName(name).build();
+    return deleteHostGroupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   DeleteHostGroupRequest request =
+   *       DeleteHostGroupRequest.newBuilder()
+   *           .setName(HostGroupName.of("[PROJECT]", "[LOCATION]", "[HOST_GROUP]").toString())
+   *           .build();
+   *   netAppClient.deleteHostGroupAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteHostGroupAsync(
+      DeleteHostGroupRequest request) {
+    return deleteHostGroupOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   DeleteHostGroupRequest request =
+   *       DeleteHostGroupRequest.newBuilder()
+   *           .setName(HostGroupName.of("[PROJECT]", "[LOCATION]", "[HOST_GROUP]").toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       netAppClient.deleteHostGroupOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteHostGroupRequest, Empty, OperationMetadata>
+      deleteHostGroupOperationCallable() {
+    return stub.deleteHostGroupOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a host group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   DeleteHostGroupRequest request =
+   *       DeleteHostGroupRequest.newBuilder()
+   *           .setName(HostGroupName.of("[PROJECT]", "[LOCATION]", "[HOST_GROUP]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.deleteHostGroupCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteHostGroupRequest, Operation> deleteHostGroupCallable() {
+    return stub.deleteHostGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * `ExecuteOntapPost` dispatches the ONTAP `POST` request to the `StoragePool` cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ExecuteOntapPostRequest request =
+   *       ExecuteOntapPostRequest.newBuilder()
+   *           .setBody(Struct.newBuilder().build())
+   *           .setOntapPath("ontapPath-1869187159")
+   *           .build();
+   *   ExecuteOntapPostResponse response = netAppClient.executeOntapPost(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExecuteOntapPostResponse executeOntapPost(ExecuteOntapPostRequest request) {
+    return executeOntapPostCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * `ExecuteOntapPost` dispatches the ONTAP `POST` request to the `StoragePool` cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ExecuteOntapPostRequest request =
+   *       ExecuteOntapPostRequest.newBuilder()
+   *           .setBody(Struct.newBuilder().build())
+   *           .setOntapPath("ontapPath-1869187159")
+   *           .build();
+   *   ApiFuture<ExecuteOntapPostResponse> future =
+   *       netAppClient.executeOntapPostCallable().futureCall(request);
+   *   // Do something.
+   *   ExecuteOntapPostResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExecuteOntapPostRequest, ExecuteOntapPostResponse>
+      executeOntapPostCallable() {
+    return stub.executeOntapPostCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * `ExecuteOntapGet` dispatches the ONTAP `GET` request to the `StoragePool` cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ExecuteOntapGetRequest request =
+   *       ExecuteOntapGetRequest.newBuilder().setOntapPath("ontapPath-1869187159").build();
+   *   ExecuteOntapGetResponse response = netAppClient.executeOntapGet(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExecuteOntapGetResponse executeOntapGet(ExecuteOntapGetRequest request) {
+    return executeOntapGetCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * `ExecuteOntapGet` dispatches the ONTAP `GET` request to the `StoragePool` cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ExecuteOntapGetRequest request =
+   *       ExecuteOntapGetRequest.newBuilder().setOntapPath("ontapPath-1869187159").build();
+   *   ApiFuture<ExecuteOntapGetResponse> future =
+   *       netAppClient.executeOntapGetCallable().futureCall(request);
+   *   // Do something.
+   *   ExecuteOntapGetResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExecuteOntapGetRequest, ExecuteOntapGetResponse>
+      executeOntapGetCallable() {
+    return stub.executeOntapGetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * `ExecuteOntapDelete` dispatches the ONTAP `DELETE` request to the `StoragePool` cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ExecuteOntapDeleteRequest request =
+   *       ExecuteOntapDeleteRequest.newBuilder().setOntapPath("ontapPath-1869187159").build();
+   *   ExecuteOntapDeleteResponse response = netAppClient.executeOntapDelete(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExecuteOntapDeleteResponse executeOntapDelete(ExecuteOntapDeleteRequest request) {
+    return executeOntapDeleteCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * `ExecuteOntapDelete` dispatches the ONTAP `DELETE` request to the `StoragePool` cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ExecuteOntapDeleteRequest request =
+   *       ExecuteOntapDeleteRequest.newBuilder().setOntapPath("ontapPath-1869187159").build();
+   *   ApiFuture<ExecuteOntapDeleteResponse> future =
+   *       netAppClient.executeOntapDeleteCallable().futureCall(request);
+   *   // Do something.
+   *   ExecuteOntapDeleteResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>
+      executeOntapDeleteCallable() {
+    return stub.executeOntapDeleteCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * `ExecuteOntapPatch` dispatches the ONTAP `PATCH` request to the `StoragePool` cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ExecuteOntapPatchRequest request =
+   *       ExecuteOntapPatchRequest.newBuilder()
+   *           .setBody(Struct.newBuilder().build())
+   *           .setOntapPath("ontapPath-1869187159")
+   *           .build();
+   *   ExecuteOntapPatchResponse response = netAppClient.executeOntapPatch(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExecuteOntapPatchResponse executeOntapPatch(ExecuteOntapPatchRequest request) {
+    return executeOntapPatchCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * `ExecuteOntapPatch` dispatches the ONTAP `PATCH` request to the `StoragePool` cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ExecuteOntapPatchRequest request =
+   *       ExecuteOntapPatchRequest.newBuilder()
+   *           .setBody(Struct.newBuilder().build())
+   *           .setOntapPath("ontapPath-1869187159")
+   *           .build();
+   *   ApiFuture<ExecuteOntapPatchResponse> future =
+   *       netAppClient.executeOntapPatchCallable().futureCall(request);
+   *   // Do something.
+   *   ExecuteOntapPatchResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
+      executeOntapPatchCallable() {
+    return stub.executeOntapPatchCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name] field:
+   *
+   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -9484,6 +10821,19 @@ public class NetAppClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name] field:
+   *
+   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -9516,6 +10866,19 @@ public class NetAppClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name] field:
+   *
+   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -10397,6 +11760,82 @@ public class NetAppClient implements BackgroundResource {
     protected ListQuotaRulesFixedSizeCollection createCollection(
         List<ListQuotaRulesPage> pages, int collectionSize) {
       return new ListQuotaRulesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListHostGroupsPagedResponse
+      extends AbstractPagedListResponse<
+          ListHostGroupsRequest,
+          ListHostGroupsResponse,
+          HostGroup,
+          ListHostGroupsPage,
+          ListHostGroupsFixedSizeCollection> {
+
+    public static ApiFuture<ListHostGroupsPagedResponse> createAsync(
+        PageContext<ListHostGroupsRequest, ListHostGroupsResponse, HostGroup> context,
+        ApiFuture<ListHostGroupsResponse> futureResponse) {
+      ApiFuture<ListHostGroupsPage> futurePage =
+          ListHostGroupsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListHostGroupsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListHostGroupsPagedResponse(ListHostGroupsPage page) {
+      super(page, ListHostGroupsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListHostGroupsPage
+      extends AbstractPage<
+          ListHostGroupsRequest, ListHostGroupsResponse, HostGroup, ListHostGroupsPage> {
+
+    private ListHostGroupsPage(
+        PageContext<ListHostGroupsRequest, ListHostGroupsResponse, HostGroup> context,
+        ListHostGroupsResponse response) {
+      super(context, response);
+    }
+
+    private static ListHostGroupsPage createEmptyPage() {
+      return new ListHostGroupsPage(null, null);
+    }
+
+    @Override
+    protected ListHostGroupsPage createPage(
+        PageContext<ListHostGroupsRequest, ListHostGroupsResponse, HostGroup> context,
+        ListHostGroupsResponse response) {
+      return new ListHostGroupsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListHostGroupsPage> createPageAsync(
+        PageContext<ListHostGroupsRequest, ListHostGroupsResponse, HostGroup> context,
+        ApiFuture<ListHostGroupsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListHostGroupsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListHostGroupsRequest,
+          ListHostGroupsResponse,
+          HostGroup,
+          ListHostGroupsPage,
+          ListHostGroupsFixedSizeCollection> {
+
+    private ListHostGroupsFixedSizeCollection(List<ListHostGroupsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListHostGroupsFixedSizeCollection createEmptyCollection() {
+      return new ListHostGroupsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListHostGroupsFixedSizeCollection createCollection(
+        List<ListHostGroupsPage> pages, int collectionSize) {
+      return new ListHostGroupsFixedSizeCollection(pages, collectionSize);
     }
   }
 

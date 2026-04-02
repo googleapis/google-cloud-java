@@ -13,7 +13,28 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent' 'google-cloud-pom-parent' 'java-vertexai')
+excluded_modules=(
+  'gapic-libraries-bom'
+  'google-cloud-jar-parent'
+  'google-cloud-pom-parent'
+  'java-vertexai'
+  'java-logging'
+  'java-bigquery'
+  'java-bigquerystorage'
+  'java-datastore'
+  'java-logging-logback'
+  'sdk-platform-java'
+  'sdk-platform-java/java-shared-dependencies/dependency-analyzer'
+  'sdk-platform-java/java-shared-dependencies/dependency-convergence-check'
+  'sdk-platform-java/java-showcase'
+  'sdk-platform-java/java-showcase-3.21.0'
+  'sdk-platform-java/java-showcase-3.25.8'
+  'java-spanner'
+  'java-spanner-jdbc'
+  'google-auth-library-java'
+  'java-storage'
+  'java-storage-nio'
+)
 
 function retry_with_backoff {
   attempts_left=$1
@@ -53,22 +74,69 @@ function retry_with_backoff {
   return $exit_code
 }
 
+# Helper function to reliably extract the text between <module> tags strictly
+# within the default <modules> block, natively ignoring <profiles>.
+# Uses a pure Bash loop to avoid spawning slower external processes like awk or sed,
+# and naturally survives single-module components without throwing exit signals.
+function extract_pom_modules() {
+  local pom_file="$1"
+  local modules_list=""
+  local in_profiles=false
+  local in_modules=false
+  
+  while IFS= read -r line || [ -n "$line" ]; do
+    if [[ "$line" == *"<profiles>"* ]]; then
+      in_profiles=true
+    elif [[ "$line" == *"</profiles>"* ]]; then
+      in_profiles=false
+    elif [[ "$line" == *"<modules>"* ]] && [ "$in_profiles" = false ]; then
+      in_modules=true
+    elif [[ "$line" == *"</modules>"* ]] && [ "$in_profiles" = false ]; then
+      in_modules=false
+      break
+    elif [ "$in_modules" = true ] && [[ "$line" == *"<module>"* ]]; then
+      # Extract text between tags
+      local module="${line#*<module>}"
+      module="${module%</module>*}"
+      
+      # Trim whitespace natively
+      module="${module#"${module%%[![:space:]]*}"}"
+      module="${module%"${module##*[![:space:]]}"}"
+      
+      if [ -z "$modules_list" ]; then
+        modules_list="$module"
+      else
+        modules_list="${modules_list} ${module}"
+      fi
+    fi
+  done < "$pom_file"
+  
+  echo "$modules_list"
+}
+
 # Given a folder containing a maven multi-module, assign the variable 'submodules' to a
 # comma-delimited list of <folder>/<submodule>.
 function parse_submodules() {
-  pushd "$1" >/dev/null
-
   submodules_array=()
-  mvn_submodules=$(mvn help:evaluate -Dexpression=project.modules)
-  if mvn_submodules=$(grep '<.*>.*</.*>' <<< "$mvn_submodules"); then
-    mvn_submodules=$(sed -e 's/<.*>\(.*\)<\/.*>/\1/g' <<< "$mvn_submodules")
-    for submodule in $mvn_submodules; do
-      # Each entry = <folder>/<submodule>
-      submodules_array+=("$1/${submodule}");
-    done
+  if [ -f "$1/pom.xml" ]; then
+    local modules
+
+    # Use pure Bash extraction to find the modules in the aggregator pom file.
+    # Faster than invoking mvn help:evaluate to list all the project modules,
+    # cleanly ignores optional <profiles>, and gracefully skips flat POMs.
+    modules=$(extract_pom_modules "$1/pom.xml")
+    if [ -n "$modules" ]; then
+      for submodule in $modules; do
+        # Each entry = <folder>/<submodule>
+        submodules_array+=("$1/${submodule}")
+      done
+    else
+      # If this module contains no submodules, select the module itself.
+      submodules_array+=("$1")
+    fi
   else
-    # If this module contains no submodules, select the module itself.
-    submodules_array+=("$1");
+    echo "Module does not have a pom.xml file: $1"
+    exit 1
   fi
 
   # Convert from array to comma-delimited string
@@ -77,8 +145,6 @@ function parse_submodules() {
     echo "${submodules_array[*]}"
   )
   export submodules
-
-  popd >/dev/null
 }
 
 # Given a list of folders containing maven multi-modules, assign the variable 'all_submodules' to a
@@ -155,6 +221,13 @@ function release_please_snapshot_pull_request() {
   fi
 }
 
+# Sets bash variables for maven_modules and modified_module_list
+# maven_modules is the list of all maven submodules of the root pom
+# modified_module_list is the subset of maven_modules that have been touched
+# in the current pull request
+#
+# The first positional argument is a value true/false. If true (default), then
+# exclude modules from the global exclusion list.
 function generate_modified_modules_list() {
   # Find the files changed from when the PR branched to the last commit
   # Filter for java modules and get all the unique elements
@@ -167,11 +240,19 @@ function generate_modified_modules_list() {
   # Generate the list of valid maven modules
   maven_modules_list=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
   maven_modules=()
-  for module in $maven_modules_list; do
-    if [[ ! " ${excluded_modules[*]} " =~ " ${module} " ]]; then
-      maven_modules+=("${module}")
-    fi
-  done
+
+  # If the first argument is "true" (default), then use the module exclusion list
+  use_exclusion_list=${1:-true}
+  if [[ "${use_exclusion_list}" == "true" ]]; then
+    echo "Excluding modules from the global exclusion list"
+    for module in $maven_modules_list; do
+      if [[ ! " ${excluded_modules[*]} " =~ " ${module} " ]]; then
+        maven_modules+=("${module}")
+      fi
+    done
+  else
+    maven_modules=(${maven_modules_list[*]})
+  fi
 
   modified_module_list=()
   # If either parent pom.xml is touched, run ITs on all the modules
@@ -181,12 +262,12 @@ function generate_modified_modules_list() {
     modified_module_list=(${maven_modules[*]})
     echo "Testing the entire monorepo"
   else
-    modules=$(echo "${modified_files}" | grep -E 'java-.*' || true)
+    modules=$(echo "${modified_files}" | grep -E '(google-auth|java)-.*' || true)
     printf "Files in java modules:\n%s\n" "${modules}"
     if [[ -n $modules ]]; then
       modules=$(echo "${modules}" | cut -d '/' -f1 | sort -u)
       for module in $modules; do
-        if [[ ! " ${excluded_modules[*]} " =~ " ${module} " && " ${maven_modules[*]} " =~ " ${module} " ]]; then
+        if [[ " ${maven_modules[*]} " =~ " ${module} " ]]; then
           modified_module_list+=("${module}")
         fi
       done
@@ -194,6 +275,25 @@ function generate_modified_modules_list() {
       echo "Found no changes in the java modules"
     fi
   fi
+}
+
+# Filters the modified_module_list to only include modules that contain
+# integration test files (matching IT*.java or *IT.java in src/test/java).
+# Not all modules will have ITs written and there is not need to test
+# modules without ITs.
+function filter_modules_with_integration_tests() {
+  filtered_it_module_list=()
+  for module in "${modified_module_list[@]}"; do
+    # 1. Search for files in the Java test directory (*/src/test/java/*)
+    # 2. Filter for ITs that match the typical file name (IT prefix or suffix)
+    # 3. Stop searching when a single file match has been found
+    if find "$module" -path '*/src/test/java/*' \( -name 'IT*.java' -o -name '*IT.java' \) -print -quit 2>/dev/null | grep -q .; then
+      filtered_it_module_list+=("$module")
+    fi
+  done
+  printf "Modules with integration tests:\n"
+  printf "  %s\n" "${filtered_it_module_list[@]}"
+  echo "Found ${#filtered_it_module_list[@]} modules with integration tests (out of ${#modified_module_list[@]} modified modules)"
 }
 
 function run_integration_tests() {
@@ -204,6 +304,7 @@ function run_integration_tests() {
   mvn verify -Penable-integration-tests --projects "$all_submodules" \
     ${INTEGRATION_TEST_ARGS} \
     -B -ntp -fae \
+    --also-make \
     -DtrimStackTrace=false \
     -Dclirr.skip=true \
     -Denforcer.skip=true \
@@ -317,6 +418,36 @@ function install_modules() {
     parse_all_submodules "$1"
     printf "Installing submodules:\n%s\n" "$all_submodules"
 
+    always_install_deps_list=(
+      'sdk-platform-java/java-shared-dependencies'
+      'sdk-platform-java/java-shared-dependencies/first-party-dependencies'
+      'sdk-platform-java/java-shared-dependencies/third-party-dependencies'
+      'sdk-platform-java/gapic-generator-java-bom'
+      'sdk-platform-java/java-iam/grpc-google-iam-v1'
+      'sdk-platform-java/java-iam/grpc-google-iam-v2'
+      'sdk-platform-java/java-iam/grpc-google-iam-v2beta'
+      'sdk-platform-java/java-iam/grpc-google-iam-v3'
+      'sdk-platform-java/java-iam/grpc-google-iam-v3beta'
+      'sdk-platform-java/java-iam/proto-google-iam-v1'
+      'sdk-platform-java/java-iam/proto-google-iam-v2'
+      'sdk-platform-java/java-iam/proto-google-iam-v2beta'
+      'sdk-platform-java/java-iam/proto-google-iam-v3'
+      'sdk-platform-java/java-iam/proto-google-iam-v3beta'
+      'sdk-platform-java/java-core/google-cloud-core-bom'
+      'sdk-platform-java/java-core/google-cloud-core'
+      'sdk-platform-java/java-core/google-cloud-core-grpc'
+      'sdk-platform-java/java-core/google-cloud-core-http'
+      'sdk-platform-java/gax-java/gax-bom'
+      'sdk-platform-java/gax-java/gax'
+      'sdk-platform-java/gax-java/gax-grpc'
+      'sdk-platform-java/gax-java/gax-httpjson'
+    )
+    always_install_deps=$(
+      IFS=,
+      echo "${always_install_deps_list[*]}"
+    )
+    printf "with always_install_deps:\n%s\n" "$all_submodules,$always_install_deps"
+
     # When working with a maven multi-module project containing other multi-module projects,
     # to build a module with its dependencies and without building its dependents:
     # Perform the install command on a grandchild module with the --also-make flag.
@@ -332,7 +463,7 @@ function install_modules() {
     #
     #   mvn install --projects java-kms/google-cloud-kms --also-make
     #      Correctly builds dependencies without building dependents.
-    mvn install --projects "$all_submodules" --also-make \
+    mvn install --projects "$all_submodules,$always_install_deps" --also-make \
       -B -ntp \
       -DtrimStackTrace=false \
       -Dclirr.skip=true \

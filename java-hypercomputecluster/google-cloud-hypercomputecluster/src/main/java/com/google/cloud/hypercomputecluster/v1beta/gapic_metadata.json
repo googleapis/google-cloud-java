@@ -1,0 +1,39 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.hypercomputecluster.v1beta",
+  "libraryPackage": "com.google.cloud.hypercomputecluster.v1beta",
+  "services": {
+    "HypercomputeCluster": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "HypercomputeClusterClient",
+          "rpcs": {
+            "CreateCluster": {
+              "methods": ["createClusterAsync", "createClusterAsync", "createClusterAsync", "createClusterOperationCallable", "createClusterCallable"]
+            },
+            "DeleteCluster": {
+              "methods": ["deleteClusterAsync", "deleteClusterAsync", "deleteClusterAsync", "deleteClusterOperationCallable", "deleteClusterCallable"]
+            },
+            "GetCluster": {
+              "methods": ["getCluster", "getCluster", "getCluster", "getClusterCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListClusters": {
+              "methods": ["listClusters", "listClusters", "listClusters", "listClustersPagedCallable", "listClustersCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "UpdateCluster": {
+              "methods": ["updateClusterAsync", "updateClusterAsync", "updateClusterOperationCallable", "updateClusterCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

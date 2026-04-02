@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -380,6 +380,7 @@ public class HttpJsonEntitySignalsMappingServiceStub extends EntitySignalsMappin
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListEntitySignalsMappingsRequest, ListEntitySignalsMappingsResponse>
         listEntitySignalsMappingsTransportSettings =
@@ -393,6 +394,7 @@ public class HttpJsonEntitySignalsMappingServiceStub extends EntitySignalsMappin
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateEntitySignalsMappingRequest, EntitySignalsMapping>
         createEntitySignalsMappingTransportSettings =
@@ -406,6 +408,7 @@ public class HttpJsonEntitySignalsMappingServiceStub extends EntitySignalsMappin
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateEntitySignalsMappingRequest, EntitySignalsMapping>
         updateEntitySignalsMappingTransportSettings =
@@ -436,6 +439,7 @@ public class HttpJsonEntitySignalsMappingServiceStub extends EntitySignalsMappin
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             BatchUpdateEntitySignalsMappingsRequest, BatchUpdateEntitySignalsMappingsResponse>
@@ -451,6 +455,7 @@ public class HttpJsonEntitySignalsMappingServiceStub extends EntitySignalsMappin
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getEntitySignalsMappingCallable =

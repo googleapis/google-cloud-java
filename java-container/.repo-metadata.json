@@ -13,7 +13,7 @@
   "api_id": "container.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true,
-  "codeowner_team": "@googleapis/yoshi-java",
+  "codeowner_team": "@googleapis/cloud-sdk-java-team",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559777",
   "rest_documentation": "https://cloud.google.com/kubernetes-engine/docs/reference/rest"
 }

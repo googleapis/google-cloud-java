@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,8 @@ import com.google.cloud.aiplatform.v1beta1.DirectPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.DirectPredictResponse;
 import com.google.cloud.aiplatform.v1beta1.DirectRawPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.DirectRawPredictResponse;
+import com.google.cloud.aiplatform.v1beta1.EmbedContentRequest;
+import com.google.cloud.aiplatform.v1beta1.EmbedContentResponse;
 import com.google.cloud.aiplatform.v1beta1.ExplainRequest;
 import com.google.cloud.aiplatform.v1beta1.ExplainResponse;
 import com.google.cloud.aiplatform.v1beta1.GenerateContentRequest;
@@ -257,6 +259,17 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<EmbedContentRequest, EmbedContentResponse>
+      embedContentMethodDescriptor =
+          MethodDescriptor.<EmbedContentRequest, EmbedContentResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1beta1.PredictionService/EmbedContent")
+              .setRequestMarshaller(ProtoUtils.marshaller(EmbedContentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(EmbedContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -331,6 +344,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
   private final ServerStreamingCallable<GenerateContentRequest, GenerateContentResponse>
       streamGenerateContentCallable;
   private final ServerStreamingCallable<ChatCompletionsRequest, HttpBody> chatCompletionsCallable;
+  private final UnaryCallable<EmbedContentRequest, EmbedContentResponse> embedContentCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -393,6 +407,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   builder.add("endpoint", String.valueOf(request.getEndpoint()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEndpoint())
             .build();
     GrpcCallSettings<RawPredictRequest, HttpBody> rawPredictTransportSettings =
         GrpcCallSettings.<RawPredictRequest, HttpBody>newBuilder()
@@ -403,6 +418,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   builder.add("endpoint", String.valueOf(request.getEndpoint()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEndpoint())
             .build();
     GrpcCallSettings<StreamRawPredictRequest, HttpBody> streamRawPredictTransportSettings =
         GrpcCallSettings.<StreamRawPredictRequest, HttpBody>newBuilder()
@@ -413,6 +429,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   builder.add("endpoint", String.valueOf(request.getEndpoint()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEndpoint())
             .build();
     GrpcCallSettings<DirectPredictRequest, DirectPredictResponse> directPredictTransportSettings =
         GrpcCallSettings.<DirectPredictRequest, DirectPredictResponse>newBuilder()
@@ -423,6 +440,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   builder.add("endpoint", String.valueOf(request.getEndpoint()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEndpoint())
             .build();
     GrpcCallSettings<DirectRawPredictRequest, DirectRawPredictResponse>
         directRawPredictTransportSettings =
@@ -434,22 +452,26 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                       builder.add("endpoint", String.valueOf(request.getEndpoint()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getEndpoint())
                 .build();
     GrpcCallSettings<StreamDirectPredictRequest, StreamDirectPredictResponse>
         streamDirectPredictTransportSettings =
             GrpcCallSettings.<StreamDirectPredictRequest, StreamDirectPredictResponse>newBuilder()
                 .setMethodDescriptor(streamDirectPredictMethodDescriptor)
+                .setResourceNameExtractor(request -> request.getEndpoint())
                 .build();
     GrpcCallSettings<StreamDirectRawPredictRequest, StreamDirectRawPredictResponse>
         streamDirectRawPredictTransportSettings =
             GrpcCallSettings
                 .<StreamDirectRawPredictRequest, StreamDirectRawPredictResponse>newBuilder()
                 .setMethodDescriptor(streamDirectRawPredictMethodDescriptor)
+                .setResourceNameExtractor(request -> request.getEndpoint())
                 .build();
     GrpcCallSettings<StreamingPredictRequest, StreamingPredictResponse>
         streamingPredictTransportSettings =
             GrpcCallSettings.<StreamingPredictRequest, StreamingPredictResponse>newBuilder()
                 .setMethodDescriptor(streamingPredictMethodDescriptor)
+                .setResourceNameExtractor(request -> request.getEndpoint())
                 .build();
     GrpcCallSettings<StreamingPredictRequest, StreamingPredictResponse>
         serverStreamingPredictTransportSettings =
@@ -461,11 +483,13 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                       builder.add("endpoint", String.valueOf(request.getEndpoint()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getEndpoint())
                 .build();
     GrpcCallSettings<StreamingRawPredictRequest, StreamingRawPredictResponse>
         streamingRawPredictTransportSettings =
             GrpcCallSettings.<StreamingRawPredictRequest, StreamingRawPredictResponse>newBuilder()
                 .setMethodDescriptor(streamingRawPredictMethodDescriptor)
+                .setResourceNameExtractor(request -> request.getEndpoint())
                 .build();
     GrpcCallSettings<ExplainRequest, ExplainResponse> explainTransportSettings =
         GrpcCallSettings.<ExplainRequest, ExplainResponse>newBuilder()
@@ -476,6 +500,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   builder.add("endpoint", String.valueOf(request.getEndpoint()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEndpoint())
             .build();
     GrpcCallSettings<CountTokensRequest, CountTokensResponse> countTokensTransportSettings =
         GrpcCallSettings.<CountTokensRequest, CountTokensResponse>newBuilder()
@@ -486,6 +511,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   builder.add("endpoint", String.valueOf(request.getEndpoint()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEndpoint())
             .build();
     GrpcCallSettings<GenerateContentRequest, GenerateContentResponse>
         generateContentTransportSettings =
@@ -497,6 +523,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                       builder.add("model", String.valueOf(request.getModel()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCachedContent())
                 .build();
     GrpcCallSettings<GenerateContentRequest, GenerateContentResponse>
         streamGenerateContentTransportSettings =
@@ -508,6 +535,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                       builder.add("model", String.valueOf(request.getModel()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCachedContent())
                 .build();
     GrpcCallSettings<ChatCompletionsRequest, HttpBody> chatCompletionsTransportSettings =
         GrpcCallSettings.<ChatCompletionsRequest, HttpBody>newBuilder()
@@ -518,6 +546,18 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   builder.add("endpoint", String.valueOf(request.getEndpoint()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getEndpoint())
+            .build();
+    GrpcCallSettings<EmbedContentRequest, EmbedContentResponse> embedContentTransportSettings =
+        GrpcCallSettings.<EmbedContentRequest, EmbedContentResponse>newBuilder()
+            .setMethodDescriptor(embedContentMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("model", String.valueOf(request.getModel()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getModel())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -548,6 +588,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -558,6 +599,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -569,6 +611,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.predictCallable =
@@ -626,6 +669,9 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
     this.chatCompletionsCallable =
         callableFactory.createServerStreamingCallable(
             chatCompletionsTransportSettings, settings.chatCompletionsSettings(), clientContext);
+    this.embedContentCallable =
+        callableFactory.createUnaryCallable(
+            embedContentTransportSettings, settings.embedContentSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -735,6 +781,11 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
   @Override
   public ServerStreamingCallable<ChatCompletionsRequest, HttpBody> chatCompletionsCallable() {
     return chatCompletionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<EmbedContentRequest, EmbedContentResponse> embedContentCallable() {
+    return embedContentCallable;
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,8 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.AnalyzeContentRequest;
 import com.google.cloud.dialogflow.v2beta1.AnalyzeContentResponse;
+import com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest;
+import com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse;
 import com.google.cloud.dialogflow.v2beta1.CompileSuggestionRequest;
 import com.google.cloud.dialogflow.v2beta1.CompileSuggestionResponse;
 import com.google.cloud.dialogflow.v2beta1.CreateParticipantRequest;
@@ -655,6 +657,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetParticipantRequest, Participant> getParticipantTransportSettings =
         HttpJsonCallSettings.<GetParticipantRequest, Participant>newBuilder()
@@ -666,6 +669,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListParticipantsRequest, ListParticipantsResponse>
         listParticipantsTransportSettings =
@@ -678,6 +682,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateParticipantRequest, Participant> updateParticipantTransportSettings =
         HttpJsonCallSettings.<UpdateParticipantRequest, Participant>newBuilder()
@@ -702,6 +707,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                       builder.add("participant", String.valueOf(request.getParticipant()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParticipant())
                 .build();
     HttpJsonCallSettings<SuggestArticlesRequest, SuggestArticlesResponse>
         suggestArticlesTransportSettings =
@@ -714,6 +720,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<SuggestFaqAnswersRequest, SuggestFaqAnswersResponse>
         suggestFaqAnswersTransportSettings =
@@ -726,6 +733,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
         suggestSmartRepliesTransportSettings =
@@ -739,6 +747,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
         suggestKnowledgeAssistTransportSettings =
@@ -752,6 +761,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListSuggestionsRequest, ListSuggestionsResponse>
         listSuggestionsTransportSettings =
@@ -979,6 +989,15 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
     throw new UnsupportedOperationException(
         "Not implemented: streamingAnalyzeContentCallable(). REST transport is not implemented for"
             + " this method yet.");
+  }
+
+  @Override
+  public BidiStreamingCallable<
+          BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+      bidiStreamingAnalyzeContentCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: bidiStreamingAnalyzeContentCallable(). REST transport is not implemented"
+            + " for this method yet.");
   }
 
   @Override

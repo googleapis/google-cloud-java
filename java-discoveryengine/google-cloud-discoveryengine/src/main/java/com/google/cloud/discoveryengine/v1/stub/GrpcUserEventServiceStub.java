@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -160,6 +160,7 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CollectUserEventRequest, HttpBody> collectUserEventTransportSettings =
         GrpcCallSettings.<CollectUserEventRequest, HttpBody>newBuilder()
@@ -170,6 +171,7 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<PurgeUserEventsRequest, Operation> purgeUserEventsTransportSettings =
         GrpcCallSettings.<PurgeUserEventsRequest, Operation>newBuilder()
@@ -180,6 +182,7 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ImportUserEventsRequest, Operation> importUserEventsTransportSettings =
         GrpcCallSettings.<ImportUserEventsRequest, Operation>newBuilder()
@@ -190,6 +193,7 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.writeUserEventCallable =

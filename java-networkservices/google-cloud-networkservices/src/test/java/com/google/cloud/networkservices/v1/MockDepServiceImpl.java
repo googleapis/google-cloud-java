@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -273,6 +273,116 @@ public class MockDepServiceImpl extends DepServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteLbRouteExtension, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listLbEdgeExtensions(
+      ListLbEdgeExtensionsRequest request,
+      StreamObserver<ListLbEdgeExtensionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListLbEdgeExtensionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListLbEdgeExtensionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListLbEdgeExtensions, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListLbEdgeExtensionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getLbEdgeExtension(
+      GetLbEdgeExtensionRequest request, StreamObserver<LbEdgeExtension> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof LbEdgeExtension) {
+      requests.add(request);
+      responseObserver.onNext(((LbEdgeExtension) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetLbEdgeExtension, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  LbEdgeExtension.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createLbEdgeExtension(
+      CreateLbEdgeExtensionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateLbEdgeExtension, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateLbEdgeExtension(
+      UpdateLbEdgeExtensionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateLbEdgeExtension, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteLbEdgeExtension(
+      DeleteLbEdgeExtensionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteLbEdgeExtension, expected %s or"
                       + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),

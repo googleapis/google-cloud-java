@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,9 +39,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * particular resource and its child resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/orgpolicy/v2/orgpolicy.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class OrgPolicyGrpc {
 
@@ -1210,8 +1207,9 @@ public final class OrgPolicyGrpc {
      * </pre>
      */
     public com.google.cloud.orgpolicy.v2.ListConstraintsResponse listConstraints(
-        com.google.cloud.orgpolicy.v2.ListConstraintsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.orgpolicy.v2.ListConstraintsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConstraintsMethod(), getCallOptions(), request);
     }
 
@@ -1223,8 +1221,8 @@ public final class OrgPolicyGrpc {
      * </pre>
      */
     public com.google.cloud.orgpolicy.v2.ListPoliciesResponse listPolicies(
-        com.google.cloud.orgpolicy.v2.ListPoliciesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.orgpolicy.v2.ListPoliciesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPoliciesMethod(), getCallOptions(), request);
     }
 
@@ -1239,8 +1237,8 @@ public final class OrgPolicyGrpc {
      * </pre>
      */
     public com.google.cloud.orgpolicy.v2.Policy getPolicy(
-        com.google.cloud.orgpolicy.v2.GetPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.orgpolicy.v2.GetPolicyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1257,8 +1255,9 @@ public final class OrgPolicyGrpc {
      * </pre>
      */
     public com.google.cloud.orgpolicy.v2.Policy getEffectivePolicy(
-        com.google.cloud.orgpolicy.v2.GetEffectivePolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.orgpolicy.v2.GetEffectivePolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEffectivePolicyMethod(), getCallOptions(), request);
     }
 
@@ -1274,8 +1273,8 @@ public final class OrgPolicyGrpc {
      * </pre>
      */
     public com.google.cloud.orgpolicy.v2.Policy createPolicy(
-        com.google.cloud.orgpolicy.v2.CreatePolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.orgpolicy.v2.CreatePolicyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreatePolicyMethod(), getCallOptions(), request);
     }
 
@@ -1293,8 +1292,8 @@ public final class OrgPolicyGrpc {
      * </pre>
      */
     public com.google.cloud.orgpolicy.v2.Policy updatePolicy(
-        com.google.cloud.orgpolicy.v2.UpdatePolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.orgpolicy.v2.UpdatePolicyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdatePolicyMethod(), getCallOptions(), request);
     }
 
@@ -1308,8 +1307,8 @@ public final class OrgPolicyGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deletePolicy(
-        com.google.cloud.orgpolicy.v2.DeletePolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.orgpolicy.v2.DeletePolicyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePolicyMethod(), getCallOptions(), request);
     }
 
@@ -1325,8 +1324,9 @@ public final class OrgPolicyGrpc {
      * </pre>
      */
     public com.google.cloud.orgpolicy.v2.CustomConstraint createCustomConstraint(
-        com.google.cloud.orgpolicy.v2.CreateCustomConstraintRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.orgpolicy.v2.CreateCustomConstraintRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCustomConstraintMethod(), getCallOptions(), request);
     }
 
@@ -1342,8 +1342,9 @@ public final class OrgPolicyGrpc {
      * </pre>
      */
     public com.google.cloud.orgpolicy.v2.CustomConstraint updateCustomConstraint(
-        com.google.cloud.orgpolicy.v2.UpdateCustomConstraintRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.orgpolicy.v2.UpdateCustomConstraintRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCustomConstraintMethod(), getCallOptions(), request);
     }
 
@@ -1357,8 +1358,9 @@ public final class OrgPolicyGrpc {
      * </pre>
      */
     public com.google.cloud.orgpolicy.v2.CustomConstraint getCustomConstraint(
-        com.google.cloud.orgpolicy.v2.GetCustomConstraintRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.orgpolicy.v2.GetCustomConstraintRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCustomConstraintMethod(), getCallOptions(), request);
     }
 
@@ -1371,8 +1373,9 @@ public final class OrgPolicyGrpc {
      * </pre>
      */
     public com.google.cloud.orgpolicy.v2.ListCustomConstraintsResponse listCustomConstraints(
-        com.google.cloud.orgpolicy.v2.ListCustomConstraintsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.orgpolicy.v2.ListCustomConstraintsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCustomConstraintsMethod(), getCallOptions(), request);
     }
 
@@ -1386,8 +1389,9 @@ public final class OrgPolicyGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteCustomConstraint(
-        com.google.cloud.orgpolicy.v2.DeleteCustomConstraintRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.orgpolicy.v2.DeleteCustomConstraintRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCustomConstraintMethod(), getCallOptions(), request);
     }
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * * [Attestor][google.cloud.binaryauthorization.v1beta1.Attestor]
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/binaryauthorization/v1beta1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class BinauthzManagementServiceV1Beta1Grpc {
 
@@ -795,8 +792,9 @@ public final class BinauthzManagementServiceV1Beta1Grpc {
      * </pre>
      */
     public com.google.cloud.binaryauthorization.v1beta1.Policy getPolicy(
-        com.google.cloud.binaryauthorization.v1beta1.GetPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.binaryauthorization.v1beta1.GetPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPolicyMethod(), getCallOptions(), request);
     }
 
@@ -812,8 +810,9 @@ public final class BinauthzManagementServiceV1Beta1Grpc {
      * </pre>
      */
     public com.google.cloud.binaryauthorization.v1beta1.Policy updatePolicy(
-        com.google.cloud.binaryauthorization.v1beta1.UpdatePolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.binaryauthorization.v1beta1.UpdatePolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdatePolicyMethod(), getCallOptions(), request);
     }
 
@@ -828,8 +827,9 @@ public final class BinauthzManagementServiceV1Beta1Grpc {
      * </pre>
      */
     public com.google.cloud.binaryauthorization.v1beta1.Attestor createAttestor(
-        com.google.cloud.binaryauthorization.v1beta1.CreateAttestorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.binaryauthorization.v1beta1.CreateAttestorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAttestorMethod(), getCallOptions(), request);
     }
 
@@ -842,8 +842,9 @@ public final class BinauthzManagementServiceV1Beta1Grpc {
      * </pre>
      */
     public com.google.cloud.binaryauthorization.v1beta1.Attestor getAttestor(
-        com.google.cloud.binaryauthorization.v1beta1.GetAttestorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.binaryauthorization.v1beta1.GetAttestorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAttestorMethod(), getCallOptions(), request);
     }
 
@@ -856,8 +857,9 @@ public final class BinauthzManagementServiceV1Beta1Grpc {
      * </pre>
      */
     public com.google.cloud.binaryauthorization.v1beta1.Attestor updateAttestor(
-        com.google.cloud.binaryauthorization.v1beta1.UpdateAttestorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.binaryauthorization.v1beta1.UpdateAttestorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAttestorMethod(), getCallOptions(), request);
     }
 
@@ -870,8 +872,9 @@ public final class BinauthzManagementServiceV1Beta1Grpc {
      * </pre>
      */
     public com.google.cloud.binaryauthorization.v1beta1.ListAttestorsResponse listAttestors(
-        com.google.cloud.binaryauthorization.v1beta1.ListAttestorsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.binaryauthorization.v1beta1.ListAttestorsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAttestorsMethod(), getCallOptions(), request);
     }
 
@@ -884,8 +887,9 @@ public final class BinauthzManagementServiceV1Beta1Grpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteAttestor(
-        com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAttestorMethod(), getCallOptions(), request);
     }
   }

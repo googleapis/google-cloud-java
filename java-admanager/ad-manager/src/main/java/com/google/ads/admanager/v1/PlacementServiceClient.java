@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -98,6 +99,132 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> listPlacementsPagedCallable()
  *           <li><p> listPlacementsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreatePlacement</td>
+ *      <td><p> API to create an `Placement` object.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createPlacement(CreatePlacementRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createPlacement(NetworkName parent, Placement placement)
+ *           <li><p> createPlacement(String parent, Placement placement)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createPlacementCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdatePlacement</td>
+ *      <td><p> API to update an `Placement` object.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updatePlacement(UpdatePlacementRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updatePlacement(Placement placement, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updatePlacementCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchCreatePlacements</td>
+ *      <td><p> API to batch create `Placement` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchCreatePlacements(NetworkName parent, List&lt;CreatePlacementRequest&gt; requests)
+ *           <li><p> batchCreatePlacements(String parent, List&lt;CreatePlacementRequest&gt; requests)
+ *           <li><p> batchCreatePlacements(BatchCreatePlacementsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchCreatePlacementsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchUpdatePlacements</td>
+ *      <td><p> API to batch update `Placement` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchUpdatePlacements(NetworkName parent, List&lt;UpdatePlacementRequest&gt; requests)
+ *           <li><p> batchUpdatePlacements(String parent, List&lt;UpdatePlacementRequest&gt; requests)
+ *           <li><p> batchUpdatePlacements(BatchUpdatePlacementsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchUpdatePlacementsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchActivatePlacements</td>
+ *      <td><p> Activates a list of `Placement` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchActivatePlacements(BatchActivatePlacementsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> batchActivatePlacements(NetworkName parent, List&lt;String&gt; names)
+ *           <li><p> batchActivatePlacements(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchActivatePlacementsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchDeactivatePlacements</td>
+ *      <td><p> Deactivates a list of `Placement` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchDeactivatePlacements(BatchDeactivatePlacementsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> batchDeactivatePlacements(NetworkName parent, List&lt;String&gt; names)
+ *           <li><p> batchDeactivatePlacements(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchDeactivatePlacementsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchArchivePlacements</td>
+ *      <td><p> Archives a list of `Placement` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchArchivePlacements(BatchArchivePlacementsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> batchArchivePlacements(NetworkName parent, List&lt;String&gt; names)
+ *           <li><p> batchArchivePlacements(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchArchivePlacementsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -478,6 +605,873 @@ public class PlacementServiceClient implements BackgroundResource {
   public final UnaryCallable<ListPlacementsRequest, ListPlacementsResponse>
       listPlacementsCallable() {
     return stub.listPlacementsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to create an `Placement` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacementServiceClient placementServiceClient = PlacementServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   Placement placement = Placement.newBuilder().build();
+   *   Placement response = placementServiceClient.createPlacement(parent, placement);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this `Placement` will be created. Format:
+   *     `networks/{network_code}`
+   * @param placement Required. The `Placement` to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Placement createPlacement(NetworkName parent, Placement placement) {
+    CreatePlacementRequest request =
+        CreatePlacementRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setPlacement(placement)
+            .build();
+    return createPlacement(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to create an `Placement` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacementServiceClient placementServiceClient = PlacementServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   Placement placement = Placement.newBuilder().build();
+   *   Placement response = placementServiceClient.createPlacement(parent, placement);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this `Placement` will be created. Format:
+   *     `networks/{network_code}`
+   * @param placement Required. The `Placement` to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Placement createPlacement(String parent, Placement placement) {
+    CreatePlacementRequest request =
+        CreatePlacementRequest.newBuilder().setParent(parent).setPlacement(placement).build();
+    return createPlacement(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to create an `Placement` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacementServiceClient placementServiceClient = PlacementServiceClient.create()) {
+   *   CreatePlacementRequest request =
+   *       CreatePlacementRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .setPlacement(Placement.newBuilder().build())
+   *           .build();
+   *   Placement response = placementServiceClient.createPlacement(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Placement createPlacement(CreatePlacementRequest request) {
+    return createPlacementCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to create an `Placement` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacementServiceClient placementServiceClient = PlacementServiceClient.create()) {
+   *   CreatePlacementRequest request =
+   *       CreatePlacementRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .setPlacement(Placement.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Placement> future =
+   *       placementServiceClient.createPlacementCallable().futureCall(request);
+   *   // Do something.
+   *   Placement response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreatePlacementRequest, Placement> createPlacementCallable() {
+    return stub.createPlacementCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to update an `Placement` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacementServiceClient placementServiceClient = PlacementServiceClient.create()) {
+   *   Placement placement = Placement.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Placement response = placementServiceClient.updatePlacement(placement, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param placement Required. The `Placement` to update.
+   *     <p>The `Placement`'s name is used to identify the `Placement` to update. Format:
+   *     `networks/{network_code}/placements/{placement_id}`
+   * @param updateMask Required. The list of fields to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Placement updatePlacement(Placement placement, FieldMask updateMask) {
+    UpdatePlacementRequest request =
+        UpdatePlacementRequest.newBuilder()
+            .setPlacement(placement)
+            .setUpdateMask(updateMask)
+            .build();
+    return updatePlacement(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to update an `Placement` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacementServiceClient placementServiceClient = PlacementServiceClient.create()) {
+   *   UpdatePlacementRequest request =
+   *       UpdatePlacementRequest.newBuilder()
+   *           .setPlacement(Placement.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Placement response = placementServiceClient.updatePlacement(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Placement updatePlacement(UpdatePlacementRequest request) {
+    return updatePlacementCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to update an `Placement` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacementServiceClient placementServiceClient = PlacementServiceClient.create()) {
+   *   UpdatePlacementRequest request =
+   *       UpdatePlacementRequest.newBuilder()
+   *           .setPlacement(Placement.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Placement> future =
+   *       placementServiceClient.updatePlacementCallable().futureCall(request);
+   *   // Do something.
+   *   Placement response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdatePlacementRequest, Placement> updatePlacementCallable() {
+    return stub.updatePlacementCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to batch create `Placement` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacementServiceClient placementServiceClient = PlacementServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<CreatePlacementRequest> requests = new ArrayList<>();
+   *   BatchCreatePlacementsResponse response =
+   *       placementServiceClient.batchCreatePlacements(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where the `Placement`s will be created. Format:
+   *     `networks/{network_code}` The parent field in the CreatePlacementRequest messages match
+   *     this field.
+   * @param requests Required. The `Placement` objects to create. A maximum of 100 objects can be
+   *     created in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreatePlacementsResponse batchCreatePlacements(
+      NetworkName parent, List<CreatePlacementRequest> requests) {
+    BatchCreatePlacementsRequest request =
+        BatchCreatePlacementsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllRequests(requests)
+            .build();
+    return batchCreatePlacements(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to batch create `Placement` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacementServiceClient placementServiceClient = PlacementServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<CreatePlacementRequest> requests = new ArrayList<>();
+   *   BatchCreatePlacementsResponse response =
+   *       placementServiceClient.batchCreatePlacements(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where the `Placement`s will be created. Format:
+   *     `networks/{network_code}` The parent field in the CreatePlacementRequest messages match
+   *     this field.
+   * @param requests Required. The `Placement` objects to create. A maximum of 100 objects can be
+   *     created in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreatePlacementsResponse batchCreatePlacements(
+      String parent, List<CreatePlacementRequest> requests) {
+    BatchCreatePlacementsRequest request =
+        BatchCreatePlacementsRequest.newBuilder()
+            .setParent(parent)
+            .addAllRequests(requests)
+            .build();
+    return batchCreatePlacements(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to batch create `Placement` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacementServiceClient placementServiceClient = PlacementServiceClient.create()) {
+   *   BatchCreatePlacementsRequest request =
+   *       BatchCreatePlacementsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<CreatePlacementRequest>())
+   *           .build();
+   *   BatchCreatePlacementsResponse response =
+   *       placementServiceClient.batchCreatePlacements(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreatePlacementsResponse batchCreatePlacements(
+      BatchCreatePlacementsRequest request) {
+    return batchCreatePlacementsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to batch create `Placement` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacementServiceClient placementServiceClient = PlacementServiceClient.create()) {
+   *   BatchCreatePlacementsRequest request =
+   *       BatchCreatePlacementsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<CreatePlacementRequest>())
+   *           .build();
+   *   ApiFuture<BatchCreatePlacementsResponse> future =
+   *       placementServiceClient.batchCreatePlacementsCallable().futureCall(request);
+   *   // Do something.
+   *   BatchCreatePlacementsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchCreatePlacementsRequest, BatchCreatePlacementsResponse>
+      batchCreatePlacementsCallable() {
+    return stub.batchCreatePlacementsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to batch update `Placement` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacementServiceClient placementServiceClient = PlacementServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<UpdatePlacementRequest> requests = new ArrayList<>();
+   *   BatchUpdatePlacementsResponse response =
+   *       placementServiceClient.batchUpdatePlacements(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `Placements` will be updated. Format:
+   *     `networks/{network_code}` The parent field in the UpdatePlacementsRequest must match this
+   *     field.
+   * @param requests Required. The `Placement` objects to update. A maximum of 100 objects can be
+   *     updated in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUpdatePlacementsResponse batchUpdatePlacements(
+      NetworkName parent, List<UpdatePlacementRequest> requests) {
+    BatchUpdatePlacementsRequest request =
+        BatchUpdatePlacementsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllRequests(requests)
+            .build();
+    return batchUpdatePlacements(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to batch update `Placement` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacementServiceClient placementServiceClient = PlacementServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<UpdatePlacementRequest> requests = new ArrayList<>();
+   *   BatchUpdatePlacementsResponse response =
+   *       placementServiceClient.batchUpdatePlacements(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `Placements` will be updated. Format:
+   *     `networks/{network_code}` The parent field in the UpdatePlacementsRequest must match this
+   *     field.
+   * @param requests Required. The `Placement` objects to update. A maximum of 100 objects can be
+   *     updated in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUpdatePlacementsResponse batchUpdatePlacements(
+      String parent, List<UpdatePlacementRequest> requests) {
+    BatchUpdatePlacementsRequest request =
+        BatchUpdatePlacementsRequest.newBuilder()
+            .setParent(parent)
+            .addAllRequests(requests)
+            .build();
+    return batchUpdatePlacements(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to batch update `Placement` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacementServiceClient placementServiceClient = PlacementServiceClient.create()) {
+   *   BatchUpdatePlacementsRequest request =
+   *       BatchUpdatePlacementsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<UpdatePlacementRequest>())
+   *           .build();
+   *   BatchUpdatePlacementsResponse response =
+   *       placementServiceClient.batchUpdatePlacements(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUpdatePlacementsResponse batchUpdatePlacements(
+      BatchUpdatePlacementsRequest request) {
+    return batchUpdatePlacementsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to batch update `Placement` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacementServiceClient placementServiceClient = PlacementServiceClient.create()) {
+   *   BatchUpdatePlacementsRequest request =
+   *       BatchUpdatePlacementsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<UpdatePlacementRequest>())
+   *           .build();
+   *   ApiFuture<BatchUpdatePlacementsResponse> future =
+   *       placementServiceClient.batchUpdatePlacementsCallable().futureCall(request);
+   *   // Do something.
+   *   BatchUpdatePlacementsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchUpdatePlacementsRequest, BatchUpdatePlacementsResponse>
+      batchUpdatePlacementsCallable() {
+    return stub.batchUpdatePlacementsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Activates a list of `Placement` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacementServiceClient placementServiceClient = PlacementServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<String> names = new ArrayList<>();
+   *   BatchActivatePlacementsResponse response =
+   *       placementServiceClient.batchActivatePlacements(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: `networks/{network_code}`
+   * @param names Required. The names of the `Placement` objects to activate. Format:
+   *     `networks/{network_code}/placements/{placement_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchActivatePlacementsResponse batchActivatePlacements(
+      NetworkName parent, List<String> names) {
+    BatchActivatePlacementsRequest request =
+        BatchActivatePlacementsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return batchActivatePlacements(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Activates a list of `Placement` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacementServiceClient placementServiceClient = PlacementServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   BatchActivatePlacementsResponse response =
+   *       placementServiceClient.batchActivatePlacements(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: `networks/{network_code}`
+   * @param names Required. The names of the `Placement` objects to activate. Format:
+   *     `networks/{network_code}/placements/{placement_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchActivatePlacementsResponse batchActivatePlacements(
+      String parent, List<String> names) {
+    BatchActivatePlacementsRequest request =
+        BatchActivatePlacementsRequest.newBuilder().setParent(parent).addAllNames(names).build();
+    return batchActivatePlacements(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Activates a list of `Placement` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacementServiceClient placementServiceClient = PlacementServiceClient.create()) {
+   *   BatchActivatePlacementsRequest request =
+   *       BatchActivatePlacementsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   BatchActivatePlacementsResponse response =
+   *       placementServiceClient.batchActivatePlacements(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchActivatePlacementsResponse batchActivatePlacements(
+      BatchActivatePlacementsRequest request) {
+    return batchActivatePlacementsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Activates a list of `Placement` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacementServiceClient placementServiceClient = PlacementServiceClient.create()) {
+   *   BatchActivatePlacementsRequest request =
+   *       BatchActivatePlacementsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<BatchActivatePlacementsResponse> future =
+   *       placementServiceClient.batchActivatePlacementsCallable().futureCall(request);
+   *   // Do something.
+   *   BatchActivatePlacementsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchActivatePlacementsRequest, BatchActivatePlacementsResponse>
+      batchActivatePlacementsCallable() {
+    return stub.batchActivatePlacementsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deactivates a list of `Placement` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacementServiceClient placementServiceClient = PlacementServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<String> names = new ArrayList<>();
+   *   BatchDeactivatePlacementsResponse response =
+   *       placementServiceClient.batchDeactivatePlacements(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: `networks/{network_code}`
+   * @param names Required. The names of the `Placement` objects to deactivate. Format:
+   *     `networks/{network_code}/placements/{placement_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchDeactivatePlacementsResponse batchDeactivatePlacements(
+      NetworkName parent, List<String> names) {
+    BatchDeactivatePlacementsRequest request =
+        BatchDeactivatePlacementsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return batchDeactivatePlacements(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deactivates a list of `Placement` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacementServiceClient placementServiceClient = PlacementServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   BatchDeactivatePlacementsResponse response =
+   *       placementServiceClient.batchDeactivatePlacements(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: `networks/{network_code}`
+   * @param names Required. The names of the `Placement` objects to deactivate. Format:
+   *     `networks/{network_code}/placements/{placement_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchDeactivatePlacementsResponse batchDeactivatePlacements(
+      String parent, List<String> names) {
+    BatchDeactivatePlacementsRequest request =
+        BatchDeactivatePlacementsRequest.newBuilder().setParent(parent).addAllNames(names).build();
+    return batchDeactivatePlacements(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deactivates a list of `Placement` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacementServiceClient placementServiceClient = PlacementServiceClient.create()) {
+   *   BatchDeactivatePlacementsRequest request =
+   *       BatchDeactivatePlacementsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   BatchDeactivatePlacementsResponse response =
+   *       placementServiceClient.batchDeactivatePlacements(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchDeactivatePlacementsResponse batchDeactivatePlacements(
+      BatchDeactivatePlacementsRequest request) {
+    return batchDeactivatePlacementsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deactivates a list of `Placement` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacementServiceClient placementServiceClient = PlacementServiceClient.create()) {
+   *   BatchDeactivatePlacementsRequest request =
+   *       BatchDeactivatePlacementsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<BatchDeactivatePlacementsResponse> future =
+   *       placementServiceClient.batchDeactivatePlacementsCallable().futureCall(request);
+   *   // Do something.
+   *   BatchDeactivatePlacementsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchDeactivatePlacementsRequest, BatchDeactivatePlacementsResponse>
+      batchDeactivatePlacementsCallable() {
+    return stub.batchDeactivatePlacementsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Archives a list of `Placement` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacementServiceClient placementServiceClient = PlacementServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<String> names = new ArrayList<>();
+   *   BatchArchivePlacementsResponse response =
+   *       placementServiceClient.batchArchivePlacements(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: `networks/{network_code}`
+   * @param names Required. The names of the `Placement` objects to archive. Format:
+   *     `networks/{network_code}/placements/{placement_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchArchivePlacementsResponse batchArchivePlacements(
+      NetworkName parent, List<String> names) {
+    BatchArchivePlacementsRequest request =
+        BatchArchivePlacementsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return batchArchivePlacements(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Archives a list of `Placement` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacementServiceClient placementServiceClient = PlacementServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   BatchArchivePlacementsResponse response =
+   *       placementServiceClient.batchArchivePlacements(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: `networks/{network_code}`
+   * @param names Required. The names of the `Placement` objects to archive. Format:
+   *     `networks/{network_code}/placements/{placement_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchArchivePlacementsResponse batchArchivePlacements(
+      String parent, List<String> names) {
+    BatchArchivePlacementsRequest request =
+        BatchArchivePlacementsRequest.newBuilder().setParent(parent).addAllNames(names).build();
+    return batchArchivePlacements(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Archives a list of `Placement` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacementServiceClient placementServiceClient = PlacementServiceClient.create()) {
+   *   BatchArchivePlacementsRequest request =
+   *       BatchArchivePlacementsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   BatchArchivePlacementsResponse response =
+   *       placementServiceClient.batchArchivePlacements(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchArchivePlacementsResponse batchArchivePlacements(
+      BatchArchivePlacementsRequest request) {
+    return batchArchivePlacementsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Archives a list of `Placement` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacementServiceClient placementServiceClient = PlacementServiceClient.create()) {
+   *   BatchArchivePlacementsRequest request =
+   *       BatchArchivePlacementsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<BatchArchivePlacementsResponse> future =
+   *       placementServiceClient.batchArchivePlacementsCallable().futureCall(request);
+   *   // Do something.
+   *   BatchArchivePlacementsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchArchivePlacementsRequest, BatchArchivePlacementsResponse>
+      batchArchivePlacementsCallable() {
+    return stub.batchArchivePlacementsCallable();
   }
 
   @Override

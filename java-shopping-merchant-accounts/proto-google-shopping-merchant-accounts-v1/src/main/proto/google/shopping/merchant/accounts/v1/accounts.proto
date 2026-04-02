@@ -1,4 +1,4 @@
-// Copyright 2025 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import "google/protobuf/empty.proto";
 import "google/protobuf/field_mask.proto";
 import "google/shopping/merchant/accounts/v1/accountservices.proto";
 import "google/shopping/merchant/accounts/v1/user.proto";
+import "google/shopping/merchant/accounts/v1/verificationmailsettings.proto";
 import "google/type/datetime.proto";
 
 option csharp_namespace = "Google.Shopping.Merchant.Accounts.V1";
@@ -59,12 +60,37 @@ service AccountsService {
     };
   }
 
+  // Creates a Merchant Center test account.
+  //
+  // Test accounts are intended for development and testing purposes, such as
+  // validating API integrations or new feature behavior.
+  //
+  // Key characteristics and limitations of test accounts:
+  // - Immutable Type: A test account cannot be converted into a regular
+  //   (live) Merchant Center account. Likewise, a regular account cannot be
+  //   converted into a test account.
+  // - Non-Serving Products: Any products, offers, or data created within a
+  //   test account will not be published or made visible to end-users on any
+  //   Google surfaces. They are strictly for testing environments.
+  // - Separate Environment: Test accounts operate in a sandbox-like manner,
+  //   isolated from live serving and real user traffic.
+  rpc CreateTestAccount(CreateTestAccountRequest) returns (Account) {
+    option (google.api.http) = {
+      post: "/accounts/v1/{parent=accounts/*}:createTestAccount"
+      body: "account"
+    };
+    option (google.api.method_signature) = "parent,account";
+  }
+
   // Deletes the specified account regardless of its type: standalone, advanced
   // account or sub-account. Deleting an advanced account leads to the deletion
-  // of all of its sub-accounts. Executing this method requires admin access.
-  // The deletion succeeds only if the account does not provide services
-  // to any other account and has no processed offers. You can use the `force`
-  // parameter to override this.
+  // of all of its sub-accounts. This also deletes the account's [developer
+  // registration
+  // entity](/merchant/api/reference/rest/accounts_v1/accounts.developerRegistration)
+  // and any associated GCP project to the account. Executing this method
+  // requires admin access. The deletion succeeds only if the account does not
+  // provide services to any other account and has no processed offers. You can
+  // use the `force` parameter to override this.
   rpc DeleteAccount(DeleteAccountRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {
       delete: "/accounts/v1/{name=accounts/*}"
@@ -135,10 +161,12 @@ message Account {
   // Output only. The ID of the account.
   int64 account_id = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Required. A human-readable name of the account. See
-  // [store name](https://support.google.com/merchants/answer/160556) and
-  // [business name](https://support.google.com/merchants/answer/12159159) for
-  // more information.
+  // Required. A human-readable name of the account. Don't use punctuation,
+  // capitalization, or non-alphanumeric symbols such as the "/" or "_" symbols.
+  // See
+  // [Adding a business
+  // name](https://support.google.com/merchants/answer/12159159) for more
+  // information.
   string account_name = 3 [(google.api.field_behavior) = REQUIRED];
 
   // Optional. Whether this account contains adult content.
@@ -187,6 +215,11 @@ message CreateAndConfigureAccountRequest {
     // Optional. Details about the user to be added. At the moment, only access
     // rights may be specified.
     User user = 2 [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. Settings related to configuring the verification email that is
+    // sent after adding a user.
+    VerificationMailSettings verification_mail_settings = 3
+        [(google.api.field_behavior) = OPTIONAL];
   }
 
   // Additional instructions to add account services during creation of the
@@ -198,12 +231,62 @@ message CreateAndConfigureAccountRequest {
       // [aggregator](https://support.google.com/merchants/answer/188487) for
       // the account. Payload for service type Account Aggregation.
       AccountAggregation account_aggregation = 103;
+
+      // The provider manages this account. Payload for service type Account
+      // Management.
+      AccountManagement account_management = 104;
+
+      // The provider is a CSS (Comparison Shopping Service) of this account.
+      // Payload for service type Comparison Shopping.
+      ComparisonShopping comparison_shopping = 105;
+
+      // The provider manages products for this account. Payload for service
+      // type products management.
+      ProductsManagement products_management = 106;
+
+      // The provider manages campaigns for this account. Payload for service
+      // type campaigns management.
+      CampaignsManagement campaigns_management = 107;
     }
 
     // Required. The provider of the service. Either the reference to an account
     // such as `providers/123` or a well-known service provider (one of
     // `providers/GOOGLE_ADS` or `providers/GOOGLE_BUSINESS_PROFILE`).
     optional string provider = 1 [(google.api.field_behavior) = REQUIRED];
+
+    // Immutable. An optional, immutable identifier that Google uses to refer to
+    // this account when communicating with the provider. This should be the
+    // unique account ID within the provider's system (for example, your shop ID
+    // in Shopify).
+    //
+    // If you have multiple accounts with the same provider - for instance,
+    // different accounts for various regions — the `external_account_id`
+    // differentiates between them, ensuring accurate linking and integration
+    // between Google and the provider.
+    //
+    // The external account ID must be specified for the campaigns management
+    // service type.
+    //
+    // The external account ID must not be specified for the account aggregation
+    // service type.
+    //
+    // The external account ID is optional / may be specified for all other
+    // service types.
+    string external_account_id = 3 [(google.api.field_behavior) = IMMUTABLE];
+  }
+
+  // Set an alias for a relationship between a provider and the account to
+  // be created.
+  message SetAliasForRelationship {
+    // Required. The provider of the service. This is a reference to an account
+    // such as `providers/123` or `accounts/123`. The same provider must be
+    // specified in at least one of the `service` fields.
+    string provider = 1 [(google.api.field_behavior) = REQUIRED];
+
+    // Required. The unique ID of this account in the provider's system.
+    // The value must be unique across all accounts on the platform for this
+    // provider.
+    string account_id_alias = 2 [(google.api.field_behavior) = REQUIRED];
   }
 
   // Required. The account to be created.
@@ -218,9 +301,30 @@ message CreateAndConfigureAccountRequest {
   // `account_aggregation` and `accounts.createAndConfigure` method can be
   // used to create a sub-account under an existing advanced account through
   // this method. Additional `account_management` or
-  // `product_management` services may be provided.
+  // `products_management` services may be provided.
   repeated AddAccountService service = 4
       [(google.api.field_behavior) = REQUIRED];
+
+  // Optional. If a relationship is created with a provider, you can set an
+  // alias for it with this field. The calling user must be an admin on the
+  // provider to be able to set an alias.
+  repeated SetAliasForRelationship set_alias = 5
+      [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Request message for the CreateTestAccount RPC
+message CreateTestAccountRequest {
+  // Required. The account resource name to create the test account under.
+  // Format: accounts/{account}
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "merchantapi.googleapis.com/Account"
+    }
+  ];
+
+  // Required. The account to be created.
+  Account account = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
 // Request message for the `DeleteAccount` method.

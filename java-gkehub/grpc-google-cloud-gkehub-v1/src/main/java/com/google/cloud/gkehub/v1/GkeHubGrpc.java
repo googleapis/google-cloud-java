@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,9 +36,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * with Membership resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/gkehub/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class GkeHubGrpc {
 
@@ -91,6 +88,54 @@ public final class GkeHubGrpc {
       }
     }
     return getListMembershipsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.ListBoundMembershipsRequest,
+          com.google.cloud.gkehub.v1.ListBoundMembershipsResponse>
+      getListBoundMembershipsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListBoundMemberships",
+      requestType = com.google.cloud.gkehub.v1.ListBoundMembershipsRequest.class,
+      responseType = com.google.cloud.gkehub.v1.ListBoundMembershipsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.ListBoundMembershipsRequest,
+          com.google.cloud.gkehub.v1.ListBoundMembershipsResponse>
+      getListBoundMembershipsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.ListBoundMembershipsRequest,
+            com.google.cloud.gkehub.v1.ListBoundMembershipsResponse>
+        getListBoundMembershipsMethod;
+    if ((getListBoundMembershipsMethod = GkeHubGrpc.getListBoundMembershipsMethod) == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getListBoundMembershipsMethod = GkeHubGrpc.getListBoundMembershipsMethod) == null) {
+          GkeHubGrpc.getListBoundMembershipsMethod =
+              getListBoundMembershipsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.ListBoundMembershipsRequest,
+                          com.google.cloud.gkehub.v1.ListBoundMembershipsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListBoundMemberships"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.ListBoundMembershipsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.ListBoundMembershipsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GkeHubMethodDescriptorSupplier("ListBoundMemberships"))
+                      .build();
+        }
+      }
+    }
+    return getListBoundMembershipsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -517,6 +562,1492 @@ public final class GkeHubGrpc {
     return getGenerateConnectManifestMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.CreateFleetRequest, com.google.longrunning.Operation>
+      getCreateFleetMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateFleet",
+      requestType = com.google.cloud.gkehub.v1.CreateFleetRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.CreateFleetRequest, com.google.longrunning.Operation>
+      getCreateFleetMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.CreateFleetRequest, com.google.longrunning.Operation>
+        getCreateFleetMethod;
+    if ((getCreateFleetMethod = GkeHubGrpc.getCreateFleetMethod) == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getCreateFleetMethod = GkeHubGrpc.getCreateFleetMethod) == null) {
+          GkeHubGrpc.getCreateFleetMethod =
+              getCreateFleetMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.CreateFleetRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateFleet"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.CreateFleetRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new GkeHubMethodDescriptorSupplier("CreateFleet"))
+                      .build();
+        }
+      }
+    }
+    return getCreateFleetMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.GetFleetRequest, com.google.cloud.gkehub.v1.Fleet>
+      getGetFleetMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetFleet",
+      requestType = com.google.cloud.gkehub.v1.GetFleetRequest.class,
+      responseType = com.google.cloud.gkehub.v1.Fleet.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.GetFleetRequest, com.google.cloud.gkehub.v1.Fleet>
+      getGetFleetMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.GetFleetRequest, com.google.cloud.gkehub.v1.Fleet>
+        getGetFleetMethod;
+    if ((getGetFleetMethod = GkeHubGrpc.getGetFleetMethod) == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getGetFleetMethod = GkeHubGrpc.getGetFleetMethod) == null) {
+          GkeHubGrpc.getGetFleetMethod =
+              getGetFleetMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.GetFleetRequest,
+                          com.google.cloud.gkehub.v1.Fleet>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetFleet"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.GetFleetRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.Fleet.getDefaultInstance()))
+                      .setSchemaDescriptor(new GkeHubMethodDescriptorSupplier("GetFleet"))
+                      .build();
+        }
+      }
+    }
+    return getGetFleetMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.UpdateFleetRequest, com.google.longrunning.Operation>
+      getUpdateFleetMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateFleet",
+      requestType = com.google.cloud.gkehub.v1.UpdateFleetRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.UpdateFleetRequest, com.google.longrunning.Operation>
+      getUpdateFleetMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.UpdateFleetRequest, com.google.longrunning.Operation>
+        getUpdateFleetMethod;
+    if ((getUpdateFleetMethod = GkeHubGrpc.getUpdateFleetMethod) == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getUpdateFleetMethod = GkeHubGrpc.getUpdateFleetMethod) == null) {
+          GkeHubGrpc.getUpdateFleetMethod =
+              getUpdateFleetMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.UpdateFleetRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateFleet"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.UpdateFleetRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new GkeHubMethodDescriptorSupplier("UpdateFleet"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateFleetMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.DeleteFleetRequest, com.google.longrunning.Operation>
+      getDeleteFleetMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteFleet",
+      requestType = com.google.cloud.gkehub.v1.DeleteFleetRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.DeleteFleetRequest, com.google.longrunning.Operation>
+      getDeleteFleetMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.DeleteFleetRequest, com.google.longrunning.Operation>
+        getDeleteFleetMethod;
+    if ((getDeleteFleetMethod = GkeHubGrpc.getDeleteFleetMethod) == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getDeleteFleetMethod = GkeHubGrpc.getDeleteFleetMethod) == null) {
+          GkeHubGrpc.getDeleteFleetMethod =
+              getDeleteFleetMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.DeleteFleetRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteFleet"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.DeleteFleetRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new GkeHubMethodDescriptorSupplier("DeleteFleet"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteFleetMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.ListFleetsRequest,
+          com.google.cloud.gkehub.v1.ListFleetsResponse>
+      getListFleetsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListFleets",
+      requestType = com.google.cloud.gkehub.v1.ListFleetsRequest.class,
+      responseType = com.google.cloud.gkehub.v1.ListFleetsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.ListFleetsRequest,
+          com.google.cloud.gkehub.v1.ListFleetsResponse>
+      getListFleetsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.ListFleetsRequest,
+            com.google.cloud.gkehub.v1.ListFleetsResponse>
+        getListFleetsMethod;
+    if ((getListFleetsMethod = GkeHubGrpc.getListFleetsMethod) == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getListFleetsMethod = GkeHubGrpc.getListFleetsMethod) == null) {
+          GkeHubGrpc.getListFleetsMethod =
+              getListFleetsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.ListFleetsRequest,
+                          com.google.cloud.gkehub.v1.ListFleetsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListFleets"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.ListFleetsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.ListFleetsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(new GkeHubMethodDescriptorSupplier("ListFleets"))
+                      .build();
+        }
+      }
+    }
+    return getListFleetsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.GetScopeNamespaceRequest, com.google.cloud.gkehub.v1.Namespace>
+      getGetScopeNamespaceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetScopeNamespace",
+      requestType = com.google.cloud.gkehub.v1.GetScopeNamespaceRequest.class,
+      responseType = com.google.cloud.gkehub.v1.Namespace.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.GetScopeNamespaceRequest, com.google.cloud.gkehub.v1.Namespace>
+      getGetScopeNamespaceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.GetScopeNamespaceRequest,
+            com.google.cloud.gkehub.v1.Namespace>
+        getGetScopeNamespaceMethod;
+    if ((getGetScopeNamespaceMethod = GkeHubGrpc.getGetScopeNamespaceMethod) == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getGetScopeNamespaceMethod = GkeHubGrpc.getGetScopeNamespaceMethod) == null) {
+          GkeHubGrpc.getGetScopeNamespaceMethod =
+              getGetScopeNamespaceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.GetScopeNamespaceRequest,
+                          com.google.cloud.gkehub.v1.Namespace>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetScopeNamespace"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.GetScopeNamespaceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.Namespace.getDefaultInstance()))
+                      .setSchemaDescriptor(new GkeHubMethodDescriptorSupplier("GetScopeNamespace"))
+                      .build();
+        }
+      }
+    }
+    return getGetScopeNamespaceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.CreateScopeNamespaceRequest, com.google.longrunning.Operation>
+      getCreateScopeNamespaceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateScopeNamespace",
+      requestType = com.google.cloud.gkehub.v1.CreateScopeNamespaceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.CreateScopeNamespaceRequest, com.google.longrunning.Operation>
+      getCreateScopeNamespaceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.CreateScopeNamespaceRequest,
+            com.google.longrunning.Operation>
+        getCreateScopeNamespaceMethod;
+    if ((getCreateScopeNamespaceMethod = GkeHubGrpc.getCreateScopeNamespaceMethod) == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getCreateScopeNamespaceMethod = GkeHubGrpc.getCreateScopeNamespaceMethod) == null) {
+          GkeHubGrpc.getCreateScopeNamespaceMethod =
+              getCreateScopeNamespaceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.CreateScopeNamespaceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateScopeNamespace"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.CreateScopeNamespaceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GkeHubMethodDescriptorSupplier("CreateScopeNamespace"))
+                      .build();
+        }
+      }
+    }
+    return getCreateScopeNamespaceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.UpdateScopeNamespaceRequest, com.google.longrunning.Operation>
+      getUpdateScopeNamespaceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateScopeNamespace",
+      requestType = com.google.cloud.gkehub.v1.UpdateScopeNamespaceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.UpdateScopeNamespaceRequest, com.google.longrunning.Operation>
+      getUpdateScopeNamespaceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.UpdateScopeNamespaceRequest,
+            com.google.longrunning.Operation>
+        getUpdateScopeNamespaceMethod;
+    if ((getUpdateScopeNamespaceMethod = GkeHubGrpc.getUpdateScopeNamespaceMethod) == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getUpdateScopeNamespaceMethod = GkeHubGrpc.getUpdateScopeNamespaceMethod) == null) {
+          GkeHubGrpc.getUpdateScopeNamespaceMethod =
+              getUpdateScopeNamespaceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.UpdateScopeNamespaceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateScopeNamespace"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.UpdateScopeNamespaceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GkeHubMethodDescriptorSupplier("UpdateScopeNamespace"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateScopeNamespaceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.DeleteScopeNamespaceRequest, com.google.longrunning.Operation>
+      getDeleteScopeNamespaceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteScopeNamespace",
+      requestType = com.google.cloud.gkehub.v1.DeleteScopeNamespaceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.DeleteScopeNamespaceRequest, com.google.longrunning.Operation>
+      getDeleteScopeNamespaceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.DeleteScopeNamespaceRequest,
+            com.google.longrunning.Operation>
+        getDeleteScopeNamespaceMethod;
+    if ((getDeleteScopeNamespaceMethod = GkeHubGrpc.getDeleteScopeNamespaceMethod) == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getDeleteScopeNamespaceMethod = GkeHubGrpc.getDeleteScopeNamespaceMethod) == null) {
+          GkeHubGrpc.getDeleteScopeNamespaceMethod =
+              getDeleteScopeNamespaceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.DeleteScopeNamespaceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteScopeNamespace"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.DeleteScopeNamespaceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GkeHubMethodDescriptorSupplier("DeleteScopeNamespace"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteScopeNamespaceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.ListScopeNamespacesRequest,
+          com.google.cloud.gkehub.v1.ListScopeNamespacesResponse>
+      getListScopeNamespacesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListScopeNamespaces",
+      requestType = com.google.cloud.gkehub.v1.ListScopeNamespacesRequest.class,
+      responseType = com.google.cloud.gkehub.v1.ListScopeNamespacesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.ListScopeNamespacesRequest,
+          com.google.cloud.gkehub.v1.ListScopeNamespacesResponse>
+      getListScopeNamespacesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.ListScopeNamespacesRequest,
+            com.google.cloud.gkehub.v1.ListScopeNamespacesResponse>
+        getListScopeNamespacesMethod;
+    if ((getListScopeNamespacesMethod = GkeHubGrpc.getListScopeNamespacesMethod) == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getListScopeNamespacesMethod = GkeHubGrpc.getListScopeNamespacesMethod) == null) {
+          GkeHubGrpc.getListScopeNamespacesMethod =
+              getListScopeNamespacesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.ListScopeNamespacesRequest,
+                          com.google.cloud.gkehub.v1.ListScopeNamespacesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListScopeNamespaces"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.ListScopeNamespacesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.ListScopeNamespacesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GkeHubMethodDescriptorSupplier("ListScopeNamespaces"))
+                      .build();
+        }
+      }
+    }
+    return getListScopeNamespacesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.GetScopeRBACRoleBindingRequest,
+          com.google.cloud.gkehub.v1.RBACRoleBinding>
+      getGetScopeRBACRoleBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetScopeRBACRoleBinding",
+      requestType = com.google.cloud.gkehub.v1.GetScopeRBACRoleBindingRequest.class,
+      responseType = com.google.cloud.gkehub.v1.RBACRoleBinding.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.GetScopeRBACRoleBindingRequest,
+          com.google.cloud.gkehub.v1.RBACRoleBinding>
+      getGetScopeRBACRoleBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.GetScopeRBACRoleBindingRequest,
+            com.google.cloud.gkehub.v1.RBACRoleBinding>
+        getGetScopeRBACRoleBindingMethod;
+    if ((getGetScopeRBACRoleBindingMethod = GkeHubGrpc.getGetScopeRBACRoleBindingMethod) == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getGetScopeRBACRoleBindingMethod = GkeHubGrpc.getGetScopeRBACRoleBindingMethod)
+            == null) {
+          GkeHubGrpc.getGetScopeRBACRoleBindingMethod =
+              getGetScopeRBACRoleBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.GetScopeRBACRoleBindingRequest,
+                          com.google.cloud.gkehub.v1.RBACRoleBinding>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetScopeRBACRoleBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.GetScopeRBACRoleBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.RBACRoleBinding.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GkeHubMethodDescriptorSupplier("GetScopeRBACRoleBinding"))
+                      .build();
+        }
+      }
+    }
+    return getGetScopeRBACRoleBindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.CreateScopeRBACRoleBindingRequest,
+          com.google.longrunning.Operation>
+      getCreateScopeRBACRoleBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateScopeRBACRoleBinding",
+      requestType = com.google.cloud.gkehub.v1.CreateScopeRBACRoleBindingRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.CreateScopeRBACRoleBindingRequest,
+          com.google.longrunning.Operation>
+      getCreateScopeRBACRoleBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.CreateScopeRBACRoleBindingRequest,
+            com.google.longrunning.Operation>
+        getCreateScopeRBACRoleBindingMethod;
+    if ((getCreateScopeRBACRoleBindingMethod = GkeHubGrpc.getCreateScopeRBACRoleBindingMethod)
+        == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getCreateScopeRBACRoleBindingMethod = GkeHubGrpc.getCreateScopeRBACRoleBindingMethod)
+            == null) {
+          GkeHubGrpc.getCreateScopeRBACRoleBindingMethod =
+              getCreateScopeRBACRoleBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.CreateScopeRBACRoleBindingRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateScopeRBACRoleBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.CreateScopeRBACRoleBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GkeHubMethodDescriptorSupplier("CreateScopeRBACRoleBinding"))
+                      .build();
+        }
+      }
+    }
+    return getCreateScopeRBACRoleBindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.UpdateScopeRBACRoleBindingRequest,
+          com.google.longrunning.Operation>
+      getUpdateScopeRBACRoleBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateScopeRBACRoleBinding",
+      requestType = com.google.cloud.gkehub.v1.UpdateScopeRBACRoleBindingRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.UpdateScopeRBACRoleBindingRequest,
+          com.google.longrunning.Operation>
+      getUpdateScopeRBACRoleBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.UpdateScopeRBACRoleBindingRequest,
+            com.google.longrunning.Operation>
+        getUpdateScopeRBACRoleBindingMethod;
+    if ((getUpdateScopeRBACRoleBindingMethod = GkeHubGrpc.getUpdateScopeRBACRoleBindingMethod)
+        == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getUpdateScopeRBACRoleBindingMethod = GkeHubGrpc.getUpdateScopeRBACRoleBindingMethod)
+            == null) {
+          GkeHubGrpc.getUpdateScopeRBACRoleBindingMethod =
+              getUpdateScopeRBACRoleBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.UpdateScopeRBACRoleBindingRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateScopeRBACRoleBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.UpdateScopeRBACRoleBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GkeHubMethodDescriptorSupplier("UpdateScopeRBACRoleBinding"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateScopeRBACRoleBindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.DeleteScopeRBACRoleBindingRequest,
+          com.google.longrunning.Operation>
+      getDeleteScopeRBACRoleBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteScopeRBACRoleBinding",
+      requestType = com.google.cloud.gkehub.v1.DeleteScopeRBACRoleBindingRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.DeleteScopeRBACRoleBindingRequest,
+          com.google.longrunning.Operation>
+      getDeleteScopeRBACRoleBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.DeleteScopeRBACRoleBindingRequest,
+            com.google.longrunning.Operation>
+        getDeleteScopeRBACRoleBindingMethod;
+    if ((getDeleteScopeRBACRoleBindingMethod = GkeHubGrpc.getDeleteScopeRBACRoleBindingMethod)
+        == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getDeleteScopeRBACRoleBindingMethod = GkeHubGrpc.getDeleteScopeRBACRoleBindingMethod)
+            == null) {
+          GkeHubGrpc.getDeleteScopeRBACRoleBindingMethod =
+              getDeleteScopeRBACRoleBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.DeleteScopeRBACRoleBindingRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteScopeRBACRoleBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.DeleteScopeRBACRoleBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GkeHubMethodDescriptorSupplier("DeleteScopeRBACRoleBinding"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteScopeRBACRoleBindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.ListScopeRBACRoleBindingsRequest,
+          com.google.cloud.gkehub.v1.ListScopeRBACRoleBindingsResponse>
+      getListScopeRBACRoleBindingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListScopeRBACRoleBindings",
+      requestType = com.google.cloud.gkehub.v1.ListScopeRBACRoleBindingsRequest.class,
+      responseType = com.google.cloud.gkehub.v1.ListScopeRBACRoleBindingsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.ListScopeRBACRoleBindingsRequest,
+          com.google.cloud.gkehub.v1.ListScopeRBACRoleBindingsResponse>
+      getListScopeRBACRoleBindingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.ListScopeRBACRoleBindingsRequest,
+            com.google.cloud.gkehub.v1.ListScopeRBACRoleBindingsResponse>
+        getListScopeRBACRoleBindingsMethod;
+    if ((getListScopeRBACRoleBindingsMethod = GkeHubGrpc.getListScopeRBACRoleBindingsMethod)
+        == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getListScopeRBACRoleBindingsMethod = GkeHubGrpc.getListScopeRBACRoleBindingsMethod)
+            == null) {
+          GkeHubGrpc.getListScopeRBACRoleBindingsMethod =
+              getListScopeRBACRoleBindingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.ListScopeRBACRoleBindingsRequest,
+                          com.google.cloud.gkehub.v1.ListScopeRBACRoleBindingsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListScopeRBACRoleBindings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.ListScopeRBACRoleBindingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.ListScopeRBACRoleBindingsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GkeHubMethodDescriptorSupplier("ListScopeRBACRoleBindings"))
+                      .build();
+        }
+      }
+    }
+    return getListScopeRBACRoleBindingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.GetScopeRequest, com.google.cloud.gkehub.v1.Scope>
+      getGetScopeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetScope",
+      requestType = com.google.cloud.gkehub.v1.GetScopeRequest.class,
+      responseType = com.google.cloud.gkehub.v1.Scope.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.GetScopeRequest, com.google.cloud.gkehub.v1.Scope>
+      getGetScopeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.GetScopeRequest, com.google.cloud.gkehub.v1.Scope>
+        getGetScopeMethod;
+    if ((getGetScopeMethod = GkeHubGrpc.getGetScopeMethod) == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getGetScopeMethod = GkeHubGrpc.getGetScopeMethod) == null) {
+          GkeHubGrpc.getGetScopeMethod =
+              getGetScopeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.GetScopeRequest,
+                          com.google.cloud.gkehub.v1.Scope>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetScope"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.GetScopeRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.Scope.getDefaultInstance()))
+                      .setSchemaDescriptor(new GkeHubMethodDescriptorSupplier("GetScope"))
+                      .build();
+        }
+      }
+    }
+    return getGetScopeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.CreateScopeRequest, com.google.longrunning.Operation>
+      getCreateScopeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateScope",
+      requestType = com.google.cloud.gkehub.v1.CreateScopeRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.CreateScopeRequest, com.google.longrunning.Operation>
+      getCreateScopeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.CreateScopeRequest, com.google.longrunning.Operation>
+        getCreateScopeMethod;
+    if ((getCreateScopeMethod = GkeHubGrpc.getCreateScopeMethod) == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getCreateScopeMethod = GkeHubGrpc.getCreateScopeMethod) == null) {
+          GkeHubGrpc.getCreateScopeMethod =
+              getCreateScopeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.CreateScopeRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateScope"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.CreateScopeRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new GkeHubMethodDescriptorSupplier("CreateScope"))
+                      .build();
+        }
+      }
+    }
+    return getCreateScopeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.UpdateScopeRequest, com.google.longrunning.Operation>
+      getUpdateScopeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateScope",
+      requestType = com.google.cloud.gkehub.v1.UpdateScopeRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.UpdateScopeRequest, com.google.longrunning.Operation>
+      getUpdateScopeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.UpdateScopeRequest, com.google.longrunning.Operation>
+        getUpdateScopeMethod;
+    if ((getUpdateScopeMethod = GkeHubGrpc.getUpdateScopeMethod) == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getUpdateScopeMethod = GkeHubGrpc.getUpdateScopeMethod) == null) {
+          GkeHubGrpc.getUpdateScopeMethod =
+              getUpdateScopeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.UpdateScopeRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateScope"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.UpdateScopeRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new GkeHubMethodDescriptorSupplier("UpdateScope"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateScopeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.DeleteScopeRequest, com.google.longrunning.Operation>
+      getDeleteScopeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteScope",
+      requestType = com.google.cloud.gkehub.v1.DeleteScopeRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.DeleteScopeRequest, com.google.longrunning.Operation>
+      getDeleteScopeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.DeleteScopeRequest, com.google.longrunning.Operation>
+        getDeleteScopeMethod;
+    if ((getDeleteScopeMethod = GkeHubGrpc.getDeleteScopeMethod) == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getDeleteScopeMethod = GkeHubGrpc.getDeleteScopeMethod) == null) {
+          GkeHubGrpc.getDeleteScopeMethod =
+              getDeleteScopeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.DeleteScopeRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteScope"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.DeleteScopeRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new GkeHubMethodDescriptorSupplier("DeleteScope"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteScopeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.ListScopesRequest,
+          com.google.cloud.gkehub.v1.ListScopesResponse>
+      getListScopesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListScopes",
+      requestType = com.google.cloud.gkehub.v1.ListScopesRequest.class,
+      responseType = com.google.cloud.gkehub.v1.ListScopesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.ListScopesRequest,
+          com.google.cloud.gkehub.v1.ListScopesResponse>
+      getListScopesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.ListScopesRequest,
+            com.google.cloud.gkehub.v1.ListScopesResponse>
+        getListScopesMethod;
+    if ((getListScopesMethod = GkeHubGrpc.getListScopesMethod) == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getListScopesMethod = GkeHubGrpc.getListScopesMethod) == null) {
+          GkeHubGrpc.getListScopesMethod =
+              getListScopesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.ListScopesRequest,
+                          com.google.cloud.gkehub.v1.ListScopesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListScopes"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.ListScopesRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.ListScopesResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(new GkeHubMethodDescriptorSupplier("ListScopes"))
+                      .build();
+        }
+      }
+    }
+    return getListScopesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.ListPermittedScopesRequest,
+          com.google.cloud.gkehub.v1.ListPermittedScopesResponse>
+      getListPermittedScopesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListPermittedScopes",
+      requestType = com.google.cloud.gkehub.v1.ListPermittedScopesRequest.class,
+      responseType = com.google.cloud.gkehub.v1.ListPermittedScopesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.ListPermittedScopesRequest,
+          com.google.cloud.gkehub.v1.ListPermittedScopesResponse>
+      getListPermittedScopesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.ListPermittedScopesRequest,
+            com.google.cloud.gkehub.v1.ListPermittedScopesResponse>
+        getListPermittedScopesMethod;
+    if ((getListPermittedScopesMethod = GkeHubGrpc.getListPermittedScopesMethod) == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getListPermittedScopesMethod = GkeHubGrpc.getListPermittedScopesMethod) == null) {
+          GkeHubGrpc.getListPermittedScopesMethod =
+              getListPermittedScopesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.ListPermittedScopesRequest,
+                          com.google.cloud.gkehub.v1.ListPermittedScopesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListPermittedScopes"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.ListPermittedScopesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.ListPermittedScopesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GkeHubMethodDescriptorSupplier("ListPermittedScopes"))
+                      .build();
+        }
+      }
+    }
+    return getListPermittedScopesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.GetMembershipBindingRequest,
+          com.google.cloud.gkehub.v1.MembershipBinding>
+      getGetMembershipBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetMembershipBinding",
+      requestType = com.google.cloud.gkehub.v1.GetMembershipBindingRequest.class,
+      responseType = com.google.cloud.gkehub.v1.MembershipBinding.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.GetMembershipBindingRequest,
+          com.google.cloud.gkehub.v1.MembershipBinding>
+      getGetMembershipBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.GetMembershipBindingRequest,
+            com.google.cloud.gkehub.v1.MembershipBinding>
+        getGetMembershipBindingMethod;
+    if ((getGetMembershipBindingMethod = GkeHubGrpc.getGetMembershipBindingMethod) == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getGetMembershipBindingMethod = GkeHubGrpc.getGetMembershipBindingMethod) == null) {
+          GkeHubGrpc.getGetMembershipBindingMethod =
+              getGetMembershipBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.GetMembershipBindingRequest,
+                          com.google.cloud.gkehub.v1.MembershipBinding>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetMembershipBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.GetMembershipBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.MembershipBinding.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GkeHubMethodDescriptorSupplier("GetMembershipBinding"))
+                      .build();
+        }
+      }
+    }
+    return getGetMembershipBindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.CreateMembershipBindingRequest,
+          com.google.longrunning.Operation>
+      getCreateMembershipBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateMembershipBinding",
+      requestType = com.google.cloud.gkehub.v1.CreateMembershipBindingRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.CreateMembershipBindingRequest,
+          com.google.longrunning.Operation>
+      getCreateMembershipBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.CreateMembershipBindingRequest,
+            com.google.longrunning.Operation>
+        getCreateMembershipBindingMethod;
+    if ((getCreateMembershipBindingMethod = GkeHubGrpc.getCreateMembershipBindingMethod) == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getCreateMembershipBindingMethod = GkeHubGrpc.getCreateMembershipBindingMethod)
+            == null) {
+          GkeHubGrpc.getCreateMembershipBindingMethod =
+              getCreateMembershipBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.CreateMembershipBindingRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateMembershipBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.CreateMembershipBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GkeHubMethodDescriptorSupplier("CreateMembershipBinding"))
+                      .build();
+        }
+      }
+    }
+    return getCreateMembershipBindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.UpdateMembershipBindingRequest,
+          com.google.longrunning.Operation>
+      getUpdateMembershipBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateMembershipBinding",
+      requestType = com.google.cloud.gkehub.v1.UpdateMembershipBindingRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.UpdateMembershipBindingRequest,
+          com.google.longrunning.Operation>
+      getUpdateMembershipBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.UpdateMembershipBindingRequest,
+            com.google.longrunning.Operation>
+        getUpdateMembershipBindingMethod;
+    if ((getUpdateMembershipBindingMethod = GkeHubGrpc.getUpdateMembershipBindingMethod) == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getUpdateMembershipBindingMethod = GkeHubGrpc.getUpdateMembershipBindingMethod)
+            == null) {
+          GkeHubGrpc.getUpdateMembershipBindingMethod =
+              getUpdateMembershipBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.UpdateMembershipBindingRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateMembershipBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.UpdateMembershipBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GkeHubMethodDescriptorSupplier("UpdateMembershipBinding"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateMembershipBindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.DeleteMembershipBindingRequest,
+          com.google.longrunning.Operation>
+      getDeleteMembershipBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteMembershipBinding",
+      requestType = com.google.cloud.gkehub.v1.DeleteMembershipBindingRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.DeleteMembershipBindingRequest,
+          com.google.longrunning.Operation>
+      getDeleteMembershipBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.DeleteMembershipBindingRequest,
+            com.google.longrunning.Operation>
+        getDeleteMembershipBindingMethod;
+    if ((getDeleteMembershipBindingMethod = GkeHubGrpc.getDeleteMembershipBindingMethod) == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getDeleteMembershipBindingMethod = GkeHubGrpc.getDeleteMembershipBindingMethod)
+            == null) {
+          GkeHubGrpc.getDeleteMembershipBindingMethod =
+              getDeleteMembershipBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.DeleteMembershipBindingRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteMembershipBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.DeleteMembershipBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GkeHubMethodDescriptorSupplier("DeleteMembershipBinding"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteMembershipBindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.ListMembershipBindingsRequest,
+          com.google.cloud.gkehub.v1.ListMembershipBindingsResponse>
+      getListMembershipBindingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMembershipBindings",
+      requestType = com.google.cloud.gkehub.v1.ListMembershipBindingsRequest.class,
+      responseType = com.google.cloud.gkehub.v1.ListMembershipBindingsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.ListMembershipBindingsRequest,
+          com.google.cloud.gkehub.v1.ListMembershipBindingsResponse>
+      getListMembershipBindingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.ListMembershipBindingsRequest,
+            com.google.cloud.gkehub.v1.ListMembershipBindingsResponse>
+        getListMembershipBindingsMethod;
+    if ((getListMembershipBindingsMethod = GkeHubGrpc.getListMembershipBindingsMethod) == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getListMembershipBindingsMethod = GkeHubGrpc.getListMembershipBindingsMethod)
+            == null) {
+          GkeHubGrpc.getListMembershipBindingsMethod =
+              getListMembershipBindingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.ListMembershipBindingsRequest,
+                          com.google.cloud.gkehub.v1.ListMembershipBindingsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListMembershipBindings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.ListMembershipBindingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.ListMembershipBindingsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GkeHubMethodDescriptorSupplier("ListMembershipBindings"))
+                      .build();
+        }
+      }
+    }
+    return getListMembershipBindingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.GetMembershipRBACRoleBindingRequest,
+          com.google.cloud.gkehub.v1.RBACRoleBinding>
+      getGetMembershipRBACRoleBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetMembershipRBACRoleBinding",
+      requestType = com.google.cloud.gkehub.v1.GetMembershipRBACRoleBindingRequest.class,
+      responseType = com.google.cloud.gkehub.v1.RBACRoleBinding.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.GetMembershipRBACRoleBindingRequest,
+          com.google.cloud.gkehub.v1.RBACRoleBinding>
+      getGetMembershipRBACRoleBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.GetMembershipRBACRoleBindingRequest,
+            com.google.cloud.gkehub.v1.RBACRoleBinding>
+        getGetMembershipRBACRoleBindingMethod;
+    if ((getGetMembershipRBACRoleBindingMethod = GkeHubGrpc.getGetMembershipRBACRoleBindingMethod)
+        == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getGetMembershipRBACRoleBindingMethod =
+                GkeHubGrpc.getGetMembershipRBACRoleBindingMethod)
+            == null) {
+          GkeHubGrpc.getGetMembershipRBACRoleBindingMethod =
+              getGetMembershipRBACRoleBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.GetMembershipRBACRoleBindingRequest,
+                          com.google.cloud.gkehub.v1.RBACRoleBinding>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetMembershipRBACRoleBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.GetMembershipRBACRoleBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.RBACRoleBinding.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GkeHubMethodDescriptorSupplier("GetMembershipRBACRoleBinding"))
+                      .build();
+        }
+      }
+    }
+    return getGetMembershipRBACRoleBindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.CreateMembershipRBACRoleBindingRequest,
+          com.google.longrunning.Operation>
+      getCreateMembershipRBACRoleBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateMembershipRBACRoleBinding",
+      requestType = com.google.cloud.gkehub.v1.CreateMembershipRBACRoleBindingRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.CreateMembershipRBACRoleBindingRequest,
+          com.google.longrunning.Operation>
+      getCreateMembershipRBACRoleBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.CreateMembershipRBACRoleBindingRequest,
+            com.google.longrunning.Operation>
+        getCreateMembershipRBACRoleBindingMethod;
+    if ((getCreateMembershipRBACRoleBindingMethod =
+            GkeHubGrpc.getCreateMembershipRBACRoleBindingMethod)
+        == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getCreateMembershipRBACRoleBindingMethod =
+                GkeHubGrpc.getCreateMembershipRBACRoleBindingMethod)
+            == null) {
+          GkeHubGrpc.getCreateMembershipRBACRoleBindingMethod =
+              getCreateMembershipRBACRoleBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.CreateMembershipRBACRoleBindingRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateMembershipRBACRoleBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.CreateMembershipRBACRoleBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GkeHubMethodDescriptorSupplier("CreateMembershipRBACRoleBinding"))
+                      .build();
+        }
+      }
+    }
+    return getCreateMembershipRBACRoleBindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.UpdateMembershipRBACRoleBindingRequest,
+          com.google.longrunning.Operation>
+      getUpdateMembershipRBACRoleBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateMembershipRBACRoleBinding",
+      requestType = com.google.cloud.gkehub.v1.UpdateMembershipRBACRoleBindingRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.UpdateMembershipRBACRoleBindingRequest,
+          com.google.longrunning.Operation>
+      getUpdateMembershipRBACRoleBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.UpdateMembershipRBACRoleBindingRequest,
+            com.google.longrunning.Operation>
+        getUpdateMembershipRBACRoleBindingMethod;
+    if ((getUpdateMembershipRBACRoleBindingMethod =
+            GkeHubGrpc.getUpdateMembershipRBACRoleBindingMethod)
+        == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getUpdateMembershipRBACRoleBindingMethod =
+                GkeHubGrpc.getUpdateMembershipRBACRoleBindingMethod)
+            == null) {
+          GkeHubGrpc.getUpdateMembershipRBACRoleBindingMethod =
+              getUpdateMembershipRBACRoleBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.UpdateMembershipRBACRoleBindingRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateMembershipRBACRoleBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.UpdateMembershipRBACRoleBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GkeHubMethodDescriptorSupplier("UpdateMembershipRBACRoleBinding"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateMembershipRBACRoleBindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.DeleteMembershipRBACRoleBindingRequest,
+          com.google.longrunning.Operation>
+      getDeleteMembershipRBACRoleBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteMembershipRBACRoleBinding",
+      requestType = com.google.cloud.gkehub.v1.DeleteMembershipRBACRoleBindingRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.DeleteMembershipRBACRoleBindingRequest,
+          com.google.longrunning.Operation>
+      getDeleteMembershipRBACRoleBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.DeleteMembershipRBACRoleBindingRequest,
+            com.google.longrunning.Operation>
+        getDeleteMembershipRBACRoleBindingMethod;
+    if ((getDeleteMembershipRBACRoleBindingMethod =
+            GkeHubGrpc.getDeleteMembershipRBACRoleBindingMethod)
+        == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getDeleteMembershipRBACRoleBindingMethod =
+                GkeHubGrpc.getDeleteMembershipRBACRoleBindingMethod)
+            == null) {
+          GkeHubGrpc.getDeleteMembershipRBACRoleBindingMethod =
+              getDeleteMembershipRBACRoleBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.DeleteMembershipRBACRoleBindingRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteMembershipRBACRoleBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.DeleteMembershipRBACRoleBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GkeHubMethodDescriptorSupplier("DeleteMembershipRBACRoleBinding"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteMembershipRBACRoleBindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.ListMembershipRBACRoleBindingsRequest,
+          com.google.cloud.gkehub.v1.ListMembershipRBACRoleBindingsResponse>
+      getListMembershipRBACRoleBindingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMembershipRBACRoleBindings",
+      requestType = com.google.cloud.gkehub.v1.ListMembershipRBACRoleBindingsRequest.class,
+      responseType = com.google.cloud.gkehub.v1.ListMembershipRBACRoleBindingsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.ListMembershipRBACRoleBindingsRequest,
+          com.google.cloud.gkehub.v1.ListMembershipRBACRoleBindingsResponse>
+      getListMembershipRBACRoleBindingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.ListMembershipRBACRoleBindingsRequest,
+            com.google.cloud.gkehub.v1.ListMembershipRBACRoleBindingsResponse>
+        getListMembershipRBACRoleBindingsMethod;
+    if ((getListMembershipRBACRoleBindingsMethod =
+            GkeHubGrpc.getListMembershipRBACRoleBindingsMethod)
+        == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getListMembershipRBACRoleBindingsMethod =
+                GkeHubGrpc.getListMembershipRBACRoleBindingsMethod)
+            == null) {
+          GkeHubGrpc.getListMembershipRBACRoleBindingsMethod =
+              getListMembershipRBACRoleBindingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.ListMembershipRBACRoleBindingsRequest,
+                          com.google.cloud.gkehub.v1.ListMembershipRBACRoleBindingsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListMembershipRBACRoleBindings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.ListMembershipRBACRoleBindingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1.ListMembershipRBACRoleBindingsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GkeHubMethodDescriptorSupplier("ListMembershipRBACRoleBindings"))
+                      .build();
+        }
+      }
+    }
+    return getListMembershipRBACRoleBindingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.GenerateMembershipRBACRoleBindingYAMLRequest,
+          com.google.cloud.gkehub.v1.GenerateMembershipRBACRoleBindingYAMLResponse>
+      getGenerateMembershipRBACRoleBindingYAMLMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GenerateMembershipRBACRoleBindingYAML",
+      requestType = com.google.cloud.gkehub.v1.GenerateMembershipRBACRoleBindingYAMLRequest.class,
+      responseType = com.google.cloud.gkehub.v1.GenerateMembershipRBACRoleBindingYAMLResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkehub.v1.GenerateMembershipRBACRoleBindingYAMLRequest,
+          com.google.cloud.gkehub.v1.GenerateMembershipRBACRoleBindingYAMLResponse>
+      getGenerateMembershipRBACRoleBindingYAMLMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkehub.v1.GenerateMembershipRBACRoleBindingYAMLRequest,
+            com.google.cloud.gkehub.v1.GenerateMembershipRBACRoleBindingYAMLResponse>
+        getGenerateMembershipRBACRoleBindingYAMLMethod;
+    if ((getGenerateMembershipRBACRoleBindingYAMLMethod =
+            GkeHubGrpc.getGenerateMembershipRBACRoleBindingYAMLMethod)
+        == null) {
+      synchronized (GkeHubGrpc.class) {
+        if ((getGenerateMembershipRBACRoleBindingYAMLMethod =
+                GkeHubGrpc.getGenerateMembershipRBACRoleBindingYAMLMethod)
+            == null) {
+          GkeHubGrpc.getGenerateMembershipRBACRoleBindingYAMLMethod =
+              getGenerateMembershipRBACRoleBindingYAMLMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkehub.v1.GenerateMembershipRBACRoleBindingYAMLRequest,
+                          com.google.cloud.gkehub.v1.GenerateMembershipRBACRoleBindingYAMLResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "GenerateMembershipRBACRoleBindingYAML"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1
+                                  .GenerateMembershipRBACRoleBindingYAMLRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkehub.v1
+                                  .GenerateMembershipRBACRoleBindingYAMLResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GkeHubMethodDescriptorSupplier(
+                              "GenerateMembershipRBACRoleBindingYAML"))
+                      .build();
+        }
+      }
+    }
+    return getGenerateMembershipRBACRoleBindingYAMLMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static GkeHubStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<GkeHubStub> factory =
@@ -604,6 +2135,22 @@ public final class GkeHubGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListMembershipsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Memberships bound to a Scope. The response includes relevant
+     * Memberships from all regions.
+     * </pre>
+     */
+    default void listBoundMemberships(
+        com.google.cloud.gkehub.v1.ListBoundMembershipsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.ListBoundMembershipsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListBoundMembershipsMethod(), responseObserver);
     }
 
     /**
@@ -754,6 +2301,463 @@ public final class GkeHubGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGenerateConnectManifestMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a fleet.
+     * </pre>
+     */
+    default void createFleet(
+        com.google.cloud.gkehub.v1.CreateFleetRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateFleetMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a fleet.
+     * </pre>
+     */
+    default void getFleet(
+        com.google.cloud.gkehub.v1.GetFleetRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.Fleet> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetFleetMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a fleet.
+     * </pre>
+     */
+    default void updateFleet(
+        com.google.cloud.gkehub.v1.UpdateFleetRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateFleetMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes a Fleet. There must be no memberships remaining in the Fleet.
+     * </pre>
+     */
+    default void deleteFleet(
+        com.google.cloud.gkehub.v1.DeleteFleetRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteFleetMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns all fleets within an organization or a project that the caller has
+     * access to.
+     * </pre>
+     */
+    default void listFleets(
+        com.google.cloud.gkehub.v1.ListFleetsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.ListFleetsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListFleetsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a fleet namespace.
+     * </pre>
+     */
+    default void getScopeNamespace(
+        com.google.cloud.gkehub.v1.GetScopeNamespaceRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.Namespace> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetScopeNamespaceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a fleet namespace.
+     * </pre>
+     */
+    default void createScopeNamespace(
+        com.google.cloud.gkehub.v1.CreateScopeNamespaceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateScopeNamespaceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a fleet namespace.
+     * </pre>
+     */
+    default void updateScopeNamespace(
+        com.google.cloud.gkehub.v1.UpdateScopeNamespaceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateScopeNamespaceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a fleet namespace.
+     * </pre>
+     */
+    default void deleteScopeNamespace(
+        com.google.cloud.gkehub.v1.DeleteScopeNamespaceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteScopeNamespaceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists fleet namespaces.
+     * </pre>
+     */
+    default void listScopeNamespaces(
+        com.google.cloud.gkehub.v1.ListScopeNamespacesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.ListScopeNamespacesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListScopeNamespacesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a Scope RBACRoleBinding.
+     * </pre>
+     */
+    default void getScopeRBACRoleBinding(
+        com.google.cloud.gkehub.v1.GetScopeRBACRoleBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.RBACRoleBinding> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetScopeRBACRoleBindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Scope RBACRoleBinding.
+     * </pre>
+     */
+    default void createScopeRBACRoleBinding(
+        com.google.cloud.gkehub.v1.CreateScopeRBACRoleBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateScopeRBACRoleBindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Scope RBACRoleBinding.
+     * </pre>
+     */
+    default void updateScopeRBACRoleBinding(
+        com.google.cloud.gkehub.v1.UpdateScopeRBACRoleBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateScopeRBACRoleBindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Scope RBACRoleBinding.
+     * </pre>
+     */
+    default void deleteScopeRBACRoleBinding(
+        com.google.cloud.gkehub.v1.DeleteScopeRBACRoleBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteScopeRBACRoleBindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all Scope RBACRoleBindings.
+     * </pre>
+     */
+    default void listScopeRBACRoleBindings(
+        com.google.cloud.gkehub.v1.ListScopeRBACRoleBindingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.ListScopeRBACRoleBindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListScopeRBACRoleBindingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a Scope.
+     * </pre>
+     */
+    default void getScope(
+        com.google.cloud.gkehub.v1.GetScopeRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.Scope> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetScopeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Scope.
+     * </pre>
+     */
+    default void createScope(
+        com.google.cloud.gkehub.v1.CreateScopeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateScopeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a scopes.
+     * </pre>
+     */
+    default void updateScope(
+        com.google.cloud.gkehub.v1.UpdateScopeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateScopeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Scope.
+     * </pre>
+     */
+    default void deleteScope(
+        com.google.cloud.gkehub.v1.DeleteScopeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteScopeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Scopes.
+     * </pre>
+     */
+    default void listScopes(
+        com.google.cloud.gkehub.v1.ListScopesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.ListScopesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListScopesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists permitted Scopes.
+     * </pre>
+     */
+    default void listPermittedScopes(
+        com.google.cloud.gkehub.v1.ListPermittedScopesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.ListPermittedScopesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListPermittedScopesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a MembershipBinding.
+     * </pre>
+     */
+    default void getMembershipBinding(
+        com.google.cloud.gkehub.v1.GetMembershipBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.MembershipBinding>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetMembershipBindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a MembershipBinding.
+     * </pre>
+     */
+    default void createMembershipBinding(
+        com.google.cloud.gkehub.v1.CreateMembershipBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateMembershipBindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a MembershipBinding.
+     * </pre>
+     */
+    default void updateMembershipBinding(
+        com.google.cloud.gkehub.v1.UpdateMembershipBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateMembershipBindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a MembershipBinding.
+     * </pre>
+     */
+    default void deleteMembershipBinding(
+        com.google.cloud.gkehub.v1.DeleteMembershipBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteMembershipBindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists MembershipBindings.
+     * </pre>
+     */
+    default void listMembershipBindings(
+        com.google.cloud.gkehub.v1.ListMembershipBindingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.ListMembershipBindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListMembershipBindingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a Membership RBACRoleBinding.
+     * </pre>
+     */
+    default void getMembershipRBACRoleBinding(
+        com.google.cloud.gkehub.v1.GetMembershipRBACRoleBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.RBACRoleBinding> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetMembershipRBACRoleBindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Membership RBACRoleBinding.
+     * </pre>
+     */
+    default void createMembershipRBACRoleBinding(
+        com.google.cloud.gkehub.v1.CreateMembershipRBACRoleBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateMembershipRBACRoleBindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Membership RBACRoleBinding.
+     * </pre>
+     */
+    default void updateMembershipRBACRoleBinding(
+        com.google.cloud.gkehub.v1.UpdateMembershipRBACRoleBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateMembershipRBACRoleBindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Membership RBACRoleBinding.
+     * </pre>
+     */
+    default void deleteMembershipRBACRoleBinding(
+        com.google.cloud.gkehub.v1.DeleteMembershipRBACRoleBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteMembershipRBACRoleBindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all Membership RBACRoleBindings.
+     * </pre>
+     */
+    default void listMembershipRBACRoleBindings(
+        com.google.cloud.gkehub.v1.ListMembershipRBACRoleBindingsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.gkehub.v1.ListMembershipRBACRoleBindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListMembershipRBACRoleBindingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates a YAML of the  RBAC policies for the specified
+     * RoleBinding and its associated impersonation resources.
+     * </pre>
+     */
+    default void generateMembershipRBACRoleBindingYAML(
+        com.google.cloud.gkehub.v1.GenerateMembershipRBACRoleBindingYAMLRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.gkehub.v1.GenerateMembershipRBACRoleBindingYAMLResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGenerateMembershipRBACRoleBindingYAMLMethod(), responseObserver);
+    }
   }
 
   /**
@@ -825,6 +2829,24 @@ public final class GkeHubGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListMembershipsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Memberships bound to a Scope. The response includes relevant
+     * Memberships from all regions.
+     * </pre>
+     */
+    public void listBoundMemberships(
+        com.google.cloud.gkehub.v1.ListBoundMembershipsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.ListBoundMembershipsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListBoundMembershipsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -996,6 +3018,523 @@ public final class GkeHubGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a fleet.
+     * </pre>
+     */
+    public void createFleet(
+        com.google.cloud.gkehub.v1.CreateFleetRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateFleetMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a fleet.
+     * </pre>
+     */
+    public void getFleet(
+        com.google.cloud.gkehub.v1.GetFleetRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.Fleet> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetFleetMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a fleet.
+     * </pre>
+     */
+    public void updateFleet(
+        com.google.cloud.gkehub.v1.UpdateFleetRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateFleetMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes a Fleet. There must be no memberships remaining in the Fleet.
+     * </pre>
+     */
+    public void deleteFleet(
+        com.google.cloud.gkehub.v1.DeleteFleetRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteFleetMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns all fleets within an organization or a project that the caller has
+     * access to.
+     * </pre>
+     */
+    public void listFleets(
+        com.google.cloud.gkehub.v1.ListFleetsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.ListFleetsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListFleetsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a fleet namespace.
+     * </pre>
+     */
+    public void getScopeNamespace(
+        com.google.cloud.gkehub.v1.GetScopeNamespaceRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.Namespace> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetScopeNamespaceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a fleet namespace.
+     * </pre>
+     */
+    public void createScopeNamespace(
+        com.google.cloud.gkehub.v1.CreateScopeNamespaceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateScopeNamespaceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a fleet namespace.
+     * </pre>
+     */
+    public void updateScopeNamespace(
+        com.google.cloud.gkehub.v1.UpdateScopeNamespaceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateScopeNamespaceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a fleet namespace.
+     * </pre>
+     */
+    public void deleteScopeNamespace(
+        com.google.cloud.gkehub.v1.DeleteScopeNamespaceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteScopeNamespaceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists fleet namespaces.
+     * </pre>
+     */
+    public void listScopeNamespaces(
+        com.google.cloud.gkehub.v1.ListScopeNamespacesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.ListScopeNamespacesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListScopeNamespacesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a Scope RBACRoleBinding.
+     * </pre>
+     */
+    public void getScopeRBACRoleBinding(
+        com.google.cloud.gkehub.v1.GetScopeRBACRoleBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.RBACRoleBinding> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetScopeRBACRoleBindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Scope RBACRoleBinding.
+     * </pre>
+     */
+    public void createScopeRBACRoleBinding(
+        com.google.cloud.gkehub.v1.CreateScopeRBACRoleBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateScopeRBACRoleBindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Scope RBACRoleBinding.
+     * </pre>
+     */
+    public void updateScopeRBACRoleBinding(
+        com.google.cloud.gkehub.v1.UpdateScopeRBACRoleBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateScopeRBACRoleBindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Scope RBACRoleBinding.
+     * </pre>
+     */
+    public void deleteScopeRBACRoleBinding(
+        com.google.cloud.gkehub.v1.DeleteScopeRBACRoleBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteScopeRBACRoleBindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all Scope RBACRoleBindings.
+     * </pre>
+     */
+    public void listScopeRBACRoleBindings(
+        com.google.cloud.gkehub.v1.ListScopeRBACRoleBindingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.ListScopeRBACRoleBindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListScopeRBACRoleBindingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a Scope.
+     * </pre>
+     */
+    public void getScope(
+        com.google.cloud.gkehub.v1.GetScopeRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.Scope> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetScopeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Scope.
+     * </pre>
+     */
+    public void createScope(
+        com.google.cloud.gkehub.v1.CreateScopeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateScopeMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a scopes.
+     * </pre>
+     */
+    public void updateScope(
+        com.google.cloud.gkehub.v1.UpdateScopeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateScopeMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Scope.
+     * </pre>
+     */
+    public void deleteScope(
+        com.google.cloud.gkehub.v1.DeleteScopeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteScopeMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Scopes.
+     * </pre>
+     */
+    public void listScopes(
+        com.google.cloud.gkehub.v1.ListScopesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.ListScopesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListScopesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists permitted Scopes.
+     * </pre>
+     */
+    public void listPermittedScopes(
+        com.google.cloud.gkehub.v1.ListPermittedScopesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.ListPermittedScopesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListPermittedScopesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a MembershipBinding.
+     * </pre>
+     */
+    public void getMembershipBinding(
+        com.google.cloud.gkehub.v1.GetMembershipBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.MembershipBinding>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetMembershipBindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a MembershipBinding.
+     * </pre>
+     */
+    public void createMembershipBinding(
+        com.google.cloud.gkehub.v1.CreateMembershipBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateMembershipBindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a MembershipBinding.
+     * </pre>
+     */
+    public void updateMembershipBinding(
+        com.google.cloud.gkehub.v1.UpdateMembershipBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateMembershipBindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a MembershipBinding.
+     * </pre>
+     */
+    public void deleteMembershipBinding(
+        com.google.cloud.gkehub.v1.DeleteMembershipBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteMembershipBindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists MembershipBindings.
+     * </pre>
+     */
+    public void listMembershipBindings(
+        com.google.cloud.gkehub.v1.ListMembershipBindingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.ListMembershipBindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMembershipBindingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a Membership RBACRoleBinding.
+     * </pre>
+     */
+    public void getMembershipRBACRoleBinding(
+        com.google.cloud.gkehub.v1.GetMembershipRBACRoleBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.RBACRoleBinding> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetMembershipRBACRoleBindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Membership RBACRoleBinding.
+     * </pre>
+     */
+    public void createMembershipRBACRoleBinding(
+        com.google.cloud.gkehub.v1.CreateMembershipRBACRoleBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateMembershipRBACRoleBindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Membership RBACRoleBinding.
+     * </pre>
+     */
+    public void updateMembershipRBACRoleBinding(
+        com.google.cloud.gkehub.v1.UpdateMembershipRBACRoleBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateMembershipRBACRoleBindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Membership RBACRoleBinding.
+     * </pre>
+     */
+    public void deleteMembershipRBACRoleBinding(
+        com.google.cloud.gkehub.v1.DeleteMembershipRBACRoleBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteMembershipRBACRoleBindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all Membership RBACRoleBindings.
+     * </pre>
+     */
+    public void listMembershipRBACRoleBindings(
+        com.google.cloud.gkehub.v1.ListMembershipRBACRoleBindingsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.gkehub.v1.ListMembershipRBACRoleBindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMembershipRBACRoleBindingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates a YAML of the  RBAC policies for the specified
+     * RoleBinding and its associated impersonation resources.
+     * </pre>
+     */
+    public void generateMembershipRBACRoleBindingYAML(
+        com.google.cloud.gkehub.v1.GenerateMembershipRBACRoleBindingYAMLRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.gkehub.v1.GenerateMembershipRBACRoleBindingYAMLResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGenerateMembershipRBACRoleBindingYAMLMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1036,9 +3575,24 @@ public final class GkeHubGrpc {
      * </pre>
      */
     public com.google.cloud.gkehub.v1.ListMembershipsResponse listMemberships(
-        com.google.cloud.gkehub.v1.ListMembershipsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkehub.v1.ListMembershipsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMembershipsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Memberships bound to a Scope. The response includes relevant
+     * Memberships from all regions.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.ListBoundMembershipsResponse listBoundMemberships(
+        com.google.cloud.gkehub.v1.ListBoundMembershipsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListBoundMembershipsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1049,8 +3603,8 @@ public final class GkeHubGrpc {
      * </pre>
      */
     public com.google.cloud.gkehub.v1.ListFeaturesResponse listFeatures(
-        com.google.cloud.gkehub.v1.ListFeaturesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkehub.v1.ListFeaturesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFeaturesMethod(), getCallOptions(), request);
     }
 
@@ -1062,8 +3616,8 @@ public final class GkeHubGrpc {
      * </pre>
      */
     public com.google.cloud.gkehub.v1.Membership getMembership(
-        com.google.cloud.gkehub.v1.GetMembershipRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkehub.v1.GetMembershipRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMembershipMethod(), getCallOptions(), request);
     }
 
@@ -1075,8 +3629,8 @@ public final class GkeHubGrpc {
      * </pre>
      */
     public com.google.cloud.gkehub.v1.Feature getFeature(
-        com.google.cloud.gkehub.v1.GetFeatureRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkehub.v1.GetFeatureRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFeatureMethod(), getCallOptions(), request);
     }
 
@@ -1091,8 +3645,8 @@ public final class GkeHubGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createMembership(
-        com.google.cloud.gkehub.v1.CreateMembershipRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkehub.v1.CreateMembershipRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateMembershipMethod(), getCallOptions(), request);
     }
 
@@ -1104,8 +3658,8 @@ public final class GkeHubGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createFeature(
-        com.google.cloud.gkehub.v1.CreateFeatureRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkehub.v1.CreateFeatureRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateFeatureMethod(), getCallOptions(), request);
     }
 
@@ -1120,8 +3674,8 @@ public final class GkeHubGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteMembership(
-        com.google.cloud.gkehub.v1.DeleteMembershipRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkehub.v1.DeleteMembershipRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteMembershipMethod(), getCallOptions(), request);
     }
 
@@ -1133,8 +3687,8 @@ public final class GkeHubGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteFeature(
-        com.google.cloud.gkehub.v1.DeleteFeatureRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkehub.v1.DeleteFeatureRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteFeatureMethod(), getCallOptions(), request);
     }
 
@@ -1146,8 +3700,8 @@ public final class GkeHubGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateMembership(
-        com.google.cloud.gkehub.v1.UpdateMembershipRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkehub.v1.UpdateMembershipRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateMembershipMethod(), getCallOptions(), request);
     }
 
@@ -1159,8 +3713,8 @@ public final class GkeHubGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateFeature(
-        com.google.cloud.gkehub.v1.UpdateFeatureRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkehub.v1.UpdateFeatureRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateFeatureMethod(), getCallOptions(), request);
     }
 
@@ -1174,9 +3728,455 @@ public final class GkeHubGrpc {
      * </pre>
      */
     public com.google.cloud.gkehub.v1.GenerateConnectManifestResponse generateConnectManifest(
-        com.google.cloud.gkehub.v1.GenerateConnectManifestRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkehub.v1.GenerateConnectManifestRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateConnectManifestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a fleet.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createFleet(
+        com.google.cloud.gkehub.v1.CreateFleetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateFleetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a fleet.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.Fleet getFleet(
+        com.google.cloud.gkehub.v1.GetFleetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetFleetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a fleet.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateFleet(
+        com.google.cloud.gkehub.v1.UpdateFleetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateFleetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes a Fleet. There must be no memberships remaining in the Fleet.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteFleet(
+        com.google.cloud.gkehub.v1.DeleteFleetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteFleetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns all fleets within an organization or a project that the caller has
+     * access to.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.ListFleetsResponse listFleets(
+        com.google.cloud.gkehub.v1.ListFleetsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListFleetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a fleet namespace.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.Namespace getScopeNamespace(
+        com.google.cloud.gkehub.v1.GetScopeNamespaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetScopeNamespaceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a fleet namespace.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createScopeNamespace(
+        com.google.cloud.gkehub.v1.CreateScopeNamespaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateScopeNamespaceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a fleet namespace.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateScopeNamespace(
+        com.google.cloud.gkehub.v1.UpdateScopeNamespaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateScopeNamespaceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a fleet namespace.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteScopeNamespace(
+        com.google.cloud.gkehub.v1.DeleteScopeNamespaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteScopeNamespaceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists fleet namespaces.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.ListScopeNamespacesResponse listScopeNamespaces(
+        com.google.cloud.gkehub.v1.ListScopeNamespacesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListScopeNamespacesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a Scope RBACRoleBinding.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.RBACRoleBinding getScopeRBACRoleBinding(
+        com.google.cloud.gkehub.v1.GetScopeRBACRoleBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetScopeRBACRoleBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Scope RBACRoleBinding.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createScopeRBACRoleBinding(
+        com.google.cloud.gkehub.v1.CreateScopeRBACRoleBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateScopeRBACRoleBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Scope RBACRoleBinding.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateScopeRBACRoleBinding(
+        com.google.cloud.gkehub.v1.UpdateScopeRBACRoleBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateScopeRBACRoleBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Scope RBACRoleBinding.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteScopeRBACRoleBinding(
+        com.google.cloud.gkehub.v1.DeleteScopeRBACRoleBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteScopeRBACRoleBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all Scope RBACRoleBindings.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.ListScopeRBACRoleBindingsResponse listScopeRBACRoleBindings(
+        com.google.cloud.gkehub.v1.ListScopeRBACRoleBindingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListScopeRBACRoleBindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a Scope.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.Scope getScope(
+        com.google.cloud.gkehub.v1.GetScopeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetScopeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Scope.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createScope(
+        com.google.cloud.gkehub.v1.CreateScopeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateScopeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a scopes.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateScope(
+        com.google.cloud.gkehub.v1.UpdateScopeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateScopeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Scope.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteScope(
+        com.google.cloud.gkehub.v1.DeleteScopeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteScopeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Scopes.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.ListScopesResponse listScopes(
+        com.google.cloud.gkehub.v1.ListScopesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListScopesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists permitted Scopes.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.ListPermittedScopesResponse listPermittedScopes(
+        com.google.cloud.gkehub.v1.ListPermittedScopesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListPermittedScopesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a MembershipBinding.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.MembershipBinding getMembershipBinding(
+        com.google.cloud.gkehub.v1.GetMembershipBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetMembershipBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a MembershipBinding.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createMembershipBinding(
+        com.google.cloud.gkehub.v1.CreateMembershipBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateMembershipBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a MembershipBinding.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateMembershipBinding(
+        com.google.cloud.gkehub.v1.UpdateMembershipBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateMembershipBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a MembershipBinding.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteMembershipBinding(
+        com.google.cloud.gkehub.v1.DeleteMembershipBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteMembershipBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists MembershipBindings.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.ListMembershipBindingsResponse listMembershipBindings(
+        com.google.cloud.gkehub.v1.ListMembershipBindingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListMembershipBindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a Membership RBACRoleBinding.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.RBACRoleBinding getMembershipRBACRoleBinding(
+        com.google.cloud.gkehub.v1.GetMembershipRBACRoleBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetMembershipRBACRoleBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Membership RBACRoleBinding.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createMembershipRBACRoleBinding(
+        com.google.cloud.gkehub.v1.CreateMembershipRBACRoleBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateMembershipRBACRoleBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Membership RBACRoleBinding.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateMembershipRBACRoleBinding(
+        com.google.cloud.gkehub.v1.UpdateMembershipRBACRoleBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateMembershipRBACRoleBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Membership RBACRoleBinding.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteMembershipRBACRoleBinding(
+        com.google.cloud.gkehub.v1.DeleteMembershipRBACRoleBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteMembershipRBACRoleBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all Membership RBACRoleBindings.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.ListMembershipRBACRoleBindingsResponse
+        listMembershipRBACRoleBindings(
+            com.google.cloud.gkehub.v1.ListMembershipRBACRoleBindingsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListMembershipRBACRoleBindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates a YAML of the  RBAC policies for the specified
+     * RoleBinding and its associated impersonation resources.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.GenerateMembershipRBACRoleBindingYAMLResponse
+        generateMembershipRBACRoleBindingYAML(
+            com.google.cloud.gkehub.v1.GenerateMembershipRBACRoleBindingYAMLRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getGenerateMembershipRBACRoleBindingYAMLMethod(),
+          getCallOptions(),
+          request);
     }
   }
 
@@ -1227,6 +4227,20 @@ public final class GkeHubGrpc {
      *
      *
      * <pre>
+     * Lists Memberships bound to a Scope. The response includes relevant
+     * Memberships from all regions.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.ListBoundMembershipsResponse listBoundMemberships(
+        com.google.cloud.gkehub.v1.ListBoundMembershipsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBoundMembershipsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists Features in a given project and location.
      * </pre>
      */
@@ -1360,6 +4374,429 @@ public final class GkeHubGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGenerateConnectManifestMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a fleet.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createFleet(
+        com.google.cloud.gkehub.v1.CreateFleetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateFleetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a fleet.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.Fleet getFleet(
+        com.google.cloud.gkehub.v1.GetFleetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetFleetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a fleet.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateFleet(
+        com.google.cloud.gkehub.v1.UpdateFleetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateFleetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes a Fleet. There must be no memberships remaining in the Fleet.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteFleet(
+        com.google.cloud.gkehub.v1.DeleteFleetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteFleetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns all fleets within an organization or a project that the caller has
+     * access to.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.ListFleetsResponse listFleets(
+        com.google.cloud.gkehub.v1.ListFleetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListFleetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a fleet namespace.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.Namespace getScopeNamespace(
+        com.google.cloud.gkehub.v1.GetScopeNamespaceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetScopeNamespaceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a fleet namespace.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createScopeNamespace(
+        com.google.cloud.gkehub.v1.CreateScopeNamespaceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateScopeNamespaceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a fleet namespace.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateScopeNamespace(
+        com.google.cloud.gkehub.v1.UpdateScopeNamespaceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateScopeNamespaceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a fleet namespace.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteScopeNamespace(
+        com.google.cloud.gkehub.v1.DeleteScopeNamespaceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteScopeNamespaceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists fleet namespaces.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.ListScopeNamespacesResponse listScopeNamespaces(
+        com.google.cloud.gkehub.v1.ListScopeNamespacesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListScopeNamespacesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a Scope RBACRoleBinding.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.RBACRoleBinding getScopeRBACRoleBinding(
+        com.google.cloud.gkehub.v1.GetScopeRBACRoleBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetScopeRBACRoleBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Scope RBACRoleBinding.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createScopeRBACRoleBinding(
+        com.google.cloud.gkehub.v1.CreateScopeRBACRoleBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateScopeRBACRoleBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Scope RBACRoleBinding.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateScopeRBACRoleBinding(
+        com.google.cloud.gkehub.v1.UpdateScopeRBACRoleBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateScopeRBACRoleBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Scope RBACRoleBinding.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteScopeRBACRoleBinding(
+        com.google.cloud.gkehub.v1.DeleteScopeRBACRoleBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteScopeRBACRoleBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all Scope RBACRoleBindings.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.ListScopeRBACRoleBindingsResponse listScopeRBACRoleBindings(
+        com.google.cloud.gkehub.v1.ListScopeRBACRoleBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListScopeRBACRoleBindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a Scope.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.Scope getScope(
+        com.google.cloud.gkehub.v1.GetScopeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetScopeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Scope.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createScope(
+        com.google.cloud.gkehub.v1.CreateScopeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateScopeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a scopes.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateScope(
+        com.google.cloud.gkehub.v1.UpdateScopeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateScopeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Scope.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteScope(
+        com.google.cloud.gkehub.v1.DeleteScopeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteScopeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Scopes.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.ListScopesResponse listScopes(
+        com.google.cloud.gkehub.v1.ListScopesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListScopesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists permitted Scopes.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.ListPermittedScopesResponse listPermittedScopes(
+        com.google.cloud.gkehub.v1.ListPermittedScopesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPermittedScopesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a MembershipBinding.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.MembershipBinding getMembershipBinding(
+        com.google.cloud.gkehub.v1.GetMembershipBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMembershipBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a MembershipBinding.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createMembershipBinding(
+        com.google.cloud.gkehub.v1.CreateMembershipBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMembershipBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a MembershipBinding.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateMembershipBinding(
+        com.google.cloud.gkehub.v1.UpdateMembershipBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateMembershipBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a MembershipBinding.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteMembershipBinding(
+        com.google.cloud.gkehub.v1.DeleteMembershipBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteMembershipBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists MembershipBindings.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.ListMembershipBindingsResponse listMembershipBindings(
+        com.google.cloud.gkehub.v1.ListMembershipBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMembershipBindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a Membership RBACRoleBinding.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.RBACRoleBinding getMembershipRBACRoleBinding(
+        com.google.cloud.gkehub.v1.GetMembershipRBACRoleBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMembershipRBACRoleBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Membership RBACRoleBinding.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createMembershipRBACRoleBinding(
+        com.google.cloud.gkehub.v1.CreateMembershipRBACRoleBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMembershipRBACRoleBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Membership RBACRoleBinding.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateMembershipRBACRoleBinding(
+        com.google.cloud.gkehub.v1.UpdateMembershipRBACRoleBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateMembershipRBACRoleBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Membership RBACRoleBinding.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteMembershipRBACRoleBinding(
+        com.google.cloud.gkehub.v1.DeleteMembershipRBACRoleBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteMembershipRBACRoleBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all Membership RBACRoleBindings.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.ListMembershipRBACRoleBindingsResponse
+        listMembershipRBACRoleBindings(
+            com.google.cloud.gkehub.v1.ListMembershipRBACRoleBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMembershipRBACRoleBindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates a YAML of the  RBAC policies for the specified
+     * RoleBinding and its associated impersonation resources.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.GenerateMembershipRBACRoleBindingYAMLResponse
+        generateMembershipRBACRoleBindingYAML(
+            com.google.cloud.gkehub.v1.GenerateMembershipRBACRoleBindingYAMLRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getGenerateMembershipRBACRoleBindingYAMLMethod(),
+          getCallOptions(),
+          request);
+    }
   }
 
   /**
@@ -1404,6 +4841,21 @@ public final class GkeHubGrpc {
         listMemberships(com.google.cloud.gkehub.v1.ListMembershipsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListMembershipsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Memberships bound to a Scope. The response includes relevant
+     * Memberships from all regions.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkehub.v1.ListBoundMembershipsResponse>
+        listBoundMemberships(com.google.cloud.gkehub.v1.ListBoundMembershipsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListBoundMembershipsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1545,19 +4997,496 @@ public final class GkeHubGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGenerateConnectManifestMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a fleet.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createFleet(com.google.cloud.gkehub.v1.CreateFleetRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateFleetMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a fleet.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.gkehub.v1.Fleet>
+        getFleet(com.google.cloud.gkehub.v1.GetFleetRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetFleetMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a fleet.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateFleet(com.google.cloud.gkehub.v1.UpdateFleetRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateFleetMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes a Fleet. There must be no memberships remaining in the Fleet.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteFleet(com.google.cloud.gkehub.v1.DeleteFleetRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteFleetMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns all fleets within an organization or a project that the caller has
+     * access to.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkehub.v1.ListFleetsResponse>
+        listFleets(com.google.cloud.gkehub.v1.ListFleetsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListFleetsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a fleet namespace.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.gkehub.v1.Namespace>
+        getScopeNamespace(com.google.cloud.gkehub.v1.GetScopeNamespaceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetScopeNamespaceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a fleet namespace.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createScopeNamespace(com.google.cloud.gkehub.v1.CreateScopeNamespaceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateScopeNamespaceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a fleet namespace.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateScopeNamespace(com.google.cloud.gkehub.v1.UpdateScopeNamespaceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateScopeNamespaceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a fleet namespace.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteScopeNamespace(com.google.cloud.gkehub.v1.DeleteScopeNamespaceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteScopeNamespaceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists fleet namespaces.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkehub.v1.ListScopeNamespacesResponse>
+        listScopeNamespaces(com.google.cloud.gkehub.v1.ListScopeNamespacesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListScopeNamespacesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a Scope RBACRoleBinding.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkehub.v1.RBACRoleBinding>
+        getScopeRBACRoleBinding(com.google.cloud.gkehub.v1.GetScopeRBACRoleBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetScopeRBACRoleBindingMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Scope RBACRoleBinding.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createScopeRBACRoleBinding(
+            com.google.cloud.gkehub.v1.CreateScopeRBACRoleBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateScopeRBACRoleBindingMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Scope RBACRoleBinding.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateScopeRBACRoleBinding(
+            com.google.cloud.gkehub.v1.UpdateScopeRBACRoleBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateScopeRBACRoleBindingMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Scope RBACRoleBinding.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteScopeRBACRoleBinding(
+            com.google.cloud.gkehub.v1.DeleteScopeRBACRoleBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteScopeRBACRoleBindingMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all Scope RBACRoleBindings.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkehub.v1.ListScopeRBACRoleBindingsResponse>
+        listScopeRBACRoleBindings(
+            com.google.cloud.gkehub.v1.ListScopeRBACRoleBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListScopeRBACRoleBindingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a Scope.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.gkehub.v1.Scope>
+        getScope(com.google.cloud.gkehub.v1.GetScopeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetScopeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Scope.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createScope(com.google.cloud.gkehub.v1.CreateScopeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateScopeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a scopes.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateScope(com.google.cloud.gkehub.v1.UpdateScopeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateScopeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Scope.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteScope(com.google.cloud.gkehub.v1.DeleteScopeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteScopeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Scopes.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkehub.v1.ListScopesResponse>
+        listScopes(com.google.cloud.gkehub.v1.ListScopesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListScopesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists permitted Scopes.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkehub.v1.ListPermittedScopesResponse>
+        listPermittedScopes(com.google.cloud.gkehub.v1.ListPermittedScopesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListPermittedScopesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a MembershipBinding.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkehub.v1.MembershipBinding>
+        getMembershipBinding(com.google.cloud.gkehub.v1.GetMembershipBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetMembershipBindingMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a MembershipBinding.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createMembershipBinding(com.google.cloud.gkehub.v1.CreateMembershipBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateMembershipBindingMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a MembershipBinding.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateMembershipBinding(com.google.cloud.gkehub.v1.UpdateMembershipBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateMembershipBindingMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a MembershipBinding.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteMembershipBinding(com.google.cloud.gkehub.v1.DeleteMembershipBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteMembershipBindingMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists MembershipBindings.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkehub.v1.ListMembershipBindingsResponse>
+        listMembershipBindings(com.google.cloud.gkehub.v1.ListMembershipBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMembershipBindingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details of a Membership RBACRoleBinding.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkehub.v1.RBACRoleBinding>
+        getMembershipRBACRoleBinding(
+            com.google.cloud.gkehub.v1.GetMembershipRBACRoleBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetMembershipRBACRoleBindingMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Membership RBACRoleBinding.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createMembershipRBACRoleBinding(
+            com.google.cloud.gkehub.v1.CreateMembershipRBACRoleBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateMembershipRBACRoleBindingMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Membership RBACRoleBinding.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateMembershipRBACRoleBinding(
+            com.google.cloud.gkehub.v1.UpdateMembershipRBACRoleBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateMembershipRBACRoleBindingMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Membership RBACRoleBinding.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteMembershipRBACRoleBinding(
+            com.google.cloud.gkehub.v1.DeleteMembershipRBACRoleBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteMembershipRBACRoleBindingMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all Membership RBACRoleBindings.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkehub.v1.ListMembershipRBACRoleBindingsResponse>
+        listMembershipRBACRoleBindings(
+            com.google.cloud.gkehub.v1.ListMembershipRBACRoleBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMembershipRBACRoleBindingsMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates a YAML of the  RBAC policies for the specified
+     * RoleBinding and its associated impersonation resources.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkehub.v1.GenerateMembershipRBACRoleBindingYAMLResponse>
+        generateMembershipRBACRoleBindingYAML(
+            com.google.cloud.gkehub.v1.GenerateMembershipRBACRoleBindingYAMLRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGenerateMembershipRBACRoleBindingYAMLMethod(), getCallOptions()),
+          request);
+    }
   }
 
   private static final int METHODID_LIST_MEMBERSHIPS = 0;
-  private static final int METHODID_LIST_FEATURES = 1;
-  private static final int METHODID_GET_MEMBERSHIP = 2;
-  private static final int METHODID_GET_FEATURE = 3;
-  private static final int METHODID_CREATE_MEMBERSHIP = 4;
-  private static final int METHODID_CREATE_FEATURE = 5;
-  private static final int METHODID_DELETE_MEMBERSHIP = 6;
-  private static final int METHODID_DELETE_FEATURE = 7;
-  private static final int METHODID_UPDATE_MEMBERSHIP = 8;
-  private static final int METHODID_UPDATE_FEATURE = 9;
-  private static final int METHODID_GENERATE_CONNECT_MANIFEST = 10;
+  private static final int METHODID_LIST_BOUND_MEMBERSHIPS = 1;
+  private static final int METHODID_LIST_FEATURES = 2;
+  private static final int METHODID_GET_MEMBERSHIP = 3;
+  private static final int METHODID_GET_FEATURE = 4;
+  private static final int METHODID_CREATE_MEMBERSHIP = 5;
+  private static final int METHODID_CREATE_FEATURE = 6;
+  private static final int METHODID_DELETE_MEMBERSHIP = 7;
+  private static final int METHODID_DELETE_FEATURE = 8;
+  private static final int METHODID_UPDATE_MEMBERSHIP = 9;
+  private static final int METHODID_UPDATE_FEATURE = 10;
+  private static final int METHODID_GENERATE_CONNECT_MANIFEST = 11;
+  private static final int METHODID_CREATE_FLEET = 12;
+  private static final int METHODID_GET_FLEET = 13;
+  private static final int METHODID_UPDATE_FLEET = 14;
+  private static final int METHODID_DELETE_FLEET = 15;
+  private static final int METHODID_LIST_FLEETS = 16;
+  private static final int METHODID_GET_SCOPE_NAMESPACE = 17;
+  private static final int METHODID_CREATE_SCOPE_NAMESPACE = 18;
+  private static final int METHODID_UPDATE_SCOPE_NAMESPACE = 19;
+  private static final int METHODID_DELETE_SCOPE_NAMESPACE = 20;
+  private static final int METHODID_LIST_SCOPE_NAMESPACES = 21;
+  private static final int METHODID_GET_SCOPE_RBACROLE_BINDING = 22;
+  private static final int METHODID_CREATE_SCOPE_RBACROLE_BINDING = 23;
+  private static final int METHODID_UPDATE_SCOPE_RBACROLE_BINDING = 24;
+  private static final int METHODID_DELETE_SCOPE_RBACROLE_BINDING = 25;
+  private static final int METHODID_LIST_SCOPE_RBACROLE_BINDINGS = 26;
+  private static final int METHODID_GET_SCOPE = 27;
+  private static final int METHODID_CREATE_SCOPE = 28;
+  private static final int METHODID_UPDATE_SCOPE = 29;
+  private static final int METHODID_DELETE_SCOPE = 30;
+  private static final int METHODID_LIST_SCOPES = 31;
+  private static final int METHODID_LIST_PERMITTED_SCOPES = 32;
+  private static final int METHODID_GET_MEMBERSHIP_BINDING = 33;
+  private static final int METHODID_CREATE_MEMBERSHIP_BINDING = 34;
+  private static final int METHODID_UPDATE_MEMBERSHIP_BINDING = 35;
+  private static final int METHODID_DELETE_MEMBERSHIP_BINDING = 36;
+  private static final int METHODID_LIST_MEMBERSHIP_BINDINGS = 37;
+  private static final int METHODID_GET_MEMBERSHIP_RBACROLE_BINDING = 38;
+  private static final int METHODID_CREATE_MEMBERSHIP_RBACROLE_BINDING = 39;
+  private static final int METHODID_UPDATE_MEMBERSHIP_RBACROLE_BINDING = 40;
+  private static final int METHODID_DELETE_MEMBERSHIP_RBACROLE_BINDING = 41;
+  private static final int METHODID_LIST_MEMBERSHIP_RBACROLE_BINDINGS = 42;
+  private static final int METHODID_GENERATE_MEMBERSHIP_RBACROLE_BINDING_YAML = 43;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1580,6 +5509,12 @@ public final class GkeHubGrpc {
           serviceImpl.listMemberships(
               (com.google.cloud.gkehub.v1.ListMembershipsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.ListMembershipsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_BOUND_MEMBERSHIPS:
+          serviceImpl.listBoundMemberships(
+              (com.google.cloud.gkehub.v1.ListBoundMembershipsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.ListBoundMembershipsResponse>)
                   responseObserver);
           break;
         case METHODID_LIST_FEATURES:
@@ -1636,6 +5571,181 @@ public final class GkeHubGrpc {
                       com.google.cloud.gkehub.v1.GenerateConnectManifestResponse>)
                   responseObserver);
           break;
+        case METHODID_CREATE_FLEET:
+          serviceImpl.createFleet(
+              (com.google.cloud.gkehub.v1.CreateFleetRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_FLEET:
+          serviceImpl.getFleet(
+              (com.google.cloud.gkehub.v1.GetFleetRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.Fleet>) responseObserver);
+          break;
+        case METHODID_UPDATE_FLEET:
+          serviceImpl.updateFleet(
+              (com.google.cloud.gkehub.v1.UpdateFleetRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_FLEET:
+          serviceImpl.deleteFleet(
+              (com.google.cloud.gkehub.v1.DeleteFleetRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_FLEETS:
+          serviceImpl.listFleets(
+              (com.google.cloud.gkehub.v1.ListFleetsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.ListFleetsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_SCOPE_NAMESPACE:
+          serviceImpl.getScopeNamespace(
+              (com.google.cloud.gkehub.v1.GetScopeNamespaceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.Namespace>) responseObserver);
+          break;
+        case METHODID_CREATE_SCOPE_NAMESPACE:
+          serviceImpl.createScopeNamespace(
+              (com.google.cloud.gkehub.v1.CreateScopeNamespaceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_SCOPE_NAMESPACE:
+          serviceImpl.updateScopeNamespace(
+              (com.google.cloud.gkehub.v1.UpdateScopeNamespaceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_SCOPE_NAMESPACE:
+          serviceImpl.deleteScopeNamespace(
+              (com.google.cloud.gkehub.v1.DeleteScopeNamespaceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_SCOPE_NAMESPACES:
+          serviceImpl.listScopeNamespaces(
+              (com.google.cloud.gkehub.v1.ListScopeNamespacesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.ListScopeNamespacesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_SCOPE_RBACROLE_BINDING:
+          serviceImpl.getScopeRBACRoleBinding(
+              (com.google.cloud.gkehub.v1.GetScopeRBACRoleBindingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.RBACRoleBinding>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_SCOPE_RBACROLE_BINDING:
+          serviceImpl.createScopeRBACRoleBinding(
+              (com.google.cloud.gkehub.v1.CreateScopeRBACRoleBindingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_SCOPE_RBACROLE_BINDING:
+          serviceImpl.updateScopeRBACRoleBinding(
+              (com.google.cloud.gkehub.v1.UpdateScopeRBACRoleBindingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_SCOPE_RBACROLE_BINDING:
+          serviceImpl.deleteScopeRBACRoleBinding(
+              (com.google.cloud.gkehub.v1.DeleteScopeRBACRoleBindingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_SCOPE_RBACROLE_BINDINGS:
+          serviceImpl.listScopeRBACRoleBindings(
+              (com.google.cloud.gkehub.v1.ListScopeRBACRoleBindingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.gkehub.v1.ListScopeRBACRoleBindingsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_SCOPE:
+          serviceImpl.getScope(
+              (com.google.cloud.gkehub.v1.GetScopeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.Scope>) responseObserver);
+          break;
+        case METHODID_CREATE_SCOPE:
+          serviceImpl.createScope(
+              (com.google.cloud.gkehub.v1.CreateScopeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_SCOPE:
+          serviceImpl.updateScope(
+              (com.google.cloud.gkehub.v1.UpdateScopeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_SCOPE:
+          serviceImpl.deleteScope(
+              (com.google.cloud.gkehub.v1.DeleteScopeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_SCOPES:
+          serviceImpl.listScopes(
+              (com.google.cloud.gkehub.v1.ListScopesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.ListScopesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_PERMITTED_SCOPES:
+          serviceImpl.listPermittedScopes(
+              (com.google.cloud.gkehub.v1.ListPermittedScopesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.ListPermittedScopesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_MEMBERSHIP_BINDING:
+          serviceImpl.getMembershipBinding(
+              (com.google.cloud.gkehub.v1.GetMembershipBindingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.MembershipBinding>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_MEMBERSHIP_BINDING:
+          serviceImpl.createMembershipBinding(
+              (com.google.cloud.gkehub.v1.CreateMembershipBindingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_MEMBERSHIP_BINDING:
+          serviceImpl.updateMembershipBinding(
+              (com.google.cloud.gkehub.v1.UpdateMembershipBindingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_MEMBERSHIP_BINDING:
+          serviceImpl.deleteMembershipBinding(
+              (com.google.cloud.gkehub.v1.DeleteMembershipBindingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_MEMBERSHIP_BINDINGS:
+          serviceImpl.listMembershipBindings(
+              (com.google.cloud.gkehub.v1.ListMembershipBindingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.gkehub.v1.ListMembershipBindingsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_MEMBERSHIP_RBACROLE_BINDING:
+          serviceImpl.getMembershipRBACRoleBinding(
+              (com.google.cloud.gkehub.v1.GetMembershipRBACRoleBindingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.RBACRoleBinding>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_MEMBERSHIP_RBACROLE_BINDING:
+          serviceImpl.createMembershipRBACRoleBinding(
+              (com.google.cloud.gkehub.v1.CreateMembershipRBACRoleBindingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_MEMBERSHIP_RBACROLE_BINDING:
+          serviceImpl.updateMembershipRBACRoleBinding(
+              (com.google.cloud.gkehub.v1.UpdateMembershipRBACRoleBindingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_MEMBERSHIP_RBACROLE_BINDING:
+          serviceImpl.deleteMembershipRBACRoleBinding(
+              (com.google.cloud.gkehub.v1.DeleteMembershipRBACRoleBindingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_MEMBERSHIP_RBACROLE_BINDINGS:
+          serviceImpl.listMembershipRBACRoleBindings(
+              (com.google.cloud.gkehub.v1.ListMembershipRBACRoleBindingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.gkehub.v1.ListMembershipRBACRoleBindingsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GENERATE_MEMBERSHIP_RBACROLE_BINDING_YAML:
+          serviceImpl.generateMembershipRBACRoleBindingYAML(
+              (com.google.cloud.gkehub.v1.GenerateMembershipRBACRoleBindingYAMLRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.gkehub.v1.GenerateMembershipRBACRoleBindingYAMLResponse>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -1661,6 +5771,13 @@ public final class GkeHubGrpc {
                     com.google.cloud.gkehub.v1.ListMembershipsRequest,
                     com.google.cloud.gkehub.v1.ListMembershipsResponse>(
                     service, METHODID_LIST_MEMBERSHIPS)))
+        .addMethod(
+            getListBoundMembershipsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.ListBoundMembershipsRequest,
+                    com.google.cloud.gkehub.v1.ListBoundMembershipsResponse>(
+                    service, METHODID_LIST_BOUND_MEMBERSHIPS)))
         .addMethod(
             getListFeaturesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1723,6 +5840,213 @@ public final class GkeHubGrpc {
                     com.google.cloud.gkehub.v1.GenerateConnectManifestRequest,
                     com.google.cloud.gkehub.v1.GenerateConnectManifestResponse>(
                     service, METHODID_GENERATE_CONNECT_MANIFEST)))
+        .addMethod(
+            getCreateFleetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.CreateFleetRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_FLEET)))
+        .addMethod(
+            getGetFleetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.GetFleetRequest, com.google.cloud.gkehub.v1.Fleet>(
+                    service, METHODID_GET_FLEET)))
+        .addMethod(
+            getUpdateFleetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.UpdateFleetRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_FLEET)))
+        .addMethod(
+            getDeleteFleetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.DeleteFleetRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_FLEET)))
+        .addMethod(
+            getListFleetsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.ListFleetsRequest,
+                    com.google.cloud.gkehub.v1.ListFleetsResponse>(service, METHODID_LIST_FLEETS)))
+        .addMethod(
+            getGetScopeNamespaceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.GetScopeNamespaceRequest,
+                    com.google.cloud.gkehub.v1.Namespace>(service, METHODID_GET_SCOPE_NAMESPACE)))
+        .addMethod(
+            getCreateScopeNamespaceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.CreateScopeNamespaceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_SCOPE_NAMESPACE)))
+        .addMethod(
+            getUpdateScopeNamespaceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.UpdateScopeNamespaceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_SCOPE_NAMESPACE)))
+        .addMethod(
+            getDeleteScopeNamespaceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.DeleteScopeNamespaceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_SCOPE_NAMESPACE)))
+        .addMethod(
+            getListScopeNamespacesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.ListScopeNamespacesRequest,
+                    com.google.cloud.gkehub.v1.ListScopeNamespacesResponse>(
+                    service, METHODID_LIST_SCOPE_NAMESPACES)))
+        .addMethod(
+            getGetScopeRBACRoleBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.GetScopeRBACRoleBindingRequest,
+                    com.google.cloud.gkehub.v1.RBACRoleBinding>(
+                    service, METHODID_GET_SCOPE_RBACROLE_BINDING)))
+        .addMethod(
+            getCreateScopeRBACRoleBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.CreateScopeRBACRoleBindingRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_SCOPE_RBACROLE_BINDING)))
+        .addMethod(
+            getUpdateScopeRBACRoleBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.UpdateScopeRBACRoleBindingRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_SCOPE_RBACROLE_BINDING)))
+        .addMethod(
+            getDeleteScopeRBACRoleBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.DeleteScopeRBACRoleBindingRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_SCOPE_RBACROLE_BINDING)))
+        .addMethod(
+            getListScopeRBACRoleBindingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.ListScopeRBACRoleBindingsRequest,
+                    com.google.cloud.gkehub.v1.ListScopeRBACRoleBindingsResponse>(
+                    service, METHODID_LIST_SCOPE_RBACROLE_BINDINGS)))
+        .addMethod(
+            getGetScopeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.GetScopeRequest, com.google.cloud.gkehub.v1.Scope>(
+                    service, METHODID_GET_SCOPE)))
+        .addMethod(
+            getCreateScopeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.CreateScopeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_SCOPE)))
+        .addMethod(
+            getUpdateScopeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.UpdateScopeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_SCOPE)))
+        .addMethod(
+            getDeleteScopeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.DeleteScopeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_SCOPE)))
+        .addMethod(
+            getListScopesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.ListScopesRequest,
+                    com.google.cloud.gkehub.v1.ListScopesResponse>(service, METHODID_LIST_SCOPES)))
+        .addMethod(
+            getListPermittedScopesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.ListPermittedScopesRequest,
+                    com.google.cloud.gkehub.v1.ListPermittedScopesResponse>(
+                    service, METHODID_LIST_PERMITTED_SCOPES)))
+        .addMethod(
+            getGetMembershipBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.GetMembershipBindingRequest,
+                    com.google.cloud.gkehub.v1.MembershipBinding>(
+                    service, METHODID_GET_MEMBERSHIP_BINDING)))
+        .addMethod(
+            getCreateMembershipBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.CreateMembershipBindingRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_MEMBERSHIP_BINDING)))
+        .addMethod(
+            getUpdateMembershipBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.UpdateMembershipBindingRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_MEMBERSHIP_BINDING)))
+        .addMethod(
+            getDeleteMembershipBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.DeleteMembershipBindingRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_MEMBERSHIP_BINDING)))
+        .addMethod(
+            getListMembershipBindingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.ListMembershipBindingsRequest,
+                    com.google.cloud.gkehub.v1.ListMembershipBindingsResponse>(
+                    service, METHODID_LIST_MEMBERSHIP_BINDINGS)))
+        .addMethod(
+            getGetMembershipRBACRoleBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.GetMembershipRBACRoleBindingRequest,
+                    com.google.cloud.gkehub.v1.RBACRoleBinding>(
+                    service, METHODID_GET_MEMBERSHIP_RBACROLE_BINDING)))
+        .addMethod(
+            getCreateMembershipRBACRoleBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.CreateMembershipRBACRoleBindingRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_MEMBERSHIP_RBACROLE_BINDING)))
+        .addMethod(
+            getUpdateMembershipRBACRoleBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.UpdateMembershipRBACRoleBindingRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_MEMBERSHIP_RBACROLE_BINDING)))
+        .addMethod(
+            getDeleteMembershipRBACRoleBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.DeleteMembershipRBACRoleBindingRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_MEMBERSHIP_RBACROLE_BINDING)))
+        .addMethod(
+            getListMembershipRBACRoleBindingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.ListMembershipRBACRoleBindingsRequest,
+                    com.google.cloud.gkehub.v1.ListMembershipRBACRoleBindingsResponse>(
+                    service, METHODID_LIST_MEMBERSHIP_RBACROLE_BINDINGS)))
+        .addMethod(
+            getGenerateMembershipRBACRoleBindingYAMLMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.GenerateMembershipRBACRoleBindingYAMLRequest,
+                    com.google.cloud.gkehub.v1.GenerateMembershipRBACRoleBindingYAMLResponse>(
+                    service, METHODID_GENERATE_MEMBERSHIP_RBACROLE_BINDING_YAML)))
         .build();
   }
 
@@ -1773,6 +6097,7 @@ public final class GkeHubGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new GkeHubFileDescriptorSupplier())
                       .addMethod(getListMembershipsMethod())
+                      .addMethod(getListBoundMembershipsMethod())
                       .addMethod(getListFeaturesMethod())
                       .addMethod(getGetMembershipMethod())
                       .addMethod(getGetFeatureMethod())
@@ -1783,6 +6108,38 @@ public final class GkeHubGrpc {
                       .addMethod(getUpdateMembershipMethod())
                       .addMethod(getUpdateFeatureMethod())
                       .addMethod(getGenerateConnectManifestMethod())
+                      .addMethod(getCreateFleetMethod())
+                      .addMethod(getGetFleetMethod())
+                      .addMethod(getUpdateFleetMethod())
+                      .addMethod(getDeleteFleetMethod())
+                      .addMethod(getListFleetsMethod())
+                      .addMethod(getGetScopeNamespaceMethod())
+                      .addMethod(getCreateScopeNamespaceMethod())
+                      .addMethod(getUpdateScopeNamespaceMethod())
+                      .addMethod(getDeleteScopeNamespaceMethod())
+                      .addMethod(getListScopeNamespacesMethod())
+                      .addMethod(getGetScopeRBACRoleBindingMethod())
+                      .addMethod(getCreateScopeRBACRoleBindingMethod())
+                      .addMethod(getUpdateScopeRBACRoleBindingMethod())
+                      .addMethod(getDeleteScopeRBACRoleBindingMethod())
+                      .addMethod(getListScopeRBACRoleBindingsMethod())
+                      .addMethod(getGetScopeMethod())
+                      .addMethod(getCreateScopeMethod())
+                      .addMethod(getUpdateScopeMethod())
+                      .addMethod(getDeleteScopeMethod())
+                      .addMethod(getListScopesMethod())
+                      .addMethod(getListPermittedScopesMethod())
+                      .addMethod(getGetMembershipBindingMethod())
+                      .addMethod(getCreateMembershipBindingMethod())
+                      .addMethod(getUpdateMembershipBindingMethod())
+                      .addMethod(getDeleteMembershipBindingMethod())
+                      .addMethod(getListMembershipBindingsMethod())
+                      .addMethod(getGetMembershipRBACRoleBindingMethod())
+                      .addMethod(getCreateMembershipRBACRoleBindingMethod())
+                      .addMethod(getUpdateMembershipRBACRoleBindingMethod())
+                      .addMethod(getDeleteMembershipRBACRoleBindingMethod())
+                      .addMethod(getListMembershipRBACRoleBindingsMethod())
+                      .addMethod(getGenerateMembershipRBACRoleBindingYAMLMethod())
                       .build();
         }
       }

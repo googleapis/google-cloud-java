@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing conversion sources for a merchant account.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/conversions/v1beta/conversionsources.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ConversionSourcesServiceGrpc {
 
@@ -703,8 +700,9 @@ public final class ConversionSourcesServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.conversions.v1beta.ConversionSource createConversionSource(
-        com.google.shopping.merchant.conversions.v1beta.CreateConversionSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.conversions.v1beta.CreateConversionSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateConversionSourceMethod(), getCallOptions(), request);
     }
 
@@ -717,8 +715,9 @@ public final class ConversionSourcesServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.conversions.v1beta.ConversionSource updateConversionSource(
-        com.google.shopping.merchant.conversions.v1beta.UpdateConversionSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.conversions.v1beta.UpdateConversionSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateConversionSourceMethod(), getCallOptions(), request);
     }
 
@@ -733,8 +732,9 @@ public final class ConversionSourcesServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteConversionSource(
-        com.google.shopping.merchant.conversions.v1beta.DeleteConversionSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.conversions.v1beta.DeleteConversionSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteConversionSourceMethod(), getCallOptions(), request);
     }
 
@@ -748,9 +748,9 @@ public final class ConversionSourcesServiceGrpc {
      */
     public com.google.shopping.merchant.conversions.v1beta.ConversionSource
         undeleteConversionSource(
-            com.google.shopping.merchant.conversions.v1beta.UndeleteConversionSourceRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.shopping.merchant.conversions.v1beta.UndeleteConversionSourceRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUndeleteConversionSourceMethod(), getCallOptions(), request);
     }
 
@@ -762,8 +762,9 @@ public final class ConversionSourcesServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.conversions.v1beta.ConversionSource getConversionSource(
-        com.google.shopping.merchant.conversions.v1beta.GetConversionSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.conversions.v1beta.GetConversionSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConversionSourceMethod(), getCallOptions(), request);
     }
 
@@ -776,8 +777,9 @@ public final class ConversionSourcesServiceGrpc {
      */
     public com.google.shopping.merchant.conversions.v1beta.ListConversionSourcesResponse
         listConversionSources(
-            com.google.shopping.merchant.conversions.v1beta.ListConversionSourcesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.shopping.merchant.conversions.v1beta.ListConversionSourcesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConversionSourcesMethod(), getCallOptions(), request);
     }
   }

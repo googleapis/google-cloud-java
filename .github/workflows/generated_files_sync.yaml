@@ -14,13 +14,10 @@
 # GitHub action job to test core java library features on
 # downstream client libraries before they are released.
 on:
-  push:
-    branches:
-    - main
   pull_request:
 name: generation diff
 env:
-  library_generation_image_tag: 2.62.1
+  library_generation_image_tag: 2.68.1-SNAPSHOT  # {x-version-update:gapic-generator-java:current}
 jobs:
   root-pom:
     # root pom.xml does not have diff from generated one
@@ -167,13 +164,18 @@ jobs:
         
         # java/com/google : This is the standard package
         # samples         : Samples are not shipped as a library
+        # benchmark       : Benchmarking tests are not shipped as a library
         # grafeas         : java-grafeas is known to have special package name
         # cloud-build v2  : java_package was not configured when we published
         #                   the Cloud Build V2 client library
         # the rest        : the same as above
         invalid_files=$(find . -name '*.java' \
             |grep --invert-match 'java/com/google' \
+            |grep --invert-match '/test/' \
+            |grep --invert-match '/tests/' \
+            |grep --invert-match '/javatests/' \
             |grep --invert-match samples \
+            |grep --invert-match benchmark \
             |grep --invert-match grafeas \
             |grep --invert-match 'cloud-build.*v2' \
             |grep --invert-match 'google/monitoring/v3/DroppedLabelsOuterClass.java' \

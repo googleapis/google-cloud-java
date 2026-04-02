@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for settings at Project level.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/retail/v2alpha/project_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ProjectServiceGrpc {
 
@@ -804,8 +801,8 @@ public final class ProjectServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.Project getProject(
-        com.google.cloud.retail.v2alpha.GetProjectRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.GetProjectRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetProjectMethod(), getCallOptions(), request);
     }
 
@@ -820,8 +817,8 @@ public final class ProjectServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.Project acceptTerms(
-        com.google.cloud.retail.v2alpha.AcceptTermsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.AcceptTermsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAcceptTermsMethod(), getCallOptions(), request);
     }
 
@@ -839,8 +836,9 @@ public final class ProjectServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation enrollSolution(
-        com.google.cloud.retail.v2alpha.EnrollSolutionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.EnrollSolutionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getEnrollSolutionMethod(), getCallOptions(), request);
     }
 
@@ -852,8 +850,9 @@ public final class ProjectServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.ListEnrolledSolutionsResponse listEnrolledSolutions(
-        com.google.cloud.retail.v2alpha.ListEnrolledSolutionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.ListEnrolledSolutionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEnrolledSolutionsMethod(), getCallOptions(), request);
     }
 
@@ -866,8 +865,9 @@ public final class ProjectServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.LoggingConfig getLoggingConfig(
-        com.google.cloud.retail.v2alpha.GetLoggingConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.GetLoggingConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetLoggingConfigMethod(), getCallOptions(), request);
     }
 
@@ -880,8 +880,9 @@ public final class ProjectServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.LoggingConfig updateLoggingConfig(
-        com.google.cloud.retail.v2alpha.UpdateLoggingConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.UpdateLoggingConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateLoggingConfigMethod(), getCallOptions(), request);
     }
 
@@ -894,8 +895,9 @@ public final class ProjectServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.AlertConfig getAlertConfig(
-        com.google.cloud.retail.v2alpha.GetAlertConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.GetAlertConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAlertConfigMethod(), getCallOptions(), request);
     }
 
@@ -907,8 +909,9 @@ public final class ProjectServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.AlertConfig updateAlertConfig(
-        com.google.cloud.retail.v2alpha.UpdateAlertConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.UpdateAlertConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAlertConfigMethod(), getCallOptions(), request);
     }
   }

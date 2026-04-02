@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -154,6 +154,7 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateBudgetRequest, Budget> updateBudgetTransportSettings =
         GrpcCallSettings.<UpdateBudgetRequest, Budget>newBuilder()
@@ -174,6 +175,7 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListBudgetsRequest, ListBudgetsResponse> listBudgetsTransportSettings =
         GrpcCallSettings.<ListBudgetsRequest, ListBudgetsResponse>newBuilder()
@@ -184,6 +186,7 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteBudgetRequest, Empty> deleteBudgetTransportSettings =
         GrpcCallSettings.<DeleteBudgetRequest, Empty>newBuilder()
@@ -194,6 +197,7 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createBudgetCallable =

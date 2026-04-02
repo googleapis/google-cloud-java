@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -104,6 +104,20 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> unregisterGcpCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAccountForGcpRegistration</td>
+ *      <td><p> Retrieves the merchant account that the calling GCP is registered with.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAccountForGcpRegistration(Empty request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAccountForGcpRegistrationCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -462,6 +476,62 @@ public class DeveloperRegistrationServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<UnregisterGcpRequest, Empty> unregisterGcpCallable() {
     return stub.unregisterGcpCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the merchant account that the calling GCP is registered with.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperRegistrationServiceClient developerRegistrationServiceClient =
+   *     DeveloperRegistrationServiceClient.create()) {
+   *   Empty request = Empty.newBuilder().build();
+   *   GetAccountForGcpRegistrationResponse response =
+   *       developerRegistrationServiceClient.getAccountForGcpRegistration(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GetAccountForGcpRegistrationResponse getAccountForGcpRegistration(Empty request) {
+    return getAccountForGcpRegistrationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the merchant account that the calling GCP is registered with.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperRegistrationServiceClient developerRegistrationServiceClient =
+   *     DeveloperRegistrationServiceClient.create()) {
+   *   Empty request = Empty.newBuilder().build();
+   *   ApiFuture<GetAccountForGcpRegistrationResponse> future =
+   *       developerRegistrationServiceClient
+   *           .getAccountForGcpRegistrationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   GetAccountForGcpRegistrationResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<Empty, GetAccountForGcpRegistrationResponse>
+      getAccountForGcpRegistrationCallable() {
+    return stub.getAccountForGcpRegistrationCallable();
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * currently offered include DataTaxonomy and DataAttribute.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dataplex/v1/data_taxonomy.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 @java.lang.Deprecated
 public final class DataTaxonomyServiceGrpc {
@@ -1401,8 +1398,9 @@ public final class DataTaxonomyServiceGrpc {
      */
     @java.lang.Deprecated
     public com.google.longrunning.Operation createDataTaxonomy(
-        com.google.cloud.dataplex.v1.CreateDataTaxonomyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateDataTaxonomyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDataTaxonomyMethod(), getCallOptions(), request);
     }
 
@@ -1415,8 +1413,9 @@ public final class DataTaxonomyServiceGrpc {
      */
     @java.lang.Deprecated
     public com.google.longrunning.Operation updateDataTaxonomy(
-        com.google.cloud.dataplex.v1.UpdateDataTaxonomyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.UpdateDataTaxonomyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDataTaxonomyMethod(), getCallOptions(), request);
     }
 
@@ -1430,8 +1429,9 @@ public final class DataTaxonomyServiceGrpc {
      */
     @java.lang.Deprecated
     public com.google.longrunning.Operation deleteDataTaxonomy(
-        com.google.cloud.dataplex.v1.DeleteDataTaxonomyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeleteDataTaxonomyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDataTaxonomyMethod(), getCallOptions(), request);
     }
 
@@ -1444,8 +1444,9 @@ public final class DataTaxonomyServiceGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.dataplex.v1.ListDataTaxonomiesResponse listDataTaxonomies(
-        com.google.cloud.dataplex.v1.ListDataTaxonomiesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListDataTaxonomiesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDataTaxonomiesMethod(), getCallOptions(), request);
     }
 
@@ -1458,8 +1459,9 @@ public final class DataTaxonomyServiceGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.dataplex.v1.DataTaxonomy getDataTaxonomy(
-        com.google.cloud.dataplex.v1.GetDataTaxonomyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetDataTaxonomyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDataTaxonomyMethod(), getCallOptions(), request);
     }
 
@@ -1472,8 +1474,9 @@ public final class DataTaxonomyServiceGrpc {
      */
     @java.lang.Deprecated
     public com.google.longrunning.Operation createDataAttributeBinding(
-        com.google.cloud.dataplex.v1.CreateDataAttributeBindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateDataAttributeBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDataAttributeBindingMethod(), getCallOptions(), request);
     }
 
@@ -1486,8 +1489,9 @@ public final class DataTaxonomyServiceGrpc {
      */
     @java.lang.Deprecated
     public com.google.longrunning.Operation updateDataAttributeBinding(
-        com.google.cloud.dataplex.v1.UpdateDataAttributeBindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.UpdateDataAttributeBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDataAttributeBindingMethod(), getCallOptions(), request);
     }
 
@@ -1502,8 +1506,9 @@ public final class DataTaxonomyServiceGrpc {
      */
     @java.lang.Deprecated
     public com.google.longrunning.Operation deleteDataAttributeBinding(
-        com.google.cloud.dataplex.v1.DeleteDataAttributeBindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeleteDataAttributeBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDataAttributeBindingMethod(), getCallOptions(), request);
     }
 
@@ -1516,8 +1521,9 @@ public final class DataTaxonomyServiceGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.dataplex.v1.ListDataAttributeBindingsResponse listDataAttributeBindings(
-        com.google.cloud.dataplex.v1.ListDataAttributeBindingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListDataAttributeBindingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDataAttributeBindingsMethod(), getCallOptions(), request);
     }
 
@@ -1530,8 +1536,9 @@ public final class DataTaxonomyServiceGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.dataplex.v1.DataAttributeBinding getDataAttributeBinding(
-        com.google.cloud.dataplex.v1.GetDataAttributeBindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetDataAttributeBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDataAttributeBindingMethod(), getCallOptions(), request);
     }
 
@@ -1544,8 +1551,9 @@ public final class DataTaxonomyServiceGrpc {
      */
     @java.lang.Deprecated
     public com.google.longrunning.Operation createDataAttribute(
-        com.google.cloud.dataplex.v1.CreateDataAttributeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateDataAttributeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDataAttributeMethod(), getCallOptions(), request);
     }
 
@@ -1558,8 +1566,9 @@ public final class DataTaxonomyServiceGrpc {
      */
     @java.lang.Deprecated
     public com.google.longrunning.Operation updateDataAttribute(
-        com.google.cloud.dataplex.v1.UpdateDataAttributeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.UpdateDataAttributeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDataAttributeMethod(), getCallOptions(), request);
     }
 
@@ -1572,8 +1581,9 @@ public final class DataTaxonomyServiceGrpc {
      */
     @java.lang.Deprecated
     public com.google.longrunning.Operation deleteDataAttribute(
-        com.google.cloud.dataplex.v1.DeleteDataAttributeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeleteDataAttributeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDataAttributeMethod(), getCallOptions(), request);
     }
 
@@ -1586,8 +1596,9 @@ public final class DataTaxonomyServiceGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.dataplex.v1.ListDataAttributesResponse listDataAttributes(
-        com.google.cloud.dataplex.v1.ListDataAttributesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListDataAttributesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDataAttributesMethod(), getCallOptions(), request);
     }
 
@@ -1600,8 +1611,9 @@ public final class DataTaxonomyServiceGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.dataplex.v1.DataAttribute getDataAttribute(
-        com.google.cloud.dataplex.v1.GetDataAttributeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetDataAttributeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDataAttributeMethod(), getCallOptions(), request);
     }
   }

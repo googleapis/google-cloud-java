@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service for managing and retrieving few-shot examples.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/example_store_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ExampleStoreServiceGrpc {
 
@@ -873,8 +870,9 @@ public final class ExampleStoreServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createExampleStore(
-        com.google.cloud.aiplatform.v1beta1.CreateExampleStoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.CreateExampleStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateExampleStoreMethod(), getCallOptions(), request);
     }
 
@@ -886,8 +884,9 @@ public final class ExampleStoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ExampleStore getExampleStore(
-        com.google.cloud.aiplatform.v1beta1.GetExampleStoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.GetExampleStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetExampleStoreMethod(), getCallOptions(), request);
     }
 
@@ -899,8 +898,9 @@ public final class ExampleStoreServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateExampleStore(
-        com.google.cloud.aiplatform.v1beta1.UpdateExampleStoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.UpdateExampleStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateExampleStoreMethod(), getCallOptions(), request);
     }
 
@@ -912,8 +912,9 @@ public final class ExampleStoreServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteExampleStore(
-        com.google.cloud.aiplatform.v1beta1.DeleteExampleStoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.DeleteExampleStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteExampleStoreMethod(), getCallOptions(), request);
     }
 
@@ -925,8 +926,9 @@ public final class ExampleStoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ListExampleStoresResponse listExampleStores(
-        com.google.cloud.aiplatform.v1beta1.ListExampleStoresRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ListExampleStoresRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListExampleStoresMethod(), getCallOptions(), request);
     }
 
@@ -938,8 +940,9 @@ public final class ExampleStoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.UpsertExamplesResponse upsertExamples(
-        com.google.cloud.aiplatform.v1beta1.UpsertExamplesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.UpsertExamplesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpsertExamplesMethod(), getCallOptions(), request);
     }
 
@@ -951,8 +954,9 @@ public final class ExampleStoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.RemoveExamplesResponse removeExamples(
-        com.google.cloud.aiplatform.v1beta1.RemoveExamplesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.RemoveExamplesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRemoveExamplesMethod(), getCallOptions(), request);
     }
 
@@ -964,8 +968,9 @@ public final class ExampleStoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.SearchExamplesResponse searchExamples(
-        com.google.cloud.aiplatform.v1beta1.SearchExamplesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.SearchExamplesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchExamplesMethod(), getCallOptions(), request);
     }
 
@@ -977,8 +982,9 @@ public final class ExampleStoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.FetchExamplesResponse fetchExamples(
-        com.google.cloud.aiplatform.v1beta1.FetchExamplesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.FetchExamplesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchExamplesMethod(), getCallOptions(), request);
     }
   }

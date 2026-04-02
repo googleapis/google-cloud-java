@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,9 +35,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * `projects/{project_number}/locations/{location_id}/federations/{federation_id}`.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/metastore/v1beta/metastore_federation.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DataprocMetastoreFederationGrpc {
 
@@ -619,8 +616,9 @@ public final class DataprocMetastoreFederationGrpc {
      * </pre>
      */
     public com.google.cloud.metastore.v1beta.ListFederationsResponse listFederations(
-        com.google.cloud.metastore.v1beta.ListFederationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.metastore.v1beta.ListFederationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFederationsMethod(), getCallOptions(), request);
     }
 
@@ -632,8 +630,9 @@ public final class DataprocMetastoreFederationGrpc {
      * </pre>
      */
     public com.google.cloud.metastore.v1beta.Federation getFederation(
-        com.google.cloud.metastore.v1beta.GetFederationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.metastore.v1beta.GetFederationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFederationMethod(), getCallOptions(), request);
     }
 
@@ -645,8 +644,9 @@ public final class DataprocMetastoreFederationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createFederation(
-        com.google.cloud.metastore.v1beta.CreateFederationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.metastore.v1beta.CreateFederationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateFederationMethod(), getCallOptions(), request);
     }
 
@@ -658,8 +658,9 @@ public final class DataprocMetastoreFederationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateFederation(
-        com.google.cloud.metastore.v1beta.UpdateFederationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.metastore.v1beta.UpdateFederationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateFederationMethod(), getCallOptions(), request);
     }
 
@@ -671,8 +672,9 @@ public final class DataprocMetastoreFederationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteFederation(
-        com.google.cloud.metastore.v1beta.DeleteFederationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.metastore.v1beta.DeleteFederationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteFederationMethod(), getCallOptions(), request);
     }
   }

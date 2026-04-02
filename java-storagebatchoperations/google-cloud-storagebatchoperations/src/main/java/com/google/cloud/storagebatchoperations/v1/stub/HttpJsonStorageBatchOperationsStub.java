@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.storagebatchoperations.v1.stub;
 
+import static com.google.cloud.storagebatchoperations.v1.StorageBatchOperationsClient.ListBucketOperationsPagedResponse;
 import static com.google.cloud.storagebatchoperations.v1.StorageBatchOperationsClient.ListJobsPagedResponse;
 import static com.google.cloud.storagebatchoperations.v1.StorageBatchOperationsClient.ListLocationsPagedResponse;
 
@@ -39,12 +40,16 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.storagebatchoperations.v1.BucketOperation;
 import com.google.cloud.storagebatchoperations.v1.CancelJobRequest;
 import com.google.cloud.storagebatchoperations.v1.CancelJobResponse;
 import com.google.cloud.storagebatchoperations.v1.CreateJobRequest;
 import com.google.cloud.storagebatchoperations.v1.DeleteJobRequest;
+import com.google.cloud.storagebatchoperations.v1.GetBucketOperationRequest;
 import com.google.cloud.storagebatchoperations.v1.GetJobRequest;
 import com.google.cloud.storagebatchoperations.v1.Job;
+import com.google.cloud.storagebatchoperations.v1.ListBucketOperationsRequest;
+import com.google.cloud.storagebatchoperations.v1.ListBucketOperationsResponse;
 import com.google.cloud.storagebatchoperations.v1.ListJobsRequest;
 import com.google.cloud.storagebatchoperations.v1.ListJobsResponse;
 import com.google.cloud.storagebatchoperations.v1.OperationMetadata;
@@ -208,6 +213,7 @@ public class HttpJsonStorageBatchOperationsStub extends StorageBatchOperationsSt
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<DeleteJobRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "force", request.getForce());
                         serializer.putQueryParam(fields, "requestId", request.getRequestId());
                         serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
@@ -255,6 +261,82 @@ public class HttpJsonStorageBatchOperationsStub extends StorageBatchOperationsSt
               .setResponseParser(
                   ProtoMessageResponseParser.<CancelJobResponse>newBuilder()
                       .setDefaultInstance(CancelJobResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListBucketOperationsRequest, ListBucketOperationsResponse>
+      listBucketOperationsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListBucketOperationsRequest, ListBucketOperationsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.storagebatchoperations.v1.StorageBatchOperations/ListBucketOperations")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListBucketOperationsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/jobs/*}/bucketOperations",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBucketOperationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBucketOperationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListBucketOperationsResponse>newBuilder()
+                      .setDefaultInstance(ListBucketOperationsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetBucketOperationRequest, BucketOperation>
+      getBucketOperationMethodDescriptor =
+          ApiMethodDescriptor.<GetBucketOperationRequest, BucketOperation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.storagebatchoperations.v1.StorageBatchOperations/GetBucketOperation")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetBucketOperationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/jobs/*/bucketOperations/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetBucketOperationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetBucketOperationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BucketOperation>newBuilder()
+                      .setDefaultInstance(BucketOperation.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -335,6 +417,12 @@ public class HttpJsonStorageBatchOperationsStub extends StorageBatchOperationsSt
       createJobOperationCallable;
   private final UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable;
   private final UnaryCallable<CancelJobRequest, CancelJobResponse> cancelJobCallable;
+  private final UnaryCallable<ListBucketOperationsRequest, ListBucketOperationsResponse>
+      listBucketOperationsCallable;
+  private final UnaryCallable<ListBucketOperationsRequest, ListBucketOperationsPagedResponse>
+      listBucketOperationsPagedCallable;
+  private final UnaryCallable<GetBucketOperationRequest, BucketOperation>
+      getBucketOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -422,6 +510,7 @@ public class HttpJsonStorageBatchOperationsStub extends StorageBatchOperationsSt
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetJobRequest, Job> getJobTransportSettings =
         HttpJsonCallSettings.<GetJobRequest, Job>newBuilder()
@@ -433,6 +522,7 @@ public class HttpJsonStorageBatchOperationsStub extends StorageBatchOperationsSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateJobRequest, Operation> createJobTransportSettings =
         HttpJsonCallSettings.<CreateJobRequest, Operation>newBuilder()
@@ -444,6 +534,7 @@ public class HttpJsonStorageBatchOperationsStub extends StorageBatchOperationsSt
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteJobRequest, Empty> deleteJobTransportSettings =
         HttpJsonCallSettings.<DeleteJobRequest, Empty>newBuilder()
@@ -455,6 +546,7 @@ public class HttpJsonStorageBatchOperationsStub extends StorageBatchOperationsSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CancelJobRequest, CancelJobResponse> cancelJobTransportSettings =
         HttpJsonCallSettings.<CancelJobRequest, CancelJobResponse>newBuilder()
@@ -466,7 +558,35 @@ public class HttpJsonStorageBatchOperationsStub extends StorageBatchOperationsSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<ListBucketOperationsRequest, ListBucketOperationsResponse>
+        listBucketOperationsTransportSettings =
+            HttpJsonCallSettings
+                .<ListBucketOperationsRequest, ListBucketOperationsResponse>newBuilder()
+                .setMethodDescriptor(listBucketOperationsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<GetBucketOperationRequest, BucketOperation>
+        getBucketOperationTransportSettings =
+            HttpJsonCallSettings.<GetBucketOperationRequest, BucketOperation>newBuilder()
+                .setMethodDescriptor(getBucketOperationMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -515,6 +635,21 @@ public class HttpJsonStorageBatchOperationsStub extends StorageBatchOperationsSt
     this.cancelJobCallable =
         callableFactory.createUnaryCallable(
             cancelJobTransportSettings, settings.cancelJobSettings(), clientContext);
+    this.listBucketOperationsCallable =
+        callableFactory.createUnaryCallable(
+            listBucketOperationsTransportSettings,
+            settings.listBucketOperationsSettings(),
+            clientContext);
+    this.listBucketOperationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listBucketOperationsTransportSettings,
+            settings.listBucketOperationsSettings(),
+            clientContext);
+    this.getBucketOperationCallable =
+        callableFactory.createUnaryCallable(
+            getBucketOperationTransportSettings,
+            settings.getBucketOperationSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -537,6 +672,8 @@ public class HttpJsonStorageBatchOperationsStub extends StorageBatchOperationsSt
     methodDescriptors.add(createJobMethodDescriptor);
     methodDescriptors.add(deleteJobMethodDescriptor);
     methodDescriptors.add(cancelJobMethodDescriptor);
+    methodDescriptors.add(listBucketOperationsMethodDescriptor);
+    methodDescriptors.add(getBucketOperationMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -579,6 +716,23 @@ public class HttpJsonStorageBatchOperationsStub extends StorageBatchOperationsSt
   @Override
   public UnaryCallable<CancelJobRequest, CancelJobResponse> cancelJobCallable() {
     return cancelJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBucketOperationsRequest, ListBucketOperationsResponse>
+      listBucketOperationsCallable() {
+    return listBucketOperationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBucketOperationsRequest, ListBucketOperationsPagedResponse>
+      listBucketOperationsPagedCallable() {
+    return listBucketOperationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetBucketOperationRequest, BucketOperation> getBucketOperationCallable() {
+    return getBucketOperationCallable;
   }
 
   @Override

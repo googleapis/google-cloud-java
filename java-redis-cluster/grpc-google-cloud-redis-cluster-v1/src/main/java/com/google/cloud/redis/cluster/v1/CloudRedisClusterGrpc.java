@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,9 +35,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * * `projects/redpepper-1290/locations/us-central1/clusters/my-redis`
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/redis/cluster/v1/cloud_redis_cluster.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CloudRedisClusterGrpc {
 
@@ -323,6 +320,63 @@ public final class CloudRedisClusterGrpc {
       }
     }
     return getGetClusterCertificateAuthorityMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.GetSharedRegionalCertificateAuthorityRequest,
+          com.google.cloud.redis.cluster.v1.SharedRegionalCertificateAuthority>
+      getGetSharedRegionalCertificateAuthorityMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSharedRegionalCertificateAuthority",
+      requestType =
+          com.google.cloud.redis.cluster.v1.GetSharedRegionalCertificateAuthorityRequest.class,
+      responseType = com.google.cloud.redis.cluster.v1.SharedRegionalCertificateAuthority.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.GetSharedRegionalCertificateAuthorityRequest,
+          com.google.cloud.redis.cluster.v1.SharedRegionalCertificateAuthority>
+      getGetSharedRegionalCertificateAuthorityMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1.GetSharedRegionalCertificateAuthorityRequest,
+            com.google.cloud.redis.cluster.v1.SharedRegionalCertificateAuthority>
+        getGetSharedRegionalCertificateAuthorityMethod;
+    if ((getGetSharedRegionalCertificateAuthorityMethod =
+            CloudRedisClusterGrpc.getGetSharedRegionalCertificateAuthorityMethod)
+        == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getGetSharedRegionalCertificateAuthorityMethod =
+                CloudRedisClusterGrpc.getGetSharedRegionalCertificateAuthorityMethod)
+            == null) {
+          CloudRedisClusterGrpc.getGetSharedRegionalCertificateAuthorityMethod =
+              getGetSharedRegionalCertificateAuthorityMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1
+                              .GetSharedRegionalCertificateAuthorityRequest,
+                          com.google.cloud.redis.cluster.v1.SharedRegionalCertificateAuthority>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "GetSharedRegionalCertificateAuthority"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1
+                                  .GetSharedRegionalCertificateAuthorityRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1.SharedRegionalCertificateAuthority
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier(
+                              "GetSharedRegionalCertificateAuthority"))
+                      .build();
+        }
+      }
+    }
+    return getGetSharedRegionalCertificateAuthorityMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -878,6 +932,23 @@ public final class CloudRedisClusterGrpc {
      *
      *
      * <pre>
+     * Gets the details of regional certificate authority information for Redis
+     * cluster.
+     * </pre>
+     */
+    default void getSharedRegionalCertificateAuthority(
+        com.google.cloud.redis.cluster.v1.GetSharedRegionalCertificateAuthorityRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.redis.cluster.v1.SharedRegionalCertificateAuthority>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetSharedRegionalCertificateAuthorityMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Reschedules upcoming maintenance event.
      * </pre>
      */
@@ -1175,6 +1246,25 @@ public final class CloudRedisClusterGrpc {
      *
      *
      * <pre>
+     * Gets the details of regional certificate authority information for Redis
+     * cluster.
+     * </pre>
+     */
+    public void getSharedRegionalCertificateAuthority(
+        com.google.cloud.redis.cluster.v1.GetSharedRegionalCertificateAuthorityRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.redis.cluster.v1.SharedRegionalCertificateAuthority>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSharedRegionalCertificateAuthorityMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Reschedules upcoming maintenance event.
      * </pre>
      */
@@ -1359,8 +1449,9 @@ public final class CloudRedisClusterGrpc {
      * </pre>
      */
     public com.google.cloud.redis.cluster.v1.ListClustersResponse listClusters(
-        com.google.cloud.redis.cluster.v1.ListClustersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.cluster.v1.ListClustersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListClustersMethod(), getCallOptions(), request);
     }
 
@@ -1372,8 +1463,9 @@ public final class CloudRedisClusterGrpc {
      * </pre>
      */
     public com.google.cloud.redis.cluster.v1.Cluster getCluster(
-        com.google.cloud.redis.cluster.v1.GetClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.cluster.v1.GetClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetClusterMethod(), getCallOptions(), request);
     }
 
@@ -1388,8 +1480,9 @@ public final class CloudRedisClusterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateCluster(
-        com.google.cloud.redis.cluster.v1.UpdateClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.cluster.v1.UpdateClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateClusterMethod(), getCallOptions(), request);
     }
 
@@ -1402,8 +1495,9 @@ public final class CloudRedisClusterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteCluster(
-        com.google.cloud.redis.cluster.v1.DeleteClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.cluster.v1.DeleteClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteClusterMethod(), getCallOptions(), request);
     }
 
@@ -1421,8 +1515,9 @@ public final class CloudRedisClusterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createCluster(
-        com.google.cloud.redis.cluster.v1.CreateClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.cluster.v1.CreateClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateClusterMethod(), getCallOptions(), request);
     }
 
@@ -1434,9 +1529,29 @@ public final class CloudRedisClusterGrpc {
      * </pre>
      */
     public com.google.cloud.redis.cluster.v1.CertificateAuthority getClusterCertificateAuthority(
-        com.google.cloud.redis.cluster.v1.GetClusterCertificateAuthorityRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.cluster.v1.GetClusterCertificateAuthorityRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetClusterCertificateAuthorityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of regional certificate authority information for Redis
+     * cluster.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1.SharedRegionalCertificateAuthority
+        getSharedRegionalCertificateAuthority(
+            com.google.cloud.redis.cluster.v1.GetSharedRegionalCertificateAuthorityRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getGetSharedRegionalCertificateAuthorityMethod(),
+          getCallOptions(),
+          request);
     }
 
     /**
@@ -1447,8 +1562,9 @@ public final class CloudRedisClusterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation rescheduleClusterMaintenance(
-        com.google.cloud.redis.cluster.v1.RescheduleClusterMaintenanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.cluster.v1.RescheduleClusterMaintenanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRescheduleClusterMaintenanceMethod(), getCallOptions(), request);
     }
 
@@ -1463,8 +1579,9 @@ public final class CloudRedisClusterGrpc {
      * </pre>
      */
     public com.google.cloud.redis.cluster.v1.ListBackupCollectionsResponse listBackupCollections(
-        com.google.cloud.redis.cluster.v1.ListBackupCollectionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.cluster.v1.ListBackupCollectionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBackupCollectionsMethod(), getCallOptions(), request);
     }
 
@@ -1476,8 +1593,9 @@ public final class CloudRedisClusterGrpc {
      * </pre>
      */
     public com.google.cloud.redis.cluster.v1.BackupCollection getBackupCollection(
-        com.google.cloud.redis.cluster.v1.GetBackupCollectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.cluster.v1.GetBackupCollectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBackupCollectionMethod(), getCallOptions(), request);
     }
 
@@ -1489,8 +1607,9 @@ public final class CloudRedisClusterGrpc {
      * </pre>
      */
     public com.google.cloud.redis.cluster.v1.ListBackupsResponse listBackups(
-        com.google.cloud.redis.cluster.v1.ListBackupsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.cluster.v1.ListBackupsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBackupsMethod(), getCallOptions(), request);
     }
 
@@ -1502,8 +1621,8 @@ public final class CloudRedisClusterGrpc {
      * </pre>
      */
     public com.google.cloud.redis.cluster.v1.Backup getBackup(
-        com.google.cloud.redis.cluster.v1.GetBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.cluster.v1.GetBackupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBackupMethod(), getCallOptions(), request);
     }
 
@@ -1515,8 +1634,9 @@ public final class CloudRedisClusterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteBackup(
-        com.google.cloud.redis.cluster.v1.DeleteBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.cluster.v1.DeleteBackupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteBackupMethod(), getCallOptions(), request);
     }
 
@@ -1528,8 +1648,9 @@ public final class CloudRedisClusterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportBackup(
-        com.google.cloud.redis.cluster.v1.ExportBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.cluster.v1.ExportBackupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportBackupMethod(), getCallOptions(), request);
     }
 
@@ -1552,8 +1673,9 @@ public final class CloudRedisClusterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation backupCluster(
-        com.google.cloud.redis.cluster.v1.BackupClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.cluster.v1.BackupClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBackupClusterMethod(), getCallOptions(), request);
     }
   }
@@ -1680,6 +1802,25 @@ public final class CloudRedisClusterGrpc {
         com.google.cloud.redis.cluster.v1.GetClusterCertificateAuthorityRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetClusterCertificateAuthorityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of regional certificate authority information for Redis
+     * cluster.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1.SharedRegionalCertificateAuthority
+        getSharedRegionalCertificateAuthority(
+            com.google.cloud.redis.cluster.v1.GetSharedRegionalCertificateAuthorityRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getGetSharedRegionalCertificateAuthorityMethod(),
+          getCallOptions(),
+          request);
     }
 
     /**
@@ -1933,6 +2074,24 @@ public final class CloudRedisClusterGrpc {
      *
      *
      * <pre>
+     * Gets the details of regional certificate authority information for Redis
+     * cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.redis.cluster.v1.SharedRegionalCertificateAuthority>
+        getSharedRegionalCertificateAuthority(
+            com.google.cloud.redis.cluster.v1.GetSharedRegionalCertificateAuthorityRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSharedRegionalCertificateAuthorityMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Reschedules upcoming maintenance event.
      * </pre>
      */
@@ -2060,14 +2219,15 @@ public final class CloudRedisClusterGrpc {
   private static final int METHODID_DELETE_CLUSTER = 3;
   private static final int METHODID_CREATE_CLUSTER = 4;
   private static final int METHODID_GET_CLUSTER_CERTIFICATE_AUTHORITY = 5;
-  private static final int METHODID_RESCHEDULE_CLUSTER_MAINTENANCE = 6;
-  private static final int METHODID_LIST_BACKUP_COLLECTIONS = 7;
-  private static final int METHODID_GET_BACKUP_COLLECTION = 8;
-  private static final int METHODID_LIST_BACKUPS = 9;
-  private static final int METHODID_GET_BACKUP = 10;
-  private static final int METHODID_DELETE_BACKUP = 11;
-  private static final int METHODID_EXPORT_BACKUP = 12;
-  private static final int METHODID_BACKUP_CLUSTER = 13;
+  private static final int METHODID_GET_SHARED_REGIONAL_CERTIFICATE_AUTHORITY = 6;
+  private static final int METHODID_RESCHEDULE_CLUSTER_MAINTENANCE = 7;
+  private static final int METHODID_LIST_BACKUP_COLLECTIONS = 8;
+  private static final int METHODID_GET_BACKUP_COLLECTION = 9;
+  private static final int METHODID_LIST_BACKUPS = 10;
+  private static final int METHODID_GET_BACKUP = 11;
+  private static final int METHODID_DELETE_BACKUP = 12;
+  private static final int METHODID_EXPORT_BACKUP = 13;
+  private static final int METHODID_BACKUP_CLUSTER = 14;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2117,6 +2277,14 @@ public final class CloudRedisClusterGrpc {
           serviceImpl.getClusterCertificateAuthority(
               (com.google.cloud.redis.cluster.v1.GetClusterCertificateAuthorityRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1.CertificateAuthority>)
+                  responseObserver);
+          break;
+        case METHODID_GET_SHARED_REGIONAL_CERTIFICATE_AUTHORITY:
+          serviceImpl.getSharedRegionalCertificateAuthority(
+              (com.google.cloud.redis.cluster.v1.GetSharedRegionalCertificateAuthorityRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.redis.cluster.v1.SharedRegionalCertificateAuthority>)
                   responseObserver);
           break;
         case METHODID_RESCHEDULE_CLUSTER_MAINTENANCE:
@@ -2220,6 +2388,13 @@ public final class CloudRedisClusterGrpc {
                     com.google.cloud.redis.cluster.v1.GetClusterCertificateAuthorityRequest,
                     com.google.cloud.redis.cluster.v1.CertificateAuthority>(
                     service, METHODID_GET_CLUSTER_CERTIFICATE_AUTHORITY)))
+        .addMethod(
+            getGetSharedRegionalCertificateAuthorityMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1.GetSharedRegionalCertificateAuthorityRequest,
+                    com.google.cloud.redis.cluster.v1.SharedRegionalCertificateAuthority>(
+                    service, METHODID_GET_SHARED_REGIONAL_CERTIFICATE_AUTHORITY)))
         .addMethod(
             getRescheduleClusterMaintenanceMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2329,6 +2504,7 @@ public final class CloudRedisClusterGrpc {
                       .addMethod(getDeleteClusterMethod())
                       .addMethod(getCreateClusterMethod())
                       .addMethod(getGetClusterCertificateAuthorityMethod())
+                      .addMethod(getGetSharedRegionalCertificateAuthorityMethod())
                       .addMethod(getRescheduleClusterMaintenanceMethod())
                       .addMethod(getListBackupCollectionsMethod())
                       .addMethod(getGetBackupCollectionMethod())

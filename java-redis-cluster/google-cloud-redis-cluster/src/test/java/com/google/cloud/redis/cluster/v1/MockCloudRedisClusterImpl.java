@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -182,6 +182,29 @@ public class MockCloudRedisClusterImpl extends CloudRedisClusterImplBase {
                       + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   CertificateAuthority.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getSharedRegionalCertificateAuthority(
+      GetSharedRegionalCertificateAuthorityRequest request,
+      StreamObserver<SharedRegionalCertificateAuthority> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SharedRegionalCertificateAuthority) {
+      requests.add(request);
+      responseObserver.onNext(((SharedRegionalCertificateAuthority) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetSharedRegionalCertificateAuthority,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SharedRegionalCertificateAuthority.class.getName(),
                   Exception.class.getName())));
     }
   }

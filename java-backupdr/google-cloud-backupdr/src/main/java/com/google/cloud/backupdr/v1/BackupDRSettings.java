@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.backupdr.v1;
 
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchBackupPlanAssociationsForResourceTypePagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.FetchBackupsForResourceTypePagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchDataSourceReferencesForResourceTypePagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchUsableBackupVaultsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanAssociationsPagedResponse;
@@ -24,6 +25,7 @@ import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanRevision
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlansPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupVaultsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListDataSourceReferencesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListDataSourcesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListLocationsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListManagementServersPagedResponse;
@@ -103,8 +105,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -254,6 +256,15 @@ public class BackupDRSettings extends ClientSettings<BackupDRSettings> {
   public PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
       listBackupsSettings() {
     return ((BackupDRStubSettings) getStubSettings()).listBackupsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to fetchBackupsForResourceType. */
+  public PagedCallSettings<
+          FetchBackupsForResourceTypeRequest,
+          FetchBackupsForResourceTypeResponse,
+          FetchBackupsForResourceTypePagedResponse>
+      fetchBackupsForResourceTypeSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).fetchBackupsForResourceTypeSettings();
   }
 
   /** Returns the object with the settings used for calls to getBackup. */
@@ -438,6 +449,15 @@ public class BackupDRSettings extends ClientSettings<BackupDRSettings> {
   public UnaryCallSettings<GetDataSourceReferenceRequest, DataSourceReference>
       getDataSourceReferenceSettings() {
     return ((BackupDRStubSettings) getStubSettings()).getDataSourceReferenceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDataSourceReferences. */
+  public PagedCallSettings<
+          ListDataSourceReferencesRequest,
+          ListDataSourceReferencesResponse,
+          ListDataSourceReferencesPagedResponse>
+      listDataSourceReferencesSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).listDataSourceReferencesSettings();
   }
 
   /**
@@ -731,6 +751,15 @@ public class BackupDRSettings extends ClientSettings<BackupDRSettings> {
       return getStubSettingsBuilder().listBackupsSettings();
     }
 
+    /** Returns the builder for the settings used for calls to fetchBackupsForResourceType. */
+    public PagedCallSettings.Builder<
+            FetchBackupsForResourceTypeRequest,
+            FetchBackupsForResourceTypeResponse,
+            FetchBackupsForResourceTypePagedResponse>
+        fetchBackupsForResourceTypeSettings() {
+      return getStubSettingsBuilder().fetchBackupsForResourceTypeSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getBackup. */
     public UnaryCallSettings.Builder<GetBackupRequest, Backup> getBackupSettings() {
       return getStubSettingsBuilder().getBackupSettings();
@@ -915,6 +944,15 @@ public class BackupDRSettings extends ClientSettings<BackupDRSettings> {
     public UnaryCallSettings.Builder<GetDataSourceReferenceRequest, DataSourceReference>
         getDataSourceReferenceSettings() {
       return getStubSettingsBuilder().getDataSourceReferenceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listDataSourceReferences. */
+    public PagedCallSettings.Builder<
+            ListDataSourceReferencesRequest,
+            ListDataSourceReferencesResponse,
+            ListDataSourceReferencesPagedResponse>
+        listDataSourceReferencesSettings() {
+      return getStubSettingsBuilder().listDataSourceReferencesSettings();
     }
 
     /**

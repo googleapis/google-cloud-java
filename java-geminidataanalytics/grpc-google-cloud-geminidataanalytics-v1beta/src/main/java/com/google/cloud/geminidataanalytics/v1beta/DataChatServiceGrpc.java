@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * to help provide a rich conversational answer.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/geminidataanalytics/v1beta/data_chat_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DataChatServiceGrpc {
 
@@ -130,6 +127,53 @@ public final class DataChatServiceGrpc {
       }
     }
     return getCreateConversationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.geminidataanalytics.v1beta.DeleteConversationRequest,
+          com.google.protobuf.Empty>
+      getDeleteConversationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteConversation",
+      requestType = com.google.cloud.geminidataanalytics.v1beta.DeleteConversationRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.geminidataanalytics.v1beta.DeleteConversationRequest,
+          com.google.protobuf.Empty>
+      getDeleteConversationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.geminidataanalytics.v1beta.DeleteConversationRequest,
+            com.google.protobuf.Empty>
+        getDeleteConversationMethod;
+    if ((getDeleteConversationMethod = DataChatServiceGrpc.getDeleteConversationMethod) == null) {
+      synchronized (DataChatServiceGrpc.class) {
+        if ((getDeleteConversationMethod = DataChatServiceGrpc.getDeleteConversationMethod)
+            == null) {
+          DataChatServiceGrpc.getDeleteConversationMethod =
+              getDeleteConversationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.geminidataanalytics.v1beta.DeleteConversationRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteConversation"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.geminidataanalytics.v1beta.DeleteConversationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataChatServiceMethodDescriptorSupplier("DeleteConversation"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteConversationMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -273,6 +317,52 @@ public final class DataChatServiceGrpc {
     return getListMessagesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.geminidataanalytics.v1beta.QueryDataRequest,
+          com.google.cloud.geminidataanalytics.v1beta.QueryDataResponse>
+      getQueryDataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "QueryData",
+      requestType = com.google.cloud.geminidataanalytics.v1beta.QueryDataRequest.class,
+      responseType = com.google.cloud.geminidataanalytics.v1beta.QueryDataResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.geminidataanalytics.v1beta.QueryDataRequest,
+          com.google.cloud.geminidataanalytics.v1beta.QueryDataResponse>
+      getQueryDataMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.geminidataanalytics.v1beta.QueryDataRequest,
+            com.google.cloud.geminidataanalytics.v1beta.QueryDataResponse>
+        getQueryDataMethod;
+    if ((getQueryDataMethod = DataChatServiceGrpc.getQueryDataMethod) == null) {
+      synchronized (DataChatServiceGrpc.class) {
+        if ((getQueryDataMethod = DataChatServiceGrpc.getQueryDataMethod) == null) {
+          DataChatServiceGrpc.getQueryDataMethod =
+              getQueryDataMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.geminidataanalytics.v1beta.QueryDataRequest,
+                          com.google.cloud.geminidataanalytics.v1beta.QueryDataResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "QueryData"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.geminidataanalytics.v1beta.QueryDataRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.geminidataanalytics.v1beta.QueryDataResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new DataChatServiceMethodDescriptorSupplier("QueryData"))
+                      .build();
+        }
+      }
+    }
+    return getQueryDataMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static DataChatServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<DataChatServiceStub> factory =
@@ -373,6 +463,20 @@ public final class DataChatServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a conversation.
+     * </pre>
+     */
+    default void deleteConversation(
+        com.google.cloud.geminidataanalytics.v1beta.DeleteConversationRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteConversationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets details of a single conversation by using conversation id and parent.
      * </pre>
      */
@@ -414,6 +518,20 @@ public final class DataChatServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListMessagesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Queries data from a natural language user query.
+     * </pre>
+     */
+    default void queryData(
+        com.google.cloud.geminidataanalytics.v1beta.QueryDataRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.geminidataanalytics.v1beta.QueryDataResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getQueryDataMethod(), responseObserver);
     }
   }
 
@@ -493,6 +611,22 @@ public final class DataChatServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a conversation.
+     * </pre>
+     */
+    public void deleteConversation(
+        com.google.cloud.geminidataanalytics.v1beta.DeleteConversationRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteConversationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets details of a single conversation by using conversation id and parent.
      * </pre>
      */
@@ -540,6 +674,21 @@ public final class DataChatServiceGrpc {
           getChannel().newCall(getListMessagesMethod(), getCallOptions()),
           request,
           responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Queries data from a natural language user query.
+     * </pre>
+     */
+    public void queryData(
+        com.google.cloud.geminidataanalytics.v1beta.QueryDataRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.geminidataanalytics.v1beta.QueryDataResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getQueryDataMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -589,9 +738,24 @@ public final class DataChatServiceGrpc {
      * </pre>
      */
     public com.google.cloud.geminidataanalytics.v1beta.Conversation createConversation(
-        com.google.cloud.geminidataanalytics.v1beta.CreateConversationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.geminidataanalytics.v1beta.CreateConversationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateConversationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a conversation.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteConversation(
+        com.google.cloud.geminidataanalytics.v1beta.DeleteConversationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteConversationMethod(), getCallOptions(), request);
     }
 
     /**
@@ -602,8 +766,9 @@ public final class DataChatServiceGrpc {
      * </pre>
      */
     public com.google.cloud.geminidataanalytics.v1beta.Conversation getConversation(
-        com.google.cloud.geminidataanalytics.v1beta.GetConversationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.geminidataanalytics.v1beta.GetConversationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConversationMethod(), getCallOptions(), request);
     }
 
@@ -615,8 +780,9 @@ public final class DataChatServiceGrpc {
      * </pre>
      */
     public com.google.cloud.geminidataanalytics.v1beta.ListConversationsResponse listConversations(
-        com.google.cloud.geminidataanalytics.v1beta.ListConversationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.geminidataanalytics.v1beta.ListConversationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConversationsMethod(), getCallOptions(), request);
     }
 
@@ -628,9 +794,24 @@ public final class DataChatServiceGrpc {
      * </pre>
      */
     public com.google.cloud.geminidataanalytics.v1beta.ListMessagesResponse listMessages(
-        com.google.cloud.geminidataanalytics.v1beta.ListMessagesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.geminidataanalytics.v1beta.ListMessagesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMessagesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Queries data from a natural language user query.
+     * </pre>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.QueryDataResponse queryData(
+        com.google.cloud.geminidataanalytics.v1beta.QueryDataRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getQueryDataMethod(), getCallOptions(), request);
     }
   }
 
@@ -687,6 +868,19 @@ public final class DataChatServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a conversation.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteConversation(
+        com.google.cloud.geminidataanalytics.v1beta.DeleteConversationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteConversationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets details of a single conversation by using conversation id and parent.
      * </pre>
      */
@@ -720,6 +914,19 @@ public final class DataChatServiceGrpc {
         com.google.cloud.geminidataanalytics.v1beta.ListMessagesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListMessagesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Queries data from a natural language user query.
+     * </pre>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.QueryDataResponse queryData(
+        com.google.cloud.geminidataanalytics.v1beta.QueryDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getQueryDataMethod(), getCallOptions(), request);
     }
   }
 
@@ -758,6 +965,20 @@ public final class DataChatServiceGrpc {
             com.google.cloud.geminidataanalytics.v1beta.CreateConversationRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateConversationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a conversation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteConversation(
+            com.google.cloud.geminidataanalytics.v1beta.DeleteConversationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteConversationMethod(), getCallOptions()), request);
     }
 
     /**
@@ -803,13 +1024,29 @@ public final class DataChatServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListMessagesMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Queries data from a natural language user query.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.geminidataanalytics.v1beta.QueryDataResponse>
+        queryData(com.google.cloud.geminidataanalytics.v1beta.QueryDataRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getQueryDataMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CHAT = 0;
   private static final int METHODID_CREATE_CONVERSATION = 1;
-  private static final int METHODID_GET_CONVERSATION = 2;
-  private static final int METHODID_LIST_CONVERSATIONS = 3;
-  private static final int METHODID_LIST_MESSAGES = 4;
+  private static final int METHODID_DELETE_CONVERSATION = 2;
+  private static final int METHODID_GET_CONVERSATION = 3;
+  private static final int METHODID_LIST_CONVERSATIONS = 4;
+  private static final int METHODID_LIST_MESSAGES = 5;
+  private static final int METHODID_QUERY_DATA = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -841,6 +1078,11 @@ public final class DataChatServiceGrpc {
                       com.google.cloud.geminidataanalytics.v1beta.Conversation>)
                   responseObserver);
           break;
+        case METHODID_DELETE_CONVERSATION:
+          serviceImpl.deleteConversation(
+              (com.google.cloud.geminidataanalytics.v1beta.DeleteConversationRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
         case METHODID_GET_CONVERSATION:
           serviceImpl.getConversation(
               (com.google.cloud.geminidataanalytics.v1beta.GetConversationRequest) request,
@@ -860,6 +1102,13 @@ public final class DataChatServiceGrpc {
               (com.google.cloud.geminidataanalytics.v1beta.ListMessagesRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.geminidataanalytics.v1beta.ListMessagesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_QUERY_DATA:
+          serviceImpl.queryData(
+              (com.google.cloud.geminidataanalytics.v1beta.QueryDataRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.geminidataanalytics.v1beta.QueryDataResponse>)
                   responseObserver);
           break;
         default:
@@ -894,6 +1143,12 @@ public final class DataChatServiceGrpc {
                     com.google.cloud.geminidataanalytics.v1beta.Conversation>(
                     service, METHODID_CREATE_CONVERSATION)))
         .addMethod(
+            getDeleteConversationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.geminidataanalytics.v1beta.DeleteConversationRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_CONVERSATION)))
+        .addMethod(
             getGetConversationMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -914,6 +1169,13 @@ public final class DataChatServiceGrpc {
                     com.google.cloud.geminidataanalytics.v1beta.ListMessagesRequest,
                     com.google.cloud.geminidataanalytics.v1beta.ListMessagesResponse>(
                     service, METHODID_LIST_MESSAGES)))
+        .addMethod(
+            getQueryDataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.geminidataanalytics.v1beta.QueryDataRequest,
+                    com.google.cloud.geminidataanalytics.v1beta.QueryDataResponse>(
+                    service, METHODID_QUERY_DATA)))
         .build();
   }
 
@@ -967,9 +1229,11 @@ public final class DataChatServiceGrpc {
                       .setSchemaDescriptor(new DataChatServiceFileDescriptorSupplier())
                       .addMethod(getChatMethod())
                       .addMethod(getCreateConversationMethod())
+                      .addMethod(getDeleteConversationMethod())
                       .addMethod(getGetConversationMethod())
                       .addMethod(getListConversationsMethod())
                       .addMethod(getListMessagesMethod())
+                      .addMethod(getQueryDataMethod())
                       .build();
         }
       }

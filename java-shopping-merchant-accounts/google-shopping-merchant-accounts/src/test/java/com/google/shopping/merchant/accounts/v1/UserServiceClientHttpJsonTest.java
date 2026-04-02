@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -495,6 +495,96 @@ public class UserServiceClientHttpJsonTest {
     try {
       String parent = "accounts/account-4811";
       client.listUsers(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void verifySelfTest() throws Exception {
+    User expectedResponse =
+        User.newBuilder()
+            .setName(UserName.of("[ACCOUNT]", "[EMAIL]").toString())
+            .addAllAccessRights(new ArrayList<AccessRight>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AccountName account = AccountName.of("[ACCOUNT]");
+
+    User actualResponse = client.verifySelf(account);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void verifySelfExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AccountName account = AccountName.of("[ACCOUNT]");
+      client.verifySelf(account);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void verifySelfTest2() throws Exception {
+    User expectedResponse =
+        User.newBuilder()
+            .setName(UserName.of("[ACCOUNT]", "[EMAIL]").toString())
+            .addAllAccessRights(new ArrayList<AccessRight>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String account = "accounts/account-7630";
+
+    User actualResponse = client.verifySelf(account);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void verifySelfExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String account = "accounts/account-7630";
+      client.verifySelf(account);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

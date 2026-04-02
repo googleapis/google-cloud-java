@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,7 +64,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Get</td>
- *      <td><p> Returns the specified Region resource. To decrease latency for this method, you can optionally omit any unneeded information from the response by using a field mask. This practice is especially recommended for unused quota information (the `quotas` field). To exclude one or more fields, set your request's `fields` query parameter to only include the fields you need. For example, to only include the `id` and `selfLink` fields, add the query parameter `?fields=id,selfLink` to your request. This method fails if the quota information is unavailable for the region and if the organization policy constraint compute.requireBasicQuotaInResponse is enforced. This constraint, when enforced, disables the fail-open behaviour when quota information (the `items.quotas` field) is unavailable for the region. It is recommended to use the default setting for the constraint unless your application requires the fail-closed behaviour for this method.</td>
+ *      <td><p> Returns the specified Region resource.
+ * <p>  To decrease latency for this method, you can optionally omit any unneeded information from the response by using a field mask. This practice is especially recommended for unused quota information (the `quotas` field). To exclude one or more fields, set your request's `fields` query parameter to only include the fields you need. For example, to only include the `id` and `selfLink` fields, add the query parameter `?fields=id,selfLink` to your request.
+ * <p>  This method fails if the quota information is unavailable for the region and if the organization policy constraint compute.requireBasicQuotaInResponse is enforced. This constraint, when enforced, disables the fail-open behaviour when quota information (the `items.quotas` field) is unavailable for the region. It is recommended to use the default setting for the constraint unless your application requires the fail-closed behaviour for this method.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -82,7 +84,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> List</td>
- *      <td><p> Retrieves the list of region resources available to the specified project. To decrease latency for this method, you can optionally omit any unneeded information from the response by using a field mask. This practice is especially recommended for unused quota information (the `items.quotas` field). To exclude one or more fields, set your request's `fields` query parameter to only include the fields you need. For example, to only include the `id` and `selfLink` fields, add the query parameter `?fields=id,selfLink` to your request. This method fails if the quota information is unavailable for the region and if the organization policy constraint compute.requireBasicQuotaInResponse is enforced. This constraint, when enforced, disables the fail-open behaviour when quota information (the `items.quotas` field) is unavailable for the region. It is recommended to use the default setting for the constraint unless your application requires the fail-closed behaviour for this method.</td>
+ *      <td><p> Retrieves the list of region resources available to the specified project.
+ * <p>  To decrease latency for this method, you can optionally omit any unneeded information from the response by using a field mask. This practice is especially recommended for unused quota information (the `items.quotas` field). To exclude one or more fields, set your request's `fields` query parameter to only include the fields you need. For example, to only include the `id` and `selfLink` fields, add the query parameter `?fields=id,selfLink` to your request.
+ * <p>  This method fails if the quota information is unavailable for the region and if the organization policy constraint compute.requireBasicQuotaInResponse is enforced. This constraint, when enforced, disables the fail-open behaviour when quota information (the `items.quotas` field) is unavailable for the region. It is recommended to use the default setting for the constraint unless your application requires the fail-closed behaviour for this method.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -189,17 +193,20 @@ public class RegionsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified Region resource. To decrease latency for this method, you can optionally
-   * omit any unneeded information from the response by using a field mask. This practice is
-   * especially recommended for unused quota information (the `quotas` field). To exclude one or
-   * more fields, set your request's `fields` query parameter to only include the fields you need.
-   * For example, to only include the `id` and `selfLink` fields, add the query parameter
-   * `?fields=id,selfLink` to your request. This method fails if the quota information is
-   * unavailable for the region and if the organization policy constraint
-   * compute.requireBasicQuotaInResponse is enforced. This constraint, when enforced, disables the
-   * fail-open behaviour when quota information (the `items.quotas` field) is unavailable for the
-   * region. It is recommended to use the default setting for the constraint unless your application
-   * requires the fail-closed behaviour for this method.
+   * Returns the specified Region resource.
+   *
+   * <p>To decrease latency for this method, you can optionally omit any unneeded information from
+   * the response by using a field mask. This practice is especially recommended for unused quota
+   * information (the `quotas` field). To exclude one or more fields, set your request's `fields`
+   * query parameter to only include the fields you need. For example, to only include the `id` and
+   * `selfLink` fields, add the query parameter `?fields=id,selfLink` to your request.
+   *
+   * <p>This method fails if the quota information is unavailable for the region and if the
+   * organization policy constraint compute.requireBasicQuotaInResponse is enforced. This
+   * constraint, when enforced, disables the fail-open behaviour when quota information (the
+   * `items.quotas` field) is unavailable for the region. It is recommended to use the default
+   * setting for the constraint unless your application requires the fail-closed behaviour for this
+   * method.
    *
    * <p>Sample code:
    *
@@ -228,17 +235,20 @@ public class RegionsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified Region resource. To decrease latency for this method, you can optionally
-   * omit any unneeded information from the response by using a field mask. This practice is
-   * especially recommended for unused quota information (the `quotas` field). To exclude one or
-   * more fields, set your request's `fields` query parameter to only include the fields you need.
-   * For example, to only include the `id` and `selfLink` fields, add the query parameter
-   * `?fields=id,selfLink` to your request. This method fails if the quota information is
-   * unavailable for the region and if the organization policy constraint
-   * compute.requireBasicQuotaInResponse is enforced. This constraint, when enforced, disables the
-   * fail-open behaviour when quota information (the `items.quotas` field) is unavailable for the
-   * region. It is recommended to use the default setting for the constraint unless your application
-   * requires the fail-closed behaviour for this method.
+   * Returns the specified Region resource.
+   *
+   * <p>To decrease latency for this method, you can optionally omit any unneeded information from
+   * the response by using a field mask. This practice is especially recommended for unused quota
+   * information (the `quotas` field). To exclude one or more fields, set your request's `fields`
+   * query parameter to only include the fields you need. For example, to only include the `id` and
+   * `selfLink` fields, add the query parameter `?fields=id,selfLink` to your request.
+   *
+   * <p>This method fails if the quota information is unavailable for the region and if the
+   * organization policy constraint compute.requireBasicQuotaInResponse is enforced. This
+   * constraint, when enforced, disables the fail-open behaviour when quota information (the
+   * `items.quotas` field) is unavailable for the region. It is recommended to use the default
+   * setting for the constraint unless your application requires the fail-closed behaviour for this
+   * method.
    *
    * <p>Sample code:
    *
@@ -267,17 +277,20 @@ public class RegionsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified Region resource. To decrease latency for this method, you can optionally
-   * omit any unneeded information from the response by using a field mask. This practice is
-   * especially recommended for unused quota information (the `quotas` field). To exclude one or
-   * more fields, set your request's `fields` query parameter to only include the fields you need.
-   * For example, to only include the `id` and `selfLink` fields, add the query parameter
-   * `?fields=id,selfLink` to your request. This method fails if the quota information is
-   * unavailable for the region and if the organization policy constraint
-   * compute.requireBasicQuotaInResponse is enforced. This constraint, when enforced, disables the
-   * fail-open behaviour when quota information (the `items.quotas` field) is unavailable for the
-   * region. It is recommended to use the default setting for the constraint unless your application
-   * requires the fail-closed behaviour for this method.
+   * Returns the specified Region resource.
+   *
+   * <p>To decrease latency for this method, you can optionally omit any unneeded information from
+   * the response by using a field mask. This practice is especially recommended for unused quota
+   * information (the `quotas` field). To exclude one or more fields, set your request's `fields`
+   * query parameter to only include the fields you need. For example, to only include the `id` and
+   * `selfLink` fields, add the query parameter `?fields=id,selfLink` to your request.
+   *
+   * <p>This method fails if the quota information is unavailable for the region and if the
+   * organization policy constraint compute.requireBasicQuotaInResponse is enforced. This
+   * constraint, when enforced, disables the fail-open behaviour when quota information (the
+   * `items.quotas` field) is unavailable for the region. It is recommended to use the default
+   * setting for the constraint unless your application requires the fail-closed behaviour for this
+   * method.
    *
    * <p>Sample code:
    *
@@ -305,17 +318,20 @@ public class RegionsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves the list of region resources available to the specified project. To decrease latency
-   * for this method, you can optionally omit any unneeded information from the response by using a
-   * field mask. This practice is especially recommended for unused quota information (the
-   * `items.quotas` field). To exclude one or more fields, set your request's `fields` query
-   * parameter to only include the fields you need. For example, to only include the `id` and
-   * `selfLink` fields, add the query parameter `?fields=id,selfLink` to your request. This method
-   * fails if the quota information is unavailable for the region and if the organization policy
-   * constraint compute.requireBasicQuotaInResponse is enforced. This constraint, when enforced,
-   * disables the fail-open behaviour when quota information (the `items.quotas` field) is
-   * unavailable for the region. It is recommended to use the default setting for the constraint
-   * unless your application requires the fail-closed behaviour for this method.
+   * Retrieves the list of region resources available to the specified project.
+   *
+   * <p>To decrease latency for this method, you can optionally omit any unneeded information from
+   * the response by using a field mask. This practice is especially recommended for unused quota
+   * information (the `items.quotas` field). To exclude one or more fields, set your request's
+   * `fields` query parameter to only include the fields you need. For example, to only include the
+   * `id` and `selfLink` fields, add the query parameter `?fields=id,selfLink` to your request.
+   *
+   * <p>This method fails if the quota information is unavailable for the region and if the
+   * organization policy constraint compute.requireBasicQuotaInResponse is enforced. This
+   * constraint, when enforced, disables the fail-open behaviour when quota information (the
+   * `items.quotas` field) is unavailable for the region. It is recommended to use the default
+   * setting for the constraint unless your application requires the fail-closed behaviour for this
+   * method.
    *
    * <p>Sample code:
    *
@@ -343,17 +359,20 @@ public class RegionsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves the list of region resources available to the specified project. To decrease latency
-   * for this method, you can optionally omit any unneeded information from the response by using a
-   * field mask. This practice is especially recommended for unused quota information (the
-   * `items.quotas` field). To exclude one or more fields, set your request's `fields` query
-   * parameter to only include the fields you need. For example, to only include the `id` and
-   * `selfLink` fields, add the query parameter `?fields=id,selfLink` to your request. This method
-   * fails if the quota information is unavailable for the region and if the organization policy
-   * constraint compute.requireBasicQuotaInResponse is enforced. This constraint, when enforced,
-   * disables the fail-open behaviour when quota information (the `items.quotas` field) is
-   * unavailable for the region. It is recommended to use the default setting for the constraint
-   * unless your application requires the fail-closed behaviour for this method.
+   * Retrieves the list of region resources available to the specified project.
+   *
+   * <p>To decrease latency for this method, you can optionally omit any unneeded information from
+   * the response by using a field mask. This practice is especially recommended for unused quota
+   * information (the `items.quotas` field). To exclude one or more fields, set your request's
+   * `fields` query parameter to only include the fields you need. For example, to only include the
+   * `id` and `selfLink` fields, add the query parameter `?fields=id,selfLink` to your request.
+   *
+   * <p>This method fails if the quota information is unavailable for the region and if the
+   * organization policy constraint compute.requireBasicQuotaInResponse is enforced. This
+   * constraint, when enforced, disables the fail-open behaviour when quota information (the
+   * `items.quotas` field) is unavailable for the region. It is recommended to use the default
+   * setting for the constraint unless your application requires the fail-closed behaviour for this
+   * method.
    *
    * <p>Sample code:
    *
@@ -388,17 +407,20 @@ public class RegionsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves the list of region resources available to the specified project. To decrease latency
-   * for this method, you can optionally omit any unneeded information from the response by using a
-   * field mask. This practice is especially recommended for unused quota information (the
-   * `items.quotas` field). To exclude one or more fields, set your request's `fields` query
-   * parameter to only include the fields you need. For example, to only include the `id` and
-   * `selfLink` fields, add the query parameter `?fields=id,selfLink` to your request. This method
-   * fails if the quota information is unavailable for the region and if the organization policy
-   * constraint compute.requireBasicQuotaInResponse is enforced. This constraint, when enforced,
-   * disables the fail-open behaviour when quota information (the `items.quotas` field) is
-   * unavailable for the region. It is recommended to use the default setting for the constraint
-   * unless your application requires the fail-closed behaviour for this method.
+   * Retrieves the list of region resources available to the specified project.
+   *
+   * <p>To decrease latency for this method, you can optionally omit any unneeded information from
+   * the response by using a field mask. This practice is especially recommended for unused quota
+   * information (the `items.quotas` field). To exclude one or more fields, set your request's
+   * `fields` query parameter to only include the fields you need. For example, to only include the
+   * `id` and `selfLink` fields, add the query parameter `?fields=id,selfLink` to your request.
+   *
+   * <p>This method fails if the quota information is unavailable for the region and if the
+   * organization policy constraint compute.requireBasicQuotaInResponse is enforced. This
+   * constraint, when enforced, disables the fail-open behaviour when quota information (the
+   * `items.quotas` field) is unavailable for the region. It is recommended to use the default
+   * setting for the constraint unless your application requires the fail-closed behaviour for this
+   * method.
    *
    * <p>Sample code:
    *
@@ -432,17 +454,20 @@ public class RegionsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves the list of region resources available to the specified project. To decrease latency
-   * for this method, you can optionally omit any unneeded information from the response by using a
-   * field mask. This practice is especially recommended for unused quota information (the
-   * `items.quotas` field). To exclude one or more fields, set your request's `fields` query
-   * parameter to only include the fields you need. For example, to only include the `id` and
-   * `selfLink` fields, add the query parameter `?fields=id,selfLink` to your request. This method
-   * fails if the quota information is unavailable for the region and if the organization policy
-   * constraint compute.requireBasicQuotaInResponse is enforced. This constraint, when enforced,
-   * disables the fail-open behaviour when quota information (the `items.quotas` field) is
-   * unavailable for the region. It is recommended to use the default setting for the constraint
-   * unless your application requires the fail-closed behaviour for this method.
+   * Retrieves the list of region resources available to the specified project.
+   *
+   * <p>To decrease latency for this method, you can optionally omit any unneeded information from
+   * the response by using a field mask. This practice is especially recommended for unused quota
+   * information (the `items.quotas` field). To exclude one or more fields, set your request's
+   * `fields` query parameter to only include the fields you need. For example, to only include the
+   * `id` and `selfLink` fields, add the query parameter `?fields=id,selfLink` to your request.
+   *
+   * <p>This method fails if the quota information is unavailable for the region and if the
+   * organization policy constraint compute.requireBasicQuotaInResponse is enforced. This
+   * constraint, when enforced, disables the fail-open behaviour when quota information (the
+   * `items.quotas` field) is unavailable for the region. It is recommended to use the default
+   * setting for the constraint unless your application requires the fail-closed behaviour for this
+   * method.
    *
    * <p>Sample code:
    *

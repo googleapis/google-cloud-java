@@ -1,0 +1,27 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.locationfinder.v1",
+  "libraryPackage": "com.google.cloud.locationfinder.v1",
+  "services": {
+    "CloudLocationFinder": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CloudLocationFinderClient",
+          "rpcs": {
+            "GetCloudLocation": {
+              "methods": ["getCloudLocation", "getCloudLocation", "getCloudLocation", "getCloudLocationCallable"]
+            },
+            "ListCloudLocations": {
+              "methods": ["listCloudLocations", "listCloudLocations", "listCloudLocations", "listCloudLocationsPagedCallable", "listCloudLocationsCallable"]
+            },
+            "SearchCloudLocations": {
+              "methods": ["searchCloudLocations", "searchCloudLocations", "searchCloudLocations", "searchCloudLocations", "searchCloudLocations", "searchCloudLocationsPagedCallable", "searchCloudLocationsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * stores for a merchant.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/lfp/v1beta/lfpstore.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class LfpStoreServiceGrpc {
 
@@ -488,8 +485,9 @@ public final class LfpStoreServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.lfp.v1beta.LfpStore getLfpStore(
-        com.google.shopping.merchant.lfp.v1beta.GetLfpStoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.lfp.v1beta.GetLfpStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetLfpStoreMethod(), getCallOptions(), request);
     }
 
@@ -502,8 +500,9 @@ public final class LfpStoreServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.lfp.v1beta.LfpStore insertLfpStore(
-        com.google.shopping.merchant.lfp.v1beta.InsertLfpStoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.lfp.v1beta.InsertLfpStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getInsertLfpStoreMethod(), getCallOptions(), request);
     }
 
@@ -515,8 +514,9 @@ public final class LfpStoreServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteLfpStore(
-        com.google.shopping.merchant.lfp.v1beta.DeleteLfpStoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.lfp.v1beta.DeleteLfpStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteLfpStoreMethod(), getCallOptions(), request);
     }
 
@@ -529,8 +529,9 @@ public final class LfpStoreServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.lfp.v1beta.ListLfpStoresResponse listLfpStores(
-        com.google.shopping.merchant.lfp.v1beta.ListLfpStoresRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.lfp.v1beta.ListLfpStoresRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListLfpStoresMethod(), getCallOptions(), request);
     }
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -212,15 +212,26 @@ public class MemorystoreClientTest {
             .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
             .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
             .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
             .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
             .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
             .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .setBackupCollection(
                 BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
                     .toString())
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -282,15 +293,26 @@ public class MemorystoreClientTest {
             .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
             .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
             .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
             .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
             .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
             .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .setBackupCollection(
                 BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
                     .toString())
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -352,15 +374,26 @@ public class MemorystoreClientTest {
             .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
             .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
             .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
             .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
             .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
             .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .setBackupCollection(
                 BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
                     .toString())
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -431,15 +464,26 @@ public class MemorystoreClientTest {
             .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
             .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
             .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
             .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
             .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
             .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .setBackupCollection(
                 BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
                     .toString())
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -510,15 +554,26 @@ public class MemorystoreClientTest {
             .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
             .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
             .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
             .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
             .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
             .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .setBackupCollection(
                 BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
                     .toString())
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -548,15 +603,26 @@ public class MemorystoreClientTest {
             .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
             .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
             .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
             .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
             .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
             .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .setBackupCollection(
                 BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
                     .toString())
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -606,16 +672,27 @@ public class MemorystoreClientTest {
               .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
               .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
               .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+              .setSimulateMaintenanceEvent(true)
               .setOndemandMaintenance(true)
+              .setSatisfiesPzs(true)
+              .setSatisfiesPzi(true)
               .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
               .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
               .setCrossInstanceReplicationConfig(
                   CrossInstanceReplicationConfig.newBuilder().build())
               .setAsyncInstanceEndpointsDeletionEnabled(true)
+              .setKmsKey("kmsKey-1127483058")
+              .setEncryptionInfo(EncryptionInfo.newBuilder().build())
               .setBackupCollection(
                   BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
                       .toString())
               .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+              .setMaintenanceVersion("maintenanceVersion1355658821")
+              .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+              .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+              .setAllowFewerZonesDeployment(true)
+              .setServerCaPool("serverCaPool1433802429")
+              .setRotateServerCertificate(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateInstanceAsync(instance, updateMask).get();
@@ -799,6 +876,101 @@ public class MemorystoreClientTest {
   }
 
   @Test
+  public void getSharedRegionalCertificateAuthorityTest() throws Exception {
+    SharedRegionalCertificateAuthority expectedResponse =
+        SharedRegionalCertificateAuthority.newBuilder()
+            .setName(
+                SharedRegionalCertificateAuthorityName.of("[PROJECT]", "[LOCATION]").toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SharedRegionalCertificateAuthorityName name =
+        SharedRegionalCertificateAuthorityName.of("[PROJECT]", "[LOCATION]");
+
+    SharedRegionalCertificateAuthority actualResponse =
+        client.getSharedRegionalCertificateAuthority(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSharedRegionalCertificateAuthorityExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SharedRegionalCertificateAuthorityName name =
+          SharedRegionalCertificateAuthorityName.of("[PROJECT]", "[LOCATION]");
+      client.getSharedRegionalCertificateAuthority(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSharedRegionalCertificateAuthorityTest2() throws Exception {
+    SharedRegionalCertificateAuthority expectedResponse =
+        SharedRegionalCertificateAuthority.newBuilder()
+            .setName(
+                SharedRegionalCertificateAuthorityName.of("[PROJECT]", "[LOCATION]").toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-693/locations/location-693/sharedRegionalCertificateAuthority";
+
+    SharedRegionalCertificateAuthority actualResponse =
+        client.getSharedRegionalCertificateAuthority(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSharedRegionalCertificateAuthorityExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-693/locations/location-693/sharedRegionalCertificateAuthority";
+      client.getSharedRegionalCertificateAuthority(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void rescheduleMaintenanceTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
@@ -820,15 +992,26 @@ public class MemorystoreClientTest {
             .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
             .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
             .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
             .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
             .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
             .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .setBackupCollection(
                 BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
                     .toString())
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -902,15 +1085,26 @@ public class MemorystoreClientTest {
             .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
             .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
             .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
             .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
             .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
             .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .setBackupCollection(
                 BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
                     .toString())
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1074,6 +1268,9 @@ public class MemorystoreClientTest {
             .setKmsKey("kmsKey-1127483058")
             .setUid("uid115792")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setTotalBackupSizeBytes(-665105137)
+            .setTotalBackupCount(775900525)
+            .setLastBackupTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1127,6 +1324,9 @@ public class MemorystoreClientTest {
             .setKmsKey("kmsKey-1127483058")
             .setUid("uid115792")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setTotalBackupSizeBytes(-665105137)
+            .setTotalBackupCount(775900525)
+            .setLastBackupTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1288,6 +1488,7 @@ public class MemorystoreClientTest {
             .addAllBackupFiles(new ArrayList<BackupFile>())
             .setReplicaCount(564075208)
             .setShardCount(-495377042)
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .setUid("uid115792")
             .build();
     mockService.addResponse(expectedResponse);
@@ -1344,6 +1545,7 @@ public class MemorystoreClientTest {
             .addAllBackupFiles(new ArrayList<BackupFile>())
             .setReplicaCount(564075208)
             .setShardCount(-495377042)
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .setUid("uid115792")
             .build();
     mockService.addResponse(expectedResponse);
@@ -1494,6 +1696,7 @@ public class MemorystoreClientTest {
             .addAllBackupFiles(new ArrayList<BackupFile>())
             .setReplicaCount(564075208)
             .setShardCount(-495377042)
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .setUid("uid115792")
             .build();
     Operation resultOperation =
@@ -1571,15 +1774,26 @@ public class MemorystoreClientTest {
             .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
             .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
             .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
             .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
             .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
             .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .setBackupCollection(
                 BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
                     .toString())
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1646,15 +1860,26 @@ public class MemorystoreClientTest {
             .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
             .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
             .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
             .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
             .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
             .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .setBackupCollection(
                 BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
                     .toString())
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

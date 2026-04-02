@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -184,6 +184,16 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> BidiStreamingAnalyzeContent</td>
+ *      <td><p> Bidirectional endless streaming version of [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent].</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> bidiStreamingAnalyzeContentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> SuggestArticles</td>
  *      <td><p> Gets suggested articles for a participant based on specific historical messages.
  * <p>  Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion based on the provided conversation context in the real time.</td>
@@ -290,7 +300,10 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name] field:
+ * <p> &#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1310,6 +1323,7 @@ public class ParticipantsClient implements BackgroundResource {
    *           .setCxCurrentPage("cxCurrentPage1596907507")
    *           .setEnableExtendedStreaming(true)
    *           .setEnablePartialAutomatedAgentReply(true)
+   *           .setOutputMultipleUtterances(true)
    *           .setEnableDebuggingInfo(true)
    *           .build();
    *   bidiStream.send(request);
@@ -1323,6 +1337,37 @@ public class ParticipantsClient implements BackgroundResource {
           StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
       streamingAnalyzeContentCallable() {
     return stub.streamingAnalyzeContentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Bidirectional endless streaming version of
+   * [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
+   *   BidiStream<BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+   *       bidiStream = participantsClient.bidiStreamingAnalyzeContentCallable().call();
+   *   BidiStreamingAnalyzeContentRequest request =
+   *       BidiStreamingAnalyzeContentRequest.newBuilder().build();
+   *   bidiStream.send(request);
+   *   for (BidiStreamingAnalyzeContentResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final BidiStreamingCallable<
+          BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+      bidiStreamingAnalyzeContentCallable() {
+    return stub.bidiStreamingAnalyzeContentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2086,6 +2131,19 @@ public class ParticipantsClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name] field:
+   *
+   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -2118,6 +2176,19 @@ public class ParticipantsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name] field:
+   *
+   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -2152,6 +2223,19 @@ public class ParticipantsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name] field:
+   *
+   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *

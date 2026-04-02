@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -567,6 +567,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetParticipantRequest, Participant> getParticipantTransportSettings =
         HttpJsonCallSettings.<GetParticipantRequest, Participant>newBuilder()
@@ -578,6 +579,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListParticipantsRequest, ListParticipantsResponse>
         listParticipantsTransportSettings =
@@ -590,6 +592,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateParticipantRequest, Participant> updateParticipantTransportSettings =
         HttpJsonCallSettings.<UpdateParticipantRequest, Participant>newBuilder()
@@ -614,6 +617,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                       builder.add("participant", String.valueOf(request.getParticipant()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParticipant())
                 .build();
     HttpJsonCallSettings<SuggestArticlesRequest, SuggestArticlesResponse>
         suggestArticlesTransportSettings =
@@ -626,6 +630,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<SuggestFaqAnswersRequest, SuggestFaqAnswersResponse>
         suggestFaqAnswersTransportSettings =
@@ -638,6 +643,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
         suggestSmartRepliesTransportSettings =
@@ -651,6 +657,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
         suggestKnowledgeAssistTransportSettings =
@@ -664,6 +671,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

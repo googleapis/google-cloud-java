@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -103,7 +103,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteUser</td>
- *      <td><p> Deletes a Merchant Center account user. Executing this method requires admin access. The user to be deleted can't be the last admin user of that account. Also a user is protected from deletion if it is managed by Business Manager"</td>
+ *      <td><p> Deletes a Merchant Center account user. Executing this method requires admin access. The user to be deleted can't be the last admin user of that account.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -155,6 +155,25 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> listUsersPagedCallable()
  *           <li><p> listUsersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> VerifySelf</td>
+ *      <td><p> Updates the user that is represented by the caller from pending to verified.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> verifySelf(VerifySelfRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> verifySelf(AccountName account)
+ *           <li><p> verifySelf(String account)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> verifySelfCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -507,8 +526,7 @@ public class UserServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a Merchant Center account user. Executing this method requires admin access. The user
-   * to be deleted can't be the last admin user of that account. Also a user is protected from
-   * deletion if it is managed by Business Manager"
+   * to be deleted can't be the last admin user of that account.
    *
    * <p>Sample code:
    *
@@ -539,8 +557,7 @@ public class UserServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a Merchant Center account user. Executing this method requires admin access. The user
-   * to be deleted can't be the last admin user of that account. Also a user is protected from
-   * deletion if it is managed by Business Manager"
+   * to be deleted can't be the last admin user of that account.
    *
    * <p>Sample code:
    *
@@ -570,8 +587,7 @@ public class UserServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a Merchant Center account user. Executing this method requires admin access. The user
-   * to be deleted can't be the last admin user of that account. Also a user is protected from
-   * deletion if it is managed by Business Manager"
+   * to be deleted can't be the last admin user of that account.
    *
    * <p>Sample code:
    *
@@ -600,8 +616,7 @@ public class UserServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a Merchant Center account user. Executing this method requires admin access. The user
-   * to be deleted can't be the last admin user of that account. Also a user is protected from
-   * deletion if it is managed by Business Manager"
+   * to be deleted can't be the last admin user of that account.
    *
    * <p>Sample code:
    *
@@ -873,6 +888,114 @@ public class UserServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ListUsersRequest, ListUsersResponse> listUsersCallable() {
     return stub.listUsersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the user that is represented by the caller from pending to verified.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (UserServiceClient userServiceClient = UserServiceClient.create()) {
+   *   AccountName account = AccountName.of("[ACCOUNT]");
+   *   User response = userServiceClient.verifySelf(account);
+   * }
+   * }</pre>
+   *
+   * @param account Required. The name of the account under which the caller is a user. Format:
+   *     `accounts/{account}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final User verifySelf(AccountName account) {
+    VerifySelfRequest request =
+        VerifySelfRequest.newBuilder()
+            .setAccount(account == null ? null : account.toString())
+            .build();
+    return verifySelf(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the user that is represented by the caller from pending to verified.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (UserServiceClient userServiceClient = UserServiceClient.create()) {
+   *   String account = AccountName.of("[ACCOUNT]").toString();
+   *   User response = userServiceClient.verifySelf(account);
+   * }
+   * }</pre>
+   *
+   * @param account Required. The name of the account under which the caller is a user. Format:
+   *     `accounts/{account}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final User verifySelf(String account) {
+    VerifySelfRequest request = VerifySelfRequest.newBuilder().setAccount(account).build();
+    return verifySelf(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the user that is represented by the caller from pending to verified.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (UserServiceClient userServiceClient = UserServiceClient.create()) {
+   *   VerifySelfRequest request =
+   *       VerifySelfRequest.newBuilder().setAccount(AccountName.of("[ACCOUNT]").toString()).build();
+   *   User response = userServiceClient.verifySelf(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final User verifySelf(VerifySelfRequest request) {
+    return verifySelfCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the user that is represented by the caller from pending to verified.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (UserServiceClient userServiceClient = UserServiceClient.create()) {
+   *   VerifySelfRequest request =
+   *       VerifySelfRequest.newBuilder().setAccount(AccountName.of("[ACCOUNT]").toString()).build();
+   *   ApiFuture<User> future = userServiceClient.verifySelfCallable().futureCall(request);
+   *   // Do something.
+   *   User response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<VerifySelfRequest, User> verifySelfCallable() {
+    return stub.verifySelfCallable();
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,11 +28,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * key. You can register up to 20 API keys per project.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments =
-        "Source:"
-            + " google/cloud/recommendationengine/v1beta1/prediction_apikey_registry_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class PredictionApiKeyRegistryGrpc {
 
@@ -468,8 +463,9 @@ public final class PredictionApiKeyRegistryGrpc {
     public com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration
         createPredictionApiKeyRegistration(
             com.google.cloud.recommendationengine.v1beta1.CreatePredictionApiKeyRegistrationRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreatePredictionApiKeyRegistrationMethod(), getCallOptions(), request);
     }
 
@@ -483,8 +479,9 @@ public final class PredictionApiKeyRegistryGrpc {
     public com.google.cloud.recommendationengine.v1beta1.ListPredictionApiKeyRegistrationsResponse
         listPredictionApiKeyRegistrations(
             com.google.cloud.recommendationengine.v1beta1.ListPredictionApiKeyRegistrationsRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPredictionApiKeyRegistrationsMethod(), getCallOptions(), request);
     }
 
@@ -497,8 +494,9 @@ public final class PredictionApiKeyRegistryGrpc {
      */
     public com.google.protobuf.Empty deletePredictionApiKeyRegistration(
         com.google.cloud.recommendationengine.v1beta1.DeletePredictionApiKeyRegistrationRequest
-            request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePredictionApiKeyRegistrationMethod(), getCallOptions(), request);
     }
   }

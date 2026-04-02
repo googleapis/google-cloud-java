@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for grounded generation.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1beta/grounded_generation_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class GroundedGenerationServiceGrpc {
 
@@ -437,8 +434,9 @@ public final class GroundedGenerationServiceGrpc {
      */
     public com.google.cloud.discoveryengine.v1beta.GenerateGroundedContentResponse
         generateGroundedContent(
-            com.google.cloud.discoveryengine.v1beta.GenerateGroundedContentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.discoveryengine.v1beta.GenerateGroundedContentRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateGroundedContentMethod(), getCallOptions(), request);
     }
 
@@ -450,8 +448,9 @@ public final class GroundedGenerationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse checkGrounding(
-        com.google.cloud.discoveryengine.v1beta.CheckGroundingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.CheckGroundingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCheckGroundingMethod(), getCallOptions(), request);
     }
   }

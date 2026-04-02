@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -226,6 +226,7 @@ public class AlloyDBAdminClientTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     mockAlloyDBAdmin.addResponse(expectedResponse);
 
@@ -295,6 +296,7 @@ public class AlloyDBAdminClientTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     mockAlloyDBAdmin.addResponse(expectedResponse);
 
@@ -364,6 +366,7 @@ public class AlloyDBAdminClientTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -447,6 +450,7 @@ public class AlloyDBAdminClientTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -530,6 +534,7 @@ public class AlloyDBAdminClientTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1032,6 +1037,7 @@ public class AlloyDBAdminClientTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1109,6 +1115,7 @@ public class AlloyDBAdminClientTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1186,6 +1193,7 @@ public class AlloyDBAdminClientTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1263,6 +1271,7 @@ public class AlloyDBAdminClientTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1340,6 +1349,7 @@ public class AlloyDBAdminClientTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1438,6 +1448,7 @@ public class AlloyDBAdminClientTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1522,6 +1533,7 @@ public class AlloyDBAdminClientTest {
             .setTrialMetadata(Cluster.TrialMetadata.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setDataplexConfig(Cluster.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4143,6 +4155,108 @@ public class AlloyDBAdminClientTest {
     try {
       String parent = "parent-995424086";
       client.listDatabases(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createDatabaseTest() throws Exception {
+    Database expectedResponse =
+        Database.newBuilder()
+            .setName(
+                DatabaseName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[DATABASE]").toString())
+            .setCharset("charset739074380")
+            .setCollation("collation1880293257")
+            .setCharacterType("characterType-1789918717")
+            .setIsTemplate(true)
+            .setDatabaseTemplate("databaseTemplate788436757")
+            .setIsTemplateDatabase(true)
+            .build();
+    mockAlloyDBAdmin.addResponse(expectedResponse);
+
+    ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+    Database database = Database.newBuilder().build();
+    String databaseId = "databaseId1688905718";
+
+    Database actualResponse = client.createDatabase(parent, database, databaseId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlloyDBAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDatabaseRequest actualRequest = ((CreateDatabaseRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(database, actualRequest.getDatabase());
+    Assert.assertEquals(databaseId, actualRequest.getDatabaseId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDatabaseExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlloyDBAdmin.addException(exception);
+
+    try {
+      ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      Database database = Database.newBuilder().build();
+      String databaseId = "databaseId1688905718";
+      client.createDatabase(parent, database, databaseId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createDatabaseTest2() throws Exception {
+    Database expectedResponse =
+        Database.newBuilder()
+            .setName(
+                DatabaseName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[DATABASE]").toString())
+            .setCharset("charset739074380")
+            .setCollation("collation1880293257")
+            .setCharacterType("characterType-1789918717")
+            .setIsTemplate(true)
+            .setDatabaseTemplate("databaseTemplate788436757")
+            .setIsTemplateDatabase(true)
+            .build();
+    mockAlloyDBAdmin.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    Database database = Database.newBuilder().build();
+    String databaseId = "databaseId1688905718";
+
+    Database actualResponse = client.createDatabase(parent, database, databaseId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlloyDBAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDatabaseRequest actualRequest = ((CreateDatabaseRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(database, actualRequest.getDatabase());
+    Assert.assertEquals(databaseId, actualRequest.getDatabaseId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDatabaseExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlloyDBAdmin.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Database database = Database.newBuilder().build();
+      String databaseId = "databaseId1688905718";
+      client.createDatabase(parent, database, databaseId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

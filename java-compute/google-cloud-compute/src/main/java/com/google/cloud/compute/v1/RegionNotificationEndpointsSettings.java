@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.RegionNotificationEndpointsClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.RegionNotificationEndpointsClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -82,8 +83,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -114,6 +115,15 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public class RegionNotificationEndpointsSettings
     extends ClientSettings<RegionNotificationEndpointsSettings> {
+
+  /** Returns the object with the settings used for calls to aggregatedList. */
+  public PagedCallSettings<
+          AggregatedListRegionNotificationEndpointsRequest,
+          NotificationEndpointAggregatedList,
+          AggregatedListPagedResponse>
+      aggregatedListSettings() {
+    return ((RegionNotificationEndpointsStubSettings) getStubSettings()).aggregatedListSettings();
+  }
 
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteRegionNotificationEndpointRequest, Operation> deleteSettings() {
@@ -148,6 +158,14 @@ public class RegionNotificationEndpointsSettings
           ListRegionNotificationEndpointsRequest, NotificationEndpointList, ListPagedResponse>
       listSettings() {
     return ((RegionNotificationEndpointsStubSettings) getStubSettings()).listSettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<
+          TestIamPermissionsRegionNotificationEndpointRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((RegionNotificationEndpointsStubSettings) getStubSettings())
+        .testIamPermissionsSettings();
   }
 
   public static final RegionNotificationEndpointsSettings create(
@@ -248,6 +266,15 @@ public class RegionNotificationEndpointsSettings
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to aggregatedList. */
+    public PagedCallSettings.Builder<
+            AggregatedListRegionNotificationEndpointsRequest,
+            NotificationEndpointAggregatedList,
+            AggregatedListPagedResponse>
+        aggregatedListSettings() {
+      return getStubSettingsBuilder().aggregatedListSettings();
+    }
+
     /** Returns the builder for the settings used for calls to delete. */
     public UnaryCallSettings.Builder<DeleteRegionNotificationEndpointRequest, Operation>
         deleteSettings() {
@@ -285,6 +312,13 @@ public class RegionNotificationEndpointsSettings
             ListRegionNotificationEndpointsRequest, NotificationEndpointList, ListPagedResponse>
         listSettings() {
       return getStubSettingsBuilder().listSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsRegionNotificationEndpointRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

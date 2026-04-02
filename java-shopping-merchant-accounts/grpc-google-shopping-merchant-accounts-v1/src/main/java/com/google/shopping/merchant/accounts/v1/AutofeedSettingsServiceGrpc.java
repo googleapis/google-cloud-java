@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [autofeed](https://support.google.com/merchants/answer/7538732) setting.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/accounts/v1/autofeedsettings.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AutofeedSettingsServiceGrpc {
 
@@ -338,8 +335,9 @@ public final class AutofeedSettingsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.AutofeedSettings getAutofeedSettings(
-        com.google.shopping.merchant.accounts.v1.GetAutofeedSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.GetAutofeedSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAutofeedSettingsMethod(), getCallOptions(), request);
     }
 
@@ -351,8 +349,9 @@ public final class AutofeedSettingsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.AutofeedSettings updateAutofeedSettings(
-        com.google.shopping.merchant.accounts.v1.UpdateAutofeedSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.UpdateAutofeedSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAutofeedSettingsMethod(), getCallOptions(), request);
     }
   }

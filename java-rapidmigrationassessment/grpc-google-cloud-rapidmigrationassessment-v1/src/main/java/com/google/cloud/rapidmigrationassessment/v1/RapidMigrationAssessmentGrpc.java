@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service describing handlers for resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/rapidmigrationassessment/v1/rapidmigrationassessment.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class RapidMigrationAssessmentGrpc {
 
@@ -955,8 +952,9 @@ public final class RapidMigrationAssessmentGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createCollector(
-        com.google.cloud.rapidmigrationassessment.v1.CreateCollectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.rapidmigrationassessment.v1.CreateCollectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCollectorMethod(), getCallOptions(), request);
     }
 
@@ -968,8 +966,9 @@ public final class RapidMigrationAssessmentGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAnnotation(
-        com.google.cloud.rapidmigrationassessment.v1.CreateAnnotationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.rapidmigrationassessment.v1.CreateAnnotationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAnnotationMethod(), getCallOptions(), request);
     }
 
@@ -981,8 +980,9 @@ public final class RapidMigrationAssessmentGrpc {
      * </pre>
      */
     public com.google.cloud.rapidmigrationassessment.v1.Annotation getAnnotation(
-        com.google.cloud.rapidmigrationassessment.v1.GetAnnotationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.rapidmigrationassessment.v1.GetAnnotationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAnnotationMethod(), getCallOptions(), request);
     }
 
@@ -994,8 +994,9 @@ public final class RapidMigrationAssessmentGrpc {
      * </pre>
      */
     public com.google.cloud.rapidmigrationassessment.v1.ListCollectorsResponse listCollectors(
-        com.google.cloud.rapidmigrationassessment.v1.ListCollectorsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.rapidmigrationassessment.v1.ListCollectorsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCollectorsMethod(), getCallOptions(), request);
     }
 
@@ -1007,8 +1008,9 @@ public final class RapidMigrationAssessmentGrpc {
      * </pre>
      */
     public com.google.cloud.rapidmigrationassessment.v1.Collector getCollector(
-        com.google.cloud.rapidmigrationassessment.v1.GetCollectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.rapidmigrationassessment.v1.GetCollectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCollectorMethod(), getCallOptions(), request);
     }
 
@@ -1020,8 +1022,9 @@ public final class RapidMigrationAssessmentGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateCollector(
-        com.google.cloud.rapidmigrationassessment.v1.UpdateCollectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.rapidmigrationassessment.v1.UpdateCollectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCollectorMethod(), getCallOptions(), request);
     }
 
@@ -1034,8 +1037,9 @@ public final class RapidMigrationAssessmentGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteCollector(
-        com.google.cloud.rapidmigrationassessment.v1.DeleteCollectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.rapidmigrationassessment.v1.DeleteCollectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCollectorMethod(), getCallOptions(), request);
     }
 
@@ -1047,8 +1051,9 @@ public final class RapidMigrationAssessmentGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation resumeCollector(
-        com.google.cloud.rapidmigrationassessment.v1.ResumeCollectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.rapidmigrationassessment.v1.ResumeCollectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResumeCollectorMethod(), getCallOptions(), request);
     }
 
@@ -1060,8 +1065,9 @@ public final class RapidMigrationAssessmentGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation registerCollector(
-        com.google.cloud.rapidmigrationassessment.v1.RegisterCollectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.rapidmigrationassessment.v1.RegisterCollectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRegisterCollectorMethod(), getCallOptions(), request);
     }
 
@@ -1073,8 +1079,9 @@ public final class RapidMigrationAssessmentGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation pauseCollector(
-        com.google.cloud.rapidmigrationassessment.v1.PauseCollectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.rapidmigrationassessment.v1.PauseCollectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPauseCollectorMethod(), getCallOptions(), request);
     }
   }

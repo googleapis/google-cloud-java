@@ -1,5 +1,74 @@
 # Changelog
 
+## 0.47.0 (None)
+
+* No change
+
+
+## 0.46.0 (2026-03-11)
+
+* No change
+
+
+## 0.45.0 (2026-02-25)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.57.0 ([#11956](https://github.com/googleapis/google-cloud-java/issues/11956)) ([62b97e1](https://github.com/googleapis/google-cloud-java/commit/62b97e108eee0f8649c53cef400774f4fca4ffab))
+
+
+## 0.42.0 (2026-01-29)
+
+### Features
+
+* Add support for AlloyDB backup and restore ([d7a49aa](https://github.com/googleapis/google-cloud-java/commit/d7a49aa9502012df1209b55ec741b1d4ac639361))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.56.0 ([#11879](https://github.com/googleapis/google-cloud-java/issues/11879)) ([ac1f018](https://github.com/googleapis/google-cloud-java/commit/ac1f0182ac5b405ca164ac867c8c042322736bef))
+
+
+## 0.41.0 (2026-01-15)
+
+### Features
+
+* A new service `BackupDrProtectionSummary` is added ([59c954c](https://github.com/googleapis/google-cloud-java/commit/59c954c089f0379e716236aaa279207820a7dfe4))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.55.1 ([#11863](https://github.com/googleapis/google-cloud-java/issues/11863)) ([50cda6e](https://github.com/googleapis/google-cloud-java/commit/50cda6ec7be56bf1900737a6aaf12fc494be20c2))
+
+
+## 0.40.0 (2025-12-16)
+
+### Features
+
+* Adding new fields for CMEK and Retention Inheritance features ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.54.2 ([#11819](https://github.com/googleapis/google-cloud-java/issues/11819)) ([f32924a](https://github.com/googleapis/google-cloud-java/commit/f32924af0899a0b34646e88ffa8c527163b3bb24))
+
+
+## 0.37.0 (2025-10-21)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.53.0 ([#11776](https://github.com/googleapis/google-cloud-java/issues/11776)) ([e4a2892](https://github.com/googleapis/google-cloud-java/commit/e4a2892c8f7d51e3c3bec551f922b42f70a880d8))
+
+
+## 0.36.0 (2025-10-13)
+
+* No change
+
+
+## 0.35.0 (2025-10-07)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.52.3 ([#11755](https://github.com/googleapis/google-cloud-java/issues/11755)) ([b117bc3](https://github.com/googleapis/google-cloud-java/commit/b117bc3d8d04ccc3c1f5586b73e1718ff46b23e6))
+
+
 ## 0.34.0 (2025-09-22)
 
 ### Dependencies
