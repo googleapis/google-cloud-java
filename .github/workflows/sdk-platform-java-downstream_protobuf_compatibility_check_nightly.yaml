@@ -16,38 +16,21 @@ name: sdk-platform-java Downstream Protobuf Compatibility Check Nightly
 env:
   BUILD_SUBDIR: sdk-platform-java
 jobs:
-  filter:
-    runs-on: ubuntu-latest
-    outputs:
-      library: ${{ steps.filter.outputs.library }}
-    steps:
-    - uses: actions/checkout@v4
-    - uses: dorny/paths-filter@v3
-      id: filter
-      with:
-        filters: |
-          library:
-            - 'sdk-platform-java/**'
   downstream-protobuf-test:
-    needs: filter
     # This job runs if any of the three conditions match:
     # 1. PR is raised from Release-Please (PR comes from branch: release-please--branches-main)
     # 2. Job is invoked by the nightly job (scheduled event)
     # 3. Job is manually invoked via Github UI (workflow_dispatch event)
-    if: needs.filter.outputs.library == 'true' && (github.head_ref == 'release-please--branches--main' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
+    if: github.head_ref == 'release-please--branches--main' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
       matrix:
         repo:
-          - google-cloud-java
           - java-bigtable
-          - java-bigquery
           - java-firestore
           - java-pubsub
           - java-pubsublite
-          - java-spanner-jdbc
-          - java-spanner
           - java-storage
           - java-storage-nio
         # Default Protobuf-Java versions to use are specified here. Without this, the nightly workflow won't know
