@@ -91,7 +91,7 @@ public class TracedUnaryCallable<RequestT, ResponseT> extends UnaryCallable<Requ
       tracer =
           tracerFactory.newTracer(
               context.getTracer(),
-              apiTracerContext.withResourceNameExtraction(request, resourceNameExtractor));
+              apiTracerContext.withResourceNameExtractor(request, resourceNameExtractor));
     } else {
       tracer = tracerFactory.newTracer(context.getTracer(), spanName, OperationType.Unary);
     }

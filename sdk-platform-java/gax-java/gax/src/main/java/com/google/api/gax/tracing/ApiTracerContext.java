@@ -37,6 +37,7 @@ import com.google.auto.value.AutoValue;
 import com.google.common.base.Strings;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Supplier;
 import javax.annotation.Nullable;
 
 /**
@@ -164,9 +165,8 @@ public abstract class ApiTracerContext {
   @Nullable
   public abstract String urlDomain();
 
-  @InternalApi
   @Nullable
-  protected abstract java.util.function.Supplier<String> destinationResourceIdSupplier();
+  protected abstract Supplier<String> destinationResourceIdSupplier();
 
   /**
    * The destination resource id of the request (e.g.
@@ -174,7 +174,7 @@ public abstract class ApiTracerContext {
    */
   @Nullable
   public String destinationResourceId() {
-    java.util.function.Supplier<String> supplier = destinationResourceIdSupplier();
+    Supplier<String> supplier = destinationResourceIdSupplier();
     if (supplier == null) {
       return null;
     }
@@ -188,7 +188,7 @@ public abstract class ApiTracerContext {
     return "//" + urlDomain() + "/" + resourceId;
   }
 
-  public <RequestT> ApiTracerContext withResourceNameExtraction(
+  <RequestT> ApiTracerContext withResourceNameExtractor(
       @Nullable RequestT request,
       @Nullable com.google.api.gax.rpc.ResourceNameExtractor<RequestT> extractor) {
     if (extractor == null || request == null) {
@@ -361,7 +361,7 @@ public abstract class ApiTracerContext {
     public abstract Builder setUrlDomain(@Nullable String urlDomain);
 
     public abstract Builder setDestinationResourceIdSupplier(
-        @Nullable java.util.function.Supplier<String> destinationResourceIdSupplier);
+        @Nullable Supplier<String> destinationResourceIdSupplier);
 
     public abstract ApiTracerContext build();
   }

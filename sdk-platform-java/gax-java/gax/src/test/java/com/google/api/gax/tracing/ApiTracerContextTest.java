@@ -461,25 +461,25 @@ class ApiTracerContextTest {
   }
 
   @Test
-  void testWithResourceNameExtraction_nullExtractor() {
+  void testWithResourceNameExtractor_nullExtractor() {
     ApiTracerContext context = ApiTracerContext.empty();
-    ApiTracerContext result = context.withResourceNameExtraction("request", null);
+    ApiTracerContext result = context.withResourceNameExtractor("request", null);
     assertThat(result).isSameInstanceAs(context);
   }
 
   @Test
-  void testWithResourceNameExtraction_extractorReturnsNull() {
+  void testWithResourceNameExtractor_extractorReturnsNull() {
     ApiTracerContext context = ApiTracerContext.empty();
-    ApiTracerContext result = context.withResourceNameExtraction("request", req -> null);
+    ApiTracerContext result = context.withResourceNameExtractor("request", req -> null);
     assertThat(result.destinationResourceId()).isNull();
   }
 
   @Test
-  void testWithResourceNameExtraction_lazyExtraction() {
+  void testWithResourceNameExtraction_lazyExtractor() {
     ApiTracerContext context = ApiTracerContext.empty();
     boolean[] extracted = {false};
     ApiTracerContext result =
-        context.withResourceNameExtraction(
+        context.withResourceNameExtractor(
             "request",
             req -> {
               extracted[0] = true;
@@ -492,10 +492,10 @@ class ApiTracerContextTest {
   }
 
   @Test
-  void testWithResourceNameExtraction_extractorThrowsException() {
+  void testWithResourceNameExtractor_extractorThrowsException() {
     ApiTracerContext context = ApiTracerContext.empty();
     ApiTracerContext result =
-        context.withResourceNameExtraction(
+        context.withResourceNameExtractor(
             "request",
             req -> {
               throw new RuntimeException("Intentional mock extraction failure");
@@ -522,7 +522,7 @@ class ApiTracerContextTest {
     boolean[] extracted = {false};
     ApiTracerContext context2 =
         ApiTracerContext.empty()
-            .withResourceNameExtraction(
+            .withResourceNameExtractor(
                 "request",
                 req -> {
                   extracted[0] = true;
@@ -540,7 +540,7 @@ class ApiTracerContextTest {
     ApiTracerContext context = ApiTracerContext.empty();
     int[] counter = {0};
     ApiTracerContext result =
-        context.withResourceNameExtraction(
+        context.withResourceNameExtractor(
             "request",
             req -> {
               counter[0]++;
