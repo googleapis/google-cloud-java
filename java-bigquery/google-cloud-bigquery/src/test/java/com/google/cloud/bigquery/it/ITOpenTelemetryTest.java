@@ -306,9 +306,6 @@ public class ITOpenTelemetryTest {
         BigQueryTelemetryTracer.BQ_GCP_CLIENT_REPO,
         attrs.get(BigQueryTelemetryTracer.GCP_CLIENT_REPO));
     assertEquals(
-        BigQueryTelemetryTracer.BQ_GCP_CLIENT_LANGUAGE,
-        attrs.get(BigQueryTelemetryTracer.GCP_CLIENT_LANGUAGE));
-    assertEquals(
         BigQueryTelemetryTracer.BQ_GCP_CLIENT_ARTIFACT,
         attrs.get(BigQueryTelemetryTracer.GCP_CLIENT_ARTIFACT));
     assertNotNull(attrs.get(BigQueryTelemetryTracer.GCP_CLIENT_VERSION));

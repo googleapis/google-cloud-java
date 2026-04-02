@@ -448,9 +448,6 @@ public class HttpTracingRequestInitializerTest {
         BigQueryTelemetryTracer.BQ_GCP_CLIENT_ARTIFACT,
         span.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_ARTIFACT));
     assertEquals(
-        BigQueryTelemetryTracer.BQ_GCP_CLIENT_LANGUAGE,
-        span.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_LANGUAGE));
-    assertEquals(
         HttpTracingRequestInitializer.HTTP_RPC_SYSTEM_NAME,
         span.getAttributes().get(BigQueryTelemetryTracer.RPC_SYSTEM_NAME));
     assertEquals(

@@ -34,7 +34,6 @@ public final class BigQueryTelemetryTracer {
   public static final String BQ_GCP_CLIENT_SERVICE = "bigquery";
   public static final String BQ_GCP_CLIENT_REPO = "googleapis/google-cloud-java";
   public static final String BQ_GCP_CLIENT_ARTIFACT = "google-cloud-bigquery";
-  public static final String BQ_GCP_CLIENT_LANGUAGE = "java";
 
   // TODO: migrate to use gax attributes keys
   // https://github.com/googleapis/google-cloud-java/issues/12099
@@ -47,8 +46,6 @@ public final class BigQueryTelemetryTracer {
       AttributeKey.stringKey("gcp.client.repo");
   public static final AttributeKey<String> GCP_CLIENT_ARTIFACT =
       AttributeKey.stringKey("gcp.client.artifact");
-  public static final AttributeKey<String> GCP_CLIENT_LANGUAGE =
-      AttributeKey.stringKey("gcp.client.language");
   public static final AttributeKey<String> GCP_RESOURCE_DESTINATION_ID =
       AttributeKey.stringKey("gcp.resource.destination.id");
   public static final AttributeKey<String> RPC_SYSTEM_NAME =
@@ -68,7 +65,6 @@ public final class BigQueryTelemetryTracer {
     span.setAttribute(GCP_CLIENT_SERVICE, BQ_GCP_CLIENT_SERVICE)
         .setAttribute(GCP_CLIENT_REPO, BQ_GCP_CLIENT_REPO)
         .setAttribute(GCP_CLIENT_ARTIFACT, BQ_GCP_CLIENT_ARTIFACT)
-        .setAttribute(GCP_CLIENT_LANGUAGE, BQ_GCP_CLIENT_LANGUAGE)
         .setAttribute(GCP_CLIENT_VERSION, Version.VERSION);
   }
 
