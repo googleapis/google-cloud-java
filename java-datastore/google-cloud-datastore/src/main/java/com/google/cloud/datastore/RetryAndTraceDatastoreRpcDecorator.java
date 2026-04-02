@@ -205,8 +205,7 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
     String operationStatus = StatusCode.Code.UNKNOWN.toString();
     try (TraceUtil.Scope ignored = span.makeCurrent()) {
       Callable<O> callable =
-          TelemetryUtils.attemptMetricsCallable(
-              block, metricsRecorder, datastoreOptions, methodName);
+          TelemetryUtils.attemptMetricsCallable(block, metricsRecorder, methodName);
       O result =
           RetryHelper.runWithRetries(
               callable, this.retrySettings, EXCEPTION_HANDLER, this.datastoreOptions.getClock());
@@ -218,7 +217,7 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
       throw DatastoreException.translateAndThrow(e);
     } finally {
       TelemetryUtils.recordOperationMetrics(
-          metricsRecorder, datastoreOptions, stopwatch, methodName, operationStatus);
+          metricsRecorder, stopwatch, methodName, operationStatus);
       span.end();
     }
   }

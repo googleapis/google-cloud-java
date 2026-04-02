@@ -17,10 +17,8 @@
 package com.google.cloud.datastore.telemetry;
 
 import com.google.api.core.InternalApi;
-import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.datastore.DatastoreException;
-import com.google.cloud.datastore.DatastoreOptions;
 import com.google.common.base.Stopwatch;
 import java.util.HashMap;
 import java.util.Map;
@@ -40,24 +38,15 @@ public final class TelemetryUtils {
   /**
    * Method to build a map of attributes to be used across both operation and attempt level metrics.
    *
-   * @param datastoreOptions The DatastoreOptions object.
    * @param methodName The name of the API method.
    * @param status The status of the operation or attempt.
    * @return The map of attributes.
    */
-  public static Map<String, String> buildMetricAttributes(
-      DatastoreOptions datastoreOptions, String methodName, String status) {
+  public static Map<String, String> buildMetricAttributes(String methodName, String status) {
     Map<String, String> attributes = new HashMap<>();
     attributes.put(TelemetryConstants.ATTRIBUTES_KEY_METHOD, methodName);
     attributes.put(TelemetryConstants.ATTRIBUTES_KEY_STATUS, status);
-    attributes.put(TelemetryConstants.ATTRIBUTES_KEY_PROJECT_ID, datastoreOptions.getProjectId());
-    attributes.put(TelemetryConstants.ATTRIBUTES_KEY_DATABASE_ID, datastoreOptions.getDatabaseId());
-    attributes.put(
-        TelemetryConstants.ATTRIBUTES_KEY_TRANSPORT,
-        TelemetryConstants.getTransportName(datastoreOptions.getTransportOptions()));
-    attributes.put(
-        TelemetryConstants.ATTRIBUTES_KEY_LIBRARY_VERSION,
-        GaxProperties.getLibraryVersion(DatastoreOptions.class));
+    attributes.put(TelemetryConstants.ATTRIBUTES_KEY_SERVICE, TelemetryConstants.SERVICE_VALUE);
     return attributes;
   }
 
@@ -68,19 +57,17 @@ public final class TelemetryUtils {
    * <p>Metrics are recorded for both transport types (gRPC and HTTP).
    *
    * @param metricsRecorder The metrics recorder.
-   * @param datastoreOptions The DatastoreOptions object.
    * @param operationStopwatch The stopwatch tracking the duration of the entire operation.
    * @param methodName The name of the API method.
    * @param status The final status of the operation after all retries.
    */
   public static void recordOperationMetrics(
       DatastoreMetricsRecorder metricsRecorder,
-      DatastoreOptions datastoreOptions,
       Stopwatch operationStopwatch,
       String methodName,
       String status) {
     if (methodName != null) {
-      Map<String, String> attributes = buildMetricAttributes(datastoreOptions, methodName, status);
+      Map<String, String> attributes = buildMetricAttributes(methodName, status);
       metricsRecorder.recordOperationLatency(
           operationStopwatch.elapsed(TimeUnit.MILLISECONDS), attributes);
       metricsRecorder.recordOperationCount(1, attributes);
@@ -95,16 +82,12 @@ public final class TelemetryUtils {
    *
    * @param callable The original callable to execute.
    * @param metricsRecorder The metrics recorder.
-   * @param datastoreOptions The DatastoreOptions object.
    * @param methodName The name of the API method.
    * @param <T> The return type of the callable.
    * @return A wrapped callable that includes attempt-level metrics recording.
    */
   public static <T> Callable<T> attemptMetricsCallable(
-      Callable<T> callable,
-      DatastoreMetricsRecorder metricsRecorder,
-      DatastoreOptions datastoreOptions,
-      String methodName) {
+      Callable<T> callable, DatastoreMetricsRecorder metricsRecorder, String methodName) {
     return () -> {
       Stopwatch stopwatch = Stopwatch.createStarted();
       String status = StatusCode.Code.UNKNOWN.toString();
@@ -116,8 +99,7 @@ public final class TelemetryUtils {
         status = DatastoreException.extractStatusCode(e);
         throw e;
       } finally {
-        Map<String, String> attributes =
-            buildMetricAttributes(datastoreOptions, methodName, status);
+        Map<String, String> attributes = buildMetricAttributes(methodName, status);
         metricsRecorder.recordAttemptLatency(stopwatch.elapsed(TimeUnit.MILLISECONDS), attributes);
         metricsRecorder.recordAttemptCount(1, attributes);
       }

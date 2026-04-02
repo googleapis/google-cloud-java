@@ -161,11 +161,7 @@ public class DatastoreImplMetricsTest {
         .isTrue();
     assertThat(
             dataContainsStringAttribute(
-                point, TelemetryConstants.ATTRIBUTES_KEY_PROJECT_ID, PROJECT_ID))
-        .isTrue();
-    assertThat(
-            dataContainsStringAttribute(
-                point, TelemetryConstants.ATTRIBUTES_KEY_DATABASE_ID, DATABASE_ID))
+                point, TelemetryConstants.ATTRIBUTES_KEY_SERVICE, TelemetryConstants.SERVICE_VALUE))
         .isTrue();
 
     EasyMock.verify(rpcMock);
@@ -204,11 +200,7 @@ public class DatastoreImplMetricsTest {
         .isTrue();
     assertThat(
             dataContainsStringAttribute(
-                point, TelemetryConstants.ATTRIBUTES_KEY_PROJECT_ID, PROJECT_ID))
-        .isTrue();
-    assertThat(
-            dataContainsStringAttribute(
-                point, TelemetryConstants.ATTRIBUTES_KEY_DATABASE_ID, DATABASE_ID))
+                point, TelemetryConstants.ATTRIBUTES_KEY_SERVICE, TelemetryConstants.SERVICE_VALUE))
         .isTrue();
 
     EasyMock.verify(rpcMock);
@@ -286,11 +278,9 @@ public class DatastoreImplMetricsTest {
         .isTrue();
     assertThat(
             dataContainsStringAttribute(
-                abortedPoint, TelemetryConstants.ATTRIBUTES_KEY_PROJECT_ID, PROJECT_ID))
-        .isTrue();
-    assertThat(
-            dataContainsStringAttribute(
-                abortedPoint, TelemetryConstants.ATTRIBUTES_KEY_DATABASE_ID, DATABASE_ID))
+                abortedPoint,
+                TelemetryConstants.ATTRIBUTES_KEY_SERVICE,
+                TelemetryConstants.SERVICE_VALUE))
         .isTrue();
 
     LongPointData okPoint =
@@ -317,11 +307,9 @@ public class DatastoreImplMetricsTest {
         .isTrue();
     assertThat(
             dataContainsStringAttribute(
-                okPoint, TelemetryConstants.ATTRIBUTES_KEY_PROJECT_ID, PROJECT_ID))
-        .isTrue();
-    assertThat(
-            dataContainsStringAttribute(
-                okPoint, TelemetryConstants.ATTRIBUTES_KEY_DATABASE_ID, DATABASE_ID))
+                okPoint,
+                TelemetryConstants.ATTRIBUTES_KEY_SERVICE,
+                TelemetryConstants.SERVICE_VALUE))
         .isTrue();
 
     // Verify latency was recorded with OK (overall transaction succeeded)
@@ -349,11 +337,9 @@ public class DatastoreImplMetricsTest {
         .isTrue();
     assertThat(
             dataContainsStringAttribute(
-                latencyPoint, TelemetryConstants.ATTRIBUTES_KEY_PROJECT_ID, PROJECT_ID))
-        .isTrue();
-    assertThat(
-            dataContainsStringAttribute(
-                latencyPoint, TelemetryConstants.ATTRIBUTES_KEY_DATABASE_ID, DATABASE_ID))
+                latencyPoint,
+                TelemetryConstants.ATTRIBUTES_KEY_SERVICE,
+                TelemetryConstants.SERVICE_VALUE))
         .isTrue();
 
     EasyMock.verify(rpcMock);
@@ -422,11 +408,9 @@ public class DatastoreImplMetricsTest {
         .isTrue();
     assertThat(
             dataContainsStringAttribute(
-                abortedPoint, TelemetryConstants.ATTRIBUTES_KEY_PROJECT_ID, PROJECT_ID))
-        .isTrue();
-    assertThat(
-            dataContainsStringAttribute(
-                abortedPoint, TelemetryConstants.ATTRIBUTES_KEY_DATABASE_ID, DATABASE_ID))
+                abortedPoint,
+                TelemetryConstants.ATTRIBUTES_KEY_SERVICE,
+                TelemetryConstants.SERVICE_VALUE))
         .isTrue();
 
     LongPointData cancelledPoint =
@@ -454,11 +438,9 @@ public class DatastoreImplMetricsTest {
         .isTrue();
     assertThat(
             dataContainsStringAttribute(
-                cancelledPoint, TelemetryConstants.ATTRIBUTES_KEY_PROJECT_ID, PROJECT_ID))
-        .isTrue();
-    assertThat(
-            dataContainsStringAttribute(
-                cancelledPoint, TelemetryConstants.ATTRIBUTES_KEY_DATABASE_ID, DATABASE_ID))
+                cancelledPoint,
+                TelemetryConstants.ATTRIBUTES_KEY_SERVICE,
+                TelemetryConstants.SERVICE_VALUE))
         .isTrue();
 
     // Verify latency was recorded with the failure status code
@@ -487,11 +469,9 @@ public class DatastoreImplMetricsTest {
         .isTrue();
     assertThat(
             dataContainsStringAttribute(
-                latencyPoint, TelemetryConstants.ATTRIBUTES_KEY_PROJECT_ID, PROJECT_ID))
-        .isTrue();
-    assertThat(
-            dataContainsStringAttribute(
-                latencyPoint, TelemetryConstants.ATTRIBUTES_KEY_DATABASE_ID, DATABASE_ID))
+                latencyPoint,
+                TelemetryConstants.ATTRIBUTES_KEY_SERVICE,
+                TelemetryConstants.SERVICE_VALUE))
         .isTrue();
   }
 
@@ -558,11 +538,9 @@ public class DatastoreImplMetricsTest {
         .isTrue();
     assertThat(
             dataContainsStringAttribute(
-                opLatencyPoint, TelemetryConstants.ATTRIBUTES_KEY_PROJECT_ID, PROJECT_ID))
-        .isTrue();
-    assertThat(
-            dataContainsStringAttribute(
-                opLatencyPoint, TelemetryConstants.ATTRIBUTES_KEY_DATABASE_ID, DATABASE_ID))
+                opLatencyPoint,
+                TelemetryConstants.ATTRIBUTES_KEY_SERVICE,
+                TelemetryConstants.SERVICE_VALUE))
         .isTrue();
 
     // Verify operation count
