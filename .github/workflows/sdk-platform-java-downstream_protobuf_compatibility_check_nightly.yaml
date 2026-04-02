@@ -31,8 +31,6 @@ jobs:
           - java-firestore
           - java-pubsub
           - java-pubsublite
-          - java-storage
-          - java-storage-nio
         # Default Protobuf-Java versions to use are specified here. Without this, the nightly workflow won't know
         # which values to use and would resolve to ''.
         protobuf-version: ${{ fromJSON(format('[{0}]', inputs.protobuf_runtime_versions || '"4.33.5"')) }}
