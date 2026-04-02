@@ -135,6 +135,8 @@ class GoldenSignalsMetricsTracerTest {
     assertThat(metricData.getHistogramData().getPoints().iterator().next().getAttributes())
         .isEqualTo(
             Attributes.of(
+                AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE),
+                "CancellationException",
                 AttributeKey.stringKey(RPC_RESPONSE_STATUS_ATTRIBUTE),
                 StatusCode.Code.CANCELLED.toString()));
   }
