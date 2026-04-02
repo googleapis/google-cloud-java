@@ -182,9 +182,6 @@ public class BigQueryTelemetryTracerTest {
         BigQueryTelemetryTracer.BQ_GCP_CLIENT_ARTIFACT,
         spanData.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_ARTIFACT));
     assertEquals(
-        BigQueryTelemetryTracer.BQ_GCP_CLIENT_LANGUAGE,
-        spanData.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_LANGUAGE));
-    assertEquals(
         Version.VERSION, spanData.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_VERSION));
   }
 

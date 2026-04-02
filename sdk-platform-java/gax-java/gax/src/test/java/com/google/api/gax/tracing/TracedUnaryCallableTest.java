@@ -208,30 +208,4 @@ class TracedUnaryCallableTest {
     assertThat(contextCaptor.getValue().destinationResourceId())
         .isEqualTo("extracted-resource-name");
   }
-
-  @Test
-  void testExtractResourceNameToApiTracerContext_nullExtractor() {
-    tracedUnaryCallable =
-        new TracedUnaryCallable<>(innerCallable, tracerFactory, TRACER_CONTEXT, null);
-    ApiTracerContext context = tracedUnaryCallable.extractResourceNameToApiTracerContext("request");
-    assertThat(context).isEqualTo(TRACER_CONTEXT);
-  }
-
-  @Test
-  void testExtractResourceNameToApiTracerContext_extractorReturnsNull() {
-    tracedUnaryCallable =
-        new TracedUnaryCallable<>(innerCallable, tracerFactory, TRACER_CONTEXT, request -> null);
-    ApiTracerContext context = tracedUnaryCallable.extractResourceNameToApiTracerContext("request");
-    assertThat(context).isEqualTo(TRACER_CONTEXT);
-  }
-
-  @Test
-  void testExtractResourceNameToApiTracerContext_extractorReturnsResourceId() {
-    tracedUnaryCallable =
-        new TracedUnaryCallable<>(
-            innerCallable, tracerFactory, TRACER_CONTEXT, request -> "extracted-id");
-    ApiTracerContext context = tracedUnaryCallable.extractResourceNameToApiTracerContext("request");
-    assertThat(context).isNotSameInstanceAs(TRACER_CONTEXT);
-    assertThat(context.destinationResourceId()).isEqualTo("extracted-id");
-  }
 }

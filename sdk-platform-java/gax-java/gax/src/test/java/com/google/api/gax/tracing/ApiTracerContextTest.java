@@ -310,7 +310,7 @@ class ApiTracerContextTest {
     ApiTracerContext context =
         ApiTracerContext.newBuilder()
             .setLibraryMetadata(LibraryMetadata.empty())
-            .setDestinationResourceId("projects/123/instances/abc")
+            .setDestinationResourceIdSupplier(() -> "projects/123/instances/abc")
             .build();
     Map<String, Object> attributes = context.getAttemptAttributes();
 
@@ -383,13 +383,13 @@ class ApiTracerContextTest {
     ApiTracerContext context1 =
         ApiTracerContext.newBuilder()
             .setLibraryMetadata(LibraryMetadata.empty())
-            .setDestinationResourceId("name1")
+            .setDestinationResourceIdSupplier(() -> "name1")
             .build();
 
     ApiTracerContext context2 =
         ApiTracerContext.newBuilder()
             .setLibraryMetadata(LibraryMetadata.empty())
-            .setDestinationResourceId("name2")
+            .setDestinationResourceIdSupplier(() -> "name2")
             .build();
 
     ApiTracerContext merged = context1.merge(context2);
@@ -433,5 +433,122 @@ class ApiTracerContextTest {
     ApiTracerContext merged = context1.merge(context2);
     assertThat(merged.httpMethod()).isEqualTo("GET");
     assertThat(merged.httpPathTemplate()).isEqualTo("v1/projects/{project}");
+  }
+
+  @Test
+  void testDestinationResourceId_withUrlDomain() {
+    ApiTracerContext context =
+        ApiTracerContext.newBuilder()
+            .setLibraryMetadata(LibraryMetadata.empty())
+            .setUrlDomain("compute.googleapis.com")
+            .setDestinationResourceIdSupplier(() -> "projects/my-project/locations/us-central1")
+            .build();
+
+    assertThat(context.destinationResourceId())
+        .isEqualTo("//compute.googleapis.com/projects/my-project/locations/us-central1");
+  }
+
+  @Test
+  void testDestinationResourceId_withoutUrlDomain() {
+    ApiTracerContext context =
+        ApiTracerContext.newBuilder()
+            .setLibraryMetadata(LibraryMetadata.empty())
+            .setDestinationResourceIdSupplier(() -> "projects/my-project/locations/us-central1")
+            .build();
+
+    assertThat(context.destinationResourceId())
+        .isEqualTo("projects/my-project/locations/us-central1");
+  }
+
+  @Test
+  void testWithResourceNameExtractor_nullExtractor() {
+    ApiTracerContext context = ApiTracerContext.empty();
+    ApiTracerContext result = context.withResourceNameExtractor("request", null);
+    assertThat(result).isSameInstanceAs(context);
+  }
+
+  @Test
+  void testWithResourceNameExtractor_extractorReturnsNull() {
+    ApiTracerContext context = ApiTracerContext.empty();
+    ApiTracerContext result = context.withResourceNameExtractor("request", req -> null);
+    assertThat(result.destinationResourceId()).isNull();
+  }
+
+  @Test
+  void testWithResourceNameExtraction_lazyExtractor() {
+    ApiTracerContext context = ApiTracerContext.empty();
+    boolean[] extracted = {false};
+    ApiTracerContext result =
+        context.withResourceNameExtractor(
+            "request",
+            req -> {
+              extracted[0] = true;
+              return "extracted-id";
+            });
+
+    assertThat(extracted[0]).isFalse(); // Should be lazily evaluated
+    assertThat(result.destinationResourceId()).isEqualTo("extracted-id");
+    assertThat(extracted[0]).isTrue();
+  }
+
+  @Test
+  void testWithResourceNameExtractor_extractorThrowsException() {
+    ApiTracerContext context = ApiTracerContext.empty();
+    ApiTracerContext result =
+        context.withResourceNameExtractor(
+            "request",
+            req -> {
+              throw new RuntimeException("Intentional mock extraction failure");
+            });
+
+    assertThat(result.destinationResourceId()).isNull();
+  }
+
+  @Test
+  void testDestinationResourceId_emptyIdWithUrlDomain() {
+    ApiTracerContext context =
+        ApiTracerContext.newBuilder()
+            .setLibraryMetadata(LibraryMetadata.empty())
+            .setUrlDomain("compute.googleapis.com")
+            .setDestinationResourceIdSupplier(() -> "")
+            .build();
+
+    assertThat(context.destinationResourceId()).isNull();
+  }
+
+  @Test
+  void testMerge_preservesLaziness() {
+    ApiTracerContext context1 = ApiTracerContext.empty();
+    boolean[] extracted = {false};
+    ApiTracerContext context2 =
+        ApiTracerContext.empty()
+            .withResourceNameExtractor(
+                "request",
+                req -> {
+                  extracted[0] = true;
+                  return "lazy-id";
+                });
+
+    ApiTracerContext merged = context1.merge(context2);
+    assertThat(extracted[0]).isFalse(); // Should not be evaluated during merge
+    assertThat(merged.destinationResourceId()).isEqualTo("lazy-id");
+    assertThat(extracted[0]).isTrue(); // Evaluated upon calling getter
+  }
+
+  @Test
+  void testDestinationResourceId_evaluatedEveryTime() {
+    ApiTracerContext context = ApiTracerContext.empty();
+    int[] counter = {0};
+    ApiTracerContext result =
+        context.withResourceNameExtractor(
+            "request",
+            req -> {
+              counter[0]++;
+              return "extracted-id-" + counter[0];
+            });
+
+    assertThat(result.destinationResourceId()).isEqualTo("extracted-id-1");
+    assertThat(result.destinationResourceId()).isEqualTo("extracted-id-2");
+    assertThat(counter[0]).isEqualTo(2);
   }
 }

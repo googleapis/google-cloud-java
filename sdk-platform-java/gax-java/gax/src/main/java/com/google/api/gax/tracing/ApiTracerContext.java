@@ -37,6 +37,7 @@ import com.google.auto.value.AutoValue;
 import com.google.common.base.Strings;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Supplier;
 import javax.annotation.Nullable;
 
 /**
@@ -164,9 +165,46 @@ public abstract class ApiTracerContext {
   @Nullable
   public abstract String urlDomain();
 
-  /** The destination resource id of the request (e.g. projects/p/locations/l/topics/t). */
   @Nullable
-  public abstract String destinationResourceId();
+  protected abstract Supplier<String> destinationResourceIdSupplier();
+
+  /**
+   * The destination resource id of the request (e.g.
+   * //pubsub.googleapis.com/projects/p/locations/l/topics/t).
+   */
+  @Nullable
+  public String destinationResourceId() {
+    Supplier<String> supplier = destinationResourceIdSupplier();
+    if (supplier == null) {
+      return null;
+    }
+    String resourceId = supplier.get();
+    if (Strings.isNullOrEmpty(resourceId)) {
+      return null;
+    }
+    if (Strings.isNullOrEmpty(urlDomain())) {
+      return resourceId;
+    }
+    return "//" + urlDomain() + "/" + resourceId;
+  }
+
+  <RequestT> ApiTracerContext withResourceNameExtractor(
+      @Nullable RequestT request,
+      @Nullable com.google.api.gax.rpc.ResourceNameExtractor<RequestT> extractor) {
+    if (extractor == null || request == null) {
+      return this;
+    }
+    return toBuilder()
+        .setDestinationResourceIdSupplier(
+            () -> {
+              try {
+                return extractor.extract(request);
+              } catch (Exception e) {
+                return null;
+              }
+            })
+        .build();
+  }
 
   /**
    * @return a map of attributes to be included in attempt-level spans
@@ -284,8 +322,8 @@ public abstract class ApiTracerContext {
     if (!Strings.isNullOrEmpty(other.urlDomain())) {
       builder.setUrlDomain(other.urlDomain());
     }
-    if (other.destinationResourceId() != null) {
-      builder.setDestinationResourceId(other.destinationResourceId());
+    if (other.destinationResourceIdSupplier() != null) {
+      builder.setDestinationResourceIdSupplier(other.destinationResourceIdSupplier());
     }
     return builder.build();
   }
@@ -322,7 +360,8 @@ public abstract class ApiTracerContext {
 
     public abstract Builder setUrlDomain(@Nullable String urlDomain);
 
-    public abstract Builder setDestinationResourceId(@Nullable String destinationResourceId);
+    public abstract Builder setDestinationResourceIdSupplier(
+        @Nullable Supplier<String> destinationResourceIdSupplier);
 
     public abstract ApiTracerContext build();
   }

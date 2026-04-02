@@ -42,7 +42,6 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnavailableException;
 import com.google.api.gax.tracing.ObservabilityAttributes;
-import com.google.api.gax.tracing.SpanTracer;
 import com.google.api.gax.tracing.SpanTracerFactory;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.InvalidProtocolBufferException;
@@ -97,7 +96,7 @@ class ITOtelTracing {
       AttributeKey.stringKey(ObservabilityAttributes.RPC_SYSTEM_NAME_ATTRIBUTE);
   private static final AttributeKey<String> RPC_RESPONSE_STATUS_KEY =
       AttributeKey.stringKey(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE);
-  private static final AttributeKey<String> HTTP_RESPONSE_STATUS_KEY =
+  private static final AttributeKey<Long> HTTP_RESPONSE_STATUS_KEY =
       AttributeKey.longKey(ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE);
   private static final AttributeKey<String> REPO_KEY =
       AttributeKey.stringKey(ObservabilityAttributes.REPO_ATTRIBUTE);
@@ -172,11 +171,6 @@ class ITOtelTracing {
       assertThat(
               attemptSpan
                   .getAttributes()
-                  .get(AttributeKey.stringKey(SpanTracer.LANGUAGE_ATTRIBUTE)))
-          .isEqualTo(SpanTracer.DEFAULT_LANGUAGE);
-      assertThat(
-              attemptSpan
-                  .getAttributes()
                   .get(AttributeKey.stringKey(ObservabilityAttributes.SERVER_ADDRESS_ATTRIBUTE)))
           .isEqualTo(SHOWCASE_SERVER_ADDRESS);
       assertThat(
@@ -205,6 +199,21 @@ class ITOtelTracing {
                   .getAttributes()
                   .get(AttributeKey.stringKey(ObservabilityAttributes.URL_DOMAIN_ATTRIBUTE)))
           .isEqualTo("showcase.googleapis.com");
+      assertThat(
+              attemptSpan
+                  .getAttributes()
+                  .get(AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE)))
+          .isNull();
+      assertThat(
+              attemptSpan
+                  .getAttributes()
+                  .get(AttributeKey.stringKey(ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE)))
+          .isNull();
+      assertThat(
+              attemptSpan
+                  .getAttributes()
+                  .get(AttributeKey.stringKey(ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE)))
+          .isNull();
       assertThat(attemptSpan.getInstrumentationScopeInfo().getName()).isEqualTo(SHOWCASE_ARTIFACT);
     }
   }
@@ -230,11 +239,6 @@ class ITOtelTracing {
               .orElseThrow(
                   () -> new AssertionError("Attempt span 'POST v1beta1/echo:echo' not found"));
       assertThat(attemptSpan.getKind()).isEqualTo(SpanKind.CLIENT);
-      assertThat(
-              attemptSpan
-                  .getAttributes()
-                  .get(AttributeKey.stringKey(SpanTracer.LANGUAGE_ATTRIBUTE)))
-          .isEqualTo(SpanTracer.DEFAULT_LANGUAGE);
       assertThat(
               attemptSpan
                   .getAttributes()
@@ -275,6 +279,21 @@ class ITOtelTracing {
                   .getAttributes()
                   .get(AttributeKey.stringKey(ObservabilityAttributes.HTTP_URL_FULL_ATTRIBUTE)))
           .isEqualTo(SHOWCASE_USER_URL);
+      assertThat(
+              attemptSpan
+                  .getAttributes()
+                  .get(AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE)))
+          .isNull();
+      assertThat(
+              attemptSpan
+                  .getAttributes()
+                  .get(AttributeKey.stringKey(ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE)))
+          .isNull();
+      assertThat(
+              attemptSpan
+                  .getAttributes()
+                  .get(AttributeKey.stringKey(ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE)))
+          .isNull();
       EchoResponse fetchedEcho = EchoResponse.newBuilder().setContent("tracing-test").build();
       long expectedMagnitude = computeExpectedHttpJsonResponseSize(fetchedEcho);
       Long observedMagnitude =

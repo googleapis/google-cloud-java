@@ -45,9 +45,6 @@ import java.util.concurrent.CancellationException;
 @BetaApi
 @InternalApi
 public class SpanTracer implements ApiTracer {
-  public static final String LANGUAGE_ATTRIBUTE = "gcp.client.language";
-
-  public static final String DEFAULT_LANGUAGE = "Java";
 
   static final String CONTENT_LENGTH_KEY = "Content-Length";
 
@@ -103,7 +100,6 @@ public class SpanTracer implements ApiTracer {
   }
 
   private void buildAttributes() {
-    this.attemptAttributes.put(LANGUAGE_ATTRIBUTE, DEFAULT_LANGUAGE);
     this.attemptAttributes.putAll(this.apiTracerContext.getAttemptAttributes());
   }
 
@@ -205,9 +201,6 @@ public class SpanTracer implements ApiTracer {
       return;
     }
 
-    attemptSpan.setAttribute(
-        ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE, ObservabilityUtils.extractErrorType(error));
-
     Map<String, Object> statusAttributes = new HashMap<>();
     ObservabilityUtils.populateStatusAttributes(
         statusAttributes, error, this.apiTracerContext.transport());
@@ -219,6 +212,9 @@ public class SpanTracer implements ApiTracer {
       endAttempt();
       return;
     }
+
+    attemptSpan.setAttribute(
+        ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE, ObservabilityUtils.extractErrorType(error));
 
     attemptSpan.setAttribute(
         ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE, error.getClass().getName());
