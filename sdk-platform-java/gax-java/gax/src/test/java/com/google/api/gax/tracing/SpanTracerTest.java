@@ -602,4 +602,27 @@ class SpanTracerTest {
   }
 
   private static class UnknownClientException extends RuntimeException {}
+
+  @Test
+  void testInjectTraceContext_addsHeaders() {
+    io.opentelemetry.api.trace.SpanContext mockSpanContext =
+        io.opentelemetry.api.trace.SpanContext.create(
+            "00000000000000000000000000000001",
+            "0000000000000002",
+            io.opentelemetry.api.trace.TraceFlags.getSampled(),
+            io.opentelemetry.api.trace.TraceState.getDefault());
+    io.opentelemetry.api.trace.Span realSpan =
+        io.opentelemetry.api.trace.Span.wrap(mockSpanContext);
+    when(spanBuilder.startSpan()).thenReturn(realSpan);
+
+    spanTracer = new SpanTracer(tracer, ApiTracerContext.empty(), ATTEMPT_SPAN_NAME);
+    spanTracer.attemptStarted(new Object(), 1);
+
+    java.util.Map<String, String> carrier = new java.util.HashMap<>();
+    spanTracer.injectTraceContext(carrier);
+
+    assertThat(carrier).containsKey("traceparent");
+    assertThat(carrier.get("traceparent")).contains("00000000000000000000000000000001");
+    assertThat(carrier.get("traceparent")).contains("0000000000000002");
+  }
 }

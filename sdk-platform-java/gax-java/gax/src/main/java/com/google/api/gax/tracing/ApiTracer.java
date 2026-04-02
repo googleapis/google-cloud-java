@@ -196,6 +196,9 @@ public interface ApiTracer {
   default void batchRequestSent(long elementCount, long requestSize) {}
   ;
 
+  /** Extract the trace context from the tracer and add it to the given headers map. */
+  default void injectTraceContext(java.util.Map<String, String> carrier) {}
+
   /**
    * Annotates the attempt with the full resolved HTTP URL. Only relevant for HTTP transport.
    *
