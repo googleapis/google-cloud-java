@@ -118,8 +118,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     this.options = options;
     this.urlDomain = new GenericUrl(options.getResolvedApiaryHost("bigquery")).getHost();
 
-    if (options.isOpenTelemetryTracingEnabled()
-        && options.getOpenTelemetryTracer() != null) {
+    if (options.isOpenTelemetryTracingEnabled() && options.getOpenTelemetryTracer() != null) {
       initializer =
           new HttpTracingRequestInitializer(initializer, options.getOpenTelemetryTracer());
     }
@@ -2144,10 +2143,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .setAttribute("bq.rpc.service", service)
             .setAttribute("bq.rpc.method", method)
             .setAttribute("bq.rpc.system", "http")
-        .setAttribute(
-            BigQueryTelemetryTracer.GCP_RESOURCE_DESTINATION_ID, gcpResourceDestinationId)
-        .setAttribute(BigQueryTelemetryTracer.URL_TEMPLATE, urlTemplate)
-        .setAttribute(BigQueryTelemetryTracer.URL_DOMAIN, this.urlDomain);
+            .setAttribute(
+                BigQueryTelemetryTracer.GCP_RESOURCE_DESTINATION_ID, gcpResourceDestinationId)
+            .setAttribute(BigQueryTelemetryTracer.URL_TEMPLATE, urlTemplate)
+            .setAttribute(BigQueryTelemetryTracer.URL_DOMAIN, this.urlDomain);
 
     if (options != null) {
       builder.setAllAttributes(otelAttributesFromOptions(options));
@@ -2194,5 +2193,4 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     }
     return builder.build();
   }
-
 }
