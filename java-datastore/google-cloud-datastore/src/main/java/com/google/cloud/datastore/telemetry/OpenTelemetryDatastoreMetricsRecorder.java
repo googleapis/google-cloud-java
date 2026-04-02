@@ -58,12 +58,6 @@ class OpenTelemetryDatastoreMetricsRecorder extends OpenTelemetryMetricsRecorder
   private final DoubleHistogram transactionLatency;
   private final LongCounter transactionAttemptCount;
 
-  // GAX operation/attempt latency metrics re-registered under the Datastore meter with the
-  // plural names required by the internal Cloud Monitoring descriptor. These override the
-  // singular-named histograms registered by the parent GAX class.
-  private final DoubleHistogram operationLatency;
-  private final DoubleHistogram attemptLatency;
-
   /** Creates a recorder backed by a user-provided {@link OpenTelemetry} instance. */
   OpenTelemetryDatastoreMetricsRecorder(@Nonnull OpenTelemetry openTelemetry, String metricPrefix) {
     this(openTelemetry, metricPrefix, /* ownsOpenTelemetry= */ false);
@@ -95,21 +89,6 @@ class OpenTelemetryDatastoreMetricsRecorder extends OpenTelemetryMetricsRecorder
             .counterBuilder(TelemetryConstants.METRIC_NAME_TRANSACTION_ATTEMPT_COUNT)
             .setDescription("Number of attempts to commit a transaction")
             .build();
-
-    this.operationLatency =
-        meter
-            .histogramBuilder(TelemetryConstants.METRIC_NAME_OPERATION_LATENCY)
-            .setDescription(
-                "Total time until final operation success or failure, including retries and backoff.")
-            .setUnit("ms")
-            .build();
-
-    this.attemptLatency =
-        meter
-            .histogramBuilder(TelemetryConstants.METRIC_NAME_ATTEMPT_LATENCY)
-            .setDescription("Time an individual attempt took")
-            .setUnit("ms")
-            .build();
   }
 
   OpenTelemetry getOpenTelemetry() {
@@ -130,16 +109,6 @@ class OpenTelemetryDatastoreMetricsRecorder extends OpenTelemetryMetricsRecorder
         logger.log(Level.WARNING, "Failed to close built-in OpenTelemetry SDK instance.", e);
       }
     }
-  }
-
-  @Override
-  public void recordOperationLatency(double latencyMs, Map<String, String> attributes) {
-    operationLatency.record(latencyMs, toOtelAttributes(attributes));
-  }
-
-  @Override
-  public void recordAttemptLatency(double latencyMs, Map<String, String> attributes) {
-    attemptLatency.record(latencyMs, toOtelAttributes(attributes));
   }
 
   @Override

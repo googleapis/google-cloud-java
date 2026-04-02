@@ -227,7 +227,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
         // or from `transaction.commit()`. If there is an exception thrown from either call site,
         // then the transaction is still active. Check if it is still active (e.g. not commited)
         // and roll back the transaction.
-        if (transaction != null && transaction.isActive()) {
+        if (transaction.isActive()) {
           transaction.rollback();
         }
         throw DatastoreException.propagateUserException(ex);
@@ -236,11 +236,10 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
         // If the transaction is active, then commit the rollback. If it was already successfully
         // rolled back, the transaction is inactive (prevents rolling back an already rolled back
         // transaction).
-        if (transaction != null && transaction.isActive()) {
+        if (transaction.isActive()) {
           transaction.rollback();
         }
-        if (transaction != null
-            && options != null
+        if (options != null
             && options.getModeCase().equals(TransactionOptions.ModeCase.READ_WRITE)) {
           setPrevTransactionId(transaction.getTransactionId());
         }

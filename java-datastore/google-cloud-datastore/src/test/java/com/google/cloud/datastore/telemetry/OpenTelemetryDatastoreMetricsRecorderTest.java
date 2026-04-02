@@ -175,12 +175,11 @@ public class OpenTelemetryDatastoreMetricsRecorderTest {
     Collection<MetricData> metrics = metricReader.collectAllMetrics();
     MetricData metric =
         metrics.stream()
-            .filter(m -> m.getName().equals(TelemetryConstants.METRIC_NAME_ATTEMPT_LATENCY))
+            .filter(m -> m.getName().equals(TelemetryConstants.METRIC_PREFIX + "/attempt_latency"))
             .findFirst()
             .orElse(null);
 
     assertThat(metric).isNotNull();
-    assertThat(metric.getDescription()).isEqualTo("Time an individual attempt took");
     assertThat(metric.getUnit()).isEqualTo("ms");
 
     HistogramPointData point =
@@ -206,12 +205,11 @@ public class OpenTelemetryDatastoreMetricsRecorderTest {
     Collection<MetricData> metrics = metricReader.collectAllMetrics();
     MetricData metric =
         metrics.stream()
-            .filter(m -> m.getName().equals(TelemetryConstants.METRIC_NAME_ATTEMPT_COUNT))
+            .filter(m -> m.getName().equals(TelemetryConstants.METRIC_PREFIX + "/attempt_count"))
             .findFirst()
             .orElse(null);
 
     assertThat(metric).isNotNull();
-    assertThat(metric.getDescription()).isEqualTo("Number of Attempts");
 
     LongPointData point = metric.getLongSumData().getPoints().stream().findFirst().orElse(null);
     assertThat(point).isNotNull();
@@ -229,14 +227,12 @@ public class OpenTelemetryDatastoreMetricsRecorderTest {
     Collection<MetricData> metrics = metricReader.collectAllMetrics();
     MetricData metric =
         metrics.stream()
-            .filter(m -> m.getName().equals(TelemetryConstants.METRIC_NAME_OPERATION_LATENCY))
+            .filter(
+                m -> m.getName().equals(TelemetryConstants.METRIC_PREFIX + "/operation_latency"))
             .findFirst()
             .orElse(null);
 
     assertThat(metric).isNotNull();
-    assertThat(metric.getDescription())
-        .isEqualTo(
-            "Total time until final operation success or failure, including retries and backoff.");
     assertThat(metric.getUnit()).isEqualTo("ms");
 
     HistogramPointData point =
@@ -258,12 +254,11 @@ public class OpenTelemetryDatastoreMetricsRecorderTest {
     Collection<MetricData> metrics = metricReader.collectAllMetrics();
     MetricData metric =
         metrics.stream()
-            .filter(m -> m.getName().equals(TelemetryConstants.METRIC_NAME_OPERATION_COUNT))
+            .filter(m -> m.getName().equals(TelemetryConstants.METRIC_PREFIX + "/operation_count"))
             .findFirst()
             .orElse(null);
 
     assertThat(metric).isNotNull();
-    assertThat(metric.getDescription()).isEqualTo("Number of Operations");
 
     LongPointData point = metric.getLongSumData().getPoints().stream().findFirst().orElse(null);
     assertThat(point).isNotNull();
