@@ -45,7 +45,7 @@ public class DatastoreOpenTelemetryOptions {
    *
    * <p><b>Note:</b> This method does <em>not</em> reflect the state of built-in metrics export to
    * Google Cloud Monitoring, which is controlled separately by {@link
-   * #isExportBuiltinMetricsToGoogleCloudMonitoring()} and is {@code true} by default. To check
+   * #isExportBuiltinMetricsToGoogleCloudMonitoring()} and is {@code false} by default. To check
    * whether any telemetry is active, also consult that flag.
    *
    * @return {@code true} if tracing or custom OTel metrics are enabled, {@code false} otherwise.
@@ -128,7 +128,8 @@ public class DatastoreOpenTelemetryOptions {
     private Builder() {
       tracingEnabled = false;
       metricsEnabled = false;
-      exportBuiltinMetricsToGoogleCloudMonitoring = true;
+      // TODO: This is disabled by default until the Firestore namespace is deployed
+      exportBuiltinMetricsToGoogleCloudMonitoring = false;
       openTelemetry = null;
     }
 

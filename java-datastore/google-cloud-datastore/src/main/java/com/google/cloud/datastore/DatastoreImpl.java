@@ -179,6 +179,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     } catch (Exception e) {
       logger.log(Level.WARNING, "Failed to close channels", e);
     }
+    // Close the default Metrics Recorder if exists
     getOptions().getMetricsRecorder().close();
   }
 

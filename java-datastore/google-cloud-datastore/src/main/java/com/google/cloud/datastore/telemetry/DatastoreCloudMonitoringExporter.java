@@ -96,7 +96,7 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
    * responses and can mask the real failure reason.
    *
    * <p>{@code createTimeSeries} is used instead of {@code createServiceTimeSeries} because the
-   * Datastore namespace in Cloud Monitoring has not yet been deployed as a service resource. Once
+   * Firestore namespace in Cloud Monitoring has not yet been deployed as a service resource. Once
    * the namespace is available, this should be migrated to {@code createServiceTimeSeries} for
    * correct quota and resource attribution.
    *
@@ -123,9 +123,9 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
     }
     settingsBuilder.setCredentialsProvider(credentialsProvider);
 
-    Duration timeout = Duration.ofMinutes(1);
-
-    settingsBuilder.createTimeSeriesSettings().setSimpleTimeoutNoRetriesDuration(timeout);
+    settingsBuilder
+        .createTimeSeriesSettings()
+        .setSimpleTimeoutNoRetriesDuration(Duration.ofMinutes(1));
 
     return new DatastoreCloudMonitoringExporter(
         projectId, MetricServiceClient.create(settingsBuilder.build()));

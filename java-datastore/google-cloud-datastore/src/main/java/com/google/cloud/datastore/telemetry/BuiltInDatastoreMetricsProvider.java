@@ -27,6 +27,9 @@ import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
 import io.opentelemetry.sdk.resources.Resource;
 import java.io.IOException;
 import java.lang.management.ManagementFactory;
+import java.lang.reflect.Method;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -54,12 +57,6 @@ public final class BuiltInDatastoreMetricsProvider {
   private static final Logger logger =
       Logger.getLogger(BuiltInDatastoreMetricsProvider.class.getName());
 
-  // volatile ensures that the lazy initialisation in getDefaultTaskValue() and
-  // detectClientLocation()
-  // is visible across threads. Without it, a second thread could read a stale null and trigger
-  // duplicate initialisation (safe but wasteful), or — on some architectures — read a partially
-  // written value. The fields are idempotent to initialise, so a small risk of double-write is
-  // acceptable; volatile prevents the torn-read issue.
   private static volatile String taskId;
   private static volatile String location;
   private static final String DEFAULT_LOCATION = "global";
@@ -182,12 +179,44 @@ public final class BuiltInDatastoreMetricsProvider {
    * pid@hostname}). The UUID prefix ensures uniqueness across process restarts that reuse the same
    * PID, preventing Cloud Monitoring from conflating time series from different process lifecycles.
    *
+   * <p>For Java 9 and later, the PID is obtained using the ProcessHandle API. For Java 8, the PID
+   * is extracted from ManagementFactory.getRuntimeMXBean().getName().
+   *
    * @return a unique identifier string.
    */
   private static String getDefaultTaskValue() {
     if (taskId == null) {
-      taskId = UUID.randomUUID() + "@" + ManagementFactory.getRuntimeMXBean().getName();
+      String identifier = UUID.randomUUID().toString();
+      String pid = getProcessId();
+
+      try {
+        String hostname = InetAddress.getLocalHost().getHostName();
+        taskId = identifier + "@" + pid + "@" + hostname;
+      } catch (UnknownHostException e) {
+        logger.log(Level.INFO, "Unable to get the hostname.", e);
+        taskId = identifier + "@" + pid + "@localhost";
+      }
     }
     return taskId;
+  }
+
+  private static String getProcessId() {
+    try {
+      // Check if Java 9+ and ProcessHandle class is available
+      Class<?> processHandleClass = Class.forName("java.lang.ProcessHandle");
+      Method currentMethod = processHandleClass.getMethod("current");
+      Object processHandleInstance = currentMethod.invoke(null);
+      Method pidMethod = processHandleClass.getMethod("pid");
+      long pid = (long) pidMethod.invoke(processHandleInstance);
+      return Long.toString(pid);
+    } catch (Exception e) {
+      // Fallback to Java 8 method
+      final String jvmName = ManagementFactory.getRuntimeMXBean().getName();
+      if (jvmName != null && jvmName.contains("@")) {
+        return jvmName.split("@")[0];
+      } else {
+        return "unknown";
+      }
+    }
   }
 }
