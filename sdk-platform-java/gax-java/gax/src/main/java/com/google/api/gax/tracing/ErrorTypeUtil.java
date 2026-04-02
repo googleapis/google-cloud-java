@@ -112,13 +112,13 @@ public class ErrorTypeUtil {
    * </ol>
    *
    * @param error the Throwable from which to extract the error type string.
-   * @return a low-cardinality string representing the specific error type, or {@code
-   *     ErrorType.INTERNAL.toString()} if the provided error is {@code null} or non-determined.
+   * @return a low-cardinality string representing the specific error type, or {@code null} if the
+   *     provided error is {@code null} or non-determined.
    */
   // Requirement source: go/clo:product-requirements-v1
   public static String extractErrorType(@Nullable Throwable error) {
     if (error == null) {
-      // No information about the error; we default to INTERNAL.
+      // No information about the error; we default to null.
       return null;
     }
 
