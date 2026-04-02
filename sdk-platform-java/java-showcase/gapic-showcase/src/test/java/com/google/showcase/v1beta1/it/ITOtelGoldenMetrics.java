@@ -44,6 +44,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.rpc.Status;
 import com.google.showcase.v1beta1.EchoClient;
 import com.google.showcase.v1beta1.EchoRequest;
+import com.google.showcase.v1beta1.EchoResponse;
 import com.google.showcase.v1beta1.EchoSettings;
 import com.google.showcase.v1beta1.it.util.TestClientInitializer;
 import com.google.showcase.v1beta1.stub.EchoStubSettings;
@@ -98,8 +99,12 @@ class ITOtelGoldenMetrics {
     try (EchoClient client =
         TestClientInitializer.createGrpcEchoClientOpentelemetry(tracerFactory)) {
 
-      client.echo(EchoRequest.newBuilder().setContent("metrics-test").build());
+      EchoResponse echo = client.echo(EchoRequest.newBuilder().setContent("metrics-test").build());
+      System.out.println(echo.getContent());
+      System.out.println("in test:" + Thread.currentThread().getName());
 
+      // Slight delay to ensure the background callback completes its OpenTelemetry recording.
+      Thread.sleep(100);
       Collection<MetricData> metrics = metricReader.collectAllMetrics();
       assertThat(metrics).isNotEmpty();
 

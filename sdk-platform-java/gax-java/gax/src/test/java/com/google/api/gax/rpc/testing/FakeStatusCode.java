@@ -47,7 +47,7 @@ public class FakeStatusCode implements StatusCode {
 
   @Override
   public Code getTransportCode() {
-    return getCode();
+    return code;
   }
 
   @Override

@@ -85,6 +85,7 @@ class GoldenSignalsMetricsRecorder {
   }
 
   void recordOperationLatency(double operationLatency, Map<String, Object> attributes) {
+    System.out.println("in tracer:" + Thread.currentThread().getName());
     clientRequestDurationRecorder.record(
         operationLatency, ObservabilityUtils.toOtelAttributes(attributes));
   }
